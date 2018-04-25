@@ -2,10 +2,7 @@
 Geosoft vox display handling, which manages the rendering of a `geosoft.gxpy.vox.Vox` in a 3d view.
 
 :Classes:
-
-    ============ ==========================================================================
-    `VoxDisplay` 3D visualization of a vox, which can be placed `geosoft.gxpy.view.View_3d`
-    ============ ==========================================================================
+    :`VoxDisplay`: 3D visualization of a vox, which can be placed `geosoft.gxpy.view.View_3d`
     
 .. seealso:: `geosoft.gxpy.vox.Vox`, `geosoft.gxpy.view.View_3d`, `geosoft.gxapi.GXVOXD`
 
@@ -377,7 +374,8 @@ class VoxDisplay:
 
         return v3d
 
-    def figure_map(self, file_name=None, overwrite=True, title=None, legend_label=None,
+    def figure_map(self, file_name=None, overwrite=True,
+                   title=None, legend_label=None,
                    features=('LEGEND', 'NEATLINE'), **kwargs):
         """
         Create a figure view file from the instance.

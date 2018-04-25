@@ -530,6 +530,10 @@ class Test(GXPYTest):
             file_name = gxu.url_retrieve(big, reporthook=hook)
             del_file(file_name)
 
+        except:
+            print('No internet')
+            pass
+
         finally:
             del_file(ref_file)
             del_file(test_file)
@@ -611,19 +615,25 @@ class Test(GXPYTest):
 
         params = {'key': 'test'}
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-        r = requests.get("http://dap.geosoft.com/rest/service/configuration",
-                         params=params,
-                         headers=headers)
-        response = gxu.dict_from_http_response_text(r.text, object_hook=hook)
-        self.assertTrue(response['MajorVersion'] >= 12)
-        response = gxu.dict_from_http_response_text(r.text, object_pairs_hook=pairs_hook)
-        self.assertEqual(response[0][0], 'Name')
+        try:
+            r = requests.get("http://dap.geosoft.com/rest/service/configuration",
+                             params=params,
+                             headers=headers)
+            response = gxu.dict_from_http_response_text(r.text, object_hook=hook)
+            self.assertTrue(response['MajorVersion'] >= 12)
+            response = gxu.dict_from_http_response_text(r.text, object_pairs_hook=pairs_hook)
+            self.assertEqual(response[0][0], 'Name')
 
-        r = requests.get("http://dap.geosoft.com/rest/service/configuration", params=params)
-        response = gxu.dict_from_http_response_text(r.text)
-        self.assertTrue(int(response['MajorVersion']) >= 12)
-        response = gxu.dict_from_http_response_text(r.text, object_hook=hook)
-        self.assertTrue(int(response['MajorVersion']) >= 12)
+            r = requests.get("http://dap.geosoft.com/rest/service/configuration", params=params)
+            response = gxu.dict_from_http_response_text(r.text)
+            self.assertTrue(int(response['MajorVersion']) >= 12)
+            response = gxu.dict_from_http_response_text(r.text, object_hook=hook)
+            self.assertTrue(int(response['MajorVersion']) >= 12)
+
+        except:
+            print('No internet')
+            pass
+
 
 
 if __name__ == '__main__':

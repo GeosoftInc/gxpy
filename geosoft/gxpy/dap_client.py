@@ -154,7 +154,7 @@ class DataExtract:
 
     :param filename:    name of the data file
     :param extents:     data extent as a `BoundingBox` or `geosoft.gxpy.geopmetry.Point2` instance
-    :param resolution:  desired resolution in the distance usins of the xtent coodinate system
+    :param resolution:  desired resolution in the distance units of the extents coordinate system
     :param format:      one of the extraction formats for the data type, default is the first format.
 
     .. versionadded:: 9.4
@@ -238,8 +238,8 @@ class DataCard:
     Single dataset information instance.
 
     :param dap:             `DapClient` instance
-    :param id:              `Id`    unique identifier
-    :param title:           `Title`
+    :param id:              `Id` unique dataset identifier property
+    :param title:           `Title` property
     :param type:            `Type` dataset type, one of `DataType` values.
     :param hierarchy:       `Hierarchy` location in the catalog hierarchy
     :param stylesheet:      `Stylesheet` metadata style sheet
@@ -433,8 +433,8 @@ class DapClient(Sequence):
     DapClient class to communicate with a Geosoft DAP server.
 
     :param url:         url of the server, default is 'http://dap.geosoft.com/'
-    :param get_catalog: `True` to get the server catalog.  If `False` (the default) the caller needs to call
-                        method `catalog()` to get the data catalog from the server. The catalog is cached as
+    :param get_catalog: `True` to get the server catalog.  If `False` (the default) call method `catalog()`
+                        to get the retrieve the catalog from the server. The catalog is cached as
                         part of the instance.
 
     .. versionadded:: 9.4
@@ -623,12 +623,26 @@ class DapClient(Sequence):
         :param datacard:    `DataCard` instance, or a dataset description (hierarchy, title) or just title.
         :param filename:    file name in which to plase data, default is a temporary geosoft gris file.
         :param extent:      `geosoft.gxpy.geometry.Point2` instance, or a `BoundingBox` instance
-        :param resolution:  data resolution in the length usins of the extent coordinate system
+        :param resolution:  data resolution in the length units of the extent coordinate system
         :param max_seconds: maximum number of seconds to wait for the process to finish
         :param progress:    callback that can report progress, for example `progress=print` will print to the console
         :param cadence:     time in seconds between checking on server preparation status.
         :return:            data file name, which may be a temporry file.  Temporary files will only persist
                             during the live of the current context.
+
+        .. code::
+
+            import geosoft.gxpy.gx as gx
+            import geosoft.gxpy.dap_client as gxdap:
+
+            gx.GXpy()
+
+            with gxdap.DapClient() as dap:
+
+                # some point data
+                dataset = dap['Kimberlite Indicator Mineral Grain Chemistry']
+                extent = gxgeo.Point2(((-112, 65), (-111, 65.5)), coordinate_system='NAD83')
+                data_file = dap.fetch_data(dataset, extent=extent, resolution=0, progress=print)
 
         .. versionadded:: 9.4
         """
@@ -645,9 +659,11 @@ class DapClient(Sequence):
             res = self._http_post(url, datacard.Extents)
             resolution = res['Default']
 
+        pro = _t('\nFetching \'{}\'({}) from \'{}\' to file \'{}\'').\
+            format(datacard.Title, datacard.Id, self._url, filename)
+        gx.gx().log(pro)
         if progress:
-            progress(_t('\nFetching \'{}\'({}) from \'{}\' to file \'{}\'').
-                     format(datacard.Title, datacard.Id, self._url, filename))
+            progress(pro)
 
         extract_parameters = DataExtract(extents=extent,
                                          resolution=resolution,

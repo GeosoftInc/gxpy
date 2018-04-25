@@ -3,10 +3,12 @@ Geosoft grid and image handling, including all
 `supported file formats <https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations>`_ .
 
 :Classes:
+    :`Grid`: grid dataset
 
-    ============= =====================================
-    :class:`Grid` grid dataset
-    ============= =====================================
+:Constants:
+   :FILE_READ:       0 open for read, files are not changed
+   :FILE_READWRITE:  1 open for read and write, files can be changed
+   :FILE_NEW:        2 new grid file, accompanied by `overwrite=` parameter
 
 .. seealso:: :mod:`geosoft.gxpy.grid_utility`, :mod:`geosoft.gxpy.grid_fft`,
     :class:`geosoft.gxapi.GXIMG`, :class:`geosoft.gxapi.GXIMU`
@@ -16,16 +18,6 @@ Geosoft grid and image handling, including all
     Regression tests provide usage examples:     
     `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_grid.py>`_
 
-**Constants**
-
-`mode=` Grid file open mode constants
-
-   ============== == ====================================================
-   FILE_READ       0 open for read, files are not changed
-   FILE_READWRITE  1 open for read and write, files can be changed
-   FILE_NEW        2 new grid file, accompanied by `overwrite=` parameter
-   ============== == ====================================================
-    
 """
 import os
 import numpy as np

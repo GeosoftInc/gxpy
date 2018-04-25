@@ -92,7 +92,7 @@ class Test(GXPYTest):
             # some point data
             dataset = dap['Kimberlite Indicator Mineral Grain Chemistry']
             extent = gxgeo.Point2(((-112, 65), (-111, 65.5)), coordinate_system='NAD83')
-            data_file = dap.fetch_data(dataset, extent=extent, progress=print, resolution=0)
+            data_file = dap.fetch_data(dataset, extent=extent, progress=print)
             self.assertEqual(os.path.splitext(data_file)[1], '.csv')
 
             extent = gxgeo.Point2(((-80, 65), (-70, 65.5)), coordinate_system='NAD83')

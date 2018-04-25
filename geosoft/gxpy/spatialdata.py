@@ -10,6 +10,16 @@ a named file. Examples are Geosoft databases, grids, voxels, geosoft_surfaces.
     `SpatialData` base class for Geosoft spatial data, inherits from `geosoft.gxpy.geometry.Geometry`
     ============= ===================================================================================
 
+**Constants**
+
+`mode=` file open mode constants
+
+   ============== == ====================================================
+   FILE_READ       0 open for read, files are not changed
+   FILE_READWRITE  1 open for read and write, files can be changed
+   FILE_NEW        2 new file, accompanied by `overwrite=` parameter
+   ============== == ====================================================
+
 """
 import os
 
@@ -55,16 +65,17 @@ def delete_files(file_name):
         df(file_name + '.xml')
 
 
-MODE_READ = 0          #: existing dataset file open for read only
-MODE_READWRITE = 1     #: open existing dataset file for read or write
-MODE_NEW = 2           #: new dataset file
+MODE_READ = 0
+MODE_READWRITE = 1
+MODE_NEW = 2
 
 
 def find_meta_branch(meta, item):
+
     """
     Return the lowest branch in the meta dictionary that contains the item.
 
-    ... versionadded:: 9.3.1
+    .. versionadded:: 9.3.1
     """
     if item in meta:
         return meta
@@ -86,9 +97,9 @@ def coordinate_system_from_metadata(meta):
     :return:        `geosoft.gxpy.coordinate_system.Coordinate_system`, or None
     """
     try:
-        geosoft = find_meta_branch(meta, 'geosoft')
-        if geosoft:
-            projection = find_meta_branch(geosoft['geosoft'], 'projection')
+        geometa = find_meta_branch(meta, 'geosoft')
+        if geometa:
+            projection = find_meta_branch(geometa['geosoft'], 'projection')
             if projection:
                 return gxcs.Coordinate_system(projection['projection'])
     except:
