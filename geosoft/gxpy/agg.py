@@ -29,7 +29,6 @@ from . import map as gxmap
 from . import view as gxview
 from . import group as gxgroup
 from . import geometry as gxgm
-from . import utility as gxu
 from . import coordinate_system as gxcs
 
 __version__ = geosoft.__version__
@@ -47,29 +46,25 @@ class AggregateException(geosoft.GXRuntimeError):
     """
     pass
 
-ZONE_DEFAULT = 0 #:
-ZONE_LINEAR = 1 #:
-ZONE_NORMAL = 2 #:
-ZONE_EQUALAREA = 3 #:
-ZONE_SHADE = 4 #:
-ZONE_LOGLINEAR = 5 #:
-ZONE_LAST = 6 #:
+
+ZONE_DEFAULT = 0
+ZONE_LINEAR = 1
+ZONE_NORMAL = 2
+ZONE_EQUALAREA = 3
+ZONE_SHADE = 4
+ZONE_LOGLINEAR = 5
+ZONE_LAST = 6
+
 
 class Aggregate_image(gxgm.Geometry):
     """
     The AGG class supports the creation of aggregate images from one or more grid data sets. Aggregates
     can be placed into a 2D or 3D view for display.
 
-    :param grid_file:   if specified, the :meth:`add_layer()` method is called with remaining parameters
-                        to create a single-image aggregate.
-
     :Constructors:
+        :`open`: open an existing aggregate
+        :`new`:  create a new aggregate
 
-        ============= ===========================
-        :meth:`open`: open an existing aggregate
-        :meth:`new`:  create a new aggregate
-        ============= ===========================
-        
     .. versionadded:: 9.2
     """
 
@@ -82,7 +77,7 @@ class Aggregate_image(gxgm.Geometry):
     def __enter__(self):
         return self
 
-    def __exit__(self, type, value, traceback):
+    def __exit__(self, typ, value, traceback):
         self.__del__()
 
     def __del__(self):
@@ -262,18 +257,19 @@ class Aggregate_image(gxgm.Geometry):
                                 `.tbl`, `.zon`, `.itr`, or `.agg`.
         :param zone:            Colour distribution method:
 
-            ::
+                ============== ======================================================================
+                ZONE_DEFAULT   as set by user global default settings
+                ZONE_LINEAR    linearly distributed
+                ZONE_NORMAL    normal (Gaussian) distribution
+                ZONE_EQUALAREA each color will occupy an equal area on the image
+                ZONE_LOGLINEAR logarithmic linear distribution
+                ZONE_LAST      last used coloring for this grid file
+                ZONE_SHADE     Displays the shaded image version of the grid. The shaded image is
+                               a grid file will with '_s' appended to the file name.  If it does not
+                               exist, a shaded image with illumination inclination and declination
+                               both set to 45 degrees is automatically created.
+                ============== ======================================================================
 
-                ZONE_DEFAULT        as set by user global default settings
-                ZONE_LINEAR         linearly distributed
-                ZONE_NORMAL         normal (Gaussian) distribution
-                ZONE_EQUALAREA      each color will occupy an equal area on the image
-                ZONE_LOGLINEAR      logarithmic linear distribution
-                ZONE_LAST           last used coloring for this grid file
-                ZONE_SHADE          Displays the shaded image version of the grid. The shaded image is
-                                    a grid file will with '_s' appended to the file name.  If it does not
-                                    exist, a shaded image with illumination inclination and declination
-                                    both set to 45 degrees is automatically created.
                                     
         :param shade:           True, to add a shading layer
         :param minimum:         Minimum data value. All grid values less than or equal to the
@@ -288,7 +284,7 @@ class Aggregate_image(gxgm.Geometry):
         .. versionadded:: 9.2
         """
 
-        if (color_map is None):
+        if color_map is None:
             if zone == ZONE_SHADE:
                 color_map = 'lgray.tbl'
         if (color_map is None) or (isinstance(color_map, str)):
@@ -321,7 +317,6 @@ class Aggregate_image(gxgm.Geometry):
 
         if self._base_properties is None:
             self._set_properties()
-
 
     def layer_color_map(self, layer=0):
         """
@@ -358,8 +353,8 @@ class Aggregate_image(gxgm.Geometry):
             uom = g.unit_of_measure
         return uom
 
-    def figure_map(self, file_name=None, title=None, legend_label=None,
-                   features=['SCALE', 'LEGEND', 'NEATLINE'], **kwargs):
+    def figure_map(self, file_name=None, overwrite=False, title=None, legend_label=None,
+                   features=('SCALE', 'LEGEND', 'NEATLINE'), **kwargs):
         """
         Create a figure map file from an aggregate.
 
@@ -417,6 +412,7 @@ class Aggregate_image(gxgm.Geometry):
 
         gmap = gxmap.Map.figure(ref_grid.extent_xy,
                                 file_name=file_name,
+                                overwrite=overwrite,
                                 features=features,
                                 title=title,
                                 **kwargs)
@@ -470,8 +466,6 @@ class Aggregate_image(gxgm.Geometry):
                 coordinate_system = self.coordinate_system
             else:
                 coordinate_system = display_area.coordinate_system
-
-
 
         if image_file is None:
             image_file = gx.gx().temp_file('.png')

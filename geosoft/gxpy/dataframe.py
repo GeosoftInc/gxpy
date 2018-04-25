@@ -2,10 +2,7 @@
 Table (records, fields) handling, inherits from Pandas (http://pandas.pydata.org/) base class.
 
 :Classes:
-
-    =================== ============================
-    :class:`Data_frame` dataframe that holds a table
-    =================== ============================
+    :`Data_frame`: dataframe that holds a table
 
 .. seealso:: :class:`geosoft.gxapi.GXLTB`
 

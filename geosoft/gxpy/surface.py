@@ -453,6 +453,7 @@ class SurfaceDataset(gxspd.SpatialData, Sequence):
 
         gmap = gxmap.Map.figure((0, 0, 100, 100),
                                 file_name=file_name,
+                                overwrite=overwrite,
                                 features=features,
                                 title=title,
                                 **kwargs)

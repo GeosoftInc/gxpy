@@ -2,14 +2,11 @@
 Spatial geometric objects.
 
 :Classes:
-
-    ========== ==============================================================
-    `Geometry` base class for all geometries
-    `Point`    (x, y, z) point
-    `Point2`   pair of `Point` instances that define a line, or box, etc.
-    `PPoint`   multiple `Point` instances
-    `Mesh`     mesh surface made up of triangular faces defined by verticies
-    ========== ==============================================================
+    :`Geometry`: base class for all geometries
+    :`Point`:    (x, y, z) point
+    :`Point2`:   pair of `Point` instances that define a line, or box, etc.
+    :`PPoint`:   multiple `Point` instances
+    :`Mesh`:     mesh surface made up of triangular faces defined by verticies
 
 .. note::
 
@@ -41,7 +38,7 @@ def first_coordinate_system(geo_objects):
     Return the first found known coordinate system in the list
 
     :param geo_objects: objects as iterable
-    :return:            valid coordinate system or None if none found
+    :return:            valid coordinate system or `None` if none found
 
     .. versionadded:: 9.3.1
     """
@@ -123,19 +120,16 @@ class Geometry:
     :param gxobj:               optional gxapi instance that can satisfy get_ipj() and/or get_extent()
 
     :Properties:
-
-        =============================== ====================================================
-        `Geometry.name`                 name for the geometry
-        `Geometry.coordinate_system`    spatial coordinate system of the x, y, z locations
-        `Geometry.extent`               spatial extent as a `Point2`
-        `Geometry.extent_xyz`           (min_x, min_y, min_z, max_x, max_y, max_z)
-        `Geometry.extent_xy`            (min_x, min_y, max_x, max_y)
-        `Geometry.dimension`            (dx, dy, dz) dimension
-        `Geometry.dimension_xy`         (dx, dy) dimension
-        `Geometry.centroid`             center point as a `Point`
-        `Geometry.centroid_xyz`         (x, y, z) location of the object center
-        `Geometry.centroid_xy`          (x, y) center
-        =============================== ====================================================
+        :`Geometry.name`:                 name for the geometry
+        :`Geometry.coordinate_system`:    spatial coordinate system of the x, y, z locations
+        :`Geometry.extent`:               spatial extent as a `Point2`
+        :`Geometry.extent_xyz`:           (min_x, min_y, min_z, max_x, max_y, max_z)
+        :`Geometry.extent_xy`:            (min_x, min_y, max_x, max_y)
+        :`Geometry.dimension`:            (dx, dy, dz) dimension
+        :`Geometry.dimension_xy`:         (dx, dy) dimension
+        :`Geometry.centroid`:             center point as a `Point`
+        :`Geometry.centroid_xyz`:         (x, y, z) location of the object center
+        :`Geometry.centroid_xy`:          (x, y) center
 
     .. versionadded:: 9.2
     """
@@ -735,7 +729,7 @@ class PPoint(Geometry, Sequence):
     :param xyz:     array-like: (p1, p2, ...), ((x, y), ...), ((x, y, z), ...) or (vv_x, vv_y, [vv_z]).
                     vv data is resampled to match the first vv.
 
-    :param coordinate_system:   coordinate system or None
+    :param coordinate_system:   coordinate system or `None`
     :param z:                   constant z value for (x, y) data, ignored for (x, y, z) data
     :param kwargs:              passed to base class `Geometry`
 
@@ -994,13 +988,12 @@ class Mesh(Geometry, Sequence):
     Mesh - set of triangular faces, which are indexes into verticies.
 
     :param mesh:                (faces, verticies) that define a trangulated mesh surface. See below.
-    :param coordinate_system:   coordinate system or None
-    :param name:                name for the mesh, defaule is '_mesh_'
+    :param coordinate_system:   coordinate system or `None`
     :param kwargs:              passed to base class `Geometry`
 
     A mesh is a set of triangles, where each triangle has three indexes into a set of verticies.
-    Verticies are defined as by a set of (x, y, z) locations. Meshes can be represented either
-    as two arrays in the form (faces, verticies), or two sets of `geosoft.gxpy.vv.GXvv` instances
+    Verticies are defined by a set of (x, y, z) locations. A Mesh instance can be constructed from
+    two arrays in the form (faces, verticies), or from two sets of `geosoft.gxpy.vv.GXvv` instances
     in the form ((f1vv, f2vv, f3vv), (xvv, yvv, zvv)).  In array form, each array is shaped (-1, 3),
     with faces being an integer array that references vertexes in the float vertex array.
 
@@ -1042,7 +1035,7 @@ class Mesh(Geometry, Sequence):
     def __str__(self):
         return "{}({} faces)".format(self.name, len(self))
 
-    def __init__(self, mesh, coordinate_system=None, name=None, **kwargs):
+    def __init__(self, mesh, coordinate_system=None, **kwargs):
 
         if isinstance(mesh, Mesh):
             if coordinate_system and coordinate_system != mesh.coordinate_system:
@@ -1082,9 +1075,9 @@ class Mesh(Geometry, Sequence):
             except IndexError:
                 raise GeometryException(_t('Verticies do not support all face indicies'))
 
-        if name is None:
-            name = '_mesh_'
-        super().__init__(coordinate_system=coordinate_system, name=name, **kwargs)
+        if 'name' not in kwargs:
+           kwargs['name'] = '_mesh_'
+        super().__init__(coordinate_system=coordinate_system, **kwargs)
 
         self._faces = faces
         self._verticies = verticies
@@ -1190,7 +1183,7 @@ class Mesh(Geometry, Sequence):
         """
         Return numpy array of face corner locations.
 
-        :param unique:  True for limit to unique points, otherwise returns all points
+        :param unique:  `True` to limit to unique points, otherwise returns all points
                         by unwinding each face. If unique the order will not be related to the faces.
 
         .. versionadded:: 9.3.1

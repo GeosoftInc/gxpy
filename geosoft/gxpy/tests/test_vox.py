@@ -286,6 +286,7 @@ class Test(GXPYTest):
             self.assertEqual(g.unit_of_measure, 'maki')
         self.assertEqual(gxvox.Vox.open(self.vectorvox_file).unit_of_measure, 'maki')
 
+    @unittest.skip('WIP')
     def test_rbf(self):
         self.start()
 

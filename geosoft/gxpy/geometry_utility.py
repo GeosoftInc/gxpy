@@ -1,6 +1,12 @@
 """
 Geometry utilities.
 
+:Constants:
+    :SPLINE_LINEAR: `geosoft.gxapi.VVU_SPL_LINEAR`
+    :SPLINE_CUBIC: `geosoft.gxapi.VVU_SPL_CUBIC`
+    :SPLINE_AKIMA: `geosoft.gxapi.VVU_SPL_AKIMA`
+    :SPLINE_NEAREST: `geosoft.gxapi.VVU_SPL_NEAREST`
+
 .. seealso:: `geosoft.gxpy.geometry`
 
 .. note::
@@ -18,10 +24,10 @@ from . import geometry as gxgeo
 
 __version__ = geosoft.__version__
 
-SPLINE_LINEAR = gxapi.VVU_SPL_LINEAR  #:
-SPLINE_CUBIC = gxapi.VVU_SPL_CUBIC  #:
-SPLINE_AKIMA = gxapi.VVU_SPL_AKIMA  #:
-SPLINE_NEAREST = gxapi.VVU_SPL_NEAREST  #:
+SPLINE_LINEAR = gxapi.VVU_SPL_LINEAR
+SPLINE_CUBIC = gxapi.VVU_SPL_CUBIC
+SPLINE_AKIMA = gxapi.VVU_SPL_AKIMA
+SPLINE_NEAREST = gxapi.VVU_SPL_NEAREST
 
 
 def _t(s):
@@ -111,7 +117,6 @@ def resample(pp, interval, spline=SPLINE_CUBIC, closed=None):
                 closed_xyz[-3:] = xyz[:3]
                 closed_xyz[0:2] = xyz[-2:]
             closed_xyz[2: 2 + len(xyz)] = xyz
-
 
             xyz = closed_xyz
             last_point = -3

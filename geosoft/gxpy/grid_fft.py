@@ -2,14 +2,10 @@
 Geosoft Fast Fourier Transform processes for 2D gridded data.
 
 :Classes:
+    :`GridFFT`: Grid FFT
 
-    =============== ==============================================================
-    `GridFFT`       Grid FFT
-    `PowerSpectrum` Descrete transform power spectrum
-    =============== ==============================================================
-
-Note that 'wavenumber' in this module refers to cycles/unit_distance. Multiply by 2pi to
-determine the angular wavenumber.
+Note that 'wavenumber' in this module refers to cycles/unit_distance. Multiply by 2*math.pi for the
+angular wavenumber.
 
 .. seealso:: :class:`geosoft.gxapi.GXFFT2`
 

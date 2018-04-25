@@ -2,12 +2,9 @@
 Coodinate systems
 
 :Classes:
-
-    ====================== ======================================================
-    `Coordinate_system`    define a coordinate system
-    `Coordinate_translate` translate coordinates between coordinate systems
-    `Wkt`                  well-know coordinate system for ESRI interoperability
-    ====================== ======================================================
+    :`Coordinate_system`:    define a coordinate system
+    :`Coordinate_translate`: translate coordinates between coordinate systems
+    :`Wkt`:                  well-know coordinate system for ESRI interoperability
 
 Coordinate systems describe how cartesian coordinates are located ralative to the Earth.  Cartesian coordinates
 are right-handed (x, y, z) spatial ordinates that describe locations within a coordinate system frame of reference.
@@ -39,11 +36,45 @@ The descriptive name for "well-known" coordinate systems is sufficient to descri
 the `EPSG Geodetic Registry <http://www.epsg.org/>`_. To fully locate ad-hoc coordinates you will need
 the parameters defined in the GXF stings.  See :attr:`Coordinate_system.gxf`.
 
+:Constants:
+    :NAME: None
+    :NAME_HCS: gxapi.IPJ_NAME_PCS
+    :NAME_PROJECTION: gxapi.IPJ_NAME_PROJECTION
+    :NAME_METHOD: gxapi.IPJ_NAME_METHOD
+    :NAME_DATUM: gxapi.IPJ_NAME_DATUM
+    :NAME_ELLIPSOID: gxapi.IPJ_NAME_ELLIPSOID
+    :NAME_LDATUM: gxapi.IPJ_NAME_LDATUM
+    :NAME_UNIT: gxapi.IPJ_NAME_UNIT_ABBR
+    :NAME_UNIT_FULL: gxapi.IPJ_NAME_UNIT_FULL
+    :NAME_TYPE: gxapi.IPJ_NAME_TYPE
+    :NAME_LLDATUM: gxapi.IPJ_NAME_LLDATUM
+    :NAME_METHOD_PARMS: gxapi.IPJ_NAME_METHOD_PARMS
+    :NAME_METHOD_LABEL: gxapi.IPJ_NAME_METHOD_LABEL
+    :NAME_DATUM_PARMS: gxapi.IPJ_NAME_DATUM_PARMS
+    :NAME_LDATUM_PARMS: gxapi.IPJ_NAME_LDATUM_PARMS
+    :NAME_GEOID: gxapi.IPJ_NAME_GEOID
+    :NAME_LDATUMDESCRIPTION: gxapi.IPJ_NAME_LDATUMDESCRIPTION
+    :NAME_METHOD_PARMS_NATIVE: gxapi.IPJ_NAME_METHOD_PARMS_NATIVE
+    :NAME_ORIENTATION: gxapi.IPJ_NAME_ORIENTATION_PARMS
+    :NAME_VCS: -1
+    :NAME_HCS_VCS: -2
+    :LIST_COORDINATESYSTEM: gxapi.IPJ_PARM_LST_COORDINATESYSTEM
+    :LIST_DATUM: gxapi.IPJ_PARM_LST_DATUM
+    :LIST_PROJECTION: gxapi.IPJ_PARM_LST_PROJECTION
+    :LIST_UNITS: gxapi.IPJ_PARM_LST_UNITS
+    :LIST_UNITSDESCRIPTION: gxapi.IPJ_PARM_LST_UNITSDESCRIPTION
+    :LIST_LOCALDATUMDESCRIPTION: gxapi.IPJ_PARM_LST_LOCALDATUMDESCRIPTION
+    :LIST_LOCALDATUMNAME: gxapi.IPJ_PARM_LST_LOCALDATUMNAME
+    :PARM_DATUM: 'datum'
+    :PARM_PROJECTION: 'transform'
+    :PARM_UNITS: 'units'
+    :PARM_LOCAL_DATUM: 'datumtrf'
+
 .. seealso:: `geosoft.gxapi.GXIPJ`
 
 .. note::
 
-    Regression tests provide usage examples:     
+    Regression tests provide usage examples:
     `tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py>`_
 """
 
@@ -68,40 +99,40 @@ def _t(s):
 # 'HCS' and 'hcs' refer to Horizontal Coordinate System
 # 'VCS' and 'vcs' refer to Vertical Coordinate System
 
-NAME = None  #:
-NAME_HCS = gxapi.IPJ_NAME_PCS  #:
-NAME_PROJECTION = gxapi.IPJ_NAME_PROJECTION  #:
-NAME_METHOD = gxapi.IPJ_NAME_METHOD  #:
-NAME_DATUM = gxapi.IPJ_NAME_DATUM  #:
-NAME_ELLIPSOID = gxapi.IPJ_NAME_ELLIPSOID  #:
-NAME_LDATUM = gxapi.IPJ_NAME_LDATUM  #:
-NAME_UNIT = gxapi.IPJ_NAME_UNIT_ABBR  #:
-NAME_UNIT_FULL = gxapi.IPJ_NAME_UNIT_FULL  #:
-NAME_TYPE = gxapi.IPJ_NAME_TYPE  #:
-NAME_LLDATUM = gxapi.IPJ_NAME_LLDATUM  #:
-NAME_METHOD_PARMS = gxapi.IPJ_NAME_METHOD_PARMS  #:
-NAME_METHOD_LABEL = gxapi.IPJ_NAME_METHOD_LABEL  #:
-NAME_DATUM_PARMS = gxapi.IPJ_NAME_DATUM_PARMS  #:
-NAME_LDATUM_PARMS = gxapi.IPJ_NAME_LDATUM_PARMS  #:
-NAME_GEOID = gxapi.IPJ_NAME_GEOID  #:
-NAME_LDATUMDESCRIPTION = gxapi.IPJ_NAME_LDATUMDESCRIPTION  #:
-NAME_METHOD_PARMS_NATIVE = gxapi.IPJ_NAME_METHOD_PARMS_NATIVE  #:
-NAME_ORIENTATION = gxapi.IPJ_NAME_ORIENTATION_PARMS  #:
-NAME_VCS = -1  #:
-NAME_HCS_VCS = -2  #:
+NAME = None
+NAME_HCS = gxapi.IPJ_NAME_PCS
+NAME_PROJECTION = gxapi.IPJ_NAME_PROJECTION
+NAME_METHOD = gxapi.IPJ_NAME_METHOD
+NAME_DATUM = gxapi.IPJ_NAME_DATUM
+NAME_ELLIPSOID = gxapi.IPJ_NAME_ELLIPSOID
+NAME_LDATUM = gxapi.IPJ_NAME_LDATUM
+NAME_UNIT = gxapi.IPJ_NAME_UNIT_ABBR
+NAME_UNIT_FULL = gxapi.IPJ_NAME_UNIT_FULL
+NAME_TYPE = gxapi.IPJ_NAME_TYPE
+NAME_LLDATUM = gxapi.IPJ_NAME_LLDATUM
+NAME_METHOD_PARMS = gxapi.IPJ_NAME_METHOD_PARMS
+NAME_METHOD_LABEL = gxapi.IPJ_NAME_METHOD_LABEL
+NAME_DATUM_PARMS = gxapi.IPJ_NAME_DATUM_PARMS
+NAME_LDATUM_PARMS = gxapi.IPJ_NAME_LDATUM_PARMS
+NAME_GEOID = gxapi.IPJ_NAME_GEOID
+NAME_LDATUMDESCRIPTION = gxapi.IPJ_NAME_LDATUMDESCRIPTION
+NAME_METHOD_PARMS_NATIVE = gxapi.IPJ_NAME_METHOD_PARMS_NATIVE
+NAME_ORIENTATION = gxapi.IPJ_NAME_ORIENTATION_PARMS
+NAME_VCS = -1
+NAME_HCS_VCS = -2
 
-LIST_COORDINATESYSTEM = gxapi.IPJ_PARM_LST_COORDINATESYSTEM  #:
-LIST_DATUM = gxapi.IPJ_PARM_LST_DATUM  #:
-LIST_PROJECTION = gxapi.IPJ_PARM_LST_PROJECTION  #:
-LIST_UNITS = gxapi.IPJ_PARM_LST_UNITS  #:
-LIST_UNITSDESCRIPTION = gxapi.IPJ_PARM_LST_UNITSDESCRIPTION  #:
-LIST_LOCALDATUMDESCRIPTION = gxapi.IPJ_PARM_LST_LOCALDATUMDESCRIPTION  #:
-LIST_LOCALDATUMNAME = gxapi.IPJ_PARM_LST_LOCALDATUMNAME  #:
+LIST_COORDINATESYSTEM = gxapi.IPJ_PARM_LST_COORDINATESYSTEM
+LIST_DATUM = gxapi.IPJ_PARM_LST_DATUM
+LIST_PROJECTION = gxapi.IPJ_PARM_LST_PROJECTION
+LIST_UNITS = gxapi.IPJ_PARM_LST_UNITS
+LIST_UNITSDESCRIPTION = gxapi.IPJ_PARM_LST_UNITSDESCRIPTION
+LIST_LOCALDATUMDESCRIPTION = gxapi.IPJ_PARM_LST_LOCALDATUMDESCRIPTION
+LIST_LOCALDATUMNAME = gxapi.IPJ_PARM_LST_LOCALDATUMNAME
 
-PARM_DATUM = 'datum'  #:
-PARM_PROJECTION = 'transform'  #:
-PARM_UNITS = 'units'  #:
-PARM_LOCAL_DATUM = 'datumtrf'  #:
+PARM_DATUM = 'datum'
+PARM_PROJECTION = 'transform'
+PARM_UNITS = 'units'
+PARM_LOCAL_DATUM = 'datumtrf'
 
 
 class CSException(geosoft.GXRuntimeError):

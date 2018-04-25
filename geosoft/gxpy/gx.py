@@ -2,11 +2,8 @@
 GX Context and related methods required for Geosoft Python.  
 
 :Classes:
+    :`GXpy`: the Geosoft GX context
 
-    ============= =======================
-    :class:`GXpy` the Geosoft GX context
-    ============= =======================
-    
 The GX context is a singleton, which is either created for
 stand-alone Python scripts, or is provided to the script for extensions to Geosoft Desktop applications.
 

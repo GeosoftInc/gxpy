@@ -1,31 +1,154 @@
 """
 A Geosoft View (:class:`geosoft.gxpy.view.View` or :class:`geosoft.gxpy.view.View_3d`) contains graphical elements as
-:class:`Group` instances. Groups are named and are available to a user in a Geosoft viewer, which allows groups to
+`Group` instances. Groups are named and are available to a user in a Geosoft viewer, which allows groups to
 be turned on or off, modify the transparency, or be deleted.
 
 2D views can only accept 2D groups, while a 3D view can accept both 2D and 3D groups. When a 2D group is placed
 in a 3D view, the group is placed on a the active plane inside the 3D view
 
 :Classes:
+    :`Group`:               base class for named rendering groups in 2D and 3D views.
+    :`Draw`:                2D drawing group, handles 2D drawing to a view or plane in a 3D view
+    :`Draw_3d`:             3D grawing group for 3D objects placed in a 3d view
+    :`Color_symbols_group`: group for 2D symbols rendered based on data values
+    :`Aggregate_group`:     group that contains a :class:`geosoft.gxpy.agg.Aggregate_image` instance
+    :`Color`:               colour definition
+    :`Color_map`:           maps values to colors
+    :`Pen`:                 pen definition, includes line colour, thickness and pattern, and fill.
+    :`Text_def`:            defined text characteristics
+    :`VoxDisplayGroup`:     a 'geosoft.gxpy.vox.VoxDisplay` in a `geosoft.gxpy.view.View_3d`
 
-    ============================ =============================================================================
-    :class:`Group`               base class for named rendering groups in 2D and 3D views.
-    :class:`Draw`                2D drawing group, handles 2D drawing to a view or plane in a 3D view
-    :class:`Draw_3d`             3D grawing group for 3D objects placed in a 3d view
-    :class:`Color_symbols_group` group for 2D symbols rendered based on data values
-    :class:`Aggregate_group`     group that contains a :class:`geosoft.gxpy.agg.Aggregate_image` instance
-    :class:`Color`               colour definition
-    :class:`Color_map`           maps values to colors
-    :class:`Pen`                 pen definition, includes line colour, thickness and pattern, and fill.
-    :class:`Text_def`            defined text characteristics
-    :class:`VoxDisplayGroup`     a 'geosoft.gxpy.vox.VoxDisplay` in a `geosoft.gxpy.view.View_3d`
-    ============================ =============================================================================
+:Constants:
+    :GROUP_NAME_SIZE: `geosoft.gxpy.view.VIEW_NAME_SIZE`
+    :NEW: `geosoft.gxapi.MVIEW_GROUP_NEW`
+    :APPEND: `geosoft.gxapi.MVIEW_GROUP_APPEND`
+    :READ_ONLY: max(NEW, APPEND) + 1
+    :REPLACE: READ_ONLY + 1
+
+    :SMOOTH_NONE: `geosoft.gxapi.MVIEW_SMOOTH_NEAREST`
+    :SMOOTH_CUBIC: `geosoft.gxapi.MVIEW_SMOOTH_CUBIC`
+    :SMOOTH_AKIMA: `geosoft.gxapi.MVIEW_SMOOTH_AKIMA`
+
+    :TILE_RECTANGULAR: `geosoft.gxapi.MVIEW_TILE_RECTANGULAR`
+    :TILE_DIAGONAL: `geosoft.gxapi.MVIEW_TILE_DIAGONAL`
+    :TILE_TRIANGULAR: `geosoft.gxapi.MVIEW_TILE_TRIANGULAR`
+    :TILE_RANDOM: `geosoft.gxapi.MVIEW_TILE_RANDOM`
+
+    :UNIT_VIEW: 0
+    :UNIT_MAP: 2
+    :UNIT_VIEW_UNWARPED: 3
+
+    :GRATICULE_DOT: 0
+    :GRATICULE_LINE: 1
+    :GRATICULE_CROSS: 2
+
+    :LINE_STYLE_SOLID: 1
+    :LINE_STYLE_LONG: 2
+    :LINE_STYLE_DOTTED: 3
+    :LINE_STYLE_SHORT: 4
+    :LINE_STYLE_LONG_SHORT_LONG: 5
+    :LINE_STYLE_LONG_DOT_LONG: 6
+
+    :SYMBOL_NONE: 0
+    :SYMBOL_DOT: 1
+    :SYMBOL_PLUS: 2
+    :SYMBOL_X: 3
+    :SYMBOL_BOX: 4
+    :SYMBOL_TRIANGLE: 5
+    :SYMBOL_INVERTED_TRIANGLE: 6
+    :SYMBOL_HEXAGON: 7
+    :SYMBOL_SMALL_BOX: 8
+    :SYMBOL_SMALL_DIAMOND: 9
+    :SYMBOL_CIRCLE: 20
+
+    :SYMBOL_3D_SPHERE: 0
+    :SYMBOL_3D_CUBE: 1
+    :SYMBOL_3D_CYLINDER: 2
+    :SYMBOL_3D_CONE: 3
+
+    :FONT_WEIGHT_ULTRALIGHT: 1
+    :FONT_WEIGHT_LIGHT: 2
+    :FONT_WEIGHT_MEDIUM: 3
+    :FONT_WEIGHT_BOLD: 4
+    :FONT_WEIGHT_XBOLD: 5
+    :FONT_WEIGHT_XXBOLD: 6
+
+    :CMODEL_RGB: 0
+    :CMODEL_CMY: 1
+    :CMODEL_HSV: 2
+
+    :C_BLACK: 67108863
+    :C_RED: 33554687
+    :C_GREEN: 33619712
+    :C_BLUE: 50266112
+    :C_CYAN: 50331903
+    :C_MAGENTA: 50396928
+    :C_YELLOW: 67043328
+    :C_GREY: 41975936
+    :C_LT_RED: 54542336
+    :C_LT_GREEN: 54526016
+    :C_LT_BLUE: 50348096
+    :C_LT_CYAN: 50331712
+    :C_LT_MAGENTA: 50348032
+    :C_LT_YELLOW: 54525952
+    :C_LT_GREY: 54542400
+    :C_GREY10: 51910680
+    :C_GREY25: 54542400
+    :C_GREY50: 41975936
+    :C_WHITE: 50331648
+    :C_TRANSPARENT: 0
+
+    :REF_BOTTOM_LEFT: 0
+    :REF_BOTTOM_CENTER: 1
+    :REF_BOTTOM_RIGHT: 2
+    :REF_CENTER_LEFT: 3
+    :REF_CENTER: 4
+    :REF_CENTER_RIGHT: 5
+    :REF_TOP_LEFT: 6
+    :REF_TOP_CENTER: 7
+    :REF_TOP_RIGHT: 8
+
+    :GROUP_ALL: 0
+    :GROUP_MARKED: 1
+    :GROUP_VISIBLE: 2
+    :GROUP_AGG: 3
+    :GROUP_CSYMB: 4
+    :GROUP_VOXD: 5
+
+    :LOCATE_FIT: `geosoft.gxapi.MVIEW_RELOCATE_FIT`
+    :LOCATE_FIT_KEEP_ASPECT: `geosoft.gxapi.MVIEW_RELOCATE_ASPECT`
+    :LOCATE_CENTER: `geosoft.gxapi.MVIEW_RELOCATE_ASPECT_CENTER`
+
+    :COLOR_BAR_RIGHT: 0
+    :COLOR_BAR_LEFT: 1
+    :COLOR_BAR_BOTTOM: 2
+    :COLOR_BAR_TOP: 3
+
+    :COLOR_BAR_ANNOTATE_RIGHT: 1
+    :COLOR_BAR_ANNOTATE_LEFT: -1
+    :COLOR_BAR_ANNOTATE_TOP: 1
+    :COLOR_BAR_ANNOTATE_BOTTOM: -1
+
+    :CYLINDER_OPEN: 0
+    :CYLINDER_CLOSE_START: 1
+    :CYLINDER_CLOSE_END: 2
+    :CYLINDER_CLOSE_ALL: 3
+
+    :POINT_STYLE_DOT: 0
+    :POINT_STYLE_SPHERE: 1
+
+    :LINE3D_STYLE_LINE: 0
+    :LINE3D_STYLE_TUBE: 1
+    :LINE3D_STYLE_TUBE_JOINED: 2
+
+    :SURFACE_FLAT: `geosoft.gxapi.MVIEW_DRAWOBJ3D_MODE_FLAT`
+    :SURFACE_SMOOTH: `geosoft.gxapi.MVIEW_DRAWOBJ3D_MODE_SMOOTH`
 
 .. note::
 
-    Regression tests provide usage examples:     
+    Regression tests provide usage examples:
     `group drawing tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_group.py>`_
-    
+
 .. seealso:: :mod:`geosoft.gxpy.view`, :mod:`geosoft.gxpy.map`
 
    :class:`geosoft.gxapi.GXMVIEW`, :class:`geosoft.gxapi.GXMVU`
@@ -69,129 +192,129 @@ class GroupException(geosoft.GXRuntimeError):
     pass
 
 
-GROUP_NAME_SIZE = gxv.VIEW_NAME_SIZE  #:
-NEW = gxapi.MVIEW_GROUP_NEW  #:
-APPEND = gxapi.MVIEW_GROUP_APPEND  #:
-READ_ONLY = max(NEW, APPEND) + 1  #:
-REPLACE = READ_ONLY + 1  #:
+GROUP_NAME_SIZE = gxv.VIEW_NAME_SIZE
+NEW = gxapi.MVIEW_GROUP_NEW
+APPEND = gxapi.MVIEW_GROUP_APPEND
+READ_ONLY = max(NEW, APPEND) + 1
+REPLACE = READ_ONLY + 1
 
-SMOOTH_NONE = gxapi.MVIEW_SMOOTH_NEAREST  #:
-SMOOTH_CUBIC = gxapi.MVIEW_SMOOTH_CUBIC  #:
-SMOOTH_AKIMA = gxapi.MVIEW_SMOOTH_AKIMA  #:
+SMOOTH_NONE = gxapi.MVIEW_SMOOTH_NEAREST
+SMOOTH_CUBIC = gxapi.MVIEW_SMOOTH_CUBIC
+SMOOTH_AKIMA = gxapi.MVIEW_SMOOTH_AKIMA
 
-TILE_RECTANGULAR = gxapi.MVIEW_TILE_RECTANGULAR  #:
-TILE_DIAGONAL = gxapi.MVIEW_TILE_DIAGONAL  #:
-TILE_TRIANGULAR = gxapi.MVIEW_TILE_TRIANGULAR  #:
-TILE_RANDOM = gxapi.MVIEW_TILE_RANDOM  #:
+TILE_RECTANGULAR = gxapi.MVIEW_TILE_RECTANGULAR
+TILE_DIAGONAL = gxapi.MVIEW_TILE_DIAGONAL
+TILE_TRIANGULAR = gxapi.MVIEW_TILE_TRIANGULAR
+TILE_RANDOM = gxapi.MVIEW_TILE_RANDOM
 
-UNIT_VIEW = 0  #:
-UNIT_MAP = 2  #:
-UNIT_VIEW_UNWARPED = 3  #:
+UNIT_VIEW = 0
+UNIT_MAP = 2
+UNIT_VIEW_UNWARPED = 3
 
-GRATICULE_DOT = 0  #:
-GRATICULE_LINE = 1  #:
-GRATICULE_CROSS = 2  #:
+GRATICULE_DOT = 0
+GRATICULE_LINE = 1
+GRATICULE_CROSS = 2
 
-LINE_STYLE_SOLID = 1  #:
-LINE_STYLE_LONG = 2  #:
-LINE_STYLE_DOTTED = 3  #:
-LINE_STYLE_SHORT = 4  #:
-LINE_STYLE_LONG_SHORT_LONG = 5  #:
-LINE_STYLE_LONG_DOT_LONG = 6  #:
+LINE_STYLE_SOLID = 1
+LINE_STYLE_LONG = 2
+LINE_STYLE_DOTTED = 3
+LINE_STYLE_SHORT = 4
+LINE_STYLE_LONG_SHORT_LONG = 5
+LINE_STYLE_LONG_DOT_LONG = 6
 
-SYMBOL_NONE = 0  #:
-SYMBOL_DOT = 1  #:
-SYMBOL_PLUS = 2  #:
-SYMBOL_X = 3  #:
-SYMBOL_BOX = 4  #:
-SYMBOL_TRIANGLE = 5  #:
-SYMBOL_INVERTED_TRIANGLE = 6  #:
-SYMBOL_HEXAGON = 7  #:
-SYMBOL_SMALL_BOX = 8  #:
-SYMBOL_SMALL_DIAMOND = 9  #:
-SYMBOL_CIRCLE = 20  #:
+SYMBOL_NONE = 0
+SYMBOL_DOT = 1
+SYMBOL_PLUS = 2
+SYMBOL_X = 3
+SYMBOL_BOX = 4
+SYMBOL_TRIANGLE = 5
+SYMBOL_INVERTED_TRIANGLE = 6
+SYMBOL_HEXAGON = 7
+SYMBOL_SMALL_BOX = 8
+SYMBOL_SMALL_DIAMOND = 9
+SYMBOL_CIRCLE = 20
 
-SYMBOL_3D_SPHERE = 0  #:
-SYMBOL_3D_CUBE = 1  #:
-SYMBOL_3D_CYLINDER = 2  #:
-SYMBOL_3D_CONE = 3  #:
+SYMBOL_3D_SPHERE = 0
+SYMBOL_3D_CUBE = 1
+SYMBOL_3D_CYLINDER = 2
+SYMBOL_3D_CONE = 3
 
 _weight_factor = (1.0 / 48.0, 1.0 / 24.0, 1.0 / 16.0, 1.0 / 12.0, 0.145, 1.0 / 4.0)
 
-FONT_WEIGHT_ULTRALIGHT = 1  #:
-FONT_WEIGHT_LIGHT = 2  #:
-FONT_WEIGHT_MEDIUM = 3  #:
-FONT_WEIGHT_BOLD = 4  #:
-FONT_WEIGHT_XBOLD = 5  #:
-FONT_WEIGHT_XXBOLD = 6  #:
+FONT_WEIGHT_ULTRALIGHT = 1
+FONT_WEIGHT_LIGHT = 2
+FONT_WEIGHT_MEDIUM = 3
+FONT_WEIGHT_BOLD = 4
+FONT_WEIGHT_XBOLD = 5
+FONT_WEIGHT_XXBOLD = 6
 
-CMODEL_RGB = 0  #:
-CMODEL_CMY = 1  #:
-CMODEL_HSV = 2  #:
+CMODEL_RGB = 0
+CMODEL_CMY = 1
+CMODEL_HSV = 2
 
-C_BLACK = 67108863  #:
-C_RED = 33554687  #:
-C_GREEN = 33619712  #:
-C_BLUE = 50266112  #:
-C_CYAN = 50331903  #:
-C_MAGENTA = 50396928  #:
-C_YELLOW = 67043328  #:
-C_GREY = 41975936  #:
-C_LT_RED = 54542336  #:
-C_LT_GREEN = 54526016  #:
-C_LT_BLUE = 50348096  #:
-C_LT_CYAN = 50331712  #:
-C_LT_MAGENTA = 50348032  #:
-C_LT_YELLOW = 54525952  #:
-C_LT_GREY = 54542400  #:
-C_GREY10 = 51910680  #:
-C_GREY25 = 54542400  #:
-C_GREY50 = 41975936  #:
-C_WHITE = 50331648  #:
-C_TRANSPARENT = 0  #:
+C_BLACK = 67108863
+C_RED = 33554687
+C_GREEN = 33619712
+C_BLUE = 50266112
+C_CYAN = 50331903
+C_MAGENTA = 50396928
+C_YELLOW = 67043328
+C_GREY = 41975936
+C_LT_RED = 54542336
+C_LT_GREEN = 54526016
+C_LT_BLUE = 50348096
+C_LT_CYAN = 50331712
+C_LT_MAGENTA = 50348032
+C_LT_YELLOW = 54525952
+C_LT_GREY = 54542400
+C_GREY10 = 51910680
+C_GREY25 = 54542400
+C_GREY50 = 41975936
+C_WHITE = 50331648
+C_TRANSPARENT = 0
 
-REF_BOTTOM_LEFT = 0  #:
-REF_BOTTOM_CENTER = 1  #:
-REF_BOTTOM_RIGHT = 2  #:
-REF_CENTER_LEFT = 3  #:
-REF_CENTER = 4  #:
-REF_CENTER_RIGHT = 5  #:
-REF_TOP_LEFT = 6  #:
-REF_TOP_CENTER = 7  #:
-REF_TOP_RIGHT = 8  #:
+REF_BOTTOM_LEFT = 0
+REF_BOTTOM_CENTER = 1
+REF_BOTTOM_RIGHT = 2
+REF_CENTER_LEFT = 3
+REF_CENTER = 4
+REF_CENTER_RIGHT = 5
+REF_TOP_LEFT = 6
+REF_TOP_CENTER = 7
+REF_TOP_RIGHT = 8
 
-GROUP_ALL = 0  #:
-GROUP_MARKED = 1  #:
-GROUP_VISIBLE = 2  #:
-GROUP_AGG = 3  #:
-GROUP_CSYMB = 4  #:
-GROUP_VOXD = 5  #:
+GROUP_ALL = 0
+GROUP_MARKED = 1
+GROUP_VISIBLE = 2
+GROUP_AGG = 3
+GROUP_CSYMB = 4
+GROUP_VOXD = 5
 
-LOCATE_FIT = gxapi.MVIEW_RELOCATE_FIT  #:
-LOCATE_FIT_KEEP_ASPECT = gxapi.MVIEW_RELOCATE_ASPECT  #:
-LOCATE_CENTER = gxapi.MVIEW_RELOCATE_ASPECT_CENTER  #:
+LOCATE_FIT = gxapi.MVIEW_RELOCATE_FIT
+LOCATE_FIT_KEEP_ASPECT = gxapi.MVIEW_RELOCATE_ASPECT
+LOCATE_CENTER = gxapi.MVIEW_RELOCATE_ASPECT_CENTER
 
-COLOR_BAR_RIGHT = 0  #:
-COLOR_BAR_LEFT = 1  #:
-COLOR_BAR_BOTTOM = 2  #:
-COLOR_BAR_TOP = 3  #:
+COLOR_BAR_RIGHT = 0
+COLOR_BAR_LEFT = 1
+COLOR_BAR_BOTTOM = 2
+COLOR_BAR_TOP = 3
 
-COLOR_BAR_ANNOTATE_RIGHT = 1  #:
-COLOR_BAR_ANNOTATE_LEFT = -1  #:
-COLOR_BAR_ANNOTATE_TOP = 1  #:
-COLOR_BAR_ANNOTATE_BOTTOM = -1  #:
+COLOR_BAR_ANNOTATE_RIGHT = 1
+COLOR_BAR_ANNOTATE_LEFT = -1
+COLOR_BAR_ANNOTATE_TOP = 1
+COLOR_BAR_ANNOTATE_BOTTOM = -1
 
-CYLINDER_OPEN = 0  #:
-CYLINDER_CLOSE_START = 1  #:
-CYLINDER_CLOSE_END = 2  #:
-CYLINDER_CLOSE_ALL = 3  #:
+CYLINDER_OPEN = 0
+CYLINDER_CLOSE_START = 1
+CYLINDER_CLOSE_END = 2
+CYLINDER_CLOSE_ALL = 3
 
-POINT_STYLE_DOT = 0  #:
-POINT_STYLE_SPHERE = 1  #:
+POINT_STYLE_DOT = 0
+POINT_STYLE_SPHERE = 1
 
-LINE3D_STYLE_LINE = 0  #:
-LINE3D_STYLE_TUBE = 1  #:
-LINE3D_STYLE_TUBE_JOINED = 2  #:
+LINE3D_STYLE_LINE = 0
+LINE3D_STYLE_TUBE = 1
+LINE3D_STYLE_TUBE_JOINED = 2
 
 SURFACE_FLAT = gxapi.MVIEW_DRAWOBJ3D_MODE_FLAT
 SURFACE_SMOOTH = gxapi.MVIEW_DRAWOBJ3D_MODE_SMOOTH

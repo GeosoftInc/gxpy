@@ -709,8 +709,8 @@ class Test(GXPYTest):
                 self.assertEqual(g.coordinate_system, gi.coordinate_system)
                 self.assertEqual(800, gi.nx)
                 self.assertEqual(800, gi.ny)
-                self.assertAlmostEqual(6.994032176517, gi.x0)
-                self.assertAlmostEqual(43.494032176517, gi.y0)
+                self.assertAlmostEqual(6.9956, gi.x0, 4)
+                self.assertAlmostEqual(43.9956, gi.y0, 4)
 
     def test_default_color_map(self):
         self.start()

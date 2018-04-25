@@ -1,16 +1,64 @@
 """
 Geosoft maps contain one or more 2D and 3D views.
 
-:Classes:
-
-    ============ ============
-    :class:`Map` map class
-    ============ ============
-
-
 Each 2D view has a specific coordinate system and clip region.
-Each 3D view is a link to a separate `geosoft_3dv` file, which can be placed in the map 
+Each 3D view is a link to a separate `geosoft_3dv` file, which can be placed in the map
 as a 2D perspective of the last viewing state of the 3D view.
+
+:Classes:
+    :`Map`: map class
+
+:Constants:
+    :WRITE_NEW: `geosoft.gxapi.MAP_WRITENEW`
+    :WRITE_OLD: `geosoft.gxapi.MAP_WRITEOLD`
+    
+    :LIST_ALL: `geosoft.gxapi.MAP_LIST_MODE_ALL`
+    :LIST_3D: `geosoft.gxapi.MAP_LIST_MODE_3D`
+    :LIST_2D: `geosoft.gxapi.MAP_LIST_MODE_NOT3D`
+
+    :VIEW_NAME_SIZE: 2080
+
+    :TEXT_BOTTOM_LEFT: -1
+    :TEXT_BOTTOM_CENTER: 0
+    :TEXT_BOTTOM_RIGHT: 1
+    :TEXT_ALL_CENTER: 2
+    :TEXT_BASE_LEFT: 3
+    :TEXT_BASE_CENTER: 4
+    :TEXT_BASE_RIGHT: 5
+    :TEXT_BASE_ALL_CENTER: 6
+    :TEXT_BASE_FIT_BY_CHARACTER_WIDTH: 7
+    :TEXT_BASE_FIT_BY_CHARACTER_SIZE: 8
+
+    :MAP_LANDSCAPE: 0
+    :MAP_PORTRAIT: 1
+
+    :TOP_IN: 1
+    :TOP_OUT: -1
+
+    :GRID_NONE: 0
+    :GRID_DOTTED: 1
+    :GRID_CROSSES: 2
+    :GRID_LINES: 3
+
+    :GROUP_NEW: 0
+    :GROUP_APPEND: 1
+
+    :VIEW_BASE: 0
+    :VIEW_DATA: 1
+
+    :STYLE_FIGURE: 0
+    :STYLE_MAP: 1
+
+    :RASTER_FORMAT_EMF: `geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_EMF`
+    :RASTER_FORMAT_BMP: `geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_BMP`
+    :RASTER_FORMAT_JPEGL: `geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGL`
+    :RASTER_FORMAT_JPEG : `geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_JPEG `
+    :RASTER_FORMAT_JPEGH: `geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGH`
+    :RASTER_FORMAT_GIF: `geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_GIF`
+    :RASTER_FORMAT_PCX: `geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_PCX`
+    :RASTER_FORMAT_PNG: `geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_PNG`
+    :RASTER_FORMAT_EPS: `geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_EPS`
+    :RASTER_FORMAT_TIFF: `geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_TIFF`
 
 .. seealso:: :mod:`geosoft.gxpy.view`, :mod:`geosoft.gxpy.group`
  
@@ -53,56 +101,56 @@ class MapException(geosoft.GXRuntimeError):
     pass
 
 
-WRITE_NEW = gxapi.MAP_WRITENEW #:
-WRITE_OLD = gxapi.MAP_WRITEOLD #:
+WRITE_NEW = gxapi.MAP_WRITENEW
+WRITE_OLD = gxapi.MAP_WRITEOLD
 
-LIST_ALL = gxapi.MAP_LIST_MODE_ALL #:
-LIST_3D = gxapi.MAP_LIST_MODE_3D #:
-LIST_2D = gxapi.MAP_LIST_MODE_NOT3D #:
+LIST_ALL = gxapi.MAP_LIST_MODE_ALL
+LIST_3D = gxapi.MAP_LIST_MODE_3D
+LIST_2D = gxapi.MAP_LIST_MODE_NOT3D
 
-VIEW_NAME_SIZE = 2080 #:
+VIEW_NAME_SIZE = 2080
 
-TEXT_BOTTOM_LEFT = -1 #:
-TEXT_BOTTOM_CENTER = 0 #:
-TEXT_BOTTOM_RIGHT = 1 #:
-TEXT_ALL_CENTER = 2 #:
-TEXT_BASE_LEFT = 3 #:
-TEXT_BASE_CENTER = 4 #:
-TEXT_BASE_RIGHT = 5 #:
-TEXT_BASE_ALL_CENTER = 6 #:
-TEXT_BASE_FIT_BY_CHARACTER_WIDTH = 7 #:
-TEXT_BASE_FIT_BY_CHARACTER_SIZE = 8 #:
+TEXT_BOTTOM_LEFT = -1
+TEXT_BOTTOM_CENTER = 0
+TEXT_BOTTOM_RIGHT = 1
+TEXT_ALL_CENTER = 2
+TEXT_BASE_LEFT = 3
+TEXT_BASE_CENTER = 4
+TEXT_BASE_RIGHT = 5
+TEXT_BASE_ALL_CENTER = 6
+TEXT_BASE_FIT_BY_CHARACTER_WIDTH = 7
+TEXT_BASE_FIT_BY_CHARACTER_SIZE = 8
 
-MAP_LANDSCAPE = 0 #:
-MAP_PORTRAIT = 1 #:
+MAP_LANDSCAPE = 0
+MAP_PORTRAIT = 1
 
-TOP_IN = 1 #:
-TOP_OUT = -1 #:
+TOP_IN = 1
+TOP_OUT = -1
 
-GRID_NONE = 0 #:
-GRID_DOTTED = 1 #:
-GRID_CROSSES = 2 #:
-GRID_LINES = 3 #:
+GRID_NONE = 0
+GRID_DOTTED = 1
+GRID_CROSSES = 2
+GRID_LINES = 3
 
-GROUP_NEW = 0 #:
-GROUP_APPEND = 1 #:
+GROUP_NEW = 0
+GROUP_APPEND = 1
 
-VIEW_BASE = 0 #:
-VIEW_DATA = 1 #:
+VIEW_BASE = 0
+VIEW_DATA = 1
 
-STYLE_FIGURE = 0 #:
-STYLE_MAP = 1 #:
+STYLE_FIGURE = 0
+STYLE_MAP = 1
 
-RASTER_FORMAT_EMF = gxapi.MAP_EXPORT_RASTER_FORMAT_EMF #:
-RASTER_FORMAT_BMP = gxapi.MAP_EXPORT_RASTER_FORMAT_BMP #:
-RASTER_FORMAT_JPEGL = gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGL #:
-RASTER_FORMAT_JPEG  = gxapi.MAP_EXPORT_RASTER_FORMAT_JPEG  #:
-RASTER_FORMAT_JPEGH = gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGH #:
-RASTER_FORMAT_GIF = gxapi.MAP_EXPORT_RASTER_FORMAT_GIF #:
-RASTER_FORMAT_PCX = gxapi.MAP_EXPORT_RASTER_FORMAT_PCX #:
-RASTER_FORMAT_PNG = gxapi.MAP_EXPORT_RASTER_FORMAT_PNG #:
-RASTER_FORMAT_EPS = gxapi.MAP_EXPORT_RASTER_FORMAT_EPS #:
-RASTER_FORMAT_TIFF  = gxapi.MAP_EXPORT_RASTER_FORMAT_TIFF #:
+RASTER_FORMAT_EMF = gxapi.MAP_EXPORT_RASTER_FORMAT_EMF
+RASTER_FORMAT_BMP = gxapi.MAP_EXPORT_RASTER_FORMAT_BMP
+RASTER_FORMAT_JPEGL = gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGL
+RASTER_FORMAT_JPEG  = gxapi.MAP_EXPORT_RASTER_FORMAT_JPEG 
+RASTER_FORMAT_JPEGH = gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGH
+RASTER_FORMAT_GIF = gxapi.MAP_EXPORT_RASTER_FORMAT_GIF
+RASTER_FORMAT_PCX = gxapi.MAP_EXPORT_RASTER_FORMAT_PCX
+RASTER_FORMAT_PNG = gxapi.MAP_EXPORT_RASTER_FORMAT_PNG
+RASTER_FORMAT_EPS = gxapi.MAP_EXPORT_RASTER_FORMAT_EPS
+RASTER_FORMAT_TIFF  = gxapi.MAP_EXPORT_RASTER_FORMAT_TIFF
 
 def map_file_name(file_name, file_type='map'):
     """
@@ -304,8 +352,8 @@ class Map:
 
     @classmethod
     def new(cls, 
-            file_name=None, 
-            data_area=(0., 0., 100., 100.), 
+            file_name=None,
+            data_area=(0., 0., 100., 100.),
             scale=None,
             coordinate_system=None,
             media=None, 
@@ -349,8 +397,7 @@ class Map:
             :inside_margin:     additional margin (cm) inside the base view.  This margin effectively
                                 expands the data_area to allow room for graphical elements related to
                                 spatial data near the edge of the defined data area.
-            :overwrite:         True to overwrite an existing map.  If False and map exists, raises
-                                ``MapException``.
+            :overwrite:         `True` to overwrite map file should it exist
             :no_data_view:      True to create a map without a 'data' view. Use :class:`geosoft.gxpy.view.View` and
                                 :class:`geosoft.gxpy.view.View_3d` to add data views to a map.
 
@@ -861,12 +908,14 @@ class Map:
         return crc
 
     @classmethod
-    def figure(cls, data_area, file_name=None, title=None, features=('SCALE', 'NEATLINE', 'ANNOT_XY'), **kwargs):
+    def figure(cls, data_area, file_name=None, overwrite=False, title=None,
+               features=('SCALE', 'NEATLINE', 'ANNOT_XY'), **kwargs):
         """
         Create a figure-style map.
 
         :param data_area:       the area extend for the data view as (xmin, ymin, xmax, ymax)
         :param file_name:       map file name, default creates a temporary map
+        :param overwrite:       `True` to overwrite file should it exist
         :param title:           figure title
         :param features:        list of features to place on the map, default is ('SCALE', 'NEATLINE', 'ANNOT_XY')
 
@@ -931,7 +980,7 @@ class Map:
             data_area[3] += d
         kwargs['data_area'] = data_area # over-ride
             
-        gmap = Map.new(file_name, **kwargs)
+        gmap = Map.new(file_name, overwrite=overwrite, **kwargs)
 
         if 'ANNOT_XY' in feature_list:
             gmap.annotate_data_xy(grid=GRID_CROSSES)

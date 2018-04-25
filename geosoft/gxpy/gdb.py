@@ -2,13 +2,57 @@
 Geosoft databases for line-oriented spatial data.
 
 :Classes:
+    :`Geosoft_gdb`: Geosoft line database
+    :`Line`:        line handling
+    :`Channel`:     channel handling
+    
+:Constants:
+    :LINE_TYPE_NORMAL: `geosoft.gxapi.DB_LINE_TYPE_NORMAL`
+    :LINE_TYPE_BASE: `geosoft.gxapi.DB_LINE_TYPE_BASE`
+    :LINE_TYPE_TIE: `geosoft.gxapi.DB_LINE_TYPE_TIE`
+    :LINE_TYPE_TEST: `geosoft.gxapi.DB_LINE_TYPE_TEST`
+    :LINE_TYPE_TREND: `geosoft.gxapi.DB_LINE_TYPE_TREND`
+    :LINE_TYPE_SPECIAL: `geosoft.gxapi.DB_LINE_TYPE_SPECIAL`
+    :LINE_TYPE_RANDOM: `geosoft.gxapi.DB_LINE_TYPE_RANDOM`
 
-    ============= =========================
-    `Geosoft_gdb` Geosoft line database
-    `Line`        line handling
-    `Channel`     channel handling
-    ============= =========================
+    :LINE_CATEGORY_FLIGHT: `geosoft.gxapi.DB_CATEGORY_LINE_FLIGHT`
+    :LINE_CATEGORY_GROUP: `geosoft.gxapi.DB_CATEGORY_LINE_GROUP`
+    :LINE_CATEGORY_NORMAL: `geosoft.gxapi.DB_CATEGORY_LINE_NORMAL`
 
+    :FORMAT_NORMAL: `geosoft.gxapi.DB_CHAN_FORMAT_NORMAL`
+    :FORMAT_EXP: `geosoft.gxapi.DB_CHAN_FORMAT_EXP`
+    :FORMAT_TIME: `geosoft.gxapi.DB_CHAN_FORMAT_TIME`
+    :FORMAT_DATE: `geosoft.gxapi.DB_CHAN_FORMAT_DATE`
+    :FORMAT_GEOGR: `geosoft.gxapi.DB_CHAN_FORMAT_GEOGR`
+    :FORMAT_SIGDIG: `geosoft.gxapi.DB_CHAN_FORMAT_SIGDIG`
+    :FORMAT_HEX: `geosoft.gxapi.DB_CHAN_FORMAT_HEX`
+
+    :CHAN_ALL: None
+    :CHAN_NORMAL: 0
+    :CHAN_ARRAY: 1
+    :CHAN_DISPLAYED: 2
+
+    :SYMB_LINE_NORMAL: `geosoft.gxapi.DB_CATEGORY_LINE_NORMAL`
+    :SYMB_LINE_FLIGHT: `geosoft.gxapi.DB_CATEGORY_LINE_FLIGHT`
+    :SYMB_LINE_GROUP: `geosoft.gxapi.DB_CATEGORY_LINE_GROUP`
+
+    :SELECT_INCLUDE: `geosoft.gxapi.DB_LINE_SELECT_INCLUDE`
+    :SELECT_EXCLUDE: `geosoft.gxapi.DB_LINE_SELECT_EXCLUDE`
+
+    :COMP_NONE: `geosoft.gxapi.DB_COMP_NONE`
+    :COMP_SPEED: `geosoft.gxapi.DB_COMP_SPEED`
+    :COMP_SIZE: `geosoft.gxapi.DB_COMP_SIZE`
+
+    :READ_REMOVE_DUMMYROWS: 1
+    :READ_REMOVE_DUMMYCOLUMNS: 2
+
+    :SYMBOL_LOCK_NONE: `geosoft.gxapi.DB_LOCK_NONE`
+    :SYMBOL_LOCK_READ: `geosoft.gxapi.DB_LOCK_READONLY`
+    :SYMBOL_LOCK_WRITE: `geosoft.gxapi.DB_LOCK_READWRITE`
+
+    :DRAW_AS_POINTS: 0
+    :DRAW_AS_LINES: 1
+    
 .. seealso:: `geosoft.gxapi.GXGB`, `geosoft.gxapi.GXEDB`,
              `geosoft.gxapi.GXDBREAD`, `geosoft.gxapi.GXDBWRITE`
 
@@ -43,51 +87,51 @@ def _t(s):
     return geosoft.gxpy.system.translate(s)
 
 
-LINE_TYPE_NORMAL = gxapi.DB_LINE_TYPE_NORMAL  #:
-LINE_TYPE_BASE = gxapi.DB_LINE_TYPE_BASE  #:
-LINE_TYPE_TIE = gxapi.DB_LINE_TYPE_TIE  #:
-LINE_TYPE_TEST = gxapi.DB_LINE_TYPE_TEST  #:
-LINE_TYPE_TREND = gxapi.DB_LINE_TYPE_TREND   #:
-LINE_TYPE_SPECIAL = gxapi.DB_LINE_TYPE_SPECIAL   #:
-LINE_TYPE_RANDOM = gxapi.DB_LINE_TYPE_RANDOM   #:
+LINE_TYPE_NORMAL = gxapi.DB_LINE_TYPE_NORMAL
+LINE_TYPE_BASE = gxapi.DB_LINE_TYPE_BASE
+LINE_TYPE_TIE = gxapi.DB_LINE_TYPE_TIE
+LINE_TYPE_TEST = gxapi.DB_LINE_TYPE_TEST
+LINE_TYPE_TREND = gxapi.DB_LINE_TYPE_TREND
+LINE_TYPE_SPECIAL = gxapi.DB_LINE_TYPE_SPECIAL
+LINE_TYPE_RANDOM = gxapi.DB_LINE_TYPE_RANDOM
 
-LINE_CATEGORY_FLIGHT = gxapi.DB_CATEGORY_LINE_FLIGHT  #:
-LINE_CATEGORY_GROUP = gxapi.DB_CATEGORY_LINE_GROUP  #:
-LINE_CATEGORY_NORMAL = gxapi.DB_CATEGORY_LINE_NORMAL  #:
+LINE_CATEGORY_FLIGHT = gxapi.DB_CATEGORY_LINE_FLIGHT
+LINE_CATEGORY_GROUP = gxapi.DB_CATEGORY_LINE_GROUP
+LINE_CATEGORY_NORMAL = gxapi.DB_CATEGORY_LINE_NORMAL
 
-FORMAT_NORMAL = gxapi.DB_CHAN_FORMAT_NORMAL  #:
-FORMAT_EXP = gxapi.DB_CHAN_FORMAT_EXP  #:
-FORMAT_TIME = gxapi.DB_CHAN_FORMAT_TIME  #:
-FORMAT_DATE = gxapi.DB_CHAN_FORMAT_DATE  #:
-FORMAT_GEOGR = gxapi.DB_CHAN_FORMAT_GEOGR  #:
-FORMAT_SIGDIG = gxapi.DB_CHAN_FORMAT_SIGDIG  #:
-FORMAT_HEX = gxapi.DB_CHAN_FORMAT_HEX  #:
+FORMAT_NORMAL = gxapi.DB_CHAN_FORMAT_NORMAL
+FORMAT_EXP = gxapi.DB_CHAN_FORMAT_EXP
+FORMAT_TIME = gxapi.DB_CHAN_FORMAT_TIME
+FORMAT_DATE = gxapi.DB_CHAN_FORMAT_DATE
+FORMAT_GEOGR = gxapi.DB_CHAN_FORMAT_GEOGR
+FORMAT_SIGDIG = gxapi.DB_CHAN_FORMAT_SIGDIG
+FORMAT_HEX = gxapi.DB_CHAN_FORMAT_HEX
 
-CHAN_ALL = None      #:
-CHAN_NORMAL = 0      #:
-CHAN_ARRAY = 1       #:
-CHAN_DISPLAYED = 2   #:
+CHAN_ALL = None    
+CHAN_NORMAL = 0    
+CHAN_ARRAY = 1     
+CHAN_DISPLAYED = 2 
 
-SYMB_LINE_NORMAL = gxapi.DB_CATEGORY_LINE_NORMAL  #:
-SYMB_LINE_FLIGHT = gxapi.DB_CATEGORY_LINE_FLIGHT  #:
-SYMB_LINE_GROUP = gxapi.DB_CATEGORY_LINE_GROUP  #:
+SYMB_LINE_NORMAL = gxapi.DB_CATEGORY_LINE_NORMAL
+SYMB_LINE_FLIGHT = gxapi.DB_CATEGORY_LINE_FLIGHT
+SYMB_LINE_GROUP = gxapi.DB_CATEGORY_LINE_GROUP
 
-SELECT_INCLUDE = gxapi.DB_LINE_SELECT_INCLUDE  #:
-SELECT_EXCLUDE = gxapi.DB_LINE_SELECT_EXCLUDE  #:
+SELECT_INCLUDE = gxapi.DB_LINE_SELECT_INCLUDE
+SELECT_EXCLUDE = gxapi.DB_LINE_SELECT_EXCLUDE
 
-COMP_NONE = gxapi.DB_COMP_NONE  #:
-COMP_SPEED = gxapi.DB_COMP_SPEED  #:
-COMP_SIZE = gxapi.DB_COMP_SIZE  #:
+COMP_NONE = gxapi.DB_COMP_NONE
+COMP_SPEED = gxapi.DB_COMP_SPEED
+COMP_SIZE = gxapi.DB_COMP_SIZE
 
-READ_REMOVE_DUMMYROWS = 1  #:
-READ_REMOVE_DUMMYCOLUMNS = 2  #:
+READ_REMOVE_DUMMYROWS = 1
+READ_REMOVE_DUMMYCOLUMNS = 2
 
-SYMBOL_LOCK_NONE = gxapi.DB_LOCK_NONE  #:
-SYMBOL_LOCK_READ = gxapi.DB_LOCK_READONLY  #:
-SYMBOL_LOCK_WRITE = gxapi.DB_LOCK_READWRITE  #:
+SYMBOL_LOCK_NONE = gxapi.DB_LOCK_NONE
+SYMBOL_LOCK_READ = gxapi.DB_LOCK_READONLY
+SYMBOL_LOCK_WRITE = gxapi.DB_LOCK_READWRITE
 
-DRAW_AS_POINTS = 0  #:
-DRAW_AS_LINES = 1  #:
+DRAW_AS_POINTS = 0
+DRAW_AS_LINES = 1
 
 
 class GdbException(geosoft.GXRuntimeError):
@@ -2009,12 +2053,13 @@ class Geosoft_gdb(gxgeo.Geometry):
 
         return vset.tolist()
 
-    def figure_map(self, file_name=None, title=None, draw=DRAW_AS_POINTS,
+    def figure_map(self, file_name=None, overwrite=False, title=None, draw=DRAW_AS_POINTS,
                    features=None, **kwargs):
         """
         Create a figure map file from selected lines in the database.
 
         :param file_name:       the name of the map, if None a temporary default map is created.
+        :param overwrite:       `True` to overwrite map file should it exist
         :param title:           Title added to the image
         :param draw:            `DRAW_AS_POINTS` to draw a dot at each point (default). Long lines are decimated.
                                 `DRAW_AS_LINES` to draw lines with a line label at each end.
@@ -2082,6 +2127,7 @@ class Geosoft_gdb(gxgeo.Geometry):
 
         gmap = gxmap.Map.figure(ex,
                                 file_name=file_name,
+                                overwrite=overwrite,
                                 features=features,
                                 title=title,
                                 **kwargs)

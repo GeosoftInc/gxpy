@@ -772,7 +772,7 @@ class Vox(gxspd.SpatialData, Sequence):
         return npv
 
     @classmethod
-    def rbf(cls, data,
+    def _rbf(cls, data,
             file_name=None, overwrite=False,
             max_segments=1000,
             coordinate_system=None,
@@ -905,7 +905,10 @@ class Vox(gxspd.SpatialData, Sequence):
             else:
                 raise VoxException(_t('Cannot overwrite existing file: {}').format(file_name))
 
-        gxapi.GXMULTIGRID3DUTIL.generate_rbf(gdb.gxdb, file_name, vc, cs, tolerance, max_iterations, 1)
+        gxapi.GXMULTIGRID3DUTIL.generate_rbf(gdb.gxdb, file_name, vc,
+                                             cs, tolerance, max_iterations, 1,
+                                             gxapi.RBFKERNEL_GUASSIAN,
+                                             0.5)
 
         vox = cls.open(file_name)
         if coordinate_system is None:
