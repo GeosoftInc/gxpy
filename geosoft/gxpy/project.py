@@ -396,9 +396,9 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
     :param items:       comma-separated string or list/tuple of items for kind='list'
     :param default:     default value.  For multifile can be a string ('|' delimiter) or list/tuple.
     :param filemask:    File type masks, Comma delimited, or a list/tuple.  Examples:
-                        '.dat', '\*.dat,\*.grd', '\*\*,\*.grd' for multiple files
+                        '.dat', '\*.dat,\*.grd'.  For multiple files if a specific type '\*\*,\*.grd'
 
-    :returns:       user response
+    :returns:       user response string, or a list of files if multi-file requested
     :raise:         `GXCancel` if the user cancels the dialog
 
     .. versionadded:: 9.1
