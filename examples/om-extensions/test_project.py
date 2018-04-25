@@ -51,11 +51,11 @@ def test_multifile():
     ret = gxprj.get_user_input('Testing a multi-file list default', 'Multiple files:', kind='file', default=['maki.dat', 'list.', '4.5'], filemask="**")
     print('multifile from list default return: {}'.format(ret))
 
-    ret = gxprj.get_user_input('Testing a multi-file *.grd;', 'Multiple grids:', kind='file', filemask="**,*.grd")
+    ret = gxprj.get_user_input('Testing a multi-file *.grd;', 'Multiple grids:', kind='file', filemask=["**,*.grd"])
     print('multifile grid return: {}'.format(ret))
 
-    ret = gxprj.get_user_input('Testing a multi-file *.map,*.gdb', 'Multiple grids:', kind='file', filemask=["**", "*.map", "*.gdb"])
-    print('multifile grid return: {}'.format(ret))
+    ret = gxprj.get_user_input('Testing a multi-file *.map,*.gdb', 'Multiple maps/gdb:', kind='file', filemask=["**", "*.map", "*.gdb"])
+    print('multifile map/gdb return: {}'.format(ret))
 
     input("File inputs test finished, press enter to continue...")
 
