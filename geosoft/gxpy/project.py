@@ -356,7 +356,7 @@ def _user_input_gx(kind):
     user_input = os.path.join(os.path.join(dir, 'user_input'), 'user_input.gx')
     ret = gxapi.GXSYS.run_gx(user_input)
     if ret == -1:
-        gxapi.GXSYS.cancel()
+        gxapi.GXSYS.cancel_()
     return ret
 
 
