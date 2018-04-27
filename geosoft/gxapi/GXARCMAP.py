@@ -403,6 +403,26 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
 
     @classmethod
+    def load_raster_ex(cls, file):
+        """
+        Load a raster file to the current data frame and create associated files
+        
+        :param file:  File Name
+        :type  file:  str
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Loads any file type recognized as "raster" formats by ARC `GXGIS <geosoft.gxapi.GXGIS>`.
+        This includes geosoft GRD files.
+        """
+        gxapi_cy.WrapARCMAP._load_raster_ex(GXContext._get_tls_geo(), file.encode())
+        
+
+
+
+    @classmethod
     def load_shape(cls, file, layer_prefix, layer_suffix):
         """
         Load a `GXSHP <geosoft.gxapi.GXSHP>` file to the current data frame
