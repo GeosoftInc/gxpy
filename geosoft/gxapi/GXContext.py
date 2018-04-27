@@ -76,11 +76,12 @@ class GXContext:
     @classmethod
     def _create_internal(cls, internal_p_geo):
         tls_geo = getattr(_tls, '_gxa_geo', None)
-        if not tls_geo is None:
-            raise GXAPIError("Illegal call to GXContext._create_internal. An instance was already instantiated for this thread.");
-        p_geo = gxapi_cy.WrapPGeo()
-        p_geo._create_internal(internal_p_geo)
-        return GXContext(p_geo)
+        if tls_geo is None:
+            p_geo = gxapi_cy.WrapPGeo()
+            p_geo._create_internal(internal_p_geo)
+            return GXContext(p_geo)
+        else:
+            return GXContext(tls_geo)
 
     @classmethod
     def _internal_p(cls):
