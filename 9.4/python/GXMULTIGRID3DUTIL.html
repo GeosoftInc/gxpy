@@ -35,14 +35,6 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">GXMULTIGRID3DUTIL class</a><ul>
-<li><a class="reference internal" href="#rbfkernel-constants">RBFKERNEL constants</a></li>
-</ul>
-</li>
-</ul>
-
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <div class="searchformwrapper">
@@ -688,35 +680,6 @@
 </dd></dl>
 
 <dl class="classmethod">
-<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.generate_rbf">
-<em class="property">classmethod </em><code class="descname">generate_rbf</code><span class="sig-paren">(</span><em>db</em>, <em>output_file</em>, <em>data_channel</em>, <em>cell_size</em>, <em>error_tolerance</em>, <em>max_iterations</em>, <em>desample</em>, <em>kernel</em>, <em>kernel_epsilon</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.generate_rbf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a VOXEL from an database using RBF.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Handle to a database</li>
-<li><strong>output_file</strong> (<em>str</em>) – Name of the output grid3d</li>
-<li><strong>data_channel</strong> (<em>str</em>) – Channel to grid`</li>
-<li><strong>cell_size</strong> (<em>float</em>) – Cell size</li>
-<li><strong>error_tolerance</strong> (<em>float</em>) – Error Tolerance</li>
-<li><strong>max_iterations</strong> (<em>int</em>) – Maximum number of iterations (&gt;0)</li>
-<li><strong>desample</strong> (<em>int</em>) – Desample data (1) or use as is (0)</li>
-<li><strong>kernel</strong> (<em>int</em>) – <a class="reference internal" href="#rbfkernel"><span class="std std-ref">RBFKERNEL constants</span></a></li>
-<li><strong>kernel_epsilon</strong> (<em>float</em>) – Kernel Epsilon</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 9.4.</span></p>
-</div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
-</dd></dl>
-
-<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.get_gocad_location">
 <em class="property">classmethod </em><code class="descname">get_gocad_location</code><span class="sig-paren">(</span><em>input_grid3d_filename</em>, <em>origin_x</em>, <em>origin_y</em>, <em>origin_z</em>, <em>vect_xx</em>, <em>vect_xy</em>, <em>vect_xz</em>, <em>vect_yx</em>, <em>vect_yy</em>, <em>vect_yz</em>, <em>vect_zx</em>, <em>vect_zy</em>, <em>vect_zz</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.get_gocad_location" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the location of a grid3d with origin and scaled xyz vectors for use with GOCAD.</p>
@@ -1015,43 +978,6 @@
 
 </dd></dl>
 
-<div class="section" id="rbfkernel-constants">
-<span id="rbfkernel"></span><h2>RBFKERNEL constants<a class="headerlink" href="#rbfkernel-constants" title="Permalink to this headline">¶</a></h2>
-<p>Math kernel to use in the RBF Computation</p>
-<dl class="data">
-<dt id="geosoft.gxapi.RBFKERNEL_DISTANCE">
-<code class="descname">RBFKERNEL_DISTANCE</code><a class="headerlink" href="#geosoft.gxapi.RBFKERNEL_DISTANCE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Distance</p>
-<dl class="attribute">
-<dt>
-<code class="descclassname">gxapi.</code><code class="descname">RBFKERNEL_DISTANCE</code><em class="property"> = 0</em></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxapi.RBFKERNEL_GUASSIAN">
-<code class="descname">RBFKERNEL_GUASSIAN</code><a class="headerlink" href="#geosoft.gxapi.RBFKERNEL_GUASSIAN" title="Permalink to this definition">¶</a></dt>
-<dd><p>Guassian</p>
-<dl class="attribute">
-<dt>
-<code class="descclassname">gxapi.</code><code class="descname">RBFKERNEL_GUASSIAN</code><em class="property"> = 1</em></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxapi.RBFKERNEL_MULTIQUADRATIC">
-<code class="descname">RBFKERNEL_MULTIQUADRATIC</code><a class="headerlink" href="#geosoft.gxapi.RBFKERNEL_MULTIQUADRATIC" title="Permalink to this definition">¶</a></dt>
-<dd><p>Multiquadratic</p>
-<dl class="attribute">
-<dt>
-<code class="descclassname">gxapi.</code><code class="descname">RBFKERNEL_MULTIQUADRATIC</code><em class="property"> = 2</em></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
 </div>
 
 

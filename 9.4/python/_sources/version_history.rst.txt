@@ -900,6 +900,8 @@ Version 9.4
 New Functions
 ^^^^^^^^^^^^^
 
+:func:`geosoft.gxapi.GXARCMAP.load_raster_ex` Load a raster file to the current data frame and create associated files
+
 :func:`geosoft.gxapi.GXDU.em_tau_automatic` Automatic fitting EM Tau
 
 :func:`geosoft.gxapi.GXDU.em_tau_calc` Fitting  f(t) = A * e^(-t/Tau) = e^s0 * e^(-s1*t), where s0=lnA, s1=1/Tau
@@ -1087,8 +1089,6 @@ New Functions
 :func:`geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_xyz` Export a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to an XYZ File
 
 :func:`geosoft.gxapi.GXMULTIGRID3DUTIL.filter` Apply a 3D filter to a grid3d.
-
-:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.generate_rbf` Creates a VOXEL from an database using RBF.
 
 :func:`geosoft.gxapi.GXMULTIGRID3DUTIL.get_gocad_location` Get the location of a grid3d with origin and scaled xyz vectors for use with GOCAD.
 

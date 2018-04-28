@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder" version="2015.1.12.0" projectFile="M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\DotNetReference\DotNetReference.shfbproj" started="4/18/2018 10:44:05 PM">
+<shfbBuild product="Sandcastle Help File Builder" version="2015.1.12.0" projectFile="M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\DotNetReference\DotNetReference.shfbproj" started="4/27/2018 10:37:22 AM">
 <buildStep step="Initializing">
 Finding tools...
 The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\&#39;
@@ -35,16 +35,16 @@ Copying XML comments files
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
-</plugIn>    Last step completed in 00:00:00.1094
+</plugIn>    Last step completed in 00:00:00.1250
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00.1406
+    Last step completed in 00:00:00.1250
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
 [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\amd64\MSBuild.exe]
-Build started 4/18/2018 10:44:10 PM.
+Build started 4/27/2018 10:37:27 AM.
 Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
 PrepareForBuild:
   Creating directory &quot;obj\x64\Debug\&quot;.
@@ -53,7 +53,7 @@ GenerateRefInfo:
   Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
   Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
   Loaded 2 assemblies for reflection and 1 dependency assemblies.
-  Wrote information on 2 namespaces, 540 types, and 8769 members
+  Wrote information on 2 namespaces, 539 types, and 8760 members
   Copying file from &quot;reflection.org&quot; to &quot;reflection.all&quot;.
   XslTransform (v2015.1.12.0)
   Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
@@ -63,12 +63,12 @@ Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\
 <plugIn name="Geosoft DotNetExtraReflectionInfo Plugin" behavior="After" priority="1000">
 In Geosoft.Sandcastle.Plugins.DotNetExtraReflectionInfo Execute() method
 In Geosoft.Sandcastle.Plugins.DotNetExtraReflectionInfo Execute() method
-</plugIn>    Last step completed in 00:00:04.8751
+</plugIn>    Last step completed in 00:00:05.0939
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
 [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\amd64\MSBuild.exe]
-Build started 4/18/2018 10:44:14 PM.
+Build started 4/27/2018 10:37:32 AM.
 Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\TransformManifest.proj&quot; on node 1 (default targets).
 TransformManifest:
   XslTransform (v2015.1.12.0)
@@ -140,11 +140,11 @@ Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\
 <plugIn name="Geosoft DotNetExtraReflectionInfo Plugin" behavior="After" priority="1000">
 In Geosoft.Sandcastle.Plugins.DotNetExtraReflectionInfo Execute() method
 In Geosoft.Sandcastle.Plugins.DotNetExtraReflectionInfo Execute() method
-</plugIn>    Last step completed in 00:00:07.2120
+</plugIn>    Last step completed in 00:00:07.2970
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00.3125
+    Last step completed in 00:00:00.2656
 </buildStep>
 <buildStep step="CopyConceptualContent">
 Copying conceptual content...
@@ -153,7 +153,7 @@ In Geosoft.Sandcastle.Plugins.GXAPIVersionHistory Execute() method
 In Geosoft.Sandcastle.Plugins.GXAPIVersionHistory Execute() method
 </plugIn>Copying standard token shared content file...
 Checking for other token files...
-    C:\Users\buildagent.GEOSOFT\AppData\Local\Temp\tmpED7B.tmp -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\tmpED7B.tmp
+    C:\Users\buildagent.GEOSOFT\AppData\Local\Temp\tmp801E.tmp -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\tmp801E.tmp
 Checking for code snippets files...
 Copying images and creating the media map file...
 Generating conceptual topic files
@@ -161,14 +161,14 @@ Generating conceptual topic files
     M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\DotNetReference\Content\Welcome.aml -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\ddueXml\welcome.xml
     Parsing topic file &#39;M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\DotNetReference\Content\VersionHistory\VersionHistory.aml&#39;
     M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\DotNetReference\Content\VersionHistory\VersionHistory.aml -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\ddueXml\version-history.xml
-    Last step completed in 00:00:00.7500
+    Last step completed in 00:00:01.8594
 </buildStep>
 <buildStep step="CreateConceptualTopicConfigs">
 Creating conceptual topic configuration files...
     Companion files
     _ContentMetadata_.xml
     ConceptualManifest.xml
-    Last step completed in 00:00:00.0156
+    Last step completed in 00:00:00.0313
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
@@ -182,7 +182,7 @@ Merging conceptual and additional tables of contents...
 <buildStep step="GenerateIntermediateTableOfContents">
 Generating intermediate table of contents file...
 [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\amd64\MSBuild.exe]
-Build started 4/18/2018 10:44:23 PM.
+Build started 4/27/2018 10:37:41 AM.
 Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
 GenerateIntermediateTOC:
   XslTransform (v2015.1.12.0)
@@ -193,7 +193,7 @@ Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\
 Generating conceptual content intermediate TOC file...
 <plugIn name="Table of Contents Exclusion" behavior="After" priority="1500">
 Searching for comment members containing &lt;tocexclude /&gt;...
-Found 398 members to exclude from the TOC
+Found 397 members to exclude from the TOC
 Removing members from the TOC
     Removing &#39;T:GeoEngine.Core.GXNet.IntConstants&#39;
     Removing &#39;T:GeoEngine.Core.GXNet.Constant&#39;
@@ -308,7 +308,6 @@ Removing members from the TOC
     Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_COLORConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNet.MVIEW_CLIPConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNet.MAKERConstant&#39;
-    Removing &#39;T:GeoEngine.Core.GXNet.RBFKERNELConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNet.MULTIGRID3D_DIRECTGRID_METHODConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNet.FILTER3DConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNet.VECTOR_IMPORTConstant&#39;
@@ -593,25 +592,25 @@ Removing members from the TOC
     Removing &#39;T:Geosoft.Desktop.GXNet.ARCDB_NULLConstant&#39;
     Removing &#39;T:Geosoft.Desktop.GXNet.ARC_SELTBL_TYPEConstant&#39;
     Removing &#39;T:Geosoft.Desktop.GXNet.ACQUIRE_SELConstant&#39;
-</plugIn>    Last step completed in 00:00:01.9219
+</plugIn>    Last step completed in 00:00:02.2188
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
     conceptual.config
-    Last step completed in 00:00:00.7969
+    Last step completed in 00:00:00.9063
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
 M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\sandcastle.config
 M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\conceptual.config
     Removing unused ExampleComponent.
-    Last step completed in 00:00:00.1094
+    Last step completed in 00:00:00.1249
 </buildStep>
 <buildStep step="BuildConceptualTopics">
 Building conceptual help topics...
 [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\amd64\MSBuild.exe]
-Build started 4/18/2018 10:44:26 PM.
+Build started 4/27/2018 10:37:45 AM.
 Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\BuildConceptualTopics.proj&quot; on node 1 (default targets).
 BuildConceptualTopics:
   BuildAssembler (v2015.1.12.0)
@@ -622,12 +621,12 @@ BuildConceptualTopics:
   Processed 2 topic(s)
   CopyFromIndexComponent: &quot;metadata&quot; in-memory cache entries used: 1 of 15.
 Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\BuildConceptualTopics.proj&quot; (default targets).
-    Last step completed in 00:00:07.7345
+    Last step completed in 00:00:08.5939
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
 [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\amd64\MSBuild.exe]
-Build started 4/18/2018 10:44:33 PM.
+Build started 4/27/2018 10:37:53 AM.
 Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\BuildReferenceTopics.proj&quot; on node 1 (default targets).
 BuildReferenceTopics:
   BuildAssembler (v2015.1.12.0)
@@ -639,12 +638,12 @@ BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXN
 BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNet.CGXNETCore.sCheckTerminate] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNet.CGXNETCore.sGetError(System.String@,System.String@,System.Int32@)] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNet.CGXNETCore.ShowError] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\BuildReferenceTopics.proj]
-  Processed 8148 topic(s)
+  Processed 8140 topic(s)
   4 warning(s)
   CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 4 of 15.
   CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 3 of 30.
 Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\BuildReferenceTopics.proj&quot; (default targets).
-    Last step completed in 00:01:16.2907
+    Last step completed in 00:01:22.3027
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
@@ -662,11 +661,11 @@ E-Mail: Eric@EWoodruff.us
 Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
 
 Processing website files in M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\Output\Website
-Processed 8150 HTML files
+Processed 8142 HTML files
 Sorting keywords and generating See Also indices
 Saving website keyword index to M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\WebKI.xml
 Saving website table of contents to M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\WebTOC.xml
-    Last step completed in 00:00:24.5943
+    Last step completed in 00:00:07.3594
 </buildStep>
 <buildStep step="CopyStandardHelpContent">
 Copying standard help content...
@@ -750,7 +749,7 @@ M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\Web\ic
 M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\Web\icons\TocOpen.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\Output\Website\icons\TocOpen.gif
 M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\Web\scripts\branding-Website.js -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\Output\Website\scripts\branding-Website.js
 M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\Web\scripts\jquery-1.11.0.min.js -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetReference\Help\Working\Output\Website\scripts\jquery-1.11.0.min.js
-    Last step completed in 00:00:01.6250
+    Last step completed in 00:00:01.6407
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating website table of contents file...
@@ -761,7 +760,7 @@ Generating full-text index for the website...
 
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
 Adding lightweight search and TOC elements to each topic...
-</plugIn>    Last step completed in 00:00:29.8351
+</plugIn>    Last step completed in 00:00:33.2195
 </buildStep>
 <buildStep step="CopyingWebsiteFiles">
 Copying website files to output folder...
@@ -851,16 +850,16 @@ Copied 8200 files
 Copied 8300 files
 Copied 8400 files
 Copied 8500 files
-Copied 8592 files for the website content
-    Last step completed in 00:00:35.8289
+Copied 8584 files for the website content
+    Last step completed in 00:00:29.3757
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:01.2500
+    Last step completed in 00:00:01.2344
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully at 4/18/2018 10:47:23 PM.  Total time: 00:03:17.4646
+Build completed successfully at 4/27/2018 10:40:28 AM.  Total time: 00:03:05.8204
 
 </buildStep>
 </shfbBuild>
