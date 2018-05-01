@@ -853,7 +853,7 @@ class Test(GXPYTest):
                 self.assertAlmostEqual(grd.statistics()['sd'], 22.320659139902336, 5)
                 self.assertEqual(grd.unit_of_measure, 'maki')
 
-        # TODO: update this test once BASE-1265 is addressed
+        # TODO: update this test once BASE-1265 is addressed, expected for 9.5
         with gxgrd.Grid.minimum_curvature(feed_data, cs=0.25, bkd=500, edgclp=5) as grd:
             self.assertEqual((grd.nx, grd.ny), (199, 127))
             self.assertAlmostEqual(grd.statistics()['sd'], 23.4893997876449, 5)

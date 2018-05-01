@@ -781,6 +781,8 @@ class Vox(gxspd.SpatialData, Sequence):
             max_iterations=200,
             unit_of_measure=None):
         """
+        STUB for future release...
+
         Create a vox using a radial-basis function.
 
         :param data:        list of [(x, y, z, value), ...] or a callback that returns lists, or a tuple
