@@ -824,6 +824,36 @@ class Draw(Group):
             self.view.gxview.text_size(text_def.height)
             self.view.gxview.text_color(text_def.color.int_value)
 
+    def text_extent(self, str, text_def=None):
+        """
+        Return the extent of a text string in view units relative to the current
+        text `text_def` setting, or the specified `text_def` setting.
+
+        :param str: text string
+        :param text_def: `text_def` instance, None for the current setting
+        :return: `geosoft.geometry.Point2` instance
+
+        .. versionadded:: 9.4
+        """
+        x0 = gxapi.float_ref()
+        y0 = gxapi.float_ref()
+        x1 = gxapi.float_ref()
+        y1 = gxapi.float_ref()
+
+        if text_def:
+            cur_text = self._text_def
+            self.text_def = text_def
+        else:
+            cur_text = None
+
+        self.view.gxview.measure_text(str, x0, y0, x1, y1)
+
+        if cur_text:
+            self.text_def = cur_text
+
+        return gxgm.Point2(((x0.value, y0.value), (x1.value, y1.value)),
+                           coordinate_system=self.view.coordinate_system)
+
     @_draw
     def point(self, p):
         """

@@ -645,6 +645,12 @@ class Test(GXPYTest):
                            (10, 25),
                            angle=60,
                            text_def=gxg.Text_def(height=20, color='B', font='Calibri', italics=True))
+                    g.text_def = gxg.Text_def(height=20, color='B', font='Calibri', italics=True)
+                    tex = g.text_extent('Bigger, blue, angled, italics')
+                    self.assertEqual(tex.dimension_xy, (207.58444329904108, 330.632589296182))
+                    tex = g.text_extent('Bigger, blue, angled, italics',
+                                        gxg.Text_def(height=10, font='Calibri', italics=True))
+                    self.assertEqual(tex.dimension_xy, (103.79222164952054, 165.316294648091))
 
         self.crc_map(map_file)
 
@@ -652,7 +658,7 @@ class Test(GXPYTest):
         self.start()
 
         with gxmap.Map.new(data_area=(400000, 5000000, 500000, 5050000),
-                             coordinate_system='WGS 84 / UTM zone 15N [geoid]') as map:
+                           coordinate_system='WGS 84 / UTM zone 15N [geoid]') as map:
             map_file = map.file_name
             with gxv.View.open(map, '*data') as v:
                 with gxg.Draw(v) as g:
