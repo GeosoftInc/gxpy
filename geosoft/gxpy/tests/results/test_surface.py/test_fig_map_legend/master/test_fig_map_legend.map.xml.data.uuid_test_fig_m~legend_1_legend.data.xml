@@ -7,7 +7,7 @@
       <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="0"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="0.1"/>
+      <Item name="Value" value="0.0631"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="0"/>
@@ -20,7 +20,7 @@
       <Item name="Value" value="Arial(TT,MEDIUM)"/>
    </Item>
    <Item type="FontSize" size="8">
-      <Item name="Value" value="2.5"/>
+      <Item name="Value" value="1.5775"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
@@ -38,7 +38,7 @@
       <Item name="Value" value="0"/>
    </Item>
    <Item type="SymbSize" size="8">
-      <Item name="Value" value="2.5"/>
+      <Item name="Value" value="1.5775"/>
    </Item>
    <Item type="SymbAngle" size="8">
       <Item name="Value" value="0"/>
@@ -56,7 +56,7 @@
       <Item name="Value" value="0"/>
    </Item>
    <Item type="PatSize" size="8">
-      <Item name="Value" value="2"/>
+      <Item name="Value" value="1.262"/>
    </Item>
    <Item type="PatAngle" size="8">
       <Item name="Value" value="0"/>
@@ -77,14 +77,14 @@
       <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
    </Item>
    <Item type="LineThick" size="8">
-      <Item name="Value" value="0.2"/>
+      <Item name="Value" value="0.1262"/>
    </Item>
    <Item type="LineSmooth" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="LineStyle" size="12">
       <Item name="Style" value="1"/>
-      <Item name="Pitch" value="5"/>
+      <Item name="Pitch" value="3.155"/>
    </Item>
    <Item type="FillColor" size="8">
       <Item name="Color" type="COL_ANY" colortype="None"/>
@@ -99,123 +99,121 @@
       <Item name="Value" value="1"/>
    </Item>
    <Item type="PatSize" size="8">
-      <Item name="Value" value="2.5"/>
+      <Item name="Value" value="1.5775"/>
    </Item>
    <Item type="PatStyle" size="8">
       <Item name="Value" value="0"/>
    </Item>
    <Item type="PatThick" size="8">
-      <Item name="Value" value="0.2"/>
+      <Item name="Value" value="0.1262"/>
+   </Item>
+   <Item type="FontName" size="17">
+      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   </Item>
+   <Item type="FontSize" size="8">
+      <Item name="Value" value="2.2085"/>
+   </Item>
+   <Item type="FontColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   </Item>
+   <Item type="LineThick" size="8">
+      <Item name="Value" value="0.15775"/>
+   </Item>
+   <Item type="FillColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="RGB" red="191" green="191" blue="255"/>
    </Item>
    <Item type="Rectangle" size="32">
       <Item name="From" type="D2AREA">
-         <Value name="MinX" value="0"/>
-         <Value name="MinY" value="0"/>
-         <Value name="MaxX" value="308.6076469"/>
-         <Value name="MaxY" value="499.9114704"/>
+         <Value name="MinX" value="102.524"/>
+         <Value name="MinY" value="50"/>
+         <Value name="MaxX" value="107.572"/>
+         <Value name="MaxY" value="53.155"/>
       </Item>
    </Item>
+   <Item type="LineThick" size="8">
+      <Item name="Value" value="0.1262"/>
+   </Item>
+   <Item type="FillColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="None"/>
+   </Item>
    <Item type="FontRef" size="8">
-      <Item name="Value" value="0"/>
+      <Item name="Value" value="3"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
    </Item>
-   <Item type="Text" size="37">
+   <Item type="Text" size="91">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="0"/>
-         <Value name="Y" value="0"/>
+         <Value name="X" value="108.834"/>
+         <Value name="Y" value="51.5775"/>
       </Item>
-      <Item name="UTF-8 Text" value="Text on base view"/>
+      <Item name="UTF-8 Text" value="Light-blue surface, with an extremely long name to test margin settings"/>
    </Item>
-   <Item type="FontName" size="27">
-      <Item name="Value" value="Times New Roman(TT,MEDIUM)"/>
+   <Item type="LineThick" size="8">
+      <Item name="Value" value="0.15775"/>
    </Item>
-   <Item type="FontSize" size="8">
-      <Item name="Value" value="20"/>
+   <Item type="FillColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="RGB" red="191" green="255" blue="191"/>
    </Item>
-   <Item type="FontColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
+   <Item type="Rectangle" size="32">
+      <Item name="From" type="D2AREA">
+         <Value name="MinX" value="102.524"/>
+         <Value name="MinY" value="53.786"/>
+         <Value name="MaxX" value="107.572"/>
+         <Value name="MaxY" value="56.941"/>
+      </Item>
+   </Item>
+   <Item type="LineThick" size="8">
+      <Item name="Value" value="0.1262"/>
+   </Item>
+   <Item type="FillColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="FontRef" size="8">
-      <Item name="Value" value="0"/>
+      <Item name="Value" value="3"/>
    </Item>
    <Item type="FontAngle" size="8">
       <Item name="Value" value="0"/>
    </Item>
-   <Item type="Text" size="40">
+   <Item type="Text" size="26">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="10"/>
-         <Value name="Y" value="10"/>
+         <Value name="X" value="108.834"/>
+         <Value name="Y" value="55.3635"/>
       </Item>
-      <Item name="UTF-8 Text" value="Bigger, blue, higher"/>
+      <Item name="UTF-8 Text" value="maki 1"/>
    </Item>
-   <Item type="FontName" size="17">
-      <Item name="Value" value="Arial(TT,MEDIUM)"/>
+   <Item type="LineThick" size="8">
+      <Item name="Value" value="0.15775"/>
    </Item>
-   <Item type="FontSize" size="8">
-      <Item name="Value" value="2.5"/>
+   <Item type="FillColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="RGB" red="255" green="0" blue="0"/>
    </Item>
-   <Item type="FontColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
+   <Item type="Rectangle" size="32">
+      <Item name="From" type="D2AREA">
+         <Value name="MinX" value="102.524"/>
+         <Value name="MinY" value="57.572"/>
+         <Value name="MaxX" value="107.572"/>
+         <Value name="MaxY" value="60.727"/>
+      </Item>
    </Item>
-   <Item type="FontName" size="26">
-      <Item name="Value" value="Calibri(TT,MEDIUM,ITALIC)"/>
+   <Item type="LineThick" size="8">
+      <Item name="Value" value="0.1262"/>
    </Item>
-   <Item type="FontSize" size="8">
-      <Item name="Value" value="20"/>
-   </Item>
-   <Item type="FontColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
+   <Item type="FillColor" size="8">
+      <Item name="Color" type="COL_ANY" colortype="None"/>
    </Item>
    <Item type="FontRef" size="8">
-      <Item name="Value" value="0"/>
+      <Item name="Value" value="3"/>
    </Item>
    <Item type="FontAngle" size="8">
-      <Item name="Value" value="60000"/>
+      <Item name="Value" value="0"/>
    </Item>
-   <Item type="Text" size="49">
+   <Item type="Text" size="26">
       <Item name="Point" type="D2POINT">
-         <Value name="X" value="10"/>
-         <Value name="Y" value="25"/>
+         <Value name="X" value="108.834"/>
+         <Value name="Y" value="59.1495"/>
       </Item>
-      <Item name="UTF-8 Text" value="Bigger, blue, angled, italics"/>
-   </Item>
-   <Item type="FontName" size="17">
-      <Item name="Value" value="Arial(TT,MEDIUM)"/>
-   </Item>
-   <Item type="FontSize" size="8">
-      <Item name="Value" value="2.5"/>
-   </Item>
-   <Item type="FontColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FontName" size="26">
-      <Item name="Value" value="Calibri(TT,MEDIUM,ITALIC)"/>
-   </Item>
-   <Item type="FontSize" size="8">
-      <Item name="Value" value="20"/>
-   </Item>
-   <Item type="FontColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
-   </Item>
-   <Item type="FontName" size="26">
-      <Item name="Value" value="Calibri(TT,MEDIUM,ITALIC)"/>
-   </Item>
-   <Item type="FontSize" size="8">
-      <Item name="Value" value="10"/>
-   </Item>
-   <Item type="FontColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="CMY" cyan="255" magenta="255" yellow="255"/>
-   </Item>
-   <Item type="FontName" size="26">
-      <Item name="Value" value="Calibri(TT,MEDIUM,ITALIC)"/>
-   </Item>
-   <Item type="FontSize" size="8">
-      <Item name="Value" value="20"/>
-   </Item>
-   <Item type="FontColor" size="8">
-      <Item name="Color" type="COL_ANY" colortype="RGB" red="0" green="0" blue="255"/>
+      <Item name="UTF-8 Text" value="maki 0"/>
    </Item>
    <Item type="End" size="8"></Item>
 </data>

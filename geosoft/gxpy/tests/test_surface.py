@@ -427,7 +427,44 @@ class Test(GXPYTest):
                 s.render_color = gxgrp.C_RED
                 s.render_style = gxsurf.STYLE_FLAT
                 s.render_opacity = 1
+            fig_map = sd.figure_map(features=('NEATLINE',)).file_name
+        self.crc_map(fig_map)
+        #gxviewer.view_document(fig_map, wait_for_close=True)
+
+    def test_fig_map_legend(self):
+        self.start()
+
+        verts = np.array([[0, 0, 0],
+                          [5, 0, 0],
+                          [5, 5, 0],
+                          [0, 3, 5],
+                          [2.5, 2, 10]], dtype=np.float64)
+        faces = np.array([[0, 1, 2],
+                          [0, 2, 3],
+                          [3, 2, 4]], dtype=np.int32)
+
+        with gxsurf.SurfaceDataset.new() as sd:
+            with gxsurf.Surface('maki 0', surface_dataset=sd) as s:
+                s.add_mesh(gxgm.Mesh((faces, verts)))
+                s.render_color = gxgrp.C_RED
+                s.render_style = gxsurf.STYLE_FLAT
+                s.render_opacity = 1
+            with gxsurf.Surface('maki 1', surface_dataset=sd) as s:
+                verts[::, 2] *= 0.5
+                s.add_mesh(gxgm.Mesh((faces, verts)))
+                s.render_color = gxgrp.C_LT_GREEN
+                s.render_style = gxsurf.STYLE_FLAT
+                s.render_opacity = 1
+            with gxsurf.Surface('Light-blue surface, with an extremely long name to test margin settings',
+                                surface_dataset=sd) as s:
+                verts[::, 2] *= 0.5
+                s.add_mesh(gxgm.Mesh((faces, verts)))
+                s.render_color = gxgrp.C_LT_BLUE
+                s.render_style = gxsurf.STYLE_FLAT
+                s.render_opacity = 1
+
             fig_map = sd.figure_map().file_name
+
         self.crc_map(fig_map)
         # gxviewer.view_document(fig_map, wait_for_close=True)
 
@@ -460,7 +497,7 @@ class Test(GXPYTest):
                                                                           origin=(1.5, -2),
                                                                           elevation=-3))
                 s.render_color = gxgrp.C_BLUE
-            fig_map = sd.figure_map().file_name
+            fig_map = sd.figure_map(features=('NEATLINE',)).file_name
         self.crc_map(fig_map)
         # gxviewer.view_document(fig_map, wait_for_close=True)
 
