@@ -518,6 +518,8 @@ class View(gxgeo.Geometry):
         else:
             x_scale = y_scale = scale
         a_minx, a_miny, a_maxx, a_maxy = area
+        if map_location is None:
+            map_location = (0., 0.)
         mm_minx = map_location[0] * 10.0
         mm_miny = map_location[1] * 10.0
         mm_maxx = mm_minx + (a_maxx - a_minx) * 1000.0 / upm / x_scale

@@ -31,7 +31,7 @@ from . import vox as gxvox
 from . import vv as gxvv
 from . import group as gxg
 from . import map as gxmap
-from . import geometry as gxgm
+from . import geometry as gxgeo
 
 __version__ = geosoft.__version__
 
@@ -418,7 +418,7 @@ class SurfaceDataset(gxspd.SpatialData, Sequence):
         :param overwrite:       True to overwrite existing file
         :param title:           Title added to the image
         :param legend_label:    If plotting a legend make this the legend title.  The default is the unit_of_measure.
-        :param features:        list of features to place on the map, default is ('SCALE', 'LEGEND', 'NEATLINE')
+        :param features:        list of features to place on the map, default is ('LEGEND', 'NEATLINE')
 
                                     =========== =========================================
                                     'LEGEND'    draw a surface legend
@@ -440,27 +440,58 @@ class SurfaceDataset(gxspd.SpatialData, Sequence):
         features = list(feature_list.keys())
 
         # setup margins
+        set_right_margin = False
         if not ('margins' in kwargs):
 
             bottom_margin = 1.0
             if title:
                 bottom_margin += len(title.split('\n')) * 1.0
 
-            right_margin = 1
-            if 'LEGEND' in feature_list:
-                right_margin += 4.0
-            kwargs['margins'] = (1, right_margin, bottom_margin, 1)
+            kwargs['margins'] = (1, 0.4, bottom_margin, 1)
+            set_right_margin = True
 
         gmap = gxmap.Map.figure((0, 0, 100, 100),
                                 file_name=file_name,
-                                features=features,
+                                overwrite=overwrite,
+                                features=[],
                                 title=title,
                                 **kwargs)
 
-        with gxview.View.open(gmap, "data") as v:
+        leg_width = None
+        if 'LEGEND' in features:
+            with gxview.View.open(gmap, "data") as v:
 
-            if 'LEGEND' in features:
-                pass # TODO: draw a surface legend
+                box = gxgeo.Point2(((0, 0), (0.8, 0.5))) * v.units_per_map_cm
+                box += gxgeo.Point((v.extent_maximum_xy[0] + 0.2 * v.units_per_map_cm, v.centroid_xy[1]))
+                text_height = box.dimension_xy[1] * 0.7
+                text_ref = gxgeo.Point((box.extent_maximum_xy[0] + 0.2 * v.units_per_map_cm,
+                                        box.centroid_xy[1]))
+                space = gxgeo.Point((0, -0.6 * v.units_per_map_cm))
+                leg_width = 0.
+                with gxg.Draw(v, self.name + '_legend') as g:
+                    g.text_def = gxg.Text_def(height=text_height, color='K')
+                    for i in range(self.surface_count):
+                        surf = self[self.surface_count - i - 1]
+                        g.rectangle(box,
+                                    pen=g.new_pen(line_thick=0.025 * v.units_per_map_cm,
+                                                  line_color='K', fill_color=surf.render_color))
+                        g.text(surf.name, text_ref, reference=gxg.REF_CENTER_LEFT)
+                        textent = g.text_extent(surf.name)
+                        if textent.dimension_xy[0] > leg_width:
+                            leg_width = textent.dimension_xy[0]
+                        box -= space
+                        text_ref -= space
+                leg_width += text_ref.extent_minimum_xy[0] - box.extent_minimum_xy[0]
+                leg_width /= v.units_per_map_cm
+
+        if 'NEATLINE' in features:
+            if set_right_margin and leg_width:
+                with gxview.View.open(gmap, "base") as v:
+                    leg_width *= v.units_per_map_cm
+                    area = gxgeo.Point2((v.extent.p0, v.extent.p1 + gxgeo.Point((leg_width, 0.))))
+                    v.locate(area=area.extent_xy)
+
+            gmap.surround()
 
         area = gxview.View.open(gmap, gmap.current_data_view).extent_map_cm()
         area = (area[0] * 10., area[1] * 10., area[2] * 10., area[3] * 10.)
@@ -549,8 +580,8 @@ class Surface(gxspd.SpatialData, Sequence):
         self.coordinate_system = coordinate_system
         self._extent = None
         if mesh:
-            if not isinstance(mesh, gxgm.Mesh):
-                mesh = gxgm.Mesh(mesh, name=self.name + '_0')
+            if not isinstance(mesh, gxgeo.Mesh):
+                mesh = gxgeo.Mesh(mesh, name=self.name + '_0')
             self.add_mesh(mesh, render_properties=render_properties)
         elif self.faces_count:
             for m in self:
@@ -605,9 +636,9 @@ class Surface(gxspd.SpatialData, Sequence):
 
         .. versionadded:: 9.3.1
         """
-        pmin = gxgm.Point((self._extent[0], self._extent[1], self._extent[2]))
-        pmax = gxgm.Point((self._extent[3], self._extent[4], self._extent[5]))
-        return gxgm.Point2((pmin, pmax), self.coordinate_system)
+        pmin = gxgeo.Point((self._extent[0], self._extent[1], self._extent[2]))
+        pmax = gxgeo.Point((self._extent[3], self._extent[4], self._extent[5]))
+        return gxgeo.Point2((pmin, pmax), self.coordinate_system)
 
 
     def properties(self, refresh=False):
@@ -828,7 +859,7 @@ class Surface(gxspd.SpatialData, Sequence):
         self._gxsurfaceitem.get_mesh(component,
                                      vx.gxvv, vy.gxvv, vz.gxvv,
                                      f1.gxvv, f2.gxvv, f3.gxvv)
-        return gxgm.Mesh(((f1, f2, f3), (vx, vy, vz)))
+        return gxgeo.Mesh(((f1, f2, f3), (vx, vy, vz)))
 
     def add_mesh(self, mesh, render_properties=None, coordinate_system=None):
         """
@@ -849,8 +880,8 @@ class Surface(gxspd.SpatialData, Sequence):
             raise SurfaceException(_t('Cannot add to an existing surface ({}) in surface dataset ({})')
                                    .format(self.name, self._surface_dataset.name))
 
-        if not isinstance(mesh, gxgm.Mesh):
-            mesh = gxgm.Mesh(mesh)
+        if not isinstance(mesh, gxgeo.Mesh):
+            mesh = gxgeo.Mesh(mesh)
         f1vv, f2vv, f3vv = mesh.faces_vv()
         xvv, yvv, zvv = mesh.verticies_vv()
 
