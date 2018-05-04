@@ -22,7 +22,7 @@ from time import gmtime, strftime
 from ._jdcal.jdcal import is_leap, gcal2jd, jd2gcal
 from distutils.version import StrictVersion
 from collections import OrderedDict
-import xmltodict
+from ._xmltodict import xmltodict
 import urllib.request
 
 import geosoft

@@ -29,7 +29,7 @@ for f in glob("geosoft/*.pyd"):
         raise Exception("An application is using a file we need to change: \n {}".format(str(e)))
 
 
-dependencies = ['numpy', 'pandas', 'xmltodict']
+dependencies = ['numpy', 'pandas']
 if 'bdist_wheel' in sys.argv:
     # Have to specify python-tag to specify which module
     for arg in sys.argv:
@@ -83,12 +83,14 @@ setup(
         'geosoft.gxapi',
         'geosoft.gxpy',
         'geosoft.gxpy._jdcal',
+        'geosoft.gxpy._xmltodict',
         'geosoft.gxpy.user_input'
     ],
     package_data={
         'geosoft': ['*.json'],
         'geosoft.gxapi': ['geosoft.key', 'gxapi_cy.pyd',  'gxapi_cy_extend.pyd', '*.dll'],
         'geosoft.gxpy._jdcal': ['*.txt', '*.rst'],
+        'geosoft.gxpy._xmltodict': ['LICENSE', '*.md'],
         'geosoft.gxpy.user_input': ['*.gx']
     },
     test_suite="geosoft.gxpy.tests",
