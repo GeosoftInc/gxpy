@@ -283,8 +283,12 @@ def geosoft_metadata(geosoft_file_name):
         if not geosoft_file_name.lower().endswith('.xml'):
             geosoft_file_name = geosoft_file_name + '.xml'
         if os.path.isfile(geosoft_file_name):
-            with open(geosoft_file_name) as f:
-                metadata = dict_from_xml(f.read())
+            with open(geosoft_file_name, mode='r', encoding='utf-8') as f:
+                BOM = '\ufeff'
+                text = f.read()
+                if text.startswith(BOM):
+                    text = text[1:]
+                metadata = dict_from_xml(text)
     if metadata:
         return metadata
     return {'metadata': {}}
