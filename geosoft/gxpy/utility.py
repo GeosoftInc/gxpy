@@ -1493,7 +1493,7 @@ def dict_from_http_response_text(text, prune_xml_root=True, object_hook=None, ob
     :return:                    dictionary of content
 
     If the content is xml, the root node is removed and a dictionary is constructed from the content
-    above the root node. Of one of the hook functions is present, the dictionary is converted to json
+    above the root node. If one of the hook functions is present, the dictionary is converted to json
     and a dictionary is reconstructed using the hooks.
 
     .. versionadded:: 9.4

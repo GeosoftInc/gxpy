@@ -417,7 +417,7 @@ class SurfaceDataset(gxspd.SpatialData, Sequence):
         :param file_name:       the name of a file for the 3d view. If None a temporary 3d view created.
         :param overwrite:       True to overwrite existing file
         :param title:           Title added to the image
-        :param legend_label:    If plotting a legend make this the legned title.  The default is the unit_of_measure.
+        :param legend_label:    If plotting a legend make this the legend title.  The default is the unit_of_measure.
         :param features:        list of features to place on the map, default is ('SCALE', 'LEGEND', 'NEATLINE')
 
                                     =========== =========================================
