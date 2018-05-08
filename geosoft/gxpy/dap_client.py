@@ -302,12 +302,15 @@ class DataCard:
         def get(d):
             props[d] = self._dap.get('dataset/' + d.lower() + '/' + str(self.Id))
 
+        def post(d):
+            props[d] = self._dap.post('dataset/' + d.lower() + '/' + str(self.Id))
+
+
         if self._extra_properties is None:
 
             props = {}
-            # get('info') TODO: Ryan - fails
+            post('info')
             get('edition')
-            # get('legend') TODO Ryan - fails
             get('metadata')
             get('disclaimer')
             get('permission')
@@ -374,10 +377,9 @@ class ResultFilter:
     Limit results.
 
     :param path:            to this location in the hierarchy
-    :param depth:           to this depth in the hierarchy
+    :param depth:           to this depth in the hierarchy, default no depth limit
     :param start_index:     start index in the list
     :param max_results:     maximum results to include
-    :param valid_path:      TODO: Ryan, what is this?
 
     .. versionadded:: 9.4
     """
@@ -387,7 +389,10 @@ class ResultFilter:
         self.Depth = depth
         self.StartIndex = start_index
         self.MaxResults = max_results
-        self.ValidPath = valid_path
+        if path is None:
+            self.ValidPath = False
+        else:
+            self.ValidPath = True
 
     def __str__(self):
         return 'Path: %s, Depth: %s, StartIndex: %s, MaxResults: %s, ValidPath: %s' % (
