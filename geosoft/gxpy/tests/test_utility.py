@@ -603,6 +603,7 @@ class Test(GXPYTest):
         time.sleep(0.1)
         self.assertTrue(gxu.file_age(fn) > 0.)
 
+    @unittest.skip('HTTP tests are skipped for automated regression')
     def test_http_stuff(self):
         self.start()
 

@@ -709,8 +709,19 @@ class Test(GXPYTest):
                 self.assertEqual(g.coordinate_system, gi.coordinate_system)
                 self.assertEqual(800, gi.nx)
                 self.assertEqual(800, gi.ny)
-                self.assertAlmostEqual(6.9956, gi.x0, 4)
-                self.assertAlmostEqual(43.9956, gi.y0, 4)
+                self.assertAlmostEqual(6.995631249999999, gi.x0, 4)
+                self.assertAlmostEqual(43.99563125, gi.y0, 4)
+
+    def test_expression(self):
+        self.start()
+
+        with gxgrd.Grid.open(self.mag) as grd:
+            x = gxgrd.expression({'first': grd, 'second': grd}, 'first-second')
+            self.assertEqual(x.statistics()['mean'], 0.)
+
+        with gxgrd.Grid.open(self.mag) as grd:
+            x = gxgrd.expression((grd, grd), 'g1-g2')
+            self.assertEqual(x.statistics()['mean'], 0.)
 
     def test_default_color_map(self):
         self.start()
