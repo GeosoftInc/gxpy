@@ -4,17 +4,20 @@ import glob
 import timeit
 import os
 import sys
+import inspect
 
 def work(test):
+    this_file = os.path.join(os.getcwd(), inspect.getfile(work))
+    this_folder = os.path.split(this_file)[0]
     nosetests = os.path.join(os.path.split(sys.executable)[0], 'scripts', 'nosetests')
-    return (test, subprocess.call([nosetests, '-s', '-v', test]))
+    return (test, subprocess.call([nosetests, '-s', '-v', test], cwd=this_folder))
 
 _exit_code = 0
 
 def run_all_tests():
     tests = glob.glob('test_*.py')
     pool = multiprocessing.Pool(processes=6)
-    return pool.map(work, tests)
+    return pool.map_async(work, tests).get(999999)
 
 if __name__ == '__main__':
     start_time = timeit.default_timer()
