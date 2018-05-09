@@ -11,6 +11,7 @@ Utility functions to support Geosoft Python scripts and modules.
 import math
 import decimal
 import os
+import sys
 import numpy as np
 import uuid as uid
 import json
@@ -1049,9 +1050,11 @@ def run_external_python(script, script_args='',
     if not os.path.isfile(script):
         raise UtilityException(_t('Cannot find script: {}'.format(script)))
 
-    s = gxapi.str_ref()
-    gxapi.GXSYS.get_env('PYTHON_HOME', s)
-    py = os.path.join(s.value, 'python.exe')
+    py = sys.executable
+    if not py.lower().endswith('python.exe'):
+        s = gxapi.str_ref()
+        gxapi.GXSYS.get_env('PYTHON_HOME', s)
+        py = os.path.join(s.value, 'python.exe')
 
     command = "\"{}\" {} \"{}\" {}".format(py, python_args, script, script_args)
 
