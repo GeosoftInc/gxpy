@@ -306,26 +306,24 @@ class Test(GXPYTest):
             py.write("    gxpy.utility.set_shared_dict({'a':'letter a', 'b':'letter b', 'c':[1,2,3], 'argv': sys.argv, 'in_dict':d})\n")
             #py.write("input('RUN_EXTERNAL! Press return to continue...')\n")
 
-        test_result = gxu.run_external_python(testpy,
-                                              script_args='test1 test2',
-                                              shared_dict={'howdy':'hey there'},
-                                              console=False)
-        os.remove(testpy)
-        self.assertEqual(test_result['a'], 'letter a')
-        l = test_result['c']
-        self.assertEqual(len(l), 3)
-        self.assertEqual(l[1], 2)
-        self.assertEqual(test_result['argv'][1], 'test1')
-        self.assertEqual(test_result['argv'][2], 'test2')
-        self.assertEqual(test_result['in_dict']['howdy'], 'hey there')
-
         try:
-            gxu.run_external_python(testpy, script_args='test1 test2')
-            self.assertTrue(False)
-        except gxu.UtilityException:
-            pass
-        except:
-            raise
+            test_result = gxu.run_external_python(testpy,
+                                                  script_args='test1 test2',
+                                                  shared_dict={'howdy':'hey there'},
+                                                  console=False)
+            self.assertEqual(test_result['a'], 'letter a')
+            l = test_result['c']
+            self.assertEqual(len(l), 3)
+            self.assertEqual(l[1], 2)
+            self.assertEqual(test_result['argv'][1], 'test1')
+            self.assertEqual(test_result['argv'][2], 'test2')
+            self.assertEqual(test_result['in_dict']['howdy'], 'hey there')
+
+        finally:
+            gxu.delete_file(testpy)
+
+        self.assertRaises(gxu.UtilityException, gxu.run_external_python, testpy, 'test1 test2')
+
 
     def test_run_external_bad_python(self):
         self.start()
