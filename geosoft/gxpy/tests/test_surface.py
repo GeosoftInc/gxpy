@@ -32,7 +32,7 @@ class Test(GXPYTest):
     @classmethod
     def tearDownClass(cls):
         cls.tearDownGXPYTest()
-        pass #gxsurf.delete_files(cls.surface_file)
+        gxsurf.delete_files(cls.sfile)
 
     def test_surfaceProperties(self):
         self.start()
