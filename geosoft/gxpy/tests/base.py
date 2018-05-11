@@ -37,7 +37,7 @@ UPDATE_RESULTS_DONT_ASK = False
 # environment that creates the master and the results.
 #
 # TODO: need a robust png test that is not OM installation dependent. Then set following to False.
-IGNORE_IMAGE_DIFFERENCES = False
+IGNORE_IMAGE_DIFFERENCES = True
 
 # set to True to show viewer for each CRC call
 SHOW_TEST_VIEWERS = False
