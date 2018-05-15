@@ -72,6 +72,9 @@ class Test(GXPYTest):
             except gxdap.DapClientException:
                 pass
 
+            ds = dap.datacard_from_id(905)
+            self.assertEqual(ds.Title, 'SRTM1 Middle East')
+
     def test_fetch_grid(self):
         self.start()
 
@@ -104,14 +107,31 @@ class Test(GXPYTest):
         with gxdap.DapClient() as dap:
 
             # some point data
-            datacard= dap['Kimberlite Indicator Mineral Grain Chemistry']
-            xp = datacard.extra_properties
-            self.assertTrue('metadata' in xp)
+            datacard = dap['Kimberlite Indicator Mineral Grain Chemistry']
 
+            # individual properties
+            self.assertEqual(datacard.info['Id'], '127')
+            self.assertEqual(datacard.edition, '')
+            self.assertEqual(datacard.disclaimer['title'], 'Copyright Notice')
+            self.assertEqual(datacard.permission, 1)
+            self.assertEqual(len(datacard.metadata), 4)
+            self.assertEqual(str(gxcs.Coordinate_system(datacard.spatial_properties['CoordinateSystem'])), 'WGS 84')
+            self.assertEqual(len(datacard.point_properties), 9)
+            self.assertTrue(datacard.grid_properties is None)
+            self.assertTrue(datacard.voxel_properties is None)
+            self.assertTrue(datacard.map_properties is None)
 
-    def test_dap_on_tap(self):
+            self.assertEqual(len(dap.datacard_from_id(905).grid_properties), 13)
+            self.assertEqual(len(dap.datacard_from_id(872).document_properties), 8)
+
+    def test_geometry(self):
         self.start()
-        pass
+
+        with gxdap.DapClient() as dap:
+            datacard= dap['Kimberlite Indicator Mineral Grain Chemistry']
+            ex = datacard.extent
+            self.assertEqual(str(ex.coordinate_system), 'WGS 84')
+
 
 ###############################################################################################
 
