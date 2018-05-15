@@ -2,11 +2,17 @@
 Geosoft surfaces
 
 :Classes:
+    :`SurfaceDataset`:   Geosoft_surface dataset, contains zero or more `Surface` instances
+    :`Surface`:          Surfaces defined by one or more `geosoft.geometry.Mesh` instances
 
-    ================ ====================================================================
-    `SurfaceDataset` Geosoft_surface dataset, contains zero or more `Surface` instances
-    `Surface`        Surfaces defined by one or more `geosoft.geometry.Mesh` instances
-    ================ ====================================================================
+:Constants:
+    :MODE_READ:      gxspd.MODE_READ
+    :MODE_READWRITE: gxspd.MODE_READWRITE
+    :MODE_NEW:       gxspd.MODE_NEW
+    :MODE_APPEND:    MODE_READWRITE
+    :STYLE_FLAT:     gxapi.SURFACERENDER_FILL
+    :STYLE_SMOOTH:   gxapi.SURFACERENDER_SMOOTH
+    :STYLE_EDGE:     gxapi.SURFACERENDER_EDGES
 
 .. seealso:: `geosoft.gxpy.spatialdata`, `geosoft.gxapi.GXSURFACE`, `geosoft.gxapi.GXSURFACEITEM`
 
@@ -71,14 +77,14 @@ def delete_files(surface_name):
 
 
 # constants
-MODE_READ = gxspd.MODE_READ             #:
-MODE_READWRITE = gxspd.MODE_READWRITE   #: file exists, but can change properties
-MODE_NEW = gxspd.MODE_NEW               #:
-MODE_APPEND = MODE_READWRITE            #: append to existing surface dataset
+MODE_READ = gxspd.MODE_READ
+MODE_READWRITE = gxspd.MODE_READWRITE
+MODE_NEW = gxspd.MODE_NEW
+MODE_APPEND = MODE_READWRITE
 
-STYLE_FLAT = gxapi.SURFACERENDER_FILL  #:
-STYLE_SMOOTH = gxapi.SURFACERENDER_SMOOTH   #:
-STYLE_EDGE = gxapi.SURFACERENDER_EDGES  #:
+STYLE_FLAT = gxapi.SURFACERENDER_FILL
+STYLE_SMOOTH = gxapi.SURFACERENDER_SMOOTH
+STYLE_EDGE = gxapi.SURFACERENDER_EDGES
 
 
 class SurfaceDataset(gxspd.SpatialData, Sequence):

@@ -6,6 +6,17 @@ Geosoft desktop project interface, which provides access to an active and open G
     ======================== =====================
     :class:`Geosoft_project` the geosoft project
     ======================== =====================
+    
+:Constants:
+    :DOC_TYPE_DATABASE:
+    :DOC_TYPE_GRID:
+    :DOC_TYPE_MAP:
+    :DOC_TYPE_3DV:
+    :DOC_TYPE_VOXEL:
+    :DOC_TYPE_VOXI:
+    :DOC_TYPE_GMS3D:
+    :DOC_TYPE_GMS2D:
+    :DOC_TYPE_ALL:
 
 .. seealso:: :mod:`geosoft.gxapi.GXPROJ`, :mod:`geosoft.gxapi.GXEDB`, :mod:`geosoft.gxapi.GXEMAP`
 
