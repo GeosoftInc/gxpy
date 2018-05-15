@@ -6,16 +6,17 @@ Views contain one or more :class:`geosoft.gxpy.group.Group` instances.  2D views
 3D views can contain both 2D and 3D groups.
 
 :Classes:
-    :`View`:    single view on a 2D map
-    :`View_3d`: 3D view in a `geosoft.3dv` file, or a 3D view on a 2D map.
+    :`View`:        single 2D plane view
+    :`View_3d`:     3D view in a `geosoft.3dv` file, or a 3D view on a 2D map.
+    :`CrookedPath`: defines the path for a crooked section.
 
 Both 2D and 3D views can be placed on a :class:`geosoft.gxpy.map.Map`, though 3D views
 are stored in a `geosoft_3dv` file which can also be viewed separately from a map.
 
 :Constants:
-    :READ_ONLY: gxapi.MVIEW_READ
-    :WRITE_NEW: gxapi.MVIEW_WRITENEW
-    :WRITE_OLD: gxapi.MVIEW_WRITEOLD
+    :READ_ONLY: `geosoft.gxapi.MVIEW_READ`
+    :WRITE_NEW: `geosoft.gxapi.MVIEW_WRITENEW`
+    :WRITE_OLD: `geosoft.gxapi.MVIEW_WRITEOLD`
     :UNIT_VIEW: 0
     :UNIT_MAP: 2
     :UNIT_VIEW_UNWARPED: 3
@@ -27,17 +28,18 @@ are stored in a `geosoft_3dv` file which can also be viewed separately from a ma
     :GROUP_VOXD: 5
     :GROUP_VECTORVOX: 6
     :GROUP_SURFACE: 7
-    :EXTENT_ALL: gxapi.MVIEW_EXTENT_ALL
-    :EXTENT_VISIBLE: gxapi.MVIEW_EXTENT_VISIBLE
-    :EXTENT_CLIPPED: gxapi.MVIEW_EXTENT_CLIP
+    :EXTENT_ALL: `geosoft.gxapi.MVIEW_EXTENT_ALL`
+    :EXTENT_VISIBLE: `geosoft.gxapi.MVIEW_EXTENT_VISIBLE`
+    :EXTENT_CLIPPED: `geosoft.gxapi.MVIEW_EXTENT_CLIP`
 
 .. seealso:: :mod:`geosoft.gxpy.map`, :mod:`geosoft.gxpy.group`
 
-   :mod:`geosoft.gxapi.GXMVIEW`
+   :mod:`geosoft.geosoft.gxapi.GXMVIEW`
 
 .. note::
 
-    Regression tests provide usage examples: `View tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_view.py>`_
+    Regression tests provide usage examples:
+    `View tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_view.py>`_
 
 """
 import os
@@ -112,7 +114,7 @@ class CrookedPath(gxgeo.Geometry):
                 xy_path = gxgeo.PPoint(xy_path, coordinate_system=self.coordinate_system)
             self._xy = xy_path.xy
             self.coordinate_system = xy_path.coordinate_system
-            self._log_z= bool(log_z)
+            self._log_z = bool(log_z)
 
         # calculate a distance along the path
         dnp = np.zeros(len(self._xy), dtype=np.float64)
@@ -127,16 +129,17 @@ class CrookedPath(gxgeo.Geometry):
 
     @property
     def xy(self):
-        """path points as an array (npoints, 2)"""
+        """Path trace as an array (npoints, 2)."""
         return self._xy
 
     @property
     def distances(self):
-        """Distances along path points as an array (npoints) starting at 0"""
+        """Distances along path points as an array (npoints) starting at 0."""
         return self._distances
 
     @property
     def ppoint(self):
+        """Path trace as a `geosoft.gxpy.geometry.PPoint` instance."""
         return gxgeo.PPoint(self._xy, coordinate_system=self.coordinate_system)
 
     def set_in_geosoft_ipj(self, coordinate_system):
@@ -174,7 +177,8 @@ def delete_files(v3d_file):
 
 
 def _plane_err(plane, view):
-    raise ViewException(_t('Plane "{}" does not exist in view "{}"'.format(plane,view)))
+    raise ViewException(_t('Plane "{}" does not exist in view "{}"'.format(plane, view)))
+
 
 VIEW_NAME_SIZE = 2080
 
@@ -212,11 +216,8 @@ class View(gxgeo.Geometry):
     Geosoft view class.
 
     :Constructors:
-
-        ============ ==============================
-        :meth:`open` open an existing view in a map
-        :meth:`new`  create a new view in a map
-        ============ ==============================
+        :`open`: open an existing view in a map
+        :`new`:  create a new view in a map
 
     .. versionadded:: 9.2
     """
@@ -311,8 +312,8 @@ class View(gxgeo.Geometry):
             :name:              view name, default is "_unnamed_view".
             :coordinate_system: coordinate system as a `geosoft.gxpy.coordinate_system.Coordinate_system` instance, or
                                 one of the Coordinate_system constructor types.
-            :map_location:      (x, y) view location on the map, in map cm
-            :area:              (min_x, min_y, max_x, max_y) area in view units
+            :map_location:      (x, y) view location on the map, in map cm, default (0, 0)
+            :area:              (min_x, min_y, max_x, max_y) area in view units, default (0, 0, 30, 20)
             :scale:             Map scale if a coordinate system is defined.  If the coordinate system is not
                                 defined this is view units per map metre.
             :copy:              name of a view to copy into the new view.
@@ -323,7 +324,6 @@ class View(gxgeo.Geometry):
         """
 
         if map is None:
-            from . import map as gxmap
             map = gxmap.Map.new()
 
         view = cls(map,
@@ -350,7 +350,6 @@ class View(gxgeo.Geometry):
         :param map:         :class:`geosoft.gxpy.map.Map`
         :param view_name:   name of the view
         :param read_only:   True to open read-only
-        :return:            :class:`View` instance
 
         .. versionadded:: 9.2
         """
@@ -363,13 +362,12 @@ class View(gxgeo.Geometry):
         view = cls(map, name=view_name, mode=mode)
         return view
 
-
     @property
     def lock(self):
         """
         True if the view is locked by a group.  Only one group may hold a lock on a view at the
-        same time.  When drawing with groups you should use a `with geosoft.gxpy.group.Draw(...) as g:` construct
-        ensure group locks are properly created and released.
+        same time.  When drawing with groups you should use a `with gxgrp.Draw(...) as g:`
+        which will ensure group locks are properly created and released.
         """
         return self._lock
 
@@ -489,7 +487,7 @@ class View(gxgeo.Geometry):
             child_files.append(file_list)
         else:
             for f in file_list:
-                if not f in child_files:
+                if f not in child_files:
                     child_files.append(f)
         gxmeta.set_node_in_meta_dict(node, meta, child_files)
         self.metadata = meta
@@ -610,7 +608,6 @@ class View(gxgeo.Geometry):
         else:
             mapx, mapy = map_mxx, map_mxy
 
-
         m1 = (mapx, mapy, map_mny, mapx - map_mxx, mapy - map_mxy, map_mnx)
         m2 = (self.scale, self.units_per_metre, view_mnx, view_mny)
         return m1, m2
@@ -685,7 +682,6 @@ class View(gxgeo.Geometry):
     def group_list_surface(self):
         """list of surface groups in this view"""
         return self._groups(GROUP_SURFACE)
-
 
     def has_group(self, group):
         """ Returns True if the map contains this group."""
@@ -857,6 +853,7 @@ class View(gxgeo.Geometry):
         Common view class names are::
 
             'Plane'     the name of the default 2D drawing plane
+            'Section'   a section view
 
         Other class names may be defined, though they are not used by Geosoft.
 
@@ -878,10 +875,13 @@ class View(gxgeo.Geometry):
         Common view class names are::
 
             'Plane'     the name of the default 2D drawing plane
+            'Section'   a section view
+
 
         .. versionadded:: 9.2
         """
         self.gxview.set_class_name(view_class, name)
+
 
 class View_3d(View):
     """
@@ -917,8 +917,8 @@ class View_3d(View):
 
         file_name = geosoft.gxpy.map.map_file_name(file_name, 'geosoft_3dv')
         map = geosoft.gxpy.map.Map(file_name=file_name,
-                          mode=mode,
-                          _internal=True)
+                                   mode=mode,
+                                   _internal=True)
         super().__init__(map, '3D', **kwargs)
         self._extent3d = None
 
@@ -965,7 +965,7 @@ class View_3d(View):
         return g_3dv
 
     @classmethod
-    def open(cls, file_name):
+    def open(cls, file_name, **kw):
         """
         Open an existing geosoft_3dv file.
         
@@ -1126,7 +1126,7 @@ class View_3d(View):
         .. versionadded:: 9.2
         """
         try:
-            n = self.plane_number(plane)
+            self.plane_number(plane)
             return True
         except ViewException:
             return False
@@ -1200,4 +1200,4 @@ class View_3d(View):
             refine = 48
         else:
             refine = (refine - 1) * 16
-        self.gxview.set_plane_surf_info(self.current_3d_drawing_plane_number, refine, base, scale,min, max)
+        self.gxview.set_plane_surf_info(self.current_3d_drawing_plane_number, refine, base, scale, min, max)
