@@ -6,14 +6,30 @@ Views contain one or more :class:`geosoft.gxpy.group.Group` instances.  2D views
 3D views can contain both 2D and 3D groups.
 
 :Classes:
-
-    ================ ==========================================================
-    :class:`View`    single view on a 2D map
-    :class:`View_3d` 3D view in a `geosoft.3dv` file, or a 3D view on a 2D map.
-    ================ ==========================================================
+    :`View`:    single view on a 2D map
+    :`View_3d`: 3D view in a `geosoft.3dv` file, or a 3D view on a 2D map.
 
 Both 2D and 3D views can be placed on a :class:`geosoft.gxpy.map.Map`, though 3D views
 are stored in a `geosoft_3dv` file which can also be viewed separately from a map.
+
+:Constants:
+    :READ_ONLY: gxapi.MVIEW_READ
+    :WRITE_NEW: gxapi.MVIEW_WRITENEW
+    :WRITE_OLD: gxapi.MVIEW_WRITEOLD
+    :UNIT_VIEW: 0
+    :UNIT_MAP: 2
+    :UNIT_VIEW_UNWARPED: 3
+    :GROUP_ALL: 0
+    :GROUP_MARKED: 1
+    :GROUP_VISIBLE: 2
+    :GROUP_AGG: 3
+    :GROUP_CSYMB: 4
+    :GROUP_VOXD: 5
+    :GROUP_VECTORVOX: 6
+    :GROUP_SURFACE: 7
+    :EXTENT_ALL: gxapi.MVIEW_EXTENT_ALL
+    :EXTENT_VISIBLE: gxapi.MVIEW_EXTENT_VISIBLE
+    :EXTENT_CLIPPED: gxapi.MVIEW_EXTENT_CLIP
 
 .. seealso:: :mod:`geosoft.gxpy.map`, :mod:`geosoft.gxpy.group`
 
@@ -162,22 +178,22 @@ def _plane_err(plane, view):
 
 VIEW_NAME_SIZE = 2080
 
-READ_ONLY = gxapi.MVIEW_READ #:
-WRITE_NEW = gxapi.MVIEW_WRITENEW #:
-WRITE_OLD = gxapi.MVIEW_WRITEOLD #:
+READ_ONLY = gxapi.MVIEW_READ
+WRITE_NEW = gxapi.MVIEW_WRITENEW
+WRITE_OLD = gxapi.MVIEW_WRITEOLD
 
-UNIT_VIEW = 0 #:
-UNIT_MAP = 2 #:
-UNIT_VIEW_UNWARPED = 3 #:
+UNIT_VIEW = 0
+UNIT_MAP = 2
+UNIT_VIEW_UNWARPED = 3
 
-GROUP_ALL = 0 #:
-GROUP_MARKED = 1 #:
-GROUP_VISIBLE = 2 #:
-GROUP_AGG = 3 #:
-GROUP_CSYMB = 4 #:
-GROUP_VOXD = 5 #:
-GROUP_VECTORVOX = 6 #:
-GROUP_SURFACE = 7 #:
+GROUP_ALL = 0
+GROUP_MARKED = 1
+GROUP_VISIBLE = 2
+GROUP_AGG = 3
+GROUP_CSYMB = 4
+GROUP_VOXD = 5
+GROUP_VECTORVOX = 6
+GROUP_SURFACE = 7
 
 _group_selector = (None, None, None,
                    gxapi.MVIEW_IS_AGG,
@@ -186,9 +202,9 @@ _group_selector = (None, None, None,
                    gxapi.MVIEW_IS_VECTOR3D,
                    None)
 
-EXTENT_ALL = gxapi.MVIEW_EXTENT_ALL #:
-EXTENT_VISIBLE = gxapi.MVIEW_EXTENT_VISIBLE #:
-EXTENT_CLIPPED = gxapi.MVIEW_EXTENT_CLIP #:
+EXTENT_ALL = gxapi.MVIEW_EXTENT_ALL
+EXTENT_VISIBLE = gxapi.MVIEW_EXTENT_VISIBLE
+EXTENT_CLIPPED = gxapi.MVIEW_EXTENT_CLIP
 
 
 class View(gxgeo.Geometry):

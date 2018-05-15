@@ -7,6 +7,16 @@ Geosoft voxel (voxset) handling.
     :class:`Vox` Geosoft voxel (voxset), subclass of `geosoft.gxpy.spatialdata.SpatialData`
     ============ ==========================================================================
 
+:Constants:
+    :Z_ELEVATION:    0, z values are elevation
+    :Z_DEPTH:        1, z values are depth
+    :MODE_READ:      `geosoft.gxpy.spatialdata.MODE_READ`
+    :MODE_READWRITE: `geosoft.gxpy.spatialdata.MODE_READWRITE`
+    :MODE_NEW:       `geosoft.gxpy.spatialdata.MODE_NEW`
+    :INTERP_NEAREST: `geosoft.gxapi.VOXE_EVAL_NEAR`
+    :INTERP_LINEAR:  `geosoft.gxapi.VOXE_EVAL_INTERP`
+    :INTERP_SMOOTH:  `geosoft.gxapi.VOXE_EVAL_BEST`
+
 .. seealso:: `geosoft.gxpy.spatialdata`, `geosoft.gxpy.vox_display`, `geosoft.gxapi.GXVOX`
 
 .. note::
@@ -55,11 +65,6 @@ def _vox_file_name(name, vectorvoxel=False):
 def _vox_name(name):
     basename = os.path.basename(name)
     return os.path.splitext(basename)[0]
-
-
-INTERP_NEAREST = gxapi.VOXE_EVAL_NEAR
-INTERP_LINEAR = gxapi.VOXE_EVAL_INTERP
-INTERP_SMOOTH = gxapi.VOXE_EVAL_BEST
 
 
 def delete_files(vox_name):
@@ -120,12 +125,16 @@ def elevation_from_depth(depth_origin, depth_cells):
 
 
 # constants
+INTERP_NEAREST = gxapi.VOXE_EVAL_NEAR
+INTERP_LINEAR = gxapi.VOXE_EVAL_INTERP
+INTERP_SMOOTH = gxapi.VOXE_EVAL_BEST
+
 MODE_READ = gxspd.MODE_READ
 MODE_READWRITE = gxspd.MODE_READWRITE
 MODE_NEW = gxspd.MODE_NEW
 
-Z_ELEVATION = 0  #:
-Z_DEPTH = 1  #:
+Z_ELEVATION = 0
+Z_DEPTH = 1
 
 
 class Vox(gxspd.SpatialData, Sequence):

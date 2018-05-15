@@ -6,6 +6,17 @@ Geosoft desktop project interface, which provides access to an active and open G
     ======================== =====================
     :class:`Geosoft_project` the geosoft project
     ======================== =====================
+    
+:Constants:
+    :DOC_TYPE_DATABASE:
+    :DOC_TYPE_GRID:
+    :DOC_TYPE_MAP:
+    :DOC_TYPE_3DV:
+    :DOC_TYPE_VOXEL:
+    :DOC_TYPE_VOXI:
+    :DOC_TYPE_GMS3D:
+    :DOC_TYPE_GMS2D:
+    :DOC_TYPE_ALL:
 
 .. seealso:: :mod:`geosoft.gxapi.GXPROJ`, :mod:`geosoft.gxapi.GXEDB`, :mod:`geosoft.gxapi.GXEMAP`
 
@@ -27,15 +38,15 @@ __version__ = geosoft.__version__
 def _t(s):
     return s
 
-DOC_TYPE_DATABASE = "Database"   #:
-DOC_TYPE_GRID = "Grid" #:
-DOC_TYPE_MAP = "Map" #:
-DOC_TYPE_3DV = "3DView" #:
-DOC_TYPE_VOXEL = "Voxel" #:
-DOC_TYPE_VOXI = "VoxelInversion" #:
-DOC_TYPE_GMS3D = "GMS3D" #:
-DOC_TYPE_GMS2D = "GMS2D" #:
-DOC_TYPE_ALL = "All" #:
+DOC_TYPE_DATABASE = "Database"  
+DOC_TYPE_GRID = "Grid"
+DOC_TYPE_MAP = "Map"
+DOC_TYPE_3DV = "3DView"
+DOC_TYPE_VOXEL = "Voxel"
+DOC_TYPE_VOXI = "VoxelInversion"
+DOC_TYPE_GMS3D = "GMS3D"
+DOC_TYPE_GMS2D = "GMS2D"
+DOC_TYPE_ALL = "All"
 
 class ProjectException(geosoft.GXRuntimeError):
     """
