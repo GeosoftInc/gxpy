@@ -3,15 +3,25 @@ Geosoft dap server handling.
 
 :Classes:
 
-    =========== ==========================================================================
-    `DapClient` Geosoft dap client
-    =========== ==========================================================================
+    ======================= ===============================================================
+    `DapClient`             Geosoft dap client
+    `DataType`              data type
+    `GridExtractFormat`     return format for extracting a grid
+    `ExtractProgressStatus` progress
+    `DataExtract`           data extraction
+    `BoundingBox`           bounding box
+    `DataCard`              data information
+    `SearchFilter`          search filter
+    `ResultFilter`          result filter
+    `SearchParameters`      search parameters
+    ======================= ===============================================================
 
     Regression tests provide usage examples:     
     `Tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_dap.py>`_
 
 .. versionadded:: 9.4
 """
+
 import time
 import os
 from json import dumps, loads
@@ -20,7 +30,6 @@ from enum import Enum
 from collections.abc import Sequence
 
 import geosoft
-import geosoft.gxapi as gxapi
 from . import gx as gx
 from . import coordinate_system as gxcs
 from . import geometry as gxgeo
@@ -116,7 +125,6 @@ class DataType(Enum):
                     'unknown')  # 24
         return ext_list[item.value]
 
-
     def extract_url(item):
         if not isinstance(item, DataType):
             item = DataType(item)
@@ -150,7 +158,7 @@ class ExtractProgressStatus(Enum):
 
 class DataExtract:
     """
-    Extract data from the server.
+    Data extraction instance.
 
     :param filename:    name of the data file
     :param extents:     data extent as a `BoundingBox` or `geosoft.gxpy.geopmetry.Point2` instance
@@ -173,13 +181,13 @@ class DataExtract:
         return 'Resolution: %s, Format: %s, Extents: %s' % (self.Resolution, self.Format, self.BoundingBox)
 
     def __repr__(self):
-        return 'GridExtract(extents=%r,filename=%r,resolution=%r,format=%r)' % (
+        return 'DataExtract(extents=%r,filename=%r,resolution=%r,format=%r)' % (
         self.BoundingBox, self.Filename, self.Resolution, self.Format)
 
 
 class BoundingBox:
     """
-    Create a bounding box instance.
+    Bounding box instance.
 
     :param minx:                `MinX`
     :param miny:                `MinY`
@@ -233,7 +241,7 @@ class BoundingBox:
         return a % b
 
 
-class DataCard:
+class DataCard(gxgeo.Geometry):
     """
     Single dataset information instance.
 
@@ -253,10 +261,10 @@ class DataCard:
                  has_original=False):
 
         self._dap = dap
-        self._extra_properties = None
 
         if extents is None:
             extents = BoundingBox()
+        self._extent = None
 
         self.Id = id
         self.Title = title
@@ -265,6 +273,7 @@ class DataCard:
         self.Stylesheet = stylesheet
         self.Extents = extents
         self.HasOriginal = has_original
+        super().__init__(name=title)
 
     def __str__(self):
         a = 'Id: %s, Title: %s, Type: %s, Hierarchy: %s'
@@ -278,7 +287,11 @@ class DataCard:
 
     @property
     def dap_client(self):
-        """ `DapClient` instance for this dataset, may be None if card is not yet associated with a server."""
+        """
+        `DapClient` instance for this dataset, may be None if card is not yet associated with a server.
+
+        .. versionadded:: 9.4
+        """
         return self._dap
 
     @dap_client.setter
@@ -286,55 +299,145 @@ class DataCard:
         self._dap = dap
 
     @property
-    def extra_properties(self):
-        """
-        Extra dataset properties.
+    def extent(self):
+        if self._extent is None:
+            sp = self.spatial_properties
+            p1 = (sp['NativeMinX'], sp['NativeMinY'], sp['NativeMinZ'])
+            p2 = (sp['NativeMaxX'], sp['NativeMaxY'], sp['NativeMaxZ'])
+            cs = gxcs.Coordinate_system(sp['CoordinateSystem'])
+            self._extent = gxgeo.Point2((p1, p2), coordinate_system=cs)
+        return self._extent
 
-        These will be None until this property is used, at which point the extra properties are fetched from
-        the dap server.
+    @property
+    def info(self):
+        """
+        Dataset info: http://dap.geosoft.com/REST/dataset/help/operations/GetDatasetById
 
         .. versionadded:: 9.4
         """
 
-        def xget(dt):
-            return self._dap.get('dataset/properties/' + dt.lower() + '/' + str(self.Id))
+        return self._dap.post('dataset/info/' + str(self.Id))
 
-        def get(d):
-            props[d] = self._dap.get('dataset/' + d.lower() + '/' + str(self.Id))
+    @property
+    def edition(self):
+        """
+        Edition: http://dap.geosoft.com/REST/dataset/help/operations/GetEdition
 
-        def post(d):
-            props[d] = self._dap.post('dataset/' + d.lower() + '/' + str(self.Id))
+        .. versionadded:: 9.4
+        """
 
+        return self._dap.get('dataset/edition/' + str(self.Id))
 
-        if self._extra_properties is None:
+    @property
+    def disclaimer(self):
+        """
+        Disclaimer: http://dap.geosoft.com/REST/dataset/help/operations/GetDisclaimer
 
-            props = {}
-            post('info')
-            get('edition')
-            get('metadata')
-            get('disclaimer')
-            get('permission')
-            if self.Type == DataType.Grid:
-                xp = xget('grid')
-            elif self.Type == DataType.Document:
-                xp = xget('document')
-            elif self.Type == DataType.Point:
-                xp = xget('hxyz')
-            elif self.Type == DataType.Map:
-                xp = xget('map')
-            elif self.Type == DataType.Voxel:
-                xp = xget('voxel')
-            else:
-                xp = self._dap.get('dataset/properties/' + str(self.Id))
-            props = {**props, **xp}
-            self._extra_properties = props
+        .. versionadded:: 9.4
+        """
 
-        return self._extra_properties
+        return self._dap.get('dataset/disclaimer/' + str(self.Id))
+
+    @property
+    def permission(self):
+        """
+        Permission: http://dap.geosoft.com/REST/dataset/help/operations/GetPermission
+
+        .. versionadded:: 9.4
+        """
+
+        return self._dap.get('dataset/permission/' + str(self.Id))
+
+    @property
+    def metadata(self):
+        """
+        Metadata: http://dap.geosoft.com/REST/dataset/help/operations/GetMetadata
+
+        .. versionadded:: 9.4
+        """
+
+        return self._dap.get('dataset/metadata/' + str(self.Id))
+
+    @property
+    def grid_properties(self):
+        """
+        Grid data properties, `None` if not a grid dataset.
+
+        http://dap.geosoft.com/REST/dataset/help/operations/GetGridProperties
+
+        .. versionadded:: 9.4
+        """
+        if self.Type == DataType.Grid:
+            return self._dap.get('dataset/properties/grid/' + str(self.Id))
+        return None
+
+    @property
+    def document_properties(self):
+        """
+        Properties of the dataset as a document.
+
+        http://dap.geosoft.com/REST/dataset/help/operations/GetDocumentProperties
+
+        .. versionadded:: 9.4
+        """
+        try:
+            return self._dap.get('dataset/properties/document/' + str(self.Id))
+        except Exception:
+            return None
+
+    @property
+    def point_properties(self):
+        """
+        Point properties, `None` if not a point (hxyz) dataset.
+
+        http://dap.geosoft.com/REST/dataset/help/operations/GetHXYZProperties
+
+        .. versionadded:: 9.4
+        """
+        if self.Type == DataType.Point:
+            return self._dap.get('dataset/properties/hxyz/' + str(self.Id))
+        return None
+
+    @property
+    def map_properties(self):
+        """
+        Map properties, `None` if not a map.
+
+        http://dap.geosoft.com/REST/dataset/help/operations/GetMapProperties
+
+        .. versionadded:: 9.4
+        """
+        if self.Type == DataType.Map:
+            return self._dap.get('dataset/properties/map/' + str(self.Id))
+        return None
+
+    @property
+    def voxel_properties(self):
+        """
+        Voxel properties, `None` if not a voxel.
+
+        http://dap.geosoft.com/REST/dataset/help/operations/GetVoxelProperties
+
+        .. versionadded:: 9.4
+        """
+        if self.Type == DataType.Voxel or self.Type == DataType.VectorVoxel:
+            return self._dap.get('dataset/properties/voxel/' + str(self.Id))
+        return None
+
+    @property
+    def spatial_properties(self):
+        """
+        Spatial properties: http://dap.geosoft.com/REST/dataset/help/operations/GetProperties
+
+        .. versionadded:: 9.4
+        """
+
+        return self._dap.get('dataset/properties/' + str(self.Id))
 
 
 class SearchFilter:
     """
-    Search filter
+    Search filter instance.
 
     :param free_text_query:             title/keyword search filter
     :param structured_metadata_query:
@@ -374,7 +477,7 @@ class SearchFilter:
 
 class ResultFilter:
     """
-    Limit results.
+    Results filter instance.
 
     :param path:            to this location in the hierarchy
     :param depth:           to this depth in the hierarchy, default no depth limit
@@ -405,7 +508,7 @@ class ResultFilter:
 
 class SearchParameters:
     """
-    Search parameters, defined by a `SearchFilter` and a `ResultFilter`
+    Search parameter instance, defined by a `SearchFilter` and a `ResultFilter`
 
     :param search_filter:   `SearchFilter` instance
     :param result_filter:   `ResultFilter` instance
@@ -549,10 +652,13 @@ class DapClient(Sequence):
         else:
             response.raise_for_status()
 
-    def _http_post(self, url, post_parameters, decoder=None):
+    def _http_post(self, url, post_parameters=None, decoder=None):
+
+        if post_parameters is not None:
+            post_parameters = dumps(post_parameters, default=_json_default)
 
         response = post(self._rest_url + url,
-                        data=dumps(post_parameters, default=_json_default),
+                        data=post_parameters,
                         params=self._http_params,
                         headers=self._http_headers)
 
@@ -562,9 +668,27 @@ class DapClient(Sequence):
         else:
             response.raise_for_status()
 
+    def datacard_from_id(self, id):
+        """
+        Return the `DataCard` instance based on the dataset ID #
+
+        :param id: dataset id
+        :return: `DataCard` instance
+
+        .. versionadded:: 9.4
+        """
+
+        id = int(id)
+        for card in self.catalog():
+            if int(card.Id) == id:
+                return card
+
+        raise DapClientException('Id \'{}\' not found in catalog'.format(id))
+
+
     def get(self, what):
         """
-        Get information from the server.
+        GET information from the server.
 
         :param what:    string of what to get. for example "dataset/properties/265" retrieves
                         the dataset properties for dataset 265.  See http://dap.geosoft.com/REST/dataset/help
@@ -573,6 +697,16 @@ class DapClient(Sequence):
         :return: requested info as a dict.
         """
         return self._http_get(what)
+
+    def post(self, what):
+        """
+        POST information from the server.
+
+        :param what:    string of what to post.
+
+        :return: returned info as a dict.
+        """
+        return self._http_post(what)
 
     @property
     def url(self):
