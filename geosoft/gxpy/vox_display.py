@@ -3,6 +3,16 @@ Geosoft vox display handling, which manages the rendering of a `geosoft.gxpy.vox
 
 :Classes:
     :`VoxDisplay`: 3D visualization of a vox, which can be placed `geosoft.gxpy.view.View_3d`
+
+:Constants:
+    :ZONE_DEFAULT: 0
+    :ZONE_LINEAR: 1
+    :ZONE_NORMAL: 2
+    :ZONE_EQUALAREA: 3
+    :ZONE_SHADE: 4
+    :ZONE_LOGLINEAR: 5
+    :ZONE_LAST: 6
+
     
 .. seealso:: `geosoft.gxpy.vox.Vox`, `geosoft.gxpy.view.View_3d`, `geosoft.gxapi.GXVOXD`
 
@@ -53,13 +63,10 @@ class VoxDisplay:
     Creation and handling of vox displays. Vox displays can be placed into a 3D view for display.
 
     :Constructors:
+        :`solid`:        create as a solid, each cell colored from a `geosoft.gxpy.group.Color_map`
+        :`vector`:       create as a vector voxel as vectors colored from a `geosoft.gxpy.group.Color_map`
+        :`gxapi_gxvoxd`: create from an existing `geosoft.gxapi.GXVOXD` instance
 
-        =============== ====================================================================================
-        `solid`:        create as a solid, each cell colored from a `geosoft.gxpy.group.Color_map`
-        `vector`:       create as a vector voxel as vectors colored from a `geosoft.gxpy.group.Color_map`
-        `gxapi_gxvoxd`: create from an existing `geosoft.gxapi.GXVOXD` instance
-        =============== ====================================================================================
-        
     .. versionadded:: 9.3.1
     """
 
