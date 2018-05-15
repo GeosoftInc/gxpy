@@ -6,13 +6,13 @@ Geosoft surfaces
     :`Surface`:          Surfaces defined by one or more `geosoft.geometry.Mesh` instances
 
 :Constants:
-    :MODE_READ:      gxspd.MODE_READ
-    :MODE_READWRITE: gxspd.MODE_READWRITE
-    :MODE_NEW:       gxspd.MODE_NEW
+    :MODE_READ:      `geosoft.gxpy.spatialdata.MODE_READ`
+    :MODE_READWRITE: `geosoft.gxpy.spatialdata.MODE_READWRITE`
+    :MODE_NEW:       `geosoft.gxpy.spatialdata.MODE_NEW`
     :MODE_APPEND:    MODE_READWRITE
-    :STYLE_FLAT:     gxapi.SURFACERENDER_FILL
-    :STYLE_SMOOTH:   gxapi.SURFACERENDER_SMOOTH
-    :STYLE_EDGE:     gxapi.SURFACERENDER_EDGES
+    :STYLE_FLAT:     `geosoft.gxapi.SURFACERENDER_FILL`
+    :STYLE_SMOOTH:   `geosoft.gxapi.SURFACERENDER_SMOOTH`
+    :STYLE_EDGE:     `geosoft.gxapi.SURFACERENDER_EDGES`
 
 .. seealso:: `geosoft.gxpy.spatialdata`, `geosoft.gxapi.GXSURFACE`, `geosoft.gxapi.GXSURFACEITEM`
 
@@ -690,9 +690,11 @@ class Surface(gxspd.SpatialData, Sequence):
 
     def computed_properties(self, refresh=False):
         """
-        Surface properties  by `geosoft.gxapi.GXSURFACEITEM.compute_extended_info`.
+        Surface properties, see: `geosoft.gxapi.GXSURFACEITEM.compute_extended_info`.
 
         :param refresh: if True, computed properties will be refreshed on next access.
+        :returns:       dictionary of properties, 'components', 'verticies', edges',
+                        'triangles', 'inconsistent', 'invalid', 'intersect'
 
         .. versionadded:: 9.3.1
         """

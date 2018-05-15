@@ -204,7 +204,7 @@ class VoxDisplay:
 
         try:
             vox = gxvox.Vox.open(name)
-        except:
+        except Exception:
             vox = None
 
         name = os.path.splitext(os.path.basename(name))[0]
