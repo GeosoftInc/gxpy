@@ -57,9 +57,9 @@ def _vox_name(name):
     return os.path.splitext(basename)[0]
 
 
-INTERP_NEAREST = gxapi.VOXE_EVAL_NEAR  #:
-INTERP_LINEAR = gxapi.VOXE_EVAL_INTERP  #:
-INTERP_SMOOTH = gxapi.VOXE_EVAL_BEST  #:
+INTERP_NEAREST = gxapi.VOXE_EVAL_NEAR
+INTERP_LINEAR = gxapi.VOXE_EVAL_INTERP
+INTERP_SMOOTH = gxapi.VOXE_EVAL_BEST
 
 
 def delete_files(vox_name):
@@ -120,10 +120,9 @@ def elevation_from_depth(depth_origin, depth_cells):
 
 
 # constants
-MODE_READ = gxspd.MODE_READ             #:
-MODE_READWRITE = gxspd.MODE_READWRITE   #: file exists, but can change properties
-MODE_NEW = gxspd.MODE_NEW               #:
-
+MODE_READ = gxspd.MODE_READ
+MODE_READWRITE = gxspd.MODE_READWRITE
+MODE_NEW = gxspd.MODE_NEW
 
 Z_ELEVATION = 0  #:
 Z_DEPTH = 1  #:
@@ -657,11 +656,11 @@ class Vox(gxspd.SpatialData, Sequence):
         :param xyz:         tuple (x, y, z) location in the vox coordinate system
         :param interpolate: method by which to interpolate between cell centers:
 
-                            INTERP_NEAREST - same as value inside a cell.
-
-                            INTERP_LINEAR - linear interpolation between neighboring cell centers.
-
-                            INTERP_SMOOTH - smooth interpolation (slower than INTERP_LINEAR).
+            ============== =============================================================
+            INTERP_NEAREST same as value inside a cell.
+            INTERP_LINEAR  linear interpolation between neighboring cell centers.
+            INTERP_SMOOTH  smooth interpolation (slower than INTERP_LINEAR).
+            ============== =============================================================
 
         :returns:           vox value at that location
 
