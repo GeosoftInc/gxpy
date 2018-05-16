@@ -147,14 +147,14 @@ class GXBF(gxapi_cy.WrapBF):
 
         **Note:** Run-time specific directory paths may be added the the front of file names
         as follows:
-        
+
         <geosoft>      the main Geosoft installation directory
         <geosoft2>     the secondary Geosoft installation directory
         <geotemp>      the Geosoft temporary file directory
         <windows>      the operating system Windows directory
         <system>       the operating system system directory
         <other>        other environment variables
-        
+
         For example "<geosoft>/user/csv/datum.csv"
         """
         ret_val = gxapi_cy.WrapBF._create(GXContext._get_tls_geo(), file.encode(), status)
@@ -306,9 +306,9 @@ class GXBF(gxapi_cy.WrapBF):
         to the `GXBF <geosoft.gxapi.GXBF>` elelment type.  The byte order will be swapped
         if required.  For example, to write out a real number 3.5
         with Most-Significant_Byte first (Mortorola) convention:
-        
+
         `write_double <geosoft.gxapi.GXBF.write_double>`(hBF,`BF_BYTEORDER_MSB <geosoft.gxapi.BF_BYTEORDER_MSB>`+`GS_REAL <geosoft.gxapi.GS_REAL>`,3.5).
-        
+
         If a byte order is not specified, the source is assumed to be
         in the native byte order of the reading/writing computer.
         """
@@ -336,9 +336,9 @@ class GXBF(gxapi_cy.WrapBF):
         to the `GXBF <geosoft.gxapi.GXBF>` elelment type.  The byte order will be swapped
         if required.  For example, to write out a real number 3.5
         with Most-Significant_Byte first (Mortorola) convention:
-        
+
         `write_double <geosoft.gxapi.GXBF.write_double>`(hBF,`BF_BYTEORDER_MSB <geosoft.gxapi.BF_BYTEORDER_MSB>`+`GS_REAL <geosoft.gxapi.GS_REAL>`,3.5).
-        
+
         If a byte order is not specified, the source is assumed to be
         in the native byte order of the reading/writing computer.
         """
@@ -366,9 +366,9 @@ class GXBF(gxapi_cy.WrapBF):
         to the `GXBF <geosoft.gxapi.GXBF>` elelment type.  The byte order will be swapped
         if required.  For example, to write out a real number 3.5
         with Most-Significant_Byte first (Mortorola) convention:
-        
+
         `write_double <geosoft.gxapi.GXBF.write_double>`(hBF,`BF_BYTEORDER_MSB <geosoft.gxapi.BF_BYTEORDER_MSB>`+`GS_REAL <geosoft.gxapi.GS_REAL>`,3.5).
-        
+
         If a byte order is not specified, the source is assumed to be
         in the native byte order of the reading/writing computer.
         """
@@ -444,7 +444,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         **Note:** See comments on byte order for the Read.. functions if you
         want to enforce a certain byte order.
-        
+
         If a byte order is not specified, the data is written
         in the native byte order of the writing computer.
         """
@@ -469,7 +469,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         **Note:** See comments on byte order for the Read.. functions if you
         want to enforce a certain byte order.
-        
+
         If a byte order is not specified, the data is written
         in the native byte order of the writing computer.
         """
@@ -494,7 +494,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         **Note:** See comments on byte order for the Read.. functions if you
         want to enforce a certain byte order.
-        
+
         If a byte order is not specified, the data is written
         in the native byte order of the writing computer.
         """

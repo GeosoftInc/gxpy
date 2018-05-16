@@ -129,7 +129,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **Note:** The table will contain fields for all channels in
         the database.
-        
+
         The database is not loaded with data.  Use the `load_db <geosoft.gxapi.GXTB.load_db>`
         function to load data into the table.
         """
@@ -461,7 +461,7 @@ class GXTB(gxapi_cy.WrapTB):
         If the field is `GS_BYTE <geosoft.gxapi.GS_BYTE>`, `GS_USHORT <geosoft.gxapi.GS_USHORT>`, or `GS_LONG <geosoft.gxapi.GS_LONG>`, the new data
         value will cause an overflow if the value is out of range of
         the data type. The new element value will then be invalid.
-        
+
         If the row of the new element exceeds the number of rows in
         the table, then the table will AUTOMATICALLY be EXPANDED to
         exactly as many rows needed to hold the new element. The new
@@ -496,7 +496,7 @@ class GXTB(gxapi_cy.WrapTB):
         If the field is `GS_FLOAT <geosoft.gxapi.GS_FLOAT>` the new data value will cause an
         overflow if the value is out of range of the data type.
         The new element value will then be invalid.
-        
+
         If the row of the new element exceeds the number of rows in
         the table, then the table will AUTOMATICALLY be EXPANDED to
         exactly as many rows needed to hold the new element. The new
@@ -528,7 +528,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **Note:** The table field containing the element to be set MUST be
         of 'string'.
-        
+
         If the row of the new element exceeds the number of rows in
         the table, then the table will AUTOMATICALLY be EXPANDED to
         exactly as many rows needed to hold the new element. The new

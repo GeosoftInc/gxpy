@@ -39,10 +39,10 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
     `GXCSYMB <geosoft.gxapi.GXCSYMB>` groups (color symbols) contain data and rules for
     presenting the data as color symbols.  See `col_symbol <geosoft.gxapi.GXMVIEW.col_symbol>`
     and the `GXCSYMB <geosoft.gxapi.GXCSYMB>` class.
-    
+
     `GXAGG <geosoft.gxapi.GXAGG>` groups (aggregates) contain images.  See `aggregate <geosoft.gxapi.GXMVIEW.aggregate>`
     and the `GXAGG <geosoft.gxapi.GXAGG>` class.
-    
+
     Standard groups contain symbols, lines, polylines, and polygons.
     See `start_group <geosoft.gxapi.GXMVIEW.start_group>`.
     """
@@ -725,7 +725,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Section views are recognized because their projection contains one of the following orientations:
-        
+
         `IPJ_ORIENT_SECTION <geosoft.gxapi.IPJ_ORIENT_SECTION>` - Target-type sections with Z projection horizontally
         `IPJ_ORIENT_SECTION_NORMAL <geosoft.gxapi.IPJ_ORIENT_SECTION_NORMAL>` - Like `IPJ_ORIENT_SECTION <geosoft.gxapi.IPJ_ORIENT_SECTION>`, but Z projects
         perpendicular to the secton plane.
@@ -754,7 +754,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** The group names are placed in the list names, group
         numbers are placed in the list values.
-        
+
         Groups are added to the end of the `GXLST <geosoft.gxapi.GXLST>`.
         """
         self._list_plane_groups(plane, lst)
@@ -776,7 +776,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** The plane names are placed in the list names, plane
         numbers are placed in the list values.
-        
+
         Planes are added to the end of the `GXLST <geosoft.gxapi.GXLST>`.
         """
         self._list_planes(lst)
@@ -1592,12 +1592,12 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         characters, each followed by up to three digits
         specifying a number between 0 and 255.
         An empty string produce C_ANY_NONE.
-        
+
         You must stay in the same color model, RGB, CMY,
         HSV or K.
-        
+
         For example "R", "R127G22", "H255S127V32"
-        
+
         Characters are not case sensitive.
 
         .. seealso::
@@ -1717,12 +1717,12 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** Entitles that follow in this group will be clipped
         or not clipped depending on this mode.
-        
+
         The montaj editor cannot change the clip mode of
         embedded clipped/unclipped enties that are controlled
         by this call.  Use the Group clipping functions
         instead.
-        
+
         It is highly recommended that you use the `group_clip_mode <geosoft.gxapi.GXMVIEW.group_clip_mode>`
         function to control clipping on a group-by-group basis, instead
         of using `clip_mode <geosoft.gxapi.GXMVIEW.clip_mode>` when inside a group, as it is impossible
@@ -1804,7 +1804,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         not have a the style specified, the file user.lpt is
         searched.  If this file does not contain the line style
         solid is assumed.
-        
+
         Note that line styles from default.lpt and user.lpt are
         read into the map at the time the map is created, not
         at display time.
@@ -1857,7 +1857,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         feature, and each pattern tile is rotated to a different
         angle. Using this along with PatStyle(View, `MVIEW_TILE_RANDOM <geosoft.gxapi.MVIEW_TILE_RANDOM>`)
         can give a "hand-drawn" effect to geological fills.
-        
+
         See the IMPORTANT note for sPatNumber_MVIEW().
         """
         self._pat_angle(angle)
@@ -1883,7 +1883,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         values less than 1 make the pattern more "spread out".
         This can be used along with sPatStyleMethod to create more complicated
         fills from simple patterns.
-        
+
         See the IMPORTANT note for sPatNumber_MVIEW().
         """
         self._pat_density(density)
@@ -1905,17 +1905,17 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** Pattern 0 is solid fill.(default)
         Set the pattern color using `fill_color <geosoft.gxapi.GXMVIEW.fill_color>`.
-        
+
         Patterns are selected by ordinal value (pattern number)
         from those defined in default.pat.  If default.pat does
         not have a the pattern specified, the file user.pat is
         searched.  If this file does not contain the pattern
         solid is assumed.
-        
+
         Note that patterns from default.pat and user.pat are
         read into the map at the time the map is created, not
         at display time.
-        
+
         IMPORTANT: A call to this function resets all the various
         pattern attributes to those defined for the selected pattern.
         If you want to modify any attributes, call that function (e.g.
@@ -1967,10 +1967,10 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         form a triangular grid pattern.
         RANDOM tiling adds small random offsets in both directions to give
         the diffuse effect seen on many geological maps.
-        
+
         NOTE: Some patterns are designed to be interlocking and may only
         work "correctly" with one tiling method.
-        
+
         See the IMPORTANT note for sPatNumber_MVIEW().
         """
         self._pat_style(style)
@@ -2069,7 +2069,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** If the font cannot be found, the DEFAULT_SYMBOL_FONT
         specified in the [MONTAJ] section of GEOSOFT.INI
         will be used.
-        
+
         See `text_font <geosoft.gxapi.GXMVIEW.text_font>` for the font name syntax.
         """
         self._symb_font(face.encode(), geofont, weight, italic)
@@ -2092,7 +2092,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** The lower 16 bits of the number is interpreted as UTF-16 with a valid Unicode character
         code point. GFN fonts wil produce valid symbols depending on the font for 0x01-0x7f and the degree,
         plus-minus and diameter symbol(latin small letter o with stroke) for 0xB0, 0xB1 and 0xF8 respectively.
-        
+
         It is possible to check if a character is valid using `GXUNC.is_valid_utf16_char <geosoft.gxapi.GXUNC.is_valid_utf16_char>`. The high 16-bits are reserved
         for future use. Also see: `GXUNC.valid_symbol <geosoft.gxapi.GXUNC.valid_symbol>` and `GXUNC.validate_symbols <geosoft.gxapi.GXUNC.validate_symbols>`.
         """
@@ -2173,9 +2173,9 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** Font characteristics can be defined using the function parameters,
         or may be defined as decorations in the font name.  A decorated font
         name has the following format:
-        
+
         font_name(type,weight,italics,charset)
-        
+
         where
         type     - "TT" or "GFN"
         weight   - last word from MVIEW_FONT_WEIGHT_ (ie. "LIGHT")
@@ -2186,19 +2186,19 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         on the GX API level are encoded in :ref:`UTF8` during runtime which makes it possible
         to represent all possible characters without using character sets. This decoration
         will now be ignored.
-        
+
         Qualifiers take precidence over passed parameters.
         The order of qualifiers is not relevant.
-        
+
         examples:
-        
+
         "sr(GFN,ITALICS)"  - geosoft GFN font, normal weight, italics
         "Arial(TT,XBOLD)"  - TrueType font, bold
         "Times(TT,ITALICS,_EastEurope)"
         - TrueType font, italics, Eastern Europe charcters
-        
+
         Decorated name qualifiers take precedence over passed parameters.
-        
+
         If the font cannot be found, or if "Default" is used, the DEFAULT_MAP_FONT
         specified in the [MONTAJ] section of GEOSOFT.INI
         will be used.
@@ -2241,7 +2241,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         otherwise text would appear warped on these kinds of views. The X direction was chosen to represent the
         font size. For instance if the X scale is 1 unit/mm and my Y scale is 2 units/mm a font size of 3.0 view
         units will result in un-rotated text that appears 6 view units or 3mm high in the Y direction.
-        
+
         Another important thing to keep in mind that this size represents what is known as the "ascent" height
         of the font. The full height of the text may be higher if characters with accents or lower extension
         (e.g. the lowercase y) appear in the text. For TrueType fonts the mapping system will do a best effort
@@ -2388,7 +2388,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** For example, to plot three levels <95, 95-100 and
         100-120, three string arguments would be:
-        
+
         "95,100,120"      maximums of each class
         "2.0,2.5,3.0"     sizes in mm
         "y,g,r"           fill colors
@@ -4066,11 +4066,11 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** Line and fill colors and thickness must be set
         before drawing to a group.
-        
+
         If the group name is NULL, output will be sent to
         the primary group stream and the :ref:`MVIEW_GROUP` is
         ignored.
-        
+
         Group names must be different from view names.
         """
         self._start_group(name.encode(), mode)
@@ -4621,7 +4621,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** A 1mm long vertical tick is drawn at the place
         where a label is present. The label is drawn
         below the tick.
-        
+
         The incoming X `GXVV <geosoft.gxapi.GXVV>` is used to define the place for
         label.
         """
@@ -4804,7 +4804,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         corresponds to elevation, and the X coordinate is the distance along
         the crooked feature, beginning at zero on the left, but the
         status bar will show the true (X, Y, Z) location.
-        
+
         If the scale is set to `rDUMMY <geosoft.gxapi.rDUMMY>`, then it will be calculated so that
         the points will all fit horizontally.
         """
@@ -4859,7 +4859,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** This is the same as `create_crooked_section <geosoft.gxapi.GXMVIEW.create_crooked_section>`, except that the
         vertical axis plots a data value, not elevation, and allows for
         logarithmic scaling.
-        
+
         See Also: `create_crooked_section <geosoft.gxapi.GXMVIEW.create_crooked_section>`.
         """
         ret_val = gxapi_cy.WrapMVIEW._create_crooked_section_data_profile(GXContext._get_tls_geo(), map, ipj, name.encode(), x0, y0, xs, ys, scale, dist0, min_z, max_z, log_z, v_vxs, v_vx, v_vy)
@@ -4893,13 +4893,13 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** The CLIP region is the current view window or the limits
         of the current clip polygon.
-        
+
         If `MVIEW_EXTENT_ALL <geosoft.gxapi.MVIEW_EXTENT_ALL>` is requested and the view has no groups, the
         clip extents are returned.
-        
+
         If clip extents are requested and there are no clip extents, an
         area 0.0,0.0 1.0,1.0 is returned.
-        
+
         The `MVIEW_EXTENT_VISIBLE <geosoft.gxapi.MVIEW_EXTENT_VISIBLE>` flag will return the union of the `MVIEW_EXTENT_CLIP <geosoft.gxapi.MVIEW_EXTENT_CLIP>` area and the
         extents of all non-masked visible groups in the view.
         """
@@ -5022,11 +5022,11 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         reduce the size of a `GXMAP <geosoft.gxapi.GXMAP>` file.
         We recommend that you set the thinning resolution to
         0.02 mm.
-        
+
         By default, the thinning resolution is set to 0.05mm.
-        
+
         Set resolution to 0.0 to remove colinear points only.
-        
+
         To turn off thinning after turning it on, call
         SetThinRes_MVIEW with a resolution of -1.
         """
@@ -5125,7 +5125,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         that is analgous to a 2D View.  This allows all 2D functions
         (such as changing a view location and size) to treat a 3D
         view just like a 2D view.
-        
+
         The `fit_map_window_3d <geosoft.gxapi.GXMVIEW.fit_map_window_3d>` function allows you to
         locate and set the "apparent" 2D mapping of a 3D view on
         the map. An intial map window is established
@@ -5344,7 +5344,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** X (and Y) scale is the ratio of the new dimension over
         the old dimension of a reference object. For example, if a horizontal
         straight line of 10m long becomes 20m, X scale should be 2.
-        
+
         The view is then scaled back so that the view occupies the same
         area size as before.  The view's clip area is updated as well.
         """

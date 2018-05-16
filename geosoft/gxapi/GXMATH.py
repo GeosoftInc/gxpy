@@ -108,9 +108,9 @@ class GXMATH(gxapi_cy.WrapMATH):
     def and_(cls, pi_val1, pi_val2):
         """
         Return the unary operation result of A & B
-        
+
         Returns			an integer number
-        
+
         If A or B is a dummy, returns dummy.
         
         :param pi_val1:  A
@@ -156,9 +156,9 @@ class GXMATH(gxapi_cy.WrapMATH):
     def or_(cls, pi_val1, pi_val2):
         """
         Return the unary operation result of A | B
-        
+
         Returns			an integer number
-        
+
         If A or B is a dummy, returns dummy.
         
         :param pi_val1:  A
@@ -204,9 +204,9 @@ class GXMATH(gxapi_cy.WrapMATH):
     def xor_(cls, pi_val1, pi_val2):
         """
         Return the unary operation result of A ^ B
-        
+
         Returns			an integer number
-        
+
         If A or B is a dummy, returns dummy.
         
         :param pi_val1:  A
@@ -243,7 +243,7 @@ class GXMATH(gxapi_cy.WrapMATH):
         **Note:** Will fail if the input upper bound is less than the lower
         bound, but will work if the two values are equal.
         The input bounds are overwritten.
-        
+
         Input lower and upper bounds, returns "nicer" values.
         If the Fine flag is set to TRUE, the values will have the
         form N x 10^Y, where N is a value from 1 to 9, and 10^Y
@@ -683,17 +683,17 @@ class GXMATH(gxapi_cy.WrapMATH):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Mode = 0 (regular log mode) returns:
-        
+
         ::
-        
+
             Log10(Z)  for Z > minimum
             Log10(minimum) for Z <= minimum
-        
-        
+
+
         Mode = 1 (log / linear / negative log mode) returns:
-        
+
         ::
-        
+
             minimum * ( log10( |Z| / minimum) + 1 )   for Z > minimum
             Z for |Z| <= minimum   (the linear part of the range)
             -minimum * ( log10( |Z| / minimum) + 1 )   for Z < -minimum
@@ -727,11 +727,11 @@ class GXMATH(gxapi_cy.WrapMATH):
         **Note:** The modulus of A with respect to B is defined
         as the difference of A with the largest integral multiple of B
         smaller than or equal to A.
-        
+
         e.g.   A  mod B
         20 mod 10 = 0
         20 mod 9 = 2
-        
+
         f A or B is a dummy, returns dummy.
         """
         ret_val = gxapi_cy.WrapMATH._mod_double_(GXContext._get_tls_geo(), a, b)

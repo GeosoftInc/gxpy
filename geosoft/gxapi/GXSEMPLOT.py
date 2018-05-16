@@ -184,7 +184,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The "Components" group in the INI file is edited.
-        
+
         Looks first in user\\etc, then in \\etc.
         Looks first for file prefix "semtemplate" then "xyt" or "tri"
         The altered template will be output to the user\\etc directory with
@@ -210,7 +210,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The "Parameters" group in the INI file is edited.
-        
+
         Looks first in user\\etc, then in \\etc.
         Looks first for file prefix "semtemplate" then "xyt" or "tri"
         The altered template will be output to the user\\etc directory with
@@ -563,21 +563,21 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  mineral:     str
 
         :returns:           -1 - Cancel - Edits to filter discarded.
-                            
+
                              0 - Normal Return. Edits saved to filter file.
-                            
+
                              1 - Apply filter to current data only
-                            
+
                              2 - Remove filter - If removing filtered data, just
                                  restore the data to the Min/Pos data
                                  otherwise set the mask channel to 1.
-                            
+
                             Re-entry code. If not `iDUMMY <geosoft.gxapi.iDUMMY>`, what to do inside the filter after
                             going back in. Returned on exit, used on next input.
-                            
+
                              0 - Nothing. Don't need to go back into this function again.
                              1 - Edit the filter.
-                            
+
                             Notes            New and edited filters are stored in user\\etc in files with
                              the file extension ".semfilter"
                              If a file for the specified filter does not exist, then a
@@ -683,14 +683,14 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** This wrapper is for `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>`, and does not require the import licence.
-        
+
            1. Binary import templates have extension .I2 by convention.  See
               BINARY.I2 for a description of the template format.
               Archive import templates have extension .I3 by convention. See
               ARCHIVE.I3 for a description of the template format.
-        
+
            2. Both the import template and data file must exist.
-        
+
            3. If a line already exists in the database, a new version is created
               unless a line name is passed in.  In this case, the specified name
               is used and the imported channels on the previous line will be
@@ -867,10 +867,10 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         **Note:** The new template is written to the user\\etc directory, with
         the file extension "semfilter". The template contains a parameter
         identifying it as an XY or Triplot.
-        
+
         Model Template: Looks first in user\\etc, then in \\etc.
         Looks first for file prefix "semtemplate" then "xyt" or "tri"
-        
+
         Because there are so many shared parameters, it is possible to use
         an XYPlot template as a model for a TriPlot, and vica-verca, with
         few complications.  (e.g. needing to define a "Z" component)
@@ -932,10 +932,10 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         are used.
         Only values with mask values of 1 are plotted, if the mask
         channel is specified.
-        
+
         Call "`reset_used_channel <geosoft.gxapi.GXSEMPLOT.reset_used_channel>`" prior to this function
         in order to track the values actually plotted.
-        
+
         Call `init_group_symbols_used <geosoft.gxapi.GXSEMPLOT.init_group_symbols_used>` prior to this function
         to reset recording of the symbols used in plotting (for legends etc).
         """
@@ -1047,10 +1047,10 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **Note:** Note that the selection of data
         in the current `GXDB <geosoft.gxapi.GXDB>` is used to replot the map.
-        
+
         Call "`reset_used_channel <geosoft.gxapi.GXSEMPLOT.reset_used_channel>`" prior to this function
         in order to track the values actually plotted.
-        
+
         Call `init_group_symbols_used <geosoft.gxapi.GXSEMPLOT.init_group_symbols_used>` prior to this function
         to reset recording of the symbols used in plotting (for legends etc).
         """
@@ -1168,7 +1168,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Sets channel order as follows:
-        
+
         Sample_No
         X and Y Locations
         Mineral
@@ -1181,7 +1181,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         Mask
         IsPlotted (flag set when a value is plotted)
         Other channels
-        
+
         Channel order is set for all "RawData" groups.
         """
         gxapi_cy.WrapSEMPLOT._set_channel_order(GXContext._get_tls_geo(), db, lst)

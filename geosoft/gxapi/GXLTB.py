@@ -28,17 +28,17 @@ class GXLTB(gxapi_cy.WrapLTB):
     **Note:**
 
     An `GXLTB <geosoft.gxapi.GXLTB>` ASCII table file has the following structure:
-    
+
     / comments
     key_name,col_1,col_2,col_3,etc...    /field names
     key_1,token,token,token,etc...       /data lines
     key_2,token,token,token,etc...
     etc...
-    
+
     The first column must be the key column (all entries unique).
-    
+
     The header line is optional and can be used to find entries.
-    
+
     Comment and empty lines are ignored.
     """
 
@@ -109,9 +109,9 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **Note:** The "Key" of the child must be the same as the "Key" of the Master.
         The fields of two `GXLTB <geosoft.gxapi.GXLTB>` must be the same.
-        
+
         Contracting takes place as follows:
-        
+
         1. The Master `GXLTB <geosoft.gxapi.GXLTB>` is copied to the New `GXLTB <geosoft.gxapi.GXLTB>`.
         2. All records in the contract LIB are deleted from the New `GXLTB <geosoft.gxapi.GXLTB>` (if there are any)
         3. The New `GXLTB <geosoft.gxapi.GXLTB>` is returned.
@@ -523,7 +523,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Merging takes place as follows:
-        
+
         1. The "Key" of the child must be the same as the "Key" of the Master.
         2. The fields of the Master `GXLTB <geosoft.gxapi.GXLTB>` are collected in-order.
         3. Any new fields of the Child `GXLTB <geosoft.gxapi.GXLTB>` are added to the end of the list.
@@ -531,10 +531,10 @@ class GXLTB(gxapi_cy.WrapLTB):
         5. The Child table contents are added to the New `GXLTB <geosoft.gxapi.GXLTB>`.
         6. The Master table contents are added/replace the New `GXLTB <geosoft.gxapi.GXLTB>`.
         7. The New `GXLTB <geosoft.gxapi.GXLTB>` is returned.
-        
+
         If the fields of the Master and Child are the same, steps 4, 5, 6 are
         replaced by:
-        
+
         4. The Master `GXLTB <geosoft.gxapi.GXLTB>` is copied to the New `GXLTB <geosoft.gxapi.GXLTB>`.
         5. Any New records found in the child are added to the New `GXLTB <geosoft.gxapi.GXLTB>`
         """

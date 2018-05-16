@@ -25,22 +25,22 @@ class GXITR(gxapi_cy.WrapITR):
     **Note:**
 
     Histogram ranges and color zone ranges
-    
+
     Histogram bins are defined with inclusive minima and exclusive maxima;
     for instance if Min = 0 and Inc = 1, then the second bin would include
     all values z such that  0 <= z < 1 (the first bin has all values < 0).
-    
+
     Color zones used in displaying grids (`GXITR <geosoft.gxapi.GXITR>`, ZON etc...) are the
     opposite, with exclusive minima and inclusive maxima.
     For instance, if a zone is defined from 0 to 1, then it would
     contain all values of z such that 0 < z <= 1.
-    
+
     These definitions mean that it is impossible to perfectly assign
     `GXITR <geosoft.gxapi.GXITR>` colors to individual bars of a histogram. The best work-around
     when the data values are integers is to define the color zones using
     0.5 values between the integers. A general work-around is to make the
     number of histogram bins much larger than the number of color zones.
-    
+
     The `ITR_NULL <geosoft.gxapi.ITR_NULL>` is used to hold a NULL handle to an `GXITR <geosoft.gxapi.GXITR>` class.
     """
 
@@ -191,7 +191,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **Note:** The `ITR_ZONE_DEFAULT <geosoft.gxapi.ITR_ZONE_DEFAULT>` model will ask the `GXIMG <geosoft.gxapi.GXIMG>` to provide
         a model if it can.
-        
+
         If a shaded relief model is selected, a shaded image
         will be created and a shaded image file will be created with
         the same name as the original grid but with the suffux "_s"
@@ -630,7 +630,7 @@ class GXITR(gxapi_cy.WrapITR):
         0.0   - black
         0.5   - normal (no change)
         1.0   - white
-        
+
         Contrast
         0.0   - flat
         1.0   - full contrast (normal)

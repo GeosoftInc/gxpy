@@ -22,11 +22,11 @@ class GXHTTP(gxapi_cy.WrapHTTP):
     **Note:**
 
     References:
-    
+
     1. http://www.w3.org/Protocols/`GXHTTP <geosoft.gxapi.GXHTTP>`/HTTP2.html
-    
+
     2. http://www.w3.org/Addressing/URL/5_BNF.html
-    
+
     Note that path and search must conform be xalpha string (ref 2.).
     Special characters can be specified with a %xx, where xx is the
     hex ASCII number.  For example, a search string "This one" should
@@ -86,17 +86,17 @@ class GXHTTP(gxapi_cy.WrapHTTP):
         users choice of access.  This is to prevent the creation of GX's that
         may be dangerous or may be used to collect information without the
         knowledgede of the user.
-        
+
         If the specified URL is restricted from access by the user, the create
         function will fail.
-        
+
         If the specified URL has not been accessed by this user before, or if
         the user has this site on "Verify", the user will be presented with a
         dialog requiring verification before communication can begin.  The user
         may choose to change the server site to a full "Trust" relationship, in
         which case the verification message will not reappear unless the site
         is explicitly changed back to verify or is restricted.
-        
+
         If you intend your GX to communicate with a server without
         verification, you must instruct your user to change their trust
         relationship with your server to "Trusted".  Your user will have the
@@ -177,7 +177,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
 
         **Note:** Full contents of the `GXBF <geosoft.gxapi.GXBF>` are sent in an `GXHTTP <geosoft.gxapi.GXHTTP>` GET message.
         `GXBF <geosoft.gxapi.GXBF>` pointer is returned to location before the call.
-        
+
         request URL will be:
         http://server/path?search
         """
@@ -203,7 +203,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Full contents of the `GXBF <geosoft.gxapi.GXBF>` are sent as an `GXHTTP <geosoft.gxapi.GXHTTP>` POST message.
-        
+
         request URL will be:
         http://server/path?search
         """

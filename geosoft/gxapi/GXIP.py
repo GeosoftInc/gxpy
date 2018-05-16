@@ -25,7 +25,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     The following defines are used in GX code but are not
     part of any functions:
-    
+
     :ref:`IP_ARRAY`
     :ref:`IP_CHANNELS`
     :ref:`IP_LINES`
@@ -1597,7 +1597,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** This function recalculates "derived" channel values from
         "core" data.
-        
+
             1. Recalculates the "STN" and "N" channels, using the TX1,
                TX2, RX1 and RX2 channels (depending on the system).
             2. Recalculates the apparent resistivity "ResCalc",
@@ -1607,7 +1607,7 @@ class GXIP(gxapi_cy.WrapIP):
                line number for the current line.
             4. Recalculate the "Z" channel, based on the current "Topo"
                channel, and the "N" values.
-        
+
         Warning: If you make a change to an electrode location, you
         would have to call `recalculate <geosoft.gxapi.GXIP.recalculate>`, then recalculate "Topo"
         (since the X and Y values would have changed), then call

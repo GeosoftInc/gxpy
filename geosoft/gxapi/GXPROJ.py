@@ -95,9 +95,9 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         **Note:** The passed file name must be a valid
         file name complete with an extension and
         qualifiers (if applicable).
-        
+
         The type string can be one of the following:
-        
+
             Database      
             Grid          
             Map           
@@ -135,9 +135,9 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         **Note:** The passed file name must be a valid
         file name complete with an extension and
         qualifiers (if applicable).
-        
+
         The type string can be one of the following:
-        
+
             Database      
             Grid          
             Map           
@@ -159,7 +159,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         
 
         :returns:    :ref:`COMMAND_ENV`
-                  
+
                   Notes									We are moving towards embedded tools and menus and this setting can be
                   queried from the project to determine how specific commands should react.
                   Only 3D viewer is currently making use of this.
@@ -311,7 +311,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         **Limitations:** May not be available while executing a command line program.
 
         **Note:** GX will terminate if there is an error.
-        
+
         `GXLST <geosoft.gxapi.GXLST>` object will hold the tool name in the name column and
         include whether the tool is currently visible in the value
         column (1=visible, 0-hidden).
@@ -395,9 +395,9 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         **Note:** This wrapper brings up the save dialog tool to allow
         the user to save the modified documents for this project.
         Only documents that have actually changed will be listed.
-        
+
         The type string can be one of the following:
-        
+
             Database      
             Grid          
             Map           

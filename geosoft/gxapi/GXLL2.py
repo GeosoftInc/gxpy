@@ -128,7 +128,7 @@ class GXLL2(gxapi_cy.WrapLL2):
 
         **Note:** The correction data is in degrees, added to the input
         datum to product output datum results.
-        
+
         The `GXVV <geosoft.gxapi.GXVV>` lengths must be equal to #longitudes defined
         by `create <geosoft.gxapi.GXLL2.create>`.
         """

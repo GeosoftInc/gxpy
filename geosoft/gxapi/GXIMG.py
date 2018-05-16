@@ -29,20 +29,20 @@ class GXIMG(gxapi_cy.WrapIMG):
     The `GXIMG <geosoft.gxapi.GXIMG>` methods use the XGD DATs to access grid files in different
     formats.  The characteristics of a grid can be controlled using
     decorations on a grid file name.  For example:
-    
+
     `create_new_file <geosoft.gxapi.GXIMG.create_new_file>`(`GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`,1,100,100,"mag.grd");
     -> creates a new grid file "mag.grd" with all defaults.
-    
+
     `create_new_file <geosoft.gxapi.GXIMG.create_new_file>`(`GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`,1,100,100,"mag.grd(GRD;comp=none)");
     -> creates a new grid file "mag.grd" with no compression.
-    
+
     `create_new_file <geosoft.gxapi.GXIMG.create_new_file>`(`GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`,1,100,100,"mag.grd(GRD;comp=size;type=short");
     -> creates a new grid file "mag.grd" compressed for size, numbers
     stored as 2-byte integers..
-    
+
     See :ref:`DAT_XGD`.DOC for information about file name decorations available
     for all `GXDAT <geosoft.gxapi.GXDAT>` types.
-    
+
     Different grid types support different features.  For example, not all
     grid types support projection information.  Geosoft will always create
     a ``*.gi`` file that is used to store all such information that we require
@@ -95,7 +95,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         The output pager retains the same origin, but the X and Y spacing is double that of the original. Essentially,
         the process removes all the even-indexed rows and columns, while leaving the locations of all the remaining
         data points in the "odd" rows and columns unchanged.
-        
+
         The output values at the output data locations are created by performing an average of the original data point and
         its valid surrounding data points; what is essentially a 3x3 smoothing filter.
         """
@@ -848,7 +848,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         **Note:** This will force loading an image into a `GXPG <geosoft.gxapi.GXPG>` if it is not already
         accessible in the direction requested.
-        
+
         Subsequent calls to methods that use the optimal KX will use the
         KX set here.
         """

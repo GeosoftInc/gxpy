@@ -170,7 +170,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
     def get_number_of_selected_layers(cls):
         """
         Get the number of selected layers in the TOC
-        
+
         Returns									 The number of layers selected.
         
         :rtype:      int
@@ -208,7 +208,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The extra datasets CSV should contain the the following fields:
-        
+
          ID          -  Unique identifier
          DATASOURCE  -  Filename
          TYPE        -  RASTER and SHAPE supported
@@ -247,7 +247,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The extra datasets CSV should contain the the following fields:
-        
+
          ID          -  Unique identifier
          DATASOURCE  -  Filename
          TYPE        -  RASTER and SHAPE supported
@@ -346,7 +346,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The extra datasets CSV should contain the the following fields:
-        
+
             ID          -  Unique identifier
             DATASOURCE  -  Filename
             TYPE        -  RASTER and SHAPE supported
@@ -439,7 +439,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The input layer name is created using the (optional) prefix and suffix as follows:
-        
+
         Prefix_NAME_Suffix
         """
         gxapi_cy.WrapARCMAP._load_shape(GXContext._get_tls_geo(), file.encode(), layer_prefix.encode(), layer_suffix.encode())
@@ -467,7 +467,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         **Note:** The output `GXSHP <geosoft.gxapi.GXSHP>` file name(s) are made up as follows
         (where NAME is the input `GXSHP <geosoft.gxapi.GXSHP>` file name):
-        
+
               NAME_pt.shp    (point objects)
               NAME_ln.shp    (line or arc objects)
               NAME_pg.shp    (polygon objects)

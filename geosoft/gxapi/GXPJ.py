@@ -302,9 +302,9 @@ class GXPJ(gxapi_cy.WrapPJ):
         **Note:** To determine the model in use, refer to the datum_trf column in the
         user\\csv\\datumtrf.csv file.  The datum and geoid model are named in
         the sqare brackets following the transform name as follows:
-        
+
         name [datum_model:geoid]
-        
+
         The datum_model is the name of the datum transformation model which will
         be in a file with extension .ll2 in the \\etc directory.  The geoid is the
         name of the geoid model which will be in a grid file with extension .grd

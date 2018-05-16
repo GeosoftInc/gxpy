@@ -25,31 +25,31 @@ class GXDGW(gxapi_cy.WrapDGW):
     **Note:**
 
     Setting Fonts in GX dialogs.
-    
+
     By default, "new look" GX dialogs uses the "Tahoma" font. This font can be
     overridden by updating the application settings. This can be done programmatically
     using the `GXSYS.global_set <geosoft.gxapi.GXSYS.global_set>` function using the following parameters:
-    
+
     MONTAJ.GX_FONT="Font_name"
-    
+
     This sets the default font to "Font_name". It applies to text in all
     components of the dialog.
-    
+
     Additional customization of individual components can be accomplished
     using the following parameters:
-    
+
     MONTAJ.GX_CAPTION_FONT="Caption_Font": Font for the field captions (labels)
     MONTAJ.GX_BUTTON_FONT="Button_Font"  : Font for buttons, including the "Browse" button
     MONTAJ.GX_TITLE_FONT="Title_Font"    : Font for special titles (see `set_title <geosoft.gxapi.GXDGW.set_title>`).
-    
+
     The font used for the text in edit windows remains the default, or the
     value specified using MONTAJ.GX_FONT.
-    
+
     Note that the "OK" button, and the Title, use "Bold" versions of the
     specified font. If the bolded version does not exist as a normal font,
     then the operating system may provide its own alternative which may not
     appear the same as you expect.
-    
+
     Before version 6.2. there used to be a parameter, MONTAJ.GX_CHARSET, that
     affected characters above ASCII 127. 6.2. introduced Unicode in the core
     montaj engine that eliminated the need for such a setting. All strings
@@ -321,12 +321,12 @@ class GXDGW(gxapi_cy.WrapDGW):
 
         **Note:** A "Special", additional title can be added to a dialog by passing a title
         to `set_title <geosoft.gxapi.GXDGW.set_title>` with the following syntax:
-        
+
         ``"Window Title\\nAdditional Title"``
-        
+
         In the title argument, a line break character ``'\\n'`` is used to
         separate the parts.
-        
+
         The window title free_appears as the title in the upper bar of the dialog.
         The additional title free_appears below this, in the main body of the
         dialog, and is separated from the rest of the fields by a horizontal

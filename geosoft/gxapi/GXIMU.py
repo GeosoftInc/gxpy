@@ -650,7 +650,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`!
         If not, the method will terminate.
-        
+
         The `GXPLY <geosoft.gxapi.GXPLY>` will contain more than one polygon
         if it was loaded from a file containing
         coordinates of more than one polygon.
@@ -708,10 +708,10 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **Note:** This will optionally refresh the grid boundary `GXPLY <geosoft.gxapi.GXPLY>` and return
         the `GXPLY <geosoft.gxapi.GXPLY>`.
-        
+
         If the boundary is not refreshed and has never been calculated,
         the boundary will be the bounding rectangle of the grid.
-        
+
         The grid `GXPLY <geosoft.gxapi.GXPLY>` will be added to existing ploygons in the passed `GXPLY <geosoft.gxapi.GXPLY>`.
         """
         gxapi_cy.WrapIMU._grid_ply(GXContext._get_tls_geo(), img, ply, refresh)
@@ -739,10 +739,10 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **Note:** This will optionally refresh the grid boundary `GXPLY <geosoft.gxapi.GXPLY>` and return
         the `GXPLY <geosoft.gxapi.GXPLY>`.
-        
+
         If the boundary is not refreshed and has never been calculated,
         the boundary will be the bounding rectangle of the grid.
-        
+
         The grid `GXPLY <geosoft.gxapi.GXPLY>` will be added to existing ploygons in the passed `GXPLY <geosoft.gxapi.GXPLY>`.
         """
         gxapi_cy.WrapIMU._grid_ply_ex(GXContext._get_tls_geo(), img, ply, refresh, min_points)
@@ -1105,9 +1105,9 @@ class GXIMU(gxapi_cy.WrapIMU):
         differences in the X and Y directions for the supplied
         image.  This is useful for shading routines.  A good
         default scaling factor is 2.5 / standard deviation.
-        
+
         The image will be sub-sampled to a statistically meaningful number.
-        
+
         The cell sizes are used to determine the slopes.
         """
         ret_val = gxapi_cy.WrapIMU._slope_standard_deviation(GXContext._get_tls_geo(), img)
@@ -1241,13 +1241,13 @@ class GXIMU(gxapi_cy.WrapIMU):
         **Note:** Both Images must be of type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
         The `GXVM <geosoft.gxapi.GXVM>` parameter must be of type REAL,
         and be of size 10 at most.
-        
+
         The number of coefficients must be
         compatible with the order of the
         trend removed. Following is the
         number of coefficients which should
         be present for a given order
-        
+
         ===== ======================
         Order Number of Coefficients
         ----- ----------------------
@@ -1332,7 +1332,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         reference base level, and reported as positive
         integers. A multiplier is applied to the final
         volume (to correct for units).
-        
+
         The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`!
         If not, the method will terminate.
         """
@@ -1413,7 +1413,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **Note:** To change the cell size or work in a different projection,
         first inherit the `GXIMG <geosoft.gxapi.GXIMG>` by calling
-        
+
         The windowed grid will be adjusted/expanded to include the
         defined area and line up on an even grid cell.
         """
@@ -1579,13 +1579,13 @@ class GXIMU(gxapi_cy.WrapIMU):
         **Note:** Extending from the peak location of an anomaly to the inflection
         points of the grid values along each of the 8 directions results in
         8 radii. Anomaly size is defined as the 2*mediam of the 8 radii.
-        
+
         Precision factor is used to control definition of an inflection point.
         For points A,B, and C, B is an inflection point if (A+C)/2.0 > B. With
         the precision factor, B is an inflection point only when
         (A+C)/2.0 > B*(1.0+Precision factor).
         This factor must be within (-1.0,1.0).
-        
+
         Note: `peak_size2 <geosoft.gxapi.GXIMU.peak_size2>` is probably a better routine...
         """
         gxapi_cy.WrapIMU._peak_size(GXContext._get_tls_geo(), grid.encode(), vv_x, vv_y, max, prec, v_vz)
@@ -1616,13 +1616,13 @@ class GXIMU(gxapi_cy.WrapIMU):
         **Note:** Extending from the peak location of an anomaly to the inflection
         points of the grid values along each of the 8 directions results in
         8 radii. Anomaly size is defined as the 2*mediam of the 8 radii.
-        
+
         This algorithm uses 4 successive points d1, d2, d3 and d4 in any
         direction. Given slopes m1 = d2-d1, m2 = d3-d2 and m3 = d4-d3,
         an inflection point occurs between d2 and d3 if m1>m2 and m2<m3.
         The location index is given as i3 - s2/(s2-s1), where i3 is the index
         of d3, and s1=m2-m1 and s2=m3-m2.
-        
+
         This algorithm tends to give much smaller (and more reasonable)
         results than `peak_size <geosoft.gxapi.GXIMU.peak_size>`.
         """
@@ -1656,7 +1656,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         e.g. if dDx = dDy = 1, and dXo = dYo = 0, then the corner cell would
         accept values  -0.5 <= X < 0.5 and -0.5 <= Y < 0.5.
         The grid values should be set to 0 before calling this function.
-        
+
         The number of points "pigeon-holed" is returned to the user.
         This function is useful, for instance, in determining the density of
         sample locations in a survey area.

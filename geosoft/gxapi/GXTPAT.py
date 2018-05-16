@@ -24,7 +24,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
     channel in a Wholeplot From-To data group.
     ex: "FVOL"
     The code is CASE-SENSITIVE.
-    
+
     Label:         Text to use as a short-form in labels, graphs etc.
     By default, this is the same as the code.
     ex: "FVol."
@@ -36,19 +36,19 @@ class GXTPAT(gxapi_cy.WrapTPAT):
     Thickness:     The line thickness in the tile, expressed as a integer
     percentage (0-100) of the tile size.
     Color:        The pattern line work color. If not specified, defaults to black.
-    
+
     Background color: The pattern background color. If not specified, defaults to
     transparent (C_ANY_NONE)
-    
-    
+
+
     Symbols:
-    
+
     Symbol Font     The name of the symbol font to use for a given symbol index
-    
+
     Symbol Number   Index into the font.
-    
+
     Symbol Rotation: Rotation in degrees CCW.
-    
+
     Symbol Scaling  Additional scale factor to apply to symbol size (Default 1.0)
     """
 
@@ -204,25 +204,25 @@ class GXTPAT(gxapi_cy.WrapTPAT):
 
         **Note:** The type of thematic patterns file is recognized from the types
         of fields found inside it.
-        
+
         The following fields are identified. Only the "CODE" field is
         required, as the "default" thematic pattern is a solid black color.
-        
+
         CODE   The pattern code (required by all types - CASE SENSITIVE)
         LABEL  Longer text identifier to use in legends etc. (up to 31 characters)
         DESCRIPTION Much longer text string (up to 127 characters).
-        
+
         COLOR  Line color used in patterns, and for solid colors, the color.
         If only this field is found (and none below), the pattern file
         is assumed to be type TPAT_TYPE_COLOR.
-        
+
         PATTERN         Geosoft pattern ID.
         PAT_SIZE        Pattern tile size, or symbol size (default 2mm)
         PAT_DENSITY     Pattern tile density (default 1.0)
         PAT_THICKNESS   Pattern line thickness as % of size (default 5)
         BACK_COLOR      Background color for the pattern. Also used for symbols
         (Default background is transparent).
-        
+
         SYMBFONT        Symbol font (e.g. "symbols.gfn")
         SYMBNUM         Symbol number of the current font
         SYMBROT         Symbol rotation

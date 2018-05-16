@@ -26,7 +26,7 @@ class GXDU(gxapi_cy.WrapDU):
 
     The following defines are used by GX functions but are not required
     for any methods:
-    
+
     :ref:`DU_LINES`
     """
 
@@ -296,7 +296,7 @@ class GXDU(gxapi_cy.WrapDU):
         **Note:** If the source database and destination database have channels
         with the same name, then data is appended onto the end
         of the channel in lines which have the same number.
-        
+
         If a channel in the destination database is not also in the source
         database, it is ignored.
         """
@@ -625,7 +625,7 @@ class GXDU(gxapi_cy.WrapDU):
         **Note:** Selected lines are scanned for the (X, Y) location
         which is closest to the input location.
         The line and fiducial of the point are returned.
-        
+
         Will register an error if no valid (X, Y) locations
         are found.
         """
@@ -1014,7 +1014,7 @@ class GXDU(gxapi_cy.WrapDU):
         group. ---
         Option to filter out data where one of the channels has a dummy in it.
         Option to allow a header with the channel names.
-        
+
         The `DU_CHANNELS_DISPLAYED <geosoft.gxapi.DU_CHANNELS_DISPLAYED>` option can be used to export any selection of
         channels, listed by the symbols (DB_SYMB) values, cast to int values and
         stored in a `GXVV <geosoft.gxapi.GXVV>`.
@@ -1172,7 +1172,7 @@ class GXDU(gxapi_cy.WrapDU):
         If no lines are selected, (only groups), save the current line
         if it is (1) a group and (2) selected, else save the first selected
         group. ---
-        
+
         This version supports projections
         """
         gxapi_cy.WrapDU._export_aseg_proj(GXContext._get_tls_geo(), db, cur_line.encode(), chan_vv, chan, defn.encode(), data.encode(), proj.encode(), ipj)
@@ -1444,18 +1444,18 @@ class GXDU(gxapi_cy.WrapDU):
         **Note:** 1. The export template can be in the local directory or the GEOSOFT
         directory.  The import data file must include the path if it is not
         in the local directory.
-        
+
         2. Both the import template and data file must exist.
-        
+
         3. Sample Template file
-        
+
         [EXPORT XYZ]
         EXPORT     CHAN {,FORMAT} {,WIDTH} {,DECIMAL}
         WRITEDUMMY YES
         CLIPMAP    YES
         MAXPOINTS  1000
         INCREMENT  .5
-        
+
         4. This can be used to export a group, but the group must be the
         currently displayed line, and only that group will be exported.
         """
@@ -1583,7 +1583,7 @@ class GXDU(gxapi_cy.WrapDU):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Requires channels with the following names:
-        
+
         ine, TFid, TZ, TDZ
         Line, LFid, LZ, LDZ
         Mask
@@ -1977,11 +1977,11 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** 1. The import template can be in the local directory or the GEOSOFT
         directory.
-        
+
         2. Only the import template must be specified. The database connection string,
         the database table and Oasis line name are normally taken from the template
         file itself, but if these values are provided, they will override those found in the template.
-        
+
         3. If the line already exists, the data will overwrite the existing data.
         """
         gxapi_cy.WrapDU._import_ado(GXContext._get_tls_geo(), db, connect.encode(), table.encode(), template.encode(), line.encode())
@@ -2009,11 +2009,11 @@ class GXDU(gxapi_cy.WrapDU):
         if the table names are valid Geosoft line names, they are used as is.
         Otherwise, line names will be created with type LINE_NORMAL, starting at
         L0 and incrementing by 10 (L10, L20 etc.)
-        
+
         2. If the line exists, the data will overwrite the existing data.
-        
+
         3. All tables and fields will be imported.
-        
+
         4. If connection string is of type "FILENAME=..." the connection will attempt to resolve
         it as a file database. (see also ODBCFileConnect_GUI)
         """
@@ -2041,21 +2041,21 @@ class GXDU(gxapi_cy.WrapDU):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** 1. The file is assumed to be a DAO compliant database.
-        
+
         2. The import data file must include the path if it is not
         in the local directory.
-        
+
         3. For group storage, the table names are imported "as is". For line storage,
         if the table names are valid Geosoft line names, they are used as is.
         Otherwise, line names will be created with type LINE_NORMAL, starting at
         L0 and incrementing by 10 (L10, L20 etc.)
-        
+
         4. If the line exists, the data will overwrite the existing data.
-        
+
         5. All tables and fields will be imported.
-        
+
         6. The following are valid type strings for DAO:
-        
+
         MSJET       : Microsoft Access
         ODBC        : ODBC source
         dBASE III
@@ -2091,7 +2091,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** All the constant declarations are stored within the database
         under \\TEM\\CONSTANTS. The format is as follows:
-        
+
             1. Lines stored in the file beginning with "/" are comments
             2. Each constant occupies a line in the file. It uses the format: CONSTANT=VALUE
         """
@@ -2188,9 +2188,9 @@ class GXDU(gxapi_cy.WrapDU):
         BINARY.I2 for a description of the template format.
         Archive import templates have extension .I3 by convention. See
         ARCHIVE.I3 for a description of the template format.
-        
+
         2. Both the import template and data file must exist.
-        
+
         3. If a line already exists in the database, a new version is created
         unless a line name is passed in.  In this case, the specified name
         is used and the imported channels on the previous line will be
@@ -2232,9 +2232,9 @@ class GXDU(gxapi_cy.WrapDU):
         BINARY.I2 for a description of the template format.
         Archive import templates have extension .I3 by convention. See
         ARCHIVE.I3 for a description of the template format.
-        
+
         2. Both the import template and data file must exist.
-        
+
         3. If a line already exists in the database, a new version is created
         unless a line name is passed in.  In this case, the specified name
         is used and the imported channels on the previous line will be
@@ -2335,7 +2335,7 @@ class GXDU(gxapi_cy.WrapDU):
         **Note:** Imports GPS data stored in a serial channel recorded
         by the RMS Instruments DAARC500 instrument, and outputs the data to
         a line in the database. Makes the following channels:
-        
+
         Fid, UTC_Time, Latitude, Longitude, Altitude, GPS_Quality,
         NumSat (Number of satellites), GPS_HDOP (Horizontal Dilution of Position),
         Undulation, GPS_DiffAge (Age of differential channel).
@@ -2370,12 +2370,12 @@ class GXDU(gxapi_cy.WrapDU):
         **Note:** 1. The import template can be in the local directory or the GEOSOFT
         directory.  The import data file must include the path if it is not
         in the local directory.
-        
+
         2. Only the import template must be specified. The database file name,
         file type, the database table and Oasis line name are normally
         taken from the template file itself, but if these values are provided,
         they will override those found in the template.
-        
+
         3. If the line already exists, the data will overwrite the existing data.
         """
         gxapi_cy.WrapDU._import_dao(GXContext._get_tls_geo(), db, data.encode(), type.encode(), table.encode(), template.encode(), line.encode())
@@ -2403,11 +2403,11 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** 1. The import template can be in the local directory or the GEOSOFT
         directory.
-        
+
         2. Only the import template must be specified. The Geodatabase connection string
         and Oasis line name are normally taken from the template file itself,
         but if these values are provided, they will override those found in the template.
-        
+
         3. If the line already exists, the data will overwrite the existing data.
         """
         gxapi_cy.WrapDU._import_esri(GXContext._get_tls_geo(), db, connect.encode(), template.encode(), line.encode())
@@ -2544,7 +2544,7 @@ class GXDU(gxapi_cy.WrapDU):
         **Note:** 1. The import template can be in the local directory or the GEOSOFT
         directory.  The import data file must include the path if it is not
         in the local directory.
-        
+
         2. Both the import template and data file must exist.
         """
         gxapi_cy.WrapDU._import_xyz(GXContext._get_tls_geo(), db, mode, data.encode(), template.encode())
@@ -2574,7 +2574,7 @@ class GXDU(gxapi_cy.WrapDU):
         **Note:** 1. The import template can be in the local directory or the GEOSOFT
         directory.  The import data file must include the path if it is not
         in the local directory.
-        
+
         2. Both the import template and data file must exist.
         """
         gxapi_cy.WrapDU._import_xyz2(GXContext._get_tls_geo(), db, mode, data.encode(), template.encode(), wa)
@@ -2851,14 +2851,14 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** The template can be used to import the file using
         sImportBIN_DU.
-        
+
         The first column is assumed to be the sample number.
-        
+
         If the unit label line is the same as the column label
         line, column labels are assummed to be followed by
         unit labels using the format "Au-ppm", "Au ppm" or
         "Au(ppm)".
-        
+
         The number of channels is determined from the number of
         columns in the data channel.  If there are more column
         labels or unit labels, the last labels are assumed to
@@ -2894,9 +2894,9 @@ class GXDU(gxapi_cy.WrapDU):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** See GRAVITY.`GXDAT <geosoft.gxapi.GXDAT>` for a description of the file format.
-        
+
         Existing data in the line will be replaced.
-        
+
         The following `GXREG <geosoft.gxapi.GXREG>` parameters will be set if they appear
         in the data file:
         default
@@ -2912,7 +2912,7 @@ class GXDU(gxapi_cy.WrapDU):
         DENSITY_WATER        "1.0"
         DENSITY_ICE          "0.95"
         MAP_PROJECTION       ""
-        
+
         If the corresponding constant is not specified and the
         `GXREG <geosoft.gxapi.GXREG>` already has the constant defined, it is not changed.
         If the constant is not defined and it is not already in
@@ -2968,7 +2968,7 @@ class GXDU(gxapi_cy.WrapDU):
         converted to double, otherwise it will be a string type
         set to the larger of 16 characters or the longest string
         in the field.
-        
+
         For _APPEND, the `GXLTB <geosoft.gxapi.GXLTB>` data is simply added the end of each
         channel.  `re_fid_all_ch <geosoft.gxapi.GXDU.re_fid_all_ch>` can be used to re-fid data to
         match a specifc channel and there-by case all channels to be
@@ -3049,7 +3049,7 @@ class GXDU(gxapi_cy.WrapDU):
         channel READWRITE will fail.  Similarly, channels on the right
         side of an expression cannot be locked READWRITE because
         `math <geosoft.gxapi.GXDU.math>`'s attempt to lock the channels READONLY will fail.
-        
+
         If this is confusing, just make sure no channels used in the
         expression are locked before calling `math <geosoft.gxapi.GXDU.math>`.
 
@@ -3114,7 +3114,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** Channels that do not have the same fid start or fid
         increment are not processed.
-        
+
         Protected channels are modified automatically.
         """
         gxapi_cy.WrapDU._mod_fid_range(GXContext._get_tls_geo(), db, ln, fid_start, incr, start_index, num, opt)
@@ -3537,7 +3537,7 @@ class GXDU(gxapi_cy.WrapDU):
         are individually interpolated. If the number of
         columns in the output channel is more than the input channel,
         the remaining columns are dummied.
-        
+
         This function is fundamentally different in behaviour from `re_fid_ch <geosoft.gxapi.GXDU.re_fid_ch>`.
         The values in the Reference channel in `re_fid <geosoft.gxapi.GXDU.re_fid>` are the "X" locations
         corresponding to the "Y" locations in the "Original Channel". Output
@@ -3597,7 +3597,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** The original channel can be an array channel, in which case
         the columns are individually re-fidded.
-        
+
         `re_fid_ch <geosoft.gxapi.GXDU.re_fid_ch>` resamples the "Channel to refid" to the "Reference Channel" Fid
         range and increment.
         """
@@ -4360,7 +4360,7 @@ class GXDU(gxapi_cy.WrapDU):
         The grid cell sizes can be left as `GS_R8DM <geosoft.gxapi.GS_R8DM>`, in which
         case an attempt will be made to match the voxel cell
         size, based on the line azimuth, voxel rotation, etc.
-        
+
         If the slice does NOT intersect the voxel, or if
         there are fewer than 2 valid locations in the line,
         then no grid file is created, but there is no error.
@@ -4391,10 +4391,10 @@ class GXDU(gxapi_cy.WrapDU):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Channels to be written should be placed in a `GXLST <geosoft.gxapi.GXLST>` object.
-        
+
         Channels are written in the order of the list.  Only the
         channel names in the list are used.
-        
+
         Data is formated as in the channel definition and
         channels are separated by a single space character.
         """
@@ -4666,7 +4666,7 @@ class GXDU(gxapi_cy.WrapDU):
         The input drillhole database must contain current X, Y and Z channels.
         Drillhole data should be equally spaced (or nearly so) down the hole.
         Weights are calculated on a circle perpendicular to the hole at each point.
-        
+
         RADIUS - Maximum radius from drillhole to create weighting points (Default = 100).
         INCRMENENT - Grid cell size in weighting circle (Default = 10).
         MINIMUM - the minimum weighting value to apply, at the radius (Default = 0.0001).

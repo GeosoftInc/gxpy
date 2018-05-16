@@ -26,12 +26,12 @@ class GXVV(gxapi_cy.WrapVV):
     you cannot access data directly and therefore you cannot
     use a `GXVV <geosoft.gxapi.GXVV>` to pass data to an external (non-Geosoft)
     Dynamic Link Library (DLL) object function.
-    
+
     If you want to pass data to a DLL, you must move a subset
     of the data stored in memory to a small vector object and
     then use the `GXGEO.get_ptr_vm <geosoft.gxapi.GXGEO.get_ptr_vm>` function to pass a pointer to the
     data on to the external function.
-    
+
     See `GXVVU <geosoft.gxapi.GXVVU>` for more utility methods.
     """
 
@@ -145,7 +145,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **Note:** 1. Unlike Copy_VV destination `GXVV <geosoft.gxapi.GXVV>` is not reallocated, nor is
         the length changed. The caller must make any desired changes.
-        
+
         2. All `GXVV <geosoft.gxapi.GXVV>` types are supported and will be converted using
         Convert_GS if necessary.
         """
@@ -192,13 +192,13 @@ class GXVV(gxapi_cy.WrapVV):
 
         **Note:** If the data is in the range +/- minimum value,
         it is left alone. Otherwise, the result is calculated as
-        
+
         ::
-        
+
              d = dMin * (log10(fabs(d)/dMin)+1.0)
-        
+
         Sign is reapplied to d.
-        
+
         Minimum value will be defaulted to 1.0 if it is negative
         or 0.
         """
@@ -221,7 +221,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **Note:** All elements in the mask `GXVV <geosoft.gxapi.GXVV>` that are dummies will replace
         the value in the original `GXVV <geosoft.gxapi.GXVV>` with a dummy.
-        
+
         The modified `GXVV <geosoft.gxapi.GXVV>` will always be the same length as the mask
         `GXVV <geosoft.gxapi.GXVV>` after this call.  If the mask is longer than the target,
         the target will be lengthenned with dummies.
@@ -427,12 +427,12 @@ class GXVV(gxapi_cy.WrapVV):
 
         **Note:** To set the fiducial start and increment for the data in the `GXVV <geosoft.gxapi.GXVV>`
         you need to call `set_fid_start <geosoft.gxapi.GXVV.set_fid_start>` and `set_fid_incr <geosoft.gxapi.GXVV.set_fid_incr>`.
-        
+
         If you are basing the `GXVV <geosoft.gxapi.GXVV>` data on fiducial information from a
         different `GXVV <geosoft.gxapi.GXVV>`, call GetFidStart_VV and GetFidIncr_VV to obtain
         that `GXVV <geosoft.gxapi.GXVV>`'s fiducial information. Do this prior to setting the
         new `GXVV <geosoft.gxapi.GXVV>`'s fiducial start and increment.
-        
+
         If you do not know the required length for a `GXVV <geosoft.gxapi.GXVV>`, use 0
         and the `GXVV <geosoft.gxapi.GXVV>` length will be adjusted as needed.  This is
         a bit less efficient than setting the length when you
@@ -461,7 +461,7 @@ class GXVV(gxapi_cy.WrapVV):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** See `create <geosoft.gxapi.GXVV.create>`
-        
+
         Do not use data type flags: `GS_INT <geosoft.gxapi.GS_INT>` or `GS_REAL <geosoft.gxapi.GS_REAL>`,
         this will result in a respective data type of unsigned byte or
         short for the `GXVV <geosoft.gxapi.GXVV>`.
@@ -713,7 +713,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **Note:** Returns Element wanted, or blank string
         if the value is dummy or outside of the range of data.
-        
+
         Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """
@@ -784,7 +784,7 @@ class GXVV(gxapi_cy.WrapVV):
         will NOT be changed, and index values referencing
         beyond the end of the output `GXVV <geosoft.gxapi.GXVV>` data will return an
         error.
-        
+
         This function is useful when working with channel data that include
         dummies, but where the dummies must be removed before processing.
         Create and initialize an index (0, 1, 2...) `GXVV <geosoft.gxapi.GXVV>`, using the `init_index <geosoft.gxapi.GXVV.init_index>`
@@ -857,7 +857,7 @@ class GXVV(gxapi_cy.WrapVV):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This is the inverse function for `log <geosoft.gxapi.GXVV.log>`, with the same inputs.
-        
+
         NEGATIVE_NO    - will not return values smaller than the input minimum
         NEGATIVE_YES   - if the data is in the range +/- minimum,
         it is left alone.  Otherwise, the sign is removed,
@@ -935,10 +935,10 @@ class GXVV(gxapi_cy.WrapVV):
         **Note:** This method assigns index values of 0.0, 1.0, 2.0 etc. to the individual
         values in the input Data `GXVV <geosoft.gxapi.GXVV>`, and uses linear interpolation to calculate the values of
         Result `GXVV <geosoft.gxapi.GXVV>` at the input indices contained in the Index `GXVV <geosoft.gxapi.GXVV>`.
-        
+
         If the input Data `GXVV <geosoft.gxapi.GXVV>` is string type, then only values at the integral index values
         are returned.
-        
+
         See also `setup_index <geosoft.gxapi.GXVV.setup_index>` for an example of how this can be implemented.
         """
         self._lookup_index(vvi, vvr)
@@ -958,7 +958,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **Note:** This function should be called immediately aftter
         `create <geosoft.gxapi.GXVV.create>`.
-        
+
         Normal VVs are optimised to prevent thrashing, and to
         efficiently support many extremely large VVs, although
         there is a small performance penalty.
@@ -967,7 +967,7 @@ class GXVV(gxapi_cy.WrapVV):
         and will be used heavily.  By using a memory based `GXVV <geosoft.gxapi.GXVV>`, you
         can achieve some performance improvements provided your
         application does not cause the memory manager to "thrash".
-        
+
         External programs that use the GX API may prefer to use
         memory-based `GXVV <geosoft.gxapi.GXVV>`'s because you can get direct access to
         the `GXVV <geosoft.gxapi.GXVV>` through the `GXGEO.get_ptr_vv <geosoft.gxapi.GXGEO.get_ptr_vv>` function (see gx_extern.h).
@@ -1039,7 +1039,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **Note:** All elements in the mask `GXVV <geosoft.gxapi.GXVV>` that are same as string will replace
         the original `GXVV <geosoft.gxapi.GXVV>` with a 1.
-        
+
         The modified `GXVV <geosoft.gxapi.GXVV>` will always be expanded to the MaskVV size but
         not shortened after this call.  If the mask is longer than the target,
         the target will be lengthenned with dummies before applying the mask.
@@ -1469,7 +1469,7 @@ class GXVV(gxapi_cy.WrapVV):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If increasing the `GXVV <geosoft.gxapi.GXVV>` size, new elements are set to dummies.
-        
+
         It is good practice to set the length ahead of time to the
         expected maximum value, as some `GXVV <geosoft.gxapi.GXVV>` processes rely on the
         current maximum length of the `GXVV <geosoft.gxapi.GXVV>` when you pass it in as an
@@ -1612,22 +1612,22 @@ class GXVV(gxapi_cy.WrapVV):
         If your reference data is NOT ordered, then use the `sort_index1 <geosoft.gxapi.GXVV.sort_index1>` 
         function to create an order index, then sort both the reference and data VVs 
         using this index `GXVV <geosoft.gxapi.GXVV>` before you call `setup_index <geosoft.gxapi.GXVV.setup_index>`.
-        
+
         Example: You have a reference data set taken at specific times, ``hVVt``, ``hVVy``
         and you want to calculate/estimate/interpolate the values ``hVVy2`` at a second set
         of times ``hVVt2``
-        
+
         Step 1: Create an index, ``hVVi``, type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`, and call `setup_index <geosoft.gxapi.GXVV.setup_index>`.
-        
+
         with: ``hVVt2, hVVi, VV_LOOKUP_XXX, rSpacing``
-        
+
         Internally, this assigns index values of 0.0, 1.0, 2.0 etc. to the individual
         values in ``hVVt``, then, depending on the lookup method chosen, assigns
         fractional index values to the input values in ``hVVt2``.
-        
+
         Step 2: To determine what the lookup values ``hVVy2`` should be at times ``hVVt2``,
         call the `lookup_index <geosoft.gxapi.GXVV.lookup_index>` function for hVVy with ``hVVi, hVVy2``
-        
+
         Internally, this assigns index values of 0.0, 1.0, 2.0 etc. to the individual
         values in ``hVVy``, and uses linear interpolation to calculate the values of
         ``hVVy2`` at the input indices contained in ``hVVi``.

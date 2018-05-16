@@ -108,7 +108,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
         obtained with `create <geosoft.gxapi.GXIGRF.create>`.
         All of the `GXVV <geosoft.gxapi.GXVV>`'s should be the same length. The function
         will abort if they are not.
-        
+
         No assumption is made on what data types are contained by
         any of the `GXVV <geosoft.gxapi.GXVV>`'s. However, all total field, inclination, and
         declination values are internally calculated as real data.

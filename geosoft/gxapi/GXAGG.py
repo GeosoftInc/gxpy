@@ -150,9 +150,9 @@ class GXAGG(gxapi_cy.WrapAGG):
 
         **Note:** Layers are numbered from 0, consecutively in the order they are
         placed in the aggregate.
-        
+
         An error will occur if the layer does not exist.
-        
+
         Caller must create/destroy `GXITR <geosoft.gxapi.GXITR>`.
         """
         self._get_layer_itr(layer, itr)
@@ -304,7 +304,7 @@ class GXAGG(gxapi_cy.WrapAGG):
         **Note:** Brightness can range from -1.0 (black) to 1.0 (white).
         This brightness control is relative to the normal color
         when the `GXAGG <geosoft.gxapi.GXAGG>` is created.
-        
+
         `GXAGG <geosoft.gxapi.GXAGG>` brightness depends on the brightness of the `GXITR <geosoft.gxapi.GXITR>` of each layer.
         Calling dGetBright_AGG will poll all layers, and if all have the same
         brightness, this is returned.  If any of the layers have a different
@@ -336,9 +336,9 @@ class GXAGG(gxapi_cy.WrapAGG):
 
         **Note:** Layers are numbered from 0, consecutively in the order they are
         placed in the aggregate.
-        
+
         An error will occur if the layer does not exist.
-        
+
         Caller must create/destroy `GXITR <geosoft.gxapi.GXITR>`.
         """
         self._set_layer_itr(layer, itr)

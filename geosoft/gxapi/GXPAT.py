@@ -19,7 +19,7 @@ class GXPAT(gxapi_cy.WrapPAT):
 
     A `GXPAT <geosoft.gxapi.GXPAT>` object is created from a Geosoft format pattern file.
     It contains all the individual patterns listed in the file.
-    
+
     Notes: You may create your own fill patterns. They can be added to the "user.pat"
     file in the <geosoft>\\user\\etc directory. User pattern numbers should be in the 
     range between 20000 and 29999.

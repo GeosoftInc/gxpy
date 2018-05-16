@@ -194,14 +194,14 @@ class GXTIN(gxapi_cy.WrapTIN):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The join information is returned in three VVs.
-        
+
             - The joins `GXVV <geosoft.gxapi.GXVV>` is a list off the adjacent nodes for
               each node, arranged for 1st node, 2nd node etc.
             - The index `GXVV <geosoft.gxapi.GXVV>` gives the starting index in the
               joins `GXVV <geosoft.gxapi.GXVV>` for the adjacent nodes to each node.
             - The number `GXVV <geosoft.gxapi.GXVV>` gives the number of adjacent nodes
               for each node.
-        
+
         All VVs must be type `GS_LONG <geosoft.gxapi.GS_LONG>`.
         """
         self._get_joins(vv_joins, vv_index, vv_num)
@@ -355,16 +355,16 @@ class GXTIN(gxapi_cy.WrapTIN):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Index returned begins at 0, but could be negative.
-        
+
             -1: If X,Y is not contained in a triangle (or triangle not found)
-        
+
             -2: If the location is on an edge
                 This is for "fall-back" purposes only.
-        
+
                 Frequently edge positions are located as being part of
                 a triangle, so do not rely on this result to determine
                 if a node position is on an edge.
-        
+
             -3: If the location is a vertex.
                 This is for "fall-back" purposes only in the code.
                 Normal operation is to include a node position
@@ -416,7 +416,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         The `GXTIN <geosoft.gxapi.GXTIN>` must also have been created using the Z values.
         Values located outside the convex hull are set to `rDUMMY <geosoft.gxapi.rDUMMY>`.
         The method is based on the following paper:
-        
+
         Sambridge, M., Braun, J., and McQueen, H., 1995,
         Geophysical parameterization and interpolation of irregular
         data using natural neighbours:
@@ -466,7 +466,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         routine that locates the triangle for a given location may fail).
         The `GXTIN <geosoft.gxapi.GXTIN>` must also have been created using the Z values.
         Values located outside the convex hull are set to `rDUMMY <geosoft.gxapi.rDUMMY>`.
-        
+
         The values are set assuming that each `GXTIN <geosoft.gxapi.GXTIN>` triangle defines a
         plane.
         """
@@ -496,7 +496,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         routine that locates the triangle for a given location may fail).
         The `GXTIN <geosoft.gxapi.GXTIN>` must also have been created using the Z values.
         Values located outside the convex hull are set to `rDUMMY <geosoft.gxapi.rDUMMY>`.
-        
+
         Within each voronoi triangle, the Z value of node closest to the input
         X,Y location is returned.
         """

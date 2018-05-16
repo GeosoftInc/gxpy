@@ -63,18 +63,18 @@ class GXEDB(gxapi_cy.WrapEDB):
         Apply a formula to selected cells of the
         current line. (Do not use this wrapper if you
         want to apply a formula across multiple lines)
-        
+
         Notes:
-        
+
         The current selection must be on cell(s) of
         a channel or on the a channel header.
-        
+
         If the selection is on cell(s) of a channel,
         the formula is applied to only these cells.
-        
+
         If the selection is on a channel header, the
         formula is applied to every cell in the channel.
-        
+
         The given formula string must be of the form:
         "<NameOfCurrentChannel>=<SomeExpression>;"
         e.g. "x=y+1;"
@@ -468,7 +468,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         that can be displayed. If a profile is not currently displayed,
         its height fraction is 0.  The sum of all the fractions returned
         is equal to 1.
-        
+
         The profile splits refers to the relative sizes of the individual
         profile windows. To get/set the fraction of the total database window
         devoted to the profiles, use the `set_split <geosoft.gxapi.GXEDB.set_split>` and `get_split <geosoft.gxapi.GXEDB.get_split>` functions.
@@ -623,7 +623,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Limitations:** May not be available while executing a command line program.
 
         **Note:** The `GXVV <geosoft.gxapi.GXVV>` elements must be INT.
-        
+
         Displayed channel lists are filled in the order the channels
         appear on the display, left to right.
 
@@ -675,7 +675,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Limitations:** May not be available while executing a command line program.
 
         **Note:** The `GXVV <geosoft.gxapi.GXVV>` elements must be INT.
-        
+
         Displayed channel lists are filled in the order the channels
         appear on the display, left to right.
 
@@ -708,7 +708,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Note:** Displayed channel lists are filled in the order the channels
         appear on the display, left to right.
-        
+
         The channel names will be placed in the "Name" part of
         the list and the values are set to the symbol handle.
 
@@ -743,10 +743,10 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Note:** Displayed channel lists are filled in the order the channels
         appear on the display, left to right.
-        
+
         The channel names will be placed in the "Name" part of
         the list and the values are set to the symbol handle.
-        
+
         Examples of channel classes in current use are "MASK" and
         "ASSAY". (Searches are case tolerant).
 
@@ -979,7 +979,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         end fiducials and not the selected channel. You
         can use this method to retrieve the selected range
         from any channel, loaded or not.
-        
+
         The `GXVV <geosoft.gxapi.GXVV>` will be resized to the length of the data
         """
         ret_val = self._get_mark_chan_vv(vv, chan)
@@ -1011,7 +1011,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         end fiducials and not the selected channel. You
         can use this method to retrieve the selected range
         from any channel, loaded or not.
-        
+
         The `GXVA <geosoft.gxapi.GXVA>` will be resized to the length of the data
         """
         ret_val = self._get_mark_chan_va(vv, chan)
@@ -1344,7 +1344,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The scatter tool uses the following INI parameters
-        
+
         SCATTER.STM       name of the scatter template,"none" for none
         SCATTER.STM_NAME  name of last template section, "" for none.
         SCATTER.X         name of channel to display in X
@@ -1379,9 +1379,9 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Limitations:** May not be available while executing a command line program.
 
         **Note:** The last listed database will become the current database.
-        
+
         Databases may already be loaded.
-        
+
         Only the first file in the list may have a directory path.
         All other files in the list are assumed to be in the same
         directory as the first file.
@@ -1504,7 +1504,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Limitations:** May not be available while executing a command line program.
 
         **Note:** The loaded database will become the current database.
-        
+
         If the database is already loaded, it simply becomes
         the current database.
         """
@@ -1935,7 +1935,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Note:** The input `GXVV <geosoft.gxapi.GXVV>` values are the fractional heights for each
         profile window. Values are summed, and normalized (so you can
         enter "1,1,1", with a `GXVV <geosoft.gxapi.GXVV>` of length 3, if you want 3 equal profile windows).
-        
+
         `GXVV <geosoft.gxapi.GXVV>` values beyond the maximum number of displayable
         profiles (`MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`) are ignored.
         """

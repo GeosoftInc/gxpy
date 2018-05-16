@@ -107,7 +107,7 @@ class GXMISC(gxapi_cy.WrapMISC):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The TBL file will contain the following fields:
-        
+
         = Line:string16
         = Station:long
         = Latitude:double

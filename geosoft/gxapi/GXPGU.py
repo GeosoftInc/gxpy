@@ -427,17 +427,17 @@ class GXPGU(gxapi_cy.WrapPGU):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Grid cells take on the averaged values within a search radius, weighted inversely by distance.
-        
+
         Weighting can be controlled using the power and slope properties;
-        
+
         weighting = 1 / (distance^wtpower + 1/slope) where distance is in
         units of grid cells (X dimenstion). Default is 0.0,
-        
+
         If the blanking distance is set, all cells whose center point is not within the blanking distance of
         at least one data point are set to dummy.
-        
+
         `GXREG <geosoft.gxapi.GXREG>` Parameters:
-        
+
         X0, Y0, DX, DY: Grid origin, and cell sizes (required)
         WT_POWER (default=2), WT_SLOPE (default=1) Weighting function parameters
         SEARCH_RADIUS: Distance weighting limit (default = 4 * SQRT(DX*DY))
@@ -476,17 +476,17 @@ class GXPGU(gxapi_cy.WrapPGU):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** 3D cells take on the averaged values within a search radius, weighted inversely by distance.
-        
+
         Weighting can be controlled using the power and slope properties;
-        
+
         weighting = 1 / (distance^wtpower + 1/slope) where distance is in
         units of grid cells (X dimenstion). Default is 0.0,
-        
+
         If the blanking distance is set, all cells whose center point is not within the blanking distance of
         at least one data point are set to dummy.
-        
+
         `GXREG <geosoft.gxapi.GXREG>` Parameters:
-        
+
         X0, Y0, Z0, DX, DY, DZ: Grid origin, and cell sizes (required)
         WT_POWER (default=2), WT_SLOPE (default=1) Weighting function parameters
         SEARCH_RADIUS: Distance weighting limit (default = 4 * CUBE_ROOT(DX*DY*DZ))
@@ -531,7 +531,7 @@ class GXPGU(gxapi_cy.WrapPGU):
     def numeric_to_thematic(cls, pg_i, vv, pg_o):
         """
         `numeric_to_thematic <geosoft.gxapi.GXPGU.numeric_to_thematic>`    Set index values in a pager based on a numeric pager with translation `GXVV <geosoft.gxapi.GXVV>`.
-        
+
         Returns			  Nothing
         
         :param pg_i:  Input numeric `GXPG <geosoft.gxapi.GXPG>`
@@ -548,13 +548,13 @@ class GXPGU(gxapi_cy.WrapPGU):
         **Note:** The values in the input data `GXVV <geosoft.gxapi.GXVV>` represent the center-of-range
         values of unique properties with indices 0 to N-1, where N
         is the number of items in the input `GXVV <geosoft.gxapi.GXVV>`.
-        
+
         This `GXVV <geosoft.gxapi.GXVV>` is sorted from smallest to largest, and each value in
         in the input numeric `GXPG <geosoft.gxapi.GXPG>` is tested to see into which range it goes.
         The closest range value for each item is used, so the half-way point
         is the dividing point. The top and bottom-most range widths are determined
         by the "inside half-width" to the nearest range.
-        
+
         The INDEX of the closest range is then inserted into the output `GXPG <geosoft.gxapi.GXPG>`, so
         it can be used in a thematic voxel (for instance).
         """
@@ -642,11 +642,11 @@ class GXPGU(gxapi_cy.WrapPGU):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** A reference file is a binary file with the following format:
-        
+
         The first 8 bytes are the pager dimensions NX and NY as longs.
         The remaining bits, one bit per pager cell - (NX * NY)/8 bytes
         are zero where the pager is dummy, and 1 where the pager is defined.
-        
+
         The reference file is used in various operations where it is
         necessary to mask some output to the original defined cells.
         """
@@ -694,7 +694,7 @@ class GXPGU(gxapi_cy.WrapPGU):
     def thematic_to_numeric(cls, pg_i, vv, pg_o):
         """
         Set numeric values in a pager based on an index pager with translation `GXVV <geosoft.gxapi.GXVV>`.
-        
+
         Returns			  Nothing
         
         :param pg_i:  Input Index `GXPG <geosoft.gxapi.GXPG>`
@@ -710,7 +710,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         **Note:** The items in the input data `GXVV <geosoft.gxapi.GXVV>` are inserted into
         the output `GXPG <geosoft.gxapi.GXPG>` using the indices in the index `GXPG <geosoft.gxapi.GXPG>`.
-        
+
         This function is useful when converting a thematic voxel, which is
         type `GS_LONG <geosoft.gxapi.GS_LONG>` and contains indices into its own internal `GXTPAT <geosoft.gxapi.GXTPAT>`
         object, and you provide a numeric mapping `GXVV <geosoft.gxapi.GXVV>`, calculated using
@@ -1010,12 +1010,12 @@ class GXPGU(gxapi_cy.WrapPGU):
         **Note:** The matrix is input as an M rows (data) by N columns (variables) `GXPG <geosoft.gxapi.GXPG>`.
         The vector must be of length N. The output `GXVV <geosoft.gxapi.GXVV>` is set to length M.
         The `GXPG <geosoft.gxapi.GXPG>` and VVs must be type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
-        
+
         Terminates if: 
-        
+
              Matrices, `GXVV <geosoft.gxapi.GXVV>` are not expected sizes (taken from U)
              PGs are not `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
-        
+
         Dummies are treated as 0 values.
         """
         gxapi_cy.WrapPGU._matrix_vector_mult(GXContext._get_tls_geo(), pg_u, vv_x, vv_o)
@@ -1044,14 +1044,14 @@ class GXPGU(gxapi_cy.WrapPGU):
         **Note:** The matrix is input as an N rows (data) by M columns (variables) `GXPG <geosoft.gxapi.GXPG>`.
         On return, the matrix is decomposed to A = U * W * Vt. If M<N, then an error will 
         be registered. In this case, augment the "A" `GXPG <geosoft.gxapi.GXPG>` with rows of zero values.
-        
+
         The input matrices must be A[M,N], U[M.N] and V[N,N]. The length of the W `GXVV <geosoft.gxapi.GXVV>`
         is set by sSVD_PGU to N.
-        
+
         The Pagers must be type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
-        
+
         Terminates if: 
-        
+
              U is not M by N. (Taken from size of A)
              V is not N by N. (Taken from #columns in A).
              PGs, VV are not `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`
@@ -1088,13 +1088,13 @@ class GXPGU(gxapi_cy.WrapPGU):
         The input matrices must be A[M,N], U[M.N] and V[N,N]. The length of the W `GXVV <geosoft.gxapi.GXVV>`
         is set by sSVDecompose_PGU to N.
         The Pagers must be type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
-        
+
         Terminates if: 
-        
+
              U is not M by N. (Taken from size of A)
              V is not N by N. (Taken from #columns in A).
              PGs, VV are not `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`.
-        
+
         Dummies are treated as 0 values.
         """
         gxapi_cy.WrapPGU._sv_recompose(GXContext._get_tls_geo(), pg_u, vv_w, pg_v, min_w, pg_a)

@@ -20,10 +20,10 @@ class GXSTK(gxapi_cy.WrapSTK):
     The `GXSTK <geosoft.gxapi.GXSTK>` class is used for plotting a single data profile in
     an `GXMVIEW <geosoft.gxapi.GXMVIEW>`. The `GXMSTK <geosoft.gxapi.GXMSTK>` class (see `GXMSTK <geosoft.gxapi.GXMSTK>`) is used to plot
     multiple `GXSTK <geosoft.gxapi.GXSTK>` objects to a single map.
-    
+
     Use `GXMSTK.add_stk <geosoft.gxapi.GXMSTK.add_stk>` fuction to create a `GXSTK <geosoft.gxapi.GXSTK>` object before
     using functions in this file
-    
+
     SEE `GXMSTK <geosoft.gxapi.GXMSTK>` FILE FOR DETAILED DESCRIPTIONS OF ALL FUNCTION PARAMETERS.
     """
 
@@ -83,7 +83,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         **Note:** See above full description of each parameters
         `GXVV <geosoft.gxapi.GXVV>`'s for X channel transformation can be NULL if the
         transformation is log or loglinear. The same for Y channel.
-        
+
         See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
         x_trans_t.value, x_log_min.value, y_trans_t.value, y_log_min.value = self._get_trans_parms(x_trans_t.value, x_log_min.value, xvv_lev, xvv_cmp, y_trans_t.value, y_log_min.value, yvv_lev, yvv_cmp)

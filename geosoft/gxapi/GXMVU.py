@@ -573,7 +573,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** To allow for expansion, all parameters are passed inside the `GXREG <geosoft.gxapi.GXREG>` object.
-        
+
         BAR_ORIENTATION        one of MVU_ORIENTATION_XXX (DEFAULT = `MVU_ORIENTATION_VERTICAL <geosoft.gxapi.MVU_ORIENTATION_VERTICAL>`)
         DECIMALS					decimals in plotted values (see sFormatStr_GS for rules) (DEFAULT = 1)
         ANNOFF						annotation offset from bar (+/- determines side of the bar left/right and below/above)
@@ -825,7 +825,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         the forward model curves. This is useful for trouble-shooting
         or understanding why a certain inversion result was obtained.
         The earth model is a simple halfspace.
-        
+
         The forward model is plotted either as a function of
         resistivity at a single height, or as a function of height at
         a single resistivity. In either case, the relevant VVs must be
@@ -979,19 +979,19 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **Note:** Current line color, thickness and style are used to
         draw the line.
-        
+
         Current font, font color and font style are used to
         annotate the line labels.
-        
+
         If current clipping is ON in the VIEW, lines will be
         clipped to the window before plotting.  In this case,
         labels should be located ABOVE or BELOW the line
         traces to prevent labels being clipped.
-        
+
         The offsets dOffA and dOffB control the vertical and
         horizontal label offsets with respect to the ends of
         the line trace and depending on the label location.
-        
+
         The vertical line reference angle dVerAng is used
         to determine if lines are considered vertical or
         horizontal.  Vertical lines use the sUp parameter
@@ -2243,11 +2243,11 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **Note:** The area group must exist and will be modified to match the current
         line group.
-        
+
         All non-polygon entities in the current area group will remain in the
         new area group.  All existing polygon groups will be used to determine
         the most likely attributes for the new polygon groups.
-        
+
         There must be existing polygon groups in the area group.
 
         .. seealso::
