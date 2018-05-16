@@ -26,24 +26,24 @@ class GXST(gxapi_cy.WrapST):
     **Note:**
 
     .. _histogram_ranges:
-    
+
     *** Histogram ranges and color zone ranges ***
-    
+
     Histogram bins are defined with inclusive minima and exclusive maxima;
     for instance if Min = 0 and Inc = 1, then the second bin would include
     all values z such that  0 >= z > 1 (the first bin has all values < 0).
-    
+
     Color zones used in displaying grids (`GXITR <geosoft.gxapi.GXITR>`, ZON etc...) are the
     opposite, with exclusive minima and inclusive maxima.
     For instance, if a zone is defined from 0 to 1, then it would
     contain all values of z such that 0 > z >= 1.
-    
+
     These definitions mean that it is impossible to perfectly assign
     `GXITR <geosoft.gxapi.GXITR>` colors to individual bars of a histogram. The best work-around
     when the data values are integers is to define the color zones using
     0.5 values between the integers. A general work-around is to make the
     number of histogram bins much larger than the number of color zones.
-    
+
     See also  `GXST2 <geosoft.gxapi.GXST2>` (bi-variate statistics)
     """
 
@@ -209,16 +209,16 @@ class GXST(gxapi_cy.WrapST):
 
         **Note:** The Number of bins includes the one before the minimum
         and the one after the maximum, so it must be a value >2.
-        
+
         IMPORTANT: This function gets the histogram minimum and
         maximum from the current min and max values stored in the `GXST <geosoft.gxapi.GXST>`,
         so this is equivalent to calling `histogram2 <geosoft.gxapi.GXST.histogram2>` with
-        
+
         ``#bins, Min, (Max-Min)/(# bins -2))``
-        
+
         You should already have the data loaded in order to call this
         function.
-        
+
         See histogram_ranges_
         """
         self._histogram(bins)
@@ -245,7 +245,7 @@ class GXST(gxapi_cy.WrapST):
         **Note:** The Number of bins includes the one before the minimum
         and the one after the maximum, so it must be a value >2.
         The width of the individual bins will be (Min-Max)/(# - 2)
-        
+
         See histogram_ranges_
         """
         self._histogram2(bins, min, max)
@@ -333,7 +333,7 @@ class GXST(gxapi_cy.WrapST):
 
         **Note:** The following can only be determined if the `GXST <geosoft.gxapi.GXST>` has recorded
         a histogram: `ST_MEDIAN <geosoft.gxapi.ST_MEDIAN>`, `ST_MODE <geosoft.gxapi.ST_MODE>`
-        
+
         `ST_MINPOS <geosoft.gxapi.ST_MINPOS>` can be used to retrieve the smallest value greater
         than zero, but not from `GXST <geosoft.gxapi.GXST>` objects recovered from serialized object.
         """
@@ -351,8 +351,8 @@ class GXST(gxapi_cy.WrapST):
         :type  x:  float
 
         :returns:    real
-                   
-                   
+
+
                    Notes			this function is based on Normal Cumulative distribution function
                    mit to about 5 standard deviations
         :rtype:      float
@@ -375,8 +375,8 @@ class GXST(gxapi_cy.WrapST):
         :type  percent:  float
 
         :returns:        real
-                         
-                         
+
+
                          Notes			this function is based on Normal Cumulative distribution function
                          mit to about 5 standard deviations
         :rtype:          float

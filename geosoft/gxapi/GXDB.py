@@ -24,7 +24,7 @@ class GXDB(gxapi_cy.WrapDB):
 
     The following defines are not used by any methods but are
     used by GX's:
-    
+
     `DB_ACTIVITY_BLOB <geosoft.gxapi.DB_ACTIVITY_BLOB>`
     """
 
@@ -306,7 +306,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **Note:** The symbol `GXREG <geosoft.gxapi.GXREG>` is used to store a variety of attribute
         about the symbol.  Following a conventionally used entries:
-        
+
         UNITS                   - channel units
         CLASS                   - symbol class name (i.e. "Assay")
         _PJ_ipj                 - projection blob name
@@ -317,7 +317,7 @@ class GXDB(gxapi_cy.WrapDB):
         _PJ_projection
         _PJ_units
         _PJ_datum_transform
-        
+
         This is a convenient but low-performance way to get/set `GXREG <geosoft.gxapi.GXREG>`
         settings.  If performance is an issue, and more than one
         setting is to be Get and or Set, use the `GXREG <geosoft.gxapi.GXREG>` directly.
@@ -717,7 +717,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **Note:** Same as `get_reg_symb_setting <geosoft.gxapi.GXDB.get_reg_symb_setting>`, but converts
         the setting automatically to an integer value.
-        
+
         This is a convenient but low-performance way to get/set `GXREG <geosoft.gxapi.GXREG>`
         settings.  If performance is an issue, and more than one
         setting is to be Get and or Set, use the `GXREG <geosoft.gxapi.GXREG>` directly.
@@ -764,7 +764,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **Note:** If a channel has an `GXITR <geosoft.gxapi.GXITR>`, the `GXITR <geosoft.gxapi.GXITR>` colors are used to
         display channel values in the spreadsheet.
-        
+
         If a channel does not have an `GXITR <geosoft.gxapi.GXITR>`, `get_itr <geosoft.gxapi.GXDB.get_itr>` will not change
         the passed `GXITR <geosoft.gxapi.GXITR>`.
         """
@@ -876,7 +876,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **Note:** If a `GXVA <geosoft.gxapi.GXVA>` channel is specified, then element [0] of this
         `GXVA <geosoft.gxapi.GXVA>` channel will be populated with the `GXVV <geosoft.gxapi.GXVV>`.
-        
+
         There is a limit of 2000 elements for non-licensed users.
 
         .. seealso::
@@ -986,7 +986,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **Note:** Same as `get_reg_symb_setting <geosoft.gxapi.GXDB.get_reg_symb_setting>`, but converts
         the setting automatically to a real value.
-        
+
         This is a convenient but low-performance way to get/set `GXREG <geosoft.gxapi.GXREG>`
         settings.  If performance is an issue, and more than one
         setting is to be Get and or Set, use the `GXREG <geosoft.gxapi.GXREG>` directly.
@@ -1354,7 +1354,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **Note:** The symbol `GXREG <geosoft.gxapi.GXREG>` is used to store a variety of attribute
         about the symbol.  Following a conventionally used entries:
-        
+
         UNITS                   - channel units
         CLASS                   - symbol class name (i.e. "Assay")
         _PJ_ipj                 - projection blob name
@@ -1365,7 +1365,7 @@ class GXDB(gxapi_cy.WrapDB):
         _PJ_projection
         _PJ_units
         _PJ_datum_transform
-        
+
         This is a convenient but low-performance way to get/set `GXREG <geosoft.gxapi.GXREG>`
         settings.  If performance is an issue, and more than one
         setting is to be Get and or Set, use the `GXREG <geosoft.gxapi.GXREG>` directly.
@@ -2294,15 +2294,15 @@ class GXDB(gxapi_cy.WrapDB):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Label formats.
-        
+
         example full format is
         "L1023.4 13"   type "L"
         number "1023"
         version "4"
         flight "13"
-        
+
         formats can be added to get combined format
-        
+
         Use LINK format to create a database link label.
         """
         label.value = self._line_label(line, label.value.encode(), format)
@@ -2509,11 +2509,11 @@ class GXDB(gxapi_cy.WrapDB):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
-        
+
         This function simply returns a value set using the `set_line_bearing <geosoft.gxapi.GXDB.set_line_bearing>`
         function. It returns `rDUMMY <geosoft.gxapi.rDUMMY>` for line categories other than
         `DB_CATEGORY_LINE_FLIGHT <geosoft.gxapi.DB_CATEGORY_LINE_FLIGHT>`.
-        
+
         To calculate the line azimuth based on the first and
         last non-dummy locations, use the `GXDU.direction <geosoft.gxapi.GXDU.direction>` function.
 
@@ -2582,11 +2582,11 @@ class GXDB(gxapi_cy.WrapDB):
         **Note:** Selections/deselections are cumulative. If lines had already
         been selected, then any further selection/deselection will
         affect that set of selections.
-        
+
         E.g. "L99:800" is the string to select all normal lines from
         99 to 800. If `select <geosoft.gxapi.GXDB.select>` is called again to select "L1000",
         then lines 99 to 800 and 1000 would all be selected.
-        
+
         Use a "T" prefix for Tie lines.
         Use an "F" prefix to specify lines of a specific flight.
         E.g. "F10" would select all lines of flight 10.
@@ -2612,7 +2612,7 @@ class GXDB(gxapi_cy.WrapDB):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
-        
+
         This function simply sets a value in the line's metadata
         that is retrieved using the `line_bearing <geosoft.gxapi.GXDB.line_bearing>`
         function. It terminates for line categories other than
@@ -2870,7 +2870,7 @@ class GXDB(gxapi_cy.WrapDB):
         and the handle, an integer value written as a string, is
         placed in the value part of the `GXLST <geosoft.gxapi.GXLST>` (1).
         Array channels are included, as well as virtual channels (array channel single columns loaded in the database like \\"Chan[1]\\".
-        
+
         The `GXLST <geosoft.gxapi.GXLST>` is cleared first, and the items are sorted by name.
         """
         self._chan_lst(lst)
@@ -2915,7 +2915,7 @@ class GXDB(gxapi_cy.WrapDB):
         item name and the item value is set to the symbol handle.
         Only channels with the given class name are included,
         e.g. use "ASSAY" for assay channels in `GXCHIMERA <geosoft.gxapi.GXCHIMERA>`.
-        
+
         The `GXLST <geosoft.gxapi.GXLST>` is cleared first, and the items are sorted by name.
         """
         self._class_chan_lst(lst, cl.encode())
@@ -2941,7 +2941,7 @@ class GXDB(gxapi_cy.WrapDB):
         item name and the item value is set to the symbol handle.
         Only group lines with the given class name are included,
         e.g. use "TARGETS" for UX-Detect Target groups.
-        
+
         The `GXLST <geosoft.gxapi.GXLST>` is cleared first, and the items are sorted by name.
         """
         self._class_group_lst(lst, cl.encode())
@@ -2972,15 +2972,15 @@ class GXDB(gxapi_cy.WrapDB):
 
         **Note:** If symbol already exits, and it is the same type
         simply returns a handle to the existing symbol.
-        
+
         This method simple calls `create_symb_ex <geosoft.gxapi.GXDB.create_symb_ex>` with the
         extra info set to 1.
-        
+
         STRING-type channels: To create a string-type channel,
         enter a negative number for the channel category below.
         For instance, "-32" will create a string channel with
         32 characters per item.
-        
+
         BLOBS: Blobs (Binary Large Objects) can be used for storing
         miscellaneous data which does not fit well into any of the
         other various storage objects, such as a `GXREG <geosoft.gxapi.GXREG>`. Generally,
@@ -2991,11 +2991,11 @@ class GXDB(gxapi_cy.WrapDB):
         `GXBF <geosoft.gxapi.GXBF>` object.
         To avoid namespace problems, Geosoft reserves the following
         name prefixes:
-        
+
         OE.   (Core functions)
         GS.   (Applications)
         CS.   (Custom Solutions applications)
-        
+
         Programmers should avoid using the above prefixes as the starting
         letters of their blob names to avoid any possible conflicts.
         """
@@ -3028,30 +3028,30 @@ class GXDB(gxapi_cy.WrapDB):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** If symbol already exits it is returned.
-        
+
         STRING-type channels: To create a string-type channel,
         enter a negative number for the channel category below.
         For instance, "-32" will create a string channel with
         32 characters per item.
-        
+
         Symbol name for `DB_CATEGORY_LINE_FLIGHT <geosoft.gxapi.DB_CATEGORY_LINE_FLIGHT>` must conform to
         the following line naming syntax:
-        
+
         [type][number.version:flight]
-        
+
         Type can be: L - normal line
         B - base line
         T - tie line
         R - trend line
         S - test line
         P - special line
-        
+
         Examples: L100,
         T100.1:16
-        
+
         Note the "Flight" is any whole number that may be useful
         to differentiate processing tasks.
-        
+
         The ability to create a `GXVA <geosoft.gxapi.GXVA>` channel is not available in the
         free interface and requires a Montaj license.
         """
@@ -3078,7 +3078,7 @@ class GXDB(gxapi_cy.WrapDB):
         item name and the item value is set to the symbol handle.
         Only channels in the list which are present in the database
         are included.
-        
+
         The `GXLST <geosoft.gxapi.GXLST>` is cleared first.
         """
         self._csv_chan_lst(lst, channels.encode())
@@ -3205,7 +3205,7 @@ class GXDB(gxapi_cy.WrapDB):
         specify the `GXVA <geosoft.gxapi.GXVA>` element number in square brackets as part
         of the `GXVA <geosoft.gxapi.GXVA>` channel name (e.g. "EM[3]" will treat the fourth
         column of the `GXVA <geosoft.gxapi.GXVA>` channel as a `GXVV <geosoft.gxapi.GXVV>`).
-        
+
         See notes for `find_symb <geosoft.gxapi.GXDB.find_symb>`.
         Introduced in v5.1.3.
         The new `find_chan <geosoft.gxapi.GXDB.find_chan>` searches using the exact channel name.
@@ -3236,21 +3236,21 @@ class GXDB(gxapi_cy.WrapDB):
         specify the `GXVA <geosoft.gxapi.GXVA>` element number in square brackets as part
         of the `GXVA <geosoft.gxapi.GXVA>` channel name (e.g. "EM[3]" will treat the fourth
         column of the `GXVA <geosoft.gxapi.GXVA>` channel as a `GXVV <geosoft.gxapi.GXVV>`).
-        
+
         For backward compatibility with GXs not employing the
         `get_xyz_chan_symb <geosoft.gxapi.GXDB.get_xyz_chan_symb>` function, the following behaviour has
         been introduced as of v5.1.3:  (also true for "Y").
-        
+
         `find_symb <geosoft.gxapi.GXDB.find_symb>`(hDB, "X", `DB_SYMB_CHAN <geosoft.gxapi.DB_SYMB_CHAN>`) is now equivalent to:
-        
+
         `get_xyz_chan_symb <geosoft.gxapi.GXDB.get_xyz_chan_symb>`(hDB, `DB_CHAN_X <geosoft.gxapi.DB_CHAN_X>`);
-        
+
         In other words, the current X or Y is searched for, not
         necessarily the literal "X" or "Y". This ensures that newer
         databases, which might have "Easting" and "Northing"
         (or other similar names) instead of "X" and "Y" will still
         work with older GXs expecting "X" and "Y".
-        
+
         The new `find_chan <geosoft.gxapi.GXDB.find_chan>` searches using the exact channel name.
         """
         ret_val = self._find_symb(symb.encode(), type)
@@ -3288,7 +3288,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         :returns:     x - Symbol Handle
                       `NULLSYMB <geosoft.gxapi.NULLSYMB>` - Symbol not found
-                      
+
                       searches for the "current" X, Y or Z channel.
                       If none is defined, then looks for "X", "Y" or "Z" channel
                       If the channel is defined, but not present, returns `NULLSYMB <geosoft.gxapi.NULLSYMB>`.
@@ -3378,18 +3378,18 @@ class GXDB(gxapi_cy.WrapDB):
         **Note:** For backward compatibility with GXs not employing the
         GetXYZChan_DB function, the following behaviour has
         been introduced as of v5.1.3:  (also true for "Y").
-        
+
         `exist_symb <geosoft.gxapi.GXDB.exist_symb>`(hDB, "X", `DB_SYMB_CHAN <geosoft.gxapi.DB_SYMB_CHAN>`) is now equivalent to:
-        
+
         GetXYZChan_DB(hDB, `DB_CHAN_X <geosoft.gxapi.DB_CHAN_X>`, sXCh);
         `exist_symb <geosoft.gxapi.GXDB.exist_symb>`(hDB, sXCh, `DB_SYMB_CHAN <geosoft.gxapi.DB_SYMB_CHAN>`);
-        
+
         In other words, the current X or Y is searched for, not
         necessarily the literal "X" or "Y". This ensures that newer
         databases, which might have "Easting" and "Northing"
         (or other similar names) instead of "X" and "Y" will still
         work with older GXs expecting "X" and "Y".
-        
+
         The new `exist_chan <geosoft.gxapi.GXDB.exist_chan>` searches using the exact channel name.
         """
         ret_val = self._exist_symb(symb.encode(), type)
@@ -3544,10 +3544,10 @@ class GXDB(gxapi_cy.WrapDB):
         as all channels containing the string "MASK", as long
         as the CLASS for these channels is not set to something
         other than "" or "MASK".
-        
+
         This function is a duplicate of the `GXCHIMERA.mask_chan_lst <geosoft.gxapi.GXCHIMERA.mask_chan_lst>`
         function, and can be used if `GXCHIMERA <geosoft.gxapi.GXCHIMERA>` is not installed.
-        
+
         The `GXLST <geosoft.gxapi.GXLST>` is cleared first, and the items are sorted by name.
         "None" is added at the end, with a handle value of "-1".
         """
@@ -3573,7 +3573,7 @@ class GXDB(gxapi_cy.WrapDB):
         The name is put into the "Name" part of the `GXLST <geosoft.gxapi.GXLST>` (0),
         and the handle, an integer value written as a string, is
         placed in the value part of the `GXLST <geosoft.gxapi.GXLST>` (1).
-        
+
         Symbols are automatically sorted in logical line order.
         """
         self._selected_line_lst(lst)
@@ -3616,7 +3616,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **Note:** If the value specified is "", the internally stored value
         is cleared, and GetXYZChan_DB will return "X", "Y" or "Z"
-        
+
         This can be used, for instance, to make "Easting" and "Northing"
         the current X and Y channels, and have GXs using the
         `get_xyz_chan_symb <geosoft.gxapi.GXDB.get_xyz_chan_symb>` function to load "X" and "Y" work as desired.
@@ -3642,7 +3642,7 @@ class GXDB(gxapi_cy.WrapDB):
         item name and the item value is set to the symbol handle.
         Only channels with the string-type data (sChanType_DB < 0)
         are included.
-        
+
         The `GXLST <geosoft.gxapi.GXLST>` is cleared first, and the items are sorted by name.
         """
         self._string_chan_lst(lst)
@@ -3668,9 +3668,9 @@ class GXDB(gxapi_cy.WrapDB):
         The name is put into the "Name" part of the `GXLST <geosoft.gxapi.GXLST>` (0),
         and the handle, an integer value written as a string, is
         placed in the value part of the `GXLST <geosoft.gxapi.GXLST>` (1).
-        
+
         Line symbols are automatically sorted in logical line order.
-        
+
         NOTE: The `GXLST <geosoft.gxapi.GXLST>` is NOT cleared before being filled. If you
         want to clear the `GXLST <geosoft.gxapi.GXLST>` and get sorted values, use the
         `chan_lst <geosoft.gxapi.GXDB.chan_lst>` and `line_lst <geosoft.gxapi.GXDB.line_lst>` functions.
@@ -3737,7 +3737,7 @@ class GXDB(gxapi_cy.WrapDB):
         **Note:** If the channel is not yet associated, it is first associated.
         If the channel is already in the associated-load list, this
         does nothing.
-        
+
         As of v6.0, the load-status of channels is no longer stored
         in the database, but in the project, so this function is
         equivalent to calling `associate <geosoft.gxapi.GXDB.associate>`.
@@ -3764,9 +3764,9 @@ class GXDB(gxapi_cy.WrapDB):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The comment is written in the form:
-        
+
         Comment: String2
-        
+
         and is followed by a carriage return.
         The activity log is created automatically if it does not exist.
         """
@@ -3792,12 +3792,12 @@ class GXDB(gxapi_cy.WrapDB):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The comment is written in the form:
-        
+
         Comment: Value
-        
+
         and is followed by a carriage return.
         The activity log is created automatically if it does not exist.
-        
+
         See Notes in `add_comment <geosoft.gxapi.GXDB.add_comment>`.
         """
         self._add_int_comment(comment.encode(), val, indent)
@@ -3822,12 +3822,12 @@ class GXDB(gxapi_cy.WrapDB):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The comment is written in the form:
-        
+
         Comment: Value
-        
+
         and if followed by a carriage return.
         The activity log is created automatically if it does not exist.
-        
+
         See Notes in `add_comment <geosoft.gxapi.GXDB.add_comment>`.
         """
         self._add_double_comment(comment.encode(), val, indent)
@@ -3850,12 +3850,12 @@ class GXDB(gxapi_cy.WrapDB):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The comment is written in the form:
-        
+
         Comment: 2001/12/31 23:59:59
-        
+
         and is followed by a carriage return.
         The activity log is created automatically if it does not exist.
-        
+
         See Notes in `add_comment <geosoft.gxapi.GXDB.add_comment>`.
         """
         self._add_time_comment(comment.encode(), indent)
@@ -3879,12 +3879,12 @@ class GXDB(gxapi_cy.WrapDB):
 
         **Note:** If it is already associated, or if the group has no
         defined group class, does nothing.
-        
+
         As of v6.3, if a group line has no class defined, then ALL
         channels are assumed to be associated with it. This means
         that you need to associate a new channel with a group only in
         those cases where the group class is defined.
-        
+
         If this function is used on a group with a group class, then
         the channel is added to class's association list, and the
         channel will be recognized as being associated with all
@@ -4227,7 +4227,7 @@ class GXDB(gxapi_cy.WrapDB):
         :type  chan:   int
 
         :returns:      0 if not a group line, or if the channel is not associated.
-                       
+
                        As of v6.3, if a group line has no class defined, then ALL
                        channels are automatically assumed to be associated with it.
         :rtype:        int
@@ -4305,7 +4305,7 @@ class GXDB(gxapi_cy.WrapDB):
         Group classes are used to identify group lines used for
         special purposes. All group lines with the same class share
         the same list of associated channels.
-        
+
         As of v6.3, if a group line has no class defined, then ALL
         channels are assumed to be associated with it. This means
         that a group class should only be defined when you wish to
@@ -4337,13 +4337,13 @@ class GXDB(gxapi_cy.WrapDB):
 
         **Note:** Fails in the channel is not an array channel, if the
         file does not exist, or if it is not a valid color zone file.
-        
+
         The individual columns in the array channel are displayed using the input
         zone file colors. A linear `GXITR <geosoft.gxapi.GXITR>` from 0 to 1 is created on the color zones
         to map to individual channel indices (expressed as a fraction as shown below).
-        
+
         For instance, for a file with 8 colors the ranges are as follows:
-        
+
         Color Range
         Color 1    0        > value >=  0.125
         Color 2    0.125    > value >=  0.25
@@ -4353,14 +4353,14 @@ class GXDB(gxapi_cy.WrapDB):
         Color 6    0.625    > value >=  0.75
         Color 7    0.75     > value >=  0.875
         Color 8    0.875    > value >=  1.0
-        
+
         When an array channel is displayed, the index of each element (column) is mapped
         into the corresponding range above using the following formula:
-        
+
         value = (column index) / (# of columns - 1)
-        
+
         For an array with 8 columns, you get the following values:
-        
+
         Column   Value    Color
         0        0        1
         1        0.14     2
@@ -4370,7 +4370,7 @@ class GXDB(gxapi_cy.WrapDB):
         5        0.71     6
         6        0.86     7
         7        1.0      8
-        
+
         The color file search path is: Local directory, then oasismontaj\\tbl.
         """
         self._set_va_prof_color_file(ch, file.encode())

@@ -28,7 +28,7 @@ class GXVA(gxapi_cy.WrapVA):
     The number of rows, however can be changed, in the same way that
     the length of a `GXVV <geosoft.gxapi.GXVV>` can be changed. Data can be added or extracted
     using VVs, either by row or column.
-    
+
     A `GXVA <geosoft.gxapi.GXVA>` is used to store an array of data in which each element may have
     multiple elements.  For example, 256-channel radiometric data can
     be stored in a `GXVA <geosoft.gxapi.GXVA>` that is 256 elements wide.
@@ -175,7 +175,7 @@ class GXVA(gxapi_cy.WrapVA):
         **Note:** The output `GXVV <geosoft.gxapi.GXVV>` will be dimensioned by the number of
         rows or columns in the input `GXVV <geosoft.gxapi.GXVV>` depending on the
         :ref:`VA_AVERAGE` setting.
-        
+
         Dummies are not included in the average.
         """
         self._average(vv, rc)
@@ -226,7 +226,7 @@ class GXVA(gxapi_cy.WrapVA):
 
         **Note:** 1. Unlike `copy <geosoft.gxapi.GXVA.copy>` destination `GXVA <geosoft.gxapi.GXVA>` is not reallocated, nor are
         the dimensions changed. The caller must make any desired changes.
-        
+
         2. All `GXVA <geosoft.gxapi.GXVA>` types are supported and will be converted using
         Convert_GS if necessary.
         """
@@ -421,7 +421,7 @@ class GXVA(gxapi_cy.WrapVA):
 
         **Note:** Returns element wanted, `rDUMMY <geosoft.gxapi.rDUMMY>`, `iDUMMY <geosoft.gxapi.iDUMMY>` or blank string
         if the value is dummy or outside of the range of data.
-        
+
         Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """

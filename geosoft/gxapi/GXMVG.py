@@ -72,7 +72,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         **Note:** When Log annotation is applied, nice tick intervals will be
         calculated
-        
+
         Obsolete
         """
         self._axis_x(d_y, d_lx, d_rx, d_maj_int, d_min_int, d_size)
@@ -104,7 +104,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         **Note:** When Log annotation is applied, nice tick intervals will be
         calculated
-        
+
         Obsolete
         """
         self._axis_y(d_x, d_by, d_ty, d_maj_int, d_min_int, d_size)
@@ -199,11 +199,11 @@ class GXMVG(gxapi_cy.WrapMVG):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The grid will be drawn in the current window.
-        
+
         In the LOG and LOGLINEAR rescaling modes, grids will be
         drawn in decades and the X/Y grid increments will be
         ignored.  In addition, grid lines at 0 (zero) and LOGMIN will be drawn.
-        
+
         Obsolete
         """
         self._grid(d1st_x, d1st_y, d_x, d_y, d_dx, d_dy, l_type)
@@ -237,9 +237,9 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         **Note:** Label bounding will justify edge labels to be inside
         the bar limits.
-        
+
         When Log annotation is applied, labels will be drawn in decades.
-        
+
         Obsolete
 
         .. seealso::
@@ -277,9 +277,9 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         **Note:** Label bounding will justify edge labels to be inside
         the bar limits.
-        
+
         When Log annotation is applied, labels will be drawn in decades.
-        
+
         Obsolete
 
         .. seealso::
@@ -314,10 +314,10 @@ class GXMVG(gxapi_cy.WrapMVG):
         **Note:** If the `GXVV <geosoft.gxapi.GXVV>` contains dummies, the polylines
         will break at the dummies; the polygons
         will skip the dummies.
-        
+
         If wrapping is applied, POLYGON parameter is ignored and
         only POLYLINES are drawn.
-        
+
         Obsolete
         """
         self._poly_line_va(draw, wrap, vv_x, va, vv_array)
@@ -346,10 +346,10 @@ class GXMVG(gxapi_cy.WrapMVG):
         **Note:** If the `GXVV <geosoft.gxapi.GXVV>` contains dummies, the polylines
         will break at the dummies; the polygons
         will skip the dummies.
-        
+
         If wrapping is applied, POLYGON parameter is ignored and
         only POLYLINES are drawn.
-        
+
         Obsolete
         """
         self._poly_line_vv(draw, wrap, vv_x, vv_y)
@@ -377,7 +377,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         **Note:** When RescaleX_MVG is used, only the scaling information
         related to X axis will be considered
-        
+
         Obsolete
         """
         self._rescale_x_range(scale, min, max, log_min)
@@ -405,7 +405,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         **Note:** When RescaleY_MVG is used, only the scaling information
         related to Y axis will be considered
-        
+
         Obsolete
         """
         self._rescale_y_range(scale, min, max, log_min)

@@ -30,33 +30,33 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
     to begin with an `GXEMAPTEMPLATE <geosoft.gxapi.GXEMAPTEMPLATE>` object, and use the Lock function to
     lock the underlying template to prevent external changes. The returned
     `GXMAPTEMPLATE <geosoft.gxapi.GXMAPTEMPLATE>` object may then be safely used to make changes to the template itself.
-    
+
     VIRTUAL `GXEMAPTEMPLATE <geosoft.gxapi.GXEMAPTEMPLATE>` SUPPORT
-    
+
     These methods are only available when running in an external application.
     They allow the GX to open a map template and then create a Virtual `GXEMAPTEMPLATE <geosoft.gxapi.GXEMAPTEMPLATE>` from that
     map template. The GX can then call MakeCurrent and set the current `GXEMAPTEMPLATE <geosoft.gxapi.GXEMAPTEMPLATE>` so
     that code that follows sees this map template as the current `GXMAPTEMPLATE <geosoft.gxapi.GXMAPTEMPLATE>`.
-    
+
     Supported methods on Virtual EMAPTEMPLATEs are:
-    
+
       `current <geosoft.gxapi.GXEMAPTEMPLATE.current>`
       `current_no_activate <geosoft.gxapi.GXEMAPTEMPLATE.current_no_activate>`
       `make_current <geosoft.gxapi.GXEMAPTEMPLATE.make_current>`
       `have_current <geosoft.gxapi.GXEMAPTEMPLATE.have_current>`
       `current_if_exists <geosoft.gxapi.GXEMAPTEMPLATE.current_if_exists>`
-    
+
       `lock <geosoft.gxapi.GXEMAPTEMPLATE.lock>`
       `un_lock <geosoft.gxapi.GXEMAPTEMPLATE.un_lock>`
-    
+
       `get_name <geosoft.gxapi.GXEMAPTEMPLATE.get_name>`
-    
+
       `loaded <geosoft.gxapi.GXEMAPTEMPLATE.loaded>`
       `load <geosoft.gxapi.GXEMAPTEMPLATE.load>`
       `load_no_activate <geosoft.gxapi.GXEMAPTEMPLATE.load_no_activate>`
       `un_load_verify <geosoft.gxapi.GXEMAPTEMPLATE.un_load_verify>`
       `un_load <geosoft.gxapi.GXEMAPTEMPLATE.un_load>`
-    
+
       `create_virtual <geosoft.gxapi.GXEMAPTEMPLATE.create_virtual>`
     """
 
@@ -420,9 +420,9 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         **Limitations:** May not be available while executing a command line program.
 
         **Note:** The last map in the list will be the current map.
-        
+
         Maps may already be loaded.
-        
+
         Only the first file in the list may have a directory path.
         All other files in the list are assumed to be in the same
         directory as the first file.

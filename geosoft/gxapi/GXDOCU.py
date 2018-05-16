@@ -136,7 +136,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
         **Note:** If this document is only a URL link, the URL link will
         be resolved and the document downloaded from the appropriate
         server using the protocol specified.
-        
+
         The document has metadata, and the native document does not
         support metadata, the metadata will be placed in an associated
         file "filename.extension.GeosoftMeta"
@@ -287,13 +287,13 @@ class GXDOCU(gxapi_cy.WrapDOCU):
         **Note:** Document types are normally identified by their extension.  If you
         leave the document type blank, the extension of the document file
         will be used as the document type.
-        
+
         To resolve conflicting types, you can define your own unique type
         by entering your own type "extension" string.
-        
+
         The following types are pre-defined (as are any normal Geosoft
         file types):
-        
+
            "htm"       HTML
            "html"      HTML
            "txt"       ASCII text file
@@ -303,16 +303,16 @@ class GXDOCU(gxapi_cy.WrapDOCU):
            "mmap"      Mapinfo map file (real extension "map")
            "grd"       Geosoft grid file
            "gdb"       Geosoft database
-        
+
         URL Document Links
-        
+
         The document name can be a URL link to the document using one of
         the supported protocols. The following protocols are supported:
-        
+
            http://www.mywebserver.com/MyFile.doc                 - `GXHTTP <geosoft.gxapi.GXHTTP>`
            dap://my.dap.server.com/dcs?DatasetName?MyFile.doc    - DAP (DAP Document Access)
            ftp://my.ftp.server.com/Dir1/MyFile.doc               - FTP protocol
-        
+
         The full file name will be stored but no data will be stored with
         the `GXDOCU <geosoft.gxapi.GXDOCU>` class and the document can be retrieved using the sGetFile_DOCU
         method.
@@ -345,11 +345,11 @@ class GXDOCU(gxapi_cy.WrapDOCU):
         through an associated file "filename.extension.GeosoftMeta",
         that metadata will be loaded into the `GXDOCU <geosoft.gxapi.GXDOCU>` meta, and a Data
         class will be constructed if one does not exist.
-        
+
         Also, the Document type Extension is very important in that it
         specifies the document types that natively have metadata. The
         ones currently supported are:
-        
+
            "map"       Geosoft map file
            "gdb"       Geosoft database
            "grd"       Geosoft grid file

@@ -27,16 +27,16 @@ class GXGER(gxapi_cy.WrapGER):
 
     `GXGER <geosoft.gxapi.GXGER>` message files contain numbered messages that can be used within GXs.
     Following is an example from the file GEOSOFT.`GXGER <geosoft.gxapi.GXGER>`:
-    
-    
+
+
           #20008
           ! Invalid password. The product installation has failed.
-    
+
           #20009
           ! Unable to find INI file: %1
           ! See the documentation for details
-    
-    
+
+
     A '#' character in column 1 indicates a message number.  The message
     follows on lines that begin with a '!' character.  Strings in the message
     may be replaced at run time with values using the `set_string <geosoft.gxapi.GXGER.set_string>`,

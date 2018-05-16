@@ -236,7 +236,7 @@ class GXGU(gxapi_cy.WrapGU):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** There are six cases to consider:
-        
+
         ========    ====  =============  ========================================
         Case        Flag  Solutions      Symptoms
         ========    ====  =============  ========================================
@@ -270,30 +270,30 @@ class GXGU(gxapi_cy.WrapGU):
                                          lengths are not same. Interpolation
                                          is then applied
         ========    ====  =============  ========================================
-        
-        
+
+
         TERMINOLOGY:
-        
+
         Segments
              A segment refers to the distance and its contents between
              two adjacent fiducial markers
-        
+
         Normal Density
              The density (number of readings) shared by the segments in
              a survey line. The number of segments with the density is greater 
              than the number of segments having a different density in a line.
-        
+
         Tolerance and Bound:
              Tolerance is defined as a percentage, say ``50% (=0.5)``.
              Based on the tolerance, a lower bound and upper bound
-        
+
              can be defined:
-        
+
              ::
-        
+
                  Lower bound = (Normal Density) - (Normal Density)*Tolerance
                  Upper bound = (Normal Density) - (Normal Density)*Tolerance
-        
+
              Segments will pass the tolerance test if the number of readings
              falls within the Lower and Upper Bounds.
         """
@@ -909,11 +909,11 @@ class GXGU(gxapi_cy.WrapGU):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** All VVs must be REAL
-        
+
         The output X and Y values are the same as the inputs,
         except if `PEAKEULER_XY_FIT <geosoft.gxapi.PEAKEULER_XY_FIT>` is selected. All other
         output values are set to dummy if:
-        
+
              a) The input X or Y is a dummy
              b) The derived window size is a dummy.
              c) The derived solution is outside the range

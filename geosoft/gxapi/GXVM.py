@@ -34,7 +34,7 @@ class GXVM(gxapi_cy.WrapVM):
     memory paging file.  Note that the operating system virtual memory
     manager is much slower than the manager used by Geosoft when working with
     very large arrays in a `GXVV <geosoft.gxapi.GXVV>`.
-    
+
     See `GXVV <geosoft.gxapi.GXVV>` for methods to move data between a `GXVM <geosoft.gxapi.GXVM>` and a `GXVV <geosoft.gxapi.GXVV>`.
     """
 
@@ -152,7 +152,7 @@ class GXVM(gxapi_cy.WrapVM):
 
         **Note:** Returns element wanted, or blank string
         if the value is dummy or outside of the range of data.
-        
+
         Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """
@@ -234,7 +234,7 @@ class GXVM(gxapi_cy.WrapVM):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Element being set cannot be < 0.
-        
+
         If the element is > current `GXVM <geosoft.gxapi.GXVM>` length, the `GXVM <geosoft.gxapi.GXVM>` length is
         increased.  Reallocating `GXVM <geosoft.gxapi.GXVM>` lengths can lead to fragmented
         memory and should be avoided if possible.
@@ -259,7 +259,7 @@ class GXVM(gxapi_cy.WrapVM):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Element being set cannot be < 0.
-        
+
         If the element is > current `GXVM <geosoft.gxapi.GXVM>` length, the `GXVM <geosoft.gxapi.GXVM>` length is
         increased.  Reallocating `GXVM <geosoft.gxapi.GXVM>` lengths can lead to fragmented
         memory and should be avoided if possible.
@@ -284,7 +284,7 @@ class GXVM(gxapi_cy.WrapVM):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Element being set cannot be < 0.
-        
+
         If the element is > current `GXVM <geosoft.gxapi.GXVM>` length, the `GXVM <geosoft.gxapi.GXVM>` length is
         increased.  Reallocating `GXVM <geosoft.gxapi.GXVM>` lengths can lead to fragmented
         memory and should be avoided if possible.

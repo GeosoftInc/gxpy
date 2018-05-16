@@ -949,7 +949,7 @@ class GXDH(gxapi_cy.WrapDH):
         The `GXLST <geosoft.gxapi.GXLST>` is modified to have the new names.
         A value is put into the `GXDB <geosoft.gxapi.GXDB>` `GXREG <geosoft.gxapi.GXREG>` "DH_CONVERTED_NAMES" parameter so
         this process is done only once on a database.
-        
+
         DO NOT use on old-style single-database Wholeplot projects.
         """
         gxapi_cy.WrapDH._convert_old_line_names(GXContext._get_tls_geo(), db, lst)
@@ -1058,7 +1058,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Creates three CSV files and the accompanying template files
         ready for batch ASCII import into a drill project.
-        
+
              Project_Collar.csv, .i3
              Project_Survey.csv, .i3
              Project_Assay.csv,  .i3
@@ -1581,7 +1581,7 @@ class GXDH(gxapi_cy.WrapDH):
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The database name will be of the form
-        
+
         "d:\\directory\\Project_Collar.gdb"
         """
         db.value = gxapi_cy.WrapDH._create_collar_table(GXContext._get_tls_geo(), project.encode(), chan, db.value.encode())
@@ -1608,7 +1608,7 @@ class GXDH(gxapi_cy.WrapDH):
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The database name will be of the form
-        
+
         "d:\\directory\\Project_Collar.gdb"
         """
         db.value = gxapi_cy.WrapDH._create_collar_table_dir(GXContext._get_tls_geo(), project.encode(), dir.encode(), chan, db.value.encode())
@@ -1762,10 +1762,10 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** The template can be retrieved in order to refresh the
         database with a call to the DHIMPORT.GX.
-        
+
         The import types correspond to the DHIMPORT.IMPTYPE variable:
         0: ASCII, 1: Database/XLS, 2: ODBC
-        
+
         If no template blob exists, templ
         """
         ret_val, imp_type.value = gxapi_cy.WrapDH._get_template_blob(GXContext._get_tls_geo(), db, template.encode(), imp_type.value)
@@ -1793,11 +1793,11 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** As of version 6.0, the import templates (``*.i3, *.i4``) produced
         by the Wholeplot import wizards contain the following lines:
-        
+
          FILE assay.txt  (except for ODBC)
          DRILLTYPE 3
          DRILLTABLE Assay
-        
+
         The FILE is normally the input file name, except for ODBC, where it
         is not defined.
         The DRILLTYPE is one of DH_DATA_XXX, and the DRILLTABLE
@@ -1837,11 +1837,11 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** As of version 6.0, the import templates (``*.i3, *.i4``) produced
         by the Wholeplot import wizards contain the following lines:
-        
+
          FILE assay.txt  (except for ODBC)
          DRILLTYPE 3
          DRILLTABLE Assay
-        
+
         The FILE is normally the input file name, except for ODBC, where it
         is not defined.
         The DRILLTYPE is one of DH_DATA_XXX, and the DRILLTABLE
@@ -3596,7 +3596,7 @@ class GXDH(gxapi_cy.WrapDH):
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The various selection options give the following results:
-        
+
         New/Select/inside: Unselect all holes, then
                            select all holes inside the polygon.
         New/Select/outside: Unselect all holes, then
@@ -3605,7 +3605,7 @@ class GXDH(gxapi_cy.WrapDH):
                            deselect all holes inside the polygon.
         New/Deselect/outside: Select all holes, then
                            deselect all holes outside the polygon.
-        
+
         Append/Select/inside: Select all holes inside the polygon.
                               Leave selections outside as is.
         Append/Select/outside: Select all holes outside the polygon.
@@ -3786,7 +3786,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** The template can later be retrieved in order to refresh the
         database with a call to the DHIMPORT.GX.
-        
+
         The import types correspond to the DHIMPORT.IMPTYPE variable:
         0: ASCII, 1: Database/XLS, 2: ODBC
         """

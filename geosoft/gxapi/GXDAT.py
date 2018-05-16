@@ -23,7 +23,7 @@ class GXDAT(gxapi_cy.WrapDAT):
     the `GXBIGRID.run <geosoft.gxapi.GXBIGRID.run>` function uses 2 `GXDAT <geosoft.gxapi.GXDAT>` objects - one `GXDAT <geosoft.gxapi.GXDAT>` associated with the
     input data source, which is read line-by-line, and a second associated with
     the output grid file output grid file.
-    
+
     Use a specific `GXDAT <geosoft.gxapi.GXDAT>` creation method for an associated
     information source in order to make a `GXDAT <geosoft.gxapi.GXDAT>` as required
     by a specific processing function.  The gridding methods all use DATs.

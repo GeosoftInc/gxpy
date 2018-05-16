@@ -19,7 +19,7 @@ class GXPGEXP(gxapi_cy.WrapPGEXP):
 
     The `GXPGEXP <geosoft.gxapi.GXPGEXP>` class is similar to the `GXEXP <geosoft.gxapi.GXEXP>` class, but is used
     to apply math expressions to pagers (`GXPG <geosoft.gxapi.GXPG>` objects).
-    
+
     It works only on PGs of the same dimensions.
     """
 

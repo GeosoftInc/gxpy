@@ -702,11 +702,11 @@ class GXVOX(gxapi_cy.WrapVOX):
         slicing a voxel. It tries to match the "X" and "Y" sizes (in the grid
         coordinates) with the projection of the voxel's cells onto the grid
         plane. It uses a few simple rules:
-        
+
         If the voxel is rotated about a horizontal axis (i.e. if its own "Z" axis
         is not vertical, then both cell sizes are set to the smallest voxel dimension
         (a single volume pixel) in X, Y and Z.
-        
+
         If the voxel is "horizontal", then the angle between the
         section azimuth and the voxel's own X and Y axes is used to
         calculate a value which varies between the minimum X size and the
@@ -1404,9 +1404,9 @@ class GXVOX(gxapi_cy.WrapVOX):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Optional Parameters.
-        
+
         If these values are not set in the `GXREG <geosoft.gxapi.GXREG>`, then default parameters will be used.
-        
+
         ERROR_VOXEL:		Name of error `GXVOX <geosoft.gxapi.GXVOX>` ("" for none)
         CELLSIZEZ:      Z Cell size string (space delimited, "" for default)
         RADIUS_MIN:		Minimum Search Radius (REAL) (Default = 4) (Blanking Distance)
@@ -2259,17 +2259,17 @@ class GXVOX(gxapi_cy.WrapVOX):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** 3D cells take on the averaged values within a search radius, weighted inversely by distance.
-        
+
         Weighting can be controlled using the power and slope properties;
-        
+
         weighting = 1 / (distance^wtpower + 1/slope) where distance is in
         units of grid cells (X dimenstion). Default is 0.0,
-        
+
         If the blanking distance is set, all cells whose center point is not within the blanking distance of
         at least one data point are set to dummy.
-        
+
         `GXREG <geosoft.gxapi.GXREG>` Parameters:
-        
+
         X0, Y0, Z0, DX, DY, DZ: Voxel origin, and cell sizes (required)
         WT_POWER (default=2), WT_SLOPE (default=1) Weighting function parameters
         SEARCH_RADIUS: Distance weighting limit (default = 4 * CUBE_ROOT(DX*DY*DZ))
@@ -2314,9 +2314,9 @@ class GXVOX(gxapi_cy.WrapVOX):
         **Note:** Designed for data in array channels position vertically at single XY locations.
         Creates a `GXTIN <geosoft.gxapi.GXTIN>` using the XY locations and uses the coefficients for the top layer on
         each layer below to make it efficient.
-        
+
         `GXREG <geosoft.gxapi.GXREG>` Parameters:
-        
+
         X0, Y0, Z0, DX, DY, DZ: Voxel origin, and cell sizes (required)
         NX, NY, NZ: Voxel dimensions.
         DZ and NZ are used only if the input cell sizes `GXVV <geosoft.gxapi.GXVV>` is of zero length.

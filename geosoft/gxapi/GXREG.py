@@ -337,7 +337,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **Note:** To remove a parameter completely, use one of the
         following:
-        
+
         `set_int <geosoft.gxapi.GXREG.set_int>`(Reg, sParam, `iDUMMY <geosoft.gxapi.iDUMMY>`);
         or
         `set_double <geosoft.gxapi.GXREG.set_double>`(Reg, sParam, `rDUMMY <geosoft.gxapi.rDUMMY>`);

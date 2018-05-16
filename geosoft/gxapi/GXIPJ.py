@@ -28,7 +28,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
     together are used to create a `GXPJ <geosoft.gxapi.GXPJ>` object, which allows for the
     conversion of positions from one projection to the other.
     See also the `GXLL2 <geosoft.gxapi.GXLL2>` class, which creates Datum correction lookups.
-    
+
     See also          `GXPJ <geosoft.gxapi.GXPJ>`    Converts coordinates between projections
     `GXLL2 <geosoft.gxapi.GXLL2>`   Creates Datum correction lookups.
     """
@@ -246,7 +246,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         the warp will be determined by least-square fitting
         to the warp surface for all but the 4-point warp.
         The 4-point ward requires exactly 4 points.
-        
+
         Cannot be used with WARP_MATRIX or WARP_LOG
         """
         self._add_warp(type, vv_x_old, vv_y_old, vv_x_new, vv_y_new)
@@ -553,12 +553,12 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         `IPJ_ORIENT_DEFAULT <geosoft.gxapi.IPJ_ORIENT_DEFAULT>` - no special orientation - plan view.
         This is equivalent to `IPJ_ORIENT_PLAN <geosoft.gxapi.IPJ_ORIENT_PLAN>` with
         dXo = dYo = dZo = dRotation = 0.0.
-        
+
         `IPJ_ORIENT_PLAN <geosoft.gxapi.IPJ_ORIENT_PLAN>`      Azimuth = Rotation CCW degrees
         The plan differs from the default view in that
         a reference level is set, and the axes can be
         rotated and offset from the local X,Y.
-        
+
         `IPJ_ORIENT_SECTION <geosoft.gxapi.IPJ_ORIENT_SECTION>`   Azimuth - CW degrees from North
         -360 <= azimuth <= 360
         Swing - degrees bottom towards viewer
@@ -664,7 +664,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         required, for instance, when a 3D view has been created
         in one PCS, and an oriented grid from a different PCS is
         to be displayed in that view.
-        
+
         If the two input IPJs share the same PCS then the `get_plane_equation <geosoft.gxapi.GXIPJ.get_plane_equation>`
         function is called directly, using the input `GXIPJ <geosoft.gxapi.GXIPJ>`.
         """
@@ -915,17 +915,17 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **Note:** The vertical coordinate system (vcs) describes the datum used for vertical coordinates. The vcs name, if
         known, will appear in square brackets as part of the coordinate system name.
-        
+
         Examples:
-        
+
         ::
-        
+
             "WGS 84 [geoid]"
             "WGS 84 / UTM zone 12S" - the vcs is not known.
             "WGS 84 / UTM zone 12S [NAVD88]"
-        
+
         Valid inputs:
-        
+
              "NAVD88"          - Clears existing vcs, if any, and sets the VCS name to "NAVD88".
              ""                - Clears the vcs
         """
@@ -1141,16 +1141,16 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Returns     1 if there is a section orientation
-        
+
         The following orientations can be used to orient sections or section views:
-        
+
         `IPJ_ORIENT_SECTION <geosoft.gxapi.IPJ_ORIENT_SECTION>` - Target-type sections with Z projection horizontally
         `IPJ_ORIENT_SECTION_NORMAL <geosoft.gxapi.IPJ_ORIENT_SECTION_NORMAL>` - Like `IPJ_ORIENT_SECTION <geosoft.gxapi.IPJ_ORIENT_SECTION>`, but Z projects
         perpendicular to the secton plane.
         `IPJ_ORIENT_SECTION_CROOKED <geosoft.gxapi.IPJ_ORIENT_SECTION_CROOKED>` - Crooked sections
         `IPJ_ORIENT_3D <geosoft.gxapi.IPJ_ORIENT_3D>` - Some Sections extracted from a voxel - e.g. VoxelToGrids,
         as the voxel can have any orientation in 3D.
-        
+
         It is sometimes important to ignore the section orientation, for instance
         when rendering a grid in 3D where it has been located on a plane.
         """
@@ -1825,12 +1825,12 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Simplest Usage:
-        
+
         The coordinate system can be resolved from the "coordinate system name"
         if the name is specified using an EPSG number or naming convention such as:
-        
+
         "datum / projection"  (example: "Arc 1960 / UTM zone 37S")
-        
+
         Where:
         "datum" is the EPSG datum name (eg. NAD83).  All supported datums are
         listed in ...usercsvdatum.csv.
@@ -1839,89 +1839,89 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         system projections are listed in ...user/csv/transform.csv.
         All EPSG known combined coordinate systems of the earth are
         listed in ...user/csv/ipj_pcs.csv.
-        
+
         To define a geographic (longitude, latitude) oordinate system, specify
         the datum name alone (ie "Arc 1960").  EPSG numbers can also be used, so in
         the example above the name can be "21037".
-        
+
         The coordinate system may also be oriented arbitrarily in 3D relative to
         the base coordinate system by specifying the orientation as a set of
         6 comma-separated values between angled brackets after the coordinate 
         system name, e.g:
-        
+
         ::
-        
+
              "datum / projection"<oX,oY,oZ,rX,rY,rZ>
              21037<oX,oY,oZ,rX,rY,rZ>
-        
+
         where:
-        
+
         oX,oY,oZ    is the location of the local origin on the CS
-        
+
         rX,rY,rZ    are rotations in degrees azimuth (clockwise) of
                     the local axis frame around the X, Y and Z axis
                     respectively.  A simple plane rotation will only have
                     a rotation around Z.  
-        
+
         For example:
-        
+
         ::
-        
+
              "Arc 1960 / UTM zone 37S"<525000,2500000,0,0,0,15>
-        
+
         defines a local system with origin at (525000,2500000)
         with a rotation of 15 degrees azimuth.
-        
+
         Orientation parameters not defined will default to align with the
         base CS,  Note that although allowed, it does not make sense to have
         an orientation on a geographic coordinate system (long,lat).
-        
+
         Complete usage:
-        
+
         A coordinate system can also be fully described by providing an additional
         four strings that define the datum, map projection, length units and
         prefered local datum transform.  Refer to GXF revision 3 for further detail:
         http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File
-        
+
         Note that coordinate system reference tables sre maintained in csv files
         located in the .../user/csv folder found with the Geosoft installation files,
         which will usually be located here:
         C:\\Program Files (x86)\\Geosoft\\Oasis montaj\\user\\csv
-        
+
         The "datum" string can use a datum name defined in the "datum.csv" file,
         or the local datum name from datumtrf.csv, or the local datum description
         from ldatum.csv.
         For a non-EPSG datum, you can define your own datum parameters in the
         Datum stringfield as follows:
-        
+
         ::
-        
+
              "*YourDatumName",major_axis,flattening(or eccentricity)[,prime_meridian]
-        
+
         where
         The * before "YourDatumName" indicates this is a non-EPSG name.
         major_axis is in metres.
         flattening less than 0 is interpreted as eccentricity (0 indicates a sphere).
         prime_meridian is optional, specified in degrees of longitude relative to
         Greenwich.
-        
+
         The "Projection" can contain a projection system defined in the
         "transform.csv" file, or the name of a projection type followed by projection
         parameters.  Geographic coordinates systems (long/lat only) must leave
         "projection" blank.
-        
+
         Projection names not defined in "transform.csv" can be defined in the
         "projection" string as follows:
-        
+
         ::
-        
+
              method,length_units,P1,P2,...
-        
+
         where:
-        
+
             method
                  is a method from the table "transform_parameters.csv".
-        
+
             length_units
                  is a "Unit_length" from units.csv.
                  P1 through P8 (or fewer) are the projection parameters for the method
@@ -1929,21 +1929,21 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                  Parameters that are blank in "transform_parameters.csv" are omitted
                  from the list so that each method will have a minimum list of
                  parameters.
-        
+
         Angular parameters must always be degrees, and may be defined a
         decimal degree fromat, or "DEG.MM.SS.ssss".
         Distance parameters (False Northing and False Easting) must be
         defined in the "length_units" (string 4).
-        
+
         Examples:
-        
+
         ::
-        
+
             Geographic long,lat on datum "Arc 1960":
             "4210","","","",""
             "Arc 1960","","","",""
             "","Arc 1960","","",""
-        
+
             Projected Coordinate System, UTM zone 37S
             "21037","","","",""
             "","4210","16137","",""
@@ -1953,7 +1953,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
             "",""Arc 1960"","UTM zone 37S","m,1.0",""
             "",""Arc 1960"","UTM zone 37S","m,1.0","");
             "",""Arc 1960"","UTM zone 37S","m","Arc 1960 to WGS 84 (1)"
-        
+
             Locally oriented coordinate system (origin at 525000,2500000, rotated 15 deg):
             "21037<525000,2500000,0,0,0,15>","","","",""
             "<525000,2500000,0,0,0,15>","4210","16137","",""
@@ -2123,22 +2123,22 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** WMS coordinate strings supported:
-        
-        
+
+
         EPSG:code
-        
+
         where "code" is the EPSG code number
         "EPSG:4326"  is geographic "WGS 84" (see datum.csv)
         "EPSG:25834" is projected "ETRS89 / UTM zone 34N"
         (see ipj_pcs.csv)
-        
+
         The bounding box for EPSG systems must be defined in the
         EPSG coordinate system.  If a bounding box is provided,
         it will not be changed.
-        
-        
+
+
         AUTO:wm_id,epsg_units,lon,lat (see OGC documentation)
-        
+
         for "AUTO" coordinates, the "epsg_units" is the units
         of the bounding box.  This procedure will transform
         the supplied bounding box from these units to the

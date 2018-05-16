@@ -106,7 +106,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** A list of minima (e.g.  M1, M2, M3, M4, M5) is input.
         A list of values V is input and transformed to outputs N in the following manner:
-        
+
         if(V) >= M5) N = 5
         else if(V) >= M4) N = 4
         ...
@@ -163,10 +163,10 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Flow:
-        
+
         1. If auto-converting negatives, then all negative values
             are replaced by -0.5*value, and detection limit is ignored.
-        
+
         2. If not auto-converting negatives, and the detection limit is not
            `rDUMMY <geosoft.gxapi.rDUMMY>`, then values less than the detection limit are converted to
            one-half the detection limit.
@@ -402,9 +402,9 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         Set the "Dummy Row" `GXVV <geosoft.gxapi.GXVV>` to 1 if you wish to
         remove any row where a value for the corresponding
         channel is a dummy.
-        
+
         Transforms to apply:
-        
+
         -1 - Channel default (will be either raw or log)
         0 - Raw Transform
         1 - Log transform: base e with log min = CHIMERA_LOG_MIN
@@ -437,9 +437,9 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** If the lambda transform is requested, the channel
         must have the lambda value defined.
-        
+
         Input Transform options
-        
+
         -1 - Channel default (will be either raw or log)
         0 - Raw Transform
         1 - Log transform: base e with log min = CHIMERA_LOG_MIN
@@ -561,7 +561,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The scatter tool uses the following INI parameters
-        
+
         ================  ===============================================
         SCATTER.STM       name of the scatter template, "none" for none
         ----------------  -----------------------------------------------
@@ -573,7 +573,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         ----------------  -----------------------------------------------
         SCATTER.MASK      name of channel to use for mask
         ================  ===============================================
-        
+
         The database should be a currently open database.
         This function supercedes `GXEDB.launch_scatter <geosoft.gxapi.GXEDB.launch_scatter>`, (which now
         just gets the name of the `GXEDB <geosoft.gxapi.GXEDB>` and calls this function).
@@ -596,7 +596,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** The Triplot tool uses the following INI parameters
-        
+
         ================  ===============================================
         TRIPLOT.TTM       name of the triplot template, "none" for none
         ----------------  -----------------------------------------------
@@ -610,7 +610,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         ----------------  -----------------------------------------------
         TRIPLOT.MASK      name of channel to use for mask
         ================  ===============================================
-        
+
         The database should be a currently open database.
         """
         gxapi_cy.WrapCHIMERA._launch_triplot(GXContext._get_tls_geo(), db.encode())
@@ -636,7 +636,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         as all channels containing the string "MASK", as long
         as the CLASS for these channels is not set to something
         other than "" or "MASK".
-        
+
         This function has been duplicated by `GXDB.mask_chan_lst <geosoft.gxapi.GXDB.mask_chan_lst>`, which
         is safe to use in applications which do not have `GXCHIMERA <geosoft.gxapi.GXCHIMERA>` loaded.
         """
@@ -660,11 +660,11 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
         **Note:** Loads a `GXLST <geosoft.gxapi.GXLST>` with all channels in the preferred order:
-        
+
         First:  Sample, E, N, assay channels,
         Middle: Data from survey (other channels),
         Last:   Duplicate, Standard, Chemmask (and other masks), weight, lab, batch
-        
+
         If the input `GXLST <geosoft.gxapi.GXLST>` object has values, it is used as the channel `GXLST <geosoft.gxapi.GXLST>`,
         otherwise, get all the database channels. (This allows you to pass in
         the currently displayed channels and only reload those).
@@ -847,7 +847,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         The values in each data `GXVV <geosoft.gxapi.GXVV>` give the radius, in view units,
         of the sector arc to plots. Values <=0 or dummies are not
         plotted.
-        
+
         Offset symbols: When selected, the symbols plot without
         overlap, away from the original locations. The original
         location is marked with a small symbol and a line joins the
@@ -1262,11 +1262,11 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         and in the correct fiducial locations wrt the
         other data. The book-keeping VVs would all be
         set up in AAGetLithogeochemData_CHIMERA.
-        
+
         Values NOT in the data (missing indices) will
         be initialized to dummy if the channel is new,
         or if the value in the last `GXVV <geosoft.gxapi.GXVV>` below is set to 1.
-        
+
         New channel types will be set using the data `GXVV <geosoft.gxapi.GXVV>` type.
         Any metadata (CLASS, display formats) should be set separately.
         """

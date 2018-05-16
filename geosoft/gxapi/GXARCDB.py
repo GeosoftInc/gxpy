@@ -135,7 +135,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         **Note:** 1. The import template can be in the local directory or the GEOSOFT
            directory.
-        
+
         3. If the line already exists, the data will overwrite the existing data.
         """
         self._export_to_db(db, temp.encode(), line.encode())
@@ -166,7 +166,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
     def from_i_unknown(cls, unknown):
         """
         This method attempts to make a table handle from an IUnknown pointer
-        
+
         Returns				 `GXARCDB <geosoft.gxapi.GXARCDB>` Handle, `ARCDB_NULL <geosoft.gxapi.ARCDB_NULL>` if not successful
         
         :param unknown:  IUnknown pointer

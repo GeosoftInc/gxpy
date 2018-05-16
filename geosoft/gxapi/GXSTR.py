@@ -463,7 +463,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Escape characters:
-        
+
         \\a      bell
         \\b      backspace
         \\f      formfeed
@@ -476,7 +476,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         \\      backslash
         \\ooo    octal up to 3 characters
         \\xhh    hex up to 2 characters
-        
+
         A common use of this function is to convert double-quote characters in
         a user unput string to \\" so the string can be placed in a tokenized
         string.
@@ -646,12 +646,12 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **Note:** The original string is modified by terminating it
         at the character split.
-        
+
         The part of the string past the character split is
         copied to the split string.
-        
+
         Split characters in quoted strings are ignored.
-        
+
         This function is mainly intended to separate comments
         from control file strings.
         """
@@ -745,7 +745,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         **Note:** Mask characters '*' - matches any one or more up to
         next character
         '?' - matches one character
-        
+
         Test is case insensitive
         """
         ret_val = gxapi_cy.WrapSTR._stri_mask(GXContext._get_tls_geo(), mask.encode(), test.encode())
@@ -818,7 +818,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         **Note:** Mask characters '*' - matches any one or more up to
         next character
         '?' - matches one character
-        
+
         Test is case sensitive
         """
         ret_val = gxapi_cy.WrapSTR._str_mask(GXContext._get_tls_geo(), mask.encode(), test.encode())
@@ -1292,7 +1292,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         **Note:** Delimiters are "soft" in that one or more delimiters
         is considered a single delimiter, and preceding and
         trailing delimiters are ignored.
-        
+
         DO NOT use this function except in GXC code. The corresponding
         `get_token <geosoft.gxapi.GXSTR.get_token>` function will not operate correctly in GX.Net code.
         """
@@ -1322,7 +1322,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         You MUST NOT get tokens beyond number of tokens returned
         by `tokens <geosoft.gxapi.GXSTR.tokens>` or `tokens2 <geosoft.gxapi.GXSTR.tokens2>`.
         The first token has index 0.
-        
+
         DO NOT use this function except in GXC code.
         `get_token <geosoft.gxapi.GXSTR.get_token>` function will not operate correctly in GX.Net code.
 
@@ -1360,31 +1360,31 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **Note:** This uses a finite state machine to tokenize on these
         rules:
-        
+
         1. Any one character following an escape delimiter is
         treated as a normal character.
-        
+
         2. Any characters inside a quote string are treated as
         normal characters.
-        
+
         3. Any number of Soft delimiters in sequence without a
         hard delimiter are treated as one hard delimited.
-        
+
         4. Any number of soft delimiters can preceed or follow
         a hard delimiter and are ignored.
-        
-        
+
+
         EXAMPLE
-        
+
         Soft = [ ]   Hard = [,]   Escape = [\\]    Quote = ["]
-        
+
         [this is a , , the "test," of   ,  \\,\\" my delimite  fi,]
-        
+
         Results in:
-        
+
         [this] [is] [a] [] [the] ["test,"] [of] [\\,\\"] [my] [delimite] [fi] []
-        
-        
+
+
         NOT use this function except in GXC code. The corresponding
         etToken_STR function will not operate correctly in GX.Net code.
 
@@ -1417,7 +1417,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         **Note:** Delimiters in the string are reduced to a single NULL.
         Delimiters withing double quoted strings are ignored.
         Use GetToken_STR to extract tokens.
-        
+
         DO NOT use this function except in GXC code. The corresponding
         `get_token <geosoft.gxapi.GXSTR.get_token>` function will not operate correctly in GX.Net code.
 
@@ -1455,7 +1455,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **Note:** This function is for old GX compatibility only.
         See `tokenize <geosoft.gxapi.GXSTR.tokenize>`.
-        
+
         DO NOT use this function except in GXC code. The corresponding
         `get_token <geosoft.gxapi.GXSTR.get_token>` function will not operate correctly in GX.Net code.
         """

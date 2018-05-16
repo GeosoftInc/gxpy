@@ -245,7 +245,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **Note:** If the short and long wavelengths are <= 0, the input channel
         is simply copied to the output channel without filtering.
-        
+
         The wavelengths are in fiducials.
         """
         gxapi_cy.WrapVVU._bp_filt(GXContext._get_tls_geo(), vv_i, vv_o, pr_sw, pr_lw, flen)
@@ -293,14 +293,14 @@ class GXVVU(gxapi_cy.WrapVVU):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Flow:
-        
+
         1. If auto-converting negatives, then all negative values
             are replaced by -0.5*value, and detection limit is ignored.
-        
+
         2. If not auto-converting negatives, and the detection limit is not
            `rDUMMY <geosoft.gxapi.rDUMMY>`, then values less than the detection limit are converted to
            one-half the detection limit.
-        
+
         This function is identical to `GXCHIMERA.clip_to_detect_limit <geosoft.gxapi.GXCHIMERA.clip_to_detect_limit>`.
         """
         gxapi_cy.WrapVVU._clip_to_detect_limit(GXContext._get_tls_geo(), vv, det_limit, conv)
@@ -681,7 +681,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         value is not found, and the index of items that are found.
         Comparisons are case-tolerant.
         Non-string VVs are converted to string type VVs (element size 24) internally.
-        
+
         The method requires that the `GXVV <geosoft.gxapi.GXVV>` items be sorted, and
         will do so internally. Since the input VVs may already be sorted,
         the method will run faster if this stage can be skipped.
@@ -928,21 +928,21 @@ class GXVVU(gxapi_cy.WrapVVU):
              Dummies at the ends are treated as follows
              for various combinations of the inside and outside interpolation
              choices:
-        
+
         ::
-        
+
           if ((iOutside==VV_INTERP_EDGE_NEAREST) ||
               (iOutside==VV_INTERP_EDGE_SAME && iInside==VV_INTERP_NEAREST))
-        
+
                // -- Set dummies to the same value as the last defined element
-        
+
           else if ((iOutside==VV_INTERP_EDGE_LINEAR) ||
                    (iOutside==VV_INTERP_EDGE_SAME &&  iInside==VV_INTERP_LINEAR))
-        
+
                // --- Set dummies using the slope of the last two defined elements
-        
+
           endif
-        
+
         In all other cases and combinations of the two interpolation
         choices, the dummies are left "as is".
         """
@@ -1171,11 +1171,11 @@ class GXVVU(gxapi_cy.WrapVVU):
         taken to be the data index, and the Y-axis value is the
         input data `GXVV <geosoft.gxapi.GXVV>` value. The straight line is drawn between data points
         at the ends of the line segment, whose length is an input.
-        
+
         The output flag `GXVV <geosoft.gxapi.GXVV>` is set to 0 if data point in input `GXVV <geosoft.gxapi.GXVV>` falls within the
         deviation for all the moving line segments of which it is a part, otherwise, it
         will be set to 1.
-        
+
         The output maximum deviation `GXVV <geosoft.gxapi.GXVV>` contains the maximum deviation at each point
         for all the moving line segments that it is a part of.
         """
@@ -1244,7 +1244,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         the minimum of a) the input offset, b) the input symbol
         radius. This is to ensure that the original location is
         never covered by the offset symbol.
-        
+
         Care should be taken when choosing the symbol size, because
         if the point density is too high, all the points will get
         pushed to the outside edge and your plot will look like a
@@ -1289,12 +1289,12 @@ class GXVVU(gxapi_cy.WrapVVU):
         vector formed by the closest two points on the splined line. The
         correction (behind, in front, left or right) is determined with respect
         to the heading, and added to the original location.
-        
+
         IF this method fails, no dummies, no duplicated locations, no reversals
         are produced.
-        
+
         The algorithm:
-        
+
             1. Determine average distance between each point = D
             2. Smoothing interval = MAX(2*D, Offset distance) = I
             3. Thin input points to be at least the smoothing interval I apart from each other.
@@ -1408,12 +1408,12 @@ class GXVVU(gxapi_cy.WrapVVU):
         vector formed by the closest two points on the splined line. The
         correction (behind, in front, left or right) is determined with respect
         to the heading, and added to the original location.
-        
+
         IF this method fails, no dummies, no duplicated locations, no reversals
         are produced.
-        
+
         The algorithm:
-        
+
             1. Determine average distance between each point = D
             2. Default smoothing interval = MAX(2*D, Offset distance) = I
             3. Thin input points to be at least the smoothing interval I apart from each other.
@@ -1462,7 +1462,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         never covered by the offset symbol. In addition, the offset
         symbol is never place directly below the original location,
         to make it easier to draw a connecting line.
-        
+
         Care should be taken when choosing the symbol size, because
         if the point density is too high, all the points will get
         pushed to the outside edge and your plot will look like a
@@ -1494,10 +1494,10 @@ class GXVVU(gxapi_cy.WrapVVU):
         **Note:** Peaks are the maximum point within a sequence of
         positive values in the input `GXVV <geosoft.gxapi.GXVV>`.  The width is the
         number of points in the positive sequence.
-        
+
         A `GXVV <geosoft.gxapi.GXVV>` may have to be pre-filtered before finding
         the peak values:
-        
+
         Use `bp_filt <geosoft.gxapi.GXVVU.bp_filt>` to smooth the data as required.
         Use `filter <geosoft.gxapi.GXVVU.filter>` to apply a Laplace filter
         "-0.5,1.0,-0.5" to make curvature data.
@@ -1529,7 +1529,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         values in the input `GXVV <geosoft.gxapi.GXVV>`. Maximum points must be above
         the base level and have a local amplitude greater
         than the minimum amplitude specified.
-        
+
         A `GXVV <geosoft.gxapi.GXVV>` may have to be pre-filtered before finding
         the peak values.
         """
@@ -1572,7 +1572,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         calculated in two parts, individually for each side based on
         the distance from the maximum to the location where the
         amplitude is mid-way between the maximum and trough.
-        
+
         The returned VVs are packed; no dummies. Instead the
         indicies of the peak locations are returned.
         """
@@ -1598,7 +1598,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The output `GXVV <geosoft.gxapi.GXVV>` length must be set as desired before calling.
-        
+
         The X scale is unitless (1 per element), i.e. 0,1,2,3,...
 
         .. seealso::
@@ -1721,7 +1721,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         **Note:** This function tests data in input `GXVV <geosoft.gxapi.GXVV>` against
         two separate criteria. Each element of the output `GXVV <geosoft.gxapi.GXVV>`
         will have one of the following indicators:
-        
+
         =========  ==============================================================
         Indicator  Meaning
         =========  ==============================================================
@@ -2027,29 +2027,29 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **Note:** If the input VVs are not REAL, copies are made to
         temporary REALs for processing.
-        
+
         If the window size is even, it is increased by 1 so that the
         output value is put at the exact center index of the window.
-        
+
         Statistics are calculated on the values in a window
         surrounding the individual data points.
-        
+
         By shrinking the window at the ends, one-sided effects can be
         eliminated. For instance, if the data is linear to begin with,
         a rolling mean will not alter the original data.
         However, if the window size is kept constant, then values
         near the ends tend to be pulled up or down.
-        
+
         With shrinking, the window is shrunk so that it always has the
         same width on both sides of the data point under analysis;
         at the end points the window width is 1, at the next point in
         it is 3, and so on, until the full width is reached.
-        
+
         The median value is calculated by sorting the valid data in
         the window, then selecting the middle value. If the number
         of valid data points is even, then the average of the two
         central values is returned.
-        
+
         The mode value is defined as the value which occurs most
         frequently in the data. This value may not even exist, or
         may not be unique. In this implementation, the following
@@ -2283,11 +2283,11 @@ class GXVVU(gxapi_cy.WrapVVU):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Returns coefficients c[0] .. c[n]
-        
+
            Y(x) = c[0] + c[1]x + c[2](x**2) + ... + c[n](x**n)
-        
+
         The X scale is unitless (1 per element), i.e. 0,1,2,3,...
-        
+
         The polynomial `GXVV <geosoft.gxapi.GXVV>` length is set to the number of coefficients
         (order + 1)
 
@@ -2319,11 +2319,11 @@ class GXVVU(gxapi_cy.WrapVVU):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Returns coefficients c[0] .. c[n]
-        
+
            Y(x) = c[0] + c[1]x + c[2](x**2) + ... + c[n](x**n)
-        
+
         The X scale is defined by a X `GXVV <geosoft.gxapi.GXVV>` (see Trend_VV for unitless X).
-        
+
         The polynomial `GXVV <geosoft.gxapi.GXVV>` length is set to the number of coefficients
         (order + 1)
 

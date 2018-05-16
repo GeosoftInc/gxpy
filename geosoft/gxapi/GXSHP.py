@@ -91,18 +91,18 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **Note:** The file name is used to create the various files. The
         file type and extension are added:
-        
+
         e.g. "filename.shp",
              "filename.dbf"
-        
+
         The following geometry types are currently supported:
-        
+
         Type                    Required geometry function.
-        
+
         `SHP_GEOM_TYPE_POINT <geosoft.gxapi.SHP_GEOM_TYPE_POINT>`     `set_point <geosoft.gxapi.GXSHP.set_point>`
         `SHP_GEOM_TYPE_ARC <geosoft.gxapi.SHP_GEOM_TYPE_ARC>`       `set_arc <geosoft.gxapi.GXSHP.set_arc>`
         `SHP_GEOM_TYPE_POLYGON <geosoft.gxapi.SHP_GEOM_TYPE_POLYGON>`   `set_polygon <geosoft.gxapi.GXSHP.set_polygon>`
-        
+
         `SHP_GEOM_TYPE_POINTZ <geosoft.gxapi.SHP_GEOM_TYPE_POINTZ>`    `set_point_z <geosoft.gxapi.GXSHP.set_point_z>`
         `SHP_GEOM_TYPE_ARCZ <geosoft.gxapi.SHP_GEOM_TYPE_ARCZ>`      `set_arc_z <geosoft.gxapi.GXSHP.set_arc_z>`
         `SHP_GEOM_TYPE_POLYGONZ <geosoft.gxapi.SHP_GEOM_TYPE_POLYGONZ>`  `set_polygon_z <geosoft.gxapi.GXSHP.set_polygon_z>`

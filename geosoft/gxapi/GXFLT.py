@@ -64,7 +64,7 @@ class GXFLT(gxapi_cy.WrapFLT):
 
         **Note:** Terminates process if filter not found.
         Sample Fraser Filter string:
-        
+
               "-1,-1,1,1"
         """
         ret_val = gxapi_cy.WrapFLT._create(GXContext._get_tls_geo(), input.encode())
@@ -96,7 +96,7 @@ class GXFLT(gxapi_cy.WrapFLT):
         are skipped.  Comment lines beginn with a forward slash
         character in column 1.  Following is an example Fraser
         Filter file:
-        
+
            /----------------------
            / Fraser Filter
            /----------------------

@@ -21,7 +21,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
     Multi-profile stack
     This class is used for storing data of multiple profiles and
     plotting profiles in a map. It is a container of `GXSTK <geosoft.gxapi.GXSTK>` class objects.
-    
+
     See also:         `GXSTK <geosoft.gxapi.GXSTK>` class.
     """
 
@@ -177,9 +177,9 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Format of the input string:
-        
+
         Map group name + " ( " + X channel name + " , " + Y channel name + " )"
-        
+
         for example, string "DATA ( DIST , MAG )"  indicates a map group name of DATA,
         X channel name of DIST and Y channel name of MAG.
         """
@@ -249,9 +249,9 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** Format of the input string:
-        
+
         Map group name + " ( " + X channel name + " , " + Y channel name + " )"
-        
+
         for example, string "DATA ( DIST , MAG )"  indicates a map group name of DATA,
         X channel name of DIST and Y channel name of MAG.
         """

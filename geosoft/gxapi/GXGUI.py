@@ -318,7 +318,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         If the input color type is `C_TRANSPARENT <geosoft.gxapi.C_TRANSPARENT>`, then the color
         is set to white, if any other type is input the output is
         guaranteed to be of the same type.
-        
+
         If ``no_col`` is 1, then on exit, if white is
         selected, the user is prompted: 'Do you want white (Yes) or
         "None" (No) ?' and the color is converted as requested.
@@ -540,9 +540,9 @@ class GXGUI(gxapi_cy.WrapGUI):
         a dialog with the choices for the user to pick from.
         Do a bit-wise AND with the returned type to determine the file type
         (or the type selected).
-        
+
         Currently supported overlapping types/choices:
-        
+
         dmString
         dmWireframePoint
         """
@@ -813,7 +813,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Note:** The default grid/image filters are normally stored in
         "MONTAJ.DEFAULT_XGD_IN" and "MONTAJ.DEFAULT_XGD_OUT"
-        
+
         If no filter is defined, or the filter is not found
         then "grd" and "GRD" are returned as the default extension
         and qualifier.
@@ -845,12 +845,12 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Note:** Returns the four parts of the file filter;
         e.g. for `FILE_FILTER_GDB <geosoft.gxapi.FILE_FILTER_GDB>` it returns:
-        
+
         Filter:    "Database (``*.gdb``)"
         Mask:      "``*.gdb``"
         Extension: "gdb"
         Directory: "`GS_DIRECTORY_NONE <geosoft.gxapi.GS_DIRECTORY_NONE>`"
-        
+
         This function is useful for constuction open/save dialog
         file filters, especially in GX.Net functions.
         """
@@ -876,7 +876,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         **Note:** Works along with the `get_file_filter <geosoft.gxapi.GXGUI.get_file_filter>` function. Note that
         most values of FILE_FILTER_XXX will return `GS_DIRECTORY_NONE <geosoft.gxapi.GS_DIRECTORY_NONE>`,
         and give the current workspace directory.
-        
+
         This function is useful for constuction open/save dialog
         file filters, especially in GX.Net functions.
         """
@@ -972,13 +972,13 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Note:** The `GXITR <geosoft.gxapi.GXITR>` values are interpreted as cumulative percent values, using
         the "PERCENT=1" value in the `GXITR <geosoft.gxapi.GXITR>`'s `GXREG <geosoft.gxapi.GXREG>`.
-        
+
         Note that processes using ITRs do not automatically know to convert between
         percent values and "actual" data values. The `GXREG <geosoft.gxapi.GXREG>` "PERCENT" value is simply
         a flag to indicate to a user that the values are intended to be in the range
         from 0 < x < 100. The `GXITR <geosoft.gxapi.GXITR>` should not, therefore, be applied directly to data
         unless that data is already given in percent.
-        
+
         If the file name is defined on input, the initial `GXITR <geosoft.gxapi.GXITR>` will be loaded from it.
         If it is left blank, a default 5-color transform with
         The color transform file name is used as the default when the save
@@ -1021,7 +1021,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         **Note:** Remember to make the string size big enough for multiple file
         selections. In the case of multiple selections the names will be separated
         by a semicolon and only the first file will contain the full path.
-        
+
         When using the multiple flag on any of these functions please be aware that
         the string returned will be in the format:
         drive:\\path1\\path2\\name.grid|name2.grid|name3.grid(QUALIFIERS)
@@ -1065,10 +1065,10 @@ class GXGUI(gxapi_cy.WrapGUI):
         **Note:** Remember to make the string size big enough for multiple file
         selections. In the case of multiple selections the names will be separated
         by a semicolon and only the first file will contain the full path.
-        
+
         Defined Functions     The following four functions are handy defines and simply pass the appropriate
         parameter.
-        
+
         iFileOpen_GUI
         iFileSave_GUI
         iMultiFileOpen_GUI
@@ -1406,11 +1406,11 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Note:** 1. This is used to select a single database table, and
            selected fields from that table.
-        
+
         2. This function DOES NOT import the table itself, but
            creates an import template which may be used to import
            the table (see `GXDU.import_ado <geosoft.gxapi.GXDU.import_ado>`).
-        
+
         3. If connection string is of type "FILENAME=..." the connection will attempt to resolve
            it as a file database. (see also ODBCFileConnect_GUI)
         """
@@ -1448,7 +1448,7 @@ class GXGUI(gxapi_cy.WrapGUI):
            one or more database tables and fields, by selecting from
            one or more SQL selection queries. The list of queries
            is read from a text file with the following syntax:
-        
+
            Query_Name_1
            Query...
            Query... (continued)
@@ -1457,20 +1457,20 @@ class GXGUI(gxapi_cy.WrapGUI):
            END_QUERY
            Query_Name_2
            etc.
-        
+
         2. Each query has a title line, the query itself, then the
            "END_QUERY" line to finish.  The title of a subsequent query
            is on the line after an "END_QUERY" line.
-        
+
         3. If the text file parameter is left blank (""), then
            selection queries in the database itself are listed.
            In addition to the pre-defined queries, there is a
            "User Defined" query which may be filled in by the user.
-        
+
         4. This function DOES NOT import the table itself, but
            creates an import template which may be used to import
            the data (see `GXDU.import_dao <geosoft.gxapi.GXDU.import_dao>`).
-        
+
         5. If connection string is of type "FILENAME=..." the connection will attempt to resolve
            it as a file database. (see also ODBCFileConnect_GUI)
         """
@@ -1508,7 +1508,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         one or more database tables and fields, by selecting from
         one or more SQL selection queries. The list of queries
         is read from a text file with the following syntax:
-        
+
         Query_Name_1
         Query...
         Query... (continued)
@@ -1517,16 +1517,16 @@ class GXGUI(gxapi_cy.WrapGUI):
         END_QUERY
         Query_Name_2
         etc.
-        
+
         Each query has a title line, the query itself, then the
         "END_QUERY" line to finish.  The title of a subsequent query
         is on the line after an "END_QUERY" line.
-        
+
         If the text file parameter is left blank (""), then
         selection queries in the database itself are listed.
         In addition to the pre-defined queries, there is a
         "User Defined" query which may be filled in by the user.
-        
+
         This function DOES NOT import the table itself, but
         creates an import template which may be used to import
         the data (see `GXDU.import_dao <geosoft.gxapi.GXDU.import_dao>`).
@@ -1599,7 +1599,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         **Note:** This is similar to `import_database_sql <geosoft.gxapi.GXGUI.import_database_sql>`, but dispenses with
         the dialog offering a selection of queries. Instead, the
         user supplies the query as a string.
-        
+
         This function DOES NOT import the table itself, but
         creates an import template which may be used to import
         the data (see `GXDU.import_dao <geosoft.gxapi.GXDU.import_dao>`).
@@ -1637,7 +1637,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         **Note:** This is similar to `import_database_sql <geosoft.gxapi.GXGUI.import_database_sql>`, but dispenses with
         the dialog offering a selection of queries. Instead, the
         user supplies the query as a string.
-        
+
         This function DOES NOT import the table itself, but
         creates an import template which may be used to import
         the data (see `GXDU.import_ado <geosoft.gxapi.GXDU.import_ado>`).
@@ -1878,20 +1878,20 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Note:** Pattern values set on input, and new values returned.
         Solid fill is indicated by Pattern number 0.
-        
+
         Returned Values (not set on input)
-        
+
         Size
              pattern tile size in mm.
-        
+
         Thick
              pattern line thickness in percent of the tile size.
              valid range is 0-100.
-        
+
         Density
              Tile spacing. A value of 1 means tiles are laid with no overlap.
              A value of 2 means they overlap each other.
-        
+
         The pattern Angle and Style parameters are not user-definable.
         """
         ret_val, pat.value, size.value, thick.value, dense.value, col.value, back_col.value = gxapi_cy.WrapGUI._pattern_form(GXContext._get_tls_geo(), pat.value, size.value, thick.value, dense.value, col.value, back_col.value)
@@ -1960,12 +1960,12 @@ class GXGUI(gxapi_cy.WrapGUI):
         the selection `GXLST <geosoft.gxapi.GXLST>` NOT in the first `GXLST <geosoft.gxapi.GXLST>` are ignored).
         Once the user has finalized the selections, the final selections
         are returned in the selection `GXLST <geosoft.gxapi.GXLST>`.
-        
+
         Selections and display are based on the `LST_ITEM_NAME <geosoft.gxapi.LST_ITEM_NAME>` part of the
         `GXLST <geosoft.gxapi.GXLST>` item, but on export both the `LST_ITEM_NAME <geosoft.gxapi.LST_ITEM_NAME>` and `LST_ITEM_VALUE <geosoft.gxapi.LST_ITEM_VALUE>`
         elements of the selected items from the first `GXLST <geosoft.gxapi.GXLST>` are transferred
         to the second list for output.
-        
+
         The sConvertToCSV_LST and sConvertFromCSV_LST functions in lst.h
         can be used to convert the selection LSTs to forms that can be
         stored and retrieved from GX parameters (or `GXREG <geosoft.gxapi.GXREG>` or INI, etc.).

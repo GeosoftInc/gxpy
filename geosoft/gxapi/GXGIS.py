@@ -117,13 +117,13 @@ class GXGIS(gxapi_cy.WrapGIS):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The Returned `GXLST <geosoft.gxapi.GXLST>` has items in the following format:
-        
+
         Name:  If there is only one sub-directory with models, then only
         the block model name "Rock Type_5" is required to ensure uniqueness.
         If there is more than one sub-directory, then the name is set
         to (.e.g.) "[Standard]Rock Type_5"
         Value: Sub-directory file path  "Standard\\Rock Type_5.BLK", (includes the extension).
-        
+
         The Gemcom BPR and BPR2 files keep their block models in one
         or more sub-directories, identified in the ``*.CAT`` file located
         beside the input BPR or BPR2.
@@ -305,13 +305,13 @@ class GXGIS(gxapi_cy.WrapGIS):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Returns 1 if:
-        
+
             a) This is a MapInfo RASTER file
             b) A three-point warp is defined.
             c) The warp requires a rotation in order to exactly map
                the input and output warp points. The rotation must
                be at least 1.e-6 radians.
-        
+
         This function will register an error (and return 0)
         if problems are encountered opening or reading the TAB file.
         """
@@ -435,7 +435,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** All string fields (excluding X/Y and numerical fields) will be saved into the `GXWA <geosoft.gxapi.GXWA>` columns.
-        
+
         e field names are saved in the first line, followed by a blank line.
         e field columns are separated by a tab (delimited character).
         """
@@ -457,13 +457,13 @@ class GXGIS(gxapi_cy.WrapGIS):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** All fields of the database will be loaded into the group.
-        
+
         Channels will use the same name (or a allowable alias) as
         the `GXGIS <geosoft.gxapi.GXGIS>` field name.
-        
+
         If a channel does not exist, it will be created based on the
         characteristics of the `GXGIS <geosoft.gxapi.GXGIS>` field.
-        
+
         If a channel exists, it will be used as-is.
         """
         self._load_gdb(db)
@@ -571,15 +571,15 @@ class GXGIS(gxapi_cy.WrapGIS):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** All fields of the database will be loaded into the group.
-        
+
         Channels will use the same name (or a allowable alias) as
         the `GXGIS <geosoft.gxapi.GXGIS>` field name.
-        
+
         If a channel does not exist, it will be created based on the
         characteristics of the `GXGIS <geosoft.gxapi.GXGIS>` field.
-        
+
         If a channel exists, it will be used as-is.
-        
+
         The shape ID will be used as the line numbers.
         """
         self._load_shapes_gdb(db)

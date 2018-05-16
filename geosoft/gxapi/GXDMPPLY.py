@@ -420,7 +420,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         **Note:** Gives the location in plane coordinates of a selected polygon,
         after it has been projected perpendicularly onto the plane.
-        
+
         Plane coodinates: X - horizontal in plane
                           Y - "vertical" in plane (can be a swing)
                           Z - horizontal, "perpendicular" to plane (RH)
@@ -461,7 +461,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** This is the inverse operation of `project_poly <geosoft.gxapi.GXDMPPLY.project_poly>`.
-        
+
         Input the 2D locations on the projected vertical plane. These locations
         are projected back onto the original polygon plane.
         """

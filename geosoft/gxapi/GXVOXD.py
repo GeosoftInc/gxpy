@@ -121,10 +121,10 @@ class GXVOXD(gxapi_cy.WrapVOXD):
         Thematic voxels contain their own color definitions, and
         normal numerical operations, such as applying ITRs for display,
         are not valid.
-        
+
         To determine if a `GXVOX <geosoft.gxapi.GXVOX>` object is thematic, use the
         `is_thematic <geosoft.gxapi.GXVOXD.is_thematic>` function.
-        
+
         Fails if the `GXVOX <geosoft.gxapi.GXVOX>` object is NOT thematic.
         """
         ret_val = gxapi_cy.WrapVOXD._create_thematic(GXContext._get_tls_geo(), vox)

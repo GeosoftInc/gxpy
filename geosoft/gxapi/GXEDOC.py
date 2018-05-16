@@ -364,7 +364,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         **Limitations:** May not be available while executing a command line program.
 
         **Note:** The last listed document will become the current document.
-        
+
         Only the first file in the list may have a directory path.
         All other files in the list are assumed to be in the same
         directory as the first file.

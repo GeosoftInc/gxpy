@@ -23,7 +23,7 @@ class GXMETA(gxapi_cy.WrapMETA):
     schema that describes the data hierarchy.   `GXMETA <geosoft.gxapi.GXMETA>` objects
     are used by many entities that need to store metadata
     specific to the entities or to the application.
-    
+
     Metadata can be saved in databases and maps, as well as in
     channels, lines, views and groups.  Oasis montaj objects
     can be queried for their associated metadata, and if it

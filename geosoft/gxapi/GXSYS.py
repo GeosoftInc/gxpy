@@ -29,40 +29,40 @@ class GXSYS(gxapi_cy.WrapSYS):
     **Note:**
 
     PARAMETER CONTROL FUNCTIONS
-    
+
     Parameters can be named with an index extension.
     For example, a parameter could be named as "PARM[1]".
     The index can be a positive number, or it can be a '*'.
-    
+
     If the index is a '*' in `set_string <geosoft.gxapi.GXSYS.set_string>`, then the value string
     will be parsed into multiple values. Commas are assumed to be delimiters.
-    
+
     E.g.
-    
+
     ::
-    
+
        "group1",
        "multiparm[*]",
        "value1,\\"value,2\\",\\"value 3\\",  value4  ,\\"value 5 \\""
-    
-    
+
+
     Will set:
-    
+
     ::
-    
+
         multiparm[0] ="value1"
         multiparm[1] ="value,2"
         multiparm[2] ="value 3"
         multiparm[3] ="value4"
         multiparm[4] ="value 5"
-    
+
     To read a parameter, name the parameter with the index.  There is no
     looped-reading ability. For example using the following with `gt_string <geosoft.gxapi.GXSYS.gt_string>`:
-    
+
     ``"group1","multiparm[3]",setting``
-    
+
     will return:
-    
+
     ``setting = "value4"``
     """
 
@@ -547,9 +547,9 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Note:** The Default option for each define below is the first one
         and is set to 0.
-        
+
         We look for the command object in the following order:
-        
+
         1. the local working directory
         2. the <geosoft>\\bin directory
         3. the system path
@@ -744,7 +744,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         **Limitations:** May not be available while executing a command line program.
 
         **Note:** Commands syntax:  "[type] command"
-        
+
         =======  ============================================================================================
         type     command
         =======  ============================================================================================
@@ -764,9 +764,9 @@ class GXSYS(gxapi_cy.WrapSYS):
         -------  --------------------------------------------------------------------------------------------
         HLP      help file name
         =======  ============================================================================================
-        
+
         The must be ONE space between the "]" and the command.  For example:
-        
+
         ``"[ID] ID_EDIT_SELECT"``  // bring up the line edit tool
 
         .. seealso::
@@ -798,7 +798,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         messages when an error occurs in your code.  Your
         errors can be provided in your own `GXGER <geosoft.gxapi.GXGER>` file.  See
         GEOSOFT.`GXGER <geosoft.gxapi.GXGER>` for an example of the `GXGER <geosoft.gxapi.GXGER>` file format.
-        
+
         If the error # is not found in your error file, the
         OE32.`GXGER <geosoft.gxapi.GXGER>` file, then the GEOSOFT.`GXGER <geosoft.gxapi.GXGER>` file will be
         searched.
@@ -862,7 +862,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         the name of the function and the parameter name and
         a 1 will be returned.  The caller should immediatley
         cleaning up (if necessary) and return.
-        
+
         You could also test the validity of arguments and call
         the `error <geosoft.gxapi.GXSYS.error>`, `error_tag <geosoft.gxapi.GXSYS.error_tag>` and `terminate <geosoft.gxapi.GXSYS.terminate>`
         functions if you would like to provide a more specific
@@ -936,7 +936,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         (free memory, close files), call `error <geosoft.gxapi.GXSYS.error>` to register
         your own error messages, call `error_tag <geosoft.gxapi.GXSYS.error_tag>` to set any
         error message tags, call `terminate <geosoft.gxapi.GXSYS.terminate>` and return.
-        
+
         Geosoft functions that detect an error will have
         already registered their own errors and called
         `terminate <geosoft.gxapi.GXSYS.terminate>`.
@@ -1109,7 +1109,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         :returns:     0 if file deleted.
                       1 if file is not found, or found but could not be deleted.
-                      
+
                       This is a "one-line" function to take a grid file name,
                       remove the qualifiers, add the ".gi" and delete the file.
         :rtype:       int
@@ -1258,7 +1258,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         Geosoft registry, or from system environment variables that are
         not defined in the Geosoft Environment registry.  The following
         file prefixes will be replaced by the environment settings:
-        
+
         <geosoft>      the main Geosoft installation directory
         <geosoft2>     the secondary Geosoft installation directory
         <geotemp>      the Geosoft temporary file directory
@@ -1297,7 +1297,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         Geosoft registry, or from system environment variables that are
         not defined in the Geosoft Environment registry.  The following
         file prefixes will be replaced by the environment settings:
-        
+
         <geosoft>      the main Geosoft installation directory
         <geosoft2>     the secondary Geosoft installation directory
         <geotemp>      the Geosoft temporary file directory
@@ -1509,7 +1509,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This is useful for created a unique tempory name for a file in the Geosoft temporary directory.
-        
+
         From version 7.0 The file extension will match the input file, but the
         filename itself will be a process and thread unique value to ensure that
         clashes does not happen.
@@ -1776,17 +1776,17 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Note:** The returned string will be empty if the parameter is
         not found.
-        
+
         Parameters are derived from GEOSOFT.INI.
         This is a standard Windows style INI
         file that contains [GROUPS], PARAMETERS and SETTINGS
         as follows
-        
+
         [GROUP1]
         PARAM1=setting1
         PARAM2 setting2
         PARAM3 "setting3 is text"
-        
+
         To retrieve an entry, specify the group.parameter.  For
         example, iGlobal_SYS("GROUP1.PARAM3",sSetting) will
         retrieve the string "setting is text".  The double
@@ -2830,7 +2830,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         A value of 2 means they overlap each other.
         "PAT_COLOR"     The color value.
         "PAT_BACKCOLOR" Background color value.
-        
+
         Returned values may be DUMMY, but will be acceptable for use with
         the `GXGUI.color_form <geosoft.gxapi.GXGUI.color_form>` function, to set defaults.
         """
@@ -3159,9 +3159,9 @@ class GXSYS(gxapi_cy.WrapSYS):
         A value of 2 means they overlap each other.
         "PAT_COLOR"     The color value.
         "PAT_BACKCOLOR" Background color value.
-        
+
         Input values may be DUMMY.
-        
+
         Designed for use along with the sPatternForm_GUI function.
         """
         gxapi_cy.WrapSYS._set_pattern(GXContext._get_tls_geo(), group.encode(), pat, size, thick, dense, col, back_col)
@@ -3271,7 +3271,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         means any progress tracking in the calling GX is disrupted.
         The called GX should use this function to determine the original
         progress state, and not turn off progress if it was already on.
-        
+
         Returns				 0 - Progress is on
         - Progress is off
         """
@@ -3938,7 +3938,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         :returns:    0 - Normal mode
                   1 - Scripting mode
-                  
+
                   A number of functions can only be run from inside Oasis montaj
                   (such as `GXEMAP.get_display_area_raw <geosoft.gxapi.GXEMAP.get_display_area_raw>`), because they require an actual
                   window object, such as an editable database or map. Use this
@@ -4062,7 +4062,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Note:** The workspace `GXREG <geosoft.gxapi.GXREG>` is separate from the reg used
         to store `GXSYS <geosoft.gxapi.GXSYS>` parameters.
-        
+
         Because `get_workspace_reg <geosoft.gxapi.GXSYS.get_workspace_reg>` returns a copy of the
         workspace `GXREG <geosoft.gxapi.GXREG>`, and not the workspace `GXREG <geosoft.gxapi.GXREG>` itself,
         you must call `set_workspace_reg <geosoft.gxapi.GXSYS.set_workspace_reg>` if you make changes
@@ -4088,7 +4088,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Note:** The workspace `GXREG <geosoft.gxapi.GXREG>` is separate from the reg used
         to store `GXSYS <geosoft.gxapi.GXSYS>` parameters.
-        
+
         Because `get_workspace_reg <geosoft.gxapi.GXSYS.get_workspace_reg>` returns a copy of the
         workspace `GXREG <geosoft.gxapi.GXREG>`, and not the workspace `GXREG <geosoft.gxapi.GXREG>` itself,
         you must call `set_workspace_reg <geosoft.gxapi.GXSYS.set_workspace_reg>` if you make changes

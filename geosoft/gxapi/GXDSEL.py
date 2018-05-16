@@ -80,7 +80,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
         **Note:** This is the number of significant figures that you require for the data.
         You can reduce this number to achieve better compression ratios.
         This should only be used when there is one data type in the data.
-        
+
         See sSpatialResolution_DSEL to set the desired spatial resolution.
         """
         self._data_significant_figures(sf)
@@ -201,12 +201,12 @@ class GXDSEL(gxapi_cy.WrapDSEL):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Resolution must be specified in the units of the selection `GXIPJ <geosoft.gxapi.GXIPJ>`.
-        
+
         This will be the optimum data resoulution.  (grid cell for grids, data
         separation for other data types).
         You will normally get a reasonable resolution as near to or smaller than
         this unless sRequireResolution_DSEL has been set.
-        
+
         Call sRequireResolution_DSEL with TRUE to force the client to re-sample
         the data to the resolution requested.
         """
@@ -267,9 +267,9 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         **Note:** If the server supports reprojection, the data will be
         reprojected at the server.
-        
+
         If reprojection is not forced, the data may come in any projection.
-        
+
         The spatial resolution and accuracy are accumed to be in the
         coordinate system defined by this `GXIPJ <geosoft.gxapi.GXIPJ>`.
         """
@@ -291,7 +291,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Must be specified in the units of the selection `GXIPJ <geosoft.gxapi.GXIPJ>`.
-        
+
         The spatial accuracy is used improve compression performance for
         the spatial component of the data returned.
         You can reduce this number to achieve better compression ratios.

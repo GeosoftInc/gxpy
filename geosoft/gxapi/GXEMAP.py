@@ -31,9 +31,9 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     to begin with an `GXEMAP <geosoft.gxapi.GXEMAP>` object, and use the `lock <geosoft.gxapi.GXEMAP.lock>` function to
     lock the underlying map to prevent external changes. The returned
     `GXMAP <geosoft.gxapi.GXMAP>` object (see `GXMAP <geosoft.gxapi.GXMAP>`) may then be safely used to make changes to the map itself.
-    
+
     `GXMAP <geosoft.gxapi.GXMAP>` Redraw Rules:
-    
+
         1. Redraws only occur at the end of the proccess (GX or SCRIPT) not during.
            You can safely call other GX's and the map will not redraw. If you need the
            map to redraw immediately use `redraw <geosoft.gxapi.GXEMAP.redraw>` instead.
@@ -44,17 +44,17 @@ class GXEMAP(gxapi_cy.WrapEMAP):
             the last call to `un_lock <geosoft.gxapi.GXEMAP.un_lock>` occurs and is ignored on a `GXSYS.cancel_ <geosoft.gxapi.GXSYS.cancel_>`.
         4. `redraw <geosoft.gxapi.GXEMAP.redraw>` only works if the current map is not locked. It will do nothing
            if the map is locked.  Issue an `un_lock <geosoft.gxapi.GXEMAP.un_lock>` before using this function.
-    
-    
+
+
     VIRTUAL `GXEMAP <geosoft.gxapi.GXEMAP>` SUPPORT
-    
+
     These methods are only available when running in an external application.
     They allow the GX to open a `GXMAP <geosoft.gxapi.GXMAP>` and then create a Virtual `GXEMAP <geosoft.gxapi.GXEMAP>` from that
     map. The GX can then call `make_current <geosoft.gxapi.GXEMAP.make_current>` and set the current `GXEMAP <geosoft.gxapi.GXEMAP>` so
     that code that follows sees this map as the current `GXMAP <geosoft.gxapi.GXMAP>`.
-    
+
     Supported methods on Virtual EMAPS are:
-    
+
         | `current <geosoft.gxapi.GXEMAP.current>`
         | `current_no_activate <geosoft.gxapi.GXEMAP.current_no_activate>`
         | `make_current <geosoft.gxapi.GXEMAP.make_current>`
@@ -175,7 +175,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Limitations:** May not be available while executing a command line program.
 
         **Note:** Four objects are placed on the clipboard:
-        
+
             1. Georefernce Text
             2. Bitmap of current window screen resolution
             3. EMF of current window screen resolution
@@ -208,7 +208,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Limitations:** May not be available while executing a command line program.
 
         **Note:** Locations are in the current view user units.
-        
+
         The line is temporary and will disappear on the next
         screen refresh.  This function is for you to provide
         interactive screen feedback to your user.
@@ -239,7 +239,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Limitations:** May not be available while executing a command line program.
 
         **Note:** Locations are in the current view user units.
-        
+
         The line is temporary and will disappear on the next
         screen refresh.  This function is for you to provide
         interactive screen feedback to your user.
@@ -270,7 +270,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Limitations:** May not be available while executing a command line program.
 
         **Note:** Plot a square symbol on a section view, but input 3D user coordinates
-        
+
         The line is temporary and will disappear on the next
         screen refresh.  This function is for you to provide
         interactive screen feedback to your user.
@@ -1196,9 +1196,9 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Limitations:** May not be available while executing a command line program.
 
         **Note:** The last map in the list will be the current map.
-        
+
         Maps may already be loaded.
-        
+
         Only the first file in the list may have a directory path.
         All other files in the list are assumed to be in the same
         directory as the first file.
@@ -1400,7 +1400,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         the map, which normally occurs after the last `un_lock <geosoft.gxapi.GXEMAP.un_lock>`
         call, in cases where it is known that no changes are being
         made to the map.
-        
+
         Typical usage would be to call `lock <geosoft.gxapi.GXEMAP.lock>` followed by
         `set_redraw_flag <geosoft.gxapi.GXEMAP.set_redraw_flag>` (with `EMAP_REDRAW_NO <geosoft.gxapi.EMAP_REDRAW_NO>`) prior
         to querying information from the map. And then end with a call to
@@ -1617,7 +1617,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         specified, the line is immediately placed into `GXWA <geosoft.gxapi.GXWA>`,
         otherwise the user has the oportunity to enter data
         before pressing Enter.
-        
+
         Locations are in the current view user units
         """
         ret_val = self._digitize(wa, img, digits, prompt.encode(), prefix.encode(), delim.encode(), newline)
@@ -1661,7 +1661,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         specified, the line is immediately placed into the VVs,
         otherwise the user has the oportunity to enter data
         before pressing Enter.
-        
+
         Locations are in the current view user units
         """
         ret_val = self._digitize2(vvx, vvy, vvz, img, prompt.encode(), newline)

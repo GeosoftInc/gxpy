@@ -682,12 +682,12 @@ class GXMAP(gxapi_cy.WrapMAP):
         **Note:** Map class names are intended to be used to record the
         names of certain view classes in the map, such as the
         "Data", "Base" and "Section" views.
-        
+
         There can only be one name for each class, but it can
         be changed.  This lets the "Data" class name change,
         for example, so plotting can select which class to plot
         to.
-        
+
         If a name is not set, the class name is set and
         returned.
         """
@@ -878,11 +878,11 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **Note:** If there is a "Data" view, the scale is derived from
         this view.
-        
+
         If their is no data view, the scale is derived
         from the first view that is not scaled in mm.
         otherwise, the scale is 1000 (mm).
-        
+
         All views must be closed, or open read-only.
         """
         ret_val = self._get_map_scale()
@@ -924,12 +924,12 @@ class GXMAP(gxapi_cy.WrapMAP):
         **Note:** Map class names are intended to be used to record the
         names of certain view classes in the map, such as the
         "Data", "Base" and "Section" views.
-        
+
         There can only be one name for each class, but it can
         be changed.  This lets the "Data" class name change,
         for example, so plotting can select which class to plot
         to.
-        
+
         If a name is not set, the class name is set and
         returned.
         """
