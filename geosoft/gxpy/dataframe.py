@@ -62,7 +62,7 @@ def table_column(table, col):
         d[rec] = t[rec][col]
     return d
 
-class Data_frame(pd.DataFrame):
+def Data_frame(initial=None, records=None, columns=None):
     """
     Pandas DataFrame from a Geosoft table.
 
@@ -111,80 +111,76 @@ class Data_frame(pd.DataFrame):
 
     .. versionadded:: 9.2
     """
+    if not type(initial) is str:
+        raise DfException(_t('Only Geosoft tables are supported.'))
 
-    def __enter__(self):
-        return self
+    df = pd.DataFrame()
 
-    def __exit__(self, type, value, traceback):
-        pass
+    if initial is None:
+        return df
 
-    def __init__(self, initial=None, records=None, columns=None, **kwa):
-        super().__init__(**kwa)
+    lst = gxapi.GXLST.create(geosoft.gxpy.MAX_LST)
+    sr = gxapi.str_ref()
 
-        if initial is not None:
+    if records is None:
+        try:
+            ltb = gxapi.GXLTB.create(initial, 0, 1, '')
+        except geosoft.gxapi.GXError as e:
+            raise DfException(str(e))
+    else:
+        if type(records) is str:
+            if not records:
+                raise DfException(_t('Empty records string.'))
+            try:
+                ltb = gxapi.GXLTB.create(initial, 0, 1, records)
+            except geosoft.gxapi.GXError as e:
+                raise DfException(_t('Invalid table \'{}\' ({})').format(initial, str(e)))
+            except geosoft.gxapi.GXAPIError as e:
+                raise DfException(_t('Record \'{}\' not in \'{}\' ({})').format(records, initial, str(e)))
+            records = None
+        else:
+            ltb = gxapi.GXLTB.create(initial, 0, 1, '')
 
-            if type(initial) is str:
+    col_indexes = []
+    for i in range(1, ltb.fields()):
+        ltb.get_field(i, sr)
+        if columns is None:
+            incl = True
+        elif type(columns) is str:
+            incl = sr.value == columns
+        else:
+            incl = sr.value in columns
+        if incl:
+            df[sr.value] = ()
+            col_indexes.append(i)
 
-                lst = gxapi.GXLST.create(geosoft.gxpy.MAX_LST)
-                sr = gxapi.str_ref()
+    if len(col_indexes) == 0:
+        raise DfException(_t('Table has no columns or \'{}\' column(s) not found.'.format(columns)))
 
-                if records is None:
-                    try:
-                        ltb = gxapi.GXLTB.create(initial, 0, 1, '')
-                    except geosoft.gxapi.GXError as e:
-                        raise DfException(str(e))
-                else:
-                    if type(records) is str:
-                        if not records:
-                            raise DfException(_t('Empty records string.'))
-                        try:
-                            ltb = gxapi.GXLTB.create(initial, 0, 1, records)
-                        except geosoft.gxapi.GXError as e:
-                            raise DfException(_t('Invalid table \'{}\' ({})').format(initial, str(e)))
-                        except geosoft.gxapi.GXAPIError as e:
-                            raise DfException(_t('Record \'{}\' not in \'{}\' ({})').format(records, initial, str(e)))
-                        records = None
-                    else:
-                        ltb = gxapi.GXLTB.create(initial, 0, 1, '')
+    if records is None:
+        ltb.get_lst(0, lst)
+        keys = list(gxu.dict_from_lst(lst, True))
+        vlst = list(df.columns)
+        for j in range(len(keys)):
+            nf = 0
+            for i in col_indexes:
+                ltb.get_string(j, i, sr)
+                vlst[nf] = sr.value
+                nf += 1
+            df.loc[keys[j]] = vlst
 
-                col_indexes = []
-                for i in range(1, ltb.fields()):
-                    ltb.get_field(i, sr)
-                    if columns is None:
-                        incl = True
-                    elif type(columns) is str:
-                        incl = sr.value == columns
-                    else:
-                        incl = sr.value in columns
-                    if incl:
-                        self[sr.value] = ()
-                        col_indexes.append(i)
+    else:  # selective read
+        vlst = list(df.columns)
+        for rec in records:
+            j = ltb.find_key(rec)
+            nf = 0
+            for i in col_indexes:
+                ltb.get_string(j, i, sr)
+                vlst[nf] = sr.value
+                nf += 1
+            df.loc[rec] = vlst
 
-                if len(col_indexes) == 0:
-                    raise DfException(_t('Table has no columns or \'{}\' column(s) not found.'.format(columns)))
-                    
-                if records is None:
-                    ltb.get_lst(0, lst)
-                    keys = list(gxu.dict_from_lst(lst, True))
-                    vlst = list(self.columns)
-                    for j in range(len(keys)):
-                        nf = 0
-                        for i in col_indexes:
-                            ltb.get_string(j, i, sr)
-                            vlst[nf] = sr.value
-                            nf += 1
-                        self.loc[keys[j]] = vlst
+    return df
 
-                else:  # selective read
-                    vlst = list(self.columns)
-                    for rec in records:
-                        j = ltb.find_key(rec)
-                        nf = 0
-                        for i in col_indexes:
-                            ltb.get_string(j, i, sr)
-                            vlst[nf] = sr.value
-                            nf += 1
-                        self.loc[rec] = vlst
 
-            else:
-                raise DfException(_t('Only Geosoft tables are supported.'))
+
