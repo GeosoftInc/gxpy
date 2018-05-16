@@ -69,7 +69,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table border="1" class="first last docutils">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table border="1" class="first docutils">
 <colgroup>
 <col width="14%" />
 <col width="86%" />
@@ -77,6 +77,30 @@
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.vox.Vox" title="geosoft.gxpy.vox.Vox"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vox</span></code></a></td>
 <td>Geosoft voxel (voxset), subclass of <a class="reference internal" href="geosoft.gxpy.spatialdata.html#geosoft.gxpy.spatialdata.SpatialData" title="geosoft.gxpy.spatialdata.SpatialData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata.SpatialData</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Constants:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Z_ELEVATION:</th><td class="field-body">0, z values are elevation</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Z_DEPTH:</th><td class="field-body">1, z values are depth</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">MODE_READ:</th><td class="field-body"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata.MODE_READ</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">MODE_READWRITE:</th><td class="field-body"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata.MODE_READWRITE</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">MODE_NEW:</th><td class="field-body"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata.MODE_NEW</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">INTERP_NEAREST:</th><td class="field-body"><a class="reference internal" href="GXVOXE.html#geosoft.gxapi.VOXE_EVAL_NEAR" title="geosoft.gxapi.VOXE_EVAL_NEAR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.VOXE_EVAL_NEAR</span></code></a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">INTERP_LINEAR:</th><td class="field-body"><a class="reference internal" href="GXVOXE.html#geosoft.gxapi.VOXE_EVAL_INTERP" title="geosoft.gxapi.VOXE_EVAL_INTERP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.VOXE_EVAL_INTERP</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">INTERP_SMOOTH:</th><td class="field-body"><a class="reference internal" href="GXVOXE.html#geosoft.gxapi.VOXE_EVAL_BEST" title="geosoft.gxapi.VOXE_EVAL_BEST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.VOXE_EVAL_BEST</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -96,37 +120,6 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.1.</span></p>
 </div>
-<dl class="data">
-<dt id="geosoft.gxpy.vox.INTERP_LINEAR">
-<code class="descname">INTERP_LINEAR</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.vox.INTERP_LINEAR" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.vox.INTERP_NEAREST">
-<code class="descname">INTERP_NEAREST</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.vox.INTERP_NEAREST" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.vox.INTERP_SMOOTH">
-<code class="descname">INTERP_SMOOTH</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.vox.INTERP_SMOOTH" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.vox.MODE_NEW">
-<code class="descname">MODE_NEW</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.vox.MODE_NEW" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.vox.MODE_READ">
-<code class="descname">MODE_READ</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.vox.MODE_READ" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.vox.MODE_READWRITE">
-<code class="descname">MODE_READWRITE</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.vox.MODE_READWRITE" title="Permalink to this definition">¶</a></dt>
-<dd><p>file exists, but can change properties</p>
-</dd></dl>
-
 <dl class="class">
 <dt id="geosoft.gxpy.vox.Vox">
 <em class="property">class </em><code class="descname">Vox</code><span class="sig-paren">(</span><em>name=None</em>, <em>gxvox=None</em>, <em>dtype=None</em>, <em>mode=None</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.vox.Vox" title="Permalink to this definition">¶</a></dt>
@@ -487,9 +480,23 @@ The default is False, z is elevation (positive up), origin at the bottom of the 
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>xyz</strong> – tuple (x, y, z) location in the vox coordinate system</li>
 <li><strong>interpolate</strong> – <p>method by which to interpolate between cell centers:</p>
-<p>INTERP_NEAREST - same as value inside a cell.</p>
-<p>INTERP_LINEAR - linear interpolation between neighboring cell centers.</p>
-<p>INTERP_SMOOTH - smooth interpolation (slower than INTERP_LINEAR).</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>INTERP_NEAREST</td>
+<td>same as value inside a cell.</td>
+</tr>
+<tr class="row-even"><td>INTERP_LINEAR</td>
+<td>linear interpolation between neighboring cell centers.</td>
+</tr>
+<tr class="row-odd"><td>INTERP_SMOOTH</td>
+<td>smooth interpolation (slower than INTERP_LINEAR).</td>
+</tr>
+</tbody>
+</table>
 </li>
 </ul>
 </td>
@@ -538,16 +545,6 @@ Raises error if our of range of the data</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.GXRuntimeError</span></code></p>
 <p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.vox" title="geosoft.gxpy.vox"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.vox</span></code></a>.</p>
 </dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.vox.Z_DEPTH">
-<code class="descname">Z_DEPTH</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.vox.Z_DEPTH" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.vox.Z_ELEVATION">
-<code class="descname">Z_ELEVATION</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.vox.Z_ELEVATION" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.vox.delete_files">
@@ -634,7 +631,7 @@ Raises error if our of range of the data</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

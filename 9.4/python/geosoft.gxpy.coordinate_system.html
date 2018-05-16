@@ -69,20 +69,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table border="1" class="first last docutils">
-<colgroup>
-<col width="29%" />
-<col width="71%" />
-</colgroup>
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Coordinate_system</span></code></a></td>
-<td>define a coordinate system</td>
+<tr class="field-odd field"><th class="field-name" colspan="2"><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Coordinate_system</span></code></a>:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">define a coordinate system</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_translate" title="geosoft.gxpy.coordinate_system.Coordinate_translate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Coordinate_translate</span></code></a></td>
-<td>translate coordinates between coordinate systems</td>
+<tr class="field-even field"><th class="field-name" colspan="2"><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_translate" title="geosoft.gxpy.coordinate_system.Coordinate_translate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Coordinate_translate</span></code></a>:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">translate coordinates between coordinate systems</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Wkt" title="geosoft.gxpy.coordinate_system.Wkt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wkt</span></code></a></td>
-<td>well-know coordinate system for ESRI interoperability</td>
+<tr class="field-odd field"><th class="field-name"><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Wkt" title="geosoft.gxpy.coordinate_system.Wkt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wkt</span></code></a>:</th><td class="field-body">well-know coordinate system for ESRI interoperability</td>
 </tr>
 </tbody>
 </table>
@@ -114,13 +111,106 @@ If a vertical reference datum is defined it will appear as a string in square br
 <p>The descriptive name for “well-known” coordinate systems is sufficient to describe the coordinate system from
 the <a class="reference external" href="http://www.epsg.org/">EPSG Geodetic Registry</a>. To fully locate ad-hoc coordinates you will need
 the parameters defined in the GXF stings.  See <a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system.gxf" title="geosoft.gxpy.coordinate_system.Coordinate_system.gxf"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Coordinate_system.gxf</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Constants:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">NAME:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">NAME_HCS:</th><td class="field-body">gxapi.IPJ_NAME_PCS</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">NAME_PROJECTION:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">gxapi.IPJ_NAME_PROJECTION</td>
+</tr>
+<tr class="field-even field"><th class="field-name">NAME_METHOD:</th><td class="field-body">gxapi.IPJ_NAME_METHOD</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">NAME_DATUM:</th><td class="field-body">gxapi.IPJ_NAME_DATUM</td>
+</tr>
+<tr class="field-even field"><th class="field-name">NAME_ELLIPSOID:</th><td class="field-body">gxapi.IPJ_NAME_ELLIPSOID</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">NAME_LDATUM:</th><td class="field-body">gxapi.IPJ_NAME_LDATUM</td>
+</tr>
+<tr class="field-even field"><th class="field-name">NAME_UNIT:</th><td class="field-body">gxapi.IPJ_NAME_UNIT_ABBR</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">NAME_UNIT_FULL:</th><td class="field-body">gxapi.IPJ_NAME_UNIT_FULL</td>
+</tr>
+<tr class="field-even field"><th class="field-name">NAME_TYPE:</th><td class="field-body">gxapi.IPJ_NAME_TYPE</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">NAME_LLDATUM:</th><td class="field-body">gxapi.IPJ_NAME_LLDATUM</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">NAME_METHOD_PARMS:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">gxapi.IPJ_NAME_METHOD_PARMS</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">NAME_METHOD_LABEL:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">gxapi.IPJ_NAME_METHOD_LABEL</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">NAME_DATUM_PARMS:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">gxapi.IPJ_NAME_DATUM_PARMS</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">NAME_LDATUM_PARMS:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">gxapi.IPJ_NAME_LDATUM_PARMS</td>
+</tr>
+<tr class="field-even field"><th class="field-name">NAME_GEOID:</th><td class="field-body">gxapi.IPJ_NAME_GEOID</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">NAME_LDATUMDESCRIPTION:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">gxapi.IPJ_NAME_LDATUMDESCRIPTION</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">NAME_METHOD_PARMS_NATIVE:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">gxapi.IPJ_NAME_METHOD_PARMS_NATIVE</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">NAME_ORIENTATION:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">gxapi.IPJ_NAME_ORIENTATION_PARMS</td>
+</tr>
+<tr class="field-even field"><th class="field-name">NAME_VCS:</th><td class="field-body">-1</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">NAME_HCS_VCS:</th><td class="field-body">-2</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">LIST_COORDINATESYSTEM:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">gxapi.IPJ_PARM_LST_COORDINATESYSTEM</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">LIST_DATUM:</th><td class="field-body">gxapi.IPJ_PARM_LST_DATUM</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">LIST_PROJECTION:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">gxapi.IPJ_PARM_LST_PROJECTION</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">LIST_UNITS:</th><td class="field-body">gxapi.IPJ_PARM_LST_UNITS</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">LIST_UNITSDESCRIPTION:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">gxapi.IPJ_PARM_LST_UNITSDESCRIPTION</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">LIST_LOCALDATUMDESCRIPTION:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">gxapi.IPJ_PARM_LST_LOCALDATUMDESCRIPTION</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">LIST_LOCALDATUMNAME:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">gxapi.IPJ_PARM_LST_LOCALDATUMNAME</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">PARM_DATUM:</th><td class="field-body">‘datum’</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">PARM_PROJECTION:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">‘transform’</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">PARM_UNITS:</th><td class="field-body">‘units’</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">PARM_LOCAL_DATUM:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">‘datumtrf’</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a></p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Regression tests provide usage examples:     
+<p class="last">Regression tests provide usage examples:
 <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py">tests</a></p>
 </div>
 <dl class="exception">
@@ -597,166 +687,6 @@ in which the first 3 columns are coordinates X, Y and Z.</p>
 
 </dd></dl>
 
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.LIST_COORDINATESYSTEM">
-<code class="descname">LIST_COORDINATESYSTEM</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.LIST_COORDINATESYSTEM" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.LIST_DATUM">
-<code class="descname">LIST_DATUM</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.LIST_DATUM" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.LIST_LOCALDATUMDESCRIPTION">
-<code class="descname">LIST_LOCALDATUMDESCRIPTION</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.LIST_LOCALDATUMDESCRIPTION" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.LIST_LOCALDATUMNAME">
-<code class="descname">LIST_LOCALDATUMNAME</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.LIST_LOCALDATUMNAME" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.LIST_PROJECTION">
-<code class="descname">LIST_PROJECTION</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.LIST_PROJECTION" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.LIST_UNITS">
-<code class="descname">LIST_UNITS</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.LIST_UNITS" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.LIST_UNITSDESCRIPTION">
-<code class="descname">LIST_UNITSDESCRIPTION</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.LIST_UNITSDESCRIPTION" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME">
-<code class="descname">NAME</code><em class="property"> = None</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_DATUM">
-<code class="descname">NAME_DATUM</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_DATUM" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_DATUM_PARMS">
-<code class="descname">NAME_DATUM_PARMS</code><em class="property"> = 12</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_DATUM_PARMS" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_ELLIPSOID">
-<code class="descname">NAME_ELLIPSOID</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_ELLIPSOID" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_GEOID">
-<code class="descname">NAME_GEOID</code><em class="property"> = 14</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_GEOID" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_HCS">
-<code class="descname">NAME_HCS</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_HCS" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_HCS_VCS">
-<code class="descname">NAME_HCS_VCS</code><em class="property"> = -2</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_HCS_VCS" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_LDATUM">
-<code class="descname">NAME_LDATUM</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_LDATUM" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_LDATUMDESCRIPTION">
-<code class="descname">NAME_LDATUMDESCRIPTION</code><em class="property"> = 15</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_LDATUMDESCRIPTION" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_LDATUM_PARMS">
-<code class="descname">NAME_LDATUM_PARMS</code><em class="property"> = 13</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_LDATUM_PARMS" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_LLDATUM">
-<code class="descname">NAME_LLDATUM</code><em class="property"> = 9</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_LLDATUM" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_METHOD">
-<code class="descname">NAME_METHOD</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_METHOD" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_METHOD_LABEL">
-<code class="descname">NAME_METHOD_LABEL</code><em class="property"> = 11</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_METHOD_LABEL" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_METHOD_PARMS">
-<code class="descname">NAME_METHOD_PARMS</code><em class="property"> = 10</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_METHOD_PARMS" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_METHOD_PARMS_NATIVE">
-<code class="descname">NAME_METHOD_PARMS_NATIVE</code><em class="property"> = 16</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_METHOD_PARMS_NATIVE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_ORIENTATION">
-<code class="descname">NAME_ORIENTATION</code><em class="property"> = 17</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_ORIENTATION" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_PROJECTION">
-<code class="descname">NAME_PROJECTION</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_PROJECTION" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_TYPE">
-<code class="descname">NAME_TYPE</code><em class="property"> = 8</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_TYPE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_UNIT">
-<code class="descname">NAME_UNIT</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_UNIT" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_UNIT_FULL">
-<code class="descname">NAME_UNIT_FULL</code><em class="property"> = 7</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_UNIT_FULL" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.NAME_VCS">
-<code class="descname">NAME_VCS</code><em class="property"> = -1</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.NAME_VCS" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.PARM_DATUM">
-<code class="descname">PARM_DATUM</code><em class="property"> = 'datum'</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.PARM_DATUM" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.PARM_LOCAL_DATUM">
-<code class="descname">PARM_LOCAL_DATUM</code><em class="property"> = 'datumtrf'</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.PARM_LOCAL_DATUM" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.PARM_PROJECTION">
-<code class="descname">PARM_PROJECTION</code><em class="property"> = 'transform'</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.PARM_PROJECTION" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.coordinate_system.PARM_UNITS">
-<code class="descname">PARM_UNITS</code><em class="property"> = 'units'</em><a class="headerlink" href="#geosoft.gxpy.coordinate_system.PARM_UNITS" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 <dl class="class">
 <dt id="geosoft.gxpy.coordinate_system.Wkt">
 <em class="property">class </em><code class="descname">Wkt</code><span class="sig-paren">(</span><em>wkt</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Wkt" title="Permalink to this definition">¶</a></dt>
@@ -984,7 +914,7 @@ csv coordinate system table files in the Geosoft Desktop Applications <code clas
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -72,17 +72,15 @@ Map viewer or a Geosoft 3D viewer.  Geosoft maps can contain any number of 2D or
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table border="1" class="first last docutils">
-<colgroup>
-<col width="22%" />
-<col width="78%" />
-</colgroup>
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.view.View" title="geosoft.gxpy.view.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></a></td>
-<td>single view on a 2D map</td>
+<tr class="field-odd field"><th class="field-name"><a class="reference internal" href="#geosoft.gxpy.view.View" title="geosoft.gxpy.view.View"><code class="xref py py-obj docutils literal notranslate"><span class="pre">View</span></code></a>:</th><td class="field-body">single 2D plane view</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.view.View_3d" title="geosoft.gxpy.view.View_3d"><code class="xref py py-class docutils literal notranslate"><span class="pre">View_3d</span></code></a></td>
-<td>3D view in a <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.3dv</span></code> file, or a 3D view on a 2D map.</td>
+<tr class="field-even field"><th class="field-name"><a class="reference internal" href="#geosoft.gxpy.view.View_3d" title="geosoft.gxpy.view.View_3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">View_3d</span></code></a>:</th><td class="field-body">3D view in a <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.3dv</span></code> file, or a 3D view on a 2D map.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name"><a class="reference internal" href="#geosoft.gxpy.view.CrookedPath" title="geosoft.gxpy.view.CrookedPath"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CrookedPath</span></code></a>:</th><td class="field-body">defines the path for a crooked section.</td>
 </tr>
 </tbody>
 </table>
@@ -92,14 +90,65 @@ Map viewer or a Geosoft 3D viewer.  Geosoft maps can contain any number of 2D or
 </table>
 <p>Both 2D and 3D views can be placed on a <a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map" title="geosoft.gxpy.map.Map"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.map.Map</span></code></a>, though 3D views
 are stored in a <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft_3dv</span></code> file which can also be viewed separately from a map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Constants:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">READ_ONLY:</th><td class="field-body"><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.MVIEW_READ" title="geosoft.gxapi.MVIEW_READ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_READ</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">WRITE_NEW:</th><td class="field-body"><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.MVIEW_WRITENEW" title="geosoft.gxapi.MVIEW_WRITENEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_WRITENEW</span></code></a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">WRITE_OLD:</th><td class="field-body"><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.MVIEW_WRITEOLD" title="geosoft.gxapi.MVIEW_WRITEOLD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_WRITEOLD</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">UNIT_VIEW:</th><td class="field-body">0</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">UNIT_MAP:</th><td class="field-body">2</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">UNIT_VIEW_UNWARPED:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">3</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">GROUP_ALL:</th><td class="field-body">0</td>
+</tr>
+<tr class="field-even field"><th class="field-name">GROUP_MARKED:</th><td class="field-body">1</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">GROUP_VISIBLE:</th><td class="field-body">2</td>
+</tr>
+<tr class="field-even field"><th class="field-name">GROUP_AGG:</th><td class="field-body">3</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">GROUP_CSYMB:</th><td class="field-body">4</td>
+</tr>
+<tr class="field-even field"><th class="field-name">GROUP_VOXD:</th><td class="field-body">5</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">GROUP_VECTORVOX:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">6</td>
+</tr>
+<tr class="field-even field"><th class="field-name">GROUP_SURFACE:</th><td class="field-body">7</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">EXTENT_ALL:</th><td class="field-body"><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.MVIEW_EXTENT_ALL" title="geosoft.gxapi.MVIEW_EXTENT_ALL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_EXTENT_ALL</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">EXTENT_VISIBLE:</th><td class="field-body"><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.MVIEW_EXTENT_VISIBLE" title="geosoft.gxapi.MVIEW_EXTENT_VISIBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_EXTENT_VISIBLE</span></code></a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">EXTENT_CLIPPED:</th><td class="field-body"><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.MVIEW_EXTENT_CLIP" title="geosoft.gxapi.MVIEW_EXTENT_CLIP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_EXTENT_CLIP</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p><a class="reference internal" href="geosoft.gxpy.map.html#module-geosoft.gxpy.map" title="geosoft.gxpy.map"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.map</span></code></a>, <a class="reference internal" href="geosoft.gxpy.group.html#module-geosoft.gxpy.group" title="geosoft.gxpy.group"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.group</span></code></a></p>
-<p class="last"><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxapi.GXMVIEW</span></code></a></p>
+<p class="last"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.geosoft.gxapi.GXMVIEW</span></code></p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Regression tests provide usage examples: <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_view.py">View tests</a></p>
+<p class="last">Regression tests provide usage examples:
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_view.py">View tests</a></p>
 </div>
 <dl class="class">
 <dt id="geosoft.gxpy.view.CrookedPath">
@@ -112,7 +161,7 @@ are stored in a <code class="xref py py-obj docutils literal notranslate"><span 
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.CrookedPath.distances">
 <code class="descname">distances</code><a class="headerlink" href="#geosoft.gxpy.view.CrookedPath.distances" title="Permalink to this definition">¶</a></dt>
-<dd><p>Distances along path points as an array (npoints) starting at 0</p>
+<dd><p>Distances along path points as an array (npoints) starting at 0.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -124,7 +173,8 @@ are stored in a <code class="xref py py-obj docutils literal notranslate"><span 
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.CrookedPath.ppoint">
 <code class="descname">ppoint</code><a class="headerlink" href="#geosoft.gxpy.view.CrookedPath.ppoint" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Path trace as a <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.PPoint</span></code></a> instance.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.view.CrookedPath.set_in_geosoft_ipj">
@@ -147,85 +197,10 @@ are stored in a <code class="xref py py-obj docutils literal notranslate"><span 
 <dl class="attribute">
 <dt id="geosoft.gxpy.view.CrookedPath.xy">
 <code class="descname">xy</code><a class="headerlink" href="#geosoft.gxpy.view.CrookedPath.xy" title="Permalink to this definition">¶</a></dt>
-<dd><p>path points as an array (npoints, 2)</p>
+<dd><p>Path trace as an array (npoints, 2).</p>
 </dd></dl>
 
 </dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.view.EXTENT_ALL">
-<code class="descname">EXTENT_ALL</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.view.EXTENT_ALL" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.view.EXTENT_CLIPPED">
-<code class="descname">EXTENT_CLIPPED</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.view.EXTENT_CLIPPED" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.view.EXTENT_VISIBLE">
-<code class="descname">EXTENT_VISIBLE</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.view.EXTENT_VISIBLE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.view.GROUP_AGG">
-<code class="descname">GROUP_AGG</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.view.GROUP_AGG" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.view.GROUP_ALL">
-<code class="descname">GROUP_ALL</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.view.GROUP_ALL" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.view.GROUP_CSYMB">
-<code class="descname">GROUP_CSYMB</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxpy.view.GROUP_CSYMB" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.view.GROUP_MARKED">
-<code class="descname">GROUP_MARKED</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.view.GROUP_MARKED" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.view.GROUP_SURFACE">
-<code class="descname">GROUP_SURFACE</code><em class="property"> = 7</em><a class="headerlink" href="#geosoft.gxpy.view.GROUP_SURFACE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.view.GROUP_VECTORVOX">
-<code class="descname">GROUP_VECTORVOX</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxpy.view.GROUP_VECTORVOX" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.view.GROUP_VISIBLE">
-<code class="descname">GROUP_VISIBLE</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.view.GROUP_VISIBLE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.view.GROUP_VOXD">
-<code class="descname">GROUP_VOXD</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxpy.view.GROUP_VOXD" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.view.READ_ONLY">
-<code class="descname">READ_ONLY</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.view.READ_ONLY" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.view.UNIT_MAP">
-<code class="descname">UNIT_MAP</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.view.UNIT_MAP" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.view.UNIT_VIEW">
-<code class="descname">UNIT_VIEW</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.view.UNIT_VIEW" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.view.UNIT_VIEW_UNWARPED">
-<code class="descname">UNIT_VIEW_UNWARPED</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.view.UNIT_VIEW_UNWARPED" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 <dl class="class">
 <dt id="geosoft.gxpy.view.View">
@@ -236,17 +211,13 @@ are stored in a <code class="xref py py-obj docutils literal notranslate"><span 
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Constructors:</th><td class="field-body"><table border="1" class="first last docutils">
-<colgroup>
-<col width="29%" />
-<col width="71%" />
-</colgroup>
+<tr class="field-odd field"><th class="field-name">Constructors:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.view.View.open" title="geosoft.gxpy.view.View.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a></td>
-<td>open an existing view in a map</td>
+<tr class="field-odd field"><th class="field-name"><a class="reference internal" href="#geosoft.gxpy.view.View.open" title="geosoft.gxpy.view.View.open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code></a>:</th><td class="field-body">open an existing view in a map</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.view.View.new" title="geosoft.gxpy.view.View.new"><code class="xref py py-meth docutils literal notranslate"><span class="pre">new()</span></code></a></td>
-<td>create a new view in a map</td>
+<tr class="field-even field"><th class="field-name"><a class="reference internal" href="#geosoft.gxpy.view.View.new" title="geosoft.gxpy.view.View.new"><code class="xref py py-obj docutils literal notranslate"><span class="pre">new</span></code></a>:</th><td class="field-body">create a new view in a map</td>
 </tr>
 </tbody>
 </table>
@@ -408,6 +379,7 @@ are stored in a <code class="xref py py-obj docutils literal notranslate"><span 
 </table>
 <p>Common view class names are:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Plane&#39;</span>     <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">default</span> <span class="mi">2</span><span class="n">D</span> <span class="n">drawing</span> <span class="n">plane</span>
+<span class="s1">&#39;Section&#39;</span>   <span class="n">a</span> <span class="n">section</span> <span class="n">view</span>
 </pre></div>
 </div>
 <p>Other class names may be defined, though they are not used by Geosoft.</p>
@@ -543,8 +515,8 @@ or one of the Coordinate_system constructor types.</td>
 <dt id="geosoft.gxpy.view.View.lock">
 <code class="descname">lock</code><a class="headerlink" href="#geosoft.gxpy.view.View.lock" title="Permalink to this definition">¶</a></dt>
 <dd><p>True if the view is locked by a group.  Only one group may hold a lock on a view at the
-same time.  When drawing with groups you should use a <code class="xref py py-obj docutils literal notranslate"><span class="pre">with</span> <span class="pre">geosoft.gxpy.group.Draw(...)</span> <span class="pre">as</span> <span class="pre">g:</span></code> construct
-ensure group locks are properly created and released.</p>
+same time.  When drawing with groups you should use a <code class="xref py py-obj docutils literal notranslate"><span class="pre">with</span> <span class="pre">gxgrp.Draw(...)</span> <span class="pre">as</span> <span class="pre">g:</span></code>
+which will ensure group locks are properly created and released.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -638,9 +610,9 @@ created and deleted when this session finished.</td>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body">coordinate system as a <a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a> instance, or
 one of the Coordinate_system constructor types.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">map_location:</th><td class="field-body">(x, y) view location on the map, in map cm</td>
+<tr class="field-even field"><th class="field-name">map_location:</th><td class="field-body">(x, y) view location on the map, in map cm, default (0, 0)</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">area:</th><td class="field-body">(min_x, min_y, max_x, max_y) area in view units</td>
+<tr class="field-odd field"><th class="field-name">area:</th><td class="field-body">(min_x, min_y, max_x, max_y) area in view units, default (0, 0, 30, 20)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">scale:</th><td class="field-body">Map scale if a coordinate system is defined.  If the coordinate system is not
 defined this is view units per map metre.</td>
@@ -669,14 +641,11 @@ Should the coordinate system already contain a crooked path it will be replaced.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>map</strong> – <a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map" title="geosoft.gxpy.map.Map"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.map.Map</span></code></a></li>
 <li><strong>view_name</strong> – name of the view</li>
 <li><strong>read_only</strong> – True to open read-only</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxpy.view.View" title="geosoft.gxpy.view.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></a> instance</p>
 </td>
 </tr>
 </tbody>
@@ -710,6 +679,7 @@ Should the coordinate system already contain a crooked path it will be replaced.
 </table>
 <p>Common view class names are:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Plane&#39;</span>     <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">default</span> <span class="mi">2</span><span class="n">D</span> <span class="n">drawing</span> <span class="n">plane</span>
+<span class="s1">&#39;Section&#39;</span>   <span class="n">a</span> <span class="n">section</span> <span class="n">view</span>
 </pre></div>
 </div>
 <div class="versionadded">
@@ -966,7 +936,7 @@ unique temporary file is created.</li>
 
 <dl class="classmethod">
 <dt id="geosoft.gxpy.view.View_3d.open">
-<em class="property">classmethod </em><code class="descname">open</code><span class="sig-paren">(</span><em>file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View_3d.open" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">open</code><span class="sig-paren">(</span><em>file_name</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.View_3d.open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open an existing geosoft_3dv file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1026,16 +996,6 @@ unique temporary file is created.</li>
 
 </dd></dl>
 
-<dl class="data">
-<dt id="geosoft.gxpy.view.WRITE_NEW">
-<code class="descname">WRITE_NEW</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.view.WRITE_NEW" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.view.WRITE_OLD">
-<code class="descname">WRITE_OLD</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.view.WRITE_OLD" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 <dl class="function">
 <dt id="geosoft.gxpy.view.delete_files">
 <code class="descname">delete_files</code><span class="sig-paren">(</span><em>v3d_file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.view.delete_files" title="Permalink to this definition">¶</a></dt>
@@ -1074,7 +1034,7 @@ The view must be closed.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -12,13 +12,13 @@ New Classes
 
 :class:`geosoft.gxpy.dap_client.DataCard` Single dataset information instance.
 
-:class:`geosoft.gxpy.dap_client.DataExtract` Extract data from the server.
+:class:`geosoft.gxpy.dap_client.DataExtract` Data extraction instance.
 
-:class:`geosoft.gxpy.dap_client.ResultFilter` Limit results.
+:class:`geosoft.gxpy.dap_client.ResultFilter` Results filter instance.
 
-:class:`geosoft.gxpy.dap_client.SearchFilter` Search filter
+:class:`geosoft.gxpy.dap_client.SearchFilter` Search filter instance.
 
-:class:`geosoft.gxpy.dap_client.SearchParameters` Search parameters, defined by a `SearchFilter` and a `ResultFilter`
+:class:`geosoft.gxpy.dap_client.SearchParameters` Search parameter instance, defined by a `SearchFilter` and a `ResultFilter`
 
 :class:`geosoft.gxpy.grid_fft.GridFFT` Descrete Fourier Transform of a grid.
 
@@ -33,6 +33,8 @@ New Functions
 ^^^^^^^^^^^^^
 
 :func:`geosoft.gxpy.dap_client.DapClient.catalog` Return a filtered catalog list.
+
+:func:`geosoft.gxpy.dap_client.DapClient.datacard_from_id` Return the `DataCard` instance based on the dataset ID #
 
 :func:`geosoft.gxpy.dap_client.DapClient.fetch_data` Fetch data from the server.
 
@@ -88,13 +90,15 @@ New Functions
 
 :func:`geosoft.gxpy.grid_utility.feather` Feather the edge of a grid to a constant value at the edge.
 
-:func:`geosoft.gxpy.grid_utility.flood` Flood dummy areas in a grid based on a minimum-curvature surface.
+:func:`geosoft.gxpy.grid_utility.flood` Flood blank areas in a grid based on a minimum-curvature surface.
 
-:func:`geosoft.gxpy.grid_utility.grid_bool` :param g1:          Grids to merge
+:func:`geosoft.gxpy.grid_utility.grid_bool` Combine two grids into a single grid, with boolean logic to determine the result.
 
 :func:`geosoft.gxpy.grid_utility.grid_mosaic` Combine a set of grids into a single grid.  Raises an error if the resulting grid is too large.
 
-:func:`geosoft.gxpy.grid_utility.tilt_depth` Given an RTP TMI grid, or the vertical derivative of the gravity anomaly, calculate
+:func:`geosoft.gxpy.grid_utility.tilt_depth` Return estimate of the depth sources of potential filed anomalies.
+
+:func:`geosoft.gxpy.group.Draw.text_extent` Return the extent of a text string in view units relative to the current
 
 :func:`geosoft.gxpy.utility.delete_files_by_root` Delete all files that have the same file_root (without extension). This can be safely applied to remove
 
@@ -189,7 +193,7 @@ New Functions
 
 :func:`geosoft.gxpy.spatialdata.find_meta_branch` Return the lowest branch in the meta dictionary that contains the item.
 
-:func:`geosoft.gxpy.surface.Surface.computed_properties` Surface properties  by `geosoft.gxapi.GXSURFACEITEM.compute_extended_info`.
+:func:`geosoft.gxpy.surface.Surface.computed_properties` Surface properties, see: `geosoft.gxapi.GXSURFACEITEM.compute_extended_info`.
 
 :func:`geosoft.gxpy.surface.Surface.mesh` Returns a component mesh as `geosoft.gxpy.geometry.Mesh` instance
 
@@ -794,6 +798,8 @@ New Functions
 
 :func:`geosoft.gxpy.grid.Grid.from_data_array` Create grid from a 2D data array or `geosoft.gxapi.GXPG`.
 
+:func:`geosoft.gxpy.grid.Grid.gxpg` Get a copy of the `geosoft.gxapi.GXPG` instance for the grid.
+
 :func:`geosoft.gxpy.grid.Grid.new` Create a new grid file.
 
 :func:`geosoft.gxpy.grid.Grid.open` Open an existing grid file.
@@ -813,6 +819,8 @@ New Functions
 :func:`geosoft.gxpy.grid.decorate_name` Properly decorate a grid name.
 
 :func:`geosoft.gxpy.grid.name_parts` Return folder, undecorated file name + ext, file root, ext, decorations.
+
+:func:`geosoft.gxpy.grid_utility.sample` Return grid values sampled at the point locations.
 
 :func:`geosoft.gxpy.gx.GXpy.disable_app` Disables application windows to allow modal Python UI.
 

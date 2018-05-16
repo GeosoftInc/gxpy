@@ -86,24 +86,31 @@ a named file. Examples are Geosoft databases, grids, voxels, geosoft_surfaces.</
 </tr>
 </tbody>
 </table>
-<dl class="data">
-<dt id="geosoft.gxpy.spatialdata.MODE_NEW">
-<code class="descname">MODE_NEW</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.spatialdata.MODE_NEW" title="Permalink to this definition">¶</a></dt>
-<dd><p>new dataset file</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.spatialdata.MODE_READ">
-<code class="descname">MODE_READ</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.spatialdata.MODE_READ" title="Permalink to this definition">¶</a></dt>
-<dd><p>existing dataset file open for read only</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.spatialdata.MODE_READWRITE">
-<code class="descname">MODE_READWRITE</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.spatialdata.MODE_READWRITE" title="Permalink to this definition">¶</a></dt>
-<dd><p>open existing dataset file for read or write</p>
-</dd></dl>
-
+<p><strong>Constants</strong></p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mode=</span></code> file open mode constants</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="3%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>FILE_READ</td>
+<td>0</td>
+<td>open for read, files are not changed</td>
+</tr>
+<tr class="row-even"><td>FILE_READWRITE</td>
+<td>1</td>
+<td>open for read and write, files can be changed</td>
+</tr>
+<tr class="row-odd"><td>FILE_NEW</td>
+<td>2</td>
+<td>new file, accompanied by <code class="xref py py-obj docutils literal notranslate"><span class="pre">overwrite=</span></code> parameter</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
 <dl class="class">
 <dt id="geosoft.gxpy.spatialdata.SpatialData">
 <em class="property">class </em><code class="descname">SpatialData</code><span class="sig-paren">(</span><em>name=None</em>, <em>file_name=None</em>, <em>mode=2</em>, <em>overwrite=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.spatialdata.SpatialData" title="Permalink to this definition">¶</a></dt>
@@ -291,7 +298,9 @@ the dictionary items passed will be added to, or replace existing metadata.</p>
 <dt id="geosoft.gxpy.spatialdata.find_meta_branch">
 <code class="descname">find_meta_branch</code><span class="sig-paren">(</span><em>meta</em>, <em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.spatialdata.find_meta_branch" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the lowest branch in the meta dictionary that contains the item.</p>
-<p>… versionadded:: 9.3.1</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
 </dd></dl>
 
 </div>
@@ -314,7 +323,7 @@ the dictionary items passed will be added to, or replace existing metadata.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -115,21 +115,13 @@ can be placed into a 2D or 3D view for display.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid_file</strong> – if specified, the <a class="reference internal" href="#geosoft.gxpy.agg.Aggregate_image.add_layer" title="geosoft.gxpy.agg.Aggregate_image.add_layer"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_layer()</span></code></a> method is called with remaining parameters
-to create a single-image aggregate.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Constructors:</th><td class="field-body"><table border="1" class="first last docutils">
-<colgroup>
-<col width="33%" />
-<col width="68%" />
-</colgroup>
+<tr class="field-odd field"><th class="field-name">Constructors:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.agg.Aggregate_image.open" title="geosoft.gxpy.agg.Aggregate_image.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a>:</td>
-<td>open an existing aggregate</td>
+<tr class="field-odd field"><th class="field-name"><a class="reference internal" href="#geosoft.gxpy.agg.Aggregate_image.open" title="geosoft.gxpy.agg.Aggregate_image.open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code></a>:</th><td class="field-body">open an existing aggregate</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.agg.Aggregate_image.new" title="geosoft.gxpy.agg.Aggregate_image.new"><code class="xref py py-meth docutils literal notranslate"><span class="pre">new()</span></code></a>:</td>
-<td>create a new aggregate</td>
+<tr class="field-even field"><th class="field-name"><a class="reference internal" href="#geosoft.gxpy.agg.Aggregate_image.new" title="geosoft.gxpy.agg.Aggregate_image.new"><code class="xref py py-obj docutils literal notranslate"><span class="pre">new</span></code></a>:</th><td class="field-body">create a new aggregate</td>
 </tr>
 </tbody>
 </table>
@@ -153,18 +145,38 @@ to create a single-image aggregate.</p>
 <li><strong>color_map</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">gxpy.group.Color_map</span></code> instance, or the name of a file, which may be 
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">tbl</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">zon</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">itr</span></code>, or <a class="reference internal" href="#module-geosoft.gxpy.agg" title="geosoft.gxpy.agg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">agg</span></code></a>.</li>
 <li><strong>zone</strong> – <p>Colour distribution method:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ZONE_DEFAULT</span>        <span class="k">as</span> <span class="nb">set</span> <span class="n">by</span> <span class="n">user</span> <span class="k">global</span> <span class="n">default</span> <span class="n">settings</span>
-<span class="n">ZONE_LINEAR</span>         <span class="n">linearly</span> <span class="n">distributed</span>
-<span class="n">ZONE_NORMAL</span>         <span class="n">normal</span> <span class="p">(</span><span class="n">Gaussian</span><span class="p">)</span> <span class="n">distribution</span>
-<span class="n">ZONE_EQUALAREA</span>      <span class="n">each</span> <span class="n">color</span> <span class="n">will</span> <span class="n">occupy</span> <span class="n">an</span> <span class="n">equal</span> <span class="n">area</span> <span class="n">on</span> <span class="n">the</span> <span class="n">image</span>
-<span class="n">ZONE_LOGLINEAR</span>      <span class="n">logarithmic</span> <span class="n">linear</span> <span class="n">distribution</span>
-<span class="n">ZONE_LAST</span>           <span class="n">last</span> <span class="n">used</span> <span class="n">coloring</span> <span class="k">for</span> <span class="n">this</span> <span class="n">grid</span> <span class="n">file</span>
-<span class="n">ZONE_SHADE</span>          <span class="n">Displays</span> <span class="n">the</span> <span class="n">shaded</span> <span class="n">image</span> <span class="n">version</span> <span class="n">of</span> <span class="n">the</span> <span class="n">grid</span><span class="o">.</span> <span class="n">The</span> <span class="n">shaded</span> <span class="n">image</span> <span class="ow">is</span>
-                    <span class="n">a</span> <span class="n">grid</span> <span class="n">file</span> <span class="n">will</span> <span class="k">with</span> <span class="s1">&#39;_s&#39;</span> <span class="n">appended</span> <span class="n">to</span> <span class="n">the</span> <span class="n">file</span> <span class="n">name</span><span class="o">.</span>  <span class="n">If</span> <span class="n">it</span> <span class="n">does</span> <span class="ow">not</span>
-                    <span class="n">exist</span><span class="p">,</span> <span class="n">a</span> <span class="n">shaded</span> <span class="n">image</span> <span class="k">with</span> <span class="n">illumination</span> <span class="n">inclination</span> <span class="ow">and</span> <span class="n">declination</span>
-                    <span class="n">both</span> <span class="nb">set</span> <span class="n">to</span> <span class="mi">45</span> <span class="n">degrees</span> <span class="ow">is</span> <span class="n">automatically</span> <span class="n">created</span><span class="o">.</span>
-</pre></div>
-</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ZONE_DEFAULT</td>
+<td>as set by user global default settings</td>
+</tr>
+<tr class="row-even"><td>ZONE_LINEAR</td>
+<td>linearly distributed</td>
+</tr>
+<tr class="row-odd"><td>ZONE_NORMAL</td>
+<td>normal (Gaussian) distribution</td>
+</tr>
+<tr class="row-even"><td>ZONE_EQUALAREA</td>
+<td>each color will occupy an equal area on the image</td>
+</tr>
+<tr class="row-odd"><td>ZONE_LOGLINEAR</td>
+<td>logarithmic linear distribution</td>
+</tr>
+<tr class="row-even"><td>ZONE_LAST</td>
+<td>last used coloring for this grid file</td>
+</tr>
+<tr class="row-odd"><td>ZONE_SHADE</td>
+<td>Displays the shaded image version of the grid. The shaded image is
+a grid file will with ‘_s’ appended to the file name.  If it does not
+exist, a shaded image with illumination inclination and declination
+both set to 45 degrees is automatically created.</td>
+</tr>
+</tbody>
+</table>
 </li>
 <li><strong>shade</strong> – True, to add a shading layer</li>
 <li><strong>minimum</strong> – Minimum data value. All grid values less than or equal to the
@@ -226,7 +238,7 @@ the data.</li>
 
 <dl class="method">
 <dt id="geosoft.gxpy.agg.Aggregate_image.figure_map">
-<code class="descname">figure_map</code><span class="sig-paren">(</span><em>file_name=None, title=None, legend_label=None, features=['SCALE', 'LEGEND', 'NEATLINE'], **kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.figure_map" title="Permalink to this definition">¶</a></dt>
+<code class="descname">figure_map</code><span class="sig-paren">(</span><em>file_name=None</em>, <em>overwrite=False</em>, <em>title=None</em>, <em>legend_label=None</em>, <em>features=('SCALE'</em>, <em>'LEGEND'</em>, <em>'NEATLINE')</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.figure_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a figure map file from an aggregate.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -422,41 +434,6 @@ area. The display area coordinate system can be different from the grid.</li>
 
 </dd></dl>
 
-<dl class="data">
-<dt id="geosoft.gxpy.agg.ZONE_DEFAULT">
-<code class="descname">ZONE_DEFAULT</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_DEFAULT" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.agg.ZONE_EQUALAREA">
-<code class="descname">ZONE_EQUALAREA</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_EQUALAREA" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.agg.ZONE_LAST">
-<code class="descname">ZONE_LAST</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_LAST" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.agg.ZONE_LINEAR">
-<code class="descname">ZONE_LINEAR</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_LINEAR" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.agg.ZONE_LOGLINEAR">
-<code class="descname">ZONE_LOGLINEAR</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_LOGLINEAR" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.agg.ZONE_NORMAL">
-<code class="descname">ZONE_NORMAL</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_NORMAL" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="data">
-<dt id="geosoft.gxpy.agg.ZONE_SHADE">
-<code class="descname">ZONE_SHADE</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxpy.agg.ZONE_SHADE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 </div>
 
 
@@ -477,7 +454,7 @@ area. The display area coordinate system can be different from the grid.</li>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking
