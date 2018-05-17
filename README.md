@@ -4,9 +4,11 @@ This is the repository for Geosoft GX Developer support for Python development. 
 
 [GX Developer documentation](https://geosoftgxdev.atlassian.net/wiki/display/GD/Python+in+GX+Developer)
 
+[Python Packages](https://github.com/GeosoftInc/gxpy/wiki)
+
 [Python Tutorial for Geosoft GX Developer](https://geosoftgxdev.atlassian.net/wiki/spaces/GXD93/pages/103153671/Python+Tutorial+for+Geosoft+GX+Developer)
 
-[Python Packages](https://github.com/GeosoftInc/gxpy/wiki)
+[Jupyter Notebooks](https://github.com/GeosoftInc/gxpy/tree/master/examples/jupyter_notebooks/Tutorials)
 
 Also see the [Geosoft Inc. organization on Github](https://github.com/GeosoftInc) for the other programming language specific repos.
 
