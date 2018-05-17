@@ -1,8 +1,5 @@
 """
-Table (records, fields) handling, inherits from Pandas (http://pandas.pydata.org/) base class.
-
-:Classes:
-    :`Data_frame`: dataframe that holds a table
+Table (records, fields) handling, via Pandas DataFrame (http://pandas.pydata.org/).
 
 .. seealso:: :class:`geosoft.gxapi.GXLTB`
 
@@ -64,7 +61,7 @@ def table_column(table, col):
 
 def Data_frame(initial=None, records=None, columns=None):
     """
-    Pandas DataFrame from a Geosoft table.
+    Instantiates Pandas DataFrame from a Geosoft table.
 
     :parameters:
         :initial:   Geosoft table name, which is normally an ASCII csv file.  If the table cannot be
@@ -110,7 +107,7 @@ def Data_frame(initial=None, records=None, columns=None):
             print(df.loc['cal', 'PATTERN'])     # "315"
 
     .. versionadded:: 9.2
-    .. versionmodified:: 9.4
+    .. versionchanged:: 9.4
     """
     if not type(initial) is str:
         raise DfException(_t('Only Geosoft tables are supported.'))
