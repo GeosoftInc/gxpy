@@ -396,8 +396,6 @@ New Classes
 
 :class:`geosoft.gxpy.coordinate_system.Wkt` Helper class to parse WKT-formatted spatial reference strings.
 
-:class:`geosoft.gxpy.dataframe.Data_frame` Pandas DataFrame from a Geosoft table.
-
 :class:`geosoft.gxpy.geometry.Geometry` Geometry base class for all geometries and spatial objects in Geosoft.
 
 :class:`geosoft.gxpy.geometry.PPoint` Poly-Point class. Basic instance arithmetic and equality testing is supported.
@@ -485,6 +483,8 @@ New Functions
 :func:`geosoft.gxpy.coordinate_system.parameters` Get a dictionary of parameters for a coordinate system item.  Parameters are maintained in
 
 :func:`geosoft.gxpy.coordinate_system.wkt_vcs` Compose a wkt VERTCS block from a Geosoft vcs string.
+
+:func:`geosoft.gxpy.dataframe.Data_frame` Instantiates Pandas DataFrame from a Geosoft table.
 
 :func:`geosoft.gxpy.dataframe.table_column` Return a dictionary of a column from a table
 

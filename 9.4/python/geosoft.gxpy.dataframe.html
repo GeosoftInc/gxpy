@@ -64,23 +64,7 @@
             
   <div class="section" id="module-geosoft.gxpy.dataframe">
 <span id="geosoft-gxpy-dataframe-submodule"></span><h1>geosoft.gxpy.dataframe submodule<a class="headerlink" href="#module-geosoft.gxpy.dataframe" title="Permalink to this headline">¶</a></h1>
-<p>Table (records, fields) handling, inherits from Pandas (<a class="reference external" href="http://pandas.pydata.org/">http://pandas.pydata.org/</a>) base class.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><a class="reference internal" href="#geosoft.gxpy.dataframe.Data_frame" title="geosoft.gxpy.dataframe.Data_frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Data_frame</span></code></a>:</th><td class="field-body">dataframe that holds a table</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
+<p>Table (records, fields) handling, via Pandas DataFrame (<a class="reference external" href="http://pandas.pydata.org/">http://pandas.pydata.org/</a>).</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxapi.GXLTB</span></code></a></p>
@@ -90,11 +74,10 @@
 <p class="last">Regression tests provide usage examples:     
 <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_dataframe.py">dataframe tests</a></p>
 </div>
-<dl class="class">
+<dl class="function">
 <dt id="geosoft.gxpy.dataframe.Data_frame">
-<em class="property">class </em><code class="descname">Data_frame</code><span class="sig-paren">(</span><em>initial=None</em>, <em>records=None</em>, <em>columns=None</em>, <em>**kwa</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.dataframe.Data_frame" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.core.frame.DataFrame</span></code></p>
-<p>Pandas DataFrame from a Geosoft table.</p>
+<code class="descname">Data_frame</code><span class="sig-paren">(</span><em>initial=None</em>, <em>records=None</em>, <em>columns=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.dataframe.Data_frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiates Pandas DataFrame from a Geosoft table.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -148,7 +131,7 @@ of case used in the table file.</p>
 </div>
 <div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">include</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">gxpy</span> <span class="k">as</span> <span class="n">gxpy</span>
 <span class="k">with</span> <span class="n">gxpy</span><span class="o">.</span><span class="n">GXpy</span><span class="p">()</span> <span class="k">as</span> <span class="n">gx</span><span class="p">:</span>
-    <span class="k">with</span> <span class="n">gxpy</span><span class="o">.</span><span class="n">dataframe</span><span class="o">.</span><span class="n">Data_frame</span><span class="p">(</span><span class="s1">&#39;rockcode&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">df</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">gxpy</span><span class="o">.</span><span class="n">dataframe</span><span class="o">.</span><span class="n">Data_frame</span><span class="p">(</span><span class="s1">&#39;rockcode&#39;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;bif&#39;</span><span class="p">,</span> <span class="s1">&#39;DESCRIPTION&#39;</span><span class="p">])</span> <span class="c1"># &quot;BANDED IRON FM&quot;</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;bif&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>             <span class="c1"># &quot;BANDED IRON FM&quot;</span>
@@ -158,6 +141,9 @@ of case used in the table file.</p>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.4.</span></p>
 </div>
 </dd></dl>
 
