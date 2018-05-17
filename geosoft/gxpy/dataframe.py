@@ -102,14 +102,15 @@ def Data_frame(initial=None, records=None, columns=None):
 
         include geosoft.gxpy as gxpy
         with gxpy.GXpy() as gx:
-            with gxpy.dataframe.Data_frame('rockcode') as df:
-                print(len(df))
-                print(df.loc['bif', 'DESCRIPTION']) # "BANDED IRON FM"
-                print(df.loc['bif'][1])             # "BANDED IRON FM"
-                print(df.iloc[1,0])                 # "BIF"
-                print(df.loc['cal', 'PATTERN'])     # "315"
+            df = gxpy.dataframe.Data_frame('rockcode')
+            print(len(df))
+            print(df.loc['bif', 'DESCRIPTION']) # "BANDED IRON FM"
+            print(df.loc['bif'][1])             # "BANDED IRON FM"
+            print(df.iloc[1,0])                 # "BIF"
+            print(df.loc['cal', 'PATTERN'])     # "315"
 
     .. versionadded:: 9.2
+    .. versionmodified:: 9.4
     """
     if not type(initial) is str:
         raise DfException(_t('Only Geosoft tables are supported.'))
