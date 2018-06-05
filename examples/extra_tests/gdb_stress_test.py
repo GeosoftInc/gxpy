@@ -1,17 +1,12 @@
 import os
 import sys
-import geosoft
-import geosoft.gxapi as gxapi
 import geosoft.gxpy.gx as gx
-import geosoft.gxpy.utility as gxu
-import geosoft.gxpy.system as gsys
 import geosoft.gxpy.gdb as gxdb
-import geosoft.gxpy.vv as gxvv
-import geosoft.gxpy.va as gxva
 
 gxc = gx.GXpy()
-dir = sys.argv[1]
-if not dir:
+try:
+    dir = sys.argv[1]
+except IndexError:
     print('folder path that contains one or more test databases is required as a single command line parameter')
     exit()
 max_lines_per_db = 4

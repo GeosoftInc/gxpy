@@ -12,7 +12,7 @@ import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.group as gxg
 import geosoft.gxpy.system as gxsys
 
-from geosoft.gxpy.tests.base import GXPYTest
+from base import GXPYTest
 
 
 def rungx():
