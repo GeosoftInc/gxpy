@@ -289,7 +289,7 @@ class Grid(gxgm.Geometry):
                         if file_name_decorated:
                             try:
                                 gxapi.GXIMG.sync(file_name_decorated)
-                            except geosoft.GXRuntimeError:
+                            except (geosoft.GXRuntimeError, geosoft.gxapi.GXAPIError):
                                 # Locked files, extremely large files (e.g. GXF) etc. could cause errors with the
                                 # command above. TODO: Do we even need it? The code below overwrites it anyway?
                                 pass

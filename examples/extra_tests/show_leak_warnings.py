@@ -1,6 +1,6 @@
 # This sample stand-alone Python script shows a minimal use of the Pythonic gxpy module to
 # create a Geosoft context and say hello to the user.
-# This example can be run stand-alon or as a Oasis montaj extension.
+# This example can be run stand-alone or as a Oasis montaj extension.
 
 import geosoft.gxpy as gxpy   # gxpy methods
 import numpy as np
@@ -38,7 +38,8 @@ if __name__ == "__main__":
         # The context has a member 'gid' which contains the user's Geosoft ID.
         # Say hello to the user
         print("Hello {}".format(gxc.gid))
-    gxc_manual_close._close()
-    gxc_leaked_1 = None
+
+    #gxc_manual_close._close()
+    del gxc_leaked_1
     gc.collect()
     print("Done.")
