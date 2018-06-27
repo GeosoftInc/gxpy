@@ -3,7 +3,7 @@ Geosoft surfaces
 
 :Classes:
     :`SurfaceDataset`:   Geosoft_surface dataset, contains zero or more `Surface` instances
-    :`Surface`:          Surfaces defined by one or more `geosoft.geometry.Mesh` instances
+    :`Surface`:          Surfaces defined by one or more `geosoft.gxpy.geometry.Mesh` instances
 
 :Constants:
     :MODE_READ:      `geosoft.gxpy.spatialdata.MODE_READ`
