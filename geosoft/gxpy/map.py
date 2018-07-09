@@ -11,7 +11,7 @@ as a 2D perspective of the last viewing state of the 3D view.
 :Constants:
     :WRITE_NEW: `geosoft.gxapi.MAP_WRITENEW`
     :WRITE_OLD: `geosoft.gxapi.MAP_WRITEOLD`
-    
+
     :LIST_ALL: `geosoft.gxapi.MAP_LIST_MODE_ALL`
     :LIST_3D: `geosoft.gxapi.MAP_LIST_MODE_3D`
     :LIST_2D: `geosoft.gxapi.MAP_LIST_MODE_NOT3D`
@@ -61,14 +61,14 @@ as a 2D perspective of the last viewing state of the 3D view.
     :RASTER_FORMAT_TIFF: `geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_TIFF`
 
 .. seealso:: :mod:`geosoft.gxpy.view`, :mod:`geosoft.gxpy.group`
- 
+
     :mod:`geosoft.gxapi.GXMAP`, :mod:`geosoft.gxapi.GXMVIEW`, :mod:`geosoft.gxapi.GXMVU`
 
 .. note::
 
-    Regression tests provide usage examples:     
+    Regression tests provide usage examples:
     `map tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_map.py>`_
-    
+
 """
 import os
 from math import ceil
@@ -144,7 +144,7 @@ STYLE_MAP = 1
 RASTER_FORMAT_EMF = gxapi.MAP_EXPORT_RASTER_FORMAT_EMF
 RASTER_FORMAT_BMP = gxapi.MAP_EXPORT_RASTER_FORMAT_BMP
 RASTER_FORMAT_JPEGL = gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGL
-RASTER_FORMAT_JPEG  = gxapi.MAP_EXPORT_RASTER_FORMAT_JPEG 
+RASTER_FORMAT_JPEG  = gxapi.MAP_EXPORT_RASTER_FORMAT_JPEG
 RASTER_FORMAT_JPEGH = gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGH
 RASTER_FORMAT_GIF = gxapi.MAP_EXPORT_RASTER_FORMAT_GIF
 RASTER_FORMAT_PCX = gxapi.MAP_EXPORT_RASTER_FORMAT_PCX
@@ -157,7 +157,7 @@ def map_file_name(file_name, file_type='map'):
     Return a fully resolved map file path using the file name, with .map extension
 
     :param file_name:   file name, with ot without path and/or extension
-    :param file_type:   Geosoft file type, 'map' or 'geosoft_3dv' expected.  Default is 'map'    
+    :param file_type:   Geosoft file type, 'map' or 'geosoft_3dv' expected.  Default is 'map'
     :returns:           file name path with extension .map
 
     .. versionadded:: 9.2
@@ -244,18 +244,18 @@ class Map:
     :mod:`geosoft.gxpy.view` module provides classes and methods for working with individual 2D or
     3D views, and the :mod:`geosoft.gxpy.group` modules contains classes that deal with drawing groups..
 
-    Geosoft maps will always have a 2D 'base' view and is intended for drawing map annotations, such as titles, 
-    a scale bar, North arrow and legends.  The lower-left corner of the base view ia at location (0, 0) and the 
+    Geosoft maps will always have a 2D 'base' view and is intended for drawing map annotations, such as titles,
+    a scale bar, North arrow and legends.  The lower-left corner of the base view ia at location (0, 0) and the
     upper-right corner is defined by the media size and may be adjusted to fit the data view.
-    
+
     When drawing to the base view the native unit is millimetres and locations and graphic entity
     sizes are assumed to be mm.  When drawing to the map using map methods the units are in map cm,
-    including graphic entity scaling.    
+    including graphic entity scaling.
 
     Maps will also have one or more data views, each with it's own defined coordinate system
-    and graphical content.  Creating a new map will create one data view, which will become the map's 
+    and graphical content.  Creating a new map will create one data view, which will become the map's
     `current_data_view`, within which any spatial data drawn by Geosoft 2D drawing applications
-    will be placed.  Maps may have more than one data view, including 3D data views, and the 
+    will be placed.  Maps may have more than one data view, including 3D data views, and the
     `current_data_view` can be changed to any 2D or 3D view, and subsequent drawing will be placed
     in that view.
 
@@ -351,14 +351,14 @@ class Map:
         return map
 
     @classmethod
-    def new(cls, 
+    def new(cls,
             file_name=None,
             data_area=(0., 0., 100., 100.),
             scale=None,
             coordinate_system=None,
-            media=None, 
-            layout=None, 
-            fixed_size=False, 
+            media=None,
+            layout=None,
+            fixed_size=False,
             map_style=None,
             margins=None, inside_margin=1.0, overwrite=False, no_data_view=False):
 
@@ -367,21 +367,21 @@ class Map:
 
         :parameters:
             :file_name:         Map file name.  If not specified a temporary file is created in the instance
-                                temporary folder.  Use ``file_name()`` to get the file name if needed.  The 
+                                temporary folder.  Use ``file_name()`` to get the file name if needed.  The
                                 temporary map file will be unique and will exist through the life of the
                                 Python GX instance, but will be deleted along with all temporary files
                                 when the GX loses context.
             :data_area:         (min_x, min_y, max_x, max_y) data area for a 2D data view on the map
             :scale:             required scale, default will fit data to the map media
             :coordinate_system: coordinate system, default is an unknown coordinate system.  You may pass
-                                a :class:`geosoft.gxpy.coordinate_system.Coordinate_system` instance, a string 
+                                a :class:`geosoft.gxpy.coordinate_system.Coordinate_system` instance, a string
                                 descriptor, such as '`WGS 84 / UTM zone 15N`', or another valid constructor supported
                                 by :class:`geosoft.gxpy.coordinate_system.Coordinate_system`.
             :media:             media size as a tuple (x_cm, y_cm), or as a standard media name string.
                                 If the media string contains 'portrait', the media aspect will be portrait.
-                                Named media sizes are read from media.csv, which includes A4, A3, A2, A1, A0, 
+                                Named media sizes are read from media.csv, which includes A4, A3, A2, A1, A0,
                                 letter, legal, ledger, A, B, C, D, E. For example `media='A4 portrait'`.
-            :layout:            MAP_PORTRAIT or MAP_LANDSCAPE, overrides media setting.  If the layout is not 
+            :layout:            MAP_PORTRAIT or MAP_LANDSCAPE, overrides media setting.  If the layout is not
                                 defined by media or this parameter, the layout is determined by the aspect
                                 ratio of the data area.
             :map_style:         STYLE_FIGURE or STYLE_MAP (default).  A MAP style is intended for A3 or larger
@@ -389,8 +389,8 @@ class Map:
                                 style is intended for smaller media with a larger bottom margin for a
                                 title and limited annotations.
             :fixed_size:        True for fixed media size, if, and only if, a media size is defined.
-                                If False, the base view boundary will be reduced to the data view plus margins.  
-                                If True, the base view boundary is fixed to the media size and margins are 
+                                If False, the base view boundary will be reduced to the data view plus margins.
+                                If True, the base view boundary is fixed to the media size and margins are
                                 adjusted to locate the data view proportionally relative to the requested margins.
             :margins:           (left, right, bottom, top) map margins in map cm.  The default for STYLE_MAP
                                 is (3, 14, 6, 3), and for figure (1, 4, 1, 1).
@@ -566,7 +566,7 @@ class Map:
 
     @property
     def current_data_view(self):
-        """ 
+        """
         Name of the current default data view which accepts drawing groups from Geosoft methods that do not
         explicitly identify a view.
 
@@ -584,7 +584,7 @@ class Map:
 
     @property
     def current_base_view(self):
-        """ 
+        """
         Name of the current default base view which accepts map annotation drawing groups
         (like titles, North arrow, etc.) from Geosoft methods.
 
@@ -668,7 +668,7 @@ class Map:
     def extent_data_views(self):
         """
         Returns the extent of all data views on the map in map cm.
-        
+
         .. versionadded:: 9.2
         """
         def extents(ex, ext):
@@ -694,7 +694,7 @@ class Map:
         """
         Given a view name that may be a class name ('*' prefix), return the view name for that class.  if not
         class decorated, the name passed is returned.
-        
+
         :param name:    view name, `'*data'` will return the name associated with the `'data'` class, while
                         `'my_view'` will return `'my_view'`.
 
@@ -878,6 +878,7 @@ class Map:
         :returns:           image file name
 
         .. versionadded:: 9.3
+
         """
 
         if imagefile is None:
@@ -886,7 +887,7 @@ class Map:
 
         self.gxmap.export_all_raster(imagefile, '',
                                      pix_width, pix_height, gxapi.rDUMMY,
-                                     gxapi.MAP_EXPORT_BITS_32,
+                                     gxapi.MAP_EXPORT_BITS_24, #TODO add bits control to api for 9.5
                                      gxapi.MAP_EXPORT_METHOD_NONE,
                                      type, '')
 
@@ -933,7 +934,7 @@ class Map:
 
         .. versionadded:: 9.3
         """
-        
+
         # uppercase features, use a dict so we pop things we use and report error
         if isinstance(features, str):
             features = (features,)
@@ -948,19 +949,19 @@ class Map:
                                 'ANNOT_XY': None}
 
         if not 'margins' in kwargs:
-                
+
             bottom_margin = 1
             if title:
                 bottom_margin += 1
             if 'SCALE' in feature_list:
                 bottom_margin += 1.2
-    
+
             right_margin = 1
             if 'LEGEND' in feature_list:
                 right_margin += 3.5
-                
+
             kwargs['margins'] = (1, right_margin, bottom_margin, 1)
-            
+
         if not 'media' in kwargs:
             kwargs['media'] = 'A4'
         if not 'inside_margin' in kwargs:
@@ -979,7 +980,7 @@ class Map:
             data_area[1] -= d
             data_area[3] += d
         kwargs['data_area'] = data_area # over-ride
-            
+
         gmap = Map.new(file_name, overwrite=overwrite, **kwargs)
 
         if 'ANNOT_XY' in feature_list:
@@ -1014,7 +1015,7 @@ class Map:
                                                          weight=gxg.FONT_WEIGHT_BOLD))
 
         return gmap
-    
+
     def surround(self, outer_pen=None, inner_pen=None, gap=0):
         """
         Draw a map surround.  This will draw a single or a double neat-line around the base view of the
@@ -1066,7 +1067,7 @@ class Map:
         :param location:    (reference, x_offset, y_offset) reference is a reference point relative to the
                             base map extents (1 through 9) nd the offsets are the offset from that reference
                             point in map cm.
-        :param direction:   North direction in degrees azimuth (clockwise from map Y axis).  The efault is 
+        :param direction:   North direction in degrees azimuth (clockwise from map Y axis).  The efault is
                             calculated direction of North at the center of the data view.
         :param length:      arrow length in cm on the map.
         :param inclination: magnetic inclination, not shown if not specified
@@ -1117,7 +1118,7 @@ class Map:
                   pen=None):
         """
         Draw a scale bar.
-        
+
         :param location:    (ref_point, x_off, y_off) bar location reference point an offset from that point
         :param length:      maximum scale bar length in map cm, default is 5 cm. 0 will suppress drawing of the bar.
         :param sections:    number of major sections in the bar, default is determined automatically.
@@ -1345,7 +1346,7 @@ class Map:
         .. versionadded:: 9.3
         """
         self.gxmap.export_all_in_view(geotiff, "*data", gxapi.rDUMMY, dpi,
-            gxapi.MAP_EXPORT_BITS_24, gxapi.MAP_EXPORT_METHOD_NONE, 
+            gxapi.MAP_EXPORT_BITS_24, gxapi.MAP_EXPORT_METHOD_NONE,
             gxapi.MAP_EXPORT_FORMAT_GTIFF, "")
 
 

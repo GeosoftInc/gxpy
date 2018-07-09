@@ -1,5 +1,5 @@
 """
-GX Context and related methods required for Geosoft Python.  
+GX Context and related methods required for Geosoft Python.
 
 :Classes:
     :`GXpy`: the Geosoft GX context
@@ -9,7 +9,7 @@ stand-alone Python scripts, or is provided to the script for extensions to Geoso
 
 .. note::
 
-    Regression tests provide usage examples:     
+    Regression tests provide usage examples:
     `gx tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gx.py>`_
 
 """
@@ -86,11 +86,11 @@ def track_resource(resource_class, info):
     When you dispose of your resource call :meth:`pop_resource` to remove it from the tracking heap.
     On exit, any resource left on the tracked resource heap will be reported together with the call
     stack for each resource and the information you provided.
-    
+
     :param resource_class: the resource class name
     :param info: some information about the resource
     :returns: resource_id, can be used with :meth:`pop_resource`
-    
+
     .. versionadded:: 9.2
     """
     global _res_id
@@ -114,9 +114,9 @@ def track_resource(resource_class, info):
 def pop_resource(res_id):
     """
     Pop a tracked resource off the resource stack.
-    
+
     :param res_id:  the resource id returned by :meth:`track_resource`
-    
+
     .. versionadded:: 9.2
 
     .. versionchanged:: 9.3.1
@@ -188,30 +188,39 @@ def _exit_cleanup():
         _gx.log('\nGX closing')
         atexit.unregister(_exit_cleanup)
 
-        temp_folder = _gx.temp_folder()
-        if temp_folder and (temp_folder != gxu.folder_temp()):
-            shutil.rmtree(temp_folder, ignore_errors=False, onerror=_log_file_error)
+        # clean up only if we still have context
+        gid = gxapi.str_ref()
+        try:
+            gxapi.GXSYS.get_geosoft_id(gid)
+            have_gx = True
+        except gxapi.GXAPIError:
+            have_gx = False
 
-        _remove_stale_gx_temporary_folders()
-        if _remove_stale_geosoft_temp_files:
-            _remove_stale_geosoft_temporary_files()
+        if have_gx:
+            temp_folder = _gx.temp_folder()
+            if temp_folder and (temp_folder != gxu.folder_temp()):
+                shutil.rmtree(temp_folder, ignore_errors=False, onerror=_log_file_error)
 
-        if len(_res_heap):
-            # resources were created but not deleted or removed
-            _gx.log(_t('Warning - cleaning up resources that are still open:'))
-            i = 0
-            for s in _res_heap.values():
-                if i == _max_warnings:
-                    _gx.log(_t('    and there are {} more (change GXpy(max_warnings=) to see more)...'
-                               .format(len(_res_heap) - i)))
-                    break
-                _gx.log('   ', s)
-                i += 1
+            _remove_stale_gx_temporary_folders()
+            if _remove_stale_geosoft_temp_files:
+                _remove_stale_geosoft_temporary_files()
+
+            if len(_res_heap):
+                # resources were created but not deleted or removed
+                _gx.log(_t('Warning - cleaning up resources that are still open:'))
+                i = 0
+                for s in _res_heap.values():
+                    if i == _max_warnings:
+                        _gx.log(_t('    and there are {} more (change GXpy(max_warnings=) to see more)...'
+                                   .format(len(_res_heap) - i)))
+                        break
+                    _gx.log('   ', s)
+                    i += 1
+            _gx.close_log()
 
         _gx._tkframe = None
         _gx._gxapi = None
         _gx._shared_state = {}
-        _gx.close_log()
 
     _reset_globals()
 
@@ -229,7 +238,7 @@ class GXpy(_Singleton):
     Geosoft GX context.  This is a singleton class, so subsequent creation returns an instance
     identical to the initial creation. This also means that initialization arguments are ignored
     on a subsequent instantiation.
-    
+
     This class does not need to be instantiated by desktop extensions as the context is provided
     by the Geosoft desktop application.  If called, the desktop context is returned.
 
@@ -723,9 +732,9 @@ class GXpy(_Singleton):
         """
         Return the GX temporary folder path.
 
-        Each GX instance will create an instance-specific temporary folder as a child in the Geosoft 
-        temporary folder.  Placing temporary files in the GX-specific temporary folder will ensure 
-        temporary file names will not collide with other running GX-based programs, and that all 
+        Each GX instance will create an instance-specific temporary folder as a child in the Geosoft
+        temporary folder.  Placing temporary files in the GX-specific temporary folder will ensure
+        temporary file names will not collide with other running GX-based programs, and that all
         temporarty files are removed on termination of this GX.
 
         Call `keep_temp_folder` to prevent deletion of the temporary files, which can be useful
@@ -753,7 +762,7 @@ class GXpy(_Singleton):
     def keep_temp_folder(self, keep=True):
         """
         Keep temporary file folder setting.
-        
+
         :param keep: True to keep the temporary file folder, False to remove
 
         .. versionadded:: 9.2
@@ -806,7 +815,7 @@ class GXpy(_Singleton):
         If logging to a file each line is preceded by the date and time:
 
         .. code::
-        
+
             2016-12-25 12:34:16.175 log_str_line_1
             2016-12-25 12:34:16.175 log_str_line_2
 
