@@ -522,6 +522,32 @@ class GXGU(gxapi_cy.WrapGU):
 
 
     @classmethod
+    def despike_em_array(cls, vv_in, vv_noise, vv_out, num_removed):
+        """
+        Despike a time-series with individual noise levels
+        
+        :param vv_in:        `GXVV <geosoft.gxapi.GXVV>` input time series)
+        :param vv_noise:     `GXVV <geosoft.gxapi.GXVV>` individual noise values)
+        :param vv_out:       `GXVV <geosoft.gxapi.GXVV>` despiked output time series
+        :param num_removed:  Number of spikes removed - returned
+        :type  vv_in:        GXVV
+        :type  vv_noise:     GXVV
+        :type  vv_out:       GXVV
+        :type  num_removed:  int_ref
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** Remove spikes from a single EM time-series decay curve. Each point has its own noise level.
+        The algorithm is to be determined.
+        """
+        num_removed.value = gxapi_cy.WrapGU._despike_em_array(GXContext._get_tls_geo(), vv_in, vv_noise, vv_out, num_removed.value)
+        
+
+
+
+    @classmethod
     def em_layer(cls, coil_spacing, coil_frequency, coil_height, coil_configuration, n_layers, vv_thickness, vv_sigma, in_phase, quadrature):
         """
         Calculate the EM response of a layered earth model.

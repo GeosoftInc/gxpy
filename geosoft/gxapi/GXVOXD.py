@@ -346,6 +346,40 @@ class GXVOXD(gxapi_cy.WrapVOXD):
 
 
 
+    def get_render_mode(self, render_mode):
+        """
+        Get voxel render mode.
+        
+        :param render_mode:  :ref:`VOXELRENDER_MODE`
+        :type  render_mode:  int_ref
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        render_mode.value = self._get_render_mode(render_mode.value)
+        
+
+
+
+
+    def set_render_mode(self, render_mode):
+        """
+        Get voxel render mode.
+        
+        :param render_mode:  :ref:`VOXELRENDER_MODE`
+        :type  render_mode:  int
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._set_render_mode(render_mode)
+        
+
+
+
+
 
 ### endblock ClassImplementation
 ### block ClassExtend

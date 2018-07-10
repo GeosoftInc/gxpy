@@ -2522,6 +2522,22 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
 
 
+    def polygon_mply(self, mply):
+        """
+        Draw multiple complex polygons from `GXMPLY <geosoft.gxapi.GXMPLY>`.
+        
+        :type  mply:   GXMPLY
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._polygon_mply(mply)
+        
+
+
+
+
     def poly_line(self, type, vv_x, vv_y):
         """
         Draw a polyline or polygon (dummies deleted).

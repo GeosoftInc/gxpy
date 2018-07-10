@@ -3,6 +3,7 @@
 # NOTICE: Do not edit anything here, it is generated code
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+from .GXMULTIGRID3D import GXMULTIGRID3D
 
 
 ### endblock ClassImports
@@ -237,6 +238,25 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
 
     @classmethod
+    def import_from_segy(cls, output_file, input_file):
+        """
+        Imports a MultiVoxset from a SEG Y File
+        
+        :param output_file:  Name of output `GXVOX <geosoft.gxapi.GXVOX>`
+        :param input_file:   Name of input SEG Y file
+        :type  output_file:  str
+        :type  input_file:   str
+
+        .. versionadded:: 9.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapMULTIGRID3DUTIL._import_from_segy(GXContext._get_tls_geo(), output_file.encode(), input_file.encode())
+        
+
+
+
+    @classmethod
     def import_from_gdb(cls, grid3d_file, db, symb):
         """
         Imports from a Geosoft Database
@@ -289,16 +309,14 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
 
     @classmethod
-    def export_to_segy(cls, grid3d_file, grid3d_name, output_segy_filename, sample_interval):
+    def export_to_segy(cls, multigrid3d_file, output_segy_filename, sample_interval):
         """
         Export To SEGY
         
-        :param grid3d_file:           Input Voxel file
-        :param grid3d_name:           Voxel Name
+        :param multigrid3d_file:      Input Voxel file
         :param output_segy_filename:  Output Segy file
         :param sample_interval:       Sampling Internal
-        :type  grid3d_file:           str
-        :type  grid3d_name:           str
+        :type  multigrid3d_file:      str
         :type  output_segy_filename:  str
         :type  sample_interval:       float
 
@@ -306,7 +324,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._export_to_segy(GXContext._get_tls_geo(), grid3d_file.encode(), grid3d_name.encode(), output_segy_filename.encode(), sample_interval)
+        gxapi_cy.WrapMULTIGRID3DUTIL._export_to_segy(GXContext._get_tls_geo(), multigrid3d_file.encode(), output_segy_filename.encode(), sample_interval)
         
 
 
@@ -426,6 +444,33 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
 
     @classmethod
+    def convert_vector_to_double_using_rotation(cls, file_name, x_file_name, y_file_name, z_file_name, inclination, declination):
+        """
+        Convert a Vector Voxel to 3 double Voxels using an external rotation. Internal rotations are ignored.
+        
+        :param file_name:    Input Vector Voxel file
+        :param x_file_name:  Output X Voxel file
+        :param y_file_name:  Output Y Voxel file
+        :param z_file_name:  Output Z Voxel file
+        :param inclination:  Inclination
+        :param declination:  Declination
+        :type  file_name:    str
+        :type  x_file_name:  str
+        :type  y_file_name:  str
+        :type  z_file_name:  str
+        :type  inclination:  float
+        :type  declination:  float
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapMULTIGRID3DUTIL._convert_vector_to_double_using_rotation(GXContext._get_tls_geo(), file_name.encode(), x_file_name.encode(), y_file_name.encode(), z_file_name.encode(), inclination, declination)
+        
+
+
+
+    @classmethod
     def convert_thematic_to_double(cls, input_grid3d_filename, translate_vv, output_grid3d_filename):
         """
         Convert Thematic MultiVoxset to Double MultiVoxset
@@ -447,22 +492,24 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
 
     @classmethod
-    def convert_double_to_thematic(cls, input_grid3d_filename, translate_vv, output_grid3d_filename):
+    def convert_double_to_thematic(cls, input_grid3d_filename, translate_vv, tpat, output_grid3d_filename):
         """
         Convert Double MultiVoxset to Thematic MultiVoxset
         
         :param input_grid3d_filename:   Input grid3d filename
         :param translate_vv:            Translation VV handle
+        :param tpat:                    `GXTPAT <geosoft.gxapi.GXTPAT>` object
         :param output_grid3d_filename:  Output grid3d filename
         :type  input_grid3d_filename:   str
         :type  translate_vv:            GXVV
+        :type  tpat:                    GXTPAT
         :type  output_grid3d_filename:  str
 
         .. versionadded:: 9.4
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._convert_double_to_thematic(GXContext._get_tls_geo(), input_grid3d_filename.encode(), translate_vv, output_grid3d_filename.encode())
+        gxapi_cy.WrapMULTIGRID3DUTIL._convert_double_to_thematic(GXContext._get_tls_geo(), input_grid3d_filename.encode(), translate_vv, tpat, output_grid3d_filename.encode())
         
 
 
@@ -941,34 +988,95 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
 
     @classmethod
-    def generate_rbf_surface(cls, db, output_file, data_channel, isosurface_value, error_tolerance, max_iterations, desample, kernel, kernel_epsilon):
+    def invert_z(cls, input_file, output_file):
         """
-        Creates a surface from an database using RBF.
+        Invert the Z values in the Grid3d.
         
-        :param db:                Handle to a database
-        :param output_file:       Name of the output grid3d
-        :param data_channel:      Channel to grid`
-        :param isosurface_value:  Isosurface value
-        :param error_tolerance:   Error Tolerance
-        :param max_iterations:    Maximum number of iterations (>0)
-        :param desample:          Desample data (1) or use as is (0)
-        :param kernel:            :ref:`RBFKERNEL`
-        :param kernel_epsilon:    Kernel Epsilon
-        :type  db:                GXDB
-        :type  output_file:       str
-        :type  data_channel:      str
-        :type  isosurface_value:  float
-        :type  error_tolerance:   float
-        :type  max_iterations:    int
-        :type  desample:          int
-        :type  kernel:            int
-        :type  kernel_epsilon:    float
+        :param input_file:   Name of the input grid3d
+        :param output_file:  Name of the output grid3d
+        :type  input_file:   str
+        :type  output_file:  str
 
         .. versionadded:: 9.5
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._generate_rbf_surface(GXContext._get_tls_geo(), db, output_file.encode(), data_channel.encode(), isosurface_value, error_tolerance, max_iterations, desample, kernel, kernel_epsilon)
+        gxapi_cy.WrapMULTIGRID3DUTIL._invert_z(GXContext._get_tls_geo(), input_file.encode(), output_file.encode())
+        
+
+
+
+    @classmethod
+    def extract_dem(cls, input_file, output_file):
+        """
+        Extract a DEM grid from a voxel.
+        
+        :param input_file:   Name of the input grid3d
+        :param output_file:  Name of the output grid
+        :type  input_file:   str
+        :type  output_file:  str
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        gxapi_cy.WrapMULTIGRID3DUTIL._extract_dem(GXContext._get_tls_geo(), input_file.encode(), output_file.encode())
+        
+
+
+
+    @classmethod
+    def clip_to_polygon(cls, input_file, output_file, poly, clip_dummies):
+        """
+        Invert the Z values in the Grid3d.
+        
+        :param input_file:    Name of the input grid3d
+        :param output_file:   Name of the output grid3d
+        :param poly:          Polygons to clip to
+        :param clip_dummies:  Clip Dummies (1) or leave them (0)
+        :type  input_file:    str
+        :type  output_file:   str
+        :type  poly:          GXPLY
+        :type  clip_dummies:  int
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        gxapi_cy.WrapMULTIGRID3DUTIL._clip_to_polygon(GXContext._get_tls_geo(), input_file.encode(), output_file.encode(), poly, clip_dummies)
+        
+
+
+
+    @classmethod
+    def generate_rbf(cls, db, output_file, data_channel, cell_size, error_tolerance, max_iterations, desample, kernel, kernel_epsilon):
+        """
+        Creates a VOXEL from an database using RBF.
+        
+        :param db:               Handle to a database
+        :param output_file:      Name of the output grid3d
+        :param data_channel:     Channel to grid`
+        :param cell_size:        Cell size
+        :param error_tolerance:  Error Tolerance
+        :param max_iterations:   Maximum number of iterations (>0)
+        :param desample:         Desample data (1) or use as is (0)
+        :param kernel:           :ref:`RBFKERNEL`
+        :param kernel_epsilon:   Kernel Epsilon
+        :type  db:               GXDB
+        :type  output_file:      str
+        :type  data_channel:     str
+        :type  cell_size:        float
+        :type  error_tolerance:  float
+        :type  max_iterations:   int
+        :type  desample:         int
+        :type  kernel:           int
+        :type  kernel_epsilon:   float
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        gxapi_cy.WrapMULTIGRID3DUTIL._generate_rbf(GXContext._get_tls_geo(), db, output_file.encode(), data_channel.encode(), cell_size, error_tolerance, max_iterations, desample, kernel, kernel_epsilon)
         
 
 
@@ -1019,6 +1127,514 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         """
         gxapi_cy.WrapMULTIGRID3DUTIL._grid_direct_from_gdb(GXContext._get_tls_geo(), output_grid3d_filename.encode(), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, method, db, x_channel, y_channel, z_channel, data_channel)
         
+
+
+
+    @classmethod
+    def grid_idw_from_gdb(cls, output_grid3d_filename, origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, db, x_channel, y_channel, z_channel, data_channel, weight_power, weight_slope, search_radius, blanking_distance, log, log_base, log_negative):
+        """
+        Create a grid3d using IDW gridding.
+        
+        :param output_grid3d_filename:  Output grid3d filename
+        :param origin_x:                Voxel origin X
+        :param origin_y:                Voxel origin Y
+        :param origin_z:                Voxel origin Z
+        :param cell_count_x:            Voxel cell count X
+        :param cell_count_y:            Voxel cell count Y
+        :param cell_count_z:            Voxel cell count Z
+        :param cell_size_x:             Voxel cell size X
+        :param cell_size_y:             Voxel cell size Y
+        :param cell_size_z:             Voxel cell size Z
+        :param db:                      Database
+        :param x_channel:               X channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param y_channel:               Y channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param z_channel:               Z channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param data_channel:            Data channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param weight_power:            Weight Power (default 2)
+        :param weight_slope:            Weight Slope (default 1)
+        :param search_radius:           Distance weighting limit (default = 4 * CUBE_ROOT(DX*DY*DZ))
+        :param blanking_distance:       Dummy values farther from data than this distance. (default = 4 * CUBE_ROOT(DX*DY*DZ))
+        :param log:                     Apply log transform to input data before gridding (0:No (default), 1:Yes)
+        :param log_base:                One of `VV_LOG_BASE_10 <geosoft.gxapi.VV_LOG_BASE_10>` (default) or :const:`VV_LOG_BASE_E
+        :param log_negative:            One of `VV_LOG_NEGATIVE_NO <geosoft.gxapi.VV_LOG_NEGATIVE_NO>` (default) or `VV_LOG_NEGATIVE_YES <geosoft.gxapi.VV_LOG_NEGATIVE_YES>`
+        :type  output_grid3d_filename:  str
+        :type  origin_x:                float
+        :type  origin_y:                float
+        :type  origin_z:                float
+        :type  cell_count_x:            int
+        :type  cell_count_y:            int
+        :type  cell_count_z:            int
+        :type  cell_size_x:             float
+        :type  cell_size_y:             float
+        :type  cell_size_z:             float
+        :type  db:                      GXDB
+        :type  x_channel:               int
+        :type  y_channel:               int
+        :type  z_channel:               int
+        :type  data_channel:            int
+        :type  weight_power:            float
+        :type  weight_slope:            float
+        :type  search_radius:           float
+        :type  blanking_distance:       float
+        :type  log:                     int
+        :type  log_base:                float
+        :type  log_negative:            int
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** The Z and Data channels may be array channels. If they are, the array sizes must match.
+                          3D cells take on the averaged values within a search radius, weighted inversely by distance.
+
+                       Weighting can be controlled using the power and slope properties;
+
+                       weighting = 1 / (distance^wtpower + 1/slope) where distance is in
+                       units of grid cells (X dimenstion). Default is 0.0,
+
+                       If the blanking distance is set, all cells whose center point is not within the blanking distance of
+                       at least one data point are set to dummy.
+        """
+        gxapi_cy.WrapMULTIGRID3DUTIL._grid_idw_from_gdb(GXContext._get_tls_geo(), output_grid3d_filename.encode(), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, db, x_channel, y_channel, z_channel, data_channel, weight_power, weight_slope, search_radius, blanking_distance, log, log_base, log_negative)
+        
+
+
+
+    @classmethod
+    def get_data_extents(cls, filename, min_x, min_y, min_z, max_x, max_y, max_z):
+        """
+        Get the voxel size that has non-dummy data.
+        
+        :param filename:  input filename
+        :param min_x:     Index of minimum valid data in X.
+        :param min_y:     Index of minimum valid data in Y.
+        :param min_z:     Index of minimum valid data in Z.
+        :param max_x:     Index of maximum valid data in X.
+        :param max_y:     Index of maximum valid data in Y.
+        :param max_z:     Index of maximum valid data in Z.
+        :type  filename:  str
+        :type  min_x:     int_ref
+        :type  min_y:     int_ref
+        :type  min_z:     int_ref
+        :type  max_x:     int_ref
+        :type  max_y:     int_ref
+        :type  max_z:     int_ref
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Find the non-dummy volume of a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` object. If the voxel is all dummies,
+        returns `iMAX <geosoft.gxapi.iMAX>` for the minima, and `iMIN <geosoft.gxapi.iMIN>` for the maxima.
+        """
+        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = gxapi_cy.WrapMULTIGRID3DUTIL._get_data_extents(GXContext._get_tls_geo(), filename.encode(), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
+        
+
+
+
+    @classmethod
+    def get_data_ground_extents(cls, filename, min_x, min_y, min_z, max_x, max_y, max_z):
+        """
+        Get the voxel size in ground units that has non-dummy data.
+        
+        :param filename:  input filename
+        :param min_x:     Ground location of minimum valid data in X.
+        :param min_y:     Ground location of minimum valid data in Y.
+        :param min_z:     Ground location of minimum valid data in Z.
+        :param max_x:     Ground location of maximum valid data in X.
+        :param max_y:     Ground location of maximum valid data in Y.
+        :param max_z:     Ground location of maximum valid data in Z.
+        :type  filename:  str
+        :type  min_x:     float_ref
+        :type  min_y:     float_ref
+        :type  min_z:     float_ref
+        :type  max_x:     float_ref
+        :type  max_y:     float_ref
+        :type  max_z:     float_ref
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Find the non-dummy volume of a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` object. If the voxel is all dummies,
+        returns `iMAX <geosoft.gxapi.iMAX>` for the minima, and `iMIN <geosoft.gxapi.iMIN>` for the maxima.
+        """
+        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = gxapi_cy.WrapMULTIGRID3DUTIL._get_data_ground_extents(GXContext._get_tls_geo(), filename.encode(), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
+        
+
+
+
+    @classmethod
+    def grid_points_from_gdb(cls, name, error, cell_size, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, db, x_channel, y_channel, z_channel, data_channel, ipj):
+        """
+        Grid a grid3d from a database using kriging.
+        
+        :param name:          Output grid3d filename
+        :param error:         Output error grid3d filename
+        :param cell_size:     Cell size (DUMMY for default)
+        :param var_only:      Variogram Only
+        :param min_radius:    Minimum Search Radius (DUMMY for none)
+        :param max_radius:    Maximum Search Radius (DUMMY for none)
+        :param min_points:    Minimum Search Points
+        :param max_points:    Maximum Search Points
+        :param model:         Model number 1-power, 2-sperical, 3-gaussian, 4-exponential
+        :param power:         Power
+        :param slope:         Slope
+        :param range:         Range
+        :param nugget:        Nugget
+        :param sill:          Sill
+        :param type:          :ref:`GS_TYPES`
+        :param db:            Database
+        :param x_channel:     X channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param y_channel:     Y channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param z_channel:     Z channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param data_channel:  Data channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :type  name:          str
+        :type  error:         str
+        :type  cell_size:     float
+        :type  var_only:      int
+        :type  min_radius:    float
+        :type  max_radius:    float
+        :type  min_points:    int
+        :type  max_points:    int
+        :type  model:         int
+        :type  power:         float
+        :type  slope:         float
+        :type  range:         float
+        :type  nugget:        float
+        :type  sill:          float
+        :type  type:          int
+        :type  db:            GXDB
+        :type  x_channel:     int
+        :type  y_channel:     int
+        :type  z_channel:     int
+        :type  data_channel:  int
+        :type  ipj:           GXIPJ
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapMULTIGRID3DUTIL._grid_points_from_gdb(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, db, x_channel, y_channel, z_channel, data_channel, ipj)
+        
+
+
+
+    @classmethod
+    def grid_points_z_from_gdb(cls, name, error, cell_size, cell_size_z, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, db, x_channel, y_channel, z_channel, data_channel, ipj):
+        """
+        Grid a grid3d from a database (using variable Z's)
+        
+        :param name:          Output grid3d filename
+        :param error:         Output error grid3d filename
+        :param cell_size:     Cell size (DUMMY for default)
+        :param cell_size_z:   Cell size in Z ("" for default)
+        :param var_only:      Variogram Only
+        :param min_radius:    Minimum Search Radius (DUMMY for none)
+        :param max_radius:    Maximum Search Radius (DUMMY for none)
+        :param min_points:    Minimum Search Points
+        :param max_points:    Maximum Search Points
+        :param model:         Model number 1-power, 2-sperical, 3-gaussian, 4-exponential
+        :param power:         Power
+        :param slope:         Slope
+        :param range:         Range
+        :param nugget:        Nugget
+        :param sill:          Sill
+        :param type:          :ref:`GS_TYPES`
+        :param db:            Database
+        :param x_channel:     X channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param y_channel:     Y channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param z_channel:     Z channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param data_channel:  Data channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :type  name:          str
+        :type  error:         str
+        :type  cell_size:     float
+        :type  cell_size_z:   str
+        :type  var_only:      int
+        :type  min_radius:    float
+        :type  max_radius:    float
+        :type  min_points:    int
+        :type  max_points:    int
+        :type  model:         int
+        :type  power:         float
+        :type  slope:         float
+        :type  range:         float
+        :type  nugget:        float
+        :type  sill:          float
+        :type  type:          int
+        :type  db:            GXDB
+        :type  x_channel:     int
+        :type  y_channel:     int
+        :type  z_channel:     int
+        :type  data_channel:  int
+        :type  ipj:           GXIPJ
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapMULTIGRID3DUTIL._grid_points_z_from_gdb(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, db, x_channel, y_channel, z_channel, data_channel, ipj)
+        
+
+
+
+    @classmethod
+    def grid_points_z_ex_from_gdb(cls, name, error, cell_size, cell_size_z, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, strike, dip, plunge, along_strike_weight, down_dip_weight, type, db, x_channel, y_channel, z_channel, data_channel, ipj):
+        """
+        Grid a grid3d from a database (using variable Z's)
+        
+        :param name:                 Output grid3d filename
+        :param error:                Output error grid3d filename
+        :param cell_size:            Cell size (DUMMY for default)
+        :param cell_size_z:          Cell size in Z ("" for default)
+        :param var_only:             Variogram Only
+        :param min_radius:           Minimum Search Radius (DUMMY for none)
+        :param max_radius:           Maximum Search Radius (DUMMY for none)
+        :param min_points:           Minimum Search Points
+        :param max_points:           Maximum Search Points
+        :param model:                Model number 1-power, 2-sperical, 3-gaussian, 4-exponential
+        :param power:                Power
+        :param slope:                Slope
+        :param range:                Range
+        :param nugget:               Nugget
+        :param sill:                 Sill
+        :param strike:               Strike
+        :param dip:                  Dip
+        :param plunge:               Plunge
+        :param along_strike_weight:  Strike Weight
+        :param down_dip_weight:      Dip Plane Weight
+        :param type:                 :ref:`GS_TYPES`
+        :param db:                   Database
+        :param x_channel:            X channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param y_channel:            Y channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param z_channel:            Z channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param data_channel:         Data channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :type  name:                 str
+        :type  error:                str
+        :type  cell_size:            float
+        :type  cell_size_z:          str
+        :type  var_only:             int
+        :type  min_radius:           float
+        :type  max_radius:           float
+        :type  min_points:           int
+        :type  max_points:           int
+        :type  model:                int
+        :type  power:                float
+        :type  slope:                float_ref
+        :type  range:                float_ref
+        :type  nugget:               float
+        :type  sill:                 float_ref
+        :type  strike:               float
+        :type  dip:                  float
+        :type  plunge:               float
+        :type  along_strike_weight:  float
+        :type  down_dip_weight:      float
+        :type  type:                 int
+        :type  db:                   GXDB
+        :type  x_channel:            int
+        :type  y_channel:            int
+        :type  z_channel:            int
+        :type  data_channel:         int
+        :type  ipj:                  GXIPJ
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        slope.value, range.value, sill.value = gxapi_cy.WrapMULTIGRID3DUTIL._grid_points_z_ex_from_gdb(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, type, db, x_channel, y_channel, z_channel, data_channel, ipj)
+        
+
+
+
+    @classmethod
+    def log_grid_points_z_ex_from_gdb(cls, name, error, cell_size, cell_size_z, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, strike, dip, plunge, along_strike_weight, down_dip_weight, log_opt, min_log, type, db, x_channel, y_channel, z_channel, data_channel, ipj):
+        """
+        Log grid a grid3d from a database (using variable Z's)
+        
+        :param name:                 Output grid3d filename
+        :param error:                Output error grid3d filename
+        :param cell_size:            Cell size (DUMMY for default)
+        :param cell_size_z:          Cell size in Z ("" for default)
+        :param var_only:             Variogram Only
+        :param min_radius:           Minimum Search Radius (DUMMY for none)
+        :param max_radius:           Maximum Search Radius (DUMMY for none)
+        :param min_points:           Minimum Search Points
+        :param max_points:           Maximum Search Points
+        :param model:                Model number 1-power, 2-sperical, 3-gaussian, 4-exponential
+        :param power:                Power
+        :param slope:                Slope
+        :param range:                Range
+        :param nugget:               Nugget
+        :param sill:                 Sill
+        :param strike:               Strike
+        :param dip:                  Dip
+        :param plunge:               Plunge
+        :param along_strike_weight:  Strike Weight
+        :param down_dip_weight:      Dip Plane Weight
+        :param log_opt:              :ref:`VOX_GRID_LOGOPT` Log Option
+        :param min_log:              Minimum log
+        :param type:                 :ref:`GS_TYPES`
+        :param db:                   Database
+        :param x_channel:            X channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param y_channel:            Y channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param z_channel:            Z channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param data_channel:         Data channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :type  name:                 str
+        :type  error:                str
+        :type  cell_size:            float
+        :type  cell_size_z:          str
+        :type  var_only:             int
+        :type  min_radius:           float
+        :type  max_radius:           float
+        :type  min_points:           int
+        :type  max_points:           int
+        :type  model:                int
+        :type  power:                float
+        :type  slope:                float_ref
+        :type  range:                float_ref
+        :type  nugget:               float
+        :type  sill:                 float_ref
+        :type  strike:               float
+        :type  dip:                  float
+        :type  plunge:               float
+        :type  along_strike_weight:  float
+        :type  down_dip_weight:      float
+        :type  log_opt:              int
+        :type  min_log:              float
+        :type  type:                 int
+        :type  db:                   GXDB
+        :type  x_channel:            int
+        :type  y_channel:            int
+        :type  z_channel:            int
+        :type  data_channel:         int
+        :type  ipj:                  GXIPJ
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        slope.value, range.value, sill.value = gxapi_cy.WrapMULTIGRID3DUTIL._log_grid_points_z_ex_from_gdb(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, log_opt, min_log, type, db, x_channel, y_channel, z_channel, data_channel, ipj)
+        
+
+
+
+    @classmethod
+    def krig_from_gdb(cls, name, cell_size, type, db, x_channel, y_channel, z_channel, data_channel, ipj, reg):
+        """
+        A more compact and extensible form of `log_grid_points_z_ex_from_gdb <geosoft.gxapi.GXMULTIGRID3DUTIL.log_grid_points_z_ex_from_gdb>`.
+        
+        :param name:          Output grid3d filename
+        :param cell_size:     Cell size (DUMMY for default)
+        :param type:          :ref:`GS_TYPES`
+        :param db:            Database
+        :param x_channel:     X channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param y_channel:     Y channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param z_channel:     Z channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param data_channel:  Data channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :type  name:          str
+        :type  cell_size:     float
+        :type  type:          int
+        :type  db:            GXDB
+        :type  x_channel:     int
+        :type  y_channel:     int
+        :type  z_channel:     int
+        :type  data_channel:  int
+        :type  ipj:           GXIPJ
+        :type  reg:           GXREG
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Optional Parameters.
+
+        If these values are not set in the `GXREG <geosoft.gxapi.GXREG>`, then default parameters will be used.
+
+        ERROR_VOXEL:		Output error grid3d filename ("" for none)
+        CELLSIZEZ:      Z Cell size string (space delimited, "" for default)
+        RADIUS_MIN:		Minimum Search Radius (REAL) (Default = 4) (Blanking Distance)
+        RADIUS_MAX:		Maximum Search Radius (REAL) (Default = 16)
+        SEARCH_MIN:		Minimum Search Points (INT) (Default = 16)
+        SEARCH_MAX:		Maximum Search Points (INT) (Default = 32)
+        VARIOGRAM_ONLY: Set to 1 to calculate the variogram only (INT) (Default = 0)
+        MODEL:				Variogram Model number 1-power, 2-sperical, 3-gaussian, 4-exponential  (INT) (Default = 2)
+        POWER:          Power (Default = DUMMY)
+        SLOPE:          Slope (REAL) (if input is DUMMY, value calculated and set on return)
+        RANGE:          Range (REAL) (if input is DUMMY, value calculated and set on return)
+        SILL :          Sill (REAL) (if input is DUMMY, value calculated and set on return)
+        STRIKE:				Strike (REAL) (Default = 0)
+        DIP:					Dip (REAL)	(Default = 90)
+        PLUNGE:				Plunge (REAL) (Default = 0)
+        STRIKE WEIGHT:	Along-Strike Weight (REAL) (Default = 1)
+        DIP_WEIGHT:      Down-Dip Weight (REAL) (Default = 1)
+        LOG_OPT:			One of :ref:`VOX_GRID_LOGOPT` (Default = 0)
+        MIN_LOG:			Log Minimum (REAL)	(Default = 1)
+        MIN_X:				Minimum X (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. multiple of cell size chosen)
+        MAX_X:				Maximum X (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)
+        MIN_Y:				Minimum Y (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. external multiple of cell size chosen)
+        MAX_Y:				Maximum Y (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)
+        MIN_Z:				Minimum Z (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. multiple of cell size chosen)
+        MAX_Z:				Maximum Z (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)A more compact and extensible form of `GXVOX.log_grid_points_z_ex <geosoft.gxapi.GXVOX.log_grid_points_z_ex>`. Only the most
+        basic parameters are entered directly. Optional parameters are passed via a `GXREG <geosoft.gxapi.GXREG>` object.
+        """
+        gxapi_cy.WrapMULTIGRID3DUTIL._krig_from_gdb(GXContext._get_tls_geo(), name.encode(), cell_size, type, db, x_channel, y_channel, z_channel, data_channel, ipj, reg)
+        
+
+
+
+    @classmethod
+    def create_subset(cls, input_name, output_name, offset_x, offset_y, offset_z, length_x, length_y, length_z):
+        """
+        Create a new MULTIGRID3D that is a subset of an exisiting MULTIGRID3D.
+        
+        :param input_name:   File Name of the MULTIGRID3D that will be subset
+        :param output_name:  File Name of the MULTIGRID3D that will be created
+        :param offset_x:     Starting location in X.
+        :param offset_y:     Starting location in Y.
+        :param offset_z:     Starting location in Z.
+        :param length_x:     Number of items to copy in X.
+        :param length_y:     Number of items to copy in Y.
+        :param length_z:     Number of items to copy in Z.
+        :type  input_name:   str
+        :type  output_name:  str
+        :type  offset_x:     int
+        :type  offset_y:     int
+        :type  offset_z:     int
+        :type  length_x:     int
+        :type  length_y:     int
+        :type  length_z:     int
+        :rtype:              GXMULTIGRID3D
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Creates a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` object that is a subset .
+        """
+        ret_val = gxapi_cy.WrapMULTIGRID3DUTIL._create_subset(GXContext._get_tls_geo(), input_name.encode(), output_name.encode(), offset_x, offset_y, offset_z, length_x, length_y, length_z)
+        return GXMULTIGRID3D(ret_val)
+
+
+
+    @classmethod
+    def create_subset_from_double_extents(cls, input_name, output_name):
+        """
+        Create a new MULTIGRID3D that is a subset of the non-dummy extents.
+        
+        :param input_name:   File Name of the MULTIGRID3D that will be subset
+        :param output_name:  File Name of the MULTIGRID3D that will be created
+        :type  input_name:   str
+        :type  output_name:  str
+        :rtype:              GXMULTIGRID3D
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Creates a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` object that is a subset with all dummy data regions removed.
+        """
+        ret_val = gxapi_cy.WrapMULTIGRID3DUTIL._create_subset_from_double_extents(GXContext._get_tls_geo(), input_name.encode(), output_name.encode())
+        return GXMULTIGRID3D(ret_val)
 
 
 

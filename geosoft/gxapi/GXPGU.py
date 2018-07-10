@@ -68,130 +68,6 @@ class GXPGU(gxapi_cy.WrapPGU):
 
 
     @classmethod
-    def direct_gridding_db(cls, pg, xo, yo, dx, dy, rot, db, x, y, z, method):
-        """
-        Direct-gridding method, `GXDB <geosoft.gxapi.GXDB>` version.
-        
-        :param pg:      Input grid
-        :param xo:      X origin of grid
-        :param yo:      Y origin of grid
-        :param dx:      X cell size
-        :param dy:      Y cell size
-        :param rot:     Rotation angle (degrees CCW).
-        :param db:      Database
-        :param x:       X Channel [READONLY]
-        :param y:       Y Channel [READONLY]
-        :param z:       Data Channel [READONLY]
-        :param method:  :ref:`PGU_DIRECTGRID`
-        :type  pg:      GXPG
-        :type  xo:      float
-        :type  yo:      float
-        :type  dx:      float
-        :type  dy:      float
-        :type  rot:     float
-        :type  db:      GXDB
-        :type  x:       int
-        :type  y:       int
-        :type  z:       int
-        :type  method:  int
-
-        .. versionadded:: 7.3
-
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
-
-        **Note:** Grid cells take on the specified statistic of the values inside the
-        cell area. Grid cells containing no data values are set to dummy.
-        """
-        gxapi_cy.WrapPGU._direct_gridding_db(GXContext._get_tls_geo(), pg, xo, yo, dx, dy, rot, db, x, y, z, method)
-        
-
-
-
-    @classmethod
-    def direct_gridding_db_3d(cls, pg, xo, yo, zo, dx, dy, dz, rot, db, x, y, z, data, method):
-        """
-        Direct-gridding method, `GXDB <geosoft.gxapi.GXDB>` version, 3D.
-        
-        :param pg:      Input 3D `GXPG <geosoft.gxapi.GXPG>`
-        :param xo:      X origin of 3D grid
-        :param yo:      Y origin of 3D grid
-        :param zo:      Z origin of 3D grid
-        :param dx:      X cell size
-        :param dy:      Y cell size
-        :param dz:      Z cell size
-        :param rot:     Rotation angle (degrees CCW, vertical axis only).
-        :param db:      Database
-        :param x:       X Channel [READONLY]
-        :param y:       Y Channel [READONLY]
-        :param z:       Z Channel [READONLY]
-        :param data:    Data Channel [READONLY]
-        :param method:  :ref:`PGU_DIRECTGRID`
-        :type  pg:      GXPG
-        :type  xo:      float
-        :type  yo:      float
-        :type  zo:      float
-        :type  dx:      float
-        :type  dy:      float
-        :type  dz:      float
-        :type  rot:     float
-        :type  db:      GXDB
-        :type  x:       int
-        :type  y:       int
-        :type  z:       int
-        :type  data:    int
-        :type  method:  int
-
-        .. versionadded:: 8.0
-
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
-
-        **Note:** 3D grid cells take on the specified statistic of the values inside the
-        cell area. Grid cells containing no data values are set to dummy.
-        """
-        gxapi_cy.WrapPGU._direct_gridding_db_3d(GXContext._get_tls_geo(), pg, xo, yo, zo, dx, dy, dz, rot, db, x, y, z, data, method)
-        
-
-
-
-    @classmethod
-    def direct_gridding_vv(cls, pg, xo, yo, dx, dy, rot, v_vx, v_vy, v_vz, method):
-        """
-        Direct-gridding method, `GXVV <geosoft.gxapi.GXVV>` version.
-        
-        :param pg:      Input grid
-        :param xo:      X origin of grid
-        :param yo:      Y origin of grid
-        :param dx:      X cell size
-        :param dy:      Y cell size
-        :param rot:     Rotation angle (degrees CCW).
-        :param v_vx:    X locations of values
-        :param v_vy:    Y locations of values
-        :param v_vz:    Z values to grid
-        :param method:  :ref:`PGU_DIRECTGRID`
-        :type  pg:      GXPG
-        :type  xo:      float
-        :type  yo:      float
-        :type  dx:      float
-        :type  dy:      float
-        :type  rot:     float
-        :type  v_vx:    GXVV
-        :type  v_vy:    GXVV
-        :type  v_vz:    GXVV
-        :type  method:  int
-
-        .. versionadded:: 7.3
-
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
-
-        **Note:** Grid cells take on the specified statistic of the values inside the
-        cell area. Grid cells containing no data values are set to dummy.
-        """
-        gxapi_cy.WrapPGU._direct_gridding_vv(GXContext._get_tls_geo(), pg, xo, yo, dx, dy, rot, v_vx, v_vy, v_vz, method)
-        
-
-
-
-    @classmethod
     def expand(cls, pg_i, pg_o, ex_pcnt, ex_shp, ex_x, ex_y):
         """
         Expand a pager by filling the dummies for expanded edges
@@ -1355,6 +1231,134 @@ class GXPGU(gxapi_cy.WrapPGU):
         """
         ret_val = gxapi_cy.WrapPGU._maximum_terrain_steepness(GXContext._get_tls_geo(), pg, annular_size)
         return ret_val
+
+
+
+
+# Obsolete
+
+
+    @classmethod
+    def direct_gridding_db(cls, pg, xo, yo, dx, dy, rot, db, x, y, z, method):
+        """
+        Direct-gridding method, `GXDB <geosoft.gxapi.GXDB>` version.
+        
+        :param pg:      Input grid
+        :param xo:      X origin of grid
+        :param yo:      Y origin of grid
+        :param dx:      X cell size
+        :param dy:      Y cell size
+        :param rot:     Rotation angle (degrees CCW).
+        :param db:      Database
+        :param x:       X Channel [READONLY]
+        :param y:       Y Channel [READONLY]
+        :param z:       Data Channel [READONLY]
+        :param method:  :ref:`PGU_DIRECTGRID`
+        :type  pg:      GXPG
+        :type  xo:      float
+        :type  yo:      float
+        :type  dx:      float
+        :type  dy:      float
+        :type  rot:     float
+        :type  db:      GXDB
+        :type  x:       int
+        :type  y:       int
+        :type  z:       int
+        :type  method:  int
+
+        .. versionadded:: 7.3
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** Grid cells take on the specified statistic of the values inside the
+        cell area. Grid cells containing no data values are set to dummy.
+        """
+        gxapi_cy.WrapPGU._direct_gridding_db(GXContext._get_tls_geo(), pg, xo, yo, dx, dy, rot, db, x, y, z, method)
+        
+
+
+
+    @classmethod
+    def direct_gridding_db_3d(cls, pg, xo, yo, zo, dx, dy, dz, rot, db, x, y, z, data, method):
+        """
+        Direct-gridding method, `GXDB <geosoft.gxapi.GXDB>` version, 3D.
+        
+        :param pg:      Input 3D `GXPG <geosoft.gxapi.GXPG>`
+        :param xo:      X origin of 3D grid
+        :param yo:      Y origin of 3D grid
+        :param zo:      Z origin of 3D grid
+        :param dx:      X cell size
+        :param dy:      Y cell size
+        :param dz:      Z cell size
+        :param rot:     Rotation angle (degrees CCW, vertical axis only).
+        :param db:      Database
+        :param x:       X Channel [READONLY]
+        :param y:       Y Channel [READONLY]
+        :param z:       Z Channel [READONLY]
+        :param data:    Data Channel [READONLY]
+        :param method:  :ref:`PGU_DIRECTGRID`
+        :type  pg:      GXPG
+        :type  xo:      float
+        :type  yo:      float
+        :type  zo:      float
+        :type  dx:      float
+        :type  dy:      float
+        :type  dz:      float
+        :type  rot:     float
+        :type  db:      GXDB
+        :type  x:       int
+        :type  y:       int
+        :type  z:       int
+        :type  data:    int
+        :type  method:  int
+
+        .. versionadded:: 8.0
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** 3D grid cells take on the specified statistic of the values inside the
+        cell area. Grid cells containing no data values are set to dummy.
+        """
+        gxapi_cy.WrapPGU._direct_gridding_db_3d(GXContext._get_tls_geo(), pg, xo, yo, zo, dx, dy, dz, rot, db, x, y, z, data, method)
+        
+
+
+
+    @classmethod
+    def direct_gridding_vv(cls, pg, xo, yo, dx, dy, rot, v_vx, v_vy, v_vz, method):
+        """
+        Direct-gridding method, `GXVV <geosoft.gxapi.GXVV>` version.
+        
+        :param pg:      Input grid
+        :param xo:      X origin of grid
+        :param yo:      Y origin of grid
+        :param dx:      X cell size
+        :param dy:      Y cell size
+        :param rot:     Rotation angle (degrees CCW).
+        :param v_vx:    X locations of values
+        :param v_vy:    Y locations of values
+        :param v_vz:    Z values to grid
+        :param method:  :ref:`PGU_DIRECTGRID`
+        :type  pg:      GXPG
+        :type  xo:      float
+        :type  yo:      float
+        :type  dx:      float
+        :type  dy:      float
+        :type  rot:     float
+        :type  v_vx:    GXVV
+        :type  v_vy:    GXVV
+        :type  v_vz:    GXVV
+        :type  method:  int
+
+        .. versionadded:: 7.3
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** Grid cells take on the specified statistic of the values inside the
+        cell area. Grid cells containing no data values are set to dummy.
+        """
+        gxapi_cy.WrapPGU._direct_gridding_vv(GXContext._get_tls_geo(), pg, xo, yo, dx, dy, rot, v_vx, v_vy, v_vz, method)
+        
 
 
 

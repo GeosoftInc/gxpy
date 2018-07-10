@@ -601,6 +601,22 @@ File filters
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.FILE_FILTER_GOCAD_VOXET
+.. autodata:: geosoft.gxapi.FILE_FILTER_SCINTREX_DAT
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.FILE_FILTER_SCINTREX_DAT
+.. autodata:: geosoft.gxapi.FILE_FILTER_DMP
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.FILE_FILTER_DMP
+.. autodata:: geosoft.gxapi.FILE_FILTER_RAW
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.FILE_FILTER_RAW
+.. autodata:: geosoft.gxapi.FILE_FILTER_DAT
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.FILE_FILTER_DAT
 
 
 .. _FILE_FORM:

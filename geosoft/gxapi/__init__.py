@@ -1960,6 +1960,56 @@ MAPTEMPLATE_EXIST = 1
 	
 
 #
+# GXMESH Constants
+# 
+
+
+
+#
+# ATTRIBUTE_DATA_TYPE constants
+#
+# Data Type of Attribute
+
+#: DOUBLE
+ATTRIBUTE_DOUBLE = 0
+#: THEMATIC
+ATTRIBUTE_THEMATIC = 1
+#: VECTOR
+ATTRIBUTE_VECTOR = 2
+
+#
+# ATTRIBUTE_TYPE constants
+#
+# Data Type of Attribute
+
+#: Single Value Attribute
+ATTRIBUTE_SINGLE = 0
+#: Surface Sides Attribute
+ATTRIBUTE_SURFACE_SIDES = 1
+#: Vertices Attribute
+ATTRIBUTE_VERTICES = 2
+#: Faces Attribute
+ATTRIBUTE_FACES = 3	
+
+#
+# GXMESHUTIL Constants
+# 
+
+
+
+#
+# SURFACE_CLIP_MODE constants
+#
+# Surface Clip Mode
+
+#: Output the surface item above clipper surface
+SURFACE_CLIP_ABOVE = 0
+#: Output the surface item below clipper surface
+SURFACE_CLIP_BELOW = 1
+#: Output the surface items both above & below the clipper surface
+SURFACE_CLIP_BOTH = 2	
+
+#
 # GXMETA Constants
 # 
 
@@ -2086,6 +2136,12 @@ META_CORE_TYPE_Enum = -214
 META_CORE_TYPE_ClassType = -215	
 
 #
+# GXMPLY Constants
+# 
+
+	
+
+#
 # GXMULTIGRID3D Constants
 # 
 
@@ -2160,18 +2216,32 @@ FILTER3D_TOTAL_GRADIENT = 6
 #
 # How to calculate the cell values for direct gridding.
 
-#: Multigrid3d directgrid min
-MULTIGRID3D_DIRECTGRID_MIN = 0
-#: Multigrid3d directgrid max
-MULTIGRID3D_DIRECTGRID_MAX = 1
-#: Multigrid3d directgrid mean
-MULTIGRID3D_DIRECTGRID_MEAN = 2	
+#: Select the minimum value found in each cell
+MULTIGRID3D_DIRECTGRID_MINIMUM = 0
+#: Select the maximum value found in each cell
+MULTIGRID3D_DIRECTGRID_MAXIMUM = 1
+#: Select the mean of all values found in each cell
+MULTIGRID3D_DIRECTGRID_MEAN = 2
+#: The number of valid (non-dummy) items found in each cell - 0 if no items found
+MULTIGRID3D_DIRECTGRID_ITEMS = 3
+#: The number of valid (non-dummy) items found in each cell - DUMMY if no items found
+MULTIGRID3D_DIRECTGRID_DUMMYITEMS = 4	
 
 #
 # GXMULTIGRID3DUTIL Constants
 # 
 
-	
+
+
+#
+# RBFKERNEL constants
+#
+# Math kernel to use in the RBF Computation
+
+#: Distance
+RBFKERNEL_DISTANCE = 0
+#: Multiquadratic
+RBFKERNEL_MULTIQUADRATIC = 1	
 
 #
 # GXMVIEW Constants
@@ -3961,7 +4031,19 @@ VOX_VECTORVOX_AID = 2
 # GXVOXD Constants
 # 
 
-	
+
+
+#
+# VOXELRENDER_MODE constants
+#
+# Render Modes
+
+#: Voxelrender smooth
+VOXELRENDER_SMOOTH = 0
+#: Voxelrender fill
+VOXELRENDER_FILL = 1
+#: Voxelrender edges
+VOXELRENDER_EDGES = 2	
 
 #
 # GXVOXE Constants
@@ -4038,19 +4120,23 @@ VV_LOG_BASE_10 = 0
 VV_LOG_BASE_E = 1
 
 #
-# VV_LOG_NEGATIVE constants
+# VV_LOGMODE constants
 #
 # Ways to handle negatives
 
 #: Dummies out value less than the minimum.
-VV_LOG_NEGATIVE_NO = 0
+VV_LOGMODE_CLIPPED = 0
 #: if the data is in the range +/- minimum,
 #: it is left alone.  Otherwise, the data
 #: is divided by the minimum, the log is
 #: applied, the minimum is added and the
 #: sign is reapplied. Use `log_linear <geosoft.gxapi.GXVV.log_linear>` function
 #: if decades in results are required.
-VV_LOG_NEGATIVE_YES = 1
+VV_LOGMODE_SCALED = 1
+#: Any values below the minimum are turned to the minimum.
+VV_LOGMODE_CLAMPED = 2
+#: Similar to Scaled but using a smoother function. Identical to LogLinear_VV.
+VV_LOGMODE_LINEAR = 3
 
 #
 # VV_LOOKUP constants
@@ -5902,6 +5988,14 @@ FILE_FILTER_UBC_DEN = 125
 FILE_FILTER_UBC_SUS = 126
 #: GOCAD voxet files ``*.vo``		LOCAL
 FILE_FILTER_GOCAD_VOXET = 127
+#: Scintrex gravity files  ``*.dat`  LOCAL
+FILE_FILTER_SCINTREX_DAT = 128
+#: Dump files  ``*.dmp`  LOCAL
+FILE_FILTER_DMP = 129
+#: Geosoft RAW gravity files  ``*.raw`  LOCAL
+FILE_FILTER_RAW = 130
+#: Data files  ``*.dat`  LOCAL
+FILE_FILTER_DAT = 131
 
 #
 # FILE_FORM constants
@@ -6116,10 +6210,7 @@ IP_DUPLICATE_OVERWRITE = 1
 #
 # Fraser Filters
 
-#: ::
-#: 
-#:     Regular pant-leg filter:
-#: 
+#: Regular pant-leg filter::
 #: 
 #:        _!_    
 #:       /*_*\\   n1
@@ -6127,9 +6218,7 @@ IP_DUPLICATE_OVERWRITE = 1
 #:     /*/   \\*\\ n3
 #:        :  :
 IP_FILTER_PANTLEG = 1
-#: ::
-#: 
-#:     Regular pant-leg filter with top at first point:
+#: Regular pant-leg filter with top at first point::
 #: 
 #:        !  nscp:
 #:       /*\\   n1
@@ -6137,9 +6226,7 @@ IP_FILTER_PANTLEG = 1
 #:     /*/ \\*\\ n3
 #:       :  :
 IP_FILTER_PANTLEGP = 2
-#: ::
-#: 
-#:     Regular pyramid filter:
+#: Regular pyramid filter::
 #: 
 #:        _!_  maxn:
 #:       /* *\\   n1
@@ -6147,9 +6234,7 @@ IP_FILTER_PANTLEGP = 2
 #:     /* * * *\\ n3
 #:        :  :
 IP_FILTER_PYRIAMID = 3
-#: ::
-#: 
-#:     Regular pyramid filter with peak on a point:
+#: Regular pyramid filter with peak on a point::
 #: 
 #:        !  maxn:
 #:       /*\\   n1
@@ -7079,7 +7164,10 @@ __all__ = [
     'GXMAPL',
     'GXMAPTEMPLATE',
     'GXMATH',
+    'GXMESH',
+    'GXMESHUTIL',
     'GXMETA',
+    'GXMPLY',
     'GXMULTIGRID3D',
     'GXMULTIGRID3DUTIL',
     'GXMVIEW',
@@ -7207,7 +7295,10 @@ from .GXMAP import GXMAP
 from .GXMAPL import GXMAPL
 from .GXMAPTEMPLATE import GXMAPTEMPLATE
 from .GXMATH import GXMATH
+from .GXMESH import GXMESH
+from .GXMESHUTIL import GXMESHUTIL
 from .GXMETA import GXMETA
+from .GXMPLY import GXMPLY
 from .GXMULTIGRID3D import GXMULTIGRID3D
 from .GXMULTIGRID3DUTIL import GXMULTIGRID3DUTIL
 from .GXMVIEW import GXMVIEW

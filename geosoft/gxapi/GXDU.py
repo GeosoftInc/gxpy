@@ -5059,6 +5059,93 @@ class GXDU(gxapi_cy.WrapDU):
 
 
 
+    @classmethod
+    def em_tau_trend_window(cls, hVVobs, hVVtime, nWindows, hVVtau, hVVfitError):
+        """
+        Automatic fitting EM Tau
+        
+        :param hVVobs:       Observed EM				[READONLY]
+        :param hVVtime:      Time						[READONLY]
+        :param nWindows:     Get linear trends of nWindows consecutive points				[READONLY]
+        :param hVVtau:       Calculated tau values - same number of items as hVVobs
+        :param hVVfitError:  rms error of fit
+        :type  hVVobs:       GXVV
+        :type  hVVtime:      GXVV
+        :type  nWindows:     int
+        :type  hVVtau:       GXVV
+        :type  hVVfitError:  GXVV
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        gxapi_cy.WrapDU._em_tau_trend_window(GXContext._get_tls_geo(), hVVobs, hVVtime, nWindows, hVVtau, hVVfitError)
+        
+
+
+
+    @classmethod
+    def footprint_coverage_static(cls, dat, area, radius, segments, thinning_threshold, covered_area, total_area, result):
+        """
+        Compute the footprint of a survey
+        
+        :param dat:                 Input DAT for the dataset
+        :param area:                The input area including exclusion regions
+        :param radius:              The radius of the instrument
+        :param segments:            Number of segments to define a circle (default 30)
+        :param thinning_threshold:  The maxium change in circumference allowed to reduce polygon complexity
+        :param covered_area:        Computed Covered Area
+        :param total_area:          Computed Total Area
+        :param result:              Computed coverted polygon and its exclusion regions
+        :type  dat:                 GXDAT
+        :type  area:                GXPLY
+        :type  radius:              float
+        :type  segments:            int
+        :type  thinning_threshold:  float
+        :type  covered_area:        float_ref
+        :type  total_area:          float_ref
+        :type  result:              GXMPLY
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        covered_area.value, total_area.value = gxapi_cy.WrapDU._footprint_coverage_static(GXContext._get_tls_geo(), dat, area, radius, segments, thinning_threshold, covered_area.value, total_area.value, result)
+        
+
+
+
+    @classmethod
+    def footprint_coverage_dynamic(cls, dat, area, channel_name, segments, thinning_threshold, covered_area, total_area, result):
+        """
+        Compute the footprint of a survey
+        
+        :param dat:                 Input DAT for the dataset
+        :param area:                The input area including exclusion regions
+        :param channel_name:        Channel that defines the radius
+        :param segments:            Number of segments to define a circle (default 30)
+        :param thinning_threshold:  The maxium change in circumference allowed to reduce polygon complexity
+        :param covered_area:        Computed Covered Area
+        :param total_area:          Computed Total Area
+        :param result:              Computed coverted polygon and its exclusion regions
+        :type  dat:                 GXDAT
+        :type  area:                GXPLY
+        :type  channel_name:        str
+        :type  segments:            int
+        :type  thinning_threshold:  float
+        :type  covered_area:        float_ref
+        :type  total_area:          float_ref
+        :type  result:              GXMPLY
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        covered_area.value, total_area.value = gxapi_cy.WrapDU._footprint_coverage_dynamic(GXContext._get_tls_geo(), dat, area, channel_name.encode(), segments, thinning_threshold, covered_area.value, total_area.value, result)
+        
+
+
+
 
 
 ### endblock ClassImplementation

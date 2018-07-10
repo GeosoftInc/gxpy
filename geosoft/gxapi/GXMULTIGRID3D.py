@@ -659,6 +659,27 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
 
 
+    def get_vector_orientation(self, inc, dec, cell_size_y):
+        """
+        Get the vector voxel orientation
+        
+        :param inc:          inclination
+        :param dec:          declination
+        :param cell_size_y:  rotated
+        :type  inc:          float_ref
+        :type  dec:          float_ref
+        :type  cell_size_y:  int_ref
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        inc.value, dec.value, cell_size_y.value = self._get_vector_orientation(inc.value, dec.value, cell_size_y.value)
+        
+
+
+
+
     def fill(self, output_file, method, fill_value):
         """
         Fill a grid3d.
@@ -857,6 +878,66 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
         """
         ret_val = self._export_to_pg()
         return GXPG(ret_val)
+
+
+
+
+    def get_data_extents(self, min_x, min_y, min_z, max_x, max_y, max_z):
+        """
+        Get the voxel size that has non-dummy data.
+        
+        :param min_x:        Index of minimum valid data in X.
+        :param min_y:        Index of minimum valid data in Y.
+        :param min_z:        Index of minimum valid data in Z.
+        :param max_x:        Index of maximum valid data in X.
+        :param max_y:        Index of maximum valid data in Y.
+        :param max_z:        Index of maximum valid data in Z.
+        :type  min_x:        int_ref
+        :type  min_y:        int_ref
+        :type  min_z:        int_ref
+        :type  max_x:        int_ref
+        :type  max_y:        int_ref
+        :type  max_z:        int_ref
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Find the non-dummy volume of a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` object. If the voxel is all dummies,
+        returns `iMAX <geosoft.gxapi.iMAX>` for the minima, and `iMIN <geosoft.gxapi.iMIN>` for the maxima.
+        """
+        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_data_extents(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
+        
+
+
+
+
+    def get_data_ground_extents(self, min_x, min_y, min_z, max_x, max_y, max_z):
+        """
+        Get the voxel size in ground units that has non-dummy data.
+        
+        :param min_x:        Ground location of minimum valid data in X.
+        :param min_y:        Ground location of minimum valid data in Y.
+        :param min_z:        Ground location of minimum valid data in Z.
+        :param max_x:        Ground location of maximum valid data in X.
+        :param max_y:        Ground location of maximum valid data in Y.
+        :param max_z:        Ground location of maximum valid data in Z.
+        :type  min_x:        float_ref
+        :type  min_y:        float_ref
+        :type  min_z:        float_ref
+        :type  max_x:        float_ref
+        :type  max_y:        float_ref
+        :type  max_z:        float_ref
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Find the non-dummy volume of a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` object. If the voxel is all dummies,
+        returns `iMAX <geosoft.gxapi.iMAX>` for the minima, and `iMIN <geosoft.gxapi.iMIN>` for the maxima.
+        """
+        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_data_ground_extents(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
+        
 
 
 

@@ -125,7 +125,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def copy(self, srce):
         """
-        Destroys a `GXPLY <geosoft.gxapi.GXPLY>` Object
+        Copies one `GXPLY <geosoft.gxapi.GXPLY>` Object to another
         
         :param srce:  Source
         :type  srce:  GXPLY
@@ -135,6 +135,25 @@ class GXPLY(gxapi_cy.WrapPLY):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._copy(srce)
+        
+
+
+
+
+    def combine(self, srce, exclude):
+        """
+        Combines two `GXPLY <geosoft.gxapi.GXPLY>` Object with another
+        
+        :param srce:     Source
+        :param exclude:  Make all the polygons copied excluded? - if not they will be copied as they are.
+        :type  srce:     GXPLY
+        :type  exclude:  int
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._combine(srce, exclude)
         
 
 

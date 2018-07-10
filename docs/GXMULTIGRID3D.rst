@@ -132,17 +132,25 @@ MULTIGRID3D_DIRECTGRID_METHOD constants
 
 How to calculate the cell values for direct gridding.
 
-.. autodata:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MIN
+.. autodata:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MINIMUM
     :annotation:
     
-    .. autoattribute:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MIN
-.. autodata:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MAX
+    .. autoattribute:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MINIMUM
+.. autodata:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MAXIMUM
     :annotation:
     
-    .. autoattribute:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MAX
+    .. autoattribute:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MAXIMUM
 .. autodata:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MEAN
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MEAN
+.. autodata:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_ITEMS
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_ITEMS
+.. autodata:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_DUMMYITEMS
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_DUMMYITEMS
 
 	

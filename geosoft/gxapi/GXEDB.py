@@ -1990,7 +1990,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         """
         Show a profile in the profile window
         
-        :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
+        :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, -1 to plot to the currently selected profile window. See `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
         :param symb:    Channel symbol
         :type  window:  int
         :type  symb:    int

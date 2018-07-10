@@ -155,15 +155,15 @@ class GXVV(gxapi_cy.WrapVV):
 
 
 
-    def log(self, log_base, log_neg, log_min):
+    def log(self, log_base, log_mode, log_min):
         """
         Apply log to the vv.
         
         :param log_base:  :ref:`VV_LOG_BASE`
-        :param log_neg:   :ref:`VV_LOG_NEGATIVE`
+        :param log_mode:  :ref:`VV_LOGMODE`
         :param log_min:   Minimum value for :ref:`VV_LOG_NEGATIVE`
         :type  log_base:  int
-        :type  log_neg:   int
+        :type  log_mode:  int
         :type  log_min:   float
 
         .. versionadded:: 5.0
@@ -173,7 +173,7 @@ class GXVV(gxapi_cy.WrapVV):
         **Note:** Minimum value will be defaulted to 1.0 if it is 0.0 or
         less than 0.0
         """
-        self._log(log_base, log_neg, log_min)
+        self._log(log_base, log_mode, log_min)
         
 
 
@@ -841,15 +841,15 @@ class GXVV(gxapi_cy.WrapVV):
 
 
 
-    def inv_log(self, log_base, log_neg, log_min):
+    def inv_log(self, log_base, log_mode, log_min):
         """
         Inverse of the `log <geosoft.gxapi.GXVV.log>` function.
         
         :param log_base:  :ref:`VV_LOG_BASE`
-        :param log_neg:   :ref:`VV_LOG_NEGATIVE`
+        :param log_mode:  :ref:`VV_LOGMODE`
         :param log_min:   Minimum value for :ref:`VV_LOG_NEGATIVE`
         :type  log_base:  int
-        :type  log_neg:   int
+        :type  log_mode:  int
         :type  log_min:   float
 
         .. versionadded:: 7.3
@@ -857,17 +857,8 @@ class GXVV(gxapi_cy.WrapVV):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This is the inverse function for `log <geosoft.gxapi.GXVV.log>`, with the same inputs.
-
-        NEGATIVE_NO    - will not return values smaller than the input minimum
-        NEGATIVE_YES   - if the data is in the range +/- minimum,
-        it is left alone.  Otherwise, the sign is removed,
-        the minimum is subtracted, the log of the minimum is added,
-        and the exponential (base e or base 10) is taken of the
-        sum. The sign is then reapplied.
-        Minimum value will be defaulted to 1.0 if it is 0.0 or
-        less than 0.0
         """
-        self._inv_log(log_base, log_neg, log_min)
+        self._inv_log(log_base, log_mode, log_min)
         
 
 
@@ -1223,7 +1214,7 @@ class GXVV(gxapi_cy.WrapVV):
 
 
 
-    def re_sample(self, c_start, c_incr, n_start, n_incr, length, extr):
+    def re_sample(self, c_start, c_incr, n_start, n_incr, length):
         """
         Resamples a `GXVV <geosoft.gxapi.GXVV>` from one fid/incr to another fid/incr.
         
@@ -1232,19 +1223,17 @@ class GXVV(gxapi_cy.WrapVV):
         :param n_start:  New fid start
         :param n_incr:   New fid increment
         :param length:   New length
-        :param extr:     Extrapolate Endpoints (0 - No, 1 - Yes)
         :type  c_start:  float
         :type  c_incr:   float
         :type  n_start:  float
         :type  n_incr:   float
         :type  length:   int
-        :type  extr:     int
 
         .. versionadded:: 5.1.1
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._re_sample(c_start, c_incr, n_start, n_incr, length, extr)
+        self._re_sample(c_start, c_incr, n_start, n_incr, length)
         
 
 
