@@ -354,6 +354,23 @@ class Test(GXPYTest):
 
             gdb.discard()
 
+    def test_read_line_dataframe(self):
+        self.start()
+
+        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+
+            df,ch,fid = gdb.read_line_dataframe('D578625')
+            self.assertEqual(df.shape, (832, 8))
+            self.assertEqual(fid[0],0.0)
+            self.assertEqual(fid[1],1.0)
+
+            ln, ls = gdb.line_name_symb('D578625')
+            df,ch,fid = gdb.read_line_dataframe(ls,channels=['X','Y','Z'])
+            self.assertEqual(df.shape, (832, 3))
+            self.assertEqual(df.values[10, :3].tolist(), [578625.0, 7773625.0, -1195.7531280517615])
+
+            gdb.discard()
+
     def test_read_vv_GDB(self):
         self.start()
 

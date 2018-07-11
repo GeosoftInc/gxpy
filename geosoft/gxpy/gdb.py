@@ -66,6 +66,7 @@ import os
 import sys
 import math
 import numpy as np
+import pandas as pd
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -1779,6 +1780,87 @@ class Geosoft_gdb(gxgeo.Geometry):
                 raise GdbException(_t('Unrecognized dummy={}').format(dummy))
 
         return npd, ch_names, fid
+
+    def read_line_dataframe(self, line, channels=None, fid=None):
+        """
+        Read a line of data into a Pandas DataFrame
+
+        :param line:        line to read, string or symbol number
+        :param channels:    list of channels, strings or symbol number.  If empty, read all channels
+        :param fid:         required fiducial as tuple (start,incr), default smallest in data
+
+        :returns:   Pandas DataFrame, list of channel names, (fidStart,fidIncr)
+        :raises:    GdbException if first channel requested is empty
+
+        VA channels are expanded by element with channel names name[0], name[1], etc.
+
+        This method can be used to conveniently get a table structure of all data corresponding to the
+        native types of the channels. It is however not necessarily the most efficient way to get at the data.
+        If your database has a lot of channels, or wide array channels it will be more efficient
+        to read and work with just the channels you need.  See `read_channel`, `read_channel_vv`
+        and `read_channel_va`. This method also does not currently support dummy removal in the same
+        way as `read_line`.
+
+        Examples:
+
+        .. code::
+
+            # df - Pandas DataFrame
+            # ch  - list of returned channels names
+            # fid - tuple (fidStart,fidIncrement), channels resampled as necessary
+
+            df,ch,fid = gdb.read_line('L100')                           # read all channels in line "L100"
+            df,ch,fid = gdb.read_line(681)                              # read all channels in line symbol 681
+            df,ch,fid = gdb.read_line('L100','X')                       # read channel 'X' from line 'L100'
+            df,ch,fid = gdb.read_line('L100',2135)                      # read channel symbol 2135 from 'L100"
+            df,ch,fid = gdb.read_line('L100',channels=['X','Y','Z'])    # read a list of channels to (n,3) array
+
+        .. versionadded:: 9.5
+        """
+
+        df = pd.DataFrame()
+
+        ls = self.line_name_symb(line)[1]
+        fid_start, fid_incr, fid_last, ncols, channels = self.scan_line_fid(line, channels)
+        ch_names = []
+
+        if fid is None:
+            fid = (fid_start, fid_incr)
+
+        nrows = int((fid_last - fid[0])/fid[1] + 1.5)
+        if nrows == 0 or ncols == 0:
+            for ch in channels:
+                cn, cs = self.channel_name_symb(ch)
+                w = self.channel_width(cs)
+                if w == 1:
+                    df[cn] = ()
+                    ch_names.append(cn)
+                else:
+                    for i in range(w):
+                        va_cn = '{}[{}]'.format(cn, str(i))
+                        df[va_cn] = ()
+                        ch_names.append(va_cn)
+            return df, ch_names, fid
+
+        icol = 0
+        for ch in channels:
+            cn, cs = self.channel_name_symb(ch)
+            w = self.channel_width(cs)
+            if w == 1:
+                vv = self.read_channel_vv(ls, cs)
+                vv.refid(fid, nrows)
+                df[cn] = vv.np
+                icol += 1
+                ch_names.append(cn)
+            else:
+                va = self.read_channel_va(ls, cs)
+                va.refid(fid, nrows)
+                icol += w
+                for i in range(w):
+                    va_cn = '{}[{}]'.format(cn, str(i))
+                    df[va_cn] = va.np[:, i]
+                    ch_names.append(va_cn)
+        return df, ch_names, fid
 
     def write_channel_vv(self, line, channel, vv):
         """
