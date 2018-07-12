@@ -376,5 +376,8 @@ class GXPYTest(unittest.TestCase):
 
     def assertSpatialRefWKT(self, expected_wkt, spatial_ref):
         wkt_actual = spatial_ref.exportToString()
+
+        # strip precision strings
+        expected_wkt = expected_wkt[:expected_wkt.rindex(']') + 1]
         wkt_actual = wkt_actual[:wkt_actual.rindex(']')+1]
         self.assertEqual(expected_wkt, wkt_actual)
