@@ -1327,6 +1327,64 @@ class GXDH(gxapi_cy.WrapDH):
 
 
 
+    def get_hole_survey_ex(self, hole, vv_x, vv_y, vv_z, vv_d, thin):
+        """
+        Get the Survey information of a Hole.
+        
+        :param hole:  Hole index
+        :param vv_x:  X
+        :param vv_y:  Y
+        :param vv_z:  Z
+        :param vv_d:  Depth
+        :param thin:  Thin nearly co-linear segments?
+        :type  hole:  int
+        :type  vv_x:  GXVV
+        :type  vv_y:  GXVV
+        :type  vv_z:  GXVV
+        :type  vv_d:  GXVV
+        :type  thin:  bool
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        self._get_hole_survey_ex(hole, vv_x, vv_y, vv_z, vv_d, thin)
+        
+
+
+
+
+    def get_hole_survey_from_to(self, db, line, vv_x, vv_y, vv_z, vv_d, vv_l, thin):
+        """
+        Get the Survey information of a Hole using From/To database.
+        
+        :param db:    From/To Database
+        :param line:  Line handle for hole
+        :param vv_x:  X
+        :param vv_y:  Y
+        :param vv_z:  Z
+        :param vv_d:  Depth
+        :param vv_l:  From To Segment lengths
+        :param thin:  Thin nearly co-linear segments?
+        :type  db:    GXDB
+        :type  line:  int
+        :type  vv_x:  GXVV
+        :type  vv_y:  GXVV
+        :type  vv_z:  GXVV
+        :type  vv_d:  GXVV
+        :type  vv_l:  GXVV
+        :type  thin:  bool
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        self._get_hole_survey_from_to(db, line, vv_x, vv_y, vv_z, vv_d, vv_l, thin)
+        
+
+
+
+
     def get_ipj(self, ipj):
         """
         Get the project `GXIPJ <geosoft.gxapi.GXIPJ>`.
