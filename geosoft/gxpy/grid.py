@@ -1797,7 +1797,7 @@ class Grid(gxgm.Geometry):
         return ggx, ggy, ggz
 
     def image_file(self, image_file_name=None, image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None,
-                   shade=False, color_map=None, contour=None, display_area=None):
+                   shade=False, color_map=None, contour=None, display_area=None, pix_32_bit=False):
         """
         Save as a georeferenced image file.
 
@@ -1811,6 +1811,7 @@ class Grid(gxgm.Geometry):
         :param contour:     colour contour interval if colours need to break at exact levels
         :param display_area:    `geosoft.gxpy.geometry.Point2` instance, which defines the desired display
                                 area. The display area coordinate system can be different from the grid.
+        :param pix_32_bit:  make 32-bit image (with 8-bit alpha background)
         :return:            image file name.
 
         .. seealso:: `geosoft.gxpy.grid.image_file`, which creates an image directly from a grid file.
@@ -1840,7 +1841,8 @@ class Grid(gxgm.Geometry):
                                    shade=shade,
                                    color_map=color_map,
                                    contour=contour,
-                                   display_area=display_area)
+                                   display_area=display_area,
+                                   pix_32_bit=pix_32_bit)
         finally:
             delete_files(temp_grid)
 
@@ -1955,7 +1957,7 @@ def figure_map(grid_file, map_file=None, shade=True, color_map=None, contour=Non
 
 
 def image_file(grid_file, image_file=None, image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None,
-               shade=True, color_map=None, contour=None, display_area=None):
+               shade=True, color_map=None, contour=None, display_area=None, pix_32_bit=False):
     """
     Save a grid file grid as a georeferenced image file.
 
@@ -1969,6 +1971,8 @@ def image_file(grid_file, image_file=None, image_type=gxmap.RASTER_FORMAT_PNG, p
     :param contour:     colour contour interval if colours need to break at exact levels
     :param display_area:    `geosoft.gxpy.geometry.Point2` instance, which defines the desired display
                             area. The display area coordinate system can be different from the grid.
+    :param pix_32_bit:  make 32-bit image (with 8-bit alpha background)
+
     :return:            image file name.
 
     .. versionadded:: 9.3.1
@@ -1979,4 +1983,5 @@ def image_file(grid_file, image_file=None, image_type=gxmap.RASTER_FORMAT_PNG, p
             color_map = g.get_default_color_map()
 
     with gxagg.Aggregate_image.new(grid_file, shade=shade, color_map=color_map, contour=contour) as agg:
-        return agg.image_file(image_file, image_type=image_type, pix_width=pix_width, display_area=display_area)
+        return agg.image_file(image_file, image_type=image_type, pix_width=pix_width,
+                              display_area=display_area, pix_32_bit=pix_32_bit)

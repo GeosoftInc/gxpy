@@ -207,7 +207,7 @@ def delete_files(file_name):
     remove(file_name)
 
 
-def save_as_image(mapfile, imagefile=None, type=RASTER_FORMAT_PNG, pix_width=1000, pix_height=0):
+def save_as_image(mapfile, imagefile=None, type=RASTER_FORMAT_PNG, pix_width=1000, pix_height=0, pix_32_bit=False):
     """
     Save a map file to an image file
 
@@ -216,11 +216,13 @@ def save_as_image(mapfile, imagefile=None, type=RASTER_FORMAT_PNG, pix_width=100
     :param type:        one of the RASTER_FORMAT types, default`RASTER_FORMAT_PNG`
     :param pix_width:   image pixel width, if 0 use pix_height only
     :param pix_height:  image pixel height, if 0 use pix_width only
+    :param pix_32_bit:  make 32-bit image (with 8-bit alpha background)
 
     .. versionadded:: 9.2
     """
 
-    return Map.open(mapfile).image_file(imagefile=imagefile, type=type, pix_width=pix_width, pix_height=pix_height)
+    return Map.open(mapfile).image_file(imagefile=imagefile, type=type,
+                                        pix_width=pix_width, pix_height=pix_height, pix_32_bit=pix_32_bit)
 
 
 def crc_map(mapfile, pix_width=1000):
@@ -866,7 +868,7 @@ class Map:
                                          area_on_map[0], area_on_map[1],
                                          area_on_map[2], area_on_map[3])
 
-    def image_file(self, imagefile=None, type=RASTER_FORMAT_PNG, pix_width=1000, pix_height=0):
+    def image_file(self, imagefile=None, type=RASTER_FORMAT_PNG, pix_width=1000, pix_height=0, pix_32_bit=False):
         """
         Save a map to an image file
 
@@ -875,6 +877,7 @@ class Map:
         :param type:        one of the RASTER_FORMAT types, default`RASTER_FORMAT_PNG`
         :param pix_width:   image pixel width, if 0 use pix_height only
         :param pix_height:  image pixel height, if 0 use pix_width only
+        :param pix_32_bit:  make 32-bit image (with 8-bit alpha background)
         :returns:           image file name
 
         .. versionadded:: 9.3
@@ -887,7 +890,7 @@ class Map:
 
         self.gxmap.export_all_raster(imagefile, '',
                                      pix_width, pix_height, gxapi.rDUMMY,
-                                     gxapi.MAP_EXPORT_BITS_24, #TODO add bits control to api for 9.5
+                                     gxapi.MAP_EXPORT_BITS_32 if pix_32_bit else gxapi.MAP_EXPORT_BITS_24,
                                      gxapi.MAP_EXPORT_METHOD_NONE,
                                      type, '')
 

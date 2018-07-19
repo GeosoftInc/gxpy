@@ -438,7 +438,8 @@ class Aggregate_image(gxgm.Geometry):
 
         return gmap
 
-    def image_file(self, image_file=None, image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None, display_area=None):
+    def image_file(self, image_file=None, image_type=gxmap.RASTER_FORMAT_PNG, pix_width=None,
+                   display_area=None, pix_32_bit=False):
         """
         Save the aggregate as a georeferenced image file.
 
@@ -448,6 +449,8 @@ class Aggregate_image(gxgm.Geometry):
         :param pix_width:   desired image width in pixels, default is the width of the aggregate base layer
         :param display_area:    `geosoft.gxpy.geometry.Point2` instance, which defines the desired display
                                 area. The display area coordinate system can be different from the grid.
+        :param pix_32_bit:  make 32-bit image (with 8-bit alpha background)
+
 
         :return:            image file name.
 
@@ -485,6 +488,6 @@ class Aggregate_image(gxgm.Geometry):
             with gxview.View.open(gmap, "data") as v:
                 gxgroup.Aggregate_group.new(v, self)
 
-            gmap.image_file(image_file, type=image_type, pix_width=pix_width)
+            gmap.image_file(image_file, type=image_type, pix_width=pix_width, pix_32_bit=pix_32_bit)
 
         return image_file
