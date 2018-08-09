@@ -48,20 +48,22 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
 
     @classmethod
-    def clip_surface_with_grid(cls, inputSurfaceFile, inputSurface, gridFileName, outputSurfaceFile, outputSurfaceNameAbove, outputSurfaceNameBelow, surface_clip_mode):
+    def clip_surface_with_grid(cls, inputSurfaceFile, inputSurface, gridSurfaceFileName, gridSurfaceName, outputSurfaceFile, outputSurfaceNameAbove, outputSurfaceNameBelow, surface_clip_mode):
         """
-        Clip a Surface with a Grid
+        Clip a Surface with a Grid Surface (grid converted to surface)
         
         :param inputSurfaceFile:        Input Geosurface file
         :param inputSurface:            Input Surface name within Geosurface file
-        :param gridFileName:            Grid file name
+        :param gridSurfaceFileName:     Grid Surface file name
+        :param gridSurfaceName:         Grid surface name within file
         :param outputSurfaceFile:       Output Surface file
         :param outputSurfaceNameAbove:  Name of Surface Item above grid - required for mode=CLIP_ABOVE and CLIP_BOTH
         :param outputSurfaceNameBelow:  Name of Surface Item below grid - required for mode=CLIP_BELOW and CLIP_BOTH
         :param surface_clip_mode:       :ref:`SURFACE_CLIP_MODE`
         :type  inputSurfaceFile:        str
         :type  inputSurface:            str
-        :type  gridFileName:            str
+        :type  gridSurfaceFileName:     str
+        :type  gridSurfaceName:         str
         :type  outputSurfaceFile:       str
         :type  outputSurfaceNameAbove:  str
         :type  outputSurfaceNameBelow:  str
@@ -71,7 +73,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMESHUTIL._clip_surface_with_grid(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), gridFileName.encode(), outputSurfaceFile.encode(), outputSurfaceNameAbove.encode(), outputSurfaceNameBelow.encode(), surface_clip_mode)
+        gxapi_cy.WrapMESHUTIL._clip_surface_with_grid(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), gridSurfaceFileName.encode(), gridSurfaceName.encode(), outputSurfaceFile.encode(), outputSurfaceNameAbove.encode(), outputSurfaceNameBelow.encode(), surface_clip_mode)
         
 
 
@@ -185,6 +187,105 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         """
         gxapi_cy.WrapMESHUTIL._compute_surface_clip(GXContext._get_tls_geo(), primarySurfaceFile.encode(), primarySurface.encode(), secondarySurfaceFile.encode(), secondarySurface.encode(), outputSurfaceFile.encode(), outputSurface.encode())
         
+
+
+
+    @classmethod
+    def compute_surface_intersection(cls, primarySurfaceFile, primarySurface, secondarySurfaceFile, secondarySurface, outputSurfaceFile, outputSurface):
+        """
+        Computes and outputs the intersection of two closed surfaces
+        
+        :param primarySurfaceFile:    Primary Geosurface file
+        :param primarySurface:        Primary Surface Name within Geosurface File
+        :param secondarySurfaceFile:  Secondary Geosurface file
+        :param secondarySurface:      Secondary Surface Name within Geosurface File
+        :param outputSurfaceFile:     Output surface file
+        :param outputSurface:         Output surface name
+        :type  primarySurfaceFile:    str
+        :type  primarySurface:        str
+        :type  secondarySurfaceFile:  str
+        :type  secondarySurface:      str
+        :type  outputSurfaceFile:     str
+        :type  outputSurface:         str
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapMESHUTIL._compute_surface_intersection(GXContext._get_tls_geo(), primarySurfaceFile.encode(), primarySurface.encode(), secondarySurfaceFile.encode(), secondarySurface.encode(), outputSurfaceFile.encode(), outputSurface.encode())
+        
+
+
+
+    @classmethod
+    def compute_surface_simplification(cls, inputSurfaceFile, inputSurface, outputSurfaceFile, outputSurface):
+        """
+        Simplifies a surface by reducing the number of edges by half
+        
+        :param inputSurfaceFile:   Input Geosurface file
+        :param inputSurface:       Input Surface Name within Geosurface File
+        :param outputSurfaceFile:  Output Geosurface file
+        :param outputSurface:      Output Surface Name within Geosurface File
+        :type  inputSurfaceFile:   str
+        :type  inputSurface:       str
+        :type  outputSurfaceFile:  str
+        :type  outputSurface:      str
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapMESHUTIL._compute_surface_simplification(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), outputSurfaceFile.encode(), outputSurface.encode())
+        
+
+
+
+    @classmethod
+    def compute_surface_subdivision(cls, inputSurfaceFile, inputSurface, outputSurfaceFile, outputSurface):
+        """
+        Smooths a surface by applying a loop subdivision algorithm
+        
+        :param inputSurfaceFile:   Input Geosurface file
+        :param inputSurface:       Input Surface Name within Geosurface File
+        :param outputSurfaceFile:  Output Geosurface file
+        :param outputSurface:      Output Surface Name within Geosurface File
+        :type  inputSurfaceFile:   str
+        :type  inputSurface:       str
+        :type  outputSurfaceFile:  str
+        :type  outputSurface:      str
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapMESHUTIL._compute_surface_subdivision(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), outputSurfaceFile.encode(), outputSurface.encode())
+        
+
+
+
+    @classmethod
+    def does_surface_intersect(cls, primarySurfaceFile, primarySurface, secondarySurfaceFile, secondarySurface):
+        """
+        Checks if the two surfaces intersect at all
+        
+        :param primarySurfaceFile:    Primary Geosurface file
+        :param primarySurface:        Primary Surface Name within Geosurface File
+        :param secondarySurfaceFile:  Secondary Geosurface file
+        :param secondarySurface:      Secondary Surface Name within Geosurface File
+        :type  primarySurfaceFile:    str
+        :type  primarySurface:        str
+        :type  secondarySurfaceFile:  str
+        :type  secondarySurface:      str
+
+        :returns:                     Returns 1 if intersects, 0 if surfaces do not intersect
+        :rtype:                       int
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val = gxapi_cy.WrapMESHUTIL._does_surface_intersect(GXContext._get_tls_geo(), primarySurfaceFile.encode(), primarySurface.encode(), secondarySurfaceFile.encode(), secondarySurface.encode())
+        return ret_val
 
 
 

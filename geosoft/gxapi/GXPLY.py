@@ -140,6 +140,22 @@ class GXPLY(gxapi_cy.WrapPLY):
 
 
 
+    def is_valid(self):
+        """
+        Ensure a polygon is valid
+        
+        :rtype:       int
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val = self._is_valid()
+        return ret_val
+
+
+
+
     def combine(self, srce, exclude):
         """
         Combines two `GXPLY <geosoft.gxapi.GXPLY>` Object with another

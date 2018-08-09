@@ -673,6 +673,27 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
 
     @classmethod
+    def create_double_constant_copy(cls, name, value, source_name):
+        """
+        Generate a double MultiVoxset with a constant value based on an input voxel
+        
+        :param name:         Name of output Voxel File
+        :param value:        Constant Value to use - DUMMY for a trully sparse grid3d
+        :param source_name:  Name of voxel to model
+        :type  name:         str
+        :type  value:        float
+        :type  source_name:  str
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapMULTIGRID3DUTIL._create_double_constant_copy(GXContext._get_tls_geo(), name.encode(), value, source_name.encode())
+        
+
+
+
+    @classmethod
     def create_thematic_constant(cls, name, value, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj):
         """
         Generate a double MultiVoxset with a constant value
