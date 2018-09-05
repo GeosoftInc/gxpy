@@ -8,9 +8,9 @@ Table (records, fields) handling, inherits from Pandas (http://pandas.pydata.org
 
 .. note::
 
-    Regression tests provide usage examples:     
+    Regression tests provide usage examples:
     `dataframe tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_dataframe.py>`_
-    
+
 """
 import pandas as pd
 
@@ -110,7 +110,8 @@ def Data_frame(initial=None, records=None, columns=None):
             print(df.loc['cal', 'PATTERN'])     # "315"
 
     .. versionadded:: 9.2
-    .. versionmodified:: 9.4
+    .. versionchanged:: 9.4
+
     """
     if not type(initial) is str:
         raise DfException(_t('Only Geosoft tables are supported.'))
