@@ -12,13 +12,18 @@ Geosoft vox display handling, which manages the rendering of a `geosoft.gxpy.vox
     :ZONE_SHADE: 4
     :ZONE_LOGLINEAR: 5
     :ZONE_LAST: 6
+    :RENDER_FILL: 0
+    :RENDER_EDGE: 1
+    :RENDER_FILL_EDGE: 2
+    :RENDER_SMOOTH: 3
 
-    
+
+
 .. seealso:: `geosoft.gxpy.vox.Vox`, `geosoft.gxpy.view.View_3d`, `geosoft.gxapi.GXVOXD`
 
 .. note::
 
-    Regression tests provide usage examples:     
+    Regression tests provide usage examples:
     `vox_display tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_vox_display.py>`_
 
 .. versionadded:: 9.3.1
@@ -57,6 +62,10 @@ ZONE_SHADE = 4
 ZONE_LOGLINEAR = 5
 ZONE_LAST = 6
 
+RENDER_FILL = 0
+RENDER_EDGE = 1
+RENDER_FILL_EDGE = 2
+RENDER_SMOOTH = 3
 
 class VoxDisplay:
     """
@@ -113,7 +122,7 @@ class VoxDisplay:
               contour=None):
         """
         Create a solid colored vox_display from a `geosoft.gxpy.vox.Vox` instance.
-        
+
         :param vox:         `geosoft.gxpy.vox.Vox` instance
         :param color_map:   `gxpy.group.Color_map` instance, or the name of a file, which may be
                             `.tbl`, `.zon`, `.itr`, or `.agg`.
@@ -251,7 +260,7 @@ class VoxDisplay:
         .. versionadded:: 9.3.1
         """
         return self._vector_cone_specs
-        
+
     @vector_cone_specs.setter
     def vector_cone_specs(self, specs):
         sc, hb, bc, mx = specs
@@ -298,6 +307,18 @@ class VoxDisplay:
         box, trans, extent = controls
         x0, y0, z0, x1, y1, z1 = extent
         self.gxvoxd.set_draw_controls(box, trans, x0, y0, z0, x1, y1, z1)
+
+    @property
+    def render_mode(self):
+        rm = gxapi.int_ref()
+        self.gxvoxd.get_render_mode(rm)
+        return rm.value
+
+    @render_mode.setter
+    def render_mode(self, mode):
+        if mode not in (RENDER_FILL, RENDER_EDGE, RENDER_FILL_EDGE, RENDER_SMOOTH):
+            raise VoxDisplayException(_t('Invalid render mode {}').format(mode))
+        self.gxvoxd.set_render_mode(mode)
 
     @property
     def gxvoxd(self):

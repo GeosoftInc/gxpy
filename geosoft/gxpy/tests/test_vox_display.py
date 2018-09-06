@@ -54,6 +54,21 @@ class Test(GXPYTest):
         self.crc_map(fig_map)
         # gxviewer.view_document(fig_map)
 
+    def test_figure_map_smooth(self):
+        self.start()
+
+        with gxvox.Vox.open(self.vox_file) as vox:
+            vox.unit_of_measure = 'SI Susc'
+            with gxvoxd.VoxDisplay.solid(vox) as voxd:
+                voxd.shell_limits = (0.0001, None)
+                self.assertEqual(voxd.render_mode, gxvoxd.RENDER_FILL)
+                voxd.render_mode = gxvoxd.RENDER_SMOOTH
+                self.assertEqual(voxd.render_mode, gxvoxd.RENDER_SMOOTH)
+                fig_map = voxd.figure_map(title="My Test Vox").file_name
+
+        # gxviewer.view_document(fig_map)
+        self.crc_map(fig_map)
+
     def test_figure_map_zone(self):
         self.start()
 
@@ -135,6 +150,7 @@ class Test(GXPYTest):
                 self.assertEqual(gvd.voxd.name, group_name)
                 self.assertEqual(gvd.unit_of_measure, 'vecmaki')
 
+    # @unittest.skip('Fails in 9.5')
     def test_isosurface(self):
         self.start()
 
