@@ -375,7 +375,7 @@ class GXPYTest(unittest.TestCase):
             input()
 
     def assertSpatialRefWKT(self, expected_wkt, spatial_ref):
-        wkt_actual = spatial_ref.exportToString()
+        wkt_actual = spatial_ref.exportToString() if spatial_ref is not None else "[*unknown]"
 
         # strip precision strings
         expected_wkt = expected_wkt[:expected_wkt.rindex(']') + 1]
