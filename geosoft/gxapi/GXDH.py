@@ -4031,6 +4031,52 @@ class GXDH(gxapi_cy.WrapDH):
 
 
 
+    @classmethod
+    def get_mx_deposit_rights_info(cls, has_rights, base_url, api_version_prefix, api_key, user_key, database_id):
+        """
+        Get MX Deposit Service API information via Geosoft ID rights.
+        
+        :param has_rights:          Does Geosoft ID have rights to access MX Deposit?
+        :param base_url:            Base URL
+        :param api_version_prefix:  API Version Prefix
+        :param api_key:             API Key
+        :param user_key:            User Key
+        :param database_id:         Database ID
+        :type  has_rights:          bool_ref
+        :type  base_url:            str_ref
+        :type  api_version_prefix:  str_ref
+        :type  api_key:             str_ref
+        :type  user_key:            str_ref
+        :type  database_id:         str_ref
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        has_rights.value, base_url.value, api_version_prefix.value, api_key.value, user_key.value, database_id.value = gxapi_cy.WrapDH._get_mx_deposit_rights_info(GXContext._get_tls_geo(), has_rights.value, base_url.value.encode(), api_version_prefix.value.encode(), api_key.value.encode(), user_key.value.encode(), database_id.value.encode())
+        
+
+
+
+    @classmethod
+    def navigate_to_mx_deposit(cls, select_type, select_id):
+        """
+        Navigate to MX Deposit portal
+        
+        :param select_type:  Selection Type
+        :param select_id:    Selection ID
+        :type  select_type:  str
+        :type  select_id:    int
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapDH._navigate_to_mx_deposit(GXContext._get_tls_geo(), select_type.encode(), select_id)
+        
+
+
+
 
 
 ### endblock ClassImplementation
