@@ -112,7 +112,7 @@ class GXPYTest(unittest.TestCase):
 
     @classmethod
     def tearDownGXPYTest(cls):
-        cls._gx = None
+        del cls._gx
         gx._exit_cleanup()
 
         gxu._temp_folder_override = None

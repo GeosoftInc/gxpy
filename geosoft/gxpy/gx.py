@@ -41,19 +41,71 @@ class GXException(geosoft.GXRuntimeError):
     """
     pass
 
+_singleton_getattr_default = object()
 
-class _Singleton:
+class _DisposableSingletonContainer:
     """
-    Used internally to create a singleton instance of GXpy.
-    See http://www.aleax.it/Python/5ep.html
+    A singleton container class. overrides __getattr__ to appear as an instance of the wrapped singleon class.
+    Provides reset mechanism via a reset callback.
     """
-    _shared_state = {}
+    def __init__(self, parent, reset):
+        self._reset = reset
+        self._inherited = parent
 
-    def __init__(self):
-        self.__dict__ = self._shared_state
+    def __enter__(self):
+        return self
+
+    def __exit__(self, _type, _value, _traceback):
+        self.__del__()
+
+    def __del__(self):
+        if self._reset:
+            self._reset()
+
+    def __getattr__(self, name, default=_singleton_getattr_default):
+        try:
+            return getattr(self._inherited, name)
+        except AttributeError:
+            if default is _singleton_getattr_default:
+                raise
+            return default
+
+class _SingletonWrapper:
+    """
+    The singleton wrapper class. Used by _singleton decorator to ensure a single instantiation
+    of a class, reset by the release of the first instance.
+    """
+    def __init__(self, cls):
+        self._wrap_class = cls
+        self._instance = None
+
+    def _reset(self):
+        self._instance = None
+
+    def __call__(self, *args, **kwargs):
+        """Returns a single instance of decorated class"""
+
+        if self._instance is None:
+            self._instance = self._wrap_class(*args, **kwargs)
+            return _DisposableSingletonContainer(self._instance, self._reset)
+
+        return _DisposableSingletonContainer(self._instance, None)
 
 
-_gx = None
+def _singleton(cls):
+    """
+    The singleton decorator.
+    """
+    return _SingletonWrapper(cls)
+
+
+def _get_gx_instance():
+    return GXpy._instance
+
+def _have_gx():
+    return GXpy._instance is not None
+
+
 _res_id = 0
 _res_heap = {}
 _max_resource_heap = 1000000
@@ -65,19 +117,18 @@ _NULL_ID = -1
 
 
 def _reset_globals():
-    global _gx
     global _res_id
     global _res_heap
     global _max_resource_heap
     global _stack_depth
     global _max_warnings
-    _gx = None
+
+    GXpy._reset()
     _res_id = 0
     _res_heap = {}
     _max_resource_heap = 1000000
     _stack_depth = 5
     _max_warnings = 10
-
 
 def track_resource(resource_class, info):
     """
@@ -132,10 +183,11 @@ def pop_resource(res_id):
 
 
 def _log_file_error(fnc, path, excinfo):
-    if _gx is not None:
-        if hasattr(_gx, 'log'):
-            _gx.log(_t("error removing temporary file\n   \"{}\"\nfunction \"{}\"\nexception\"{}\"\n")
-                    .format(path, str(fnc), str(excinfo)))
+    if _have_gx():
+        gx = _get_gx_instance()
+        if hasattr(gx, 'log'):
+            gx.log(_t("error removing temporary file\n   \"{}\"\nfunction \"{}\"\nexception\"{}\"\n")
+                   .format(path, str(fnc), str(excinfo)))
 
 
 def _remove_stale_gx_temporary_folders():
@@ -184,56 +236,44 @@ def _exit_cleanup():
     global _max_warnings
     global _remove_stale_geosoft_temp_files
 
-    if _gx:
-        _gx.log('\nGX closing')
+    if _have_gx():
+        gx = _get_gx_instance()
+        gx.log('\nGX closing')
         atexit.unregister(_exit_cleanup)
 
-        # clean up only if we still have context
-        gid = gxapi.str_ref()
-        try:
-            gxapi.GXSYS.get_geosoft_id(gid)
-            have_gx = True
-        except gxapi.GXAPIError:
-            have_gx = False
+        temp_folder = gx.temp_folder()
+        if temp_folder and (temp_folder != gxu.folder_temp()):
+            shutil.rmtree(temp_folder, ignore_errors=False, onerror=_log_file_error)
 
-        if have_gx:
-            temp_folder = _gx.temp_folder()
-            if temp_folder and (temp_folder != gxu.folder_temp()):
-                shutil.rmtree(temp_folder, ignore_errors=False, onerror=_log_file_error)
+        _remove_stale_gx_temporary_folders()
+        if _remove_stale_geosoft_temp_files:
+            _remove_stale_geosoft_temporary_files()
 
-            _remove_stale_gx_temporary_folders()
-            if _remove_stale_geosoft_temp_files:
-                _remove_stale_geosoft_temporary_files()
-
-            if len(_res_heap):
-                # resources were created but not deleted or removed
-                _gx.log(_t('Warning - cleaning up resources that are still open:'))
-                i = 0
-                for s in _res_heap.values():
-                    if i == _max_warnings:
-                        _gx.log(_t('    and there are {} more (change GXpy(max_warnings=) to see more)...'
-                                   .format(len(_res_heap) - i)))
-                        break
-                    _gx.log('   ', s)
-                    i += 1
-            _gx.close_log()
-
-        _gx._tkframe = None
-        _gx._gxapi = None
-        _gx._shared_state = {}
+        if len(_res_heap):
+            # resources were created but not deleted or removed
+            gx.log(_t('Warning - cleaning up resources that are still open:'))
+            i = 0
+            for s in _res_heap.values():
+                if i == _max_warnings:
+                    _gx.log(_t('    and there are {} more (change GXpy(max_warnings=) to see more)...'
+                               .format(len(_res_heap) - i)))
+                    break
+                _gx.log('   ', s)
+                i += 1
+        gx.close_log()
+        gx._tkframe = None
+        gx._gxapi = None
+        del gx
 
     _reset_globals()
 
 
 def gx():
     """Returns the `GXpy` instance.  Initializes to default state in not initialized."""
-    global _gx
-    if _gx is None:
-        return GXpy()
-    return _gx
+    return GXpy()
 
-
-class GXpy(_Singleton):
+@_singleton
+class GXpy:
     """
     Geosoft GX context.  This is a singleton class, so subsequent creation returns an instance
     identical to the initial creation. This also means that initialization arguments are ignored
@@ -300,34 +340,17 @@ class GXpy(_Singleton):
     def __str__(self):
         return "GID: {}, class: {}".format(self.gid, self.license_class)
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, _type, _value, _traceback):
-        self.__del__()
-
     def __del__(self):
-        self._refs = self._refs - 1
-        if self._refs == 0:
-            _exit_cleanup()
+        _exit_cleanup()
 
     def __init__(self, name=__name__, version=__version__,
                  parent_window=0, log=None,
                  max_res_heap=10000000, res_stack=6, max_warnings=10,
                  suppress_progress=False):
 
-        global _gx
         global _max_resource_heap
         global _stack_depth
         global _max_warnings
-
-        # singleton class, initialize only once
-        _Singleton.__init__(self)
-        if _gx:
-            self._refs = self._refs + 1
-            return
-
-        self._refs = 1
 
         if log is None:
             _max_resource_heap = 0
@@ -335,6 +358,8 @@ class GXpy(_Singleton):
             _max_resource_heap = max_res_heap
             _stack_depth = max(0, res_stack)
             _max_warnings = max(0, max_warnings)
+
+        self._enter_count = 0
 
         # create a Tkinter parent frame for the viewers
         if not parent_window == 0:
@@ -428,8 +453,6 @@ class GXpy(_Singleton):
             self.log('-' * 80)
             self.log('\n')
 
-        # save context as a global
-        _gx = self
         atexit.register(_exit_cleanup)
         self.log('\nGX open')
 
