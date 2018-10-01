@@ -751,6 +751,32 @@ class GXpy:
         gxapi.GXSYS.get_license_class(lc)
         return lc.value
 
+
+    def run_gx(self, gx):
+        """
+        Runs a GX.
+
+        :param gx: GX name to run
+        :returns:  success, cancelled, error_list, warning_list
+
+        .. versionadded:: 9.6
+        """
+
+        cancelled = gxapi.GXSYS.run_gx(gx) == -1
+        success = gxapi.GXSYS.run_gx(gx) == 0
+        error_list = []
+        warning_list = []
+        for i in range(0, gxapi.GXSYS.num_errors_ap()):
+            err_no = gxapi.GXSYS.get_error_ap(i)
+            err = gxapi.str_ref()
+            gxapi.GXSYS.get_error_message_ap(i, err)
+            if err_no < 0:
+                error_list.append(err)
+            else:
+                warning_list.append(err)
+        gxapi.GXSYS.clear_err_ap()
+        return success, cancelled, error_list, warning_list
+
     def temp_folder(self):
         """
         Return the GX temporary folder path.

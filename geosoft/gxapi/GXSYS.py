@@ -452,6 +452,26 @@ class GXSYS(gxapi_cy.WrapSYS):
 
 
     @classmethod
+    def get_error_ap(cls, err):
+        """
+        Get the error number of an error.
+        
+        :param err:  The error index (0 to N-1, where N=number of registered errors)
+        :type  err:  int
+
+        :returns:    The error number registered, 0 if none registered.
+        :rtype:      int
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val = gxapi_cy.WrapSYS._get_error_ap(GXContext._get_tls_geo(), err)
+        return ret_val
+
+
+
+    @classmethod
     def get_error_message_ap(cls, err, err_str):
         """
         Return the error message text as a string.
