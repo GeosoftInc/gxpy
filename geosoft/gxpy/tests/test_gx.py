@@ -15,7 +15,7 @@ class Test(GXPYTest):
 
     def test_gxpy(self):
         with gx.GXpy() as gxc:
-            self.assertEqual(id(gxc.__dict__), id(gx.gx().__dict__))
+            self.assertIsNone(gxc._reset)
             self.assertTrue(gxc.gid.find('@') > 0)
             self.assertEqual(gxc.main_wind_id,0)
             self.assertEqual(gxc.active_wind_id, 0)
