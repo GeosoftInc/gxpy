@@ -762,8 +762,10 @@ class GXpy:
         .. versionadded:: 9.6
         """
 
-        cancelled = gxapi.GXSYS.run_gx(gx) == -1
-        success = gxapi.GXSYS.run_gx(gx) == 0
+        ret = gxapi.int_ref()
+        gxapi.GXSYS.run_gx_ex(gx, ret)
+        success = ret.value == 0
+        cancelled = ret.value == -1
         error_list = []
         warning_list = []
         for i in range(0, gxapi.GXSYS.num_errors_ap()):
@@ -771,9 +773,9 @@ class GXpy:
             err = gxapi.str_ref()
             gxapi.GXSYS.get_error_message_ap(i, err)
             if err_no < 0:
-                error_list.append(err)
+                warning_list.append(err.value)
             else:
-                warning_list.append(err)
+                error_list.append(err.value)
         gxapi.GXSYS.clear_err_ap()
         return success, cancelled, error_list, warning_list
 
