@@ -228,12 +228,6 @@ class Test(GXPYTest):
 
                 self.assertEqual(len(v.group_list), 1)
                 self.assertEqual(v.group_list[0], '2D stuff')
-                self.assertEqual(len(v.group_list_agg), 0)
-                self.assertEqual(len(v.group_list_csymb), 0)
-                self.assertEqual(len(v.group_list_marked), 1)
-                self.assertEqual(len(v.group_list_visible), 1)
-                self.assertEqual(len(v.group_list_voxel), 0)
-                self.assertEqual(len(v.group_list_vectorvoxel), 0)
 
                 self.assertEqual(v.extent_all, v.extent_visible)
                 self.assertEqual(v.extent_map_cm(), (0.0, 0.0, 30.0, 20.0))
@@ -241,6 +235,24 @@ class Test(GXPYTest):
                 self.assertEqual(v.extent_group('2D stuff'), (0.0, 0.0, 30.0, 20.0))
 
             self.assertEqual(len(gmap.view_list), 4)
+
+    def test_group_list(self):
+        self.start()
+        with gxagg.Aggregate_image.new(self.section) as agg:
+            with gxv.View.new(area=agg.extent_2d, coordinate_system=agg.coordinate_system) as v:
+                view_name = v.name
+                gxg.Aggregate_group.new(v, agg)
+                map_file = v.map.file_name
+        with gxmap.Map.open(map_file) as m:
+            with gxv.View.open(m, view_name) as v:
+                self.assertEqual(len(v.group_list_agg), 1)
+                self.assertEqual(v.group_list_agg[0], 'section')
+                self.assertEqual(len(v.group_list_csymb), 0)
+                self.assertEqual(len(v.group_list_marked), 0)
+                self.assertEqual(len(v.group_list_visible), 1)
+                self.assertEqual(len(v.group_list_voxel), 0)
+                self.assertEqual(len(v.group_list_vectorvoxel), 0)
+
 
     def test_3dview(self):
         self.start()

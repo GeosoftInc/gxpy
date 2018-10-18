@@ -148,7 +148,7 @@ class CrookedPath(gxgeo.Geometry):
 
         Geosoft stores crooked-path information in the GXIPJ, from which views are able to
 
-        :param coordinate_system: 
+        :param coordinate_system:
 
         .. versionadded:: 9.4
         """
@@ -465,7 +465,7 @@ class View(gxgeo.Geometry):
     def close(self):
         """
         Close a view.  Use to close a view when working outside of a `with ... as:` construct.
-        
+
         .. versionadded:: 9.2
         """
         self._close()
@@ -501,7 +501,7 @@ class View(gxgeo.Geometry):
         Locate and scale the view on the map.
 
         :parameters:
-            :coordinate_system: coordinate system as a class:`gxpy.coordinate_system.Coordinate_system` instance, 
+            :coordinate_system: coordinate system as a class:`gxpy.coordinate_system.Coordinate_system` instance,
                                 or one of the Coordinate_system constructor types.
             :map_location:      New (x, y) view location on the map, in map cm.
             :area:              New (min_x, min_y, max_x, max_y) area in view units
@@ -586,9 +586,9 @@ class View(gxgeo.Geometry):
     def mdf(self, base_view=None):
         """
         Returns the Map Description File specification for this view as a data view.
-        
+
         :param base_view:   name of the base view on the map from which to calculate margins.  If not specified
-                            only the left and bottom margin is calculated based on the view clip minimum 
+                            only the left and bottom margin is calculated based on the view clip minimum
                             location and the right and top margins will be 0.
         :returns:           ((x_size, y_size, margin_bottom, margin_right, margin_top, margin_left),
                              (scale, units_per_metre, x_origin, y_origin))
@@ -645,46 +645,46 @@ class View(gxgeo.Geometry):
 
     @property
     def group_list(self):
-        """list of groups in this view"""
+        """list of group names in this view"""
         return self._groups()
 
     @property
     def group_list_marked(self):
-        """list of marked groups in this view"""
+        """list of marked group names in this view"""
         return self._groups(GROUP_MARKED)
 
     @property
     def group_list_visible(self):
-        """list of visible groups in this view"""
+        """list of visible group names in this view"""
         return self._groups(GROUP_VISIBLE)
 
     @property
     def group_list_agg(self):
-        """list of :class:`geosoft.gxapi.GXAGG` groups in this view"""
+        """list of aggregate group names in this view"""
         return self._groups(GROUP_AGG)
 
     @property
     def group_list_csymb(self):
-        """list of :class:`geosoft.gxapi.GXCSYMB` groups in this view"""
+        """list of csymb group names in this view"""
         return self._groups(GROUP_CSYMB)
 
     @property
     def group_list_voxel(self):
-        """list of voxel groups in this view"""
+        """list of voxel group names in this view"""
         return self._groups(GROUP_VOXD)
 
     @property
     def group_list_vectorvoxel(self):
-        """list of voxel groups in this view"""
+        """list of vectorvoxel group names in this view"""
         return self._groups(GROUP_VECTORVOX)
 
     @property
     def group_list_surface(self):
-        """list of surface groups in this view"""
+        """list of surface group names in this view"""
         return self._groups(GROUP_SURFACE)
 
     def has_group(self, group):
-        """ Returns True if the map contains this group."""
+        """ Returns True if the map contains this group by name."""
         return bool(self.gxview.exist_group(group))
 
     def _extent(self, what):
@@ -769,17 +769,17 @@ class View(gxgeo.Geometry):
     def extent_group(self, group, unit=UNIT_VIEW):
         """
         Extent of a group
-        
+
         :param group:   group name
         :param unit:    units:
-        
+
                         ::
-                        
+
                             UNIT_VIEW
                             UNIT_MAP
-                            
+
         :returns: extent as (x_min, y_min, x_max, y_max)
-        
+
         .. versionadded: 9.2
         """
         xmin = gxapi.float_ref()
@@ -808,10 +808,10 @@ class View(gxgeo.Geometry):
     def map_cm_to_view(self, x, y=None):
         """
         Returns the location of this point on the map (in cm) to the view location in view units.
-            
+
         :param x:   x, or a tuple (x,y), in map cm
         :param y:   y if x is not a tuple
-        
+
         .. versionadded:: 9.2
         """
 
@@ -826,12 +826,12 @@ class View(gxgeo.Geometry):
         return xr.value, yr.value
 
     def view_to_map_cm(self, x, y=None):
-        """ 
+        """
         Returns the location of this point on the map in the view.
-        
+
         :param x:   x, or a tuple (x,y), in view units
         :param y:   y if x is not a tuple
-        
+
         .. versionadded:: 9.2
         """
         if y is None:
@@ -886,28 +886,28 @@ class View(gxgeo.Geometry):
 class View_3d(View):
     """
     Geosoft 3D views, which contain 3D drawing groups.
-    
+
     Geosoft 3D views are stored in a file with extension `.geosoft_3dv`.  A 3d view is required
-    to draw 3D elements using :class:`geosoft.gxpy.group.Draw_3d`, which must be created from a 
+    to draw 3D elements using :class:`geosoft.gxpy.group.Draw_3d`, which must be created from a
     :class:`geosoft.gxpy.view.View_3d` instance.
-    
+
     3D views also contain 2D drawing planes on which :class:`geosoft.gxpy.group.Draw` groups are placed.
     A default horizontal plane at elevation 0, named 'plane_0' is created when a new 3d view is created.
-    
+
     Planes are horizontal and flat by default, but can be provided a grid that defines the plane surface relief,
     which is intended for creating things like terrain surfaces on which 2d graphics are rendered.
-    
+
     Planes can also be oriented within the 3D space to create sections, or for other more esoteric
     purposes.
-    
+
     :Constructors:
 
         ============ =============================
         :meth:`open` open an existing geosoft_3dv
         :meth:`new`  create a new geosoft_3dv
         ============ =============================
-    
-    .. versionadded:: 9.2    
+
+    .. versionadded:: 9.2
     """
 
     def __init__(self, file_name, mode, _internal=False, **kwargs):
@@ -933,7 +933,7 @@ class View_3d(View):
     def new(cls, file_name=None, area_2d=None, overwrite=False, **kwargs):
         """
         Create a new 3D view.
-        
+
         :param file_name:   name for the new 3D view file (.geosoft_3dv added).  If not specified a
                             unique temporary file is created.
         :param area_2d:     2D drawing extent for the default 2D drawing plane
@@ -968,9 +968,9 @@ class View_3d(View):
     def open(cls, file_name, **kw):
         """
         Open an existing geosoft_3dv file.
-        
+
         :param file_name: name of the geosoft_3dv file
-        
+
         .. versionadded:: 9.2
         """
 
@@ -1119,10 +1119,10 @@ class View_3d(View):
     def has_plane(self, plane):
         """
         True if the view contains plane
-        
+
         :param plane: name of the plane
         :returns: True if the plane exists in the view
-        
+
         .. versionadded:: 9.2
         """
         try:
@@ -1134,10 +1134,10 @@ class View_3d(View):
     def groups_on_plane_list(self, plane=0):
         """
         List of groups on a plane.
-        
+
         :param plane: name of the plane or plane number
         :returns: list of groups on the plane
-        
+
         .. versionadded:: 9.2
         """
         gxlst = gxapi.GXLST.create(VIEW_NAME_SIZE)
@@ -1153,12 +1153,12 @@ class View_3d(View):
                           scale=(1., 1., 1.)):
         """
         Create a new drawing plane in a 3d view.
-        
+
         :param name:        name of the plane, overwritten if it exists
         :param rotation:    plane rotation as (rx, ry, rz), default (0, 0, 0)
         :param offset:      (x, y, z) offset of the plane, default (0, 0, 0)
         :param scale:       (xs, ys, zs) axis scaling, default (1, 1, 1)
-        
+
         .. versionadded::9.2
         """
         if self.has_plane(name):
