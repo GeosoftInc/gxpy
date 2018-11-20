@@ -1,0 +1,475 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>geosoft.gxpy.agg submodule &#8212; Geosoft GX Python API 9.5.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.agg.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-geosoft.gxpy.agg">
+<span id="geosoft-gxpy-agg-submodule"></span><h1>geosoft.gxpy.agg submodule<a class="headerlink" href="#module-geosoft.gxpy.agg" title="Permalink to this headline">¶</a></h1>
+<p>Geosoft aggregate images</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.agg.Aggregate_image" title="geosoft.gxpy.agg.Aggregate_image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregate_image</span></code></a></td>
+<td>image constructed from one or more grid/image layers</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Geosoft aggregates are “aggregations” of one or more grid layers that together create a
+georeferenced image that can be placed in a map view or rendered on a plane in a 3D view.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxapi.GXAGG</span></code></a></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Regression tests provide usage examples:     
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_agg.py">aggregate tests</a></p>
+</div>
+<dl class="exception">
+<dt id="geosoft.gxpy.agg.AggregateException">
+<em class="property">exception </em><code class="descname">AggregateException</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.agg.AggregateException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.GXRuntimeError</span></code></p>
+<p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.agg" title="geosoft.gxpy.agg"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.agg</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="geosoft.gxpy.agg.Aggregate_image">
+<em class="property">class </em><code class="descname">Aggregate_image</code><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Geometry</span></code></a></p>
+<p>The AGG class supports the creation of aggregate images from one or more grid data sets. Aggregates
+can be placed into a 2D or 3D view for display.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Constructors:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name"><a class="reference internal" href="#geosoft.gxpy.agg.Aggregate_image.open" title="geosoft.gxpy.agg.Aggregate_image.open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code></a>:</th><td class="field-body">open an existing aggregate</td>
+</tr>
+<tr class="field-even field"><th class="field-name"><a class="reference internal" href="#geosoft.gxpy.agg.Aggregate_image.new" title="geosoft.gxpy.agg.Aggregate_image.new"><code class="xref py py-obj docutils literal notranslate"><span class="pre">new</span></code></a>:</th><td class="field-body">create a new aggregate</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+<dl class="method">
+<dt id="geosoft.gxpy.agg.Aggregate_image.add_layer">
+<code class="descname">add_layer</code><span class="sig-paren">(</span><em>grid_file</em>, <em>color_map=None</em>, <em>zone=None</em>, <em>shade=False</em>, <em>minimum=None</em>, <em>maximum=None</em>, <em>contour=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.add_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an image layer to an aggregate</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid_file</strong> – The name of a grid file (image or data) to add.</li>
+<li><strong>color_map</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">gxpy.group.Color_map</span></code> instance, or the name of a file, which may be 
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">tbl</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">zon</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">itr</span></code>, or <a class="reference internal" href="#module-geosoft.gxpy.agg" title="geosoft.gxpy.agg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">agg</span></code></a>.</li>
+<li><strong>zone</strong> – <p>Colour distribution method:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ZONE_DEFAULT</td>
+<td>as set by user global default settings</td>
+</tr>
+<tr class="row-even"><td>ZONE_LINEAR</td>
+<td>linearly distributed</td>
+</tr>
+<tr class="row-odd"><td>ZONE_NORMAL</td>
+<td>normal (Gaussian) distribution</td>
+</tr>
+<tr class="row-even"><td>ZONE_EQUALAREA</td>
+<td>each color will occupy an equal area on the image</td>
+</tr>
+<tr class="row-odd"><td>ZONE_LOGLINEAR</td>
+<td>logarithmic linear distribution</td>
+</tr>
+<tr class="row-even"><td>ZONE_LAST</td>
+<td>last used coloring for this grid file</td>
+</tr>
+<tr class="row-odd"><td>ZONE_SHADE</td>
+<td>Displays the shaded image version of the grid. The shaded image is
+a grid file will with ‘_s’ appended to the file name.  If it does not
+exist, a shaded image with illumination inclination and declination
+both set to 45 degrees is automatically created.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><strong>shade</strong> – True, to add a shading layer</li>
+<li><strong>minimum</strong> – Minimum data value. All grid values less than or equal to the
+minimum will be assigned the first color in the table.  The default is
+calculated from the data.</li>
+<li><strong>maximum</strong> – Maximum data value.  All grid values greater than or equal to the maximum
+will be assigned the last color in the table.  The default is calculated from
+the data.</li>
+<li><strong>contour</strong> – Break colors on this interval, colors will be thinned if necessary.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.agg.Aggregate_image.brightness">
+<code class="descname">brightness</code><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.brightness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aggregate brightness between -1 (black) and +1 (white).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.agg.Aggregate_image.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close an Aggregate, releases resources.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.agg.Aggregate_image.coordinate_system">
+<code class="descname">coordinate_system</code><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.coordinate_system" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the aggregate coordinate_system, which is the same as the first layer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">pixel size in units of the coordinate system</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.agg.Aggregate_image.extent">
+<code class="descname">extent</code><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object extent as a <code class="xref py py-obj docutils literal notranslate"><span class="pre">Point2</span></code> instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.agg.Aggregate_image.extent_2d">
+<code class="descname">extent_2d</code><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.extent_2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.agg.Aggregate_image.figure_map">
+<code class="descname">figure_map</code><span class="sig-paren">(</span><em>file_name=None</em>, <em>overwrite=False</em>, <em>title=None</em>, <em>legend_label=None</em>, <em>features=('SCALE'</em>, <em>'LEGEND'</em>, <em>'NEATLINE')</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.figure_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a figure map file from an aggregate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file_name</strong> – the name of the map, if None a default map is created.</li>
+<li><strong>overwrite</strong> – True to overwrite existing image file</li>
+<li><strong>title</strong> – Title added to the image</li>
+<li><strong>legend_label</strong> – If plotting a legend make this the legned title.  The default is the title in the
+first aggregate layer colour map.</li>
+<li><strong>features</strong> – <p>list of features to place on the map, default is (‘SCALE’, ‘LEGEND’, ‘NEATLINE’)</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>’SCALE’</td>
+<td>show a scale bar</td>
+</tr>
+<tr class="row-even"><td>’LEGEND’</td>
+<td>show an aggregate colour legend</td>
+</tr>
+<tr class="row-odd"><td>’NEATLINE’</td>
+<td>draw a neat-line around the image</td>
+</tr>
+<tr class="row-even"><td>’ANNOT_XY’</td>
+<td>annotate map coordinates</td>
+</tr>
+<tr class="row-odd"><td>’ANNOT_LL’</td>
+<td>annotate map Latitude, Longitude</td>
+</tr>
+<tr class="row-even"><td>’CONTOUR’</td>
+<td>contour the first layer in the aggregate</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><strong>kwargs</strong> – passed to <a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map.new" title="geosoft.gxpy.map.Map.new"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.map.Map.new</span></code></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.agg.Aggregate_image.gxagg">
+<code class="descname">gxagg</code><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.gxagg" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxapi.GXAGG</span></code></a> instance handle.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.agg.Aggregate_image.image_file">
+<code class="descname">image_file</code><span class="sig-paren">(</span><em>image_file=None</em>, <em>image_type='PNG'</em>, <em>pix_width=None</em>, <em>display_area=None</em>, <em>pix_32_bit=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.image_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the aggregate as a georeferenced image file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>image_file</strong> – image file name. The extension should be consistent with the image_type.
+If not specified a temporary PNG file is created.</li>
+<li><strong>image_type</strong> – image type, one ot the RASTER_FORMAT constants in <a class="reference internal" href="geosoft.gxpy.map.html#module-geosoft.gxpy.map" title="geosoft.gxpy.map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.map</span></code></a>.</li>
+<li><strong>pix_width</strong> – desired image width in pixels, default is the width of the aggregate base layer</li>
+<li><strong>display_area</strong> – <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Point2</span></code></a> instance, which defines the desired display
+area. The display area coordinate system can be different from the grid.</li>
+<li><strong>pix_32_bit</strong> – make 32-bit image (with 8-bit alpha background)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">image file name.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.agg.Aggregate_image.layer_color_map">
+<code class="descname">layer_color_map</code><span class="sig-paren">(</span><em>layer=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.layer_color_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.group.Color_map</span></code></a> of a layer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>layer</strong> – layer number or layer name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.group.Color_map</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.agg.Aggregate_image.layer_count">
+<code class="descname">layer_count</code><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.layer_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of layers in the aggregate.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.agg.Aggregate_image.layer_file_names">
+<code class="descname">layer_file_names</code><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.layer_file_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return list of layer files in the aggregate.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.agg.Aggregate_image.layer_unit_of_measure">
+<code class="descname">layer_unit_of_measure</code><span class="sig-paren">(</span><em>layer=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.layer_unit_of_measure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the unit of measurement for the specified layer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>layer</strong> – layer number or layer name</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.agg.Aggregate_image.name">
+<code class="descname">name</code><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the Aggregate_image.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxpy.agg.Aggregate_image.new">
+<em class="property">classmethod </em><code class="descname">new</code><span class="sig-paren">(</span><em>grid_file=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.new" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new aggregate from a grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>grid_file</strong> – grid file name</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="#geosoft.gxpy.agg.Aggregate_image.add_layer" title="geosoft.gxpy.agg.Aggregate_image.add_layer"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_layer()</span></code></a> is called to add the grid as a layer.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxpy.agg.Aggregate_image.open">
+<em class="property">classmethod </em><code class="descname">open</code><span class="sig-paren">(</span><em>gxagg</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an <a class="reference internal" href="#geosoft.gxpy.agg.Aggregate_image" title="geosoft.gxpy.agg.Aggregate_image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregate_image</span></code></a> from a <a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxapi.GXAGG</span></code></a> instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gxagg</strong> – <a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxapi.GXAGG</span></code></a> instance</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.agg.Aggregate_image.spatial_properties">
+<code class="descname">spatial_properties</code><a class="headerlink" href="#geosoft.gxpy.agg.Aggregate_image.spatial_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the spatial properties of the base layer in the aggregate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(nx, ny, x0, y0, dx, dy, rot)</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

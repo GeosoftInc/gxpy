@@ -1,0 +1,1620 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GXMULTIGRID3DUTIL class &#8212; Geosoft GX Python API 9.5.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXMULTIGRID3DUTIL class</a><ul>
+<li><a class="reference internal" href="#rbfkernel-constants">RBFKERNEL constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXMULTIGRID3DUTIL.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxmultigrid3dutil-class">
+<span id="gxmultigrid3dutil"></span><h1>GXMULTIGRID3DUTIL class<a class="headerlink" href="#gxmultigrid3dutil-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL">
+<em class="property">class </em><code class="descname">GXMULTIGRID3DUTIL</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXMULTIGRID3DUTIL class.</p>
+<p>High Performance 3D Grid.</p>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.check_equal_to_legacy_voxel">
+<em class="property">classmethod </em><code class="descname">check_equal_to_legacy_voxel</code><span class="sig-paren">(</span><em>grid3d_file</em>, <em>legacy_grid3d_file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.check_equal_to_legacy_voxel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compare <a class="reference internal" href="GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D" title="geosoft.gxapi.GXMULTIGRID3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMULTIGRID3D</span></code></a> to Legacy Voxel</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid3d_file</strong> (<em>str</em>) – Voxel file</li>
+<li><strong>legacy_grid3d_file</strong> (<em>str</em>) – Legacy Voxel file</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.clip_to_polygon">
+<em class="property">classmethod </em><code class="descname">clip_to_polygon</code><span class="sig-paren">(</span><em>input_file</em>, <em>output_file</em>, <em>poly</em>, <em>clip_dummies</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.clip_to_polygon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invert the Z values in the Grid3d.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>input_file</strong> (<em>str</em>) – Name of the input grid3d</li>
+<li><strong>output_file</strong> (<em>str</em>) – Name of the output grid3d</li>
+<li><strong>poly</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – Polygons to clip to</li>
+<li><strong>clip_dummies</strong> (<em>int</em>) – Clip Dummies (1) or leave them (0)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.compute_default_cell_size">
+<em class="property">classmethod </em><code class="descname">compute_default_cell_size</code><span class="sig-paren">(</span><em>min_x</em>, <em>max_x</em>, <em>min_y</em>, <em>max_y</em>, <em>min_z</em>, <em>max_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.compute_default_cell_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used if the user does not provide a default cell size.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>min_x</strong> (<em>float</em>) – MinX</li>
+<li><strong>max_x</strong> (<em>float</em>) – MaxX</li>
+<li><strong>min_y</strong> (<em>float</em>) – MinY</li>
+<li><strong>max_y</strong> (<em>float</em>) – MaxY</li>
+<li><strong>min_z</strong> (<em>float</em>) – MinZ</li>
+<li><strong>max_z</strong> (<em>float</em>) – MaxZ</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Default Cell Size</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Compute a default cell size for a grid3d given a data range.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.convert_density_to_velocity">
+<em class="property">classmethod </em><code class="descname">convert_density_to_velocity</code><span class="sig-paren">(</span><em>input_grid3d_filename</em>, <em>input_scaling_factor</em>, <em>input_lower_bound</em>, <em>input_upper_bound</em>, <em>a5</em>, <em>a4</em>, <em>a3</em>, <em>a2</em>, <em>a1</em>, <em>a0</em>, <em>output_scaling_factor</em>, <em>output_grid3d_filename</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.convert_density_to_velocity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert Density MultiVoxset to Velocity MultiVoxset</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>input_grid3d_filename</strong> (<em>str</em>) – Input grid3d filename</li>
+<li><strong>input_scaling_factor</strong> (<em>float</em>) – 1.0, if this grid3d is in meters per second. Otherwise, a value by which each input cell is multiplied to convert it into meters per second.</li>
+<li><strong>input_lower_bound</strong> (<em>float</em>) – Lower bound on velocity values, in meters per second. If the input value (after being pre-multiplied by dInputScalingFactor) is less than this value, the output cell value will be DUMMY.</li>
+<li><strong>input_upper_bound</strong> (<em>float</em>) – Upper bound on velocity values, in meters per second. If the input value (after being pre-multiplied by dInputScalingFactor) is greater than this value, the output cell value will be DUMMY.</li>
+<li><strong>a5</strong> (<em>float</em>) – Coefficient of fifth-order polynomial term.</li>
+<li><strong>a4</strong> (<em>float</em>) – Coefficient of fourth-order polynomial term.</li>
+<li><strong>a3</strong> (<em>float</em>) – Coefficient of third-order polynomial term.</li>
+<li><strong>a2</strong> (<em>float</em>) – Coefficient of second-order polynomial term.</li>
+<li><strong>a1</strong> (<em>float</em>) – Coefficient of first-order polynomial term.</li>
+<li><strong>a0</strong> (<em>float</em>) – Constant offset of output.</li>
+<li><strong>output_scaling_factor</strong> (<em>float</em>) – 1.0, to produce an output grid3d that has units of g/cm^3. If different units are desired, pass in a different value, which will be multiplied into each output grid3d cell.</li>
+<li><strong>output_grid3d_filename</strong> (<em>str</em>) – Output grid3d filename</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.convert_double_to_thematic">
+<em class="property">classmethod </em><code class="descname">convert_double_to_thematic</code><span class="sig-paren">(</span><em>input_grid3d_filename</em>, <em>translate_vv</em>, <em>tpat</em>, <em>output_grid3d_filename</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.convert_double_to_thematic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert Double MultiVoxset to Thematic MultiVoxset</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>input_grid3d_filename</strong> (<em>str</em>) – Input grid3d filename</li>
+<li><strong>translate_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Translation VV handle</li>
+<li><strong>tpat</strong> (<a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><em>GXTPAT</em></a>) – <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTPAT</span></code></a> object</li>
+<li><strong>output_grid3d_filename</strong> (<em>str</em>) – Output grid3d filename</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.convert_double_to_vector">
+<em class="property">classmethod </em><code class="descname">convert_double_to_vector</code><span class="sig-paren">(</span><em>x_file_name</em>, <em>y_file_name</em>, <em>z_file_name</em>, <em>out_file_name</em>, <em>inclination</em>, <em>declination</em>, <em>rotated</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.convert_double_to_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert 3 Double Voxels to a Vector Voxel</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x_file_name</strong> (<em>str</em>) – Input X Voxel file</li>
+<li><strong>y_file_name</strong> (<em>str</em>) – Input Y Voxel file</li>
+<li><strong>z_file_name</strong> (<em>str</em>) – Input Z Voxel file</li>
+<li><strong>out_file_name</strong> (<em>str</em>) – Output Vector Voxel file</li>
+<li><strong>inclination</strong> (<em>float</em>) – Inclination</li>
+<li><strong>declination</strong> (<em>float</em>) – Declination</li>
+<li><strong>rotated</strong> (<em>bool</em>) – Rotated?</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.convert_thematic_to_double">
+<em class="property">classmethod </em><code class="descname">convert_thematic_to_double</code><span class="sig-paren">(</span><em>input_grid3d_filename</em>, <em>translate_vv</em>, <em>output_grid3d_filename</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.convert_thematic_to_double" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert Thematic MultiVoxset to Double MultiVoxset</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>input_grid3d_filename</strong> (<em>str</em>) – Input grid3d filename</li>
+<li><strong>translate_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Translation VV handle</li>
+<li><strong>output_grid3d_filename</strong> (<em>str</em>) – Output grid3d filename</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.convert_vector_to_double">
+<em class="property">classmethod </em><code class="descname">convert_vector_to_double</code><span class="sig-paren">(</span><em>file_name</em>, <em>x_file_name</em>, <em>y_file_name</em>, <em>z_file_name</em>, <em>rotated</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.convert_vector_to_double" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a Vector Voxel to 3 double Voxels</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file_name</strong> (<em>str</em>) – Input Vector Voxel file</li>
+<li><strong>x_file_name</strong> (<em>str</em>) – Output X Voxel file</li>
+<li><strong>y_file_name</strong> (<em>str</em>) – Output Y Voxel file</li>
+<li><strong>z_file_name</strong> (<em>str</em>) – Output Z Voxel file</li>
+<li><strong>rotated</strong> (<em>bool</em>) – Rotated?</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.convert_vector_to_double_using_rotation">
+<em class="property">classmethod </em><code class="descname">convert_vector_to_double_using_rotation</code><span class="sig-paren">(</span><em>file_name</em>, <em>x_file_name</em>, <em>y_file_name</em>, <em>z_file_name</em>, <em>inclination</em>, <em>declination</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.convert_vector_to_double_using_rotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a Vector Voxel to 3 double Voxels using an external rotation. Internal rotations are ignored.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file_name</strong> (<em>str</em>) – Input Vector Voxel file</li>
+<li><strong>x_file_name</strong> (<em>str</em>) – Output X Voxel file</li>
+<li><strong>y_file_name</strong> (<em>str</em>) – Output Y Voxel file</li>
+<li><strong>z_file_name</strong> (<em>str</em>) – Output Z Voxel file</li>
+<li><strong>inclination</strong> (<em>float</em>) – Inclination</li>
+<li><strong>declination</strong> (<em>float</em>) – Declination</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.convert_velocity_to_density">
+<em class="property">classmethod </em><code class="descname">convert_velocity_to_density</code><span class="sig-paren">(</span><em>input_grid3d_filename</em>, <em>input_scaling_factor</em>, <em>input_lower_bound</em>, <em>input_upper_bound</em>, <em>a5</em>, <em>a4</em>, <em>a3</em>, <em>a2</em>, <em>a1</em>, <em>a0</em>, <em>output_scaling_factor</em>, <em>output_grid3d_filename</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.convert_velocity_to_density" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert Velocity MultiVoxset to Density MultiVoxset</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>input_grid3d_filename</strong> (<em>str</em>) – Input grid3d filename</li>
+<li><strong>input_scaling_factor</strong> (<em>float</em>) – 1.0, if this grid3d is in meters per second. Otherwise, a value by which each input cell is multiplied to convert it into meters per second.</li>
+<li><strong>input_lower_bound</strong> (<em>float</em>) – Lower bound on velocity values, in meters per second. If the input value (after being pre-multiplied by dInputScalingFactor) is less than this value, the output cell value will be DUMMY.</li>
+<li><strong>input_upper_bound</strong> (<em>float</em>) – Upper bound on velocity values, in meters per second. If the input value (after being pre-multiplied by dInputScalingFactor) is greater than this value, the output cell value will be DUMMY.</li>
+<li><strong>a5</strong> (<em>float</em>) – Coefficient of fifth-order polynomial term.</li>
+<li><strong>a4</strong> (<em>float</em>) – Coefficient of fourth-order polynomial term.</li>
+<li><strong>a3</strong> (<em>float</em>) – Coefficient of third-order polynomial term.</li>
+<li><strong>a2</strong> (<em>float</em>) – Coefficient of second-order polynomial term.</li>
+<li><strong>a1</strong> (<em>float</em>) – Coefficient of first-order polynomial term.</li>
+<li><strong>a0</strong> (<em>float</em>) – Constant offset of output.</li>
+<li><strong>output_scaling_factor</strong> (<em>float</em>) – 1.0, to produce an output grid3d that has units of g/cm^3. If different units are desired, pass in a different value, which will be multiplied into each output grid3d cell.</li>
+<li><strong>output_grid3d_filename</strong> (<em>str</em>) – Output grid3d filename</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.create_double_constant">
+<em class="property">classmethod </em><code class="descname">create_double_constant</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>ox</em>, <em>oy</em>, <em>oz</em>, <em>cell_x</em>, <em>cell_y</em>, <em>cell_z</em>, <em>size_x</em>, <em>size_y</em>, <em>size_z</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.create_double_constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a double MultiVoxset with a constant value</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output Voxel File</li>
+<li><strong>value</strong> (<em>float</em>) – Constant Value to use - DUMMY for a trully sparse grid3d</li>
+<li><strong>ox</strong> (<em>float</em>) – Origin X</li>
+<li><strong>oy</strong> (<em>float</em>) – Origin Y</li>
+<li><strong>oz</strong> (<em>float</em>) – Origin Z</li>
+<li><strong>cell_x</strong> (<em>float</em>) – Cell Size X</li>
+<li><strong>cell_y</strong> (<em>float</em>) – Cell Size Y</li>
+<li><strong>cell_z</strong> (<em>float</em>) – Cell Size Z</li>
+<li><strong>size_x</strong> (<em>int</em>) – Cell Count X</li>
+<li><strong>size_y</strong> (<em>int</em>) – Cell Count Y</li>
+<li><strong>size_z</strong> (<em>int</em>) – Cell Count Z</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.create_double_constant_copy">
+<em class="property">classmethod </em><code class="descname">create_double_constant_copy</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>source_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.create_double_constant_copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a double MultiVoxset with a constant value based on an input voxel</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output Voxel File</li>
+<li><strong>value</strong> (<em>float</em>) – Constant Value to use - DUMMY for a trully sparse grid3d</li>
+<li><strong>source_name</strong> (<em>str</em>) – Name of voxel to model</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.create_double_constant_vv">
+<em class="property">classmethod </em><code class="descname">create_double_constant_vv</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>ox</em>, <em>oy</em>, <em>oz</em>, <em>cx</em>, <em>cy</em>, <em>cz</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.create_double_constant_vv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a double MultiVoxset with a constant value and non-uniform cell sizes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output Voxel</li>
+<li><strong>value</strong> (<em>float</em>) – The contant Value to fill with - DUMMY for a trully sparse grid3d</li>
+<li><strong>ox</strong> (<em>float</em>) – Origin X</li>
+<li><strong>oy</strong> (<em>float</em>) – Origin Y</li>
+<li><strong>oz</strong> (<em>float</em>) – Origin Z</li>
+<li><strong>cx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes X</li>
+<li><strong>cy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes Y</li>
+<li><strong>cz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes Z</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.create_subset">
+<em class="property">classmethod </em><code class="descname">create_subset</code><span class="sig-paren">(</span><em>input_name</em>, <em>output_name</em>, <em>offset_x</em>, <em>offset_y</em>, <em>offset_z</em>, <em>length_x</em>, <em>length_y</em>, <em>length_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.create_subset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new MULTIGRID3D that is a subset of an exisiting MULTIGRID3D.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>input_name</strong> (<em>str</em>) – File Name of the MULTIGRID3D that will be subset</li>
+<li><strong>output_name</strong> (<em>str</em>) – File Name of the MULTIGRID3D that will be created</li>
+<li><strong>offset_x</strong> (<em>int</em>) – Starting location in X.</li>
+<li><strong>offset_y</strong> (<em>int</em>) – Starting location in Y.</li>
+<li><strong>offset_z</strong> (<em>int</em>) – Starting location in Z.</li>
+<li><strong>length_x</strong> (<em>int</em>) – Number of items to copy in X.</li>
+<li><strong>length_y</strong> (<em>int</em>) – Number of items to copy in Y.</li>
+<li><strong>length_z</strong> (<em>int</em>) – Number of items to copy in Z.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D" title="geosoft.gxapi.GXMULTIGRID3D">GXMULTIGRID3D</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Creates a <a class="reference internal" href="GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D" title="geosoft.gxapi.GXMULTIGRID3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMULTIGRID3D</span></code></a> object that is a subset .</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.create_subset_from_double_extents">
+<em class="property">classmethod </em><code class="descname">create_subset_from_double_extents</code><span class="sig-paren">(</span><em>input_name</em>, <em>output_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.create_subset_from_double_extents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new MULTIGRID3D that is a subset of the non-dummy extents.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>input_name</strong> (<em>str</em>) – File Name of the MULTIGRID3D that will be subset</li>
+<li><strong>output_name</strong> (<em>str</em>) – File Name of the MULTIGRID3D that will be created</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D" title="geosoft.gxapi.GXMULTIGRID3D">GXMULTIGRID3D</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Creates a <a class="reference internal" href="GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D" title="geosoft.gxapi.GXMULTIGRID3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMULTIGRID3D</span></code></a> object that is a subset with all dummy data regions removed.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.create_thematic_constant">
+<em class="property">classmethod </em><code class="descname">create_thematic_constant</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>ox</em>, <em>oy</em>, <em>oz</em>, <em>cell_x</em>, <em>cell_y</em>, <em>cell_z</em>, <em>size_x</em>, <em>size_y</em>, <em>size_z</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.create_thematic_constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a double MultiVoxset with a constant value</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output Voxel File</li>
+<li><strong>value</strong> (<em>int</em>) – Constant Value to use - DUMMY for a trully sparse grid3d</li>
+<li><strong>ox</strong> (<em>float</em>) – Origin X</li>
+<li><strong>oy</strong> (<em>float</em>) – Origin Y</li>
+<li><strong>oz</strong> (<em>float</em>) – Origin Z</li>
+<li><strong>cell_x</strong> (<em>float</em>) – Cell Size X</li>
+<li><strong>cell_y</strong> (<em>float</em>) – Cell Size Y</li>
+<li><strong>cell_z</strong> (<em>float</em>) – Cell Size Z</li>
+<li><strong>size_x</strong> (<em>int</em>) – Cell Count X</li>
+<li><strong>size_y</strong> (<em>int</em>) – Cell Count Y</li>
+<li><strong>size_z</strong> (<em>int</em>) – Cell Count Z</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.create_thematic_constant_vv">
+<em class="property">classmethod </em><code class="descname">create_thematic_constant_vv</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>ox</em>, <em>oy</em>, <em>oz</em>, <em>cx</em>, <em>cy</em>, <em>cz</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.create_thematic_constant_vv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a double MultiVoxset with a constant value and non-uniform cell sizes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output Voxel</li>
+<li><strong>value</strong> (<em>int</em>) – The contant Value to fill with - DUMMY for a trully sparse grid3d</li>
+<li><strong>ox</strong> (<em>float</em>) – Origin X</li>
+<li><strong>oy</strong> (<em>float</em>) – Origin Y</li>
+<li><strong>oz</strong> (<em>float</em>) – Origin Z</li>
+<li><strong>cx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes X</li>
+<li><strong>cy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes Y</li>
+<li><strong>cz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes Z</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.create_vector_constant">
+<em class="property">classmethod </em><code class="descname">create_vector_constant</code><span class="sig-paren">(</span><em>name</em>, <em>value_x</em>, <em>value_y</em>, <em>value_z</em>, <em>ox</em>, <em>oy</em>, <em>oz</em>, <em>cell_x</em>, <em>cell_y</em>, <em>cell_z</em>, <em>size_x</em>, <em>size_y</em>, <em>size_z</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.create_vector_constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a double MultiVoxset with a constant value</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output Voxel File</li>
+<li><strong>value_x</strong> (<em>float</em>) – X Constant Value to use - DUMMY for a trully sparse grid3d</li>
+<li><strong>value_y</strong> (<em>float</em>) – Y Constant Value to use - DUMMY for a trully sparse grid3d</li>
+<li><strong>value_z</strong> (<em>float</em>) – Z Constant Value to use - DUMMY for a trully sparse grid3d</li>
+<li><strong>ox</strong> (<em>float</em>) – Origin X</li>
+<li><strong>oy</strong> (<em>float</em>) – Origin Y</li>
+<li><strong>oz</strong> (<em>float</em>) – Origin Z</li>
+<li><strong>cell_x</strong> (<em>float</em>) – Cell Size X</li>
+<li><strong>cell_y</strong> (<em>float</em>) – Cell Size Y</li>
+<li><strong>cell_z</strong> (<em>float</em>) – Cell Size Z</li>
+<li><strong>size_x</strong> (<em>int</em>) – Cell Count X</li>
+<li><strong>size_y</strong> (<em>int</em>) – Cell Count Y</li>
+<li><strong>size_z</strong> (<em>int</em>) – Cell Count Z</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.create_vector_constant_vv">
+<em class="property">classmethod </em><code class="descname">create_vector_constant_vv</code><span class="sig-paren">(</span><em>name</em>, <em>x_value</em>, <em>y_value</em>, <em>z_value</em>, <em>ox</em>, <em>oy</em>, <em>oz</em>, <em>cx</em>, <em>cy</em>, <em>cz</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.create_vector_constant_vv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a double MultiVoxset with a constant value and non-uniform cell sizes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output Voxel</li>
+<li><strong>x_value</strong> (<em>float</em>) – The X contant Value to fill with - DUMMY for a trully sparse grid3d</li>
+<li><strong>y_value</strong> (<em>float</em>) – The Y contant Value to fill with - DUMMY for a trully sparse grid3d</li>
+<li><strong>z_value</strong> (<em>float</em>) – The Z contant Value to fill with - DUMMY for a trully sparse grid3d</li>
+<li><strong>ox</strong> (<em>float</em>) – Origin X</li>
+<li><strong>oy</strong> (<em>float</em>) – Origin Y</li>
+<li><strong>oz</strong> (<em>float</em>) – Origin Z</li>
+<li><strong>cx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes X</li>
+<li><strong>cy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes Y</li>
+<li><strong>cz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes Z</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_binary">
+<em class="property">classmethod </em><code class="descname">export_to_binary</code><span class="sig-paren">(</span><em>grid3d_file</em>, <em>binary_file</em>, <em>dir</em>, <em>rev_x</em>, <em>rev_y</em>, <em>rev_z</em>, <em>swap</em>, <em>output_type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_binary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export contents of <a class="reference internal" href="GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D" title="geosoft.gxapi.GXMULTIGRID3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMULTIGRID3D</span></code></a> to a Binary File.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid3d_file</strong> (<em>str</em>) – Input Voxel file</li>
+<li><strong>binary_file</strong> (<em>str</em>) – Binary file to write to</li>
+<li><strong>dir</strong> (<em>int</em>) – <a class="reference internal" href="GXMULTIGRID3D.html#direction3d"><span class="std std-ref">DIRECTION3D constants</span></a></li>
+<li><strong>rev_x</strong> (<em>bool</em>) – Reverse X?</li>
+<li><strong>rev_y</strong> (<em>bool</em>) – Reverse Y?</li>
+<li><strong>rev_z</strong> (<em>bool</em>) – Reverse Z?</li>
+<li><strong>swap</strong> (<em>bool</em>) – Swap Bytes?</li>
+<li><strong>output_type</strong> (<em>int</em>) – Output Type (Geosoft Type)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_gdb">
+<em class="property">classmethod </em><code class="descname">export_to_gdb</code><span class="sig-paren">(</span><em>grid3d_file</em>, <em>db</em>, <em>chan</em>, <em>dir</em>, <em>rev_x</em>, <em>rev_y</em>, <em>rev_z</em>, <em>dummies</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_gdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export To GDB</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid3d_file</strong> (<em>str</em>) – Input Voxel file</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
+<li><strong>chan</strong> (<em>str</em>) – Channel Name</li>
+<li><strong>dir</strong> (<em>int</em>) – <a class="reference internal" href="GXMULTIGRID3D.html#direction3d"><span class="std std-ref">DIRECTION3D constants</span></a></li>
+<li><strong>rev_x</strong> (<em>bool</em>) – Reverse X?</li>
+<li><strong>rev_y</strong> (<em>bool</em>) – Reverse Y?</li>
+<li><strong>rev_z</strong> (<em>bool</em>) – Reverse Z?</li>
+<li><strong>dummies</strong> (<em>bool</em>) – Write Dummies?</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_segy">
+<em class="property">classmethod </em><code class="descname">export_to_segy</code><span class="sig-paren">(</span><em>multigrid3d_file</em>, <em>output_segy_filename</em>, <em>sample_interval</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_segy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export To SEGY</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>multigrid3d_file</strong> (<em>str</em>) – Input Voxel file</li>
+<li><strong>output_segy_filename</strong> (<em>str</em>) – Output Segy file</li>
+<li><strong>sample_interval</strong> (<em>float</em>) – Sampling Internal</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_voxel">
+<em class="property">classmethod </em><code class="descname">export_to_voxel</code><span class="sig-paren">(</span><em>project_file</em>, <em>multi_voxset_uuid</em>, <em>multi_voxset_attribute</em>, <em>grid3d_file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_voxel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports a Multi-Voxset into a Voxel</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>project_file</strong> (<em>str</em>) – Project file</li>
+<li><strong>multi_voxset_uuid</strong> (<em>str</em>) – Multi-Voxset UUID</li>
+<li><strong>multi_voxset_attribute</strong> (<em>str</em>) – Multi-Voxset attribute</li>
+<li><strong>grid3d_file</strong> (<em>str</em>) – Output Voxel file</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_wa">
+<em class="property">classmethod </em><code class="descname">export_to_wa</code><span class="sig-paren">(</span><em>file_name</em>, <em>wa</em>, <em>dir</em>, <em>rev_x</em>, <em>rev_y</em>, <em>rev_z</em>, <em>dummy</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_wa" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export To GDB</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file_name</strong> (<em>str</em>) – Input Voxel file</li>
+<li><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) – <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a> File</li>
+<li><strong>dir</strong> (<em>int</em>) – <a class="reference internal" href="GXMULTIGRID3D.html#direction3d"><span class="std std-ref">DIRECTION3D constants</span></a></li>
+<li><strong>rev_x</strong> (<em>bool</em>) – Reverse X?</li>
+<li><strong>rev_y</strong> (<em>bool</em>) – Reverse Y?</li>
+<li><strong>rev_z</strong> (<em>bool</em>) – Reverse Z?</li>
+<li><strong>dummy</strong> (<em>str</em>) – The Dummy string to write</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_xml">
+<em class="property">classmethod </em><code class="descname">export_to_xml</code><span class="sig-paren">(</span><em>grid3d_file</em>, <em>xml_file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_xml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a <a class="reference internal" href="GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D" title="geosoft.gxapi.GXMULTIGRID3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMULTIGRID3D</span></code></a> to XML</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid3d_file</strong> (<em>str</em>) – Voxel file</li>
+<li><strong>xml_file</strong> (<em>str</em>) – XML file</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_xyz">
+<em class="property">classmethod </em><code class="descname">export_to_xyz</code><span class="sig-paren">(</span><em>grid3d_file</em>, <em>xyz</em>, <em>dir</em>, <em>rev_x</em>, <em>rev_y</em>, <em>rev_z</em>, <em>dummies</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a <a class="reference internal" href="GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D" title="geosoft.gxapi.GXMULTIGRID3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMULTIGRID3D</span></code></a> to an XYZ File</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid3d_file</strong> (<em>str</em>) – Input Voxel file</li>
+<li><strong>xyz</strong> (<em>str</em>) – File Name</li>
+<li><strong>dir</strong> (<em>int</em>) – <a class="reference internal" href="GXMULTIGRID3D.html#direction3d"><span class="std std-ref">DIRECTION3D constants</span></a></li>
+<li><strong>rev_x</strong> (<em>bool</em>) – Reverse X?</li>
+<li><strong>rev_y</strong> (<em>bool</em>) – Reverse Y?</li>
+<li><strong>rev_z</strong> (<em>bool</em>) – Reverse Z?</li>
+<li><strong>dummies</strong> (<em>bool</em>) – Write Dummies?</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.extract_dem">
+<em class="property">classmethod </em><code class="descname">extract_dem</code><span class="sig-paren">(</span><em>input_file</em>, <em>output_file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.extract_dem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract a DEM grid from a voxel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>input_file</strong> (<em>str</em>) – Name of the input grid3d</li>
+<li><strong>output_file</strong> (<em>str</em>) – Name of the output grid</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.filter">
+<em class="property">classmethod </em><code class="descname">filter</code><span class="sig-paren">(</span><em>input_file</em>, <em>output_file</em>, <em>filter</em>, <em>filter_file</em>, <em>n_passes</em>, <em>interpolate_dummies</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a 3D filter to a grid3d.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>input_file</strong> (<em>str</em>) – Name of the input grid3d</li>
+<li><strong>output_file</strong> (<em>str</em>) – Name of the output grid3d</li>
+<li><strong>filter</strong> (<em>int</em>) – <a class="reference internal" href="GXMULTIGRID3D.html#filter3d"><span class="std std-ref">FILTER3D constants</span></a></li>
+<li><strong>filter_file</strong> (<em>str</em>) – Filter file, if filter is <a class="reference internal" href="GXVOX.html#geosoft.gxapi.VOX_FILTER3D_FILE" title="geosoft.gxapi.VOX_FILTER3D_FILE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VOX_FILTER3D_FILE</span></code></a></li>
+<li><strong>n_passes</strong> (<em>int</em>) – Number of filter passes</li>
+<li><strong>interpolate_dummies</strong> (<em>int</em>) – (1: interpolate dummies)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.generate_rbf">
+<em class="property">classmethod </em><code class="descname">generate_rbf</code><span class="sig-paren">(</span><em>db</em>, <em>output_file</em>, <em>data_channel</em>, <em>cell_size</em>, <em>error_tolerance</em>, <em>max_iterations</em>, <em>desample</em>, <em>kernel</em>, <em>kernel_epsilon</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.generate_rbf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a VOXEL from an database using RBF.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Handle to a database</li>
+<li><strong>output_file</strong> (<em>str</em>) – Name of the output grid3d</li>
+<li><strong>data_channel</strong> (<em>str</em>) – Channel to grid`</li>
+<li><strong>cell_size</strong> (<em>float</em>) – Cell size</li>
+<li><strong>error_tolerance</strong> (<em>float</em>) – Error Tolerance</li>
+<li><strong>max_iterations</strong> (<em>int</em>) – Maximum number of iterations (&gt;0)</li>
+<li><strong>desample</strong> (<em>int</em>) – Desample data (1) or use as is (0)</li>
+<li><strong>kernel</strong> (<em>int</em>) – <a class="reference internal" href="#rbfkernel"><span class="std std-ref">RBFKERNEL constants</span></a></li>
+<li><strong>kernel_epsilon</strong> (<em>float</em>) – Kernel Epsilon</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.get_data_extents">
+<em class="property">classmethod </em><code class="descname">get_data_extents</code><span class="sig-paren">(</span><em>filename</em>, <em>min_x</em>, <em>min_y</em>, <em>min_z</em>, <em>max_x</em>, <em>max_y</em>, <em>max_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.get_data_extents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the voxel size that has non-dummy data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filename</strong> (<em>str</em>) – input filename</li>
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Index of minimum valid data in X.</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Index of minimum valid data in Y.</li>
+<li><strong>min_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Index of minimum valid data in Z.</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Index of maximum valid data in X.</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Index of maximum valid data in Y.</li>
+<li><strong>max_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Index of maximum valid data in Z.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Find the non-dummy volume of a <a class="reference internal" href="GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D" title="geosoft.gxapi.GXMULTIGRID3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMULTIGRID3D</span></code></a> object. If the voxel is all dummies,
+returns <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iMAX" title="geosoft.gxapi.iMAX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMAX</span></code></a> for the minima, and <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iMIN" title="geosoft.gxapi.iMIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMIN</span></code></a> for the maxima.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.get_data_ground_extents">
+<em class="property">classmethod </em><code class="descname">get_data_ground_extents</code><span class="sig-paren">(</span><em>filename</em>, <em>min_x</em>, <em>min_y</em>, <em>min_z</em>, <em>max_x</em>, <em>max_y</em>, <em>max_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.get_data_ground_extents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the voxel size in ground units that has non-dummy data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filename</strong> (<em>str</em>) – input filename</li>
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Ground location of minimum valid data in X.</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Ground location of minimum valid data in Y.</li>
+<li><strong>min_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Ground location of minimum valid data in Z.</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Ground location of maximum valid data in X.</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Ground location of maximum valid data in Y.</li>
+<li><strong>max_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Ground location of maximum valid data in Z.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Find the non-dummy volume of a <a class="reference internal" href="GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D" title="geosoft.gxapi.GXMULTIGRID3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMULTIGRID3D</span></code></a> object. If the voxel is all dummies,
+returns <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iMAX" title="geosoft.gxapi.iMAX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMAX</span></code></a> for the minima, and <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iMIN" title="geosoft.gxapi.iMIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMIN</span></code></a> for the maxima.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.get_gocad_location">
+<em class="property">classmethod </em><code class="descname">get_gocad_location</code><span class="sig-paren">(</span><em>input_grid3d_filename</em>, <em>origin_x</em>, <em>origin_y</em>, <em>origin_z</em>, <em>vect_xx</em>, <em>vect_xy</em>, <em>vect_xz</em>, <em>vect_yx</em>, <em>vect_yy</em>, <em>vect_yz</em>, <em>vect_zx</em>, <em>vect_zy</em>, <em>vect_zz</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.get_gocad_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the location of a grid3d with origin and scaled xyz vectors for use with GOCAD.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>input_grid3d_filename</strong> (<em>str</em>) – Input grid3d filename</li>
+<li><strong>origin_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Origin X</li>
+<li><strong>origin_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Origin Y</li>
+<li><strong>origin_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Origin Z</li>
+<li><strong>vect_xx</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – VectX X</li>
+<li><strong>vect_xy</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – VectX Y</li>
+<li><strong>vect_xz</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – VectX Z</li>
+<li><strong>vect_yx</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – VectY X</li>
+<li><strong>vect_yy</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – VectY Y</li>
+<li><strong>vect_yz</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – VectY Z</li>
+<li><strong>vect_zx</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – VectZ X</li>
+<li><strong>vect_zy</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – VectZ Y</li>
+<li><strong>vect_zz</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – VectZ Z</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.grid_direct_from_gdb">
+<em class="property">classmethod </em><code class="descname">grid_direct_from_gdb</code><span class="sig-paren">(</span><em>output_grid3d_filename</em>, <em>origin_x</em>, <em>origin_y</em>, <em>origin_z</em>, <em>cell_count_x</em>, <em>cell_count_y</em>, <em>cell_count_z</em>, <em>cell_size_x</em>, <em>cell_size_y</em>, <em>cell_size_z</em>, <em>method</em>, <em>db</em>, <em>x_channel</em>, <em>y_channel</em>, <em>z_channel</em>, <em>data_channel</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.grid_direct_from_gdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a grid3d using direct gridding.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>output_grid3d_filename</strong> (<em>str</em>) – Output grid3d filename</li>
+<li><strong>origin_x</strong> (<em>float</em>) – Voxel origin X</li>
+<li><strong>origin_y</strong> (<em>float</em>) – Voxel origin Y</li>
+<li><strong>origin_z</strong> (<em>float</em>) – Voxel origin Z</li>
+<li><strong>cell_count_x</strong> (<em>int</em>) – Voxel cell count X</li>
+<li><strong>cell_count_y</strong> (<em>int</em>) – Voxel cell count Y</li>
+<li><strong>cell_count_z</strong> (<em>int</em>) – Voxel cell count Z</li>
+<li><strong>cell_size_x</strong> (<em>float</em>) – Voxel cell size X</li>
+<li><strong>cell_size_y</strong> (<em>float</em>) – Voxel cell size Y</li>
+<li><strong>cell_size_z</strong> (<em>float</em>) – Voxel cell size Z</li>
+<li><strong>method</strong> (<em>int</em>) – <a class="reference internal" href="GXMULTIGRID3D.html#multigrid3d-directgrid-method"><span class="std std-ref">MULTIGRID3D_DIRECTGRID_METHOD constants</span></a></li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
+<li><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The Z and Data channels may be array channels. If they are, the array sizes must match.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.grid_idw_from_gdb">
+<em class="property">classmethod </em><code class="descname">grid_idw_from_gdb</code><span class="sig-paren">(</span><em>output_grid3d_filename</em>, <em>origin_x</em>, <em>origin_y</em>, <em>origin_z</em>, <em>cell_count_x</em>, <em>cell_count_y</em>, <em>cell_count_z</em>, <em>cell_size_x</em>, <em>cell_size_y</em>, <em>cell_size_z</em>, <em>db</em>, <em>x_channel</em>, <em>y_channel</em>, <em>z_channel</em>, <em>data_channel</em>, <em>weight_power</em>, <em>weight_slope</em>, <em>search_radius</em>, <em>blanking_distance</em>, <em>log</em>, <em>log_base</em>, <em>log_negative</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.grid_idw_from_gdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a grid3d using IDW gridding.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>output_grid3d_filename</strong> (<em>str</em>) – Output grid3d filename</li>
+<li><strong>origin_x</strong> (<em>float</em>) – Voxel origin X</li>
+<li><strong>origin_y</strong> (<em>float</em>) – Voxel origin Y</li>
+<li><strong>origin_z</strong> (<em>float</em>) – Voxel origin Z</li>
+<li><strong>cell_count_x</strong> (<em>int</em>) – Voxel cell count X</li>
+<li><strong>cell_count_y</strong> (<em>int</em>) – Voxel cell count Y</li>
+<li><strong>cell_count_z</strong> (<em>int</em>) – Voxel cell count Z</li>
+<li><strong>cell_size_x</strong> (<em>float</em>) – Voxel cell size X</li>
+<li><strong>cell_size_y</strong> (<em>float</em>) – Voxel cell size Y</li>
+<li><strong>cell_size_z</strong> (<em>float</em>) – Voxel cell size Z</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
+<li><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>weight_power</strong> (<em>float</em>) – Weight Power (default 2)</li>
+<li><strong>weight_slope</strong> (<em>float</em>) – Weight Slope (default 1)</li>
+<li><strong>search_radius</strong> (<em>float</em>) – Distance weighting limit (default = 4 * CUBE_ROOT(DX*DY*DZ))</li>
+<li><strong>blanking_distance</strong> (<em>float</em>) – Dummy values farther from data than this distance. (default = 4 * CUBE_ROOT(DX*DY*DZ))</li>
+<li><strong>log</strong> (<em>int</em>) – Apply log transform to input data before gridding (0:No (default), 1:Yes)</li>
+<li><strong>log_base</strong> (<em>float</em>) – One of <a class="reference internal" href="GXVV.html#geosoft.gxapi.VV_LOG_BASE_10" title="geosoft.gxapi.VV_LOG_BASE_10"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VV_LOG_BASE_10</span></code></a> (default) or :const:<a href="#id32"><span class="problematic" id="id33">`</span></a>VV_LOG_BASE_E</li>
+<li><strong>log_negative</strong> (<em>int</em>) – One of <code class="xref py py-obj docutils literal notranslate"><span class="pre">VV_LOG_NEGATIVE_NO</span></code> (default) or <code class="xref py py-obj docutils literal notranslate"><span class="pre">VV_LOG_NEGATIVE_YES</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<dl class="docutils">
+<dt><strong>Note:</strong> The Z and Data channels may be array channels. If they are, the array sizes must match.</dt>
+<dd><blockquote class="first">
+<div>3D cells take on the averaged values within a search radius, weighted inversely by distance.</div></blockquote>
+<p>Weighting can be controlled using the power and slope properties;</p>
+<p>weighting = 1 / (distance^wtpower + 1/slope) where distance is in
+units of grid cells (X dimenstion). Default is 0.0,</p>
+<p class="last">If the blanking distance is set, all cells whose center point is not within the blanking distance of
+at least one data point are set to dummy.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.grid_points_from_gdb">
+<em class="property">classmethod </em><code class="descname">grid_points_from_gdb</code><span class="sig-paren">(</span><em>name</em>, <em>error</em>, <em>cell_size</em>, <em>var_only</em>, <em>min_radius</em>, <em>max_radius</em>, <em>min_points</em>, <em>max_points</em>, <em>model</em>, <em>power</em>, <em>slope</em>, <em>range</em>, <em>nugget</em>, <em>sill</em>, <em>type</em>, <em>db</em>, <em>x_channel</em>, <em>y_channel</em>, <em>z_channel</em>, <em>data_channel</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.grid_points_from_gdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grid a grid3d from a database using kriging.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Output grid3d filename</li>
+<li><strong>error</strong> (<em>str</em>) – Output error grid3d filename</li>
+<li><strong>cell_size</strong> (<em>float</em>) – Cell size (DUMMY for default)</li>
+<li><strong>var_only</strong> (<em>int</em>) – Variogram Only</li>
+<li><strong>min_radius</strong> (<em>float</em>) – Minimum Search Radius (DUMMY for none)</li>
+<li><strong>max_radius</strong> (<em>float</em>) – Maximum Search Radius (DUMMY for none)</li>
+<li><strong>min_points</strong> (<em>int</em>) – Minimum Search Points</li>
+<li><strong>max_points</strong> (<em>int</em>) – Maximum Search Points</li>
+<li><strong>model</strong> (<em>int</em>) – Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</li>
+<li><strong>power</strong> (<em>float</em>) – Power</li>
+<li><strong>slope</strong> (<em>float</em>) – Slope</li>
+<li><strong>range</strong> (<em>float</em>) – Range</li>
+<li><strong>nugget</strong> (<em>float</em>) – Nugget</li>
+<li><strong>sill</strong> (<em>float</em>) – Sill</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
+<li><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.grid_points_z_ex_from_gdb">
+<em class="property">classmethod </em><code class="descname">grid_points_z_ex_from_gdb</code><span class="sig-paren">(</span><em>name</em>, <em>error</em>, <em>cell_size</em>, <em>cell_size_z</em>, <em>var_only</em>, <em>min_radius</em>, <em>max_radius</em>, <em>min_points</em>, <em>max_points</em>, <em>model</em>, <em>power</em>, <em>slope</em>, <em>range</em>, <em>nugget</em>, <em>sill</em>, <em>strike</em>, <em>dip</em>, <em>plunge</em>, <em>along_strike_weight</em>, <em>down_dip_weight</em>, <em>type</em>, <em>db</em>, <em>x_channel</em>, <em>y_channel</em>, <em>z_channel</em>, <em>data_channel</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.grid_points_z_ex_from_gdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grid a grid3d from a database (using variable Z’s)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Output grid3d filename</li>
+<li><strong>error</strong> (<em>str</em>) – Output error grid3d filename</li>
+<li><strong>cell_size</strong> (<em>float</em>) – Cell size (DUMMY for default)</li>
+<li><strong>cell_size_z</strong> (<em>str</em>) – Cell size in Z (“” for default)</li>
+<li><strong>var_only</strong> (<em>int</em>) – Variogram Only</li>
+<li><strong>min_radius</strong> (<em>float</em>) – Minimum Search Radius (DUMMY for none)</li>
+<li><strong>max_radius</strong> (<em>float</em>) – Maximum Search Radius (DUMMY for none)</li>
+<li><strong>min_points</strong> (<em>int</em>) – Minimum Search Points</li>
+<li><strong>max_points</strong> (<em>int</em>) – Maximum Search Points</li>
+<li><strong>model</strong> (<em>int</em>) – Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</li>
+<li><strong>power</strong> (<em>float</em>) – Power</li>
+<li><strong>slope</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Slope</li>
+<li><strong>range</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Range</li>
+<li><strong>nugget</strong> (<em>float</em>) – Nugget</li>
+<li><strong>sill</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Sill</li>
+<li><strong>strike</strong> (<em>float</em>) – Strike</li>
+<li><strong>dip</strong> (<em>float</em>) – Dip</li>
+<li><strong>plunge</strong> (<em>float</em>) – Plunge</li>
+<li><strong>along_strike_weight</strong> (<em>float</em>) – Strike Weight</li>
+<li><strong>down_dip_weight</strong> (<em>float</em>) – Dip Plane Weight</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
+<li><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.grid_points_z_from_gdb">
+<em class="property">classmethod </em><code class="descname">grid_points_z_from_gdb</code><span class="sig-paren">(</span><em>name</em>, <em>error</em>, <em>cell_size</em>, <em>cell_size_z</em>, <em>var_only</em>, <em>min_radius</em>, <em>max_radius</em>, <em>min_points</em>, <em>max_points</em>, <em>model</em>, <em>power</em>, <em>slope</em>, <em>range</em>, <em>nugget</em>, <em>sill</em>, <em>type</em>, <em>db</em>, <em>x_channel</em>, <em>y_channel</em>, <em>z_channel</em>, <em>data_channel</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.grid_points_z_from_gdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grid a grid3d from a database (using variable Z’s)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Output grid3d filename</li>
+<li><strong>error</strong> (<em>str</em>) – Output error grid3d filename</li>
+<li><strong>cell_size</strong> (<em>float</em>) – Cell size (DUMMY for default)</li>
+<li><strong>cell_size_z</strong> (<em>str</em>) – Cell size in Z (“” for default)</li>
+<li><strong>var_only</strong> (<em>int</em>) – Variogram Only</li>
+<li><strong>min_radius</strong> (<em>float</em>) – Minimum Search Radius (DUMMY for none)</li>
+<li><strong>max_radius</strong> (<em>float</em>) – Maximum Search Radius (DUMMY for none)</li>
+<li><strong>min_points</strong> (<em>int</em>) – Minimum Search Points</li>
+<li><strong>max_points</strong> (<em>int</em>) – Maximum Search Points</li>
+<li><strong>model</strong> (<em>int</em>) – Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</li>
+<li><strong>power</strong> (<em>float</em>) – Power</li>
+<li><strong>slope</strong> (<em>float</em>) – Slope</li>
+<li><strong>range</strong> (<em>float</em>) – Range</li>
+<li><strong>nugget</strong> (<em>float</em>) – Nugget</li>
+<li><strong>sill</strong> (<em>float</em>) – Sill</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
+<li><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_datamine">
+<em class="property">classmethod </em><code class="descname">import_from_datamine</code><span class="sig-paren">(</span><em>file</em>, <em>field</em>, <em>ipj</em>, <em>grid3d</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_datamine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Geosoft Voxel file from a Datamine block model file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file</strong> (<em>str</em>) – Datamine file name</li>
+<li><strong>field</strong> (<em>str</em>) – Field to use for data</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection to set</li>
+<li><strong>grid3d</strong> (<em>str</em>) – Output grid3d file name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Create a Geosoft Voxel file from a Datamine block model file.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_gdb">
+<em class="property">classmethod </em><code class="descname">import_from_gdb</code><span class="sig-paren">(</span><em>grid3d_file</em>, <em>db</em>, <em>symb</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_gdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports from a Geosoft Database</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid3d_file</strong> (<em>str</em>) – Name of output Voxel file</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> To import from</li>
+<li><strong>symb</strong> (<em>int</em>) – Symbol to import data from</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_gocad">
+<em class="property">classmethod </em><code class="descname">import_from_gocad</code><span class="sig-paren">(</span><em>name</em>, <em>header</em>, <em>property</em>, <em>ipj</em>, <em>orientation</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_gocad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports a MultiVoxset from a GOCAD File</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output <a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a></li>
+<li><strong>header</strong> (<em>str</em>) – Name of GOCAD Voxel file</li>
+<li><strong>property</strong> (<em>str</em>) – Propert name to import</li>
+<li><strong>orientation</strong> (<em>int</em>) – <a class="reference internal" href="GXMULTIGRID3D.html#gocad-orientation"><span class="std std-ref">GOCAD_ORIENTATION constants</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_segy">
+<em class="property">classmethod </em><code class="descname">import_from_segy</code><span class="sig-paren">(</span><em>output_file</em>, <em>input_file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_segy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports a MultiVoxset from a SEG Y File</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>output_file</strong> (<em>str</em>) – Name of output <a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a></li>
+<li><strong>input_file</strong> (<em>str</em>) – Name of input SEG Y file</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_ubc">
+<em class="property">classmethod </em><code class="descname">import_from_ubc</code><span class="sig-paren">(</span><em>name</em>, <em>mesh</em>, <em>mod</em>, <em>dummy</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_ubc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import UBC file into a MultiVoxset</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output <a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a></li>
+<li><strong>mesh</strong> (<em>str</em>) – Name of UBC Mesh File</li>
+<li><strong>mod</strong> (<em>str</em>) – Name of UBC Mod File</li>
+<li><strong>dummy</strong> (<em>float</em>) – Dummy Value</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_vector_gdb">
+<em class="property">classmethod </em><code class="descname">import_from_vector_gdb</code><span class="sig-paren">(</span><em>grid3d_file</em>, <em>db</em>, <em>vector_type</em>, <em>symb_x</em>, <em>symb_y</em>, <em>symb_z</em>, <em>inc</em>, <em>dec</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_vector_gdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports from a Vector Geosoft Database</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid3d_file</strong> (<em>str</em>) – Voxel Name</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> To import from</li>
+<li><strong>vector_type</strong> (<em>int</em>) – VECTOR_IMPORTImport XYZ, UVW or Amplitude/Inclination/Declination channels</li>
+<li><strong>symb_x</strong> (<em>int</em>) – Symbol to import X, U or Amplitude data from</li>
+<li><strong>symb_y</strong> (<em>int</em>) – Symbol to import Y, V or Inclination data from</li>
+<li><strong>symb_z</strong> (<em>int</em>) – Symbol to import Z, W or Declination data from</li>
+<li><strong>inc</strong> (<em>float</em>) – Inclination value for <a class="reference internal" href="GXVOX.html#geosoft.gxapi.VOX_VECTORVOX_UVW" title="geosoft.gxapi.VOX_VECTORVOX_UVW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VOX_VECTORVOX_UVW</span></code></a> (-90° to 90°)</li>
+<li><strong>dec</strong> (<em>float</em>) – Declination value for <a class="reference internal" href="GXVOX.html#geosoft.gxapi.VOX_VECTORVOX_UVW" title="geosoft.gxapi.VOX_VECTORVOX_UVW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VOX_VECTORVOX_UVW</span></code></a> (-180° to 180°)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_voxel">
+<em class="property">classmethod </em><code class="descname">import_from_voxel</code><span class="sig-paren">(</span><em>project_file</em>, <em>grid3d_file</em>, <em>multi_voxset_attribute</em>, <em>p_uuid_string</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_voxel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import a Voxel directly into a Multi-Voxset</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>project_file</strong> (<em>str</em>) – Project file</li>
+<li><strong>grid3d_file</strong> (<em>str</em>) – Input Voxel file</li>
+<li><strong>multi_voxset_attribute</strong> (<em>str</em>) – Multi-Voxset attribute</li>
+<li><strong>p_uuid_string</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – UUID string returned</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_xyz">
+<em class="property">classmethod </em><code class="descname">import_from_xyz</code><span class="sig-paren">(</span><em>name</em>, <em>ra</em>, <em>type</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import XYZ file into a Multi-Voxset</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of output Voxel file</li>
+<li><strong>ra</strong> (<a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><em>GXRA</em></a>) – <a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXRA</span></code></a> To import from</li>
+<li><strong>type</strong> (<em>int</em>) – Data Type <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.invert_z">
+<em class="property">classmethod </em><code class="descname">invert_z</code><span class="sig-paren">(</span><em>input_file</em>, <em>output_file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.invert_z" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invert the Z values in the Grid3d.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>input_file</strong> (<em>str</em>) – Name of the input grid3d</li>
+<li><strong>output_file</strong> (<em>str</em>) – Name of the output grid3d</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.krig_from_gdb">
+<em class="property">classmethod </em><code class="descname">krig_from_gdb</code><span class="sig-paren">(</span><em>name</em>, <em>cell_size</em>, <em>type</em>, <em>db</em>, <em>x_channel</em>, <em>y_channel</em>, <em>z_channel</em>, <em>data_channel</em>, <em>ipj</em>, <em>reg</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.krig_from_gdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>A more compact and extensible form of <a class="reference internal" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.log_grid_points_z_ex_from_gdb" title="geosoft.gxapi.GXMULTIGRID3DUTIL.log_grid_points_z_ex_from_gdb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_grid_points_z_ex_from_gdb</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Output grid3d filename</li>
+<li><strong>cell_size</strong> (<em>float</em>) – Cell size (DUMMY for default)</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
+<li><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Optional Parameters.</p>
+<p>If these values are not set in the <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a>, then default parameters will be used.</p>
+<p>ERROR_VOXEL:            Output error grid3d filename (“” for none)
+CELLSIZEZ:      Z Cell size string (space delimited, “” for default)
+RADIUS_MIN:             Minimum Search Radius (REAL) (Default = 4) (Blanking Distance)
+RADIUS_MAX:             Maximum Search Radius (REAL) (Default = 16)
+SEARCH_MIN:             Minimum Search Points (INT) (Default = 16)
+SEARCH_MAX:             Maximum Search Points (INT) (Default = 32)
+VARIOGRAM_ONLY: Set to 1 to calculate the variogram only (INT) (Default = 0)
+MODEL:                          Variogram Model number 1-power, 2-sperical, 3-gaussian, 4-exponential  (INT) (Default = 2)
+POWER:          Power (Default = DUMMY)
+SLOPE:          Slope (REAL) (if input is DUMMY, value calculated and set on return)
+RANGE:          Range (REAL) (if input is DUMMY, value calculated and set on return)
+SILL :          Sill (REAL) (if input is DUMMY, value calculated and set on return)
+STRIKE:                         Strike (REAL) (Default = 0)
+DIP:                                    Dip (REAL)      (Default = 90)
+PLUNGE:                         Plunge (REAL) (Default = 0)
+STRIKE WEIGHT:  Along-Strike Weight (REAL) (Default = 1)
+DIP_WEIGHT:      Down-Dip Weight (REAL) (Default = 1)
+LOG_OPT:                        One of <a class="reference internal" href="GXVOX.html#vox-grid-logopt"><span class="std std-ref">VOX_GRID_LOGOPT constants</span></a> (Default = 0)
+MIN_LOG:                        Log Minimum (REAL)      (Default = 1)
+MIN_X:                          Minimum X (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. multiple of cell size chosen)
+MAX_X:                          Maximum X (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)
+MIN_Y:                          Minimum Y (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. external multiple of cell size chosen)
+MAX_Y:                          Maximum Y (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)
+MIN_Z:                          Minimum Z (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. multiple of cell size chosen)
+MAX_Z:                          Maximum Z (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)A more compact and extensible form of <a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX.log_grid_points_z_ex" title="geosoft.gxapi.GXVOX.log_grid_points_z_ex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX.log_grid_points_z_ex</span></code></a>. Only the most
+basic parameters are entered directly. Optional parameters are passed via a <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a> object.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.list_properties_gocad">
+<em class="property">classmethod </em><code class="descname">list_properties_gocad</code><span class="sig-paren">(</span><em>header</em>, <em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.list_properties_gocad" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all the properties available in this GOCAD file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>header</strong> (<em>str</em>) – Name of GOCAD Voxel file</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List object to populate</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.log_grid_points_z_ex_from_gdb">
+<em class="property">classmethod </em><code class="descname">log_grid_points_z_ex_from_gdb</code><span class="sig-paren">(</span><em>name</em>, <em>error</em>, <em>cell_size</em>, <em>cell_size_z</em>, <em>var_only</em>, <em>min_radius</em>, <em>max_radius</em>, <em>min_points</em>, <em>max_points</em>, <em>model</em>, <em>power</em>, <em>slope</em>, <em>range</em>, <em>nugget</em>, <em>sill</em>, <em>strike</em>, <em>dip</em>, <em>plunge</em>, <em>along_strike_weight</em>, <em>down_dip_weight</em>, <em>log_opt</em>, <em>min_log</em>, <em>type</em>, <em>db</em>, <em>x_channel</em>, <em>y_channel</em>, <em>z_channel</em>, <em>data_channel</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.log_grid_points_z_ex_from_gdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log grid a grid3d from a database (using variable Z’s)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Output grid3d filename</li>
+<li><strong>error</strong> (<em>str</em>) – Output error grid3d filename</li>
+<li><strong>cell_size</strong> (<em>float</em>) – Cell size (DUMMY for default)</li>
+<li><strong>cell_size_z</strong> (<em>str</em>) – Cell size in Z (“” for default)</li>
+<li><strong>var_only</strong> (<em>int</em>) – Variogram Only</li>
+<li><strong>min_radius</strong> (<em>float</em>) – Minimum Search Radius (DUMMY for none)</li>
+<li><strong>max_radius</strong> (<em>float</em>) – Maximum Search Radius (DUMMY for none)</li>
+<li><strong>min_points</strong> (<em>int</em>) – Minimum Search Points</li>
+<li><strong>max_points</strong> (<em>int</em>) – Maximum Search Points</li>
+<li><strong>model</strong> (<em>int</em>) – Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</li>
+<li><strong>power</strong> (<em>float</em>) – Power</li>
+<li><strong>slope</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Slope</li>
+<li><strong>range</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Range</li>
+<li><strong>nugget</strong> (<em>float</em>) – Nugget</li>
+<li><strong>sill</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Sill</li>
+<li><strong>strike</strong> (<em>float</em>) – Strike</li>
+<li><strong>dip</strong> (<em>float</em>) – Dip</li>
+<li><strong>plunge</strong> (<em>float</em>) – Plunge</li>
+<li><strong>along_strike_weight</strong> (<em>float</em>) – Strike Weight</li>
+<li><strong>down_dip_weight</strong> (<em>float</em>) – Dip Plane Weight</li>
+<li><strong>log_opt</strong> (<em>int</em>) – <a class="reference internal" href="GXVOX.html#vox-grid-logopt"><span class="std std-ref">VOX_GRID_LOGOPT constants</span></a> Log Option</li>
+<li><strong>min_log</strong> (<em>float</em>) – Minimum log</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
+<li><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+<li><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#geosoft.gxapi.DB_LOCK_READONLY" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMULTIGRID3DUTIL.null">
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMULTIGRID3DUTIL" title="geosoft.gxapi.GXMULTIGRID3DUTIL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMULTIGRID3DUTIL</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXMULTIGRID3DUTIL" title="geosoft.gxapi.GXMULTIGRID3DUTIL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMULTIGRID3DUTIL</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMULTIGRID3DUTIL" title="geosoft.gxapi.GXMULTIGRID3DUTIL">GXMULTIGRID3DUTIL</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="rbfkernel-constants">
+<span id="rbfkernel"></span><h2>RBFKERNEL constants<a class="headerlink" href="#rbfkernel-constants" title="Permalink to this headline">¶</a></h2>
+<p>Math kernel to use in the RBF Computation</p>
+<dl class="data">
+<dt id="geosoft.gxapi.RBFKERNEL_DISTANCE">
+<code class="descname">RBFKERNEL_DISTANCE</code><a class="headerlink" href="#geosoft.gxapi.RBFKERNEL_DISTANCE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Distance</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">RBFKERNEL_DISTANCE</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.RBFKERNEL_MULTIQUADRATIC">
+<code class="descname">RBFKERNEL_MULTIQUADRATIC</code><a class="headerlink" href="#geosoft.gxapi.RBFKERNEL_MULTIQUADRATIC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multiquadratic</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">RBFKERNEL_MULTIQUADRATIC</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>
