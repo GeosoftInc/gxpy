@@ -1214,7 +1214,7 @@ class GXVV(gxapi_cy.WrapVV):
 
 
 
-    def re_sample(self, c_start, c_incr, n_start, n_incr, length):
+    def re_sample(self, c_start, c_incr, n_start, n_incr, length, unused):
         """
         Resamples a `GXVV <geosoft.gxapi.GXVV>` from one fid/incr to another fid/incr.
         
@@ -1223,17 +1223,19 @@ class GXVV(gxapi_cy.WrapVV):
         :param n_start:  New fid start
         :param n_incr:   New fid increment
         :param length:   New length
+        :param unused:   This parameter is not used
         :type  c_start:  float
         :type  c_incr:   float
         :type  n_start:  float
         :type  n_incr:   float
         :type  length:   int
+        :type  unused:   int
 
         .. versionadded:: 5.1.1
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._re_sample(c_start, c_incr, n_start, n_incr, length)
+        self._re_sample(c_start, c_incr, n_start, n_incr, length, unused)
         
 
 

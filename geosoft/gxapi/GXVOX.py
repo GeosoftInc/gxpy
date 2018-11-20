@@ -400,52 +400,6 @@ class GXVOX(gxapi_cy.WrapVOX):
 
 
     @classmethod
-    def generate_constant_value(cls, name, value, type, ox, oy, oz, cx, cy, cz, cell_count_x, cell_count_y, cell_count_z, ipj, meta):
-        """
-        Generate a `GXVOX <geosoft.gxapi.GXVOX>` with a constant value
-        
-        :param name:          Name of output `GXVOX <geosoft.gxapi.GXVOX>`
-        :param value:         Value to use
-        :param type:          :ref:`GS_TYPES`
-        :param ox:            Origin X
-        :param oy:            Origin Y
-        :param oz:            Origin Z
-        :param cx:            Cell Size X
-        :param cy:            Cell Size Y
-        :param cz:            Cell Size Z
-        :param cell_count_x:  Cell Count X
-        :param cell_count_y:  Cell Count Y
-        :param cell_count_z:  Cell Count Z
-        :param ipj:           Projection
-        :param meta:          Metadata
-        :type  name:          str
-        :type  value:         float
-        :type  type:          int
-        :type  ox:            float
-        :type  oy:            float
-        :type  oz:            float
-        :type  cx:            float
-        :type  cy:            float
-        :type  cz:            float
-        :type  cell_count_x:  int
-        :type  cell_count_y:  int
-        :type  cell_count_z:  int
-        :type  ipj:           GXIPJ
-        :type  meta:          GXMETA
-
-        :returns:             `GXVOX <geosoft.gxapi.GXVOX>` Object
-        :rtype:               GXVOX
-
-        .. versionadded:: 8.4
-
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
-        """
-        ret_val = gxapi_cy.WrapVOX._generate_constant_value(GXContext._get_tls_geo(), name.encode(), value, type, ox, oy, oz, cx, cy, cz, cell_count_x, cell_count_y, cell_count_z, ipj, meta)
-        return GXVOX(ret_val)
-
-
-
-    @classmethod
     def generate_pgvv(cls, name, pg, ox, oy, oz, cx, cy, cz, ipj, meta):
         """
         Generate a `GXVOX <geosoft.gxapi.GXVOX>` from a 3D Pager, cells sizes passed in VVs.
@@ -481,46 +435,6 @@ class GXVOX(gxapi_cy.WrapVOX):
         **Note:** The input cell size VVs' lengths must match the input `GXPG <geosoft.gxapi.GXPG>` dimensions.
         """
         ret_val = gxapi_cy.WrapVOX._generate_pgvv(GXContext._get_tls_geo(), name.encode(), pg, ox, oy, oz, cx, cy, cz, ipj, meta)
-        return GXVOX(ret_val)
-
-
-
-    @classmethod
-    def generate_constant_value_vv(cls, name, value, type, ox, oy, oz, cx, cy, cz, ipj, meta):
-        """
-        Generate a `GXVOX <geosoft.gxapi.GXVOX>` with a constant value, cells sizes passed in VVs.
-        
-        :param name:   Name of output `GXVOX <geosoft.gxapi.GXVOX>`
-        :param value:  The Value to use
-        :param type:   :ref:`GS_TYPES`
-        :param ox:     Origin X
-        :param oy:     Origin Y
-        :param oz:     Origin Z
-        :param cx:     Cell Sizes X
-        :param cy:     Cell Sizes Y
-        :param cz:     Cell Sizes Z
-        :param ipj:    Projection
-        :param meta:   Metadata
-        :type  name:   str
-        :type  value:  float
-        :type  type:   int
-        :type  ox:     float
-        :type  oy:     float
-        :type  oz:     float
-        :type  cx:     GXVV
-        :type  cy:     GXVV
-        :type  cz:     GXVV
-        :type  ipj:    GXIPJ
-        :type  meta:   GXMETA
-
-        :returns:      `GXVOX <geosoft.gxapi.GXVOX>` Object
-        :rtype:        GXVOX
-
-        .. versionadded:: 8.4
-
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
-        """
-        ret_val = gxapi_cy.WrapVOX._generate_constant_value_vv(GXContext._get_tls_geo(), name.encode(), value, type, ox, oy, oz, cx, cy, cz, ipj, meta)
         return GXVOX(ret_val)
 
 

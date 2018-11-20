@@ -247,9 +247,9 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :type  output_file:  str
         :type  input_file:   str
 
-        .. versionadded:: 9.4
+        .. versionadded:: 9.5
 
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapMULTIGRID3DUTIL._import_from_segy(GXContext._get_tls_geo(), output_file.encode(), input_file.encode())
         

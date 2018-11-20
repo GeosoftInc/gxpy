@@ -16,10 +16,6 @@ VOXELRENDER_MODE constants
 
 Render Modes
 
-.. autodata:: geosoft.gxapi.VOXELRENDER_SMOOTH
-    :annotation:
-    
-    .. autoattribute:: geosoft.gxapi.VOXELRENDER_SMOOTH
 .. autodata:: geosoft.gxapi.VOXELRENDER_FILL
     :annotation:
     
@@ -28,5 +24,13 @@ Render Modes
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.VOXELRENDER_EDGES
+.. autodata:: geosoft.gxapi.VOXELRENDER_FILL_EDGES
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.VOXELRENDER_FILL_EDGES
+.. autodata:: geosoft.gxapi.VOXELRENDER_SMOOTH
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.VOXELRENDER_SMOOTH
 
 	

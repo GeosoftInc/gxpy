@@ -4038,12 +4038,14 @@ VOX_VECTORVOX_AID = 2
 #
 # Render Modes
 
-#: Voxelrender smooth
-VOXELRENDER_SMOOTH = 0
-#: Voxelrender fill
-VOXELRENDER_FILL = 1
-#: Voxelrender edges
-VOXELRENDER_EDGES = 2	
+#: Render voxel cells
+VOXELRENDER_FILL = 0
+#: Render wireframe only
+VOXELRENDER_EDGES = 1
+#: Render both voxel cells and wireframe
+VOXELRENDER_FILL_EDGES = 2
+#: Trilinear interpolation
+VOXELRENDER_SMOOTH = 3	
 
 #
 # GXVOXE Constants

@@ -48,6 +48,27 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
 
     @classmethod
+    def import_grid_to_surface(cls, grid_file_name, geosurface_filename, surface_name):
+        """
+        Imports a Grid to a Surface
+        
+        :param grid_file_name:       Grid File Name
+        :param geosurface_filename:  Surface File Name
+        :param surface_name:         Surface Item Name within the file
+        :type  grid_file_name:       str
+        :type  geosurface_filename:  str
+        :type  surface_name:         str
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapMESHUTIL._import_grid_to_surface(GXContext._get_tls_geo(), grid_file_name.encode(), geosurface_filename.encode(), surface_name.encode())
+        
+
+
+
+    @classmethod
     def clip_surface_with_grid(cls, inputSurfaceFile, inputSurface, gridSurfaceFileName, gridSurfaceName, outputSurfaceFile, outputSurfaceNameAbove, outputSurfaceNameBelow, surface_clip_mode):
         """
         Clip a Surface with a Grid Surface (grid converted to surface)
@@ -79,13 +100,14 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
 
     @classmethod
-    def clip_surface_with_extents(cls, inputSurfaceFile, inputSurface, outputSurfaceFile, min_x, max_x, min_y, max_y, min_z, max_z):
+    def clip_surface_with_extents(cls, inputSurfaceFile, inputSurface, outputSurfaceFile, outputSurfaceName, min_x, max_x, min_y, max_y, min_z, max_z):
         """
         Clip a Surface with X,Y,Z extents
         
         :param inputSurfaceFile:   Input Geosurface file
         :param inputSurface:       Input Surface name within Geosurface file
         :param outputSurfaceFile:  Output Surface file
+        :param outputSurfaceName:  Output Surface name
         :param min_x:              Min value of X
         :param max_x:              Max value of X
         :param min_y:              Min value of Y
@@ -95,6 +117,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :type  inputSurfaceFile:   str
         :type  inputSurface:       str
         :type  outputSurfaceFile:  str
+        :type  outputSurfaceName:  str
         :type  min_x:              float
         :type  max_x:              float
         :type  min_y:              float
@@ -106,13 +129,13 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMESHUTIL._clip_surface_with_extents(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), outputSurfaceFile.encode(), min_x, max_x, min_y, max_y, min_z, max_z)
+        gxapi_cy.WrapMESHUTIL._clip_surface_with_extents(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), outputSurfaceFile.encode(), outputSurfaceName.encode(), min_x, max_x, min_y, max_y, min_z, max_z)
         
 
 
 
     @classmethod
-    def clip_surface_with_polygon2d(cls, inputSurfaceFile, inputSurface, polygonFile, outputSurfaceFile, maskInside):
+    def clip_surface_with_polygon2d(cls, inputSurfaceFile, inputSurface, polygonFile, outputSurfaceFile, outputSurfaceName, maskInside):
         """
         Clip a Surface a specified Polygon file
         
@@ -120,18 +143,20 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :param inputSurface:       Input Surface name within Geosurface file
         :param polygonFile:        Polygon File
         :param outputSurfaceFile:  Output Surface file
+        :param outputSurfaceName:  Output Surface name
         :param maskInside:         Set true if the values inside polygon are to be masked
         :type  inputSurfaceFile:   str
         :type  inputSurface:       str
         :type  polygonFile:        str
         :type  outputSurfaceFile:  str
+        :type  outputSurfaceName:  str
         :type  maskInside:         bool
 
         .. versionadded:: 9.5
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMESHUTIL._clip_surface_with_polygon2d(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), polygonFile.encode(), outputSurfaceFile.encode(), maskInside)
+        gxapi_cy.WrapMESHUTIL._clip_surface_with_polygon2d(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), polygonFile.encode(), outputSurfaceFile.encode(), outputSurfaceName.encode(), maskInside)
         
 
 
@@ -285,6 +310,28 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapMESHUTIL._does_surface_intersect(GXContext._get_tls_geo(), primarySurfaceFile.encode(), primarySurface.encode(), secondarySurfaceFile.encode(), secondarySurface.encode())
+        return ret_val
+
+
+
+    @classmethod
+    def does_surface_self_intersect(cls, surfaceFile, surfaceName):
+        """
+        Checks if a surface self-intersects
+        
+        :param surfaceFile:  Geosurface file
+        :param surfaceName:  Primary Surface Name within Geosurface File
+        :type  surfaceFile:  str
+        :type  surfaceName:  str
+
+        :returns:            Returns 1 if surface self intersects, 0 if surface has no self-intersections
+        :rtype:              int
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val = gxapi_cy.WrapMESHUTIL._does_surface_self_intersect(GXContext._get_tls_geo(), surfaceFile.encode(), surfaceName.encode())
         return ret_val
 
 

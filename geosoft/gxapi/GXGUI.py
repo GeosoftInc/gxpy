@@ -1832,6 +1832,33 @@ class GXGUI(gxapi_cy.WrapGUI):
 
 
     @classmethod
+    def import_drill_wizard_ex(cls, name, temp, table, type, reg):
+        """
+        Generate a template file for importing drill holes where type is known
+        
+        :param name:   Data file name
+        :param temp:   Template to make
+        :param table:  Name of table
+        :param type:   Type of import :ref:`DH_DATA`
+        :param reg:    Drill Hole Object `GXREG <geosoft.gxapi.GXREG>` handle
+        :type  name:   str
+        :type  temp:   str
+        :type  table:  str_ref
+        :type  type:   int
+        :type  reg:    GXREG
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+        """
+        table.value = gxapi_cy.WrapGUI._import_drill_wizard_ex(GXContext._get_tls_geo(), name.encode(), temp.encode(), table.value.encode(), type, reg)
+        
+
+
+
+    @classmethod
     def internet_trust(cls):
         """
         Change the Internet Trust Relationships
@@ -2242,6 +2269,53 @@ class GXGUI(gxapi_cy.WrapGUI):
 
 
     @classmethod
+    def va_view_multiple_tool_exists(cls):
+        """
+        See if there is a Multiple Array Channel viewer already open.
+        
+
+        :returns:    0 if not open, 1 if open
+        :rtype:      int
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** See if there is a Multiple Array Channel viewer already open.
+        """
+        ret_val = gxapi_cy.WrapGUI._va_view_multiple_tool_exists(GXContext._get_tls_geo())
+        return ret_val
+
+
+
+    @classmethod
+    def launch_va_view_multiple_tool(cls, database_name, line_name, channel_name1, channel_name2, channel_name3):
+        """
+        Launch the coincident array channel viewer.
+        
+        :param database_name:  Database name
+        :param line_name:      Line name (can be blank)
+        :param channel_name1:  Master Channel name (can be blank)
+        :param channel_name2:  Channel 2 name (can be blank)
+        :param channel_name3:  Channel 3 name (can be blank)
+        :type  database_name:  str
+        :type  line_name:      str
+        :type  channel_name1:  str
+        :type  channel_name2:  str
+        :type  channel_name3:  str
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+        """
+        gxapi_cy.WrapGUI._launch_va_view_multiple_tool(GXContext._get_tls_geo(), database_name.encode(), line_name.encode(), channel_name1.encode(), channel_name2.encode(), channel_name3.encode())
+        
+
+
+
+    @classmethod
     def meta_data_viewer(cls, meta, root_token, schema):
         """
         View a `GXMETA <geosoft.gxapi.GXMETA>` object
@@ -2558,38 +2632,6 @@ class GXGUI(gxapi_cy.WrapGUI):
         """
         gxapi_cy.WrapGUI._show_3d_viewer_dialog(GXContext._get_tls_geo(), title.encode(), o3dv.encode())
         
-
-
-
-    @classmethod
-    def multiple_array_channel_profile_viewer(cls, db, line, chan1, chan2, chan3):
-        """
-        View up to 3 array channel profiles. The first channel's array base properties are
-        					used for all three (scaling, array base properties for the X-axis).
-        
-        :param db:     `GXDB <geosoft.gxapi.GXDB>` obj
-        :param line:   Selected line
-        :param chan1:  Master array channel (can be empty on input)
-        :param chan2:  Second array channel (optional)
-        :param chan3:  Third array channel (optional)
-        :type  db:     GXDB
-        :type  line:   str_ref
-        :type  chan1:  str_ref
-        :type  chan2:  str_ref
-        :type  chan3:  str_ref
-
-        :returns:      0 - OK
-                       -1 - Cancel
-        :rtype:        int
-
-        .. versionadded:: 9.4
-
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
-
-        **Limitations:** May not be available while executing a command line program.
-        """
-        ret_val, line.value, chan1.value, chan2.value, chan3.value = gxapi_cy.WrapGUI._multiple_array_channel_profile_viewer(GXContext._get_tls_geo(), db, line.value.encode(), chan1.value.encode(), chan2.value.encode(), chan3.value.encode())
-        return ret_val
 
 
 
