@@ -1,6 +1,6 @@
 # Geosoft GX for Python Repository
 
-This is the repository for Geosoft GX Developer support for Python development. Refer to the documentation for more information.
+This is the repository for Seequent's Geosoft GX Developer support for Python development. Refer to the documentation for more information.
 
 [GX Developer documentation](https://geosoftgxdev.atlassian.net/wiki/display/GD/Python+in+GX+Developer)
 
@@ -13,7 +13,7 @@ If you are new to GX Developer, refer to the [GX Developer tutorial](https://geo
 
 [Python Packages](https://github.com/GeosoftInc/gxpy/wiki)
 
-Also see the [Geosoft Inc. organization on Github](https://github.com/GeosoftInc) for the other programming language specific repos.
+Also see the [Geosoft organization on Github](https://github.com/GeosoftInc) for the other programming language specific repos.
 
 Quick Start
 -----------
@@ -44,7 +44,7 @@ pip install geosoft --upgrade
 ### Version Compatibility ###
 The base GX API, which is exposed to Python by the ___geosoft.gxapi___ module, is consistent across versions. This means that earlier versions of ___geosoft.pxpy___ will work with Geosoft Desktop 9.5. While we recommend that older scripts be updated to conform to the 9.5 API, should you need support for multiple versions of ___geosoft.gxpy___ you can create separate Anaconda Python environments for each version. For example, you might create an environment ___'py35_gx91'___ for Python 3.5 and the GX API version 9.1, ___'py36_gx92'___ for Python 3.6 and GX Developer 9.2 and 'py36_gx95' for GX Developer 9.5. If you do not depend on earlier versions of the GX Developer Python API it is best to use only the most recently released API.
 
-Vesion 9.5 supports both Python 3.5, 3.6 and 3.7.  If you need Python 3.4 support, install geosoft version 9.2.1, which will work with both Geosoft Desktop versions 9.2 and 9.5, but will not contain any methods and classes introduced since that version.
+Vesion 9.5 supports Python 3.5, 3.6 and 3.7.  If you need Python 3.4 support, install geosoft version 9.2.1, which will work with both Geosoft Desktop versions 9.2 and 9.5, but will not contain any methods and classes introduced since version 9.2.
 
 License
 -------
