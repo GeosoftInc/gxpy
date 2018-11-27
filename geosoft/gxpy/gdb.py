@@ -1340,18 +1340,32 @@ class Geosoft_gdb(gxgeo.Geometry):
     # =====================================================================================
     # reading and writing
 
-    def _sorted_chan_list(self, channels=None):
+    def _to_string_chan_list(self, channels):
+        if isinstance(channels, str):
+            if ',' in channels:
+                channels = [c.strip() for c in channels.split(',')]
+            else:
+                channels = [channels]
+        elif isinstance(channels, int):
+            channels = [channels]
+        return [self.channel_name_symb(c)[0] if isinstance(channels, int) else c for c in channels]
 
-        ch = list(self.list_channels())
+
+    def sorted_chan_list(self, channels=None):
+        """
+        Get a list of sorted channels from Gdb, placing x, y and z channels (if defined) at front of list.
+
+        :param channels:    list of channels, strings or symbol number.  If None, read all channels
+
+        :returns:       list containing channel names
+
+        .. versionadded:: 9.6
+        """
+
         if channels is not None:
-            if isinstance(channels, str):
-                if ',' in channels:
-                    channels = [c.strip() for c in channels.split(',')]
-                else:
-                    channels = [channels]
-            elif isinstance(channels, int):
-                channels = [self.channel_name_symb(channels)[0]]
-            ch = list(channels)
+            ch = self._to_string_chan_list(channels)
+        else:
+            ch = list(self.list_channels())
 
         ch.sort(key=str.lower)
         ch_lower = [c.lower() for c in ch]
@@ -1528,7 +1542,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         Read a line of data into VVs stored in a dictionary by channel.
 
         :param line:        line to read, string or symbol number
-        :param channels:    list of channels, strings or symbol number.  If empty, read all channels
+        :param channels:    list of channels, strings or symbol number.  If None, read all channels
         :param dtype:       numpy data type for the array, default np.float64 for multi-channel data,
                             data type for single channel data. Use "<Unnn" for string type.
         :param common_fid:  `True` to resample all channels to a common fiducial
@@ -1558,8 +1572,10 @@ class Geosoft_gdb(gxgeo.Geometry):
 
         ln, ls = self.line_name_symb(line)
 
-        # default all channels, sorted, X,Y,Z first
-        channels = self._sorted_chan_list(channels)
+        if channels is None:
+            channels = self.sorted_chan_list()
+        else:
+            channels = self._to_string_chan_list(channels)
 
         # make up channel list, expanding VA channels
         ch_names, ch_symb, c_type = self._expand_chan_list(channels)
@@ -1620,7 +1636,10 @@ class Geosoft_gdb(gxgeo.Geometry):
         .. versionadded:: 9.4
         """
 
-        channels = self._sorted_chan_list(channels)
+        if channels is None:
+            channels = self.sorted_chan_list()
+        else:
+            channels = self._to_string_chan_list(channels)
 
         if len(channels) == 0:
             return 0, 1., 0, 0, []
@@ -2043,9 +2062,10 @@ class Geosoft_gdb(gxgeo.Geometry):
             self.write_channel(line, channels, data, fid=fid)
 
         else:
-
             if channels is None:
-                channels = self._sorted_chan_list()
+                channels = self.sorted_chan_list()
+            else:
+                channels = self._to_string_chan_list(channels)
 
             if not isinstance(data, np.ndarray):
                 data = np.array(data)
