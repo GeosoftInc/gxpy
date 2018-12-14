@@ -567,7 +567,10 @@ def gx_dtype(dtype):
         return _np2gx_type[str(dtype)]
     except KeyError:
         if dtype.type is np.str_:
-            return -int(dtype.str[2:])
+            # Since we are using UTF-8 internally characters can take anywhere between 1 and 4 bytes.
+            # The gxapi wrappers already accounts for a 2x conversion from unicode so multiply
+            # the dtype number here accordingly.
+            return -2*int(dtype.str[2:])
 
 
 def dtype_gx(gtype):
