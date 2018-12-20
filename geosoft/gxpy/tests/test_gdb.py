@@ -1100,8 +1100,8 @@ class Test(GXPYTest):
 
                 gdb.delete_line_data('D578625')
                 data, ch, fid = gdb.read_line('D578625')
-                self.npAssertEqual([[np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan]], data)
                 self.assertEqual((0.0, 1.0), fid)
+                self.assertEqual((0, 6), data.shape)
         finally:
             tmpgdb.delete = True
 

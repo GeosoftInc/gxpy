@@ -1706,6 +1706,10 @@ class Geosoft_gdb(gxgeo.Geometry):
         """
         return self.read_line(*args, **kwargs)
 
+    @classmethod
+    def _num_rows_from_fid(cls, src_fid_start, src_fid_last, fid):
+        return 0 if src_fid_last == src_fid_start else int((src_fid_last - fid[0])/fid[1] + 1.5)
+
     def read_line(self, line, channels=None, dtype=None, fid=None, dummy=None):
         """
         Read a line of data into a numpy array.
@@ -1755,7 +1759,7 @@ class Geosoft_gdb(gxgeo.Geometry):
 
         if fid is None:
             fid = (fid_start, fid_incr)
-        nrows = int((fid_last - fid[0])/fid[1] + 1.5)
+        nrows = self._num_rows_from_fid(fid_start, fid_last, fid)
         if nrows == 0 or ncols == 0:
             if len(channels) == 0:
                 data = np.array([], dtype=dtype)
@@ -1872,7 +1876,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         if fid is None:
             fid = (fid_start, fid_incr)
 
-        nrows = int((fid_last - fid[0])/fid[1] + 1.5)
+        nrows = self._num_rows_from_fid(fid_start, fid_last, fid)
         if nrows == 0 or ncols == 0:
             for ch in channels:
                 cn, cs = self.channel_name_symb(ch)
