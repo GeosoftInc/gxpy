@@ -1295,15 +1295,41 @@ class Geosoft_gdb(gxgeo.Geometry):
             lines = [lines]
 
         for s in lines:
-
-            try:
-                ln, ls = self.line_name_symb(s)
-            except GdbException:
+            if type(s) is str and not self.exist_symb_(s, gxapi.DB_SYMB_LINE):
                 continue
-
+            ls = self.line_name_symb(s)[1] if type(s) is str else s
             self.unlock_(ls)
             self.lock_write_(ls)
             self._db.delete_symb(ls)
+
+    def delete_line_data(self, lines):
+        """
+        Delete all data in line(s) by name or symbol but keep the line.
+
+        :param lines: line name/symbol, or a list of names/symbols
+
+        .. versionadded:: 9.6
+        """
+
+        if isinstance(lines, str) or isinstance(lines, int):
+            lines = [lines]
+
+        for s in lines:
+            ls = self.line_name_symb(s)[1] if type(s) is str else s
+            self._delete_line_data(ls)
+
+    def _delete_line_data(self, ls):
+        channels = self.sorted_chan_list()
+        for ch in channels:
+            cn, cs = self.channel_name_symb(ch)
+            dtype = self.channel_dtype(cs)
+            w = self.channel_width(cs)
+            if w == 1:
+                vv = gxvv.GXvv(dtype=dtype)
+                self.write_channel_vv(ls, cs, vv)
+            else:
+                va = gxva.GXva(width=w, dtype=dtype)
+                self.write_channel_va(ls, cs, va)
 
     def select_lines(self, selection='', select=True):
         """
@@ -2840,6 +2866,14 @@ class Line:
         """
         self.gdb.delete_line(self.symbol)
         self._symb = gxapi.NULLSYMB
+
+    def delete_data(self):
+        """
+        Delete all data in a line but keep the line
+
+        .. versionadded:: 9.6
+        """
+        self.gdb.delete_line_data(self.symbol)
 
     # =================================
     # methods that work with line data

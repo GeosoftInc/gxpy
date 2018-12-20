@@ -1,5 +1,7 @@
 import unittest
 import os
+import shutil
+import tempfile
 import numpy as np
 from PIL import Image
 
@@ -1020,9 +1022,12 @@ class Test(GXPYTest):
     def test_line(self):
         self.start()
 
-        with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
+        tmpgdb = tempfile.NamedTemporaryFile(mode='w', suffix='.gdb', delete=False)
+        tmpgdb.close()
+        shutil.copyfile(self.gdb_name, tmpgdb.name)
 
-            try:
+        try:
+            with gxdb.Geosoft_gdb.open(tmpgdb.name) as gdb:
                 gdb.delete_line("T9999")
                 ln = gxdb.Line.new(gdb, "T9999")
                 det = gdb.line_details(ln.name)
@@ -1093,8 +1098,13 @@ class Test(GXPYTest):
                 self.assertEqual(ln.group, 'billy')
                 gdb.delete_line(ln.name)
 
-            finally:
-                gdb.discard()
+                gdb.delete_line_data('D578625')
+                data, ch, fid = gdb.read_line('D578625')
+                self.npAssertEqual([[np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan]], data)
+                self.assertEqual((0.0, 1.0), fid)
+        finally:
+            tmpgdb.delete = True
+
 
     def test_locks(self):
         self.start()
