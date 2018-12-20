@@ -382,6 +382,9 @@ class GXPYTest(unittest.TestCase):
         wkt_actual = wkt_actual[:wkt_actual.rindex(']')+1]
         self.assertEqual(expected_wkt, wkt_actual)
 
-    @classmethod
-    def npAssertAlmostEqual(cls, expected, actual, decimal=7, err_msg='', verbose=True):
-        np.testing.assert_almost_equal(expected, actual, decimal, err_msg, verbose)
+    def npAssertAlmostEqual(self, expected, actual, decimal=7, err_msg='', verbose=True):
+        np.testing.assert_almost_equal(actual, expected, decimal, err_msg, verbose)
+
+    def npAssertEqual(self, expected, actual, err_msg='', verbose=True):
+        np.testing.assert_equal(actual, expected, err_msg, verbose)
+
