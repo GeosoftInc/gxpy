@@ -3,6 +3,11 @@
 import json
 from os.path import dirname, join
 
+import logging
+
+mpl_logger = logging.getLogger('matplotlib')
+mpl_logger.setLevel(logging.WARNING)
+
 with open(join(dirname(__file__), 'pkg_info.json')) as fp:
     _info = json.load(fp)
 
