@@ -7,9 +7,9 @@ import subprocess
 from tkinter import Tk, messagebox
 import win32con
 import win32gui
+import numpy as np
 
-import numpy
-numpy.seterr(all='raise')
+np.seterr(all='raise')
 
 os.environ['GEOSOFT_FORCE_MESA_3D'] = '1'
 os.environ['GEOSOFT_TEST_MODE'] = '1'
@@ -381,3 +381,7 @@ class GXPYTest(unittest.TestCase):
         expected_wkt = expected_wkt[:expected_wkt.rindex(']') + 1]
         wkt_actual = wkt_actual[:wkt_actual.rindex(']')+1]
         self.assertEqual(expected_wkt, wkt_actual)
+
+    @classmethod
+    def npAssertAlmostEqual(cls, expected, actual, decimal=7, err_msg='', verbose=True):
+        np.testing.assert_almost_equal(expected, actual, decimal, err_msg, verbose)
