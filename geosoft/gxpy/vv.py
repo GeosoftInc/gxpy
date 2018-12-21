@@ -114,6 +114,7 @@ class GXvv(Sequence):
                             dimensions will be used.
     :param fid:             (start, increment) fiducial
     :param unit_of_measure: unit of measure for the contained data.
+    :param len:             length of VV
 
     :Properties:
     
@@ -131,6 +132,8 @@ class GXvv(Sequence):
     .. versionchanged:: 9.3 added unit_of_measure
 
     .. versionchanged:: 9.3.1 added string support in __getitem__, and creates from a source `GVvv` instance.
+
+    .. versionchanged:: 9.6 Added length parameter.
     """
 
     def __enter__(self):
@@ -149,9 +152,7 @@ class GXvv(Sequence):
                and self.dim == other.dim \
                and self.unit_of_measure == other.unit_of_measure
 
-
-    def __init__(self, array=None, dtype=None, fid=None, unit_of_measure=None, dim=None):
-
+    def __init__(self, array=None, dtype=None, fid=None, unit_of_measure=None, dim=None, len=0):
         if array is not None:
             if isinstance(array, GXvv):
                 if fid is None:
@@ -198,7 +199,7 @@ class GXvv(Sequence):
 
         if not self._is_float and self._dim != 1:
             raise VVException(_t('2 or 3 dimensioned data must be float32 or float64'))
-        self._gxvv = gxapi.GXVV.create_ext(gxu.gx_dtype_dimension(self._dtype, self._dim), 0)
+        self._gxvv = gxapi.GXVV.create_ext(gxu.gx_dtype_dimension(self._dtype, self._dim), len)
         self.fid = fid
         self._next = 0
         self._unit_of_measure = unit_of_measure

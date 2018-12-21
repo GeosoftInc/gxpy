@@ -71,6 +71,11 @@ class Test(GXPYTest):
             self.assertEqual(vv.dtype, np.int64)
             self.assertEqual(vv.gxtype, gxu.gx_dtype(np.int64))
 
+    def test_init_len(self):
+        self.start()
+        with gxvv.GXvv(dtype=np.float, len=10) as vv:
+            self.assertEqual(vv.length, 10)
+
     def test_np(self):
         self.start()
 
