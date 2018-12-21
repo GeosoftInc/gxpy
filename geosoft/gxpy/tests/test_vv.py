@@ -155,9 +155,9 @@ class Test(GXPYTest):
             self.assertFalse(vv.is_float)
             self.assertEqual(vv.fid,fidvv)
             self.assertEqual(vv.length,len(npdata))
-            self.assertEqual(vv.gxtype,-10)
+            self.assertEqual(vv.gxtype,-20)
             self.assertTrue(vv.dtype.type is np.str_)
-            self.assertEqual(str(vv.dtype),'<U10')
+            self.assertEqual(str(vv.dtype),'<U5')
 
             npd,fid = vv.get_data(vv.dtype)
             self.assertEqual(npd[0],"name")
@@ -269,7 +269,7 @@ class Test(GXPYTest):
         # That means we could get more characters out than specified. In the case of A
         l = [1, 2, "abcdefghijklmnopqrstuvxyz"]
         with gxvv.GXvv(l, dtype='U4') as vv:
-            self.assertEqual(list(vv.np), ['1', '2', 'abcdefgh'])
+            self.assertEqual(list(vv.np), ['1', '2', 'abcd'])
 
         # The following 4-byte UTF-8 characters can be correctly extracted (to limits of what is specified).
         # Characters from http://www.i18nguy.com/unicode/supplementary-test.html

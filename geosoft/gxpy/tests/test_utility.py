@@ -23,14 +23,13 @@ class Test(GXPYTest):
 
         self.assertEqual(gxu.gx_dtype('float'),gxapi.GS_DOUBLE)
         self.assertEqual(gxu.gx_dtype('int'),gxapi.GS_LONG)
-        self.assertEqual(gxu.gx_dtype("<U18"),-18)
+        self.assertEqual(gxu.gx_dtype("<U18"),-72) # x4 for full range of UTF-8 characters
         self.assertEqual(gxu.gx_dtype('uint64'),gxapi.GS_ULONG64)
 
         self.assertEqual(gxu.dtype_gx(gxapi.GS_DOUBLE), np.float)
         self.assertEqual(gxu.dtype_gx(gxapi.GS_FLOAT), np.float32)
         self.assertEqual(gxu.dtype_gx(gxapi.GS_LONG), np.int32)
-        self.assertEqual(gxu.dtype_gx(-2000).str, "<U2000")
-        self.assertEqual(gxu.dtype_gx(gxapi.GS_TYPE_DEFAULT), None)
+        self.assertEqual(gxu.dtype_gx(-2000).str, "<U500")
         self.assertEqual(gxu.dtype_gx(gxapi.GS_ULONG64), np.uint64)
 
         self.assertEqual(gxu.gx_dummy(np.float),gxapi.rDUMMY)
@@ -61,7 +60,7 @@ class Test(GXPYTest):
         self.assertTrue(gxu.is_string(gxu.gx_dtype('U18')))
         self.assertFalse(gxu.is_int(gxu.gx_dtype('U18')))
         self.assertFalse(gxu.is_float(gxu.gx_dtype('U18')))
-        self.assertEqual(gxu.is_string(gxu.gx_dtype('U18')), 18)
+        self.assertEqual(gxu.is_string(gxu.gx_dtype('U18')), 72)
 
         self.assertEqual(gxu.dtype_gx_dimension(gxapi.GS_FLOAT), (np.float32, 1))
         self.assertEqual(gxu.dtype_gx_dimension(gxapi.GS_FLOAT2D), (np.float32, 2))

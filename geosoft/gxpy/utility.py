@@ -559,18 +559,11 @@ def gx_dtype(dtype):
             str(np.dtype(np.uint16)): gxapi.GS_USHORT,
             str(np.dtype(np.uint32)): gxapi.GS_ULONG,
             str(np.dtype(np.uint64)): gxapi.GS_ULONG64}
-
-    if dtype is None:
-        return gxapi.GS_TYPE_DEFAULT
     dtype = np.dtype(dtype)
-    try:
-        return _np2gx_type[str(dtype)]
-    except KeyError:
-        if dtype.type is np.str_:
-            # Since we are using UTF-8 internally characters can take anywhere between 1 and 4 bytes.
-            # The gxapi wrappers already accounts for a 2x conversion from unicode so multiply
-            # the dtype number here accordingly.
-            return -2*int(dtype.str[2:])
+    if dtype.type is np.str_:
+        # x4 to allow for full UTF-8 characters
+        return -int(dtype.str[2:])*4
+    return _np2gx_type[str(dtype)]
 
 
 def dtype_gx(gtype):
@@ -579,11 +572,9 @@ def dtype_gx(gtype):
 
     .. versionadded:: 9.1
     """
-
     global _gx2np_type
     if not bool(_gx2np_type):
         _gx2np_type = {
-            gxapi.GS_TYPE_DEFAULT: None,
             gxapi.GS_DOUBLE: np.dtype(np.float64),
             gxapi.GS_FLOAT: np.dtype(np.float32),
             gxapi.GS_LONG64: np.dtype(np.int64),
@@ -598,11 +589,12 @@ def dtype_gx(gtype):
             gxapi.GS_DOUBLE2D: np.dtype(np.float64),
             gxapi.GS_FLOAT3D: np.dtype(np.float32),
             gxapi.GS_DOUBLE3D: np.dtype(np.float64)}
-    try:
-        return _gx2np_type[gtype]
-    except KeyError:
-        if gtype < 0:
-            return np.dtype('U{}'.format(-gtype))
+    if gtype < 0:
+        # Inverse of x4 multiplication in gx_dtype that allows for full UTF-8 characters
+        nchars = max(1, int(-gtype/4))
+        return np.dtype('U{}'.format(nchars))
+    return _gx2np_type[gtype]
+
 
 
 def dtype_gx_dimension(gtype):
@@ -660,7 +652,11 @@ def is_int(gxtype):
 
 
 def is_string(gxtype):
-    """ Return length of a gxtype string, 0 (False) if not a string."""
+    """
+    Return length of a gxtype string, 0 (False) if not a string.
+    Note that this is the number of available bytes in UTF-8 encoding and not
+    equivalent to number of Unicode characters
+    """
     if gxtype < 0:
         return -gxtype
     else:
