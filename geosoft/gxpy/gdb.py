@@ -1708,7 +1708,7 @@ class Geosoft_gdb(gxgeo.Geometry):
 
     @classmethod
     def _num_rows_from_fid(cls, src_fid_start, src_fid_last, fid):
-        return 0 if src_fid_last == src_fid_start else int((src_fid_last - fid[0])/fid[1] + 1.5)
+        return int((src_fid_last - fid[0])/fid[1] + 1.5)
 
     def read_line(self, line, channels=None, dtype=None, fid=None, dummy=None):
         """
@@ -1774,6 +1774,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         else:
             dummy_value = gxu.gx_dummy(npd.dtype)
 
+        all_empty = True
         ch_names = []
         icol = 0
         for ch in channels:
@@ -1781,12 +1782,16 @@ class Geosoft_gdb(gxgeo.Geometry):
             w = self.channel_width(cs)
             if w == 1:
                 vv = self.read_channel_vv(ls, cs, dtype=npd.dtype)
+                if vv.length > 0:
+                    all_empty = False
                 vv.refid(fid, nrows)
                 npd[:, icol] = vv.np
                 icol += 1
                 ch_names.append(cn)
             else:
                 va = self.read_channel_va(ls, cs, dtype=npd.dtype)
+                if va.length > 0:
+                    all_empty = False
                 va.refid(fid, nrows)
                 npd[:, icol:icol+w] = va.np
                 icol += w
@@ -1795,9 +1800,10 @@ class Geosoft_gdb(gxgeo.Geometry):
 
         nch = len(ch_names)
 
-        # dummy handling
-        if dummy:
-
+        if all_empty:
+            npd = np.empty((0, ncols), dtype=dtype)
+        elif dummy:
+            # dummy handling
             if dummy == READ_REMOVE_DUMMYCOLUMNS:
                 n_ok = 0
 
@@ -1892,23 +1898,33 @@ class Geosoft_gdb(gxgeo.Geometry):
             return df, ch_names, fid
 
         icol = 0
+        all_empty = True
         for ch in channels:
             cn, cs = self.channel_name_symb(ch)
             w = self.channel_width(cs)
             if w == 1:
                 vv = self.read_channel_vv(ls, cs)
+                if vv.length > 0:
+                    all_empty = False
                 vv.refid(fid, nrows)
                 df[cn] = vv.np
                 icol += 1
                 ch_names.append(cn)
             else:
                 va = self.read_channel_va(ls, cs)
+                if va.length > 0:
+                    all_empty = False
                 va.refid(fid, nrows)
                 icol += w
                 for i in range(w):
                     va_cn = '{}[{}]'.format(cn, str(i))
                     df[va_cn] = va.np[:, i]
                     ch_names.append(va_cn)
+
+        if all_empty:
+            # Delete one and only row
+            df = df.drop([0])
+
         return df, ch_names, fid
 
     def write_channel_vv(self, line, channel, vv):

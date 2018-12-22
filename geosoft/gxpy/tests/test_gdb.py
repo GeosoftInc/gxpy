@@ -1098,10 +1098,25 @@ class Test(GXPYTest):
                 self.assertEqual(ln.group, 'billy')
                 gdb.delete_line(ln.name)
 
+                # Correct empty line handling
                 gdb.delete_line_data('D578625')
-                data, ch, fid = gdb.read_line('D578625')
+                data, _, fid = gdb.read_line('D578625')
                 self.assertEqual((0.0, 1.0), fid)
-                self.assertEqual((0, 6), data.shape)
+                self.assertEqual((0, 8), data.shape)
+                df, _, fid = gdb.read_line_dataframe('D578625')
+                self.assertEqual((0, 8), df.shape)
+                self.assertEqual((0.0, 1.0), fid)
+
+                # Correct single row line handling
+                gdb.write_line('D578625', np.zeros((1, 8), dtype=np.float64))
+                data, _, fid = gdb.read_line('D578625')
+                self.assertEqual((0.0, 1.0), fid)
+                self.assertEqual((1, 8), data.shape)
+                self.npAssertEqual([[0, 0, 0, 0, 0, 0, 0, 0]], data)
+                df, _, fid = gdb.read_line_dataframe('D578625')
+                self.assertEqual((1, 8), df.shape)
+                self.assertEqual((0.0, 1.0), fid)
+                self.npAssertEqual([[0, 0, 0, 0, 0, 0, 0, 0]], df.values)
         finally:
             tmpgdb.delete = True
 
