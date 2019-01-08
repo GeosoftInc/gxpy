@@ -29,7 +29,7 @@ class Test(GXPYTest):
         self.assertEqual(gxu.dtype_gx(gxapi.GS_DOUBLE), np.float)
         self.assertEqual(gxu.dtype_gx(gxapi.GS_FLOAT), np.float32)
         self.assertEqual(gxu.dtype_gx(gxapi.GS_LONG), np.int32)
-        self.assertEqual(gxu.dtype_gx(-2000).str, "<U500")
+        self.assertEqual(gxu.dtype_gx(-2000).str, "<U2000")
         self.assertEqual(gxu.dtype_gx(gxapi.GS_ULONG64), np.uint64)
 
         self.assertEqual(gxu.gx_dummy(np.float),gxapi.rDUMMY)

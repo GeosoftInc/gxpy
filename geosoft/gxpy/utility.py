@@ -590,9 +590,7 @@ def dtype_gx(gtype):
             gxapi.GS_FLOAT3D: np.dtype(np.float32),
             gxapi.GS_DOUBLE3D: np.dtype(np.float64)}
     if gtype < 0:
-        # Inverse of x4 multiplication in gx_dtype that allows for full UTF-8 characters
-        nchars = max(1, int(-gtype/4))
-        return np.dtype('U{}'.format(nchars))
+        return np.dtype('U{}'.format(-gtype))
     return _gx2np_type[gtype]
 
 

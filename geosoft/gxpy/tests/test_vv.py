@@ -270,8 +270,8 @@ class Test(GXPYTest):
             self.assertEqual(list(vv.np), ['1', '2', '3'])
 
         # Since we are using UTF-8 internally characters can take anywhere between 1 and 4 bytes.
-        # The gx_dtype method and the gxapi wrappers accounts for that by multiplying the dtype number accordingly.
-        # That means we could get more characters out than specified. In the case of A
+        # Specifying a numpy dtype to instantiate VV will ensure the internal space is enough to allocate up to
+        # that 4 times the Unicode characters, however any Numpy arrays will limit the characters to the passed dtype.
         l = [1, 2, "abcdefghijklmnopqrstuvxyz"]
         with gxvv.GXvv(l, dtype='U4') as vv:
             self.assertEqual(list(vv.np), ['1', '2', 'abcd'])

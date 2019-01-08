@@ -188,7 +188,17 @@ class GXvv(Sequence):
             dtype = np.float64
 
         self._gxtype = gxu.gx_dtype(dtype)
-        self._dtype = gxu.dtype_gx(self._gxtype)
+        
+        # Since we are using UTF-8 internally characters can take anywhere between 1 and 4 bytes.
+        # The gx_dtype method and the gxapi wrappers accounts for that by multiplying the dtype number accordingly.
+        # Specifying a numpy dtype to instantiate VV will ensure the internal space is enough to allocate up to
+        # that 4 times the Unicode characters, however any Numpy arrays should still used the passed dtype as specified
+        if dtype is not None and isinstance(dtype, np.dtype) and dtype.type is np.str_:
+            self._dtype = dtype
+        elif type(dtype) is str:
+            self._dtype = np.dtype(dtype)
+        else:
+            self._dtype = gxu.dtype_gx(self._gxtype)
         self._is_float = self._is_int = self._is_string = False
         if gxu.is_float(self._gxtype):
             self._is_float = True
