@@ -28,6 +28,7 @@ from . import utility as gxu
 
 __version__ = geosoft.__version__
 
+MAX_VV_BYTES = 4096  #: maximum bytes per element in VV
 
 def _t(s):
     return geosoft.gxpy.system.translate(s)
@@ -187,7 +188,7 @@ class GXvv(Sequence):
         if dtype is None:
             dtype = np.float64
 
-        self._gxtype = gxu.gx_dtype(dtype)
+        self._gxtype = max(-MAX_VV_BYTES, gxu.gx_dtype(dtype))
         
         # Since we are using UTF-8 internally characters can take anywhere between 1 and 4 bytes.
         # The gx_dtype method and the gxapi wrappers accounts for that by multiplying the dtype number accordingly.
@@ -209,7 +210,11 @@ class GXvv(Sequence):
 
         if not self._is_float and self._dim != 1:
             raise VVException(_t('2 or 3 dimensioned data must be float32 or float64'))
-        self._gxvv = gxapi.GXVV.create_ext(gxu.gx_dtype_dimension(self._dtype, self._dim), len)
+        if self._dim != 1:
+            self._gxvv = gxapi.GXVV.create_ext(gxu.gx_dtype_dimension(self._dtype, self._dim), len)
+        else:
+            self._gxvv = gxapi.GXVV.create_ext(self._gxtype, len)
+
         self.fid = fid
         self._next = 0
         self._unit_of_measure = unit_of_measure
