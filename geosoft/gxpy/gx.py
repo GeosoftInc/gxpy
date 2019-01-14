@@ -757,15 +757,15 @@ class GXpy:
         Runs a GX.
 
         :param gx: GX name to run
-        :returns:  success, cancelled, error_list, warning_list
+        :returns:  success, cancelled, exit_val, error_list, warning_list
 
         .. versionadded:: 9.6
         """
 
-        ret = gxapi.int_ref()
-        gxapi.GXSYS.run_gx_ex(gx, ret)
-        success = ret.value == 0
-        cancelled = ret.value == -1
+        exit_val = gxapi.int_ref()
+        ret = gxapi.GXSYS.run_gx_ex(gx, exit_val)
+        success = ret == 0
+        cancelled = ret == -1
         error_list = []
         warning_list = []
         for i in range(0, gxapi.GXSYS.num_errors_ap()):
@@ -777,7 +777,8 @@ class GXpy:
             else:
                 error_list.append(err.value)
         gxapi.GXSYS.clear_err_ap()
-        return success, cancelled, error_list, warning_list
+
+        return success, cancelled, exit_val.value, error_list, warning_list
 
     def temp_folder(self):
         """
