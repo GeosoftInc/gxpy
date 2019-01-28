@@ -1218,7 +1218,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         .. versionadded:: 9.1
         """
 
-        if not is_valid_line_name(line):
+        if group is None and dup is None and is_valid_line_name(line):
             raise GdbException(_t('Invalid line name \'{}\'. Use create_line_name() to create a valid name.'.
                                   format(line)))
 
@@ -2676,7 +2676,7 @@ class Line:
         .. versionadded:: 9.3
         """
 
-        if not is_valid_line_name(name):
+        if group is None and dup is None and not is_valid_line_name(name):
             raise GdbException(_t('Invalid line name: {}'.format(name)))
 
         if gdb.exist_symb_(name, gxapi.DB_SYMB_LINE):
