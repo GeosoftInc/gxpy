@@ -685,11 +685,15 @@ def gx_dummy(dtype):
             np.dtype(np.float64): gxapi.rDUMMY,
             np.dtype(np.float32): gxapi.rDUMMY,
             np.dtype(np.int): gxapi.iDUMMY,
-            np.dtype(np.int64): gxapi.iDUMMY,
             np.dtype(np.int8): gxapi.GS_S1DM,
             np.dtype(np.int16): gxapi.GS_S2DM,
             np.dtype(np.int32): gxapi.GS_S4DM,
             np.dtype(np.int64): gxapi.GS_S8DM,
+            np.dtype(np.uint): gxapi.GS_U4DM,
+            np.dtype(np.uint8): gxapi.GS_U1DM,
+            np.dtype(np.uint16): gxapi.GS_U2DM,
+            np.dtype(np.uint32): gxapi.GS_U4DM,
+            np.dtype(np.uint64): gxapi.GS_U8DM,
             np.dtype(np.str_): ''}
 
     try:

@@ -38,6 +38,12 @@ class Test(GXPYTest):
         self.assertEqual(gxu.gx_dummy(np.str_), '')
         self.assertEqual(gxu.gx_dummy('U48'), '')
 
+        self.assertEqual(gxu.gx_dummy(np.uint), gxapi.GS_U4DM)
+        self.assertEqual(gxu.gx_dummy(np.uint8), gxapi.GS_U1DM)
+        self.assertEqual(gxu.gx_dummy(np.uint16), gxapi.GS_U2DM)
+        self.assertEqual(gxu.gx_dummy(np.uint32), gxapi.GS_U4DM)
+        self.assertEqual(gxu.gx_dummy(np.uint64), gxapi.GS_U8DM)
+
         self.assertEqual(gxu.gx_dummy(1.5),gxapi.rDUMMY)
         self.assertEqual(gxu.gx_dummy(type(1.5)), gxapi.rDUMMY)
         self.assertEqual(gxu.gx_dummy(3),gxapi.iDUMMY)
