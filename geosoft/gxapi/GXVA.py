@@ -496,6 +496,34 @@ class GXVA(gxapi_cy.WrapVA):
 
 
 
+    def range(self, startRow, startCol, rows, columns, min, max):
+        """
+        Computes the minimum and maximum range of the data, in doubles,
+        in a vector while ignoring dummies, for a range of columns and rows.
+        
+        :param startRow:  Starting row (0 to nRows-1)
+        :param startCol:  Starting column (0 to nColumns-1
+        :param rows:      Number of rows (-1 for all from start)
+        :param columns:   Number of columns (-1 for all from start)
+        :param min:       Minimum value - returned
+        :param max:       Maximum value - returned
+        :type  startRow:  int
+        :type  startCol:  int
+        :type  rows:      int
+        :type  columns:   int
+        :type  min:       float_ref
+        :type  max:       float_ref
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        min.value, max.value = self._range(startRow, startCol, rows, columns, min.value, max.value)
+        
+
+
+
+
     def range_double(self, min, max):
         """
         Computes the minimum and maximum range of the data, in doubles,
@@ -511,6 +539,34 @@ class GXVA(gxapi_cy.WrapVA):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         min.value, max.value = self._range_double(min.value, max.value)
+        
+
+
+
+
+    def range_columns(self, startRow, startCol, rows, columns, minimums, maximums):
+        """
+        Computes the minimum and maximum range of the data for individual columns, in doubles,
+        for a range of columns and rows.
+        
+        :param startRow:  Starting row (0 to nRows-1)
+        :param startCol:  Starting column (0 to nColumns-1
+        :param rows:      Number of rows (-1 for all from start)
+        :param columns:   Number of columns (-1 for all from start)
+        :param minimums:  Minimum values returned:`VV` object - GS_REAL
+        :param maximums:  Maximum values returned:`VV` object - GS_REAL
+        :type  startRow:  int
+        :type  startCol:  int
+        :type  rows:      int
+        :type  columns:   int
+        :type  minimums:  GXVV
+        :type  maximums:  GXVV
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._range_columns(startRow, startCol, rows, columns, minimums, maximums)
         
 
 

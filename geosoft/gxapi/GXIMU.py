@@ -1667,6 +1667,49 @@ class GXIMU(gxapi_cy.WrapIMU):
 
 
     @classmethod
+    def pigeon_hole_color(cls, img, color_img, vv_x, vv_y, itr, put):
+        """
+        Pigeon-hole and count points by location and color locations in another grid based on ITR information.
+        
+        :param img:        Input grid
+        :param color_img:  Input color grid
+        :param vv_x:       X locations
+        :param vv_y:       Y locations
+        :param itr:        Input color transform
+        :param put:        Number of points located in the grid.
+        :type  img:        GXIMG
+        :type  color_img:  GXIMG
+        :type  vv_x:       GXVV
+        :type  vv_y:       GXVV
+        :type  itr:        GXITR
+        :type  put:        int_ref
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** X and Y location VVs are input. If a point (X, Y) is located within
+                       one-half cell width from a location in the grid, then the value of
+                       the grid at that location is incremented by 1.
+                       The cells are inclusive at the minima, and exclusive at the maxima:
+                       e.g. if dDx = dDy = 1, and dXo = dYo = 0, then the corner cell would
+                       accept values  -0.5 <= X < 0.5 and -0.5 <= Y < 0.5.
+                       The grid values should be set to 0 before calling this function.
+
+        					The color grid locations are coloured by the number of items at each location,
+        					with the colour being determined by the input ITR, which should map the integer
+        					count values 1, 2, 3, etc. onto individual colours.				
+
+                       The number of points "pigeon-holed" is returned to the user.
+                       This function is useful, for instance, in determining the density of
+                       sample locations in a survey area.
+        """
+        put.value = gxapi_cy.WrapIMU._pigeon_hole_color(GXContext._get_tls_geo(), img, color_img, vv_x, vv_y, itr, put.value)
+        
+
+
+
+    @classmethod
     def profile(cls, img, x1, y1, x2, y2, samsep, vv_z):
         """
         Extract a profile from a grid.

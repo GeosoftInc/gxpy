@@ -4066,13 +4066,13 @@ class GXDH(gxapi_cy.WrapDH):
         :param select_type:  Selection Type
         :param select_id:    Selection ID
         :type  select_type:  str
-        :type  select_id:    int
+        :type  select_id:    str
 
         .. versionadded:: 9.6
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapDH._navigate_to_mx_deposit(GXContext._get_tls_geo(), select_type.encode(), select_id)
+        gxapi_cy.WrapDH._navigate_to_mx_deposit(GXContext._get_tls_geo(), select_type.encode(), select_id.encode())
         
 
 

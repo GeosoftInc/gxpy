@@ -89,20 +89,20 @@ class GXIEXP(gxapi_cy.WrapIEXP):
 
 
 
-    def do_formula(self, formula, max_len):
+    def do_formula(self, formula, unused):
         """
         This method runs a formula on the grids.
         
         :param formula:  Formula
-        :param max_len:  Max. Buff size
+        :param unused:   Legacy parameter, no longer used.
         :type  formula:  str
-        :type  max_len:  int
+        :type  unused:   int
 
         .. versionadded:: 5.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._do_formula(formula.encode(), max_len)
+        self._do_formula(formula.encode(), unused)
         
 
 

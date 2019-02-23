@@ -209,6 +209,23 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
 
 
+    def set_xml_format(self, format):
+        """
+        Get the XML Format
+        
+        :param format:    :ref:`USERMETA_FORMAT`
+        :type  format:    int
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._set_xml_format(format)
+        
+
+
+
+
     def compare(self, usermeta2):
         """
         Compare 2 `GXUSERMETA <geosoft.gxapi.GXUSERMETA>`'s

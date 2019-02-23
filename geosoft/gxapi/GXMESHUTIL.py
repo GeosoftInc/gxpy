@@ -336,6 +336,33 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
 
 
+    @classmethod
+    def extract_isosurface_from_voxel(cls, voxelFile, surfaceFile, surfaceName, contourMin, contourMax, close):
+        """
+        Extracts isosurface from a voxel, and saves the voxel to a Geosurface file
+        
+        :param voxelFile:    Voxel file
+        :param surfaceFile:  Geosurface file
+        :param surfaceName:  Surface name within geosurface file
+        :param contourMin:   Minimum/higher value
+        :param contourMax:   Maximum/lower value
+        :param close:        Closed option - create a closed surface?
+        :type  voxelFile:    str
+        :type  surfaceFile:  str
+        :type  surfaceName:  str
+        :type  contourMin:   float
+        :type  contourMax:   float
+        :type  close:        bool
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapMESHUTIL._extract_isosurface_from_voxel(GXContext._get_tls_geo(), voxelFile.encode(), surfaceFile.encode(), surfaceName.encode(), contourMin, contourMax, close)
+        
+
+
+
 
 
 ### endblock ClassImplementation

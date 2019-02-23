@@ -118,6 +118,18 @@ Profile data
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.EDB_PROF_I_SAMERANGE
+.. autodata:: geosoft.gxapi.EDB_PROF_I_VERT_GRID_LINE
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EDB_PROF_I_VERT_GRID_LINE
+.. autodata:: geosoft.gxapi.EDB_PROF_R_VERT_GRID_LINE_INTERVAL
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EDB_PROF_R_VERT_GRID_LINE_INTERVAL
+.. autodata:: geosoft.gxapi.EDB_PROF_I_AUTO_RESCALE_X
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EDB_PROF_I_AUTO_RESCALE_X
 
 
 .. _EDB_PROFILE_SCALE:

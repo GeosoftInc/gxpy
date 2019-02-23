@@ -228,6 +228,37 @@ class GXMAP(gxapi_cy.WrapMAP):
 
 
 
+    def render_view_bitmap(self, view, group, min_x, min_y, max_x, max_y, file, max_res):
+        """
+        Render a map view to a bitmap.
+        
+        :param view:     `GXMVIEW <geosoft.gxapi.GXMVIEW>` object
+        :param group:    group (-1 for all)
+        :param min_x:    MinX
+        :param min_y:    MinY
+        :param max_x:    MaxX
+        :param max_y:    MaxY
+        :param file:     File to generate (BMP or PNG, otherwise extension forced to BMP)
+        :param max_res:  Maximum resolution in either direction, -1 for none (will change the pixel density of image if exceeded)
+        :type  view:     GXMVIEW
+        :type  group:    int
+        :type  min_x:    float
+        :type  min_y:    float
+        :type  max_x:    float
+        :type  max_y:    float
+        :type  file:     str
+        :type  max_res:  int
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._render_view_bitmap(view, group, min_x, min_y, max_x, max_y, file.encode(), max_res)
+        
+
+
+
+
 # 3D View
 
 

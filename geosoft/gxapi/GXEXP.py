@@ -52,16 +52,16 @@ class GXEXP(gxapi_cy.WrapEXP):
 
 
     @classmethod
-    def create(cls, db, formula, max_len):
+    def create(cls, db, formula, unused):
         """
         This method creates an `GXEXP <geosoft.gxapi.GXEXP>` object.
         
         :param db:       Database Object
         :param formula:  Expression using channel names
-        :param max_len:  Maximum size of expression after expanding all local variables (those with $ prefix).
+        :param unused:   Legacy parameter, no longer used.
         :type  db:       GXDB
         :type  formula:  str
-        :type  max_len:  int
+        :type  unused:   int
 
         :returns:        `GXEXP <geosoft.gxapi.GXEXP>` Object
         :rtype:          GXEXP
@@ -97,7 +97,7 @@ class GXEXP(gxapi_cy.WrapEXP):
 
         All other tokens are assumed to be channel names.
         """
-        ret_val = gxapi_cy.WrapEXP._create(GXContext._get_tls_geo(), db, formula.encode(), max_len)
+        ret_val = gxapi_cy.WrapEXP._create(GXContext._get_tls_geo(), db, formula.encode(), unused)
         return GXEXP(ret_val)
 
 

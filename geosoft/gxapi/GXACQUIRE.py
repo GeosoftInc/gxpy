@@ -176,6 +176,55 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
 
 
 
+    def selection_tool_force_grid_selection(self, selection_file, mode):
+        """
+        Run the acQuire Selection Tool, but force selection of destination grid.
+        
+        :param selection_file:  Selection File Name
+        :param mode:            :ref:`ACQUIRE_SEL`
+        :type  selection_file:  str
+        :type  mode:            int
+
+        :returns:               0 - Ok
+                                1 - if user cancels
+        :rtype:                 int
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** The selection file will be loaded (if present) and then
+        the user can make selections then the selections are saved
+        back in the selection file.
+        """
+        ret_val = self._selection_tool_force_grid_selection(selection_file.encode(), mode)
+        return ret_val
+
+
+
+
+    def get_selection_info(self, selection_file, mode, destination_grid):
+        """
+        Get some information from existing selection file.
+        
+        :param selection_file:    Selection File Name
+        :param mode:              :ref:`ACQUIRE_SEL`
+        :param destination_grid:  0 - Destination grid was not selected
+                                  1 - Destination grid was selected
+        :type  selection_file:    str
+        :type  mode:              int_ref
+        :type  destination_grid:  int_ref
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        mode.value, destination_grid.value = self._get_selection_info(selection_file.encode(), mode.value, destination_grid.value)
+        
+
+
+
+
 
 ### endblock ClassImplementation
 ### block ClassExtend

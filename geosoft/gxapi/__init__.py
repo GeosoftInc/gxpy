@@ -3011,10 +3011,22 @@ PJ_RECT_LL2XY = 1
 PLY_CLIP_NO_INTERSECT = 0
 #: The polygons do intersect
 PLY_CLIP_INTERSECT = 1
-#: Polygon A is completly inside polygon B
+#: Polygon A is completely inside polygon B
 PLY_CLIP_A_IN_B = 2
-#: Polygon B is completly inside polygon A
+#: Polygon B is completely inside polygon A
 PLY_CLIP_B_IN_A = 3
+
+#
+# PLY_POINT_CLIP constants
+#
+# Polygon point clipping mode
+
+#: The point is inside the polygon
+PLY_POINT_CLIP_INSIDE = 0
+#: The point is outside the polygon
+PLY_POINT_CLIP_OUTSIDE = 1
+#: An error occurred
+PLY_POINT_CLIP_ERROR = 2
 
 #
 # PLY_LINE_CLIP constants
@@ -3081,6 +3093,12 @@ SBF_TYPE_DIRS = 1
 SBF_TYPE_FILES = 2
 #: Embedded file and directory names
 SBF_TYPE_BOTH = 3	
+
+#
+# GXSEGYREADER Constants
+# 
+
+	
 
 #
 # GXST Constants
@@ -4310,6 +4328,12 @@ ARCMAP_LOAD_NEW = 2048
 ARCMAP_LOAD_NAMETAGISPREFIX = 4096	
 
 #
+# GXARCPY Constants
+# 
+
+	
+
+#
 # GXARCSYS Constants
 # 
 
@@ -5174,6 +5198,12 @@ EDB_PROF_I_SOURCELINE = 13
 EDB_PROF_I_SCALEOPTION = 14
 #: 0-no, 1-yes
 EDB_PROF_I_SAMERANGE = 15
+#: 0-no, 1-yes
+EDB_PROF_I_VERT_GRID_LINE = 16
+#: 0-no, 1-yes
+EDB_PROF_R_VERT_GRID_LINE_INTERVAL = 17
+#: 0-no, 1-yes
+EDB_PROF_I_AUTO_RESCALE_X = 18
 
 #
 # EDB_PROFILE_SCALE constants
@@ -7182,6 +7212,7 @@ __all__ = [
     'GXRA',
     'GXREG',
     'GXSBF',
+    'GXSEGYREADER',
     'GXST',
     'GXST2',
     'GXSTORAGEPROJECT',
@@ -7206,6 +7237,7 @@ __all__ = [
     'GXARCDB',
     'GXARCDH',
     'GXARCMAP',
+    'GXARCPY',
     'GXARCSYS',
     'GXBIGRID',
     'GXCHIMERA',
@@ -7313,6 +7345,7 @@ from .GXPLY import GXPLY
 from .GXRA import GXRA
 from .GXREG import GXREG
 from .GXSBF import GXSBF
+from .GXSEGYREADER import GXSEGYREADER
 from .GXST import GXST
 from .GXST2 import GXST2
 from .GXSTORAGEPROJECT import GXSTORAGEPROJECT
@@ -7337,6 +7370,7 @@ from .GXACQUIRE import GXACQUIRE
 from .GXARCDB import GXARCDB
 from .GXARCDH import GXARCDH
 from .GXARCMAP import GXARCMAP
+from .GXARCPY import GXARCPY
 from .GXARCSYS import GXARCSYS
 from .GXBIGRID import GXBIGRID
 from .GXCHIMERA import GXCHIMERA

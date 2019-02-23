@@ -238,25 +238,6 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
 
     @classmethod
-    def import_from_segy(cls, output_file, input_file):
-        """
-        Imports a MultiVoxset from a SEG Y File
-        
-        :param output_file:  Name of output `GXVOX <geosoft.gxapi.GXVOX>`
-        :param input_file:   Name of input SEG Y file
-        :type  output_file:  str
-        :type  input_file:   str
-
-        .. versionadded:: 9.5
-
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
-        """
-        gxapi_cy.WrapMULTIGRID3DUTIL._import_from_segy(GXContext._get_tls_geo(), output_file.encode(), input_file.encode())
-        
-
-
-
-    @classmethod
     def import_from_gdb(cls, grid3d_file, db, symb):
         """
         Imports from a Geosoft Database

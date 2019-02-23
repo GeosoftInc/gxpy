@@ -2009,6 +2009,23 @@ class GXSYS(gxapi_cy.WrapSYS):
 
 
     @classmethod
+    def check_product_updates(cls, silent):
+        """
+        Check for product updates via Geosoft Connect
+        
+        :param silent:  Do not show notification if no updates available.
+        :type  silent:  bool
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapSYS._check_product_updates(GXContext._get_tls_geo(), silent)
+        
+
+
+
+    @classmethod
     def geosoft_connect_authenticate_and_navigate(cls, url):
         """
         Automatically authenticate and navigate to my.geosoft.com URL
@@ -3918,6 +3935,25 @@ class GXSYS(gxapi_cy.WrapSYS):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapSYS._interactive(GXContext._get_tls_geo())
+        return ret_val
+
+
+
+    @classmethod
+    def testing_system_mode(cls):
+        """
+        Checks to see if the GX is running in the Geosoft testing system.
+        
+
+        :returns:    0 - Normal operation
+                  1 - Running in the Geosoft testing system.
+        :rtype:      int
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val = gxapi_cy.WrapSYS._testing_system_mode(GXContext._get_tls_geo())
         return ret_val
 
 

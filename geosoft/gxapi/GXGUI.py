@@ -2269,53 +2269,6 @@ class GXGUI(gxapi_cy.WrapGUI):
 
 
     @classmethod
-    def va_view_multiple_tool_exists(cls):
-        """
-        See if there is a Multiple Array Channel viewer already open.
-        
-
-        :returns:    0 if not open, 1 if open
-        :rtype:      int
-
-        .. versionadded:: 9.5
-
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
-
-        **Note:** See if there is a Multiple Array Channel viewer already open.
-        """
-        ret_val = gxapi_cy.WrapGUI._va_view_multiple_tool_exists(GXContext._get_tls_geo())
-        return ret_val
-
-
-
-    @classmethod
-    def launch_va_view_multiple_tool(cls, database_name, line_name, channel_name1, channel_name2, channel_name3):
-        """
-        Launch the coincident array channel viewer.
-        
-        :param database_name:  Database name
-        :param line_name:      Line name (can be blank)
-        :param channel_name1:  Master Channel name (can be blank)
-        :param channel_name2:  Channel 2 name (can be blank)
-        :param channel_name3:  Channel 3 name (can be blank)
-        :type  database_name:  str
-        :type  line_name:      str
-        :type  channel_name1:  str
-        :type  channel_name2:  str
-        :type  channel_name3:  str
-
-        .. versionadded:: 9.5
-
-        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
-
-        **Limitations:** May not be available while executing a command line program.
-        """
-        gxapi_cy.WrapGUI._launch_va_view_multiple_tool(GXContext._get_tls_geo(), database_name.encode(), line_name.encode(), channel_name1.encode(), channel_name2.encode(), channel_name3.encode())
-        
-
-
-
-    @classmethod
     def meta_data_viewer(cls, meta, root_token, schema):
         """
         View a `GXMETA <geosoft.gxapi.GXMETA>` object

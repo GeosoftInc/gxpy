@@ -34,6 +34,27 @@ Polygon clipping mode
     .. autoattribute:: geosoft.gxapi.PLY_CLIP_B_IN_A
 
 
+.. _PLY_POINT_CLIP:
+
+PLY_POINT_CLIP constants
+-----------------------------------------------------------------------
+
+Polygon point clipping mode
+
+.. autodata:: geosoft.gxapi.PLY_POINT_CLIP_INSIDE
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.PLY_POINT_CLIP_INSIDE
+.. autodata:: geosoft.gxapi.PLY_POINT_CLIP_OUTSIDE
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.PLY_POINT_CLIP_OUTSIDE
+.. autodata:: geosoft.gxapi.PLY_POINT_CLIP_ERROR
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.PLY_POINT_CLIP_ERROR
+
+
 .. _PLY_LINE_CLIP:
 
 PLY_LINE_CLIP constants

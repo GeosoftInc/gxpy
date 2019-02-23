@@ -355,6 +355,52 @@ class GXEDB(gxapi_cy.WrapEDB):
 
 
 
+    def get_profile_x_axis_options(self, rescale_x, lines, interval):
+        """
+        Get profile X-axis options
+        
+        :param rescale_x:  Auto rescale X-axis
+        :param lines:      render vertical grid lines
+        :param interval:   vertical lines interval
+        :type  rescale_x:  bool_ref
+        :type  lines:      bool_ref
+        :type  interval:   float_ref
+
+        .. versionadded:: 9.5.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+        """
+        rescale_x.value, lines.value, interval.value = self._get_profile_x_axis_options(rescale_x.value, lines.value, interval.value)
+        
+
+
+
+
+    def set_profile_x_axis_options(self, rescale_x, lines, interval):
+        """
+        Set profile X-axis options
+        
+        :param rescale_x:  Auto rescale X-axis
+        :param lines:      render vertical grid lines
+        :param interval:   vertical lines interval
+        :type  rescale_x:  bool
+        :type  lines:      bool
+        :type  interval:   float
+
+        .. versionadded:: 9.5.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+        """
+        self._set_profile_x_axis_options(rescale_x, lines, interval)
+        
+
+
+
+
     def get_profile_range_x(self, min_x, max_x, ph_chan_x):
         """
         Get profile X range and X channel
@@ -1868,6 +1914,25 @@ class GXEDB(gxapi_cy.WrapEDB):
         loaded and/or displayed.
         """
         self._set_profile_range_y(min_x, max_x, min_y, max_y, scl)
+        
+
+
+
+
+    def profile_rescale_all(self, window):
+        """
+        Rescale all profiles in a selected window in both X and Y, based on current scaling selections
+        
+        :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
+        :type  window:  int
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+        """
+        self._profile_rescale_all(window)
         
 
 

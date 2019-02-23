@@ -367,14 +367,14 @@ class GXPLY(gxapi_cy.WrapPLY):
 
 
 
-    def clip_ply(self, ppl_yb, ppl_yc):
+    def clip_ply(self, pply_b, pply_c):
         """
         Clip one polygon against another
         
-        :param ppl_yb:  Polygon B
-        :param ppl_yc:  Resulting clipped region
-        :type  ppl_yb:  GXPLY
-        :type  ppl_yc:  GXPLY
+        :param pply_b:  Polygon B
+        :param pply_c:  Resulting clipped region
+        :type  pply_b:  GXPLY
+        :type  pply_c:  GXPLY
 
         :returns:       :ref:`PLY_CLIP`
         :rtype:         int
@@ -387,7 +387,32 @@ class GXPLY(gxapi_cy.WrapPLY):
         regions of the clipped area.  Exclusion polygons
         are treated as included areas.
         """
-        ret_val = self._clip_ply(ppl_yb, ppl_yc)
+        ret_val = self._clip_ply(pply_b, pply_c)
+        return ret_val
+
+
+
+
+    def clip_point(self, x, y):
+        """
+        Clips a point in or out of the polygon.
+        Point is inside: `PLY_POINT_CLIP_INSIDE <geosoft.gxapi.PLY_POINT_CLIP_INSIDE>`
+        Point is outside: `PLY_POINT_CLIP_OUTSIDE <geosoft.gxapi.PLY_POINT_CLIP_OUTSIDE>`
+        An error occurred: `PLY_POINT_CLIP_ERROR <geosoft.gxapi.PLY_POINT_CLIP_ERROR>`
+        
+        :param x:     Point X
+        :param y:     Point Y
+        :type  x:     float
+        :type  y:     float
+
+        :returns:     :ref:`PLY_POINT_CLIP`
+        :rtype:       int
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val = self._clip_point(x, y)
         return ret_val
 
 
