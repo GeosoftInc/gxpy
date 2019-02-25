@@ -74,8 +74,8 @@ class Test(GXPYTest):
 
         p = gxgeo.Point((5, 10))
         self.assertTrue(p == p)
-        self.assertTrue(gxgeo.Point((1,2), coordinate_system="huh") == gxgeo.Point((1,2), coordinate_system="huh"))
-        self.assertTrue(gxgeo.Point((1, 2), coordinate_system="huh") == gxgeo.Point((1, 2)))
+        self.assertTrue(gxgeo.Point((1,2), coordinate_system="WGS 84") == gxgeo.Point((1,2), coordinate_system="WGS 84"))
+        self.assertTrue(gxgeo.Point((1, 2), coordinate_system="WGS 84") == gxgeo.Point((1, 2)))
         self.assertTrue(gxgeo.Point((1, 2)) == gxgeo.Point((1, 2)))
 
         s = "WGS 84 / UTM zone 32N <0, 0, 0, 10, 15, 32>"
@@ -411,8 +411,10 @@ class Test(GXPYTest):
 
         p = gxgeo.Point((5, 10))
         self.assertTrue(p == p)
-        self.assertTrue(gxgeo.Point((1,2), coordinate_system="huh") == gxgeo.Point((1,2), coordinate_system="huh"))
-        self.assertTrue(gxgeo.Point((1, 2), coordinate_system="huh") == gxgeo.Point((1, 2)))
+        self.assertTrue(gxgeo.Point((1,2), coordinate_system="WGS 84") ==
+                        gxgeo.Point((1,2), coordinate_system="WGS 84"))
+        self.assertTrue(gxgeo.Point((1, 2), coordinate_system="WGS 84") ==
+                        gxgeo.Point((1, 2)))
         self.assertTrue(gxgeo.Point((1, 2)) == gxgeo.Point((1, 2)))
 
         cs = "NAD83 / UTM zone 32N>"

@@ -151,7 +151,7 @@ class Geometry:
         self._gxobj = gxobj
 
     def __eq__(self, other):
-        if self._cs != other.coordinate_system:
+        if self.coordinate_system != other.coordinate_system:
             return False
         if self._gxobj != other.gxobj:
             return False
@@ -449,7 +449,7 @@ class Point(Geometry, Sequence):
         return Point(self.p / p.p, self.coordinate_system)
 
     def __eq__(self, other):
-        if not super(Point).__eq__(other):
+        if not super(Point, self).__eq__(other):
             return False
         return np.array_equal(self.p, other.p)
 
