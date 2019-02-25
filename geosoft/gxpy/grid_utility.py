@@ -200,11 +200,15 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
         rgrd = horizontal_gradient(grid)
         if rgrd.dtype != return_dtype:
             return gxgrd.reopen(rgrd, dtype=return_dtype)
+        else:
+            return rgrd
 
     if derivative_type == DERIVATIVE_XYZ:
         rgrd = total_gradient(grid)
         if rgrd.dtype != return_dtype:
             return gxgrd.reopen(rgrd, dtype=return_dtype)
+        else:
+            return rgrd
 
     if derivative_type == TILT_ANGLE:
         if file_name is None:
@@ -212,6 +216,8 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
         rgrd = tilt_angle(grid, fn=file_name)
         if rgrd.dtype != return_dtype:
             return gxgrd.reopen(rgrd, dtype=return_dtype)
+        else:
+            return rgrd
 
     # dxy grid
     if file_name is None:
