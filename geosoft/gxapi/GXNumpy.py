@@ -24,4 +24,4 @@ def gs_from_np(dtype):
     elif dtype == np.float64:
         return gxa.GS_DOUBLE
     else:
-        raise GXAPIError("Numpy array type does not map to one of the supported GS_TYPES");
+        raise gxa.GXAPIError("Numpy array type does not map to one of the supported GS_TYPES");
