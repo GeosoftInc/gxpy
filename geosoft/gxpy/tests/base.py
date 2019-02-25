@@ -4,9 +4,6 @@ import glob
 import unittest
 import inspect
 import subprocess
-from tkinter import Tk, messagebox
-import win32con
-import win32gui
 import numpy as np
 
 np.seterr(all='raise')
@@ -48,11 +45,20 @@ if _prevent_interactive:
     UPDATE_RESULTS_DONT_ASK = False
     SHOW_TEST_VIEWERS = False
 
-win32gui.SystemParametersInfo(win32con.SPI_SETFONTSMOOTHING, True)
+if not IGNORE_IMAGE_DIFFERENCES:
+    import win32gui
+    import win32con
+    win32gui.SystemParametersInfo(win32con.SPI_SETFONTSMOOTHING, True)
 
 # Make root window for UI methods
 root_window = None
 if UPDATE_RESULTS and SHOW_TEST_VIEWERS:
+    from tkinter import Tk, messagebox
+
+    # We import these here to properly initialize common controls
+    import win32gui
+    import win32con
+
     root_window = Tk()
     root_window.overrideredirect(1)
     root_window.withdraw()
