@@ -386,11 +386,13 @@ class Grid(gxgm.Geometry):
                 open_mode = gxapi.IMG_FILE_READORWRITE
                 self._readonly = False
 
-            # always open in default type unless float or double
-            # TODO: see also gxapi issue #17
-            gxtype = gxu.gx_dtype(dtype)
-            if gxtype not in (gxapi.GS_FLOAT, gxapi.GS_DOUBLE):
-                gxtype = gxapi.GS_TYPE_DEFAULT
+            # always open in default type unless float or double specifically requested
+            gxtype = gxapi.GS_TYPE_DEFAULT
+            if dtype is not None:
+                gxtype_from_dtype = gxu.gx_dtype(dtype)
+                if gxtype_from_dtype in (gxapi.GS_FLOAT, gxapi.GS_DOUBLE):
+                    gxtype = gxtype_from_dtype
+
             self._img = gxapi.GXIMG.create_file(gxtype,
                                                 self.file_name_decorated,
                                                 open_mode)
