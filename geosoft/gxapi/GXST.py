@@ -86,7 +86,7 @@ class GXST(gxapi_cy.WrapST):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapST._create(GXContext._get_tls_geo())
         return GXST(ret_val)
@@ -105,7 +105,7 @@ class GXST(gxapi_cy.WrapST):
 
         .. versionadded:: 5.1.8
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapST._create_exact(GXContext._get_tls_geo())
         return GXST(ret_val)
@@ -122,7 +122,7 @@ class GXST(gxapi_cy.WrapST):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._data(val)
         
@@ -139,7 +139,7 @@ class GXST(gxapi_cy.WrapST):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._data_vv(vv)
         
@@ -158,7 +158,7 @@ class GXST(gxapi_cy.WrapST):
 
         .. versionadded:: 6.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The length of the returned `GXVV <geosoft.gxapi.GXVV>` is set to the total
         number of bins. If a histogram is not defined in
@@ -183,7 +183,7 @@ class GXST(gxapi_cy.WrapST):
 
         .. versionadded:: 6.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The items correspond to those in `histogram2 <geosoft.gxapi.GXST.histogram2>`.
         If a histogram is not defined in
@@ -205,7 +205,7 @@ class GXST(gxapi_cy.WrapST):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The Number of bins includes the one before the minimum
         and the one after the maximum, so it must be a value >2.
@@ -240,7 +240,7 @@ class GXST(gxapi_cy.WrapST):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The Number of bins includes the one before the minimum
         and the one after the maximum, so it must be a value >2.
@@ -266,7 +266,7 @@ class GXST(gxapi_cy.WrapST):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Statistics and histogram must have been calculated prior to
         calling this method
@@ -289,7 +289,7 @@ class GXST(gxapi_cy.WrapST):
 
         .. versionadded:: 5.0.8
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Statistics and histogram must have been calculated prior to
         calling this method
@@ -307,7 +307,7 @@ class GXST(gxapi_cy.WrapST):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._reset()
         
@@ -329,7 +329,7 @@ class GXST(gxapi_cy.WrapST):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** The following can only be determined if the `GXST <geosoft.gxapi.GXST>` has recorded
         a histogram: `ST_MEDIAN <geosoft.gxapi.ST_MEDIAN>`, `ST_MODE <geosoft.gxapi.ST_MODE>`
@@ -359,7 +359,7 @@ class GXST(gxapi_cy.WrapST):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapST._get_norm_prob(GXContext._get_tls_geo(), x)
         return ret_val
@@ -383,7 +383,7 @@ class GXST(gxapi_cy.WrapST):
 
         .. versionadded:: 7.1
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = gxapi_cy.WrapST._get_norm_prob_x(GXContext._get_tls_geo(), percent)
         return ret_val
@@ -402,7 +402,7 @@ class GXST(gxapi_cy.WrapST):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This function compares the histogram to a normal curve with the
         same mean and standard deviation. The individual counts are normalized

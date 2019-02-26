@@ -217,7 +217,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         .. versionadded:: 5.0
 
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** All elements in the mask `GXVV <geosoft.gxapi.GXVV>` that are dummies will replace
         the value in the original `GXVV <geosoft.gxapi.GXVV>` with a dummy.
