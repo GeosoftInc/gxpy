@@ -3,7 +3,7 @@ from . import gxapi_cy
 from geosoft.gxapi import GXAPIError, int_ref
 
 import threading
-from threading import current_thread
+import winreg
 
 _tls = threading.local()
 
@@ -46,7 +46,7 @@ class GXContext:
         return tls_geo
 
     @classmethod
-    def create(cls, application, version, wind_id = 0, flags = 0):
+    def create(cls, application, version, wind_id = 0, flags = 0, key='Core', per_user_key=False):
         """
         Creates the GX execution context (will return the current one if it exists).
 
@@ -66,6 +66,15 @@ class GXContext:
         """
         tls_geo = getattr(_tls, '_gxa_geo', None)
         if tls_geo is None:
+            if not cls._geodist_init:
+                reg_hive = winreg.HKEY_CURRENT_USER if per_user_key else winreg.HKEY_LOCAL_MACHINE
+                env_key = winreg.OpenKey(reg_hive, fr'Software\Geosoft\{key}\Environment', 0, winreg.KEY_READ)
+                try:
+                    geosoft_dir = winreg.QueryValueEx(env_key, 'GEOSOFT')
+                    cls._geosoft_dist_init(geosoft_dir)
+                finally:
+                    winreg.CloseKey(env_key)
+
             p_geo = gxapi_cy.WrapPGeo()
             p_geo._create(application, version, wind_id, flags)
             return GXContext(p_geo)
@@ -88,11 +97,20 @@ class GXContext:
         p_geo = GXContext._get_tls_geo()
         return p_geo._internal_p()
 
+    _geodist_init = False
+    @classmethod
+    def _geosoft_dist_init(cls, dist_dir, dll_name='geodist.dll'):
+        GXContext.geosoft_dist_init(cls, dist_dir, dll_name)
+        _geodist_init = True
+
+    @classmethod
+    def _set_geosoft_redist_overrides(cls, redist_dir, user_dir, temp_dir, dll_name='geodist.dll'):
+        GXContext.set_geosoft_redist_overrides(cls, redist_dir, user_dir, temp_dir, dll_name)
+        _geodist_init = True
+
     @classmethod
     def _redirect_std_streams(cls):
         gxapi_cy.WrapPGeo.gx_redirect_std_streams()
-
-
 
     def get_main_wnd_id(self):
         """
