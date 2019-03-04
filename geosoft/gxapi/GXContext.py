@@ -68,9 +68,9 @@ class GXContext:
         if tls_geo is None:
             if not cls._geodist_init:
                 reg_hive = winreg.HKEY_CURRENT_USER if per_user_key else winreg.HKEY_LOCAL_MACHINE
-                env_key = winreg.OpenKey(reg_hive, fr'Software\Geosoft\{key}\Environment', 0, winreg.KEY_READ)
+                env_key = winreg.OpenKey(reg_hive, 'Software\Geosoft\{}\Environment'.format(key), 0, winreg.KEY_READ)
                 try:
-                    geosoft_dir = winreg.QueryValueEx(env_key, 'GEOSOFT')
+                    geosoft_dir, _ = winreg.QueryValueEx(env_key, 'GEOSOFT')
                     cls._geosoft_dist_init(geosoft_dir)
                 finally:
                     winreg.CloseKey(env_key)
@@ -100,12 +100,12 @@ class GXContext:
     _geodist_init = False
     @classmethod
     def _geosoft_dist_init(cls, dist_dir, dll_name='geodist.dll'):
-        GXContext.geosoft_dist_init(cls, dist_dir, dll_name)
+        gxapi_cy.WrapPGeo.geosoft_dist_init(dist_dir, dll_name)
         _geodist_init = True
 
     @classmethod
     def _set_geosoft_redist_overrides(cls, redist_dir, user_dir, temp_dir, dll_name='geodist.dll'):
-        GXContext.set_geosoft_redist_overrides(cls, redist_dir, user_dir, temp_dir, dll_name)
+        gxapi_cy.WrapPGeo.set_geosoft_redist_overrides(redist_dir, user_dir, temp_dir, dll_name)
         _geodist_init = True
 
     @classmethod
