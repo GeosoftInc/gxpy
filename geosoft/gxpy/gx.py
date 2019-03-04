@@ -346,7 +346,7 @@ class GXpy:
     def __init__(self, name=__name__, version=__version__,
                  parent_window=0, log=None,
                  max_res_heap=10000000, res_stack=6, max_warnings=10,
-                 suppress_progress=False):
+                 suppress_progress=False, key='Core', per_user_key=False):
 
         global _max_resource_heap
         global _stack_depth
@@ -381,7 +381,7 @@ class GXpy:
                     flags = 128
                 else:
                     flags = 64
-            self._gxapi = gxapi.GXContext.create(name, version, self._parent_window, flags)
+            self._gxapi = gxapi.GXContext.create(name, version, self._parent_window, flags, key=key, per_user_key=per_user_key)
 
         except gxapi.GXAPIError as e:
             self._gxapi = None
