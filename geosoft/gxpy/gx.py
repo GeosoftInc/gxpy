@@ -20,6 +20,7 @@ import os
 import shutil
 import datetime
 import atexit
+import tempfile
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -283,23 +284,36 @@ class GXpy:
     by the Geosoft desktop application.  If called, the desktop context is returned.
 
     :parameters:
-        :name:          application name, default is the script name
-        :version:       application version number, default Geosoft version
-        :parent_window: ID of the parent window.  A parent window is required for GUI-dependent
-                        functions to work.  Set `parent_window=-1` to create a Tkinter frame that
-                        provides a default parent window handle for GUI/Viewer functions.
-        :log:           name of a file to record logging information, or a call-back function that
-                        accepts a string.  Specifying `log=''` will log to a default file named
-                        using the current date and time.  If not provided calls to log()
-                        are ignored.
-        :max_res_heap:  If logging is on, open gxpy resources (like grids, or databases) are tracked.
-                        This is the maximum size of resource heap for tracking open resources.
-                        Set to 0 to not track resources. On exit, if any resources remain open
-                        a warning is logged together with a list of the open resources, each with a
-                        call stack to help find the function that created the resources.
-        :res_stack:     Depth of the call-stack to report for open-resource warning.
-        :max_warnings:  Maximum number of resource warnings to report.
+        :name:              application name, default is the script name
+        :version:           application version number, default Geosoft version
+        :parent_window:     ID of the parent window.  A parent window is required for GUI-dependent
+                            functions to work.  Set `parent_window=-1` to create a Tkinter frame that
+                            provides a default parent window handle for GUI/Viewer functions.
+        :log:               name of a file to record logging information, or a call-back function that
+                            accepts a string.  Specifying `log=''` will log to a default file named
+                            using the current date and time.  If not provided calls to log()
+                            are ignored.
+        :max_res_heap:      If logging is on, open gxpy resources (like grids, or databases) are tracked.
+                            This is the maximum size of resource heap for tracking open resources.
+                            Set to 0 to not track resources. On exit, if any resources remain open
+                            a warning is logged together with a list of the open resources, each with a
+                            call stack to help find the function that created the resources.
+        :res_stack:         Depth of the call-stack to report for open-resource warning.
+        :max_warnings:      Maximum number of resource warnings to report.
         :suppress_progress: True to suppress progress reporting (default False)
+        :key:               Default Geosoft registry key to use to discover GX developer common redistributables
+                            or Desktop Applications software (default 'Core')
+        :per_user_key:      Use per-user registry instead of local machine (default False)
+        :redist_override:   Override registry mechanism to discover redistributables with redist_dir,
+                            user_dir and temp_dir parameters. (default False)
+        :redist_dir:        Path containing the redistributable files, i.e. containing bin, csv and other folders.
+                            Only used if redist_override is True (default None)
+        :user_dir:          Writable path to directory containing the user redistributable files.
+                            Only used if redist_override is True (default None). If redist_override is True and
+                            user_dir is None a unique folder in system temp will be used for this purpose.
+        :temp_dir:          Path to use for temporary files. Only used if redist_override is True (default None)
+                            If redist_override is True and temp_dir is None a unique folder in system temp will
+                            be used for this purpose.
 
     :Properties:
         :gxapi:             GX context to be used to call geosoft.gxapi methods
@@ -346,7 +360,8 @@ class GXpy:
     def __init__(self, name=__name__, version=__version__,
                  parent_window=0, log=None,
                  max_res_heap=10000000, res_stack=6, max_warnings=10,
-                 suppress_progress=False, key='Core', per_user_key=False):
+                 suppress_progress=False, key='Core', per_user_key=False,
+                 redist_override=False, redist_dir=None, user_dir=None, temp_dir=None):
 
         global _max_resource_heap
         global _stack_depth
@@ -360,6 +375,10 @@ class GXpy:
             _max_warnings = max(0, max_warnings)
 
         self._enter_count = 0
+        self._redist_user_dir = user_dir
+        self._redist_user_dir_cleanup = False
+        self._redist_temp_dir = temp_dir
+        self._redist_temp_dir_cleanup = False
 
         # create a Tkinter parent frame for the viewers
         if not parent_window == 0:
@@ -381,8 +400,31 @@ class GXpy:
                     flags = 128
                 else:
                     flags = 64
-            self._gxapi = gxapi.GXContext.create(name, version, self._parent_window, flags, key=key, per_user_key=per_user_key)
 
+            if redist_override:
+                if self.redist_dir is None:
+                    raise GXException('redist_dir needs to be defined with redist_override.')
+                geodist_path = os.path.normpath(os.path.join(self.redist_dir, 'bin', 'geodist.dll'))
+                if not os.path.exists(geodist_path):
+                    raise GXException('redist_dir needs to point to directory containing Geosoft redistributables. '
+                                      '(Could not find {})).'.format(geodist_path))
+                if self._redist_temp_dir is None:
+                    self._redist_temp_dir = tempfile.mkdtemp()
+                    self._redist_temp_dir_cleanup = True
+                elif not os.path.exists(self._redist_temp_dir):
+                    raise GXException('temp_dir needs to point an existing directory (or pass None to use ' 
+                                      'automatic temporary folder).')
+
+                if self._redist_user_dir is None:
+                    self._redist_user_dir = tempfile.mkdtemp()
+                    self._redist_user_dir_cleanup = True
+                elif not os.path.exists(self._redist_user_dir):
+                    raise GXException('user_dir needs to point an existing directory (or pass None to use '
+                                      'automatic temporary folder).')
+                    self._gxapi = gxapi.GXContext.create(name, version, self._parent_window, flags, key=key,
+                                                         per_user_key=per_user_key, redist_override=redist_override,
+                                                         redist_dir=redist_dir, user_dir=self._redist_user_dir,
+                                                         temp_dir=self._redist_temp_dir)
         except gxapi.GXAPIError as e:
             self._gxapi = None
             raise GXException(_t('GX services are not available.\n{}'.format(e)))

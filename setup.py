@@ -2,12 +2,10 @@
 
 import json
 import sys
-import tempfile
 import shutil
 from os import path, remove, environ
 from glob import glob
 from setuptools import setup
-import zipfile
 
 with open('geosoft/pkg_info.json') as fp:
     _info = json.load(fp)

@@ -46,7 +46,8 @@ class GXContext:
         return tls_geo
 
     @classmethod
-    def create(cls, application, version, wind_id = 0, flags = 0, key='Core', per_user_key=False):
+    def create(cls, application, version, wind_id = 0, flags = 0, key='Core', per_user_key=False,
+               redist_override=False, redist_dir=None, user_dir=None, temp_dir=None):
         """
         Creates the GX execution context (will return the current one if it exists).
 
@@ -67,13 +68,16 @@ class GXContext:
         tls_geo = getattr(_tls, '_gxa_geo', None)
         if tls_geo is None:
             if not cls._geodist_init:
-                reg_hive = winreg.HKEY_CURRENT_USER if per_user_key else winreg.HKEY_LOCAL_MACHINE
-                env_key = winreg.OpenKey(reg_hive, 'Software\Geosoft\{}\Environment'.format(key), 0, winreg.KEY_READ)
-                try:
-                    geosoft_dir, _ = winreg.QueryValueEx(env_key, 'GEOSOFT')
-                    cls._geosoft_dist_init(geosoft_dir)
-                finally:
-                    winreg.CloseKey(env_key)
+                if redist_override:
+                    cls._set_geosoft_redist_overrides(redist_dir, user_dir, temp_dir)
+                else:
+                    reg_hive = winreg.HKEY_CURRENT_USER if per_user_key else winreg.HKEY_LOCAL_MACHINE
+                    env_key = winreg.OpenKey(reg_hive, 'Software\Geosoft\{}\Environment'.format(key), 0, winreg.KEY_READ)
+                    try:
+                        geosoft_dir, _ = winreg.QueryValueEx(env_key, 'GEOSOFT')
+                        cls._geosoft_dist_init(geosoft_dir)
+                    finally:
+                        winreg.CloseKey(env_key)
 
             p_geo = gxapi_cy.WrapPGeo()
             p_geo._create(application, version, wind_id, flags)
