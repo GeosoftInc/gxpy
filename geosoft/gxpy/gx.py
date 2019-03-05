@@ -421,10 +421,10 @@ class GXpy:
                 elif not os.path.exists(self._redist_user_dir):
                     raise GXException('user_dir needs to point an existing directory (or pass None to use '
                                       'automatic temporary folder).')
-                    self._gxapi = gxapi.GXContext.create(name, version, self._parent_window, flags, key=key,
-                                                         per_user_key=per_user_key, redist_override=redist_override,
-                                                         redist_dir=redist_dir, user_dir=self._redist_user_dir,
-                                                         temp_dir=self._redist_temp_dir)
+            self._gxapi = gxapi.GXContext.create(name, version, self._parent_window, flags, key=key,
+                                                 per_user_key=per_user_key, redist_override=redist_override,
+                                                 redist_dir=redist_dir, user_dir=self._redist_user_dir,
+                                                 temp_dir=self._redist_temp_dir)
         except gxapi.GXAPIError as e:
             self._gxapi = None
             raise GXException(_t('GX services are not available.\n{}'.format(e)))
