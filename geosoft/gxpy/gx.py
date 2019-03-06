@@ -264,6 +264,9 @@ def _exit_cleanup():
         gx.close_log()
         gx._tkframe = None
         gx._gxapi = None
+
+        gx._clean_redist_folders()
+
         del gx
 
     _reset_globals()
@@ -375,6 +378,7 @@ class GXpy:
             _max_warnings = max(0, max_warnings)
 
         self._enter_count = 0
+        self._redist_dir = redist_dir
         self._redist_user_dir = user_dir
         self._redist_user_dir_cleanup = False
         self._redist_temp_dir = temp_dir
@@ -402,9 +406,9 @@ class GXpy:
                     flags = 64
 
             if redist_override:
-                if self.redist_dir is None:
+                if self._redist_dir is None:
                     raise GXException('redist_dir needs to be defined with redist_override.')
-                geodist_path = os.path.normpath(os.path.join(self.redist_dir, 'bin', 'geodist.dll'))
+                geodist_path = os.path.normpath(os.path.join(self._redist_dir, 'bin', 'geodist.dll'))
                 if not os.path.exists(geodist_path):
                     raise GXException('redist_dir needs to point to directory containing Geosoft redistributables. '
                                       '(Could not find {})).'.format(geodist_path))
@@ -423,7 +427,7 @@ class GXpy:
                                       'automatic temporary folder).')
             self._gxapi = gxapi.GXContext.create(name, version, self._parent_window, flags, key=key,
                                                  per_user_key=per_user_key, redist_override=redist_override,
-                                                 redist_dir=redist_dir, user_dir=self._redist_user_dir,
+                                                 redist_dir=self._redist_dir, user_dir=self._redist_user_dir,
                                                  temp_dir=self._redist_temp_dir)
         except gxapi.GXAPIError as e:
             self._gxapi = None
@@ -852,6 +856,12 @@ class GXpy:
                 self._keep_temp_files = True
 
         return self._temp_file_folder
+
+    def _clean_redist_folders(self):
+        if hasattr(self, '_redist_user_dir_cleanup') and self._redist_user_dir_cleanup:
+            shutil.rmtree(self._redist_user_dir, ignore_errors=True)
+        if hasattr(self, '_redist_user_temp_cleanup') and self._redist_temp_dir_cleanup:
+            shutil.rmtree(self._redist_temp_dir, ignore_errors=True)
 
     def keep_temp_folder(self, keep=True):
         """
