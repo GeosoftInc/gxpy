@@ -301,8 +301,8 @@ class GXpy:
         :res_stack:         Depth of the call-stack to report for open-resource warning.
         :max_warnings:      Maximum number of resource warnings to report.
         :suppress_progress: True to suppress progress reporting (default False)
-        :key:               Default Geosoft registry key to use to discover GX developer common redistributables
-                            or Desktop Applications software (default 'Core')
+        :key:               Default Geosoft registry key to use (in absence of geosoft.key file) to discover
+                            GX developer common redistributables or Desktop Applications software (default 'Core')
         :per_user_key:      Use per-user registry instead of local machine (default False)
         :redist_override:   Override registry mechanism to discover redistributables with redist_dir,
                             user_dir and temp_dir parameters. (default False)

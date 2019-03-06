@@ -2,6 +2,8 @@ from . import gxapi_cy
 
 from geosoft.gxapi import GXAPIError, int_ref
 
+import os
+import inspect
 import threading
 import winreg
 
@@ -51,14 +53,31 @@ class GXContext:
         """
         Creates the GX execution context (will return the current one if it exists).
 
-        :param application:   Calling application name"
-        :param version:       Calling application version
-        :param parent_wnd_id: Calling application main window handle (HWND cast to unsigned on Windows) as an int (default 0)
-        :param flags:         0 default; 64 suppresses text progress messages; 128 suppresses GUI progress window
-        :type  application:   str
-        :type  version:       str
-        :type  parent_wnd_id: int
-        :type  flags:         int
+        :param application:      Calling application name"
+        :param version:          Calling application version
+        :param parent_wnd_id:    Calling application main window handle (HWND cast to unsigned on Windows) as an int
+                                 (default 0)
+        :param flags:            0 default; 64 suppresses text progress messages; 128 suppresses GUI progress window
+        :param key:              Default Geosoft registry key (in absence of geosoft.key file) to use to discover GX
+                                 developer common redistributables or Desktop Applications software (default 'Core')
+        :param per_user_key:     Use per-user registry instead of local machine (default False)
+        :param redist_override:  Override registry mechanism to discover redistributables with redist_dir,
+                                 user_dir and temp_dir parameters. (default False)
+        :param redist_dir:       Path containing the redistributable files, i.e. containing bin, csv and other folders.
+                                 Only used if redist_override is True (default None)
+        :param user_dir:         Writable path to directory containing the user redistributable files.
+                                 Only used if redist_override is True (default None).
+        :param temp_dir:         Path to use for temporary files. Only used if redist_override is True (default None)
+        :type  application:      str
+        :type  version:          str
+        :type  parent_wnd_id:    int
+        :type  flags:            int
+        :type  key:              str
+        :type  per_user_key:     bool
+        :type  redist_override:  bool
+        :type  redist_dir:       str
+        :type  user_dir:         str
+        :type  temp_dir:         str
 
         :returns: A GX execution context.
         :rtype:   GXContext
@@ -71,6 +90,10 @@ class GXContext:
                 if redist_override:
                     cls._set_geosoft_redist_overrides(redist_dir, user_dir, temp_dir)
                 else:
+                    key_file = os.path.join(os.path.dirname(inspect.getfile(cls)), 'geosoft.key')
+                    if os.path.exists(key_file):
+                        with open(key_file) as f:
+                            key = f.read().strip()
                     reg_hive = winreg.HKEY_CURRENT_USER if per_user_key else winreg.HKEY_LOCAL_MACHINE
                     env_key = winreg.OpenKey(reg_hive, 'Software\Geosoft\{}\Environment'.format(key), 0, winreg.KEY_READ)
                     try:

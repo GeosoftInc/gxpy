@@ -91,7 +91,7 @@ class GXPYTest(unittest.TestCase):
         return 'uuid_{}_{}'.format(cls._test_case_filename, cls._cls_unique_id_count)
 
     @classmethod
-    def setUpGXPYTest(cls, res_stack=6, context_name=__name__, parent_window=0):
+    def setUpGXPYTest(cls, res_stack=6, context_name=__name__, parent_window=0, per_user_key=False):
         _verify_no_gx_context()
 
         cls._cls_unique_id_count = 0
@@ -114,7 +114,7 @@ class GXPYTest(unittest.TestCase):
 
         set_geosoft_bin_path()
         cls._gx = gx.GXpy(name=context_name, log=print, res_stack=res_stack, max_warnings=12,
-                          suppress_progress=True, parent_window=parent_window)
+                          suppress_progress=True, parent_window=parent_window, per_user_key=per_user_key)
 
     @classmethod
     def tearDownGXPYTest(cls):
