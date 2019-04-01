@@ -1414,7 +1414,7 @@ class Grid(gxgm.Geometry):
             ny, nx = data.shape
 
         if ((nx - ix0) > self.nx) or ((ny - iy0) > self.ny):
-            raise(_t('Data size exceeds grid size.'))
+            raise GridException(_t('Data size exceeds grid size.'))
 
         dvv = gxvv.GXvv(dtype=self.dtype)
         dvv.length = nx

@@ -218,9 +218,9 @@ class GridFFT:
 
         if grid.rot != 0.:
             # TODO: add support for rotated grids
-            raise(_t('Rotated grids are not supported.'))
+            raise GridFFTException(_t('Rotated grids are not supported.'))
         if grid.dx != grid.dy:
-            raise(_t('Cell size must be square'))
+            raise GridFFTException(_t('Cell size must be square'))
 
         gxc.log(_t('\nGridFFT from: {}').format(grid.file_name))
 
