@@ -442,7 +442,7 @@ class Vox(gxspd.SpatialData, Sequence):
         """
 
         if data is None:
-            data = source_vox.np
+            data = source_vox.np()
         vox = Vox.new(name, data, overwrite=overwrite, temp=temp, dtype=dtype,
                       origin=(source_vox.origin_x, source_vox.origin_y, source_vox.origin_z,),
                       cell_size=(source_vox.cells_x, source_vox.cells_y, source_vox.cells_z),
