@@ -2007,7 +2007,19 @@ SURFACE_CLIP_ABOVE = 0
 #: Output the surface item below clipper surface
 SURFACE_CLIP_BELOW = 1
 #: Output the surface items both above & below the clipper surface
-SURFACE_CLIP_BOTH = 2	
+SURFACE_CLIP_BOTH = 2
+
+#
+# SURFACE_CLIP_STATUS constants
+#
+# Surface Clip Return Code
+
+#: Surface clipping successful
+SURFACE_CLIP_SUCCESS = 0
+#: Surface clipping successful, but with empty output
+SURFACE_CLIP_SUCCESS_EMPTY = 1
+#: Surface clipping fail
+SURFACE_CLIP_FAIL = 2	
 
 #
 # GXMETA Constants
@@ -4718,7 +4730,19 @@ DH_SURFACE_LAST_LAYER_TO = 5
 #: Negative
 DIP_CONVENTION_NEGATIVE = -1
 #: Positive
-DIP_CONVENTION_POSITIVE = 1	
+DIP_CONVENTION_POSITIVE = 1
+
+#
+# DH_DESURVEY constants
+#
+# Desurvey method
+
+#: Straight seg
+DH_DESURVEY_STRAIGHT_SEG = 0
+#: Rad curve
+DH_DESURVEY_RAD_CURVE = 1
+#: Polynomial
+DH_DESURVEY_POLYNOMIAL = 2	
 
 #
 # GXDMPPLY Constants

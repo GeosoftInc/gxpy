@@ -67,7 +67,7 @@ class GXSYS(gxapi_cy.WrapSYS):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXSYS, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -3761,14 +3761,14 @@ class GXSYS(gxapi_cy.WrapSYS):
 
 
     @classmethod
-    def display_int(cls, title, int):
+    def display_int(cls, title, n):
         """
         Display an integer.
         
         :param title:  Title of the Window
-        :param int:    Number
+        :param n:      Number
         :type  title:  str
-        :type  int:    int
+        :type  n:      int
 
         .. versionadded:: 5.0
 
@@ -3776,7 +3776,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapSYS._display_int(GXContext._get_tls_geo(), title.encode(), int)
+        gxapi_cy.WrapSYS._display_int(GXContext._get_tls_geo(), title.encode(), n)
         
 
 

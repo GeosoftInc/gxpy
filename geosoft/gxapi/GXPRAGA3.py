@@ -25,7 +25,7 @@ class GXPRAGA3(gxapi_cy.WrapPRAGA3):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXPRAGA3, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):

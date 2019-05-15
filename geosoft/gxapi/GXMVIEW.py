@@ -48,7 +48,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXMVIEW, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -3936,14 +3936,14 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
 
 
-    def rename_group(self, old, new):
+    def rename_group(self, old, new_group_name):
         """
         Rename a group.
         
-        :param old:    Old group name
-        :param new:    New group name
-        :type  old:    str
-        :type  new:    str
+        :param old:             Old group name
+        :param new_group_name:  New group name
+        :type  old:             str
+        :type  new_group_name:  str
 
         .. versionadded:: 5.1.1
 
@@ -3951,7 +3951,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** Does nothing if the group does not already exist.
         """
-        self._rename_group(old.encode(), new.encode())
+        self._rename_group(old.encode(), new_group_name.encode())
         
 
 

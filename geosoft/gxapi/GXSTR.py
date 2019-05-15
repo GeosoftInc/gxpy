@@ -25,7 +25,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXSTR, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -328,14 +328,14 @@ class GXSTR(gxapi_cy.WrapSTR):
 
 
     @classmethod
-    def format_i(cls, int, buff, width):
+    def format_i(cls, value, buff, width):
         """
         Convert a GX int to a string.
         
-        :param int:    Value to format
+        :param value:  Value to format
         :param buff:   Resulting string
         :param width:  Width of the field
-        :type  int:    int
+        :type  value:  int
         :type  buff:   str_ref
         :type  width:  int
 
@@ -343,7 +343,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        buff.value = gxapi_cy.WrapSTR._format_i(GXContext._get_tls_geo(), int, buff.value.encode(), width)
+        buff.value = gxapi_cy.WrapSTR._format_i(GXContext._get_tls_geo(), value, buff.value.encode(), width)
         
 
 
@@ -558,16 +558,16 @@ class GXSTR(gxapi_cy.WrapSTR):
 
 
     @classmethod
-    def replacei_match_string(cls, istr, old, new):
+    def replacei_match_string(cls, istr, old, new_str):
         """
         Replaces all occurances of match string by replacement string with case insensitive.
         
-        :param istr:  Destination String
-        :param old:   Match string to replace
-        :param new:   Replacement string
-        :type  istr:  str_ref
-        :type  old:   str
-        :type  new:   str
+        :param istr:     Destination String
+        :param old:      Match string to replace
+        :param new_str:  Replacement string
+        :type  istr:     str_ref
+        :type  old:      str
+        :type  new_str:  str
 
         .. versionadded:: 7.0.1
 
@@ -577,22 +577,22 @@ class GXSTR(gxapi_cy.WrapSTR):
         then the string to replace is removed from the
         input string, and the string is shortened.
         """
-        istr.value = gxapi_cy.WrapSTR._replacei_match_string(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new.encode())
+        istr.value = gxapi_cy.WrapSTR._replacei_match_string(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new_str.encode())
         
 
 
 
     @classmethod
-    def replace_match_string(cls, istr, old, new):
+    def replace_match_string(cls, istr, old, new_str):
         """
         Replaces all occurances of match string by replacement string with case sensitive.
         
-        :param istr:  Destination String
-        :param old:   Match string to replace
-        :param new:   Replacement string
-        :type  istr:  str_ref
-        :type  old:   str
-        :type  new:   str
+        :param istr:     Destination String
+        :param old:      Match string to replace
+        :param new_str:  Replacement string
+        :type  istr:     str_ref
+        :type  old:      str
+        :type  new_str:  str
 
         .. versionadded:: 7.0.1
 
@@ -602,7 +602,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         then the string to replace is removed from the
         input string, and the string is shortened.
         """
-        istr.value = gxapi_cy.WrapSTR._replace_match_string(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new.encode())
+        istr.value = gxapi_cy.WrapSTR._replace_match_string(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new_str.encode())
         
 
 
@@ -680,27 +680,27 @@ class GXSTR(gxapi_cy.WrapSTR):
 
 
     @classmethod
-    def strcmp(cls, first, second, mode):
+    def strcmp(cls, first, second, case_sensitive):
         """
         This method compares two strings and returns these values
         
-        :param first:   String A
-        :param second:  String B
-        :param mode:    :ref:`STR_CASE`
-        :type  first:   str
-        :type  second:  str
-        :type  mode:    int
+        :param first:           String A
+        :param second:          String B
+        :param case_sensitive:  :ref:`STR_CASE`
+        :type  first:           str
+        :type  second:          str
+        :type  case_sensitive:  int
 
-        :returns:       A  <  B           -1
-                        A ==  B            0
-                        A  >  B            1
-        :rtype:         int
+        :returns:               A  <  B           -1
+                                A ==  B            0
+                                A  >  B            1
+        :rtype:                 int
 
         .. versionadded:: 5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSTR._strcmp(GXContext._get_tls_geo(), first.encode(), second.encode(), mode)
+        ret_val = gxapi_cy.WrapSTR._strcmp(GXContext._get_tls_geo(), first.encode(), second.encode(), case_sensitive)
         return ret_val
 
 
@@ -873,54 +873,54 @@ class GXSTR(gxapi_cy.WrapSTR):
 
 
     @classmethod
-    def strncmp(cls, first, second, n_char, mode):
+    def strncmp(cls, first, second, n_char, case_sensitive):
         """
         Compares two strings to a given number of characters.
         
-        :param first:   String A
-        :param second:  String B
-        :param n_char:  Number of characters to compare
-        :param mode:    :ref:`STR_CASE`
-        :type  first:   str
-        :type  second:  str
-        :type  n_char:  int
-        :type  mode:    int
+        :param first:           String A
+        :param second:          String B
+        :param n_char:          Number of characters to compare
+        :param case_sensitive:  :ref:`STR_CASE`
+        :type  first:           str
+        :type  second:          str
+        :type  n_char:          int
+        :type  case_sensitive:  int
 
-        :returns:       A  <  B           -1
-                        A ==  B            0
-                        A  >  B            1
-        :rtype:         int
+        :returns:               A  <  B           -1
+                                A ==  B            0
+                                A  >  B            1
+        :rtype:                 int
 
         .. versionadded:: 5.0.5
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSTR._strncmp(GXContext._get_tls_geo(), first.encode(), second.encode(), n_char, mode)
+        ret_val = gxapi_cy.WrapSTR._strncmp(GXContext._get_tls_geo(), first.encode(), second.encode(), n_char, case_sensitive)
         return ret_val
 
 
 
     @classmethod
-    def str_str(cls, str_val, sub, mode):
+    def str_str(cls, str_val, sub, case_sensitive):
         """
         Scan a string for the occurrence of a given substring.
         
-        :param str_val:  String to scan
-        :param sub:      String to look for
-        :param mode:     :ref:`STR_CASE`
-        :type  str_val:  str
-        :type  sub:      str
-        :type  mode:     int
+        :param str_val:         String to scan
+        :param sub:             String to look for
+        :param case_sensitive:  :ref:`STR_CASE`
+        :type  str_val:         str
+        :type  sub:             str
+        :type  case_sensitive:  int
 
-        :returns:        -1 if the substring does not occur in the string
-                         Index of first matching location if found
-        :rtype:          int
+        :returns:               -1 if the substring does not occur in the string
+                                Index of first matching location if found
+        :rtype:                 int
 
         .. versionadded:: 5.1.6
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSTR._str_str(GXContext._get_tls_geo(), str_val.encode(), sub.encode(), mode)
+        ret_val = gxapi_cy.WrapSTR._str_str(GXContext._get_tls_geo(), str_val.encode(), sub.encode(), case_sensitive)
         return ret_val
 
 
@@ -1044,16 +1044,16 @@ class GXSTR(gxapi_cy.WrapSTR):
 
 
     @classmethod
-    def replace_char(cls, istr, old, new):
+    def replace_char(cls, istr, old, new_char):
         """
         Replaces characters in a string.
         
-        :param istr:  String to modify
-        :param old:   Character to replace (first character only)
-        :param new:   Replacement character (first character only)
-        :type  istr:  str_ref
-        :type  old:   str
-        :type  new:   str
+        :param istr:      String to modify
+        :param old:       Character to replace (first character only)
+        :param new_char:  Replacement character (first character only)
+        :type  istr:      str_ref
+        :type  old:       str
+        :type  new_char:  str
 
         .. versionadded:: 5.0
 
@@ -1062,22 +1062,22 @@ class GXSTR(gxapi_cy.WrapSTR):
         **Note:** If the input replacement character is "", then the
         string will be truncated at the first character to replace.
         """
-        istr.value = gxapi_cy.WrapSTR._replace_char(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new.encode())
+        istr.value = gxapi_cy.WrapSTR._replace_char(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new_char.encode())
         
 
 
 
     @classmethod
-    def replace_char2(cls, istr, old, new):
+    def replace_char2(cls, istr, old, new_char):
         """
         Replaces characters in a string, supports simple removal.
         
-        :param istr:  String to modify
-        :param old:   Character to replace (first character only)
-        :param new:   Replacement character (first character only)
-        :type  istr:  str_ref
-        :type  old:   str
-        :type  new:   str
+        :param istr:      String to modify
+        :param old:       Character to replace (first character only)
+        :param new_char:  Replacement character (first character only)
+        :type  istr:      str_ref
+        :type  old:       str
+        :type  new_char:  str
 
         .. versionadded:: 6.3
 
@@ -1087,22 +1087,22 @@ class GXSTR(gxapi_cy.WrapSTR):
         then the character to replace is removed from the
         input string, and the string is shortened.
         """
-        istr.value = gxapi_cy.WrapSTR._replace_char2(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new.encode())
+        istr.value = gxapi_cy.WrapSTR._replace_char2(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new_char.encode())
         
 
 
 
     @classmethod
-    def replace_multi_char(cls, istr, old, new):
+    def replace_multi_char(cls, istr, old, new_char):
         """
         Replaces multiple characters in a string.
         
-        :param istr:  String to modify
-        :param old:   Characters to replace
-        :param new:   Replacement characters
-        :type  istr:  str_ref
-        :type  old:   str
-        :type  new:   str
+        :param istr:      String to modify
+        :param old:       Characters to replace
+        :param new_char:  Replacement characters
+        :type  istr:      str_ref
+        :type  old:       str
+        :type  new_char:  str
 
         .. versionadded:: 5.1.5
 
@@ -1111,7 +1111,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         **Note:** The number of characters to replace must equal
         the number of replacement characters.
         """
-        istr.value = gxapi_cy.WrapSTR._replace_multi_char(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new.encode())
+        istr.value = gxapi_cy.WrapSTR._replace_multi_char(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new_char.encode())
         
 
 

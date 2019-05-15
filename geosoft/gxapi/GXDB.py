@@ -29,7 +29,7 @@ class GXDB(gxapi_cy.WrapDB):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXDB, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -3106,40 +3106,40 @@ class GXDB(gxapi_cy.WrapDB):
 
 
 
-    def dup_line_symb(self, symb, new):
+    def dup_line_symb(self, symb, new_name):
         """
         Duplicate a line symbol from a group or line symbol.
         The new name must not already exist in the database.
         
-        :param symb:  Symbol Handle to duplicate
-        :param new:   Name of the New Symbol
-        :type  symb:  int
-        :type  new:   str
+        :param symb:      Symbol Handle to duplicate
+        :param new_name:  Name of the New Symbol
+        :type  symb:      int
+        :type  new_name:  str
 
-        :returns:     New Symbol Handle
-        :rtype:       int
+        :returns:         New Symbol Handle
+        :rtype:           int
 
         .. versionadded:: 5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._dup_line_symb(symb, new.encode())
+        ret_val = self._dup_line_symb(symb, new_name.encode())
         return ret_val
 
 
 
 
-    def dup_symb(self, symb, new):
+    def dup_symb(self, symb, new_name):
         """
         New Symbol by duplicating an existing symbol, LOCKED
         
-        :param symb:  Symbol Handle to duplicate
-        :param new:   Name of the New Symbol
-        :type  symb:  int
-        :type  new:   str
+        :param symb:      Symbol Handle to duplicate
+        :param new_name:  Name of the New Symbol
+        :type  symb:      int
+        :type  new_name:  str
 
-        :returns:     New Symbol Handle
-        :rtype:       int
+        :returns:         New Symbol Handle
+        :rtype:           int
 
         .. versionadded:: 5.0
 
@@ -3152,23 +3152,23 @@ class GXDB(gxapi_cy.WrapDB):
 
             `dup_symb_no_lock <geosoft.gxapi.GXDB.dup_symb_no_lock>`
         """
-        ret_val = self._dup_symb(symb, new.encode())
+        ret_val = self._dup_symb(symb, new_name.encode())
         return ret_val
 
 
 
 
-    def dup_symb_no_lock(self, symb, new):
+    def dup_symb_no_lock(self, symb, new_name):
         """
         New Symbol by duplicating an existing symbol, NO LOCK.
         
-        :param symb:  Symbol Handle to duplicate
-        :param new:   Name of the New Symbol
-        :type  symb:  int
-        :type  new:   str
+        :param symb:      Symbol Handle to duplicate
+        :param new_name:  Name of the New Symbol
+        :type  symb:      int
+        :type  new_name:  str
 
-        :returns:     New Symbol Handle
-        :rtype:       int
+        :returns:         New Symbol Handle
+        :rtype:           int
 
         .. versionadded:: 5.0
 
@@ -3181,7 +3181,7 @@ class GXDB(gxapi_cy.WrapDB):
 
             `dup_symb <geosoft.gxapi.GXDB.dup_symb>`
         """
-        ret_val = self._dup_symb_no_lock(symb, new.encode())
+        ret_val = self._dup_symb_no_lock(symb, new_name.encode())
         return ret_val
 
 

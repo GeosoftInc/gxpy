@@ -346,4 +346,25 @@ Dip convention
     
     .. autoattribute:: geosoft.gxapi.DIP_CONVENTION_POSITIVE
 
+
+.. _DH_DESURVEY:
+
+DH_DESURVEY constants
+-----------------------------------------------------------------------
+
+Desurvey method
+
+.. autodata:: geosoft.gxapi.DH_DESURVEY_STRAIGHT_SEG
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_DESURVEY_STRAIGHT_SEG
+.. autodata:: geosoft.gxapi.DH_DESURVEY_RAD_CURVE
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_DESURVEY_RAD_CURVE
+.. autodata:: geosoft.gxapi.DH_DESURVEY_POLYNOMIAL
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_DESURVEY_POLYNOMIAL
+
 	

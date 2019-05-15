@@ -21,7 +21,7 @@ class GXFLT(gxapi_cy.WrapFLT):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXFLT, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):

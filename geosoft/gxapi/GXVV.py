@@ -36,7 +36,7 @@ class GXVV(gxapi_cy.WrapVV):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXVV, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -555,18 +555,18 @@ class GXVV(gxapi_cy.WrapVV):
 
 
 
-    def fill_int(self, int):
+    def fill_int(self, value):
         """
         Fill a `GXVV <geosoft.gxapi.GXVV>` with an int value.
         
-        :param int:  Value to fill with
-        :type  int:  int
+        :param value:  Value to fill with
+        :type  value:  int
 
         .. versionadded:: 5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._fill_int(int)
+        self._fill_int(value)
         
 
 
@@ -719,6 +719,24 @@ class GXVV(gxapi_cy.WrapVV):
         """
         str_val.value = self._get_string(element, str_val.value.encode())
         
+
+
+
+
+    def get_ext_type(self):
+        """
+        Return the internal data type of this VV
+        
+
+        :returns:    The internal VV data type :ref:`GS_TYPES`
+        :rtype:      int
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val = self._get_ext_type()
+        return ret_val
 
 
 

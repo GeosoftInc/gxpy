@@ -27,7 +27,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXDBWRITE, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):

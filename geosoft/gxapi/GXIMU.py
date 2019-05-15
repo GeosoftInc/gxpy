@@ -24,7 +24,7 @@ class GXIMU(gxapi_cy.WrapIMU):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXIMU, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -372,23 +372,23 @@ class GXIMU(gxapi_cy.WrapIMU):
 
 
     @classmethod
-    def grid_bool(cls, img1, img2, out, bool, sizing, olap):
+    def grid_bool(cls, img1, img2, out, boolean_op, sizing, olap):
         """
         Mask one grid against another using boolean logic
         operations.
         
-        :param img1:    Image of first input grid
-        :param img2:    Image of second input grid
-        :param out:     File name of output grid
-        :param bool:    :ref:`IMU_BOOL_OPT`
-        :param sizing:  :ref:`IMU_BOOL_SIZING`
-        :param olap:    :ref:`IMU_BOOL_OLAP`
-        :type  img1:    GXIMG
-        :type  img2:    GXIMG
-        :type  out:     str
-        :type  bool:    int
-        :type  sizing:  int
-        :type  olap:    int
+        :param img1:        Image of first input grid
+        :param img2:        Image of second input grid
+        :param out:         File name of output grid
+        :param boolean_op:  :ref:`IMU_BOOL_OPT`
+        :param sizing:      :ref:`IMU_BOOL_SIZING`
+        :param olap:        :ref:`IMU_BOOL_OLAP`
+        :type  img1:        GXIMG
+        :type  img2:        GXIMG
+        :type  out:         str
+        :type  boolean_op:  int
+        :type  sizing:      int
+        :type  olap:        int
 
         .. versionadded:: 5.0
 
@@ -397,7 +397,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` parameters must be of type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`!
         If not, the method will terminate.
         """
-        gxapi_cy.WrapIMU._grid_bool(GXContext._get_tls_geo(), img1, img2, out.encode(), bool, sizing, olap)
+        gxapi_cy.WrapIMU._grid_bool(GXContext._get_tls_geo(), img1, img2, out.encode(), boolean_op, sizing, olap)
         
 
 

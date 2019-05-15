@@ -32,7 +32,7 @@ class GXDH(gxapi_cy.WrapDH):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXDH, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -1384,6 +1384,112 @@ class GXDH(gxapi_cy.WrapDH):
 
 
 
+    @classmethod
+    def desurvey(cls, desurvey_method, order, dip_convention, inc, thin, locations, vv_depth, vv_dip, vv_az, x, y, z, top, bottom, vv_x, vv_y, vv_z, vv_d):
+        """
+        Calculate survey locations and depth from a hole survey.
+        
+        :param desurvey_method:  :ref:`DH_DESURVEY`
+        :param order:            Polynomial order
+        :param dip_convention:   :ref:`DIP_CONVENTION`
+        :param inc:              Depth increment
+        :param thin:             Thin nearly co-linear segments?
+        :param locations:        Calculate at predefined depths (inc ignored)
+        :param vv_depth:         Survey Depth
+        :param vv_dip:           Survey Dip
+        :param vv_az:            Survey Azimuth
+        :param x:                Hole X
+        :param y:                Hole Y
+        :param z:                Hole Z
+        :param top:              Hole Top
+        :param bottom:           Hole Bottom
+        :param vv_x:             Out X
+        :param vv_y:             Out Y
+        :param vv_z:             Out Z
+        :param vv_d:             Out Depth
+        :type  desurvey_method:  int
+        :type  order:            int
+        :type  dip_convention:   int
+        :type  inc:              float
+        :type  thin:             bool
+        :type  locations:        bool
+        :type  vv_depth:         GXVV
+        :type  vv_dip:           GXVV
+        :type  vv_az:            GXVV
+        :type  x:                float
+        :type  y:                float
+        :type  z:                float
+        :type  top:              float
+        :type  bottom:           float
+        :type  vv_x:             GXVV
+        :type  vv_y:             GXVV
+        :type  vv_z:             GXVV
+        :type  vv_d:             GXVV
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        gxapi_cy.WrapDH._desurvey(GXContext._get_tls_geo(), desurvey_method, order, dip_convention, inc, thin, locations, vv_depth, vv_dip, vv_az, x, y, z, top, bottom, vv_x, vv_y, vv_z, vv_d)
+        
+
+
+
+    @classmethod
+    def desurvey_from_to(cls, desurvey_method, order, dip_convention, inc, thin, vv_from, vv_to, vv_depth, vv_dip, vv_az, x, y, z, top, bottom, vv_x, vv_y, vv_z, vv_d, vv_l):
+        """
+        Calculate survey locations and depth from a hole survey using from/to values
+        
+        :param desurvey_method:  :ref:`DH_DESURVEY`
+        :param order:            Polynomial order
+        :param dip_convention:   :ref:`DIP_CONVENTION`
+        :param inc:              Inc
+        :param thin:             Thin nearly co-linear segments?
+        :param vv_from:          From Values
+        :param vv_to:            To Values
+        :param vv_depth:         Survey Depth
+        :param vv_dip:           Survey Dip
+        :param vv_az:            Survey Azimuth
+        :param x:                Hole X
+        :param y:                Hole Y
+        :param z:                Hole Z
+        :param top:              Hole Top
+        :param bottom:           Hole Bottom
+        :param vv_x:             Out X
+        :param vv_y:             Out Y
+        :param vv_z:             Out Z
+        :param vv_d:             Out Depth
+        :param vv_l:             From/To segment lengths in output VVs matching each from/to pair
+        :type  desurvey_method:  int
+        :type  order:            int
+        :type  dip_convention:   int
+        :type  inc:              float
+        :type  thin:             bool
+        :type  vv_from:          GXVV
+        :type  vv_to:            GXVV
+        :type  vv_depth:         GXVV
+        :type  vv_dip:           GXVV
+        :type  vv_az:            GXVV
+        :type  x:                float
+        :type  y:                float
+        :type  z:                float
+        :type  top:              float
+        :type  bottom:           float
+        :type  vv_x:             GXVV
+        :type  vv_y:             GXVV
+        :type  vv_z:             GXVV
+        :type  vv_d:             GXVV
+        :type  vv_l:             GXVV
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        gxapi_cy.WrapDH._desurvey_from_to(GXContext._get_tls_geo(), desurvey_method, order, dip_convention, inc, thin, vv_from, vv_to, vv_depth, vv_dip, vv_az, x, y, z, top, bottom, vv_x, vv_y, vv_z, vv_d, vv_l)
+        
+
+
+
 
     def get_ipj(self, ipj):
         """
@@ -1799,15 +1905,15 @@ class GXDH(gxapi_cy.WrapDH):
 
 
     @classmethod
-    def get_template_blob(cls, db, template, imp_type):
+    def get_template_blob(cls, db, templ, imp_type):
         """
         Retrieve the import template from the database.
         
         :param db:        `GXDB <geosoft.gxapi.GXDB>` Handle
-        :param template:  Name of template file to extract to.
+        :param templ:     Name of template file to extract to.
         :param imp_type:  The stored import template type :ref:`DH_DATA`
         :type  db:        GXDB
-        :type  template:  str
+        :type  templ:     str
         :type  imp_type:  int_ref
 
         :returns:         0: No template stored in the database
@@ -1826,21 +1932,21 @@ class GXDH(gxapi_cy.WrapDH):
 
         If no template blob exists, templ
         """
-        ret_val, imp_type.value = gxapi_cy.WrapDH._get_template_blob(GXContext._get_tls_geo(), db, template.encode(), imp_type.value)
+        ret_val, imp_type.value = gxapi_cy.WrapDH._get_template_blob(GXContext._get_tls_geo(), db, templ.encode(), imp_type.value)
         return ret_val
 
 
 
     @classmethod
-    def get_template_info(cls, template, data_type, file, table):
+    def get_template_info(cls, templ, data_type, file, table):
         """
         Retrieve the file, `GXDH <geosoft.gxapi.GXDH>` Table name and type from an import template.
         
-        :param template:   Template name
+        :param templ:      Template name
         :param data_type:  :ref:`DH_DATA`
         :param file:       File name (blank for ODBC, or undefined).
         :param table:      Table name (blank for `DH_DATA_UNKNOWN <geosoft.gxapi.DH_DATA_UNKNOWN>`, or undefined).
-        :type  template:   str
+        :type  templ:      str
         :type  data_type:  int_ref
         :type  file:       str_ref
         :type  table:      str_ref
@@ -1868,22 +1974,22 @@ class GXDH(gxapi_cy.WrapDH):
         `DH_DATA_UNKNOWN <geosoft.gxapi.DH_DATA_UNKNOWN>` is returned for the data type; likely an indication that this
         is not a new-style template produced by Wholeplot.
         """
-        data_type.value, file.value, table.value = gxapi_cy.WrapDH._get_template_info(GXContext._get_tls_geo(), template.encode(), data_type.value, file.value.encode(), table.value.encode())
+        data_type.value, file.value, table.value = gxapi_cy.WrapDH._get_template_info(GXContext._get_tls_geo(), templ.encode(), data_type.value, file.value.encode(), table.value.encode())
         
 
 
 
     @classmethod
-    def get_template_info_ex(cls, template, data_type, file, table, lst):
+    def get_template_info_ex(cls, templ, data_type, file, table, lst):
         """
         Retrieve the file, `GXDH <geosoft.gxapi.GXDH>` Table name, type and channel list from an import template.
         
-        :param template:   Template name
+        :param templ:      Template name
         :param data_type:  :ref:`DH_DATA`
         :param file:       File name (blank for ODBC, or undefined).
         :param table:      Table name (blank for `DH_DATA_UNKNOWN <geosoft.gxapi.DH_DATA_UNKNOWN>`, or undefined).
         :param lst:        Channel list (returned)
-        :type  template:   str
+        :type  templ:      str
         :type  data_type:  int_ref
         :type  file:       str_ref
         :type  table:      str_ref
@@ -1914,7 +2020,7 @@ class GXDH(gxapi_cy.WrapDH):
         This version also returns a list of the channels in the template checks can be made to
         see if the import will exceed the database channel limit.
         """
-        data_type.value, file.value, table.value = gxapi_cy.WrapDH._get_template_info_ex(GXContext._get_tls_geo(), template.encode(), data_type.value, file.value.encode(), table.value.encode(), lst)
+        data_type.value, file.value, table.value = gxapi_cy.WrapDH._get_template_info_ex(GXContext._get_tls_geo(), templ.encode(), data_type.value, file.value.encode(), table.value.encode(), lst)
         
 
 
@@ -3636,18 +3742,18 @@ class GXDH(gxapi_cy.WrapDH):
 
 
 
-    def select_ply2(self, pply, select, inside, new):
+    def select_ply2(self, pply, select, inside, new_mode):
         """
         Select holes in `GXPLY <geosoft.gxapi.GXPLY>` (Polygon) object with options.
         
-        :param pply:    Polygon object
-        :param select:  Select (0) or Deselect (1)
-        :param inside:  Region (0: inside, 1: outside)
-        :param new:     Mode (0: Append, 1: New)
-        :type  pply:    GXPLY
-        :type  select:  int
-        :type  inside:  int
-        :type  new:     int
+        :param pply:      Polygon object
+        :param select:    Select (0) or Deselect (1)
+        :param inside:    Region (0: inside, 1: outside)
+        :param new_mode:  Mode (0: Append, 1: New)
+        :type  pply:      GXPLY
+        :type  select:    int
+        :type  inside:    int
+        :type  new_mode:  int
 
         .. versionadded:: 6.1
 
@@ -3673,7 +3779,7 @@ class GXDH(gxapi_cy.WrapDH):
         Append/Deselect/outside: Deselect all holes outside the polygon.
                               Leave selections inside as is.
         """
-        self._select_ply2(pply, select, inside, new)
+        self._select_ply2(pply, select, inside, new_mode)
         
 
 
@@ -3827,15 +3933,15 @@ class GXDH(gxapi_cy.WrapDH):
 
 
     @classmethod
-    def set_template_blob(cls, db, template, imp_type):
+    def set_template_blob(cls, db, templ, imp_type):
         """
         Store the import template to the database.
         
         :param db:        `GXDB <geosoft.gxapi.GXDB>` Handle
-        :param template:  Import template name
+        :param templ:     Import template name
         :param imp_type:  :ref:`DH_DATA`
         :type  db:        GXDB
-        :type  template:  str
+        :type  templ:     str
         :type  imp_type:  int
 
         .. versionadded:: 6.0
@@ -3848,7 +3954,7 @@ class GXDH(gxapi_cy.WrapDH):
         The import types correspond to the DHIMPORT.IMPTYPE variable:
         0: ASCII, 1: Database/XLS, 2: ODBC
         """
-        gxapi_cy.WrapDH._set_template_blob(GXContext._get_tls_geo(), db, template.encode(), imp_type)
+        gxapi_cy.WrapDH._set_template_blob(GXContext._get_tls_geo(), db, templ.encode(), imp_type)
         
 
 

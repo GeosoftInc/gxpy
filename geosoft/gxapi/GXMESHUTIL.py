@@ -21,7 +21,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXMESHUTIL, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -90,12 +90,15 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :type  outputSurfaceNameBelow:  str
         :type  surface_clip_mode:       int
 
+        :returns:                       Surface clip status
+        :rtype:                         int
+
         .. versionadded:: 9.5
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMESHUTIL._clip_surface_with_grid(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), gridSurfaceFileName.encode(), gridSurfaceName.encode(), outputSurfaceFile.encode(), outputSurfaceNameAbove.encode(), outputSurfaceNameBelow.encode(), surface_clip_mode)
-        
+        ret_val = gxapi_cy.WrapMESHUTIL._clip_surface_with_grid(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), gridSurfaceFileName.encode(), gridSurfaceName.encode(), outputSurfaceFile.encode(), outputSurfaceNameAbove.encode(), outputSurfaceNameBelow.encode(), surface_clip_mode)
+        return ret_val
 
 
 
@@ -125,12 +128,15 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :type  min_z:              float
         :type  max_z:              float
 
+        :returns:                  Surface clip status
+        :rtype:                    int
+
         .. versionadded:: 9.5
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMESHUTIL._clip_surface_with_extents(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), outputSurfaceFile.encode(), outputSurfaceName.encode(), min_x, max_x, min_y, max_y, min_z, max_z)
-        
+        ret_val = gxapi_cy.WrapMESHUTIL._clip_surface_with_extents(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), outputSurfaceFile.encode(), outputSurfaceName.encode(), min_x, max_x, min_y, max_y, min_z, max_z)
+        return ret_val
 
 
 
@@ -152,12 +158,15 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :type  outputSurfaceName:  str
         :type  maskInside:         bool
 
+        :returns:                  Surface clip status
+        :rtype:                    int
+
         .. versionadded:: 9.5
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMESHUTIL._clip_surface_with_polygon2d(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), polygonFile.encode(), outputSurfaceFile.encode(), outputSurfaceName.encode(), maskInside)
-        
+        ret_val = gxapi_cy.WrapMESHUTIL._clip_surface_with_polygon2d(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), polygonFile.encode(), outputSurfaceFile.encode(), outputSurfaceName.encode(), maskInside)
+        return ret_val
 
 
 

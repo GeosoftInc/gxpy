@@ -53,7 +53,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXTPAT, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):

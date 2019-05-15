@@ -22,7 +22,7 @@ class GXVVEXP(gxapi_cy.WrapVVEXP):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXVVEXP, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):

@@ -22,7 +22,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXEDOC, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):

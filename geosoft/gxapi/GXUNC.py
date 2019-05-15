@@ -28,7 +28,7 @@ class GXUNC(gxapi_cy.WrapUNC):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXUNC, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):

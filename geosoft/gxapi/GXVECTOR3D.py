@@ -21,7 +21,7 @@ class GXVECTOR3D(gxapi_cy.WrapVECTOR3D):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXVECTOR3D, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):

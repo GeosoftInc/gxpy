@@ -21,7 +21,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXCHIMERA, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -482,15 +482,15 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
 
     @classmethod
-    def is_element(cls, chan, case):
+    def is_element(cls, chan, case_sensitive):
         """
         Tests a string to see if it is an element symbol
         
-        :param chan:  String to test
-        :param case:  :ref:`STR_CASE`
-        :type  chan:  str
-        :type  case:  int
-        :rtype:       bool
+        :param chan:            String to test
+        :param case_sensitive:  :ref:`STR_CASE`
+        :type  chan:            str
+        :type  case_sensitive:  int
+        :rtype:                 bool
 
         .. versionadded:: 5.0.7
 
@@ -499,7 +499,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         **Note:** Suggested use - testing to see if a channel name is an
         element so that the "ASSAY" class can be set.
         """
-        ret_val = gxapi_cy.WrapCHIMERA._is_element(GXContext._get_tls_geo(), chan.encode(), case)
+        ret_val = gxapi_cy.WrapCHIMERA._is_element(GXContext._get_tls_geo(), chan.encode(), case_sensitive)
         return ret_val
 
 

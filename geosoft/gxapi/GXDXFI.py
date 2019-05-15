@@ -21,7 +21,7 @@ class GXDXFI(gxapi_cy.WrapDXFI):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXDXFI, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
