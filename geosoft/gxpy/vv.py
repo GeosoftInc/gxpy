@@ -372,7 +372,7 @@ class GXvv(Sequence):
         """
         return self.get_data()[0]
 
-    def get_data(self, dtype=None, start=0, n=None):
+    def get_data(self, dtype=None, start=0, n=None, float_dummies_to_nan=True):
         """
         Return vv data in a numpy array
 
@@ -427,9 +427,9 @@ class GXvv(Sequence):
                 else:
                     npd = self._get_data_np(start, n, dtype)
 
-        # float dummies to nan
-        if npd.dtype == np.float32 or npd.dtype == np.float64:
-            npd[npd == gxu.gx_dummy(npd.dtype)] = np.nan
+        if float_dummies_to_nan:
+            if npd.dtype == np.float32 or npd.dtype == np.float64:
+                npd[npd == gxu.gx_dummy(npd.dtype)] = np.nan
 
         fid = self.fid
         start = fid[0] + start * fid[1]
@@ -438,7 +438,7 @@ class GXvv(Sequence):
     def set_data(self, data, fid=None):
         """
         Set vv data from an iterable, which can be another `GXvv` instance.  If the data is float type numpy.nan
-        are used to indicate dummy values.
+\        are used to indicate dummy values.
 
         :param data:    data array of `GXvv` instance, will be reshapped to VV dimension
         :param fid:     fid tuple (start,increment), default does not change current fid
