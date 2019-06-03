@@ -264,8 +264,7 @@ class GXvv(Sequence):
         bytearr = np.empty(sh, dtype=dtype).tobytes()
         self.gxvv.get_data(start, n, bytearr, gxu.gx_dtype_dimension(dtype, self._dim))
         npd = np.frombuffer(bytearr, dtype=dtype).reshape(sh)
-        npd.flags['WRITEABLE'] = True
-        return npd
+        return np.array(npd)
 
     @property
     def unit_of_measure(self):
