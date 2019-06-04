@@ -846,6 +846,8 @@
     <Compile Include="geosoft\gxapi\GXMAPL.py" />
     <Compile Include="geosoft\gxapi\GXMAPTEMPLATE.py" />
     <Compile Include="geosoft\gxapi\GXMATH.py" />
+    <Compile Include="geosoft\gxapi\GXMESH.py" />
+    <Compile Include="geosoft\gxapi\GXMESHUTIL.py" />
     <Compile Include="geosoft\gxapi\GXMETA.py" />
     <Compile Include="geosoft\gxapi\GXMISC.py" />
     <Compile Include="geosoft\gxapi\GXMSTK.py" />
@@ -914,6 +916,7 @@
     <Compile Include="geosoft\gxpy\map.py" />
     <Compile Include="geosoft\gxpy\metadata.py" />
     <Compile Include="geosoft\gxpy\project.py" />
+    <Compile Include="geosoft\gxpy\surface.py" />
     <Compile Include="geosoft\gxpy\system.py" />
     <Compile Include="geosoft\gxpy\tests\base.py" />
     <Compile Include="geosoft\gxpy\tests\run_all.py" />
@@ -928,6 +931,7 @@
     <Compile Include="geosoft\gxpy\tests\test_gx.py" />
     <Compile Include="geosoft\gxpy\tests\test_map.py" />
     <Compile Include="geosoft\gxpy\tests\test_metadata.py" />
+    <Compile Include="geosoft\gxpy\tests\test_surface.py" />
     <Compile Include="geosoft\gxpy\tests\test_system.py" />
     <Compile Include="geosoft\gxpy\tests\test_utility.py" />
     <Compile Include="geosoft\gxpy\tests\test_va.py" />
