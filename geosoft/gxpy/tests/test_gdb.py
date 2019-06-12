@@ -72,16 +72,16 @@ class Test(GXPYTest):
             self.assertEqual(gdb.max_blobs, 650)
             self.assertEqual(gdb.max_lines, 500)
             self.assertEqual(gdb.max_channels, 50)
-            self.assertEqual(gdb.used_blobs, 14)
+            self.assertEqual(gdb.used_blobs, 16)
             self.assertEqual(gdb.used_lines, 5)
-            self.assertEqual(gdb.used_channels, 6)
+            self.assertEqual(gdb.used_channels, 8)
             self.assertEqual(gdb.max_compressed_channel_bytes, 67106816)
-            self.assertEqual(gdb.number_of_blocks, 275)
+            self.assertEqual(gdb.number_of_blocks, 553)
             self.assertEqual(gdb.lost_blocks, 0)
-            self.assertEqual(gdb.free_blocks, 36)
+            self.assertEqual(gdb.free_blocks, 28)
             self.assertEqual(gdb.compression, 0)
             self.assertEqual(gdb.pages_for_blobs, 0)
-            self.assertEqual(gdb.db_size_kb, 638)
+            self.assertEqual(gdb.db_size_kb, 915)
             self.assertEqual(gdb.index_size_kb, 303)
             self.assertEqual(gdb.max_block_size_bytes, 67106792)
             self.assertEqual(gdb.data_has_changed, 0)
@@ -214,36 +214,36 @@ class Test(GXPYTest):
 
             self.assertEqual(len(gdb.file_name), len(self.gdb_name))
             data, ch, fid = gdb.read_line('D578625')
-            self.assertEqual(data.shape, (832, 8))
+            self.assertEqual(data.shape, (832, 10))
 
             gdb.write_line('T45', data, fid=(99, 0.5))
             data, ch, fid = gdb.read_line('T45')
-            self.assertEqual(data.shape, (832, 8))
-            self.assertEqual(len(ch), 8)
+            self.assertEqual(data.shape, (832, 10))
+            self.assertEqual(len(ch), 10)
             self.assertEqual(ch[0], 'X')
             self.assertEqual(fid, (99.0, 0.5))
 
             gdb.write_channel('T46', 'wva', data, fid=(-10, 2.5))
             data, fid = gdb.read_channel('T46', 'wva')
-            self.assertEqual(data.shape, (832, 8))
+            self.assertEqual(data.shape, (832, 10))
             self.assertEqual(fid, (-10.0, 2.5))
             gdb.delete_channel('wva')
 
             gdb.write_line('T46', data, channels='wideva', fid=(-10, 2.5))
             data, ch, fid = gdb.read_line('T46', 'wideva')
-            self.assertEqual(data.shape, (832, 8))
-            self.assertEqual(len(ch), 8)
+            self.assertEqual(data.shape, (832, 10))
+            self.assertEqual(len(ch), 10)
             self.assertEqual(ch[0], 'wideva[0]')
             self.assertEqual(fid, (-10.0, 2.5))
 
             data, ch, fid = gdb.read_line('T46')
-            self.assertEqual(data.shape, (832, 16))
-            self.assertEqual(len(ch), 16)
+            self.assertEqual(data.shape, (832, 20))
+            self.assertEqual(len(ch), 20)
             self.assertEqual(ch[0], 'X')
             self.assertEqual(fid, (-10.0, 2.5))
 
             data, fid = gdb.read_channel('T46', 'wideva')
-            self.assertEqual(data.shape, (832, 8))
+            self.assertEqual(data.shape, (832, 10))
             self.assertEqual(fid, (-10.0, 2.5))
 
             gdb.discard()
@@ -362,7 +362,7 @@ class Test(GXPYTest):
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
 
             df,ch,fid = gdb.read_line_dataframe('D578625')
-            self.assertEqual(df.shape, (832, 8))
+            self.assertEqual(df.shape, (832, 10))
             self.assertEqual(fid[0],0.0)
             self.assertEqual(fid[1],1.0)
 
@@ -379,8 +379,8 @@ class Test(GXPYTest):
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
 
             data = gdb.read_line_vv('D578625')
+            self.assertEqual(len(data), 10)
             for chvv in data:
-                self.assertEqual(len(data), 8)
                 vv = chvv[1]
                 fid = vv.fid
                 self.assertEqual(vv.length, 832)
@@ -388,17 +388,33 @@ class Test(GXPYTest):
                 self.assertEqual(fid[1], 1.0)
 
             data = gdb.read_line_vv('D578625', common_fid=True)
+            self.assertEqual(len(data), 10)
             for chvv in data:
-                self.assertEqual(len(data), 8)
                 vv = chvv[1]
                 fid = vv.fid
+                self.assertEqual(vv.dtype, np.float64)
+                self.assertEqual(vv.length, 832)
+                self.assertEqual(fid[0], 0.0)
+                self.assertEqual(fid[1], 1.0)
+
+            data = gdb.read_line_vv('D578625', common_fid=True, chan_dtypes=True)
+            self.assertEqual(len(data), 10)
+            for i, chvv in enumerate(data):
+                vv = chvv[1]
+                fid = vv.fid
+                if i == 5:
+                    self.assertEqual(vv.dtype, np.int16)
+                elif i == 6:
+                    self.assertEqual(vv.dtype, np.dtype('<U64'))
+                else:
+                    self.assertEqual(vv.dtype, np.float64)
                 self.assertEqual(vv.length, 832)
                 self.assertEqual(fid[0], 0.0)
                 self.assertEqual(fid[1], 1.0)
 
             data = gdb.read_line_vv('D578625', common_fid=True, fid=(0.1,4.8))
             for chvv in data:
-                self.assertEqual(len(data), 8)
+                self.assertEqual(len(data), 10)
                 vv = chvv[1]
                 fid = vv.fid
                 self.assertEqual(vv.length, 175)
@@ -441,8 +457,8 @@ class Test(GXPYTest):
             try:
 
                 npd,ch,fid = gdb.read_line('D2', dummy=gxdb.READ_REMOVE_DUMMYROWS)
-                self.assertEqual(npd.shape, (825, 8))
-                self.assertEqual(npd.shape[1], 8)
+                self.assertEqual(npd.shape, (825, 10))
+                self.assertEqual(npd.shape[1], 10)
                 self.assertEqual(npd.shape[1], len(ch))
 
                 npd,ch,fid = gdb.read_line('D2',dummy=gxdb.READ_REMOVE_DUMMYCOLUMNS)
@@ -1102,21 +1118,21 @@ class Test(GXPYTest):
                 gdb.delete_line_data('D578625')
                 data, _, fid = gdb.read_line('D578625')
                 self.assertEqual((0.0, 1.0), fid)
-                self.assertEqual((0, 8), data.shape)
+                self.assertEqual((0, 10), data.shape)
                 df, _, fid = gdb.read_line_dataframe('D578625')
-                self.assertEqual((0, 8), df.shape)
+                self.assertEqual((0, 10), df.shape)
                 self.assertEqual((0.0, 1.0), fid)
 
                 # Correct single row line handling
-                gdb.write_line('D578625', np.zeros((1, 8), dtype=np.float64))
+                gdb.write_line('D578625', np.zeros((1, 10), dtype=np.float64))
                 data, _, fid = gdb.read_line('D578625')
                 self.assertEqual((0.0, 1.0), fid)
-                self.assertEqual((1, 8), data.shape)
-                self.npAssertEqual([[0, 0, 0, 0, 0, 0, 0, 0]], data)
+                self.assertEqual((1, 10), data.shape)
+                self.npAssertEqual([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], data)
                 df, _, fid = gdb.read_line_dataframe('D578625')
-                self.assertEqual((1, 8), df.shape)
+                self.assertEqual((1, 10), df.shape)
                 self.assertEqual((0.0, 1.0), fid)
-                self.npAssertEqual([[0, 0, 0, 0, 0, 0, 0, 0]], df.values)
+                self.npAssertEqual(np.array([[0, 0, 0, 0, 0, 0, '0', 0, 0, 0]], dtype=np.object), df.values)
         finally:
             tmpgdb.delete = True
 

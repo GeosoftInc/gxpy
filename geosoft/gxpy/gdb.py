@@ -1563,17 +1563,16 @@ class Geosoft_gdb(gxgeo.Geometry):
             va = self.read_channel_va(line, channel, dtype)
             return va.get_data(va.dtype)[0], va.fid
 
-    def read_line_vv(self, line, channels=None, dtype=None, fid=None, common_fid=False):
+    def read_line_vv(self, line, channels=None, dtype=None, fid=None, common_fid=False, chan_dtypes=False):
         """
         Read a line of data into VVs stored in a dictionary by channel.
 
         :param line:        line to read, string or symbol number
         :param channels:    list of channels, strings or symbol number.  If None, read all channels
-        :param dtype:       numpy data type for the array, default np.float64 for multi-channel data,
-                            data type for single channel data. Use "<Unnn" for string type.
+        :param dtype:       numpy data type for the array, default np.float64 for multi-channel data (unless
+                            chan_dtypes is `True`), data type for single channel data. Use "<Unnn" for string type.
         :param common_fid:  `True` to resample all channels to a common fiducial
-        :param fid:         required fid (start, increment), ignored if `common_fid=False`.
-                            if `common_fid=True` and fid= is not defined, use the smallest common fid.
+        :param chan_dtypes: `True` to determine dtype for each vv from channel type, default `False`
         :returns:           list of tuples [(channel_name, vv), ...]
 
         If a requested channel is a VA, it is with channel names 'name[0]', 'name[1]', etc.
@@ -1606,7 +1605,9 @@ class Geosoft_gdb(gxgeo.Geometry):
         # make up channel list, expanding VA channels
         ch_names, ch_symb, c_type = self._expand_chan_list(channels)
 
-        if dtype is None:
+        if chan_dtypes:
+            dtype = None
+        elif dtype is None:
             dtype = np.float64
 
         # read the data into vv
