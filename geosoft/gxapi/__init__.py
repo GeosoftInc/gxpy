@@ -4737,12 +4737,12 @@ DIP_CONVENTION_POSITIVE = 1
 #
 # Desurvey method
 
-#: Straight seg
-DH_DESURVEY_STRAIGHT_SEG = 0
 #: Rad curve
-DH_DESURVEY_RAD_CURVE = 1
+DH_DESURVEY_RAD_CURVE = 0
 #: Polynomial
-DH_DESURVEY_POLYNOMIAL = 2	
+DH_DESURVEY_POLYNOMIAL = 1
+#: Straight seg
+DH_DESURVEY_STRAIGHT_SEG = 2	
 
 #
 # GXDMPPLY Constants
@@ -6052,6 +6052,8 @@ FILE_FILTER_DMP = 129
 FILE_FILTER_RAW = 130
 #: Data files  ``*.dat`  LOCAL
 FILE_FILTER_DAT = 131
+#: OMF files  ``*.omf`  LOCAL
+FILE_FILTER_OMF = 132
 
 #
 # FILE_FORM constants

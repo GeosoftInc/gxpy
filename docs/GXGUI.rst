@@ -617,6 +617,10 @@ File filters
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.FILE_FILTER_DAT
+.. autodata:: geosoft.gxapi.FILE_FILTER_OMF
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.FILE_FILTER_OMF
 
 
 .. _FILE_FORM:

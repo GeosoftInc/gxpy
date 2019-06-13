@@ -4,6 +4,7 @@
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXPG import GXPG
+from .GXVV import GXVV
 
 
 ### endblock ClassImports
@@ -2055,6 +2056,77 @@ class GXIP(gxapi_cy.WrapIP):
         """
         gxapi_cy.WrapIP._locate_contributing_electrodes(GXContext._get_tls_geo(), db, map.encode(), rx1x.encode(), rx1y.encode(), rx2x.encode(), rx2y.encode(), tx1x.encode(), tx1y.encode(), tx2x.encode(), tx2y.encode(), sym_size)
         
+
+
+
+    @classmethod
+    def locate_contributing_electrodes_3d(cls, db, map, rx1x, rx1y, rx1z, rx2x, rx2y, rx2z, tx1x, tx1y, tx1z, tx2x, tx2y, tx2z, sym_size):
+        """
+        Locate on a 3D view electrodes selected in a database row.
+        
+        :param db:        `GXDB <geosoft.gxapi.GXDB>` object
+        :param map:       The current map
+        :param rx1x:      Rx1 X channel (required)
+        :param rx1y:      Rx1 Y channel (required)
+        :param rx1z:      Rx1 Z channel (assume zero elevation if not specified)
+        :param rx2x:      Rx2 X channel
+        :param rx2y:      Rx2 Y channel
+        :param rx2z:      Rx2 Z channel (assume zero elevation if not specified)
+        :param tx1x:      Tx1 X channel
+        :param tx1y:      Tx1 Y channel
+        :param tx1z:      Tx1 Z channel (assume zero elevation if not specified)
+        :param tx2x:      Tx2 X channel
+        :param tx2y:      Tx2 Y channel
+        :param tx2z:      Tx2 Z channel (assume zero elevation if not specified)
+        :param sym_size:  Symbol size (ground units)
+        :type  db:        GXDB
+        :type  map:       str
+        :type  rx1x:      str
+        :type  rx1y:      str
+        :type  rx1z:      str
+        :type  rx2x:      str
+        :type  rx2y:      str
+        :type  rx2z:      str
+        :type  tx1x:      str
+        :type  tx1y:      str
+        :type  tx1z:      str
+        :type  tx2x:      str
+        :type  tx2y:      str
+        :type  tx2z:      str
+        :type  sym_size:  float
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** Sets up an EXT object in the database that captures row/line change events and plots the
+        electrodes for the selected row on an accompanying 3D view.
+        The EXT object is removed by running LaunchRemoveContributingElectrodesEXTTool_IPGUI.
+        This EXT is not serialized, so it is also removed if the database is closed (since
+        this is not the normal behaviour expected from a database).
+        """
+        gxapi_cy.WrapIP._locate_contributing_electrodes_3d(GXContext._get_tls_geo(), db, map.encode(), rx1x.encode(), rx1y.encode(), rx1z.encode(), rx2x.encode(), rx2y.encode(), rx2z.encode(), tx1x.encode(), tx1y.encode(), tx1z.encode(), tx2x.encode(), tx2y.encode(), tx2z.encode(), sym_size)
+        
+
+
+
+
+    def get_grids_vv(self):
+        """
+        Get a VV populated with grids created making pseudosections by this IP object
+        
+
+        :returns:    `GXVV <geosoft.gxapi.GXVV>` Object
+        :rtype:      GXVV
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** You can use this list (for instance) to add the created grids to the project list.
+        """
+        ret_val = self._get_grids_vv()
+        return GXVV(ret_val)
 
 
 

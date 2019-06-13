@@ -354,10 +354,6 @@ DH_DESURVEY constants
 
 Desurvey method
 
-.. autodata:: geosoft.gxapi.DH_DESURVEY_STRAIGHT_SEG
-    :annotation:
-    
-    .. autoattribute:: geosoft.gxapi.DH_DESURVEY_STRAIGHT_SEG
 .. autodata:: geosoft.gxapi.DH_DESURVEY_RAD_CURVE
     :annotation:
     
@@ -366,5 +362,9 @@ Desurvey method
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.DH_DESURVEY_POLYNOMIAL
+.. autodata:: geosoft.gxapi.DH_DESURVEY_STRAIGHT_SEG
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DH_DESURVEY_STRAIGHT_SEG
 
 	
