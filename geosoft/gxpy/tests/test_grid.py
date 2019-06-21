@@ -165,6 +165,7 @@ class Test(GXPYTest):
             self.assertEqual(properties.get('rot'),5.0)
             self.assertEqual(properties.get('nx'),100)
             self.assertEqual(properties.get('ny'),50)
+            self.assertEqual(properties.get('gridtype'), 'MEMORY')
             self.assertEqual(str(properties.get('coordinate_system')),'NAD27 / UTM zone 18N')
             self.assertEqual(properties.get('dtype'),np.int16)
 
