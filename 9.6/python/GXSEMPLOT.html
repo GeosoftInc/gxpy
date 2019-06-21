@@ -1,0 +1,1602 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GXSEMPLOT class &#8212; Geosoft GX Python API 9.6.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXSEMPLOT class</a><ul>
+<li><a class="reference internal" href="#semplot-group-class-constants">SEMPLOT_GROUP_CLASS constants</a></li>
+<li><a class="reference internal" href="#semplot-export-constants">SEMPLOT_EXPORT constants</a></li>
+<li><a class="reference internal" href="#semplot-ext-constants">SEMPLOT_EXT constants</a></li>
+<li><a class="reference internal" href="#semplot-plot-constants">SEMPLOT_PLOT constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXSEMPLOT.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxsemplot-class">
+<span id="gxsemplot"></span><h1>GXSEMPLOT class<a class="headerlink" href="#gxsemplot-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXSEMPLOT">
+<em class="property">class </em><code class="descname">GXSEMPLOT</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXSEMPLOT class.</p>
+<p>Oasis montaj implementation of RTE <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a></p>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.apply_filter_to_mask">
+<em class="property">classmethod </em><code class="descname">apply_filter_to_mask</code><span class="sig-paren">(</span><em>db</em>, <em>filter</em>, <em>mask_ch</em>, <em>mineral_ch</em>, <em>mineral</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.apply_filter_to_mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the filter to the mask channel</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>filter</strong> (<em>str</em>) – Filter name</li>
+<li><strong>mask_ch</strong> (<em>str</em>) – Mask channel name</li>
+<li><strong>mineral_ch</strong> (<em>str</em>) – Mineral channel name</li>
+<li><strong>mineral</strong> (<em>str</em>) – Mineral to use (“All” or “” for all)</li>
+<li><strong>mode</strong> (<em>int</em>) – Mask mode (0: Append, 1: New)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The mask channel is updated for the current data to reflect
+the actions of the filter. Those values passing get 1, those
+failing get 0.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.convert_dummies">
+<em class="property">classmethod </em><code class="descname">convert_dummies</code><span class="sig-paren">(</span><em>db</em>, <em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.convert_dummies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert dummies to zero values for assay channels.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>line</strong> (<em>int</em>) – Input line to convert</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The is operation is controlled by the Preferences
+“Use dummies to indicate no data?” By default, this option is “yes”
+so this function will return with no changes. However, if
+“no”, then all ASSAY class channels will have dummy values
+converted to 0.0.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.create_ascii_template">
+<em class="property">classmethod </em><code class="descname">create_ascii_template</code><span class="sig-paren">(</span><em>name</em>, <em>temp</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.create_ascii_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>: Generate ASCII import template automatically</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<em>str</em>) – Data file name</li>
+<li><strong>temp</strong> (<em>str</em>) – Template to make</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">1 if it succeeds in creating a Template.
+0 if it fails.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.create_database_template">
+<em class="property">classmethod </em><code class="descname">create_database_template</code><span class="sig-paren">(</span><em>name</em>, <em>temp</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.create_database_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate database import template automatically</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<em>str</em>) – Data file name</li>
+<li><strong>temp</strong> (<em>str</em>) – Template to make</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">1 if it succeeds in creating a Template.
+0 if it fails.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.create_groups">
+<em class="property">classmethod </em><code class="descname">create_groups</code><span class="sig-paren">(</span><em>db</em>, <em>mask_ch</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.create_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Group data by anomaly or string channel - Interactive.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>mask_ch</strong> (<em>str</em>) – Mask channel</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.default_groups">
+<em class="property">classmethod </em><code class="descname">default_groups</code><span class="sig-paren">(</span><em>db</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.default_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Group data by selected anomalies.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.edit_filter">
+<em class="property">classmethod </em><code class="descname">edit_filter</code><span class="sig-paren">(</span><em>db</em>, <em>filter</em>, <em>mask_ch</em>, <em>mineral_ch</em>, <em>mineral</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.edit_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edit and create filter on channel values</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>filter</strong> (<em>str</em>) – Name of filter</li>
+<li><strong>mask_ch</strong> (<em>str</em>) – Mask channel name</li>
+<li><strong>mineral_ch</strong> (<em>str</em>) – Mineral channel name</li>
+<li><strong>mineral</strong> (<em>str</em>) – Mineral to restrict filter to.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>-1 - Cancel - Edits to filter discarded.</p>
+<blockquote>
+<div><p>0 - Normal Return. Edits saved to filter file.</p>
+<p>1 - Apply filter to current data only</p>
+<dl class="docutils">
+<dt>2 - Remove filter - If removing filtered data, just</dt>
+<dd><p class="first last">restore the data to the Min/Pos data
+otherwise set the mask channel to 1.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Re-entry code. If not <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iDUMMY" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iDUMMY</span></code></a>, what to do inside the filter after
+going back in. Returned on exit, used on next input.</p>
+<blockquote>
+<div><p>0 - Nothing. Don’t need to go back into this function again.
+1 - Edit the filter.</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>Notes            New and edited filters are stored in useretc in files with</dt>
+<dd><p class="first last">the file extension “.semfilter”
+If a file for the specified filter does not exist, then a
+new filter by that name will be created.</p>
+</dd>
+</dl>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.edit_map_plot_parameters">
+<em class="property">classmethod </em><code class="descname">edit_map_plot_parameters</code><span class="sig-paren">(</span><em>db</em>, <em>mask_ch</em>, <em>mineral_ch</em>, <em>map</em>, <em>view</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.edit_map_plot_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alter parameters in an XYplot Triplot map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>mask_ch</strong> (<em>str</em>) – Mask channel (can be “”)</li>
+<li><strong>mineral_ch</strong> (<em>str</em>) – Mineral channel (can be “” for raw data)</li>
+<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – Map handle</li>
+<li><strong>view</strong> (<em>str</em>) – Map View</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The Parameters <a class="reference internal" href="GXGUI.html#geosoft.gxapi.GXGUI" title="geosoft.gxapi.GXGUI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGUI</span></code></a> is loaded based on settings stored in
+the map. The map is then re-plotted, overwriting the old one,
+based on the new settings. Note that the selection of data
+in the current <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> is used to replot the map.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.edit_plot_components">
+<em class="property">classmethod </em><code class="descname">edit_plot_components</code><span class="sig-paren">(</span><em>db</em>, <em>templ</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.edit_plot_components" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set group names and channels to plot in a template.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>templ</strong> (<em>str</em>) – Template name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The “Components” group in the INI file is edited.</p>
+<p>Looks first in useretc, then in etc.
+Looks first for file prefix “semtemplate” then “xyt” or “tri”
+The altered template will be output to the useretc directory with
+the file extension “semtemplate”.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.edit_plot_parameters">
+<em class="property">classmethod </em><code class="descname">edit_plot_parameters</code><span class="sig-paren">(</span><em>db</em>, <em>templ</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.edit_plot_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set TriPlot parameters in a template.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>templ</strong> (<em>str</em>) – Template name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The “Parameters” group in the INI file is edited.</p>
+<p>Looks first in useretc, then in etc.
+Looks first for file prefix “semtemplate” then “xyt” or “tri”
+The altered template will be output to the useretc directory with
+the file extension “semtemplate”.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.export_overlay">
+<em class="property">classmethod </em><code class="descname">export_overlay</code><span class="sig-paren">(</span><em>overlay</em>, <em>map</em>, <em>mview</em>, <em>group</em>, <em>plot_type</em>, <em>x_stage</em>, <em>x_oxide</em>, <em>y_stage</em>, <em>y_oxide</em>, <em>z_stage</em>, <em>z_oxide</em>, <em>extension</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.export_overlay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create overlay map and file from a group.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>overlay</strong> (<em>str</em>) – Overlay file name</li>
+<li><strong>map</strong> (<em>str</em>) – Associated map</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View with group</li>
+<li><strong>group</strong> (<em>str</em>) – Group name</li>
+<li><strong>plot_type</strong> (<em>int</em>) – <a class="reference internal" href="#semplot-plot"><span class="std std-ref">SEMPLOT_PLOT constants</span></a></li>
+<li><strong>x_stage</strong> (<em>str</em>) – XStage</li>
+<li><strong>x_oxide</strong> (<em>str</em>) – XOxide</li>
+<li><strong>y_stage</strong> (<em>str</em>) – YStage</li>
+<li><strong>y_oxide</strong> (<em>str</em>) – YOxide</li>
+<li><strong>z_stage</strong> (<em>str</em>) – ZStage</li>
+<li><strong>z_oxide</strong> (<em>str</em>) – ZOxide</li>
+<li><strong>extension</strong> (<em>int</em>) – <a class="reference internal" href="#semplot-ext"><span class="std std-ref">SEMPLOT_EXT constants</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The group is written to a new map, and an overlay file
+is created which points to this map.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.export_view">
+<em class="property">classmethod </em><code class="descname">export_view</code><span class="sig-paren">(</span><em>db</em>, <em>lst</em>, <em>new_db</em>, <em>view</em>, <em>mask_ch</em>, <em>mineral_ch</em>, <em>mineral</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.export_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a “View” database</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Original raw data database</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List of lines (anomlies) to export</li>
+<li><strong>new_db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Destination database</li>
+<li><strong>view</strong> (<em>int</em>) – View to export - One of SEMPLOT_XXX_STAGE</li>
+<li><strong>mask_ch</strong> (<em>str</em>) – Mask channel (“” for None)</li>
+<li><strong>mineral_ch</strong> (<em>str</em>) – Mineral channel</li>
+<li><strong>mineral</strong> (<em>str</em>) – Mineral to export (“” for all)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.export_view2">
+<em class="property">classmethod </em><code class="descname">export_view2</code><span class="sig-paren">(</span><em>db</em>, <em>lst</em>, <em>new_db</em>, <em>view</em>, <em>mask_ch</em>, <em>mineral_ch</em>, <em>mineral</em>, <em>export_extra</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.export_view2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a “View” database, with channel selection</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Original raw data database</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List of lines (anomlies) to export</li>
+<li><strong>new_db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Destination database</li>
+<li><strong>view</strong> (<em>int</em>) – View to export - One of SEMPLOT_XXX_STAGE</li>
+<li><strong>mask_ch</strong> (<em>str</em>) – Mask channel (“” for None)</li>
+<li><strong>mineral_ch</strong> (<em>str</em>) – Mineral channel</li>
+<li><strong>mineral</strong> (<em>str</em>) – Mineral to export (“” for all)</li>
+<li><strong>export_extra</strong> (<em>int</em>) – <a class="reference internal" href="#semplot-export"><span class="std std-ref">SEMPLOT_EXPORT constants</span></a> Channel selection</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.filter_lst">
+<em class="property">classmethod </em><code class="descname">filter_lst</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.filter_lst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> with existing <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a> filters</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill.</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> “Supplied” filters are stored in etc, while user-edited and new filters
+are stored in useretc. This function finds all files with the extension
+“.semfilter”, first in useretc, then in etc, and adds the file names
+(without the extension) to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a>. The name with the extension is stored
+as the value.
+The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> is cleared first.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.filter_mineral_pos_data">
+<em class="property">classmethod </em><code class="descname">filter_mineral_pos_data</code><span class="sig-paren">(</span><em>db</em>, <em>mask_ch</em>, <em>mineral_ch</em>, <em>mineral</em>, <em>pos</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.filter_mineral_pos_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter raw data by position and mineral values</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>mask_ch</strong> (<em>str</em>) – Mask channel</li>
+<li><strong>mineral_ch</strong> (<em>str</em>) – Mineral channel</li>
+<li><strong>mineral</strong> (<em>str</em>) – Mineral (string) - “C”, “I” etc.</li>
+<li><strong>pos</strong> (<em>int</em>) – Grain position</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The Mask channel will be updated so that those data values
+which “pass” get “1” and those that “fail” get dummy “*”
+NO DATA IS REMOVED.
+Works on all selected lines of data.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.get_associated_lst">
+<em class="property">classmethod </em><code class="descname">get_associated_lst</code><span class="sig-paren">(</span><em>db</em>, <em>group</em>, <em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_associated_lst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the associated channels for this group in a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>group</strong> (<em>int</em>) – Data Group handle</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to copy channels into</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.get_current_mineral_lst">
+<em class="property">classmethod </em><code class="descname">get_current_mineral_lst</code><span class="sig-paren">(</span><em>db</em>, <em>mineral_ch</em>, <em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_current_mineral_lst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> of minerals in selected lines.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>mineral_ch</strong> (<em>str</em>) – Mineral channel name</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> object</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> If the mineral channel name is not specified, it returns
+just the “X” (Unknown) item.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.get_current_position_lst">
+<em class="property">classmethod </em><code class="descname">get_current_position_lst</code><span class="sig-paren">(</span><em>db</em>, <em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_current_position_lst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> of positions in selected lines.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> object</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.get_full_mineral_lst">
+<em class="property">classmethod </em><code class="descname">get_full_mineral_lst</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_full_mineral_lst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> of all minerals in Semplot_Minerals.csv</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> object</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.get_full_position_lst">
+<em class="property">classmethod </em><code class="descname">get_full_position_lst</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_full_position_lst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> of all possible mineral positions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> object</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.get_grouping_lst">
+<em class="property">classmethod </em><code class="descname">get_grouping_lst</code><span class="sig-paren">(</span><em>db</em>, <em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_grouping_lst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get list of items to group symbols by.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List to hold items</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The first item is “Anomaly”, which gives the line names, The second
+item (if the channel exists in the database) is the Sample Number.
+After this are included all string channels which are NOT oxides or
+elements. (The list can include the mineral).
+Channel symbol is the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> value (except for the first item - “Anomaly”)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.get_mineral_channel_name">
+<em class="property">classmethod </em><code class="descname">get_mineral_channel_name</code><span class="sig-paren">(</span><em>db</em>, <em>mineral_ch</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_mineral_channel_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the mineral channel name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>mineral_ch</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Mineral channel name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> First looks at the <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a>.MINERAL_CHANNEL value.
+If not found, returns the first MINERAL class
+channel found. If still not found, returns a
+blank string.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.import_ascii_wizard">
+<em class="property">classmethod </em><code class="descname">import_ascii_wizard</code><span class="sig-paren">(</span><em>name</em>, <em>temp</em>, <em>anomaly</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.import_ascii_wizard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a> ASCII import template.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Data file name</li>
+<li><strong>temp</strong> (<em>str</em>) – Template to make</li>
+<li><strong>anomaly</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Anomaly name (can be “”)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> If the anomaly name is not included, then
+the input data must have an “Anom_Name” field.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.import_bin">
+<em class="property">classmethod </em><code class="descname">import_bin</code><span class="sig-paren">(</span><em>db</em>, <em>data</em>, <em>templ</em>, <em>line</em>, <em>flight</em>, <em>date</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.import_bin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import blocked binary or archive ASCII data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
+<li><strong>data</strong> (<em>str</em>) – Import data file name</li>
+<li><strong>templ</strong> (<em>str</em>) – Import template name</li>
+<li><strong>line</strong> (<em>str</em>) – Optional Line name (see note 3.)</li>
+<li><strong>flight</strong> (<em>int</em>) – Optional Flight number</li>
+<li><strong>date</strong> (<em>float</em>) – Optional date</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> This wrapper is for <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a>, and does not require the import licence.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Binary import templates have extension .I2 by convention.  See
+BINARY.I2 for a description of the template format.
+Archive import templates have extension .I3 by convention. See
+ARCHIVE.I3 for a description of the template format.</li>
+<li>Both the import template and data file must exist.</li>
+<li>If a line already exists in the database, a new version is created
+unless a line name is passed in.  In this case, the specified name
+is used and the imported channels on the previous line will be
+destroyed.</li>
+</ol>
+</div></blockquote>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.lab_template" title="geosoft.gxapi.GXDU.lab_template"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDU.lab_template</span></code></a> in du.gxh</p>
+</div>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.import_database_ado">
+<em class="property">classmethod </em><code class="descname">import_database_ado</code><span class="sig-paren">(</span><em>name</em>, <em>temp</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.import_database_ado" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a template file for importing semplot databases.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Data file name</li>
+<li><strong>temp</strong> (<em>str</em>) – Template to make</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.import_database_odbc">
+<em class="property">classmethod </em><code class="descname">import_database_odbc</code><span class="sig-paren">(</span><em>connection</em>, <em>temp</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.import_database_odbc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a template file for importing ODBC databases.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>connection</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Connection string (input and returned)</li>
+<li><strong>temp</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Template file (returned)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.init_group_symbols_used">
+<em class="property">classmethod </em><code class="descname">init_group_symbols_used</code><span class="sig-paren">(</span><em>db</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.init_group_symbols_used" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes memory of symbols used in plotting.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Maintains a list of the symbols used in plotting. Call before
+Plotting one or more legends - symbols are accumulated.
+<a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.plot_symbol_legend" title="geosoft.gxapi.GXSEMPLOT.plot_symbol_legend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_symbol_legend</span></code></a> uses this information to create a legend.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXSEMPLOT.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.mineral_id">
+<em class="property">classmethod </em><code class="descname">mineral_id</code><span class="sig-paren">(</span><em>db</em>, <em>resid</em>, <em>min_ch</em>, <em>res_ch</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.mineral_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identify minerals from the oxide channels.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
+<li><strong>resid</strong> (<em>float</em>) – Maximum residual value (in % of the total oxide)</li>
+<li><strong>min_ch</strong> (<em>int</em>) – Mineral channel (Locked RW)</li>
+<li><strong>res_ch</strong> (<em>int</em>) – Residual channel (Locked RW)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Finds the best mineral matching the composition for each
+row of oxide values. Works using linear programming and
+the simplex method to maximize the oxides used to create
+each of the possible output minerals. The mineral leaving the
+least leftover is selected, as long as the residual (measured
+as a percent of the total) is less than or equal to the
+input value.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.new_filter">
+<em class="property">classmethod </em><code class="descname">new_filter</code><span class="sig-paren">(</span><em>filter</em>, <em>model</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.new_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new selection filter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filter</strong> (<em>str</em>) – New filter name</li>
+<li><strong>model</strong> (<em>str</em>) – Filter to use as a model (can be “”)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Creates a new, empty filter file in the useretc directory</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.new_template">
+<em class="property">classmethod </em><code class="descname">new_template</code><span class="sig-paren">(</span><em>templ</em>, <em>type</em>, <em>model</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.new_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new XYPlot or TriPlot template.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>templ</strong> (<em>str</em>) – New template name</li>
+<li><strong>type</strong> (<em>int</em>) – Unknown</li>
+<li><strong>model</strong> (<em>str</em>) – Template to use as a model (can be “”)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The new template is written to the useretc directory, with
+the file extension “semfilter”. The template contains a parameter
+identifying it as an XY or Triplot.</p>
+<p>Model Template: Looks first in useretc, then in etc.
+Looks first for file prefix “semtemplate” then “xyt” or “tri”</p>
+<p>Because there are so many shared parameters, it is possible to use
+an XYPlot template as a model for a TriPlot, and vica-verca, with
+few complications.  (e.g. needing to define a “Z” component)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.null">
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT">GXSEMPLOT</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.overlay_lst">
+<em class="property">classmethod </em><code class="descname">overlay_lst</code><span class="sig-paren">(</span><em>lst</em>, <em>extension</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.overlay_lst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill a list with the available plot overlay names</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Input <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a>.</li>
+<li><strong>extension</strong> (<em>int</em>) – <a class="reference internal" href="#semplot-ext"><span class="std std-ref">SEMPLOT_EXT constants</span></a></li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#semplot-plot"><span class="std std-ref">SEMPLOT_PLOT constants</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Looks first in useretc, then in etc.
+See <a class="reference internal" href="#semplot-ext"><span class="std std-ref">SEMPLOT_EXT constants</span></a> definitions above for which files to look for.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.plot">
+<em class="property">classmethod </em><code class="descname">plot</code><span class="sig-paren">(</span><em>db</em>, <em>templ</em>, <em>mask_ch</em>, <em>mineral_ch</em>, <em>map</em>, <em>map_mode</em>, <em>plot_symb</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot an XYPlot or TriPlot based on the template.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>templ</strong> (<em>str</em>) – Template file name</li>
+<li><strong>mask_ch</strong> (<em>str</em>) – Mask channel (can be “”)</li>
+<li><strong>mineral_ch</strong> (<em>str</em>) – Mineral channel (can be “” for raw data)</li>
+<li><strong>map</strong> (<em>str</em>) – Map name</li>
+<li><strong>map_mode</strong> (<em>int</em>) – Map open mode; one of MAP_WRITEXXX (see map.gxh)</li>
+<li><strong>plot_symb</strong> (<em>int</em>) – Plot symbols (O: No, 1:Yes) ?</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The “Components” and “Parameters” groups in the INI file
+are used.
+Only values with mask values of 1 are plotted, if the mask
+channel is specified.</p>
+<p>Call “<a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.reset_used_channel" title="geosoft.gxapi.GXSEMPLOT.reset_used_channel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_used_channel</span></code></a>” prior to this function
+in order to track the values actually plotted.</p>
+<p>Call <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.init_group_symbols_used" title="geosoft.gxapi.GXSEMPLOT.init_group_symbols_used"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_group_symbols_used</span></code></a> prior to this function
+to reset recording of the symbols used in plotting (for legends etc).</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.plot_symbol_legend">
+<em class="property">classmethod </em><code class="descname">plot_symbol_legend</code><span class="sig-paren">(</span><em>db</em>, <em>mview</em>, <em>x_min</em>, <em>y_min</em>, <em>y_max</em>, <em>symb_size</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.plot_symbol_legend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a symbol legend in a view.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View to plot into</li>
+<li><strong>x_min</strong> (<em>float</em>) – X Minimum</li>
+<li><strong>y_min</strong> (<em>float</em>) – Y Minimum</li>
+<li><strong>y_max</strong> (<em>float</em>) – Y Maximum</li>
+<li><strong>symb_size</strong> (<em>float</em>) – Symbol size</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> This function depends on <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.init_group_symbols_used" title="geosoft.gxapi.GXSEMPLOT.init_group_symbols_used"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_group_symbols_used</span></code></a>
+before the plot for which this legend is created is made.
+The symbols and groups to use in the legend are stored to
+a database blob after the plot is made. These values are
+recovered by this function to make the legend at the
+specified location.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.prop_symb">
+<em class="property">classmethod </em><code class="descname">prop_symb</code><span class="sig-paren">(</span><em>db</em>, <em>map</em>, <em>view</em>, <em>chan</em>, <em>mask_ch</em>, <em>mineral_ch</em>, <em>log</em>, <em>area</em>, <em>base</em>, <em>scale</em>, <em>symb</em>, <em>wt</em>, <em>line_col</em>, <em>fill_col</em>, <em>legend</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.prop_symb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a proportional symbol plot.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – Map to plot to</li>
+<li><strong>view</strong> (<em>str</em>) – View to replot</li>
+<li><strong>chan</strong> (<em>str</em>) – Channel name</li>
+<li><strong>mask_ch</strong> (<em>str</em>) – Mask channel (can be “”)</li>
+<li><strong>mineral_ch</strong> (<em>str</em>) – Mineral channel (</li>
+<li><strong>log</strong> (<em>int</em>) – Linear (0) or logarithmic (1) scaling</li>
+<li><strong>area</strong> (<em>int</em>) – Scale by diameter (0) or area (1)</li>
+<li><strong>base</strong> (<em>float</em>) – Scale base (log) data units</li>
+<li><strong>scale</strong> (<em>float</em>) – Scale factor (log) data units/mm</li>
+<li><strong>symb</strong> (<em>int</em>) – Symbol number</li>
+<li><strong>wt</strong> (<em>int</em>) – Symbol weight</li>
+<li><strong>line_col</strong> (<em>int</em>) – Symbol line color</li>
+<li><strong>fill_col</strong> (<em>int</em>) – Symbol fill color</li>
+<li><strong>legend</strong> (<em>int</em>) – Plot legend?</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Replots map using proportional symbols</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.re_plot_symbol_legend">
+<em class="property">classmethod </em><code class="descname">re_plot_symbol_legend</code><span class="sig-paren">(</span><em>db</em>, <em>mview</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.re_plot_symbol_legend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replot a symbol legend in a view.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View to plot into</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Searches the VIEW <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a> for information on a previously
+created legend, and if it finds that info, replots the Legend,
+using the current data, group key etc.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.replot">
+<em class="property">classmethod </em><code class="descname">replot</code><span class="sig-paren">(</span><em>db</em>, <em>mask_ch</em>, <em>mineral_ch</em>, <em>map</em>, <em>view</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.replot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replot an existing <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a> plot based on current data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>mask_ch</strong> (<em>str</em>) – Mask channel (can be “”)</li>
+<li><strong>mineral_ch</strong> (<em>str</em>) – Mineral channel (can be “” for raw data)</li>
+<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – Map handle</li>
+<li><strong>view</strong> (<em>str</em>) – Map View containing the plot</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Note that the selection of data
+in the current <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> is used to replot the map.</p>
+<p>Call “<a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.reset_used_channel" title="geosoft.gxapi.GXSEMPLOT.reset_used_channel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_used_channel</span></code></a>” prior to this function
+in order to track the values actually plotted.</p>
+<p>Call <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.init_group_symbols_used" title="geosoft.gxapi.GXSEMPLOT.init_group_symbols_used"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_group_symbols_used</span></code></a> prior to this function
+to reset recording of the symbols used in plotting (for legends etc).</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.reset_groups">
+<em class="property">classmethod </em><code class="descname">reset_groups</code><span class="sig-paren">(</span><em>db</em>, <em>mask_ch</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.reset_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Re-group data using current settings.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>mask_ch</strong> (<em>str</em>) – Mask channel</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.reset_used_channel">
+<em class="property">classmethod </em><code class="descname">reset_used_channel</code><span class="sig-paren">(</span><em>db</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.reset_used_channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the “Plotted” channel to dummies</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> This function is called before one or a series of plots to initialize
+the “Plotted” channel in all the selected lines to dummy values.
+As the plots are created, those points used in the plot are set to 1,
+so that at the end the database records which values have been plotted.
+This information can then be used to make a symbol legend.
+If the “Plotted” channel does not exist, it is created, associated,
+loaded, and filled with dummies.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.select_poly">
+<em class="property">classmethod </em><code class="descname">select_poly</code><span class="sig-paren">(</span><em>db</em>, <em>mview</em>, <em>mask_ch</em>, <em>mineral_ch</em>, <em>pply</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.select_poly" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select data from a polygonal area on a map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View Handle</li>
+<li><strong>mask_ch</strong> (<em>str</em>) – Mask channel to update</li>
+<li><strong>mineral_ch</strong> (<em>str</em>) – Mineral channel</li>
+<li><strong>pply</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – Polygon to select from, in the view coordinates.</li>
+<li><strong>mode</strong> (<em>int</em>) – Mask mode (0: Append, 1: New)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.set_channel_order">
+<em class="property">classmethod </em><code class="descname">set_channel_order</code><span class="sig-paren">(</span><em>db</em>, <em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.set_channel_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets preset channel order.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Channel names, handles</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Sets channel order as follows:</p>
+<p>Sample_No
+X and Y Locations
+Mineral
+Grain_No
+Position (e.g. center, edge etc.)
+Grain Morph
+Oxides (in the order they appear in Semplot_Oxides.csv)
+Trace Elements (Ordered as in the periodic table)
+Total
+Mask
+IsPlotted (flag set when a value is plotted)
+Other channels</p>
+<p>Channel order is set for all “RawData” groups.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.set_channel_units">
+<em class="property">classmethod </em><code class="descname">set_channel_units</code><span class="sig-paren">(</span><em>db</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.set_channel_units" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set units for oxides (%) and elements (ppm)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> If the channel units are already set, then they are not changed.
+Oxide channels are identified from the Semplot_Oxides.csv file.
+Trace elements are identified from the periodic table of the
+elements, except for “Y”, if it is the current Y channel.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.set_itr">
+<em class="property">classmethod </em><code class="descname">set_itr</code><span class="sig-paren">(</span><em>db</em>, <em>ch</em>, <em>itr</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.set_itr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Put <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> into a channel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>ch</strong> (<em>int</em>) – Data channel handle</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.set_mask">
+<em class="property">classmethod </em><code class="descname">set_mask</code><span class="sig-paren">(</span><em>db</em>, <em>mask_ch</em>, <em>mineral_ch</em>, <em>mineral</em>, <em>selected</em>, <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.set_mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the mask channel ON or OFF.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>mask_ch</strong> (<em>str</em>) – Mask channel</li>
+<li><strong>mineral_ch</strong> (<em>str</em>) – Mineral channel</li>
+<li><strong>mineral</strong> (<em>str</em>) – Mineral to use (“All” or “” for all)</li>
+<li><strong>selected</strong> (<em>int</em>) – 0 for all lines, 1 for selected lines</li>
+<li><strong>val</strong> (<em>int</em>) – 0 for off, 1 for on.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.sort_data">
+<em class="property">classmethod </em><code class="descname">sort_data</code><span class="sig-paren">(</span><em>db</em>, <em>group</em>, <em>anomaly</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.sort_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort data by Sample No, Grain and Position</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>group</strong> (<em>int</em>) – Data Group handle</li>
+<li><strong>anomaly</strong> (<em>int</em>) – Use Anomaly channel as primary sort?</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.template_lst">
+<em class="property">classmethod </em><code class="descname">template_lst</code><span class="sig-paren">(</span><em>lst</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.template_lst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill a list with the available plot template names</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Input <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a>.</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#semplot-plot"><span class="std std-ref">SEMPLOT_PLOT constants</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Looks first in useretc, then in etc.
+Looks first for file prefix “semtemplate” then “xyt” or “tri”
+(New-style templates with the “semtemplate” extentsion have the
+plot type “triplot” or “xyplot” inside them.)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.template_type">
+<em class="property">classmethod </em><code class="descname">template_type</code><span class="sig-paren">(</span><em>templ</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.template_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new XYPlot or TriPlot template.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>templ</strong> (<em>str</em>) – Template name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.SEMPLOT_PLOT_XYPLOT" title="geosoft.gxapi.SEMPLOT_PLOT_XYPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SEMPLOT_PLOT_XYPLOT</span></code></a> or
+<a class="reference internal" href="#geosoft.gxapi.SEMPLOT_PLOT_TRIPLOT" title="geosoft.gxapi.SEMPLOT_PLOT_TRIPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SEMPLOT_PLOT_TRIPLOT</span></code></a>
+Terminates if error.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.tile_windows">
+<em class="property">classmethod </em><code class="descname">tile_windows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.tile_windows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tile currently maximimized windows.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.total_oxides">
+<em class="property">classmethod </em><code class="descname">total_oxides</code><span class="sig-paren">(</span><em>db</em>, <em>mineral_ch</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.total_oxides" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the total oxides channel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
+<li><strong>mineral_ch</strong> (<em>str</em>) – Mineral channel</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The mineral channel is needed in order to adjust the total
+with the Fe Corrected Ferric and Ferrous values, and these
+require a mineral for their identification. If none is provided,
+mineral “X” (unknown) is assumed.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSEMPLOT.view_type">
+<em class="property">classmethod </em><code class="descname">view_type</code><span class="sig-paren">(</span><em>map</em>, <em>view</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.view_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test to see if a view is an XYPlot or Triplot view.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – Input map object</li>
+<li><strong>view</strong> (<em>str</em>) – Input view name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#semplot-plot"><span class="std std-ref">SEMPLOT_PLOT constants</span></a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.4.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> First checks the view name to see if it starts with
+<code class="docutils literal notranslate"><span class="pre">&quot;XYplt_&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;Triplt_&quot;</span></code>. Failing that it looks in the
+view <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a> for a value for “Components.Type”, which will
+be either “XYPlot” or “TriPlot”.
+If the view does not appear to be an XYPlot or a TriPlot view,
+the function returns <a class="reference internal" href="#geosoft.gxapi.SEMPLOT_PLOT_UNKNOWN" title="geosoft.gxapi.SEMPLOT_PLOT_UNKNOWN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SEMPLOT_PLOT_UNKNOWN</span></code></a>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="semplot-group-class-constants">
+<span id="semplot-group-class"></span><h2>SEMPLOT_GROUP_CLASS constants<a class="headerlink" href="#semplot-group-class-constants" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a> group class.</p>
+<dl class="data">
+<dt id="geosoft.gxapi.SEMPLOT_GROUP_CLASS">
+<code class="descname">SEMPLOT_GROUP_CLASS</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_GROUP_CLASS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Semplot group class</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">SEMPLOT_GROUP_CLASS</code><em class="property"> = 'Semplot'</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="semplot-export-constants">
+<span id="semplot-export"></span><h2>SEMPLOT_EXPORT constants<a class="headerlink" href="#semplot-export-constants" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a> export type selection.</p>
+<dl class="data">
+<dt id="geosoft.gxapi.SEMPLOT_EXPORT_NORMAL">
+<code class="descname">SEMPLOT_EXPORT_NORMAL</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_EXPORT_NORMAL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports Sample info channels, oxides/ratios, totals, extra channels.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">SEMPLOT_EXPORT_NORMAL</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.SEMPLOT_EXPORT_NOEXTRA">
+<code class="descname">SEMPLOT_EXPORT_NOEXTRA</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_EXPORT_NOEXTRA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports Sample info, oxides/ratios, totals.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">SEMPLOT_EXPORT_NOEXTRA</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="semplot-ext-constants">
+<span id="semplot-ext"></span><h2>SEMPLOT_EXT constants<a class="headerlink" href="#semplot-ext-constants" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a> file extension selection</p>
+<dl class="data">
+<dt id="geosoft.gxapi.SEMPLOT_EXT_ALL">
+<code class="descname">SEMPLOT_EXT_ALL</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_EXT_ALL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use for selection only. Selects both “Semplot” and “<a class="reference internal" href="GXCHIMERA.html#geosoft.gxapi.GXCHIMERA" title="geosoft.gxapi.GXCHIMERA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCHIMERA</span></code></a>” type
+files when creating LSTs etc.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">SEMPLOT_EXT_ALL</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.SEMPLOT_EXT_SEMPLOT">
+<code class="descname">SEMPLOT_EXT_SEMPLOT</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_EXT_SEMPLOT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read/write templates with extensions “.xyt”, “.tri” and “.semtemplate”
+Read/write overlays with extensions “.oly” and “.semoverlay”</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">SEMPLOT_EXT_SEMPLOT</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.SEMPLOT_EXT_CHIMERA">
+<code class="descname">SEMPLOT_EXT_CHIMERA</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_EXT_CHIMERA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read/write templates with extensions “.geosoft_template”
+Read/write overlays with extensions “.geosoft_overlay”</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">SEMPLOT_EXT_CHIMERA</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="semplot-plot-constants">
+<span id="semplot-plot"></span><h2>SEMPLOT_PLOT constants<a class="headerlink" href="#semplot-plot-constants" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a> plot type selection.</p>
+<dl class="data">
+<dt id="geosoft.gxapi.SEMPLOT_PLOT_ALL">
+<code class="descname">SEMPLOT_PLOT_ALL</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_PLOT_ALL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use for selection only. Selects both “XYPlot” and “TriPlot”
+plots when creating LSTs etc.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">SEMPLOT_PLOT_ALL</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.SEMPLOT_PLOT_XYPLOT">
+<code class="descname">SEMPLOT_PLOT_XYPLOT</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_PLOT_XYPLOT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select XY (Scatter) plot.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">SEMPLOT_PLOT_XYPLOT</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.SEMPLOT_PLOT_TRIPLOT">
+<code class="descname">SEMPLOT_PLOT_TRIPLOT</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_PLOT_TRIPLOT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select Tri (Triangular) plot.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">SEMPLOT_PLOT_TRIPLOT</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.SEMPLOT_PLOT_UNKNOWN">
+<code class="descname">SEMPLOT_PLOT_UNKNOWN</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_PLOT_UNKNOWN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returned as an error status from some functions.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">SEMPLOT_PLOT_UNKNOWN</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

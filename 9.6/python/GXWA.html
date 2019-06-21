@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GXWA class &#8212; Geosoft GX Python API 9.6.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXWA class</a><ul>
+<li><a class="reference internal" href="#wa-encode-constants">WA_ENCODE constants</a></li>
+<li><a class="reference internal" href="#wa-open-constants">WA_OPEN constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXWA.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxwa-class">
+<span id="gxwa"></span><h1>GXWA class<a class="headerlink" href="#gxwa-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXWA">
+<em class="property">class </em><code class="descname">GXWA</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXWA" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXWA class.</p>
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a> class enables you to access and write data to ASCII files.</p>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXWA.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>file</em>, <em>append</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXWA.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an ASCII file to write to.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file</strong> (<em>str</em>) – Name of the File</li>
+<li><strong>append</strong> (<em>int</em>) – <a class="reference internal" href="#wa-open"><span class="std std-ref">WA_OPEN constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a> Handle</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA">GXWA</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> ANSI Encoding is assumed, See <a class="reference internal" href="#geosoft.gxapi.GXWA.create_ex" title="geosoft.gxapi.GXWA.create_ex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_ex</span></code></a> to override this.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXWA.create_ex">
+<em class="property">classmethod </em><code class="descname">create_ex</code><span class="sig-paren">(</span><em>file</em>, <em>append</em>, <em>encode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXWA.create_ex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an ASCII file to write to.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file</strong> (<em>str</em>) – Name of the File</li>
+<li><strong>append</strong> (<em>int</em>) – <a class="reference internal" href="#wa-open"><span class="std std-ref">WA_OPEN constants</span></a></li>
+<li><strong>encode</strong> (<em>int</em>) – <a class="reference internal" href="#wa-encode"><span class="std std-ref">WA_ENCODE constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a> Handle</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA">GXWA</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Before version 6.2. text in on the GX API level were handled as characters in the current ANSI code page
+defining how characters above ASCII 127 would be displayed. 6.2. introduced Unicode in the core
+montaj engine that greatly increased the number of symbols that can be used. The <a class="reference internal" href="#wa-encode"><span class="std std-ref">WA_ENCODE constants</span></a> constants
+were introduce that controls how text are written to files on disk with the <a class="reference internal" href="#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a> class.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXWA.create_sbf">
+<em class="property">classmethod </em><code class="descname">create_sbf</code><span class="sig-paren">(</span><em>sbf</em>, <em>file</em>, <em>append</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXWA.create_sbf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an ASCII file to write to in an <a class="reference internal" href="GXSBF.html#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>sbf</strong> (<a class="reference internal" href="GXSBF.html#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><em>GXSBF</em></a>) – Storage</li>
+<li><strong>file</strong> (<em>str</em>) – Name of the File</li>
+<li><strong>append</strong> (<em>int</em>) – <a class="reference internal" href="#wa-open"><span class="std std-ref">WA_OPEN constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a> Handle</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA">GXWA</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> See sbf.gxh. ANSI Encoding is assumed, See <a class="reference internal" href="#geosoft.gxapi.GXWA.create_sbf_ex" title="geosoft.gxapi.GXWA.create_sbf_ex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_sbf_ex</span></code></a> to override this.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXWA.create_sbf_ex">
+<em class="property">classmethod </em><code class="descname">create_sbf_ex</code><span class="sig-paren">(</span><em>sbf</em>, <em>file</em>, <em>append</em>, <em>encode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXWA.create_sbf_ex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an ASCII file to write to in an <a class="reference internal" href="GXSBF.html#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>sbf</strong> (<a class="reference internal" href="GXSBF.html#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><em>GXSBF</em></a>) – Storage</li>
+<li><strong>file</strong> (<em>str</em>) – Name of the File</li>
+<li><strong>append</strong> (<em>int</em>) – <a class="reference internal" href="#wa-open"><span class="std std-ref">WA_OPEN constants</span></a></li>
+<li><strong>encode</strong> (<em>int</em>) – <a class="reference internal" href="#wa-encode"><span class="std std-ref">WA_ENCODE constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a> Handle</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA">GXWA</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Also see sbf.gxh
+Before version 6.2. text in on the GX API level were handled as characters in the current ANSI code page
+defining how characters above ASCII 127 would be displayed. 6.2. introduced Unicode in the core
+montaj engine that greatly increased the number of symbols that can be used. The <a class="reference internal" href="#wa-encode"><span class="std std-ref">WA_ENCODE constants</span></a> constants
+were introduce that controls how text are written to files on disk with the <a class="reference internal" href="#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a> class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXWA.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXWA.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXWA.new_line">
+<code class="descname">new_line</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXWA.new_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Forces a new line in the <a class="reference internal" href="#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a> object.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXWA.null">
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXWA.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA">GXWA</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXWA.puts">
+<code class="descname">puts</code><span class="sig-paren">(</span><em>str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXWA.puts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes a string to the file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<em>str</em>) – String to write</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="wa-encode-constants">
+<span id="wa-encode"></span><h2>WA_ENCODE constants<a class="headerlink" href="#wa-encode-constants" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a> Encode defines</p>
+<dl class="data">
+<dt id="geosoft.gxapi.WA_ENCODE_ANSI">
+<code class="descname">WA_ENCODE_ANSI</code><a class="headerlink" href="#geosoft.gxapi.WA_ENCODE_ANSI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Current Ansi Code Page (Conversion from UTF-8 data, if an exisiting BOM header found with <a class="reference internal" href="#geosoft.gxapi.WA_APPEND" title="geosoft.gxapi.WA_APPEND"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WA_APPEND</span></code></a>,
+encoding will switch to <a class="reference internal" href="#geosoft.gxapi.WA_ENCODE_UTF8" title="geosoft.gxapi.WA_ENCODE_UTF8"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WA_ENCODE_UTF8</span></code></a>)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">WA_ENCODE_ANSI</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.WA_ENCODE_RAW">
+<code class="descname">WA_ENCODE_RAW</code><a class="headerlink" href="#geosoft.gxapi.WA_ENCODE_RAW" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write all data without any conversion check</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">WA_ENCODE_RAW</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.WA_ENCODE_UTF8">
+<code class="descname">WA_ENCODE_UTF8</code><a class="headerlink" href="#geosoft.gxapi.WA_ENCODE_UTF8" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="GXUNC.html#utf8"><span class="std std-ref">UTF8 constants</span></a> (If no exisiting BOM header found with <a class="reference internal" href="#geosoft.gxapi.WA_APPEND" title="geosoft.gxapi.WA_APPEND"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WA_APPEND</span></code></a>, encoding will switch to <a class="reference internal" href="#geosoft.gxapi.WA_ENCODE_ANSI" title="geosoft.gxapi.WA_ENCODE_ANSI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WA_ENCODE_ANSI</span></code></a>)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">WA_ENCODE_UTF8</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.WA_ENCODE_UTF8_NOHEADER">
+<code class="descname">WA_ENCODE_UTF8_NOHEADER</code><a class="headerlink" href="#geosoft.gxapi.WA_ENCODE_UTF8_NOHEADER" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="GXUNC.html#utf8"><span class="std std-ref">UTF8 constants</span></a> w.o. header (will assume <a class="reference internal" href="GXUNC.html#utf8"><span class="std std-ref">UTF8 constants</span></a> encoding if <a class="reference internal" href="#geosoft.gxapi.WA_APPEND" title="geosoft.gxapi.WA_APPEND"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WA_APPEND</span></code></a> is used)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">WA_ENCODE_UTF8_NOHEADER</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.WA_ENCODE_UTF16_NOHEADER">
+<code class="descname">WA_ENCODE_UTF16_NOHEADER</code><a class="headerlink" href="#geosoft.gxapi.WA_ENCODE_UTF16_NOHEADER" title="Permalink to this definition">¶</a></dt>
+<dd><p>UTF16 w.o. header (will assume UTF16 encoding if <a class="reference internal" href="#geosoft.gxapi.WA_APPEND" title="geosoft.gxapi.WA_APPEND"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WA_APPEND</span></code></a> is used)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">WA_ENCODE_UTF16_NOHEADER</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="wa-open-constants">
+<span id="wa-open"></span><h2>WA_OPEN constants<a class="headerlink" href="#wa-open-constants" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a> Open defines</p>
+<dl class="data">
+<dt id="geosoft.gxapi.WA_NEW">
+<code class="descname">WA_NEW</code><a class="headerlink" href="#geosoft.gxapi.WA_NEW" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new file</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">WA_NEW</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.WA_APPEND">
+<code class="descname">WA_APPEND</code><a class="headerlink" href="#geosoft.gxapi.WA_APPEND" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append to existing file</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">WA_APPEND</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

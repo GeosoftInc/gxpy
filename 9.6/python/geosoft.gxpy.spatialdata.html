@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>geosoft.gxpy.spatialdata submodule &#8212; Geosoft GX Python API 9.6.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.spatialdata.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-geosoft.gxpy.spatialdata">
+<span id="geosoft-gxpy-spatialdata-submodule"></span><h1>geosoft.gxpy.spatialdata submodule<a class="headerlink" href="#module-geosoft.gxpy.spatialdata" title="Permalink to this headline">¶</a></h1>
+<p>Geosoft spatial data base class.</p>
+<p>Spatial datasets are collections of geometric objects that have associated data, typically persisting in
+a named file. Examples are Geosoft databases, grids, voxels, geosoft_surfaces.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.spatialdata.SpatialData" title="geosoft.gxpy.spatialdata.SpatialData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SpatialData</span></code></a></td>
+<td>base class for Geosoft spatial data, inherits from <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Geometry</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Constants</strong></p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mode=</span></code> file open mode constants</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="3%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>FILE_READ</td>
+<td>0</td>
+<td>open for read, files are not changed</td>
+</tr>
+<tr class="row-even"><td>FILE_READWRITE</td>
+<td>1</td>
+<td>open for read and write, files can be changed</td>
+</tr>
+<tr class="row-odd"><td>FILE_NEW</td>
+<td>2</td>
+<td>new file, accompanied by <code class="xref py py-obj docutils literal notranslate"><span class="pre">overwrite=</span></code> parameter</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<dl class="class">
+<dt id="geosoft.gxpy.spatialdata.SpatialData">
+<em class="property">class </em><code class="descname">SpatialData</code><span class="sig-paren">(</span><em>name=None</em>, <em>file_name=None</em>, <em>mode=2</em>, <em>overwrite=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.spatialdata.SpatialData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Geometry</span></code></a></p>
+<p>Base class for spatial datasets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> – dataset name.</li>
+<li><strong>file_name</strong> – file name for this dataset.</li>
+<li><strong>mode</strong> – file mode, MODE_READ, MODE_READWRITE or MODE_NEW.  The default is MODE_NEW.</li>
+<li><strong>overwrite</strong> – Default is False. If True will raise an error if MODE_NEW and file_name exists.</li>
+<li><strong>gxobj</strong> – Base GXAPI spatial dataset object, default is None.  If passed the base object is used
+to resolve common named methods like <em>`get_ipj()`</em>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Properties:</th><td class="field-body"><p class="first">properties of <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Geometry</span></code></a> plus:</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.spatialdata.SpatialData.file_name" title="geosoft.gxpy.spatialdata.SpatialData.file_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file_name</span></code></a></td>
+<td>file name</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.spatialdata.SpatialData.metadata" title="geosoft.gxpy.spatialdata.SpatialData.metadata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metadata</span></code></a></td>
+<td>metadata dictionary</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.spatialdata.SpatialData.unit_of_measure" title="geosoft.gxpy.spatialdata.SpatialData.unit_of_measure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unit_of_measure</span></code></a></td>
+<td>primary data unit of measurement</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+<dl class="method">
+<dt id="geosoft.gxpy.spatialdata.SpatialData.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.spatialdata.SpatialData.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>close the dataset.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.spatialdata.SpatialData.dataset_mode">
+<code class="descname">dataset_mode</code><a class="headerlink" href="#geosoft.gxpy.spatialdata.SpatialData.dataset_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dataset open mode</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.spatialdata.SpatialData.file_name">
+<code class="descname">file_name</code><a class="headerlink" href="#geosoft.gxpy.spatialdata.SpatialData.file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>dataset primary file name</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.spatialdata.SpatialData.metadata">
+<code class="descname">metadata</code><a class="headerlink" href="#geosoft.gxpy.spatialdata.SpatialData.metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the dataset metadata as a dictionary.  Can be set, in which case
+the dictionary items passed will be added to, or replace existing metadata.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">Geosoft metadata
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">Schema</span></code></p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.spatialdata.SpatialData.unit_of_measure">
+<code class="descname">unit_of_measure</code><a class="headerlink" href="#geosoft.gxpy.spatialdata.SpatialData.unit_of_measure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Units of measurement (a string) for the primary scalar data associated with this dataset.</p>
+<p>Can be set.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="geosoft.gxpy.spatialdata.SpatialException">
+<em class="property">exception </em><code class="descname">SpatialException</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.spatialdata.SpatialException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.GXRuntimeError</span></code></p>
+<p>Exceptions from <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.spatial_data</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.spatialdata.coordinate_system_from_metadata">
+<code class="descname">coordinate_system_from_metadata</code><span class="sig-paren">(</span><em>meta</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.spatialdata.coordinate_system_from_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a <a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a> instance from metadata.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> – metadata dictionary</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a>, or None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.spatialdata.coordinate_system_from_metadata_file">
+<code class="descname">coordinate_system_from_metadata_file</code><span class="sig-paren">(</span><em>file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.spatialdata.coordinate_system_from_metadata_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a <a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a> instance from metadata.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_name</strong> – spatial dataset name.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a>, or None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.spatialdata.delete_files">
+<code class="descname">delete_files</code><span class="sig-paren">(</span><em>file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.spatialdata.delete_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete file and xml file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_name</strong> – base file name</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.spatialdata.extent_from_metadata">
+<code class="descname">extent_from_metadata</code><span class="sig-paren">(</span><em>meta</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.spatialdata.extent_from_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return spatial dataset extent from geosoft metadata.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> – metadata dictionary</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Point2</span></code></a> instance</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.spatialdata.extent_from_metadata_file">
+<code class="descname">extent_from_metadata_file</code><span class="sig-paren">(</span><em>file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.spatialdata.extent_from_metadata_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return spatial dataset extent from file metadata .xml file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_name</strong> – spatial dataset file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Point2</span></code></a> instance</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.spatialdata.find_meta_branch">
+<code class="descname">find_meta_branch</code><span class="sig-paren">(</span><em>meta</em>, <em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.spatialdata.find_meta_branch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the lowest branch in the meta dictionary that contains the item.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,696 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GXMESH class &#8212; Geosoft GX Python API 9.6.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXMESH class</a><ul>
+<li><a class="reference internal" href="#attribute-data-type-constants">ATTRIBUTE_DATA_TYPE constants</a></li>
+<li><a class="reference internal" href="#attribute-type-constants">ATTRIBUTE_TYPE constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXMESH.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxmesh-class">
+<span id="gxmesh"></span><h1>GXMESH class<a class="headerlink" href="#gxmesh-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXMESH">
+<em class="property">class </em><code class="descname">GXMESH</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXMESH class.</p>
+<p>High Performance Surface API.</p>
+<dl class="method">
+<dt id="geosoft.gxapi.GXMESH.add_face">
+<code class="descname">add_face</code><span class="sig-paren">(</span><em>mesh_name</em>, <em>patch_id</em>, <em>v0</em>, <em>v1</em>, <em>v2</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.add_face" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a face to a patch in a mesh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>mesh_name</strong> (<em>str</em>) – Mesh Name</li>
+<li><strong>patch_id</strong> (<em>int</em>) – Patch ID</li>
+<li><strong>v0</strong> (<em>int</em>) – Vertex index 0 for the face</li>
+<li><strong>v1</strong> (<em>int</em>) – Vertex index 1 for the face</li>
+<li><strong>v2</strong> (<em>int</em>) – Vertex index 2 for the face</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns the face index of the added face</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMESH.add_vertex">
+<code class="descname">add_vertex</code><span class="sig-paren">(</span><em>mesh_name</em>, <em>patch_id</em>, <em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.add_vertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a vertex to a patch in a mesh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>mesh_name</strong> (<em>str</em>) – Mesh Name</li>
+<li><strong>patch_id</strong> (<em>int</em>) – Patch ID</li>
+<li><strong>x</strong> (<em>float</em>) – x coordinate of the vertex</li>
+<li><strong>y</strong> (<em>float</em>) – y coordinate of the vertex</li>
+<li><strong>z</strong> (<em>float</em>) – z coordinate of the vertex</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns the vertex index of the added vertex</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMESH.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new Mesh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Mesh Name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMESH" title="geosoft.gxapi.GXMESH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMESH</span></code></a> handle, terminates if creation fails</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMESH" title="geosoft.gxapi.GXMESH">GXMESH</a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMESH.delete_patch">
+<code class="descname">delete_patch</code><span class="sig-paren">(</span><em>mesh_name</em>, <em>patch_id</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.delete_patch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a patch specified by Patch ID from a mesh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mesh_name</strong> (<em>str</em>) – Mesh Name</li>
+<li><strong>patch_id</strong> (<em>int</em>) – Patch ID</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMESH.get_attribute_values">
+<code class="descname">get_attribute_values</code><span class="sig-paren">(</span><em>mesh_name</em>, <em>attribute_name</em>, <em>data_type</em>, <em>attribute_type</em>, <em>patch_id</em>, <em>vv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.get_attribute_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inserts an attribute set to a mesh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mesh_name</strong> (<em>str</em>) – Mesh Name</li>
+<li><strong>attribute_name</strong> (<em>str</em>) – Attribute Name</li>
+<li><strong>data_type</strong> (<em>int</em>) – <a class="reference internal" href="#attribute-data-type"><span class="std std-ref">ATTRIBUTE_DATA_TYPE constants</span></a></li>
+<li><strong>attribute_type</strong> (<em>int</em>) – <a class="reference internal" href="#attribute-type"><span class="std std-ref">ATTRIBUTE_TYPE constants</span></a></li>
+<li><strong>patch_id</strong> (<em>int</em>) – Patch ID</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Attributes VV <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMESH.get_faces">
+<code class="descname">get_faces</code><span class="sig-paren">(</span><em>mesh_name</em>, <em>patch_id</em>, <em>face_v_1</em>, <em>face_v_2</em>, <em>face_v_3</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.get_faces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all the faces comprising of vertex indices in a patch</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mesh_name</strong> (<em>str</em>) – Mesh Name</li>
+<li><strong>patch_id</strong> (<em>int</em>) – Patch ID</li>
+<li><strong>face_v_1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Face vertex 1</li>
+<li><strong>face_v_2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Face vertex 2</li>
+<li><strong>face_v_3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Face vertex 3</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMESH.get_vertex_point">
+<code class="descname">get_vertex_point</code><span class="sig-paren">(</span><em>mesh_name</em>, <em>patch_id</em>, <em>vertex_index</em>, <em>x_coordinate</em>, <em>y_coordinate</em>, <em>z_coordinate</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.get_vertex_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of faces in a patch in mesh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>mesh_name</strong> (<em>str</em>) – Mesh Name</li>
+<li><strong>patch_id</strong> (<em>int</em>) – Patch ID</li>
+<li><strong>vertex_index</strong> (<em>int</em>) – Vertex Index</li>
+<li><strong>x_coordinate</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X coordinate</li>
+<li><strong>y_coordinate</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y coordinate</li>
+<li><strong>z_coordinate</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Z coordinate</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns the number of faces in a patch</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMESH.get_vertices">
+<code class="descname">get_vertices</code><span class="sig-paren">(</span><em>mesh_name</em>, <em>patch_id</em>, <em>vert_v_vx</em>, <em>vert_v_vy</em>, <em>vert_v_vz</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.get_vertices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all the vertices in a patch</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mesh_name</strong> (<em>str</em>) – Mesh Name</li>
+<li><strong>patch_id</strong> (<em>int</em>) – Patch ID</li>
+<li><strong>vert_v_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertices X</li>
+<li><strong>vert_v_vy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertices Y</li>
+<li><strong>vert_v_vz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertices Z</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMESH.import_grid_to_mesh">
+<em class="property">classmethod </em><code class="descname">import_grid_to_mesh</code><span class="sig-paren">(</span><em>grid_file_name</em>, <em>geosurface_filename</em>, <em>surface_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.import_grid_to_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports a Grid to a Surface. Creates a new Geosurface file for the surface</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>grid_file_name</strong> (<em>str</em>) – Grid File Name</li>
+<li><strong>geosurface_filename</strong> (<em>str</em>) – Surface File Name</li>
+<li><strong>surface_name</strong> (<em>str</em>) – Surface Item Name within the file</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXMESH" title="geosoft.gxapi.GXMESH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMESH</span></code></a> handle, terminates if creation fails</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXMESH" title="geosoft.gxapi.GXMESH">GXMESH</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMESH.insert_attributes">
+<code class="descname">insert_attributes</code><span class="sig-paren">(</span><em>mesh_name</em>, <em>attribute_name</em>, <em>data_type</em>, <em>attribute_type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.insert_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inserts an attribute set to a mesh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mesh_name</strong> (<em>str</em>) – Mesh Name</li>
+<li><strong>attribute_name</strong> (<em>str</em>) – Attribute Name</li>
+<li><strong>data_type</strong> (<em>int</em>) – <a class="reference internal" href="#attribute-data-type"><span class="std std-ref">ATTRIBUTE_DATA_TYPE constants</span></a></li>
+<li><strong>attribute_type</strong> (<em>int</em>) – <a class="reference internal" href="#attribute-type"><span class="std std-ref">ATTRIBUTE_TYPE constants</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMESH.insert_patch">
+<code class="descname">insert_patch</code><span class="sig-paren">(</span><em>mesh_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.insert_patch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inserts a new surface patch to the mesh specified by a unique ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mesh_name</strong> (<em>str</em>) – Mesh Name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Patch ID of the inserted patch</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMESH.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMESH.null">
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMESH" title="geosoft.gxapi.GXMESH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMESH</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXMESH" title="geosoft.gxapi.GXMESH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMESH</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMESH" title="geosoft.gxapi.GXMESH">GXMESH</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMESH.num_faces">
+<code class="descname">num_faces</code><span class="sig-paren">(</span><em>mesh_name</em>, <em>patch_id</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.num_faces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of faces in a patch in mesh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>mesh_name</strong> (<em>str</em>) – Mesh Name</li>
+<li><strong>patch_id</strong> (<em>int</em>) – Patch ID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns the number of faces in a patch</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMESH.num_patches">
+<code class="descname">num_patches</code><span class="sig-paren">(</span><em>mesh_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.num_patches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of patches added to the mesh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mesh_name</strong> (<em>str</em>) – Mesh Name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The number of patches added to the mesh</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMESH.num_vertices">
+<code class="descname">num_vertices</code><span class="sig-paren">(</span><em>mesh_name</em>, <em>patch_id</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.num_vertices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of vertices in a patch in mesh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>mesh_name</strong> (<em>str</em>) – Mesh Name</li>
+<li><strong>patch_id</strong> (<em>int</em>) – Patch ID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns the number of vertices in a patch</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMESH.open">
+<em class="property">classmethod </em><code class="descname">open</code><span class="sig-paren">(</span><em>fileName</em>, <em>lstMeshNames</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opens an existing Mesh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fileName</strong> (<em>str</em>) – File Name</li>
+<li><strong>lstMeshNames</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill with Mesh Names</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXMESH" title="geosoft.gxapi.GXMESH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMESH</span></code></a> handle, terminates if creation fails</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXMESH" title="geosoft.gxapi.GXMESH">GXMESH</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMESH.patch_exists">
+<code class="descname">patch_exists</code><span class="sig-paren">(</span><em>mesh_name</em>, <em>patch_id</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.patch_exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a patch specified by a patch ID exists in a mesh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>mesh_name</strong> (<em>str</em>) – Mesh Name</li>
+<li><strong>patch_id</strong> (<em>int</em>) – Patch ID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE if patch exists</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMESH.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves Mesh to the Project Cache and Geosurface file</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMESH.set_attribute_values">
+<code class="descname">set_attribute_values</code><span class="sig-paren">(</span><em>mesh_name</em>, <em>attribute_name</em>, <em>data_type</em>, <em>attribute_type</em>, <em>patch_id</em>, <em>vv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESH.set_attribute_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inserts an attribute set to a mesh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mesh_name</strong> (<em>str</em>) – Mesh Name</li>
+<li><strong>attribute_name</strong> (<em>str</em>) – Attribute Name</li>
+<li><strong>data_type</strong> (<em>int</em>) – <a class="reference internal" href="#attribute-data-type"><span class="std std-ref">ATTRIBUTE_DATA_TYPE constants</span></a></li>
+<li><strong>attribute_type</strong> (<em>int</em>) – <a class="reference internal" href="#attribute-type"><span class="std std-ref">ATTRIBUTE_TYPE constants</span></a></li>
+<li><strong>patch_id</strong> (<em>int</em>) – Patch ID</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Attributes VV <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="attribute-data-type-constants">
+<span id="attribute-data-type"></span><h2>ATTRIBUTE_DATA_TYPE constants<a class="headerlink" href="#attribute-data-type-constants" title="Permalink to this headline">¶</a></h2>
+<p>Data Type of Attribute</p>
+<dl class="data">
+<dt id="geosoft.gxapi.ATTRIBUTE_DOUBLE">
+<code class="descname">ATTRIBUTE_DOUBLE</code><a class="headerlink" href="#geosoft.gxapi.ATTRIBUTE_DOUBLE" title="Permalink to this definition">¶</a></dt>
+<dd><p>DOUBLE</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">ATTRIBUTE_DOUBLE</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.ATTRIBUTE_THEMATIC">
+<code class="descname">ATTRIBUTE_THEMATIC</code><a class="headerlink" href="#geosoft.gxapi.ATTRIBUTE_THEMATIC" title="Permalink to this definition">¶</a></dt>
+<dd><p>THEMATIC</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">ATTRIBUTE_THEMATIC</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.ATTRIBUTE_VECTOR">
+<code class="descname">ATTRIBUTE_VECTOR</code><a class="headerlink" href="#geosoft.gxapi.ATTRIBUTE_VECTOR" title="Permalink to this definition">¶</a></dt>
+<dd><p>VECTOR</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">ATTRIBUTE_VECTOR</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="attribute-type-constants">
+<span id="attribute-type"></span><h2>ATTRIBUTE_TYPE constants<a class="headerlink" href="#attribute-type-constants" title="Permalink to this headline">¶</a></h2>
+<p>Data Type of Attribute</p>
+<dl class="data">
+<dt id="geosoft.gxapi.ATTRIBUTE_SINGLE">
+<code class="descname">ATTRIBUTE_SINGLE</code><a class="headerlink" href="#geosoft.gxapi.ATTRIBUTE_SINGLE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Single Value Attribute</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">ATTRIBUTE_SINGLE</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.ATTRIBUTE_SURFACE_SIDES">
+<code class="descname">ATTRIBUTE_SURFACE_SIDES</code><a class="headerlink" href="#geosoft.gxapi.ATTRIBUTE_SURFACE_SIDES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Surface Sides Attribute</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">ATTRIBUTE_SURFACE_SIDES</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.ATTRIBUTE_VERTICES">
+<code class="descname">ATTRIBUTE_VERTICES</code><a class="headerlink" href="#geosoft.gxapi.ATTRIBUTE_VERTICES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vertices Attribute</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">ATTRIBUTE_VERTICES</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.ATTRIBUTE_FACES">
+<code class="descname">ATTRIBUTE_FACES</code><a class="headerlink" href="#geosoft.gxapi.ATTRIBUTE_FACES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Faces Attribute</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">ATTRIBUTE_FACES</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>
