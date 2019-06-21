@@ -1196,10 +1196,12 @@ class Grid(gxgm.Geometry):
     @property
     def gridtype(self):
         """
-        grid type (ie. 'GRD' or 'HGD')
+        grid type (e.g. 'GRD', 'HGD' etc. 'MEMORY' for in-memory grid)
 
         .. versionadded:: 9.2
         """
+        if self._file_name is None:
+            return 'MEMORY'
         _, _, _, ext, dec = name_parts(self._file_name)
         if len(dec) > 0:
             return dec.split(';')[0]
