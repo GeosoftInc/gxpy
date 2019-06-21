@@ -24,7 +24,7 @@ class GXPGEXP(gxapi_cy.WrapPGEXP):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXPGEXP, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):

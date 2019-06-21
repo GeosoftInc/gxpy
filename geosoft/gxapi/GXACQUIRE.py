@@ -22,7 +22,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXACQUIRE, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -86,26 +86,26 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
 
 
 
-    def import_hole(self, proj, dir, para, geo_vv, delete, convert):
+    def import_hole(self, proj, dir, para, geo_vv, delete_existing, convert):
         """
         Import Drillhole data acQuire database into a GDB
         
-        :param proj:     Project name
-        :param dir:      Project directory
-        :param para:     Parameter File
-        :param geo_vv:   List of geology name database
-        :param delete:   0: Write to existing databases (overwrite holes), 1: Delete existing databases.
-        :param convert:  Convert Negatives (0,1)
-        :type  proj:     str
-        :type  dir:      str
-        :type  para:     str
-        :type  geo_vv:   GXVV
-        :type  delete:   int
-        :type  convert:  int
+        :param proj:             Project name
+        :param dir:              Project directory
+        :param para:             Parameter File
+        :param geo_vv:           List of geology name database
+        :param delete_existing:  0: Write to existing databases (overwrite holes), 1: Delete existing databases.
+        :param convert:          Convert Negatives (0,1)
+        :type  proj:             str
+        :type  dir:              str
+        :type  para:             str
+        :type  geo_vv:           GXVV
+        :type  delete_existing:  int
+        :type  convert:          int
 
-        :returns:        0 - Ok
-                         1 - Error (Will not stop GX)
-        :rtype:          int
+        :returns:                0 - Ok
+                                 1 - Error (Will not stop GX)
+        :rtype:                  int
 
         .. versionadded:: 6.0.1
 
@@ -114,7 +114,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
         **Note:** Point data and polygon data are saved into Dnnn lines in GDB,
         nnn representing incremental number starting from 0
         """
-        ret_val = self._import_hole(proj.encode(), dir.encode(), para.encode(), geo_vv, delete, convert)
+        ret_val = self._import_hole(proj.encode(), dir.encode(), para.encode(), geo_vv, delete_existing, convert)
         return ret_val
 
 

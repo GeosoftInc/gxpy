@@ -30,7 +30,7 @@ class GXDAT(gxapi_cy.WrapDAT):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXDAT, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -107,18 +107,18 @@ class GXDAT(gxapi_cy.WrapDAT):
 
 
     @classmethod
-    def get_lst(cls, lst, interface, flags, mode):
+    def get_lst(cls, lst, interface_name, flags, mode):
         """
         Put available `GXDAT <geosoft.gxapi.GXDAT>` filters and qualifiers in a `GXLST <geosoft.gxapi.GXLST>`
         
-        :param lst:        `GXLST <geosoft.gxapi.GXLST>` object to populate
-        :param interface:  `GXDAT <geosoft.gxapi.GXDAT>` interface name ("XGD" only support option currently)
-        :param flags:      :ref:`DAT_FILE`
-        :param mode:       :ref:`DAT_FILE_FORM`
-        :type  lst:        GXLST
-        :type  interface:  str
-        :type  flags:      int
-        :type  mode:       int
+        :param lst:             `GXLST <geosoft.gxapi.GXLST>` object to populate
+        :param interface_name:  `GXDAT <geosoft.gxapi.GXDAT>` interface name ("XGD" only support option currently)
+        :param flags:           :ref:`DAT_FILE`
+        :param mode:            :ref:`DAT_FILE_FORM`
+        :type  lst:             GXLST
+        :type  interface_name:  str
+        :type  flags:           int
+        :type  mode:            int
 
         .. versionadded:: 5.1.8
 
@@ -128,7 +128,7 @@ class GXDAT(gxapi_cy.WrapDAT):
         in the "Name" of the `GXLST <geosoft.gxapi.GXLST>`, while the file qualifiers are stored in
         the "Value".
         """
-        gxapi_cy.WrapDAT._get_lst(GXContext._get_tls_geo(), lst, interface.encode(), flags, mode)
+        gxapi_cy.WrapDAT._get_lst(GXContext._get_tls_geo(), lst, interface_name.encode(), flags, mode)
         
 
 

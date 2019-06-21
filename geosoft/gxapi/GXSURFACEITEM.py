@@ -23,7 +23,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXSURFACEITEM, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):

@@ -76,7 +76,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXEMAP, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -276,6 +276,31 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         interactive screen feedback to your user.
         """
         self._draw_rect_3d(x, y, z, pix)
+        
+
+
+
+
+    def draw_ply(self, polygon):
+        """
+        Draws a polygon on the current map.
+        
+        :param polygon:  `GXPLY <geosoft.gxapi.GXPLY>` Object
+        :type  polygon:  GXPLY
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Locations are in the current view user units.
+
+        The polygon is temporary and will disappear on the next
+        screen refresh.  This function is for you to provide
+        interactive screen feedback to your user.
+        """
+        self._draw_ply(polygon)
         
 
 

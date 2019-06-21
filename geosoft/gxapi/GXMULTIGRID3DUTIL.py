@@ -22,7 +22,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXMULTIGRID3DUTIL, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -1046,39 +1046,6 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapMULTIGRID3DUTIL._clip_to_polygon(GXContext._get_tls_geo(), input_file.encode(), output_file.encode(), poly, clip_dummies)
-        
-
-
-
-    @classmethod
-    def generate_rbf(cls, db, output_file, data_channel, cell_size, error_tolerance, max_iterations, desample, kernel, kernel_epsilon):
-        """
-        Creates a VOXEL from an database using RBF.
-        
-        :param db:               Handle to a database
-        :param output_file:      Name of the output grid3d
-        :param data_channel:     Channel to grid`
-        :param cell_size:        Cell size
-        :param error_tolerance:  Error Tolerance
-        :param max_iterations:   Maximum number of iterations (>0)
-        :param desample:         Desample data (1) or use as is (0)
-        :param kernel:           :ref:`RBFKERNEL`
-        :param kernel_epsilon:   Kernel Epsilon
-        :type  db:               GXDB
-        :type  output_file:      str
-        :type  data_channel:     str
-        :type  cell_size:        float
-        :type  error_tolerance:  float
-        :type  max_iterations:   int
-        :type  desample:         int
-        :type  kernel:           int
-        :type  kernel_epsilon:   float
-
-        .. versionadded:: 9.5
-
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
-        """
-        gxapi_cy.WrapMULTIGRID3DUTIL._generate_rbf(GXContext._get_tls_geo(), db, output_file.encode(), data_channel.encode(), cell_size, error_tolerance, max_iterations, desample, kernel, kernel_epsilon)
         
 
 

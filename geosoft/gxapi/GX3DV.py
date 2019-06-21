@@ -22,7 +22,7 @@ class GX3DV(gxapi_cy.Wrap3DV):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GX3DV, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):

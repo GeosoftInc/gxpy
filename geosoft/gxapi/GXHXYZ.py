@@ -24,7 +24,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXHXYZ, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -114,31 +114,31 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
 
 
     @classmethod
-    def h_create_sql(cls, template, x, y, z, ipj, name):
+    def h_create_sql(cls, templ, x, y, z, ipj, name):
         """
         Make an `GXHXYZ <geosoft.gxapi.GXHXYZ>` from SQL Query
         
-        :param template:  Template File Name
-        :param x:         X field name
-        :param y:         Y field name
-        :param z:         Z field name
-        :param ipj:       Projection of data values
-        :param name:      Name of `GXHXYZ <geosoft.gxapi.GXHXYZ>` object
-        :type  template:  str
-        :type  x:         str
-        :type  y:         str
-        :type  z:         str
-        :type  ipj:       GXIPJ
-        :type  name:      str
+        :param templ:  Template File Name
+        :param x:      X field name
+        :param y:      Y field name
+        :param z:      Z field name
+        :param ipj:    Projection of data values
+        :param name:   Name of `GXHXYZ <geosoft.gxapi.GXHXYZ>` object
+        :type  templ:  str
+        :type  x:      str
+        :type  y:      str
+        :type  z:      str
+        :type  ipj:    GXIPJ
+        :type  name:   str
 
-        :returns:         `GXHXYZ <geosoft.gxapi.GXHXYZ>` object
-        :rtype:           GXHXYZ
+        :returns:      `GXHXYZ <geosoft.gxapi.GXHXYZ>` object
+        :rtype:        GXHXYZ
 
         .. versionadded:: 5.1.3
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapHXYZ._h_create_sql(GXContext._get_tls_geo(), template.encode(), x.encode(), y.encode(), z.encode(), ipj, name.encode())
+        ret_val = gxapi_cy.WrapHXYZ._h_create_sql(GXContext._get_tls_geo(), templ.encode(), x.encode(), y.encode(), z.encode(), ipj, name.encode())
         return GXHXYZ(ret_val)
 
 

@@ -23,7 +23,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXVVU, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -982,25 +982,25 @@ class GXVVU(gxapi_cy.WrapVVU):
 
 
     @classmethod
-    def search_text(cls, vv, text, case, match, start, dir):
+    def search_text(cls, vv, text, case_sensitive, match, start, dir):
         """
         Search for a text value in a `GXVV <geosoft.gxapi.GXVV>`
         
-        :param vv:     `GXVV <geosoft.gxapi.GXVV>` to search
-        :param text:   Text to match
-        :param case:   :ref:`VVU_CASE`
-        :param match:  :ref:`VVU_MATCH`
-        :param start:  Index to begin search (-1 for full `GXVV <geosoft.gxapi.GXVV>`)
-        :param dir:    1: forward search, -1: backward search
-        :type  vv:     GXVV
-        :type  text:   str
-        :type  case:   int
-        :type  match:  int
-        :type  start:  int
-        :type  dir:    int
+        :param vv:              `GXVV <geosoft.gxapi.GXVV>` to search
+        :param text:            Text to match
+        :param case_sensitive:  :ref:`VVU_CASE`
+        :param match:           :ref:`VVU_MATCH`
+        :param start:           Index to begin search (-1 for full `GXVV <geosoft.gxapi.GXVV>`)
+        :param dir:             1: forward search, -1: backward search
+        :type  vv:              GXVV
+        :type  text:            str
+        :type  case_sensitive:  int
+        :type  match:           int
+        :type  start:           int
+        :type  dir:             int
 
-        :returns:      Index of first matching text, -1 if not found.
-        :rtype:        int
+        :returns:               Index of first matching text, -1 if not found.
+        :rtype:                 int
 
         .. versionadded:: 5.0.8
 
@@ -1019,7 +1019,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
             sSearchReplace_VV
         """
-        ret_val = gxapi_cy.WrapVVU._search_text(GXContext._get_tls_geo(), vv, text.encode(), case, match, start, dir)
+        ret_val = gxapi_cy.WrapVVU._search_text(GXContext._get_tls_geo(), vv, text.encode(), case_sensitive, match, start, dir)
         return ret_val
 
 
@@ -1776,24 +1776,24 @@ class GXVVU(gxapi_cy.WrapVVU):
 
 
     @classmethod
-    def regress(cls, vv_x, vv_y, slp, int):
+    def regress(cls, vv_x, vv_y, slp, intercept):
         """
         Calculate linear regression through data
         
-        :param vv_x:  X data
-        :param vv_y:  Y data
-        :param slp:   Returns slope
-        :param int:   Returns intercept
-        :type  vv_x:  GXVV
-        :type  vv_y:  GXVV
-        :type  slp:   float_ref
-        :type  int:   float_ref
+        :param vv_x:       X data
+        :param vv_y:       Y data
+        :param slp:        Returns slope
+        :param intercept:  Returns intercept
+        :type  vv_x:       GXVV
+        :type  vv_y:       GXVV
+        :type  slp:        float_ref
+        :type  intercept:  float_ref
 
         .. versionadded:: 5.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        slp.value, int.value = gxapi_cy.WrapVVU._regress(GXContext._get_tls_geo(), vv_x, vv_y, slp.value, int.value)
+        slp.value, intercept.value = gxapi_cy.WrapVVU._regress(GXContext._get_tls_geo(), vv_x, vv_y, slp.value, intercept.value)
         
 
 

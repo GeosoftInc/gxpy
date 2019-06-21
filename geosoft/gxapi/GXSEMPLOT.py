@@ -21,7 +21,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXSEMPLOT, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -170,14 +170,14 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
 
     @classmethod
-    def edit_plot_components(cls, db, template):
+    def edit_plot_components(cls, db, templ):
         """
         Set group names and channels to plot in a template.
         
-        :param db:        Database handle
-        :param template:  Template name
-        :type  db:        GXDB
-        :type  template:  str
+        :param db:     Database handle
+        :param templ:  Template name
+        :type  db:     GXDB
+        :type  templ:  str
 
         .. versionadded:: 6.2
 
@@ -190,20 +190,20 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         The altered template will be output to the user\\etc directory with
         the file extension "semtemplate".
         """
-        gxapi_cy.WrapSEMPLOT._edit_plot_components(GXContext._get_tls_geo(), db, template.encode())
+        gxapi_cy.WrapSEMPLOT._edit_plot_components(GXContext._get_tls_geo(), db, templ.encode())
         
 
 
 
     @classmethod
-    def edit_plot_parameters(cls, db, template):
+    def edit_plot_parameters(cls, db, templ):
         """
         Set TriPlot parameters in a template.
         
-        :param db:        Database handle
-        :param template:  Template name
-        :type  db:        GXDB
-        :type  template:  str
+        :param db:     Database handle
+        :param templ:  Template name
+        :type  db:     GXDB
+        :type  templ:  str
 
         .. versionadded:: 6.2
 
@@ -216,7 +216,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         The altered template will be output to the user\\etc directory with
         the file extension "semtemplate".
         """
-        gxapi_cy.WrapSEMPLOT._edit_plot_parameters(GXContext._get_tls_geo(), db, template.encode())
+        gxapi_cy.WrapSEMPLOT._edit_plot_parameters(GXContext._get_tls_geo(), db, templ.encode())
         
 
 
@@ -293,32 +293,32 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
 
     @classmethod
-    def export_view2(cls, db, lst, new_db, view, mask_ch, mineral_ch, mineral, export):
+    def export_view2(cls, db, lst, new_db, view, mask_ch, mineral_ch, mineral, export_extra):
         """
         Create a "View" database, with channel selection
         
-        :param db:          Original raw data database
-        :param lst:         List of lines (anomlies) to export
-        :param new_db:      Destination database
-        :param view:        View to export - One of SEMPLOT_XXX_STAGE
-        :param mask_ch:     Mask channel ("" for None)
-        :param mineral_ch:  Mineral channel
-        :param mineral:     Mineral to export ("" for all)
-        :param export:      :ref:`SEMPLOT_EXPORT` Channel selection
-        :type  db:          GXDB
-        :type  lst:         GXLST
-        :type  new_db:      GXDB
-        :type  view:        int
-        :type  mask_ch:     str
-        :type  mineral_ch:  str
-        :type  mineral:     str
-        :type  export:      int
+        :param db:            Original raw data database
+        :param lst:           List of lines (anomlies) to export
+        :param new_db:        Destination database
+        :param view:          View to export - One of SEMPLOT_XXX_STAGE
+        :param mask_ch:       Mask channel ("" for None)
+        :param mineral_ch:    Mineral channel
+        :param mineral:       Mineral to export ("" for all)
+        :param export_extra:  :ref:`SEMPLOT_EXPORT` Channel selection
+        :type  db:            GXDB
+        :type  lst:           GXLST
+        :type  new_db:        GXDB
+        :type  view:          int
+        :type  mask_ch:       str
+        :type  mineral_ch:    str
+        :type  mineral:       str
+        :type  export_extra:  int
 
         .. versionadded:: 7.1
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapSEMPLOT._export_view2(GXContext._get_tls_geo(), db, lst, new_db, view, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), export)
+        gxapi_cy.WrapSEMPLOT._export_view2(GXContext._get_tls_geo(), db, lst, new_db, view, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), export_extra)
         
 
 
@@ -661,22 +661,22 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
 
     @classmethod
-    def import_bin(cls, db, data, template, line, flight, date):
+    def import_bin(cls, db, data, templ, line, flight, date):
         """
         Import blocked binary or archive ASCII data
         
-        :param db:        Database
-        :param data:      Import data file name
-        :param template:  Import template name
-        :param line:      Optional Line name (see note 3.)
-        :param flight:    Optional Flight number
-        :param date:      Optional date
-        :type  db:        GXDB
-        :type  data:      str
-        :type  template:  str
-        :type  line:      str
-        :type  flight:    int
-        :type  date:      float
+        :param db:      Database
+        :param data:    Import data file name
+        :param templ:   Import template name
+        :param line:    Optional Line name (see note 3.)
+        :param flight:  Optional Flight number
+        :param date:    Optional date
+        :type  db:      GXDB
+        :type  data:    str
+        :type  templ:   str
+        :type  line:    str
+        :type  flight:  int
+        :type  date:    float
 
         .. versionadded:: 6.2
 
@@ -700,7 +700,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
             `GXDU.lab_template <geosoft.gxapi.GXDU.lab_template>` in du.gxh
         """
-        gxapi_cy.WrapSEMPLOT._import_bin(GXContext._get_tls_geo(), db, data.encode(), template.encode(), line.encode(), flight, date)
+        gxapi_cy.WrapSEMPLOT._import_bin(GXContext._get_tls_geo(), db, data.encode(), templ.encode(), line.encode(), flight, date)
         
 
 
@@ -746,23 +746,23 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
 
     @classmethod
-    def template_type(cls, template):
+    def template_type(cls, templ):
         """
         Create a new XYPlot or TriPlot template.
         
-        :param template:  Template name
-        :type  template:  str
+        :param templ:  Template name
+        :type  templ:  str
 
-        :returns:         `SEMPLOT_PLOT_XYPLOT <geosoft.gxapi.SEMPLOT_PLOT_XYPLOT>` or
-                          `SEMPLOT_PLOT_TRIPLOT <geosoft.gxapi.SEMPLOT_PLOT_TRIPLOT>`
-                          Terminates if error.
-        :rtype:           int
+        :returns:      `SEMPLOT_PLOT_XYPLOT <geosoft.gxapi.SEMPLOT_PLOT_XYPLOT>` or
+                       `SEMPLOT_PLOT_TRIPLOT <geosoft.gxapi.SEMPLOT_PLOT_TRIPLOT>`
+                       Terminates if error.
+        :rtype:        int
 
         .. versionadded:: 6.2
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapSEMPLOT._template_type(GXContext._get_tls_geo(), template.encode())
+        ret_val = gxapi_cy.WrapSEMPLOT._template_type(GXContext._get_tls_geo(), templ.encode())
         return ret_val
 
 
@@ -849,16 +849,16 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
 
     @classmethod
-    def new_template(cls, template, type, model):
+    def new_template(cls, templ, type, model):
         """
         Create a new XYPlot or TriPlot template.
         
-        :param template:  New template name
-        :param type:      Unknown
-        :param model:     Template to use as a model (can be "")
-        :type  template:  str
-        :type  type:      int
-        :type  model:     str
+        :param templ:  New template name
+        :param type:   Unknown
+        :param model:  Template to use as a model (can be "")
+        :type  templ:  str
+        :type  type:   int
+        :type  model:  str
 
         .. versionadded:: 6.2
 
@@ -875,7 +875,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         an XYPlot template as a model for a TriPlot, and vica-verca, with
         few complications.  (e.g. needing to define a "Z" component)
         """
-        gxapi_cy.WrapSEMPLOT._new_template(GXContext._get_tls_geo(), template.encode(), type, model.encode())
+        gxapi_cy.WrapSEMPLOT._new_template(GXContext._get_tls_geo(), templ.encode(), type, model.encode())
         
 
 
@@ -905,19 +905,19 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
 
     @classmethod
-    def plot(cls, db, template, mask_ch, mineral_ch, map, map_mode, plot_symb):
+    def plot(cls, db, templ, mask_ch, mineral_ch, map, map_mode, plot_symb):
         """
         Plot an XYPlot or TriPlot based on the template.
         
         :param db:          Database handle
-        :param template:    Template file name
+        :param templ:       Template file name
         :param mask_ch:     Mask channel (can be "")
         :param mineral_ch:  Mineral channel (can be "" for raw data)
         :param map:         Map name
         :param map_mode:    Map open mode; one of MAP_WRITEXXX (see map.gxh)
         :param plot_symb:   Plot symbols (O: No, 1:Yes) ?
         :type  db:          GXDB
-        :type  template:    str
+        :type  templ:       str
         :type  mask_ch:     str
         :type  mineral_ch:  str
         :type  map:         str
@@ -939,7 +939,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         Call `init_group_symbols_used <geosoft.gxapi.GXSEMPLOT.init_group_symbols_used>` prior to this function
         to reset recording of the symbols used in plotting (for legends etc).
         """
-        gxapi_cy.WrapSEMPLOT._plot(GXContext._get_tls_geo(), db, template.encode(), mask_ch.encode(), mineral_ch.encode(), map.encode(), map_mode, plot_symb)
+        gxapi_cy.WrapSEMPLOT._plot(GXContext._get_tls_geo(), db, templ.encode(), mask_ch.encode(), mineral_ch.encode(), map.encode(), map_mode, plot_symb)
         
 
 

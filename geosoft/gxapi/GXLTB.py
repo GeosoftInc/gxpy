@@ -43,7 +43,7 @@ class GXLTB(gxapi_cy.WrapLTB):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXLTB, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -151,26 +151,26 @@ class GXLTB(gxapi_cy.WrapLTB):
 
 
     @classmethod
-    def create_crypt(cls, file, type, delim, case, key, crypt):
+    def create_crypt(cls, file, type, delim, case_sensitive, key, crypt):
         """
         Creates a `GXLTB <geosoft.gxapi.GXLTB>` object from an encrypted file.
         
-        :param file:   File name, .csv assumed, searched locally then in GEOSOFT.
-        :param type:   :ref:`LTB_TYPE`
-        :param delim:  :ref:`LTB_DELIM`
-        :param case:   :ref:`LTB_CASE`
-        :param key:    Key to find if only one record required, "" to read entire table.
-        :param crypt:  Decryption Key :ref:`SYS_CRYPT_KEY`
-        :type  file:   str
-        :type  type:   int
-        :type  delim:  int
-        :type  case:   int
-        :type  key:    str
-        :type  crypt:  str
+        :param file:            File name, .csv assumed, searched locally then in GEOSOFT.
+        :param type:            :ref:`LTB_TYPE`
+        :param delim:           :ref:`LTB_DELIM`
+        :param case_sensitive:  :ref:`LTB_CASE`
+        :param key:             Key to find if only one record required, "" to read entire table.
+        :param crypt:           Decryption Key :ref:`SYS_CRYPT_KEY`
+        :type  file:            str
+        :type  type:            int
+        :type  delim:           int
+        :type  case_sensitive:  int
+        :type  key:             str
+        :type  crypt:           str
 
-        :returns:      x    - Handle to `GXLTB <geosoft.gxapi.GXLTB>` object
-                       NULL - Error of some kind
-        :rtype:        GXLTB
+        :returns:               x    - Handle to `GXLTB <geosoft.gxapi.GXLTB>` object
+                                NULL - Error of some kind
+        :rtype:                 GXLTB
 
         .. versionadded:: 6.2
 
@@ -178,30 +178,30 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **Note:** If the file has no header, field names are assumed to be "0", "1", etc.
         """
-        ret_val = gxapi_cy.WrapLTB._create_crypt(GXContext._get_tls_geo(), file.encode(), type, delim, case, key.encode(), crypt.encode())
+        ret_val = gxapi_cy.WrapLTB._create_crypt(GXContext._get_tls_geo(), file.encode(), type, delim, case_sensitive, key.encode(), crypt.encode())
         return GXLTB(ret_val)
 
 
 
     @classmethod
-    def create_ex(cls, file, type, delim, case, key):
+    def create_ex(cls, file, type, delim, case_sensitive, key):
         """
         Creates a `GXLTB <geosoft.gxapi.GXLTB>` object from a file.
         
-        :param file:   File name, .csv assumed, searched locally then in GEOSOFT.
-        :param type:   :ref:`LTB_TYPE`
-        :param delim:  :ref:`LTB_DELIM`
-        :param case:   :ref:`LTB_CASE`
-        :param key:    Key to find if only one record required, "" to read entire table.
-        :type  file:   str
-        :type  type:   int
-        :type  delim:  int
-        :type  case:   int
-        :type  key:    str
+        :param file:            File name, .csv assumed, searched locally then in GEOSOFT.
+        :param type:            :ref:`LTB_TYPE`
+        :param delim:           :ref:`LTB_DELIM`
+        :param case_sensitive:  :ref:`LTB_CASE`
+        :param key:             Key to find if only one record required, "" to read entire table.
+        :type  file:            str
+        :type  type:            int
+        :type  delim:           int
+        :type  case_sensitive:  int
+        :type  key:             str
 
-        :returns:      x    - Handle to `GXLTB <geosoft.gxapi.GXLTB>` object
-                       NULL - Error of some kind
-        :rtype:        GXLTB
+        :returns:               x    - Handle to `GXLTB <geosoft.gxapi.GXLTB>` object
+                                NULL - Error of some kind
+        :rtype:                 GXLTB
 
         .. versionadded:: 6.1
 
@@ -209,7 +209,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **Note:** If the file has no header, field names are assumed to be "0", "1", etc.
         """
-        ret_val = gxapi_cy.WrapLTB._create_ex(GXContext._get_tls_geo(), file.encode(), type, delim, case, key.encode())
+        ret_val = gxapi_cy.WrapLTB._create_ex(GXContext._get_tls_geo(), file.encode(), type, delim, case_sensitive, key.encode())
         return GXLTB(ret_val)
 
 

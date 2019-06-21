@@ -32,7 +32,7 @@ class GXDH(gxapi_cy.WrapDH):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXDH, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -1799,15 +1799,15 @@ class GXDH(gxapi_cy.WrapDH):
 
 
     @classmethod
-    def get_template_blob(cls, db, template, imp_type):
+    def get_template_blob(cls, db, templ, imp_type):
         """
         Retrieve the import template from the database.
         
         :param db:        `GXDB <geosoft.gxapi.GXDB>` Handle
-        :param template:  Name of template file to extract to.
+        :param templ:     Name of template file to extract to.
         :param imp_type:  The stored import template type :ref:`DH_DATA`
         :type  db:        GXDB
-        :type  template:  str
+        :type  templ:     str
         :type  imp_type:  int_ref
 
         :returns:         0: No template stored in the database
@@ -1826,21 +1826,21 @@ class GXDH(gxapi_cy.WrapDH):
 
         If no template blob exists, templ
         """
-        ret_val, imp_type.value = gxapi_cy.WrapDH._get_template_blob(GXContext._get_tls_geo(), db, template.encode(), imp_type.value)
+        ret_val, imp_type.value = gxapi_cy.WrapDH._get_template_blob(GXContext._get_tls_geo(), db, templ.encode(), imp_type.value)
         return ret_val
 
 
 
     @classmethod
-    def get_template_info(cls, template, data_type, file, table):
+    def get_template_info(cls, templ, data_type, file, table):
         """
         Retrieve the file, `GXDH <geosoft.gxapi.GXDH>` Table name and type from an import template.
         
-        :param template:   Template name
+        :param templ:      Template name
         :param data_type:  :ref:`DH_DATA`
         :param file:       File name (blank for ODBC, or undefined).
         :param table:      Table name (blank for `DH_DATA_UNKNOWN <geosoft.gxapi.DH_DATA_UNKNOWN>`, or undefined).
-        :type  template:   str
+        :type  templ:      str
         :type  data_type:  int_ref
         :type  file:       str_ref
         :type  table:      str_ref
@@ -1868,22 +1868,22 @@ class GXDH(gxapi_cy.WrapDH):
         `DH_DATA_UNKNOWN <geosoft.gxapi.DH_DATA_UNKNOWN>` is returned for the data type; likely an indication that this
         is not a new-style template produced by Wholeplot.
         """
-        data_type.value, file.value, table.value = gxapi_cy.WrapDH._get_template_info(GXContext._get_tls_geo(), template.encode(), data_type.value, file.value.encode(), table.value.encode())
+        data_type.value, file.value, table.value = gxapi_cy.WrapDH._get_template_info(GXContext._get_tls_geo(), templ.encode(), data_type.value, file.value.encode(), table.value.encode())
         
 
 
 
     @classmethod
-    def get_template_info_ex(cls, template, data_type, file, table, lst):
+    def get_template_info_ex(cls, templ, data_type, file, table, lst):
         """
         Retrieve the file, `GXDH <geosoft.gxapi.GXDH>` Table name, type and channel list from an import template.
         
-        :param template:   Template name
+        :param templ:      Template name
         :param data_type:  :ref:`DH_DATA`
         :param file:       File name (blank for ODBC, or undefined).
         :param table:      Table name (blank for `DH_DATA_UNKNOWN <geosoft.gxapi.DH_DATA_UNKNOWN>`, or undefined).
         :param lst:        Channel list (returned)
-        :type  template:   str
+        :type  templ:      str
         :type  data_type:  int_ref
         :type  file:       str_ref
         :type  table:      str_ref
@@ -1914,7 +1914,7 @@ class GXDH(gxapi_cy.WrapDH):
         This version also returns a list of the channels in the template checks can be made to
         see if the import will exceed the database channel limit.
         """
-        data_type.value, file.value, table.value = gxapi_cy.WrapDH._get_template_info_ex(GXContext._get_tls_geo(), template.encode(), data_type.value, file.value.encode(), table.value.encode(), lst)
+        data_type.value, file.value, table.value = gxapi_cy.WrapDH._get_template_info_ex(GXContext._get_tls_geo(), templ.encode(), data_type.value, file.value.encode(), table.value.encode(), lst)
         
 
 
@@ -3636,18 +3636,18 @@ class GXDH(gxapi_cy.WrapDH):
 
 
 
-    def select_ply2(self, pply, select, inside, new):
+    def select_ply2(self, pply, select, inside, new_mode):
         """
         Select holes in `GXPLY <geosoft.gxapi.GXPLY>` (Polygon) object with options.
         
-        :param pply:    Polygon object
-        :param select:  Select (0) or Deselect (1)
-        :param inside:  Region (0: inside, 1: outside)
-        :param new:     Mode (0: Append, 1: New)
-        :type  pply:    GXPLY
-        :type  select:  int
-        :type  inside:  int
-        :type  new:     int
+        :param pply:      Polygon object
+        :param select:    Select (0) or Deselect (1)
+        :param inside:    Region (0: inside, 1: outside)
+        :param new_mode:  Mode (0: Append, 1: New)
+        :type  pply:      GXPLY
+        :type  select:    int
+        :type  inside:    int
+        :type  new_mode:  int
 
         .. versionadded:: 6.1
 
@@ -3673,7 +3673,7 @@ class GXDH(gxapi_cy.WrapDH):
         Append/Deselect/outside: Deselect all holes outside the polygon.
                               Leave selections inside as is.
         """
-        self._select_ply2(pply, select, inside, new)
+        self._select_ply2(pply, select, inside, new_mode)
         
 
 
@@ -3827,15 +3827,15 @@ class GXDH(gxapi_cy.WrapDH):
 
 
     @classmethod
-    def set_template_blob(cls, db, template, imp_type):
+    def set_template_blob(cls, db, templ, imp_type):
         """
         Store the import template to the database.
         
         :param db:        `GXDB <geosoft.gxapi.GXDB>` Handle
-        :param template:  Import template name
+        :param templ:     Import template name
         :param imp_type:  :ref:`DH_DATA`
         :type  db:        GXDB
-        :type  template:  str
+        :type  templ:     str
         :type  imp_type:  int
 
         .. versionadded:: 6.0
@@ -3848,7 +3848,7 @@ class GXDH(gxapi_cy.WrapDH):
         The import types correspond to the DHIMPORT.IMPTYPE variable:
         0: ASCII, 1: Database/XLS, 2: ODBC
         """
-        gxapi_cy.WrapDH._set_template_blob(GXContext._get_tls_geo(), db, template.encode(), imp_type)
+        gxapi_cy.WrapDH._set_template_blob(GXContext._get_tls_geo(), db, templ.encode(), imp_type)
         
 
 

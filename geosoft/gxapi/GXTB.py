@@ -25,7 +25,7 @@ class GXTB(gxapi_cy.WrapTB):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXTB, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):

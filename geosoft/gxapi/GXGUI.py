@@ -23,7 +23,7 @@ class GXGUI(gxapi_cy.WrapGUI):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXGUI, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -552,22 +552,22 @@ class GXGUI(gxapi_cy.WrapGUI):
 
 
     @classmethod
-    def export_xyz_template_editor(cls, db, template, size):
+    def export_xyz_template_editor(cls, db, templ, size):
         """
         Allows the user to edit XYZ export template
         using a complex dialog. The Template name
         may change during editing.
         
-        :param db:        Database
-        :param template:  Name of the Template (can change)
-        :param size:      Size of the Template
-        :type  db:        GXDB
-        :type  template:  str
-        :type  size:      int
+        :param db:     Database
+        :param templ:  Name of the Template (can change)
+        :param size:   Size of the Template
+        :type  db:     GXDB
+        :type  templ:  str
+        :type  size:   int
 
-        :returns:         0 - OK
-                          1 - Error
-        :rtype:           int
+        :returns:      0 - OK
+                       1 - Error
+        :rtype:        int
 
         .. versionadded:: 5.0
 
@@ -581,26 +581,26 @@ class GXGUI(gxapi_cy.WrapGUI):
         the current `GXDB <geosoft.gxapi.GXDB>`. Please see ExportXYXTemplateEditorEx_GUI
         for an updated function.
         """
-        ret_val = gxapi_cy.WrapGUI._export_xyz_template_editor(GXContext._get_tls_geo(), db, template.encode(), size)
+        ret_val = gxapi_cy.WrapGUI._export_xyz_template_editor(GXContext._get_tls_geo(), db, templ.encode(), size)
         return ret_val
 
 
 
     @classmethod
-    def export_xyz_template_editor_ex(cls, edb, template):
+    def export_xyz_template_editor_ex(cls, edb, templ):
         """
         Allows the user to edit an XYZ export template
         using a complex dialog. The template name
         may change during editing.
         
-        :param edb:       `GXEDB <geosoft.gxapi.GXEDB>` object
-        :param template:  Template name
-        :type  edb:       GXEDB
-        :type  template:  str_ref
+        :param edb:    `GXEDB <geosoft.gxapi.GXEDB>` object
+        :param templ:  Template name
+        :type  edb:    GXEDB
+        :type  templ:  str_ref
 
-        :returns:         0 - OK
-                          1 - Error
-        :rtype:           int
+        :returns:      0 - OK
+                       1 - Error
+        :rtype:        int
 
         .. versionadded:: 5.0
 
@@ -608,7 +608,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val, template.value = gxapi_cy.WrapGUI._export_xyz_template_editor_ex(GXContext._get_tls_geo(), edb, template.value.encode())
+        ret_val, templ.value = gxapi_cy.WrapGUI._export_xyz_template_editor_ex(GXContext._get_tls_geo(), edb, templ.value.encode())
         return ret_val
 
 
@@ -1648,24 +1648,24 @@ class GXGUI(gxapi_cy.WrapGUI):
 
 
     @classmethod
-    def import_xyz_template_editor(cls, db, template, size, file):
+    def import_xyz_template_editor(cls, db, templ, size, file):
         """
         Allows the user to edit XYZ import templates
         using a complex dialog. The Template name
         may change during editing.
         
-        :param db:        Database
-        :param template:  Name of the Template (can change)
-        :param size:      Size of the Template
-        :param file:      Name of the XYZ file to base it on
-        :type  db:        GXDB
-        :type  template:  str
-        :type  size:      int
-        :type  file:      str
+        :param db:     Database
+        :param templ:  Name of the Template (can change)
+        :param size:   Size of the Template
+        :param file:   Name of the XYZ file to base it on
+        :type  db:     GXDB
+        :type  templ:  str
+        :type  size:   int
+        :type  file:   str
 
-        :returns:         0 - OK
-                          1 - Error
-        :rtype:           int
+        :returns:      0 - OK
+                       1 - Error
+        :rtype:        int
 
         .. versionadded:: 5.0
 
@@ -1673,7 +1673,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapGUI._import_xyz_template_editor(GXContext._get_tls_geo(), db, template.encode(), size, file.encode())
+        ret_val = gxapi_cy.WrapGUI._import_xyz_template_editor(GXContext._get_tls_geo(), db, templ.encode(), size, file.encode())
         return ret_val
 
 

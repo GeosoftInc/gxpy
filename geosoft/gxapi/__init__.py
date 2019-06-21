@@ -2007,7 +2007,19 @@ SURFACE_CLIP_ABOVE = 0
 #: Output the surface item below clipper surface
 SURFACE_CLIP_BELOW = 1
 #: Output the surface items both above & below the clipper surface
-SURFACE_CLIP_BOTH = 2	
+SURFACE_CLIP_BOTH = 2
+
+#
+# SURFACE_CLIP_STATUS constants
+#
+# Surface Clip Return Code
+
+#: Surface clipping successful
+SURFACE_CLIP_SUCCESS = 0
+#: Surface clipping successful, but with empty output
+SURFACE_CLIP_SUCCESS_EMPTY = 1
+#: Surface clipping fail
+SURFACE_CLIP_FAIL = 2	
 
 #
 # GXMETA Constants

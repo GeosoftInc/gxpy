@@ -5,6 +5,7 @@ from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXIPJ import GXIPJ
 from .GXLTB import GXLTB
+from .GXVV import GXVV
 
 
 ### endblock ClassImports
@@ -23,7 +24,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXSEGYREADER, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -66,6 +67,56 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         """
         ret_val = gxapi_cy.WrapSEGYREADER._open_file(GXContext._get_tls_geo(), filename.encode())
         return GXSEGYREADER(ret_val)
+
+
+
+
+    def get_endianess(self):
+        """
+        Returns true if the file is little endian. false if it is big endian.
+        
+        :rtype:              bool
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        ret_val = self._get_endianess()
+        return ret_val
+
+
+
+
+    def set_endianess(self, is_little_endian):
+        """
+        Set the endianess of the file.
+        
+        :param is_little_endian:  True is file is little endian, false for big endian.
+        :type  is_little_endian:  bool
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._set_endianess(is_little_endian)
+        
+
+
+
+
+    def get_xy_units(self, xy_units):
+        """
+        Get the currently-specified xy-units.
+        
+        :param xy_units:     The name of the units.
+        :type  xy_units:     str_ref
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        xy_units.value = self._get_xy_units(xy_units.value.encode())
+        
 
 
 
@@ -125,7 +176,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         """
         Get the currently-specified z-units.
         
-        :param z_units:      List of possible z-units,separated by newlines
+        :param z_units:      The name of the z-units.
         :type  z_units:      str_ref
 
         .. versionadded:: 9.6
@@ -205,24 +256,6 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
 
 
-
-    def has_sane_setup(self, error_messages):
-        """
-        Returns true if reader has a valid configuration and passes some basic sanity checks. If this function returns false, `Export()` will not run and some of the getters may return garbage values.
-        
-        :param error_messages:  A string, suitable for displaying to the user, indicating why the configuration is not valid. (Ignore this string if the function returns true.
-        :type  error_messages:  str_ref
-        :rtype:                 int
-
-        .. versionadded:: 9.6
-
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
-        """
-        ret_val, error_messages.value = self._has_sane_setup(error_messages.value.encode())
-        return ret_val
-
-
-
     @classmethod
     def list_binary_header_fields(cls):
         """
@@ -287,6 +320,78 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         """
         ret_val = self._get_binary_header()
         return GXLTB(ret_val)
+
+
+
+
+    def get_trace_data_at(self, data_type_name, number_of_samples, current_trace, is_big_endian):
+        """
+        Get the SEG Y trace file data for a particular data type, number of samples, and starting trace
+        
+        :param data_type_name:     The name of a supported data type.
+        :param number_of_samples:  The number of samples to return
+        :param current_trace:      The trace to start at
+        :param is_big_endian:      1 for big endian, 0 for small
+        :type  data_type_name:     str
+        :type  number_of_samples:  int
+        :type  current_trace:      int
+        :type  is_big_endian:      int
+
+        :returns:                  :class:'VV' containing the data from the traces
+        :rtype:                    GXVV
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        ret_val = self._get_trace_data_at(data_type_name.encode(), number_of_samples, current_trace, is_big_endian)
+        return GXVV(ret_val)
+
+
+
+
+    def get_trace_header_at(self, data_type_name, number_of_samples, current_trace, is_big_endian):
+        """
+        Get the SEG Y trace file header data for a particular starting trace
+        
+        :param data_type_name:     The name of a supported data type.
+        :param number_of_samples:  The number of samples to return
+        :param current_trace:      The trace to start at
+        :param is_big_endian:      1 for big endian, 0 for small
+        :type  data_type_name:     str
+        :type  number_of_samples:  int
+        :type  current_trace:      int
+        :type  is_big_endian:      int
+
+        :returns:                  :class:'VV' containing the data from the trace header
+        :rtype:                    GXVV
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        ret_val = self._get_trace_header_at(data_type_name.encode(), number_of_samples, current_trace, is_big_endian)
+        return GXVV(ret_val)
+
+
+
+
+    def estimate_number_of_traces(self, data_type_name, number_of_samples):
+        """
+        Get the number of traces that would be in the SEG-Y file, given a trace length and data type.
+        
+        :param data_type_name:     The name of a supported data type.
+        :param number_of_samples:  The number of samples to return
+        :type  data_type_name:     str
+        :type  number_of_samples:  int
+        :rtype:                    int
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        ret_val = self._estimate_number_of_traces(data_type_name.encode(), number_of_samples)
+        return ret_val
 
 
 
@@ -614,6 +719,27 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
 
 
+    def check_sane_inline_crossline(self, is_sane, possibly_swapped, only_one_line):
+        """
+        Checks if the currently-configured inline and crossline fields seem sensible.
+        
+        :param is_sane:           True is inline/crossline values seem sensible.
+        :param possibly_swapped:  True if it looks like the inline and crossline fields are swapped.
+        :param only_one_line:     True if it looks like the file only contains one line. This may mean the file is 2D.
+        :type  is_sane:           bool_ref
+        :type  possibly_swapped:  bool_ref
+        :type  only_one_line:     bool_ref
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        is_sane.value, possibly_swapped.value, only_one_line.value = self._check_sane_inline_crossline(is_sane.value, possibly_swapped.value, only_one_line.value)
+        
+
+
+
+
     def get_voxel_dimensions(self, x, y, z):
         """
         Get the size of the voxel that would be exported with the current configuration.
@@ -722,84 +848,51 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
 
 
-    def get_num_tie_points(self):
-        """
-        Get the number of tie points.
-        
-        :rtype:              int
-
-        .. versionadded:: 9.6
-
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
-        """
-        ret_val = self._get_num_tie_points()
-        return ret_val
-
-
-
-
-    def get_tie_point(self, i, x, y, inline, crossline):
+    def get_tie_point(self, i, x, y, in_line, cross_line):
         """
         Return  the currently-active tie points. If SetTiePoints() has not already been called, then the returned points will be the automatically-selected ones.
         
-        :param i:            Tie point index.
+        :param i:            Tie point indexl must be 0, 1 or 2.
         :param x:            x-coordinate
         :param y:            inline-coordinate
-        :param inline:       Tie point index.
-        :param crossline:    crossline-coordinate
+        :param in_line:      Tie point index.
+        :param cross_line:   crossline-coordinate
         :type  i:            int
         :type  x:            float_ref
         :type  y:            float_ref
-        :type  inline:       int_ref
-        :type  crossline:    int_ref
+        :type  in_line:      int_ref
+        :type  cross_line:   int_ref
 
         .. versionadded:: 9.6
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        x.value, y.value, inline.value, crossline.value = self._get_tie_point(i, x.value, y.value, inline.value, crossline.value)
+        x.value, y.value, in_line.value, cross_line.value = self._get_tie_point(i, x.value, y.value, in_line.value, cross_line.value)
         
 
 
 
 
-    def set_num_tie_points(self, count):
-        """
-        Get the number of tie points.
-        
-        :param count:        Number of tie points
-        :type  count:        int
-
-        .. versionadded:: 9.6
-
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
-        """
-        self._set_num_tie_points(count)
-        
-
-
-
-
-    def set_tie_point(self, i, x, y, inline, crossline):
+    def set_tie_point(self, i, x, y, in_line, cross_line):
         """
         Set the currently-active tie points. If SetTiePoints() has not already been called, then the returned points will be the automatically-selected ones.
         
         :param i:            Tie point index.
         :param x:            x-coordinate
         :param y:            inline-coordinate
-        :param inline:       Tie point index.
-        :param crossline:    crossline-coordinate
+        :param in_line:      Tie point index.
+        :param cross_line:   crossline-coordinate
         :type  i:            int
         :type  x:            float
         :type  y:            float
-        :type  inline:       int
-        :type  crossline:    int
+        :type  in_line:      int
+        :type  cross_line:   int
 
         .. versionadded:: 9.6
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._set_tie_point(i, x, y, inline, crossline)
+        self._set_tie_point(i, x, y, in_line, cross_line)
         
 
 
@@ -830,6 +923,25 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._reset_tie_points()
+        
+
+
+
+
+    def get_inline_and_crossline_azimuths(self, inline_azimuth, crossline_azimuth):
+        """
+        Get the inline and crossline azimuths, in degrees
+        
+        :param inline_azimuth:     Inline azimuth
+        :param crossline_azimuth:  Crossline azimuth
+        :type  inline_azimuth:     float_ref
+        :type  crossline_azimuth:  float_ref
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        inline_azimuth.value, crossline_azimuth.value = self._get_inline_and_crossline_azimuths(inline_azimuth.value, crossline_azimuth.value)
         
 
 

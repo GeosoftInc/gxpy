@@ -31,7 +31,7 @@ class GXDU(gxapi_cy.WrapDU):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXDU, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -1426,16 +1426,16 @@ class GXDU(gxapi_cy.WrapDU):
 
 
     @classmethod
-    def export_xyz(cls, db, data, template):
+    def export_xyz(cls, db, data, templ):
         """
         Export XYZdata from a database to an XYZ file.
         
-        :param db:        Database
-        :param data:      Export data file name
-        :param template:  Export template name
-        :type  db:        GXDB
-        :type  data:      str
-        :type  template:  str
+        :param db:     Database
+        :param data:   Export data file name
+        :param templ:  Export template name
+        :type  db:     GXDB
+        :type  data:   str
+        :type  templ:  str
 
         .. versionadded:: 5.0
 
@@ -1459,7 +1459,7 @@ class GXDU(gxapi_cy.WrapDU):
         4. This can be used to export a group, but the group must be the
         currently displayed line, and only that group will be exported.
         """
-        gxapi_cy.WrapDU._export_xyz(GXContext._get_tls_geo(), db, data.encode(), template.encode())
+        gxapi_cy.WrapDU._export_xyz(GXContext._get_tls_geo(), db, data.encode(), templ.encode())
         
 
 
@@ -1767,6 +1767,37 @@ class GXDU(gxapi_cy.WrapDU):
 
 
     @classmethod
+    def grav_drift2(cls, db, line, date, time, read, base, clos, corr):
+        """
+        Calculate base loop closure, calculate drift correction and correct for drift.
+        
+        :param db:    Database
+        :param line:  Line                    [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param date:  Date                    [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param time:  Local time (on date)    [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param read:  Reading                 [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param base:  Base                    [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
+        :param clos:  Closure error           [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
+        :param corr:  Drift correction        [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
+        :type  db:    GXDB
+        :type  line:  int
+        :type  date:  int
+        :type  time:  int
+        :type  read:  int
+        :type  base:  int
+        :type  clos:  int
+        :type  corr:  int
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        gxapi_cy.WrapDU._grav_drift2(GXContext._get_tls_geo(), db, line, date, time, read, base, clos, corr)
+        
+
+
+
+    @classmethod
     def grav_tide(cls, db, line, lat, lon, date, time, gmt, tide):
         """
         Calculate earth tide gravity correction.
@@ -1892,23 +1923,23 @@ class GXDU(gxapi_cy.WrapDU):
 
 
     @classmethod
-    def import_bin3(cls, db, data, template, line, flight, date, wa):
+    def import_bin3(cls, db, data, templ, line, flight, date, wa):
         """
         Same as `import_bin2 <geosoft.gxapi.GXDU.import_bin2>`, but returns the name of the imported line.
         
-        :param db:        Database
-        :param data:      Import data file name
-        :param template:  Import template name
-        :param line:      Optional Line name (on return, the actual line)
-        :param flight:    Optional Flight number
-        :param date:      Optional date
-        :type  db:        GXDB
-        :type  data:      str
-        :type  template:  str
-        :type  line:      str_ref
-        :type  flight:    int
-        :type  date:      float
-        :type  wa:        GXWA
+        :param db:      Database
+        :param data:    Import data file name
+        :param templ:   Import template name
+        :param line:    Optional Line name (on return, the actual line)
+        :param flight:  Optional Flight number
+        :param date:    Optional date
+        :type  db:      GXDB
+        :type  data:    str
+        :type  templ:   str
+        :type  line:    str_ref
+        :type  flight:  int
+        :type  date:    float
+        :type  wa:      GXWA
 
         .. versionadded:: 6.1
 
@@ -1923,7 +1954,7 @@ class GXDU(gxapi_cy.WrapDU):
 
             `import_bin2 <geosoft.gxapi.GXDU.import_bin2>`
         """
-        line.value = gxapi_cy.WrapDU._import_bin3(GXContext._get_tls_geo(), db, data.encode(), template.encode(), line.value.encode(), flight, date, wa)
+        line.value = gxapi_cy.WrapDU._import_bin3(GXContext._get_tls_geo(), db, data.encode(), templ.encode(), line.value.encode(), flight, date, wa)
         
 
 
@@ -1956,20 +1987,20 @@ class GXDU(gxapi_cy.WrapDU):
 
 
     @classmethod
-    def import_ado(cls, db, connect, table, template, line):
+    def import_ado(cls, db, connect, table, templ, line):
         """
         Import an external database table into a group using ADO.
         
-        :param db:        Database
-        :param connect:   Import database connection string       (overrides template value)
-        :param table:     Imported table in database file (overrides template value)
-        :param template:  Import template name
-        :param line:      Oasis montaj line name to create (overrides template value)
-        :type  db:        GXDB
-        :type  connect:   str
-        :type  table:     str
-        :type  template:  str
-        :type  line:      str
+        :param db:       Database
+        :param connect:  Import database connection string       (overrides template value)
+        :param table:    Imported table in database file (overrides template value)
+        :param templ:    Import template name
+        :param line:     Oasis montaj line name to create (overrides template value)
+        :type  db:       GXDB
+        :type  connect:  str
+        :type  table:    str
+        :type  templ:    str
+        :type  line:     str
 
         .. versionadded:: 5.0.8
 
@@ -1984,7 +2015,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         3. If the line already exists, the data will overwrite the existing data.
         """
-        gxapi_cy.WrapDU._import_ado(GXContext._get_tls_geo(), db, connect.encode(), table.encode(), template.encode(), line.encode())
+        gxapi_cy.WrapDU._import_ado(GXContext._get_tls_geo(), db, connect.encode(), table.encode(), templ.encode(), line.encode())
         
 
 
@@ -2101,55 +2132,55 @@ class GXDU(gxapi_cy.WrapDU):
 
 
     @classmethod
-    def import_aseg(cls, db, template, file, data, flc, chans):
+    def import_aseg(cls, db, templ, file, data, flc, chans):
         """
         Import an ASEG-GDF data file.
         
-        :param db:        Database
-        :param template:  Template file name
-        :param file:      Header file name
-        :param data:      Data file name
-        :param flc:       Flight Line Channel name
-        :param chans:     Number of channels to import at one time
-        :type  db:        GXDB
-        :type  template:  str
-        :type  file:      str
-        :type  data:      str
-        :type  flc:       str
-        :type  chans:     int
+        :param db:     Database
+        :param templ:  Template file name
+        :param file:   Header file name
+        :param data:   Data file name
+        :param flc:    Flight Line Channel name
+        :param chans:  Number of channels to import at one time
+        :type  db:     GXDB
+        :type  templ:  str
+        :type  file:   str
+        :type  data:   str
+        :type  flc:    str
+        :type  chans:  int
 
         .. versionadded:: 5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapDU._import_aseg(GXContext._get_tls_geo(), db, template.encode(), file.encode(), data.encode(), flc.encode(), chans)
+        gxapi_cy.WrapDU._import_aseg(GXContext._get_tls_geo(), db, templ.encode(), file.encode(), data.encode(), flc.encode(), chans)
         
 
 
 
     @classmethod
-    def import_aseg_proj(cls, db, template, file, data, flc, chans, proj, x_ch, y_ch):
+    def import_aseg_proj(cls, db, templ, file, data, flc, chans, proj, x_ch, y_ch):
         """
         Import an ASEG-GDF data file (supports projections).
         
-        :param db:        Database
-        :param template:  Template file name
-        :param file:      Header file name
-        :param data:      Data file name
-        :param flc:       Flight Line Channel name
-        :param chans:     Number of channels to import at one time
-        :param proj:      Projection file name
-        :param x_ch:      Channel pair to associate projection
-        :param y_ch:      Channel pair to associate projection
-        :type  db:        GXDB
-        :type  template:  str
-        :type  file:      str
-        :type  data:      str
-        :type  flc:       str
-        :type  chans:     int
-        :type  proj:      str
-        :type  x_ch:      str
-        :type  y_ch:      str
+        :param db:     Database
+        :param templ:  Template file name
+        :param file:   Header file name
+        :param data:   Data file name
+        :param flc:    Flight Line Channel name
+        :param chans:  Number of channels to import at one time
+        :param proj:   Projection file name
+        :param x_ch:   Channel pair to associate projection
+        :param y_ch:   Channel pair to associate projection
+        :type  db:     GXDB
+        :type  templ:  str
+        :type  file:   str
+        :type  data:   str
+        :type  flc:    str
+        :type  chans:  int
+        :type  proj:   str
+        :type  x_ch:   str
+        :type  y_ch:   str
 
         .. versionadded:: 5.0.1
 
@@ -2157,28 +2188,28 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** This version supports projections
         """
-        gxapi_cy.WrapDU._import_aseg_proj(GXContext._get_tls_geo(), db, template.encode(), file.encode(), data.encode(), flc.encode(), chans, proj.encode(), x_ch.encode(), y_ch.encode())
+        gxapi_cy.WrapDU._import_aseg_proj(GXContext._get_tls_geo(), db, templ.encode(), file.encode(), data.encode(), flc.encode(), chans, proj.encode(), x_ch.encode(), y_ch.encode())
         
 
 
 
     @classmethod
-    def import_bin(cls, db, data, template, line, flight, date):
+    def import_bin(cls, db, data, templ, line, flight, date):
         """
         Import blocked binary or archive ASCII data
         
-        :param db:        Database
-        :param data:      Import data file name
-        :param template:  Import template name
-        :param line:      Optional Line name (see note 3.)
-        :param flight:    Optional Flight number
-        :param date:      Optional date
-        :type  db:        GXDB
-        :type  data:      str
-        :type  template:  str
-        :type  line:      str
-        :type  flight:    int
-        :type  date:      float
+        :param db:      Database
+        :param data:    Import data file name
+        :param templ:   Import template name
+        :param line:    Optional Line name (see note 3.)
+        :param flight:  Optional Flight number
+        :param date:    Optional date
+        :type  db:      GXDB
+        :type  data:    str
+        :type  templ:   str
+        :type  line:    str
+        :type  flight:  int
+        :type  date:    float
 
         .. versionadded:: 5.0
 
@@ -2200,29 +2231,29 @@ class GXDU(gxapi_cy.WrapDU):
 
             `lab_template <geosoft.gxapi.GXDU.lab_template>`
         """
-        gxapi_cy.WrapDU._import_bin(GXContext._get_tls_geo(), db, data.encode(), template.encode(), line.encode(), flight, date)
+        gxapi_cy.WrapDU._import_bin(GXContext._get_tls_geo(), db, data.encode(), templ.encode(), line.encode(), flight, date)
         
 
 
 
     @classmethod
-    def import_bin2(cls, db, data, template, line, flight, date, wa):
+    def import_bin2(cls, db, data, templ, line, flight, date, wa):
         """
         Import blocked binary or archive ASCII data with data error display
         
-        :param db:        Database
-        :param data:      Import data file name
-        :param template:  Import template name
-        :param line:      Optional Line name (see note 3.)
-        :param flight:    Optional Flight number
-        :param date:      Optional date
-        :type  db:        GXDB
-        :type  data:      str
-        :type  template:  str
-        :type  line:      str
-        :type  flight:    int
-        :type  date:      float
-        :type  wa:        GXWA
+        :param db:      Database
+        :param data:    Import data file name
+        :param templ:   Import template name
+        :param line:    Optional Line name (see note 3.)
+        :param flight:  Optional Flight number
+        :param date:    Optional date
+        :type  db:      GXDB
+        :type  data:    str
+        :type  templ:   str
+        :type  line:    str
+        :type  flight:  int
+        :type  date:    float
+        :type  wa:      GXWA
 
         .. versionadded:: 5.1.6
 
@@ -2244,31 +2275,31 @@ class GXDU(gxapi_cy.WrapDU):
 
             `lab_template <geosoft.gxapi.GXDU.lab_template>`
         """
-        gxapi_cy.WrapDU._import_bin2(GXContext._get_tls_geo(), db, data.encode(), template.encode(), line.encode(), flight, date, wa)
+        gxapi_cy.WrapDU._import_bin2(GXContext._get_tls_geo(), db, data.encode(), templ.encode(), line.encode(), flight, date, wa)
         
 
 
 
     @classmethod
-    def import_bin4(cls, db, mode, data, template, line, flight, date, wa):
+    def import_bin4(cls, db, mode, data, templ, line, flight, date, wa):
         """
         Same as `import_bin2 <geosoft.gxapi.GXDU.import_bin2>` but with an import mode
         
-        :param db:        Database
-        :param mode:      :ref:`DU_IMPORT`
-        :param data:      Import data file name
-        :param template:  Import template name
-        :param line:      Optional Line name (see note 3.)
-        :param flight:    Optional Flight number
-        :param date:      Optional date
-        :type  db:        GXDB
-        :type  mode:      int
-        :type  data:      str
-        :type  template:  str
-        :type  line:      str
-        :type  flight:    int
-        :type  date:      float
-        :type  wa:        GXWA
+        :param db:      Database
+        :param mode:    :ref:`DU_IMPORT`
+        :param data:    Import data file name
+        :param templ:   Import template name
+        :param line:    Optional Line name (see note 3.)
+        :param flight:  Optional Flight number
+        :param date:    Optional date
+        :type  db:      GXDB
+        :type  mode:    int
+        :type  data:    str
+        :type  templ:   str
+        :type  line:    str
+        :type  flight:  int
+        :type  date:    float
+        :type  wa:      GXWA
 
         .. versionadded:: 9.1
 
@@ -2280,7 +2311,7 @@ class GXDU(gxapi_cy.WrapDU):
 
             `import_bin2 <geosoft.gxapi.GXDU.import_bin2>`
         """
-        gxapi_cy.WrapDU._import_bin4(GXContext._get_tls_geo(), db, mode, data.encode(), template.encode(), line.encode(), flight, date, wa)
+        gxapi_cy.WrapDU._import_bin4(GXContext._get_tls_geo(), db, mode, data.encode(), templ.encode(), line.encode(), flight, date, wa)
         
 
 
@@ -2346,22 +2377,22 @@ class GXDU(gxapi_cy.WrapDU):
 
 
     @classmethod
-    def import_dao(cls, db, data, type, table, template, line):
+    def import_dao(cls, db, data, type, table, templ, line):
         """
         Import an external database table into a group using DAO.
         
-        :param db:        Database
-        :param data:      Import database file name   (overrides template value)
-        :param type:      Import data file type       (overrides template value)
-        :param table:     Imported table in database file (overrides template value)
-        :param template:  Import template name
-        :param line:      Oasis Montaj line name to create (overrides template value)
-        :type  db:        GXDB
-        :type  data:      str
-        :type  type:      str
-        :type  table:     str
-        :type  template:  str
-        :type  line:      str
+        :param db:     Database
+        :param data:   Import database file name   (overrides template value)
+        :param type:   Import data file type       (overrides template value)
+        :param table:  Imported table in database file (overrides template value)
+        :param templ:  Import template name
+        :param line:   Oasis Montaj line name to create (overrides template value)
+        :type  db:     GXDB
+        :type  data:   str
+        :type  type:   str
+        :type  table:  str
+        :type  templ:  str
+        :type  line:   str
 
         .. versionadded:: 5.0
 
@@ -2378,24 +2409,24 @@ class GXDU(gxapi_cy.WrapDU):
 
         3. If the line already exists, the data will overwrite the existing data.
         """
-        gxapi_cy.WrapDU._import_dao(GXContext._get_tls_geo(), db, data.encode(), type.encode(), table.encode(), template.encode(), line.encode())
+        gxapi_cy.WrapDU._import_dao(GXContext._get_tls_geo(), db, data.encode(), type.encode(), table.encode(), templ.encode(), line.encode())
         
 
 
 
     @classmethod
-    def import_esri(cls, db, connect, template, line):
+    def import_esri(cls, db, connect, templ, line):
         """
         Import an ArcGIS Geodatabase table or feature class into a GDB group
         
-        :param db:        Database
-        :param connect:   Import database connection string (e.g. "d:\\Personal\\test.mdb|Table" or "d:\\File\\test.gdb|FeatureClass, overrides template value)
-        :param template:  Import template name
-        :param line:      Oasis montaj line name to create (overrides template value)
-        :type  db:        GXDB
-        :type  connect:   str
-        :type  template:  str
-        :type  line:      str
+        :param db:       Database
+        :param connect:  Import database connection string (e.g. "d:\\Personal\\test.mdb|Table" or "d:\\File\\test.gdb|FeatureClass, overrides template value)
+        :param templ:    Import template name
+        :param line:     Oasis montaj line name to create (overrides template value)
+        :type  db:       GXDB
+        :type  connect:  str
+        :type  templ:    str
+        :type  line:     str
 
         .. versionadded:: 7.1
 
@@ -2410,7 +2441,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         3. If the line already exists, the data will overwrite the existing data.
         """
-        gxapi_cy.WrapDU._import_esri(GXContext._get_tls_geo(), db, connect.encode(), template.encode(), line.encode())
+        gxapi_cy.WrapDU._import_esri(GXContext._get_tls_geo(), db, connect.encode(), templ.encode(), line.encode())
         
 
 
@@ -2454,24 +2485,24 @@ class GXDU(gxapi_cy.WrapDU):
 
 
     @classmethod
-    def import_pico(cls, db, template, data, chans):
+    def import_pico(cls, db, templ, data, chans):
         """
         Import a Picodas data file.
         
-        :param db:        Database
-        :param template:  Template file name
-        :param data:      Data file name
-        :param chans:     Number of channels to import at one time
-        :type  db:        GXDB
-        :type  template:  str
-        :type  data:      str
-        :type  chans:     int
+        :param db:     Database
+        :param templ:  Template file name
+        :param data:   Data file name
+        :param chans:  Number of channels to import at one time
+        :type  db:     GXDB
+        :type  templ:  str
+        :type  data:   str
+        :type  chans:  int
 
         .. versionadded:: 5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapDU._import_pico(GXContext._get_tls_geo(), db, template.encode(), data.encode(), chans)
+        gxapi_cy.WrapDU._import_pico(GXContext._get_tls_geo(), db, templ.encode(), data.encode(), chans)
         
 
 
@@ -2524,18 +2555,18 @@ class GXDU(gxapi_cy.WrapDU):
 
 
     @classmethod
-    def import_xyz(cls, db, mode, data, template):
+    def import_xyz(cls, db, mode, data, templ):
         """
         Import XYZ data into the database.
         
-        :param db:        Database
-        :param mode:      :ref:`DU_IMPORT`
-        :param data:      Import data file name
-        :param template:  Import template name
-        :type  db:        GXDB
-        :type  mode:      int
-        :type  data:      str
-        :type  template:  str
+        :param db:     Database
+        :param mode:   :ref:`DU_IMPORT`
+        :param data:   Import data file name
+        :param templ:  Import template name
+        :type  db:     GXDB
+        :type  mode:   int
+        :type  data:   str
+        :type  templ:  str
 
         .. versionadded:: 5.0
 
@@ -2547,25 +2578,25 @@ class GXDU(gxapi_cy.WrapDU):
 
         2. Both the import template and data file must exist.
         """
-        gxapi_cy.WrapDU._import_xyz(GXContext._get_tls_geo(), db, mode, data.encode(), template.encode())
+        gxapi_cy.WrapDU._import_xyz(GXContext._get_tls_geo(), db, mode, data.encode(), templ.encode())
         
 
 
 
     @classmethod
-    def import_xyz2(cls, db, mode, data, template, wa):
+    def import_xyz2(cls, db, mode, data, templ, wa):
         """
         Import XYZ data into the database.
         
-        :param db:        Database
-        :param mode:      :ref:`DU_IMPORT`
-        :param data:      Import data file name
-        :param template:  Import template name
-        :type  db:        GXDB
-        :type  mode:      int
-        :type  data:      str
-        :type  template:  str
-        :type  wa:        GXWA
+        :param db:     Database
+        :param mode:   :ref:`DU_IMPORT`
+        :param data:   Import data file name
+        :param templ:  Import template name
+        :type  db:     GXDB
+        :type  mode:   int
+        :type  data:   str
+        :type  templ:  str
+        :type  wa:     GXWA
 
         .. versionadded:: 5.1.6
 
@@ -2577,22 +2608,22 @@ class GXDU(gxapi_cy.WrapDU):
 
         2. Both the import template and data file must exist.
         """
-        gxapi_cy.WrapDU._import_xyz2(GXContext._get_tls_geo(), db, mode, data.encode(), template.encode(), wa)
+        gxapi_cy.WrapDU._import_xyz2(GXContext._get_tls_geo(), db, mode, data.encode(), templ.encode(), wa)
         
 
 
 
     @classmethod
-    def import_io_gas(cls, db, data_csv, template):
+    def import_io_gas(cls, db, data_csv, templ):
         """
         Import data columns from an ioGAS data file.
         
         :param db:        Database
         :param data_csv:  Input data.csv file name
-        :param template:  Input template file name
+        :param templ:     Input template file name
         :type  db:        GXDB
         :type  data_csv:  str
-        :type  template:  str
+        :type  templ:     str
 
         .. versionadded:: 8.5
 
@@ -2601,7 +2632,7 @@ class GXDU(gxapi_cy.WrapDU):
         **Note:** 1. All columns in the speficied ioGAS data file will be imported.
         2. If a line already exists, the data will overwrite the existing data.
         """
-        gxapi_cy.WrapDU._import_io_gas(GXContext._get_tls_geo(), db, data_csv.encode(), template.encode())
+        gxapi_cy.WrapDU._import_io_gas(GXContext._get_tls_geo(), db, data_csv.encode(), templ.encode())
         
 
 
@@ -2822,12 +2853,12 @@ class GXDU(gxapi_cy.WrapDU):
 
 
     @classmethod
-    def lab_template(cls, data, template, type, delimit, name_off, unit_off, data_off, sample_type, data_type):
+    def lab_template(cls, data, templ, type, delimit, name_off, unit_off, data_off, sample_type, data_type):
         """
         Makes a default template from a lab assay file.
         
         :param data:         Data file name
-        :param template:     New template name
+        :param templ:        New template name
         :param type:         :ref:`DU_LAB_TYPE`
         :param delimit:      Delimiter string
         :param name_off:     Offset to column labels line (0 for first line)
@@ -2836,7 +2867,7 @@ class GXDU(gxapi_cy.WrapDU):
         :param sample_type:  Sample channel element type, recommend -10 for 10-character ASCII, or `GS_LONG <geosoft.gxapi.GS_LONG>` for numbers.
         :param data_type:    Default channel element type, recommend `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`
         :type  data:         str
-        :type  template:     str
+        :type  templ:        str
         :type  type:         int
         :type  delimit:      str
         :type  name_off:     int
@@ -2870,7 +2901,7 @@ class GXDU(gxapi_cy.WrapDU):
 
             `import_bin <geosoft.gxapi.GXDU.import_bin>`
         """
-        gxapi_cy.WrapDU._lab_template(GXContext._get_tls_geo(), data.encode(), template.encode(), type, delimit.encode(), name_off, unit_off, data_off, sample_type, data_type)
+        gxapi_cy.WrapDU._lab_template(GXContext._get_tls_geo(), data.encode(), templ.encode(), type, delimit.encode(), name_off, unit_off, data_off, sample_type, data_type)
         
 
 
@@ -3473,6 +3504,64 @@ class GXDU(gxapi_cy.WrapDU):
 
 
     @classmethod
+    def qc_survey_plan2(cls, db, wa, pply, sl_spa, sl_azi, slx, sly, sl_sta, sl_inc, tl_spa, tl_azi, tlx, tly, tl_sta, tl_inc, type, sample_spacing, extend_outside):
+        """
+        Same as QCSurveyPlan_DU, but lines split by the polygon increment version numbers and keep the line number the same.
+        
+        :param db:              Database to save proposed survey plan
+        :param wa:              `GXWA <geosoft.gxapi.GXWA>` to save survey plan summary
+        :param pply:            Boundary `GXPLY <geosoft.gxapi.GXPLY>`
+        :param sl_spa:          Survey line spacing
+        :param sl_azi:          Survey line azimuth
+        :param slx:             Survey line reference X coordinate
+        :param sly:             Survey line reference Y coordinate
+        :param sl_sta:          Survey line starting number of LINES
+        :param sl_inc:          Line number increment for survey line
+        :param tl_spa:          Tie line spacing
+        :param tl_azi:          Tie line azimuth
+        :param tlx:             Tie line reference X coordinate
+        :param tly:             Tie line reference Y coordinate
+        :param tl_sta:          Tie line starting number of LINES
+        :param tl_inc:          Line number increment for Tie line
+        :param type:            :ref:`QC_PLAN_TYPE`
+        :param sample_spacing:  Sample spacing (spacing between points in lines)
+        :param extend_outside:  Spacing to extend lines outside polygon
+        :type  db:              GXDB
+        :type  wa:              GXWA
+        :type  pply:            GXPLY
+        :type  sl_spa:          float
+        :type  sl_azi:          float
+        :type  slx:             float
+        :type  sly:             float
+        :type  sl_sta:          int
+        :type  sl_inc:          int
+        :type  tl_spa:          float
+        :type  tl_azi:          float
+        :type  tlx:             float
+        :type  tly:             float
+        :type  tl_sta:          int
+        :type  tl_inc:          int
+        :type  type:            int
+        :type  sample_spacing:  float
+        :type  extend_outside:  float
+        :rtype:                 int
+
+        .. versionadded:: 9.6
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** The LINE on which has the reference (X,Y) will have the starting Line number
+        The lines on the right hand side of the reference line (while looking
+        into azimuth of ref. line) have increasing line numbers. The lines
+        on the left hand side have the decreasing line numbers from the starting
+        number. Returns an error code or 0 (if successful)
+        """
+        ret_val = gxapi_cy.WrapDU._qc_survey_plan2(GXContext._get_tls_geo(), db, wa, pply, sl_spa, sl_azi, slx, sly, sl_sta, sl_inc, tl_spa, tl_azi, tlx, tly, tl_sta, tl_inc, type, sample_spacing, extend_outside)
+        return ret_val
+
+
+
+    @classmethod
     def direction(cls, db, line, x_ch, y_ch):
         """
         Returns the direction of a line.
@@ -3727,16 +3816,16 @@ class GXDU(gxapi_cy.WrapDU):
 
 
     @classmethod
-    def scan_ado(cls, connect, table, template):
+    def scan_ado(cls, connect, table, templ):
         """
         Scans an external ADO database and generates a default template.
         
-        :param connect:   Database connection string
-        :param table:     Database Table Name
-        :param template:  Template file name to Create
-        :type  connect:   str
-        :type  table:     str
-        :type  template:  str
+        :param connect:  Database connection string
+        :param table:    Database Table Name
+        :param templ:    Template file name to Create
+        :type  connect:  str
+        :type  table:    str
+        :type  templ:    str
 
         .. versionadded:: 5.0.8
 
@@ -3744,48 +3833,48 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** All the channels are listed
         """
-        gxapi_cy.WrapDU._scan_ado(GXContext._get_tls_geo(), connect.encode(), table.encode(), template.encode())
+        gxapi_cy.WrapDU._scan_ado(GXContext._get_tls_geo(), connect.encode(), table.encode(), templ.encode())
         
 
 
 
     @classmethod
-    def scan_aseg(cls, file, data, flc, template):
+    def scan_aseg(cls, file, data, flc, templ):
         """
         This method scans an ASEG-GDF file and generates a default
         template listing all the channels and all the ALIAS lines.
         
-        :param file:      Header file name
-        :param data:      Data file name
-        :param flc:       Flight Line Channel name
-        :param template:  Template file name to Create
-        :type  file:      str
-        :type  data:      str
-        :type  flc:       str
-        :type  template:  str
+        :param file:   Header file name
+        :param data:   Data file name
+        :param flc:    Flight Line Channel name
+        :param templ:  Template file name to Create
+        :type  file:   str
+        :type  data:   str
+        :type  flc:    str
+        :type  templ:  str
 
         .. versionadded:: 5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapDU._scan_aseg(GXContext._get_tls_geo(), file.encode(), data.encode(), flc.encode(), template.encode())
+        gxapi_cy.WrapDU._scan_aseg(GXContext._get_tls_geo(), file.encode(), data.encode(), flc.encode(), templ.encode())
         
 
 
 
     @classmethod
-    def scan_dao(cls, file, type, table, template):
+    def scan_dao(cls, file, type, table, templ):
         """
         Scans an external DAO database and generates a default template.
         
-        :param file:      Database file name
-        :param type:      Database Type
-        :param table:     Database Table Name
-        :param template:  Template file name to Create
-        :type  file:      str
-        :type  type:      str
-        :type  table:     str
-        :type  template:  str
+        :param file:   Database file name
+        :param type:   Database Type
+        :param table:  Database Table Name
+        :param templ:  Template file name to Create
+        :type  file:   str
+        :type  type:   str
+        :type  table:  str
+        :type  templ:  str
 
         .. versionadded:: 5.0
 
@@ -3793,27 +3882,27 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** All the channels are listed
         """
-        gxapi_cy.WrapDU._scan_dao(GXContext._get_tls_geo(), file.encode(), type.encode(), table.encode(), template.encode())
+        gxapi_cy.WrapDU._scan_dao(GXContext._get_tls_geo(), file.encode(), type.encode(), table.encode(), templ.encode())
         
 
 
 
     @classmethod
-    def scan_pico(cls, data, template):
+    def scan_pico(cls, data, templ):
         """
         This method scans a picodas file and generates a default
         template listing all the channels and all the ALIAS lines.
         
-        :param data:      Data file Name
-        :param template:  Template file name to Create
-        :type  data:      str
-        :type  template:  str
+        :param data:   Data file Name
+        :param templ:  Template file name to Create
+        :type  data:   str
+        :type  templ:  str
 
         .. versionadded:: 5.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapDU._scan_pico(GXContext._get_tls_geo(), data.encode(), template.encode())
+        gxapi_cy.WrapDU._scan_pico(GXContext._get_tls_geo(), data.encode(), templ.encode())
         
 
 
