@@ -97,6 +97,9 @@ def _singleton(cls):
     """
     The singleton decorator.
     """
+    # Do not wrap class during documentation generation
+    if os.environ['GEOSOFT_SPHINX_BUILD'] == '1':
+       return cls
     return _SingletonWrapper(cls)
 
 
