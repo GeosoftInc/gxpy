@@ -1,12 +1,10 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>geosoft.gxpy.dataframe submodule &#8212; Geosoft GX Python API 9.6.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,6 +12,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -36,13 +35,11 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -65,79 +62,64 @@
   <div class="section" id="module-geosoft.gxpy.dataframe">
 <span id="geosoft-gxpy-dataframe-submodule"></span><h1>geosoft.gxpy.dataframe submodule<a class="headerlink" href="#module-geosoft.gxpy.dataframe" title="Permalink to this headline">¶</a></h1>
 <p>Table (records, fields) handling, inherits from Pandas (<a class="reference external" href="http://pandas.pydata.org/">http://pandas.pydata.org/</a>) base class.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><a class="reference internal" href="#geosoft.gxpy.dataframe.Data_frame" title="geosoft.gxpy.dataframe.Data_frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Data_frame</span></code></a>:</th><td class="field-body">dataframe that holds a table</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Classes</dt>
+<dd class="field-odd"><dl class="field-list simple">
+<dt class="field-odd"><a class="reference internal" href="#geosoft.gxpy.dataframe.Data_frame" title="geosoft.gxpy.dataframe.Data_frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Data_frame</span></code></a></dt>
+<dd class="field-odd"><p>dataframe that holds a table</p>
+</dd>
+</dl>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxapi.GXLTB</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxapi.GXLTB</span></code></a></p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Regression tests provide usage examples:
+<p class="admonition-title">Note</p>
+<p>Regression tests provide usage examples:
 <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_dataframe.py">dataframe tests</a></p>
 </div>
 <dl class="function">
 <dt id="geosoft.gxpy.dataframe.Data_frame">
-<code class="descname">Data_frame</code><span class="sig-paren">(</span><em>initial=None</em>, <em>records=None</em>, <em>columns=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.dataframe.Data_frame" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Data_frame</code><span class="sig-paren">(</span><em class="sig-param">initial=None</em>, <em class="sig-param">records=None</em>, <em class="sig-param">columns=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.dataframe.Data_frame" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pandas DataFrame from a Geosoft table.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">initial:</th><td class="field-body">Geosoft table name, which is normally an ASCII csv file.  If the table cannot be
-found in the project folder <code class="xref py py-obj docutils literal notranslate"><span class="pre">user/csv</span></code> is searched, then the Geosoft <code class="xref py py-obj docutils literal notranslate"><span class="pre">csv</span></code> folder.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">records:</th><td class="field-body">Record name to include, or a list of records to include.  If not specified all
-records are included in the dataframe.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">columns:</th><td class="field-body">Column name to be included, or a list of column names to include.  If not specified all
-columns are included in the dataframe.</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">DfException:</th><td class="field-body">if no columns.records found in the table.  If only some fields are found the dataframe is
-created with the found fields.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">raises geosoft.gxapi.GXError:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">if a requested record is not found.</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="field-list simple">
+<dt class="field-odd">initial</dt>
+<dd class="field-odd"><p>Geosoft table name, which is normally an ASCII csv file.  If the table cannot be
+found in the project folder <code class="xref py py-obj docutils literal notranslate"><span class="pre">user/csv</span></code> is searched, then the Geosoft <code class="xref py py-obj docutils literal notranslate"><span class="pre">csv</span></code> folder.</p>
+</dd>
+<dt class="field-even">records</dt>
+<dd class="field-even"><p>Record name to include, or a list of records to include.  If not specified all
+records are included in the dataframe.</p>
+</dd>
+<dt class="field-odd">columns</dt>
+<dd class="field-odd"><p>Column name to be included, or a list of column names to include.  If not specified all
+columns are included in the dataframe.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><dl class="field-list simple">
+<dt class="field-odd">DfException</dt>
+<dd class="field-odd"><p>if no columns.records found in the table.  If only some fields are found the dataframe is
+created with the found fields.</p>
+</dd>
+<dt class="field-even">raises geosoft.gxapi.GXError</dt>
+<dd class="field-even"><p>if a requested record is not found.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 <p>This returns a Pandas DataFrame instance, which can be accessed and used with standard Pandas
 calls.</p>
 <p>Column names from Geosoft table files are always uppercase, regardless
 of case used in the table file.</p>
 <p>Record/index names from Geosoft table files are case-sensitive.</p>
 <p>Example table file “rockcode.csv”:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span> <span class="n">standard</span> <span class="n">Geosoft</span> <span class="n">rock</span> <span class="n">codes</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span> <span class="n">standard</span> <span class="n">Geosoft</span> <span class="n">rock</span> <span class="n">codes</span>
 <span class="n">CODE</span><span class="p">,</span><span class="n">LABEL</span><span class="p">,</span><span class="n">__DESCRIPTION</span><span class="p">,</span><span class="n">PATTERN</span><span class="p">,</span><span class="n">PAT_SIZE</span><span class="p">,</span><span class="n">PAT_DENSITY</span><span class="p">,</span><span class="n">PAT_THICKNESS</span><span class="p">,</span><span class="n">COLOR</span>
 <span class="n">bau</span><span class="p">,</span><span class="n">BAU</span><span class="p">,</span><span class="n">BAUXITE</span><span class="p">,</span><span class="mi">100</span><span class="p">,,,,</span><span class="n">RG49B181</span>
 <span class="n">bif</span><span class="p">,</span><span class="n">BIF</span><span class="p">,</span><span class="s2">&quot;BANDED IRON FM&quot;</span><span class="p">,</span><span class="mi">202</span><span class="p">,,,,</span><span class="n">R</span>
@@ -145,7 +127,7 @@ of case used in the table file.</p>
 <span class="n">cbt</span><span class="p">,</span><span class="n">CBT</span><span class="p">,</span><span class="n">CARBONATITE</span><span class="p">,</span><span class="mi">305</span><span class="p">,,,,</span><span class="n">R128G128B192</span>
 </pre></div>
 </div>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">include</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">gxpy</span> <span class="k">as</span> <span class="n">gxpy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">include</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">gxpy</span> <span class="k">as</span> <span class="n">gxpy</span>
 <span class="k">with</span> <span class="n">gxpy</span><span class="o">.</span><span class="n">GXpy</span><span class="p">()</span> <span class="k">as</span> <span class="n">gx</span><span class="p">:</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">gxpy</span><span class="o">.</span><span class="n">dataframe</span><span class="o">.</span><span class="n">Data_frame</span><span class="p">(</span><span class="s1">&#39;rockcode&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
@@ -156,68 +138,60 @@ of case used in the table file.</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.2.</span></p>
+<p><span class="versionmodified added">New in version 9.2.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 9.4.</span></p>
+<p><span class="versionmodified changed">Changed in version 9.4.</span></p>
 </div>
 </dd></dl>
 
 <dl class="exception">
 <dt id="geosoft.gxpy.dataframe.DfException">
-<em class="property">exception </em><code class="descname">DfException</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.dataframe.DfException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="sig-name descname">DfException</code><span class="sig-paren">(</span><em class="sig-param">message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.dataframe.DfException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.GXRuntimeError</span></code></p>
 <p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.dataframe" title="geosoft.gxpy.dataframe"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.dataframe</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.2.</span></p>
+<p><span class="versionmodified added">New in version 9.2.</span></p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.dataframe.table_column">
-<code class="descname">table_column</code><span class="sig-paren">(</span><em>table</em>, <em>col</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.dataframe.table_column" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">table_column</code><span class="sig-paren">(</span><em class="sig-param">table</em>, <em class="sig-param">col</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.dataframe.table_column" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a dictionary of a column from a table</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>table</strong> – table name</li>
-<li><strong>col</strong> – column wanted</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> – table name</p></li>
+<li><p><strong>col</strong> – column wanted</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dictionary containing record values as strings</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dictionary containing record values as strings</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.2.</span></p>
+<p><span class="versionmodified added">New in version 9.2.</span></p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.dataframe.table_record">
-<code class="descname">table_record</code><span class="sig-paren">(</span><em>table</em>, <em>rec</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.dataframe.table_record" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">table_record</code><span class="sig-paren">(</span><em class="sig-param">table</em>, <em class="sig-param">rec</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.dataframe.table_record" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a dictionary of a single record from a table</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>table</strong> – table name</li>
-<li><strong>rec</strong> – record wanted</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> – table name</p></li>
+<li><p><strong>rec</strong> – record wanted</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dictionary containing record values as strings</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dictionary containing record values as strings</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.2.</span></p>
+<p><span class="versionmodified added">New in version 9.2.</span></p>
 </div>
 </dd></dl>
 
@@ -241,7 +215,7 @@ of case used in the table file.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

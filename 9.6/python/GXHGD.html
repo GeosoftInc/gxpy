@@ -1,12 +1,10 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>GXHGD class &#8212; Geosoft GX Python API 9.6.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,6 +12,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -36,13 +35,11 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -66,145 +63,127 @@
 <span id="gxhgd"></span><h1>GXHGD class<a class="headerlink" href="#gxhgd-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXHGD">
-<em class="property">class </em><code class="descname">GXHGD</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXHGD" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">GXHGD</code><span class="sig-paren">(</span><em class="sig-param">handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXHGD" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXHGD class.</p>
 <p>High Performance Grid. Designed to place grid data
 on a DAP server. It produces a multi-resolution
 compressed object that supports multi-threading and
 allows for high-speed extraction of data at any
 resolution.</p>
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXHGD.create">
-<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXHGD.create" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXHGD.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a handle to an <a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXHGD</span></code></a> object</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – File Name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXHGD</span></code></a> handle, terminates if creation fails</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD">GXHGD</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – File Name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXHGD</span></code></a> handle, terminates if creation fails</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD">GXHGD</a></p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.</span></p>
+<p><span class="versionmodified added">New in version 5.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXHGD.export_img">
-<code class="descname">export_img</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXHGD.export_img" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">export_img</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXHGD.export_img" title="Permalink to this definition">¶</a></dt>
 <dd><p>Export all layers of this <a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXHGD</span></code></a> into grid files.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Name of grids (each layers adds _Number to the name)</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of grids (each layers adds _Number to the name)</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.1.</span></p>
+<p><span class="versionmodified added">New in version 6.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXHGD.get_meta">
-<code class="descname">get_meta</code><span class="sig-paren">(</span><em>meta</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXHGD.get_meta" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_meta</code><span class="sig-paren">(</span><em class="sig-param">meta</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXHGD.get_meta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the metadata of a grid.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> object to save <a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXHGD</span></code></a>’s meta to</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> object to save <a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXHGD</span></code></a>’s meta to</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.</span></p>
+<p><span class="versionmodified added">New in version 5.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXHGD.h_create_img">
-<em class="property">classmethod </em><code class="descname">h_create_img</code><span class="sig-paren">(</span><em>img</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXHGD.h_create_img" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">h_create_img</code><span class="sig-paren">(</span><em class="sig-param">img</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXHGD.h_create_img" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make an <a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXHGD</span></code></a> from an <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image Handle</li>
-<li><strong>name</strong> (<em>str</em>) – Name of <a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXHGD</span></code></a> object</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image Handle</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Name of <a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXHGD</span></code></a> object</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXHGD</span></code></a> Object</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD">GXHGD</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXHGD</span></code></a> Object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD">GXHGD</a></p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.</span></p>
+<p><span class="versionmodified added">New in version 5.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXHGD.is_null">
-<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXHGD.is_null" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXHGD.is_null" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXHGD.null">
-<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXHGD.null" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXHGD.null" title="Permalink to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXHGD</span></code></a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXHGD</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD">GXHGD</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXHGD</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD">GXHGD</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXHGD.set_meta">
-<code class="descname">set_meta</code><span class="sig-paren">(</span><em>meta</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXHGD.set_meta" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_meta</code><span class="sig-paren">(</span><em class="sig-param">meta</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXHGD.set_meta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the metadata of a grid.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> object to add to <a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXHGD</span></code></a>’s meta</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> object to add to <a class="reference internal" href="#geosoft.gxapi.GXHGD" title="geosoft.gxapi.GXHGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXHGD</span></code></a>’s meta</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.</span></p>
+<p><span class="versionmodified added">New in version 5.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -231,7 +210,7 @@ resolution.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

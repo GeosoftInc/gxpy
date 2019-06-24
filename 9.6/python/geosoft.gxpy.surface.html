@@ -1,12 +1,10 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>geosoft.gxpy.surface submodule &#8212; Geosoft GX Python API 9.6.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,6 +12,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -36,13 +35,11 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -65,262 +62,244 @@
   <div class="section" id="module-geosoft.gxpy.surface">
 <span id="geosoft-gxpy-surface-submodule"></span><h1>geosoft.gxpy.surface submodule<a class="headerlink" href="#module-geosoft.gxpy.surface" title="Permalink to this headline">¶</a></h1>
 <p>Geosoft surfaces</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><a class="reference internal" href="#geosoft.gxpy.surface.SurfaceDataset" title="geosoft.gxpy.surface.SurfaceDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SurfaceDataset</span></code></a>:</th><td class="field-body">Geosoft_surface dataset, contains zero or more <a class="reference internal" href="#geosoft.gxpy.surface.Surface" title="geosoft.gxpy.surface.Surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code></a> instances</td>
-</tr>
-<tr class="field-even field"><th class="field-name"><a class="reference internal" href="#geosoft.gxpy.surface.Surface" title="geosoft.gxpy.surface.Surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code></a>:</th><td class="field-body">Surfaces defined by one or more <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Mesh" title="geosoft.gxpy.geometry.Mesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Mesh</span></code></a> instances</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Constants:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">MODE_READ:</th><td class="field-body"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata.MODE_READ</span></code></td>
-</tr>
-<tr class="field-even field"><th class="field-name">MODE_READWRITE:</th><td class="field-body"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata.MODE_READWRITE</span></code></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">MODE_NEW:</th><td class="field-body"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata.MODE_NEW</span></code></td>
-</tr>
-<tr class="field-even field"><th class="field-name">MODE_APPEND:</th><td class="field-body">MODE_READWRITE</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">STYLE_FLAT:</th><td class="field-body"><a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.SURFACERENDER_FILL" title="geosoft.gxapi.SURFACERENDER_FILL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.SURFACERENDER_FILL</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">STYLE_SMOOTH:</th><td class="field-body"><a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.SURFACERENDER_SMOOTH" title="geosoft.gxapi.SURFACERENDER_SMOOTH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.SURFACERENDER_SMOOTH</span></code></a></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">STYLE_EDGE:</th><td class="field-body"><a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.SURFACERENDER_EDGES" title="geosoft.gxapi.SURFACERENDER_EDGES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.SURFACERENDER_EDGES</span></code></a></td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Classes</dt>
+<dd class="field-odd"><dl class="field-list simple">
+<dt class="field-odd"><a class="reference internal" href="#geosoft.gxpy.surface.SurfaceDataset" title="geosoft.gxpy.surface.SurfaceDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SurfaceDataset</span></code></a></dt>
+<dd class="field-odd"><p>Geosoft_surface dataset, contains zero or more <a class="reference internal" href="#geosoft.gxpy.surface.Surface" title="geosoft.gxpy.surface.Surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code></a> instances</p>
+</dd>
+<dt class="field-even"><a class="reference internal" href="#geosoft.gxpy.surface.Surface" title="geosoft.gxpy.surface.Surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code></a></dt>
+<dd class="field-even"><p>Surfaces defined by one or more <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Mesh" title="geosoft.gxpy.geometry.Mesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Mesh</span></code></a> instances</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Constants</dt>
+<dd class="field-odd"><dl class="field-list simple">
+<dt class="field-odd">MODE_READ</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata.MODE_READ</span></code></p>
+</dd>
+<dt class="field-even">MODE_READWRITE</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata.MODE_READWRITE</span></code></p>
+</dd>
+<dt class="field-odd">MODE_NEW</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata.MODE_NEW</span></code></p>
+</dd>
+<dt class="field-even">MODE_APPEND</dt>
+<dd class="field-even"><p>MODE_READWRITE</p>
+</dd>
+<dt class="field-odd">STYLE_FLAT</dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.SURFACERENDER_FILL" title="geosoft.gxapi.SURFACERENDER_FILL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.SURFACERENDER_FILL</span></code></a></p>
+</dd>
+<dt class="field-even">STYLE_SMOOTH</dt>
+<dd class="field-even"><p><a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.SURFACERENDER_SMOOTH" title="geosoft.gxapi.SURFACERENDER_SMOOTH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.SURFACERENDER_SMOOTH</span></code></a></p>
+</dd>
+<dt class="field-odd">STYLE_EDGE</dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.SURFACERENDER_EDGES" title="geosoft.gxapi.SURFACERENDER_EDGES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.SURFACERENDER_EDGES</span></code></a></p>
+</dd>
+</dl>
+</dd>
+</dl>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="geosoft.gxpy.spatialdata.html#module-geosoft.gxpy.spatialdata" title="geosoft.gxpy.spatialdata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata</span></code></a>, <a class="reference internal" href="GXSURFACE.html#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSURFACE</span></code></a>, <a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSURFACEITEM</span></code></a></p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="geosoft.gxpy.spatialdata.html#module-geosoft.gxpy.spatialdata" title="geosoft.gxpy.spatialdata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata</span></code></a>, <a class="reference internal" href="GXSURFACE.html#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSURFACE</span></code></a>, <a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSURFACEITEM</span></code></a></p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Regression tests provide usage examples:     
+<p class="admonition-title">Note</p>
+<p>Regression tests provide usage examples:     
 <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_surface.py">Tests</a></p>
 </div>
 <dl class="class">
 <dt id="geosoft.gxpy.surface.Surface">
-<em class="property">class </em><code class="descname">Surface</code><span class="sig-paren">(</span><em>surface</em>, <em>surface_type='none'</em>, <em>surface_dataset=None</em>, <em>mesh=None</em>, <em>coordinate_system=None</em>, <em>render_properties=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.Surface" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Surface</code><span class="sig-paren">(</span><em class="sig-param">surface</em>, <em class="sig-param">surface_type='none'</em>, <em class="sig-param">surface_dataset=None</em>, <em class="sig-param">mesh=None</em>, <em class="sig-param">coordinate_system=None</em>, <em class="sig-param">render_properties=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.Surface" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="geosoft.gxpy.spatialdata.html#geosoft.gxpy.spatialdata.SpatialData" title="geosoft.gxpy.spatialdata.SpatialData"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata.SpatialData</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Sequence</span></code></p>
 <p>A single surface, which contains one or more <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Mesh" title="geosoft.gxpy.geometry.Mesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Mesh</span></code></a> instances.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>surface</strong> – surface name or a <a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSURFACEITEM</span></code></a> instance.</li>
-<li><strong>surface_type</strong> – surface type as a descriptive name, such as “ISOSURFACE”</li>
-<li><strong>surface_dataset</strong> – optional <a class="reference internal" href="#geosoft.gxpy.surface.SurfaceDataset" title="geosoft.gxpy.surface.SurfaceDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SurfaceDataset</span></code></a> instance in which to place a new <a class="reference internal" href="#geosoft.gxpy.surface.Surface" title="geosoft.gxpy.surface.Surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code></a></li>
-<li><strong>mesh</strong> – optional <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Mesh" title="geosoft.gxpy.geometry.Mesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Mesh</span></code></a> instance, or tuple (faces, verticies).</li>
-<li><strong>coordinate_system</strong> – mesh coordinate system, which will become the surface coordinate system.</li>
-<li><strong>render_properties</strong> – (color, opacity, style), default is
-(<code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.group.C_GREY</span></code>, 1.0, <code class="xref py py-obj docutils literal notranslate"><span class="pre">STYLE_FLAT</span></code>)</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>surface</strong> – surface name or a <a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSURFACEITEM</span></code></a> instance.</p></li>
+<li><p><strong>surface_type</strong> – surface type as a descriptive name, such as “ISOSURFACE”</p></li>
+<li><p><strong>surface_dataset</strong> – optional <a class="reference internal" href="#geosoft.gxpy.surface.SurfaceDataset" title="geosoft.gxpy.surface.SurfaceDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SurfaceDataset</span></code></a> instance in which to place a new <a class="reference internal" href="#geosoft.gxpy.surface.Surface" title="geosoft.gxpy.surface.Surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code></a></p></li>
+<li><p><strong>mesh</strong> – optional <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Mesh" title="geosoft.gxpy.geometry.Mesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Mesh</span></code></a> instance, or tuple (faces, verticies).</p></li>
+<li><p><strong>coordinate_system</strong> – mesh coordinate system, which will become the surface coordinate system.</p></li>
+<li><p><strong>render_properties</strong> – (color, opacity, style), default is
+(<code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.group.C_GREY</span></code>, 1.0, <code class="xref py py-obj docutils literal notranslate"><span class="pre">STYLE_FLAT</span></code>)</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Iterating yields component <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Mesh" title="geosoft.gxpy.geometry.Mesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Mesh</span></code></a> instances.</p>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.1.</span></p>
+<p><span class="versionmodified added">New in version 9.3.1.</span></p>
 </div>
 <dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.add_mesh">
-<code class="descname">add_mesh</code><span class="sig-paren">(</span><em>mesh</em>, <em>render_properties=None</em>, <em>coordinate_system=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.Surface.add_mesh" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_mesh</code><span class="sig-paren">(</span><em class="sig-param">mesh</em>, <em class="sig-param">render_properties=None</em>, <em class="sig-param">coordinate_system=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.Surface.add_mesh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a vv mesh to a new surface.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>mesh</strong> – mesh as ((f1vv, f2vv, f3vv), (xvv, yvv, zvv))</li>
-<li><strong>render_properties</strong> – (color, opacity, style), where colour is a <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color" title="geosoft.gxpy.group.Color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.group.Color</span></code></a>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mesh</strong> – mesh as ((f1vv, f2vv, f3vv), (xvv, yvv, zvv))</p></li>
+<li><p><strong>render_properties</strong> – (color, opacity, style), where colour is a <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color" title="geosoft.gxpy.group.Color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.group.Color</span></code></a>
 instance or a 32-bit Geosoft color integer, opacity is a value between
 0. (invisible) and 1. (opaque), and style is STYLE_FLAT, STYLE_SMOOTH or
-STYLE_EDGE.</li>
-<li><strong>coordinate_system</strong> – coordinate system for the verticies, default is the same as the surface</li>
+STYLE_EDGE.</p></li>
+<li><p><strong>coordinate_system</strong> – coordinate system for the verticies, default is the same as the surface</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">component number, which will always be the last component.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>component number, which will always be the last component.</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.</span></p>
+<p><span class="versionmodified added">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.component_count">
-<code class="descname">component_count</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.component_count" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">component_count</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.component_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>number of components to this surface, usually 1</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.computed_properties">
-<code class="descname">computed_properties</code><span class="sig-paren">(</span><em>refresh=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.Surface.computed_properties" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">computed_properties</code><span class="sig-paren">(</span><em class="sig-param">refresh=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.Surface.computed_properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Surface properties, see: <a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.compute_extended_info" title="geosoft.gxapi.GXSURFACEITEM.compute_extended_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSURFACEITEM.compute_extended_info</span></code></a>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>refresh</strong> – if True, computed properties will be refreshed on next access.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary of properties, ‘components’, ‘verticies’, edges’,
-‘triangles’, ‘inconsistent’, ‘invalid’, ‘intersect’</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>refresh</strong> – if True, computed properties will be refreshed on next access.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dictionary of properties, ‘components’, ‘verticies’, edges’,
+‘triangles’, ‘inconsistent’, ‘invalid’, ‘intersect’</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.1.</span></p>
+<p><span class="versionmodified added">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.extent">
-<code class="descname">extent</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.extent" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">extent</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.extent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the surface extent as a <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Point2</span></code></a> instance.</p>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.1.</span></p>
+<p><span class="versionmodified added">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.faces_count">
-<code class="descname">faces_count</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.faces_count" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">faces_count</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.faces_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>number of triangular faces</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.guid">
-<code class="descname">guid</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.guid" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">guid</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.guid" title="Permalink to this definition">¶</a></dt>
 <dd><p>The GUID of this surface</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.gxsurfaceitem">
-<code class="descname">gxsurfaceitem</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.gxsurfaceitem" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">gxsurfaceitem</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.gxsurfaceitem" title="Permalink to this definition">¶</a></dt>
 <dd><p>the <a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSURFACEITEM</span></code></a> instance</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.mesh">
-<code class="descname">mesh</code><span class="sig-paren">(</span><em>component=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.Surface.mesh" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">mesh</code><span class="sig-paren">(</span><em class="sig-param">component=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.Surface.mesh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a component mesh as <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Mesh" title="geosoft.gxpy.geometry.Mesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Mesh</span></code></a> instance</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>component</strong> – component number from a multi-component surface</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">(triangle_index_1, triangle_index_2, triangle_index_3), (vertex_x, vertex_y, vertex_z)
-as <a class="reference internal" href="geosoft.gxpy.vv.html#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.vv.GXvv</span></code></a> instances</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> – component number from a multi-component surface</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(triangle_index_1, triangle_index_2, triangle_index_3), (vertex_x, vertex_y, vertex_z)
+as <a class="reference internal" href="geosoft.gxpy.vv.html#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.vv.GXvv</span></code></a> instances</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.1.</span></p>
+<p><span class="versionmodified added">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.metadata">
-<code class="descname">metadata</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.metadata" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">metadata</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the parent surface dataset metadata as a dictionary.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.name">
-<code class="descname">name</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.name" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name of this surface</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.properties">
-<code class="descname">properties</code><span class="sig-paren">(</span><em>refresh=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.Surface.properties" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">properties</code><span class="sig-paren">(</span><em class="sig-param">refresh=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.Surface.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Surface properties from <a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_properties_ex" title="geosoft.gxapi.GXSURFACEITEM.get_properties_ex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSURFACEITEM.get_properties_ex</span></code></a>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>refresh</strong> – if True, computed properties will be refreshed on next access.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>refresh</strong> – if True, computed properties will be refreshed on next access.</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.1.</span></p>
+<p><span class="versionmodified added">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.render_color">
-<code class="descname">render_color</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.render_color" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">render_color</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.render_color" title="Permalink to this definition">¶</a></dt>
 <dd><p>rendering colour as a <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color" title="geosoft.gxpy.group.Color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.group.Color</span></code></a> instance</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.render_opacity">
-<code class="descname">render_opacity</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.render_opacity" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">render_opacity</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.render_opacity" title="Permalink to this definition">¶</a></dt>
 <dd><p>group opacity, 0.0 (transparent) to 1.0 (opaque)</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.render_properties">
-<code class="descname">render_properties</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.render_properties" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">render_properties</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.render_properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>The rendering properties for this surface as (color, opacity, style). Can be set.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.render_style">
-<code class="descname">render_style</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.render_style" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">render_style</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.render_style" title="Permalink to this definition">¶</a></dt>
 <dd><p>surface rendering style, one of STYLE constants</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.source_dataset">
-<code class="descname">source_dataset</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.source_dataset" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">source_dataset</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.source_dataset" title="Permalink to this definition">¶</a></dt>
 <dd><p>the source dataset from which this surface was derived</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.source_measure">
-<code class="descname">source_measure</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.source_measure" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">source_measure</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.source_measure" title="Permalink to this definition">¶</a></dt>
 <dd><p>the source measure</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.surface_type">
-<code class="descname">surface_type</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.surface_type" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">surface_type</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.surface_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>the defined surface type string</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.unit_of_measure">
-<code class="descname">unit_of_measure</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.unit_of_measure" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">unit_of_measure</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.unit_of_measure" title="Permalink to this definition">¶</a></dt>
 <dd><p>the unit of measure for data defined by this surface, often the isosurface value</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.Surface.verticies_count">
-<code class="descname">verticies_count</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.verticies_count" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">verticies_count</code><a class="headerlink" href="#geosoft.gxpy.surface.Surface.verticies_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>number of verticies</p>
 </dd></dl>
 
@@ -328,268 +307,236 @@ as <a class="reference internal" href="geosoft.gxpy.vv.html#geosoft.gxpy.vv.GXvv
 
 <dl class="class">
 <dt id="geosoft.gxpy.surface.SurfaceDataset">
-<em class="property">class </em><code class="descname">SurfaceDataset</code><span class="sig-paren">(</span><em>name</em>, <em>file_name=None</em>, <em>gxsurface=None</em>, <em>mode=None</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">SurfaceDataset</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">file_name=None</em>, <em class="sig-param">gxsurface=None</em>, <em class="sig-param">mode=None</em>, <em class="sig-param">overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="geosoft.gxpy.spatialdata.html#geosoft.gxpy.spatialdata.SpatialData" title="geosoft.gxpy.spatialdata.SpatialData"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata.SpatialData</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Sequence</span></code></p>
 <p>Surface dataset, which contains one or more <a class="reference internal" href="#geosoft.gxpy.surface.Surface" title="geosoft.gxpy.surface.Surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code></a> instances.</p>
 <p>A Surface dataset is stored in a .geosoft_surface file.</p>
 <p>Iterating yields <a class="reference internal" href="#geosoft.gxpy.surface.Surface" title="geosoft.gxpy.surface.Surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code></a> instances.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Constructors:</th><td class="field-body"><table border="1" class="first last docutils">
+<dl class="field-list">
+<dt class="field-odd">Constructors</dt>
+<dd class="field-odd"><table class="docutils align-default">
 <colgroup>
-<col width="34%" />
-<col width="66%" />
+<col style="width: 34%" />
+<col style="width: 66%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.surface.SurfaceDataset.open" title="geosoft.gxpy.surface.SurfaceDataset.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a></td>
-<td>open an existing surface dataset</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#geosoft.gxpy.surface.SurfaceDataset.open" title="geosoft.gxpy.surface.SurfaceDataset.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a></p></td>
+<td><p>open an existing surface dataset</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.surface.SurfaceDataset.new" title="geosoft.gxpy.surface.SurfaceDataset.new"><code class="xref py py-meth docutils literal notranslate"><span class="pre">new()</span></code></a></td>
-<td>create a new surface dataset</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#geosoft.gxpy.surface.SurfaceDataset.new" title="geosoft.gxpy.surface.SurfaceDataset.new"><code class="xref py py-meth docutils literal notranslate"><span class="pre">new()</span></code></a></p></td>
+<td><p>create a new surface dataset</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.surface.SurfaceDataset.vox_surface" title="geosoft.gxpy.surface.SurfaceDataset.vox_surface"><code class="xref py py-meth docutils literal notranslate"><span class="pre">vox_surface()</span></code></a></td>
-<td>isosurfaces created from a vox.</td>
-</tr>
-</tbody>
-</table>
-</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#geosoft.gxpy.surface.SurfaceDataset.vox_surface" title="geosoft.gxpy.surface.SurfaceDataset.vox_surface"><code class="xref py py-meth docutils literal notranslate"><span class="pre">vox_surface()</span></code></a></p></td>
+<td><p>isosurfaces created from a vox.</p></td>
 </tr>
 </tbody>
 </table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.1.</span></p>
+<p><span class="versionmodified added">New in version 9.3.1.</span></p>
 </div>
 <dl class="method">
 <dt id="geosoft.gxpy.surface.SurfaceDataset.add_surface">
-<code class="descname">add_surface</code><span class="sig-paren">(</span><em>surface</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.add_surface" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_surface</code><span class="sig-paren">(</span><em class="sig-param">surface</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.add_surface" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a surface to the surface dataset.  One can only add surfaces to new datasets.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>surface</strong> – <a class="reference internal" href="#geosoft.gxpy.surface.Surface" title="geosoft.gxpy.surface.Surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code></a> instance to add</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>surface</strong> – <a class="reference internal" href="#geosoft.gxpy.surface.Surface" title="geosoft.gxpy.surface.Surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code></a> instance to add</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.1.</span></p>
+<p><span class="versionmodified added">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.surface.SurfaceDataset.add_surface_dataset">
-<code class="descname">add_surface_dataset</code><span class="sig-paren">(</span><em>surface_dataset</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.add_surface_dataset" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_surface_dataset</code><span class="sig-paren">(</span><em class="sig-param">surface_dataset</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.add_surface_dataset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add the surfaces from an existing surface dataset.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>surface_dataset</strong> – <a class="reference internal" href="#geosoft.gxpy.surface.SurfaceDataset" title="geosoft.gxpy.surface.SurfaceDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SurfaceDataset</span></code></a> instance or a file name</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>surface_dataset</strong> – <a class="reference internal" href="#geosoft.gxpy.surface.SurfaceDataset" title="geosoft.gxpy.surface.SurfaceDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SurfaceDataset</span></code></a> instance or a file name</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.1.</span></p>
+<p><span class="versionmodified added">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.surface.SurfaceDataset.figure_map">
-<code class="descname">figure_map</code><span class="sig-paren">(</span><em>file_name=None</em>, <em>overwrite=True</em>, <em>title=None</em>, <em>legend_label=None</em>, <em>features=('LEGEND'</em>, <em>'NEATLINE')</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.figure_map" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">figure_map</code><span class="sig-paren">(</span><em class="sig-param">file_name=None</em>, <em class="sig-param">overwrite=True</em>, <em class="sig-param">title=None</em>, <em class="sig-param">legend_label=None</em>, <em class="sig-param">features=('LEGEND'</em>, <em class="sig-param">'NEATLINE')</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.figure_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a figure view file from an SurfaceDataset.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file_name</strong> – the name of a file for the 3d view. If None a temporary 3d view created.</li>
-<li><strong>overwrite</strong> – True to overwrite existing file</li>
-<li><strong>title</strong> – Title added to the image</li>
-<li><strong>legend_label</strong> – If plotting a legend make this the legend title.  The default is the unit_of_measure.</li>
-<li><strong>features</strong> – <p>list of features to place on the map, default is (‘LEGEND’, ‘NEATLINE’)</p>
-<table border="1" class="docutils">
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> – the name of a file for the 3d view. If None a temporary 3d view created.</p></li>
+<li><p><strong>overwrite</strong> – True to overwrite existing file</p></li>
+<li><p><strong>title</strong> – Title added to the image</p></li>
+<li><p><strong>legend_label</strong> – If plotting a legend make this the legend title.  The default is the unit_of_measure.</p></li>
+<li><p><strong>features</strong> – <p>list of features to place on the map, default is (‘LEGEND’, ‘NEATLINE’)</p>
+<table class="docutils align-default">
 <colgroup>
-<col width="21%" />
-<col width="79%" />
+<col style="width: 21%" />
+<col style="width: 79%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>’LEGEND’</td>
-<td>draw a surface legend</td>
+<tbody>
+<tr class="row-odd"><td><p>’LEGEND’</p></td>
+<td><p>draw a surface legend</p></td>
 </tr>
-<tr class="row-even"><td>’NEATLINE’</td>
-<td>draw a neat-line around the image</td>
+<tr class="row-even"><td><p>’NEATLINE’</p></td>
+<td><p>draw a neat-line around the image</p></td>
 </tr>
 </tbody>
 </table>
-</li>
-<li><strong>kwargs</strong> – passed to <a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map.new" title="geosoft.gxpy.map.Map.new"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.map.Map.new</span></code></a></li>
+</p></li>
+<li><p><strong>kwargs</strong> – passed to <a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map.new" title="geosoft.gxpy.map.Map.new"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.map.Map.new</span></code></a></p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.</span></p>
+<p><span class="versionmodified added">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.SurfaceDataset.gxsurface">
-<code class="descname">gxsurface</code><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.gxsurface" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">gxsurface</code><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.gxsurface" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="GXSURFACE.html#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSURFACE</span></code></a> instance handle</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.surface.SurfaceDataset.has_surface">
-<code class="descname">has_surface</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.has_surface" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">has_surface</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.has_surface" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns True if this surface name or guid exists in the surface dataset.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.SurfaceDataset.is_new">
-<code class="descname">is_new</code><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.is_new" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">is_new</code><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.is_new" title="Permalink to this definition">¶</a></dt>
 <dd><p>True if this is a new surface dataset. Can only add to new datasets.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.SurfaceDataset.new">
-<em class="property">classmethod </em><code class="descname">new</code><span class="sig-paren">(</span><em>name=None</em>, <em>temp=False</em>, <em>overwrite=False</em>, <em>coordinate_system=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.new" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">new</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">temp=False</em>, <em class="sig-param">overwrite=False</em>, <em class="sig-param">coordinate_system=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.new" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new surface dataset.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> – dataset name, or a path to a persistent file. If None a temporary dataset is created.</li>
-<li><strong>temp</strong> – True to create a temporary surface dataset.</li>
-<li><strong>overwrite</strong> – True to overwrite existing persistent surface dataset file</li>
-<li><strong>coordinate_system</strong> – coordinate system as required to create from <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.Coordinate_system</span></code></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – dataset name, or a path to a persistent file. If None a temporary dataset is created.</p></li>
+<li><p><strong>temp</strong> – True to create a temporary surface dataset.</p></li>
+<li><p><strong>overwrite</strong> – True to overwrite existing persistent surface dataset file</p></li>
+<li><p><strong>coordinate_system</strong> – coordinate system as required to create from <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.Coordinate_system</span></code></p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.1.</span></p>
+<p><span class="versionmodified added">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.SurfaceDataset.open">
-<em class="property">classmethod </em><code class="descname">open</code><span class="sig-paren">(</span><em>name</em>, <em>file_name=None</em>, <em>mode=0</em>, <em>gxapi_surface=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.open" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">open</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">file_name=None</em>, <em class="sig-param">mode=0</em>, <em class="sig-param">gxapi_surface=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open an existing surface dataset.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> – name of the surface dataset.</li>
-<li><strong>file_name</strong> – file name of the surface dataset file, default is name.geosoft_surface.</li>
-<li><strong>mode</strong> – open mode: MODE_READ or MODE_READWRITE</li>
-<li><strong>gxapi_surface</strong> – <a class="reference internal" href="GXSURFACE.html#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSURFACE</span></code></a> instance, or None to open the named surface file.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – name of the surface dataset.</p></li>
+<li><p><strong>file_name</strong> – file name of the surface dataset file, default is name.geosoft_surface.</p></li>
+<li><p><strong>mode</strong> – open mode: MODE_READ or MODE_READWRITE</p></li>
+<li><p><strong>gxapi_surface</strong> – <a class="reference internal" href="GXSURFACE.html#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSURFACE</span></code></a> instance, or None to open the named surface file.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.1.</span></p>
+<p><span class="versionmodified added">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.SurfaceDataset.surface_count">
-<code class="descname">surface_count</code><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.surface_count" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">surface_count</code><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.surface_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>number of surfaces in the dataset</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.SurfaceDataset.surface_dict">
-<code class="descname">surface_dict</code><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.surface_dict" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">surface_dict</code><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.surface_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>dictionary of surfaces keyed by GUID, values are the surface names</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.surface.SurfaceDataset.surface_guid">
-<code class="descname">surface_guid</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.surface_guid" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">surface_guid</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.surface_guid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the guid of a surface based on the name.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> – Name of the surface.  The first matching surface name is returned.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">guid of the surface, or None if the surface not found</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – Name of the surface.  The first matching surface name is returned.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>guid of the surface, or None if the surface not found</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.1.</span></p>
+<p><span class="versionmodified added">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.SurfaceDataset.surface_name_list">
-<code class="descname">surface_name_list</code><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.surface_name_list" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">surface_name_list</code><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.surface_name_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>list of surface names</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.surface.SurfaceDataset.view_3d">
-<code class="descname">view_3d</code><span class="sig-paren">(</span><em>file_name=None</em>, <em>overwrite=True</em>, <em>plane_2d=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.view_3d" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">view_3d</code><span class="sig-paren">(</span><em class="sig-param">file_name=None</em>, <em class="sig-param">overwrite=True</em>, <em class="sig-param">plane_2d=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.view_3d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a 3d view (<a class="reference internal" href="geosoft.gxpy.view.html#geosoft.gxpy.view.View_3d" title="geosoft.gxpy.view.View_3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.view.View_3d</span></code></a>) that contains this <a class="reference internal" href="#geosoft.gxpy.surface.SurfaceDataset" title="geosoft.gxpy.surface.SurfaceDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SurfaceDataset</span></code></a>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file_name</strong> – the name of a file for the 3d view. If None a temporary 3d view created.</li>
-<li><strong>overwrite</strong> – True to overwrite existing file</li>
-<li><strong>plane_2d</strong> – True to keep the 2D plane.  Only keep it if you intend to draw on it otherwise a grey
-plane will appear in the view.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> – the name of a file for the 3d view. If None a temporary 3d view created.</p></li>
+<li><p><strong>overwrite</strong> – True to overwrite existing file</p></li>
+<li><p><strong>plane_2d</strong> – True to keep the 2D plane.  Only keep it if you intend to draw on it otherwise a grey
+plane will appear in the view.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.</span></p>
+<p><span class="versionmodified added">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxpy.surface.SurfaceDataset.vox_surface">
-<em class="property">classmethod </em><code class="descname">vox_surface</code><span class="sig-paren">(</span><em>vox</em>, <em>surfaces</em>, <em>name=None</em>, <em>file_name=None</em>, <em>color=None</em>, <em>opacity=None</em>, <em>mode=2</em>, <em>temp=False</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.vox_surface" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">vox_surface</code><span class="sig-paren">(</span><em class="sig-param">vox</em>, <em class="sig-param">surfaces</em>, <em class="sig-param">name=None</em>, <em class="sig-param">file_name=None</em>, <em class="sig-param">color=None</em>, <em class="sig-param">opacity=None</em>, <em class="sig-param">mode=2</em>, <em class="sig-param">temp=False</em>, <em class="sig-param">overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceDataset.vox_surface" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add voxel isosurfaces to a surface dataset.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>vox</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.Vox</span></code> instance</li>
-<li><strong>surfaces</strong> – surface value, or a list of surface values</li>
-<li><strong>name</strong> – Surface dataset name. The default will be vox.name.</li>
-<li><strong>file_name</strong> – optional file name if different from name root, ignored if temp=True</li>
-<li><strong>color</strong> – surface color, or a list of colors,
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vox</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.Vox</span></code> instance</p></li>
+<li><p><strong>surfaces</strong> – surface value, or a list of surface values</p></li>
+<li><p><strong>name</strong> – Surface dataset name. The default will be vox.name.</p></li>
+<li><p><strong>file_name</strong> – optional file name if different from name root, ignored if temp=True</p></li>
+<li><p><strong>color</strong> – surface color, or a list of colors,
 For a list of surfaces, the default colour of each surface cycles through a list of
 (C_GREY, C_GREEN, C_YELLOW, C_BLUE, C_MAGENTA, C_RED, C_CYAN). If only one surface
-the default color is <code class="xref py py-obj docutils literal notranslate"><span class="pre">gxgroup.C_GREY</span></code>.</li>
-<li><strong>opacity</strong> – opacity 0 t0 1. (1. is opaque), or a list of opacities.
+the default color is <code class="xref py py-obj docutils literal notranslate"><span class="pre">gxgroup.C_GREY</span></code>.</p></li>
+<li><p><strong>opacity</strong> – opacity 0 t0 1. (1. is opaque), or a list of opacities.
 For a list of surfaces default opacity is applied in increasingly
 opaque steps in the order of the surface list, such that the 5’th
-and higher surfaces are opaque.</li>
-<li><strong>mode</strong> – MODE_NEW to create a new surface dataset. MODE_APPEND to append to existing dataset.</li>
-<li><strong>temp</strong> – True to create a temporary surface dataset.</li>
-<li><strong>overwrite</strong> – True to overwrite if dataset exists and MODE_NEW.</li>
+and higher surfaces are opaque.</p></li>
+<li><p><strong>mode</strong> – MODE_NEW to create a new surface dataset. MODE_APPEND to append to existing dataset.</p></li>
+<li><p><strong>temp</strong> – True to create a temporary surface dataset.</p></li>
+<li><p><strong>overwrite</strong> – True to overwrite if dataset exists and MODE_NEW.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.1.</span></p>
+<p><span class="versionmodified added">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
@@ -597,53 +544,46 @@ and higher surfaces are opaque.</li>
 
 <dl class="exception">
 <dt id="geosoft.gxpy.surface.SurfaceException">
-<em class="property">exception </em><code class="descname">SurfaceException</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="sig-name descname">SurfaceException</code><span class="sig-paren">(</span><em class="sig-param">message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.SurfaceException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.GXRuntimeError</span></code></p>
 <p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.surface" title="geosoft.gxpy.surface"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.surface</span></code></a>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.surface.delete_files">
-<code class="descname">delete_files</code><span class="sig-paren">(</span><em>surface_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.delete_files" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">delete_files</code><span class="sig-paren">(</span><em class="sig-param">surface_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.delete_files" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete all files associated with this surface dataset.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>surface_name</strong> – name of the surface dataset file</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>surface_name</strong> – name of the surface dataset file</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.1.</span></p>
+<p><span class="versionmodified added">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.surface.render">
-<code class="descname">render</code><span class="sig-paren">(</span><em>view</em>, <em>surface</em>, <em>group_name=None</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.render" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">render</code><span class="sig-paren">(</span><em class="sig-param">view</em>, <em class="sig-param">surface</em>, <em class="sig-param">group_name=None</em>, <em class="sig-param">overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.surface.render" title="Permalink to this definition">¶</a></dt>
 <dd><p>Render a surface, surface dataset or surface dataset file in a 3D view.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>view</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.view.View_3d</span></code> instance</li>
-<li><strong>surface</strong> – <a class="reference internal" href="#geosoft.gxpy.surface.Surface" title="geosoft.gxpy.surface.Surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code></a> instance, <a class="reference internal" href="#geosoft.gxpy.surface.SurfaceDataset" title="geosoft.gxpy.surface.SurfaceDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SurfaceDataset</span></code></a> instance or a geosoft_surface file name.</li>
-<li><strong>group_name</strong> – name for the group, which defaults to the source name</li>
-<li><strong>overwrite</strong> – True to overwrite existing group</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>view</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.view.View_3d</span></code> instance</p></li>
+<li><p><strong>surface</strong> – <a class="reference internal" href="#geosoft.gxpy.surface.Surface" title="geosoft.gxpy.surface.Surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code></a> instance, <a class="reference internal" href="#geosoft.gxpy.surface.SurfaceDataset" title="geosoft.gxpy.surface.SurfaceDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SurfaceDataset</span></code></a> instance or a geosoft_surface file name.</p></li>
+<li><p><strong>group_name</strong> – name for the group, which defaults to the source name</p></li>
+<li><p><strong>overwrite</strong> – True to overwrite existing group</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">For a <a class="reference internal" href="#geosoft.gxpy.surface.Surface" title="geosoft.gxpy.surface.Surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code></a> or a <a class="reference internal" href="#geosoft.gxpy.surface.SurfaceDataset" title="geosoft.gxpy.surface.SurfaceDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SurfaceDataset</span></code></a> instance a surface dataset file is created with a name constructed
+<p class="admonition-title">Note</p>
+<p>For a <a class="reference internal" href="#geosoft.gxpy.surface.Surface" title="geosoft.gxpy.surface.Surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code></a> or a <a class="reference internal" href="#geosoft.gxpy.surface.SurfaceDataset" title="geosoft.gxpy.surface.SurfaceDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SurfaceDataset</span></code></a> instance a surface dataset file is created with a name constructed
 from the view name and the fies name: <em>view_name.group_name.geosoft_surface</em>.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.1.</span></p>
+<p><span class="versionmodified added">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
@@ -667,7 +607,7 @@ from the view name and the fies name: <em>view_name.group_name.geosoft_surface</
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

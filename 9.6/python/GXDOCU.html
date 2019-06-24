@@ -1,12 +1,10 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>GXDOCU class &#8212; Geosoft GX Python API 9.6.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,6 +12,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -35,7 +34,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
+  <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">GXDOCU class</a><ul>
 <li><a class="reference internal" href="#docu-open-constants">DOCU_OPEN constants</a></li>
@@ -44,13 +43,11 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -74,137 +71,119 @@
 <span id="gxdocu"></span><h1>GXDOCU class<a class="headerlink" href="#gxdocu-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXDOCU">
-<em class="property">class </em><code class="descname">GXDOCU</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">GXDOCU</code><span class="sig-paren">(</span><em class="sig-param">handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXDOCU class.</p>
 <p>Class to work with documents</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXDOCU.copy">
-<code class="descname">copy</code><span class="sig-paren">(</span><em>doc_us</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.copy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param">doc_us</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copy <a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDOCU</span></code></a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>doc_us</strong> (<a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU"><em>GXDOCU</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDOCU</span></code></a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>doc_us</strong> (<a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU"><em>GXDOCU</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDOCU</span></code></a></p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.1.</span></p>
+<p><span class="versionmodified added">New in version 5.1.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXDOCU.create">
-<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.create" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a document onject</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDOCU</span></code></a> Object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU">GXDOCU</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDOCU</span></code></a> Object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU">GXDOCU</a></p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.1.</span></p>
+<p><span class="versionmodified added">New in version 5.1.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXDOCU.create_s">
-<em class="property">classmethod </em><code class="descname">create_s</code><span class="sig-paren">(</span><em>bf</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.create_s" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">create_s</code><span class="sig-paren">(</span><em class="sig-param">bf</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.create_s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create from a serialized source</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> from which to read <a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDOCU</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDOCU</span></code></a> Object</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU">GXDOCU</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> from which to read <a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDOCU</span></code></a></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDOCU</span></code></a> Object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU">GXDOCU</a></p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.1.</span></p>
+<p><span class="versionmodified added">New in version 5.1.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDOCU.doc_name">
-<code class="descname">doc_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.doc_name" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">doc_name</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.doc_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>The document name.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer to fill with document name</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer to fill with document name</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.1.</span></p>
+<p><span class="versionmodified added">New in version 5.1.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDOCU.file_name">
-<code class="descname">file_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.file_name" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">file_name</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.file_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>The original document file name.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer to fill with document file name</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer to fill with document file name</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.1.</span></p>
+<p><span class="versionmodified added">New in version 5.1.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDOCU.get_file">
-<code class="descname">get_file</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.get_file" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_file</code><span class="sig-paren">(</span><em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.get_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the document and place in a file.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File to which to write document</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>str</em>) – File to which to write document</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.1.</span></p>
+<p><span class="versionmodified added">New in version 5.1.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDOCU.get_file_meta">
-<code class="descname">get_file_meta</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.get_file_meta" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_file_meta</code><span class="sig-paren">(</span><em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.get_file_meta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the document and place in a file with metadata.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File to which to write document</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>str</em>) – File to which to write document</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.8.</span></p>
+<p><span class="versionmodified added">New in version 5.1.8.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If this document is only a URL link, the URL link will
@@ -217,106 +196,91 @@ file “filename.extension.GeosoftMeta”</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDOCU.get_meta">
-<code class="descname">get_meta</code><span class="sig-paren">(</span><em>meta</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.get_meta" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_meta</code><span class="sig-paren">(</span><em class="sig-param">meta</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.get_meta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the document’s meta</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> object to fill in with the document’s meta</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> object to fill in with the document’s meta</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.1.</span></p>
+<p><span class="versionmodified added">New in version 5.1.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDOCU.have_meta">
-<code class="descname">have_meta</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.have_meta" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">have_meta</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.have_meta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if a document has metadata.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.1.</span></p>
+<p><span class="versionmodified added">New in version 5.1.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDOCU.is_null">
-<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.is_null" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.is_null" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDOCU.is_reference">
-<code class="descname">is_reference</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.is_reference" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_reference</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.is_reference" title="Permalink to this definition">¶</a></dt>
 <dd><p>Is the document only a reference (a URL) ?</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">1 - Yes, 0 - No</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>1 - Yes, 0 - No</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.6.</span></p>
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXDOCU.null">
-<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.null" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.null" title="Permalink to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDOCU</span></code></a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDOCU</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU">GXDOCU</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDOCU</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU">GXDOCU</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDOCU.open">
-<code class="descname">open</code><span class="sig-paren">(</span><em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.open" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">open</code><span class="sig-paren">(</span><em class="sig-param">mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open a document in the document viewer</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<em>int</em>) – <a class="reference internal" href="#docu-open"><span class="std std-ref">DOCU_OPEN constants</span></a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mode</strong> (<em>int</em>) – <a class="reference internal" href="#docu-open"><span class="std std-ref">DOCU_OPEN constants</span></a></p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.1.</span></p>
+<p><span class="versionmodified added">New in version 5.1.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> On Windows, the default application for the file extension is
@@ -325,41 +289,34 @@ used to open the file.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDOCU.serial">
-<code class="descname">serial</code><span class="sig-paren">(</span><em>bf</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.serial" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">serial</code><span class="sig-paren">(</span><em class="sig-param">bf</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.serial" title="Permalink to this definition">¶</a></dt>
 <dd><p>Serialize <a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDOCU</span></code></a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> in which to write object</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> in which to write object</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.1.</span></p>
+<p><span class="versionmodified added">New in version 5.1.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDOCU.set_file">
-<code class="descname">set_file</code><span class="sig-paren">(</span><em>type</em>, <em>name</em>, <em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.set_file" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_file</code><span class="sig-paren">(</span><em class="sig-param">type</em>, <em class="sig-param">name</em>, <em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.set_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the document from a file source.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>str</em>) – Document type</li>
-<li><strong>name</strong> (<em>str</em>) – Document name, if “” file name will be used</li>
-<li><strong>file</strong> (<em>str</em>) – Document file, must exist</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>str</em>) – Document type</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Document name, if “” file name will be used</p></li>
+<li><p><strong>file</strong> (<em>str</em>) – Document file, must exist</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.1.</span></p>
+<p><span class="versionmodified added">New in version 5.1.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Document types are normally identified by their extension.  If you
@@ -370,7 +327,7 @@ by entering your own type “extension” string.</p>
 <p>The following types are pre-defined (as are any normal Geosoft
 file types):</p>
 <blockquote>
-<div>“htm”       HTML
+<div><p>“htm”       HTML
 “html”      HTML
 “txt”       ASCII text file
 “doc”       Word for Windows document
@@ -378,14 +335,16 @@ file types):</p>
 “map”       Geosoft map file
 “mmap”      Mapinfo map file (real extension “map”)
 “grd”       Geosoft grid file
-“gdb”       Geosoft database</div></blockquote>
+“gdb”       Geosoft database</p>
+</div></blockquote>
 <p>URL Document Links</p>
 <p>The document name can be a URL link to the document using one of
 the supported protocols. The following protocols are supported:</p>
 <blockquote>
-<div><a class="reference external" href="http://www.mywebserver.com/MyFile.doc">http://www.mywebserver.com/MyFile.doc</a>                 - <a class="reference internal" href="GXHTTP.html#geosoft.gxapi.GXHTTP" title="geosoft.gxapi.GXHTTP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXHTTP</span></code></a>
+<div><p><a class="reference external" href="http://www.mywebserver.com/MyFile.doc">http://www.mywebserver.com/MyFile.doc</a>                 - <a class="reference internal" href="GXHTTP.html#geosoft.gxapi.GXHTTP" title="geosoft.gxapi.GXHTTP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXHTTP</span></code></a>
 dap://my.dap.server.com/dcs?DatasetName?MyFile.doc    - DAP (DAP Document Access)
-ftp://my.ftp.server.com/Dir1/MyFile.doc               - FTP protocol</div></blockquote>
+ftp://my.ftp.server.com/Dir1/MyFile.doc               - FTP protocol</p>
+</div></blockquote>
 <p>The full file name will be stored but no data will be stored with
 the <a class="reference internal" href="#geosoft.gxapi.GXDOCU" title="geosoft.gxapi.GXDOCU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDOCU</span></code></a> class and the document can be retrieved using the sGetFile_DOCU
 method.</p>
@@ -393,23 +352,19 @@ method.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDOCU.set_file_meta">
-<code class="descname">set_file_meta</code><span class="sig-paren">(</span><em>type</em>, <em>name</em>, <em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.set_file_meta" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_file_meta</code><span class="sig-paren">(</span><em class="sig-param">type</em>, <em class="sig-param">name</em>, <em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.set_file_meta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the document from a file source with metadata.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>str</em>) – Document type extension</li>
-<li><strong>name</strong> (<em>str</em>) – Document name, if NULL use file name</li>
-<li><strong>file</strong> (<em>str</em>) – Document file or URL</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>str</em>) – Document type extension</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Document name, if NULL use file name</p></li>
+<li><p><strong>file</strong> (<em>str</em>) – Document file or URL</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.8.</span></p>
+<p><span class="versionmodified added">New in version 5.1.8.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="#geosoft.gxapi.GXDOCU.set_file" title="geosoft.gxapi.GXDOCU.set_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_file</span></code></a>.
@@ -423,25 +378,23 @@ class will be constructed if one does not exist.</p>
 specifies the document types that natively have metadata. The
 ones currently supported are:</p>
 <blockquote>
-<div>“map”       Geosoft map file
+<div><p>“map”       Geosoft map file
 “gdb”       Geosoft database
-“grd”       Geosoft grid file</div></blockquote>
+“grd”       Geosoft grid file</p>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDOCU.set_meta">
-<code class="descname">set_meta</code><span class="sig-paren">(</span><em>meta</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.set_meta" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_meta</code><span class="sig-paren">(</span><em class="sig-param">meta</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDOCU.set_meta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the document’s meta</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> to add to the document’s meta</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> to add to the document’s meta</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.1.</span></p>
+<p><span class="versionmodified added">New in version 5.1.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -453,22 +406,22 @@ ones currently supported are:</p>
 <p>How to open document</p>
 <dl class="data">
 <dt id="geosoft.gxapi.DOCU_OPEN_VIEW">
-<code class="descname">DOCU_OPEN_VIEW</code><a class="headerlink" href="#geosoft.gxapi.DOCU_OPEN_VIEW" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">DOCU_OPEN_VIEW</code><a class="headerlink" href="#geosoft.gxapi.DOCU_OPEN_VIEW" title="Permalink to this definition">¶</a></dt>
 <dd><p>View</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">DOCU_OPEN_VIEW</code><em class="property"> = 0</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DOCU_OPEN_VIEW</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.DOCU_OPEN_EDIT">
-<code class="descname">DOCU_OPEN_EDIT</code><a class="headerlink" href="#geosoft.gxapi.DOCU_OPEN_EDIT" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">DOCU_OPEN_EDIT</code><a class="headerlink" href="#geosoft.gxapi.DOCU_OPEN_EDIT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Edit</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">DOCU_OPEN_EDIT</code><em class="property"> = 1</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DOCU_OPEN_EDIT</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -494,7 +447,7 @@ ones currently supported are:</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

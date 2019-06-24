@@ -1,12 +1,10 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>GXPDF3D class &#8212; Geosoft GX Python API 9.6.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,6 +12,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -36,13 +35,11 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -66,111 +63,95 @@
 <span id="gxpdf3d"></span><h1>GXPDF3D class<a class="headerlink" href="#gxpdf3d-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXPDF3D">
-<em class="property">class </em><code class="descname">GXPDF3D</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPDF3D" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">GXPDF3D</code><span class="sig-paren">(</span><em class="sig-param">handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPDF3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXPDF3D class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXPDF3D" title="geosoft.gxapi.GXPDF3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPDF3D</span></code></a> class provides the ability to create 3D PDFs.</p>
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXPDF3D.export_2d">
-<em class="property">classmethod </em><code class="descname">export_2d</code><span class="sig-paren">(</span><em>input_map</em>, <em>output_file</em>, <em>create_layersin_pdf</em>, <em>geospatial_pdf</em>, <em>open_pdf</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPDF3D.export_2d" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">export_2d</code><span class="sig-paren">(</span><em class="sig-param">input_map</em>, <em class="sig-param">output_file</em>, <em class="sig-param">create_layersin_pdf</em>, <em class="sig-param">geospatial_pdf</em>, <em class="sig-param">open_pdf</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPDF3D.export_2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Export a 2D map to a PDF file.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>input_map</strong> (<em>str</em>) – Input map file</li>
-<li><strong>output_file</strong> (<em>str</em>) – Output PDF file</li>
-<li><strong>create_layersin_pdf</strong> (<em>int</em>) – Create layers in PDF</li>
-<li><strong>geospatial_pdf</strong> (<em>int</em>) – Geospatial PDF</li>
-<li><strong>open_pdf</strong> (<em>int</em>) – Open PDF after export</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_map</strong> (<em>str</em>) – Input map file</p></li>
+<li><p><strong>output_file</strong> (<em>str</em>) – Output PDF file</p></li>
+<li><p><strong>create_layersin_pdf</strong> (<em>int</em>) – Create layers in PDF</p></li>
+<li><p><strong>geospatial_pdf</strong> (<em>int</em>) – Geospatial PDF</p></li>
+<li><p><strong>open_pdf</strong> (<em>int</em>) – Open PDF after export</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.5.</span></p>
+<p><span class="versionmodified added">New in version 8.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPDF3D.is_null">
-<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPDF3D.is_null" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPDF3D.is_null" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXPDF3D.null">
-<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPDF3D.null" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPDF3D.null" title="Permalink to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXPDF3D" title="geosoft.gxapi.GXPDF3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPDF3D</span></code></a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXPDF3D" title="geosoft.gxapi.GXPDF3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPDF3D</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXPDF3D" title="geosoft.gxapi.GXPDF3D">GXPDF3D</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXPDF3D" title="geosoft.gxapi.GXPDF3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPDF3D</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXPDF3D" title="geosoft.gxapi.GXPDF3D">GXPDF3D</a></p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXPDF3D.render">
-<em class="property">classmethod </em><code class="descname">render</code><span class="sig-paren">(</span><em>mview</em>, <em>file_name</em>, <em>resolution</em>, <em>no_clipping</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPDF3D.render" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">render</code><span class="sig-paren">(</span><em class="sig-param">mview</em>, <em class="sig-param">file_name</em>, <em class="sig-param">resolution</em>, <em class="sig-param">no_clipping</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPDF3D.render" title="Permalink to this definition">¶</a></dt>
 <dd><p>Render a voxel, voxsurf and/or gensurf to pdf</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> handle</li>
-<li><strong>file_name</strong> (<em>str</em>) – Filename</li>
-<li><strong>resolution</strong> (<em>int</em>) – Resolution</li>
-<li><strong>no_clipping</strong> (<em>int</em>) – Noclipping</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> handle</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – Filename</p></li>
+<li><p><strong>resolution</strong> (<em>int</em>) – Resolution</p></li>
+<li><p><strong>no_clipping</strong> (<em>int</em>) – Noclipping</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.4.2.</span></p>
+<p><span class="versionmodified added">New in version 6.4.2.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXPDF3D.render_to_page">
-<em class="property">classmethod </em><code class="descname">render_to_page</code><span class="sig-paren">(</span><em>mview</em>, <em>file_name</em>, <em>page_number</em>, <em>resolution</em>, <em>no_clip</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPDF3D.render_to_page" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">render_to_page</code><span class="sig-paren">(</span><em class="sig-param">mview</em>, <em class="sig-param">file_name</em>, <em class="sig-param">page_number</em>, <em class="sig-param">resolution</em>, <em class="sig-param">no_clip</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPDF3D.render_to_page" title="Permalink to this definition">¶</a></dt>
 <dd><p>Render a voxel, voxsurf and/or gensurf to a specified page on a pdf</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> handle</li>
-<li><strong>file_name</strong> (<em>str</em>) – Filename</li>
-<li><strong>page_number</strong> (<em>int</em>) – Page number</li>
-<li><strong>resolution</strong> (<em>int</em>) – Resolution</li>
-<li><strong>no_clip</strong> (<em>int</em>) – Noclipping</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> handle</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – Filename</p></li>
+<li><p><strong>page_number</strong> (<em>int</em>) – Page number</p></li>
+<li><p><strong>resolution</strong> (<em>int</em>) – Resolution</p></li>
+<li><p><strong>no_clip</strong> (<em>int</em>) – Noclipping</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 7.1.</span></p>
+<p><span class="versionmodified added">New in version 7.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -197,7 +178,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

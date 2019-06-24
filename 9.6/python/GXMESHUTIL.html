@@ -1,12 +1,10 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>GXMESHUTIL class &#8212; Geosoft GX Python API 9.6.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,6 +12,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -35,7 +34,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
+  <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">GXMESHUTIL class</a><ul>
 <li><a class="reference internal" href="#surface-clip-mode-constants">SURFACE_CLIP_MODE constants</a></li>
@@ -45,13 +44,11 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -75,374 +72,322 @@
 <span id="gxmeshutil"></span><h1>GXMESHUTIL class<a class="headerlink" href="#gxmeshutil-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXMESHUTIL">
-<em class="property">class </em><code class="descname">GXMESHUTIL</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">GXMESHUTIL</code><span class="sig-paren">(</span><em class="sig-param">handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXMESHUTIL class.</p>
 <p>Mesh utility methods.</p>
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXMESHUTIL.clip_surface_with_extents">
-<em class="property">classmethod </em><code class="descname">clip_surface_with_extents</code><span class="sig-paren">(</span><em>inputSurfaceFile</em>, <em>inputSurface</em>, <em>outputSurfaceFile</em>, <em>outputSurfaceName</em>, <em>min_x</em>, <em>max_x</em>, <em>min_y</em>, <em>max_y</em>, <em>min_z</em>, <em>max_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.clip_surface_with_extents" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">clip_surface_with_extents</code><span class="sig-paren">(</span><em class="sig-param">inputSurfaceFile</em>, <em class="sig-param">inputSurface</em>, <em class="sig-param">outputSurfaceFile</em>, <em class="sig-param">outputSurfaceName</em>, <em class="sig-param">min_x</em>, <em class="sig-param">max_x</em>, <em class="sig-param">min_y</em>, <em class="sig-param">max_y</em>, <em class="sig-param">min_z</em>, <em class="sig-param">max_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.clip_surface_with_extents" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clip a Surface with X,Y,Z extents</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>inputSurfaceFile</strong> (<em>str</em>) – Input Geosurface file</li>
-<li><strong>inputSurface</strong> (<em>str</em>) – Input Surface name within Geosurface file</li>
-<li><strong>outputSurfaceFile</strong> (<em>str</em>) – Output Surface file</li>
-<li><strong>outputSurfaceName</strong> (<em>str</em>) – Output Surface name</li>
-<li><strong>min_x</strong> (<em>float</em>) – Min value of X</li>
-<li><strong>max_x</strong> (<em>float</em>) – Max value of X</li>
-<li><strong>min_y</strong> (<em>float</em>) – Min value of Y</li>
-<li><strong>max_y</strong> (<em>float</em>) – Max value of Y</li>
-<li><strong>min_z</strong> (<em>float</em>) – Min value of Z</li>
-<li><strong>max_z</strong> (<em>float</em>) – Max value of Z</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputSurfaceFile</strong> (<em>str</em>) – Input Geosurface file</p></li>
+<li><p><strong>inputSurface</strong> (<em>str</em>) – Input Surface name within Geosurface file</p></li>
+<li><p><strong>outputSurfaceFile</strong> (<em>str</em>) – Output Surface file</p></li>
+<li><p><strong>outputSurfaceName</strong> (<em>str</em>) – Output Surface name</p></li>
+<li><p><strong>min_x</strong> (<em>float</em>) – Min value of X</p></li>
+<li><p><strong>max_x</strong> (<em>float</em>) – Max value of X</p></li>
+<li><p><strong>min_y</strong> (<em>float</em>) – Min value of Y</p></li>
+<li><p><strong>max_y</strong> (<em>float</em>) – Max value of Y</p></li>
+<li><p><strong>min_z</strong> (<em>float</em>) – Min value of Z</p></li>
+<li><p><strong>max_z</strong> (<em>float</em>) – Max value of Z</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Surface clip status</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Surface clip status</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.5.</span></p>
+<p><span class="versionmodified added">New in version 9.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXMESHUTIL.clip_surface_with_grid">
-<em class="property">classmethod </em><code class="descname">clip_surface_with_grid</code><span class="sig-paren">(</span><em>inputSurfaceFile</em>, <em>inputSurface</em>, <em>gridSurfaceFileName</em>, <em>gridSurfaceName</em>, <em>outputSurfaceFile</em>, <em>outputSurfaceNameAbove</em>, <em>outputSurfaceNameBelow</em>, <em>surface_clip_mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.clip_surface_with_grid" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">clip_surface_with_grid</code><span class="sig-paren">(</span><em class="sig-param">inputSurfaceFile</em>, <em class="sig-param">inputSurface</em>, <em class="sig-param">gridSurfaceFileName</em>, <em class="sig-param">gridSurfaceName</em>, <em class="sig-param">outputSurfaceFile</em>, <em class="sig-param">outputSurfaceNameAbove</em>, <em class="sig-param">outputSurfaceNameBelow</em>, <em class="sig-param">surface_clip_mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.clip_surface_with_grid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clip a Surface with a Grid Surface (grid converted to surface)</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>inputSurfaceFile</strong> (<em>str</em>) – Input Geosurface file</li>
-<li><strong>inputSurface</strong> (<em>str</em>) – Input Surface name within Geosurface file</li>
-<li><strong>gridSurfaceFileName</strong> (<em>str</em>) – Grid Surface file name</li>
-<li><strong>gridSurfaceName</strong> (<em>str</em>) – Grid surface name within file</li>
-<li><strong>outputSurfaceFile</strong> (<em>str</em>) – Output Surface file</li>
-<li><strong>outputSurfaceNameAbove</strong> (<em>str</em>) – Name of Surface Item above grid - required for mode=CLIP_ABOVE and CLIP_BOTH</li>
-<li><strong>outputSurfaceNameBelow</strong> (<em>str</em>) – Name of Surface Item below grid - required for mode=CLIP_BELOW and CLIP_BOTH</li>
-<li><strong>surface_clip_mode</strong> (<em>int</em>) – <a class="reference internal" href="#surface-clip-mode"><span class="std std-ref">SURFACE_CLIP_MODE constants</span></a></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputSurfaceFile</strong> (<em>str</em>) – Input Geosurface file</p></li>
+<li><p><strong>inputSurface</strong> (<em>str</em>) – Input Surface name within Geosurface file</p></li>
+<li><p><strong>gridSurfaceFileName</strong> (<em>str</em>) – Grid Surface file name</p></li>
+<li><p><strong>gridSurfaceName</strong> (<em>str</em>) – Grid surface name within file</p></li>
+<li><p><strong>outputSurfaceFile</strong> (<em>str</em>) – Output Surface file</p></li>
+<li><p><strong>outputSurfaceNameAbove</strong> (<em>str</em>) – Name of Surface Item above grid - required for mode=CLIP_ABOVE and CLIP_BOTH</p></li>
+<li><p><strong>outputSurfaceNameBelow</strong> (<em>str</em>) – Name of Surface Item below grid - required for mode=CLIP_BELOW and CLIP_BOTH</p></li>
+<li><p><strong>surface_clip_mode</strong> (<em>int</em>) – <a class="reference internal" href="#surface-clip-mode"><span class="std std-ref">SURFACE_CLIP_MODE constants</span></a></p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Surface clip status</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Surface clip status</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.5.</span></p>
+<p><span class="versionmodified added">New in version 9.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXMESHUTIL.clip_surface_with_polygon2d">
-<em class="property">classmethod </em><code class="descname">clip_surface_with_polygon2d</code><span class="sig-paren">(</span><em>inputSurfaceFile</em>, <em>inputSurface</em>, <em>polygonFile</em>, <em>outputSurfaceFile</em>, <em>outputSurfaceName</em>, <em>maskInside</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.clip_surface_with_polygon2d" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">clip_surface_with_polygon2d</code><span class="sig-paren">(</span><em class="sig-param">inputSurfaceFile</em>, <em class="sig-param">inputSurface</em>, <em class="sig-param">polygonFile</em>, <em class="sig-param">outputSurfaceFile</em>, <em class="sig-param">outputSurfaceName</em>, <em class="sig-param">maskInside</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.clip_surface_with_polygon2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clip a Surface a specified Polygon file</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>inputSurfaceFile</strong> (<em>str</em>) – Input Geosurface file</li>
-<li><strong>inputSurface</strong> (<em>str</em>) – Input Surface name within Geosurface file</li>
-<li><strong>polygonFile</strong> (<em>str</em>) – Polygon File</li>
-<li><strong>outputSurfaceFile</strong> (<em>str</em>) – Output Surface file</li>
-<li><strong>outputSurfaceName</strong> (<em>str</em>) – Output Surface name</li>
-<li><strong>maskInside</strong> (<em>bool</em>) – Set true if the values inside polygon are to be masked</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputSurfaceFile</strong> (<em>str</em>) – Input Geosurface file</p></li>
+<li><p><strong>inputSurface</strong> (<em>str</em>) – Input Surface name within Geosurface file</p></li>
+<li><p><strong>polygonFile</strong> (<em>str</em>) – Polygon File</p></li>
+<li><p><strong>outputSurfaceFile</strong> (<em>str</em>) – Output Surface file</p></li>
+<li><p><strong>outputSurfaceName</strong> (<em>str</em>) – Output Surface name</p></li>
+<li><p><strong>maskInside</strong> (<em>bool</em>) – Set true if the values inside polygon are to be masked</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Surface clip status</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Surface clip status</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.5.</span></p>
+<p><span class="versionmodified added">New in version 9.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXMESHUTIL.compute_surface_clip">
-<em class="property">classmethod </em><code class="descname">compute_surface_clip</code><span class="sig-paren">(</span><em>primarySurfaceFile</em>, <em>primarySurface</em>, <em>secondarySurfaceFile</em>, <em>secondarySurface</em>, <em>outputSurfaceFile</em>, <em>outputSurface</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.compute_surface_clip" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">compute_surface_clip</code><span class="sig-paren">(</span><em class="sig-param">primarySurfaceFile</em>, <em class="sig-param">primarySurface</em>, <em class="sig-param">secondarySurfaceFile</em>, <em class="sig-param">secondarySurface</em>, <em class="sig-param">outputSurfaceFile</em>, <em class="sig-param">outputSurface</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.compute_surface_clip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clip a surface with another surface, and output the clipped surfaces</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>primarySurfaceFile</strong> (<em>str</em>) – Primary Geosurface file</li>
-<li><strong>primarySurface</strong> (<em>str</em>) – Primary Surface Name within Geosurface File</li>
-<li><strong>secondarySurfaceFile</strong> (<em>str</em>) – Secondary Geosurface file</li>
-<li><strong>secondarySurface</strong> (<em>str</em>) – Secondary Surface Name within Geosurface File</li>
-<li><strong>outputSurfaceFile</strong> (<em>str</em>) – Output surface file</li>
-<li><strong>outputSurface</strong> (<em>str</em>) – Output surface name</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>primarySurfaceFile</strong> (<em>str</em>) – Primary Geosurface file</p></li>
+<li><p><strong>primarySurface</strong> (<em>str</em>) – Primary Surface Name within Geosurface File</p></li>
+<li><p><strong>secondarySurfaceFile</strong> (<em>str</em>) – Secondary Geosurface file</p></li>
+<li><p><strong>secondarySurface</strong> (<em>str</em>) – Secondary Surface Name within Geosurface File</p></li>
+<li><p><strong>outputSurfaceFile</strong> (<em>str</em>) – Output surface file</p></li>
+<li><p><strong>outputSurface</strong> (<em>str</em>) – Output surface name</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.5.</span></p>
+<p><span class="versionmodified added">New in version 9.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXMESHUTIL.compute_surface_intersection">
-<em class="property">classmethod </em><code class="descname">compute_surface_intersection</code><span class="sig-paren">(</span><em>primarySurfaceFile</em>, <em>primarySurface</em>, <em>secondarySurfaceFile</em>, <em>secondarySurface</em>, <em>outputSurfaceFile</em>, <em>outputSurface</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.compute_surface_intersection" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">compute_surface_intersection</code><span class="sig-paren">(</span><em class="sig-param">primarySurfaceFile</em>, <em class="sig-param">primarySurface</em>, <em class="sig-param">secondarySurfaceFile</em>, <em class="sig-param">secondarySurface</em>, <em class="sig-param">outputSurfaceFile</em>, <em class="sig-param">outputSurface</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.compute_surface_intersection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes and outputs the intersection of two closed surfaces</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>primarySurfaceFile</strong> (<em>str</em>) – Primary Geosurface file</li>
-<li><strong>primarySurface</strong> (<em>str</em>) – Primary Surface Name within Geosurface File</li>
-<li><strong>secondarySurfaceFile</strong> (<em>str</em>) – Secondary Geosurface file</li>
-<li><strong>secondarySurface</strong> (<em>str</em>) – Secondary Surface Name within Geosurface File</li>
-<li><strong>outputSurfaceFile</strong> (<em>str</em>) – Output surface file</li>
-<li><strong>outputSurface</strong> (<em>str</em>) – Output surface name</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>primarySurfaceFile</strong> (<em>str</em>) – Primary Geosurface file</p></li>
+<li><p><strong>primarySurface</strong> (<em>str</em>) – Primary Surface Name within Geosurface File</p></li>
+<li><p><strong>secondarySurfaceFile</strong> (<em>str</em>) – Secondary Geosurface file</p></li>
+<li><p><strong>secondarySurface</strong> (<em>str</em>) – Secondary Surface Name within Geosurface File</p></li>
+<li><p><strong>outputSurfaceFile</strong> (<em>str</em>) – Output surface file</p></li>
+<li><p><strong>outputSurface</strong> (<em>str</em>) – Output surface name</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.5.</span></p>
+<p><span class="versionmodified added">New in version 9.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXMESHUTIL.compute_surface_simplification">
-<em class="property">classmethod </em><code class="descname">compute_surface_simplification</code><span class="sig-paren">(</span><em>inputSurfaceFile</em>, <em>inputSurface</em>, <em>outputSurfaceFile</em>, <em>outputSurface</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.compute_surface_simplification" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">compute_surface_simplification</code><span class="sig-paren">(</span><em class="sig-param">inputSurfaceFile</em>, <em class="sig-param">inputSurface</em>, <em class="sig-param">outputSurfaceFile</em>, <em class="sig-param">outputSurface</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.compute_surface_simplification" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simplifies a surface by reducing the number of edges by half</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>inputSurfaceFile</strong> (<em>str</em>) – Input Geosurface file</li>
-<li><strong>inputSurface</strong> (<em>str</em>) – Input Surface Name within Geosurface File</li>
-<li><strong>outputSurfaceFile</strong> (<em>str</em>) – Output Geosurface file</li>
-<li><strong>outputSurface</strong> (<em>str</em>) – Output Surface Name within Geosurface File</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputSurfaceFile</strong> (<em>str</em>) – Input Geosurface file</p></li>
+<li><p><strong>inputSurface</strong> (<em>str</em>) – Input Surface Name within Geosurface File</p></li>
+<li><p><strong>outputSurfaceFile</strong> (<em>str</em>) – Output Geosurface file</p></li>
+<li><p><strong>outputSurface</strong> (<em>str</em>) – Output Surface Name within Geosurface File</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.5.</span></p>
+<p><span class="versionmodified added">New in version 9.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXMESHUTIL.compute_surface_subdivision">
-<em class="property">classmethod </em><code class="descname">compute_surface_subdivision</code><span class="sig-paren">(</span><em>inputSurfaceFile</em>, <em>inputSurface</em>, <em>outputSurfaceFile</em>, <em>outputSurface</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.compute_surface_subdivision" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">compute_surface_subdivision</code><span class="sig-paren">(</span><em class="sig-param">inputSurfaceFile</em>, <em class="sig-param">inputSurface</em>, <em class="sig-param">outputSurfaceFile</em>, <em class="sig-param">outputSurface</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.compute_surface_subdivision" title="Permalink to this definition">¶</a></dt>
 <dd><p>Smooths a surface by applying a loop subdivision algorithm</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>inputSurfaceFile</strong> (<em>str</em>) – Input Geosurface file</li>
-<li><strong>inputSurface</strong> (<em>str</em>) – Input Surface Name within Geosurface File</li>
-<li><strong>outputSurfaceFile</strong> (<em>str</em>) – Output Geosurface file</li>
-<li><strong>outputSurface</strong> (<em>str</em>) – Output Surface Name within Geosurface File</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputSurfaceFile</strong> (<em>str</em>) – Input Geosurface file</p></li>
+<li><p><strong>inputSurface</strong> (<em>str</em>) – Input Surface Name within Geosurface File</p></li>
+<li><p><strong>outputSurfaceFile</strong> (<em>str</em>) – Output Geosurface file</p></li>
+<li><p><strong>outputSurface</strong> (<em>str</em>) – Output Surface Name within Geosurface File</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.5.</span></p>
+<p><span class="versionmodified added">New in version 9.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXMESHUTIL.compute_surface_union">
-<em class="property">classmethod </em><code class="descname">compute_surface_union</code><span class="sig-paren">(</span><em>primarySurfaceFile</em>, <em>primarySurface</em>, <em>secondarySurfaceFile</em>, <em>secondarySurface</em>, <em>outputSurfaceFile</em>, <em>outputSurface</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.compute_surface_union" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">compute_surface_union</code><span class="sig-paren">(</span><em class="sig-param">primarySurfaceFile</em>, <em class="sig-param">primarySurface</em>, <em class="sig-param">secondarySurfaceFile</em>, <em class="sig-param">secondarySurface</em>, <em class="sig-param">outputSurfaceFile</em>, <em class="sig-param">outputSurface</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.compute_surface_union" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute union of two surfaces</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>primarySurfaceFile</strong> (<em>str</em>) – Primary Geosurface file</li>
-<li><strong>primarySurface</strong> (<em>str</em>) – Primary Surface Name within Geosurface File</li>
-<li><strong>secondarySurfaceFile</strong> (<em>str</em>) – Secondary Geosurface file</li>
-<li><strong>secondarySurface</strong> (<em>str</em>) – Secondary Surface Name within Geosurface File</li>
-<li><strong>outputSurfaceFile</strong> (<em>str</em>) – Output surface file</li>
-<li><strong>outputSurface</strong> (<em>str</em>) – Output surface name</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>primarySurfaceFile</strong> (<em>str</em>) – Primary Geosurface file</p></li>
+<li><p><strong>primarySurface</strong> (<em>str</em>) – Primary Surface Name within Geosurface File</p></li>
+<li><p><strong>secondarySurfaceFile</strong> (<em>str</em>) – Secondary Geosurface file</p></li>
+<li><p><strong>secondarySurface</strong> (<em>str</em>) – Secondary Surface Name within Geosurface File</p></li>
+<li><p><strong>outputSurfaceFile</strong> (<em>str</em>) – Output surface file</p></li>
+<li><p><strong>outputSurface</strong> (<em>str</em>) – Output surface name</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.5.</span></p>
+<p><span class="versionmodified added">New in version 9.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXMESHUTIL.does_surface_intersect">
-<em class="property">classmethod </em><code class="descname">does_surface_intersect</code><span class="sig-paren">(</span><em>primarySurfaceFile</em>, <em>primarySurface</em>, <em>secondarySurfaceFile</em>, <em>secondarySurface</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.does_surface_intersect" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">does_surface_intersect</code><span class="sig-paren">(</span><em class="sig-param">primarySurfaceFile</em>, <em class="sig-param">primarySurface</em>, <em class="sig-param">secondarySurfaceFile</em>, <em class="sig-param">secondarySurface</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.does_surface_intersect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if the two surfaces intersect at all</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>primarySurfaceFile</strong> (<em>str</em>) – Primary Geosurface file</li>
-<li><strong>primarySurface</strong> (<em>str</em>) – Primary Surface Name within Geosurface File</li>
-<li><strong>secondarySurfaceFile</strong> (<em>str</em>) – Secondary Geosurface file</li>
-<li><strong>secondarySurface</strong> (<em>str</em>) – Secondary Surface Name within Geosurface File</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>primarySurfaceFile</strong> (<em>str</em>) – Primary Geosurface file</p></li>
+<li><p><strong>primarySurface</strong> (<em>str</em>) – Primary Surface Name within Geosurface File</p></li>
+<li><p><strong>secondarySurfaceFile</strong> (<em>str</em>) – Secondary Geosurface file</p></li>
+<li><p><strong>secondarySurface</strong> (<em>str</em>) – Secondary Surface Name within Geosurface File</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns 1 if intersects, 0 if surfaces do not intersect</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns 1 if intersects, 0 if surfaces do not intersect</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.5.</span></p>
+<p><span class="versionmodified added">New in version 9.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXMESHUTIL.does_surface_self_intersect">
-<em class="property">classmethod </em><code class="descname">does_surface_self_intersect</code><span class="sig-paren">(</span><em>surfaceFile</em>, <em>surfaceName</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.does_surface_self_intersect" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">does_surface_self_intersect</code><span class="sig-paren">(</span><em class="sig-param">surfaceFile</em>, <em class="sig-param">surfaceName</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.does_surface_self_intersect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if a surface self-intersects</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>surfaceFile</strong> (<em>str</em>) – Geosurface file</li>
-<li><strong>surfaceName</strong> (<em>str</em>) – Primary Surface Name within Geosurface File</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>surfaceFile</strong> (<em>str</em>) – Geosurface file</p></li>
+<li><p><strong>surfaceName</strong> (<em>str</em>) – Primary Surface Name within Geosurface File</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns 1 if surface self intersects, 0 if surface has no self-intersections</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns 1 if surface self intersects, 0 if surface has no self-intersections</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.5.</span></p>
+<p><span class="versionmodified added">New in version 9.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXMESHUTIL.extract_isosurface_from_voxel">
-<em class="property">classmethod </em><code class="descname">extract_isosurface_from_voxel</code><span class="sig-paren">(</span><em>voxelFile</em>, <em>surfaceFile</em>, <em>surfaceName</em>, <em>contourMin</em>, <em>contourMax</em>, <em>close</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.extract_isosurface_from_voxel" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">extract_isosurface_from_voxel</code><span class="sig-paren">(</span><em class="sig-param">voxelFile</em>, <em class="sig-param">surfaceFile</em>, <em class="sig-param">surfaceName</em>, <em class="sig-param">contourMin</em>, <em class="sig-param">contourMax</em>, <em class="sig-param">close</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.extract_isosurface_from_voxel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extracts isosurface from a voxel, and saves the voxel to a Geosurface file</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>voxelFile</strong> (<em>str</em>) – Voxel file</li>
-<li><strong>surfaceFile</strong> (<em>str</em>) – Geosurface file</li>
-<li><strong>surfaceName</strong> (<em>str</em>) – Surface name within geosurface file</li>
-<li><strong>contourMin</strong> (<em>float</em>) – Minimum/higher value</li>
-<li><strong>contourMax</strong> (<em>float</em>) – Maximum/lower value</li>
-<li><strong>close</strong> (<em>bool</em>) – Closed option - create a closed surface?</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>voxelFile</strong> (<em>str</em>) – Voxel file</p></li>
+<li><p><strong>surfaceFile</strong> (<em>str</em>) – Geosurface file</p></li>
+<li><p><strong>surfaceName</strong> (<em>str</em>) – Surface name within geosurface file</p></li>
+<li><p><strong>contourMin</strong> (<em>float</em>) – Minimum/higher value</p></li>
+<li><p><strong>contourMax</strong> (<em>float</em>) – Maximum/lower value</p></li>
+<li><p><strong>close</strong> (<em>bool</em>) – Closed option - create a closed surface?</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.6.</span></p>
+<p><span class="versionmodified added">New in version 9.6.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXMESHUTIL.import_grid_to_surface">
-<em class="property">classmethod </em><code class="descname">import_grid_to_surface</code><span class="sig-paren">(</span><em>grid_file_name</em>, <em>geosurface_filename</em>, <em>surface_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.import_grid_to_surface" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">import_grid_to_surface</code><span class="sig-paren">(</span><em class="sig-param">grid_file_name</em>, <em class="sig-param">geosurface_filename</em>, <em class="sig-param">surface_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.import_grid_to_surface" title="Permalink to this definition">¶</a></dt>
 <dd><p>Imports a Grid to a Surface</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>grid_file_name</strong> (<em>str</em>) – Grid File Name</li>
-<li><strong>geosurface_filename</strong> (<em>str</em>) – Surface File Name</li>
-<li><strong>surface_name</strong> (<em>str</em>) – Surface Item Name within the file</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grid_file_name</strong> (<em>str</em>) – Grid File Name</p></li>
+<li><p><strong>geosurface_filename</strong> (<em>str</em>) – Surface File Name</p></li>
+<li><p><strong>surface_name</strong> (<em>str</em>) – Surface Item Name within the file</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.5.</span></p>
+<p><span class="versionmodified added">New in version 9.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMESHUTIL.is_null">
-<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.is_null" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.is_null" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXMESHUTIL.null">
-<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.null" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.null" title="Permalink to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMESHUTIL" title="geosoft.gxapi.GXMESHUTIL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMESHUTIL</span></code></a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXMESHUTIL" title="geosoft.gxapi.GXMESHUTIL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMESHUTIL</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMESHUTIL" title="geosoft.gxapi.GXMESHUTIL">GXMESHUTIL</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXMESHUTIL" title="geosoft.gxapi.GXMESHUTIL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMESHUTIL</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXMESHUTIL" title="geosoft.gxapi.GXMESHUTIL">GXMESHUTIL</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -452,33 +397,33 @@
 <p>Surface Clip Mode</p>
 <dl class="data">
 <dt id="geosoft.gxapi.SURFACE_CLIP_ABOVE">
-<code class="descname">SURFACE_CLIP_ABOVE</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_CLIP_ABOVE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SURFACE_CLIP_ABOVE</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_CLIP_ABOVE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output the surface item above clipper surface</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">SURFACE_CLIP_ABOVE</code><em class="property"> = 0</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_CLIP_ABOVE</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.SURFACE_CLIP_BELOW">
-<code class="descname">SURFACE_CLIP_BELOW</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_CLIP_BELOW" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SURFACE_CLIP_BELOW</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_CLIP_BELOW" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output the surface item below clipper surface</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">SURFACE_CLIP_BELOW</code><em class="property"> = 1</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_CLIP_BELOW</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.SURFACE_CLIP_BOTH">
-<code class="descname">SURFACE_CLIP_BOTH</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_CLIP_BOTH" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SURFACE_CLIP_BOTH</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_CLIP_BOTH" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output the surface items both above &amp; below the clipper surface</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">SURFACE_CLIP_BOTH</code><em class="property"> = 2</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_CLIP_BOTH</code><em class="property"> = 2</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -489,33 +434,33 @@
 <p>Surface Clip Return Code</p>
 <dl class="data">
 <dt id="geosoft.gxapi.SURFACE_CLIP_SUCCESS">
-<code class="descname">SURFACE_CLIP_SUCCESS</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_CLIP_SUCCESS" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SURFACE_CLIP_SUCCESS</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_CLIP_SUCCESS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Surface clipping successful</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">SURFACE_CLIP_SUCCESS</code><em class="property"> = 0</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_CLIP_SUCCESS</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.SURFACE_CLIP_SUCCESS_EMPTY">
-<code class="descname">SURFACE_CLIP_SUCCESS_EMPTY</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_CLIP_SUCCESS_EMPTY" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SURFACE_CLIP_SUCCESS_EMPTY</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_CLIP_SUCCESS_EMPTY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Surface clipping successful, but with empty output</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">SURFACE_CLIP_SUCCESS_EMPTY</code><em class="property"> = 1</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_CLIP_SUCCESS_EMPTY</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.SURFACE_CLIP_FAIL">
-<code class="descname">SURFACE_CLIP_FAIL</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_CLIP_FAIL" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SURFACE_CLIP_FAIL</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_CLIP_FAIL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Surface clipping fail</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">SURFACE_CLIP_FAIL</code><em class="property"> = 2</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_CLIP_FAIL</code><em class="property"> = 2</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -541,7 +486,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -1,12 +1,10 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>GXSTR class &#8212; Geosoft GX Python API 9.6.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,6 +12,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -35,7 +34,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
+  <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">GXSTR class</a><ul>
 <li><a class="reference internal" href="#file-ext-constants">FILE_EXT constants</a></li>
@@ -49,13 +48,11 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -79,89 +76,80 @@
 <span id="gxstr"></span><h1>GXSTR class<a class="headerlink" href="#gxstr-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXSTR">
-<em class="property">class </em><code class="descname">GXSTR</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">GXSTR</code><span class="sig-paren">(</span><em class="sig-param">handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXSTR class.</p>
 <p>This library is not a class. Use the <a class="reference internal" href="#geosoft.gxapi.GXSTR" title="geosoft.gxapi.GXSTR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTR</span></code></a> library functions
 to work with and manipulate string variables. Since the
 GX Programming Language does not provide string literal
 tokens, you must use these functions for any string operations
 you want to perform.</p>
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.char_">
-<em class="property">classmethod </em><code class="descname">char_</code><span class="sig-paren">(</span><em>str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.char_" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">char_</code><span class="sig-paren">(</span><em class="sig-param">str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.char_" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the ASCII value of a character.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<em>str</em>) – String to return ascii value of first character</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">ASCII value of first character in string.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str_val</strong> (<em>str</em>) – String to return ascii value of first character</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ASCII value of first character in string.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.char_n">
-<em class="property">classmethod </em><code class="descname">char_n</code><span class="sig-paren">(</span><em>str_val</em>, <em>c</em>, <em>max</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.char_n" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">char_n</code><span class="sig-paren">(</span><em class="sig-param">str_val</em>, <em class="sig-param">c</em>, <em class="sig-param">max</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.char_n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the ASCII value of the n’th character.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<em>str</em>) – String</li>
-<li><strong>c</strong> (<em>int</em>) – Character to get</li>
-<li><strong>max</strong> (<em>int</em>) – Maximum string length (unused)</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_val</strong> (<em>str</em>) – String</p></li>
+<li><p><strong>c</strong> (<em>int</em>) – Character to get</p></li>
+<li><p><strong>max</strong> (<em>int</em>) – Maximum string length (unused)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">ASCII value of n’th character in string.
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ASCII value of n’th character in string.
 The first character is 0.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.count_tokens">
-<em class="property">classmethod </em><code class="descname">count_tokens</code><span class="sig-paren">(</span><em>str_val</em>, <em>delims</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.count_tokens" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">count_tokens</code><span class="sig-paren">(</span><em class="sig-param">str_val</em>, <em class="sig-param">delims</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.count_tokens" title="Permalink to this definition">¶</a></dt>
 <dd><p>Counts number of tokens.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<em>str</em>) – String to tokenize</li>
-<li><strong>delims</strong> (<em>str</em>) – Delimiter characters</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_val</strong> (<em>str</em>) – String to tokenize</p></li>
+<li><p><strong>delims</strong> (<em>str</em>) – Delimiter characters</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Number of tokens in the string.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Number of tokens in the string.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Delimiters are “soft” in that one or more delimiters
@@ -171,24 +159,20 @@ trailing delimiters are ignored.</p>
 <a class="reference internal" href="#geosoft.gxapi.GXSTR.get_token" title="geosoft.gxapi.GXSTR.get_token"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_token</span></code></a> function will not operate correctly in GX.Net code.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.escape">
-<em class="property">classmethod </em><code class="descname">escape</code><span class="sig-paren">(</span><em>str_val</em>, <em>opt</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.escape" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">escape</code><span class="sig-paren">(</span><em class="sig-param">str_val</em>, <em class="sig-param">opt</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.escape" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert/replace escape sequences in strings.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to modify</li>
-<li><strong>opt</strong> (<em>int</em>) – <a class="reference internal" href="#str-escape"><span class="std std-ref">STR_ESCAPE constants</span></a></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to modify</p></li>
+<li><p><strong>opt</strong> (<em>int</em>) – <a class="reference internal" href="#str-escape"><span class="std std-ref">STR_ESCAPE constants</span></a></p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.6.</span></p>
+<p><span class="versionmodified added">New in version 5.0.6.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Escape characters:</p>
@@ -209,268 +193,224 @@ a user unput string to ” so the string can be placed in a tokenized
 string.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.file_combine_parts">
-<em class="property">classmethod </em><code class="descname">file_combine_parts</code><span class="sig-paren">(</span><em>drive</em>, <em>dir</em>, <em>file</em>, <em>ext</em>, <em>qual</em>, <em>file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.file_combine_parts" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">file_combine_parts</code><span class="sig-paren">(</span><em class="sig-param">drive</em>, <em class="sig-param">dir</em>, <em class="sig-param">file</em>, <em class="sig-param">ext</em>, <em class="sig-param">qual</em>, <em class="sig-param">file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.file_combine_parts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Combine file parts to build a file name.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>drive</strong> (<em>str</em>) – Drive</li>
-<li><strong>dir</strong> (<em>str</em>) – Directory</li>
-<li><strong>file</strong> (<em>str</em>) – Name</li>
-<li><strong>ext</strong> (<em>str</em>) – Extension</li>
-<li><strong>qual</strong> (<em>str</em>) – Qualifiers</li>
-<li><strong>file_name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination string, can be same as input</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>drive</strong> (<em>str</em>) – Drive</p></li>
+<li><p><strong>dir</strong> (<em>str</em>) – Directory</p></li>
+<li><p><strong>file</strong> (<em>str</em>) – Name</p></li>
+<li><p><strong>ext</strong> (<em>str</em>) – Extension</p></li>
+<li><p><strong>qual</strong> (<em>str</em>) – Qualifiers</p></li>
+<li><p><strong>file_name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination string, can be same as input</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.file_ext">
-<em class="property">classmethod </em><code class="descname">file_ext</code><span class="sig-paren">(</span><em>ifile</em>, <em>ext</em>, <em>ofile</em>, <em>opt</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.file_ext" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">file_ext</code><span class="sig-paren">(</span><em class="sig-param">ifile</em>, <em class="sig-param">ext</em>, <em class="sig-param">ofile</em>, <em class="sig-param">opt</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.file_ext" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a file extension onto a file name string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ifile</strong> (<em>str</em>) – File name to extend</li>
-<li><strong>ext</strong> (<em>str</em>) – Extension if “”, extenstion and ‘.’ are stripped.</li>
-<li><strong>ofile</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Extended file name (can be same as input)</li>
-<li><strong>opt</strong> (<em>int</em>) – <a class="reference internal" href="#file-ext"><span class="std std-ref">FILE_EXT constants</span></a></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ifile</strong> (<em>str</em>) – File name to extend</p></li>
+<li><p><strong>ext</strong> (<em>str</em>) – Extension if “”, extenstion and ‘.’ are stripped.</p></li>
+<li><p><strong>ofile</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Extended file name (can be same as input)</p></li>
+<li><p><strong>opt</strong> (<em>int</em>) – <a class="reference internal" href="#file-ext"><span class="std std-ref">FILE_EXT constants</span></a></p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.file_name_part">
-<em class="property">classmethod </em><code class="descname">file_name_part</code><span class="sig-paren">(</span><em>file</em>, <em>file_part</em>, <em>part</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.file_name_part" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">file_name_part</code><span class="sig-paren">(</span><em class="sig-param">file</em>, <em class="sig-param">file_part</em>, <em class="sig-param">part</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.file_name_part" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get part of a file name.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file</strong> (<em>str</em>) – File name</li>
-<li><strong>file_part</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination string, can be same as input</li>
-<li><strong>part</strong> (<em>int</em>) – <a class="reference internal" href="#str-file-part"><span class="std std-ref">STR_FILE_PART constants</span></a></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file</strong> (<em>str</em>) – File name</p></li>
+<li><p><strong>file_part</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination string, can be same as input</p></li>
+<li><p><strong>part</strong> (<em>int</em>) – <a class="reference internal" href="#str-file-part"><span class="std std-ref">STR_FILE_PART constants</span></a></p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.format_crc">
-<em class="property">classmethod </em><code class="descname">format_crc</code><span class="sig-paren">(</span><em>pul_crc</em>, <em>buff</em>, <em>width</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.format_crc" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">format_crc</code><span class="sig-paren">(</span><em class="sig-param">pul_crc</em>, <em class="sig-param">buff</em>, <em class="sig-param">width</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.format_crc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a GX CRC value to a string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>pul_crc</strong> (<em>int</em>) – CRC value to format</li>
-<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</li>
-<li><strong>width</strong> (<em>int</em>) – Width of the field</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pul_crc</strong> (<em>int</em>) – CRC value to format</p></li>
+<li><p><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – Width of the field</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.format_date">
-<em class="property">classmethod </em><code class="descname">format_date</code><span class="sig-paren">(</span><em>real</em>, <em>buff</em>, <em>width</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.format_date" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">format_date</code><span class="sig-paren">(</span><em class="sig-param">real</em>, <em class="sig-param">buff</em>, <em class="sig-param">width</em>, <em class="sig-param">type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.format_date" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a GX real to a date string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>real</strong> (<em>float</em>) – Date value in decimal years to format</li>
-<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</li>
-<li><strong>width</strong> (<em>int</em>) – Width of the field</li>
-<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#date-format"><span class="std std-ref">DATE_FORMAT constants</span></a></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>real</strong> (<em>float</em>) – Date value in decimal years to format</p></li>
+<li><p><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – Width of the field</p></li>
+<li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#date-format"><span class="std std-ref">DATE_FORMAT constants</span></a></p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.format_double">
-<em class="property">classmethod </em><code class="descname">format_double</code><span class="sig-paren">(</span><em>real</em>, <em>buff</em>, <em>type</em>, <em>width</em>, <em>dec</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.format_double" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">format_double</code><span class="sig-paren">(</span><em class="sig-param">real</em>, <em class="sig-param">buff</em>, <em class="sig-param">type</em>, <em class="sig-param">width</em>, <em class="sig-param">dec</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.format_double" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a GX real to a string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>real</strong> (<em>float</em>) – Value to format</li>
-<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</li>
-<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-formats"><span class="std std-ref">GS_FORMATS constants</span></a></li>
-<li><strong>width</strong> (<em>int</em>) – Width of the field</li>
-<li><strong>dec</strong> (<em>int</em>) – Significant digits/decimals</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>real</strong> (<em>float</em>) – Value to format</p></li>
+<li><p><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</p></li>
+<li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-formats"><span class="std std-ref">GS_FORMATS constants</span></a></p></li>
+<li><p><strong>width</strong> (<em>int</em>) – Width of the field</p></li>
+<li><p><strong>dec</strong> (<em>int</em>) – Significant digits/decimals</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.format_i">
-<em class="property">classmethod </em><code class="descname">format_i</code><span class="sig-paren">(</span><em>value</em>, <em>buff</em>, <em>width</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.format_i" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">format_i</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">buff</em>, <em class="sig-param">width</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.format_i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a GX int to a string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>value</strong> (<em>int</em>) – Value to format</li>
-<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</li>
-<li><strong>width</strong> (<em>int</em>) – Width of the field</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>int</em>) – Value to format</p></li>
+<li><p><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – Width of the field</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.format_r">
-<em class="property">classmethod </em><code class="descname">format_r</code><span class="sig-paren">(</span><em>real</em>, <em>buff</em>, <em>width</em>, <em>sig</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.format_r" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">format_r</code><span class="sig-paren">(</span><em class="sig-param">real</em>, <em class="sig-param">buff</em>, <em class="sig-param">width</em>, <em class="sig-param">sig</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.format_r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a GX real to a string with significant digits.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>real</strong> (<em>float</em>) – Value to format</li>
-<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</li>
-<li><strong>width</strong> (<em>int</em>) – Width of the field</li>
-<li><strong>sig</strong> (<em>int</em>) – Significant digits</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>real</strong> (<em>float</em>) – Value to format</p></li>
+<li><p><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – Width of the field</p></li>
+<li><p><strong>sig</strong> (<em>int</em>) – Significant digits</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.format_r2">
-<em class="property">classmethod </em><code class="descname">format_r2</code><span class="sig-paren">(</span><em>real</em>, <em>buff</em>, <em>width</em>, <em>sig</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.format_r2" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">format_r2</code><span class="sig-paren">(</span><em class="sig-param">real</em>, <em class="sig-param">buff</em>, <em class="sig-param">width</em>, <em class="sig-param">sig</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.format_r2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a GX real to a string with given decimals.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>real</strong> (<em>float</em>) – Value to format</li>
-<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</li>
-<li><strong>width</strong> (<em>int</em>) – Width of the field</li>
-<li><strong>sig</strong> (<em>int</em>) – Decimals</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>real</strong> (<em>float</em>) – Value to format</p></li>
+<li><p><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – Width of the field</p></li>
+<li><p><strong>sig</strong> (<em>int</em>) – Decimals</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.format_time">
-<em class="property">classmethod </em><code class="descname">format_time</code><span class="sig-paren">(</span><em>real</em>, <em>buff</em>, <em>width</em>, <em>deci</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.format_time" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">format_time</code><span class="sig-paren">(</span><em class="sig-param">real</em>, <em class="sig-param">buff</em>, <em class="sig-param">width</em>, <em class="sig-param">deci</em>, <em class="sig-param">type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.format_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a GX real to a time string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>real</strong> (<em>float</em>) – Time value in decimal hours to format</li>
-<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</li>
-<li><strong>width</strong> (<em>int</em>) – Width of the field</li>
-<li><strong>deci</strong> (<em>int</em>) – Decimals to format with</li>
-<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#time-format"><span class="std std-ref">TIME_FORMAT constants</span></a></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>real</strong> (<em>float</em>) – Time value in decimal hours to format</p></li>
+<li><p><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Resulting string</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – Width of the field</p></li>
+<li><p><strong>deci</strong> (<em>int</em>) – Decimals to format with</p></li>
+<li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#time-format"><span class="std std-ref">TIME_FORMAT constants</span></a></p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.gen_group_name">
-<em class="property">classmethod </em><code class="descname">gen_group_name</code><span class="sig-paren">(</span><em>istr1</em>, <em>istr2</em>, <em>istr3</em>, <em>ostr</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.gen_group_name" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">gen_group_name</code><span class="sig-paren">(</span><em class="sig-param">istr1</em>, <em class="sig-param">istr2</em>, <em class="sig-param">istr3</em>, <em class="sig-param">ostr</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.gen_group_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a group name string
 from type string, database and channel(optional) strings..</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>istr1</strong> (<em>str</em>) – Input type string (static part)</li>
-<li><strong>istr2</strong> (<em>str</em>) – Input db string</li>
-<li><strong>istr3</strong> (<em>str</em>) – Input ch string (could be 0 length)</li>
-<li><strong>ostr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output group name string</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>istr1</strong> (<em>str</em>) – Input type string (static part)</p></li>
+<li><p><strong>istr2</strong> (<em>str</em>) – Input db string</p></li>
+<li><p><strong>istr3</strong> (<em>str</em>) – Input ch string (could be 0 length)</p></li>
+<li><p><strong>ostr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output group name string</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.4.</span></p>
+<p><span class="versionmodified added">New in version 5.1.4.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The output group name string is formed in the way of typestr_dbstr_chstr.
@@ -480,55 +420,47 @@ the typestr will always be kept the full length to be the first part,
 while the dbstr and/or chstr will be shortened to be the
 second and/or third part of the output string.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last">GenNewGroupName_MVIEW</p>
+<p class="admonition-title">See also</p>
+<p>GenNewGroupName_MVIEW</p>
 </div>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.get_m_file">
-<em class="property">classmethod </em><code class="descname">get_m_file</code><span class="sig-paren">(</span><em>in_str</em>, <em>out_str</em>, <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.get_m_file" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">get_m_file</code><span class="sig-paren">(</span><em class="sig-param">in_str</em>, <em class="sig-param">out_str</em>, <em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.get_m_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the indexed filepath from a multiple filepath string</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>in_str</strong> (<em>str</em>) – Input multifile string</li>
-<li><strong>out_str</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output filepath string</li>
-<li><strong>index</strong> (<em>int</em>) – Index of file</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>in_str</strong> (<em>str</em>) – Input multifile string</p></li>
+<li><p><strong>out_str</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output filepath string</p></li>
+<li><p><strong>index</strong> (<em>int</em>) – Index of file</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The multifile string must use ‘|’ as a delimiter.
 Do not pass a string after calling <a class="reference internal" href="#geosoft.gxapi.GXSTR.tokenize" title="geosoft.gxapi.GXSTR.tokenize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tokenize</span></code></a>.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.get_token">
-<em class="property">classmethod </em><code class="descname">get_token</code><span class="sig-paren">(</span><em>dest</em>, <em>orig</em>, <em>tok</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.get_token" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">get_token</code><span class="sig-paren">(</span><em class="sig-param">dest</em>, <em class="sig-param">orig</em>, <em class="sig-param">tok</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.get_token" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a token from a tokenized string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination string</li>
-<li><strong>orig</strong> (<em>str</em>) – Tokenized string</li>
-<li><strong>tok</strong> (<em>int</em>) – Token number wanted  (0 is the first!)</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination string</p></li>
+<li><p><strong>orig</strong> (<em>str</em>) – Tokenized string</p></li>
+<li><p><strong>tok</strong> (<em>int</em>) – Token number wanted  (0 is the first!)</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Call <a class="reference internal" href="#geosoft.gxapi.GXSTR.tokens" title="geosoft.gxapi.GXSTR.tokens"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tokens</span></code></a>  to prepare the tokenized
@@ -539,106 +471,91 @@ The first token has index 0.</p>
 <p>DO NOT use this function except in GXC code.
 <a class="reference internal" href="#geosoft.gxapi.GXSTR.get_token" title="geosoft.gxapi.GXSTR.get_token"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_token</span></code></a> function will not operate correctly in GX.Net code.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXSTR.tokens" title="geosoft.gxapi.GXSTR.tokens"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tokens</span></code></a>, GetToken_STR</p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#geosoft.gxapi.GXSTR.tokens" title="geosoft.gxapi.GXSTR.tokens"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tokens</span></code></a>, GetToken_STR</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSTR.is_null">
-<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.is_null" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.is_null" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.justify">
-<em class="property">classmethod </em><code class="descname">justify</code><span class="sig-paren">(</span><em>in_str</em>, <em>out_str</em>, <em>width</em>, <em>just</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.justify" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">justify</code><span class="sig-paren">(</span><em class="sig-param">in_str</em>, <em class="sig-param">out_str</em>, <em class="sig-param">width</em>, <em class="sig-param">just</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.justify" title="Permalink to this definition">¶</a></dt>
 <dd><p>Justify a string</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>in_str</strong> (<em>str</em>) – String to justify</li>
-<li><strong>out_str</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Result string, can be same as input</li>
-<li><strong>width</strong> (<em>int</em>) – Justification width</li>
-<li><strong>just</strong> (<em>int</em>) – <a class="reference internal" href="#str-justify"><span class="std std-ref">STR_JUSTIFY constants</span></a></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>in_str</strong> (<em>str</em>) – String to justify</p></li>
+<li><p><strong>out_str</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Result string, can be same as input</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – Justification width</p></li>
+<li><p><strong>just</strong> (<em>int</em>) – <a class="reference internal" href="#str-justify"><span class="std std-ref">STR_JUSTIFY constants</span></a></p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If the string is too big to fit in the number of display characters,
 the output string will be “**” justified as specified.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.make_alpha">
-<em class="property">classmethod </em><code class="descname">make_alpha</code><span class="sig-paren">(</span><em>str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.make_alpha" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">make_alpha</code><span class="sig-paren">(</span><em class="sig-param">str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.make_alpha" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turns all non alpha-numeric characters into an _.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to trim</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to trim</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.8.</span></p>
+<p><span class="versionmodified added">New in version 5.1.8.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> THE STRING IS MODIFIED.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.null">
-<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.null" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.null" title="Permalink to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXSTR" title="geosoft.gxapi.GXSTR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTR</span></code></a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXSTR" title="geosoft.gxapi.GXSTR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTR</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSTR" title="geosoft.gxapi.GXSTR">GXSTR</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXSTR" title="geosoft.gxapi.GXSTR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTR</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXSTR" title="geosoft.gxapi.GXSTR">GXSTR</a></p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.parse_list">
-<em class="property">classmethod </em><code class="descname">parse_list</code><span class="sig-paren">(</span><em>str_val</em>, <em>gvv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.parse_list" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">parse_list</code><span class="sig-paren">(</span><em class="sig-param">str_val</em>, <em class="sig-param">gvv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.parse_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse a tokenized list to get a selection list.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>str_val</strong> (<em>str</em>) – String to be parsed</li>
-<li><strong>gvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Selection Buffer to fill</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_val</strong> (<em>str</em>) – String to be parsed</p></li>
+<li><p><strong>gvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Selection Buffer to fill</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.1.</span></p>
+<p><span class="versionmodified added">New in version 5.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Given a list such as “1,3,4,6-9,12”, it fills the
@@ -650,94 +567,78 @@ Only values from 0 to one less than the buffer length
 are used.  Out-of-range values are ignored.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.printf">
-<em class="property">classmethod </em><code class="descname">printf</code><span class="sig-paren">(</span><em>dest</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.printf" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">printf</code><span class="sig-paren">(</span><em class="sig-param">dest</em>, <em class="sig-param">mask</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.printf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Variable Argument PrintF function</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination string</li>
-<li><strong>mask</strong> (<em>str</em>) – Pattern string</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination string</p></li>
+<li><p><strong>mask</strong> (<em>str</em>) – Pattern string</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 7.3.</span></p>
+<p><span class="versionmodified added">New in version 7.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.remove_qualifiers">
-<em class="property">classmethod </em><code class="descname">remove_qualifiers</code><span class="sig-paren">(</span><em>ifile</em>, <em>ofile</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.remove_qualifiers" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">remove_qualifiers</code><span class="sig-paren">(</span><em class="sig-param">ifile</em>, <em class="sig-param">ofile</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.remove_qualifiers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove file qualifiers from a file name</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ifile</strong> (<em>str</em>) – Input file name</li>
-<li><strong>ofile</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output file name (can be same as input)</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ifile</strong> (<em>str</em>) – Input file name</p></li>
+<li><p><strong>ofile</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output file name (can be same as input)</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 7.0.1.</span></p>
+<p><span class="versionmodified added">New in version 7.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.replace_char">
-<em class="property">classmethod </em><code class="descname">replace_char</code><span class="sig-paren">(</span><em>istr</em>, <em>old</em>, <em>new_char</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.replace_char" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">replace_char</code><span class="sig-paren">(</span><em class="sig-param">istr</em>, <em class="sig-param">old</em>, <em class="sig-param">new_char</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.replace_char" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces characters in a string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to modify</li>
-<li><strong>old</strong> (<em>str</em>) – Character to replace (first character only)</li>
-<li><strong>new_char</strong> (<em>str</em>) – Replacement character (first character only)</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to modify</p></li>
+<li><p><strong>old</strong> (<em>str</em>) – Character to replace (first character only)</p></li>
+<li><p><strong>new_char</strong> (<em>str</em>) – Replacement character (first character only)</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If the input replacement character is “”, then the
 string will be truncated at the first character to replace.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.replace_char2">
-<em class="property">classmethod </em><code class="descname">replace_char2</code><span class="sig-paren">(</span><em>istr</em>, <em>old</em>, <em>new_char</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.replace_char2" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">replace_char2</code><span class="sig-paren">(</span><em class="sig-param">istr</em>, <em class="sig-param">old</em>, <em class="sig-param">new_char</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.replace_char2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces characters in a string, supports simple removal.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to modify</li>
-<li><strong>old</strong> (<em>str</em>) – Character to replace (first character only)</li>
-<li><strong>new_char</strong> (<em>str</em>) – Replacement character (first character only)</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to modify</p></li>
+<li><p><strong>old</strong> (<em>str</em>) – Character to replace (first character only)</p></li>
+<li><p><strong>new_char</strong> (<em>str</em>) – Replacement character (first character only)</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.3.</span></p>
+<p><span class="versionmodified added">New in version 6.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If the replacement character is “” (NULL character)
@@ -745,25 +646,21 @@ then the character to replace is removed from the
 input string, and the string is shortened.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.replace_match_string">
-<em class="property">classmethod </em><code class="descname">replace_match_string</code><span class="sig-paren">(</span><em>istr</em>, <em>old</em>, <em>new_str</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.replace_match_string" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">replace_match_string</code><span class="sig-paren">(</span><em class="sig-param">istr</em>, <em class="sig-param">old</em>, <em class="sig-param">new_str</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.replace_match_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces all occurances of match string by replacement string with case sensitive.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination String</li>
-<li><strong>old</strong> (<em>str</em>) – Match string to replace</li>
-<li><strong>new_str</strong> (<em>str</em>) – Replacement string</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination String</p></li>
+<li><p><strong>old</strong> (<em>str</em>) – Match string to replace</p></li>
+<li><p><strong>new_str</strong> (<em>str</em>) – Replacement string</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 7.0.1.</span></p>
+<p><span class="versionmodified added">New in version 7.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If the replacement string is “” (NULL character)
@@ -771,74 +668,62 @@ then the string to replace is removed from the
 input string, and the string is shortened.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.replace_multi_char">
-<em class="property">classmethod </em><code class="descname">replace_multi_char</code><span class="sig-paren">(</span><em>istr</em>, <em>old</em>, <em>new_char</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.replace_multi_char" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">replace_multi_char</code><span class="sig-paren">(</span><em class="sig-param">istr</em>, <em class="sig-param">old</em>, <em class="sig-param">new_char</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.replace_multi_char" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces multiple characters in a string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to modify</li>
-<li><strong>old</strong> (<em>str</em>) – Characters to replace</li>
-<li><strong>new_char</strong> (<em>str</em>) – Replacement characters</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to modify</p></li>
+<li><p><strong>old</strong> (<em>str</em>) – Characters to replace</p></li>
+<li><p><strong>new_char</strong> (<em>str</em>) – Replacement characters</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.5.</span></p>
+<p><span class="versionmodified added">New in version 5.1.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The number of characters to replace must equal
 the number of replacement characters.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.replace_non_ascii">
-<em class="property">classmethod </em><code class="descname">replace_non_ascii</code><span class="sig-paren">(</span><em>str_val</em>, <em>rpl</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.replace_non_ascii" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">replace_non_ascii</code><span class="sig-paren">(</span><em class="sig-param">str_val</em>, <em class="sig-param">rpl</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.replace_non_ascii" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replace non-ASCII characters in a string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to modify</li>
-<li><strong>rpl</strong> (<em>str</em>) – Replacement character</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to modify</p></li>
+<li><p><strong>rpl</strong> (<em>str</em>) – Replacement character</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.0.</span></p>
+<p><span class="versionmodified added">New in version 6.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> All characthers &gt; 127 will be replaced by the first character
 of the replacement string.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.replacei_match_string">
-<em class="property">classmethod </em><code class="descname">replacei_match_string</code><span class="sig-paren">(</span><em>istr</em>, <em>old</em>, <em>new_str</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.replacei_match_string" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">replacei_match_string</code><span class="sig-paren">(</span><em class="sig-param">istr</em>, <em class="sig-param">old</em>, <em class="sig-param">new_str</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.replacei_match_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces all occurances of match string by replacement string with case insensitive.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination String</li>
-<li><strong>old</strong> (<em>str</em>) – Match string to replace</li>
-<li><strong>new_str</strong> (<em>str</em>) – Replacement string</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>istr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination String</p></li>
+<li><p><strong>old</strong> (<em>str</em>) – Match string to replace</p></li>
+<li><p><strong>new_str</strong> (<em>str</em>) – Replacement string</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 7.0.1.</span></p>
+<p><span class="versionmodified added">New in version 7.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If the replacement string is “” (NULL character)
@@ -846,200 +731,174 @@ then the string to replace is removed from the
 input string, and the string is shortened.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.scan_date">
-<em class="property">classmethod </em><code class="descname">scan_date</code><span class="sig-paren">(</span><em>str_val</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.scan_date" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">scan_date</code><span class="sig-paren">(</span><em class="sig-param">str_val</em>, <em class="sig-param">type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.scan_date" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a date string to a GX real.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<em>str</em>) – Date string</li>
-<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#date-format"><span class="std std-ref">DATE_FORMAT constants</span></a></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_val</strong> (<em>str</em>) – Date string</p></li>
+<li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#date-format"><span class="std std-ref">DATE_FORMAT constants</span></a></p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Resulting Real, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a> if conversion fails.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Resulting Real, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a> if conversion fails.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.0.1.</span></p>
+<p><span class="versionmodified added">New in version 6.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> OLD usage, use ScanForm_STR instead.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.scan_form">
-<em class="property">classmethod </em><code class="descname">scan_form</code><span class="sig-paren">(</span><em>str_val</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.scan_form" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">scan_form</code><span class="sig-paren">(</span><em class="sig-param">str_val</em>, <em class="sig-param">type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.scan_form" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a formated string to a real.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<em>str</em>) – Date string</li>
-<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-formats"><span class="std std-ref">GS_FORMATS constants</span></a></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_val</strong> (<em>str</em>) – Date string</p></li>
+<li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-formats"><span class="std std-ref">GS_FORMATS constants</span></a></p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Resulting Real, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a> if conversion fails.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Resulting Real, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a> if conversion fails.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.0.1.</span></p>
+<p><span class="versionmodified added">New in version 6.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.scan_i">
-<em class="property">classmethod </em><code class="descname">scan_i</code><span class="sig-paren">(</span><em>str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.scan_i" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">scan_i</code><span class="sig-paren">(</span><em class="sig-param">str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.scan_i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a string to a GX int.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<em>str</em>) – String to convert to an integer</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Resulting Integer, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iDUMMY" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iDUMMY</span></code></a> is bad integer</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str_val</strong> (<em>str</em>) – String to convert to an integer</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Resulting Integer, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iDUMMY" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iDUMMY</span></code></a> is bad integer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.0.1.</span></p>
+<p><span class="versionmodified added">New in version 6.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.scan_r">
-<em class="property">classmethod </em><code class="descname">scan_r</code><span class="sig-paren">(</span><em>str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.scan_r" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">scan_r</code><span class="sig-paren">(</span><em class="sig-param">str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.scan_r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a string to a GX real.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<em>str</em>) – String to convert to a real</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Resulting Real, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a> if bad string.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str_val</strong> (<em>str</em>) – String to convert to a real</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Resulting Real, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a> if bad string.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.0.1.</span></p>
+<p><span class="versionmodified added">New in version 6.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.scan_time">
-<em class="property">classmethod </em><code class="descname">scan_time</code><span class="sig-paren">(</span><em>str_val</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.scan_time" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">scan_time</code><span class="sig-paren">(</span><em class="sig-param">str_val</em>, <em class="sig-param">type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.scan_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a time string to a GX real.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<em>str</em>) – Date string</li>
-<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#time-format"><span class="std std-ref">TIME_FORMAT constants</span></a></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_val</strong> (<em>str</em>) – Date string</p></li>
+<li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#time-format"><span class="std std-ref">TIME_FORMAT constants</span></a></p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Resulting Real, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a> if conversion fails.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Resulting Real, <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a> if conversion fails.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.0.1.</span></p>
+<p><span class="versionmodified added">New in version 6.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> OLD usage, use ScanForm_STR instead.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.set_char">
-<em class="property">classmethod </em><code class="descname">set_char</code><span class="sig-paren">(</span><em>str_val</em>, <em>ascii</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.set_char" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">set_char</code><span class="sig-paren">(</span><em class="sig-param">str_val</em>, <em class="sig-param">ascii</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.set_char" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set a string’s first character using an ASCII value of a character.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String</li>
-<li><strong>ascii</strong> (<em>int</em>) – ASCII value</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String</p></li>
+<li><p><strong>ascii</strong> (<em>int</em>) – ASCII value</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.4.</span></p>
+<p><span class="versionmodified added">New in version 5.1.4.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.set_char_n">
-<em class="property">classmethod </em><code class="descname">set_char_n</code><span class="sig-paren">(</span><em>str_val</em>, <em>c</em>, <em>ascii</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.set_char_n" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">set_char_n</code><span class="sig-paren">(</span><em class="sig-param">str_val</em>, <em class="sig-param">c</em>, <em class="sig-param">ascii</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.set_char_n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the n’th character of a string using an ASCII value</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String</li>
-<li><strong>c</strong> (<em>int</em>) – Character to set</li>
-<li><strong>ascii</strong> (<em>int</em>) – ASCII value</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String</p></li>
+<li><p><strong>c</strong> (<em>int</em>) – Character to set</p></li>
+<li><p><strong>ascii</strong> (<em>int</em>) – ASCII value</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.4.</span></p>
+<p><span class="versionmodified added">New in version 5.1.4.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.split_string">
-<em class="property">classmethod </em><code class="descname">split_string</code><span class="sig-paren">(</span><em>origstr</em>, <em>ch</em>, <em>split</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.split_string" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">split_string</code><span class="sig-paren">(</span><em class="sig-param">origstr</em>, <em class="sig-param">ch</em>, <em class="sig-param">split</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.split_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Splits a string in two on a character.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>origstr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Original string</li>
-<li><strong>ch</strong> (<em>str</em>) – Split character (first character of string)</li>
-<li><strong>split</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Split string past split character.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>origstr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Original string</p></li>
+<li><p><strong>ch</strong> (<em>str</em>) – Split character (first character of string)</p></li>
+<li><p><strong>split</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Split string past split character.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The original string is modified by terminating it
@@ -1051,31 +910,27 @@ copied to the split string.</p>
 from control file strings.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.str_mask">
-<em class="property">classmethod </em><code class="descname">str_mask</code><span class="sig-paren">(</span><em>mask</em>, <em>test</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.str_mask" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">str_mask</code><span class="sig-paren">(</span><em class="sig-param">mask</em>, <em class="sig-param">test</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.str_mask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Case sensitive comparison of two strings.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>mask</strong> (<em>str</em>) – Mask</li>
-<li><strong>test</strong> (<em>str</em>) – String to test</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mask</strong> (<em>str</em>) – Mask</p></li>
+<li><p><strong>test</strong> (<em>str</em>) – String to test</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 if string does not match mask.
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>0 if string does not match mask.
 1 if string matches mask.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Mask characters ‘*’ - matches any one or more up to
@@ -1084,24 +939,23 @@ next character
 <p>Test is case sensitive</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.str_min">
-<em class="property">classmethod </em><code class="descname">str_min</code><span class="sig-paren">(</span><em>str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.str_min" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">str_min</code><span class="sig-paren">(</span><em class="sig-param">str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.str_min" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove spaces and tabs and return length</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to find the min length of</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">String length.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to find the min length of</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>String length.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> String may be modified. This function should not be
@@ -1111,158 +965,137 @@ name will be altered. Instead, use <a class="reference internal" href="#geosoft.
 <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.file_exist" title="geosoft.gxapi.GXSYS.file_exist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSYS.file_exist</span></code></a> to see if the file actually exists.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.str_min2">
-<em class="property">classmethod </em><code class="descname">str_min2</code><span class="sig-paren">(</span><em>str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.str_min2" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">str_min2</code><span class="sig-paren">(</span><em class="sig-param">str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.str_min2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Length less spaces and tabs, string unchanged.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<em>str</em>) – String to find the min length of</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">String length.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str_val</strong> (<em>str</em>) – String to find the min length of</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>String length.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.str_str">
-<em class="property">classmethod </em><code class="descname">str_str</code><span class="sig-paren">(</span><em>str_val</em>, <em>sub</em>, <em>case_sensitive</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.str_str" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">str_str</code><span class="sig-paren">(</span><em class="sig-param">str_val</em>, <em class="sig-param">sub</em>, <em class="sig-param">case_sensitive</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.str_str" title="Permalink to this definition">¶</a></dt>
 <dd><p>Scan a string for the occurrence of a given substring.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<em>str</em>) – String to scan</li>
-<li><strong>sub</strong> (<em>str</em>) – String to look for</li>
-<li><strong>case_sensitive</strong> (<em>int</em>) – <a class="reference internal" href="#str-case"><span class="std std-ref">STR_CASE constants</span></a></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_val</strong> (<em>str</em>) – String to scan</p></li>
+<li><p><strong>sub</strong> (<em>str</em>) – String to look for</p></li>
+<li><p><strong>case_sensitive</strong> (<em>int</em>) – <a class="reference internal" href="#str-case"><span class="std std-ref">STR_CASE constants</span></a></p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">-1 if the substring does not occur in the string
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>-1 if the substring does not occur in the string
 Index of first matching location if found</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.6.</span></p>
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.strcat">
-<em class="property">classmethod </em><code class="descname">strcat</code><span class="sig-paren">(</span><em>dest</em>, <em>orig</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.strcat" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">strcat</code><span class="sig-paren">(</span><em class="sig-param">dest</em>, <em class="sig-param">orig</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.strcat" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method contatinates a string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination String</li>
-<li><strong>orig</strong> (<em>str</em>) – String to add</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination String</p></li>
+<li><p><strong>orig</strong> (<em>str</em>) – String to add</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.strcmp">
-<em class="property">classmethod </em><code class="descname">strcmp</code><span class="sig-paren">(</span><em>first</em>, <em>second</em>, <em>case_sensitive</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.strcmp" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">strcmp</code><span class="sig-paren">(</span><em class="sig-param">first</em>, <em class="sig-param">second</em>, <em class="sig-param">case_sensitive</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.strcmp" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method compares two strings and returns these values</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>first</strong> (<em>str</em>) – String A</li>
-<li><strong>second</strong> (<em>str</em>) – String B</li>
-<li><strong>case_sensitive</strong> (<em>int</em>) – <a class="reference internal" href="#str-case"><span class="std std-ref">STR_CASE constants</span></a></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>first</strong> (<em>str</em>) – String A</p></li>
+<li><p><strong>second</strong> (<em>str</em>) – String B</p></li>
+<li><p><strong>case_sensitive</strong> (<em>int</em>) – <a class="reference internal" href="#str-case"><span class="std std-ref">STR_CASE constants</span></a></p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A  &lt;  B           -1
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A  &lt;  B           -1
 A ==  B            0
 A  &gt;  B            1</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.strcpy">
-<em class="property">classmethod </em><code class="descname">strcpy</code><span class="sig-paren">(</span><em>dest</em>, <em>orig</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.strcpy" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">strcpy</code><span class="sig-paren">(</span><em class="sig-param">dest</em>, <em class="sig-param">orig</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.strcpy" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method copies a string into another string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination string</li>
-<li><strong>orig</strong> (<em>str</em>) – Origin string</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination string</p></li>
+<li><p><strong>orig</strong> (<em>str</em>) – Origin string</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.stri_mask">
-<em class="property">classmethod </em><code class="descname">stri_mask</code><span class="sig-paren">(</span><em>mask</em>, <em>test</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.stri_mask" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">stri_mask</code><span class="sig-paren">(</span><em class="sig-param">mask</em>, <em class="sig-param">test</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.stri_mask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Case insensitive comparison of two strings.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>mask</strong> (<em>str</em>) – Mask</li>
-<li><strong>test</strong> (<em>str</em>) – String to test</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mask</strong> (<em>str</em>) – Mask</p></li>
+<li><p><strong>test</strong> (<em>str</em>) – String to test</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 if string does not match mask.
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>0 if string does not match mask.
 1 if string matches mask.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Mask characters ‘*’ - matches any one or more up to
@@ -1271,105 +1104,92 @@ next character
 <p>Test is case insensitive</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.strins">
-<em class="property">classmethod </em><code class="descname">strins</code><span class="sig-paren">(</span><em>dest</em>, <em>ins</em>, <em>orig</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.strins" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">strins</code><span class="sig-paren">(</span><em class="sig-param">dest</em>, <em class="sig-param">ins</em>, <em class="sig-param">orig</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.strins" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method inserts a string at a specified position.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination String</li>
-<li><strong>ins</strong> (<em>int</em>) – Insert Position</li>
-<li><strong>orig</strong> (<em>str</em>) – String to add</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination String</p></li>
+<li><p><strong>ins</strong> (<em>int</em>) – Insert Position</p></li>
+<li><p><strong>orig</strong> (<em>str</em>) – String to add</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.8.</span></p>
+<p><span class="versionmodified added">New in version 5.1.8.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If the specified position does not fall within the current string
 the source string will simply be Concatenated.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.strlen">
-<em class="property">classmethod </em><code class="descname">strlen</code><span class="sig-paren">(</span><em>str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.strlen" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">strlen</code><span class="sig-paren">(</span><em class="sig-param">str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.strlen" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the length of a string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<em>str</em>) – String to find the length of</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">String length.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str_val</strong> (<em>str</em>) – String to find the length of</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>String length.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.strncmp">
-<em class="property">classmethod </em><code class="descname">strncmp</code><span class="sig-paren">(</span><em>first</em>, <em>second</em>, <em>n_char</em>, <em>case_sensitive</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.strncmp" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">strncmp</code><span class="sig-paren">(</span><em class="sig-param">first</em>, <em class="sig-param">second</em>, <em class="sig-param">n_char</em>, <em class="sig-param">case_sensitive</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.strncmp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compares two strings to a given number of characters.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>first</strong> (<em>str</em>) – String A</li>
-<li><strong>second</strong> (<em>str</em>) – String B</li>
-<li><strong>n_char</strong> (<em>int</em>) – Number of characters to compare</li>
-<li><strong>case_sensitive</strong> (<em>int</em>) – <a class="reference internal" href="#str-case"><span class="std std-ref">STR_CASE constants</span></a></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>first</strong> (<em>str</em>) – String A</p></li>
+<li><p><strong>second</strong> (<em>str</em>) – String B</p></li>
+<li><p><strong>n_char</strong> (<em>int</em>) – Number of characters to compare</p></li>
+<li><p><strong>case_sensitive</strong> (<em>int</em>) – <a class="reference internal" href="#str-case"><span class="std std-ref">STR_CASE constants</span></a></p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A  &lt;  B           -1
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A  &lt;  B           -1
 A ==  B            0
 A  &gt;  B            1</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.5.</span></p>
+<p><span class="versionmodified added">New in version 5.0.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.substr">
-<em class="property">classmethod </em><code class="descname">substr</code><span class="sig-paren">(</span><em>dest</em>, <em>orig</em>, <em>start</em>, <em>length</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.substr" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">substr</code><span class="sig-paren">(</span><em class="sig-param">dest</em>, <em class="sig-param">orig</em>, <em class="sig-param">start</em>, <em class="sig-param">length</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.substr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract part of a string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination string</li>
-<li><strong>orig</strong> (<em>str</em>) – Origin string</li>
-<li><strong>start</strong> (<em>int</em>) – Start location</li>
-<li><strong>length</strong> (<em>int</em>) – Number of characters</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dest</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Destination string</p></li>
+<li><p><strong>orig</strong> (<em>str</em>) – Origin string</p></li>
+<li><p><strong>start</strong> (<em>int</em>) – Start location</p></li>
+<li><p><strong>length</strong> (<em>int</em>) – Number of characters</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.2.</span></p>
+<p><span class="versionmodified added">New in version 6.2.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The destination string length will be less than the
@@ -1377,69 +1197,59 @@ requested length if the substring is not fully enclosed
 in the origin string.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.to_lower">
-<em class="property">classmethod </em><code class="descname">to_lower</code><span class="sig-paren">(</span><em>str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.to_lower" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">to_lower</code><span class="sig-paren">(</span><em class="sig-param">str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.to_lower" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a string to lower case.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.to_upper">
-<em class="property">classmethod </em><code class="descname">to_upper</code><span class="sig-paren">(</span><em>str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.to_upper" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">to_upper</code><span class="sig-paren">(</span><em class="sig-param">str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.to_upper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a string to upper case.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.tokenize">
-<em class="property">classmethod </em><code class="descname">tokenize</code><span class="sig-paren">(</span><em>str_val</em>, <em>soft</em>, <em>hard</em>, <em>esc</em>, <em>quote</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.tokenize" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">tokenize</code><span class="sig-paren">(</span><em class="sig-param">str_val</em>, <em class="sig-param">soft</em>, <em class="sig-param">hard</em>, <em class="sig-param">esc</em>, <em class="sig-param">quote</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.tokenize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tokenize a string based on any characters.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXSTR" title="geosoft.gxapi.GXSTR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTR</span></code></a> - String containing token(s)</li>
-<li><strong>soft</strong> (<em>str</em>) – szSoft - Soft delimiters (spaces/tabs)</li>
-<li><strong>hard</strong> (<em>str</em>) – szHard - Hard delimiters (commas)</li>
-<li><strong>esc</strong> (<em>str</em>) – szEsc  - Escape delimiters (back-slash)</li>
-<li><strong>quote</strong> (<em>str</em>) – szQuote- Quote delimiters  (quote characters)</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXSTR" title="geosoft.gxapi.GXSTR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTR</span></code></a> - String containing token(s)</p></li>
+<li><p><strong>soft</strong> (<em>str</em>) – szSoft - Soft delimiters (spaces/tabs)</p></li>
+<li><p><strong>hard</strong> (<em>str</em>) – szHard - Hard delimiters (commas)</p></li>
+<li><p><strong>esc</strong> (<em>str</em>) – szEsc  - Escape delimiters (back-slash)</p></li>
+<li><p><strong>quote</strong> (<em>str</em>) – szQuote- Quote delimiters  (quote characters)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Number of tokens</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Number of tokens</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> This uses a finite state machine to tokenize on these
@@ -1460,35 +1270,31 @@ a hard delimiter and are ignored.</p>
 <p>NOT use this function except in GXC code. The corresponding
 etToken_STR function will not operate correctly in GX.Net code.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last">GetToken_STR</p>
+<p class="admonition-title">See also</p>
+<p>GetToken_STR</p>
 </div>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.tokens">
-<em class="property">classmethod </em><code class="descname">tokens</code><span class="sig-paren">(</span><em>str_val</em>, <em>delims</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.tokens" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">tokens</code><span class="sig-paren">(</span><em class="sig-param">str_val</em>, <em class="sig-param">delims</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.tokens" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tokenize a string</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to tokenize</li>
-<li><strong>delims</strong> (<em>str</em>) – Delimiter characters</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to tokenize</p></li>
+<li><p><strong>delims</strong> (<em>str</em>) – Delimiter characters</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Number of tokens, maximum is 2048</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Number of tokens, maximum is 2048</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Delimiters in the string are reduced to a single NULL.
@@ -1497,38 +1303,34 @@ Use GetToken_STR to extract tokens.</p>
 <p>DO NOT use this function except in GXC code. The corresponding
 <a class="reference internal" href="#geosoft.gxapi.GXSTR.get_token" title="geosoft.gxapi.GXSTR.get_token"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_token</span></code></a> function will not operate correctly in GX.Net code.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXSTR.tokens2" title="geosoft.gxapi.GXSTR.tokens2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tokens2</span></code></a>, GetToken_STR</p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#geosoft.gxapi.GXSTR.tokens2" title="geosoft.gxapi.GXSTR.tokens2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tokens2</span></code></a>, GetToken_STR</p>
 </div>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.tokens2">
-<em class="property">classmethod </em><code class="descname">tokens2</code><span class="sig-paren">(</span><em>str_val</em>, <em>soft</em>, <em>hard</em>, <em>esc</em>, <em>quote</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.tokens2" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">tokens2</code><span class="sig-paren">(</span><em class="sig-param">str_val</em>, <em class="sig-param">soft</em>, <em class="sig-param">hard</em>, <em class="sig-param">esc</em>, <em class="sig-param">quote</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.tokens2" title="Permalink to this definition">¶</a></dt>
 <dd><p>General tokenize a string</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to tokenize</li>
-<li><strong>soft</strong> (<em>str</em>) – szSoft - Soft delimiters (spaces/tabs)</li>
-<li><strong>hard</strong> (<em>str</em>) – szHard - Hard delimiters (commas)</li>
-<li><strong>esc</strong> (<em>str</em>) – szEsc  - Escape delimiters (back-slash)</li>
-<li><strong>quote</strong> (<em>str</em>) – szQuote- Quote delimiters  (quote characters)</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to tokenize</p></li>
+<li><p><strong>soft</strong> (<em>str</em>) – szSoft - Soft delimiters (spaces/tabs)</p></li>
+<li><p><strong>hard</strong> (<em>str</em>) – szHard - Hard delimiters (commas)</p></li>
+<li><p><strong>esc</strong> (<em>str</em>) – szEsc  - Escape delimiters (back-slash)</p></li>
+<li><p><strong>quote</strong> (<em>str</em>) – szQuote- Quote delimiters  (quote characters)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Number of Tokens</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Number of Tokens</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> This function is for old GX compatibility only.
@@ -1537,20 +1339,17 @@ See <a class="reference internal" href="#geosoft.gxapi.GXSTR.tokenize" title="ge
 <a class="reference internal" href="#geosoft.gxapi.GXSTR.get_token" title="geosoft.gxapi.GXSTR.get_token"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_token</span></code></a> function will not operate correctly in GX.Net code.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.trim_quotes">
-<em class="property">classmethod </em><code class="descname">trim_quotes</code><span class="sig-paren">(</span><em>str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.trim_quotes" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">trim_quotes</code><span class="sig-paren">(</span><em class="sig-param">str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.trim_quotes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove double quotes.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to trim</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to trim</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> THE STRING IS MODIFIED.
@@ -1563,24 +1362,20 @@ the backslash is deleted. These quotes are NOT treated as
 delimiters.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.trim_space">
-<em class="property">classmethod </em><code class="descname">trim_space</code><span class="sig-paren">(</span><em>str_val</em>, <em>trim</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.trim_space" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">trim_space</code><span class="sig-paren">(</span><em class="sig-param">str_val</em>, <em class="sig-param">trim</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.trim_space" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove leading and/or trailing whitespace.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to trim</li>
-<li><strong>trim</strong> (<em>int</em>) – <a class="reference internal" href="#str-trim"><span class="std std-ref">STR_TRIM constants</span></a></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to trim</p></li>
+<li><p><strong>trim</strong> (<em>int</em>) – <a class="reference internal" href="#str-trim"><span class="std std-ref">STR_TRIM constants</span></a></p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> THE STRING IS MODIFIED.
@@ -1588,20 +1383,17 @@ Whitespace characters are defined as space, tab, carriage return,
 new line, vertical tab or formfeed (0x09 to 0x0D, 0x20)</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.un_quote">
-<em class="property">classmethod </em><code class="descname">un_quote</code><span class="sig-paren">(</span><em>str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.un_quote" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">un_quote</code><span class="sig-paren">(</span><em class="sig-param">str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.un_quote" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove double quotes from string</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to unquote</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String to unquote</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> THE STRING IS MODIFIED.
@@ -1611,24 +1403,20 @@ Both first and last characters must be quotes for the
 triming to take place.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXSTR.xyz_line">
-<em class="property">classmethod </em><code class="descname">xyz_line</code><span class="sig-paren">(</span><em>line</em>, <em>xyz</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.xyz_line" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">xyz_line</code><span class="sig-paren">(</span><em class="sig-param">line</em>, <em class="sig-param">xyz</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSTR.xyz_line" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make a valid XYZ line name from a valid <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> line name.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>line</strong> (<em>str</em>) – Line name to convert</li>
-<li><strong>xyz</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer to hold new line name</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>line</strong> (<em>str</em>) – Line name to convert</p></li>
+<li><p><strong>xyz</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer to hold new line name</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -1640,22 +1428,22 @@ triming to take place.</p>
 <p>Extension option</p>
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_EXT_ADD_IF_NONE">
-<code class="descname">FILE_EXT_ADD_IF_NONE</code><a class="headerlink" href="#geosoft.gxapi.FILE_EXT_ADD_IF_NONE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">FILE_EXT_ADD_IF_NONE</code><a class="headerlink" href="#geosoft.gxapi.FILE_EXT_ADD_IF_NONE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Will add the extension only if no extension is present.</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">FILE_EXT_ADD_IF_NONE</code><em class="property"> = 0</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">FILE_EXT_ADD_IF_NONE</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.FILE_EXT_FORCE">
-<code class="descname">FILE_EXT_FORCE</code><a class="headerlink" href="#geosoft.gxapi.FILE_EXT_FORCE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">FILE_EXT_FORCE</code><a class="headerlink" href="#geosoft.gxapi.FILE_EXT_FORCE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Will cause a renaming of the file extension to the new extension.</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">FILE_EXT_FORCE</code><em class="property"> = 1</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">FILE_EXT_FORCE</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1666,22 +1454,22 @@ triming to take place.</p>
 <p>Case sensitivity</p>
 <dl class="data">
 <dt id="geosoft.gxapi.STR_CASE_TOLERANT">
-<code class="descname">STR_CASE_TOLERANT</code><a class="headerlink" href="#geosoft.gxapi.STR_CASE_TOLERANT" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STR_CASE_TOLERANT</code><a class="headerlink" href="#geosoft.gxapi.STR_CASE_TOLERANT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tolerant</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">STR_CASE_TOLERANT</code><em class="property"> = 0</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STR_CASE_TOLERANT</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_CASE_SENSITIVE">
-<code class="descname">STR_CASE_SENSITIVE</code><a class="headerlink" href="#geosoft.gxapi.STR_CASE_SENSITIVE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STR_CASE_SENSITIVE</code><a class="headerlink" href="#geosoft.gxapi.STR_CASE_SENSITIVE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sensitive</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">STR_CASE_SENSITIVE</code><em class="property"> = 1</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STR_CASE_SENSITIVE</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1692,22 +1480,22 @@ triming to take place.</p>
 <p>How to handle escape</p>
 <dl class="data">
 <dt id="geosoft.gxapi.ESCAPE_CONVERT">
-<code class="descname">ESCAPE_CONVERT</code><a class="headerlink" href="#geosoft.gxapi.ESCAPE_CONVERT" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ESCAPE_CONVERT</code><a class="headerlink" href="#geosoft.gxapi.ESCAPE_CONVERT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts non-standard characters in a string to escape sequences.</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">ESCAPE_CONVERT</code><em class="property"> = 0</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ESCAPE_CONVERT</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.ESCAPE_REPLACE">
-<code class="descname">ESCAPE_REPLACE</code><a class="headerlink" href="#geosoft.gxapi.ESCAPE_REPLACE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ESCAPE_REPLACE</code><a class="headerlink" href="#geosoft.gxapi.ESCAPE_REPLACE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces escape sequences with original characters.</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">ESCAPE_REPLACE</code><em class="property"> = 1</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ESCAPE_REPLACE</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1718,77 +1506,77 @@ triming to take place.</p>
 <p>Parts of a path string</p>
 <dl class="data">
 <dt id="geosoft.gxapi.STR_FILE_PART_NAME">
-<code class="descname">STR_FILE_PART_NAME</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_NAME" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STR_FILE_PART_NAME</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_NAME" title="Permalink to this definition">¶</a></dt>
 <dd><p>File Name</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">STR_FILE_PART_NAME</code><em class="property"> = 0</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STR_FILE_PART_NAME</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_FILE_PART_EXTENSION">
-<code class="descname">STR_FILE_PART_EXTENSION</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_EXTENSION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STR_FILE_PART_EXTENSION</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_EXTENSION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extension</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">STR_FILE_PART_EXTENSION</code><em class="property"> = 1</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STR_FILE_PART_EXTENSION</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_FILE_PART_DIRECTORY">
-<code class="descname">STR_FILE_PART_DIRECTORY</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_DIRECTORY" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STR_FILE_PART_DIRECTORY</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_DIRECTORY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Directory</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">STR_FILE_PART_DIRECTORY</code><em class="property"> = 2</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STR_FILE_PART_DIRECTORY</code><em class="property"> = 2</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_FILE_PART_VOLUME">
-<code class="descname">STR_FILE_PART_VOLUME</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_VOLUME" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STR_FILE_PART_VOLUME</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_VOLUME" title="Permalink to this definition">¶</a></dt>
 <dd><p>Drive</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">STR_FILE_PART_VOLUME</code><em class="property"> = 3</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STR_FILE_PART_VOLUME</code><em class="property"> = 3</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_FILE_PART_QUALIFIERS">
-<code class="descname">STR_FILE_PART_QUALIFIERS</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_QUALIFIERS" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STR_FILE_PART_QUALIFIERS</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_QUALIFIERS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Qualifiers</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">STR_FILE_PART_QUALIFIERS</code><em class="property"> = 4</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STR_FILE_PART_QUALIFIERS</code><em class="property"> = 4</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_FILE_PART_NAME_EXTENSION">
-<code class="descname">STR_FILE_PART_NAME_EXTENSION</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_NAME_EXTENSION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STR_FILE_PART_NAME_EXTENSION</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_NAME_EXTENSION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Name and the Extension together</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">STR_FILE_PART_NAME_EXTENSION</code><em class="property"> = 5</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STR_FILE_PART_NAME_EXTENSION</code><em class="property"> = 5</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_FILE_PART_FULLPATH_NO_QUALIFIERS">
-<code class="descname">STR_FILE_PART_FULLPATH_NO_QUALIFIERS</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_FULLPATH_NO_QUALIFIERS" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STR_FILE_PART_FULLPATH_NO_QUALIFIERS</code><a class="headerlink" href="#geosoft.gxapi.STR_FILE_PART_FULLPATH_NO_QUALIFIERS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Full name of file with no qualifiers</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">STR_FILE_PART_FULLPATH_NO_QUALIFIERS</code><em class="property"> = 6</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STR_FILE_PART_FULLPATH_NO_QUALIFIERS</code><em class="property"> = 6</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1799,33 +1587,33 @@ triming to take place.</p>
 <p>String justification style</p>
 <dl class="data">
 <dt id="geosoft.gxapi.STR_JUSTIFY_LEFT">
-<code class="descname">STR_JUSTIFY_LEFT</code><a class="headerlink" href="#geosoft.gxapi.STR_JUSTIFY_LEFT" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STR_JUSTIFY_LEFT</code><a class="headerlink" href="#geosoft.gxapi.STR_JUSTIFY_LEFT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Left</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">STR_JUSTIFY_LEFT</code><em class="property"> = 0</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STR_JUSTIFY_LEFT</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_JUSTIFY_CENTER">
-<code class="descname">STR_JUSTIFY_CENTER</code><a class="headerlink" href="#geosoft.gxapi.STR_JUSTIFY_CENTER" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STR_JUSTIFY_CENTER</code><a class="headerlink" href="#geosoft.gxapi.STR_JUSTIFY_CENTER" title="Permalink to this definition">¶</a></dt>
 <dd><p>Center</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">STR_JUSTIFY_CENTER</code><em class="property"> = 1</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STR_JUSTIFY_CENTER</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_JUSTIFY_RIGHT">
-<code class="descname">STR_JUSTIFY_RIGHT</code><a class="headerlink" href="#geosoft.gxapi.STR_JUSTIFY_RIGHT" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STR_JUSTIFY_RIGHT</code><a class="headerlink" href="#geosoft.gxapi.STR_JUSTIFY_RIGHT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Right</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">STR_JUSTIFY_RIGHT</code><em class="property"> = 2</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STR_JUSTIFY_RIGHT</code><em class="property"> = 2</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1836,33 +1624,33 @@ triming to take place.</p>
 <p>What to trim</p>
 <dl class="data">
 <dt id="geosoft.gxapi.STR_TRIMRIGHT">
-<code class="descname">STR_TRIMRIGHT</code><a class="headerlink" href="#geosoft.gxapi.STR_TRIMRIGHT" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STR_TRIMRIGHT</code><a class="headerlink" href="#geosoft.gxapi.STR_TRIMRIGHT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Str trimright</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">STR_TRIMRIGHT</code><em class="property"> = 1</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STR_TRIMRIGHT</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_TRIMLEFT">
-<code class="descname">STR_TRIMLEFT</code><a class="headerlink" href="#geosoft.gxapi.STR_TRIMLEFT" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STR_TRIMLEFT</code><a class="headerlink" href="#geosoft.gxapi.STR_TRIMLEFT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Str trimleft</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">STR_TRIMLEFT</code><em class="property"> = 2</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STR_TRIMLEFT</code><em class="property"> = 2</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.STR_TRIMBOTH">
-<code class="descname">STR_TRIMBOTH</code><a class="headerlink" href="#geosoft.gxapi.STR_TRIMBOTH" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STR_TRIMBOTH</code><a class="headerlink" href="#geosoft.gxapi.STR_TRIMBOTH" title="Permalink to this definition">¶</a></dt>
 <dd><p>Str trimboth</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">STR_TRIMBOTH</code><em class="property"> = 3</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STR_TRIMBOTH</code><em class="property"> = 3</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1888,7 +1676,7 @@ triming to take place.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking
