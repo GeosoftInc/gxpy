@@ -132,6 +132,39 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
 
     @classmethod
+    def export_to_binary_ex(cls, grid3d_file, binary_file, dir, rev_x, rev_y, rev_z, swap, dummy, output_type):
+        """
+        Export contents of `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to a Binary File, with dummy replacement.
+        
+        :param grid3d_file:  Input Voxel file
+        :param binary_file:  Binary file to write to
+        :param dir:          :ref:`DIRECTION3D`
+        :param rev_x:        Reverse X?
+        :param rev_y:        Reverse Y?
+        :param rev_z:        Reverse Z?
+        :param swap:         Swap Bytes?
+        :param dummy:        Replace dummy values with this value on export
+        :param output_type:  Output Type (Geosoft Type)
+        :type  grid3d_file:  str
+        :type  binary_file:  str
+        :type  dir:          int
+        :type  rev_x:        bool
+        :type  rev_y:        bool
+        :type  rev_z:        bool
+        :type  swap:         bool
+        :type  dummy:        float
+        :type  output_type:  int
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        gxapi_cy.WrapMULTIGRID3DUTIL._export_to_binary_ex(GXContext._get_tls_geo(), grid3d_file.encode(), binary_file.encode(), dir, rev_x, rev_y, rev_z, swap, dummy, output_type)
+        
+
+
+
+    @classmethod
     def export_to_xml(cls, grid3d_file, xml_file):
         """
         Export a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to XML
@@ -202,7 +235,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         :param name:         Name of output `GXVOX <geosoft.gxapi.GXVOX>`
         :param header:       Name of GOCAD Voxel file
         :param property:     Propert name to import
-        :param orientation:  :ref:`GOCAD_ORIENTATION`
+        :param orientation:  :ref:`GOCAD_ORIENTATION` OBSOLETE as of 9.7. The UVW axes and ZPOSITIVE values are read from the *.vo header and are handled on import automatically. By default ZPOSITIVE Elevation is assumed
         :type  name:         str
         :type  header:       str
         :type  property:     str

@@ -244,6 +244,22 @@ BF_SEEK_CURRENT = 1
 BF_SEEK_EOF = 2	
 
 #
+# GXCSYMB Constants
+# 
+
+
+
+#
+# CSYMB_COLOR constants
+#
+# Color Symbol filling defines
+
+#: Draw Edges only
+CSYMB_COLOR_EDGE = 0
+#: Fill Symbols
+CSYMB_COLOR_FILL = 1	
+
+#
 # GXDAT Constants
 # 
 
@@ -2504,6 +2520,10 @@ MVIEW_IS_VOXD = 10
 MVIEW_IS_SHADOW_2D_INTERPRETATION = 11
 #: Vector3d
 MVIEW_IS_VECTOR3D = 12
+#: Gensurf
+MVIEW_IS_GENSURF = 13
+#: Voxsurf
+MVIEW_IS_VOXSURF = 14
 
 #
 # MVIEW_LABEL_BOUND constants
@@ -4482,22 +4502,6 @@ COM_STOPBITS_ONE5 = 1
 COM_STOPBITS_TWO = 2	
 
 #
-# GXCSYMB Constants
-# 
-
-
-
-#
-# CSYMB_COLOR constants
-#
-# Color Symbol filling defines
-
-#: Draw Edges only
-CSYMB_COLOR_EDGE = 0
-#: Fill Symbols
-CSYMB_COLOR_FILL = 1	
-
-#
 # GXDGW Constants
 # 
 
@@ -6054,6 +6058,8 @@ FILE_FILTER_RAW = 130
 FILE_FILTER_DAT = 131
 #: OMF files  ``*.omf`  LOCAL
 FILE_FILTER_OMF = 132
+#: 3d survey files  ``*.3dSurvey`  LOCAL
+FILE_FILTER_3DSURVEY = 133
 
 #
 # FILE_FORM constants
@@ -7192,6 +7198,7 @@ __all__ = [
     'GX3DV',
     'GXAGG',
     'GXBF',
+    'GXCSYMB',
     'GXDAT',
     'GXDATALINKD',
     'GXDATAMINE',
@@ -7268,7 +7275,6 @@ __all__ = [
     'GXBIGRID',
     'GXCHIMERA',
     'GXCOM',
-    'GXCSYMB',
     'GXDGW',
     'GXDH',
     'GXDMPPLY',
@@ -7325,6 +7331,7 @@ from .GX3DN import GX3DN
 from .GX3DV import GX3DV
 from .GXAGG import GXAGG
 from .GXBF import GXBF
+from .GXCSYMB import GXCSYMB
 from .GXDAT import GXDAT
 from .GXDATALINKD import GXDATALINKD
 from .GXDATAMINE import GXDATAMINE
@@ -7401,7 +7408,6 @@ from .GXARCSYS import GXARCSYS
 from .GXBIGRID import GXBIGRID
 from .GXCHIMERA import GXCHIMERA
 from .GXCOM import GXCOM
-from .GXCSYMB import GXCSYMB
 from .GXDGW import GXDGW
 from .GXDH import GXDH
 from .GXDMPPLY import GXDMPPLY

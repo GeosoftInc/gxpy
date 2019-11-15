@@ -1436,6 +1436,42 @@ class GXDH(gxapi_cy.WrapDH):
 
 
     @classmethod
+    def convert_oriented_core_dip_dir_for_hole_survey(cls, vv_depth, vv_alpha, vv_beta, vv_survey_x, vv_survey_y, vv_survey_z, vv_survey_depth, top_ref):
+        """
+        Converted alpha/beta values in oriented cores to dip/dip direction.
+        
+        :param vv_depth:         Depth VV
+        :param vv_alpha:         Alpha VV
+        :param vv_beta:          Beta VV
+        :param vv_survey_x:      Desurveyed X
+        :param vv_survey_y:      Desurveyed Y
+        :param vv_survey_z:      Desurveyed Z
+        :param vv_survey_depth:  Desurveyed Depth
+        :param top_ref:          1: Top of core reference 0: Bottom of core reference
+        :type  vv_depth:         GXVV
+        :type  vv_alpha:         GXVV
+        :type  vv_beta:          GXVV
+        :type  vv_survey_x:      GXVV
+        :type  vv_survey_y:      GXVV
+        :type  vv_survey_z:      GXVV
+        :type  vv_survey_depth:  GXVV
+        :type  top_ref:          int
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** The input data are the oriented core alpha and beta values, using either
+        top or bottom reference. The values alpha and beta are converted in place 
+        to "absolute" dip and dip-direction values, using the desurveyed hole
+        orientations at each depth.
+        """
+        gxapi_cy.WrapDH._convert_oriented_core_dip_dir_for_hole_survey(GXContext._get_tls_geo(), vv_depth, vv_alpha, vv_beta, vv_survey_x, vv_survey_y, vv_survey_z, vv_survey_depth, top_ref)
+        
+
+
+
+    @classmethod
     def desurvey_from_to(cls, desurvey_method, order, dip_convention, inc, thin, vv_from, vv_to, vv_depth, vv_dip, vv_az, x, y, z, top, bottom, vv_x, vv_y, vv_z, vv_d, vv_l):
         """
         Calculate survey locations and depth from a hole survey using from/to values

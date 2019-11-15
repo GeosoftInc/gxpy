@@ -522,6 +522,41 @@ class GXGU(gxapi_cy.WrapGU):
 
 
     @classmethod
+    def gravity_still_reading_database_correction(cls, db, grav_in, date, time, stillDB, station_channel, date_channel, time_channel, readings_channel, grav_out):
+        """
+        Gravity Still Reading Correction on selected lines, using a still readings database
+        
+        :param db:                Database
+        :param grav_in:           Input gravity channel handle [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param date:              Input date channel handle [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param time:              Input time channel handle [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param stillDB:           Still readings database
+        :param station_channel:   station channel in still readings database
+        :param date_channel:      date channel in still readings database
+        :param time_channel:      time channel in still readings database
+        :param readings_channel:  readings (gravity) channel in still readings database
+        :param grav_out:          Output gravity channel handle [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
+        :type  db:                GXDB
+        :type  grav_in:           int
+        :type  date:              int
+        :type  time:              int
+        :type  stillDB:           GXDB
+        :type  station_channel:   str
+        :type  date_channel:      str
+        :type  time_channel:      str
+        :type  readings_channel:  str
+        :type  grav_out:          int
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        gxapi_cy.WrapGU._gravity_still_reading_database_correction(GXContext._get_tls_geo(), db, grav_in, date, time, stillDB, station_channel.encode(), date_channel.encode(), time_channel.encode(), readings_channel.encode(), grav_out)
+        
+
+
+
+    @classmethod
     def despike_em_array(cls, vv_in, vv_noise, vv_out, num_removed):
         """
         Despike a time-series with individual noise levels

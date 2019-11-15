@@ -791,6 +791,37 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
 
 
+    def export_to_binary_ex(self, binary_file, dir, rev_x, rev_y, rev_z, swap, dummy, output_type):
+        """
+        Export contents of `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to a Binary File, with dummy replacement.
+        
+        :param binary_file:  Binary file to write to
+        :param dir:          :ref:`DIRECTION3D`
+        :param rev_x:        Reverse X?
+        :param rev_y:        Reverse Y?
+        :param rev_z:        Reverse Z?
+        :param swap:         Swap Bytes?
+        :param dummy:        Replace dummy values with this value on export
+        :param output_type:  Output Type (Geosoft Type)
+        :type  binary_file:  str
+        :type  dir:          int
+        :type  rev_x:        bool
+        :type  rev_y:        bool
+        :type  rev_z:        bool
+        :type  swap:         bool
+        :type  dummy:        float
+        :type  output_type:  int
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._export_to_binary_ex(binary_file.encode(), dir, rev_x, rev_y, rev_z, swap, dummy, output_type)
+        
+
+
+
+
     def export_to_xml(self, xml_file):
         """
         Export a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to XML

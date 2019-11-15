@@ -2060,6 +2060,40 @@ class GXSYS(gxapi_cy.WrapSYS):
 
 
     @classmethod
+    def get_api_key(cls, key):
+        """
+        Get the API Key if signed in
+        
+        :param key:  Returned API key
+        :type  key:  str_ref
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        key.value = gxapi_cy.WrapSYS._get_api_key(GXContext._get_tls_geo(), key.value.encode())
+        
+
+
+
+    @classmethod
+    def get_view_url(cls, url):
+        """
+        Get the View URL
+        
+        :param url:  Returned View URL
+        :type  url:  str_ref
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        url.value = gxapi_cy.WrapSYS._get_view_url(GXContext._get_tls_geo(), url.value.encode())
+        
+
+
+
+    @classmethod
     def get_profile_name(cls, name):
         """
         Get the profile name as defined in My Geosoft (or email if not defined)

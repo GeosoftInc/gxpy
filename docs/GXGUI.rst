@@ -621,6 +621,10 @@ File filters
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.FILE_FILTER_OMF
+.. autodata:: geosoft.gxapi.FILE_FILTER_3DSURVEY
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.FILE_FILTER_3DSURVEY
 
 
 .. _FILE_FORM:

@@ -345,6 +345,29 @@ class GXIMG(gxapi_cy.WrapIMG):
 
 
 
+    def extent(self, min_x, min_y, max_x, max_y):
+        """
+        Get the img extents
+        
+        :param min_x:  X minimum
+        :param min_y:  Y minimum
+        :param max_x:  X maximum
+        :param max_y:  Y maximum
+        :type  min_x:  float_ref
+        :type  min_y:  float_ref
+        :type  max_x:  float_ref
+        :type  max_y:  float_ref
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        min_x.value, min_y.value, max_x.value, max_y.value = self._extent(min_x.value, min_y.value, max_x.value, max_y.value)
+        
+
+
+
+
     def geth_pg(self):
         """
         Get the actual pager of a grid.

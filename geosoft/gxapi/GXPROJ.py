@@ -153,6 +153,38 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
 
     @classmethod
+    def add_grid_document(cls, name, colors, method, display):
+        """
+        Adds (and opens) a grid document file in the current project with a particular colour distribution and colour file.
+        
+        :param name:     Document name
+        :param colors:   Colour zone file to use
+        :param method:   Colour method to use - one of the ITR_ZONE_XXXX values
+        :param display:  :ref:`PROJ_DISPLAY`
+        :type  name:     str
+        :type  colors:   str
+        :type  method:   int
+        :type  display:  int
+
+        :returns:        0 - Ok
+                         1 - Error
+        :rtype:          int
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The passed file name must be a valid Grid document
+        with an extension and qualifiers (if applicable).
+        """
+        ret_val = gxapi_cy.WrapPROJ._add_grid_document(GXContext._get_tls_geo(), name.encode(), colors.encode(), method, display)
+        return ret_val
+
+
+
+    @classmethod
     def get_command_environment(cls):
         """
         The current command environment

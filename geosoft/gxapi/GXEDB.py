@@ -1315,6 +1315,30 @@ class GXEDB(gxapi_cy.WrapEDB):
 
 
 
+    def profile_shown(self, chan):
+        """
+        Return index of first profile window in which a profile is shown
+        
+        :param chan:  Name of the channel
+        :type  chan:  str
+
+        :returns:     Index of first profile window in which it is loaded, -1 if not loaded in any profile window
+        :rtype:       int
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Returns -1 if channel profile is not loaded.
+        """
+        ret_val = self._profile_shown(chan.encode())
+        return ret_val
+
+
+
+
     def get_window_y_axis_direction(self, window):
         """
         Get the y-axis direction for a window

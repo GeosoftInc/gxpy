@@ -12,11 +12,6 @@ os.environ['GEOSOFT_FORCE_MESA_3D'] = '1'
 os.environ['GEOSOFT_TEST_MODE'] = '1'
 os.environ['GEOSOFT_TESTSYSTEM_MODE'] = '1'
 
-def set_geosoft_bin_path():
-    if 'GX_GEOSOFT_BIN_PATH_RELEASE' in os.environ:
-        os.environ['GX_GEOSOFT_BIN_PATH'] = os.environ['GX_GEOSOFT_BIN_PATH_RELEASE']
-
-
 import geosoft.gxpy.gx as gx
 import geosoft.gxapi as gxapi
 import geosoft.gxpy.map as gxmap
@@ -112,7 +107,12 @@ class GXPYTest(unittest.TestCase):
 
         gxu._uuid_callable = cls._cls_uuid
 
-        set_geosoft_bin_path()
+        # This ensures clean global and other settings for consistent test runs
+        _, user_dir, _ = gxapi.GXContext.get_key_based_product_dirs(per_user_key=per_user_key)
+        if os.path.exists(user_dir):
+            shutil.rmtree(user_dir)
+        os.makedirs(user_dir, exist_ok=True)
+
         cls._gx = gx.GXpy(name=context_name, log=print, res_stack=res_stack, max_warnings=12,
                           suppress_progress=True, parent_window=parent_window, per_user_key=per_user_key)
 

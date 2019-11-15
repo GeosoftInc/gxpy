@@ -90,23 +90,42 @@ class GXContext:
                 if redist_override:
                     cls._set_geosoft_redist_overrides(redist_dir, user_dir, temp_dir)
                 else:
-                    key_file = os.path.join(os.path.dirname(inspect.getfile(cls)), 'geosoft.key')
-                    if os.path.exists(key_file):
-                        with open(key_file) as f:
-                            key = f.read().strip()
-                    reg_hive = winreg.HKEY_CURRENT_USER if per_user_key else winreg.HKEY_LOCAL_MACHINE
-                    env_key = winreg.OpenKey(reg_hive, 'Software\Geosoft\{}\Environment'.format(key), 0, winreg.KEY_READ)
-                    try:
-                        geosoft_dir, _ = winreg.QueryValueEx(env_key, 'GEOSOFT')
-                        cls._geosoft_dist_init(geosoft_dir)
-                    finally:
-                        winreg.CloseKey(env_key)
+                    geosoft_dir, _, _ = cls.get_key_based_product_dirs(key, per_user_key)
+                    cls._geosoft_dist_init(geosoft_dir)
 
             p_geo = gxapi_cy.WrapPGeo()
             p_geo._create(application, version, wind_id, flags)
             return GXContext(p_geo)
         else:
             return GXContext(tls_geo)
+
+    @classmethod
+    def get_key_based_product_dirs(cls, key='Core', per_user_key=False):
+        """
+        Gets key product folders based on geosoft.key file and registry
+
+        :param key:              Default Geosoft registry key (in absence of geosoft.key file) to use to discover GX
+                                 developer common redistributables or Desktop Applications software (default 'Core')
+        :param per_user_key:     Use per-user registry instead of local machine (default False)
+
+        :returns: product_install_dir, user_dir, temp_dir
+
+        .. versionadded:: 9.7
+        """
+        key_file = os.path.join(os.path.dirname(inspect.getfile(cls)), 'geosoft.key')
+        if os.path.exists(key_file):
+            with open(key_file) as f:
+                key = f.read().strip()
+        reg_hive = winreg.HKEY_CURRENT_USER if per_user_key else winreg.HKEY_LOCAL_MACHINE
+        env_key = winreg.OpenKey(reg_hive, 'Software\Geosoft\{}\Environment'.format(key), 0,
+                                 winreg.KEY_READ)
+        try:
+            product_install_dir, _ = winreg.QueryValueEx(env_key, 'GEOSOFT')
+            user_dir, _ = winreg.QueryValueEx(env_key, 'GEOSOFT2')
+            temp_dir, _ = winreg.QueryValueEx(env_key, 'GEOTEMP')
+            return product_install_dir, user_dir, temp_dir
+        finally:
+            winreg.CloseKey(env_key)
 
 
     @classmethod

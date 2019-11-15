@@ -144,6 +144,25 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
 
 
+    def view_group_json(self, group, file):
+        """
+        Generate a JSON representation of a Group.
+        
+        :param group:  Name of Group
+        :param file:   Name of JSON file to generate.
+        :type  group:  str
+        :type  file:   str
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._view_group_json(group.encode(), file.encode())
+        
+
+
+
+
     def cylinder_3d(self, start_x, start_y, start_z, end_x, end_y, end_z, start_radius, end_radius, flags):
         """
         Draw a 3D cylinder
@@ -667,6 +686,42 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._find_plane(plane.encode())
+        return ret_val
+
+
+
+
+    def is_surface_plane(self, plane):
+        """
+        Is a surface plane?
+        
+        :param plane:  Name of the plane
+        :type  plane:  str
+        :rtype:        bool
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val = self._is_surface_plane(plane.encode())
+        return ret_val
+
+
+
+
+    def is_plane_visible(self, plane):
+        """
+        Is the plane visible?
+        
+        :param plane:  Name of the plane
+        :type  plane:  str
+        :rtype:        bool
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val = self._is_plane_visible(plane.encode())
         return ret_val
 
 
@@ -2930,6 +2985,25 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
 
 
+    def get_maker_name(self, group, str_val):
+        """
+        Used to retrieve the maker for a particular view group.
+        
+        :param group:    Group number
+        :param str_val:  String in which to place the maker name
+        :type  group:    int
+        :type  str_val:  str_ref
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        str_val.value = self._get_maker_name(group, str_val.value.encode())
+        
+
+
+
+
     def emf_object(self, min_x, min_y, max_x, max_y, file):
         """
         Add an EMF file data object to the view.
@@ -3810,6 +3884,26 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** Views with lower numbers should render first, `iDUMMY <geosoft.gxapi.iDUMMY>` is undefined
         """
         ret_val = self._render_order()
+        return ret_val
+
+
+
+
+    def is_group_exportable(self, group):
+        """
+        Query whether the group is an exportable type.
+        
+        :param group:  Group name
+        :type  group:  str
+
+        :returns:      TRUE or FALSE (1 or 0)
+        :rtype:        int
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val = self._is_group_exportable(group.encode())
         return ret_val
 
 
@@ -5537,6 +5631,52 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         """
         x.value, y.value = self._view_to_user(x.value, y.value)
         
+
+
+
+
+# Obsolete
+
+
+
+    def get_surface_filename(self, group, filename):
+        """
+        Get the surface filename.
+        
+        :param group:     Group name
+        :param filename:  filename returned
+        :type  group:     str
+        :type  filename:  str_ref
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** The group must be a `GXSURFACE <geosoft.gxapi.GXSURFACE>` group. Check this using
+        `is_group <geosoft.gxapi.GXMVIEW.is_group>` and `MVIEW_IS_GENSURF <geosoft.gxapi.MVIEW_IS_GENSURF>` or `MVIEW_IS_VOXSURF <geosoft.gxapi.MVIEW_IS_VOXSURF>` .
+        """
+        filename.value = self._get_surface_filename(group.encode(), filename.value.encode())
+        
+
+
+
+
+    def is_surface_item_visible(self, group, guid):
+        """
+        Is the surface item visible?
+        
+        :param group:  Group name
+        :param guid:   Item GUID
+        :type  group:  str
+        :type  guid:   str
+        :rtype:        bool
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val = self._is_surface_item_visible(group.encode(), guid.encode())
+        return ret_val
 
 
 

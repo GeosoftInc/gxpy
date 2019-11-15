@@ -71,6 +71,39 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
 
 
+    def set_is_3d(self, is_3d):
+        """
+        Specify if the input SEG-Y file is 3D or 2D.
+        
+        :param is_3d:        True is file is 3D, false for 2D.
+        :type  is_3d:        bool
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._set_is_3d(is_3d)
+        
+
+
+
+
+    def get_is_3d(self):
+        """
+        Returns true if the file is 3D false if it is 2D.
+        
+        :rtype:              bool
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        ret_val = self._get_is_3d()
+        return ret_val
+
+
+
+
     def get_endianess(self):
         """
         Returns true if the file is little endian. false if it is big endian.
@@ -961,6 +994,401 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         self._export_voxel_and_database(voxel_filename.encode(), gdb_filename.encode())
+        
+
+
+
+
+    def set_gdb_output_filename(self, filename):
+        """
+        Exports contents of SEG Y file to a database.
+        
+        :param filename:     Output database file name
+        :type  filename:     str
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._set_gdb_output_filename(filename.encode())
+        
+
+
+
+
+    def set_voxel_output_filename(self, filename):
+        """
+        Exports contents of SEG Y file to voxel.
+        
+        :param filename:     Output voxel file name
+        :type  filename:     str
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._set_voxel_output_filename(filename.encode())
+        
+
+
+
+
+    def set_section_output_filename(self, filename):
+        """
+        Exports contents of SEG Y file to a crooked section.
+        
+        :param filename:     Output crooked section file name
+        :type  filename:     str
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._set_section_output_filename(filename.encode())
+        
+
+
+
+
+    def set_slice_output_prefix(self, prefix):
+        """
+        Exports inline or crossline slices to a section grid.
+        
+        :param prefix:       Output section file name prefix
+        :type  prefix:       str
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._set_slice_output_prefix(prefix.encode())
+        
+
+
+
+
+    def set_inline_slice_indices(self, indices):
+        """
+        Which inline slices to export to a section grid.
+        
+        :param indices:      Which inline values to export.
+        :type  indices:      GXVV
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._set_inline_slice_indices(indices)
+        
+
+
+
+
+    def set_crossline_slice_indices(self, indices):
+        """
+        Which crossline slices to export to a section grid.
+        
+        :param indices:      Which crossline values to export.
+        :type  indices:      GXVV
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._set_crossline_slice_indices(indices)
+        
+
+
+
+
+    def set_z_slice_indices(self, indices):
+        """
+        Which z slices to export to a section grid.
+        
+        :param indices:      Which z values to export.
+        :type  indices:      GXVV
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._set_z_slice_indices(indices)
+        
+
+
+
+
+    def get_slice_filenames(self, filename_list):
+        """
+        Returns a list of the filenames of the XY slices that will be exported.
+        
+        :param filename_list:  List of filenames,separated by newlines
+        :type  filename_list:  str_ref
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        filename_list.value = self._get_slice_filenames(filename_list.value.encode())
+        
+
+
+
+
+    def set_z_decimation(self, factor):
+        """
+        Sets Z decimation factor.
+        
+        :param factor:       Decimation factor
+        :type  factor:       int
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._set_z_decimation(factor)
+        
+
+
+
+
+    def set_user_z_range(self, z_min, z_max):
+        """
+        Sets Z-range to clamp to.
+        
+        :param z_min:        Z minimum
+        :param z_max:        Z maximum
+        :type  z_min:        float
+        :type  z_max:        float
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._set_user_z_range(z_min, z_max)
+        
+
+
+
+
+    def clear_user_z_range(self):
+        """
+        Clears Z-range to clamp to, disbling z-clamping.
+        
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._clear_user_z_range()
+        
+
+
+
+
+    def set_user_inline_range(self, inline_min, inline_max, inline_stride, factor):
+        """
+        Sets inline-range to clamp to.
+        
+        :param inline_min:     inline minimum
+        :param inline_max:     inline maximum
+        :param inline_stride:  inline stride
+        :param factor:         Decimation factor
+        :type  inline_min:     int
+        :type  inline_max:     int
+        :type  inline_stride:  int
+        :type  factor:         int
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._set_user_inline_range(inline_min, inline_max, inline_stride, factor)
+        
+
+
+
+
+    def set_user_crossline_range(self, crossline_min, crossline_max, crossline_stride, factor):
+        """
+        Sets crossline-range to clamp to.
+        
+        :param crossline_min:     crossline minimum
+        :param crossline_max:     crossline maximum
+        :param crossline_stride:  crossline stride
+        :param factor:            Decimation factor
+        :type  crossline_min:     int
+        :type  crossline_max:     int
+        :type  crossline_stride:  int
+        :type  factor:            int
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._set_user_crossline_range(crossline_min, crossline_max, crossline_stride, factor)
+        
+
+
+
+
+    def clear_user_range(self):
+        """
+        Clears inline and crossline ranges to clamp to.
+        
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._clear_user_range()
+        
+
+
+
+
+    def set_trace_dummy_value(self, dummy_value):
+        """
+        Sets the trace dummy value.
+        
+        :param dummy_value:  trace dummy value
+        :type  dummy_value:  float
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._set_trace_dummy_value(dummy_value)
+        
+
+
+
+
+    def clear_trace_dummy_value(self):
+        """
+        Disables the trace dummy value.
+        
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._clear_trace_dummy_value()
+        
+
+
+
+
+    def get_clip_xy_extents(self, is_clip_valid, x_min, x_max, y_min, y_max):
+        """
+        Gets the X,Y extents to clip the voxel.
+        
+        :param is_clip_valid:  is clip area valid
+        :param x_min:          minimum X value
+        :param x_max:          maximum X value
+        :param y_min:          minimum Y value
+        :param y_max:          maximum Y value
+        :type  is_clip_valid:  int_ref
+        :type  x_min:          float_ref
+        :type  x_max:          float_ref
+        :type  y_min:          float_ref
+        :type  y_max:          float_ref
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        is_clip_valid.value, x_min.value, x_max.value, y_min.value, y_max.value = self._get_clip_xy_extents(is_clip_valid.value, x_min.value, x_max.value, y_min.value, y_max.value)
+        
+
+
+
+
+    def add_trace_filter(self, offset, value1, value2, constraint):
+        """
+        Add a filter based on trace header fields.
+        
+        :param offset:       byte-offset of the field to filter by.
+        :param value1:       If `constraint` is EQUAL and NOT_EQUAL, this is the value to compare the field to. For IN_RANGE and NOT_IN_RANGE, this is the minimum.
+        :param value2:       If `constraint` is EQUAL and NOT_EQUAL, this parameter is ignored For IN_RANGE and NOT_IN_RANGE, this is the maximum.
+        :param constraint:   How the values are compared. Can be "IN_RANGE", "NOT_IN_RANGE", "EQUAL" or "NOT_EQUAL".
+        :type  offset:       int
+        :type  value1:       int
+        :type  value2:       int
+        :type  constraint:   str
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._add_trace_filter(offset, value1, value2, constraint.encode())
+        
+
+
+
+
+    def clear_trace_filters(self):
+        """
+        Remove all active trace filters.
+        
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._clear_trace_filters()
+        
+
+
+
+
+    def count_traces_that_pass_filters(self):
+        """
+        Count the number of traces that pass the currently-configured trace filters.
+        
+        :rtype:              int
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        ret_val = self._count_traces_that_pass_filters()
+        return ret_val
+
+
+
+
+    def override_navigation_2d(self, shotpoint_coords, x_coordinates, y_coordinates):
+        """
+        Specify the X/Y coordinates of the traces, instead of using values from the trace headers.
+        
+        :param shotpoint_coords:  The shotpoint coordinates, asread from the trace headers.
+        :param x_coordinates:     The x-coordinates
+        :param y_coordinates:     The y-coordinates
+        :type  shotpoint_coords:  GXVV
+        :type  x_coordinates:     GXVV
+        :type  y_coordinates:     GXVV
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._override_navigation_2d(shotpoint_coords, x_coordinates, y_coordinates)
+        
+
+
+
+
+    def export_files(self):
+        """
+        Exports contents of SEG Y file to voxel and/or database.
+        
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._export_files()
         
 
 
