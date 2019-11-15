@@ -1,0 +1,531 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>geosoft.gxpy.grid_fft submodule &#8212; Geosoft GX Python API 9.7.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.grid_fft.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-geosoft.gxpy.grid_fft">
+<span id="geosoft-gxpy-grid-fft-submodule"></span><h1>geosoft.gxpy.grid_fft submodule<a class="headerlink" href="#module-geosoft.gxpy.grid_fft" title="Permalink to this headline">¶</a></h1>
+<p>Geosoft Fast Fourier Transform processes for 2D gridded data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name"><a class="reference internal" href="#geosoft.gxpy.grid_fft.GridFFT" title="geosoft.gxpy.grid_fft.GridFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GridFFT</span></code></a>:</th><td class="field-body">Grid FFT</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Note that ‘wavenumber’ in this module refers to cycles/unit_distance. Multiply by 2*math.pi for the
+angular wavenumber.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="GXFFT2.html#geosoft.gxapi.GXFFT2" title="geosoft.gxapi.GXFFT2"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxapi.GXFFT2</span></code></a></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Regression tests provide usage examples:     
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_grid_fft.py">Tests</a></p>
+</div>
+<dl class="class">
+<dt id="geosoft.gxpy.grid_fft.GridFFT">
+<em class="property">class </em><code class="descname">GridFFT</code><span class="sig-paren">(</span><em>grid</em>, <em>buffer=2.0</em>, <em>buff_iterations=250</em>, <em>buffer_tolerance=None</em>, <em>trend_order=1</em>, <em>trend_edge=1</em>, <em>expand=10.0</em>, <em>fill_method=0</em>, <em>filter_length=0</em>, <em>amplitude_limit=0.0</em>, <em>edge_limit=-1.0</em>, <em>edge_limit_cells=0</em>, <em>smooth=1</em>, <em>feather=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Descrete Fourier Transform of a grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid</strong> – grid file name or a <a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid</span></code></a> instance.</li>
+<li><strong>expand</strong> – minimum expansion percent to create a periodic function. The default is 10.</li>
+<li><strong>trend_order</strong> – trend order to remove, default is 1</li>
+<li><strong>fill_method</strong> – FILL_MAXIMUM_ENTROPY (default) or FILL_MINIMUM_CURVATURE.  Maximum entropy
+prediction fills the expanded area in a way that preserves the character of the
+radially-averaged power spectrum so that spectral analysis based on the shape
+of the spectrum will be more reliable.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The following parameters only apply for maximum-entropy prediction. The defaults will be fine in all but
+exceptional situations where edge effects unduly distort the result.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>buffer</strong> – percentage buffer area, default 2%.  The buffer expands the size of the grid
+footprint before filling internal space with a minimum-curvacture surface.  This
+minimizes edge effects from high-amplitude features at the edge of the grid.</li>
+<li><strong>buff_iterations</strong> – maximum iterations to resolve the minimum curvature surface for the internal fill.</li>
+<li><strong>filter_length</strong> – maximum entropy filter length,</li>
+<li><strong>amplitude_limit</strong> – Amplitudes limiting, which starts at halve this setting.  Default no limiting.</li>
+<li><strong>edge_limit</strong> – edge amplitude limiting, starting at half this value. Default no limiting.</li>
+<li><strong>edge_limit_cells</strong> – if edge limiting, start this many cells from the edge</li>
+<li><strong>smooth</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> (default) to smooth the filled expanded area.</li>
+<li><strong>feather</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> to feather expanded data to mean value at the expanded edges. If <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code>
+the data will be periodic at the edges. Feathering may be useful should the
+prediction function introduce unreasonable edge effects.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.du">
+<code class="descname">du</code><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.du" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wavenumber increment in the grid X direction in (cycles / grid distance uom)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.dv">
+<code class="descname">dv</code><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.dv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wavenumber increment in the grid Y direction in (cycles / grid distance uom).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.expanded_filled_grid">
+<code class="descname">expanded_filled_grid</code><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.expanded_filled_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Expanded and filled grid as a <a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid</span></code></a> instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.filter">
+<code class="descname">filter</code><span class="sig-paren">(</span><em>filters=None</em>, <em>trn=0</em>, <em>height=''</em>, <em>mag_inclination=''</em>, <em>mag_declination=''</em>, <em>mag_strength=''</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a pre-defined filter.</p>
+<p>See filter reference: <a class="reference external" href="https://github.com/GeosoftInc/gxc/blob/master/reference/con_files/magmap.con">https://github.com/GeosoftInc/gxc/blob/master/reference/con_files/magmap.con</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filters</strong> – list of filters to apply.  Each filter can be a string, or a tuple with the first
+item being the filter name followed by the filter parameters. See <code class="xref py py-obj docutils literal notranslate"><span class="pre">magmap.con</span></code>
+referenced above for the full list of filters.</li>
+<li><strong>trn</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">TRN_SOURCE</span></code> apply to the source transform (default) or
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">TRN_FILTERED</span></code> to apply to the current filtered transform.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The following parameter are the default for magnetic filed filters like pole/equator reduction and
+aparent susceptibility.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>height</strong> – survey ground clearance in grid distance units</li>
+<li><strong>mag_inclination</strong> – magnetic field inclination</li>
+<li><strong>mag_declination</strong> – magnetic field declination</li>
+<li><strong>mag_strength</strong> – total magnetic filed strength for converting magnetization to susceptibility.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Example upward continuation 500 grid distance units and a first vertical derivative:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geosoft.gxpy.gx</span> <span class="k">as</span> <span class="nn">gx</span>
+<span class="kn">import</span> <span class="nn">geosoft.gxpy.grid_fft</span> <span class="k">as</span> <span class="nn">gfft</span>
+
+<span class="n">gxc</span> <span class="o">=</span> <span class="n">gx</span><span class="o">.</span><span class="n">GXpy</span><span class="p">(</span><span class="n">log</span><span class="o">=</span><span class="nb">print</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">gxfft</span><span class="o">.</span><span class="n">GridFFT</span><span class="p">(</span><span class="s1">&#39;some_mag_grid_file.grd&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fft</span><span class="p">:</span>
+
+    <span class="c1"># apply the filer</span>
+    <span class="n">fft</span><span class="o">.</span><span class="n">filter</span><span class="p">([</span><span class="s1">&#39;CNUP 500&#39;</span><span class="p">,</span> <span class="s1">&#39;DRVZ 1&#39;</span><span class="p">])</span>  <span class="c1"># equlavalent to `fft.filter([(&#39;CNUP&#39;, 500), (&#39;DRVZ&#39;, 1)])`</span>
+
+    <span class="c1"># create an output grid of the upward-continued result</span>
+    <span class="n">fft</span><span class="o">.</span><span class="n">result_grid</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;upward_continued_500.grd&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.filtered_transform">
+<code class="descname">filtered_transform</code><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.filtered_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Folded descrete Fourier transform after filters applied.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.log_average_spectral_density">
+<code class="descname">log_average_spectral_density</code><span class="sig-paren">(</span><em>trn=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.log_average_spectral_density" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log of the average spectral density of the transform.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>trn</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">TRN_SOURCE</span></code> (default) source data spectrum, or <code class="xref py py-obj docutils literal notranslate"><span class="pre">TRN_FILTERED</span></code> current filtered transform.</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.nu">
+<code class="descname">nu</code><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.nu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of discrete wavenumbers in grid X direction.</p>
+<p>The transform is folded in the x direction, will be half the transform width + 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.nv">
+<code class="descname">nv</code><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.nv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of discrete wavenumbers in the grid Y direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.radially_averaged_spectrum">
+<code class="descname">radially_averaged_spectrum</code><span class="sig-paren">(</span><em>trn=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.radially_averaged_spectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Radially averaged spectrum as a Numpy array shaped (n_wavenumbers, 5).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>trn</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">TRN_SOURCE</span></code> (default) return spectrum of the source data, or <code class="xref py py-obj docutils literal notranslate"><span class="pre">TRN_FILTERED</span></code> return spectrum
+of the current filtered state.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Numpy array shaped (n_wavenumbers, 5), where each row contains:
+[wavenumber, sample_count, log_power, 3-point_depth, 5-point_depth], wavenumber in cycles per
+1000 * distance unit of measure (cycle/km for metres), and log_power is the natural log of
+the power.</p>
+<p>Point depths are calculated by dividing the local slope(3 points and 5 points) of the log_power by (4 * pi)
+(see Spector and Grant, 1970).</p>
+<p>For code clarity, the following index constants can be used to reference columns in the
+spectrum array:</p>
+<blockquote class="last">
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="82%" />
+<col width="18%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>I_WAVENUMBER</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>I_SAMPLE_COUNT</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>I_LOG_POWER</td>
+<td>2</td>
+</tr>
+<tr class="row-even"><td>I_DEPTH_3</td>
+<td>3</td>
+</tr>
+<tr class="row-odd"><td>I_DEPTH_5</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.read_uv_row">
+<code class="descname">read_uv_row</code><span class="sig-paren">(</span><em>row</em>, <em>trn=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.read_uv_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a row (constant wavenumber v) from (u, v) transform.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>row</strong> – row number in (u, v) space, row 0 is minimum v</li>
+<li><strong>trn</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">TRN_SOURCE</span></code> from the source transform (default) or <code class="xref py py-obj docutils literal notranslate"><span class="pre">TRN_FILTERED</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(u_array, v, real_array, imaginary_array)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>To calculate a wavenumber array: wavenumber = np.sqrt(u_array**2 + v**2).</p>
+<p>Upward continuation example:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geosoft.gxpy.gx</span> <span class="k">as</span> <span class="nn">gx</span>
+<span class="kn">import</span> <span class="nn">geosoft.gxpy.grid_fft</span> <span class="k">as</span> <span class="nn">gfft</span>
+
+<span class="n">gxc</span> <span class="o">=</span> <span class="n">gx</span><span class="o">.</span><span class="n">GXpy</span><span class="p">(</span><span class="n">log</span><span class="o">=</span><span class="nb">print</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">gxfft</span><span class="o">.</span><span class="n">GridFFT</span><span class="p">(</span><span class="s1">&#39;some_mag_grid_file.grd&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fft</span><span class="p">:</span>
+
+    <span class="c1"># for each row v in (u, v)</span>
+    <span class="k">for</span> <span class="n">vrow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">fft</span><span class="o">.</span><span class="n">nv</span><span class="p">):</span>
+
+        <span class="c1"># read the row</span>
+        <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="n">fft</span><span class="o">.</span><span class="n">read_uv_row</span><span class="p">(</span><span class="n">vrow</span><span class="p">)</span>
+
+        <span class="c1"># angular wavenumber along the row</span>
+        <span class="n">wn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">u</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+
+        <span class="c1"># upward continue 500 grid distance units</span>
+        <span class="n">continuation_filter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">wn</span> <span class="o">*</span> <span class="o">-</span><span class="mf">500.</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">*=</span> <span class="n">continuation_filter</span>
+        <span class="n">i</span> <span class="o">*=</span> <span class="n">continuation_filter</span>
+
+        <span class="c1"># write the filtered result to the TRN_FILTERED transform</span>
+        <span class="n">fft</span><span class="o">.</span><span class="n">write_uv_row</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">vrow</span><span class="p">,</span> <span class="n">trn</span><span class="o">=</span><span class="n">gxfft</span><span class="o">.</span><span class="n">TRN_FILTERED</span><span class="p">)</span>
+
+    <span class="c1"># create an output grid of the upward-continued result</span>
+    <span class="n">fft</span><span class="o">.</span><span class="n">result_grid</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;upward_continued_500.grd&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="#geosoft.gxpy.grid_fft.GridFFT.write_uv_row" title="geosoft.gxpy.grid_fft.GridFFT.write_uv_row"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_uv_row()</span></code></a></p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.result_grid">
+<code class="descname">result_grid</code><span class="sig-paren">(</span><em>file_name=None</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.result_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce a filter result grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file_name</strong> – result grid file, default greates a temporary grid</li>
+<li><strong>overwrite</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> to overwrite an existing grid</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid</span></code></a> instance</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.source_grid">
+<code class="descname">source_grid</code><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.source_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Source grid as a <a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid</span></code></a> instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.source_transform">
+<code class="descname">source_transform</code><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.source_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Folded descrete Fourier transform as a <a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid</span></code></a> instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.spectrum_grid">
+<code class="descname">spectrum_grid</code><span class="sig-paren">(</span><em>trn=0</em>, <em>file_name=None</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.spectrum_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the 2D log(power) amplitude as a grid in wavenumber domain (u, v).</p>
+<p>Amplitude = log(real**2 + imaginary**2)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>trn</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">TRN_SOURCE</span></code> source spectrum (default) or <code class="xref py py-obj docutils literal notranslate"><span class="pre">TRN_FILTERED</span></code> filtered spectrum</li>
+<li><strong>file_name</strong> – name for the grid file, default is a temporary grid.</li>
+<li><strong>overwrite</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> to overwrite existing grid.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid</span></code></a> instance</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.tr_row_from_uv">
+<code class="descname">tr_row_from_uv</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.tr_row_from_uv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns transform row index from (u, v) space row index.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.u0">
+<code class="descname">u0</code><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.u0" title="Permalink to this definition">¶</a></dt>
+<dd><p>First u (X-direction) wavenumber, always 0.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.uv_row_from_tr">
+<code class="descname">uv_row_from_tr</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.uv_row_from_tr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns (u, v) space row index of a transform row.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.v0">
+<code class="descname">v0</code><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.v0" title="Permalink to this definition">¶</a></dt>
+<dd><p>First v (Y-direction) wavenumber.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.grid_fft.GridFFT.write_uv_row">
+<code class="descname">write_uv_row</code><span class="sig-paren">(</span><em>r</em>, <em>i</em>, <em>row</em>, <em>trn=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFT.write_uv_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a row (constant wavenumber v) to the (u, v) transform.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>r</strong> – reals as a numpy array length half the width of the transform (as returned from <code class="xref py py-obj docutils literal notranslate"><span class="pre">read_row</span></code>).</li>
+<li><strong>i</strong> – imaginary as a numpy array, matches r.</li>
+<li><strong>row</strong> – row number in (u, v) space, row 0 is minimum v</li>
+<li><strong>trn</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">TRN_SOURCE</span></code> from the source transform (default) or <code class="xref py py-obj docutils literal notranslate"><span class="pre">TRN_FILTERED</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="#geosoft.gxpy.grid_fft.GridFFT.read_uv_row" title="geosoft.gxpy.grid_fft.GridFFT.read_uv_row"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_uv_row()</span></code></a></p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="geosoft.gxpy.grid_fft.GridFFTException">
+<em class="property">exception </em><code class="descname">GridFFTException</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid_fft.GridFFTException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.GXRuntimeError</span></code></p>
+<p>Exceptions from this module.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>
