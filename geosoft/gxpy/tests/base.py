@@ -19,35 +19,25 @@ import geosoft.gxpy.viewer as gxvwr
 import geosoft.gxpy.utility as gxu
 import geosoft.gxpy.system as gxsys
 
-# Set the following to True to enable interactive updating of results.
-# To incorporate a diff tool the GXPY_DIFF_TOOL environment
-# variable should be defined.
-UPDATE_RESULTS = False
-UPDATE_RESULTS_DONT_ASK = False
-
-# set to False to compare result and master png files. These may differ depending on OM settings between
-# environment that creates the master and the results.
-#
-# TODO: need a robust png test that is not OM installation dependent. Then set following to False.
-IGNORE_IMAGE_DIFFERENCES = False
-
 # set to True to show viewer for each CRC call
 SHOW_TEST_VIEWERS = False
 
 _prevent_interactive = os.environ.get('GEOSOFT_PREVENT_INTERACTIVE', 0) == '1'
 if _prevent_interactive:
-    UPDATE_RESULTS = False
-    UPDATE_RESULTS_DONT_ASK = False
     SHOW_TEST_VIEWERS = False
 
-if not IGNORE_IMAGE_DIFFERENCES:
-    import win32gui
-    import win32con
-    win32gui.SystemParametersInfo(win32con.SPI_SETFONTSMOOTHING, True)
+_external_result_base_dir = os.environ.get('GEOSOFT_GXPY_DEV_RESULT_DIR', None)
+_dev_test_run = os.environ.get('GEOSOFT_GXPY_DEV_TEST_RUN', 0) == '1'
+if _dev_test_run:
+    SHOW_TEST_VIEWERS = False
+
+import win32gui
+import win32con
+win32gui.SystemParametersInfo(win32con.SPI_SETFONTSMOOTHING, True)
 
 # Make root window for UI methods
 root_window = None
-if UPDATE_RESULTS and SHOW_TEST_VIEWERS:
+if SHOW_TEST_VIEWERS:
     from tkinter import Tk, messagebox
 
     # We import these here to properly initialize common controls
@@ -96,7 +86,7 @@ class GXPYTest(unittest.TestCase):
             raise Exception(_t("GXPYTest base class incorrectly detected as test case!"))
 
         cur_dir = os.path.dirname(cls._test_case_py)
-        cls._result_base_dir = os.path.join(cur_dir, 'results', cls._test_case_filename)
+        cls._result_base_dir = os.path.join(cur_dir, 'results', cls._test_case_filename) if  _external_result_base_dir is None else _external_result_base_dir
         os.makedirs(cls._result_base_dir, exist_ok=True)
         os.chdir(cls._result_base_dir)
 
@@ -106,12 +96,6 @@ class GXPYTest(unittest.TestCase):
         os.makedirs(gxu._temp_folder_override, exist_ok=True)
 
         gxu._uuid_callable = cls._cls_uuid
-
-        # This ensures clean global and other settings for consistent test runs
-        _, user_dir, _ = gxapi.GXContext.get_key_based_product_dirs(per_user_key=per_user_key)
-        if os.path.exists(user_dir):
-            shutil.rmtree(user_dir)
-        os.makedirs(user_dir, exist_ok=True)
 
         cls._gx = gx.GXpy(name=context_name, log=print, res_stack=res_stack, max_warnings=12,
                           suppress_progress=True, parent_window=parent_window, per_user_key=per_user_key)
@@ -215,26 +199,6 @@ class GXPYTest(unittest.TestCase):
             pass
 
     @classmethod
-    def _report_mismatch_files(cls, result, master):
-        if not os.path.exists(result):
-            return '{} does not exist\r\n'.format(result)
-        if not os.path.exists(master):
-            return '{} does not exist\r\n'.format(master)
-        if not gxu.crc32_file(result) == gxu.crc32_file(master):
-            return '{} and {} differ\r\n'.format(result, master)
-        else:
-            return ''
-
-    @classmethod
-    def _report_master_files_not_in_results(cls, xml_master_files, xml_result_files):
-        report = ''
-        xml_result_file_names = [os.path.split(f)[1].lower() for f in xml_result_files]
-        not_in_results = [f for f in xml_master_files if os.path.split(f)[1].lower() not in xml_result_file_names]
-        for f in not_in_results:
-            report += '{} no longer exists in result dir\r\n'.format(f)
-        return report
-
-    @classmethod
     def _agnosticize_and_ensure_consistent_line_endings(cls, xml_file, file_name_part, alt_crc_name):
         with open(xml_file) as f:
             lines = f.read().splitlines()
@@ -244,35 +208,22 @@ class GXPYTest(unittest.TestCase):
                 line = line.replace(file_name_part, alt_crc_name)
                 f.write('{}\r\n'.format(line).encode('UTF-8'))
 
-    def crc_map(self, map_file, *, format='PNG', pix_width=2048, update_results=False, alt_crc_name=None):
+    def crc_map(self, map_file, *, format='PNG', pix_width=2048, alt_crc_name=None):
         """ 
         Run Geosoft crc testing protocol on Geosoft maps.
         
         :param pix_width:       pixel width, increase if achieve higher fidelity in the bitmap test
-        :param update_results:  True to interactively update failing results 
         :param alt_crc_name:    test name.  The default is the name of the calling function.  The name
                                 must be unique within this test suite, which it will be if there is
                                 only one test per test function.  If you have more than one test in a single
                                 testing function use this parameter to create unique names.
         """
 
-        def update_master():
-            for xml_result in xml_result_files:
-                xml_master = xml_result.replace(os.path.splitext(xml_result_part)[0],
-                                                os.path.splitext(xml_master_part)[0])
-                print("Updating {}".format(xml_master))
-                shutil.copyfile(xml_result, xml_master)
-            xml_result_file_names = [os.path.split(f)[1].lower() for f in xml_result_files]
-            not_in_results = [f for f in xml_master_files if os.path.split(f)[1].lower() not in xml_result_file_names]
-            for f in not_in_results:
-                print("Removing {}".format(f))
-                os.remove(f)
-
-
-        result_dir = os.path.join(self.result_dir, 'result')
-        master_dir = os.path.join(self.result_dir, 'master')
+        result_dir = os.path.join(self.result_dir, 'result') if _external_result_base_dir is None else self.result_dir
         if not os.path.exists(result_dir):
             os.makedirs(result_dir)
+        
+        master_dir = os.path.join(self.result_dir, 'master')
         if not os.path.exists(master_dir):
             os.makedirs(master_dir)
 
@@ -322,57 +273,16 @@ class GXPYTest(unittest.TestCase):
             map_master_file = os.path.join(master_dir, "{}".format(file_part))
             xml_master_file = os.path.join(master_dir, "{}.xml".format(file_part))
 
+        if _external_result_base_dir is not None:
+            return
+
         xml_result_part = os.path.join('result', os.path.split(xml_result_file)[1])
         xml_master_part = os.path.join('master', os.path.split(xml_master_file)[1])
         xml_result_files = glob.glob(map_result_file + '*')
         xml_master_files = glob.glob(map_master_file + '*')
 
-        report = ''
-        if not IGNORE_IMAGE_DIFFERENCES:
-            report += self._report_mismatch_files(image_result_file, image_master_file)
-        report += self._report_master_files_not_in_results(xml_master_files, xml_result_files)
-
-        for xml_result in xml_result_files:
-            xml_master = xml_result.replace(xml_result_part, xml_master_part)
-            report += self._report_mismatch_files(xml_result, xml_master)
-
         if SHOW_TEST_VIEWERS:
             gxvwr.view_document(map_file, env={'GEOSOFT_FORCE_MESA_3D': '0'})
-
-        if len(report) > 0:
-
-            if UPDATE_RESULTS_DONT_ASK:
-                update_master()
-
-            elif UPDATE_RESULTS or update_results:
-
-                diff_tool = os.environ.get('GXPY_DIFF_TOOL', None)
-                if diff_tool is not None:
-                    update = messagebox.askyesnocancel('Test differences found ({})'.format(self.id()),
-                                                       'The following files are different\n\n{}\n\n'
-                                                       'Press Yes to update master result.\n'
-                                                       'Press No to launch launch diff tool.\n'
-                                                       'Press Cancel to ignore and continue.'.format(report))
-                else:
-                    update = True if messagebox.askokcancel(
-                        'Test differences found ({})'.format(self.id()),
-                        'The following files are different\n\n{}\n\n'
-                        'Press Ok to update master result.\n'
-                        'Press Cancel to ignore and continue.\n\n'
-                        'Set GXPY_DIFF_TOOL environment variable to get option\n'
-                        'to view differences in a diff tool.'.format(report)) else None
-
-                if update is None:
-                    self.fail(report)
-
-                if update:
-                    update_master()
-
-                else:
-                    subprocess.run([diff_tool, result_dir, master_dir])
-
-            else:
-                self.fail(report)
 
     @classmethod
     def pause(cls):

@@ -115,6 +115,32 @@ class GXDXFI(gxapi_cy.WrapDXFI):
 
 
 
+    def dxf2_view_no_surfaces(self, view, max_pen, pb_group, group, pb_one_color, color):
+        """
+        Draw entities in a DXF file to a view in a map, but for 3D views skips all surfaces
+        
+        :param max_pen:       User defined number of pens to use (can be `iDUMMY <geosoft.gxapi.iDUMMY>`)
+        :param pb_group:      TRUE to place entire DXF in one group
+        :param group:         Group name for one group (can be "" if above is FALSE)
+        :param pb_one_color:  TRUE to force one color
+        :param color:         :ref:`MVIEW_COLOR` (ignored if above is FALSE)
+        :type  view:          GXMVIEW
+        :type  max_pen:       int
+        :type  pb_group:      int
+        :type  group:         str
+        :type  pb_one_color:  int
+        :type  color:         int
+
+        .. versionadded:: 9.7.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._dxf2_view_no_surfaces(view, max_pen, pb_group, group.encode(), pb_one_color, color)
+        
+
+
+
+
     def get_range(self, min_x, max_x, min_y, max_y, min_z, max_z):
         """
         Get DXF data range
