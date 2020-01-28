@@ -139,6 +139,31 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="geosoft.gxapi.GXDXFI.dxf2_view_no_surfaces">
+<code class="descname">dxf2_view_no_surfaces</code><span class="sig-paren">(</span><em>view</em>, <em>max_pen</em>, <em>pb_group</em>, <em>group</em>, <em>pb_one_color</em>, <em>color</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDXFI.dxf2_view_no_surfaces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw entities in a DXF file to a view in a map, but for 3D views skips all surfaces</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>max_pen</strong> (<em>int</em>) – User defined number of pens to use (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iDUMMY" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iDUMMY</span></code></a>)</li>
+<li><strong>pb_group</strong> (<em>int</em>) – TRUE to place entire DXF in one group</li>
+<li><strong>group</strong> (<em>str</em>) – Group name for one group (can be “” if above is FALSE)</li>
+<li><strong>pb_one_color</strong> (<em>int</em>) – TRUE to force one color</li>
+<li><strong>color</strong> (<em>int</em>) – <a class="reference internal" href="GXMVIEW.html#mview-color"><span class="std std-ref">MVIEW_COLOR constants</span></a> (ignored if above is FALSE)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.7.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
 <dt id="geosoft.gxapi.GXDXFI.get_range">
 <code class="descname">get_range</code><span class="sig-paren">(</span><em>min_x</em>, <em>max_x</em>, <em>min_y</em>, <em>max_y</em>, <em>min_z</em>, <em>max_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDXFI.get_range" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get DXF data range</p>

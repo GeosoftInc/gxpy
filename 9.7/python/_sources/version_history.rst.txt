@@ -896,6 +896,17 @@ geosoft.gxapi module history
 ==========================================
 
   
+Version 9.7.1
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXDXFI.dxf2_view_no_surfaces` Draw entities in a DXF file to a view in a map, but for 3D views skips all surfaces
+
+
+  
 Version 9.7
 -----------------
 
