@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GXDBREAD class &#8212; Geosoft GX Python API 9.8.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXDBREAD.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxdbread-class">
+<span id="gxdbread"></span><h1>GXDBREAD class<a class="headerlink" href="#gxdbread-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXDBREAD">
+<em class="property">class </em><code class="descname">GXDBREAD</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDBREAD" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXDBREAD class.</p>
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXDBREAD" title="geosoft.gxapi.GXDBREAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDBREAD</span></code></a> class is used to open and read from databases. Very large lines
+are split into blocks and served up sequentially to prevent the over-use of virtual memory when channels are read into VVs or VAs.
+Individual data blocks are limited by default to 1 MB (which is user-alterable). Single lines smaller than the block size
+are served up whole, one block per line.</p>
+<dl class="method">
+<dt id="geosoft.gxapi.GXDBREAD.add_channel">
+<code class="descname">add_channel</code><span class="sig-paren">(</span><em>chan</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDBREAD.add_channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a data channel to the <a class="reference internal" href="#geosoft.gxapi.GXDBREAD" title="geosoft.gxapi.GXDBREAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDBREAD</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chan</strong> (<em>int</em>) – Channel handle (does not need to be locked, but can be.)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Channel index. Use for getting the correct <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> or <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> object.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXDBREAD.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>db</em>, <em>line_lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDBREAD.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXDBREAD" title="geosoft.gxapi.GXDBREAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDBREAD</span></code></a> object
+Add channels using the <a class="reference internal" href="#geosoft.gxapi.GXDBREAD.add_channel" title="geosoft.gxapi.GXDBREAD.add_channel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_channel</span></code></a> method.channel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database input</li>
+<li><strong>line_lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List of lines to process NAME = line name, VALUE = line symbol</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXDBREAD" title="geosoft.gxapi.GXDBREAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDBREAD</span></code></a> object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXDBREAD" title="geosoft.gxapi.GXDBREAD">GXDBREAD</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXDBREAD.create_xy">
+<em class="property">classmethod </em><code class="descname">create_xy</code><span class="sig-paren">(</span><em>db</em>, <em>line_lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDBREAD.create_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXDBREAD" title="geosoft.gxapi.GXDBREAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDBREAD</span></code></a> object for a XY-located data. Add channels using the
+<a class="reference internal" href="#geosoft.gxapi.GXDBREAD.add_channel" title="geosoft.gxapi.GXDBREAD.add_channel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_channel</span></code></a> method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database input</li>
+<li><strong>line_lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List of lines to process NAME = line name, VALUE = line symbol</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXDBREAD" title="geosoft.gxapi.GXDBREAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDBREAD</span></code></a> object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXDBREAD" title="geosoft.gxapi.GXDBREAD">GXDBREAD</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXDBREAD.create_xyz">
+<em class="property">classmethod </em><code class="descname">create_xyz</code><span class="sig-paren">(</span><em>db</em>, <em>line_lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDBREAD.create_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXDBREAD" title="geosoft.gxapi.GXDBREAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDBREAD</span></code></a> object for a XYZ-located data.
+Add channels using the <a class="reference internal" href="#geosoft.gxapi.GXDBREAD.add_channel" title="geosoft.gxapi.GXDBREAD.add_channel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_channel</span></code></a> method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database input</li>
+<li><strong>line_lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List of lines to process NAME = line name, VALUE = line symbol</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXDBREAD" title="geosoft.gxapi.GXDBREAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDBREAD</span></code></a> object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXDBREAD" title="geosoft.gxapi.GXDBREAD">GXDBREAD</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDBREAD.get_chan_array_size">
+<code class="descname">get_chan_array_size</code><span class="sig-paren">(</span><em>chan</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDBREAD.get_chan_array_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of columns of data in a channel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chan</strong> (<em>int</em>) – Index of channel to access.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The number of columns (array size) for a channel</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Regular channels have one column of data. Array channels have more than one column of data.
+This function should be called to determine whether to use <a class="reference internal" href="#geosoft.gxapi.GXDBREAD.get_vv" title="geosoft.gxapi.GXDBREAD.get_vv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_vv</span></code></a> or <a class="reference internal" href="#geosoft.gxapi.GXDBREAD.get_va" title="geosoft.gxapi.GXDBREAD.get_va"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_va</span></code></a> to access data
+for a channel.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDBREAD.get_next_block">
+<code class="descname">get_next_block</code><span class="sig-paren">(</span><em>line</em>, <em>block</em>, <em>n_blocks</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDBREAD.get_next_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the next block of data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – (returned) The index into the input selected line list of the line whose data is contained in the current block</li>
+<li><strong>block</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – (returned) The block index (0 to NBlocks-1) for the current line of data.</li>
+<li><strong>n_blocks</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – (returned) The number of blocks that the current line is split into.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns the current block index, or -1 if at end of file (no new data returned).</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The next block of data is read and copied into the channel <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> and/or <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> objects, accessed using
+the <a class="reference internal" href="#geosoft.gxapi.GXDBREAD.get_vv" title="geosoft.gxapi.GXDBREAD.get_vv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_vv</span></code></a> and <a class="reference internal" href="#geosoft.gxapi.GXDBREAD.get_va" title="geosoft.gxapi.GXDBREAD.get_va"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_va</span></code></a> functions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDBREAD.get_number_of_blocks_to_process">
+<code class="descname">get_number_of_blocks_to_process</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDBREAD.get_number_of_blocks_to_process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of blocks to be served up.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The number of blocks to process in the selected lines.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The selected lines are scanned. All lines where the served up data is less than the maximum block size for
+all channels are served as a single block. Any lines where any channel’s data exceeds the maximum block size are split up into blocks.
+The value returned can be used as the progress message maximum iteration value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDBREAD.get_v_vx">
+<code class="descname">get_v_vx</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDBREAD.get_v_vx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the X channel <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> handle.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> handle</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV">GXVV</a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Only available for the CreateXY or CreateXYZ methods.
+The <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> is filled anew for each block served up.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDBREAD.get_v_vy">
+<code class="descname">get_v_vy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDBREAD.get_v_vy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the Y channel <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> handle.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> handle</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV">GXVV</a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Only available for the CreateXY or CreateXYZ methods.
+The <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> is filled anew for each block served up.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDBREAD.get_v_vz">
+<code class="descname">get_v_vz</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDBREAD.get_v_vz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the Z channel <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> handle.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> handle</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV">GXVV</a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Only available for the CreateXY or CreateXYZ methods.
+The <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> is filled anew for each block served up.
+If the Z channel is an array channel, the returned <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> is the “base” <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> of the <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> and contains all items sequentially.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDBREAD.get_va">
+<code class="descname">get_va</code><span class="sig-paren">(</span><em>chan</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDBREAD.get_va" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> handle for an array channel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chan</strong> (<em>int</em>) – Index of channel to access.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> handle</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA">GXVA</a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Call only for array (multi-column) channels. You can call the <a class="reference internal" href="#geosoft.gxapi.GXDBREAD.get_chan_array_size" title="geosoft.gxapi.GXDBREAD.get_chan_array_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_chan_array_size</span></code></a>
+function to find the number fo columns in a given channel, or you can call <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA.col" title="geosoft.gxapi.GXVA.col"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA.col</span></code></a> on the returned <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> handle.
+The <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> is filled anew for each block served up.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDBREAD.get_vv">
+<code class="descname">get_vv</code><span class="sig-paren">(</span><em>chan</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDBREAD.get_vv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> handle for a channel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chan</strong> (<em>int</em>) – Index of channel to access.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> handle</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV">GXVV</a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Call only for single-column (regular) channels. You can call the <a class="reference internal" href="#geosoft.gxapi.GXDBREAD.get_chan_array_size" title="geosoft.gxapi.GXDBREAD.get_chan_array_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_chan_array_size</span></code></a>
+function to find the number fo columns in a given channel. The <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> is filled anew for 
+each block served up.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXDBREAD.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDBREAD.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXDBREAD.null">
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDBREAD.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXDBREAD" title="geosoft.gxapi.GXDBREAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDBREAD</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXDBREAD" title="geosoft.gxapi.GXDBREAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDBREAD</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXDBREAD" title="geosoft.gxapi.GXDBREAD">GXDBREAD</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,1009 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GXPG class &#8212; Geosoft GX Python API 9.8.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXPG class</a><ul>
+<li><a class="reference internal" href="#pg-3d-dir-constants">PG_3D_DIR constants</a></li>
+<li><a class="reference internal" href="#pg-bf-conv-constants">PG_BF_CONV constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXPG.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxpg-class">
+<span id="gxpg"></span><h1>GXPG class<a class="headerlink" href="#gxpg-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXPG">
+<em class="property">class </em><code class="descname">GXPG</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXPG class.</p>
+<p>Pager methods for large 2-D arrays
+This class handles very-large 2-D arrays in which efficient
+access is required along both rows and columns.</p>
+<p><strong>Note:</strong></p>
+<p>Typically a grid is accessed using the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> class, and a <a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a>
+is obtained from the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> using the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG.get_pg" title="geosoft.gxapi.GXIMG.get_pg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG.get_pg</span></code></a> function.
+Following operations on the <a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a>, it can be written back to
+the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> using <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG.set_pg" title="geosoft.gxapi.GXIMG.set_pg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG.set_pg</span></code></a>.</p>
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>pgs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy the data from one pager to another.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pgs</strong> (<a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a> object</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.copy_subset">
+<code class="descname">copy_subset</code><span class="sig-paren">(</span><em>pgs</em>, <em>y_row_d</em>, <em>x_col_d</em>, <em>y_row_s</em>, <em>x_col_s</em>, <em>ny</em>, <em>nx</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.copy_subset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy a subset of data from one pager to another.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pgs</strong> (<a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a> object</li>
+<li><strong>y_row_d</strong> (<em>int</em>) – Y (row) Origin on destination</li>
+<li><strong>x_col_d</strong> (<em>int</em>) – X (col) Origin on destination</li>
+<li><strong>y_row_s</strong> (<em>int</em>) – Y (row) Origin on source</li>
+<li><strong>x_col_s</strong> (<em>int</em>) – X (col) Origin on source</li>
+<li><strong>ny</strong> (<em>int</em>) – Number of Y (rows) to copy</li>
+<li><strong>nx</strong> (<em>int</em>) – Number of X (columns) to copy</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> 2D Only</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.copy_subset_3d">
+<code class="descname">copy_subset_3d</code><span class="sig-paren">(</span><em>pgs</em>, <em>sliced</em>, <em>n</em>, <em>vv</em>, <em>slices</em>, <em>rows</em>, <em>cols</em>, <em>n_slice</em>, <em>n_row</em>, <em>n_col</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.copy_subset_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy a subset of data from one pager to another.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pgs</strong> (<a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a> object</li>
+<li><strong>sliced</strong> (<em>int</em>) – Z (slice) Origin on destination</li>
+<li><strong>n</strong> (<em>int</em>) – Y (row) Origin on destination</li>
+<li><strong>vv</strong> (<em>int</em>) – X (col) Origin on destination</li>
+<li><strong>slices</strong> (<em>int</em>) – Z (slice) Origin on source</li>
+<li><strong>rows</strong> (<em>int</em>) – Y (row) Origin on source</li>
+<li><strong>cols</strong> (<em>int</em>) – X (col) Origin on source</li>
+<li><strong>n_slice</strong> (<em>int</em>) – Number of Z (slice) to copy</li>
+<li><strong>n_row</strong> (<em>int</em>) – Number of Y (rows) to copy</li>
+<li><strong>n_col</strong> (<em>int</em>) – Number of X (columns) to copy</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> 2D Only</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXPG.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>row</em>, <em>col</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a Pager object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>row</strong> (<em>int</em>) – # elements in y (# of row)</li>
+<li><strong>col</strong> (<em>int</em>) – # elements in x (# of column)</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a> Object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG">GXPG</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXPG.create_3d">
+<em class="property">classmethod </em><code class="descname">create_3d</code><span class="sig-paren">(</span><em>slice</em>, <em>row</em>, <em>col</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.create_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a Pager object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>slice</strong> (<em>int</em>) – # elements in z (# of slices)</li>
+<li><strong>row</strong> (<em>int</em>) – # elements in y (# of row)</li>
+<li><strong>col</strong> (<em>int</em>) – # elements in x (# of column)</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a> Object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG">GXPG</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXPG.create_s">
+<em class="property">classmethod </em><code class="descname">create_s</code><span class="sig-paren">(</span><em>bf</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.create_s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a 2D <a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a> from serialized source.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a> Object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG">GXPG</a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> For 3D pagers, use CreateBF_PG.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.dummy">
+<code class="descname">dummy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.dummy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the Entire pager to dummy.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.e_type">
+<code class="descname">e_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.e_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the type of pager.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>col</em>, <em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a single value from a 2D <a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>col</strong> (<em>int</em>) – iBx - element # in x (column #)</li>
+<li><strong>row</strong> (<em>int</em>) – iBy - element # in y (row #)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This is a low-performance method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.n_cols">
+<code class="descname">n_cols</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.n_cols" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the # of columns in pager.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"># of columns.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.n_rows">
+<code class="descname">n_rows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.n_rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the # of rows in pager.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"># of rows.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.n_slices">
+<code class="descname">n_slices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.n_slices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the # of slices (z) in pager.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"># of rows.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXPG.null">
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG">GXPG</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.range">
+<code class="descname">range</code><span class="sig-paren">(</span><em>min</em>, <em>max</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the range of the entire pager.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum Data (Dummy if no range)</li>
+<li><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum Data (Dummy if no range)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.re_allocate">
+<code class="descname">re_allocate</code><span class="sig-paren">(</span><em>n_row</em>, <em>n_col</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.re_allocate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the size of Pager</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>n_row</strong> (<em>int</em>) – Number of Y (rows) to reallocate</li>
+<li><strong>n_col</strong> (<em>int</em>) – Number of X (columns) to reallocate</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.re_allocate_3d">
+<code class="descname">re_allocate_3d</code><span class="sig-paren">(</span><em>n_slice</em>, <em>n_row</em>, <em>n_col</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.re_allocate_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the size of 3D Pager</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>n_slice</strong> (<em>int</em>) – Number of Z (slices) to reallocate</li>
+<li><strong>n_row</strong> (<em>int</em>) – Number of Y (rows) to reallocate</li>
+<li><strong>n_col</strong> (<em>int</em>) – Number of X (columns) to reallocate</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.read_bf">
+<code class="descname">read_bf</code><span class="sig-paren">(</span><em>bf</em>, <em>dir</em>, <em>conv</em>, <em>rev_x</em>, <em>rev_y</em>, <em>rev_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.read_bf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the contents of a 2D or 3D pager to from a <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> to read from</li>
+<li><strong>dir</strong> (<em>int</em>) – <a class="reference internal" href="#pg-3d-dir"><span class="std std-ref">PG_3D_DIR constants</span></a></li>
+<li><strong>conv</strong> (<em>int</em>) – <a class="reference internal" href="#pg-bf-conv"><span class="std std-ref">PG_BF_CONV constants</span></a></li>
+<li><strong>rev_x</strong> (<em>int</em>) – Reverse X</li>
+<li><strong>rev_y</strong> (<em>int</em>) – Reverse Y</li>
+<li><strong>rev_z</strong> (<em>int</em>) – Reverse Z</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.read_col">
+<code class="descname">read_col</code><span class="sig-paren">(</span><em>col</em>, <em>o</em>, <em>n</em>, <em>vv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.read_col" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a set of elements in X (column) from pager into vv</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>col</strong> (<em>int</em>) – iBx - element # in x (column #)</li>
+<li><strong>o</strong> (<em>int</em>) – iBy - begining element # in y to read (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) – iNy - # elements to read (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> handle</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.read_col_3d">
+<code class="descname">read_col_3d</code><span class="sig-paren">(</span><em>slice</em>, <em>col</em>, <em>o</em>, <em>n</em>, <em>vv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.read_col_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a set of elements in X (column) from pager into vv</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>slice</strong> (<em>int</em>) – iBz - element # in z (slice #)</li>
+<li><strong>col</strong> (<em>int</em>) – iBx - element # in x (column #)</li>
+<li><strong>o</strong> (<em>int</em>) – iBy - begining element # in y to read (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) – iNy - # elements to read (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> handle</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.read_ra">
+<code class="descname">read_ra</code><span class="sig-paren">(</span><em>ra</em>, <em>dir</em>, <em>rev_x</em>, <em>rev_y</em>, <em>rev_z</em>, <em>dummy</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.read_ra" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the contents of a 2D or 3D pager to from an <a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXRA</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ra</strong> (<a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><em>GXRA</em></a>) – <a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXRA</span></code></a> to read from</li>
+<li><strong>dir</strong> (<em>int</em>) – <a class="reference internal" href="#pg-3d-dir"><span class="std std-ref">PG_3D_DIR constants</span></a></li>
+<li><strong>rev_x</strong> (<em>int</em>) – Reverse X</li>
+<li><strong>rev_y</strong> (<em>int</em>) – Reverse Y</li>
+<li><strong>rev_z</strong> (<em>int</em>) – Reverse Z</li>
+<li><strong>dummy</strong> (<em>str</em>) – Dummy</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Each line must hold only 1 value</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.read_row">
+<code class="descname">read_row</code><span class="sig-paren">(</span><em>row</em>, <em>o</em>, <em>n</em>, <em>vv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.read_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a set of elements in Y (row) from pager into vv</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>row</strong> (<em>int</em>) – iBy - element # in y (row #)</li>
+<li><strong>o</strong> (<em>int</em>) – iBx - begining element # in x to read (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) – iNx - # elements to read (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> handle</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.read_row_3d">
+<code class="descname">read_row_3d</code><span class="sig-paren">(</span><em>slice</em>, <em>row</em>, <em>o</em>, <em>n</em>, <em>vv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.read_row_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a set of elements in Y (row) from pager into vv</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>slice</strong> (<em>int</em>) – iBz - element # in z (slice #)</li>
+<li><strong>row</strong> (<em>int</em>) – iBy - element # in y (row #)</li>
+<li><strong>o</strong> (<em>int</em>) – iBx - begining element # in x to read (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) – iNx - # elements to read (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> handle</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.read_trace_3d">
+<code class="descname">read_trace_3d</code><span class="sig-paren">(</span><em>col</em>, <em>row</em>, <em>o</em>, <em>n</em>, <em>vv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.read_trace_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a set of elements in Z (trace) from pager into vv</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>col</strong> (<em>int</em>) – iBx - element # in x (column #)</li>
+<li><strong>row</strong> (<em>int</em>) – iBy - element # in y (row #)</li>
+<li><strong>o</strong> (<em>int</em>) – iBy - begining element # in z to read (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) – iNy - # elements to read (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> handle</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.serial">
+<code class="descname">serial</code><span class="sig-paren">(</span><em>bf</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.serial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize a 2D <a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a> to a <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> For 3D pagers, use <a class="reference internal" href="#geosoft.gxapi.GXPG.write_bf" title="geosoft.gxapi.GXPG.write_bf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_bf</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.statistics">
+<code class="descname">statistics</code><span class="sig-paren">(</span><em>st</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the statistics of a pager object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) – hST - statistics object</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.write_bf">
+<code class="descname">write_bf</code><span class="sig-paren">(</span><em>bf</em>, <em>dir</em>, <em>conv</em>, <em>rev_x</em>, <em>rev_y</em>, <em>rev_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.write_bf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the contents of a 2D or 3D pager to a <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> to write to</li>
+<li><strong>dir</strong> (<em>int</em>) – <a class="reference internal" href="#pg-3d-dir"><span class="std std-ref">PG_3D_DIR constants</span></a></li>
+<li><strong>conv</strong> (<em>int</em>) – <a class="reference internal" href="#pg-bf-conv"><span class="std std-ref">PG_BF_CONV constants</span></a></li>
+<li><strong>rev_x</strong> (<em>int</em>) – Reverse X</li>
+<li><strong>rev_y</strong> (<em>int</em>) – Reverse Y</li>
+<li><strong>rev_z</strong> (<em>int</em>) – Reverse Z</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.write_bf_ex">
+<code class="descname">write_bf_ex</code><span class="sig-paren">(</span><em>bf</em>, <em>dir</em>, <em>conv</em>, <em>rev_x</em>, <em>rev_y</em>, <em>rev_z</em>, <em>p_dummy</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.write_bf_ex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the contents of a 2D or 3D pager to a <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> to write to</li>
+<li><strong>dir</strong> (<em>int</em>) – <a class="reference internal" href="#pg-3d-dir"><span class="std std-ref">PG_3D_DIR constants</span></a></li>
+<li><strong>conv</strong> (<em>int</em>) – <a class="reference internal" href="#pg-bf-conv"><span class="std std-ref">PG_BF_CONV constants</span></a></li>
+<li><strong>rev_x</strong> (<em>int</em>) – Reverse X</li>
+<li><strong>rev_y</strong> (<em>int</em>) – Reverse Y</li>
+<li><strong>rev_z</strong> (<em>int</em>) – Reverse Z</li>
+<li><strong>p_dummy</strong> (<em>float</em>) – Dummy value</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.write_col">
+<code class="descname">write_col</code><span class="sig-paren">(</span><em>col</em>, <em>o</em>, <em>n</em>, <em>vv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.write_col" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a set of elements in X (column) from vv into pager</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>col</strong> (<em>int</em>) – iBx - element # in x (column #)</li>
+<li><strong>o</strong> (<em>int</em>) – iBy - begining element # in y to write (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) – iNy - # elements to write (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> handle</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.write_col_3d">
+<code class="descname">write_col_3d</code><span class="sig-paren">(</span><em>slice</em>, <em>col</em>, <em>o</em>, <em>n</em>, <em>vv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.write_col_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a set of elements in X (column) from vv into pager</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>slice</strong> (<em>int</em>) – iBz - element # in z (slice #)</li>
+<li><strong>col</strong> (<em>int</em>) – iBx - element # in x (column #)</li>
+<li><strong>o</strong> (<em>int</em>) – iBy - begining element # in y to write (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) – iNy - # elements to write (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> handle</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.write_row">
+<code class="descname">write_row</code><span class="sig-paren">(</span><em>row</em>, <em>o</em>, <em>n</em>, <em>vv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.write_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a set of elements in Y (row) from vv into pager</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>row</strong> (<em>int</em>) – iBy - element # in y (row #)</li>
+<li><strong>o</strong> (<em>int</em>) – iBx - begining element # in x to write (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) – iNx - # elements to write (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> handle</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.write_row_3d">
+<code class="descname">write_row_3d</code><span class="sig-paren">(</span><em>slice</em>, <em>row</em>, <em>o</em>, <em>n</em>, <em>vv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.write_row_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a set of elements in Y (row) from vv into pager</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>slice</strong> (<em>int</em>) – iBz - element # in z (slice #)</li>
+<li><strong>row</strong> (<em>int</em>) – iBy - element # in y (row #)</li>
+<li><strong>o</strong> (<em>int</em>) – iBx - begining element # in x to write (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) – iNx - # elements to write (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> handle</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.write_trace_3d">
+<code class="descname">write_trace_3d</code><span class="sig-paren">(</span><em>col</em>, <em>row</em>, <em>o</em>, <em>n</em>, <em>vv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.write_trace_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a set of elements in Z (trace) from pager into vv</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>col</strong> (<em>int</em>) – iBx - element # in x (column #)</li>
+<li><strong>row</strong> (<em>int</em>) – iBy - element # in y (row #)</li>
+<li><strong>o</strong> (<em>int</em>) – iBy - begining element # in z to read (0 is the first)</li>
+<li><strong>n</strong> (<em>int</em>) – iNy - # elements to read (0 for whole vector)</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – hVV - <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> handle</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPG.write_wa">
+<code class="descname">write_wa</code><span class="sig-paren">(</span><em>wa</em>, <em>dir</em>, <em>rev_x</em>, <em>rev_y</em>, <em>rev_z</em>, <em>dummy</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPG.write_wa" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the contents of a 2D or 3D pager to a <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) – <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a> to write to</li>
+<li><strong>dir</strong> (<em>int</em>) – <a class="reference internal" href="#pg-3d-dir"><span class="std std-ref">PG_3D_DIR constants</span></a></li>
+<li><strong>rev_x</strong> (<em>int</em>) – Reverse X</li>
+<li><strong>rev_y</strong> (<em>int</em>) – Reverse Y</li>
+<li><strong>rev_z</strong> (<em>int</em>) – Reverse Z</li>
+<li><strong>dummy</strong> (<em>str</em>) – Dummy</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Each line will hold only 1 value</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="pg-3d-dir-constants">
+<span id="pg-3d-dir"></span><h2>PG_3D_DIR constants<a class="headerlink" href="#pg-3d-dir-constants" title="Permalink to this headline">¶</a></h2>
+<p>3D Pager direction</p>
+<dl class="data">
+<dt id="geosoft.gxapi.PG_3D_DIR_XYZ">
+<code class="descname">PG_3D_DIR_XYZ</code><a class="headerlink" href="#geosoft.gxapi.PG_3D_DIR_XYZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Xyz</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PG_3D_DIR_XYZ</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.PG_3D_DIR_YXZ">
+<code class="descname">PG_3D_DIR_YXZ</code><a class="headerlink" href="#geosoft.gxapi.PG_3D_DIR_YXZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yxz</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PG_3D_DIR_YXZ</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.PG_3D_DIR_XZY">
+<code class="descname">PG_3D_DIR_XZY</code><a class="headerlink" href="#geosoft.gxapi.PG_3D_DIR_XZY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Xzy</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PG_3D_DIR_XZY</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.PG_3D_DIR_YZX">
+<code class="descname">PG_3D_DIR_YZX</code><a class="headerlink" href="#geosoft.gxapi.PG_3D_DIR_YZX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yzx</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PG_3D_DIR_YZX</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.PG_3D_DIR_ZXY">
+<code class="descname">PG_3D_DIR_ZXY</code><a class="headerlink" href="#geosoft.gxapi.PG_3D_DIR_ZXY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zxy</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PG_3D_DIR_ZXY</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.PG_3D_DIR_ZYX">
+<code class="descname">PG_3D_DIR_ZYX</code><a class="headerlink" href="#geosoft.gxapi.PG_3D_DIR_ZYX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zyx</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PG_3D_DIR_ZYX</code><em class="property"> = 5</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="pg-bf-conv-constants">
+<span id="pg-bf-conv"></span><h2>PG_BF_CONV constants<a class="headerlink" href="#pg-bf-conv-constants" title="Permalink to this headline">¶</a></h2>
+<p>Pager binary conversions</p>
+<dl class="data">
+<dt id="geosoft.gxapi.PG_BF_CONV_NONE">
+<code class="descname">PG_BF_CONV_NONE</code><a class="headerlink" href="#geosoft.gxapi.PG_BF_CONV_NONE" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Data is in Raw form</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PG_BF_CONV_NONE</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.PG_BF_CONV_SWAP">
+<code class="descname">PG_BF_CONV_SWAP</code><a class="headerlink" href="#geosoft.gxapi.PG_BF_CONV_SWAP" title="Permalink to this definition">¶</a></dt>
+<dd><p>The data needs to be byte swapped</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PG_BF_CONV_SWAP</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

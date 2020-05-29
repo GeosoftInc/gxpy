@@ -1,0 +1,902 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GXPLY class &#8212; Geosoft GX Python API 9.8.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXPLY class</a><ul>
+<li><a class="reference internal" href="#ply-clip-constants">PLY_CLIP constants</a></li>
+<li><a class="reference internal" href="#ply-point-clip-constants">PLY_POINT_CLIP constants</a></li>
+<li><a class="reference internal" href="#ply-line-clip-constants">PLY_LINE_CLIP constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXPLY.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxply-class">
+<span id="gxply"></span><h1>GXPLY class<a class="headerlink" href="#gxply-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXPLY">
+<em class="property">class </em><code class="descname">GXPLY</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXPLY class.</p>
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> object contains the definitions for one or more
+polygons, and does import and export of polygon files.</p>
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.add_polygon">
+<code class="descname">add_polygon</code><span class="sig-paren">(</span><em>vv_x</em>, <em>vv_y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.add_polygon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a polygon to the polygon file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.add_polygon_ex">
+<code class="descname">add_polygon_ex</code><span class="sig-paren">(</span><em>vv_x</em>, <em>vv_y</em>, <em>exclude</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.add_polygon_ex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a polygon to the polygon file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</li>
+<li><strong>exclude</strong> (<em>int</em>) – bExclude</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.area">
+<code class="descname">area</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.area" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the Area of a polygon</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Area of a polygon</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Excluded polygons have negative area.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.change_ipj">
+<code class="descname">change_ipj</code><span class="sig-paren">(</span><em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.change_ipj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> to place in the <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> is re-projected to the new projection.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear/remove all polygons from the <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.clip_area">
+<code class="descname">clip_area</code><span class="sig-paren">(</span><em>min_x</em>, <em>min_y</em>, <em>max_x</em>, <em>max_y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.clip_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clip a polygon to an area</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>min_x</strong> (<em>float</em>) – Min X</li>
+<li><strong>min_y</strong> (<em>float</em>) – Min Y</li>
+<li><strong>max_x</strong> (<em>float</em>) – Max X</li>
+<li><strong>max_y</strong> (<em>float</em>) – Max y</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#ply-clip"><span class="std std-ref">PLY_CLIP constants</span></a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.clip_line_int">
+<code class="descname">clip_line_int</code><span class="sig-paren">(</span><em>min_x</em>, <em>min_y</em>, <em>max_x</em>, <em>max_y</em>, <em>vv</em>, <em>inc</em>, <em>first</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.clip_line_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clips a line in or out of the polygons for intersections (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_DOUBLE" title="geosoft.gxapi.GS_DOUBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DOUBLE</span></code></a>).
+Intersections are returned as fiducials down the line stored in <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>
+starting at the first point of the line.
+Examples:
+No intersection: <a class="reference internal" href="#geosoft.gxapi.PLY_LINE_CLIP_OUTSIDE" title="geosoft.gxapi.PLY_LINE_CLIP_OUTSIDE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PLY_LINE_CLIP_OUTSIDE</span></code></a>, 0 intersections
+Starts outside, ends inside: <a class="reference internal" href="#geosoft.gxapi.PLY_LINE_CLIP_OUTSIDE" title="geosoft.gxapi.PLY_LINE_CLIP_OUTSIDE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PLY_LINE_CLIP_OUTSIDE</span></code></a>, 1 intersection
+Starts outside, intersects then ends inside or outside: <a class="reference internal" href="#geosoft.gxapi.PLY_LINE_CLIP_OUTSIDE" title="geosoft.gxapi.PLY_LINE_CLIP_OUTSIDE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PLY_LINE_CLIP_OUTSIDE</span></code></a>, 2 intersections
+Starts inside, ends inside : <a class="reference internal" href="#geosoft.gxapi.PLY_LINE_CLIP_INSIDE" title="geosoft.gxapi.PLY_LINE_CLIP_INSIDE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PLY_LINE_CLIP_INSIDE</span></code></a>, 1 intersection (gives end-of-line)
+Starts inside, ends outside : <a class="reference internal" href="#geosoft.gxapi.PLY_LINE_CLIP_INSIDE" title="geosoft.gxapi.PLY_LINE_CLIP_INSIDE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PLY_LINE_CLIP_INSIDE</span></code></a>, 1 intersection</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>min_x</strong> (<em>float</em>) – Min X of line to clip</li>
+<li><strong>min_y</strong> (<em>float</em>) – Min Y of line to clip</li>
+<li><strong>max_x</strong> (<em>float</em>) – Max X of line to clip</li>
+<li><strong>max_y</strong> (<em>float</em>) – Max y of line to clip</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – DOUBLE <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> holding intersection fids</li>
+<li><strong>inc</strong> (<em>float</em>) – Data element increment (precision)</li>
+<li><strong>first</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – First point value (<a class="reference internal" href="#ply-line-clip"><span class="std std-ref">PLY_LINE_CLIP constants</span></a> value)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0, Terminates on error (you can ignore this value)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.clip_ply">
+<code class="descname">clip_ply</code><span class="sig-paren">(</span><em>pply_b</em>, <em>pply_c</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.clip_ply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clip one polygon against another</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>pply_b</strong> (<a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – Polygon B</li>
+<li><strong>pply_c</strong> (<a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – Resulting clipped region</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#ply-clip"><span class="std std-ref">PLY_CLIP constants</span></a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Resulting clipped polygon only has inclusive
+regions of the clipped area.  Exclusion polygons
+are treated as included areas.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.clip_point">
+<code class="descname">clip_point</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.clip_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clips a point in or out of the polygon.
+Point is inside: <a class="reference internal" href="#geosoft.gxapi.PLY_POINT_CLIP_INSIDE" title="geosoft.gxapi.PLY_POINT_CLIP_INSIDE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PLY_POINT_CLIP_INSIDE</span></code></a>
+Point is outside: <a class="reference internal" href="#geosoft.gxapi.PLY_POINT_CLIP_OUTSIDE" title="geosoft.gxapi.PLY_POINT_CLIP_OUTSIDE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PLY_POINT_CLIP_OUTSIDE</span></code></a>
+An error occurred: <a class="reference internal" href="#geosoft.gxapi.PLY_POINT_CLIP_ERROR" title="geosoft.gxapi.PLY_POINT_CLIP_ERROR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PLY_POINT_CLIP_ERROR</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> (<em>float</em>) – Point X</li>
+<li><strong>y</strong> (<em>float</em>) – Point Y</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#ply-point-clip"><span class="std std-ref">PLY_POINT_CLIP constants</span></a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.combine">
+<code class="descname">combine</code><span class="sig-paren">(</span><em>srce</em>, <em>exclude</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.combine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Combines two <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> Object with another</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>srce</strong> (<a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – Source</li>
+<li><strong>exclude</strong> (<em>int</em>) – Make all the polygons copied excluded? - if not they will be copied as they are.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>srce</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies one <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> Object to another</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>srce</strong> (<a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – Source</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXPLY.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a Polygon Object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> Handle</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY">GXPLY</a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXPLY.create_s">
+<em class="property">classmethod </em><code class="descname">create_s</code><span class="sig-paren">(</span><em>bf</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.create_s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> Object from a <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> to serialize from</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> Handle</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY">GXPLY</a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.extent">
+<code class="descname">extent</code><span class="sig-paren">(</span><em>min_x</em>, <em>min_y</em>, <em>max_x</em>, <em>max_y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the extent of the current polygon.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Min X</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Min Y</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Max X</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Max Y</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If there are no polygons in the <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> object, returns dummies.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.get_description">
+<code class="descname">get_description</code><span class="sig-paren">(</span><em>desc</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.get_description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> description string</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>desc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Polygon description</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.get_ipj">
+<code class="descname">get_ipj</code><span class="sig-paren">(</span><em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.get_ipj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> in which to place the <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> projection</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.get_polygon">
+<code class="descname">get_polygon</code><span class="sig-paren">(</span><em>vv_x</em>, <em>vv_y</em>, <em>poly</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.get_polygon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a polygon from the <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</li>
+<li><strong>poly</strong> (<em>int</em>) – Polygon number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.get_polygon_ex">
+<code class="descname">get_polygon_ex</code><span class="sig-paren">(</span><em>vv_x</em>, <em>vv_y</em>, <em>poly</em>, <em>exclude</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.get_polygon_ex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a polygon from the <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</li>
+<li><strong>poly</strong> (<em>int</em>) – Polygon number</li>
+<li><strong>exclude</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – TRUE if exclusion polygon</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.is_valid">
+<code class="descname">is_valid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ensure a polygon is valid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.load_table">
+<code class="descname">load_table</code><span class="sig-paren">(</span><em>table</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.load_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads Polygons from a Polygon file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>table</strong> (<em>str</em>) – Name of the polygon file File contains coordinates of one or more polygons</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXPLY.null">
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY">GXPLY</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.num_poly">
+<code class="descname">num_poly</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.num_poly" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of polygons.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of polygons in the <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.rectangle">
+<code class="descname">rectangle</code><span class="sig-paren">(</span><em>min_x</em>, <em>min_y</em>, <em>max_x</em>, <em>max_y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.rectangle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a polygon from a rectangular area.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>min_x</strong> (<em>float</em>) – Min X</li>
+<li><strong>min_y</strong> (<em>float</em>) – Min Y</li>
+<li><strong>max_x</strong> (<em>float</em>) – Max X</li>
+<li><strong>max_y</strong> (<em>float</em>) – Max Y</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.rotate">
+<code class="descname">rotate</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>rot</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotate a polygon about a point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>float</em>) – Rotation point, X</li>
+<li><strong>y</strong> (<em>float</em>) – Rotation point, Y</li>
+<li><strong>rot</strong> (<em>float</em>) – Rotation angle, CCW in degrees</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.save_table">
+<code class="descname">save_table</code><span class="sig-paren">(</span><em>table</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.save_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save Polygons to a Polygon file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>table</strong> (<em>str</em>) – Name of the polygon file</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.serial">
+<code class="descname">serial</code><span class="sig-paren">(</span><em>bf</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.serial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize an <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> to a <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> to serialize to</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.set_description">
+<code class="descname">set_description</code><span class="sig-paren">(</span><em>desc</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.set_description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> description string</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>desc</strong> (<em>str</em>) – Polygon description</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.set_ipj">
+<code class="descname">set_ipj</code><span class="sig-paren">(</span><em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.set_ipj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> to place in the <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This changes the projection information only.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXPLY.thin">
+<code class="descname">thin</code><span class="sig-paren">(</span><em>thin</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPLY.thin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Thin polygons to a desired resolution</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>thin</strong> (<em>float</em>) – Thining resolution</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Points on the polygon that deviate from a line drawn between
+neighboring points by more than the thining resolution will
+be removed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="ply-clip-constants">
+<span id="ply-clip"></span><h2>PLY_CLIP constants<a class="headerlink" href="#ply-clip-constants" title="Permalink to this headline">¶</a></h2>
+<p>Polygon clipping mode</p>
+<dl class="data">
+<dt id="geosoft.gxapi.PLY_CLIP_NO_INTERSECT">
+<code class="descname">PLY_CLIP_NO_INTERSECT</code><a class="headerlink" href="#geosoft.gxapi.PLY_CLIP_NO_INTERSECT" title="Permalink to this definition">¶</a></dt>
+<dd><p>The polygons do not intersect</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PLY_CLIP_NO_INTERSECT</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.PLY_CLIP_INTERSECT">
+<code class="descname">PLY_CLIP_INTERSECT</code><a class="headerlink" href="#geosoft.gxapi.PLY_CLIP_INTERSECT" title="Permalink to this definition">¶</a></dt>
+<dd><p>The polygons do intersect</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PLY_CLIP_INTERSECT</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.PLY_CLIP_A_IN_B">
+<code class="descname">PLY_CLIP_A_IN_B</code><a class="headerlink" href="#geosoft.gxapi.PLY_CLIP_A_IN_B" title="Permalink to this definition">¶</a></dt>
+<dd><p>Polygon A is completely inside polygon B</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PLY_CLIP_A_IN_B</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.PLY_CLIP_B_IN_A">
+<code class="descname">PLY_CLIP_B_IN_A</code><a class="headerlink" href="#geosoft.gxapi.PLY_CLIP_B_IN_A" title="Permalink to this definition">¶</a></dt>
+<dd><p>Polygon B is completely inside polygon A</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PLY_CLIP_B_IN_A</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ply-point-clip-constants">
+<span id="ply-point-clip"></span><h2>PLY_POINT_CLIP constants<a class="headerlink" href="#ply-point-clip-constants" title="Permalink to this headline">¶</a></h2>
+<p>Polygon point clipping mode</p>
+<dl class="data">
+<dt id="geosoft.gxapi.PLY_POINT_CLIP_INSIDE">
+<code class="descname">PLY_POINT_CLIP_INSIDE</code><a class="headerlink" href="#geosoft.gxapi.PLY_POINT_CLIP_INSIDE" title="Permalink to this definition">¶</a></dt>
+<dd><p>The point is inside the polygon</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PLY_POINT_CLIP_INSIDE</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.PLY_POINT_CLIP_OUTSIDE">
+<code class="descname">PLY_POINT_CLIP_OUTSIDE</code><a class="headerlink" href="#geosoft.gxapi.PLY_POINT_CLIP_OUTSIDE" title="Permalink to this definition">¶</a></dt>
+<dd><p>The point is outside the polygon</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PLY_POINT_CLIP_OUTSIDE</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.PLY_POINT_CLIP_ERROR">
+<code class="descname">PLY_POINT_CLIP_ERROR</code><a class="headerlink" href="#geosoft.gxapi.PLY_POINT_CLIP_ERROR" title="Permalink to this definition">¶</a></dt>
+<dd><p>An error occurred</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PLY_POINT_CLIP_ERROR</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ply-line-clip-constants">
+<span id="ply-line-clip"></span><h2>PLY_LINE_CLIP constants<a class="headerlink" href="#ply-line-clip-constants" title="Permalink to this headline">¶</a></h2>
+<p>Polygon line clip indicator</p>
+<dl class="data">
+<dt id="geosoft.gxapi.PLY_LINE_CLIP_INSIDE">
+<code class="descname">PLY_LINE_CLIP_INSIDE</code><a class="headerlink" href="#geosoft.gxapi.PLY_LINE_CLIP_INSIDE" title="Permalink to this definition">¶</a></dt>
+<dd><p>The start point of the line is inside</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PLY_LINE_CLIP_INSIDE</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.PLY_LINE_CLIP_NO_INTERSECT">
+<code class="descname">PLY_LINE_CLIP_NO_INTERSECT</code><a class="headerlink" href="#geosoft.gxapi.PLY_LINE_CLIP_NO_INTERSECT" title="Permalink to this definition">¶</a></dt>
+<dd><p>This name is a misnomer - it should have been <a class="reference internal" href="#geosoft.gxapi.PLY_LINE_CLIP_INSIDE" title="geosoft.gxapi.PLY_LINE_CLIP_INSIDE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PLY_LINE_CLIP_INSIDE</span></code></a>, but is retained to support legacy code</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PLY_LINE_CLIP_NO_INTERSECT</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.PLY_LINE_CLIP_OUTSIDE">
+<code class="descname">PLY_LINE_CLIP_OUTSIDE</code><a class="headerlink" href="#geosoft.gxapi.PLY_LINE_CLIP_OUTSIDE" title="Permalink to this definition">¶</a></dt>
+<dd><p>The start point of the line is outside</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PLY_LINE_CLIP_OUTSIDE</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.PLY_LINE_CLIP_ERROR">
+<code class="descname">PLY_LINE_CLIP_ERROR</code><a class="headerlink" href="#geosoft.gxapi.PLY_LINE_CLIP_ERROR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Error</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PLY_LINE_CLIP_ERROR</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

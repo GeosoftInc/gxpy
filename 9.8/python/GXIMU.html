@@ -1,0 +1,2538 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GXIMU class &#8212; Geosoft GX Python API 9.8.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXIMU class</a><ul>
+<li><a class="reference internal" href="#imu-bool-olap-constants">IMU_BOOL_OLAP constants</a></li>
+<li><a class="reference internal" href="#imu-bool-opt-constants">IMU_BOOL_OPT constants</a></li>
+<li><a class="reference internal" href="#imu-bool-sizing-constants">IMU_BOOL_SIZING constants</a></li>
+<li><a class="reference internal" href="#imu-double-crc-bits-constants">IMU_DOUBLE_CRC_BITS constants</a></li>
+<li><a class="reference internal" href="#imu-expand-shape-constants">IMU_EXPAND_SHAPE constants</a></li>
+<li><a class="reference internal" href="#imu-fill-rollopt-constants">IMU_FILL_ROLLOPT constants</a></li>
+<li><a class="reference internal" href="#imu-filt-dummy-constants">IMU_FILT_DUMMY constants</a></li>
+<li><a class="reference internal" href="#imu-filt-file-constants">IMU_FILT_FILE constants</a></li>
+<li><a class="reference internal" href="#imu-filt-hzdrv-constants">IMU_FILT_HZDRV constants</a></li>
+<li><a class="reference internal" href="#imu-float-crc-bits-constants">IMU_FLOAT_CRC_BITS constants</a></li>
+<li><a class="reference internal" href="#imu-mask-constants">IMU_MASK constants</a></li>
+<li><a class="reference internal" href="#imu-stat-forced-constants">IMU_STAT_FORCED constants</a></li>
+<li><a class="reference internal" href="#imu-trans-constants">IMU_TRANS constants</a></li>
+<li><a class="reference internal" href="#imu-trend-constants">IMU_TREND constants</a></li>
+<li><a class="reference internal" href="#imu-wind-coord-constants">IMU_WIND_COORD constants</a></li>
+<li><a class="reference internal" href="#imu-wind-dummies-constants">IMU_WIND_DUMMIES constants</a></li>
+<li><a class="reference internal" href="#imu-xyz-index-constants">IMU_XYZ_INDEX constants</a></li>
+<li><a class="reference internal" href="#imu-xyz-label-constants">IMU_XYZ_LABEL constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXIMU.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gximu-class">
+<span id="gximu"></span><h1>GXIMU class<a class="headerlink" href="#gximu-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXIMU">
+<em class="property">class </em><code class="descname">GXIMU</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXIMU class.</p>
+<p>Not a class. This is a catch-all group of functions working
+on <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> objects (see <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a>). Grid operations include masking,
+trending, windowing, expanding and grid stitching.</p>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.agg_to_geo_color">
+<em class="property">classmethod </em><code class="descname">agg_to_geo_color</code><span class="sig-paren">(</span><em>agg</em>, <em>grid</em>, <em>ipj</em>, <em>res</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.agg_to_geo_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Geosoft color grid from an aggregate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>agg</strong> (<a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><em>GXAGG</em></a>) – Input Aggregate</li>
+<li><strong>grid</strong> (<em>str</em>) – Output image name</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection to use</li>
+<li><strong>res</strong> (<em>float</em>) – Resolution (Cell Size) size to use</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> This consumes a very small amount of memory</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.crc">
+<em class="property">classmethod </em><code class="descname">crc</code><span class="sig-paren">(</span><em>img</em>, <em>pul_crc</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.crc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes a CRC Checksum on an image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input image</li>
+<li><strong>pul_crc</strong> (<em>int</em>) – Starting CRC (use <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.CRC_INIT_VALUE" title="geosoft.gxapi.CRC_INIT_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CRC_INIT_VALUE</span></code></a> if none)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CRC value</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.crc_grid">
+<em class="property">classmethod </em><code class="descname">crc_grid</code><span class="sig-paren">(</span><em>grid</em>, <em>pul_crc</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.crc_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes a CRC Checksum on a grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>grid</strong> (<em>str</em>) – Grid</li>
+<li><strong>pul_crc</strong> (<em>int</em>) – Starting CRC (use <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.CRC_INIT_VALUE" title="geosoft.gxapi.CRC_INIT_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CRC_INIT_VALUE</span></code></a> if none)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CRC value</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.crc_grid_inexact">
+<em class="property">classmethod </em><code class="descname">crc_grid_inexact</code><span class="sig-paren">(</span><em>grid</em>, <em>pul_crc</em>, <em>float_bits</em>, <em>double_bits</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.crc_grid_inexact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes a CRC Checksum on a grid and allows you to specify
+number of bits of floats/doubles to drop so that the CRC
+will be same even of this are changed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>grid</strong> (<em>str</em>) – Grid</li>
+<li><strong>pul_crc</strong> (<em>int</em>) – Starting CRC (use <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.CRC_INIT_VALUE" title="geosoft.gxapi.CRC_INIT_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CRC_INIT_VALUE</span></code></a> if none)</li>
+<li><strong>float_bits</strong> (<em>int</em>) – <a class="reference internal" href="#imu-float-crc-bits"><span class="std std-ref">IMU_FLOAT_CRC_BITS constants</span></a></li>
+<li><strong>double_bits</strong> (<em>int</em>) – <a class="reference internal" href="#imu-double-crc-bits"><span class="std std-ref">IMU_DOUBLE_CRC_BITS constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CRC value</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Very useful for testing where the last bits of accuracy
+are not as important.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.crc_inexact">
+<em class="property">classmethod </em><code class="descname">crc_inexact</code><span class="sig-paren">(</span><em>img</em>, <em>pul_crc</em>, <em>float_bits</em>, <em>double_bits</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.crc_inexact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes a CRC Checksum on an image and allows you to specify
+number of bits of floats/doubles to drop so that the CRC
+will be same even of this are changed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input image</li>
+<li><strong>pul_crc</strong> (<em>int</em>) – Starting CRC (use <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.CRC_INIT_VALUE" title="geosoft.gxapi.CRC_INIT_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CRC_INIT_VALUE</span></code></a> if none)</li>
+<li><strong>float_bits</strong> (<em>int</em>) – <a class="reference internal" href="#imu-float-crc-bits"><span class="std std-ref">IMU_FLOAT_CRC_BITS constants</span></a></li>
+<li><strong>double_bits</strong> (<em>int</em>) – <a class="reference internal" href="#imu-double-crc-bits"><span class="std std-ref">IMU_DOUBLE_CRC_BITS constants</span></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CRC value</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Very useful for testing where the last bits of accuracy
+are not as important.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.export_grid_without_data_section_xml">
+<em class="property">classmethod </em><code class="descname">export_grid_without_data_section_xml</code><span class="sig-paren">(</span><em>grid</em>, <em>crc</em>, <em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.export_grid_without_data_section_xml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a Grid minus the data section as an XML file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid</strong> (<em>str</em>) – Grid</li>
+<li><strong>crc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – CRC returned</li>
+<li><strong>file</strong> (<em>str</em>) – Output XML file</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.export_grid_xml">
+<em class="property">classmethod </em><code class="descname">export_grid_xml</code><span class="sig-paren">(</span><em>grid</em>, <em>crc</em>, <em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.export_grid_xml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a Grid as an XML file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid</strong> (<em>str</em>) – Grid</li>
+<li><strong>crc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – CRC returned</li>
+<li><strong>file</strong> (<em>str</em>) – Output XML file</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.export_raw_xml">
+<em class="property">classmethod </em><code class="descname">export_raw_xml</code><span class="sig-paren">(</span><em>img</em>, <em>crc</em>, <em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.export_raw_xml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a Grid as an XML file using a fast raw output.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image</li>
+<li><strong>crc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – CRC returned</li>
+<li><strong>file</strong> (<em>str</em>) – Output XML file</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.export_xml">
+<em class="property">classmethod </em><code class="descname">export_xml</code><span class="sig-paren">(</span><em>img</em>, <em>crc</em>, <em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.export_xml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a Grid as an XML file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image</li>
+<li><strong>crc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – CRC returned</li>
+<li><strong>file</strong> (<em>str</em>) – Output XML file</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.get_z_peaks_vv">
+<em class="property">classmethod </em><code class="descname">get_z_peaks_vv</code><span class="sig-paren">(</span><em>img</em>, <em>vv_x</em>, <em>vv_y</em>, <em>vv_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.get_z_peaks_vv" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Same as <a class="reference internal" href="#geosoft.gxapi.GXIMU.get_zvv" title="geosoft.gxapi.GXIMU.get_zvv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_zvv</span></code></a>, but find the closest peak value to the input locations, and return</dt>
+<dd>the peak value and peak value location.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input grid</li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></li>
+<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> filled with values (set to be same size as X, Y)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<dl class="docutils">
+<dt><strong>Note:</strong> The returned locations will always be a grid point location; no interpolation is performed when locating the peaks. A simple search is</dt>
+<dd>done of all neighbouring points from the starting point, and once no neighbours can be located with a higher value, the search stops.</dd>
+</dl>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.get_zvv">
+<em class="property">classmethod </em><code class="descname">get_zvv</code><span class="sig-paren">(</span><em>img</em>, <em>vv_x</em>, <em>vv_y</em>, <em>vv_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.get_zvv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract an interpolated image value for given XY <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> locations</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input grid</li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></li>
+<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> filled with values (set to be same size as X, Y)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_add">
+<em class="property">classmethod </em><code class="descname">grid_add</code><span class="sig-paren">(</span><em>img1</em>, <em>m1</em>, <em>img2</em>, <em>m2</em>, <em>imgo</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds two Grid images together point-by-point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of first grid</li>
+<li><strong>m1</strong> (<em>float</em>) – Multiplier to operate on first grid image</li>
+<li><strong>img2</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of second grid</li>
+<li><strong>m2</strong> (<em>float</em>) – Multiplier to operate on second grid image</li>
+<li><strong>imgo</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Output grid image</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> parameters MUST be of type <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_DOUBLE" title="geosoft.gxapi.GS_DOUBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DOUBLE</span></code></a>!
+If not, the method will terminate.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_agc">
+<em class="property">classmethod </em><code class="descname">grid_agc</code><span class="sig-paren">(</span><em>i_img</em>, <em>o_img</em>, <em>width</em>, <em>max_gain</em>, <em>remove_background</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_agc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatic Gain Compensation of a grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>i_img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of input grid</li>
+<li><strong>o_img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of output grid</li>
+<li><strong>width</strong> (<em>int</em>) – Width of filter to separate signal from background.</li>
+<li><strong>max_gain</strong> (<em>float</em>) – Maximum gain applied to the signal.</li>
+<li><strong>remove_background</strong> (<em>int</em>) – Remove background before applying gain?</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> parameters MUST be of type <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_FLOAT" title="geosoft.gxapi.GS_FLOAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_FLOAT</span></code></a>!
+If not, the method will terminate.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_bool">
+<em class="property">classmethod </em><code class="descname">grid_bool</code><span class="sig-paren">(</span><em>img1</em>, <em>img2</em>, <em>out</em>, <em>boolean_op</em>, <em>sizing</em>, <em>olap</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_bool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mask one grid against another using boolean logic
+operations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of first input grid</li>
+<li><strong>img2</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of second input grid</li>
+<li><strong>out</strong> (<em>str</em>) – File name of output grid</li>
+<li><strong>boolean_op</strong> (<em>int</em>) – <a class="reference internal" href="#imu-bool-opt"><span class="std std-ref">IMU_BOOL_OPT constants</span></a></li>
+<li><strong>sizing</strong> (<em>int</em>) – <a class="reference internal" href="#imu-bool-sizing"><span class="std std-ref">IMU_BOOL_SIZING constants</span></a></li>
+<li><strong>olap</strong> (<em>int</em>) – <a class="reference internal" href="#imu-bool-olap"><span class="std std-ref">IMU_BOOL_OLAP constants</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> parameters must be of type <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_DOUBLE" title="geosoft.gxapi.GS_DOUBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DOUBLE</span></code></a>!
+If not, the method will terminate.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_edge">
+<em class="property">classmethod </em><code class="descname">grid_edge</code><span class="sig-paren">(</span><em>grid</em>, <em>vv_x</em>, <em>vv_y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get grid edge points</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid</strong> (<em>str</em>) – Grid file name</li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X coordinates of edge points</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y coordinates of edge points</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_edge_ply">
+<em class="property">classmethod </em><code class="descname">grid_edge_ply</code><span class="sig-paren">(</span><em>img</em>, <em>ply</em>, <em>min_points</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_edge_ply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get grid edge points</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – The Grid</li>
+<li><strong>ply</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> containing the edges.</li>
+<li><strong>min_points</strong> (<em>int</em>) – Minimum number of points in polygons (0 for all)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Unlike <a class="reference internal" href="#geosoft.gxapi.GXIMU.grid_ply" title="geosoft.gxapi.GXIMU.grid_ply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_ply</span></code></a> and GridPlyEx_IMU, the image is not
+altered. It just gives the <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a>.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_exp_fill">
+<em class="property">classmethod </em><code class="descname">grid_exp_fill</code><span class="sig-paren">(</span><em>in_grd</em>, <em>out_grd</em>, <em>p_ex</em>, <em>t_ex</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_exp_fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extends and fills a grid for <a class="reference internal" href="GXFFT2.html#geosoft.gxapi.GXFFT2" title="geosoft.gxapi.GXFFT2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT2</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>in_grd</strong> (<em>str</em>) – Name of the input grid</li>
+<li><strong>out_grd</strong> (<em>str</em>) – Name of the output grid</li>
+<li><strong>p_ex</strong> (<em>float</em>) – % expansion</li>
+<li><strong>t_ex</strong> (<em>int</em>) – Shape of expansion: 0 - rectangle, 1 - square</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_expand">
+<em class="property">classmethod </em><code class="descname">grid_expand</code><span class="sig-paren">(</span><em>im_gi</em>, <em>out</em>, <em>per</em>, <em>shape</em>, <em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_expand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Expand a grid and place dummies in the area
+beyond the original edges.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>im_gi</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of input grid</li>
+<li><strong>out</strong> (<em>str</em>) – File name of output grid</li>
+<li><strong>per</strong> (<em>float</em>) – Minimum percentage to expand the grid by</li>
+<li><strong>shape</strong> (<em>int</em>) – <a class="reference internal" href="#imu-expand-shape"><span class="std std-ref">IMU_EXPAND_SHAPE constants</span></a></li>
+<li><strong>x</strong> (<em>int</em>) – X Dimension the output grid is expanded to</li>
+<li><strong>y</strong> (<em>int</em>) – Y Dimension the output grid is expanded to</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> parameter MUST be of type <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_FLOAT" title="geosoft.gxapi.GS_FLOAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_FLOAT</span></code></a>!
+If not, the method will terminate.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_fill">
+<em class="property">classmethod </em><code class="descname">grid_fill</code><span class="sig-paren">(</span><em>im_gi</em>, <em>im_go</em>, <em>rollopt</em>, <em>rolldist</em>, <em>mxf</em>, <em>mxp</em>, <em>rollbase</em>, <em>alimit</em>, <em>elimit</em>, <em>width</em>, <em>npass</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interpolates to fill dummies, generates an output grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>im_gi</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of input grid</li>
+<li><strong>im_go</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of output grid</li>
+<li><strong>rollopt</strong> (<em>int</em>) – <a class="reference internal" href="#imu-fill-rollopt"><span class="std std-ref">IMU_FILL_ROLLOPT constants</span></a></li>
+<li><strong>rolldist</strong> (<em>int</em>) – Distance at which to roll off to 0</li>
+<li><strong>mxf</strong> (<em>int</em>) – Maximum prediction filter length</li>
+<li><strong>mxp</strong> (<em>int</em>) – Maximum prediction filter area</li>
+<li><strong>rollbase</strong> (<em>float</em>) – Base value to roll off to</li>
+<li><strong>alimit</strong> (<em>float</em>) – Maximum amplitude allowed in grid</li>
+<li><strong>elimit</strong> (<em>float</em>) – Maximum edge amplitude allowed in grid</li>
+<li><strong>width</strong> (<em>int</em>) – Width from edge to start limiting from</li>
+<li><strong>npass</strong> (<em>int</em>) – Number of convolution passes to apply</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> parameters MUST be of type <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_FLOAT" title="geosoft.gxapi.GS_FLOAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_FLOAT</span></code></a>!
+If not, the method will terminate.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_filt">
+<em class="property">classmethod </em><code class="descname">grid_filt</code><span class="sig-paren">(</span><em>img</em>, <em>imgo</em>, <em>passes</em>, <em>mult</em>, <em>dum</em>, <em>hz</em>, <em>usefile</em>, <em>file</em>, <em>vv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_filt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies a filter to a grid any number
+of passes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of first grid</li>
+<li><strong>imgo</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of second grid</li>
+<li><strong>passes</strong> (<em>int</em>) – Number of passes to apply filter (&gt;0)</li>
+<li><strong>mult</strong> (<em>float</em>) – Multiplier to apply to grid values</li>
+<li><strong>dum</strong> (<em>int</em>) – <a class="reference internal" href="#imu-filt-dummy"><span class="std std-ref">IMU_FILT_DUMMY constants</span></a></li>
+<li><strong>hz</strong> (<em>int</em>) – <a class="reference internal" href="#imu-filt-hzdrv"><span class="std std-ref">IMU_FILT_HZDRV constants</span></a></li>
+<li><strong>usefile</strong> (<em>int</em>) – <a class="reference internal" href="#imu-filt-file"><span class="std std-ref">IMU_FILT_FILE constants</span></a></li>
+<li><strong>file</strong> (<em>str</em>) – Name of file containing filter values</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> containing filter values (if not using a file for the values) MUST BE OF TYPE ‘real’</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> parameters MUST be of type <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_FLOAT" title="geosoft.gxapi.GS_FLOAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_FLOAT</span></code></a>!
+If not, the method will terminate.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_head">
+<em class="property">classmethod </em><code class="descname">grid_head</code><span class="sig-paren">(</span><em>grid</em>, <em>esep</em>, <em>vsep</em>, <em>x_orig</em>, <em>y_orig</em>, <em>rot</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_head" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies Statistics contained in a grid header.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid</strong> (<em>str</em>) – Name of the grid whose header is to be modified.</li>
+<li><strong>esep</strong> (<em>float</em>) – Element separation</li>
+<li><strong>vsep</strong> (<em>float</em>) – Vector separation</li>
+<li><strong>x_orig</strong> (<em>float</em>) – Grid X Origin on ground</li>
+<li><strong>y_orig</strong> (<em>float</em>) – Grid Y Origin on ground</li>
+<li><strong>rot</strong> (<em>float</em>) – Grid Rotation</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_in_fill">
+<em class="property">classmethod </em><code class="descname">grid_in_fill</code><span class="sig-paren">(</span><em>im_gi</em>, <em>out_grd</em>, <em>extend</em>, <em>iter</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_in_fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill in a ribbon along the edge and inside hollow areas of the grid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>im_gi</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of input grid</li>
+<li><strong>out_grd</strong> (<em>str</em>) – Name of the output grid</li>
+<li><strong>extend</strong> (<em>int</em>) – Number of cells to extend ribbon along the edge</li>
+<li><strong>iter</strong> (<em>int</em>) – Number of iterations to fill inside hollow areas</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_mask">
+<em class="property">classmethod </em><code class="descname">grid_mask</code><span class="sig-paren">(</span><em>in_grid</em>, <em>m_grid</em>, <em>pply</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a mask grid using a set of polygon
+coordinates defined in a separate file, then
+masking the polygon over an input grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>in_grid</strong> (<em>str</em>) – Name of input grid</li>
+<li><strong>m_grid</strong> (<em>str</em>) – Name of output mask grid file</li>
+<li><strong>pply</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – Polygon containing mask coordinates</li>
+<li><strong>mode</strong> (<em>int</em>) – <a class="reference internal" href="#imu-mask"><span class="std std-ref">IMU_MASK constants</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> parameters MUST be of type <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_DOUBLE" title="geosoft.gxapi.GS_DOUBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DOUBLE</span></code></a>!
+If not, the method will terminate.</p>
+<p>The <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> will contain more than one polygon
+if it was loaded from a file containing
+coordinates of more than one polygon.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_peak">
+<em class="property">classmethod </em><code class="descname">grid_peak</code><span class="sig-paren">(</span><em>grid</em>, <em>nlmt</em>, <em>v_vx</em>, <em>v_vy</em>, <em>v_vz</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_peak" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pick grid peaks.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid</strong> (<em>str</em>) – Grid file name</li>
+<li><strong>nlmt</strong> (<em>int</em>) – Peak test directions (1 to 4)</li>
+<li><strong>v_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X of found peaks</li>
+<li><strong>v_vy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y of found peaks</li>
+<li><strong>v_vz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z values of found peaks</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Peak test directions defines how grid peaks are to be found.
+For example, with the 1, a grid point will be picked if its
+value is greater than it’s two neighbors in at least one
+direction.  Up to 4 directions can be tested.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_ply">
+<em class="property">classmethod </em><code class="descname">grid_ply</code><span class="sig-paren">(</span><em>img</em>, <em>ply</em>, <em>refresh</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_ply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the grid edge in a <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – The <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a></li>
+<li><strong>ply</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> to which the bounding polygons will be added.</li>
+<li><strong>refresh</strong> (<em>int</em>) – TRUE to force the boundary to be refreshed.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> This will optionally refresh the grid boundary <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> and return
+the <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a>.</p>
+<p>If the boundary is not refreshed and has never been calculated,
+the boundary will be the bounding rectangle of the grid.</p>
+<p>The grid <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> will be added to existing ploygons in the passed <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a>.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_ply_ex">
+<em class="property">classmethod </em><code class="descname">grid_ply_ex</code><span class="sig-paren">(</span><em>img</em>, <em>ply</em>, <em>refresh</em>, <em>min_points</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_ply_ex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the grid edge in a <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> (with min points)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – The <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a></li>
+<li><strong>ply</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> to which the bounding polygons will be added.</li>
+<li><strong>refresh</strong> (<em>int</em>) – TRUE to force the boundary to be refreshed.</li>
+<li><strong>min_points</strong> (<em>int</em>) – Minimum number of points in polygons refreshed (0 for all)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> This will optionally refresh the grid boundary <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> and return
+the <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a>.</p>
+<p>If the boundary is not refreshed and has never been calculated,
+the boundary will be the bounding rectangle of the grid.</p>
+<p>The grid <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> will be added to existing ploygons in the passed <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a>.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_reproject_and_window">
+<em class="property">classmethod </em><code class="descname">grid_reproject_and_window</code><span class="sig-paren">(</span><em>input_grid_filename</em>, <em>output_grid_filename</em>, <em>new_projection</em>, <em>min_x</em>, <em>max_x</em>, <em>min_y</em>, <em>max_y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_reproject_and_window" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new grid by reprojecting an existing grid and windowing its contents</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>input_grid_filename</strong> (<em>str</em>) – Input grid filename</li>
+<li><strong>output_grid_filename</strong> (<em>str</em>) – Output grid filename</li>
+<li><strong>new_projection</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Output grid projection</li>
+<li><strong>min_x</strong> (<em>float</em>) – Window minX (in output projection)</li>
+<li><strong>max_x</strong> (<em>float</em>) – Window maxX (in output projection)</li>
+<li><strong>min_y</strong> (<em>float</em>) – Window minY (in output projection)</li>
+<li><strong>max_y</strong> (<em>float</em>) – Window maxY (in output projection)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_resample">
+<em class="property">classmethod </em><code class="descname">grid_resample</code><span class="sig-paren">(</span><em>input_grid_filename</em>, <em>output_grid_filename</em>, <em>o_x</em>, <em>o_y</em>, <em>d_x</em>, <em>d_y</em>, <em>n_x</em>, <em>n_y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_resample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new grid by resampling an existing grid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>input_grid_filename</strong> (<em>str</em>) – Input grid filename</li>
+<li><strong>output_grid_filename</strong> (<em>str</em>) – Output grid filename</li>
+<li><strong>o_x</strong> (<em>float</em>) – Origin X</li>
+<li><strong>o_y</strong> (<em>float</em>) – Origin Y</li>
+<li><strong>d_x</strong> (<em>float</em>) – Cell spacing X</li>
+<li><strong>d_y</strong> (<em>float</em>) – Cell spacing Y</li>
+<li><strong>n_x</strong> (<em>int</em>) – Elements in X</li>
+<li><strong>n_y</strong> (<em>int</em>) – Elements in Y</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 7.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Works only for un rotated grids.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_resize">
+<em class="property">classmethod </em><code class="descname">grid_resize</code><span class="sig-paren">(</span><em>in_grd</em>, <em>out_grd</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_resize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resize a grid to reduce the size not cover the outside dummies.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>in_grd</strong> (<em>str</em>) – File name of input grid</li>
+<li><strong>out_grd</strong> (<em>str</em>) – File name of output grid</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_shad">
+<em class="property">classmethod </em><code class="descname">grid_shad</code><span class="sig-paren">(</span><em>in_grid</em>, <em>sh_grid</em>, <em>inc</em>, <em>dec</em>, <em>scl</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_shad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a shaded relief image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>in_grid</strong> (<em>str</em>) – Input image name</li>
+<li><strong>sh_grid</strong> (<em>str</em>) – Output new shaded image</li>
+<li><strong>inc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Inclination 0-90 degrees (def. 45)</li>
+<li><strong>dec</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Declination 0-360 degrees azimuth (def. 45)</li>
+<li><strong>scl</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Vertical scale factor (distance/z unit)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Pass <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_R8DM</span></code></a> as parameters to obtain default values.
+The default values are returned.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_st">
+<em class="property">classmethod </em><code class="descname">grid_st</code><span class="sig-paren">(</span><em>grid</em>, <em>st</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_st" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update an <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> object using a grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid</strong> (<em>str</em>) – Grid name</li>
+<li><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) – <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> (statistics) object to fill/update</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The input <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> object is not initialized by <a class="reference internal" href="#geosoft.gxapi.GXIMU.grid_st" title="geosoft.gxapi.GXIMU.grid_st"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_st</span></code></a>,
+so this function can be used to accumulate statistical
+info on more than a single grid.
+See <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a>.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_stat">
+<em class="property">classmethod </em><code class="descname">grid_stat</code><span class="sig-paren">(</span><em>grid</em>, <em>type</em>, <em>xelem</em>, <em>yelem</em>, <em>xsep</em>, <em>ysep</em>, <em>kx</em>, <em>x_orig</em>, <em>y_orig</em>, <em>rot</em>, <em>base</em>, <em>mult</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reports statistics contained in a grid header.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid</strong> (<em>str</em>) – Name of the grid to get stats from</li>
+<li><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Element type in bytes</li>
+<li><strong>xelem</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Elements in X direction</li>
+<li><strong>yelem</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Elements in Y direction</li>
+<li><strong>xsep</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X element separation</li>
+<li><strong>ysep</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y element separation</li>
+<li><strong>kx</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – KX (storage orientation)</li>
+<li><strong>x_orig</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X origin</li>
+<li><strong>y_orig</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y origin</li>
+<li><strong>rot</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Grid Rotation</li>
+<li><strong>base</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Base removed</li>
+<li><strong>mult</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Grid multiplier</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Statistics are returned in the parameter set</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_stat_comp">
+<em class="property">classmethod </em><code class="descname">grid_stat_comp</code><span class="sig-paren">(</span><em>grid</em>, <em>type</em>, <em>xelem</em>, <em>yelem</em>, <em>xsep</em>, <em>ysep</em>, <em>kx</em>, <em>x_orig</em>, <em>y_orig</em>, <em>rot</em>, <em>base</em>, <em>mult</em>, <em>comp</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_stat_comp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reports statistics contained in a grid header.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid</strong> (<em>str</em>) – Name of the grid to get stats from</li>
+<li><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Element type: 0 - byte 1 - USHORT 2 - SHORT 3 - LONG 4 - FLOAT 5 - DOUBLE 6 - 32 byte Color (RGBx)</li>
+<li><strong>xelem</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Elements in X direction</li>
+<li><strong>yelem</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Elements in Y direction</li>
+<li><strong>xsep</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X element separation</li>
+<li><strong>ysep</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y element separation</li>
+<li><strong>kx</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – KX (storage orientation)</li>
+<li><strong>x_orig</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X origin</li>
+<li><strong>y_orig</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y origin</li>
+<li><strong>rot</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Grid Rotation</li>
+<li><strong>base</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Base removed</li>
+<li><strong>mult</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Grid multiplier</li>
+<li><strong>comp</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Compression Ratio</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Statistics are returned in the parameter set</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_stat_ext">
+<em class="property">classmethod </em><code class="descname">grid_stat_ext</code><span class="sig-paren">(</span><em>grid</em>, <em>force</em>, <em>items</em>, <em>dums</em>, <em>min</em>, <em>max</em>, <em>mean</em>, <em>stddev</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_stat_ext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reports statistics of a grid’s elements.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid</strong> (<em>str</em>) – Name of the grid to get stats from</li>
+<li><strong>force</strong> (<em>int</em>) – <a class="reference internal" href="#imu-stat-forced"><span class="std std-ref">IMU_STAT_FORCED constants</span></a></li>
+<li><strong>items</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of valid elements in grid</li>
+<li><strong>dums</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of dummies in grid</li>
+<li><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum grid value</li>
+<li><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum grid value</li>
+<li><strong>mean</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Grid mean</li>
+<li><strong>stddev</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Grid standard deviation</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If the <a class="reference internal" href="#imu-stat-forced"><span class="std std-ref">IMU_STAT_FORCED constants</span></a> value is set, the
+statistics will be recalculated.
+Statistics are returned in the parameter set.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_stat_trend">
+<em class="property">classmethod </em><code class="descname">grid_stat_trend</code><span class="sig-paren">(</span><em>grid</em>, <em>trend_valid</em>, <em>co</em>, <em>cx</em>, <em>cy</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_stat_trend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reports Trend Info of a grid (for first order coefficients only).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid</strong> (<em>str</em>) – Name of the grid to get stats from</li>
+<li><strong>trend_valid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Trend Valid Flag</li>
+<li><strong>co</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Trend coefficient rCo</li>
+<li><strong>cx</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Trend coefficient rCx</li>
+<li><strong>cy</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Trend coefficient rCy</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Trend Info are returned in the parameter set</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_stat_trend_ext">
+<em class="property">classmethod </em><code class="descname">grid_stat_trend_ext</code><span class="sig-paren">(</span><em>grid</em>, <em>order</em>, <em>num_coef</em>, <em>xo</em>, <em>yo</em>, <em>vm</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_stat_trend_ext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reports Extended Trend Info of a grid (for up to third order coefficients).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid</strong> (<em>str</em>) – Grid name</li>
+<li><strong>order</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Trend order</li>
+<li><strong>num_coef</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of coefficients</li>
+<li><strong>xo</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Trend origin Xo</li>
+<li><strong>yo</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Trend origin Yo</li>
+<li><strong>vm</strong> (<a class="reference internal" href="GXVM.html#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><em>GXVM</em></a>) – <a class="reference internal" href="GXVM.html#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> hold coefficient values MUST BE OF TYPE ‘real’</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Trend Info are returned in the parameter set</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_stitch">
+<em class="property">classmethod </em><code class="descname">grid_stitch</code><span class="sig-paren">(</span><em>grid1</em>, <em>grid2</em>, <em>grid3</em>, <em>method</em>, <em>tr_order1</em>, <em>tr_order2</em>, <em>tr_calc</em>, <em>gap</em>, <em>spline</em>, <em>path</em>, <em>pply</em>, <em>weighting</em>, <em>width</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_stitch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stitches together too grids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid1</strong> (<em>str</em>) – Input Grid1 name</li>
+<li><strong>grid2</strong> (<em>str</em>) – Input Grid2 name</li>
+<li><strong>grid3</strong> (<em>str</em>) – Output Grid name</li>
+<li><strong>method</strong> (<em>int</em>) – Stitching method</li>
+<li><strong>tr_order1</strong> (<em>int</em>) – Grid 1 trend removal order</li>
+<li><strong>tr_order2</strong> (<em>int</em>) – Grid 2 trend removal order</li>
+<li><strong>tr_calc</strong> (<em>int</em>) – Trend removal type of points to use</li>
+<li><strong>gap</strong> (<em>float</em>) – Gap for interpolation</li>
+<li><strong>spline</strong> (<em>int</em>) – Interpolation spline method</li>
+<li><strong>path</strong> (<em>int</em>) – Path selection</li>
+<li><strong>pply</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> object for user path</li>
+<li><strong>weighting</strong> (<em>float</em>) – Correction weighting</li>
+<li><strong>width</strong> (<em>int</em>) – Width of corrections, in grid cells (8 to 256)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_stitch_ctl">
+<em class="property">classmethod </em><code class="descname">grid_stitch_ctl</code><span class="sig-paren">(</span><em>ctl</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_stitch_ctl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stitches together two grids - control file for options.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ctl</strong> (<em>str</em>) – Control file containing all “GRIDSTCH” parameters</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Data validation is done internally, not in the GX.
+This is simply a way of avoiding writing a new GX wrapper
+every time an option is added.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_tiff">
+<em class="property">classmethod </em><code class="descname">grid_tiff</code><span class="sig-paren">(</span><em>grds</em>, <em>tiff</em>, <em>bcol</em>, <em>red</em>, <em>green</em>, <em>blue</em>, <em>csize</em>, <em>reg</em>, <em>scale</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_tiff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a Tiff (Tagged-Image file format) file with up to 16 grids.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grds</strong> (<em>str</em>) – Comma-delimited string containing names of all grids to use in Tiff generation Up to 16 grids allowed.</li>
+<li><strong>tiff</strong> (<em>str</em>) – Name of Tiff file to create</li>
+<li><strong>bcol</strong> (<em>str</em>) – Background color option. One of W (White)  K (Black) C (Cyan) M (Magenta) Y (Yellow) R (Red)  G (Green) B (Blue)</li>
+<li><strong>red</strong> (<em>int</em>) – Background Red value (0-255)</li>
+<li><strong>green</strong> (<em>int</em>) – Background Green (0-255)</li>
+<li><strong>blue</strong> (<em>int</em>) – Background Blue  (0-255)</li>
+<li><strong>csize</strong> (<em>float</em>) – New cell size</li>
+<li><strong>reg</strong> (<em>int</em>) – Pixel size of registration marks</li>
+<li><strong>scale</strong> (<em>float</em>) – Map scale</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The background color can be either selected
+from one of 8 settings, or can be specified
+as a combination of Reg,Green, and Blue values.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_trnd">
+<em class="property">classmethod </em><code class="descname">grid_trnd</code><span class="sig-paren">(</span><em>imgi</em>, <em>imgo</em>, <em>tr_option</em>, <em>edge</em>, <em>order</em>, <em>vm</em>, <em>num_coefs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_trnd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a trend surface from a grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>imgi</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Handle to input image</li>
+<li><strong>imgo</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Handle to output image</li>
+<li><strong>tr_option</strong> (<em>int</em>) – 0-calculate, 1-given, 2-replace</li>
+<li><strong>edge</strong> (<em>int</em>) – <a class="reference internal" href="#imu-trend"><span class="std std-ref">IMU_TREND constants</span></a></li>
+<li><strong>order</strong> (<em>int</em>) – Trend order</li>
+<li><strong>vm</strong> (<a class="reference internal" href="GXVM.html#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><em>GXVM</em></a>) – <a class="reference internal" href="GXVM.html#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> holds coefficients</li>
+<li><strong>num_coefs</strong> (<em>int</em>) – Number of coefficients</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Both Images must be of type <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_DOUBLE" title="geosoft.gxapi.GS_DOUBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DOUBLE</span></code></a>.
+The <a class="reference internal" href="GXVM.html#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> parameter must be of type REAL,
+and be of size 10 at most.</p>
+<p>The number of coefficients must be
+compatible with the order of the
+trend removed. Following is the
+number of coefficients which should
+be present for a given order</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Order</td>
+<td>Number of Coefficients</td>
+</tr>
+<tr class="row-even"><td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>3</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>6</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_trns">
+<em class="property">classmethod </em><code class="descname">grid_trns</code><span class="sig-paren">(</span><em>grid</em>, <em>tcon</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_trns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transpose a grid by swapping the grid rows with
+the grid columns.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid</strong> (<em>str</em>) – Name of the grid to transpose</li>
+<li><strong>tcon</strong> (<em>int</em>) – Transpose condition value <a class="reference internal" href="#imu-trans"><span class="std std-ref">IMU_TRANS constants</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If the grid has a line orientation that does NOT
+match the <a class="reference internal" href="#imu-trans"><span class="std std-ref">IMU_TRANS constants</span></a> value, this method will
+not succeed.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_type">
+<em class="property">classmethod </em><code class="descname">grid_type</code><span class="sig-paren">(</span><em>grid</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reports the true data the of a grid (geosoft types)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>grid</strong> (<em>str</em>) – Name of the Grid</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_vd">
+<em class="property">classmethod </em><code class="descname">grid_vd</code><span class="sig-paren">(</span><em>im_gi</em>, <em>im_go</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_vd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply vertical derivative convolution filter to a grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>im_gi</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input image</li>
+<li><strong>im_go</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Output image</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_vol">
+<em class="property">classmethod </em><code class="descname">grid_vol</code><span class="sig-paren">(</span><em>img</em>, <em>rbase</em>, <em>mult</em>, <em>vol_a</em>, <em>vol_b</em>, <em>diff</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_vol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the grid volumes above and below a
+reference base.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of the grid to calculate volume for</li>
+<li><strong>rbase</strong> (<em>float</em>) – Reference base</li>
+<li><strong>mult</strong> (<em>float</em>) – Multiplier to final volume</li>
+<li><strong>vol_a</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Grid Volume above reference base</li>
+<li><strong>vol_b</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Grid Volume below reference base</li>
+<li><strong>diff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Differences between volumes</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Volumes are calculated above and below a
+reference base level, and reported as positive
+integers. A multiplier is applied to the final
+volume (to correct for units).</p>
+<p>The <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> parameters MUST be of type <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_FLOAT" title="geosoft.gxapi.GS_FLOAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_FLOAT</span></code></a>!
+If not, the method will terminate.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_wind">
+<em class="property">classmethod </em><code class="descname">grid_wind</code><span class="sig-paren">(</span><em>img</em>, <em>out</em>, <em>coord</em>, <em>xmin</em>, <em>xmax</em>, <em>ymin</em>, <em>ymax</em>, <em>zmin</em>, <em>zmax</em>, <em>csize</em>, <em>clip</em>, <em>dec</em>, <em>mdf</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_wind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a grid using a defined area window
+within a larger grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of input grid</li>
+<li><strong>out</strong> (<em>str</em>) – Name of output grid file</li>
+<li><strong>coord</strong> (<em>int</em>) – <a class="reference internal" href="#imu-wind-coord"><span class="std std-ref">IMU_WIND_COORD constants</span></a></li>
+<li><strong>xmin</strong> (<em>float</em>) – Min. limit of window in X direction (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>)</li>
+<li><strong>xmax</strong> (<em>float</em>) – Max. limit of window in X direction (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>)</li>
+<li><strong>ymin</strong> (<em>float</em>) – Min. limit of window in Y direction (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>)</li>
+<li><strong>ymax</strong> (<em>float</em>) – Max. limit of window in Y direction (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>)</li>
+<li><strong>zmin</strong> (<em>float</em>) – Minimum Z data value in output grid (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>)</li>
+<li><strong>zmax</strong> (<em>float</em>) – Maximum Z data value in output grid (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>)</li>
+<li><strong>csize</strong> (<em>float</em>) – New grid cell size</li>
+<li><strong>clip</strong> (<em>int</em>) – <a class="reference internal" href="#imu-wind-dummies"><span class="std std-ref">IMU_WIND_DUMMIES constants</span></a></li>
+<li><strong>dec</strong> (<em>int</em>) – Decimation factor</li>
+<li><strong>mdf</strong> (<em>str</em>) – Name of .MDF file for data clipping</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_wind2">
+<em class="property">classmethod </em><code class="descname">grid_wind2</code><span class="sig-paren">(</span><em>img</em>, <em>out</em>, <em>xmin</em>, <em>xmax</em>, <em>ymin</em>, <em>ymax</em>, <em>zmin</em>, <em>zmax</em>, <em>clip</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_wind2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Window a grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of input grid</li>
+<li><strong>out</strong> (<em>str</em>) – Name of output grid file</li>
+<li><strong>xmin</strong> (<em>float</em>) – Minimum X, ground units (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>)</li>
+<li><strong>xmax</strong> (<em>float</em>) – Maximum X (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>)</li>
+<li><strong>ymin</strong> (<em>float</em>) – Minimum Y (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>)</li>
+<li><strong>ymax</strong> (<em>float</em>) – Maximum Y (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>)</li>
+<li><strong>zmin</strong> (<em>float</em>) – Minimum Z (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>)</li>
+<li><strong>zmax</strong> (<em>float</em>) – Maximum Z (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>)</li>
+<li><strong>clip</strong> (<em>int</em>) – <a class="reference internal" href="#imu-wind-dummies"><span class="std std-ref">IMU_WIND_DUMMIES constants</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> To change the cell size or work in a different projection,
+first inherit the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> by calling</p>
+<p>The windowed grid will be adjusted/expanded to include the
+defined area and line up on an even grid cell.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.grid_xyz">
+<em class="property">classmethod </em><code class="descname">grid_xyz</code><span class="sig-paren">(</span><em>img</em>, <em>xyz</em>, <em>index</em>, <em>dec_x</em>, <em>dec_y</em>, <em>lab</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a Grid image to an XYZ file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of the grid to export</li>
+<li><strong>xyz</strong> (<em>str</em>) – Name of new XYZ file</li>
+<li><strong>index</strong> (<em>int</em>) – <a class="reference internal" href="#imu-xyz-index"><span class="std std-ref">IMU_XYZ_INDEX constants</span></a></li>
+<li><strong>dec_x</strong> (<em>int</em>) – X direction decimation factor</li>
+<li><strong>dec_y</strong> (<em>int</em>) – Y direction decimation factor</li>
+<li><strong>lab</strong> (<em>int</em>) – <a class="reference internal" href="#imu-xyz-label"><span class="std std-ref">IMU_XYZ_LABEL constants</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> (image) of the grid to export must
+be of type <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_FLOAT" title="geosoft.gxapi.GS_FLOAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_FLOAT</span></code></a>. If not, this method will
+terminate with an error.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXIMU.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.make_mi_tab_file">
+<em class="property">classmethod </em><code class="descname">make_mi_tab_file</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.make_mi_tab_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a MapInfo tab file for this grid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – Grid file name</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.make_mi_tabfrom_grid">
+<em class="property">classmethod </em><code class="descname">make_mi_tabfrom_grid</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.make_mi_tabfrom_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a MapInfo tab file for this grid as rendered in a map</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – Grid file name</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.make_mi_tabfrom_map">
+<em class="property">classmethod </em><code class="descname">make_mi_tabfrom_map</code><span class="sig-paren">(</span><em>map</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.make_mi_tabfrom_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a MapInfo tab file from this map</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>map</strong> (<em>str</em>) – Map file name</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.mosaic">
+<em class="property">classmethod </em><code class="descname">mosaic</code><span class="sig-paren">(</span><em>grids</em>, <em>name</em>, <em>ipj</em>, <em>cell</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.mosaic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a mosaic image of an image list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>grids</strong> (<em>str</em>) – Image names (‘|’ separated)</li>
+<li><strong>name</strong> (<em>str</em>) – Output image name (“” for a memory only image)</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection to use (0 to use the first grid’s projection)</li>
+<li><strong>cell</strong> (<em>float</em>) – Cell size to use (rDummy to use first grid)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> Object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG">GXIMG</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The images are simply placed on the output image, starting with
+the first image. Note that this function may require very large
+amounts of virtual memory.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.null">
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXIMU" title="geosoft.gxapi.GXIMU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMU</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXIMU" title="geosoft.gxapi.GXIMU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMU</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXIMU" title="geosoft.gxapi.GXIMU">GXIMU</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.peak_size">
+<em class="property">classmethod </em><code class="descname">peak_size</code><span class="sig-paren">(</span><em>grid</em>, <em>vv_x</em>, <em>vv_y</em>, <em>max</em>, <em>prec</em>, <em>v_vz</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.peak_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define the sizes of all the peaks in an image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid</strong> (<em>str</em>) – Grid file name</li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Peaks’ X</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Peaks’ Y</li>
+<li><strong>max</strong> (<em>int</em>) – Maximum target diameter (window) in # of cells</li>
+<li><strong>prec</strong> (<em>float</em>) – Precision factor (see note above)</li>
+<li><strong>v_vz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Returned peak (anomaly) sizes in data units</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Extending from the peak location of an anomaly to the inflection
+points of the grid values along each of the 8 directions results in
+8 radii. Anomaly size is defined as the 2*mediam of the 8 radii.</p>
+<p>Precision factor is used to control definition of an inflection point.
+For points A,B, and C, B is an inflection point if (A+C)/2.0 &gt; B. With
+the precision factor, B is an inflection point only when
+(A+C)/2.0 &gt; B*(1.0+Precision factor).
+This factor must be within (-1.0,1.0).</p>
+<p>Note: <a class="reference internal" href="#geosoft.gxapi.GXIMU.peak_size2" title="geosoft.gxapi.GXIMU.peak_size2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">peak_size2</span></code></a> is probably a better routine…</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.peak_size2">
+<em class="property">classmethod </em><code class="descname">peak_size2</code><span class="sig-paren">(</span><em>grid</em>, <em>vv_x</em>, <em>vv_y</em>, <em>max</em>, <em>v_vz</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.peak_size2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define the sizes of all the peaks in an image - new algorithm</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grid</strong> (<em>str</em>) – Grid file name</li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Peaks’ X</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Peaks’ Y</li>
+<li><strong>max</strong> (<em>int</em>) – Maximum target diameter (window) in # of cells</li>
+<li><strong>v_vz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Returned peak (anomaly) sizes in data units</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Extending from the peak location of an anomaly to the inflection
+points of the grid values along each of the 8 directions results in
+8 radii. Anomaly size is defined as the 2*mediam of the 8 radii.</p>
+<p>This algorithm uses 4 successive points d1, d2, d3 and d4 in any
+direction. Given slopes m1 = d2-d1, m2 = d3-d2 and m3 = d4-d3,
+an inflection point occurs between d2 and d3 if m1&gt;m2 and m2&lt;m3.
+The location index is given as i3 - s2/(s2-s1), where i3 is the index
+of d3, and s1=m2-m1 and s2=m3-m2.</p>
+<p>This algorithm tends to give much smaller (and more reasonable)
+results than <a class="reference internal" href="#geosoft.gxapi.GXIMU.peak_size" title="geosoft.gxapi.GXIMU.peak_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">peak_size</span></code></a>.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.pigeon_hole">
+<em class="property">classmethod </em><code class="descname">pigeon_hole</code><span class="sig-paren">(</span><em>img</em>, <em>vv_x</em>, <em>vv_y</em>, <em>put</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.pigeon_hole" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pigeon-hole and count points by location into a grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input grid</li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations</li>
+<li><strong>put</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of points located in the grid.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> X and Y location VVs are input. If a point (X, Y) is located within
+one-half cell width from a location in the grid, then the value of
+the grid at that location is incremented by 1.
+The cells are inclusive at the minima, and exclusive at the maxima:
+e.g. if dDx = dDy = 1, and dXo = dYo = 0, then the corner cell would
+accept values  -0.5 &lt;= X &lt; 0.5 and -0.5 &lt;= Y &lt; 0.5.
+The grid values should be set to 0 before calling this function.</p>
+<p>The number of points “pigeon-holed” is returned to the user.
+This function is useful, for instance, in determining the density of
+sample locations in a survey area.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.pigeon_hole_color">
+<em class="property">classmethod </em><code class="descname">pigeon_hole_color</code><span class="sig-paren">(</span><em>img</em>, <em>color_img</em>, <em>vv_x</em>, <em>vv_y</em>, <em>itr</em>, <em>put</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.pigeon_hole_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pigeon-hole and count points by location and color locations in another grid based on ITR information.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input grid</li>
+<li><strong>color_img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input color grid</li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations</li>
+<li><strong>itr</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) – Input color transform</li>
+<li><strong>put</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of points located in the grid.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<dl class="docutils">
+<dt><strong>Note:</strong> X and Y location VVs are input. If a point (X, Y) is located within</dt>
+<dd><p class="first">one-half cell width from a location in the grid, then the value of
+the grid at that location is incremented by 1.
+The cells are inclusive at the minima, and exclusive at the maxima:
+e.g. if dDx = dDy = 1, and dXo = dYo = 0, then the corner cell would
+accept values  -0.5 &lt;= X &lt; 0.5 and -0.5 &lt;= Y &lt; 0.5.
+The grid values should be set to 0 before calling this function.</p>
+<blockquote>
+<div>The color grid locations are coloured by the number of items at each location,
+with the colour being determined by the input ITR, which should map the integer
+count values 1, 2, 3, etc. onto individual colours.</div></blockquote>
+<p class="last">The number of points “pigeon-holed” is returned to the user.
+This function is useful, for instance, in determining the density of
+sample locations in a survey area.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.profile">
+<em class="property">classmethod </em><code class="descname">profile</code><span class="sig-paren">(</span><em>img</em>, <em>x1</em>, <em>y1</em>, <em>x2</em>, <em>y2</em>, <em>samsep</em>, <em>vv_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract a profile from a grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input image</li>
+<li><strong>x1</strong> (<em>float</em>) – X1</li>
+<li><strong>y1</strong> (<em>float</em>) – Y1</li>
+<li><strong>x2</strong> (<em>float</em>) – X2</li>
+<li><strong>y2</strong> (<em>float</em>) – Y2</li>
+<li><strong>samsep</strong> (<em>float</em>) – Sample separation, if 0.0, use grid cell size</li>
+<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> in which to place result</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Returned <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> will start at X1,Y1 and will sample
+up to X2,Y2 at the specified separation.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.profile_vv">
+<em class="property">classmethod </em><code class="descname">profile_vv</code><span class="sig-paren">(</span><em>img</em>, <em>vv_x</em>, <em>vv_y</em>, <em>vv_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.profile_vv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> profile from a grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input image</li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> coordinates</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> coordinates</li>
+<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> in which to place result</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">iGetPolyLine_DBE</p>
+</div>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.range_grids">
+<em class="property">classmethod </em><code class="descname">range_grids</code><span class="sig-paren">(</span><em>grids</em>, <em>ipj</em>, <em>min_x</em>, <em>min_y</em>, <em>max_x</em>, <em>max_y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.range_grids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine bounding rectangle for a set of grids</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>grids</strong> (<em>str</em>) – List of grid files, “|” delimited</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection for the range - see notes</li>
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Min X - returned range in the projection</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Min Y</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Max X</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Max Y</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> If an <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> is IPJ_CS_UNKNOWN, the
+<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> of the first grid in the list will be used and
+the <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> will be returned in this setting.
+Otherwise, the range in the requested <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> will be
+determined.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.range_ll">
+<em class="property">classmethod </em><code class="descname">range_ll</code><span class="sig-paren">(</span><em>img</em>, <em>min_lat</em>, <em>min_lon</em>, <em>max_lat</em>, <em>max_lon</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.range_ll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine the range in lat. and long. of a projected grid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input image</li>
+<li><strong>min_lat</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Min latitude</li>
+<li><strong>min_lon</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Min longitude</li>
+<li><strong>max_lat</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Max latitude</li>
+<li><strong>max_lon</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Max longitude</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> This routine determines the latitude and longitudes along the
+edge of a grid and returns the minimal and maximal values.
+It scans each row and and column and finds the first non-dummy
+position at the start and end, and then determines the coordinates
+at those points.
+If the grid has no data, no <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> object, or if the Source Type of
+the <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> is not <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.IPJ_TYPE_PCS" title="geosoft.gxapi.IPJ_TYPE_PCS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IPJ_TYPE_PCS</span></code></a> (projected coordinate system), then the
+returned values are dummies (<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_R8DM</span></code></a>).</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.refresh_shad">
+<em class="property">classmethod </em><code class="descname">refresh_shad</code><span class="sig-paren">(</span><em>in_img</em>, <em>sh_img</em>, <em>inc</em>, <em>dec</em>, <em>scl</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.refresh_shad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh a shaded relief image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>in_img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input grid object</li>
+<li><strong>sh_img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Output shaded grid object</li>
+<li><strong>inc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Inclination 0-90 degrees (def. 45)</li>
+<li><strong>dec</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Declination 0-360 degrees azimuth (def. 45)</li>
+<li><strong>scl</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Vertical scale factor (distance/z unit)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Pass <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_R8DM</span></code></a> as parameters to obtain default values.
+The default values are returned.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.slope_standard_deviation">
+<em class="property">classmethod </em><code class="descname">slope_standard_deviation</code><span class="sig-paren">(</span><em>img</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.slope_standard_deviation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the standard deviation of the slopes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Grid object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Standard deviation of grid slopes</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 8.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This method calculates the standard deviation of the horizontal
+differences in the X and Y directions for the supplied
+image.  This is useful for shading routines.  A good
+default scaling factor is 2.5 / standard deviation.</p>
+<p>The image will be sub-sampled to a statistically meaningful number.</p>
+<p>The cell sizes are used to determine the slopes.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.stat_window">
+<em class="property">classmethod </em><code class="descname">stat_window</code><span class="sig-paren">(</span><em>img</em>, <em>min_x</em>, <em>min_y</em>, <em>max_x</em>, <em>max_y</em>, <em>max</em>, <em>st</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.stat_window" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate grid statistics in a window</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Name of the grid to get stats from</li>
+<li><strong>min_x</strong> (<em>float</em>) – Min X window</li>
+<li><strong>min_y</strong> (<em>float</em>) – Min Y window</li>
+<li><strong>max_x</strong> (<em>float</em>) – Max X window</li>
+<li><strong>max_y</strong> (<em>float</em>) – Max Y window</li>
+<li><strong>max</strong> (<em>int</em>) – Maximum values needed, 0 for all</li>
+<li><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) – <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> object, stats are accumulated</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The maximum values needed will beused to
+decimate the sampling of the grid in order to
+improve performance.  100000 is often a good
+number when absolute precision is not
+required.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXIMU.update_ply">
+<em class="property">classmethod </em><code class="descname">update_ply</code><span class="sig-paren">(</span><em>img</em>, <em>ply</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXIMU.update_ply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the grid boundary in the grid metadata</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – The Grid</li>
+<li><strong>ply</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> containing the edges.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> You can call the GridEdgePLY function to get an edge,
+perhaps alter the edge, such as thin it to a reasonable
+resolution, then put set it as the grid boundary by
+calling this funtion.  This is similar to the
+GridPLYEx function except that you get to alter the
+<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> before it is placed back in the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="imu-bool-olap-constants">
+<span id="imu-bool-olap"></span><h2>IMU_BOOL_OLAP constants<a class="headerlink" href="#imu-bool-olap-constants" title="Permalink to this headline">¶</a></h2>
+<p>Overlapping area option</p>
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_BOOL_OLAP_AVE">
+<code class="descname">IMU_BOOL_OLAP_AVE</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_OLAP_AVE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overlap values are averaged</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_BOOL_OLAP_AVE</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_BOOL_OLAP_1">
+<code class="descname">IMU_BOOL_OLAP_1</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_OLAP_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overlap values use grid 1 value</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_BOOL_OLAP_1</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_BOOL_OLAP_2">
+<code class="descname">IMU_BOOL_OLAP_2</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_OLAP_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overlap values use grid 2 value</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_BOOL_OLAP_2</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="imu-bool-opt-constants">
+<span id="imu-bool-opt"></span><h2>IMU_BOOL_OPT constants<a class="headerlink" href="#imu-bool-opt-constants" title="Permalink to this headline">¶</a></h2>
+<p>Boolean logic option</p>
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_BOOL_OPT_AND">
+<code class="descname">IMU_BOOL_OPT_AND</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_OPT_AND" title="Permalink to this definition">¶</a></dt>
+<dd><p>Valid areas are only where grids overlap</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_BOOL_OPT_AND</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_BOOL_OPT_OR">
+<code class="descname">IMU_BOOL_OPT_OR</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_OPT_OR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Valid areas are where either grid is a valid value</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_BOOL_OPT_OR</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_BOOL_OPT_XOR">
+<code class="descname">IMU_BOOL_OPT_XOR</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_OPT_XOR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overlap areas are dummied</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_BOOL_OPT_XOR</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="imu-bool-sizing-constants">
+<span id="imu-bool-sizing"></span><h2>IMU_BOOL_SIZING constants<a class="headerlink" href="#imu-bool-sizing-constants" title="Permalink to this headline">¶</a></h2>
+<p>Sizing option</p>
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_BOOL_SIZING_MIN">
+<code class="descname">IMU_BOOL_SIZING_MIN</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_SIZING_MIN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output grid is sized to overlapping region</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_BOOL_SIZING_MIN</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_BOOL_SIZING_0">
+<code class="descname">IMU_BOOL_SIZING_0</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_SIZING_0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output grid is sized to grid 1</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_BOOL_SIZING_0</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_BOOL_SIZING_1">
+<code class="descname">IMU_BOOL_SIZING_1</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_SIZING_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output grid is sized to grid 2</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_BOOL_SIZING_1</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_BOOL_SIZING_MAX">
+<code class="descname">IMU_BOOL_SIZING_MAX</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_SIZING_MAX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output grid is sized to maximum combined area of both grids</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_BOOL_SIZING_MAX</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="imu-double-crc-bits-constants">
+<span id="imu-double-crc-bits"></span><h2>IMU_DOUBLE_CRC_BITS constants<a class="headerlink" href="#imu-double-crc-bits-constants" title="Permalink to this headline">¶</a></h2>
+<p>Bits to use in double CRC’s</p>
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_DOUBLE_CRC_BITS_EXACT">
+<code class="descname">IMU_DOUBLE_CRC_BITS_EXACT</code><a class="headerlink" href="#geosoft.gxapi.IMU_DOUBLE_CRC_BITS_EXACT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exact CRC</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_DOUBLE_CRC_BITS_EXACT</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_DOUBLE_CRC_BITS_DEFAULT">
+<code class="descname">IMU_DOUBLE_CRC_BITS_DEFAULT</code><a class="headerlink" href="#geosoft.gxapi.IMU_DOUBLE_CRC_BITS_DEFAULT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default inaccuracy in double (10 Bits)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_DOUBLE_CRC_BITS_DEFAULT</code><em class="property"> = 10</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_DOUBLE_CRC_BITS_MAX">
+<code class="descname">IMU_DOUBLE_CRC_BITS_MAX</code><a class="headerlink" href="#geosoft.gxapi.IMU_DOUBLE_CRC_BITS_MAX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum number of inaccuracy bits (51 Bits)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_DOUBLE_CRC_BITS_MAX</code><em class="property"> = 51</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="imu-expand-shape-constants">
+<span id="imu-expand-shape"></span><h2>IMU_EXPAND_SHAPE constants<a class="headerlink" href="#imu-expand-shape-constants" title="Permalink to this headline">¶</a></h2>
+<p>Shape of output grid</p>
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_EXPAND_SHAPE_RECTANGLE">
+<code class="descname">IMU_EXPAND_SHAPE_RECTANGLE</code><a class="headerlink" href="#geosoft.gxapi.IMU_EXPAND_SHAPE_RECTANGLE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rectangle</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_EXPAND_SHAPE_RECTANGLE</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_EXPAND_SHAPE_SQUARE">
+<code class="descname">IMU_EXPAND_SHAPE_SQUARE</code><a class="headerlink" href="#geosoft.gxapi.IMU_EXPAND_SHAPE_SQUARE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Square</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_EXPAND_SHAPE_SQUARE</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="imu-fill-rollopt-constants">
+<span id="imu-fill-rollopt"></span><h2>IMU_FILL_ROLLOPT constants<a class="headerlink" href="#imu-fill-rollopt-constants" title="Permalink to this headline">¶</a></h2>
+<p>Defines for Grid Filling Method Options</p>
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_FILL_ROLLOPT_LINEAR">
+<code class="descname">IMU_FILL_ROLLOPT_LINEAR</code><a class="headerlink" href="#geosoft.gxapi.IMU_FILL_ROLLOPT_LINEAR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Linear</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_FILL_ROLLOPT_LINEAR</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_FILL_ROLLOPT_SQUARE">
+<code class="descname">IMU_FILL_ROLLOPT_SQUARE</code><a class="headerlink" href="#geosoft.gxapi.IMU_FILL_ROLLOPT_SQUARE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Square</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_FILL_ROLLOPT_SQUARE</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="imu-filt-dummy-constants">
+<span id="imu-filt-dummy"></span><h2>IMU_FILT_DUMMY constants<a class="headerlink" href="#imu-filt-dummy-constants" title="Permalink to this headline">¶</a></h2>
+<p>Settings for placing dummy values in grid if any of filter
+values are dummy</p>
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_FILT_DUMMY_NO">
+<code class="descname">IMU_FILT_DUMMY_NO</code><a class="headerlink" href="#geosoft.gxapi.IMU_FILT_DUMMY_NO" title="Permalink to this definition">¶</a></dt>
+<dd><p>No</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_FILT_DUMMY_NO</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_FILT_DUMMY_YES">
+<code class="descname">IMU_FILT_DUMMY_YES</code><a class="headerlink" href="#geosoft.gxapi.IMU_FILT_DUMMY_YES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yes</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_FILT_DUMMY_YES</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="imu-filt-file-constants">
+<span id="imu-filt-file"></span><h2>IMU_FILT_FILE constants<a class="headerlink" href="#imu-filt-file-constants" title="Permalink to this headline">¶</a></h2>
+<p>Flags which indicate if a file is to be used to read the
+filter values</p>
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_FILT_FILE_NO">
+<code class="descname">IMU_FILT_FILE_NO</code><a class="headerlink" href="#geosoft.gxapi.IMU_FILT_FILE_NO" title="Permalink to this definition">¶</a></dt>
+<dd><p>No</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_FILT_FILE_NO</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_FILT_FILE_YES">
+<code class="descname">IMU_FILT_FILE_YES</code><a class="headerlink" href="#geosoft.gxapi.IMU_FILT_FILE_YES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yes</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_FILT_FILE_YES</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="imu-filt-hzdrv-constants">
+<span id="imu-filt-hzdrv"></span><h2>IMU_FILT_HZDRV constants<a class="headerlink" href="#imu-filt-hzdrv-constants" title="Permalink to this headline">¶</a></h2>
+<p>Flags which indicate which type of horizontal derivative
+is being applied (X direction, Y direction, none at all)</p>
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_FILT_HZDRV_NO">
+<code class="descname">IMU_FILT_HZDRV_NO</code><a class="headerlink" href="#geosoft.gxapi.IMU_FILT_HZDRV_NO" title="Permalink to this definition">¶</a></dt>
+<dd><p>No</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_FILT_HZDRV_NO</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_FILT_HZDRV_X">
+<code class="descname">IMU_FILT_HZDRV_X</code><a class="headerlink" href="#geosoft.gxapi.IMU_FILT_HZDRV_X" title="Permalink to this definition">¶</a></dt>
+<dd><p>X</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_FILT_HZDRV_X</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_FILT_HZDRV_Y">
+<code class="descname">IMU_FILT_HZDRV_Y</code><a class="headerlink" href="#geosoft.gxapi.IMU_FILT_HZDRV_Y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Y</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_FILT_HZDRV_Y</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="imu-float-crc-bits-constants">
+<span id="imu-float-crc-bits"></span><h2>IMU_FLOAT_CRC_BITS constants<a class="headerlink" href="#imu-float-crc-bits-constants" title="Permalink to this headline">¶</a></h2>
+<p>Bits to use in float CRC’s</p>
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_FLOAT_CRC_BITS_EXACT">
+<code class="descname">IMU_FLOAT_CRC_BITS_EXACT</code><a class="headerlink" href="#geosoft.gxapi.IMU_FLOAT_CRC_BITS_EXACT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exact CRC</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_FLOAT_CRC_BITS_EXACT</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_FLOAT_CRC_BITS_DEFAULT">
+<code class="descname">IMU_FLOAT_CRC_BITS_DEFAULT</code><a class="headerlink" href="#geosoft.gxapi.IMU_FLOAT_CRC_BITS_DEFAULT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default inaccuracy in floats (7 Bits)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_FLOAT_CRC_BITS_DEFAULT</code><em class="property"> = 7</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_FLOAT_CRC_BITS_MAX">
+<code class="descname">IMU_FLOAT_CRC_BITS_MAX</code><a class="headerlink" href="#geosoft.gxapi.IMU_FLOAT_CRC_BITS_MAX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum number of inaccuracy bits (22 Bits)</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_FLOAT_CRC_BITS_MAX</code><em class="property"> = 22</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="imu-mask-constants">
+<span id="imu-mask"></span><h2>IMU_MASK constants<a class="headerlink" href="#imu-mask-constants" title="Permalink to this headline">¶</a></h2>
+<p>Defined options for masking grids</p>
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_MASK_INSIDE">
+<code class="descname">IMU_MASK_INSIDE</code><a class="headerlink" href="#geosoft.gxapi.IMU_MASK_INSIDE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inside</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_MASK_INSIDE</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_MASK_OUTSIDE">
+<code class="descname">IMU_MASK_OUTSIDE</code><a class="headerlink" href="#geosoft.gxapi.IMU_MASK_OUTSIDE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Outside</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_MASK_OUTSIDE</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="imu-stat-forced-constants">
+<span id="imu-stat-forced"></span><h2>IMU_STAT_FORCED constants<a class="headerlink" href="#imu-stat-forced-constants" title="Permalink to this headline">¶</a></h2>
+<p>Defined options for forcing recalculating the grid values</p>
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_STAT_FORCED_NO">
+<code class="descname">IMU_STAT_FORCED_NO</code><a class="headerlink" href="#geosoft.gxapi.IMU_STAT_FORCED_NO" title="Permalink to this definition">¶</a></dt>
+<dd><p>No</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_STAT_FORCED_NO</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_STAT_FORCED_YES">
+<code class="descname">IMU_STAT_FORCED_YES</code><a class="headerlink" href="#geosoft.gxapi.IMU_STAT_FORCED_YES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yes</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_STAT_FORCED_YES</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="imu-trans-constants">
+<span id="imu-trans"></span><h2>IMU_TRANS constants<a class="headerlink" href="#imu-trans-constants" title="Permalink to this headline">¶</a></h2>
+<p>Transpose Options available for <a class="reference internal" href="#geosoft.gxapi.GXIMU.grid_trns" title="geosoft.gxapi.GXIMU.grid_trns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_trns</span></code></a>
+implies original grid lines:</p>
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_TRANS_DEFAULT">
+<code class="descname">IMU_TRANS_DEFAULT</code><a class="headerlink" href="#geosoft.gxapi.IMU_TRANS_DEFAULT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can be ANY orientation</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_TRANS_DEFAULT</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_TRANS_Y">
+<code class="descname">IMU_TRANS_Y</code><a class="headerlink" href="#geosoft.gxapi.IMU_TRANS_Y" title="Permalink to this definition">¶</a></dt>
+<dd><p>MUST be parallel to Y-Axis</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_TRANS_Y</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_TRANS_X">
+<code class="descname">IMU_TRANS_X</code><a class="headerlink" href="#geosoft.gxapi.IMU_TRANS_X" title="Permalink to this definition">¶</a></dt>
+<dd><p>MUST be parallel to X-Axis</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_TRANS_X</code><em class="property"> = -1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="imu-trend-constants">
+<span id="imu-trend"></span><h2>IMU_TREND constants<a class="headerlink" href="#imu-trend-constants" title="Permalink to this headline">¶</a></h2>
+<p>Points in grid to use</p>
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_TREND_ALL">
+<code class="descname">IMU_TREND_ALL</code><a class="headerlink" href="#geosoft.gxapi.IMU_TREND_ALL" title="Permalink to this definition">¶</a></dt>
+<dd><p>All</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_TREND_ALL</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_TREND_EDGE">
+<code class="descname">IMU_TREND_EDGE</code><a class="headerlink" href="#geosoft.gxapi.IMU_TREND_EDGE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edge</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_TREND_EDGE</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="imu-wind-coord-constants">
+<span id="imu-wind-coord"></span><h2>IMU_WIND_COORD constants<a class="headerlink" href="#imu-wind-coord-constants" title="Permalink to this headline">¶</a></h2>
+<p>Output grid coordinate units</p>
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_WIND_GRID">
+<code class="descname">IMU_WIND_GRID</code><a class="headerlink" href="#geosoft.gxapi.IMU_WIND_GRID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imu wind grid</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_WIND_GRID</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_WIND_GROUND">
+<code class="descname">IMU_WIND_GROUND</code><a class="headerlink" href="#geosoft.gxapi.IMU_WIND_GROUND" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imu wind ground</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_WIND_GROUND</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="imu-wind-dummies-constants">
+<span id="imu-wind-dummies"></span><h2>IMU_WIND_DUMMIES constants<a class="headerlink" href="#imu-wind-dummies-constants" title="Permalink to this headline">¶</a></h2>
+<p>Option for handling out-of-range Z values</p>
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_WIND_DUMMY">
+<code class="descname">IMU_WIND_DUMMY</code><a class="headerlink" href="#geosoft.gxapi.IMU_WIND_DUMMY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imu wind dummy</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_WIND_DUMMY</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_WIND_CLIP">
+<code class="descname">IMU_WIND_CLIP</code><a class="headerlink" href="#geosoft.gxapi.IMU_WIND_CLIP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imu wind clip</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_WIND_CLIP</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="imu-xyz-index-constants">
+<span id="imu-xyz-index"></span><h2>IMU_XYZ_INDEX constants<a class="headerlink" href="#imu-xyz-index-constants" title="Permalink to this headline">¶</a></h2>
+<p>Flags whether to use grid index numbers as
+station numbers.</p>
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_XYZ_INDEX_NO">
+<code class="descname">IMU_XYZ_INDEX_NO</code><a class="headerlink" href="#geosoft.gxapi.IMU_XYZ_INDEX_NO" title="Permalink to this definition">¶</a></dt>
+<dd><p>No</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_XYZ_INDEX_NO</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_XYZ_INDEX_YES">
+<code class="descname">IMU_XYZ_INDEX_YES</code><a class="headerlink" href="#geosoft.gxapi.IMU_XYZ_INDEX_YES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yes</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_XYZ_INDEX_YES</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="imu-xyz-label-constants">
+<span id="imu-xyz-label"></span><h2>IMU_XYZ_LABEL constants<a class="headerlink" href="#imu-xyz-label-constants" title="Permalink to this headline">¶</a></h2>
+<p>XYZ Label Flags</p>
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_XYZ_LABEL_NO">
+<code class="descname">IMU_XYZ_LABEL_NO</code><a class="headerlink" href="#geosoft.gxapi.IMU_XYZ_LABEL_NO" title="Permalink to this definition">¶</a></dt>
+<dd><p>No</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_XYZ_LABEL_NO</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.IMU_XYZ_LABEL_YES">
+<code class="descname">IMU_XYZ_LABEL_YES</code><a class="headerlink" href="#geosoft.gxapi.IMU_XYZ_LABEL_YES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yes</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">IMU_XYZ_LABEL_YES</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

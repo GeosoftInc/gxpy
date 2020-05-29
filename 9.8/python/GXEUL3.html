@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GXEUL3 class &#8212; Geosoft GX Python API 9.8.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXEUL3 class</a><ul>
+<li><a class="reference internal" href="#eul3-result-constants">EUL3_RESULT constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXEUL3.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxeul3-class">
+<span id="gxeul3"></span><h1>GXEUL3 class<a class="headerlink" href="#gxeul3-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXEUL3">
+<em class="property">class </em><code class="descname">GXEUL3</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEUL3" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXEUL3 class.</p>
+<p>This is a specialized class which performs 3D Euler deconvolution
+for potential field interpretation.</p>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXEUL3.creat">
+<em class="property">classmethod </em><code class="descname">creat</code><span class="sig-paren">(</span><em>imgt</em>, <em>imgtx</em>, <em>imgty</em>, <em>imgtz</em>, <em>wnd_siz</em>, <em>gi</em>, <em>tolrnc</em>, <em>max_dis</em>, <em>obs_flg</em>, <em>obs_hght</em>, <em>obs_elev</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEUL3.creat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an <a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEUL3</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>imgt</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of grid T</li>
+<li><strong>imgtx</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of grid Tx</li>
+<li><strong>imgty</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of grid Ty</li>
+<li><strong>imgtz</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of grid Tz</li>
+<li><strong>wnd_siz</strong> (<em>int</em>) – Window size (maximum 20)</li>
+<li><strong>gi</strong> (<em>float</em>) – Geometric index, from 0.0 to 3.0</li>
+<li><strong>tolrnc</strong> (<em>float</em>) – Max tolerance to allow (percentage)</li>
+<li><strong>max_dis</strong> (<em>float</em>) – Max dist. acceptable (0 for infinite)</li>
+<li><strong>obs_flg</strong> (<em>int</em>) – ObsFlg  Height (0) or Elevation (1)</li>
+<li><strong>obs_hght</strong> (<em>float</em>) – Height of observation plane</li>
+<li><strong>obs_elev</strong> (<em>float</em>) – Elevation of observation plane</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEUL3</span></code></a> Object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3">GXEUL3</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEUL3.destr">
+<code class="descname">destr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEUL3.destr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroys a <a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEUL3</span></code></a> object.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXEUL3.ex_euler_calc">
+<em class="property">classmethod </em><code class="descname">ex_euler_calc</code><span class="sig-paren">(</span><em>typ</em>, <em>p2</em>, <em>p3</em>, <em>p4</em>, <em>p5</em>, <em>p6</em>, <em>p7</em>, <em>p8</em>, <em>p9</em>, <em>p10</em>, <em>p11</em>, <em>p12</em>, <em>p13</em>, <em>p14</em>, <em>p15</em>, <em>p16</em>, <em>p17</em>, <em>p18</em>, <em>p19</em>, <em>p20</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEUL3.ex_euler_calc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does the exeuler depth calculations</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>typ</strong> (<em>int</em>) – Solution type flag (0 for contacts, 1 for dykes)</li>
+<li><strong>p2</strong> (<em>float</em>) – Structural index value (used only when generating dykes)</li>
+<li><strong>p3</strong> (<em>int</em>) – Window length</li>
+<li><strong>p4</strong> (<em>float</em>) – Field strength in nT</li>
+<li><strong>p5</strong> (<em>float</em>) – Inclination</li>
+<li><strong>p6</strong> (<em>float</em>) – Declination</li>
+<li><strong>p7</strong> (<em>float</em>) – Profile azimuth wrt north</li>
+<li><strong>p8</strong> (<em>float</em>) – Minimum depth for returned solutions</li>
+<li><strong>p9</strong> (<em>float</em>) – Maximum depth for returned solutions</li>
+<li><strong>p10</strong> (<em>float</em>) – Percentage error allowed before rejection</li>
+<li><strong>p11</strong> (<em>int</em>) – Number of points in profile</li>
+<li><strong>p12</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Array of point distances along profile</li>
+<li><strong>p13</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Array of observed values</li>
+<li><strong>p14</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Array of horizontal derivative values. Can be NULL for calculated</li>
+<li><strong>p15</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Array of vertical derivative values. Can be NULL for calculated</li>
+<li><strong>p16</strong> (<em>int</em>) – Length of solutions arrays passed in</li>
+<li><strong>p17</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – The profile distance for each solution</li>
+<li><strong>p18</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – The depth for each solution</li>
+<li><strong>p19</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – The dip for each solution</li>
+<li><strong>p20</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – The susceptibility for each solution</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">&gt;0 for OK, -1 for Error</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXEUL3.ex_euler_derive">
+<em class="property">classmethod </em><code class="descname">ex_euler_derive</code><span class="sig-paren">(</span><em>vv_dist</em>, <em>pr_dx</em>, <em>vv_mag</em>, <em>length</em>, <em>vv_gx</em>, <em>vv_gz</em>, <em>max_sol</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEUL3.ex_euler_derive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates gradients</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>vv_dist</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input distance</li>
+<li><strong>pr_dx</strong> (<em>float</em>) – Sample Interval</li>
+<li><strong>vv_mag</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input mag</li>
+<li><strong>length</strong> (<em>int</em>) – SampleCount</li>
+<li><strong>vv_gx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Horizontal Gradient out</li>
+<li><strong>vv_gz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertical Gradient out</li>
+<li><strong>max_sol</strong> (<em>int</em>) – Output array size limit</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 for OK, -1 for Error</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEUL3.get_result">
+<code class="descname">get_result</code><span class="sig-paren">(</span><em>vv_r</em>, <em>pi_res_field</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEUL3.get_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a result field <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> from <a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEUL3</span></code></a> object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vv_r</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> to store the result</li>
+<li><strong>pi_res_field</strong> (<em>int</em>) – <a class="reference internal" href="#eul3-result"><span class="std std-ref">EUL3_RESULT constants</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEUL3.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEUL3.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXEUL3.null">
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEUL3.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEUL3</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEUL3</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3">GXEUL3</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXEUL3.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>out_fil</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEUL3.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the results of <a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEUL3</span></code></a> object to output file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>out_fil</strong> (<em>str</em>) – Output File Name</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="eul3-result-constants">
+<span id="eul3-result"></span><h2>EUL3_RESULT constants<a class="headerlink" href="#eul3-result-constants" title="Permalink to this headline">¶</a></h2>
+<p>Euler result types</p>
+<dl class="data">
+<dt id="geosoft.gxapi.EUL3_RESULT_X">
+<code class="descname">EUL3_RESULT_X</code><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_X" title="Permalink to this definition">¶</a></dt>
+<dd><p>X</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">EUL3_RESULT_X</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.EUL3_RESULT_Y">
+<code class="descname">EUL3_RESULT_Y</code><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_Y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Y</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">EUL3_RESULT_Y</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.EUL3_RESULT_DEPTH">
+<code class="descname">EUL3_RESULT_DEPTH</code><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_DEPTH" title="Permalink to this definition">¶</a></dt>
+<dd><p>Depth</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">EUL3_RESULT_DEPTH</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.EUL3_RESULT_BACKGROUND">
+<code class="descname">EUL3_RESULT_BACKGROUND</code><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_BACKGROUND" title="Permalink to this definition">¶</a></dt>
+<dd><p>Background</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">EUL3_RESULT_BACKGROUND</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.EUL3_RESULT_DEPTHERROR">
+<code class="descname">EUL3_RESULT_DEPTHERROR</code><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_DEPTHERROR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deptherror</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">EUL3_RESULT_DEPTHERROR</code><em class="property"> = 5</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.EUL3_RESULT_LOCATIONERROR">
+<code class="descname">EUL3_RESULT_LOCATIONERROR</code><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_LOCATIONERROR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Locationerror</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">EUL3_RESULT_LOCATIONERROR</code><em class="property"> = 6</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.EUL3_RESULT_WINDOWX">
+<code class="descname">EUL3_RESULT_WINDOWX</code><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_WINDOWX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Windowx</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">EUL3_RESULT_WINDOWX</code><em class="property"> = 7</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.EUL3_RESULT_WINDOWY">
+<code class="descname">EUL3_RESULT_WINDOWY</code><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_WINDOWY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Windowy</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">EUL3_RESULT_WINDOWY</code><em class="property"> = 8</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

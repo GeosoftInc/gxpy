@@ -1,0 +1,813 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GXCOM class &#8212; Geosoft GX Python API 9.8.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXCOM class</a><ul>
+<li><a class="reference internal" href="#com-baud-constants">COM_BAUD constants</a></li>
+<li><a class="reference internal" href="#com-datasize-constants">COM_DATASIZE constants</a></li>
+<li><a class="reference internal" href="#com-flowcontrol-constants">COM_FLOWCONTROL constants</a></li>
+<li><a class="reference internal" href="#com-parity-constants">COM_PARITY constants</a></li>
+<li><a class="reference internal" href="#com-stopbits-constants">COM_STOPBITS constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXCOM.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxcom-class">
+<span id="gxcom"></span><h1>GXCOM class<a class="headerlink" href="#gxcom-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="geosoft.gxapi.GXCOM">
+<em class="property">class </em><code class="descname">GXCOM</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCOM" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXCOM class.</p>
+<p>This class is used to communicate with external serial devices. It allows the setting of timeouts.</p>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXCOM.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>port</em>, <em>baud</em>, <em>data_size</em>, <em>parity</em>, <em>stop_bits</em>, <em>flow_control</em>, <em>time_out</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCOM.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create <a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCOM</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>port</strong> (<em>str</em>) – Port name to open (“COM1” is example)</li>
+<li><strong>baud</strong> (<em>int</em>) – <a class="reference internal" href="#com-baud"><span class="std std-ref">COM_BAUD constants</span></a></li>
+<li><strong>data_size</strong> (<em>int</em>) – <a class="reference internal" href="#com-datasize"><span class="std std-ref">COM_DATASIZE constants</span></a></li>
+<li><strong>parity</strong> (<em>int</em>) – <a class="reference internal" href="#com-parity"><span class="std std-ref">COM_PARITY constants</span></a></li>
+<li><strong>stop_bits</strong> (<em>int</em>) – <a class="reference internal" href="#com-stopbits"><span class="std std-ref">COM_STOPBITS constants</span></a></li>
+<li><strong>flow_control</strong> (<em>int</em>) – <a class="reference internal" href="#com-flowcontrol"><span class="std std-ref">COM_FLOWCONTROL constants</span></a></li>
+<li><strong>time_out</strong> (<em>int</em>) – Timeout in Ms (500)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCOM</span></code></a> Object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM">GXCOM</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXCOM.create_no_terminate">
+<em class="property">classmethod </em><code class="descname">create_no_terminate</code><span class="sig-paren">(</span><em>port</em>, <em>baud</em>, <em>data_size</em>, <em>parity</em>, <em>stop_bits</em>, <em>flow_control</em>, <em>time_out</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCOM.create_no_terminate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create <a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCOM</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>port</strong> (<em>str</em>) – Port name to open (“COM1” is example)</li>
+<li><strong>baud</strong> (<em>int</em>) – <a class="reference internal" href="#com-baud"><span class="std std-ref">COM_BAUD constants</span></a></li>
+<li><strong>data_size</strong> (<em>int</em>) – <a class="reference internal" href="#com-datasize"><span class="std std-ref">COM_DATASIZE constants</span></a></li>
+<li><strong>parity</strong> (<em>int</em>) – <a class="reference internal" href="#com-parity"><span class="std std-ref">COM_PARITY constants</span></a></li>
+<li><strong>stop_bits</strong> (<em>int</em>) – <a class="reference internal" href="#com-stopbits"><span class="std std-ref">COM_STOPBITS constants</span></a></li>
+<li><strong>flow_control</strong> (<em>int</em>) – <a class="reference internal" href="#com-flowcontrol"><span class="std std-ref">COM_FLOWCONTROL constants</span></a></li>
+<li><strong>time_out</strong> (<em>int</em>) – Timeout in Ms (500)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCOM</span></code></a> Object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM">GXCOM</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXCOM.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCOM.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXCOM.null">
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCOM.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCOM</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCOM</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM">GXCOM</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXCOM.purge_comm">
+<code class="descname">purge_comm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCOM.purge_comm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Purges the input and output buffers.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXCOM.read_chars">
+<code class="descname">read_chars</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCOM.read_chars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads characters from the <a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCOM</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String for characters</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXCOM.read_chars_no_terminate">
+<code class="descname">read_chars_no_terminate</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCOM.read_chars_no_terminate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads characters from the <a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCOM</span></code></a>, times out and does not terminate</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String for characters</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - if successful
+1 - if time out or error</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.0.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXCOM.read_em61_lines_wa">
+<code class="descname">read_em61_lines_wa</code><span class="sig-paren">(</span><em>lines</em>, <em>wa</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCOM.read_em61_lines_wa" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads Lines from the <a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCOM</span></code></a> to a <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a>: Geonics EM61 only</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lines</strong> (<em>int</em>) – Number of lines</li>
+<li><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) – Where to put lines</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXCOM.read_file2_wa">
+<code class="descname">read_file2_wa</code><span class="sig-paren">(</span><em>wa</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCOM.read_file2_wa" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads entire dataset from the <a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCOM</span></code></a> to a <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) – Where to put lines</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXCOM.read_line">
+<code class="descname">read_line</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCOM.read_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads a Line from the <a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCOM</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String for line</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXCOM.read_line_no_terminate">
+<code class="descname">read_line_no_terminate</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCOM.read_line_no_terminate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads a Line from the <a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCOM</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String for line</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - if successful in reading a line
+1 - if an error was encountered</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.0.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXCOM.read_lines_wa">
+<code class="descname">read_lines_wa</code><span class="sig-paren">(</span><em>lines</em>, <em>wa</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCOM.read_lines_wa" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads Lines from the <a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCOM</span></code></a> to a <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lines</strong> (<em>int</em>) – Number of lines</li>
+<li><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) – Where to put lines</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXCOM.set_time_out">
+<code class="descname">set_time_out</code><span class="sig-paren">(</span><em>time_out</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCOM.set_time_out" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the timeout value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time_out</strong> (<em>int</em>) – Timeout in Ms (500)</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXCOM.write_chars">
+<code class="descname">write_chars</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCOM.write_chars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes characters to the <a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCOM</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line</strong> (<em>str</em>) – Line to write</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXCOM.write_chars_no_terminate">
+<code class="descname">write_chars_no_terminate</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCOM.write_chars_no_terminate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes characters to the <a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCOM</span></code></a>.  Does not terminate upon error</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line</strong> (<em>str</em>) – Line to write</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - if successful in writing a string
+1 - if time out or error was encountered</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.0.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXCOM.write_line">
+<code class="descname">write_line</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXCOM.write_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes a Line to the <a class="reference internal" href="#geosoft.gxapi.GXCOM" title="geosoft.gxapi.GXCOM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCOM</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line</strong> (<em>str</em>) – Line to write</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="com-baud-constants">
+<span id="com-baud"></span><h2>COM_BAUD constants<a class="headerlink" href="#com-baud-constants" title="Permalink to this headline">¶</a></h2>
+<p>Connection Speed</p>
+<dl class="data">
+<dt id="geosoft.gxapi.COM_BAUD_110">
+<code class="descname">COM_BAUD_110</code><a class="headerlink" href="#geosoft.gxapi.COM_BAUD_110" title="Permalink to this definition">¶</a></dt>
+<dd><p>110</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_BAUD_110</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_BAUD_300">
+<code class="descname">COM_BAUD_300</code><a class="headerlink" href="#geosoft.gxapi.COM_BAUD_300" title="Permalink to this definition">¶</a></dt>
+<dd><p>300</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_BAUD_300</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_BAUD_600">
+<code class="descname">COM_BAUD_600</code><a class="headerlink" href="#geosoft.gxapi.COM_BAUD_600" title="Permalink to this definition">¶</a></dt>
+<dd><p>600</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_BAUD_600</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_BAUD_1200">
+<code class="descname">COM_BAUD_1200</code><a class="headerlink" href="#geosoft.gxapi.COM_BAUD_1200" title="Permalink to this definition">¶</a></dt>
+<dd><p>1200</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_BAUD_1200</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_BAUD_2400">
+<code class="descname">COM_BAUD_2400</code><a class="headerlink" href="#geosoft.gxapi.COM_BAUD_2400" title="Permalink to this definition">¶</a></dt>
+<dd><p>2400</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_BAUD_2400</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_BAUD_4800">
+<code class="descname">COM_BAUD_4800</code><a class="headerlink" href="#geosoft.gxapi.COM_BAUD_4800" title="Permalink to this definition">¶</a></dt>
+<dd><p>4800</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_BAUD_4800</code><em class="property"> = 5</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_BAUD_9600">
+<code class="descname">COM_BAUD_9600</code><a class="headerlink" href="#geosoft.gxapi.COM_BAUD_9600" title="Permalink to this definition">¶</a></dt>
+<dd><p>9600</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_BAUD_9600</code><em class="property"> = 6</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_BAUD_14400">
+<code class="descname">COM_BAUD_14400</code><a class="headerlink" href="#geosoft.gxapi.COM_BAUD_14400" title="Permalink to this definition">¶</a></dt>
+<dd><p>14400</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_BAUD_14400</code><em class="property"> = 7</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_BAUD_19200">
+<code class="descname">COM_BAUD_19200</code><a class="headerlink" href="#geosoft.gxapi.COM_BAUD_19200" title="Permalink to this definition">¶</a></dt>
+<dd><p>19200</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_BAUD_19200</code><em class="property"> = 8</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_BAUD_56000">
+<code class="descname">COM_BAUD_56000</code><a class="headerlink" href="#geosoft.gxapi.COM_BAUD_56000" title="Permalink to this definition">¶</a></dt>
+<dd><p>56000</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_BAUD_56000</code><em class="property"> = 9</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_BAUD_57600">
+<code class="descname">COM_BAUD_57600</code><a class="headerlink" href="#geosoft.gxapi.COM_BAUD_57600" title="Permalink to this definition">¶</a></dt>
+<dd><p>57600</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_BAUD_57600</code><em class="property"> = 10</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_BAUD_115200">
+<code class="descname">COM_BAUD_115200</code><a class="headerlink" href="#geosoft.gxapi.COM_BAUD_115200" title="Permalink to this definition">¶</a></dt>
+<dd><p>115200</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_BAUD_115200</code><em class="property"> = 11</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_BAUD_128000">
+<code class="descname">COM_BAUD_128000</code><a class="headerlink" href="#geosoft.gxapi.COM_BAUD_128000" title="Permalink to this definition">¶</a></dt>
+<dd><p>128000</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_BAUD_128000</code><em class="property"> = 12</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_BAUD_256000">
+<code class="descname">COM_BAUD_256000</code><a class="headerlink" href="#geosoft.gxapi.COM_BAUD_256000" title="Permalink to this definition">¶</a></dt>
+<dd><p>256000</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_BAUD_256000</code><em class="property"> = 13</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_BAUD_38400">
+<code class="descname">COM_BAUD_38400</code><a class="headerlink" href="#geosoft.gxapi.COM_BAUD_38400" title="Permalink to this definition">¶</a></dt>
+<dd><p>38400</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_BAUD_38400</code><em class="property"> = 14</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="com-datasize-constants">
+<span id="com-datasize"></span><h2>COM_DATASIZE constants<a class="headerlink" href="#com-datasize-constants" title="Permalink to this headline">¶</a></h2>
+<p>Data Bits</p>
+<dl class="data">
+<dt id="geosoft.gxapi.COM_DATASIZE_FIVE">
+<code class="descname">COM_DATASIZE_FIVE</code><a class="headerlink" href="#geosoft.gxapi.COM_DATASIZE_FIVE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Five</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_DATASIZE_FIVE</code><em class="property"> = 5</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_DATASIZE_SIX">
+<code class="descname">COM_DATASIZE_SIX</code><a class="headerlink" href="#geosoft.gxapi.COM_DATASIZE_SIX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Six</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_DATASIZE_SIX</code><em class="property"> = 6</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_DATASIZE_SEVEN">
+<code class="descname">COM_DATASIZE_SEVEN</code><a class="headerlink" href="#geosoft.gxapi.COM_DATASIZE_SEVEN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Seven</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_DATASIZE_SEVEN</code><em class="property"> = 7</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_DATASIZE_EIGHT">
+<code class="descname">COM_DATASIZE_EIGHT</code><a class="headerlink" href="#geosoft.gxapi.COM_DATASIZE_EIGHT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Eight</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_DATASIZE_EIGHT</code><em class="property"> = 8</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="com-flowcontrol-constants">
+<span id="com-flowcontrol"></span><h2>COM_FLOWCONTROL constants<a class="headerlink" href="#com-flowcontrol-constants" title="Permalink to this headline">¶</a></h2>
+<p>Flow Control Options</p>
+<dl class="data">
+<dt id="geosoft.gxapi.COM_FLOWCONTROL_NONE">
+<code class="descname">COM_FLOWCONTROL_NONE</code><a class="headerlink" href="#geosoft.gxapi.COM_FLOWCONTROL_NONE" title="Permalink to this definition">¶</a></dt>
+<dd><p>None</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_FLOWCONTROL_NONE</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_FLOWCONTROL_RTS_CTS">
+<code class="descname">COM_FLOWCONTROL_RTS_CTS</code><a class="headerlink" href="#geosoft.gxapi.COM_FLOWCONTROL_RTS_CTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rts cts</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_FLOWCONTROL_RTS_CTS</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_FLOWCONTROL_DTR_DSR">
+<code class="descname">COM_FLOWCONTROL_DTR_DSR</code><a class="headerlink" href="#geosoft.gxapi.COM_FLOWCONTROL_DTR_DSR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dtr dsr</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_FLOWCONTROL_DTR_DSR</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_FLOWCONTROL_XON_XOFF">
+<code class="descname">COM_FLOWCONTROL_XON_XOFF</code><a class="headerlink" href="#geosoft.gxapi.COM_FLOWCONTROL_XON_XOFF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Xon xoff</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_FLOWCONTROL_XON_XOFF</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="com-parity-constants">
+<span id="com-parity"></span><h2>COM_PARITY constants<a class="headerlink" href="#com-parity-constants" title="Permalink to this headline">¶</a></h2>
+<p>Parity</p>
+<dl class="data">
+<dt id="geosoft.gxapi.COM_PARITY_EVEN">
+<code class="descname">COM_PARITY_EVEN</code><a class="headerlink" href="#geosoft.gxapi.COM_PARITY_EVEN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Even</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_PARITY_EVEN</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_PARITY_NARK">
+<code class="descname">COM_PARITY_NARK</code><a class="headerlink" href="#geosoft.gxapi.COM_PARITY_NARK" title="Permalink to this definition">¶</a></dt>
+<dd><p>Nark</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_PARITY_NARK</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_PARITY_NONE">
+<code class="descname">COM_PARITY_NONE</code><a class="headerlink" href="#geosoft.gxapi.COM_PARITY_NONE" title="Permalink to this definition">¶</a></dt>
+<dd><p>None</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_PARITY_NONE</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_PARITY_ODD">
+<code class="descname">COM_PARITY_ODD</code><a class="headerlink" href="#geosoft.gxapi.COM_PARITY_ODD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Odd</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_PARITY_ODD</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_PARITY_SPACE">
+<code class="descname">COM_PARITY_SPACE</code><a class="headerlink" href="#geosoft.gxapi.COM_PARITY_SPACE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Space</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_PARITY_SPACE</code><em class="property"> = 4</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="com-stopbits-constants">
+<span id="com-stopbits"></span><h2>COM_STOPBITS constants<a class="headerlink" href="#com-stopbits-constants" title="Permalink to this headline">¶</a></h2>
+<p>Stop Bits</p>
+<dl class="data">
+<dt id="geosoft.gxapi.COM_STOPBITS_ONE">
+<code class="descname">COM_STOPBITS_ONE</code><a class="headerlink" href="#geosoft.gxapi.COM_STOPBITS_ONE" title="Permalink to this definition">¶</a></dt>
+<dd><p>One</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_STOPBITS_ONE</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_STOPBITS_ONE5">
+<code class="descname">COM_STOPBITS_ONE5</code><a class="headerlink" href="#geosoft.gxapi.COM_STOPBITS_ONE5" title="Permalink to this definition">¶</a></dt>
+<dd><p>One5</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_STOPBITS_ONE5</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.COM_STOPBITS_TWO">
+<code class="descname">COM_STOPBITS_TWO</code><a class="headerlink" href="#geosoft.gxapi.COM_STOPBITS_TWO" title="Permalink to this definition">¶</a></dt>
+<dd><p>Two</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">COM_STOPBITS_TWO</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>
