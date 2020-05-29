@@ -2077,6 +2077,46 @@ class GXSYS(gxapi_cy.WrapSYS):
 
 
     @classmethod
+    def connect_with_current_central_instance(cls, name, base_path, url, token):
+        """
+        Query information necessary to communicate with current Central Instance
+        
+        :param name:       Instance name
+        :param base_path:  Base path (single port support)
+        :param url:        URL
+        :param token:      Authorization token
+        :type  name:       str_ref
+        :type  base_path:  str_ref
+        :type  url:        str_ref
+        :type  token:      str_ref
+
+        .. versionadded:: 9.8
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        name.value, base_path.value, url.value, token.value = gxapi_cy.WrapSYS._connect_with_current_central_instance(GXContext._get_tls_geo(), name.value.encode(), base_path.value.encode(), url.value.encode(), token.value.encode())
+        
+
+
+
+    @classmethod
+    def get_view_service_url(cls, service_url):
+        """
+        Get the service URL for View
+        
+        :param service_url:  Returned Service URL
+        :type  service_url:  str_ref
+
+        .. versionadded:: 9.7.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        service_url.value = gxapi_cy.WrapSYS._get_view_service_url(GXContext._get_tls_geo(), service_url.value.encode())
+        
+
+
+
+    @classmethod
     def get_view_url(cls, url):
         """
         Get the View URL

@@ -2976,6 +2976,29 @@ class GXDU(gxapi_cy.WrapDU):
 
 
     @classmethod
+    def load_gravity_cg6_to_line(cls, db, data, line):
+        """
+        Load a CG-6 gravity survey file. Specify the name of the output line
+        
+        :param db:    Database
+        :param data:  Gravity data file
+        :param line:  line name - can be empty in which case it will create a line name from the input file name
+        :type  db:    GXDB
+        :type  data:  str
+        :type  line:  str
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** Has its own format - space-delimited columns of data
+        """
+        gxapi_cy.WrapDU._load_gravity_cg6_to_line(GXContext._get_tls_geo(), db, data.encode(), line.encode())
+        
+
+
+
+    @classmethod
     def load_ltb(cls, db, line, ltb, mode):
         """
         Load `GXLTB <geosoft.gxapi.GXLTB>` into a database line.

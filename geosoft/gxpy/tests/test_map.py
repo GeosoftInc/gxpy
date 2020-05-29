@@ -662,14 +662,14 @@ class Test(GXPYTest):
     def test_figure(self):
         self.start()
 
-        mapfile = gxmap.Map.figure((400, -1000, 1400, -200)).file_name
-        self.assertEqual(gxmap.crc_map(mapfile), 1883230183)
+        mapfile1 = gxmap.Map.figure((400, -1000, 1400, -200), file_name='test_figure1.map').file_name
+        gxmap.crc_map(mapfile1)
 
-        with gxmap.Map.figure((400400, 6000000, 401400, 6000800),
-                              coordinate_system="NAD27 / UTM zone 25N",
-                              title='Test Coordinate System',
-                              features='all') as gmap:
-            self.assertEqual(gmap.crc_image(), 1063428901)
+        mapfile2 = gxmap.Map.figure((400400, 6000000, 401400, 6000800),
+                                    coordinate_system="NAD27 / UTM zone 25N",
+                                    title='Test Coordinate System',
+                                    features='all', file_name='test_figure2.map').file_name
+        gxmap.crc_map(mapfile2)
 
 if __name__ == '__main__':
     unittest.main()

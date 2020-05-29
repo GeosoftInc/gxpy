@@ -1198,11 +1198,19 @@ class Mesh(Geometry, Sequence):
             gxvv.GXvv(self._faces[:, 1], dtype=np.int32),\
             gxvv.GXvv(self._faces[:, 2], dtype=np.int32)
 
+    def faces_vv_fast(self):
+        """Return faces in list (f1vv, f2vv, f3vv)."""
+        return  [self.faces[:, 0], self.faces[:, 1], self.faces[:, 2]]
+
     def verticies_vv(self):
         """Return verticies in `geosoft.gxpy.vv.GXvv` tuple (xvv, yvv, zvv)."""
         return gxvv.GXvv(self._verticies[:, 0], dtype=np.float64),\
             gxvv.GXvv(self._verticies[:, 1], dtype=np.float64),\
             gxvv.GXvv(self._verticies[:, 2], dtype=np.float64)
+
+    def verticies_vv_fast(self):
+        """Return verticies in list (xvv, yvv, zvv)."""
+        return [self._verticies[:, 0], self._verticies[:, 1], self._verticies[:, 2]]
 
     def copy(self):
         """Return a copy"""

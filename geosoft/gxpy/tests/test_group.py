@@ -647,10 +647,12 @@ class Test(GXPYTest):
                            text_def=gxg.Text_def(height=20, color='B', font='Calibri', italics=True))
                     g.text_def = gxg.Text_def(height=20, color='B', font='Calibri', italics=True)
                     tex = g.text_extent('Bigger, blue, angled, italics')
-                    self.assertEqual(tex.dimension_xy, (207.58444329904108, 330.632589296182))
+                    self.assertAlmostEqual(209.9629, tex.dimension_xy[0], 3)
+                    self.assertAlmostEqual(334.6408, tex.dimension_xy[1], 3)
                     tex = g.text_extent('Bigger, blue, angled, italics',
                                         gxg.Text_def(height=10, font='Calibri', italics=True))
-                    self.assertEqual(tex.dimension_xy, (103.79222164952054, 165.316294648091))
+                    self.assertAlmostEqual(104.98147, tex.dimension_xy[0], 3)
+                    self.assertAlmostEqual(167.32042, tex.dimension_xy[1], 3)
 
         self.crc_map(map_file)
 

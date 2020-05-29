@@ -22,10 +22,6 @@ import geosoft.gxpy.system as gxsys
 # set to True to show viewer for each CRC call
 SHOW_TEST_VIEWERS = False
 
-_prevent_interactive = os.environ.get('GEOSOFT_PREVENT_INTERACTIVE', 0) == '1'
-if _prevent_interactive:
-    SHOW_TEST_VIEWERS = False
-
 _external_result_base_dir = os.environ.get('GEOSOFT_GXPY_DEV_RESULT_DIR', None)
 _dev_test_run = os.environ.get('GEOSOFT_GXPY_DEV_TEST_RUN', 0) == '1'
 if _dev_test_run:
@@ -33,7 +29,20 @@ if _dev_test_run:
 
 import win32gui
 import win32con
-win32gui.SystemParametersInfo(win32con.SPI_SETFONTSMOOTHING, True)
+
+if win32gui.SystemParametersInfo(win32con.SPI_GETFONTSMOOTHING):
+    import atexit
+
+    def restore_font_smoothing():
+        win32gui.SystemParametersInfo(win32con.SPI_SETFONTSMOOTHING, True)
+    atexit.register(restore_font_smoothing)
+    win32gui.SystemParametersInfo(win32con.SPI_SETFONTSMOOTHING, False)
+
+# do not accidentally block automated runs if these variables are set
+_prevent_interactive = _dev_test_run or os.environ.get('GEOSOFT_PREVENT_INTERACTIVE', 0) == '1'
+if _prevent_interactive:
+    SHOW_TEST_VIEWERS = False
+
 
 # Make root window for UI methods
 root_window = None
@@ -96,6 +105,13 @@ class GXPYTest(unittest.TestCase):
         os.makedirs(gxu._temp_folder_override, exist_ok=True)
 
         gxu._uuid_callable = cls._cls_uuid
+
+        if not _dev_test_run:
+            # This ensures clean global and other settings for consistent test runs
+            _, user_dir, _ = gxapi.GXContext.get_key_based_product_dirs(per_user_key=per_user_key)
+            if os.path.exists(user_dir):
+                shutil.rmtree(user_dir)
+            os.makedirs(user_dir, exist_ok=True)
 
         cls._gx = gx.GXpy(name=context_name, log=print, res_stack=res_stack, max_warnings=12,
                           suppress_progress=True, parent_window=parent_window, per_user_key=per_user_key)

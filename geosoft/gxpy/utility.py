@@ -47,6 +47,9 @@ _temp_folder_override = None
 # Assign callable to override unique ID generation
 _uuid_callable = None
 
+# Global deterministic uuid counter
+d_uuid_count = 1
+
 
 # check valid group/parameter string
 def _validate_parameter(s):
@@ -977,8 +980,13 @@ def uuid():
     .. versionadded:: 9.2
     """
     global _uuid_callable
+    global d_uuid_count
     if _uuid_callable:
         return _uuid_callable()
+    elif gxapi.GXSYS.testing_system_mode() == 1:
+        d_uuid = str(uid.UUID(fields=(0x12345678, 0x1234, 0x5678, 0x12, 0x34, 0x000000000000 + d_uuid_count)))
+        d_uuid_count += 1
+        return d_uuid
     else:
         return str(str(uid.uuid1()))
 

@@ -489,6 +489,61 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
 
 
+    def compute_poly_line_intersections(self, vv_x, vv_y, vv_z, vv_x_out, vv_y_out, vv_z_out):
+        """
+        Compute intersections of a 3D PolyLine with a `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` Object
+        
+        :param vv_x:         X coordinates.
+        :param vv_y:         Y coordinates.
+        :param vv_z:         Z coordinates.
+        :param vv_x_out:     X coordinates.
+        :param vv_y_out:     Y coordinates.
+        :param vv_z_out:     Z coordinates.
+        :type  vv_x:         GXVV
+        :type  vv_y:         GXVV
+        :type  vv_z:         GXVV
+        :type  vv_x_out:     GXVV
+        :type  vv_y_out:     GXVV
+        :type  vv_z_out:     GXVV
+
+        .. versionadded:: 9.7.1
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        self._compute_poly_line_intersections(vv_x, vv_y, vv_z, vv_x_out, vv_y_out, vv_z_out)
+        
+
+
+
+
+    def intersects_bounding_box(self, min_x, min_y, min_z, max_x, max_y, max_z):
+        """
+        Checks intersections of a bounding box with a `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` Object
+        
+        :param min_x:        Min X
+        :param min_y:        Min Y
+        :param min_z:        Min Z
+        :param max_x:        Max X
+        :param max_y:        Max Y
+        :param max_z:        Max Z
+        :type  min_x:        float
+        :type  min_y:        float
+        :type  min_z:        float
+        :type  max_x:        float
+        :type  max_y:        float
+        :type  max_z:        float
+        :rtype:              bool
+
+        .. versionadded:: 9.7.1
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        ret_val = self._intersects_bounding_box(min_x, min_y, min_z, max_x, max_y, max_z)
+        return ret_val
+
+
+
+
 
 ### endblock ClassImplementation
 ### block ClassExtend

@@ -1974,6 +1974,39 @@ class GXDH(gxapi_cy.WrapDH):
 
 
     @classmethod
+    def get_template_blob_no_source_resolve(cls, db, templ, imp_type):
+        """
+        Retrieve the import template from the database.
+        
+        :param db:        `GXDB <geosoft.gxapi.GXDB>` Handle
+        :param templ:     Name of template file to extract to.
+        :param imp_type:  The stored import template type :ref:`DH_DATA`
+        :type  db:        GXDB
+        :type  templ:     str
+        :type  imp_type:  int_ref
+
+        :returns:         0: No template stored in the database
+                          1: Template retrieved and written to a file.
+        :rtype:           int
+
+        .. versionadded:: 9.7.1
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** The template can be retrieved in order to refresh the
+        database with a call to the DHIMPORT.GX.
+
+        The import types correspond to the DHIMPORT.IMPTYPE variable:
+        0: ASCII, 1: Database/XLS, 2: ODBC
+
+        If no template blob exists, templ
+        """
+        ret_val, imp_type.value = gxapi_cy.WrapDH._get_template_blob_no_source_resolve(GXContext._get_tls_geo(), db, templ.encode(), imp_type.value)
+        return ret_val
+
+
+
+    @classmethod
     def get_template_info(cls, templ, data_type, file, table):
         """
         Retrieve the file, `GXDH <geosoft.gxapi.GXDH>` Table name and type from an import template.

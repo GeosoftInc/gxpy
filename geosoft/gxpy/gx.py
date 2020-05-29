@@ -373,6 +373,9 @@ class GXpy:
         global _stack_depth
         global _max_warnings
 
+        # Reset testing UUID base with every init
+        gxu.d_uuid_count = 1
+
         if log is None:
             _max_resource_heap = 0
         else:

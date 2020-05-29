@@ -635,9 +635,8 @@ class Test(GXPYTest):
 
     def test_figure_map(self):
         self.start()
-
-        map_file = gxgrd.figure_map(self.g1f, title='image_test', features='all').file_name
-        self.assertEqual(gxmap.Map.open(map_file).crc_image(pix_width=800), 2301553865)
+        map_file = gxgrd.figure_map(self.g1f, map_file='figure_map.map', title='image_test', features='all').file_name
+        self.crc_map(map_file)
 
     def test_np(self):
         self.start()
@@ -648,8 +647,6 @@ class Test(GXPYTest):
             self.assertEqual(data.shape, (101, 101))
             self.assertEqual(data[0, 0], 771.0)
             self.assertEqual(data[100, 100], 243.0)
-
-
             self.assertEqual(10081870.0, np.nansum(data))
             self.assertEqual(91, np.count_nonzero(np.isnan(data)))
 

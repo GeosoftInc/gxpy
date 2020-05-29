@@ -78,7 +78,7 @@ class Test(GXPYTest):
             self.assertEqual(gdb.max_compressed_channel_bytes, 67106816)
             self.assertEqual(gdb.number_of_blocks, 553)
             self.assertEqual(gdb.lost_blocks, 0)
-            self.assertEqual(gdb.free_blocks, 28)
+            self.assertEqual(gdb.free_blocks, 24)
             self.assertEqual(gdb.compression, 0)
             self.assertEqual(gdb.pages_for_blobs, 0)
             self.assertEqual(gdb.db_size_kb, 915)
@@ -1316,15 +1316,14 @@ class Test(GXPYTest):
 
     def test_figure_line(self):
         self.start()
-
-        map_file = gxdb.Geosoft_gdb.open(self.gdb_name).figure_map(draw=gxdb.DRAW_AS_LINES).file_name
-        self.assertEqual(gxmap.Map.open(map_file).crc_image(pix_width=800), 3590089297)
+        map_file = gxdb.Geosoft_gdb.open(self.gdb_name).figure_map(file_name='figure_line.map',
+                                                                   draw=gxdb.DRAW_AS_LINES).file_name
+        self.crc_map(map_file)
 
     def test_figure_point(self):
         self.start()
-
-        map_file = gxdb.Geosoft_gdb.open(self.gdb_name).figure_map().file_name
-        self.assertEqual(gxmap.Map.open(map_file).crc_image(pix_width=800), 1969856440)
+        map_file = gxdb.Geosoft_gdb.open(self.gdb_name).figure_map(file_name='figure_point.map').file_name
+        self.crc_map(map_file)
 
     def test_temp_gdb(self):
         self.start()

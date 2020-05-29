@@ -3,6 +3,7 @@
 # NOTICE: Do not edit anything here, it is generated code
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+from .GXLST import GXLST
 
 
 ### endblock ClassImports
@@ -2817,12 +2818,28 @@ class GXDB(gxapi_cy.WrapDB):
 # Symbols
 
 
+    @classmethod
+    def create_symb_lst(cls):
+        """
+        Create  a `GXLST <geosoft.gxapi.GXLST>` object large enough to contain channel names and symbols numbers.
+        
+        :rtype:      GXLST
+
+        .. versionadded:: 9.8
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val = gxapi_cy.WrapDB._create_symb_lst(GXContext._get_tls_geo())
+        return GXLST(ret_val)
+
+
+
 
     def array_lst(self, lst):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` object with array (`GXVA <geosoft.gxapi.GXVA>`) channel symbols.
         
-        :param lst:  List to Populate
+        :param lst:  List to Populate (construct with CreateSymbLST_DB)
         :type  lst:  GXLST
 
         .. versionadded:: 5.0
@@ -2840,7 +2857,7 @@ class GXDB(gxapi_cy.WrapDB):
         Load a `GXLST <geosoft.gxapi.GXLST>` object with array (`GXVA <geosoft.gxapi.GXVA>`) channel symbols with a particular number of columns.
         
         :param columns:  Number of columns in array ( > 1 )
-        :param lst:      List to Populate
+        :param lst:      List to Populate (construct with CreateSymbLST_DB)
         :type  columns:  int
         :type  lst:      GXLST
 
@@ -2858,7 +2875,7 @@ class GXDB(gxapi_cy.WrapDB):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with database channels.
         
-        :param lst:  List to Populate
+        :param lst:  List to Populate (construct with CreateSymbLST_DB)
         :type  lst:  GXLST
 
         .. versionadded:: 6.3
@@ -2883,7 +2900,7 @@ class GXDB(gxapi_cy.WrapDB):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with non-array database channels.
         
-        :param lst:  List to Populate
+        :param lst:  List to Populate (construct with CreateSymbLST_DB)
         :type  lst:  GXLST
 
         .. versionadded:: 8.2
@@ -2902,7 +2919,7 @@ class GXDB(gxapi_cy.WrapDB):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with channels in a particular class.
         
-        :param lst:  `GXLST <geosoft.gxapi.GXLST>` object to populate
+        :param lst:  `GXLST <geosoft.gxapi.GXLST>` object to populate (construct with CreateSymbLST_DB)
         :param cl:   CLASS name for the channel ("" for all)
         :type  lst:  GXLST
         :type  cl:   str
@@ -2928,7 +2945,7 @@ class GXDB(gxapi_cy.WrapDB):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with group lines in a particular class.
         
-        :param lst:  `GXLST <geosoft.gxapi.GXLST>` object to populate
+        :param lst:  `GXLST <geosoft.gxapi.GXLST>` object to populate (construct with CreateSymbLST_DB)
         :param cl:   CLASS name for the group ("" for all)
         :type  lst:  GXLST
         :type  cl:   str
@@ -3065,7 +3082,7 @@ class GXDB(gxapi_cy.WrapDB):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with channels in a comma-separated list.
         
-        :param lst:       `GXLST <geosoft.gxapi.GXLST>` object to populate
+        :param lst:       `GXLST <geosoft.gxapi.GXLST>` object to populate (construct with CreateSymbLST_DB)
         :param channels:  Comma-separated list of channels
         :type  lst:       GXLST
         :type  channels:  str
@@ -3266,7 +3283,7 @@ class GXDB(gxapi_cy.WrapDB):
         In order to modify this displayed channels list,
         call `set_chan_order_lst <geosoft.gxapi.GXDB.set_chan_order_lst>` after.
         
-        :param lst:  `GXLST <geosoft.gxapi.GXLST>` object to populate
+        :param lst:  `GXLST <geosoft.gxapi.GXLST>` object to populate (construct with CreateSymbLST_DB)
         :type  lst:  GXLST
 
         .. versionadded:: 5.0.8
@@ -3489,7 +3506,7 @@ class GXDB(gxapi_cy.WrapDB):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with database lines.
         
-        :param lst:  List to Populate
+        :param lst:  List to Populate (construct with CreateSymbLST_DB)
         :type  lst:  GXLST
 
         .. versionadded:: 6.3
@@ -3561,7 +3578,7 @@ class GXDB(gxapi_cy.WrapDB):
         """
         Load a `GXLST <geosoft.gxapi.GXLST>` with the selected lines.
         
-        :param lst:  List to Populate
+        :param lst:  List to Populate (construct with CreateSymbLST_DB)
         :type  lst:  GXLST
 
         .. versionadded:: 5.1.2
@@ -3655,7 +3672,7 @@ class GXDB(gxapi_cy.WrapDB):
         """
         Populate a `GXLST <geosoft.gxapi.GXLST>` with database symbols.
         
-        :param lst:   List to Populate
+        :param lst:   List to Populate (construct with CreateSymbLST_DB)
         :param type:  :ref:`DB_SYMB_TYPE`
         :type  lst:   GXLST
         :type  type:  int
