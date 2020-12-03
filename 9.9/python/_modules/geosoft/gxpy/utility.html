@@ -1,0 +1,1635 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxpy.utility &#8212; Geosoft GX Python API 9.9.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.utility</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxpy.utility</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Utility functions to support Geosoft Python scripts and modules.</span>
+
+<span class="sd">.. note::</span>
+
+<span class="sd">    Regression tests provide usage examples:</span>
+<span class="sd">    `Tests &lt;https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_utility.py&gt;`_</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">decimal</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">uuid</span> <span class="k">as</span> <span class="nn">uid</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">binascii</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">gmtime</span><span class="p">,</span> <span class="n">strftime</span>
+<span class="kn">from</span> <span class="nn">._jdcal.jdcal</span> <span class="kn">import</span> <span class="n">is_leap</span><span class="p">,</span> <span class="n">gcal2jd</span><span class="p">,</span> <span class="n">jd2gcal</span>
+<span class="kn">from</span> <span class="nn">distutils.version</span> <span class="kn">import</span> <span class="n">StrictVersion</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">._xmltodict</span> <span class="kn">import</span> <span class="n">xmltodict</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
+
+<span class="kn">import</span> <span class="nn">geosoft</span>
+<span class="kn">import</span> <span class="nn">geosoft.gxapi</span> <span class="k">as</span> <span class="nn">gxapi</span>
+
+<span class="n">__version__</span> <span class="o">=</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">__version__</span>
+
+
+<span class="k">def</span> <span class="nf">_t</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">gxpy</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+
+<span class="c1"># cached lookup tables</span>
+<span class="n">_dummy_map</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">_gx2np_type</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">_np2gx_type</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># Assign to valid path to override the Geosoft temporary file folder</span>
+<span class="n">_temp_folder_override</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># Assign callable to override unique ID generation</span>
+<span class="n">_uuid_callable</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># Global deterministic uuid counter</span>
+<span class="n">d_uuid_count</span> <span class="o">=</span> <span class="mi">1</span>
+
+
+<span class="c1"># check valid group/parameter string</span>
+<span class="k">def</span> <span class="nf">_validate_parameter</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s1">&#39;.&#39;</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+<div class="viewcode-block" id="UtilityException"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.UtilityException">[docs]</a><span class="k">class</span> <span class="nc">UtilityException</span><span class="p">(</span><span class="n">geosoft</span><span class="o">.</span><span class="n">GXRuntimeError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Exceptions from :mod:`geosoft.gxpy.utility`.</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="check_version"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.check_version">[docs]</a><span class="k">def</span> <span class="nf">check_version</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">raise_on_fail</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check the minimum API version.</span>
+
+<span class="sd">    :param v:               minimum version string required (ie &quot;9.1&quot; or &quot;9.2.4&quot;)</span>
+<span class="sd">    :param raise_on_fail:   if True, raises an error if the version check fails, returns False otherwise</span>
+<span class="sd">    :returns:               True if version is OK, False otherwise(unless raise_on_fail is False)</span>
+
+<span class="sd">    .. note::  </span>
+<span class="sd">        A valid version consists of two or three dot-separated numeric components, with an optional development</span>
+<span class="sd">        version tag on the end.  The development version tag consists of the letter &#39;b&#39; (for beta) followed by</span>
+<span class="sd">        a number.  If the numeric components of two version numbers are equal, then a development version will</span>
+<span class="sd">        always be deemed earlier (lesser) than one without.</span>
+
+<span class="sd">        The following are valid version numbers (shown in order of used for meeting minimum requirements):</span>
+
+<span class="sd">            * 9.1 or 9.1.0  (they are equivalent)</span>
+<span class="sd">            * 9.1.1b0 (development version)</span>
+<span class="sd">            * 9.1.1</span>
+<span class="sd">            * 9.2</span>
+
+<span class="sd">        The following are examples of invalid version numbers:</span>
+
+<span class="sd">            * 1</span>
+<span class="sd">            * 2.7.2.2</span>
+<span class="sd">            * 1.3.a4</span>
+<span class="sd">            * 1.3pl1</span>
+<span class="sd">            * 1.3c4</span>
+
+<span class="sd">        The rationale for this version numbering system is explained</span>
+<span class="sd">        in the `distutils &lt;https://docs.python.org/3/distutils/&gt;`_ documentation.</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">StrictVersion</span><span class="p">(</span><span class="n">__version__</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">StrictVersion</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">raise_on_fail</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">UtilityException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s2">&quot;GX Requires API </span><span class="si">{}</span><span class="s2">, only </span><span class="si">{}</span><span class="s2"> installed.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">__version__</span><span class="p">))</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">UtilityException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Invalid version string &quot;</span><span class="si">{}</span><span class="s1">&quot;, expecting something like &quot;</span><span class="si">{}</span><span class="s1">&quot;.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">__version__</span><span class="p">)))</span></div>
+
+
+<div class="viewcode-block" id="dict_from_lst"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.dict_from_lst">[docs]</a><span class="k">def</span> <span class="nf">dict_from_lst</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a dictionary from a Geosoft `geosoft.gxapi.GXLST` instance.</span>
+<span class="sd">    </span>
+<span class="sd">    :param lst:     `geosoft.gxapi.GXLST` instance</span>
+<span class="sd">    :param ordered: True to return an OrderedDict</span>
+<span class="sd">    :returns:       python dictionary from a Geosoft GXLST</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">ordered</span><span class="p">:</span>
+        <span class="n">dct</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dct</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lst</span><span class="o">.</span><span class="n">size</span><span class="p">()):</span>
+        <span class="n">lst</span><span class="o">.</span><span class="n">gt_item</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="n">lst</span><span class="o">.</span><span class="n">gt_item</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+        <span class="n">dct</span><span class="p">[</span><span class="n">key</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">value</span>
+    <span class="k">return</span> <span class="n">dct</span></div>
+
+<div class="viewcode-block" id="geosoft_xml_from_dict"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.geosoft_xml_from_dict">[docs]</a><span class="k">def</span> <span class="nf">geosoft_xml_from_dict</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">pretty</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a unicode XML string of a dictionary with geosoft namespace defined.</span>
+
+<span class="sd">    :param d: dictionary</span>
+<span class="sd">    :param pretty: True to indent with line-feeds for pretty-printing</span>
+
+<span class="sd">    The tag xmlns=&quot;http://www.geosoft.com/schema/geo&quot; is added to the root element.</span>
+
+
+<span class="sd">    .. versionadded:: 9.4</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;geosoft&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">xml_from_dict</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">pretty</span><span class="p">,</span> <span class="n">xmlns</span><span class="o">=</span><span class="s2">&quot;http://www.geosoft.com/schema/geo&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="xml_from_dict"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.xml_from_dict">[docs]</a><span class="k">def</span> <span class="nf">xml_from_dict</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">pretty</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xmlns</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a unicode XML string of a dictionary.</span>
+<span class="sd">    </span>
+<span class="sd">    :param d:       dictionary</span>
+<span class="sd">    :param pretty:  True to indent with line-feeds for pretty-printing</span>
+<span class="sd">    :param xmlns:   xml namespace string.  xmlns=&quot;http://www.geosoft.com/schema/geo&quot; for geosoft.</span>
+
+<span class="sd">    If the dictionary does not have a single node root, the root XML will be &#39;__gx_xml__&#39;.</span>
+<span class="sd">    </span>
+<span class="sd">    Based on: https://github.com/martinblech/xmltodict</span>
+<span class="sd">    </span>
+<span class="sd">    .. seealso:: :func:`dict_from_xml`</span>
+<span class="sd">     </span>
+<span class="sd">    .. versionadded:: 9.2</span>
+
+<span class="sd">    .. versionchanged:: 9.4 added support for xmlns</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">d</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">UtilityException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Cannot create XML from an empty dictionary.&#39;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;__gx_xml__&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}</span>
+
+    <span class="k">if</span> <span class="n">xmlns</span><span class="p">:</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">d</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">root</span><span class="p">][</span><span class="s1">&#39;@xmlns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">xmlns</span>
+
+    <span class="n">xml</span> <span class="o">=</span> <span class="n">xmltodict</span><span class="o">.</span><span class="n">unparse</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">pretty</span><span class="o">=</span><span class="n">pretty</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">xml</span></div>
+
+
+<div class="viewcode-block" id="dict_from_xml"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.dict_from_xml">[docs]</a><span class="k">def</span> <span class="nf">dict_from_xml</span><span class="p">(</span><span class="n">xml</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a dictionary of an xml string.</span>
+<span class="sd">    </span>
+<span class="sd">    :param xml: xml string              </span>
+<span class="sd">    :returns:   dictionary of the XML content.</span>
+<span class="sd">    </span>
+<span class="sd">    If the XML root is &#39;__gx_xml__&#39;, the root is stripped.</span>
+<span class="sd">    </span>
+<span class="sd">    Based on: https://github.com/martinblech/xmltodict</span>
+<span class="sd">    </span>
+<span class="sd">    Tag attributes will become keys with &#39;@&#39; as the first character, and the key value will be the attribute setting.</span>
+<span class="sd">    </span>
+<span class="sd">    For example, XML string:</span>
+<span class="sd">    </span>
+<span class="sd">    .. code::</span>
+<span class="sd">    </span>
+<span class="sd">        &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="sd">        &lt;gmd:MD_Metadata xsi:schemaLocation=&quot;http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd&quot;&gt;</span>
+<span class="sd">            &lt;geosoft xmlns=&quot;http://www.geosoft.com/schema/geo&quot;&gt;</span>
+<span class="sd">                &lt;dataset version=&quot;1&quot; beta=&quot;abc&quot;&gt;</span>
+<span class="sd">                    &lt;title&gt;test_grid_1&lt;/title&gt;</span>
+<span class="sd">                    &lt;file_format&gt;Geosoft Grid&lt;/file_format&gt;</span>
+<span class="sd">                &lt;/dataset&gt;</span>
+<span class="sd">            &lt;/geosoft&gt;</span>
+<span class="sd">        &lt;/gmd:MD_Metadata&gt;</span>
+<span class="sd">        </span>
+<span class="sd">    returns dictionary:</span>
+<span class="sd">    </span>
+<span class="sd">    .. code::</span>
+<span class="sd">    </span>
+<span class="sd">        {&#39;gmd:MD_Metadata&#39;: {</span>
+<span class="sd">            &#39;@xsi:schemaLocation&#39;: &quot;http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd&quot;,</span>
+<span class="sd">            &#39;geosoft&#39;: {</span>
+<span class="sd">                &#39;@xmlns&#39;: &quot;http://www.geosoft.com/schema/geo&quot;,</span>
+<span class="sd">                &#39;dataset&#39;: {</span>
+<span class="sd">                    &#39;@beta&#39;: &quot;abc&quot;,</span>
+<span class="sd">                    &#39;@version&#39;: &quot;1&quot;,</span>
+<span class="sd">                    &#39;title&#39;: &quot;test_grid_1&quot;,</span>
+<span class="sd">                    &#39;file_format&#39;: &quot;Geosoft Grid&quot;</span>
+<span class="sd">                    }</span>
+<span class="sd">                }</span>
+<span class="sd">            }</span>
+<span class="sd">        }</span>
+<span class="sd">        </span>
+<span class="sd">    .. seealso:: :func:`xml_from_dict` </span>
+<span class="sd">        </span>
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">d</span> <span class="o">=</span> <span class="n">xmltodict</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
+
+    <span class="c1"># strip the generic dictionary root</span>
+    <span class="k">if</span> <span class="s1">&#39;__gx_xml__&#39;</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;__gx_xml__&#39;</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">d</span></div>
+
+
+<div class="viewcode-block" id="merge_dict"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.merge_dict">[docs]</a><span class="k">def</span> <span class="nf">merge_dict</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">d2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Update a dictionary by adding key-values from second dictionary.  Unlike Python&#39;s </span>
+<span class="sd">    update(), this adds new keys to nested dictionaries rather than replace everything</span>
+<span class="sd">    in a nested dictionary.</span>
+<span class="sd">    </span>
+<span class="sd">    :param d:   dictionary to update</span>
+<span class="sd">    :param d2:  new items to add or replace</span>
+<span class="sd">    :return:    merged dictionary</span>
+<span class="sd">    </span>
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">new</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">old</span><span class="p">:</span>
+                <span class="n">old</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                    <span class="n">update</span><span class="p">(</span><span class="n">old</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">v</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">old</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+
+    <span class="n">update</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">d2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">d</span></div>
+
+
+<div class="viewcode-block" id="geosoft_metadata"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.geosoft_metadata">[docs]</a><span class="k">def</span> <span class="nf">geosoft_metadata</span><span class="p">(</span><span class="n">geosoft_file_name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get the metadata dictionary for a geosoft data file.</span>
+<span class="sd">    </span>
+<span class="sd">    :param geosoft_file_name:   geosoft supported file name</span>
+<span class="sd">    :returns:                   dictionary of the metadata</span>
+<span class="sd">    </span>
+<span class="sd">    If the metadata for the file does not exist  {&#39;metadata&#39;: {}} is returned.</span>
+<span class="sd">    </span>
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">geosoft_file_name</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">geosoft_file_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.xml&#39;</span><span class="p">):</span>
+            <span class="n">geosoft_file_name</span> <span class="o">=</span> <span class="n">geosoft_file_name</span> <span class="o">+</span> <span class="s1">&#39;.xml&#39;</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">geosoft_file_name</span><span class="p">):</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">geosoft_file_name</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">BOM</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\ufeff</span><span class="s1">&#39;</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">BOM</span><span class="p">):</span>
+                    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+                <span class="n">metadata</span> <span class="o">=</span> <span class="n">dict_from_xml</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">metadata</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">metadata</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;metadata&#39;</span><span class="p">:</span> <span class="p">{}}</span></div>
+
+
+<div class="viewcode-block" id="time_stamp"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.time_stamp">[docs]</a><span class="k">def</span> <span class="nf">time_stamp</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;current date-time as a string.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">,</span> <span class="n">gmtime</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="yearFromJulianDay2"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.yearFromJulianDay2">[docs]</a><span class="k">def</span> <span class="nf">yearFromJulianDay2</span><span class="p">(</span><span class="n">jd1</span><span class="p">,</span> <span class="n">jd2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Julian year</span>
+<span class="sd">    </span>
+<span class="sd">    :param jd1: part 1 Julian date (https://pypi.python.org/pypi/jdcal)</span>
+<span class="sd">    :param jd2: part 2 Julian date</span>
+<span class="sd">    :returns: decimal Gregorian year (Western calendar year)</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">jd2gcal</span><span class="p">(</span><span class="n">jd1</span><span class="p">,</span> <span class="n">jd2</span><span class="p">)</span>
+    <span class="n">jdt_1</span><span class="p">,</span> <span class="n">jdt_2</span> <span class="o">=</span> <span class="n">gcal2jd</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">day_diff</span> <span class="o">=</span> <span class="p">(</span><span class="n">jd1</span> <span class="o">-</span> <span class="n">jdt_1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">jd2</span> <span class="o">-</span> <span class="n">jdt_2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span> <span class="o">+</span> <span class="p">(</span><span class="n">day_diff</span> <span class="o">/</span> <span class="p">(</span><span class="mi">366</span> <span class="k">if</span> <span class="n">is_leap</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="k">else</span> <span class="mi">365</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="rdecode_err"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.rdecode_err">[docs]</a><span class="k">def</span> <span class="nf">rdecode_err</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Geosoft string conversion to a number, raising ValueError on failure</span>
+
+<span class="sd">    :param s: string to be decoded</span>
+<span class="sd">    :returns: float of decoded string</span>
+
+<span class="sd">    If unable to decode string:</span>
+<span class="sd">        | rdecode_err()   raises ValueError</span>
+<span class="sd">        | rdecode()       returns gxapi.rDUMMY</span>
+
+<span class="sd">    Any string that begins with &quot;*&quot; character is interpreted as a dummy.</span>
+
+<span class="sd">    If unable to directly convert simple string, decoder will clean-up the string by</span>
+<span class="sd">    removing leading/trailing white space and converting &#39;o&#39; or &#39;O&#39; to numeral &#39;0&#39;.</span>
+
+<span class="sd">    If decoder still fails, it will attempt to decode time and geographic formatted</span>
+<span class="sd">    strings to return decimal hours or decimal degrees respectively:</span>
+
+<span class="sd">    :date:</span>
+<span class="sd">        | yyyy-mm-dd</span>
+<span class="sd">        | yyyy/mm/dd</span>
+<span class="sd">        | date will be fractional Gregorian year</span>
+
+<span class="sd">    :time:</span>
+<span class="sd">        | hh:mm:ss.ssAM/am</span>
+<span class="sd">        | hh:mm:ss.ssPM/pm</span>
+<span class="sd">        | PM/pm adds 12 hours (for example 2:30pm returns 14.5)</span>
+
+<span class="sd">    :geographic:</span>
+<span class="sd">        | [+/-]deg mm ss.ss[N/S/E/W/n/s/e/w]</span>
+<span class="sd">        | [+/-]deg.mm.ss.ss[N/S/E/W/n/s/e/w]</span>
+<span class="sd">        | S/s and W/w return negative of decoded value</span>
+<span class="sd">        |</span>
+<span class="sd">        | Example:</span>
+<span class="sd">        | &quot;-90 15 18.0&quot; = &quot;90 15 18.0W&quot; = &quot;90.15.18w&quot;, returns -90.255</span>
+<span class="sd">        | &quot;14&quot; = &quot;14N&quot; = &quot;14.00.00&quot; = &quot;14 00 00&quot;, returns 14.0</span>
+
+<span class="sd">    Note that mm and ss.ss can go over 60.0 and will be decoded as minutes or seconds</span>
+<span class="sd">    as presented. For example, &quot;20 90 0.00&quot; will return 21.5.</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># nothing there, or a dummy</span>
+    <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">s</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;*&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">rDUMMY</span>
+
+    <span class="c1"># try floating point</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+
+        <span class="c1"># date</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">8</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="ow">in</span> <span class="s1">&#39;/-&#39;</span><span class="p">):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">smonth</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">smonth</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="s1">&#39;/-&#39;</span><span class="p">:</span>
+                    <span class="n">smonth</span> <span class="o">=</span> <span class="n">smonth</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">sday</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">7</span><span class="p">:]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">sday</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+                <span class="n">j1</span><span class="p">,</span> <span class="n">j2</span> <span class="o">=</span> <span class="n">gcal2jd</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="mi">4</span><span class="p">],</span> <span class="n">smonth</span><span class="p">,</span> <span class="n">sday</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">yearFromJulianDay2</span><span class="p">(</span><span class="n">j1</span><span class="p">,</span> <span class="n">j2</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span>
+
+        <span class="c1"># tabs are spaces, trim leading white space</span>
+        <span class="n">ss</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+        <span class="n">ss</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
+        <span class="n">ss</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+
+        <span class="c1"># replace mistyped &quot;o&quot;, &quot;O&quot;</span>
+        <span class="n">ss</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
+        <span class="n">ss</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
+
+        <span class="c1"># nothing there, or a dummy</span>
+        <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">ss</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">ss</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;*&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">rDUMMY</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">ss</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+
+            <span class="c1"># look for time or geographic format - two spaces become dots</span>
+            <span class="n">sg</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">sg</span> <span class="o">=</span> <span class="n">sg</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="k">if</span> <span class="s1">&#39; &#39;</span> <span class="ow">in</span> <span class="n">sg</span><span class="p">:</span>  <span class="c1"># ok, this string is messed up</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span>
+            <span class="n">sg</span> <span class="o">=</span> <span class="n">sg</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+            <span class="n">twelve</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">negsuf</span> <span class="o">=</span> <span class="n">negpre</span> <span class="o">=</span> <span class="mf">1.0</span>
+            <span class="n">suf</span> <span class="o">=</span> <span class="n">sg</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">sg</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">suf</span> <span class="o">==</span> <span class="s1">&#39;S&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">suf</span> <span class="o">==</span> <span class="s1">&#39;W&#39;</span><span class="p">):</span>
+                <span class="n">negsuf</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+            <span class="k">if</span> <span class="n">sg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
+                <span class="n">negpre</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+                <span class="n">sg</span> <span class="o">=</span> <span class="n">sg</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s1">&#39;PM&#39;</span> <span class="ow">in</span> <span class="n">sg</span><span class="p">:</span>
+                    <span class="n">twelve</span> <span class="o">=</span> <span class="mf">12.0</span>
+            <span class="n">sg</span> <span class="o">=</span> <span class="n">sg</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;NSEWAMP&quot;</span><span class="p">)</span>
+            <span class="n">dms</span> <span class="o">=</span> <span class="n">sg</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">degrees</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">dms</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dms</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">minutes</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">dms</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">minutes</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dms</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">seconds</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">dms</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">seconds</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">degrees</span> <span class="o">+</span> <span class="p">(</span><span class="n">minutes</span> <span class="o">+</span> <span class="n">seconds</span> <span class="o">/</span> <span class="mf">60.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">60.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">negpre</span> <span class="o">*</span> <span class="n">negsuf</span> <span class="o">+</span> <span class="n">twelve</span></div>
+
+
+<div class="viewcode-block" id="rdecode"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.rdecode">[docs]</a><span class="k">def</span> <span class="nf">rdecode</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Geosoft string (number, date, time, geographic) conversion to a number, always works.</span>
+
+<span class="sd">    :param s:   string to decode</span>
+<span class="sd">    :returns:   decoded number, gxapi.rDUMMY if unable to decode the string</span>
+
+<span class="sd">    See rdecode_err(string) for more details.</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">rdecode_err</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">rDUMMY</span></div>
+
+
+<div class="viewcode-block" id="decode"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.decode">[docs]</a><span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Decode a string (s) to a numpy format defined by string (f).</span>
+
+<span class="sd">    :param s:   string to decode</span>
+<span class="sd">    :param f:   format string:</span>
+
+<span class="sd">        === ================================================</span>
+<span class="sd">        b	Boolean</span>
+<span class="sd">        i	(signed) integer</span>
+<span class="sd">        u	unsigned integer</span>
+<span class="sd">        f	floating-point</span>
+<span class="sd">        S   string, interpreted as &#39;U&#39; unicode</span>
+<span class="sd">        a	string, interpreted as &#39;U&#39; unicode</span>
+<span class="sd">        U	unicode, requires length suffix, ie &#39;U1&#39;, &#39;U14&#39;</span>
+<span class="sd">        === ================================================</span>
+
+<span class="sd">    :times:</span>
+<span class="sd">        Times in the form hh:mm:ss.sss return a decimal hour.</span>
+
+<span class="sd">    :dates:</span>
+<span class="sd">        Dates in form yyyy-mm-dd, yyyy-m-d, yy/mm/dd or yyyy/m/d will be decoded naturally</span>
+<span class="sd">        and return a decimal Gregorian year. Other date formats will raise a ValueErr.</span>
+
+<span class="sd">    :Errors:</span>
+<span class="sd">        ========== ======================================</span>
+<span class="sd">        TypeError  if unable to recognize type</span>
+<span class="sd">        ValueError if there is a problem with the string.</span>
+<span class="sd">        ========== ======================================</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># always use Unicode for strings</span>
+    <span class="k">if</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="s2">&quot;Sa&quot;</span><span class="p">:</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="s1">&#39;U&#39;</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+    <span class="c1"># handle strings</span>
+    <span class="k">if</span> <span class="n">f</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;U&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span>
+        <span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>  <span class="c1"># to insure valid type</span>
+        <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">:])]</span>
+
+    <span class="c1"># not currently supporting complex</span>
+    <span class="k">if</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span>
+
+    <span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>  <span class="c1"># raises error if unknown type</span>
+
+    <span class="n">r</span> <span class="o">=</span> <span class="n">rdecode_err</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;f&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">r</span>
+
+    <span class="c1"># boolean</span>
+    <span class="k">if</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">r</span> <span class="o">==</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">rDUMMY</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">r</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># everything else is returned as an int</span>
+    <span class="k">if</span> <span class="n">r</span> <span class="o">==</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">rDUMMY</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_S4DM</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">r</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="display_message"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.display_message">[docs]</a><span class="k">def</span> <span class="nf">display_message</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Display a message to the user.</span>
+
+<span class="sd">    :param title:   message title</span>
+<span class="sd">    :param message: message</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">display_message</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">gxapi</span><span class="o">.</span><span class="n">GXAPIError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Title: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">Message: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="gx_dtype"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.gx_dtype">[docs]</a><span class="k">def</span> <span class="nf">gx_dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :returns:   GX type for a numpy dtype</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">global</span> <span class="n">_np2gx_type</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">bool</span><span class="p">(</span><span class="n">_np2gx_type</span><span class="p">):</span>
+        <span class="n">_np2gx_type</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_DOUBLE</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_LONG64</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">byte</span><span class="p">)):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_BYTE</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_DOUBLE</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_FLOAT</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_LONG64</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_LONG</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">)):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_SHORT</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">)):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_BYTE</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_UBYTE</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_USHORT</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_ULONG</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint64</span><span class="p">)):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_ULONG64</span><span class="p">}</span>
+    <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">dtype</span><span class="o">.</span><span class="n">type</span> <span class="ow">is</span> <span class="n">np</span><span class="o">.</span><span class="n">str_</span><span class="p">:</span>
+        <span class="c1"># x4 to allow for full UTF-8 characters</span>
+        <span class="k">return</span> <span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="n">dtype</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span><span class="o">*</span><span class="mi">4</span>
+    <span class="k">return</span> <span class="n">_np2gx_type</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">dtype</span><span class="p">)]</span></div>
+
+
+<div class="viewcode-block" id="dtype_gx"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.dtype_gx">[docs]</a><span class="k">def</span> <span class="nf">dtype_gx</span><span class="p">(</span><span class="n">gtype</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :returns:   numpy dtype from a GX type</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">_gx2np_type</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">bool</span><span class="p">(</span><span class="n">_gx2np_type</span><span class="p">):</span>
+        <span class="n">_gx2np_type</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_DOUBLE</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">),</span>
+            <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_FLOAT</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span>
+            <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_LONG64</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">),</span>
+            <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_LONG</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">),</span>
+            <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_BYTE</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">byte</span><span class="p">),</span>
+            <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_SHORT</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">),</span>
+            <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_UBYTE</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">),</span>
+            <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_USHORT</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">),</span>
+            <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_ULONG</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">),</span>
+            <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_ULONG64</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint64</span><span class="p">),</span>
+            <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_FLOAT2D</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span>
+            <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_DOUBLE2D</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">),</span>
+            <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_FLOAT3D</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span>
+            <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_DOUBLE3D</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)}</span>
+    <span class="k">if</span> <span class="n">gtype</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;U</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">-</span><span class="n">gtype</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">_gx2np_type</span><span class="p">[</span><span class="n">gtype</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="dtype_gx_dimension"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.dtype_gx_dimension">[docs]</a><span class="k">def</span> <span class="nf">dtype_gx_dimension</span><span class="p">(</span><span class="n">gtype</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :returns:   numpy dtype and dimension of the type, 1, 2 or 3. The dimension indicates 1D, 2D or 3D data.</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">gtype</span> <span class="o">==</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_FLOAT2D</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">gtype</span> <span class="o">==</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_DOUBLE2D</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">dtype_gx</span><span class="p">(</span><span class="n">gtype</span><span class="p">),</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">gtype</span> <span class="o">==</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_FLOAT3D</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">gtype</span> <span class="o">==</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_DOUBLE3D</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">dtype_gx</span><span class="p">(</span><span class="n">gtype</span><span class="p">),</span> <span class="mi">3</span>
+    <span class="k">return</span> <span class="n">dtype_gx</span><span class="p">(</span><span class="n">gtype</span><span class="p">),</span> <span class="mi">1</span></div>
+
+
+<div class="viewcode-block" id="gx_dtype_dimension"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.gx_dtype_dimension">[docs]</a><span class="k">def</span> <span class="nf">gx_dtype_dimension</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">dimension</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :returns:   GX type for a numpy dtype, with dimensions 2 and 3</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">gtype</span> <span class="o">=</span> <span class="n">gx_dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">dimension</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">gtype</span>
+    <span class="k">if</span> <span class="ow">not</span><span class="p">((</span><span class="n">gtype</span> <span class="o">==</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_DOUBLE</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">gtype</span> <span class="o">==</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_FLOAT</span><span class="p">)):</span>
+        <span class="k">raise</span> <span class="n">UtilityException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Dimensioned data must be float32 or float64&#39;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">dimension</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">gtype</span> <span class="o">==</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_DOUBLE</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_DOUBLE2D</span>
+        <span class="k">return</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_FLOAT2D</span>
+    <span class="k">if</span> <span class="n">dimension</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">UtilityException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Dimension must be 1, 2 or 3&#39;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">gtype</span> <span class="o">==</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_DOUBLE</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_DOUBLE3D</span>
+    <span class="k">return</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_FLOAT3D</span></div>
+
+
+<div class="viewcode-block" id="is_float"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.is_float">[docs]</a><span class="k">def</span> <span class="nf">is_float</span><span class="p">(</span><span class="n">gxtype</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Return True of gxtype can be stored in a 64-bit float&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">gxtype</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">gxtype</span> <span class="ow">in</span> <span class="p">{</span><span class="n">gxapi</span><span class="o">.</span><span class="n">GS_DOUBLE</span><span class="p">,</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_FLOAT</span><span class="p">,</span>
+                                  <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_DOUBLE2D</span><span class="p">,</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_FLOAT2D</span><span class="p">,</span>
+                                  <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_DOUBLE3D</span><span class="p">,</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_FLOAT3D</span><span class="p">}:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="is_int"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.is_int">[docs]</a><span class="k">def</span> <span class="nf">is_int</span><span class="p">(</span><span class="n">gxtype</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Return True of gxtype can be stored in a 64-bit integer&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">gxtype</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_float</span><span class="p">(</span><span class="n">gxtype</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="is_string"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.is_string">[docs]</a><span class="k">def</span> <span class="nf">is_string</span><span class="p">(</span><span class="n">gxtype</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return length of a gxtype string, 0 (False) if not a string.</span>
+<span class="sd">    Note that this is the number of available bytes in UTF-8 encoding and not</span>
+<span class="sd">    equivalent to number of Unicode characters</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">gxtype</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">gxtype</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="gxDummy"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.gxDummy">[docs]</a><span class="k">def</span> <span class="nf">gxDummy</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    .. deprecated:: 9.2 use gx_dummy()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">gx_dummy</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="gx_dummy"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.gx_dummy">[docs]</a><span class="k">def</span> <span class="nf">gx_dummy</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the dummy for this value, or this type.</span>
+
+<span class="sd">    :returns:   GX dummy for this data</span>
+<span class="sd">    :raises:    KeyError if the dtype is not supported</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">global</span> <span class="n">_dummy_map</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">bool</span><span class="p">(</span><span class="n">_dummy_map</span><span class="p">):</span>
+        <span class="n">_dummy_map</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">rDUMMY</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">rDUMMY</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">rDUMMY</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">iDUMMY</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_S1DM</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_S2DM</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_S4DM</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_S8DM</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint</span><span class="p">):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_U4DM</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_U1DM</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_U2DM</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_U4DM</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint64</span><span class="p">):</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GS_U8DM</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">str_</span><span class="p">):</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">dtype</span><span class="p">))</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_dummy_map</span><span class="p">[</span><span class="n">dtype</span><span class="p">]</span>
+
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;U&#39;</span> <span class="ow">or</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;U&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">raise</span></div>
+
+
+<div class="viewcode-block" id="dummy_none"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.dummy_none">[docs]</a><span class="k">def</span> <span class="nf">dummy_none</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Returns None if dummy, otherwise the value.</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">gx_dummy</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">v</span></div>
+
+
+<div class="viewcode-block" id="dummyMask"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.dummyMask">[docs]</a><span class="k">def</span> <span class="nf">dummyMask</span><span class="p">(</span><span class="n">npd</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    .. deprecated:: 9.2 use dummy_mask()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">dummy_mask</span><span class="p">(</span><span class="n">npd</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="dummy_mask"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.dummy_mask">[docs]</a><span class="k">def</span> <span class="nf">dummy_mask</span><span class="p">(</span><span class="n">npd</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a 1-D dummy mask that is True for all rows  in a 2D numpy array that</span>
+<span class="sd">    have a Geosoft dummy value.</span>
+
+<span class="sd">    :param npd: numpy data array</span>
+<span class="sd">    :returns:   numpy 1D array, True for any row that had a dummy in any data field</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">dummy</span> <span class="o">=</span> <span class="n">gx_dummy</span><span class="p">(</span><span class="n">npd</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">npd</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">npd</span> <span class="o">==</span> <span class="n">dummy</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">npd</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">UtilityException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Must be a 2D array&#39;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">dummy</span> <span class="ow">in</span> <span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">npd</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="dummy_to_nan"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.dummy_to_nan">[docs]</a><span class="k">def</span> <span class="nf">dummy_to_nan</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Replaces dummies in float data to numpy.nan.  All other data types are returned unchanged.</span>
+
+<span class="sd">    If passed data is a numpy array, dummies are changed in-place.</span>
+<span class="sd">    The numpy array is returned.</span>
+<span class="sd">    </span>
+<span class="sd">    :param data:    float value or a numpy array</span>
+<span class="sd">    :returns:       data with dummies replaced by numpy.nan</span>
+<span class="sd">    </span>
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">((</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">data</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">gxdummy</span> <span class="o">=</span> <span class="n">gx_dummy</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">data</span> <span class="o">==</span> <span class="n">gxdummy</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="k">return</span> <span class="n">data</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">data</span> <span class="o">==</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">rDUMMY</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">data</span></div>
+
+
+<div class="viewcode-block" id="reg_from_dict"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.reg_from_dict">[docs]</a><span class="k">def</span> <span class="nf">reg_from_dict</span><span class="p">(</span><span class="n">rd</span><span class="p">,</span> <span class="n">max_size</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span> <span class="n">json_encode</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    `geosoft.gxapi.GXREG` instance from a dictionary</span>
+<span class="sd">    </span>
+<span class="sd">    :param rd:          dictionary</span>
+<span class="sd">    :param max_size:    maximum &quot;key=value&quot; string size</span>
+<span class="sd">    :param json_encode: if True, non-string values in the dictionary are converted to JSON strings and stored as</span>
+<span class="sd">                        &quot;_JSON:json-string&quot;. False will encode non-string values as ``str(value)``</span>
+<span class="sd">    :returns:           `geosoft.gxapi.GXREG` instance</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">reg</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXREG</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">max_size</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">rd</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">str</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">json_encode</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;_JSON:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">max_size</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">UtilityException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\&#39;</span><span class="s2">key=value</span><span class="se">\&#39;</span><span class="s2"> longer than maximum (</span><span class="si">{}</span><span class="s2">):</span><span class="se">\n</span><span class="si">{}</span><span class="s2">=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">)</span>
+                                   <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">max_size</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="n">reg</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">reg</span></div>
+
+
+<div class="viewcode-block" id="dict_from_reg"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.dict_from_reg">[docs]</a><span class="k">def</span> <span class="nf">dict_from_reg</span><span class="p">(</span><span class="n">reg</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    dictionary from a `geosoft.gxapi.GXREG` instance</span>
+<span class="sd">    </span>
+<span class="sd">    :param reg:     `geosoft.gxapi.GXREG` instance</span>
+<span class="sd">    :param ordered: True to return and OrderedDict</span>
+<span class="sd">    :returns:       python dictionary from a Geosoft GXREG</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">ordered</span><span class="p">:</span>
+        <span class="n">dct</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dct</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">entries</span><span class="p">()):</span>
+        <span class="n">reg</span><span class="o">.</span><span class="n">get_one</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">val</span><span class="o">.</span><span class="n">value</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;_JSON:&quot;</span><span class="p">:</span>
+            <span class="n">dct</span><span class="p">[</span><span class="n">key</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">val</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="mi">6</span><span class="p">:])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dct</span><span class="p">[</span><span class="n">key</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">value</span>
+    <span class="k">return</span> <span class="n">dct</span></div>
+
+
+<div class="viewcode-block" id="save_parameters"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.save_parameters">[docs]</a><span class="k">def</span> <span class="nf">save_parameters</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="n">parms</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Save parameters to the Project Parameter Block.  Parameter group names and member names</span>
+<span class="sd">    are converted to uppercase.</span>
+
+<span class="sd">    :param group:   parameter block group name, default is &#39;_&#39;</span>
+<span class="sd">    :param parms:   dict containing named parameter settings, must be specified</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parms</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">UtilityException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;parms dictionary not defined.&#39;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">_validate_parameter</span><span class="p">(</span><span class="n">group</span><span class="p">)):</span>
+        <span class="k">raise</span> <span class="n">UtilityException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Group name </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1"> contains invalid character </span><span class="se">\&#39;</span><span class="s1">.</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">group</span><span class="p">)))</span>
+
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">parms</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">_validate_parameter</span><span class="p">(</span><span class="n">k</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="n">UtilityException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Parameter name </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1"> contains invalid character </span><span class="se">\&#39;</span><span class="s1">.</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">)))</span>
+
+        <span class="c1"># remove escaped characters because set_str() puts them back in</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">set_string</span><span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">k</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_parameters"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.get_parameters">[docs]</a><span class="k">def</span> <span class="nf">get_parameters</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="n">parms</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get parameters from the Project Parameter Block.</span>
+
+<span class="sd">    :param group:   name in the parameter block group name</span>
+<span class="sd">    :param parms:   if specified only these keys are searched and the value is replaced by the found parameter.</span>
+<span class="sd">                    Parameter keys are not case sensitive, though if parms is not provided all returned keys will</span>
+<span class="sd">                    be upper-case.</span>
+<span class="sd">    :param default: default value for parameters not found, ignored if parms is provided as a dict, in which</span>
+<span class="sd">                    case the current key:value settings will be unchanged.</span>
+<span class="sd">    :returns:       dictionary containing group parameters</span>
+
+<span class="sd">    .. versionchanged:: 9.2.1</span>
+<span class="sd">        Now retains case on keys passed in to parms, which allows callers to maintain case.  Note that</span>
+<span class="sd">        if not specifying parms, the returned keys will always be upper-case.</span>
+<span class="sd">        Fixed bug handling file name construction on Windows.</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">sv</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">_validate_parameter</span><span class="p">(</span><span class="n">group</span><span class="p">)):</span>
+        <span class="k">raise</span> <span class="n">UtilityException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Group name </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1"> contains invalid character </span><span class="se">\&#39;</span><span class="s1">.</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">group</span><span class="p">)))</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="n">group</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">parms</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parms</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">parms</span><span class="p">:</span>
+                <span class="n">p</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">default</span>
+            <span class="n">parms</span> <span class="o">=</span> <span class="n">p</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">default</span> <span class="ow">in</span> <span class="n">parms</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">k_upper</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">exist_string</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">k_upper</span><span class="p">):</span>
+                <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">gt_string</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">k_upper</span><span class="p">,</span> <span class="n">sv</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">p</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\\\</span><span class="s1">&#39;</span><span class="p">))</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">p</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">value</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">p</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">default</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">h_reg</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXREG</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="mi">4096</span><span class="p">)</span>
+        <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">get_reg</span><span class="p">(</span><span class="n">h_reg</span><span class="p">,</span> <span class="n">group</span><span class="p">)</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">h_reg</span><span class="o">.</span><span class="n">entries</span><span class="p">()):</span>
+            <span class="n">h_reg</span><span class="o">.</span><span class="n">get_one</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">sv</span><span class="p">)</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">p</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="n">p</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="k">return</span> <span class="n">p</span></div>
+
+
+<div class="viewcode-block" id="folder_workspace"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.folder_workspace">[docs]</a><span class="k">def</span> <span class="nf">folder_workspace</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the Geosoft project folder name.</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+    <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="n">gxapi</span><span class="o">.</span><span class="n">SYS_PATH_LOCAL</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">path</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="folder_user"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.folder_user">[docs]</a><span class="k">def</span> <span class="nf">folder_user</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the Geosoft user configurations folder name.</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+    <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="n">gxapi</span><span class="o">.</span><span class="n">SYS_PATH_GEOSOFT_USER</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">path</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="folder_temp"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.folder_temp">[docs]</a><span class="k">def</span> <span class="nf">folder_temp</span><span class="p">(</span><span class="n">use_override</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the Geosoft temporary folder name.</span>
+
+<span class="sd">    :param use_override: True to use the _temp_folder_overide if it is defined (used by tests)</span>
+
+<span class="sd">    .. Note::</span>
+<span class="sd">        If creating temporary files, better to use gx method :meth:`~gx.GXpy.temp_file`, which will</span>
+<span class="sd">        create the temporary file in the GX-specific folder :mod:`~gx.GXpy.temp_folder`.</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">_temp_folder_override</span>
+    <span class="k">if</span> <span class="n">use_override</span> <span class="ow">and</span> <span class="n">_temp_folder_override</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_temp_folder_override</span>
+
+    <span class="n">path</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+    <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="n">gxapi</span><span class="o">.</span><span class="n">SYS_PATH_GEOTEMP</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="normalize_file_name"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.normalize_file_name">[docs]</a><span class="k">def</span> <span class="nf">normalize_file_name</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Normalize a file name string by replacing &#39;\&#39; with &#39;/&#39;.  This is useful for writing</span>
+<span class="sd">    file names to control files.</span>
+
+<span class="sd">    :param fn: file name</span>
+<span class="sd">    :returns: normalized file name</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">fn</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="uuid"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.uuid">[docs]</a><span class="k">def</span> <span class="nf">uuid</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :returns: a uuid as a string</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">_uuid_callable</span>
+    <span class="k">global</span> <span class="n">d_uuid_count</span>
+    <span class="k">if</span> <span class="n">_uuid_callable</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_uuid_callable</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">testing_system_mode</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">d_uuid</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uid</span><span class="o">.</span><span class="n">UUID</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">(</span><span class="mh">0x12345678</span><span class="p">,</span> <span class="mh">0x1234</span><span class="p">,</span> <span class="mh">0x5678</span><span class="p">,</span> <span class="mh">0x12</span><span class="p">,</span> <span class="mh">0x34</span><span class="p">,</span> <span class="mh">0x000000000000</span> <span class="o">+</span> <span class="n">d_uuid_count</span><span class="p">)))</span>
+        <span class="n">d_uuid_count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">d_uuid</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">uid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">()))</span></div>
+
+
+<span class="k">def</span> <span class="nf">_temp_dict_file_name</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Name of the expected python dictionary as a json file from run_external_python().</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s1">&#39;__shared_dictionary__&#39;</span>
+
+
+<div class="viewcode-block" id="set_shared_dict"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.set_shared_dict">[docs]</a><span class="k">def</span> <span class="nf">set_shared_dict</span><span class="p">(</span><span class="n">shared_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Save a dictionary to be shared by an separate application.</span>
+<span class="sd">    This is a companion file to run_external_python().</span>
+
+<span class="sd">    :param shared_dict:  dictionary of parameters to save</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># if no dictionary, pop the existing one if it is there</span>
+    <span class="k">if</span> <span class="n">shared_dict</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">get_shared_dict</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">_temp_dict_file_name</span><span class="p">(),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">shared_dict</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_shared_dict"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.get_shared_dict">[docs]</a><span class="k">def</span> <span class="nf">get_shared_dict</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get a dictionary shared by an external application.</span>
+<span class="sd">    The shared dictionary is cleared (popped) so a subsequent call will return an empty dictionary.</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">_temp_dict_file_name</span><span class="p">(),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">shared_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">_temp_dict_file_name</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">shared_dict</span>
+
+    <span class="k">except</span> <span class="p">(</span><span class="ne">IOError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{}</span></div>
+
+
+<div class="viewcode-block" id="run_external_python"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.run_external_python">[docs]</a><span class="k">def</span> <span class="nf">run_external_python</span><span class="p">(</span><span class="n">script</span><span class="p">,</span> <span class="n">script_args</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">python_args</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">shared_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">console</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">catcherr</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Run a python script as an external program, returning results as a dictionary.</span>
+<span class="sd">    External program calls gxpy.utility.get_shared_dict() to get the caller&#39;s dictionary,</span>
+<span class="sd">    and gxpy.utility.set_shared_dict(return_dictionary) to return a dictionary back to caller.</span>
+
+<span class="sd">    :param script:      full path of the python script</span>
+<span class="sd">    :param shared_dict: dictionary passed to the external script (get_shared_dict() to retrieve)</span>
+<span class="sd">    :param script_args: command line arguments as a string</span>
+<span class="sd">    :param python_args: command line arguments as a string</span>
+<span class="sd">    :param console:     True (default) will create a separate console for the process.</span>
+<span class="sd">    :param catcherr:    True (default) Catch and re-raise errors from the sub-process.</span>
+<span class="sd">    :returns:           dictionary passed back from caller via set_shared_dict(dict)</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">script</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">UtilityException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Cannot find script: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">script</span><span class="p">)))</span>
+
+    <span class="n">py</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">executable</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">py</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;python.exe&#39;</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+        <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="s1">&#39;PYTHON_HOME&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+        <span class="n">py</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="s1">&#39;python.exe&#39;</span><span class="p">)</span>
+
+    <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">py</span><span class="p">,</span> <span class="n">python_args</span><span class="p">,</span> <span class="n">script</span><span class="p">,</span> <span class="n">script_args</span><span class="p">)</span>
+
+    <span class="n">set_shared_dict</span><span class="p">(</span><span class="n">shared_dict</span><span class="p">)</span>
+
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">console</span><span class="p">:</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;creationflags&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">CREATE_NEW_CONSOLE</span>
+
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">subprocess</span><span class="p">,</span> <span class="s1">&#39;run&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">catcherr</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;stderr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span>
+        <span class="n">cp</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">catcherr</span> <span class="ow">and</span> <span class="n">cp</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">UtilityException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">External python error:</span><span class="se">\n\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)))</span>
+
+    <span class="k">else</span><span class="p">:</span>  <span class="c1"># use call, python 3.4...</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">catcherr</span> <span class="ow">and</span> <span class="n">err</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">UtilityException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">External python error(</span><span class="si">{}</span><span class="s1">) running: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">command</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">get_shared_dict</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="crc32"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.crc32">[docs]</a><span class="k">def</span> <span class="nf">crc32</span><span class="p">(</span><span class="n">byte_buffer</span><span class="p">,</span> <span class="n">crc</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return 32-bit CRC of a byte buffer.</span>
+
+<span class="sd">    :param byte_buffer: byte buffer (fulfills the Buffer Protocol)</span>
+<span class="sd">    :param crc:         seed crc, can be passed along to accumulate the crc</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">crc</span> <span class="o">=</span> <span class="n">binascii</span><span class="o">.</span><span class="n">crc32</span><span class="p">(</span><span class="n">byte_buffer</span><span class="p">,</span> <span class="n">crc</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">crc</span></div>
+
+
+<div class="viewcode-block" id="crc32_file"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.crc32_file">[docs]</a><span class="k">def</span> <span class="nf">crc32_file</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">crc</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return 32-bit CRC of a file.</span>
+
+<span class="sd">    :param filename:    file name</span>
+<span class="sd">    :param crc:         seed crc, default 0</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">readbuff</span><span class="p">(</span><span class="n">ff</span><span class="p">,</span> <span class="n">bsize</span><span class="o">=</span><span class="mi">16384</span><span class="p">):</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">buff</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">bsize</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">buff</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="k">yield</span> <span class="n">buff</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">readbuff</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+            <span class="n">crc</span> <span class="o">=</span> <span class="n">crc32</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">crc</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">crc</span></div>
+
+
+<div class="viewcode-block" id="crc32_str"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.crc32_str">[docs]</a><span class="k">def</span> <span class="nf">crc32_str</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">crc</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return 32-bit CRC of a string.</span>
+
+<span class="sd">    :param s:    string</span>
+<span class="sd">    :param crc:  seed crc, default 0</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">crc</span> <span class="o">=</span> <span class="n">crc32</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">crc</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">crc</span></div>
+
+
+<div class="viewcode-block" id="year_from_datetime"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.year_from_datetime">[docs]</a><span class="k">def</span> <span class="nf">year_from_datetime</span><span class="p">(</span><span class="n">dt</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a decimal Gregorian calendar year from a Python datetime.</span>
+<span class="sd">    </span>
+<span class="sd">    :param dt:  datetime</span>
+<span class="sd">    :returns:   decimal Gregorian year to an accuracy of 1 millisecond</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">naive_dt</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">y_start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">naive_dt</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">y_end</span> <span class="o">=</span> <span class="n">y_start</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">naive_dt</span><span class="o">.</span><span class="n">year</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dt</span><span class="o">.</span><span class="n">year</span> <span class="o">+</span> <span class="p">(</span><span class="n">naive_dt</span> <span class="o">-</span> <span class="n">y_start</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">y_end</span> <span class="o">-</span> <span class="n">y_start</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="datetime_from_year"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.datetime_from_year">[docs]</a><span class="k">def</span> <span class="nf">datetime_from_year</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the Python datetime from a decimal Gregorian year.</span>
+<span class="sd">    </span>
+<span class="sd">    :param year:    decimal year on the Gregorian calendar.</span>
+<span class="sd">    :returns:       datetime (resolved to 1 millisecond)</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">yr</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+    <span class="n">remainder</span> <span class="o">=</span> <span class="n">year</span> <span class="o">-</span> <span class="n">yr</span>
+    <span class="n">y_start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">yr</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">y_end</span> <span class="o">=</span> <span class="n">y_start</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">yr</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">milliseconds</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">remainder</span> <span class="o">*</span> <span class="p">(</span><span class="n">y_end</span> <span class="o">-</span> <span class="n">y_start</span><span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">*</span> <span class="mf">1000.0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y_start</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="n">milliseconds</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="str_significant"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.str_significant">[docs]</a><span class="k">def</span> <span class="nf">str_significant</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a formatted string to n significant figures.</span>
+<span class="sd">    </span>
+<span class="sd">    :param value:   value to format</span>
+<span class="sd">    :param n:       number of significant digits</span>
+<span class="sd">    :param mode:    0 round, 1 ceiling, -1 floor</span>
+<span class="sd">    :returns:       string to n significant figures</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;0&#39;</span>
+
+    <span class="n">value</span> <span class="o">=</span> <span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mf">0.0</span><span class="p">:</span>
+        <span class="n">mult</span> <span class="o">=</span> <span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">mult</span> <span class="o">=</span> <span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">vstr</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{:33.16f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39; 0&#39;</span><span class="p">)</span>
+
+    <span class="n">power</span> <span class="o">=</span> <span class="n">vstr</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+    <span class="n">vstr</span> <span class="o">=</span> <span class="n">vstr</span><span class="p">[:</span><span class="n">power</span><span class="p">]</span> <span class="o">+</span> <span class="n">vstr</span><span class="p">[</span><span class="n">power</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">vstr</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">c</span> <span class="o">!=</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span>
+            <span class="n">power</span> <span class="o">-=</span> <span class="n">i</span>
+            <span class="k">break</span>
+    <span class="n">vstr</span> <span class="o">=</span> <span class="n">vstr</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
+
+    <span class="n">significant</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">vstr</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">significant</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span> <span class="o">*</span> <span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="p">(</span><span class="n">mult</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.0&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">s</span>
+
+    <span class="n">v</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">vstr</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">vstr</span><span class="p">[</span><span class="n">n</span><span class="p">:])</span>
+    <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">vstr</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">vstr</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">vstr</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="p">(</span><span class="n">vstr</span><span class="p">)</span> <span class="o">*</span> <span class="n">mult</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span> <span class="o">**</span> <span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="p">(</span><span class="n">power</span> <span class="o">-</span> <span class="n">n</span><span class="p">)))</span></div>
+
+
+<div class="viewcode-block" id="url_retrieve"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.url_retrieve">[docs]</a><span class="k">def</span> <span class="nf">url_retrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">reporthook</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Retrieve a URL resource as a file.</span>
+
+<span class="sd">    :param url:         name of the URL resource</span>
+<span class="sd">    :param filename:    name of file in which to place the resource, default is the resource base name.</span>
+<span class="sd">    :param overwrite:   True to overwrite an existing file.  Default is False, in which case if the file</span>
+<span class="sd">                        exists the filename is returned.</span>
+<span class="sd">    :param reporthook:  a hook function that will be called once on establishment of the network connection</span>
+<span class="sd">                        and once after each block read thereafter. The hook will be passed three arguments;</span>
+<span class="sd">                        a count of blocks transferred so far, a block size in bytes, and the total size of the file.</span>
+<span class="sd">    :return:            filename of the file that is created.</span>
+
+<span class="sd">    .. seealso:: https://docs.python.org/3.6/library/urllib.request.html#urllib.request.urlretrieve</span>
+
+<span class="sd">    .. versionadded:: 9.3</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;%20&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">overwrite</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">filename</span>
+
+    <span class="n">file</span><span class="p">,</span> <span class="n">message</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;%20&#39;</span><span class="p">),</span> <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">reporthook</span><span class="o">=</span><span class="n">reporthook</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">file</span></div>
+
+
+<div class="viewcode-block" id="delete_file"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.delete_file">[docs]</a><span class="k">def</span> <span class="nf">delete_file</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Delete a file, does nothing if file does not exist.</span>
+
+<span class="sd">    :param file_name:   file to delete</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">file_name</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">FileNotFoundError</span><span class="p">,</span> <span class="ne">PermissionError</span><span class="p">):</span>
+            <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="delete_files_by_root"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.delete_files_by_root">[docs]</a><span class="k">def</span> <span class="nf">delete_files_by_root</span><span class="p">(</span><span class="n">file_root</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Delete all files that have the same file_root (without extension). This can be safely applied to remove</span>
+<span class="sd">    temporary files that use named using `geosoft.gxpy.gx.temp_file`.</span>
+
+<span class="sd">    :param file_root:   file root name</span>
+
+<span class="sd">    .. versionadded:: 9.4</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">file_root</span><span class="p">:</span>
+        <span class="n">path</span><span class="p">,</span> <span class="n">root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">file_root</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">fn</span> <span class="o">==</span> <span class="n">root</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">fn</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">root</span><span class="p">):</span>
+                <span class="n">delete_file</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">fn</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="unique_name"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.unique_name">[docs]</a><span class="k">def</span> <span class="nf">unique_name</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;()&#39;</span><span class="p">,</span> <span class="n">maxversion</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Build a unique name or file name.</span>
+<span class="sd">    </span>
+<span class="sd">    :param name:        seed name, returns this if callback(name) is False the name in unique</span>
+<span class="sd">    :param invalid:     callback function invalid(name), returns True if name is invalid. If a call-back</span>
+<span class="sd">                        is not provided a simple os.path.isfile(name) is used.</span>
+<span class="sd">    :param separator:   single or two-character separator. The unique name is constructed by appending</span>
+<span class="sd">                        an increasing number to the seed name until a valid name is found. By default</span>
+<span class="sd">                        the number is enclosed in parentheses (e.g. some_name(4).txt). If a single separator</span>
+<span class="sd">                        character is defined the number is separted from the name by the single character</span>
+<span class="sd">                        (e.g. for separator=&#39;_&#39;, might return some_name_4.txt).</span>
+<span class="sd">    :param maxversion:  maximum number to try, default is 1000. This protects against infinite loop</span>
+<span class="sd">                        should there be a bug in your callback.</span>
+<span class="sd">    :return:            unique name</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">parts</span><span class="p">():</span>
+        <span class="n">path</span><span class="p">,</span> <span class="n">file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">base</span><span class="p">,</span> <span class="n">ex</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+        <span class="n">isep</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="n">separator</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">isep</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">current_base</span> <span class="o">=</span> <span class="n">base</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">separator</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">base</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">separator</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                    <span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">base</span><span class="p">[</span><span class="n">isep</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:])</span>
+                <span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[:</span><span class="n">isep</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">base</span> <span class="o">=</span> <span class="n">current_base</span>
+        <span class="k">return</span> <span class="n">path</span> <span class="o">+</span> <span class="n">base</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">ex</span>
+
+    <span class="k">if</span> <span class="n">invalid</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">invalid</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span>
+
+    <span class="k">while</span> <span class="n">invalid</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+        <span class="n">path_name</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="n">ext</span> <span class="o">=</span> <span class="n">parts</span><span class="p">()</span>
+        <span class="n">number</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">number</span> <span class="o">&gt;=</span> <span class="n">maxversion</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">UtilityException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s2">&quot;Cannot determine a unique name in </span><span class="si">{}</span><span class="s2"> tries.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">maxversion</span><span class="p">))</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">path_name</span> <span class="o">+</span> <span class="n">separator</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">separator</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="n">separator</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="n">ext</span>
+
+    <span class="k">return</span> <span class="n">name</span></div>
+
+
+<div class="viewcode-block" id="is_file_locked"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.is_file_locked">[docs]</a><span class="k">def</span> <span class="nf">is_file_locked</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns True if the file exists and is currently locked by another process or is younger than age.</span>
+
+<span class="sd">    :param file_name:   file to test</span>
+<span class="sd">    :param age:         minimum age in seconds, default ignores age</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">age</span> <span class="ow">and</span> <span class="n">file_age</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">age</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="file_age"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.file_age">[docs]</a><span class="k">def</span> <span class="nf">file_age</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the age of a file in seconds from now. -1 if the file does not exist.</span>
+
+<span class="sd">    :param file_name: file name</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getmtime</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="is_path_locked"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.is_path_locked">[docs]</a><span class="k">def</span> <span class="nf">is_path_locked</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns True if any files in this folder or sub-folders are locked or younger than age.</span>
+
+<span class="sd">    :param path:    name of the folder</span>
+<span class="sd">    :param age:     age in seconds from now</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">is_file_locked</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">age</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">is_path_locked</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">is_file_locked</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="kc">True</span>
+                <span class="k">if</span> <span class="n">age</span> <span class="ow">and</span> <span class="n">file_age</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">age</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="delete_folder"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.delete_folder">[docs]</a><span class="k">def</span> <span class="nf">delete_folder</span><span class="p">(</span><span class="n">folder_name</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raise_on_error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Delete a folder if all files and sub-folders are accessible and deletable.</span>
+
+<span class="sd">    :param folder_name:     name of the folder</span>
+<span class="sd">    :param age:             age in seconds relative to the current date/time</span>
+<span class="sd">    :param raise_on_error:  True to raise an error if unsuccessful, otherwise just returns False</span>
+<span class="sd">    :return:                True if successful</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">is_path_locked</span><span class="p">(</span><span class="n">folder_name</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">age</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">raise_on_error</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">UtilityException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s2">&quot;Folder `</span><span class="si">{}</span><span class="s2">` is locked.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">folder_name</span><span class="p">))</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder_name</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+                <span class="n">delete_folder</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">age</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder_name</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">age</span> <span class="ow">and</span> <span class="n">file_age</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">age</span><span class="p">:</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+        <span class="n">os</span><span class="o">.</span><span class="n">removedirs</span><span class="p">(</span><span class="n">folder_name</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">raise_on_error</span><span class="p">:</span>
+            <span class="k">raise</span>
+
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="jupyter_markdown_toc"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.jupyter_markdown_toc">[docs]</a><span class="k">def</span> <span class="nf">jupyter_markdown_toc</span><span class="p">(</span><span class="n">j_file</span><span class="p">,</span> <span class="n">numbered</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">start_level</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a markdoown table-of-content string from a jupyter notebook based on markdown &quot;#&quot;.</span>
+
+<span class="sd">    :param j_file:      jupyter notebook name. Default file extension is &#39;.ipynb&#39;</span>
+<span class="sd">    :param numbered:    True (default) to number the main headings, False for all bulletys</span>
+<span class="sd">    :param start_level: toc base level, default is 1, which starts TOC at &quot;##&quot;</span>
+<span class="sd">    :param max_depth:   maximum levels relative to the start level, default is first level only.</span>
+<span class="sd">    :param prefix:      previx for each TOC line, default is &#39; &#39; so TOC will appear indented.</span>
+<span class="sd">    :return:        toc string.</span>
+
+<span class="sd">    Include this in a jupyter notebook to create a TOC that can then be cut/pasted into the</span>
+<span class="sd">    introductory markdown:</span>
+
+<span class="sd">    .. code::</span>
+
+<span class="sd">        import geosoft.gxpy.utility as gxu</span>
+<span class="sd">        print (gxu.jupyter_markdown_toc(&#39;my_notebook_name&#39;))</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">base</span><span class="p">,</span> <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">j_file</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">ext</span><span class="p">:</span>
+        <span class="n">j_file</span> <span class="o">=</span> <span class="n">j_file</span> <span class="o">+</span> <span class="s1">&#39;.ipynb&#39;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">j_file</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">toc</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;cells&#39;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">k</span><span class="p">[</span><span class="s1">&#39;cell_type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;markdown&#39;</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">sl</span> <span class="ow">in</span> <span class="n">k</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">]:</span>
+                <span class="n">sl</span> <span class="o">=</span> <span class="n">sl</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">sl</span> <span class="ow">and</span> <span class="n">sl</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;#&#39;</span><span class="p">:</span>
+                    <span class="n">sl</span> <span class="o">=</span> <span class="n">sl</span><span class="p">[</span><span class="n">start_level</span><span class="p">:]</span>
+                    <span class="k">if</span> <span class="n">sl</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;#&#39;</span><span class="p">:</span>
+                        <span class="n">indent</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">sl</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">indent</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">max_depth</span><span class="p">:</span>
+                            <span class="k">if</span> <span class="n">label</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">:</span>
+                                <span class="n">label</span> <span class="o">=</span> <span class="n">label</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                            <span class="k">if</span> <span class="n">numbered</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">indent</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                                <span class="n">lead</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;. [&#39;</span>
+                                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="n">lead</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">indent</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;- [&#39;</span>
+                            <span class="n">toc</span> <span class="o">=</span> <span class="n">toc</span> <span class="o">+</span> <span class="n">prefix</span> <span class="o">+</span> <span class="n">lead</span> <span class="o">+</span> <span class="n">label</span> <span class="o">+</span> <span class="s1">&#39;](#&#39;</span> <span class="o">+</span> <span class="n">label</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;)</span><span class="se">\n</span><span class="s1">&#39;</span>
+    <span class="k">return</span> <span class="n">toc</span></div>
+
+
+<div class="viewcode-block" id="vector_normalize"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.vector_normalize">[docs]</a><span class="k">def</span> <span class="nf">vector_normalize</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Normalise (Euclidean) the last axis of a numpy array</span>
+
+<span class="sd">    :param v: numpy vector array, any dimension</span>
+<span class="sd">    :return:  array normalized, 0 vectors will be np.nan</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mf">1.</span><span class="p">,))</span>
+    <span class="n">vs</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">mag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">mag</span><span class="p">[</span><span class="n">mag</span> <span class="o">==</span> <span class="mf">0.</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">reciprocal</span><span class="p">(</span><span class="n">mag</span><span class="p">))</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">vs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="dict_from_http_response_text"><a class="viewcode-back" href="../../../geosoft.gxpy.utility.html#geosoft.gxpy.utility.dict_from_http_response_text">[docs]</a><span class="k">def</span> <span class="nf">dict_from_http_response_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">prune_xml_root</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">object_hook</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">object_pairs_hook</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Decode http response text to a dictionary. Response may be json or xml.</span>
+
+<span class="sd">    :param text:                http response.text from requests module response objects</span>
+<span class="sd">    :param prune_xml_root:      True to remove the xml root, False to keep it</span>
+<span class="sd">    :param object_hook:         json.loads decoder hook for objects</span>
+<span class="sd">    :param object_pairs_hook:   json.loads decoder for object pairs (see json.loads documentation).</span>
+<span class="sd">    :param kw:                  arguments passed to `json.loads()`</span>
+<span class="sd">    :return:                    dictionary of content</span>
+
+<span class="sd">    If the content is xml, the root node is removed and a dictionary is constructed from the content</span>
+<span class="sd">    above the root node. If one of the hook functions is present, the dictionary is converted to json</span>
+<span class="sd">    and a dictionary is reconstructed using the hooks.</span>
+
+<span class="sd">    .. versionadded:: 9.4</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">td</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">object_hook</span><span class="o">=</span><span class="n">object_hook</span><span class="p">,</span> <span class="n">object_pairs_hook</span><span class="o">=</span><span class="n">object_pairs_hook</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ejson</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">td</span> <span class="o">=</span> <span class="n">dict_from_xml</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exml</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">UtilityException</span><span class="p">(</span><span class="s1">&#39;json error: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">xml_error: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">text:</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span>
+                                   <span class="nb">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ejson</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">exml</span><span class="p">),</span> <span class="n">text</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">prune_xml_root</span><span class="p">:</span>  <span class="c1"># TODO: discuss with @Ryan pruning xml root wrt general http usage.</span>
+            <span class="n">td</span> <span class="o">=</span> <span class="n">td</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">td</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="k">if</span> <span class="n">object_hook</span> <span class="ow">or</span> <span class="n">object_pairs_hook</span><span class="p">:</span>
+            <span class="n">td</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">td</span><span class="p">),</span> <span class="n">object_hook</span><span class="o">=</span><span class="n">object_hook</span><span class="p">,</span> <span class="n">object_pairs_hook</span><span class="o">=</span><span class="n">object_pairs_hook</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">td</span></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.utility</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

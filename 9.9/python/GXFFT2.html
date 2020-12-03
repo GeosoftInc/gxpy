@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GXFFT2 class &#8212; Geosoft GX Python API 9.9.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXFFT2 class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXFFT2 class</a><ul>
+<li><a class="reference internal" href="#fft2-pg-constants">FFT2_PG constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXFFT2.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxfft2-class">
+<span id="gxfft2"></span><h1>GXFFT2 class<a class="headerlink" href="#gxfft2-class" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="geosoft.gxapi.GXFFT2">
+<em class="property">class </em><code class="sig-name descname">GXFFT2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT2.html#GXFFT2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT2" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXFFT2 class.</p>
+<p>2-D Fast Fourier Transforms
+These methods now work with an <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> object, instead of creating
+their own <a class="reference internal" href="#geosoft.gxapi.GXFFT2" title="geosoft.gxapi.GXFFT2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT2</span></code></a> object.</p>
+<dl class="py method">
+<dt id="geosoft.gxapi.GXFFT2.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT2.html#GXFFT2.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT2.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXFFT2.fft2_in">
+<em class="property">classmethod </em><code class="sig-name descname">fft2_in</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">im_gi</span></em>, <em class="sig-param"><span class="n">trn_fil</span></em>, <em class="sig-param"><span class="n">spc_fil</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT2.html#GXFFT2.fft2_in"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT2.fft2_in" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#geosoft.gxapi.GXFFT2" title="geosoft.gxapi.GXFFT2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT2</span></code></a> transform</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>im_gi</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input image</p></li>
+<li><p><strong>trn_fil</strong> (<em>str</em>) – Output Transform file name string</p></li>
+<li><p><strong>spc_fil</strong> (<em>str</em>) – Output Power Spectrum file name string</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXFFT2.filter_pg">
+<em class="property">classmethod </em><code class="sig-name descname">filter_pg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">con_fil</span></em>, <em class="sig-param"><span class="n">tr</span></em>, <em class="sig-param"><span class="n">dx</span></em>, <em class="sig-param"><span class="n">dy</span></em>, <em class="sig-param"><span class="n">rot</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT2.html#GXFFT2.filter_pg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT2.filter_pg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply 2D FFT filters to data in pager</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Pager obj</p></li>
+<li><p><strong>con_fil</strong> (<em>str</em>) – FFT filter control file</p></li>
+<li><p><strong>tr</strong> (<a class="reference internal" href="GXTR.html#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><em>GXTR</em></a>) – <a class="reference internal" href="GXTR.html#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTR</span></code></a> obj</p></li>
+<li><p><strong>dx</strong> (<em>float</em>) – rDx - X increment</p></li>
+<li><p><strong>dy</strong> (<em>float</em>) – rDy - Y increment</p></li>
+<li><p><strong>rot</strong> (<em>float</em>) – rRot- Rotation degree</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXFFT2.filter_response">
+<em class="property">classmethod </em><code class="sig-name descname">filter_response</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">con_fil</span></em>, <em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">increment</span></em>, <em class="sig-param"><span class="n">input_vv</span></em>, <em class="sig-param"><span class="n">output_vv</span></em>, <em class="sig-param"><span class="n">profile_vv</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT2.html#GXFFT2.filter_response"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT2.filter_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates response for filter(s) defined in control file. Not specific to 2D.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>con_fil</strong> (<em>str</em>) – FFT filter control file</p></li>
+<li><p><strong>start</strong> (<em>float</em>) – Wavenumber start</p></li>
+<li><p><strong>increment</strong> (<em>float</em>) – Wavenumber increment</p></li>
+<li><p><strong>input_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input spectrum</p></li>
+<li><p><strong>output_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output spectrum</p></li>
+<li><p><strong>profile_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output filter profile</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.9.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXFFT2.flt">
+<em class="property">classmethod </em><code class="sig-name descname">flt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">im_gi</span></em>, <em class="sig-param"><span class="n">out_fil</span></em>, <em class="sig-param"><span class="n">con_fil</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT2.html#GXFFT2.flt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT2.flt" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#geosoft.gxapi.GXFFT2" title="geosoft.gxapi.GXFFT2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT2</span></code></a> filter</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>im_gi</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input image (Transform grid)</p></li>
+<li><p><strong>out_fil</strong> (<em>str</em>) – Output file (Transform grid)</p></li>
+<li><p><strong>con_fil</strong> (<em>str</em>) – Control file</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXFFT2.flt_inv">
+<em class="property">classmethod </em><code class="sig-name descname">flt_inv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">im_gi</span></em>, <em class="sig-param"><span class="n">out_fil</span></em>, <em class="sig-param"><span class="n">con_fil</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT2.html#GXFFT2.flt_inv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT2.flt_inv" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#geosoft.gxapi.GXFFT2" title="geosoft.gxapi.GXFFT2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT2</span></code></a> filter and inverse</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>im_gi</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input image (Transform grid)</p></li>
+<li><p><strong>out_fil</strong> (<em>str</em>) – Output file</p></li>
+<li><p><strong>con_fil</strong> (<em>str</em>) – Control file</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXFFT2.is_null">
+<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT2.html#GXFFT2.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT2.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXFFT2.null">
+<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT2.html#GXFFT2.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT2.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXFFT2" title="geosoft.gxapi.GXFFT2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT2</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXFFT2" title="geosoft.gxapi.GXFFT2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT2</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXFFT2" title="geosoft.gxapi.GXFFT2">GXFFT2</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXFFT2.pow_spc">
+<em class="property">classmethod </em><code class="sig-name descname">pow_spc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">im_gi</span></em>, <em class="sig-param"><span class="n">spc_fil</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT2.html#GXFFT2.pow_spc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT2.pow_spc" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#geosoft.gxapi.GXFFT2" title="geosoft.gxapi.GXFFT2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT2</span></code></a> transform power spectrum</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>im_gi</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input image (Transform grid)</p></li>
+<li><p><strong>spc_fil</strong> (<em>str</em>) – Output Power Spectrum file name string</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXFFT2.rad_spc">
+<em class="property">classmethod </em><code class="sig-name descname">rad_spc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">im_gi</span></em>, <em class="sig-param"><span class="n">spc_fil</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT2.html#GXFFT2.rad_spc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT2.rad_spc" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#geosoft.gxapi.GXFFT2" title="geosoft.gxapi.GXFFT2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT2</span></code></a> transform Radially averaged power spectrum</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>im_gi</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input image (Transform grid)</p></li>
+<li><p><strong>spc_fil</strong> (<em>str</em>) – Output Radial Spectrum file name string</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXFFT2.rad_spc1">
+<em class="property">classmethod </em><code class="sig-name descname">rad_spc1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">img</span></em>, <em class="sig-param"><span class="n">vv</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT2.html#GXFFT2.rad_spc1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT2.rad_spc1" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#geosoft.gxapi.GXFFT2" title="geosoft.gxapi.GXFFT2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT2</span></code></a> transform Radially averaged power spectrum for one <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>img</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input image (Transform grid)</p></li>
+<li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output Radial Spectrum <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXFFT2.rad_spc2">
+<em class="property">classmethod </em><code class="sig-name descname">rad_spc2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">img1</span></em>, <em class="sig-param"><span class="n">img2</span></em>, <em class="sig-param"><span class="n">vv</span></em>, <em class="sig-param"><span class="n">v_vst</span></em>, <em class="sig-param"><span class="n">opt</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT2.html#GXFFT2.rad_spc2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT2.rad_spc2" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#geosoft.gxapi.GXFFT2" title="geosoft.gxapi.GXFFT2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT2</span></code></a> transform Radially averaged power spectrum for two IMGs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>img1</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input image1 (Transform grid1 - G)</p></li>
+<li><p><strong>img2</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input image2 (Transform grid2 - H)</p></li>
+<li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output Radial Spectrum <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></p></li>
+<li><p><strong>v_vst</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output Radial Spectrum Standard deviation VVst   (Null: no calc)</p></li>
+<li><p><strong>opt</strong> (<em>int</em>) – lOpt - 1: &lt;Re(GH*/HH*)&gt; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>;  0: &lt;Re(GH*)&gt; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXFFT2.rad_spc_alt">
+<em class="property">classmethod </em><code class="sig-name descname">rad_spc_alt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">im_gi</span></em>, <em class="sig-param"><span class="n">spc_fil</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT2.html#GXFFT2.rad_spc_alt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT2.rad_spc_alt" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#geosoft.gxapi.GXFFT2" title="geosoft.gxapi.GXFFT2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT2</span></code></a> transform Radially averaged power spectrum - log before average and no normalization</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>im_gi</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input image (Transform grid)</p></li>
+<li><p><strong>spc_fil</strong> (<em>str</em>) – Output Radial Spectrum file name string</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXFFT2.td_xd_y">
+<em class="property">classmethod </em><code class="sig-name descname">td_xd_y</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">img_tx</span></em>, <em class="sig-param"><span class="n">img_ty</span></em>, <em class="sig-param"><span class="n">out_fil</span></em>, <em class="sig-param"><span class="n">inv_flg</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT2.html#GXFFT2.td_xd_y"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT2.td_xd_y" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#geosoft.gxapi.GXFFT2" title="geosoft.gxapi.GXFFT2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT2</span></code></a> filter (calculate T from the derivatives Tx and Ty)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>img_tx</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input dX image (Transform grid)</p></li>
+<li><p><strong>img_ty</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input dY image (Transform grid)</p></li>
+<li><p><strong>out_fil</strong> (<em>str</em>) – Output T file name</p></li>
+<li><p><strong>inv_flg</strong> (<em>int</em>) – 0 - no invers, 1 - invers FFT applied</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXFFT2.trans_pg">
+<em class="property">classmethod </em><code class="sig-name descname">trans_pg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">opt</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT2.html#GXFFT2.trans_pg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT2.trans_pg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply 2D FFT transform to data in pager</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Pager obj</p></li>
+<li><p><strong>opt</strong> (<em>int</em>) – <a class="reference internal" href="#fft2-pg"><span class="std std-ref">FFT2_PG constants</span></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="fft2-pg-constants">
+<span id="fft2-pg"></span><h2>FFT2_PG constants<a class="headerlink" href="#fft2-pg-constants" title="Permalink to this headline">¶</a></h2>
+<p>Pager Direction</p>
+<dl class="py data">
+<dt id="geosoft.gxapi.FFT2_PG_FORWARD">
+<code class="sig-name descname">FFT2_PG_FORWARD</code><a class="headerlink" href="#geosoft.gxapi.FFT2_PG_FORWARD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Forward</p>
+<dl class="py attribute">
+<dt id="id0">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">FFT2_PG_FORWARD</code><em class="property"> = 0</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.FFT2_PG_INVERSE">
+<code class="sig-name descname">FFT2_PG_INVERSE</code><a class="headerlink" href="#geosoft.gxapi.FFT2_PG_INVERSE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse</p>
+<dl class="py attribute">
+<dt id="id11">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">FFT2_PG_INVERSE</code><em class="property"> = 1</em><a class="headerlink" href="#id11" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXFFT2 class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

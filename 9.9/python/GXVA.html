@@ -1,0 +1,1029 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GXVA class &#8212; Geosoft GX Python API 9.9.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXVA class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXVA class</a><ul>
+<li><a class="reference internal" href="#va-average-constants">VA_AVERAGE constants</a></li>
+<li><a class="reference internal" href="#va-object-constants">VA_OBJECT constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXVA.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxva-class">
+<span id="gxva"></span><h1>GXVA class<a class="headerlink" href="#gxva-class" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="geosoft.gxapi.GXVA">
+<em class="property">class </em><code class="sig-name descname">GXVA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXVA class.</p>
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> class is the 2-Dimensional analogue to the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> class.
+When displayed in a database, <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> objects are displayed graphically
+as profiles, one to a cell, and can also be displayed one column of
+data at a time by specifying an index; e.g. CH[0]. A <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> object is
+declared with a fixed number of columns, which cannot be altered.
+The number of rows, however can be changed, in the same way that
+the length of a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> can be changed. Data can be added or extracted
+using VVs, either by row or column.</p>
+<p>A <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> is used to store an array of data in which each element may have
+multiple elements.  For example, 256-channel radiometric data can
+be stored in a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> that is 256 elements wide.</p>
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.add_elevations_vv_to_depths">
+<code class="sig-name descname">add_elevations_vv_to_depths</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vv</span></em>, <em class="sig-param"><span class="n">negative_depths</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.add_elevations_vv_to_depths"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.add_elevations_vv_to_depths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> value to each row of the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>, output true elevation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Elevations to add</p></li>
+<li><p><strong>negative_depths</strong> (<em>int</em>) – Use negative <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> depths (0:No, 1:Yes)?</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Adds each value in an input elevation <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> to all the values at
+the same fid in a depths <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>. Includes an option for negative depths down
+(e.g. a relative level).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.append">
+<code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v_aa</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends VAs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>v_aa</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><em>GXVA</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> to append</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If the VAs have different numbers of columns, the smaller number
+is used in the copy operation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.average">
+<code class="sig-name descname">average</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vv</span></em>, <em class="sig-param"><span class="n">rc</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.average"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.average" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average elements in a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> by row or column</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> in which to place average results</p></li>
+<li><p><strong>rc</strong> (<em>int</em>) – <a class="reference internal" href="#va-average"><span class="std std-ref">VA_AVERAGE constants</span></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The output <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> will be dimensioned by the number of
+rows or columns in the input <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> depending on the
+<a class="reference internal" href="#va-average"><span class="std std-ref">VA_AVERAGE constants</span></a> setting.</p>
+<p>Dummies are not included in the average.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.check_for_repeating">
+<code class="sig-name descname">check_for_repeating</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vv_t</span></em>, <em class="sig-param"><span class="n">subtract_vv</span></em>, <em class="sig-param"><span class="n">vv_sub</span></em>, <em class="sig-param"><span class="n">tol</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.check_for_repeating"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.check_for_repeating" title="Permalink to this definition">¶</a></dt>
+<dd><p>Window a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> to a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> based on fractional frame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vv_t</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Items to test for repeats (length equal to the number of columns in the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>)</p></li>
+<li><p><strong>subtract_vv</strong> (<em>int</em>) – If set to 1, subtract single values in the following <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> from every array row item before testing (e.g. an elevation value)</p></li>
+<li><p><strong>vv_sub</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Values to subtract from each row before doing the comparison test (length equal to the length of the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>). Can be VV_NULL (-1) if above subtraction parameter is zero</p></li>
+<li><p><strong>tol</strong> (<em>float</em>) – Comparison tolerance - set to zero or dummy for exact match</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>1 if rows repeat, 0 if not.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Returns 1 if all rows contain values which match the input values.
+Optionally, row values can be offset by amounts specified with a secondary <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.
+This function was designed to detect “depth” array channels, including those which might
+have been offset with topography on each row.
+An absolute tolerance can be specified to ignore numerical noise.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.check_for_repeating2">
+<code class="sig-name descname">check_for_repeating2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vv_t</span></em>, <em class="sig-param"><span class="n">subtract_vv</span></em>, <em class="sig-param"><span class="n">vv_sub</span></em>, <em class="sig-param"><span class="n">tol</span></em>, <em class="sig-param"><span class="n">bad_row</span></em>, <em class="sig-param"><span class="n">bad_col</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.check_for_repeating2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.check_for_repeating2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Window a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> to a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> based on fractional frame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vv_t</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Items to test for repeats (length equal to the number of columns in the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>)</p></li>
+<li><p><strong>subtract_vv</strong> (<em>int</em>) – If set to 1, subtract single values in the following <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> from every array row item before testing (e.g. an elevation value)</p></li>
+<li><p><strong>vv_sub</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Values to subtract from each row before doing the comparison test (length equal to the length of the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>). Can be VV_NULL (-1) if above subtraction parameter is zero</p></li>
+<li><p><strong>tol</strong> (<em>float</em>) – Comparison tolerance - set to zero or dummy for exact match</p></li>
+<li><p><strong>bad_row</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Row index of first mismatch</p></li>
+<li><p><strong>bad_col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Column index of first mismatch</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>1 if rows repeat, 0 if not.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Returns 1 if all rows contain values which match the input values.
+Optionally, row values can be offset by amounts specified with a secondary <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.
+This function was designed to detect “depth” array channels, including those which might
+have been offset with topography on each row.
+An absolute tolerance can be specified to ignore numerical noise.
+This version returns the row and column index of first mismatch.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.col">
+<code class="sig-name descname">col</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.col"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.col" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return number of columns in <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Columns in <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> <a class="reference internal" href="#geosoft.gxapi.GXVA.len" title="geosoft.gxapi.GXVA.len"><code class="xref py py-obj docutils literal notranslate"><span class="pre">len</span></code></a> returns the number of rows.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v_as</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy one <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> to another.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>v_as</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><em>GXVA</em></a>) – source</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.copy2">
+<code class="sig-name descname">copy2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_row</span></em>, <em class="sig-param"><span class="n">d_col</span></em>, <em class="sig-param"><span class="n">v_as</span></em>, <em class="sig-param"><span class="n">s_row</span></em>, <em class="sig-param"><span class="n">s_col</span></em>, <em class="sig-param"><span class="n">rows</span></em>, <em class="sig-param"><span class="n">cols</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.copy2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.copy2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy part of a vector into part of another vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>d_row</strong> (<em>int</em>) – Destination start row</p></li>
+<li><p><strong>d_col</strong> (<em>int</em>) – Destination start column</p></li>
+<li><p><strong>v_as</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><em>GXVA</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> (can be the same as Destination)</p></li>
+<li><p><strong>s_row</strong> (<em>int</em>) – Source start row</p></li>
+<li><p><strong>s_col</strong> (<em>int</em>) – Source start column</p></li>
+<li><p><strong>rows</strong> (<em>int</em>) – Number of rows</p></li>
+<li><p><strong>cols</strong> (<em>int</em>) – Number of columns</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> 1. Unlike <a class="reference internal" href="#geosoft.gxapi.GXVA.copy" title="geosoft.gxapi.GXVA.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a> destination <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> is not reallocated, nor are
+the dimensions changed. The caller must make any desired changes.</p>
+<p>2. All <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> types are supported and will be converted using
+Convert_GS if necessary.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.create">
+<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type</span></em>, <em class="sig-param"><span class="n">rows</span></em>, <em class="sig-param"><span class="n">cols</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#geo-var"><span class="std std-ref">GEO_VAR constants</span></a></p></li>
+<li><p><strong>rows</strong> (<em>int</em>) – Maximum number of rows in the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>, &gt;= 0</p></li>
+<li><p><strong>cols</strong> (<em>int</em>) – Number of columns in the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>, &gt; 0</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> Object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA">GXVA</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.create_ext">
+<em class="property">classmethod </em><code class="sig-name descname">create_ext</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type</span></em>, <em class="sig-param"><span class="n">rows</span></em>, <em class="sig-param"><span class="n">cols</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.create_ext"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.create_ext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>, using one of the <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> special data types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></p></li>
+<li><p><strong>rows</strong> (<em>int</em>) – Maximum number of rows in the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>, &gt;= 0</p></li>
+<li><p><strong>cols</strong> (<em>int</em>) – Number of columns in the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>, &gt; 0</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>, aborts if creation fails</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA">GXVA</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> See <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV.create" title="geosoft.gxapi.GXVV.create"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV.create</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.create_vv">
+<em class="property">classmethod </em><code class="sig-name descname">create_vv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vv</span></em>, <em class="sig-param"><span class="n">rows</span></em>, <em class="sig-param"><span class="n">columns</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.create_vv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.create_vv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> using the data in a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> with the data</p></li>
+<li><p><strong>rows</strong> (<em>int</em>) – # of rows</p></li>
+<li><p><strong>columns</strong> (<em>int</em>) – # of columns</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>, aborts if creation fails</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA">GXVA</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.2.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> See <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV.create" title="geosoft.gxapi.GXVV.create"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV.create</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.get_array">
+<code class="sig-name descname">get_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_row</span></em>, <em class="sig-param"><span class="n">start_col</span></em>, <em class="sig-param"><span class="n">rows</span></em>, <em class="sig-param"><span class="n">cols</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">gs_type</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.get_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.get_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an array of data from a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_row</strong> (<em>int</em>) – Starting Row</p></li>
+<li><p><strong>start_col</strong> (<em>int</em>) – Starting Column</p></li>
+<li><p><strong>rows</strong> (<em>int</em>) – # rows</p></li>
+<li><p><strong>cols</strong> (<em>int</em>) – # cols</p></li>
+<li><p><strong>data</strong> (<em>bytearray</em>) – Data buffer to copy <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> data into</p></li>
+<li><p><strong>gs_type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.get_double">
+<code class="sig-name descname">get_double</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">col</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.get_double"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.get_double" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a real element from a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>int</em>) – Row</p></li>
+<li><p><strong>col</strong> (<em>int</em>) – Column</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Element wanted, <a class="reference internal" href="GXGEOSOFT.html#id5" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>, <a class="reference internal" href="GXGEOSOFT.html#id4" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iDUMMY</span></code></a> or blank string
+if the value is dummy or outside of the range of data.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Type conversions are performed if necessary.  Dummy values
+are converted to “*” string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.get_fid_incr">
+<code class="sig-name descname">get_fid_incr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.get_fid_incr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.get_fid_incr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the Fiducial increment from a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Fiducial increment of the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.get_fid_start">
+<code class="sig-name descname">get_fid_start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.get_fid_start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.get_fid_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the Fiducial start from a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Fiducial start of the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.get_full_vv">
+<code class="sig-name descname">get_full_vv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.get_full_vv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.get_full_vv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the full <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> from the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> Object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV">GXVV</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> No data is copied, this is the handle to the data <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> in the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.
+The fid start/increment of the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> is passed to the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> at the time
+of the call.  If a new <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> is read, you must call GetFull_VV_VA
+to get the new fid in the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.get_int">
+<code class="sig-name descname">get_int</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">col</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.get_int"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.get_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an integer element from a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>int</em>) – Row</p></li>
+<li><p><strong>col</strong> (<em>int</em>) – Column</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Element wanted, <a class="reference internal" href="GXGEOSOFT.html#id5" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>, <a class="reference internal" href="GXGEOSOFT.html#id4" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iDUMMY</span></code></a> or blank string
+if the value is dummy or outside of the range of data.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Type conversions are performed if necessary.  Dummy values
+are converted to “*” string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.get_string">
+<code class="sig-name descname">get_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">col</span></em>, <em class="sig-param"><span class="n">str_val</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.get_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.get_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a string element from a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>int</em>) – Row</p></li>
+<li><p><strong>col</strong> (<em>int</em>) – Column</p></li>
+<li><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String in which to place element</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Returns element wanted, <a class="reference internal" href="GXGEOSOFT.html#id5" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>, <a class="reference internal" href="GXGEOSOFT.html#id4" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iDUMMY</span></code></a> or blank string
+if the value is dummy or outside of the range of data.</p>
+<p>Type conversions are performed if necessary.  Dummy values
+are converted to “*” string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.get_vv">
+<code class="sig-name descname">get_vv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">no</span></em>, <em class="sig-param"><span class="n">row_col</span></em>, <em class="sig-param"><span class="n">vv</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.get_vv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.get_vv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a row or column of data as a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> from an array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>no</strong> (<em>int</em>) – Row or Column # (0 is first)</p></li>
+<li><p><strong>row_col</strong> (<em>int</em>) – <a class="reference internal" href="#va-object"><span class="std std-ref">VA_OBJECT constants</span></a></p></li>
+<li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> in which to place data</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.index_order">
+<em class="property">classmethod </em><code class="sig-name descname">index_order</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vv</span></em>, <em class="sig-param"><span class="n">va</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.index_order"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.index_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reorder a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> based on an index <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Index <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> of type INT</p></li>
+<li><p><strong>va</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><em>GXVA</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> to order</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Given a row index <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> (of type INT), this method reorders a
+<a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>. Please make sure that the index holds valid information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.is_null">
+<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.len">
+<code class="sig-name descname">len</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.len"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.len" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return length (number of rows) in a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Length of <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> <a class="reference internal" href="#geosoft.gxapi.GXVA.col" title="geosoft.gxapi.GXVA.col"><code class="xref py py-obj docutils literal notranslate"><span class="pre">col</span></code></a> returns the number of columns.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.lookup_index">
+<code class="sig-name descname">lookup_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vvi</span></em>, <em class="sig-param"><span class="n">var</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.lookup_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.lookup_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lookup a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> from another <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> using an index <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vvi</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Index <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> of REAL</p></li>
+<li><p><strong>var</strong> (<a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><em>GXVA</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> to output results (same type as Data <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.4.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Fractional values in the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> will interpolate between the value
+at the whole integer value and the next whole integer, dummy
+if outside the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.null">
+<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA">GXVA</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.range">
+<code class="sig-name descname">range</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">startRow</span></em>, <em class="sig-param"><span class="n">startCol</span></em>, <em class="sig-param"><span class="n">rows</span></em>, <em class="sig-param"><span class="n">columns</span></em>, <em class="sig-param"><span class="n">min</span></em>, <em class="sig-param"><span class="n">max</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the minimum and maximum range of the data, in doubles,
+in a vector while ignoring dummies, for a range of columns and rows.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>startRow</strong> (<em>int</em>) – Starting row (0 to nRows-1)</p></li>
+<li><p><strong>startCol</strong> (<em>int</em>) – Starting column (0 to nColumns-1</p></li>
+<li><p><strong>rows</strong> (<em>int</em>) – Number of rows (-1 for all from start)</p></li>
+<li><p><strong>columns</strong> (<em>int</em>) – Number of columns (-1 for all from start)</p></li>
+<li><p><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum value - returned</p></li>
+<li><p><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum value - returned</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.range_columns">
+<code class="sig-name descname">range_columns</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">startRow</span></em>, <em class="sig-param"><span class="n">startCol</span></em>, <em class="sig-param"><span class="n">rows</span></em>, <em class="sig-param"><span class="n">columns</span></em>, <em class="sig-param"><span class="n">minimums</span></em>, <em class="sig-param"><span class="n">maximums</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.range_columns"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.range_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the minimum and maximum range of the data for individual columns, in doubles,
+for a range of columns and rows.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>startRow</strong> (<em>int</em>) – Starting row (0 to nRows-1)</p></li>
+<li><p><strong>startCol</strong> (<em>int</em>) – Starting column (0 to nColumns-1</p></li>
+<li><p><strong>rows</strong> (<em>int</em>) – Number of rows (-1 for all from start)</p></li>
+<li><p><strong>columns</strong> (<em>int</em>) – Number of columns (-1 for all from start)</p></li>
+<li><p><strong>minimums</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Minimum values returned:<code class="xref py py-obj docutils literal notranslate"><span class="pre">VV</span></code> object - GS_REAL</p></li>
+<li><p><strong>maximums</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Maximum values returned:<code class="xref py py-obj docutils literal notranslate"><span class="pre">VV</span></code> object - GS_REAL</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.range_double">
+<code class="sig-name descname">range_double</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">min</span></em>, <em class="sig-param"><span class="n">max</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.range_double"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.range_double" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the minimum and maximum range of the data, in doubles,
+in a vector while ignoring dummies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum value - returned</p></li>
+<li><p><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum value - returned</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.re_fid">
+<code class="sig-name descname">re_fid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">incr</span></em>, <em class="sig-param"><span class="n">length</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.re_fid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.re_fid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Re-sample a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> to a new fid start/icrement</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>float</em>) – New fid start</p></li>
+<li><p><strong>incr</strong> (<em>float</em>) – New fid increment</p></li>
+<li><p><strong>length</strong> (<em>int</em>) – New length</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.reverse">
+<code class="sig-name descname">reverse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.reverse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.reverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverses the order of the rows in a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.set_array">
+<code class="sig-name descname">set_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_row</span></em>, <em class="sig-param"><span class="n">start_col</span></em>, <em class="sig-param"><span class="n">rows</span></em>, <em class="sig-param"><span class="n">cols</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">gs_type</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.set_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.set_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a range of data in an array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_row</strong> (<em>int</em>) – Starting Row</p></li>
+<li><p><strong>start_col</strong> (<em>int</em>) – Starting Column</p></li>
+<li><p><strong>rows</strong> (<em>int</em>) – # rows</p></li>
+<li><p><strong>cols</strong> (<em>int</em>) – # cols</p></li>
+<li><p><strong>data</strong> (<em>bytearray</em>) – Data buffer to copy into <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a></p></li>
+<li><p><strong>gs_type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.set_double">
+<code class="sig-name descname">set_double</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">col</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.set_double"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.set_double" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a real element in a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>int</em>) – Row</p></li>
+<li><p><strong>col</strong> (<em>int</em>) – Column</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – Value to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Element being set cannot be &lt; 0.
+If the element is &gt; current <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> length, the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> length is
+increased.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.set_fid_incr">
+<code class="sig-name descname">set_fid_incr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">incr</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.set_fid_incr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.set_fid_incr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the Fiducial increment of a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>incr</strong> (<em>float</em>) – New increment</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.set_fid_start">
+<code class="sig-name descname">set_fid_start</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.set_fid_start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.set_fid_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the Fiducial start of a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>start</strong> (<em>float</em>) – New start</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.set_int">
+<code class="sig-name descname">set_int</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">col</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.set_int"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.set_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an integer element in a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>int</em>) – Row</p></li>
+<li><p><strong>col</strong> (<em>int</em>) – Column</p></li>
+<li><p><strong>value</strong> (<em>int</em>) – Value to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Element being set cannot be &lt; 0.
+If the element is &gt; current <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> length, the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> length is
+increased.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.set_ln">
+<code class="sig-name descname">set_ln</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rows</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.set_ln"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.set_ln" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the length (number of rows) of the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rows</strong> (<em>int</em>) – Length</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The number of columns in a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> is fixed, and cannot be
+altered once the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> is created.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.set_string">
+<code class="sig-name descname">set_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">col</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.set_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.set_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a string element in a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>int</em>) – Row</p></li>
+<li><p><strong>col</strong> (<em>int</em>) – Column</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – String to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Element being set cannot be &lt; 0.
+If the element is &gt; current <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> length, the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> length is
+increased.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.set_vv">
+<code class="sig-name descname">set_vv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">no</span></em>, <em class="sig-param"><span class="n">row_col</span></em>, <em class="sig-param"><span class="n">vv</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.set_vv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.set_vv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a row or column of data in an array from a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>no</strong> (<em>int</em>) – Row or Column # (0 is first)</p></li>
+<li><p><strong>row_col</strong> (<em>int</em>) – <a class="reference internal" href="#va-object"><span class="std std-ref">VA_OBJECT constants</span></a></p></li>
+<li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> from which to get data</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.trans">
+<code class="sig-name descname">trans</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">base</span></em>, <em class="sig-param"><span class="n">mult</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.trans"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.trans" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translate (<a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> + base ) * mult</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base</strong> (<em>float</em>) – Base value</p></li>
+<li><p><strong>mult</strong> (<em>float</em>) – Mult value</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Supports all <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> types using an internal double <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.window">
+<code class="sig-name descname">window</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">count</span></em>, <em class="sig-param"><span class="n">vv</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.window"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.window" title="Permalink to this definition">¶</a></dt>
+<dd><p>Window a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> to a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> based in intergral frame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>int</em>) – First element in the window</p></li>
+<li><p><strong>count</strong> (<em>int</em>) – Number of elements in the window</p></li>
+<li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> in which to place results</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The defined window must be within the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> element dimensions.
+The windowed result will be the simple sum of all
+values in the window.
+If any values are dummy, the result will be dummy.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVA.window2">
+<code class="sig-name descname">window2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em>, <em class="sig-param"><span class="n">vv</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.window2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.window2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Window a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> to a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> based on fractional frame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>float</em>) – Start point (from 0.0)</p></li>
+<li><p><strong>end</strong> (<em>float</em>) – End point (&lt; <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> elements - 1.0)</p></li>
+<li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> in which to place results</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The defined window must be within the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> element dimensions.
+The windowed result will be the simple sum of all
+values in the window.
+If any values are dummy, the result will be dummy.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="va-average-constants">
+<span id="va-average"></span><h2>VA_AVERAGE constants<a class="headerlink" href="#va-average-constants" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> Object to average</p>
+<dl class="py data">
+<dt id="geosoft.gxapi.VA_AVERAGE_ROWS">
+<code class="sig-name descname">VA_AVERAGE_ROWS</code><a class="headerlink" href="#geosoft.gxapi.VA_AVERAGE_ROWS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average the Rows</p>
+<dl class="py attribute">
+<dt id="id0">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">VA_AVERAGE_ROWS</code><em class="property"> = 0</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.VA_AVERAGE_COLUMNS">
+<code class="sig-name descname">VA_AVERAGE_COLUMNS</code><a class="headerlink" href="#geosoft.gxapi.VA_AVERAGE_COLUMNS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average the Columns</p>
+<dl class="py attribute">
+<dt id="id37">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">VA_AVERAGE_COLUMNS</code><em class="property"> = 1</em><a class="headerlink" href="#id37" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="va-object-constants">
+<span id="va-object"></span><h2>VA_OBJECT constants<a class="headerlink" href="#va-object-constants" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> Object to select</p>
+<dl class="py data">
+<dt id="geosoft.gxapi.VA_ROW">
+<code class="sig-name descname">VA_ROW</code><a class="headerlink" href="#geosoft.gxapi.VA_ROW" title="Permalink to this definition">¶</a></dt>
+<dd><p>Row</p>
+<dl class="py attribute">
+<dt id="id38">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">VA_ROW</code><em class="property"> = 0</em><a class="headerlink" href="#id38" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.VA_COL">
+<code class="sig-name descname">VA_COL</code><a class="headerlink" href="#geosoft.gxapi.VA_COL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Column</p>
+<dl class="py attribute">
+<dt id="id39">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">VA_COL</code><em class="property"> = 1</em><a class="headerlink" href="#id39" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXVA class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>
