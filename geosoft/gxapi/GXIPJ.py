@@ -2038,10 +2038,10 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         """
         Set plan orientation parameters.
         
-        :param x:    X location of view origin
-        :param y:    Y location of view origin
-        :param z:    Z location of view origin
-        :param rot:  Rotation CCW from normal XY coords
+        :param x:    X location of view rotation point
+        :param y:    Y location of view rotation point
+        :param z:    Z location of view plane in 3D
+        :param rot:  Rotation CCW from normal XY coords about the rotation point
         :type  x:    float
         :type  y:    float
         :type  z:    float
@@ -2052,12 +2052,19 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** This sets up the orientation of an `GXIPJ <geosoft.gxapi.GXIPJ>` for plan view plots,
-        for instance in Wholeplot. These differ from regular plan
+        for instance in drill hole section map (top plan view). 
+        These differ from regular plan
         map views in that the elevation of the view plane is set, and
         the view may be rotated. In addition, when viewed in a map,
         a view with this `GXIPJ <geosoft.gxapi.GXIPJ>` will give a status bar location (X, Y, Z)
         of the actual location in space, as opposed to just the X, Y of
-        the view plane itself.
+        the view plane itself. When a rotation angle (CCW) is specified,
+        the input (X, Y) location is the point about which the coordinate
+        system is rotated. For instance, you can rotate a grid about its corner
+        (XC, YC) by giving it a Plan View orientation (XC, YC, ZElevation, Rot).
+        If there is no rotation, the input X, Y locations are irrelevent, but they
+        will show up in the output string for the orientation, so it makes sense to
+        default them to (0, 0).
         """
         self._set_plan_view(x, y, z, rot)
         

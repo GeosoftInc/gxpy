@@ -26,10 +26,12 @@ lib64/
 parts/
 sdist/
 var/
+results/
 *.egg-info/
 .installed.cfg
 *.egg
 *.key
+*.pyd
 geosoft/gxapi/*.pyd
 GeosoftRedist/
 

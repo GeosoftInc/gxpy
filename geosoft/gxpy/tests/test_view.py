@@ -3,6 +3,7 @@ import os
 import numpy as np
 
 import geosoft
+import geosoft.gxapi as gxapi
 import geosoft.gxpy.map as gxmap
 import geosoft.gxpy.view as gxv
 import geosoft.gxpy.coordinate_system as gxcs
@@ -514,6 +515,49 @@ class Test(GXPYTest):
             self.assertTrue(v.is_crooked_path)
             self.assertEqual(len(v.crooked_path()), 1629)
 
+
+    def test_plane_relief_surface(self):
+        self.start()
+
+        with gxv.View_3d.new('test_plane_relief', overwrite=True) as vw:
+            vw.new_drawing_plane('plane_no_relief')
+
+            vw.new_drawing_plane('plane_relief')
+            vw.set_plane_relief_surface(self.section, refine=4, base=100, scale=2, min=200, max=400)
+
+            no_relief_info = vw.get_plane_relief_surface_info('plane_no_relief')
+            self.assertEqual('', no_relief_info.surface_grid_name)
+            self.assertEqual(3, no_relief_info.refine)
+            self.assertEqual(0, no_relief_info.base)
+            self.assertEqual(1, no_relief_info.scale)
+            self.assertEqual(None, no_relief_info.min)
+            self.assertEqual(None, no_relief_info.max)
+
+            with_relief_info = vw.get_plane_relief_surface_info(1)
+            self.assertEqual('.\__tmp__\_gx_uuid_test_view.py_1\section.grd', with_relief_info.surface_grid_name)
+            self.assertEqual(4, with_relief_info.refine)
+            self.assertEqual(100, with_relief_info.base)
+            self.assertEqual(2, with_relief_info.scale)
+            self.assertEqual(200, with_relief_info.min)
+            self.assertEqual(400, with_relief_info.max)
+
+    def test_from_gxapi(self):
+        self.start()
+        gxapi_map = gxapi.GXMAP.create('test_from_gxapi.map', gxmap.WRITE_NEW)
+        gxmview = gxapi.GXMVIEW.create(gxapi_map, 'someview', gxv.WRITE_NEW)
+
+        with gxv.View.from_gxapi(gxapi_map, gxmview) as v:
+            self.assertEqual('someview', v.name)
+
+    def test_3d_from_gxapi(self):
+        self.start()
+        gxapi_map = gxapi.GXMAP.create('test_3d_from_gxapi.geosoft_3dv', gxmap.WRITE_NEW)
+        gxmview = gxapi.GXMVIEW.create(gxapi_map, '3D', gxv.WRITE_NEW)
+        h3dn = gxapi.GX3DN.create()
+        gxmview.set_3dn(h3dn)
+
+        with gxv.View_3d.from_gxapi(gxapi_map, gxmview) as v:
+            self.assertEqual('test_3d_from_gxapi', v.name)
 
 if __name__ == '__main__':
 

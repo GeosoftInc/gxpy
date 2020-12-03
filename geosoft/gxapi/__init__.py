@@ -5226,12 +5226,6 @@ EDB_PROF_I_SOURCELINE = 13
 EDB_PROF_I_SCALEOPTION = 14
 #: 0-no, 1-yes
 EDB_PROF_I_SAMERANGE = 15
-#: 0-no, 1-yes
-EDB_PROF_I_VERT_GRID_LINE = 16
-#: 0-no, 1-yes
-EDB_PROF_R_VERT_GRID_LINE_INTERVAL = 17
-#: 0-no, 1-yes
-EDB_PROF_I_AUTO_RESCALE_X = 18
 
 #
 # EDB_PROFILE_SCALE constants
@@ -5334,6 +5328,8 @@ EDOC_TYPE_VOXEL = 1
 EDOC_TYPE_VOXEL_INVERSION = 2
 #: `GXGMSYS <geosoft.gxapi.GXGMSYS>` 2D Model
 EDOC_TYPE_GMS2D = 3
+#: Geosurface
+EDOC_TYPE_GEOSURFACE = 4
 
 #
 # EDOC_UNLOAD constants
@@ -5603,7 +5599,17 @@ FFT_DETREND_ENDS = 1
 #: Detrend order 1 using all data points
 FFT_DETREND_ALL = 2
 #: Remove mean value
-FFT_DETREND_MEAN = 3	
+FFT_DETREND_MEAN = 3
+
+#
+# FFT_WHITE_NOISE constants
+#
+# Add white noise option
+
+#: Add the input value to the real part of all non-DC components of the current power spectrum
+FFT_WHITE_NOISE_ADD = 0
+#: Set non-DC components to the input value and set the DC value to 0.0
+FFT_WHITE_NOISE_SET = 1	
 
 #
 # GXFFT2 Constants

@@ -294,20 +294,27 @@ class Map:
     def __str__(self):
         return self._file_name
 
-    def __init__(self, file_name, mode=WRITE_NEW, _internal=False):
+    def __init__(self, file_name, mode=WRITE_NEW, _internal=False, gxmap=None):
 
         if not _internal:
-            raise MapException(_t("Map must be created from Map.new(), or Map.open()."))
+            raise MapException(_t("Map must be created from Map.new(), or Map.open(), or Map.from_gxapi()."))
 
         super().__init__()
 
         self._gx = gx.GXpy()
-        self._gxmap = None
         self._remove = False
-        self._file_name = map_file_name(file_name)
+
+        if gxmap is not None:
+            self._gxmap = gxmap
+            file_name_ref = gxapi.str_ref()
+            self._gxmap.get_file_name(file_name_ref)
+            self._file_name = map_file_name(file_name_ref.value)
+        else:
+            self._file_name = map_file_name(file_name)
+            self._gxmap = gxapi.GXMAP.create(self.file_name, mode)
         self._name = os.path.splitext(os.path.split(self._file_name)[1])[0]
+
         self._annotation_outer_edge = 0.0
-        self._gxmap = gxapi.GXMAP.create(self.file_name, mode)
         self._metadata = None
         self._metadata_changed = False
         self._metadata_root = ''
@@ -337,6 +344,17 @@ class Map:
                 if pop:
                     gx.pop_resource(self._open)
                 self._open = None
+
+    @classmethod
+    def from_gxapi(cls, gxmap):
+        """
+        Instantiate Map from gxapi instance.
+
+        :param gxmap:    a gxapi.CGXMAP
+
+        .. versionadded:: 9.9
+        """
+        return cls(None, gxmap=gxmap, _internal=True)
 
     @classmethod
     def open(cls, file_name):

@@ -80,7 +80,7 @@ class Test(GXPYTest):
             self.assertEqual(gdb.lost_blocks, 0)
             self.assertEqual(gdb.free_blocks, 24)
             self.assertEqual(gdb.compression, 0)
-            self.assertEqual(gdb.pages_for_blobs, 0)
+            self.assertEqual(gdb.pages_for_blobs, 35)
             self.assertEqual(gdb.db_size_kb, 915)
             self.assertEqual(gdb.index_size_kb, 303)
             self.assertEqual(gdb.max_block_size_bytes, 67106792)

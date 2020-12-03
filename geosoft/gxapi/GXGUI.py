@@ -75,27 +75,6 @@ class GXGUI(gxapi_cy.WrapGUI):
 
 
     @classmethod
-    def fft2_spec_filter(cls, spec_file_name, con_file_name):
-        """
-        Interactive `GXFFT2 <geosoft.gxapi.GXFFT2>` radially averaged power spectrum filter
-        
-        :param spec_file_name:  Name of the input spectrum file
-        :param con_file_name:   Name of the output control file
-        :type  spec_file_name:  str
-        :type  con_file_name:   str
-
-        .. versionadded:: 5.0
-
-        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
-
-        **Limitations:** May not be available while executing a command line program.
-        """
-        gxapi_cy.WrapGUI._fft2_spec_filter(GXContext._get_tls_geo(), spec_file_name.encode(), con_file_name.encode())
-        
-
-
-
-    @classmethod
     def get_parent_wnd(cls):
         """
         Get the current parent window
@@ -1033,6 +1012,50 @@ class GXGUI(gxapi_cy.WrapGUI):
 
 
     @classmethod
+    def dat_file_form_ex(cls, title, default, psz_file_path, type, validation_type, multi, sort):
+        """
+        Grid and Image file Open/Save Form for Multiple/Single file selections and optional filter list sorting.
+        
+        :param title:            Title of the Form
+        :param default:          Default value
+        :param psz_file_path:    Where the file name(s) is returned
+        :param type:             :ref:`DAT_TYPE`
+        :param validation_type:  :ref:`FILE_FORM`
+        :param multi:            Allow Multiple file selections = TRUE Single   file selections = FALSE
+        :param sort:             Sort file filter list = TRUE   Maintain default filter list sorting = FALSE
+        :type  title:            str
+        :type  default:          str
+        :type  psz_file_path:    str_ref
+        :type  type:             int
+        :type  validation_type:  int
+        :type  multi:            int
+        :type  sort:             int
+
+        :returns:                0 - Ok
+                                 1 - Cancel
+        :rtype:                  int
+
+        .. versionadded:: 9.9
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Remember to make the string size big enough for multiple file
+        selections. In the case of multiple selections the names will be separated
+        by a semicolon and only the first file will contain the full path.
+
+        When using the multiple flag on any of these functions please be aware that
+        the string returned will be in the format:
+        drive:\\path1\\path2\\name.grid|name2.grid|name3.grid(QUALIFIERS)
+        All grids are required to be of the same type.
+        """
+        ret_val, psz_file_path.value = gxapi_cy.WrapGUI._dat_file_form_ex(GXContext._get_tls_geo(), title.encode(), default.encode(), psz_file_path.value.encode(), type, validation_type, multi, sort)
+        return ret_val
+
+
+
+    @classmethod
     def gen_file_form(cls, title, filt_vv, filter, default, file_path, type, multi):
         """
         General file Open/Save Form for Multiple/Single file selections and multiple filter capability
@@ -1648,7 +1671,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
 
     @classmethod
-    def import_xyz_template_editor(cls, db, templ, size, file):
+    def import_xyz_template_editor(cls, db, templ, file):
         """
         Allows the user to edit XYZ import templates
         using a complex dialog. The Template name
@@ -1656,11 +1679,9 @@ class GXGUI(gxapi_cy.WrapGUI):
         
         :param db:     Database
         :param templ:  Name of the Template (can change)
-        :param size:   Size of the Template
         :param file:   Name of the XYZ file to base it on
         :type  db:     GXDB
-        :type  templ:  str
-        :type  size:   int
+        :type  templ:  str_ref
         :type  file:   str
 
         :returns:      0 - OK
@@ -1673,7 +1694,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapGUI._import_xyz_template_editor(GXContext._get_tls_geo(), db, templ.encode(), size, file.encode())
+        ret_val, templ.value = gxapi_cy.WrapGUI._import_xyz_template_editor(GXContext._get_tls_geo(), db, templ.value.encode(), file.encode())
         return ret_val
 
 
@@ -2584,6 +2605,31 @@ class GXGUI(gxapi_cy.WrapGUI):
         **Note:** Any changes made to the 3D View will be persisted.
         """
         gxapi_cy.WrapGUI._show_3d_viewer_dialog(GXContext._get_tls_geo(), title.encode(), o3dv.encode())
+        
+
+
+
+
+# Obsolete
+
+
+    @classmethod
+    def fft2_spec_filter(cls, spec_file_name, con_file_name):
+        """
+        Interactive `GXFFT2 <geosoft.gxapi.GXFFT2>` radially averaged power spectrum filter
+        
+        :param spec_file_name:  Name of the input spectrum file
+        :param con_file_name:   Name of the output control file
+        :type  spec_file_name:  str
+        :type  con_file_name:   str
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+        """
+        gxapi_cy.WrapGUI._fft2_spec_filter(GXContext._get_tls_geo(), spec_file_name.encode(), con_file_name.encode())
         
 
 

@@ -130,6 +130,48 @@ class GXTC(gxapi_cy.WrapTC):
 
 
 
+    @classmethod
+    def create_ex2(cls, img, elev_unit, dinner, douter, dens_t, dens_w, elev_w, edge, edge_elev, opt, survey_type, img2):
+        """
+        Creates a Terrain Correction object with surveytype and topo surface elevation grid
+        
+        :param img:          Topo (Rock Surface DEM) grid
+        :param elev_unit:    Elevation unit in 1 metre (i.e. 0.3048 for feet)
+        :param dinner:       Inner distance (in topo grid projection units, default in metres)
+        :param douter:       Outer distance (in topo grid projection units, default in metres)
+        :param dens_t:       Terrain density in g/cc
+        :param dens_w:       Water density in g/cc
+        :param elev_w:       Water reference elevation (in elevation unit)
+        :param edge:         1 to calculate an edge correction (compensation), 0 otherwise
+        :param edge_elev:    Average elevation beyond max distance (in elevation unit)
+        :param opt:          :ref:`TC_OPT`
+        :param survey_type:  :ref:`TC_SURVEYTYPE`
+        :param img2:         Topo (Elev Surface DEM) grid
+        :type  img:          GXIMG
+        :type  elev_unit:    float
+        :type  dinner:       float
+        :type  douter:       float
+        :type  dens_t:       float
+        :type  dens_w:       float
+        :type  elev_w:       float
+        :type  edge:         int
+        :type  edge_elev:    float
+        :type  opt:          int
+        :type  survey_type:  int
+        :type  img2:         GXIMG
+
+        :returns:            `GXTC <geosoft.gxapi.GXTC>` Object
+        :rtype:              GXTC
+
+        .. versionadded:: 9.9
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        ret_val = gxapi_cy.WrapTC._create_ex2(GXContext._get_tls_geo(), img, elev_unit, dinner, douter, dens_t, dens_w, elev_w, edge, edge_elev, opt, survey_type, img2)
+        return GXTC(ret_val)
+
+
+
 
 
 

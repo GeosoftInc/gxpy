@@ -2326,7 +2326,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
-        **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The line must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
         ret_val = self._line_number(line)
         return ret_val
@@ -2347,7 +2347,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
-        **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The line must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
         line_number.value = self._line_number2(line, line_number.value.encode())
         
@@ -2369,7 +2369,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
-        **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The line must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
         ret_val = self._line_type(line)
         return ret_val
@@ -2391,7 +2391,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
-        **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
+        **Note:** The line must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
         ret_val = self._line_version(line)
         return ret_val
@@ -2452,6 +2452,35 @@ class GXDB(gxapi_cy.WrapDB):
         i.e. XU324, 98765, A, 23NGV etc.
         """
         name.value = gxapi_cy.WrapDB._set_line_name2(GXContext._get_tls_geo(), al_num.encode(), type, ver, name.value.encode())
+        
+
+
+
+
+    def rename_line(self, line, al_num, type, ver):
+        """
+        Change the name for a line.
+        
+        :param line:    Line handle of line to modify (READWRITE
+        :param al_num:  Line number (alphanumeric)
+        :param type:    Line type
+        :param ver:     Line version
+        :type  line:    int
+        :type  al_num:  str
+        :type  type:    int
+        :type  ver:     int
+
+        .. versionadded:: 9.9
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** The line must be locked :const:`DB_LOCK_READWRITE'
+        Sets/resets the name of an existing line directly from line type, number, and version.
+        The line number can be any combination of letters and numbers,
+        i.e. XU324, 98765, A, 23NGV etc.
+        Returns an error if the renamed line already exists.
+        """
+        self._rename_line(line, al_num.encode(), type, ver)
         
 
 
@@ -2910,6 +2939,25 @@ class GXDB(gxapi_cy.WrapDB):
         **Note:** Like `chan_lst <geosoft.gxapi.GXDB.chan_lst>`, but does not include array channels or virtual channels.
         """
         self._normal_chan_lst(lst)
+        
+
+
+
+
+    def non_string_and_non_array_chan_lst(self, lst):
+        """
+        Load a `GXLST <geosoft.gxapi.GXLST>` with non-string and non-array database channels.
+        
+        :param lst:  List to Populate (construct with CreateSymbLST_DB)
+        :type  lst:  GXLST
+
+        .. versionadded:: 9.9
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Like `chan_lst <geosoft.gxapi.GXDB.chan_lst>`, but does not include array channels, virtual channels or string channels.
+        """
+        self._non_string_and_non_array_chan_lst(lst)
         
 
 

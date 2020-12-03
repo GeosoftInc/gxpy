@@ -713,10 +713,7 @@ class Geosoft_gdb(gxgeo.Geometry):
     @property
     def pages_for_blobs(self):
         """pages consumed by blobs"""
-        try:
-            return self._db.get_info(gxapi.DB_INFO_BLOB_SIZE)
-        except gxapi.GXError:
-            return 0
+        return self._db.get_info(gxapi.DB_INFO_BLOB_SIZE)
 
     @property
     def db_size_kb(self):

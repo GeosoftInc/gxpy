@@ -606,29 +606,6 @@ class GXIMU(gxapi_cy.WrapIMU):
 
 
     @classmethod
-    def grid_in_fill(cls, im_gi, out_grd, extend, iter):
-        """
-        Fill in a ribbon along the edge and inside hollow areas of the grid
-        
-        :param im_gi:    Image of input grid
-        :param out_grd:  Name of the output grid
-        :param extend:   Number of cells to extend ribbon along the edge
-        :param iter:     Number of iterations to fill inside hollow areas
-        :type  im_gi:    GXIMG
-        :type  out_grd:  str
-        :type  extend:   int
-        :type  iter:     int
-
-        .. versionadded:: 7.2
-
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
-        """
-        gxapi_cy.WrapIMU._grid_in_fill(GXContext._get_tls_geo(), im_gi, out_grd.encode(), extend, iter)
-        
-
-
-
-    @classmethod
     def grid_mask(cls, in_grid, m_grid, pply, mode):
         """
         Create a mask grid using a set of polygon

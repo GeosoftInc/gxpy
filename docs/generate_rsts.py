@@ -74,9 +74,12 @@ def get_class_that_defined_method(meth):
                 return cls
         meth = meth.__func__ # fallback to __qualname__ parsing
     if inspect.isfunction(meth):
-        cls = getattr(inspect.getmodule(meth),
-                      meth.__qualname__.split('.<locals>', 1)[0].rsplit('.', 1)[0])
-        if isinstance(cls, type):
+        mod = inspect.getmodule(meth)
+        if mod is None:
+            return None
+        cls = getattr(mod,
+                      meth.__qualname__.split('.<locals>', 1)[0].rsplit('.', 1)[0], None)
+        if cls is not None and isinstance(cls, type):
             return cls
     return None # not required since None would have been implicitly returned anyway
 

@@ -1298,7 +1298,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  state:  int
         :type  chan:   str
 
-        :returns:      Profile ID if loaded, -1 for error
+        :returns:      Profile number in window (see `get_profile_range_y <geosoft.gxapi.GXEDB.get_profile_range_y>`), -1 for error
         :rtype:        int
 
         .. versionadded:: 5.0
@@ -1913,20 +1913,20 @@ class GXEDB(gxapi_cy.WrapEDB):
 
 
 
-    def set_profile_range_y(self, min_x, max_x, min_y, max_y, scl):
+    def set_profile_range_y(self, window, prof, min_y, max_y, scl):
         """
         Set profile Y range and display option
         
-        :param min_x:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
-        :param max_x:  Profile number in window (see `get_profile_range_y <geosoft.gxapi.GXEDB.get_profile_range_y>`)
-        :param min_y:  Minimum y
-        :param max_y:  Maximum y
-        :param scl:    :ref:`EDB_PROFILE_SCALE`
-        :type  min_x:  int
-        :type  max_x:  int
-        :type  min_y:  float
-        :type  max_y:  float
-        :type  scl:    int
+        :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
+        :param prof:    Profile number in window (see `get_profile_range_y <geosoft.gxapi.GXEDB.get_profile_range_y>`)
+        :param min_y:   Minimum y
+        :param max_y:   Maximum y
+        :param scl:     :ref:`EDB_PROFILE_SCALE`
+        :type  window:  int
+        :type  prof:    int
+        :type  min_y:   float
+        :type  max_y:   float
+        :type  scl:     int
 
         .. versionadded:: 5.0
 
@@ -1937,7 +1937,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Note:** If channel is not loaded or displayed, it will
         loaded and/or displayed.
         """
-        self._set_profile_range_y(min_x, max_x, min_y, max_y, scl)
+        self._set_profile_range_y(window, prof, min_y, max_y, scl)
         
 
 

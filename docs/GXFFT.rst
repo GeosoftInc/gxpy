@@ -33,4 +33,21 @@ Detrending option
     
     .. autoattribute:: geosoft.gxapi.FFT_DETREND_MEAN
 
+
+.. _FFT_WHITE_NOISE:
+
+FFT_WHITE_NOISE constants
+-----------------------------------------------------------------------
+
+Add white noise option
+
+.. autodata:: geosoft.gxapi.FFT_WHITE_NOISE_ADD
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.FFT_WHITE_NOISE_ADD
+.. autodata:: geosoft.gxapi.FFT_WHITE_NOISE_SET
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.FFT_WHITE_NOISE_SET
+
 	

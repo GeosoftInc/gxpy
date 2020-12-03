@@ -44,6 +44,7 @@ are stored in a `geosoft_3dv` file which can also be viewed separately from a ma
 """
 import os
 import numpy as np
+from typing import NamedTuple
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -164,6 +165,27 @@ class CrookedPath(gxgeo.Geometry):
         return self.ppoint.extent
 
 
+class PlaneReliefSurfaceInfo(NamedTuple):
+    """
+    Information about a relief surface assigned to a plane. The following properties are represented:
+
+    surface_grid_name:   grid file name
+    refine:              relief refinement between 1 (low) and 4 (high). Default is 3.
+    base:                base value in grid, will be at z=0.  Default is 0.
+    scale:               scale to apply to grid after removing base, default is 1.
+    min:                 minimum clip in unscaled grid values
+    max:                 maximum clip in unscaled grid values
+
+    .. versionadded:: 9.9
+    """
+    surface_grid_name: str
+    refine: int
+    base: float
+    scale: float
+    min: float
+    max: float
+
+
 def delete_files(v3d_file):
     """
     Delete a v3d file with associated files. Just calls `geosoft.gxpy.map.delete_files`.
@@ -255,6 +277,7 @@ class View(gxgeo.Geometry):
                  area=(0, 0, 30, 20),
                  scale=100,
                  copy=None,
+                 gxmview=None,
                  **kwargs):
 
         if not isinstance(map, geosoft.gxpy.map.Map):
@@ -264,10 +287,19 @@ class View(gxgeo.Geometry):
 
         self._gx = gx.GXpy()
         self._map = map
-        self._name = map.classview(name)
-        if mode == WRITE_OLD and not map.has_view(self._name):
-            mode = WRITE_NEW
-        self._gxview = gxapi.GXMVIEW.create(self._map.gxmap, self._name, mode)
+
+        if gxmview is not None:
+            name_ref = gxapi.str_ref()
+            gxmview.get_name(name_ref)
+            name = name_ref.value
+            self._name = map.classview(name)
+            self._gxview = gxmview
+        else:
+            self._name = map.classview(name)
+            if mode == WRITE_OLD and not map.has_view(self._name):
+                mode = WRITE_NEW
+            self._gxview = gxapi.GXMVIEW.create(self._map.gxmap, self._name, mode)
+
         self._mode = mode
         self._lock = None
         self._open = True
@@ -291,6 +323,19 @@ class View(gxgeo.Geometry):
             if metres_per <= 0.:
                 raise ViewException(_t('Invalid units {}({})'.format(self._uname, metres_per)))
             self._metres_per_unit = 1.0 / metres_per
+
+    @classmethod
+    def from_gxapi(cls, gxmap, gxmview):
+        """
+        Instantiate View from gxapi instance.
+
+        :param gxmap:      a gxapi.CGXMAP
+        :param gxmview:    a gxapi.CGXMVIEW
+
+        .. versionadded:: 9.9
+        """
+        return cls(geosoft.gxpy.map.Map.from_gxapi(gxmap), gxmview=gxmview)
+
 
     @classmethod
     def new(cls,
@@ -910,16 +955,20 @@ class View_3d(View):
     .. versionadded:: 9.2
     """
 
-    def __init__(self, file_name, mode, _internal=False, **kwargs):
+    def __init__(self, file_name, mode, _internal=False,
+                 map=None, gxmview=None, **kwargs):
 
         if not _internal:
-            raise ViewException(_t("Must be called by a class constructor 'open' or 'new'"))
+            raise ViewException(_t("Must be called by a class constructor 'open' or 'new' or 'from_gxapi'"))
 
-        file_name = geosoft.gxpy.map.map_file_name(file_name, 'geosoft_3dv')
-        map = geosoft.gxpy.map.Map(file_name=file_name,
-                                   mode=mode,
-                                   _internal=True)
-        super().__init__(map, '3D', **kwargs)
+        if map and gxmview:
+            super().__init__(map, gxmview=gxmview, **kwargs)
+        else:
+            file_name = geosoft.gxpy.map.map_file_name(file_name, 'geosoft_3dv')
+            map = geosoft.gxpy.map.Map(file_name=file_name,
+                                       mode=mode,
+                                       _internal=True)
+            super().__init__(map, '3D', **kwargs)
         self._extent3d = None
 
     def _extent_union(self, extent):
@@ -928,6 +977,19 @@ class View_3d(View):
             self._extent = gxgeo.Point2(extent, self.coordinate_system)
         else:
             self._extent = self._extent.union(extent)
+
+    @classmethod
+    def from_gxapi(cls, gxmap, gxmview):
+        """
+        Instantiate View_3d from gxapi instance.
+
+        :param gxmap:      a gxapi.CGXMAP
+        :param gxmview:    a gxapi.CGXMVIEW
+
+        .. versionadded:: 9.9
+        """
+        return cls(file_name=None, mode=WRITE_OLD, _internal=True,
+                   map=geosoft.gxpy.map.Map.from_gxapi(gxmap), gxmview=gxmview)
 
     @classmethod
     def new(cls, file_name=None, area_2d=None, overwrite=False, **kwargs):
@@ -1170,15 +1232,49 @@ class View_3d(View):
                                        offset[0], offset[1], offset[2],
                                        scale[0], scale[1], scale[2])
 
-    def set_plane_relief_surface(self, surface_grid_name, refine=2, base=0, scale=1, min=None, max=None):
+
+
+    def get_plane_relief_surface_info(self, plane):
+        """
+        Get relief surface parameters for a plane.
+
+        :param plane:   plane number or plane name
+        :returns:       relief surface properties
+        :rtype:         :class:`geosoft.gxpy.view.PlaneReliefSurfaceInfo`
+
+                .. versionadded::9.2
+        """
+
+        if isinstance(plane, str):
+            plane = self.plane_number(plane)
+
+        surface_grid_name = gxapi.str_ref()
+        sample = gxapi.int_ref()
+        base = gxapi.float_ref()
+        scale = gxapi.float_ref()
+        min_ref = gxapi.float_ref()
+        max_ref = gxapi.float_ref()
+        self.gxview.get_plane_surface(plane, surface_grid_name)
+        self.gxview.get_plane_surf_info(plane, sample, base, scale, min_ref, max_ref)
+
+        refine = 1 + int(sample.value / 16)
+
+        min_val = None if min_ref.value == gxapi.rDUMMY else min_ref.value
+        max_val = None if max_ref.value == gxapi.rDUMMY else max_ref.value
+
+        return PlaneReliefSurfaceInfo(surface_grid_name.value, refine,
+                                      base.value, scale.value, min_val, max_val)
+
+
+    def set_plane_relief_surface(self, surface_grid_name, refine=3, base=0, scale=1, min=None, max=None):
         """
         Establish a relief surface for the current plane based on a grid.
 
         :param surface_grid_name:   grid file name
-        :param refine:              relief refinement between 1 (low) and 4 (high). Default is 2.
+        :param refine:              relief refinement between 1 (low) and 4 (high). Default is 3.
         :param base:                base value in grid, will be at z=0.  Default is 0.
         :param scale:               scale to apply to grid after removing base, default is 1.
-        :param min:                 minimum clip  in unscaled grid values
+        :param min:                 minimum clip in unscaled grid values
         :param max:                 maximum clip in unscaled grid values
 
         .. versionadded:: 9.3

@@ -73,10 +73,10 @@ class GXFFT2(gxapi_cy.WrapFFT2):
     @classmethod
     def filter_pg(cls, pg, con_fil, tr, dx, dy, rot):
         """
-        Apply 2D `GXFFT <geosoft.gxapi.GXFFT>` filters to data in pager
+        Apply 2D FFT filters to data in pager
         
         :param pg:       Pager obj
-        :param con_fil:  sConFil - `GXFFT <geosoft.gxapi.GXFFT>` filter control file
+        :param con_fil:  FFT filter control file
         :param tr:       `GXTR <geosoft.gxapi.GXTR>` obj
         :param dx:       rDx - X increment
         :param dy:       rDy - Y increment
@@ -248,7 +248,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
         :param img_tx:   Input dX image (Transform grid)
         :param img_ty:   Input dY image (Transform grid)
         :param out_fil:  Output T file name
-        :param inv_flg:  0 - no invers, 1 - invers `GXFFT <geosoft.gxapi.GXFFT>` applied
+        :param inv_flg:  0 - no invers, 1 - invers FFT applied
         :type  img_tx:   GXIMG
         :type  img_ty:   GXIMG
         :type  out_fil:  str
@@ -266,7 +266,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
     @classmethod
     def trans_pg(cls, pg, opt):
         """
-        Apply 2D `GXFFT <geosoft.gxapi.GXFFT>` transform to data in pager
+        Apply 2D FFT transform to data in pager
         
         :param pg:   Pager obj
         :param opt:  :ref:`FFT2_PG`
@@ -278,6 +278,33 @@ class GXFFT2(gxapi_cy.WrapFFT2):
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
         gxapi_cy.WrapFFT2._trans_pg(GXContext._get_tls_geo(), pg, opt)
+        
+
+
+
+    @classmethod
+    def filter_response(cls, con_fil, start, increment, input_vv, output_vv, profile_vv):
+        """
+        Calculates response for filter(s) defined in control file. Not specific to 2D.
+        
+        :param con_fil:     FFT filter control file
+        :param start:       Wavenumber start
+        :param increment:   Wavenumber increment
+        :param input_vv:    Input spectrum
+        :param output_vv:   Output spectrum
+        :param profile_vv:  Output filter profile
+        :type  con_fil:     str
+        :type  start:       float
+        :type  increment:   float
+        :type  input_vv:    GXVV
+        :type  output_vv:   GXVV
+        :type  profile_vv:  GXVV
+
+        .. versionadded:: 9.9
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapFFT2._filter_response(GXContext._get_tls_geo(), con_fil.encode(), start, increment, input_vv, output_vv, profile_vv)
         
 
 

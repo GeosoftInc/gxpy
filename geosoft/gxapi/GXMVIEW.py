@@ -8,6 +8,7 @@ from .GXBF import GXBF
 from .GXCSYMB import GXCSYMB
 from .GXDATALINKD import GXDATALINKD
 from .GXITR import GXITR
+from .GXLST import GXLST
 from .GXMAP import GXMAP
 from .GXMETA import GXMETA
 from .GXREG import GXREG
@@ -583,69 +584,69 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
 
 
-    def get_plane_equation(self, plane, pitch, yaw, roll, x, y, z, sx, sy, str_val):
+    def get_plane_equation(self, plane, pitch, yaw, roll, x, y, z, sx, sy, sz):
         """
         Get the equation of a plane
         
-        :param plane:    Plane index
-        :param pitch:    Rotation about X (Y toward Z +ve, between -360 and 360)
-        :param yaw:      Rotation about Y (Z toward X +ve, between -360 and 360)
-        :param roll:     Rotation about Z (Y toward X +ve, between -360 and 360)
-        :param x:        X offset of plane
-        :param y:        Y offset of plane
-        :param z:        Z offset of plane
-        :param sx:       X scale
-        :param sy:       Y scale
-        :param str_val:  Z scale
-        :type  plane:    int
-        :type  pitch:    float_ref
-        :type  yaw:      float_ref
-        :type  roll:     float_ref
-        :type  x:        float_ref
-        :type  y:        float_ref
-        :type  z:        float_ref
-        :type  sx:       float_ref
-        :type  sy:       float_ref
-        :type  str_val:  float_ref
+        :param plane:  Plane index
+        :param pitch:  Rotation about X (Y toward Z +ve, between -360 and 360)
+        :param yaw:    Rotation about Y (Z toward X +ve, between -360 and 360)
+        :param roll:   Rotation about Z (Y toward X +ve, between -360 and 360)
+        :param x:      X offset of plane
+        :param y:      Y offset of plane
+        :param z:      Z offset of plane
+        :param sx:     X scale
+        :param sy:     Y scale
+        :param sz:     Z scale
+        :type  plane:  int
+        :type  pitch:  float_ref
+        :type  yaw:    float_ref
+        :type  roll:   float_ref
+        :type  x:      float_ref
+        :type  y:      float_ref
+        :type  z:      float_ref
+        :type  sx:     float_ref
+        :type  sy:     float_ref
+        :type  sz:     float_ref
 
         .. versionadded:: 5.1.2
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value = self._get_plane_equation(plane, pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value)
+        pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, sz.value = self._get_plane_equation(plane, pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, sz.value)
         
 
 
 
 
-    def get_view_plane_equation(self, pitch, yaw, roll, x, y, z, sx, sy, str_val):
+    def get_view_plane_equation(self, pitch, yaw, roll, x, y, z, sx, sy, sz):
         """
         Get the View's Plane Equation
         
-        :param pitch:    Angle in X
-        :param yaw:      Angle in Y
-        :param roll:     Angle in Z
-        :param x:        Offset in X
-        :param y:        Offset in Y
-        :param z:        Offset in Z
-        :param sx:       Scale in X
-        :param sy:       Scale in Y
-        :param str_val:  Scale in Z
-        :type  pitch:    float_ref
-        :type  yaw:      float_ref
-        :type  roll:     float_ref
-        :type  x:        float_ref
-        :type  y:        float_ref
-        :type  z:        float_ref
-        :type  sx:       float_ref
-        :type  sy:       float_ref
-        :type  str_val:  float_ref
+        :param pitch:  Angle in X
+        :param yaw:    Angle in Y
+        :param roll:   Angle in Z
+        :param x:      Offset in X
+        :param y:      Offset in Y
+        :param z:      Offset in Z
+        :param sx:     Scale in X
+        :param sy:     Scale in Y
+        :param sz:     Scale in Z
+        :type  pitch:  float_ref
+        :type  yaw:    float_ref
+        :type  roll:   float_ref
+        :type  x:      float_ref
+        :type  y:      float_ref
+        :type  z:      float_ref
+        :type  sx:     float_ref
+        :type  sy:     float_ref
+        :type  sz:     float_ref
 
         .. versionadded:: 5.1.2
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value = self._get_view_plane_equation(pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value)
+        pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, sz.value = self._get_view_plane_equation(pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, sz.value)
         
 
 
@@ -1009,30 +1010,30 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
 
 
-    def set_plane_equation(self, plane, pitch, yaw, roll, x, y, z, sx, sy, str_val):
+    def set_plane_equation(self, plane, pitch, yaw, roll, x, y, z, sx, sy, sz):
         """
         Set the equation of a plane
         
-        :param plane:    Plane index
-        :param pitch:    Rotation about X (Z toward Y +ve, between -360 and 360)
-        :param yaw:      Rotation about Y (Z toward X +ve, between -360 and 360)
-        :param roll:     Rotation about Z (Y toward X +ve, between -360 and 360)
-        :param x:        X offset of plane
-        :param y:        Y offset of plane
-        :param z:        Z offset of plane
-        :param sx:       X scale
-        :param sy:       Y scale
-        :param str_val:  Z scale
-        :type  plane:    int
-        :type  pitch:    float
-        :type  yaw:      float
-        :type  roll:     float
-        :type  x:        float
-        :type  y:        float
-        :type  z:        float
-        :type  sx:       float
-        :type  sy:       float
-        :type  str_val:  float
+        :param plane:  Plane index
+        :param pitch:  Rotation about X (Z toward Y +ve, between -360 and 360)
+        :param yaw:    Rotation about Y (Z toward X +ve, between -360 and 360)
+        :param roll:   Rotation about Z (Y toward X +ve, between -360 and 360)
+        :param x:      X offset of plane
+        :param y:      Y offset of plane
+        :param z:      Z offset of plane
+        :param sx:     X scale
+        :param sy:     Y scale
+        :param sz:     Z scale
+        :type  plane:  int
+        :type  pitch:  float
+        :type  yaw:    float
+        :type  roll:   float
+        :type  x:      float
+        :type  y:      float
+        :type  z:      float
+        :type  sx:     float
+        :type  sy:     float
+        :type  sz:     float
 
         .. versionadded:: 5.1.2
 
@@ -1042,7 +1043,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         use rotations = (-90, 0, 0) for a section with azimuth 90 (E-W)
         use rotations = (-90, 0, -90) for a section with azimuth 0 (N-S)
         """
-        self._set_plane_equation(plane, pitch, yaw, roll, x, y, z, sx, sy, str_val)
+        self._set_plane_equation(plane, pitch, yaw, roll, x, y, z, sx, sy, sz)
         
 
 
@@ -1053,7 +1054,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         Set the surface image of a plane
         
         :param plane:    Plane index
-        :param surface:  Optional surface image/grid name, can be NULL
+        :param surface:  Optional surface image/grid name, can be empty
         :type  plane:    int
         :type  surface:  str
 
@@ -1062,6 +1063,25 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_plane_surface(plane, surface.encode())
+        
+
+
+
+
+    def get_plane_surface(self, plane, surface):
+        """
+        Get the surface image of a plane
+        
+        :param plane:    Plane index
+        :param surface:  Optional surface image/grid name, can be empty
+        :type  plane:    int
+        :type  surface:  str_ref
+
+        .. versionadded:: 9.9
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        surface.value = self._get_plane_surface(plane, surface.value.encode())
         
 
 
@@ -1089,6 +1109,33 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._set_plane_surf_info(plane, sample, base, scale, min, max)
+        
+
+
+
+
+    def get_plane_surf_info(self, plane, sample, base, scale, min, max):
+        """
+        Get the surface information
+        
+        :param plane:   Plane index
+        :param sample:  Sample rate (>=1)
+        :param base:    Base
+        :param scale:   Scale
+        :param min:     Min
+        :param max:     Max
+        :type  plane:   int
+        :type  sample:  int_ref
+        :type  base:    float_ref
+        :type  scale:   float_ref
+        :type  min:     float_ref
+        :type  max:     float_ref
+
+        .. versionadded:: 9.9
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        sample.value, base.value, scale.value, min.value, max.value = self._get_plane_surf_info(plane, sample.value, base.value, scale.value, min.value, max.value)
         
 
 
@@ -1181,6 +1228,70 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         this is identical to the previous
         """
         self._define_viewer_plane_3d(center_x, center_y, center_z)
+        
+
+
+
+
+# 3D Snapshots
+
+
+
+    def get_3d_snapshots(self):
+        """
+        Get the list of 3D snapshots in a 3D view.
+        
+
+        :returns:      `GXLST <geosoft.gxapi.GXLST>` object
+        :rtype:        GXLST
+
+        .. versionadded:: 9.9
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Returns name/guid pairs.
+        """
+        ret_val = self._get_3d_snapshots()
+        return GXLST(ret_val)
+
+
+
+
+    def restore_3d_snapshot(self, guid):
+        """
+        Restore 3D view to specific snapshot state.
+        
+        :param guid:   Snapshot GUID
+        :type  guid:   str
+
+        .. versionadded:: 9.9
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._restore_3d_snapshot(guid.encode())
+        
+
+
+
+
+    def capture_3d_snapshot(self, name, description, light_weight, guid):
+        """
+        Capture current 3D view state to a snapshot.
+        
+        :param name:          Snapshot name
+        :param description:   Snapshot description
+        :param light_weight:  Is this a light weight snapshot, i.e. just captures view orientation and type and not group visibility/clipping etc.
+        :param guid:          Snapshot GUID
+        :type  name:          str
+        :type  description:   str
+        :type  light_weight:  bool
+        :type  guid:          str_ref
+
+        .. versionadded:: 9.9
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        guid.value = self._capture_3d_snapshot(name.encode(), description.encode(), light_weight, guid.value.encode())
         
 
 

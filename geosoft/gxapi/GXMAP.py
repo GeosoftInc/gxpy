@@ -199,6 +199,25 @@ class GXMAP(gxapi_cy.WrapMAP):
 
 
 
+    def rename_view(self, current_name, new_name):
+        """
+        Renames a view in this map.
+        
+        :param current_name:  Name of view to rename)
+        :param new_name:      New name of view
+        :type  current_name:  str
+        :type  new_name:      str
+
+        .. versionadded:: 9.9
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._rename_view(current_name.encode(), new_name.encode())
+        
+
+
+
+
     def render_bitmap(self, view, min_x, min_y, max_x, max_y, file, max_res):
         """
         Render a map to a bitmap.

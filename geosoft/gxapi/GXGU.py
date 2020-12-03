@@ -823,6 +823,34 @@ class GXGU(gxapi_cy.WrapGU):
 
 
     @classmethod
+    def magnetic_tilt_depth(cls, tilt_deriv_grid, horiz_deriv_grid, database):
+        """
+        Calculate the depth of magnetic sources based on the tilt depth method by Ahmed Salem et al.
+        
+        :param tilt_deriv_grid:   Tilt derivative grid
+        :param horiz_deriv_grid:  Horizontal derivative grid
+        :param database:          Output database name (will overwrite existing)
+        :type  tilt_deriv_grid:   str
+        :type  horiz_deriv_grid:  str
+        :type  database:          str
+
+        .. versionadded:: 9.9
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** Tilt-Depth is a magnetic depth estimation method that lends itself to rapid mapping of sedimentary basins without the complexity of unraveling the depth solutions from methods that give multiple solutions (e.g. Euler deconvolution).
+        Reference: Sedimentary basins reconnaissance using the magnetic Tilt-Depth method by Ahmed Salem et al.
+        Exploration Geophysics, 2010, 41, 198-209.
+        Rick Blakely & Gerry Connard have extended and improved this method, as have other authors.
+        The 0-value contour of the tilt derivative grid is sampled to a new database, and the horizontal derivative
+        grid is sampled at those locations. The inverse of the horizontal derivative values are output to the Tilt_Depth channel.
+        """
+        gxapi_cy.WrapGU._magnetic_tilt_depth(GXContext._get_tls_geo(), tilt_deriv_grid.encode(), horiz_deriv_grid.encode(), database.encode())
+        
+
+
+
+    @classmethod
     def maxwell_plate_corners(cls, x, y, z, dip, dip_dir, plunge, length, width, x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4):
         """
         Calculate the corner point locations for a Maxwell Plate.

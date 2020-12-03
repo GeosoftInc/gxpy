@@ -83,11 +83,12 @@ class Test(GXPYTest):
         if margins is None:
             margins = (1.5, 1.5, 3, 1)
         return gxmap.Map.new(file_name=name,
-                               data_area=data_area,
-                               coordinate_system=coordinate_system,
-                               media="A4",
-                               margins=margins,
-                               inside_margin=0.5)
+                             data_area=data_area,
+                             coordinate_system=coordinate_system,
+                             media="A4",
+                             margins=margins,
+                             inside_margin=0.5)
+
     def test_version(self):
         self.start()
         self.assertEqual(gxmap.__version__, geosoft.__version__)
@@ -670,6 +671,13 @@ class Test(GXPYTest):
                                     title='Test Coordinate System',
                                     features='all', file_name='test_figure2.map').file_name
         gxmap.crc_map(mapfile2)
+
+    def test_from_gxapi(self):
+        self.start()
+        gxapi_map = gxapi.GXMAP.create('test_from_gxapi.map', gxmap.WRITE_NEW)
+        with gxmap.Map.from_gxapi(gxapi_map) as map:
+            self.assertEqual('test_from_gxapi', map.name)
+
 
 if __name__ == '__main__':
     unittest.main()

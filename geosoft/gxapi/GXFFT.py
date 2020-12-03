@@ -51,6 +51,25 @@ class GXFFT(gxapi_cy.WrapFFT):
 
 
 
+    def add_white_noise(self, amp, option):
+        """
+        Add white noise to the power spectrum of an FFT object.
+        
+        :param amp:     The value added to the real part of all non-DC components of the current power spectrum
+        :param option:  :ref:`FFT_WHITE_NOISE`
+        :type  amp:     float
+        :type  option:  int
+
+        .. versionadded:: 9.9
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        self._add_white_noise(amp, option)
+        
+
+
+
+
     def app_dens(self, thick, dens):
         """
         Appparent density filter

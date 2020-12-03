@@ -36,7 +36,7 @@ class Test(GXPYTest):
         self.start()
 
         f = gsys.func_name()
-        p = gsys.func_name(1)
+        p = gsys.func_name(2) # This may change with Python upgrades if the unittest.case code changes 
         self.assertEqual(f, "test_func")
         self.assertEqual(p, "run")
 

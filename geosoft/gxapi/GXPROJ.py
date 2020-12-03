@@ -102,6 +102,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
             Grid          
             Map           
             3DView        
+            Geosurface
             Voxel         
             VoxelInversion
             GMS3D         
@@ -142,6 +143,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
             Grid          
             Map           
             3DView        
+            Geosurface
             Voxel         
             VoxelInversion
             GMS3D         
@@ -232,6 +234,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         Grid             List Grids.
         Map              List Maps.
         3DView           List 3D Views.
+        Geosurface       List Geosurfaces.
         Voxel            List Voxels.
         VoxelInversion   List VOXI Documents.
         `GXMXD <geosoft.gxapi.GXMXD>`              List ArcGIS MXDs.
@@ -268,6 +271,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         Grid             List Grids.
         Map              List Maps.
         3DView           List 3D Views.
+        Geosurface       List Geosurfaces.
         Voxel            List Voxels.
         VoxelInversion   List VOXI Documents.
         `GXMXD <geosoft.gxapi.GXMXD>`              List ArcGIS MXDs.
@@ -434,6 +438,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
             Grid          
             Map           
             3DView        
+            Geosurface
             Voxel         
             VoxelInversion
             GMS3D         

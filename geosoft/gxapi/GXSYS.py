@@ -638,6 +638,32 @@ class GXSYS(gxapi_cy.WrapSYS):
 
 
     @classmethod
+    def run_python(cls, gx, init_info):
+        """
+        Run a Python GX script with initialization information.
+        
+        :param gx:         Name of Python GX to run.
+        :param init_info:  Initialization information (usually JSON). Available withon Python script as a global variable named gx_init_info.
+        :type  gx:         str
+        :type  init_info:  str
+
+        :returns:          Return value of the GX set by `set_return <geosoft.gxapi.GXSYS.set_return>` (0 by default). Terminates on error or cancel.
+        :rtype:            int
+
+        .. versionadded:: 9.9
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        .. seealso::
+
+            `set_return <geosoft.gxapi.GXSYS.set_return>`
+        """
+        ret_val = gxapi_cy.WrapSYS._run_python(GXContext._get_tls_geo(), gx.encode(), init_info.encode())
+        return ret_val
+
+
+
+    @classmethod
     def run_gx_ex(cls, gx, ret):
         """
         Run a GX.
@@ -2060,23 +2086,6 @@ class GXSYS(gxapi_cy.WrapSYS):
 
 
     @classmethod
-    def get_api_key(cls, key):
-        """
-        Get the API Key if signed in
-        
-        :param key:  Returned API key
-        :type  key:  str_ref
-
-        .. versionadded:: 9.7
-
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
-        """
-        key.value = gxapi_cy.WrapSYS._get_api_key(GXContext._get_tls_geo(), key.value.encode())
-        
-
-
-
-    @classmethod
     def connect_with_current_central_instance(cls, name, base_path, url, token):
         """
         Query information necessary to communicate with current Central Instance
@@ -2095,40 +2104,6 @@ class GXSYS(gxapi_cy.WrapSYS):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         name.value, base_path.value, url.value, token.value = gxapi_cy.WrapSYS._connect_with_current_central_instance(GXContext._get_tls_geo(), name.value.encode(), base_path.value.encode(), url.value.encode(), token.value.encode())
-        
-
-
-
-    @classmethod
-    def get_view_service_url(cls, service_url):
-        """
-        Get the service URL for View
-        
-        :param service_url:  Returned Service URL
-        :type  service_url:  str_ref
-
-        .. versionadded:: 9.7.1
-
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
-        """
-        service_url.value = gxapi_cy.WrapSYS._get_view_service_url(GXContext._get_tls_geo(), service_url.value.encode())
-        
-
-
-
-    @classmethod
-    def get_view_url(cls, url):
-        """
-        Get the View URL
-        
-        :param url:  Returned View URL
-        :type  url:  str_ref
-
-        .. versionadded:: 9.7
-
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
-        """
-        url.value = gxapi_cy.WrapSYS._get_view_url(GXContext._get_tls_geo(), url.value.encode())
         
 
 

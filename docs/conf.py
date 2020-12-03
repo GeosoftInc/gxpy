@@ -23,6 +23,16 @@ from datetime import date
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.abspath('..'))
 
+def skip(app, what, name, obj, would_skip, options):
+    if name in ( '__init__',):
+        return False
+    return would_skip
+
+
+def setup(app):
+    app.connect('autodoc-skip-member', skip)
+
+
 os.environ['GEOSOFT_SPHINX_BUILD'] = '1'
 import geosoft
 
@@ -36,7 +46,9 @@ import geosoft
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary'
+    'sphinx.ext.viewcode',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.todo',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -83,7 +95,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'templates', 'transform' ]
+exclude_patterns = ['_build', 'templates', 'transform', 'Thumbs.db', '.DS_Store' ]
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
