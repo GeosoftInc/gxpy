@@ -1,0 +1,688 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXEDOC &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXEDOC</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXEDOC</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXEDOC"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC">[docs]</a><span class="k">class</span> <span class="nc">GXEDOC</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXEDOC class.</span>
+
+<span class="sd">    The `GXEDOC &lt;geosoft.gxapi.GXEDOC&gt;` class provides access to a generic documents views as loaded within</span>
+<span class="sd">    Oasis montaj.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEDOC.__init__"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXEDOC</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXEDOC.null"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXEDOC &lt;geosoft.gxapi.GXEDOC&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXEDOC &lt;geosoft.gxapi.GXEDOC&gt;`</span>
+<span class="sd">        :rtype:   GXEDOC</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXEDOC</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXEDOC.is_null"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># GMSYS 3D Models</span>
+
+
+<div class="viewcode-block" id="GXEDOC.create_new_gms_3d"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.create_new_gms_3d">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_new_gms_3d</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a new `GXGMSYS &lt;geosoft.gxapi.GXGMSYS&gt;` 3D Model into the workspace, flags as new.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Document to load.</span>
+<span class="sd">        :param nx:    X Size</span>
+<span class="sd">        :param ny:    Y Size</span>
+<span class="sd">        :param type:  :ref:`GMS3D_MODELTYPE`</span>
+<span class="sd">        :type  name:  str</span>
+<span class="sd">        :type  nx:    int</span>
+<span class="sd">        :type  ny:    int</span>
+<span class="sd">        :type  type:  int</span>
+
+<span class="sd">        :returns:     Handle to the newly created edited model.</span>
+<span class="sd">        :rtype:       GXEDOC</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** See `load &lt;geosoft.gxapi.GXEDOC.load&gt;`. This is used for brand new documents, it also sets</span>
+<span class="sd">        an internal flag such that if on closing the user chooses</span>
+<span class="sd">        not to save changes, the document is deleted thus keeping the</span>
+<span class="sd">        project folders clean.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_create_new_gms_3d</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXEDOC</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+<div class="viewcode-block" id="GXEDOC.current"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.current">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">current</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method returns the Current Edited Document.</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:  :ref:`EDOC_TYPE`</span>
+<span class="sd">        :type  type:  int</span>
+
+<span class="sd">        :returns:     `GXEDOC &lt;geosoft.gxapi.GXEDOC&gt;` Object</span>
+<span class="sd">        :rtype:       GXEDOC</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_current</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXEDOC</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GXEDOC.current_no_activate"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.current_no_activate">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">current_no_activate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method returns the Current Edited Document.</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:  :ref:`EDOC_TYPE`</span>
+<span class="sd">        :type  type:  int</span>
+
+<span class="sd">        :returns:     `GXEDOC &lt;geosoft.gxapi.GXEDOC&gt;` Object</span>
+<span class="sd">        :rtype:       GXEDOC</span>
+
+<span class="sd">        .. versionadded:: 9.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** This function acts just like `current &lt;geosoft.gxapi.GXEDOC.current&gt;` except that the document is not activated (brought to foreground) and no</span>
+<span class="sd">        				guarantee is given about which document is currently active.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_current_no_activate</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXEDOC</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GXEDOC.current_if_exists"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.current_if_exists">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">current_if_exists</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method returns the Current Edited Document.</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:  :ref:`EDOC_TYPE`</span>
+<span class="sd">        :type  type:  int</span>
+
+<span class="sd">        :returns:     `GXEDOC &lt;geosoft.gxapi.GXEDOC&gt;` Object to current edited document. If there is no current document,</span>
+<span class="sd">                      the user is not prompted for a document, and 0 is returned.</span>
+<span class="sd">        :rtype:       GXEDOC</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_current_if_exists</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXEDOC</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+
+<div class="viewcode-block" id="GXEDOC.get_documents_lst"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.get_documents_lst">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_documents_lst</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load the file names of open documents into a `GXLST &lt;geosoft.gxapi.GXLST&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param lst:   `GXLST &lt;geosoft.gxapi.GXLST&gt;` to load</span>
+<span class="sd">        :param path:  :ref:`EDOC_PATH`</span>
+<span class="sd">        :param type:  :ref:`EDOC_TYPE`</span>
+<span class="sd">        :type  lst:   GXLST</span>
+<span class="sd">        :type  path:  int</span>
+<span class="sd">        :type  type:  int</span>
+
+<span class="sd">        :returns:     The number of documents loaded into the `GXLST &lt;geosoft.gxapi.GXLST&gt;`.</span>
+<span class="sd">                      The `GXLST &lt;geosoft.gxapi.GXLST&gt;` is cleared first.</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_get_documents_lst</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">lst</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXEDOC.get_name"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.get_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the name of the document object of this `GXEDOC &lt;geosoft.gxapi.GXEDOC&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Name returned</span>
+<span class="sd">        :type  name:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXEDOC.get_window_state"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.get_window_state">[docs]</a>    <span class="k">def</span> <span class="nf">get_window_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieve the current state of the document window</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:     :ref:`EDOC_WINDOW_STATE`</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_window_state</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXEDOC.have_current"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.have_current">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">have_current</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns true if a document is loaded</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:  :ref:`EDOC_TYPE`</span>
+<span class="sd">        :type  type:  int</span>
+<span class="sd">        :rtype:       bool</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_have_current</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXEDOC.loaded"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.loaded">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">loaded</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns 1 if a document is loaded .</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  document name</span>
+<span class="sd">        :param type:  :ref:`EDOC_TYPE`</span>
+<span class="sd">        :type  name:  str</span>
+<span class="sd">        :type  type:  int</span>
+
+<span class="sd">        :returns:     1 if document is loaded, 0 otherwise.</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_loaded</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXEDOC.get_window_position"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.get_window_position">[docs]</a>    <span class="k">def</span> <span class="nf">get_window_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the map window&#39;s position and dock state</span>
+<span class="sd">        </span>
+<span class="sd">        :param left:         Window left position</span>
+<span class="sd">        :param top:          Window top position</span>
+<span class="sd">        :param right:        Window right position</span>
+<span class="sd">        :param bottom:       Window bottom position</span>
+<span class="sd">        :param state:        Window state :ref:`EDOC_WINDOW_STATE`</span>
+<span class="sd">        :param is_floating:  Docked or floating :ref:`EDOC_WINDOW_POSITION`</span>
+<span class="sd">        :type  left:         int_ref</span>
+<span class="sd">        :type  top:          int_ref</span>
+<span class="sd">        :type  right:        int_ref</span>
+<span class="sd">        :type  bottom:       int_ref</span>
+<span class="sd">        :type  state:        int_ref</span>
+<span class="sd">        :type  is_floating:  int_ref</span>
+
+<span class="sd">        .. versionadded:: 9.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">state</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">is_floating</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_window_position</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">state</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">is_floating</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXEDOC.set_window_position"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.set_window_position">[docs]</a>    <span class="k">def</span> <span class="nf">set_window_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the map window&#39;s position and dock state</span>
+<span class="sd">        </span>
+<span class="sd">        :param left:         Window left position</span>
+<span class="sd">        :param top:          Window top position</span>
+<span class="sd">        :param right:        Window right position</span>
+<span class="sd">        :param bottom:       Window bottom position</span>
+<span class="sd">        :param state:        Window state :ref:`EDOC_WINDOW_STATE`</span>
+<span class="sd">        :param is_floating:  Docked or floating :ref:`EDOC_WINDOW_POSITION`</span>
+<span class="sd">        :type  left:         int</span>
+<span class="sd">        :type  top:          int</span>
+<span class="sd">        :type  right:        int</span>
+<span class="sd">        :type  bottom:       int</span>
+<span class="sd">        :type  state:        int</span>
+<span class="sd">        :type  is_floating:  int</span>
+
+<span class="sd">        .. versionadded:: 9.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_window_position</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXEDOC.read_only"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.read_only">[docs]</a>    <span class="k">def</span> <span class="nf">read_only</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Checks if a document is currently opened in a read-only mode.</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:       bool</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_only</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXEDOC.load"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.load">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Loads a list of documents into the workspace</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  list of documents (&#39;;&#39; or &#39;|&#39; delimited) to load.</span>
+<span class="sd">        :param type:  :ref:`EDOC_TYPE`</span>
+<span class="sd">        :type  name:  str</span>
+<span class="sd">        :type  type:  int</span>
+
+<span class="sd">        :returns:     Handle to current edited document, which will be the last</span>
+<span class="sd">                      document in the list.</span>
+<span class="sd">        :rtype:       GXEDOC</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** The last listed document will become the current document.</span>
+
+<span class="sd">        Only the first file in the list may have a directory path.</span>
+<span class="sd">        All other files in the list are assumed to be in the same</span>
+<span class="sd">        directory as the first file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_load</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXEDOC</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GXEDOC.load_no_activate"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.load_no_activate">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">load_no_activate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Loads a list of documents into the workspace</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  list of documents (&#39;;&#39; or &#39;|&#39; delimited) to load.</span>
+<span class="sd">        :param type:  :ref:`EDOC_TYPE`</span>
+<span class="sd">        :type  name:  str</span>
+<span class="sd">        :type  type:  int</span>
+
+<span class="sd">        :returns:     Handle to current edited document, which will be the last</span>
+<span class="sd">                      document in the list.</span>
+<span class="sd">        :rtype:       GXEDOC</span>
+
+<span class="sd">        .. versionadded:: 9.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** This function acts just like `load &lt;geosoft.gxapi.GXEDOC.load&gt;` except that the document(s) is not activated (brought to foreground) and no</span>
+<span class="sd">        					guarantee is given about which document is currently active.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_load_no_activate</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXEDOC</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXEDOC.make_current"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.make_current">[docs]</a>    <span class="k">def</span> <span class="nf">make_current</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Makes this `GXEDOC &lt;geosoft.gxapi.GXEDOC&gt;` object the current active object to the user.</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_make_current</span><span class="p">()</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXEDOC.set_window_state"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.set_window_state">[docs]</a>    <span class="k">def</span> <span class="nf">set_window_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Changes the state of the document window</span>
+<span class="sd">        </span>
+<span class="sd">        :param state:  :ref:`EDOC_WINDOW_STATE`</span>
+<span class="sd">        :type  state:  int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_window_state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXEDOC.sync"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.sync">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">sync</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Syncronize the Metadata of a document that is not currently open</span>
+<span class="sd">        </span>
+<span class="sd">        :param file:  Document file name</span>
+<span class="sd">        :param type:  :ref:`EDOC_TYPE`</span>
+<span class="sd">        :type  file:  str</span>
+<span class="sd">        :type  type:  int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_sync</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXEDOC.sync_open"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.sync_open">[docs]</a>    <span class="k">def</span> <span class="nf">sync_open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Syncronize the Metadata of a document</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sync_open</span><span class="p">()</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXEDOC.un_load"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.un_load">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">un_load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Unloads an edited document.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Name of document to unload</span>
+<span class="sd">        :param type:  :ref:`EDOC_TYPE`</span>
+<span class="sd">        :type  name:  str</span>
+<span class="sd">        :type  type:  int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** If the document is not loaded, nothing happens.</span>
+<span class="sd">        Same as `un_load_verify &lt;geosoft.gxapi.GXEDOC.un_load_verify&gt;` with FALSE to prompt save.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_un_load</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXEDOC.un_load_all"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.un_load_all">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">un_load_all</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Unloads all opened documents</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:  :ref:`EDOC_TYPE`</span>
+<span class="sd">        :type  type:  int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_un_load_all</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXEDOC.un_load_discard"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.un_load_discard">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">un_load_discard</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Unloads a document in the workspace, discards changes.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Name of document to unload</span>
+<span class="sd">        :param type:  :ref:`EDOC_TYPE`</span>
+<span class="sd">        :type  name:  str</span>
+<span class="sd">        :type  type:  int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** If the document is not loaded, nothing happens.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_un_load_discard</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXEDOC.un_load_verify"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.un_load_verify">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">un_load_verify</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">verify</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Unloads an edited document, optional prompt to save.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:    Name of document to unload</span>
+<span class="sd">        :param verify:  :ref:`EDOC_UNLOAD`</span>
+<span class="sd">        :param type:    :ref:`EDOC_TYPE`</span>
+<span class="sd">        :type  name:    str</span>
+<span class="sd">        :type  verify:  int</span>
+<span class="sd">        :type  type:    int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** If the document is not loaded, nothing happens.</span>
+<span class="sd">        The user can be prompted to save before unloading.</span>
+<span class="sd">        If `EDOC_UNLOAD_NO_PROMPT &lt;geosoft.gxapi.EDOC_UNLOAD_NO_PROMPT&gt;`, data is always saved.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_un_load_verify</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">verify</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXEDOC</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

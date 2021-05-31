@@ -1,0 +1,1563 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GXMETA class &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXMETA class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXMETA class</a><ul>
+<li><a class="reference internal" href="#h-meta-invalid-token-constants">H_META_INVALID_TOKEN constants</a></li>
+<li><a class="reference internal" href="#meta-core-attrib-constants">META_CORE_ATTRIB constants</a></li>
+<li><a class="reference internal" href="#meta-core-class-constants">META_CORE_CLASS constants</a></li>
+<li><a class="reference internal" href="#meta-core-type-constants">META_CORE_TYPE constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXMETA.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxmeta-class">
+<span id="gxmeta"></span><h1>GXMETA class<a class="headerlink" href="#gxmeta-class" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="geosoft.gxapi.GXMETA">
+<em class="property">class </em><code class="sig-name descname">GXMETA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXMETA class.</p>
+<p>A <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> object contains hierarchical organized metadata
+of any type, including other objects.  <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> information
+is organized in an XML-like structure based on a data
+schema that describes the data hierarchy.   <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> objects
+are used by many entities that need to store metadata
+specific to the entities or to the application.</p>
+<p>Metadata can be saved in databases and maps, as well as in
+channels, lines, views and groups.  Oasis montaj objects
+can be queried for their associated metadata, and if it
+exists, the metadata can be retrieved and utilized by
+other Oasis montaj processes.</p>
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source_meta</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy a <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> to another</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>source_meta</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> object.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.create">
+<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> Object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA">GXMETA</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.create_attrib">
+<code class="sig-name descname">create_attrib</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">ph_class</span></em>, <em class="sig-param"><span class="n">ph_type</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.create_attrib"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.create_attrib" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an attribute</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Attribute Name</p></li>
+<li><p><strong>ph_class</strong> (<em>int</em>) – Parent class or <a class="reference internal" href="#meta-core-class"><span class="std std-ref">META_CORE_CLASS constants</span></a></p></li>
+<li><p><strong>ph_type</strong> (<em>int</em>) – Type of Attribute or <a class="reference internal" href="#meta-core-type"><span class="std std-ref">META_CORE_TYPE constants</span></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>x - Attribute Token</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.create_class">
+<code class="sig-name descname">create_class</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">ph_class</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.create_class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.create_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Class Name</p></li>
+<li><p><strong>ph_class</strong> (<em>int</em>) – Parent class or <a class="reference internal" href="#id61" title="geosoft.gxapi.META_CORE_CLASS_Base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">META_CORE_CLASS_Base</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>x - Class Token</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.create_s">
+<em class="property">classmethod </em><code class="sig-name descname">create_s</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bf</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.create_s"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.create_s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> Object from a <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> to serialize from</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> Object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA">GXMETA</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.create_type">
+<code class="sig-name descname">create_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">ph_class</span></em>, <em class="sig-param"><span class="n">ph_type</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.create_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.create_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an attribute</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Attribute Name</p></li>
+<li><p><strong>ph_class</strong> (<em>int</em>) – Parent Class or <a class="reference internal" href="#meta-core-class"><span class="std std-ref">META_CORE_CLASS constants</span></a></p></li>
+<li><p><strong>ph_type</strong> (<em>int</em>) – Parent Type or <a class="reference internal" href="#meta-core-type"><span class="std std-ref">META_CORE_TYPE constants</span></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>x - Type Token</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.delete_all_items">
+<code class="sig-name descname">delete_all_items</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_class</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.delete_all_items"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.delete_all_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete all items in this class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ph_class</strong> (<em>int</em>) – Class of items to delete</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.delete_attrib">
+<code class="sig-name descname">delete_attrib</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_attribute</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.delete_attrib"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.delete_attrib" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete Attrib from <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ph_attribute</strong> (<em>int</em>) – Attrib to delete</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.delete_class">
+<code class="sig-name descname">delete_class</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_class</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.delete_class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.delete_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete Class from <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ph_class</strong> (<em>int</em>) – Class to delete</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.delete_data">
+<code class="sig-name descname">delete_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_data</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.delete_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.delete_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete Data from <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ph_data</strong> (<em>int</em>) – Data to delete</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.delete_item">
+<code class="sig-name descname">delete_item</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_item</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.delete_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.delete_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete item from <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ph_item</strong> (<em>int</em>) – Item to delete</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.delete_type">
+<code class="sig-name descname">delete_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_type</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.delete_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.delete_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete Type from <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ph_type</strong> (<em>int</em>) – Type to delete</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.export_table_csv">
+<code class="sig-name descname">export_table_csv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_class</span></em>, <em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.export_table_csv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.export_table_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export all items in a class as a CSV</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_class</strong> (<em>int</em>) – Class of items to export</p></li>
+<li><p><strong>file</strong> (<em>str</em>) – Name of CSV file to produce</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.find_data">
+<code class="sig-name descname">find_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_object</span></em>, <em class="sig-param"><span class="n">ph_attrib</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.find_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.find_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does this meta/attribute have a value ?</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_object</strong> (<em>int</em>) – Object</p></li>
+<li><p><strong>ph_attrib</strong> (<em>int</em>) – Attribute</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>x  - Data Value
+<a class="reference internal" href="#id0" title="geosoft.gxapi.H_META_INVALID_TOKEN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">H_META_INVALID_TOKEN</span></code></a> - No</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.get_attrib_bool">
+<code class="sig-name descname">get_attrib_bool</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_object</span></em>, <em class="sig-param"><span class="n">ph_attrib</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.get_attrib_bool"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.get_attrib_bool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a boolean value to an attribute</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_object</strong> (<em>int</em>) – Object</p></li>
+<li><p><strong>ph_attrib</strong> (<em>int</em>) – Attribute</p></li>
+<li><p><strong>value</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Value to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.get_attrib_double">
+<code class="sig-name descname">get_attrib_double</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_object</span></em>, <em class="sig-param"><span class="n">ph_attrib</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.get_attrib_double"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.get_attrib_double" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an integer value to an attribute</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_object</strong> (<em>int</em>) – Object</p></li>
+<li><p><strong>ph_attrib</strong> (<em>int</em>) – Attribute</p></li>
+<li><p><strong>value</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Value to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.get_attrib_enum">
+<code class="sig-name descname">get_attrib_enum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_object</span></em>, <em class="sig-param"><span class="n">ph_attrib</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.get_attrib_enum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.get_attrib_enum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an enum value to an attribute (as an integer)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_object</strong> (<em>int</em>) – Object</p></li>
+<li><p><strong>ph_attrib</strong> (<em>int</em>) – Attribute</p></li>
+<li><p><strong>value</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Value to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.get_attrib_int">
+<code class="sig-name descname">get_attrib_int</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_object</span></em>, <em class="sig-param"><span class="n">ph_attrib</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.get_attrib_int"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.get_attrib_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an integer value to an attribute</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_object</strong> (<em>int</em>) – Object</p></li>
+<li><p><strong>ph_attrib</strong> (<em>int</em>) – Attribute</p></li>
+<li><p><strong>value</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Value to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.get_attrib_obj">
+<code class="sig-name descname">get_attrib_obj</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_object</span></em>, <em class="sig-param"><span class="n">ph_attrib</span></em>, <em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.get_attrib_obj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.get_attrib_obj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an object from an attribute</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_object</strong> (<em>int</em>) – Object</p></li>
+<li><p><strong>ph_attrib</strong> (<em>int</em>) – Attribute</p></li>
+<li><p><strong>obj</strong> (<em>int</em>) – Object to get info into</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.get_attrib_string">
+<code class="sig-name descname">get_attrib_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_object</span></em>, <em class="sig-param"><span class="n">ph_attrib</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.get_attrib_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.get_attrib_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a string value to an attribute</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_object</strong> (<em>int</em>) – Object</p></li>
+<li><p><strong>ph_attrib</strong> (<em>int</em>) – Attribute</p></li>
+<li><p><strong>value</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String value to get</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.get_obj_name">
+<code class="sig-name descname">get_obj_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_object</span></em>, <em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.get_obj_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.get_obj_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the name of this item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_object</strong> (<em>int</em>) – Object</p></li>
+<li><p><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name of object</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.h_copy_across_attribute">
+<code class="sig-name descname">h_copy_across_attribute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source_meta</span></em>, <em class="sig-param"><span class="n">ph_attribute</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.h_copy_across_attribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.h_copy_across_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy an Attribute from one <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> to another</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_meta</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> object.</p></li>
+<li><p><strong>ph_attribute</strong> (<em>int</em>) – Attribute to copy</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>x                  - Handle of Attribute
+META_INVALID_TOKEN - No visible data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.h_copy_across_class">
+<code class="sig-name descname">h_copy_across_class</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source_meta</span></em>, <em class="sig-param"><span class="n">ph_class</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.h_copy_across_class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.h_copy_across_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy a Class from one <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> to another</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_meta</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> object.</p></li>
+<li><p><strong>ph_class</strong> (<em>int</em>) – Class to copy</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>x                  - Handle of Class
+META_INVALID_TOKEN - No visible data anywhere</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This will copy all parent classes as well.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.h_copy_across_data">
+<code class="sig-name descname">h_copy_across_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source_meta</span></em>, <em class="sig-param"><span class="n">ph_data</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.h_copy_across_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.h_copy_across_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy a Data value from one <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> to another</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_meta</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> object.</p></li>
+<li><p><strong>ph_data</strong> (<em>int</em>) – Data value to copy</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>x                  - Handle of Data value
+META_INVALID_TOKEN - No visible data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.h_copy_across_item">
+<code class="sig-name descname">h_copy_across_item</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source_meta</span></em>, <em class="sig-param"><span class="n">ph_item</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.h_copy_across_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.h_copy_across_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy an Item from one <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> to another</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_meta</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> object.</p></li>
+<li><p><strong>ph_item</strong> (<em>int</em>) – Item to copy</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>x                  - Handle of Item
+META_INVALID_TOKEN - No visible data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.h_copy_across_type">
+<code class="sig-name descname">h_copy_across_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source_meta</span></em>, <em class="sig-param"><span class="n">ph_type</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.h_copy_across_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.h_copy_across_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy a Type from one <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> to another</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_meta</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> object.</p></li>
+<li><p><strong>ph_type</strong> (<em>int</em>) – Type to copy</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>x                  - Handle of type
+META_INVALID_TOKEN - No visible data anywhere</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Classes and parent types will also be copied.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.h_creat_item">
+<code class="sig-name descname">h_creat_item</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">ph_class</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.h_creat_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.h_creat_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates item in Class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Unique item Name</p></li>
+<li><p><strong>ph_class</strong> (<em>int</em>) – Class (can be root)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>x                    - Next Item
+<a class="reference internal" href="#id0" title="geosoft.gxapi.H_META_INVALID_TOKEN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">H_META_INVALID_TOKEN</span></code></a> - Error</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.h_get_next_item">
+<code class="sig-name descname">h_get_next_item</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_class</span></em>, <em class="sig-param"><span class="n">ph_token</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.h_get_next_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.h_get_next_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Count the number of items in a class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_class</strong> (<em>int</em>) – Class</p></li>
+<li><p><strong>ph_token</strong> (<em>int</em>) – Starting Item (must <a class="reference internal" href="#id0" title="geosoft.gxapi.H_META_INVALID_TOKEN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">H_META_INVALID_TOKEN</span></code></a> for first item)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>x                    - Next Item
+<a class="reference internal" href="#id0" title="geosoft.gxapi.H_META_INVALID_TOKEN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">H_META_INVALID_TOKEN</span></code></a> - No more items</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.has_value">
+<code class="sig-name descname">has_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_object</span></em>, <em class="sig-param"><span class="n">ph_attrib</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.has_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.has_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does this meta/attribute have a value set?</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_object</strong> (<em>int</em>) – Object</p></li>
+<li><p><strong>ph_attrib</strong> (<em>int</em>) – Attribute</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.import_table_csv">
+<code class="sig-name descname">import_table_csv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_class</span></em>, <em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.import_table_csv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.import_table_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import a CSV into a class as items.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_class</strong> (<em>int</em>) – Class to import into</p></li>
+<li><p><strong>file</strong> (<em>str</em>) – Name of CSV file to load</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Field names in the CSV file that match attribute names in the class will be
+imported into table entries in the class.  Usually this will be used with
+a class created using the hCreateTable_SCHEMA method so that the contents of
+class can be viewed as a table.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.is_null">
+<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.move_datas_across">
+<code class="sig-name descname">move_datas_across</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source_meta</span></em>, <em class="sig-param"><span class="n">ph_i_obj</span></em>, <em class="sig-param"><span class="n">ph_o_obj</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.move_datas_across"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.move_datas_across" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moves data items from one <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> to another</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_meta</strong> (<a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> Object</p></li>
+<li><p><strong>ph_i_obj</strong> (<em>int</em>) – Object to copy data from</p></li>
+<li><p><strong>ph_o_obj</strong> (<em>int</em>) – Object to copy data to</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.null">
+<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA">GXMETA</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.resolve_umn">
+<code class="sig-name descname">resolve_umn</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">umn</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.resolve_umn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.resolve_umn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resolve a Unique Meta Name (UMN) and find the token</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>umn</strong> (<em>str</em>) – Unique Meta Name (UMN)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>x                    - Token
+<a class="reference internal" href="#id0" title="geosoft.gxapi.H_META_INVALID_TOKEN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">H_META_INVALID_TOKEN</span></code></a> - Not found</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.serial">
+<code class="sig-name descname">serial</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bf</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.serial"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.serial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize an <a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> to a <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> to serialize to</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.set_attrib_bool">
+<code class="sig-name descname">set_attrib_bool</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_object</span></em>, <em class="sig-param"><span class="n">ph_attrib</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.set_attrib_bool"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attrib_bool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a boolean value to an attribute</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_object</strong> (<em>int</em>) – Object</p></li>
+<li><p><strong>ph_attrib</strong> (<em>int</em>) – Attribute</p></li>
+<li><p><strong>value</strong> (<em>int</em>) – Value to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.set_attrib_double">
+<code class="sig-name descname">set_attrib_double</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_object</span></em>, <em class="sig-param"><span class="n">ph_attrib</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.set_attrib_double"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attrib_double" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an integer value to an attribute</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_object</strong> (<em>int</em>) – Object</p></li>
+<li><p><strong>ph_attrib</strong> (<em>int</em>) – Attribute</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – Value to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.set_attrib_enum">
+<code class="sig-name descname">set_attrib_enum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_object</span></em>, <em class="sig-param"><span class="n">ph_attrib</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.set_attrib_enum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attrib_enum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an enum value to an attribute (as an integer)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_object</strong> (<em>int</em>) – Object</p></li>
+<li><p><strong>ph_attrib</strong> (<em>int</em>) – Attribute</p></li>
+<li><p><strong>value</strong> (<em>int</em>) – Value to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.set_attrib_int">
+<code class="sig-name descname">set_attrib_int</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_object</span></em>, <em class="sig-param"><span class="n">ph_attrib</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.set_attrib_int"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attrib_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an integer value to an attribute</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_object</strong> (<em>int</em>) – Object</p></li>
+<li><p><strong>ph_attrib</strong> (<em>int</em>) – Attribute</p></li>
+<li><p><strong>value</strong> (<em>int</em>) – Value to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.set_attrib_obj">
+<code class="sig-name descname">set_attrib_obj</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_object</span></em>, <em class="sig-param"><span class="n">ph_attrib</span></em>, <em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.set_attrib_obj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attrib_obj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an object to an attribute</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_object</strong> (<em>int</em>) – Object</p></li>
+<li><p><strong>ph_attrib</strong> (<em>int</em>) – Attribute</p></li>
+<li><p><strong>obj</strong> (<em>int</em>) – Object to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.set_attrib_string">
+<code class="sig-name descname">set_attrib_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_object</span></em>, <em class="sig-param"><span class="n">ph_attrib</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.set_attrib_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attrib_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a string value to an attribute</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_object</strong> (<em>int</em>) – Object</p></li>
+<li><p><strong>ph_attrib</strong> (<em>int</em>) – Attribute</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – String value to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.set_attribute_editable">
+<code class="sig-name descname">set_attribute_editable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_attribute</span></em>, <em class="sig-param"><span class="n">editable</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.set_attribute_editable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attribute_editable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allow/disallow an attribute to be editable in the browser</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_attribute</strong> (<em>int</em>) – Attribute or <a class="reference internal" href="#meta-core-attrib"><span class="std std-ref">META_CORE_ATTRIB constants</span></a></p></li>
+<li><p><strong>editable</strong> (<em>int</em>) – Editable Flag</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.set_attribute_visible">
+<code class="sig-name descname">set_attribute_visible</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_attribute</span></em>, <em class="sig-param"><span class="n">visible</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.set_attribute_visible"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.set_attribute_visible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allow/disallow an attribute to be visible in the browser</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_attribute</strong> (<em>int</em>) – Attribute or <a class="reference internal" href="#meta-core-attrib"><span class="std std-ref">META_CORE_ATTRIB constants</span></a></p></li>
+<li><p><strong>visible</strong> (<em>int</em>) – Editable Flag</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.set_empty_attrib">
+<code class="sig-name descname">set_empty_attrib</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ph_object</span></em>, <em class="sig-param"><span class="n">ph_attrib</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.set_empty_attrib"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.set_empty_attrib" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an empty attribute data holder</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ph_object</strong> (<em>int</em>) – MetaObject to set</p></li>
+<li><p><strong>ph_attrib</strong> (<em>int</em>) – Attribute MetaObject to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMETA.write_text">
+<code class="sig-name descname">write_text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">wa</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMETA.html#GXMETA.write_text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMETA.write_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the entire meta as a text file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) – <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a> to write to</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="h-meta-invalid-token-constants">
+<span id="h-meta-invalid-token"></span><h2>H_META_INVALID_TOKEN constants<a class="headerlink" href="#h-meta-invalid-token-constants" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> Invalid Token</p>
+<dl class="py data">
+<dt id="geosoft.gxapi.H_META_INVALID_TOKEN">
+<code class="sig-name descname">H_META_INVALID_TOKEN</code><a class="headerlink" href="#geosoft.gxapi.H_META_INVALID_TOKEN" title="Permalink to this definition">¶</a></dt>
+<dd><p>H meta invalid token</p>
+<dl class="py attribute">
+<dt id="id0">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">H_META_INVALID_TOKEN</code><em class="property"> = -1</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="meta-core-attrib-constants">
+<span id="meta-core-attrib"></span><h2>META_CORE_ATTRIB constants<a class="headerlink" href="#meta-core-attrib-constants" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> Core Attributes</p>
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Class_Description">
+<code class="sig-name descname">META_CORE_ATTRIB_Class_Description</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Class_Description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description of this class</p>
+<dl class="py attribute">
+<dt id="id43">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_ATTRIB_Class_Description</code><em class="property"> = -300</em><a class="headerlink" href="#id43" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Class_Application">
+<code class="sig-name descname">META_CORE_ATTRIB_Class_Application</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Class_Application" title="Permalink to this definition">¶</a></dt>
+<dd><p>Application that created this class</p>
+<dl class="py attribute">
+<dt id="id44">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_ATTRIB_Class_Application</code><em class="property"> = -301</em><a class="headerlink" href="#id44" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Class_ReferenceURL">
+<code class="sig-name descname">META_CORE_ATTRIB_Class_ReferenceURL</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Class_ReferenceURL" title="Permalink to this definition">¶</a></dt>
+<dd><p>URL that defines this class</p>
+<dl class="py attribute">
+<dt id="id45">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_ATTRIB_Class_ReferenceURL</code><em class="property"> = -302</em><a class="headerlink" href="#id45" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Class_Type">
+<code class="sig-name descname">META_CORE_ATTRIB_Class_Type</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Class_Type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type of Class</p>
+<dl class="py attribute">
+<dt id="id46">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_ATTRIB_Class_Type</code><em class="property"> = -303</em><a class="headerlink" href="#id46" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_Description">
+<code class="sig-name descname">META_CORE_ATTRIB_Type_Description</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_Description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description of this type</p>
+<dl class="py attribute">
+<dt id="id47">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_ATTRIB_Type_Description</code><em class="property"> = -304</em><a class="headerlink" href="#id47" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_ReferenceURL">
+<code class="sig-name descname">META_CORE_ATTRIB_Type_ReferenceURL</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_ReferenceURL" title="Permalink to this definition">¶</a></dt>
+<dd><p>URL that defines this type</p>
+<dl class="py attribute">
+<dt id="id48">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_ATTRIB_Type_ReferenceURL</code><em class="property"> = -305</em><a class="headerlink" href="#id48" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_FixedSize">
+<code class="sig-name descname">META_CORE_ATTRIB_Type_FixedSize</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_FixedSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fixed size of this type (in bytes)</p>
+<dl class="py attribute">
+<dt id="id49">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_ATTRIB_Type_FixedSize</code><em class="property"> = -306</em><a class="headerlink" href="#id49" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_ByteOrder">
+<code class="sig-name descname">META_CORE_ATTRIB_Type_ByteOrder</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_ByteOrder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Byte order for this type</p>
+<dl class="py attribute">
+<dt id="id50">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_ATTRIB_Type_ByteOrder</code><em class="property"> = -307</em><a class="headerlink" href="#id50" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_MinValue">
+<code class="sig-name descname">META_CORE_ATTRIB_Type_MinValue</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_MinValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum Value for this type</p>
+<dl class="py attribute">
+<dt id="id51">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_ATTRIB_Type_MinValue</code><em class="property"> = -308</em><a class="headerlink" href="#id51" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_MaxValue">
+<code class="sig-name descname">META_CORE_ATTRIB_Type_MaxValue</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_MaxValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum Value for this type</p>
+<dl class="py attribute">
+<dt id="id52">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_ATTRIB_Type_MaxValue</code><em class="property"> = -309</em><a class="headerlink" href="#id52" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_MaxSize">
+<code class="sig-name descname">META_CORE_ATTRIB_Type_MaxSize</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_MaxSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum Size in bytes for this type</p>
+<dl class="py attribute">
+<dt id="id53">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_ATTRIB_Type_MaxSize</code><em class="property"> = -310</em><a class="headerlink" href="#id53" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_ObjectClass">
+<code class="sig-name descname">META_CORE_ATTRIB_Type_ObjectClass</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_ObjectClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object class that manages this type</p>
+<dl class="py attribute">
+<dt id="id54">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_ATTRIB_Type_ObjectClass</code><em class="property"> = -311</em><a class="headerlink" href="#id54" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_hCreatS_Func">
+<code class="sig-name descname">META_CORE_ATTRIB_Type_hCreatS_Func</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_hCreatS_Func" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object creating function</p>
+<dl class="py attribute">
+<dt id="id55">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_ATTRIB_Type_hCreatS_Func</code><em class="property"> = -312</em><a class="headerlink" href="#id55" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_sSerial_Func">
+<code class="sig-name descname">META_CORE_ATTRIB_Type_sSerial_Func</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_sSerial_Func" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object serializationg function</p>
+<dl class="py attribute">
+<dt id="id56">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_ATTRIB_Type_sSerial_Func</code><em class="property"> = -313</em><a class="headerlink" href="#id56" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Type_Enum_Value">
+<code class="sig-name descname">META_CORE_ATTRIB_Type_Enum_Value</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Type_Enum_Value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumeration Value</p>
+<dl class="py attribute">
+<dt id="id57">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_ATTRIB_Type_Enum_Value</code><em class="property"> = -314</em><a class="headerlink" href="#id57" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Attrib_Visible">
+<code class="sig-name descname">META_CORE_ATTRIB_Attrib_Visible</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Attrib_Visible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is this attribute visible to the user</p>
+<dl class="py attribute">
+<dt id="id58">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_ATTRIB_Attrib_Visible</code><em class="property"> = -315</em><a class="headerlink" href="#id58" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Attrib_Editable">
+<code class="sig-name descname">META_CORE_ATTRIB_Attrib_Editable</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Attrib_Editable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is this atttribute editable by the user</p>
+<dl class="py attribute">
+<dt id="id59">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_ATTRIB_Attrib_Editable</code><em class="property"> = -316</em><a class="headerlink" href="#id59" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_ATTRIB_Attrib_FlatName">
+<code class="sig-name descname">META_CORE_ATTRIB_Attrib_FlatName</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_ATTRIB_Attrib_FlatName" title="Permalink to this definition">¶</a></dt>
+<dd><p>The flat name of this attribute</p>
+<dl class="py attribute">
+<dt id="id60">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_ATTRIB_Attrib_FlatName</code><em class="property"> = -317</em><a class="headerlink" href="#id60" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="meta-core-class-constants">
+<span id="meta-core-class"></span><h2>META_CORE_CLASS constants<a class="headerlink" href="#meta-core-class-constants" title="Permalink to this headline">¶</a></h2>
+<p>Meta Core Class Objects</p>
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_CLASS_Base">
+<code class="sig-name descname">META_CORE_CLASS_Base</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_Base" title="Permalink to this definition">¶</a></dt>
+<dd><p>All Classes are subordinate to this class</p>
+<dl class="py attribute">
+<dt id="id61">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_CLASS_Base</code><em class="property"> = -100</em><a class="headerlink" href="#id61" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_CLASS_Predefined">
+<code class="sig-name descname">META_CORE_CLASS_Predefined</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_Predefined" title="Permalink to this definition">¶</a></dt>
+<dd><p>All Predefined symbols are in this class</p>
+<dl class="py attribute">
+<dt id="id62">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_CLASS_Predefined</code><em class="property"> = -101</em><a class="headerlink" href="#id62" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_CLASS_Attributes">
+<code class="sig-name descname">META_CORE_CLASS_Attributes</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_Attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attributes</p>
+<dl class="py attribute">
+<dt id="id63">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_CLASS_Attributes</code><em class="property"> = -102</em><a class="headerlink" href="#id63" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_CLASS_ClassAttributes">
+<code class="sig-name descname">META_CORE_CLASS_ClassAttributes</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_ClassAttributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Classattributes</p>
+<dl class="py attribute">
+<dt id="id64">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_CLASS_ClassAttributes</code><em class="property"> = -103</em><a class="headerlink" href="#id64" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_CLASS_TypeAttributes">
+<code class="sig-name descname">META_CORE_CLASS_TypeAttributes</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_TypeAttributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Typeattributes</p>
+<dl class="py attribute">
+<dt id="id65">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_CLASS_TypeAttributes</code><em class="property"> = -104</em><a class="headerlink" href="#id65" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_CLASS_ObjectAttributes">
+<code class="sig-name descname">META_CORE_CLASS_ObjectAttributes</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_ObjectAttributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Objectattributes</p>
+<dl class="py attribute">
+<dt id="id66">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_CLASS_ObjectAttributes</code><em class="property"> = -105</em><a class="headerlink" href="#id66" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_CLASS_EnumAttributes">
+<code class="sig-name descname">META_CORE_CLASS_EnumAttributes</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_EnumAttributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumattributes</p>
+<dl class="py attribute">
+<dt id="id67">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_CLASS_EnumAttributes</code><em class="property"> = -106</em><a class="headerlink" href="#id67" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_CLASS_AttributeAttributes">
+<code class="sig-name descname">META_CORE_CLASS_AttributeAttributes</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_AttributeAttributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attributeattributes</p>
+<dl class="py attribute">
+<dt id="id68">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_CLASS_AttributeAttributes</code><em class="property"> = -107</em><a class="headerlink" href="#id68" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_CLASS_ItemAttributes">
+<code class="sig-name descname">META_CORE_CLASS_ItemAttributes</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_ItemAttributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Itemattributes</p>
+<dl class="py attribute">
+<dt id="id69">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_CLASS_ItemAttributes</code><em class="property"> = -108</em><a class="headerlink" href="#id69" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_CLASS_Types">
+<code class="sig-name descname">META_CORE_CLASS_Types</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_Types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Types</p>
+<dl class="py attribute">
+<dt id="id70">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_CLASS_Types</code><em class="property"> = -109</em><a class="headerlink" href="#id70" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_CLASS_Enums">
+<code class="sig-name descname">META_CORE_CLASS_Enums</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_Enums" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enums</p>
+<dl class="py attribute">
+<dt id="id71">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_CLASS_Enums</code><em class="property"> = -110</em><a class="headerlink" href="#id71" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_CLASS_Enum_Bool">
+<code class="sig-name descname">META_CORE_CLASS_Enum_Bool</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_Enum_Bool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enum bool</p>
+<dl class="py attribute">
+<dt id="id72">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_CLASS_Enum_Bool</code><em class="property"> = -111</em><a class="headerlink" href="#id72" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_CLASS_Enum_ClassType">
+<code class="sig-name descname">META_CORE_CLASS_Enum_ClassType</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_CLASS_Enum_ClassType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enum classtype</p>
+<dl class="py attribute">
+<dt id="id73">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_CLASS_Enum_ClassType</code><em class="property"> = -112</em><a class="headerlink" href="#id73" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="meta-core-type-constants">
+<span id="meta-core-type"></span><h2>META_CORE_TYPE constants<a class="headerlink" href="#meta-core-type-constants" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> Core Data Types</p>
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_TYPE_Bytes">
+<code class="sig-name descname">META_CORE_TYPE_Bytes</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_Bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data Bytes (Base type)</p>
+<dl class="py attribute">
+<dt id="id74">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_TYPE_Bytes</code><em class="property"> = -200</em><a class="headerlink" href="#id74" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_TYPE_Bool">
+<code class="sig-name descname">META_CORE_TYPE_Bool</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_Bool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Boolean</p>
+<dl class="py attribute">
+<dt id="id75">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_TYPE_Bool</code><em class="property"> = -201</em><a class="headerlink" href="#id75" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_TYPE_I1">
+<code class="sig-name descname">META_CORE_TYPE_I1</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_I1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signed character</p>
+<dl class="py attribute">
+<dt id="id76">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_TYPE_I1</code><em class="property"> = -202</em><a class="headerlink" href="#id76" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_TYPE_U1">
+<code class="sig-name descname">META_CORE_TYPE_U1</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_U1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsigned character</p>
+<dl class="py attribute">
+<dt id="id77">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_TYPE_U1</code><em class="property"> = -203</em><a class="headerlink" href="#id77" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_TYPE_I2">
+<code class="sig-name descname">META_CORE_TYPE_I2</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_I2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signed short</p>
+<dl class="py attribute">
+<dt id="id78">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_TYPE_I2</code><em class="property"> = -204</em><a class="headerlink" href="#id78" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_TYPE_U2">
+<code class="sig-name descname">META_CORE_TYPE_U2</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_U2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsigned short</p>
+<dl class="py attribute">
+<dt id="id79">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_TYPE_U2</code><em class="property"> = -205</em><a class="headerlink" href="#id79" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_TYPE_I4">
+<code class="sig-name descname">META_CORE_TYPE_I4</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_I4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signed long</p>
+<dl class="py attribute">
+<dt id="id80">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_TYPE_I4</code><em class="property"> = -206</em><a class="headerlink" href="#id80" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_TYPE_U4">
+<code class="sig-name descname">META_CORE_TYPE_U4</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_U4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsigned long</p>
+<dl class="py attribute">
+<dt id="id81">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_TYPE_U4</code><em class="property"> = -207</em><a class="headerlink" href="#id81" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_TYPE_I8">
+<code class="sig-name descname">META_CORE_TYPE_I8</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_I8" title="Permalink to this definition">¶</a></dt>
+<dd><p>Singed long long (64 bit int)</p>
+<dl class="py attribute">
+<dt id="id82">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_TYPE_I8</code><em class="property"> = -208</em><a class="headerlink" href="#id82" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_TYPE_U8">
+<code class="sig-name descname">META_CORE_TYPE_U8</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_U8" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsigned long long</p>
+<dl class="py attribute">
+<dt id="id83">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_TYPE_U8</code><em class="property"> = -209</em><a class="headerlink" href="#id83" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_TYPE_R4">
+<code class="sig-name descname">META_CORE_TYPE_R4</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_R4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Float (32bit)</p>
+<dl class="py attribute">
+<dt id="id84">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_TYPE_R4</code><em class="property"> = -210</em><a class="headerlink" href="#id84" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_TYPE_R8">
+<code class="sig-name descname">META_CORE_TYPE_R8</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_R8" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double (64bit)</p>
+<dl class="py attribute">
+<dt id="id85">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_TYPE_R8</code><em class="property"> = -211</em><a class="headerlink" href="#id85" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_TYPE_String">
+<code class="sig-name descname">META_CORE_TYPE_String</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_String" title="Permalink to this definition">¶</a></dt>
+<dd><p>String</p>
+<dl class="py attribute">
+<dt id="id86">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_TYPE_String</code><em class="property"> = -212</em><a class="headerlink" href="#id86" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_TYPE_Object">
+<code class="sig-name descname">META_CORE_TYPE_Object</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_Object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predefined Object (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a>,`GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`)</p>
+<dl class="py attribute">
+<dt id="id87">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_TYPE_Object</code><em class="property"> = -213</em><a class="headerlink" href="#id87" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_TYPE_Enum">
+<code class="sig-name descname">META_CORE_TYPE_Enum</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_Enum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumeration</p>
+<dl class="py attribute">
+<dt id="id88">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_TYPE_Enum</code><em class="property"> = -214</em><a class="headerlink" href="#id88" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.META_CORE_TYPE_ClassType">
+<code class="sig-name descname">META_CORE_TYPE_ClassType</code><a class="headerlink" href="#geosoft.gxapi.META_CORE_TYPE_ClassType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Classtype</p>
+<dl class="py attribute">
+<dt id="id89">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">META_CORE_TYPE_ClassType</code><em class="property"> = -215</em><a class="headerlink" href="#id89" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXMETA class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>
