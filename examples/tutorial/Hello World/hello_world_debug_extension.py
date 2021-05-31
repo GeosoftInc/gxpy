@@ -8,7 +8,7 @@ def rungx():
     # this will break inside a running "Debug Extension" configuration in PyCharm
     pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
 
-    gxc = gxpy.gx.GXpy()
+    gxc = gxpy.gx.gx()
     gxapi.GXSYS.display_message("GX Python", "Hello {}".format(gxc.gid))
 
 if __name__ == "__main__":

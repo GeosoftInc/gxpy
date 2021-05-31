@@ -35,7 +35,7 @@ class Test(GXPYTest):
             self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
             self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
             self.assertEqual(gxfs[3],'m,1')
-            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
+            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.3')
             self.assertEqual(cs.cs_name(),'DHDN / Okarito 2000')
             self.assertEqual(cs.cs_name(what=gxcs.NAME),'DHDN / Okarito 2000')
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS),'DHDN / Okarito 2000')
@@ -54,7 +54,7 @@ class Test(GXPYTest):
             self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
             self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
             self.assertEqual(gxfs[3],'m,1')
-            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
+            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.3')
 
             cs.gxf = ['', 'NAD27', '"Transverse Mercator",0,-87,0.9996,500000,0', 'm,1', '']
             self.assertEqual(cs, 'NAD27 / UTM zone 16N')
@@ -68,14 +68,14 @@ class Test(GXPYTest):
                 self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
                 self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
                 self.assertEqual(gxfs[3],'m,1')
-                self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
+                self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.3')
 
                 csd = cs.coordinate_dict()
                 self.assertEqual(csd['name'],'DHDN / Okarito 2000')
                 self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
                 self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
                 self.assertEqual(gxfs[3],'m,1')
-                self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
+                self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.3')
 
                 js = cs.json
                 with gxcs.Coordinate_system(js) as cs:
@@ -84,7 +84,7 @@ class Test(GXPYTest):
                     self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
                     self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
                     self.assertEqual(gxfs[3],'m,1')
-                    self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
+                    self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.3')
 
                 cs = gxcs.Coordinate_system()
                 cs.json = '{"units": "m,1", "orientation": "", "datum": "NAD27,6378206.4,0.0822718542230039,0", "local_datum": "\\"NAD27 to WGS 84 (4)\\",-8,160,176,0,0,0,0", "projection": "\\"Transverse Mercator\\",0,-105,0.9996,500000,0", "name": "NAD27 / UTM zone 13N", "type": "Geosoft", "vcs": ""}'
@@ -94,11 +94,11 @@ class Test(GXPYTest):
         esri_wkt = 'PROJCS["Okarito_2000",GEOGCS["GCS_Deutsches_Hauptdreiecksnetz",DATUM["D_Deutsches_Hauptdreiecksnetz",SPHEROID["Bessel_1841",6377397.155,299.152812800001]],PRIMEM["Greenwich",0],UNIT["Degree",0.0174532925199432955]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",400000],PARAMETER["False_Northing",800000],PARAMETER["Central_Meridian",170.260833333333],PARAMETER["Scale_Factor",1],PARAMETER["Latitude_Of_Origin",-43.11],UNIT["Meter",1]]'
         with gxcs.Coordinate_system(esri_wkt) as cs:
             gxfs = cs.gxf
-            self.assertEqual(gxfs[0],'DHDN / *Okarito 2000')
+            self.assertEqual(gxfs[0],'DHDN / Okarito 2000')
             self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225274,0')
             self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
             self.assertEqual(gxfs[3],'m,1')
-            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
+            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.3')
 
             cs.esri_wkt = 'PROJCS["NAD_1927_UTM_Zone_16N",GEOGCS["GCS_North_American_1927",DATUM["D_North_American_1927",SPHEROID["Clarke_1866",6378206.4,294.9786982]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",500000.0],PARAMETER["False_Northing",0.0],PARAMETER["Central_Meridian",-87.0],PARAMETER["Scale_Factor",0.9996],PARAMETER["Latitude_Of_Origin",0.0],UNIT["Meter",1.0],AUTHORITY["EPSG",26716]]'
             self.assertEqual(cs, 'NAD27 / UTM zone 16N')
@@ -124,7 +124,7 @@ class Test(GXPYTest):
             self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
             self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
             self.assertEqual(gxfs[3],'m,1')
-            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
+            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.3')
             self.assertEqual(cs.cs_name(),'DHDN / Okarito 2000')
             self.assertEqual(cs.cs_name(what=gxcs.NAME),'DHDN / Okarito 2000')
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS),'DHDN / Okarito 2000')
@@ -143,7 +143,7 @@ class Test(GXPYTest):
             self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
             self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
             self.assertEqual(gxfs[3],'m,1')
-            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
+            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.3')
             self.assertEqual(cs.cs_name(),'DHDN / Okarito 2000')
             self.assertEqual(cs.cs_name(what=gxcs.NAME),'DHDN / Okarito 2000')
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS),'DHDN / Okarito 2000')
@@ -188,7 +188,7 @@ class Test(GXPYTest):
             self.assertEqual(gxfs[1],'DHDN,6377397.155,0.0816968312225275,0')
             self.assertEqual(gxfs[2],'"Transverse Mercator",-43.11,170.260833333333,1,400000,800000')
             self.assertEqual(gxfs[3],'m,1')
-            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.29999999996112')
+            self.assertEqual(gxfs[4],'"DHDN to WGS 84 (1)",582,105,414,1.04,0.35,-3.08,8.3')
             self.assertEqual(cs.cs_name(),'DHDN / Okarito 2000 [geodetic]')
             self.assertEqual(cs.cs_name(what=gxcs.NAME),'DHDN / Okarito 2000 [geodetic]')
             self.assertEqual(cs.cs_name(what=gxcs.NAME_HCS),'DHDN / Okarito 2000')

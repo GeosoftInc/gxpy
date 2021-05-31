@@ -11,7 +11,7 @@ def rungx():
     gxpy.utility.check_version('9.2')
 
     # say hello
-    with gxpy.gx.GXpy() as gxc:
+    with gxpy.gx.gx() as gxc:
         gxpy.utility.display_message("GX Python", "Hello {}".format(gxc.gid))
 
 

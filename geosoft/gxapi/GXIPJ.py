@@ -275,7 +275,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def clear_orientation(self):
         """
-        Clear an orientation warp from an `GXIPJ <geosoft.gxapi.GXIPJ>`.
+        Clear any orientation and/or warp from an `GXIPJ <geosoft.gxapi.GXIPJ>`.
         
 
         .. versionadded:: 5.1.6
@@ -283,6 +283,23 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._clear_orientation()
+        
+
+
+
+
+    def copy_orientation(self, ip_jd):
+        """
+        Copy any orientation and/or warp from one `GXIPJ <geosoft.gxapi.GXIPJ>` to another.
+        
+        :param ip_jd:  Destination `GXIPJ <geosoft.gxapi.GXIPJ>`
+        :type  ip_jd:  GXIPJ
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._copy_orientation(ip_jd)
         
 
 
@@ -704,6 +721,40 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
 
 
+    def compare_datums_to_specified_tolerance_with_feedback(self, ipj2, sig_digits, str_val):
+        """
+        Compare the datums of two coordinate systems, but allows for a specified accuracy and returns the reason if they are different
+        
+        :param ipj2:        `GXIPJ <geosoft.gxapi.GXIPJ>` 2
+        :param sig_digits:  Significant digits (0 for exact)
+        :param str_val:     Reason if different returned
+        :type  ipj2:        GXIPJ
+        :type  sig_digits:  int
+        :type  str_val:     str_ref
+
+        :returns:           0 - Datums are different
+                            1 - Datums are the same, but different LDT
+                            2 - Datums and LTD are the same
+        :rtype:             int
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** To transform between different datums requires the use of a local
+        datum transform.  The local datum transform can be defined when
+        a coordinate system is created, but the definition is optional.
+        This function will test that the local datum transforms are defined.
+        Note that a coordinate transformation between datums without a
+        local datum transform is still possible, but only the effect of
+        ellipsoid shape will be modelled in the transform.
+        """
+        ret_val, str_val.value = self._compare_datums_to_specified_tolerance_with_feedback(ipj2, sig_digits, str_val.value.encode())
+        return ret_val
+
+
+
+
     def convert_warp(self, x, y, z, f_forward):
         """
         Converts a point X, Y, Z to the new `GXIPJ <geosoft.gxapi.GXIPJ>` plane.
@@ -793,6 +844,33 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._coordinate_systems_are_the_same_within_a_small_tolerance(ipj2)
+        return ret_val
+
+
+
+
+    def coordinate_systems_are_the_same_to_specified_tolerance_with_feedback(self, ipj2, sig_digits, sig_digits_EN, str_val):
+        """
+        Same as `coordinate_systems_are_the_same <geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same>`, but allows for a specified accuracy and returns the reason if they are different
+        
+        :param ipj2:           `GXIPJ <geosoft.gxapi.GXIPJ>` 2
+        :param sig_digits:     Significant digits (0 for exact)
+        :param sig_digits_EN:  Significant digits for high-precision parameters like easting and northing (0 for exact)
+        :param str_val:        Reason if different returned
+        :type  ipj2:           GXIPJ
+        :type  sig_digits:     int
+        :type  sig_digits_EN:  int
+        :type  str_val:        str_ref
+
+        :returns:              0 - No
+                               1 - Yes
+        :rtype:                int
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val, str_val.value = self._coordinate_systems_are_the_same_to_specified_tolerance_with_feedback(ipj2, sig_digits, sig_digits_EN, str_val.value.encode())
         return ret_val
 
 
@@ -1127,6 +1205,31 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
 
 
+    def orientations_are_the_same_to_specified_tolerance_with_feedback(self, ipj2, sig_digits, str_val):
+        """
+        Same as `orientations_are_the_same <geosoft.gxapi.GXIPJ.orientations_are_the_same>`, but allows for small numerical differences
+        
+        :param ipj2:        `GXIPJ <geosoft.gxapi.GXIPJ>` 2
+        :param sig_digits:  Significant digits (0 for exact)
+        :param str_val:     Reason if different returned
+        :type  ipj2:        GXIPJ
+        :type  sig_digits:  int
+        :type  str_val:     str_ref
+
+        :returns:           0 - No
+                            1 - Yes
+        :rtype:             int
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val, str_val.value = self._orientations_are_the_same_to_specified_tolerance_with_feedback(ipj2, sig_digits, str_val.value.encode())
+        return ret_val
+
+
+
+
     def has_section_orientation(self):
         """
         Does this projection contain an orientation used by section plots?
@@ -1341,6 +1444,31 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val = self._warps_are_the_same_within_a_small_tolerance(ipj2)
+        return ret_val
+
+
+
+
+    def warps_are_the_same_to_specified_tolerance_with_feedback(self, ipj2, sig_digits, str_val):
+        """
+        Same as `warps_are_the_same <geosoft.gxapi.GXIPJ.warps_are_the_same>`, but allows for a specified accuracy and returns the reason if they are different
+        
+        :param ipj2:        `GXIPJ <geosoft.gxapi.GXIPJ>` 2
+        :param sig_digits:  Significant digits (0 for exact)
+        :param str_val:     Reason if different returned
+        :type  ipj2:        GXIPJ
+        :type  sig_digits:  int
+        :type  str_val:     str_ref
+
+        :returns:           0 - No
+                            1 - Yes
+        :rtype:             int
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val, str_val.value = self._warps_are_the_same_to_specified_tolerance_with_feedback(ipj2, sig_digits, str_val.value.encode())
         return ret_val
 
 
@@ -2329,6 +2457,110 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         it remains in the same location.
         """
         x0.value, y0.value, dx.value, dy.value, rot.value = self._reproject_section_grid(output_ipj, x0.value, y0.value, dx.value, dy.value, rot.value)
+        
+
+
+
+
+    def get_authority_id(self, authority):
+        """
+        Get Authority ID (e.g. EPSG, ESRI) for coordinate system or `iDUMMY <geosoft.gxapi.iDUMMY>` if unknown.
+        
+        :param authority:  Authority ID (e.g. EPSG and ESRI)
+        :type  authority:  str_ref
+
+        :returns:          :ref:`IPJ_ORIENT`
+        :rtype:            int
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val, authority.value = self._get_authority_id(authority.value.encode())
+        return ret_val
+
+
+
+
+    def get_epsgid_for_datum(self):
+        """
+        Get EPSG ID for datum of coordinate system or `iDUMMY <geosoft.gxapi.iDUMMY>` if unknown.
+        
+
+        :returns:    :ref:`IPJ_ORIENT`
+        :rtype:      int
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val = self._get_epsgid_for_datum()
+        return ret_val
+
+
+
+
+    def add_as_favourite_coordinate_system(self):
+        """
+        Add as favourite coordinate system to Settings.
+        
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._add_as_favourite_coordinate_system()
+        
+
+
+
+    @classmethod
+    def get_number_of_favourite_coordinate_systems(cls):
+        """
+        Get number of favourite coordinate systems in Settings.
+        
+        :rtype:      int
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val = gxapi_cy.WrapIPJ._get_number_of_favourite_coordinate_systems(GXContext._get_tls_geo())
+        return ret_val
+
+
+
+    @classmethod
+    def get_favourite_coordinate_system(cls, index):
+        """
+        Get a favourite coordinate system from Settings.
+        
+        :param index:  Index of item.
+        :type  index:  int
+        :rtype:        GXIPJ
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val = gxapi_cy.WrapIPJ._get_favourite_coordinate_system(GXContext._get_tls_geo(), index)
+        return GXIPJ(ret_val)
+
+
+
+    @classmethod
+    def remove_favourite_coordinate_system(cls, index):
+        """
+        Remove favourite coordinate system from Settings.
+        
+        :param index:  Index of item.
+        :type  index:  int
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapIPJ._remove_favourite_coordinate_system(GXContext._get_tls_geo(), index)
         
 
 

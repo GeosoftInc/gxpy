@@ -1394,6 +1394,45 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
 
 
+    def get_trace_header_as_json(self, trace_number, text):
+        """
+        Return the contents of a trace header as JSON.
+        
+        :param trace_number:  Which trace to read
+        :param text:          Trace header as JSON.
+        :type  trace_number:  int
+        :type  text:          str_ref
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        text.value = self._get_trace_header_as_json(trace_number, text.value.encode())
+        
+
+
+
+
+    def get_trace_data(self, trace_number):
+        """
+        Get the SEG Y trace file header data for a particular starting trace
+        
+        :param trace_number:  Which trace to read
+        :type  trace_number:  int
+
+        :returns:             :class:'VV' containing the data from the trace header
+        :rtype:               GXVV
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        ret_val = self._get_trace_data(trace_number)
+        return GXVV(ret_val)
+
+
+
+
 
 ### endblock ClassImplementation
 ### block ClassExtend

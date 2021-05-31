@@ -1063,6 +1063,8 @@ def run_external_python(script, script_args='',
     if not py.lower().endswith('python.exe'):
         s = gxapi.str_ref()
         gxapi.GXSYS.get_env('PYTHON_HOME', s)
+        if not s.value:
+           gxapi.GXSYS.get_directory(gxapi.SYS_DIR_GEOSOFT_PYTHON, s)
         py = os.path.join(s.value, 'python.exe')
 
     command = "\"{}\" {} \"{}\" {}".format(py, python_args, script, script_args)

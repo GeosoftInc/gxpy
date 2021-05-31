@@ -1705,6 +1705,24 @@ ITR_ZONE_MODEL_EQUAL = 3
 ITR_MODEL_LOGLIN = 4	
 
 #
+# GXKML Constants
+# 
+
+
+
+#
+# KML_ALT constants
+#
+# KML Altitude values.
+
+#: Clamptoground
+KML_ALT_CLAMPTOGROUND = 0
+#: Relativetoground
+KML_ALT_RELATIVETOGROUND = 1
+#: Absolute
+KML_ALT_ABSOLUTE = 2	
+
+#
 # GXLAYOUT Constants
 # 
 
@@ -3510,6 +3528,8 @@ SYS_DIR_GEOSOFT_SPEC_INI = 119
 SYS_DIR_GEOSOFT_STYLESHEETS = 120
 #: TBL folder
 SYS_DIR_GEOSOFT_TBL = 121
+#: PYTHON folder
+SYS_DIR_GEOSOFT_PYTHON = 127
 #: User CSV Folder
 SYS_DIR_USER_CSV = 200
 #: User ETC Folder
@@ -7226,6 +7246,7 @@ __all__ = [
     'GXIMU',
     'GXIPJ',
     'GXITR',
+    'GXKML',
     'GXLAYOUT',
     'GXLL2',
     'GXLPT',
@@ -7359,6 +7380,7 @@ from .GXIMG import GXIMG
 from .GXIMU import GXIMU
 from .GXIPJ import GXIPJ
 from .GXITR import GXITR
+from .GXKML import GXKML
 from .GXLAYOUT import GXLAYOUT
 from .GXLL2 import GXLL2
 from .GXLPT import GXLPT

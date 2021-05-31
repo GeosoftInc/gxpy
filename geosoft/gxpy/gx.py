@@ -21,6 +21,7 @@ import shutil
 import datetime
 import atexit
 import tempfile
+import threading
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -42,97 +43,44 @@ class GXException(geosoft.GXRuntimeError):
     """
     pass
 
+
 _singleton_getattr_default = object()
-
-class _DisposableSingletonContainer:
-    """
-    A singleton container class. overrides __getattr__ to appear as an instance of the wrapped singleon class.
-    Provides reset mechanism via a reset callback.
-    """
-    def __init__(self, parent, reset):
-        self._reset = reset
-        self._inherited = parent
-
-    def __enter__(self):
-        return self
-
-    def __exit__(self, _type, _value, _traceback):
-        self.__del__()
-
-    def __del__(self):
-        if self._reset:
-            self._reset()
-
-    def __getattr__(self, name, default=_singleton_getattr_default):
-        try:
-            return getattr(self._inherited, name)
-        except AttributeError:
-            if default is _singleton_getattr_default:
-                raise
-            return default
-
-class _SingletonWrapper:
-    """
-    The singleton wrapper class. Used by _singleton decorator to ensure a single instantiation
-    of a class, reset by the release of the first instance.
-    """
-    def __init__(self, cls):
-        self._wrap_class = cls
-        self._instance = None
-
-    def _reset(self):
-        self._instance = None
-
-    def __call__(self, *args, **kwargs):
-        """Returns a single instance of decorated class"""
-
-        if self._instance is None:
-            self._instance = self._wrap_class(*args, **kwargs)
-            return _DisposableSingletonContainer(self._instance, self._reset)
-
-        return _DisposableSingletonContainer(self._instance, None)
-
-
-def _singleton(cls):
-    """
-    The singleton decorator.
-    """
-    # Do not wrap class during documentation generation
-    if os.environ.get('GEOSOFT_SPHINX_BUILD', '0') == '1':
-       return cls
-    return _SingletonWrapper(cls)
-
+_is_sphinx_build = os.environ.get('GEOSOFT_SPHINX_BUILD', '0') == '1'
+_tls = threading.local()
 
 def _get_gx_instance():
-    return GXpy._instance
+    return GXpyContext._get_instance()
+
 
 def _have_gx():
-    return GXpy._instance is not None
+    return GXpyContext._get_instance() is not None
 
 
-_res_id = 0
-_res_heap = {}
-_max_resource_heap = 1000000
-_stack_depth = 5
-_max_warnings = 10
-_stale_age = 24. * 60 * 60
-_remove_stale_geosoft_temp_files = False
-_NULL_ID = -1
-
-
-def _reset_globals():
-    global _res_id
-    global _res_heap
-    global _max_resource_heap
-    global _stack_depth
-    global _max_warnings
-
-    GXpy._reset()
+class TLSGlobals:
     _res_id = 0
     _res_heap = {}
     _max_resource_heap = 1000000
     _stack_depth = 5
     _max_warnings = 10
+    _NULL_ID = -1
+
+
+def _get_tls_globals():
+    global _tls
+    tls_globals = getattr(_tls, '_gxpy_tls_globals', None)
+    if tls_globals is not None:
+        return tls_globals
+    if _tls is None:
+        return None
+    _tls._gxpy_tls_globals = TLSGlobals()
+    return _tls._gxpy_tls_globals
+
+
+def _reset_tls_globals():
+    global _tls
+    # Reset singlton wrappers
+    _tls._gxpy_tls_globals = None
+
 
 def track_resource(resource_class, info):
     """
@@ -148,22 +96,20 @@ def track_resource(resource_class, info):
 
     .. versionadded:: 9.2
     """
-    global _res_id
-    global _res_heap
-    global _stack_depth
-    if _res_id < _max_resource_heap:
-        _res_id += 1
+    tls_globals = _get_tls_globals()
+    if tls_globals._res_id < tls_globals._max_resource_heap:
+        tls_globals._res_id += 1
         rs = "{}:".format(resource_class)
-        for i in range(_stack_depth):
+        for i in range(tls_globals._stack_depth):
             f = gxs.func_name(i + 2)
             if f is None:
                 break
             rs += '<{}'.format(gxs.func_name(i + 2))
         rs += ' [{}]'.format(info)
-        _res_heap[_res_id] = rs
-        return _res_id
+        tls_globals._res_heap[tls_globals._res_id] = rs
+        return tls_globals._res_id
     else:
-        return _NULL_ID
+        return tls_globals._NULL_ID
 
 
 def pop_resource(res_id):
@@ -178,10 +124,11 @@ def pop_resource(res_id):
         changed id to res_id to avoid built-in shadow
 
     """
-    if res_id != _NULL_ID:
-        if len(_res_heap):
+    tls_globals = _get_tls_globals()
+    if res_id != tls_globals._NULL_ID:
+        if len(tls_globals._res_heap):
             try:
-                del (_res_heap[res_id])
+                del (tls_globals._res_heap[res_id])
             except KeyError:
                 pass
 
@@ -194,100 +141,72 @@ def _log_file_error(fnc, path, excinfo):
                    .format(path, str(fnc), str(excinfo)))
 
 
-def _remove_stale_gx_temporary_folders():
-    """ removes stale gx temporary folders from user's geosoft temp folder"""
-
-    global _stale_age
-
-    for filename in list(os.listdir(gxu.folder_temp(False))):
-        ff = os.path.join(gxu.folder_temp(False), filename)
-        if os.path.isdir(ff):
-            if filename[:4] == '_gx_' or _remove_stale_geosoft_temp_files:
-                if not gxu.is_path_locked(ff, age=_stale_age):
-                    shutil.rmtree(ff, ignore_errors=False, onerror=_log_file_error)
-        elif _remove_stale_geosoft_temp_files:
-            if not gxu.is_file_locked(ff, age=_stale_age):
-                try:
-                    os.remove(ff)
-                except IOError as e:
-                    _log_file_error('os.remove', ff, e)
-
-
-def _remove_stale_geosoft_temporary_files():
-    """ removes stale geosoft temporary files and folders from user's geosoft temp folder"""
-
-    global _stale_age
-
-    for filename in list(os.listdir(gxu.folder_temp(False))):
-        ff = os.path.join(gxu.folder_temp(False), filename)
-        if os.path.isdir(ff):
-            if filename == 'TempFileStacks':
-                for item in list(os.listdir(ff)):
-                    item = os.path.join(os.path.join(gxu.folder_temp(False), filename), item)
-                    if not gxu.is_file_locked(item, age=_stale_age):
-                        gxu.delete_file(item)
-
-            elif not gxu.is_path_locked(ff, age=_stale_age):
-                shutil.rmtree(ff, ignore_errors=False, onerror=_log_file_error)
-        else:
-            if not gxu.is_file_locked(ff, age=_stale_age):
-                gxu.delete_file(ff)
-
-
-def _exit_cleanup():
-    global _gx
-    global _res_heap
-    global _max_warnings
-    global _remove_stale_geosoft_temp_files
-
-    if _have_gx():
-        gx = _get_gx_instance()
-        gx.log('\nGX closing')
-        atexit.unregister(_exit_cleanup)
-
-        temp_folder = gx.temp_folder()
-        if temp_folder and (temp_folder != gxu.folder_temp()):
-            shutil.rmtree(temp_folder, ignore_errors=False, onerror=_log_file_error)
-
-        _remove_stale_gx_temporary_folders()
-        if _remove_stale_geosoft_temp_files:
-            _remove_stale_geosoft_temporary_files()
-
-        if len(_res_heap):
-            # resources were created but not deleted or removed
-            gx.log(_t('Warning - cleaning up resources that are still open:'))
-            i = 0
-            for s in _res_heap.values():
-                if i == _max_warnings:
-                    _gx.log(_t('    and there are {} more (change GXpy(max_warnings=) to see more)...'
-                               .format(len(_res_heap) - i)))
-                    break
-                _gx.log('   ', s)
-                i += 1
-        gx.close_log()
-        gx._tkframe = None
-        gx._gxapi = None
-
-        gx._clean_redist_folders()
-
-        del gx
-
-    _reset_globals()
-
-
 def gx():
-    """Returns the `GXpy` instance.  Initializes to default state in not initialized."""
-    return GXpy()
+    """Returns the current thread `GXpy` instance."""
+    if not _have_gx():
+        raise gxapi.GXAPIError("A GXpy instance has not been created for current thread yet, "
+                               "or the original context has been released.")
+    return _get_gx_instance()
 
-@_singleton
-class GXpy:
+def GXpy(name=__name__, version=__version__, parent_window=0, log=None, max_res_heap=10000000, res_stack=6,
+         max_warnings=10, suppress_progress=False, key='Core', per_user_key=False, redist_override=False,
+         redist_dir=None, user_dir=None, temp_dir=None):
     """
-    Geosoft GX context.  This is a singleton class, so subsequent creation returns an instance
-    identical to the initial creation. This also means that initialization arguments are ignored
-    on a subsequent instantiation.
+        Instantiate a Geosoft GX context.  There should be only one instance of this created per thread.
+        To simplify usage, use this method to instantiaate the context and the :func:`.gxpy.gx.gx` methods instead
+        to obtain the current thread instance.
 
-    This class does not need to be instantiated by desktop extensions as the context is provided
-    by the Geosoft desktop application.  If called, the desktop context is returned.
+        It is a good idea to use the with statement pattern to ensure timely cleanup of unmanaged resources.
+
+        :parameters:
+            :name:              application name, default is the script name
+            :version:           application version number, default Geosoft version
+            :parent_window:     ID of the parent window.  A parent window is required for GUI-dependent
+                                functions to work.  Set `parent_window=-1` to create a Tkinter frame that
+                                provides a default parent window handle for GUI/Viewer functions.
+            :log:               name of a file to record logging information, or a call-back function that
+                                accepts a string.  Specifying `log=''` will log to a default file named
+                                using the current date and time.  If not provided calls to log()
+                                are ignored.
+            :max_res_heap:      If logging is on, open gxpy resources (like grids, or databases) are tracked.
+                                This is the maximum size of resource heap for tracking open resources.
+                                Set to 0 to not track resources. On exit, if any resources remain open
+                                a warning is logged together with a list of the open resources, each with a
+                                call stack to help find the function that created the resources.
+            :res_stack:         Depth of the call-stack to report for open-resource warning.
+            :max_warnings:      Maximum number of resource warnings to report.
+            :suppress_progress: True to suppress progress reporting (default False)
+            :key:               Default Geosoft registry key to use (in absence of geosoft.key file) to discover
+                                GX developer common redistributables or Desktop Applications software (default 'Core')
+            :per_user_key:      Use per-user registry instead of local machine (default False)
+            :redist_override:   Override registry mechanism to discover redistributables with redist_dir,
+                                user_dir and temp_dir parameters. (default False)
+            :redist_dir:        Path containing the redistributable files, i.e. containing bin, csv and other folders.
+                                Only used if redist_override is True (default None)
+            :user_dir:          Writable path to directory containing the user redistributable files.
+                                Only used if redist_override is True (default None). If redist_override is True and
+                                user_dir is None a unique folder in system temp will be used for this purpose.
+            :temp_dir:          Path to use for temporary files. Only used if redist_override is True (default None)
+                                If redist_override is True and temp_dir is None a unique folder in system temp will
+                                be used for this purpose.
+
+    .. seealso::
+
+        Class :class:`.gxpy.gx.GXpyContext`
+"""
+    return GXpyContext(name, version, parent_window, log, max_res_heap, res_stack, max_warnings, suppress_progress,
+                       key, per_user_key, redist_override, redist_dir, user_dir, temp_dir)
+
+
+class GXpyContext:
+    """
+    Geosoft GX context.  There should be only one instance of this created per thread. To simplify usage, use the
+    :func:`.gxpy.gx.GXpy` and :func:`.gxpy.gx.gx` methods instead of instantiating this class directly.
+
+    This class does not need to be instantiated by the main thread in Oasis montaj desktop extension scripts,
+    since the context is instantiated prior to entering the rungx method. If called, the desktop context is returned.
+
+    It is a good idea to use the with statement pattern to ensure timely cleanup of unmanaged resources.
 
     :parameters:
         :name:              application name, default is the script name
@@ -334,13 +253,6 @@ class GXpy:
         :folder_temp:       Geosoft temporary folder
         :folder_user:       Geosoft Desktop installation 'user' folder
 
-    :Private properties for special use:
-        :_stale_age:        stale temporary files older than this age (in seconds) will be removed upon loss
-                            of context.  The default is 24 hours (24*60*60 seconds).
-        :__remove_stale_geosoft_temp_files: if True, also remove Geosoft temporary files that may heve
-                            been created by other processes. The default is False, in which case only stale temporary
-                            files created by geosoft.gxpy processes will be removed.
-
     :raises:
         :GXException(): if unable to create context
 
@@ -360,28 +272,69 @@ class GXpy:
     def __str__(self):
         return "GID: {}, class: {}".format(self.gid, self.license_class)
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, _type, _value, _traceback):
+        self.__del__()
+
     def __del__(self):
-        _exit_cleanup()
+        self._delete()
+
+    _gxpy_deleted = True
+
+    def _delete(self):
+        if not getattr(self, '_gxpy_deleted', True):
+            self._gxpy_deleted = True
+            tls_globals = _get_tls_globals()
+            if tls_globals is None:
+                return
+
+            self.log('\nGX closing')
+
+            temp_folder = self.temp_folder()
+            if temp_folder and (temp_folder != gxu.folder_temp()):
+                shutil.rmtree(temp_folder, ignore_errors=False, onerror=_log_file_error)
+
+            if len(tls_globals._res_heap):
+                # resources were created but not deleted or removed
+                self.log(_t('Warning - cleaning up resources that are still open:'))
+                i = 0
+                for s in tls_globals._res_heap.values():
+                    if i == tls_globals._max_warnings:
+                        self.log(_t('    and there are {} more (change GXpy(max_warnings=) to see more)...'
+                                    .format(len(tls_globals._res_heap) - i)))
+                        break
+                    self.log('   ', s)
+                    i += 1
+            self.close_log()
+            self._clean_redist_folders()
+
+            del self._tkframe
+
+            self._gxapi.__del__()
+            del self._gxapi
+            GXpyContext._set_instance(None)
 
     def __init__(self, name=__name__, version=__version__,
                  parent_window=0, log=None,
                  max_res_heap=10000000, res_stack=6, max_warnings=10,
                  suppress_progress=False, key='Core', per_user_key=False,
                  redist_override=False, redist_dir=None, user_dir=None, temp_dir=None):
+        if _have_gx():
+            raise gxapi.GXAPIError("A GXpy instance has already been created for current thread.")
 
-        global _max_resource_heap
-        global _stack_depth
-        global _max_warnings
+        tls_globals = _get_tls_globals()
 
         # Reset testing UUID base with every init
         gxu.d_uuid_count = 1
 
         if log is None:
-            _max_resource_heap = 0
+            tls_globals._max_resource_heap = 0
         else:
-            _max_resource_heap = max_res_heap
-            _stack_depth = max(0, res_stack)
-            _max_warnings = max(0, max_warnings)
+            tls_globals._max_resource_heap = max_res_heap
+            tls_globals._stack_depth = max(0, res_stack)
+            tls_globals._max_warnings = max(0, max_warnings)
 
         self._enter_count = 0
         self._redist_dir = redist_dir
@@ -398,6 +351,7 @@ class GXpy:
                 raise ImportError(_t(
                     'Unable to import the pythoncom module, which is needed for GUI APIs to work.'))
 
+        self._tkframe = None
         if parent_window == -1:
             self._tkframe = ttk.Frame(master=None)
             parent_window = self._tkframe.winfo_id()
@@ -505,8 +459,20 @@ class GXpy:
             self.log('-' * 80)
             self.log('\n')
 
-        atexit.register(_exit_cleanup)
         self.log('\nGX open')
+        self._gxpy_deleted = False
+        GXpyContext._set_instance(self)
+
+    _tls_instance_name = '_GXpyContext_tls_instance'
+    @classmethod
+    def _set_instance(cls, instance):
+        global _tls
+        setattr(_tls, cls._tls_instance_name, instance)
+
+    @classmethod
+    def _get_instance(cls):
+        global _tls
+        return getattr(_tls, cls._tls_instance_name, None)
 
     def _log_to_file(self, *args):
 
@@ -931,15 +897,16 @@ class GXpy:
 
         .. versionadded:: 9.2
         """
-
-        if self._log_it:
-            self._log_it(*args)
+        log_it = getattr(self, '_log_it', None)
+        if log_it:
+            log_it(*args)
 
     def close_log(self):
         """close logging"""
         self.log('GX closed')
-        if self._logf:
-            self._logf.close()
+        logf = getattr(self, '_logf', None)
+        if logf:
+            logf.close()
 
     def elapsed_seconds(self, tag='', log=False):
         """

@@ -414,10 +414,11 @@ class Test(GXPYTest):
 
         g1 = gxgrd.Grid.open(self.g1f)
         g2 = gxgrd.Grid.open(self.g2f)
-        rs = len(gx._res_heap)
+        gx_tls_globals = gx._get_tls_globals()
+        rs = len(gx_tls_globals._res_heap)
         self.assertTrue(rs >= 2)
         g1.close()
-        self.assertEqual(len(gx._res_heap), rs-1)
+        self.assertEqual(len(gx_tls_globals._res_heap), rs-1)
         g2.close()
 
     def test_extent(self):

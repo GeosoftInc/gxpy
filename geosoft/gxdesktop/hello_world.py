@@ -5,7 +5,7 @@ import geosoft.gxpy as gxpy
 def rungx():
 
     # get the current gx context
-    gxp = gxpy.gx.GXpy()
+    gxp = gxpy.gx.gx()
 
     # say hello to the user identified by gxp.gid.
     gxapi.GXSYS.display_message("GX Python", "Hello {}".format(gxp.gid))

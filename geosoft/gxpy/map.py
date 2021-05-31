@@ -301,7 +301,7 @@ class Map:
 
         super().__init__()
 
-        self._gx = gx.GXpy()
+        self._gx = gx.gx()
         self._remove = False
 
         if gxmap is not None:

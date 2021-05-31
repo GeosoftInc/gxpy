@@ -194,9 +194,14 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         :returns:    :ref:`COMMAND_ENV`
 
-                  Notes									We are moving towards embedded tools and menus and this setting can be
+                  Notes									
+
+                  We are moving towards embedded tools and menus and this setting can be
                   queried from the project to determine how specific commands should react.
                   Only 3D viewer is currently making use of this.
+
+                  If new Command environment enum values are added, then update the iGetCommandEnvironment_PROJ() function
+                  in geogxgui\\gxx_app.cpp and in the COMMAND_ENVIRONMENT enums in geoengine.core\\include\\obj\\objgp.h.
         :rtype:      int
 
         .. versionadded:: 5.0

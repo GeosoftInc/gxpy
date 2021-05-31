@@ -285,7 +285,7 @@ class View(gxgeo.Geometry):
 
         super().__init__(**kwargs)
 
-        self._gx = gx.GXpy()
+        self._gx = gx.gx()
         self._map = map
 
         if gxmview is not None:

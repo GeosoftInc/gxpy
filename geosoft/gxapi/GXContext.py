@@ -19,20 +19,26 @@ class GXContext:
 
     .. seealso::
 
-        Class :class:`.gxpy.gx.GXpy`
+        Method :func:`.gxpy.gx.GXpy`
     """
+
     def __enter__(self):
         return self
 
     def __exit__(self, type, value, traceback):
-        if self._release_tls_geo:
-            _tls._gxa_geo = None
+        self.__del__()
 
     def __del__(self):
         if self._release_tls_geo:
-            _tls._gxa_geo = None
+            global _tls
+            tls_geo = getattr(_tls, '_gxa_geo', None)
+            if tls_geo is not None:
+                del _tls._gxa_geo
+                _tls._gxa_geo = None
+                tls_geo._destroy()
 
     def __init__(self, wrapper):
+        global _tls
         tls_geo = getattr(_tls, '_gxa_geo', None)
         if tls_geo is None:
             _tls._gxa_geo = wrapper
@@ -41,14 +47,20 @@ class GXContext:
             self._release_tls_geo = False
 
     @classmethod
+    def _try_get_tls_geo(cls):
+        global _tls
+        return getattr(_tls, '_gxa_geo', None)
+
+    @classmethod
     def _get_tls_geo(cls):
-        tls_geo = getattr(_tls, '_gxa_geo', None)
+        tls_geo = cls._try_get_tls_geo()
         if tls_geo is None:
-            raise GXAPIError("A GXContext instance has not been created for current thread yet, or the original context has been released.");
+            raise GXAPIError("A GXContext instance has not been created for current thread yet, "
+                             "or the original context has been released.")
         return tls_geo
 
     @classmethod
-    def create(cls, application, version, wind_id = 0, flags = 0, key='Core', per_user_key=False,
+    def create(cls, application, version, wind_id=0, flags=0, key='Core', per_user_key=False,
                redist_override=False, redist_dir=None, user_dir=None, temp_dir=None):
         """
         Creates the GX execution context (will return the current one if it exists).
@@ -84,6 +96,7 @@ class GXContext:
 
         .. versionadded:: 9.1
         """
+        global _tls
         tls_geo = getattr(_tls, '_gxa_geo', None)
         if tls_geo is None:
             if not cls._geodist_init:
@@ -127,9 +140,9 @@ class GXContext:
         finally:
             winreg.CloseKey(env_key)
 
-
     @classmethod
     def _create_internal(cls, internal_p_geo):
+        global _tls
         tls_geo = getattr(_tls, '_gxa_geo', None)
         if tls_geo is None:
             p_geo = gxapi_cy.WrapPGeo()
@@ -144,15 +157,16 @@ class GXContext:
         return p_geo._internal_p()
 
     _geodist_init = False
+
     @classmethod
     def _geosoft_dist_init(cls, dist_dir, dll_name='geodist.dll'):
         gxapi_cy.WrapPGeo.geosoft_dist_init(dist_dir, dll_name)
-        _geodist_init = True
+        cls._geodist_init = True
 
     @classmethod
     def _set_geosoft_redist_overrides(cls, redist_dir, user_dir, temp_dir, dll_name='geodist.dll'):
         gxapi_cy.WrapPGeo.set_geosoft_redist_overrides(redist_dir, user_dir, temp_dir, dll_name)
-        _geodist_init = True
+        cls._geodist_init = True
 
     @classmethod
     def _redirect_std_streams(cls):
@@ -207,7 +221,7 @@ class GXContext:
         """
         p_geo = GXContext._get_tls_geo()
         return p_geo.has_ui_console()
-    
+
     def is_ui_console_visible(self):
         """
         Checks if a console owned by UI applications is visible

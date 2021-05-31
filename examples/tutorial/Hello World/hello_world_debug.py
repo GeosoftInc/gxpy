@@ -3,7 +3,7 @@ import geosoft.gxpy as gxpy
 
 def rungx():
 
-    gxc = gxpy.gx.GXpy()
+    gxc = gxpy.gx.gx()
     gxapi.GXSYS.display_message("GX Python", "Hello {}".format(gxc.gid))
 
 if __name__ == "__main__":

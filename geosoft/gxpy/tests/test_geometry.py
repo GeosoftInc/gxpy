@@ -476,8 +476,8 @@ class Test(GXPYTest):
         self.assertEqual(tuple(pp[0]), (999999.99835706223, 12000000.002281997, 0.0))
         self.assertEqual(tuple(pp[1]), (1000001.9983570619, 12000002.002281997, 0.0))
         pp = pp - p27[0]
-        self.assertEqual(tuple(pp[0]), (500000.0, 6000000.0000000009, 0.0))
-        self.assertEqual(tuple(pp[1]), (500001.99999999965, 6000002.0000000009, 0.0))
+        self.assertEqual(tuple(pp[0]), (500000.0, 6000000, 0.0))
+        self.assertEqual(tuple(pp[1]), (500001.99999999965, 6000002, 0.0))
 
         pd = p - p27
         self.assertEqual(str(pd.coordinate_system), "NAD83 / UTM zone 32N")

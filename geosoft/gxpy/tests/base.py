@@ -118,8 +118,8 @@ class GXPYTest(unittest.TestCase):
 
     @classmethod
     def tearDownGXPYTest(cls):
-        del cls._gx
-        gx._exit_cleanup()
+        cls._gx.__del__()
+        cls._gx = None
 
         gxu._temp_folder_override = None
         gxu._uuid_callable = None

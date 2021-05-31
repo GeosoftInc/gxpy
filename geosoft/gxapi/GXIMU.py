@@ -1264,6 +1264,29 @@ class GXIMU(gxapi_cy.WrapIMU):
 
 
     @classmethod
+    def grid_vc(cls, im_gi, im_go, updown, distance):
+        """
+        Apply vertical continuation convolution filter to a grid.
+        
+        :param im_gi:     Input image
+        :param im_go:     Output image
+        :param updown:    1 to calculate continuation upward, 0 downward
+        :param distance:  Continuation distance
+        :type  im_gi:     GXIMG
+        :type  im_go:     GXIMG
+        :type  updown:    int
+        :type  distance:  float
+
+        .. versionadded:: 9.9
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        gxapi_cy.WrapIMU._grid_vc(GXContext._get_tls_geo(), im_gi, im_go, updown, distance)
+        
+
+
+
+    @classmethod
     def grid_vd(cls, im_gi, im_go):
         """
         Apply vertical derivative convolution filter to a grid.

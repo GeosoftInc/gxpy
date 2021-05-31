@@ -24,6 +24,7 @@ from . import metadata
 from . import spatialdata
 from . import surface
 from . import dap_client
+from . import segy_reader
 
 __all__ = ['agg',
            'coordinate_system',
@@ -40,6 +41,7 @@ __all__ = ['agg',
            'map',
            'metadata',
            'project',
+           'segy_reader',
            'spatialdata',
            'surface',
            'system',

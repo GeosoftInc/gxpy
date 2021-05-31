@@ -3956,7 +3956,7 @@ class GXDU(gxapi_cy.WrapDU):
     @classmethod
     def sort_index(cls, db, line, ch, in_ch, sort):
         """
-        Create an ordered index of the contents of a channel.
+        Create an ordered index of the contents of a channel. The order of rows where compared items are the same is preserved.
         
         :param db:     Database
         :param line:   Line symbol
@@ -3981,7 +3981,7 @@ class GXDU(gxapi_cy.WrapDU):
     @classmethod
     def sort_index2(cls, db, line, ch1, sort1, ch2, sort2, in_ch):
         """
-        Create an ordered index from two channels
+        Create an ordered index from two channels.  The order of rows where compared items are the same is preserved.
         
         :param db:     Database
         :param line:   Line symbol
@@ -4003,6 +4003,31 @@ class GXDU(gxapi_cy.WrapDU):
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         gxapi_cy.WrapDU._sort_index2(GXContext._get_tls_geo(), db, line, ch1, sort1, ch2, sort2, in_ch)
+        
+
+
+
+    @classmethod
+    def sort_index_n(cls, db, line, chVV, orderVV, in_ch):
+        """
+        Create an ordered index from any number of channels.  The order of rows where compared items are the same is preserved.
+        
+        :param db:       Database
+        :param line:     Line symbol
+        :param chVV:     VV of channel symbols (INT). Sort by these channels [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param orderVV:  VV of sort order values (INT, one for each channel) :ref:`DU_SORT`
+        :param in_ch:    Output index channel (should be int) [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
+        :type  db:       GXDB
+        :type  line:     int
+        :type  chVV:     GXVV
+        :type  orderVV:  GXVV
+        :type  in_ch:    int
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        gxapi_cy.WrapDU._sort_index_n(GXContext._get_tls_geo(), db, line, chVV, orderVV, in_ch)
         
 
 
