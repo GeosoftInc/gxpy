@@ -372,6 +372,104 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
 
 
+    @classmethod
+    def reproject_geosurface_file(cls, input_surface_filename, output_surface_filename, ipj):
+        """
+        Repoject surface with the coordinate system of the `GXIPJ <geosoft.gxapi.GXIPJ>`.
+        
+        :param input_surface_filename:   Input Geosurface file name
+        :param output_surface_filename:  Output Geosurface file name
+        :param ipj:                      `GXIPJ <geosoft.gxapi.GXIPJ>` in which to place the new Geosurface coordinate system
+        :type  input_surface_filename:   str
+        :type  output_surface_filename:  str
+        :type  ipj:                      GXIPJ
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapMESHUTIL._reproject_geosurface_file(GXContext._get_tls_geo(), input_surface_filename.encode(), output_surface_filename.encode(), ipj)
+        
+
+
+
+    @classmethod
+    def project_geosurface_onto_grid(cls, surface_filename, surface_name, input_geometry_grid, projection_method, output_grid):
+        """
+        Repoject surface with the coordinate system of the `GXIPJ <geosoft.gxapi.GXIPJ>`.
+        
+        :param surface_filename:     Input Geosurface file name
+        :param surface_name:         Geosurface surface name
+        :param input_geometry_grid:  Input Geometry grid
+        :param projection_method:    :ref:`SURFACE_PROJECTION_METHOD`
+        :param output_grid:          Output grid
+        :type  surface_filename:     str
+        :type  surface_name:         str
+        :type  input_geometry_grid:  str
+        :type  projection_method:    int
+        :type  output_grid:          str
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapMESHUTIL._project_geosurface_onto_grid(GXContext._get_tls_geo(), surface_filename.encode(), surface_name.encode(), input_geometry_grid.encode(), projection_method, output_grid.encode())
+        
+
+
+
+    @classmethod
+    def copy_mesh_to_geo_surface_file(cls, input_surface_filename, surface_name, output_surface_filename):
+        """
+        Copy a mesh from one geosurface file to another
+        
+        :param input_surface_filename:   Input Geosurface file name
+        :param surface_name:             Geosurface surface name
+        :param output_surface_filename:  Output Geosurface file name
+        :type  input_surface_filename:   str
+        :type  surface_name:             str
+        :type  output_surface_filename:  str
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapMESHUTIL._copy_mesh_to_geo_surface_file(GXContext._get_tls_geo(), input_surface_filename.encode(), surface_name.encode(), output_surface_filename.encode())
+        
+
+
+
+    @classmethod
+    def apply_transformation(cls, inputSurfaceFile, inputSurfaceName, outputSurfaceFile, outputSurfaceName, transformationMethod, x, y, z):
+        """
+        Applies a transformation to a surface, see :ref:`SURFACE_TRANSFORMATION_METHOD`for available operations. The existing mesh will be preserved, and a new mesh will be created with the target name in the target file. Reprojection willbe handled automatically in the case that the coordinate systems differ.
+        
+        :param inputSurfaceFile:      Input surface file name
+        :param inputSurfaceName:      Input surface layer (mesh) name
+        :param outputSurfaceFile:     Output surface file name
+        :param outputSurfaceName:     Output surface layer (mesh) name
+        :param transformationMethod:  :ref:`SURFACE_TRANSFORMATION_METHOD`
+        :param x:                     X transformation component
+        :param y:                     Y transformation component
+        :param z:                     Z transformation component
+        :type  inputSurfaceFile:      str
+        :type  inputSurfaceName:      str
+        :type  outputSurfaceFile:     str
+        :type  outputSurfaceName:     str
+        :type  transformationMethod:  int
+        :type  x:                     float
+        :type  y:                     float
+        :type  z:                     float
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapMESHUTIL._apply_transformation(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurfaceName.encode(), outputSurfaceFile.encode(), outputSurfaceName.encode(), transformationMethod, x, y, z)
+        
+
+
+
 
 
 ### endblock ClassImplementation

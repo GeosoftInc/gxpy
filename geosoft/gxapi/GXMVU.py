@@ -594,6 +594,41 @@ class GXMVU(gxapi_cy.WrapMVU):
 
 
     @classmethod
+    def color_bar_reg_ex(cls, mview, st_hist, itr, itr2, reg, vv):
+        """
+        Create a Color Bar in view
+        
+        :param mview:    View
+        :param st_hist:  `GXST <geosoft.gxapi.GXST>` with histogram info of original
+        :param itr:      Itr
+        :param itr2:     Optional 2nd Itr (can be null)
+        :param reg:      Parameters
+        :param vv:       Ranges
+        :type  mview:    GXMVIEW
+        :type  st_hist:  GXST
+        :type  itr:      GXITR
+        :type  itr2:     GXITR
+        :type  reg:      GXREG
+        :type  vv:       GXVV
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** See `color_bar_reg <geosoft.gxapi.GXMVU.color_bar_reg>`.  This is the same except for the
+        additional Ranges VV parameter.        
+        The VV is not part of the REG object, it contains the interval values for the exact interval option from an ASCII file.
+
+        .. seealso::
+
+            `color_bar_reg <geosoft.gxapi.GXMVU.color_bar_reg>`
+        """
+        gxapi_cy.WrapMVU._color_bar_reg_ex(GXContext._get_tls_geo(), mview, st_hist, itr, itr2, reg, vv)
+        
+
+
+
+    @classmethod
     def contour(cls, mview, con, grid):
         """
         Creates a contour map.

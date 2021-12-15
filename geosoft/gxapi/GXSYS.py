@@ -2086,6 +2086,56 @@ class GXSYS(gxapi_cy.WrapSYS):
 
 
     @classmethod
+    def publish_datasets_to_central(cls, instance_uuid, project_uuid, project_name, central_server_guid, central_branch_id, central_revision_id, metadata_as_json, parent_event_id):
+        """
+        Publish datasets to Central
+        
+        :param instance_uuid:        Central Instance UUID
+        :param project_uuid:         Project UUID
+        :param project_name:         Project name
+        :param central_server_guid:  Central server GUID
+        :param central_branch_id:    Branch ID
+        :param central_revision_id:  Revision ID
+        :param metadata_as_json:     metadata as JSON
+        :param parent_event_id:      Parent Event ID
+        :type  instance_uuid:        str
+        :type  project_uuid:         str
+        :type  project_name:         str
+        :type  central_server_guid:  str_ref
+        :type  central_branch_id:    int_ref
+        :type  central_revision_id:  int_ref
+        :type  metadata_as_json:     str
+        :type  parent_event_id:      str
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        central_server_guid.value, central_branch_id.value, central_revision_id.value = gxapi_cy.WrapSYS._publish_datasets_to_central(GXContext._get_tls_geo(), instance_uuid.encode(), project_uuid.encode(), project_name.encode(), central_server_guid.value.encode(), central_branch_id.value, central_revision_id.value, metadata_as_json.encode(), parent_event_id.encode())
+        
+
+
+
+    @classmethod
+    def get_publish_path_for_central(cls, project_uuid, cache_path):
+        """
+        Get cache path to publish datasets to Central
+        
+        :param project_uuid:  Project UUID
+        :param cache_path:    Returned cache path
+        :type  project_uuid:  str
+        :type  cache_path:    str_ref
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        cache_path.value = gxapi_cy.WrapSYS._get_publish_path_for_central(GXContext._get_tls_geo(), project_uuid.encode(), cache_path.value.encode())
+        
+
+
+
+    @classmethod
     def connect_with_current_central_instance(cls, name, base_path, url, token):
         """
         Query information necessary to communicate with current Central Instance

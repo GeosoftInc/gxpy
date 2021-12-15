@@ -72,6 +72,40 @@ class GXITR(gxapi_cy.WrapITR):
 
 
 
+    def set_name(self, name):
+        """
+        Set the name of the `GXITR <geosoft.gxapi.GXITR>`.
+        
+        :param name:  Name to set
+        :type  name:  str
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._set_name(name.encode())
+        
+
+
+
+
+    def get_name(self, name):
+        """
+        Get the name of the `GXITR <geosoft.gxapi.GXITR>`.
+        
+        :param name:  Name returned
+        :type  name:  str_ref
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        name.value = self._get_name(name.value.encode())
+        
+
+
+
+
     def change_brightness(self, brt):
         """
         Change the brightness.
@@ -331,6 +365,28 @@ class GXITR(gxapi_cy.WrapITR):
 
 
 
+    def get_zone_base_color(self, zone, color):
+        """
+        Get the base color in a zone of the `GXITR <geosoft.gxapi.GXITR>`
+        
+        :param zone:   Number of the zone to set.
+        :param color:  :ref:`MVIEW_COLOR`
+        :type  zone:   int
+        :type  color:  int_ref
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Valid indices are 0 to N-1, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
+        The base colour is the colour in the ITR before any brightness is applied.
+        """
+        color.value = self._get_zone_base_color(zone, color.value)
+        
+
+
+
+
     def color_value(self, val):
         """
         Transform single data value to color
@@ -386,6 +442,60 @@ class GXITR(gxapi_cy.WrapITR):
         """
         ret_val = self._get_zone_model_type()
         return ret_val
+
+
+
+
+    def get_zone_model(self, model, parameters):
+        """
+        Get the `GXITR <geosoft.gxapi.GXITR>` zone model (e.g. Linear, LogLin, Equal Area) and the accompanying values (if defined)
+        
+        :param model:       :ref:`ITR_ZONE_MODEL`
+        :param parameters:  `GXVV <geosoft.gxapi.GXVV>` object (REAL): see notes for values returned
+        :type  model:       int_ref
+        :type  parameters:  GXVV
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** The following parameters are returned for the following values returned for :ref:`ITR_ZONE_MODEL`:
+        ITR_ZONE_MODEL_LINEAR: [0]: Contour, [1]: Min, [2]: Max
+        ITR_ZONE_MODEL_LOGLIN: [0]: Contour, [1]: Min, [2]: Max
+        ITR_ZONE_MODEL_NORMAL: [0]: Contour, [1]: Mean, [2]: Standard Deviation, [3]: Exponent
+        ITR_ZONE_MODEL_EQUAL: [0]: Contour
+        All other types do not return any values (the VV will be empty).
+        """
+        model.value = self._get_zone_model(model.value, parameters)
+        
+
+
+
+
+    def set_zone_model(self, model, parameters):
+        """
+        Set the `GXITR <geosoft.gxapi.GXITR>` zone model (e.g. Linear, LogLin, Equal Area) and the accompanying values (if defined)
+        
+        :param model:       :ref:`ITR_ZONE_MODEL`
+        :param parameters:  `GXVV <geosoft.gxapi.GXVV>` object (REAL): see notes for values returned
+        :type  model:       int
+        :type  parameters:  GXVV
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** The following parameters are required for the following values of :ref:`ITR_ZONE_MODEL`:
+        ITR_ZONE_MODEL_LINEAR: [0]: Contour, [1]: Min, [2]: Max
+        ITR_ZONE_MODEL_LOGLIN: [0]: Contour, [1]: Min, [2]: Max
+        ITR_ZONE_MODEL_NORMAL: [0]: Contour, [1]: Mean, [2]: Standard Deviation, [3]: Exponent
+        ITR_ZONE_MODEL_EQUAL: [0]: Contour
+        All other types do not require any values (the VV will be empty).
+        NOTE: This will not change the actual ranges, so care is needed when using this function that the input
+        specification accurately reflects the actual ranges.
+        """
+        self._set_zone_model(model, parameters)
+        
 
 
 
@@ -509,9 +619,55 @@ class GXITR(gxapi_cy.WrapITR):
 
         .. seealso::
 
-            `change_brightness <geosoft.gxapi.GXITR.change_brightness>`, `GXAGG.get_brightness <geosoft.gxapi.GXAGG.get_brightness>`, `GXAGG.change_brightness <geosoft.gxapi.GXAGG.change_brightness>`
+            `change_brightness <geosoft.gxapi.GXITR.change_brightness>`, `get_contrast <geosoft.gxapi.GXITR.get_contrast>`, `set_bright_contrast <geosoft.gxapi.GXITR.set_bright_contrast>`
         """
         ret_val = self._get_brightness()
+        return ret_val
+
+
+
+
+    def get_contrast(self):
+        """
+        Get the contrast setting of the `GXITR <geosoft.gxapi.GXITR>`
+        
+
+        :returns:    The contrast setting of the `GXITR <geosoft.gxapi.GXITR>`
+        :rtype:      float
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Brightness can range from 0.0 (flat) to 1.0 (normal full contrast).
+
+        .. seealso::
+
+            `change_brightness <geosoft.gxapi.GXITR.change_brightness>`, `GXAGG.get_brightness <geosoft.gxapi.GXAGG.get_brightness>`, `set_bright_contrast <geosoft.gxapi.GXITR.set_bright_contrast>`
+        """
+        ret_val = self._get_contrast()
+        return ret_val
+
+
+
+
+    def get_contour(self):
+        """
+        Get the contour value associated with the current transform model of the `GXITR <geosoft.gxapi.GXITR>`
+        
+
+        :returns:    The contour setting of the `GXITR <geosoft.gxapi.GXITR>`
+        :rtype:      float
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** The Linear, Normal and Equal-Area transforms accept a contour value as part of their definitions on creation.
+        All the colour-breaks are rounded to the nearest integral multiple of the contour value (if defined).
+        This function returns the value defined, and rDUMMY if none is defined.
+        """
+        ret_val = self._get_contour()
         return ret_val
 
 
@@ -725,10 +881,80 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
-        **Note:** Valid indices are 0 to N-1, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
+        **Note:** "
+                       Valid indices are 0 to N-1, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
+                       This function modifies the colours as rendered, including applied
+                       brightness, and triggers an internal reset of the ITR brightness
+                       to zero, with all the "rendered" colours becoming the "base" colours.
         """
         self._set_zone_color(zone, color)
         
+
+
+
+
+    def set_zone_base_color(self, zone, color):
+        """
+        Set the color in a zone of the `GXITR <geosoft.gxapi.GXITR>`
+        
+        :param zone:   Number of the zone to set.
+        :param color:  :ref:`MVIEW_COLOR`
+        :type  zone:   int
+        :type  color:  int
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** "
+                       Valid indices are 0 to N-1, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
+                       This function modifies the "base" colours directly. The base colours have
+                       the current brightness applied to produce the rendered colours. The 
+                       internal brightness remains unchanged.
+        """
+        self._set_zone_base_color(zone, color)
+        
+
+
+
+
+    def set_zone_active(self, zone, active):
+        """
+        Set whether a zone of the `GXITR <geosoft.gxapi.GXITR>` is active (1) or rendered trasparent (0)
+        
+        :param zone:    Number of the zone to set.
+        :param active:  1: active, 0: inactive (transparent)
+        :type  zone:    int
+        :type  active:  int
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Valid indices are 0 to N-1, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
+        """
+        self._set_zone_active(zone, active)
+        
+
+
+
+
+    def get_zone_active(self, zone):
+        """
+        Get whether a zone of the `GXITR <geosoft.gxapi.GXITR>` is active (1) or rendered trasparent (0)
+        
+        :param zone:  Number of the zone to set.
+        :type  zone:  int
+        :rtype:       int
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Valid indices are 0 to N-1, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
+        """
+        ret_val = self._get_zone_active(zone)
+        return ret_val
 
 
 

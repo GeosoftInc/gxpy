@@ -476,6 +476,95 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
 
 
+    @classmethod
+    def get_server_and_project_guid(cls, server_id, project_id):
+        """
+        Return the unique identifier of the project and server.
+        
+        :param server_id:   Server ID
+        :param project_id:  Project ID
+        :type  server_id:   str_ref
+        :type  project_id:  str_ref
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Return the unique identifier of the project and server.
+        """
+        server_id.value, project_id.value = gxapi_cy.WrapPROJ._get_server_and_project_guid(GXContext._get_tls_geo(), server_id.value.encode(), project_id.value.encode())
+        
+
+
+
+    @classmethod
+    def set_central_project_information(cls, server_guid, project_guid, branch_id, revision_id, cs_info):
+        """
+        Set Central project information.
+        
+        :param server_guid:   server guid
+        :param project_guid:  project guid
+        :param branch_id:     branch ID
+        :param revision_id:   revision ID
+        :param cs_info:       Coordinate system information, either EPSG or WKT
+        :type  server_guid:   str
+        :type  project_guid:  str
+        :type  branch_id:     int
+        :type  revision_id:   int
+        :type  cs_info:       str
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Set Central project information.
+        """
+        gxapi_cy.WrapPROJ._set_central_project_information(GXContext._get_tls_geo(), server_guid.encode(), project_guid.encode(), branch_id, revision_id, cs_info.encode())
+        
+
+
+
+    @classmethod
+    def get_central_project_information(cls, instance, project, crs, branch, rev_id, rev_date, rev_note, rev_stage, rev_author):
+        """
+        Get Central project information.
+        
+        :param instance:    Instance name
+        :param project:     Project name
+        :param crs:         Coordinate Reference System
+        :param branch:      Branch name
+        :param rev_id:      Revision Id
+        :param rev_date:    Revision date
+        :param rev_note:    Revision note
+        :param rev_stage:   Revision stage
+        :param rev_author:  Revision author
+        :type  instance:    str_ref
+        :type  project:     str_ref
+        :type  crs:         str_ref
+        :type  branch:      str_ref
+        :type  rev_id:      str_ref
+        :type  rev_date:    str_ref
+        :type  rev_note:    str_ref
+        :type  rev_stage:   str_ref
+        :type  rev_author:  str_ref
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Get Central project information.
+        """
+        instance.value, project.value, crs.value, branch.value, rev_id.value, rev_date.value, rev_note.value, rev_stage.value, rev_author.value = gxapi_cy.WrapPROJ._get_central_project_information(GXContext._get_tls_geo(), instance.value.encode(), project.value.encode(), crs.value.encode(), branch.value.encode(), rev_id.value.encode(), rev_date.value.encode(), rev_note.value.encode(), rev_stage.value.encode(), rev_author.value.encode())
+        
+
+
+
 
 
 ### endblock ClassImplementation

@@ -1113,6 +1113,40 @@ GRID3D_THEMATIC = 2
 
 
 #
+# IMG_DISPLAY_PROPERTY constants
+#
+# Image display property
+
+#: Shading inclination
+IMG_SHADING_INCLINATION = 0
+#: Shading declination
+IMG_SHADING_DECLINATION = 1
+#: Shading scale
+IMG_SHADING_SCALE = 2
+#: Shading contrast (0-1)
+IMG_SHADING_CONTRAST = 3
+#: Shading brightness (0-1)
+IMG_SHADING_BRIGHTNESS = 4
+#: Shading wet look (0 or 1)?
+IMG_SHADING_WETLOOK = 5
+#: Zone colours reversed from originals (0 or 1)?
+IMG_COLOURS_REVERSED = 6
+#: Is smoothing enabled (0 or 1)?
+IMG_SMOOTHING_ENABLED = 7
+#: Is shading enabled (0 or 1)?
+IMG_SHADING_ENABLED = 8
+
+#
+# IMG_FAULT constants
+#
+# Fault type
+
+#: Polyline
+IMG_FAULT_POLYLINE = 0
+#: Polygon
+IMG_FAULT_POLYGON = 1
+
+#
 # IMG_FILE constants
 #
 # Image open modes
@@ -1702,7 +1736,9 @@ ITR_ZONE_MODEL_NORMAL = 2
 #: The `GXITR <geosoft.gxapi.GXITR>` is set up with an equal area transform.
 ITR_ZONE_MODEL_EQUAL = 3
 #: The `GXITR <geosoft.gxapi.GXITR>` is set up with a log-linear transform.
-ITR_MODEL_LOGLIN = 4	
+ITR_MODEL_LOGLIN = 4
+#: The `GXITR <geosoft.gxapi.GXITR>` is set up with a log-linear transform.
+ITR_ZONE_MODEL_LOGLIN = 4	
 
 #
 # GXKML Constants
@@ -2053,7 +2089,29 @@ SURFACE_CLIP_SUCCESS = 0
 #: Surface clipping successful, but with empty output
 SURFACE_CLIP_SUCCESS_EMPTY = 1
 #: Surface clipping fail
-SURFACE_CLIP_FAIL = 2	
+SURFACE_CLIP_FAIL = 2
+
+#
+# SURFACE_PROJECTION_METHOD constants
+#
+# Surface projection method
+
+#: Maximum value: first intersection from the top
+SURFACE_PROJECTION_MAXIMUM = 0
+#: Minimum value: first intersection from the bottom
+SURFACE_PROJECTION_MINIMUM = 1
+#: Average value: all intersections
+SURFACE_PROJECTION_AVERAGE = 2
+
+#
+# SURFACE_TRANSFORMATION_METHOD constants
+#
+# Surface transformation method
+
+#: Transforms the surface by shifting it, provided dX, dY, dZ
+SURFACE_TRANSFORMATION_METHOD_SHIFT = 0
+#: Transforms the surface by scaling it, provided sX, sY, sZ
+SURFACE_TRANSFORMATION_METHOD_SCALE = 1	
 
 #
 # GXMETA Constants
@@ -3839,7 +3897,7 @@ TD_ICON_CONFIRMATION = 5
 # TaskDialog Common Buttons
 
 #: No common buttons.
-TD_BUTTON_NONE = 1
+TD_BUTTON_NONE = 0
 #: Button results in `TD_ID_OK <geosoft.gxapi.TD_ID_OK>` return value.
 TD_BUTTON_OK = 1
 #: Button results in `TD_ID_YES <geosoft.gxapi.TD_ID_YES>` return value.
@@ -4520,6 +4578,48 @@ COM_STOPBITS_ONE = 0
 COM_STOPBITS_ONE5 = 1
 #: Two
 COM_STOPBITS_TWO = 2	
+
+#
+# GXDCOL Constants
+# 
+
+
+
+#
+# BRIGHT constants
+#
+# Brightness type
+
+#: Set the brightness of all the layers
+BRIGHT_ALL = 0
+#: Set the brightness of the current layer
+BRIGHT_LAYER = 1
+
+#
+# BRIGHTNESS_TYPES constants
+#
+# Detrending option
+
+#: Can set the brightness only for object as a whole
+BRIGHTNESS_ALL = 0
+#: Can set the brightness for object as a whole and for individual layers
+BRIGHTNESS_ALL_AND_LAYERS = 1
+
+#
+# DCOL_TYPE constants
+#
+# Layer type
+
+#: Unknown
+DCOL_TYPE_UNKNOWN = 0
+#: Grid
+DCOL_TYPE_GRID = 1
+#: Symbols
+DCOL_TYPE_SYMBOLS = 2
+#: Voxel
+DCOL_TYPE_VOXEL = 3
+#: Vector voxel
+DCOL_TYPE_VECTOR_VOXEL = 4	
 
 #
 # GXDGW Constants
@@ -6790,6 +6890,24 @@ SEMPLOT_PLOT_TRIPLOT = 2
 SEMPLOT_PLOT_UNKNOWN = 3	
 
 #
+# GXSHD Constants
+# 
+
+
+
+#
+# SHD_FIX constants
+#
+# Interactive tracking constraints.
+
+#: None
+SHD_FIX_NONE = 0
+#: Inclination
+SHD_FIX_INCLINATION = 1
+#: Declination
+SHD_FIX_DECLINATION = 2	
+
+#
 # GXSHP Constants
 # 
 
@@ -7302,6 +7420,7 @@ __all__ = [
     'GXBIGRID',
     'GXCHIMERA',
     'GXCOM',
+    'GXDCOL',
     'GXDGW',
     'GXDH',
     'GXDMPPLY',
@@ -7339,6 +7458,7 @@ __all__ = [
     'GXPROJ',
     'GXRGRD',
     'GXSEMPLOT',
+    'GXSHD',
     'GXSHP',
     'GXSQLSRV',
     'GXSTK',
@@ -7436,6 +7556,7 @@ from .GXARCSYS import GXARCSYS
 from .GXBIGRID import GXBIGRID
 from .GXCHIMERA import GXCHIMERA
 from .GXCOM import GXCOM
+from .GXDCOL import GXDCOL
 from .GXDGW import GXDGW
 from .GXDH import GXDH
 from .GXDMPPLY import GXDMPPLY
@@ -7473,6 +7594,7 @@ from .GXPRAGA3 import GXPRAGA3
 from .GXPROJ import GXPROJ
 from .GXRGRD import GXRGRD
 from .GXSEMPLOT import GXSEMPLOT
+from .GXSHD import GXSHD
 from .GXSHP import GXSHP
 from .GXSQLSRV import GXSQLSRV
 from .GXSTK import GXSTK

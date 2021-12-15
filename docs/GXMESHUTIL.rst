@@ -50,4 +50,42 @@ Surface Clip Return Code
     
     .. autoattribute:: geosoft.gxapi.SURFACE_CLIP_FAIL
 
+
+.. _SURFACE_PROJECTION_METHOD:
+
+SURFACE_PROJECTION_METHOD constants
+-----------------------------------------------------------------------
+
+Surface projection method
+
+.. autodata:: geosoft.gxapi.SURFACE_PROJECTION_MAXIMUM
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SURFACE_PROJECTION_MAXIMUM
+.. autodata:: geosoft.gxapi.SURFACE_PROJECTION_MINIMUM
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SURFACE_PROJECTION_MINIMUM
+.. autodata:: geosoft.gxapi.SURFACE_PROJECTION_AVERAGE
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SURFACE_PROJECTION_AVERAGE
+
+
+.. _SURFACE_TRANSFORMATION_METHOD:
+
+SURFACE_TRANSFORMATION_METHOD constants
+-----------------------------------------------------------------------
+
+Surface transformation method
+
+.. autodata:: geosoft.gxapi.SURFACE_TRANSFORMATION_METHOD_SHIFT
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SURFACE_TRANSFORMATION_METHOD_SHIFT
+.. autodata:: geosoft.gxapi.SURFACE_TRANSFORMATION_METHOD_SCALE
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SURFACE_TRANSFORMATION_METHOD_SCALE
+
 	

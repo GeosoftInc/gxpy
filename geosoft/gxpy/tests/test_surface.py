@@ -45,7 +45,7 @@ class Test(GXPYTest):
                 self.assertEqual(str(surfdataset.coordinate_system), 'NAD83 / UTM zone 20N')
                 surface_name_list = surfdataset.surface_name_list
                 self.assertTrue('Isosurface 0.02' in surface_name_list)
-                self.assertTrue('Isosurface 0.005'in surface_name_list)
+                self.assertTrue('Isosurface 0.005' in surface_name_list)
                 self.assertTrue('Isosurface 0.01' in surface_name_list)
                 self.assertEqual(surfdataset.surface_guid('Isosurface 0.02'), '{ABCDEF02-2345-6789-6945-2301E0BC0A89}')
                 self.assertEqual(surfdataset.surface_dict[surfdataset.surface_guid('Isosurface 0.02')],
@@ -106,7 +106,7 @@ class Test(GXPYTest):
             v = surf.mesh().verticies_vv()
             f1, f2, f3 = f
             vx, vy, vz = v
-            
+
             self.assertEqual(len(vx), surf.verticies_count)
             self.assertEqual(len(vy), surf.verticies_count)
             self.assertEqual(len(vz), surf.verticies_count)
@@ -135,7 +135,6 @@ class Test(GXPYTest):
         with gxsurf.SurfaceDataset.open('billy', file_name=self.sfile) as surfdataset:
             self.assertEqual(surfdataset.name, 'billy')
 
-
     def test_temp(self):
         self.start()
 
@@ -158,7 +157,7 @@ class Test(GXPYTest):
             self.assertEqual(surfdataset.surface_guid('Isosurface 0.01'), '{ABCDEF00-2345-6789-6745-2301DEBC0A89}')
             self.assertEqual(surfdataset.surface_dict[surfdataset.surface_guid('Isosurface 0.01')], 'Isosurface 0.01')
             self.assertEqual(surfdataset.surface_guid('{ABCDEF00-2345-6789-6745-2301DEBC0A89}'),
-                                                      '{ABCDEF00-2345-6789-6745-2301DEBC0A89}')
+                             '{ABCDEF00-2345-6789-6745-2301DEBC0A89}')
 
             for surf in surfdataset:
                 self.assertTrue(surf.verticies_count > 0)
@@ -171,11 +170,11 @@ class Test(GXPYTest):
             self.assertEqual(surf.render_opacity, 0.5)
             self.assertEqual(surf.render_style, gxsurf.STYLE_SMOOTH)
             self.assertEqual(surf.extent_xyz, (440718.65079365077,
-                                           6129015.476190476,
-                                           -954.3756313323975,
-                                           441475.0,
-                                           6129475.0,
-                                           512.5))
+                                               6129015.476190476,
+                                               -954.3756313323975,
+                                               441475.0,
+                                               6129475.0,
+                                               512.5))
 
     def test_copy(self):
         self.start()
@@ -196,20 +195,20 @@ class Test(GXPYTest):
 
             surf = sd['Isosurface 0.01']
             self.assertEqual(surf.extent_xyz, (440718.65079365077,
-                                           6129015.476190476,
-                                           -954.3756313323975,
-                                           441475.0,
-                                           6129475.0,
-                                           512.5))
+                                               6129015.476190476,
+                                               -954.3756313323975,
+                                               441475.0,
+                                               6129475.0,
+                                               512.5))
 
             with gxsurf.Surface('maki') as s:
                 s.add_mesh(surf.mesh())
                 self.assertEqual(s.extent_xyz, (440718.65079365077,
-                                            6129015.476190476,
-                                            -954.3756313323975,
-                                            441475.0,
-                                            6129475.0,
-                                            512.5))
+                                                6129015.476190476,
+                                                -954.3756313323975,
+                                                441475.0,
+                                                6129475.0,
+                                                512.5))
 
     def test_new_mesh(self):
         self.start()
@@ -236,7 +235,6 @@ class Test(GXPYTest):
             v3d_file = v3d.file_name
             gxsurf.render(v3d, sd_fn, group_name='billy')
         self.crc_map(v3d_file)
-
 
     def test_exceptions(self):
         self.start()
@@ -429,7 +427,7 @@ class Test(GXPYTest):
                 s.render_opacity = 1
             fig_map = sd.figure_map(features=('NEATLINE',)).file_name
         self.crc_map(fig_map)
-        #gxviewer.view_document(fig_map, wait_for_close=True)
+        # gxviewer.view_document(fig_map, wait_for_close=True)
 
     def test_fig_map_legend(self):
         self.start()
@@ -526,5 +524,4 @@ class Test(GXPYTest):
 ###############################################################################################
 
 if __name__ == '__main__':
-
     unittest.main()

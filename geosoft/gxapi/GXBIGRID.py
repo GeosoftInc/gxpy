@@ -208,6 +208,49 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
 
 
+    @classmethod
+    def get_defaults(cls, db, x, y, z, cell, maxLineSeparation, maxPointSeparation, trendAngle, lowPassWavelength, highPass, noneLinear, preFilter):
+        """
+        Get default values for max line separation, max point separation and trend angle.
+        
+        :param db:                  Handle to a database
+        :param x:                   Y Channel
+        :param y:                   X Channel
+        :param z:                   Data channel
+        :param cell:                cell size
+        :param maxLineSeparation:   max line separation
+        :param maxPointSeparation:  max point separation
+        :param trendAngle:          trend angle
+        :param lowPassWavelength:   low-pass filter wavelength
+        :param highPass:            high-pass filter wavelength
+        :param noneLinear:          non-linear filter tolerance
+        :param preFilter:           pre-filter sample increment
+        :type  db:                  GXDB
+        :type  x:                   str
+        :type  y:                   str
+        :type  z:                   str
+        :type  cell:                float
+        :type  maxLineSeparation:   float_ref
+        :type  maxPointSeparation:  float_ref
+        :type  trendAngle:          float_ref
+        :type  lowPassWavelength:   float_ref
+        :type  highPass:            float_ref
+        :type  noneLinear:          float_ref
+        :type  preFilter:           float_ref
+
+        :returns:                   0 - Ok
+                                    1 - Error
+        :rtype:                     int
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        ret_val, maxLineSeparation.value, maxPointSeparation.value, trendAngle.value, lowPassWavelength.value, highPass.value, noneLinear.value, preFilter.value = gxapi_cy.WrapBIGRID._get_defaults(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), cell, maxLineSeparation.value, maxPointSeparation.value, trendAngle.value, lowPassWavelength.value, highPass.value, noneLinear.value, preFilter.value)
+        return ret_val
+
+
+
 
 
 ### endblock ClassImplementation

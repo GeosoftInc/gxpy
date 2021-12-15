@@ -284,6 +284,29 @@ class GXPG(gxapi_cy.WrapPG):
 
 
 
+    def set(self, col, row, value):
+        """
+        Write a single value to a 2D `GXPG <geosoft.gxapi.GXPG>`
+        
+        :param col:    iBx - element # in x (column #)
+        :param row:    iBy - element # in y (row #)
+        :param value:  value to set
+        :type  col:    int
+        :type  row:    int
+        :type  value:  float
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** This is a low-performance method.
+        """
+        self._set(col, row, value)
+        
+
+
+
+
     def read_col(self, col, o, n, vv):
         """
         Read a set of elements in X (column) from pager into vv

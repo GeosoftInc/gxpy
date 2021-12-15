@@ -111,5 +111,9 @@ ITR_ZONE_MODEL constants
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.ITR_MODEL_LOGLIN
+.. autodata:: geosoft.gxapi.ITR_ZONE_MODEL_LOGLIN
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.ITR_ZONE_MODEL_LOGLIN
 
 	

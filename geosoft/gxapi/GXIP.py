@@ -1642,6 +1642,83 @@ class GXIP(gxapi_cy.WrapIP):
 
 
 
+    def recalculate_derived_data(self, db, line_handle, channel_list, recalculate_xyz):
+        """
+        Recalculate derived channel values.
+        
+        :param db:               Database
+        :param line_handle:      line handle  [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
+        :param channel_list:     `GXLST <geosoft.gxapi.GXLST>` object - channel name overrides
+        :param recalculate_xyz:  Recalculate XYZ locations (TRUE or FALSE)?
+        :type  db:               GXDB
+        :type  line_handle:      int
+        :type  channel_list:     GXLST
+        :type  recalculate_xyz:  int
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** This function recalculates "derived" channel values from
+        "core" data. It duplicates and extends the functionality
+        of RecalateEx_IP by allowing for the input/output channel
+        names to be overridden, with extra control on what is calculated.
+
+            1. Recalculates the "STN" and "N" channels (depending on the system).
+            2. Recalculates the apparent resistivity "ResCalc",
+               average "IP_Avg" and metal factor "MF" channels
+            3. Recalculates the "X" and "Y" channels. One of these will
+               be equal to "STN", the other to the internally stored
+               line number for the current line.
+            4. Recalculate the "Z" channel, based on the current "Topo"
+               channel, and the "N" values.
+
+        Channel overrides are passed via a LST object, with the channel key (type)
+        passed in the LST_ITEM_NAME part, and the channel name passed in the 
+        LST_ITEM_VALUE part.
+
+        The following channel overrides supported 
+        (NOTE: Different behaviours for 2D and 3D arrays)
+
+        3D Electrode location channels (IP_ARRAY_3D_XXX):
+            "R1X", "R1Y", "R1Z", "R2X", "R2Y", "R2Z",
+            "T1X", "T1Y", "T1Z", "T2X", "T2Y", "T2Z" 
+            (electrodes not included or set to "" are not read)
+
+        or IN-LINE arrays (DPDP, PLDP, PLPL, GRAD)
+            "R1X", "R2X", "T1X", "T2X"  (In-line locations)
+            "R1Y", "R2Y", "T1Y", "T2Y"  (Across-line locations)
+            "R1Z", "R2Z", "T1Z", "T2Z"  (Z)
+            (for any electrode not include or set to "" the default channel name For
+             the array line direction, or the defined distant electrode location
+             is used)
+
+        Other input channels overridden if defined:
+            "Vp" (primary voltage - must be in mV)
+            "I" (current - must be in A)
+
+        Other output channels overridden if defined (if you DON'T want the
+        various output channels modified, then set the override values to ""):
+            "MF" (metal factor) - formulation defined in settings, 
+            "AvgIP" (average IP)
+            "AppRes" (apparent resistivity)
+            "N" (Pseudo-section pseudo-depth)
+            "Stn" (Station value)
+            "X" (Station "X" value)
+            "Y" (Station "Y" value)
+            "Z" (Station "Z" value)
+            "Topo" (Ground elevation at station location)
+
+         Recalculating XYZ will result in any channel grid makers from the IPIMPGRID.GX
+         being re-run, then if a maker exists for the Topo channel it is re-run, and
+         finally the Z channel is recalculated (see "RecalculateZ_IP").
+        """
+        self._recalculate_derived_data(db, line_handle, channel_list, recalculate_xyz)
+        
+
+
+
+
     def recalculate_z(self, db):
         """
         Recalculate Z channel values.
@@ -2127,6 +2204,51 @@ class GXIP(gxapi_cy.WrapIP):
         """
         ret_val = self._get_grids_vv()
         return GXVV(ret_val)
+
+
+
+
+    def get_line_data(self, db, line, vv_R1X, vv_R1Y, vv_R2X, vv_R2Y, vv_T1X, vv_T1Y, vv_T2X, vv_T2Y, vv_QC_IP, vv_QC_Res, data, vv_data):
+        """
+        Get electrodes, data and mask values for a single line.
+        
+        :param db:         `GXDB <geosoft.gxapi.GXDB>` object
+        :param line:       Line name ("" for all selected lines)
+        :param vv_R1X:     RX1 x locations (returned)
+        :param vv_R1Y:     RX1 y locations (returned)
+        :param vv_R2X:     RX2 x locations (returned)
+        :param vv_R2Y:     RX2 y locations (returned)
+        :param vv_T1X:     TX1 x locations (returned)
+        :param vv_T1Y:     TX1 y locations (returned)
+        :param vv_T2X:     TX2 x locations (returned)
+        :param vv_T2Y:     TX2 y locations (returned)
+        :param vv_QC_IP:   `GXIP <geosoft.gxapi.GXIP>` QC channel values ("QC" or "QC_IP") (returned)
+        :param vv_QC_Res:  Resistivity QC channel values ("QC_RES") (returned)
+        :param data:       data channel (optional)
+        :param vv_data:    data channel values (returned)
+        :type  db:         GXDB
+        :type  line:       str
+        :type  vv_R1X:     GXVV
+        :type  vv_R1Y:     GXVV
+        :type  vv_R2X:     GXVV
+        :type  vv_R2Y:     GXVV
+        :type  vv_T1X:     GXVV
+        :type  vv_T1Y:     GXVV
+        :type  vv_T2X:     GXVV
+        :type  vv_T2Y:     GXVV
+        :type  vv_QC_IP:   GXVV
+        :type  vv_QC_Res:  GXVV
+        :type  data:       str
+        :type  vv_data:    GXVV
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** True XY locations are returned for 2D arrays. Distant Electrode locations may be dummies.
+        """
+        self._get_line_data(db, line.encode(), vv_R1X, vv_R1Y, vv_R2X, vv_R2Y, vv_T1X, vv_T1Y, vv_T2X, vv_T2Y, vv_QC_IP, vv_QC_Res, data.encode(), vv_data)
+        
 
 
 

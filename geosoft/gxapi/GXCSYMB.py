@@ -271,6 +271,23 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
 
 
+    def get_stat(self, st):
+        """
+        Get the `GXST <geosoft.gxapi.GXST>` of the `GXCSYMB <geosoft.gxapi.GXCSYMB>`
+        
+        :param st:     `GXST <geosoft.gxapi.GXST>` object
+        :type  st:     GXST
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._get_stat(st)
+        
+
+
+
+
 
 ### endblock ClassImplementation
 ### block ClassExtend

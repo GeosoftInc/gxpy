@@ -4321,6 +4321,83 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
 
 
+    def get_folder_items_3d(self, parent_guid):
+        """
+        Get the list of folders in the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+        
+        :param parent_guid:  Folder parent GUID, or empty string for parent MVIEW
+        :type  parent_guid:  str
+        :rtype:              GXLST
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Returns name/guid pairs. Empty GUID indicates item is a group.
+        """
+        ret_val = self._get_folder_items_3d(parent_guid.encode())
+        return GXLST(ret_val)
+
+
+
+
+    def add_folder_3d(self, name, parent_guid, guid):
+        """
+        Add a folder to the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+        
+        :param name:         Folder name
+        :param parent_guid:  Folder parent GUID, or empty string for parent `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+        :param guid:         GUID
+        :type  name:         str
+        :type  parent_guid:  str
+        :type  guid:         str_ref
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        guid.value = self._add_folder_3d(name.encode(), parent_guid.encode(), guid.value.encode())
+        
+
+
+
+
+    def move_group_to_folder_3d(self, guid, group):
+        """
+        Add group to a folder in `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+        
+        :param guid:   Folder parent GUID, or empty string for parent `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+        :param group:  Group number
+        :type  guid:   str
+        :type  group:  int
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._move_group_to_folder_3d(guid.encode(), group)
+        
+
+
+
+
+    def delete_folder_3d(self, guid):
+        """
+        Delete a folder.
+        
+        :param guid:   Folder GUID.
+        :type  guid:   str
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._delete_folder_3d(guid.encode())
+        
+
+
+
+
     def find_group_by_guid(self, guid):
         """
         Find a Group by name.

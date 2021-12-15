@@ -255,6 +255,33 @@ class GXGUI(gxapi_cy.WrapGUI):
 
 
     @classmethod
+    def grid_stat_hist5(cls, grid_name_1, grid_name_2, grid_name_3, grid_name_4, grid_name_5):
+        """
+        Display Histogram of up to 5 different grids
+        
+        :param grid_name_1:  Name of the first grid to get stats from (required)
+        :param grid_name_2:  Optional name of the second grid to get stats from
+        :param grid_name_3:  Optional name of the third grid to get stats from
+        :param grid_name_4:  Optional name of the fourth grid to get stats from
+        :param grid_name_5:  Optional name of the fifth grid to get stats from
+        :type  grid_name_1:  str
+        :type  grid_name_2:  str
+        :type  grid_name_3:  str
+        :type  grid_name_4:  str
+        :type  grid_name_5:  str
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+        """
+        gxapi_cy.WrapGUI._grid_stat_hist5(GXContext._get_tls_geo(), grid_name_1.encode(), grid_name_2.encode(), grid_name_3.encode(), grid_name_4.encode(), grid_name_5.encode())
+        
+
+
+
+    @classmethod
     def voxel_stat_hist(cls, vox_name):
         """
         Display Histogram of Voxel
@@ -1247,6 +1274,35 @@ class GXGUI(gxapi_cy.WrapGUI):
         from the name of the table opened - e.g. "HOLELOCATION.i4".
         """
         ret_val, connect.value, temp.value, table.value, type.value = gxapi_cy.WrapGUI._import_drill_database_odbc(GXContext._get_tls_geo(), connect.value.encode(), temp.value.encode(), table.value.encode(), type.value, reg)
+        return ret_val
+
+
+
+    @classmethod
+    def configure_connection(cls, connect, temp, table):
+        """
+        Configures connection string from ODBC database data.
+        
+        :param connect:  Connection string
+        :param temp:     Template to make
+        :param table:    Name of table
+        :type  connect:  str_ref
+        :type  temp:     str_ref
+        :type  table:    str_ref
+
+        :returns:        0 - OK
+                         -1 - Cancel
+        :rtype:          int
+
+        .. versionadded:: 9.9.1
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** 
+        """
+        ret_val, connect.value, temp.value, table.value = gxapi_cy.WrapGUI._configure_connection(GXContext._get_tls_geo(), connect.value.encode(), temp.value.encode(), table.value.encode())
         return ret_val
 
 

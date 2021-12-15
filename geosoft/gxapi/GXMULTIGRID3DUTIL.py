@@ -292,6 +292,45 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
 
     @classmethod
+    def import_from_gdb_ignore_stored_voxel_geometry(cls, grid3d_file, db, symb):
+        """
+        Imports from a Geosoft Database, but ignores any stored internal geometry
+        
+        :param grid3d_file:  Name of output Voxel file
+        :param db:           `GXDB <geosoft.gxapi.GXDB>` To import from
+        :param symb:         Symbol to import data from
+        :type  grid3d_file:  str
+        :type  db:           GXDB
+        :type  symb:         int
+
+        .. versionadded:: 2021.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapMULTIGRID3DUTIL._import_from_gdb_ignore_stored_voxel_geometry(GXContext._get_tls_geo(), grid3d_file.encode(), db, symb)
+        
+
+
+
+    @classmethod
+    def database_contains_voxel_geometry(cls, db):
+        """
+        Returns 1 if the original voxel geometry is stored inside the database
+        
+        :param db:  `GXDB <geosoft.gxapi.GXDB>` To import from
+        :type  db:  GXDB
+        :rtype:      int
+
+        .. versionadded:: 2021.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val = gxapi_cy.WrapMULTIGRID3DUTIL._database_contains_voxel_geometry(GXContext._get_tls_geo(), db)
+        return ret_val
+
+
+
+    @classmethod
     def import_from_vector_gdb(cls, grid3d_file, db, vector_type, symb_x, symb_y, symb_z, inc, dec):
         """
         Imports from a Vector Geosoft Database

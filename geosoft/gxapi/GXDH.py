@@ -4028,6 +4028,34 @@ class GXDH(gxapi_cy.WrapDH):
 
 
 
+    @classmethod
+    def update_template_blob(cls, db, templDestination, templSource, imp_type):
+        """
+        Update the import template and store to the database if necessary.
+        
+        :param db:                `GXDB <geosoft.gxapi.GXDB>` Handle
+        :param templDestination:  Destination template name
+        :param templSource:       Source template name
+        :param imp_type:          :ref:`DH_DATA`
+        :type  db:                GXDB
+        :type  templDestination:  str
+        :type  templSource:       str
+        :type  imp_type:          int
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** The template will be updated using another template.
+
+        The import types correspond to the DHIMPORT.IMPTYPE variable:
+        0: ASCII, 1: Database/XLS, 2: ODBC
+        """
+        gxapi_cy.WrapDH._update_template_blob(GXContext._get_tls_geo(), db, templDestination.encode(), templSource.encode(), imp_type)
+        
+
+
+
 
     def significant_intersections_db(self, mast_db, comp_db, hol_sel, assay_ch, cut_off_grade, clip_grade, min_composite_thickness, min_composite_grade, max_internal_dilution_length, min_internal_dilution_grade, grade_for_missing_assays):
         """

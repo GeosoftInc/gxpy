@@ -3,6 +3,7 @@
 # NOTICE: Do not edit anything here, it is generated code
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+from .GXST import GXST
 
 
 ### endblock ClassImports
@@ -157,6 +158,33 @@ class GXAGG(gxapi_cy.WrapAGG):
         """
         self._get_layer_itr(layer, itr)
         
+
+
+
+
+    def get_layer_st(self, layer):
+        """
+        Get a `GXST <geosoft.gxapi.GXST>` filled with layer statistics
+        
+        :param layer:  Layer number
+        :type  layer:  int
+
+        :returns:      `GXST <geosoft.gxapi.GXST>` object
+        :rtype:        GXST
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Layers are numbered from 0, consecutively in the order they are
+        placed in the aggregate.
+
+        An error will occur if the layer does not exist.
+
+        Caller must create/destroy `GXITR <geosoft.gxapi.GXITR>`.
+        """
+        ret_val = self._get_layer_st(layer)
+        return GXST(ret_val)
 
 
 

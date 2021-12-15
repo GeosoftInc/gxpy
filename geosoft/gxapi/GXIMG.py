@@ -1043,6 +1043,29 @@ class GXIMG(gxapi_cy.WrapIMG):
 
 
 
+    def get_display_property(self, query):
+        """
+        Gets display information about this image.
+        
+        :param query:  :ref:`IMG_DISPLAY_PROPERTY`
+        :type  query:  int
+        :rtype:        float
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** These values do not necessarily match the grid as currently displayed; they are retrieved and used whenever
+        the grid is displayed in a viewer or map, and are used (for instance) to set the default values
+        in the Display Grid GX.
+        Some values return only values of 0 or 1.
+        """
+        ret_val = self._get_display_property(query)
+        return ret_val
+
+
+
+
     def get_z(self, x, y):
         """
         Gets the grid value at a point
@@ -1084,6 +1107,68 @@ class GXIMG(gxapi_cy.WrapIMG):
         """
         ret_val = self._query_double(query)
         return ret_val
+
+
+
+
+    def set_display_property(self, query, value):
+        """
+        Sets display information about this image.
+        
+        :param query:  :ref:`IMG_DISPLAY_PROPERTY`
+        :param value:  Value
+        :type  query:  int
+        :type  value:  float
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** These values do NOT take immediate effect; they are retrieved and used whenever
+        the grid is displayed in a viewer or map, and are used (for instance) to set the default values
+        in the Display Grid GX.
+        Some values take on only values of 0 or 1.
+        """
+        self._set_display_property(query, value)
+        
+
+
+
+
+    def get_shadow_grid_path(self, path):
+        """
+        Gets the name of a view.
+        
+        :param path:  Shadow grid path name returned
+        :type  path:  str_ref
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        path.value = self._get_shadow_grid_path(path.value.encode())
+        
+
+
+
+
+    def set_shadow_grid_path(self, path):
+        """
+        Sets display information about this image.
+        
+        :param path:  Grid path for the shadow grid
+        :type  path:  str
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** This values does NOT take immediate effect; it is retrieved and used whenever
+        the grid is displayed in a viewer or map, and is used (for instance) to set the default value
+        in the Display Grid GX.
+        """
+        self._set_shadow_grid_path(path.encode())
+        
 
 
 
@@ -1321,6 +1406,94 @@ class GXIMG(gxapi_cy.WrapIMG):
         """
         ret_val = self._get_double_parameter(name.encode())
         return ret_val
+
+
+
+
+# Faults
+
+
+
+    def number_of_faults(self):
+        """
+        Returns the number of individual fault traces stored in the IMG
+        
+        :rtype:      int
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Faults are paths of (X, Y) locations, and are either polylines or polygons.
+        """
+        ret_val = self._number_of_faults()
+        return ret_val
+
+
+
+
+    def get_fault(self, index, xVV, yVV, type):
+        """
+        Retrieve a fault trace
+        
+        :param index:  Fault index (0 to N-1)
+        :param xVV:    X locations `GXVV <geosoft.gxapi.GXVV>` (REAL)
+        :param yVV:    Y locations `GXVV <geosoft.gxapi.GXVV>` (REAL)
+        :param type:   Fault type :ref:`IMG_FAULT`
+        :type  index:  int
+        :type  xVV:    GXVV
+        :type  yVV:    GXVV
+        :type  type:   int_ref
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        type.value = self._get_fault(index, xVV, yVV, type.value)
+        
+
+
+
+
+    def add_fault(self, xVV, yVV, type):
+        """
+        Add a fault trace
+        
+        :param xVV:   X locations `GXVV <geosoft.gxapi.GXVV>`
+        :param yVV:   Y locations `GXVV <geosoft.gxapi.GXVV>`
+        :param type:  Fault type :ref:`IMG_FAULT`
+        :type  xVV:   GXVV
+        :type  yVV:   GXVV
+        :type  type:  int
+
+        :returns:     index of the added fault
+        :rtype:       int
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** The X and Y values cannot be dummies. Polygons require at least three locations, Polylines require at least two.
+        """
+        ret_val = self._add_fault(xVV, yVV, type)
+        return ret_val
+
+
+
+
+    def delete_fault(self, index):
+        """
+        Delete a fault trace
+        
+        :param index:  Fault index (0 to N-1)
+        :type  index:  int
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._delete_fault(index)
+        
 
 
 

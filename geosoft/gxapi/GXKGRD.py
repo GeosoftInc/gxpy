@@ -255,6 +255,36 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
 
 
+    @classmethod
+    def get_defaults(cls, db, x, y, z, blankingDistance, lowPassDesamplingFactor):
+        """
+        Get default blanking distance and low-pass desampling factor.
+        
+        :param db:                       Handle to a database
+        :param x:                        Y Channel
+        :param y:                        X Channel
+        :param z:                        Data channel
+        :param blankingDistance:         blanking distance
+        :param lowPassDesamplingFactor:  low-pass desampling factor
+        :type  db:                       GXDB
+        :type  x:                        str
+        :type  y:                        str
+        :type  z:                        str
+        :type  blankingDistance:         float_ref
+        :type  lowPassDesamplingFactor:  int_ref
+
+        :returns:                        0 OK, 1 Error.
+        :rtype:                          int
+
+        .. versionadded:: 2021.2
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        ret_val, blankingDistance.value, lowPassDesamplingFactor.value = gxapi_cy.WrapKGRD._get_defaults(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), blankingDistance.value, lowPassDesamplingFactor.value)
+        return ret_val
+
+
+
 
 
 ### endblock ClassImplementation
