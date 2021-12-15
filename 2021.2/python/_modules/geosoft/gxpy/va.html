@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxpy.va &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.va</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxpy.va</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Geosoft vector arrays (vector of array elements)</span>
+
+<span class="sd">:Classes:</span>
+
+<span class="sd">    =============== =========================</span>
+<span class="sd">    :class:`GXva`   vector of array elements</span>
+<span class="sd">    =============== =========================</span>
+
+<span class="sd">VA and VV classes are related based on a key called a *fiducial*, </span>
+<span class="sd">which has a start value and increment between values.  The :meth:`refid` method can be used to resample vector</span>
+<span class="sd">data to the same fiducial so that vector-to-vector operations can be performed.</span>
+
+<span class="sd">.. seealso:: :mod:`geosoft.gxpy.vv`, :mod:`geosoft.gxapi.GXVA`, :mod:`geosoft.gxapi.GXVV`</span>
+
+<span class="sd">.. note::</span>
+
+<span class="sd">    Regression tests provide usage examples:    </span>
+<span class="sd">    `va tests &lt;https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gxva.py&gt;`_</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Sequence</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">geosoft</span>
+<span class="kn">import</span> <span class="nn">geosoft.gxapi</span> <span class="k">as</span> <span class="nn">gxapi</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">utility</span> <span class="k">as</span> <span class="n">gxu</span>
+
+<span class="n">__version__</span> <span class="o">=</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">__version__</span>
+
+<span class="k">def</span> <span class="nf">_t</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">gxpy</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="VAException"><a class="viewcode-back" href="../../../geosoft.gxpy.va.html#geosoft.gxpy.va.VAException">[docs]</a><span class="k">class</span> <span class="nc">VAException</span><span class="p">(</span><span class="n">geosoft</span><span class="o">.</span><span class="n">GXRuntimeError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Exceptions from :mod:`geosoft.gxpy.va`.</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="GXva"><a class="viewcode-back" href="../../../geosoft.gxpy.va.html#geosoft.gxpy.va.GXva">[docs]</a><span class="k">class</span> <span class="nc">GXva</span><span class="p">(</span><span class="n">Sequence</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    VA class wrapper.</span>
+
+<span class="sd">    :param array:           2D numpy array, None for an empty VA</span>
+<span class="sd">    :param dtype:           numpy data type, default np.float</span>
+<span class="sd">    :param width:           array width, default is determined from array.</span>
+<span class="sd">    :param fid:             fid tuple (start,increment), default (0.0, 1.0)</span>
+<span class="sd">    :param unit_of_measure: the unit of measurement for the data</span>
+
+<span class="sd">    Maximum number of elements must be less that 2^31 - 1</span>
+
+<span class="sd">    .. versionchanged:: 9.3 added unit_of_measure</span>
+
+<span class="sd">    .. versionchanged:: 9.2 allow construction directly from numpy array</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="fm">__del__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_gxva&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_gxva</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gxva</span><span class="o">.</span><span class="n">len</span><span class="p">()</span>
+
+<div class="viewcode-block" id="GXva.__init__"><a class="viewcode-back" href="../../../geosoft.gxpy.va.html#geosoft.gxpy.va.GXva.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">array</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fid</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">unit_of_measure</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">array</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+                <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">dtype</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">dtype</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">dtype</span>
+
+            <span class="k">if</span> <span class="n">array</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">VAException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;array must have 2 dimensions&#39;</span><span class="p">))</span>
+
+            <span class="k">if</span> <span class="n">width</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">width</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">width</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="p">(</span><span class="n">width</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">VAException</span><span class="p">(</span><span class="s1">&#39;width must be &gt;= 2&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxtype</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">gx_dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gxtype</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">VAException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s2">&quot;VA of strings is not supported.&quot;</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dtype</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">dtype_gx</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gxtype</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxva</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXVA</span><span class="o">.</span><span class="n">create_ext</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gxtype</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_width</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fid</span> <span class="o">=</span> <span class="n">fid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_incr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_next</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_unit_of_measure</span> <span class="o">=</span> <span class="n">unit_of_measure</span>
+
+        <span class="k">if</span> <span class="n">array</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">array</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">fid</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_next</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_incr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fid</span>
+            <span class="k">raise</span> <span class="ne">StopIteration</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_next</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">np</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_incr</span> <span class="o">*</span> <span class="n">i</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_incr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fid</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">np</span><span class="p">[</span><span class="n">item</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_incr</span> <span class="o">*</span> <span class="n">item</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">unit_of_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; data unit of measurement&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unit_of_measure</span>
+
+    <span class="nd">@unit_of_measure</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">unit_of_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uom</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_unit_of_measure</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uom</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">fid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        fid tuple (start,increment), can be set</span>
+
+<span class="sd">        .. versionadded:: 9.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gxva</span><span class="o">.</span><span class="n">get_fid_start</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gxva</span><span class="o">.</span><span class="n">get_fid_incr</span><span class="p">()</span>
+
+    <span class="nd">@fid</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">fid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fid</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxva</span><span class="o">.</span><span class="n">set_fid_start</span><span class="p">(</span><span class="n">fid</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxva</span><span class="o">.</span><span class="n">set_fid_incr</span><span class="p">(</span><span class="n">fid</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+
+<div class="viewcode-block" id="GXva.refid"><a class="viewcode-back" href="../../../geosoft.gxpy.va.html#geosoft.gxpy.va.GXva.refid">[docs]</a>    <span class="k">def</span> <span class="nf">refid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fid</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Resample VA to a new fiducial and length</span>
+
+<span class="sd">        :param fid: (start,incr)</span>
+<span class="sd">        :param length: length</span>
+
+<span class="sd">        .. versionadded:: 9.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxva</span><span class="o">.</span><span class="n">re_fid</span><span class="p">(</span><span class="n">fid</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">fid</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">length</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fid</span> <span class="o">=</span> <span class="n">fid</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        number of elements in the VA, can be set.</span>
+
+<span class="sd">        .. versionadded:: 9.1</span>
+
+<span class="sd">        .. versionchanged:: 9.3 can be set</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__len__</span><span class="p">()</span>
+
+    <span class="nd">@length</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fid</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">width</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        width of each row(element) in the VA</span>
+
+<span class="sd">        .. versionadded:: 9.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_width</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dimensions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        VA dimensions (length, width)</span>
+
+<span class="sd">        .. versionadded:: 9.2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_width</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">gxtype</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        GX data type</span>
+
+<span class="sd">        .. versionadded:: 9.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gxtype</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dtype</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        numpy data type</span>
+
+<span class="sd">        .. versionadded:: 9.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dtype</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">np</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Numpy array of VA data, in the data type of the VA.  Use :meth:`get_data` to get a numpy array</span>
+<span class="sd">        in another `dtype`.  Array will be 2-dimensional.</span>
+
+<span class="sd">        .. versionadded:: 9.2 </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">gxva</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The :class:`geosoft.gxapi.GXVA` instance handle.</span>
+
+<span class="sd">        ..versionadded:: 9.3</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gxva</span>
+
+<div class="viewcode-block" id="GXva.get_data"><a class="viewcode-back" href="../../../geosoft.gxpy.va.html#geosoft.gxpy.va.GXva.get_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">start_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_col</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a numpy array of data from a va.</span>
+
+<span class="sd">        :param start:       index of first value, must be &gt;=0</span>
+<span class="sd">        :param n:           number of values wanted</span>
+<span class="sd">        :param start_col:   index of the first column wanted</span>
+<span class="sd">        :param n_col:       number of columns</span>
+<span class="sd">        :param dtype:       numpy data type wanted</span>
+
+<span class="sd">        .. versionadded:: 9.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">dtype</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">dtype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dtype</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[],</span> <span class="p">[]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+        <span class="c1"># strings not supported</span>
+        <span class="k">if</span> <span class="n">gxu</span><span class="o">.</span><span class="n">gx_dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">VAException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;VA string elements are not supported.&#39;</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">n</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">-</span> <span class="n">start</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="nb">min</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">-</span> <span class="n">start</span><span class="p">),</span> <span class="n">n</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">start</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">VAException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Cannot get (start,n) (</span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">) from va of length </span><span class="si">{}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">n_col</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">n_col</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_width</span> <span class="o">-</span> <span class="n">start_col</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">n_col</span> <span class="o">=</span> <span class="nb">min</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_width</span> <span class="o">-</span> <span class="n">start_col</span><span class="p">),</span> <span class="n">n_col</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n_col</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">start_col</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">VAException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Cannot get columns (start,n) (</span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">) from VA of width </span><span class="si">{}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span>
+                              <span class="nb">format</span><span class="p">(</span><span class="n">start_col</span><span class="p">,</span> <span class="n">n_col</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_width</span><span class="p">))</span>
+
+        <span class="n">npd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gxva</span><span class="o">.</span><span class="n">get_array_np</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">start_col</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">n_col</span><span class="p">,</span> <span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_col</span><span class="p">)</span>
+
+        <span class="c1"># float dummies to nan</span>
+        <span class="k">if</span> <span class="n">npd</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span> <span class="ow">or</span> <span class="n">npd</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">:</span>
+            <span class="n">npd</span><span class="p">[</span><span class="n">npd</span> <span class="o">==</span> <span class="n">gxu</span><span class="o">.</span><span class="n">gx_dummy</span><span class="p">(</span><span class="n">npd</span><span class="o">.</span><span class="n">dtype</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+        <span class="n">fid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fid</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">fid</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">start</span> <span class="o">*</span> <span class="n">fid</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">npd</span><span class="p">,</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">fid</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="GXva.set_data"><a class="viewcode-back" href="../../../geosoft.gxpy.va.html#geosoft.gxpy.va.GXva.set_data">[docs]</a>    <span class="k">def</span> <span class="nf">set_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">npdata</span><span class="p">,</span> <span class="n">fid</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy numpy data into a VA.</span>
+
+<span class="sd">        :param npdata:  numpy data array (must be 2D)</span>
+<span class="sd">        :param fid:     fid tuple (start,increment), default (0.0,1.0)</span>
+
+<span class="sd">        Maximum number of elements must be less that 2^31 - 1</span>
+
+<span class="sd">        .. versionadded:: 9.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">npdata</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="n">fid</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fid</span> <span class="o">=</span> <span class="n">fid</span>
+            <span class="k">return</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">npd</span> <span class="o">=</span> <span class="n">npdata</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_width</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">VAException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Numpy data does not align with VA data width (</span><span class="si">{}</span><span class="s1">).&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_width</span><span class="p">))</span>
+
+        <span class="n">max_length</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">iMAX</span> <span class="o">//</span> <span class="bp">self</span><span class="o">.</span><span class="n">_width</span>
+        <span class="k">if</span> <span class="n">npdata</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">max_length</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">VAException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Array length </span><span class="si">{}</span><span class="s1"> too long. Maximum is </span><span class="si">{}</span><span class="s1"> for width </span><span class="si">{}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">npdata</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">max_length</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_width</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">npdata</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span> <span class="ow">or</span> <span class="n">npdata</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">npdata</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+                <span class="n">npdata</span> <span class="o">=</span> <span class="n">npdata</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="n">npdata</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">npdata</span><span class="p">)]</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">gx_dummy</span><span class="p">(</span><span class="n">npdata</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxva</span><span class="o">.</span><span class="n">set_ln</span><span class="p">(</span><span class="n">npd</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxva</span><span class="o">.</span><span class="n">set_array_np</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">npd</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fid</span> <span class="o">=</span> <span class="n">fid</span></div></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.va</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,722 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXUSERMETA &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXUSERMETA</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXUSERMETA</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXUSERMETA"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA">[docs]</a><span class="k">class</span> <span class="nc">GXUSERMETA</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapUSERMETA</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXUSERMETA class.</span>
+
+<span class="sd">    The `GXUSERMETA &lt;geosoft.gxapi.GXUSERMETA&gt;` class handles user style metadata tied to real</span>
+<span class="sd">    data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXUSERMETA.__init__"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXUSERMETA</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXUSERMETA.null"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXUSERMETA &lt;geosoft.gxapi.GXUSERMETA&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXUSERMETA &lt;geosoft.gxapi.GXUSERMETA&gt;`</span>
+<span class="sd">        :rtype:   GXUSERMETA</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXUSERMETA</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXUSERMETA.is_null"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+<div class="viewcode-block" id="GXUSERMETA.create"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.create">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">format</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates an empty `GXUSERMETA &lt;geosoft.gxapi.GXUSERMETA&gt;` object</span>
+<span class="sd">        </span>
+<span class="sd">        :param format:  :ref:`USERMETA_FORMAT` Type of Meta to create</span>
+<span class="sd">        :type  format:  int</span>
+
+<span class="sd">        :returns:       `GXUSERMETA &lt;geosoft.gxapi.GXUSERMETA&gt;` Object</span>
+<span class="sd">        :rtype:         GXUSERMETA</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapUSERMETA</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">format</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXUSERMETA</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.create_s"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.create_s">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_s</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a `GXUSERMETA &lt;geosoft.gxapi.GXUSERMETA&gt;` from a file</span>
+<span class="sd">        </span>
+<span class="sd">        :param file:  File Name</span>
+<span class="sd">        :type  file:  str</span>
+
+<span class="sd">        :returns:     `GXUSERMETA &lt;geosoft.gxapi.GXUSERMETA&gt;` Object</span>
+<span class="sd">        :rtype:       GXUSERMETA</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapUSERMETA</span><span class="o">.</span><span class="n">_create_s</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXUSERMETA</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.get_data_creation_date"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.get_data_creation_date">[docs]</a>    <span class="k">def</span> <span class="nf">get_data_creation_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the Data Creation Date</span>
+<span class="sd">        </span>
+<span class="sd">        :param date:      Date</span>
+<span class="sd">        :type  date:      float_ref</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">date</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_data_creation_date</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.get_extents2d"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.get_extents2d">[docs]</a>    <span class="k">def</span> <span class="nf">get_extents2d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the 2d Extents</span>
+<span class="sd">        </span>
+<span class="sd">        :param min_x:     MinX</span>
+<span class="sd">        :param min_y:     MinY</span>
+<span class="sd">        :param max_x:     MaxX</span>
+<span class="sd">        :param max_y:     MaxY</span>
+<span class="sd">        :type  min_x:     float_ref</span>
+<span class="sd">        :type  min_y:     float_ref</span>
+<span class="sd">        :type  max_x:     float_ref</span>
+<span class="sd">        :type  max_y:     float_ref</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_extents2d</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.get_extents3d"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.get_extents3d">[docs]</a>    <span class="k">def</span> <span class="nf">get_extents3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the 3d Extents</span>
+<span class="sd">        </span>
+<span class="sd">        :param min_x:     MinX</span>
+<span class="sd">        :param min_y:     MinY</span>
+<span class="sd">        :param min_z:     MinZ</span>
+<span class="sd">        :param max_x:     MaxX</span>
+<span class="sd">        :param max_y:     MaxY</span>
+<span class="sd">        :param max_z:     MaxZ</span>
+<span class="sd">        :type  min_x:     float_ref</span>
+<span class="sd">        :type  min_y:     float_ref</span>
+<span class="sd">        :type  min_z:     float_ref</span>
+<span class="sd">        :type  max_x:     float_ref</span>
+<span class="sd">        :type  max_y:     float_ref</span>
+<span class="sd">        :type  max_z:     float_ref</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_extents3d</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.get_ipj"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.get_ipj">[docs]</a>    <span class="k">def</span> <span class="nf">get_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :param ipj:       Date</span>
+<span class="sd">        :type  ipj:       GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.get_meta_creation_date"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.get_meta_creation_date">[docs]</a>    <span class="k">def</span> <span class="nf">get_meta_creation_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the Meta Creation Date</span>
+<span class="sd">        </span>
+<span class="sd">        :param date:      Date</span>
+<span class="sd">        :type  date:      float_ref</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">date</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_meta_creation_date</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.get_xml_format"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.get_xml_format">[docs]</a>    <span class="k">def</span> <span class="nf">get_xml_format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the XML Format</span>
+<span class="sd">        </span>
+<span class="sd">        :param format:    :ref:`USERMETA_FORMAT`</span>
+<span class="sd">        :type  format:    int_ref</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">format</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_xml_format</span><span class="p">(</span><span class="nb">format</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.set_xml_format"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.set_xml_format">[docs]</a>    <span class="k">def</span> <span class="nf">set_xml_format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the XML Format</span>
+<span class="sd">        </span>
+<span class="sd">        :param format:    :ref:`USERMETA_FORMAT`</span>
+<span class="sd">        :type  format:    int</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_xml_format</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.compare"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.compare">[docs]</a>    <span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">usermeta2</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compare 2 `GXUSERMETA &lt;geosoft.gxapi.GXUSERMETA&gt;`&#39;s</span>
+<span class="sd">        </span>
+<span class="sd">        :param usermeta2:  Second UERMETA</span>
+<span class="sd">        :type  usermeta2:  GXUSERMETA</span>
+
+<span class="sd">        :returns:          0 - No</span>
+<span class="sd">                           1 - Yes</span>
+<span class="sd">        :rtype:            int</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compare</span><span class="p">(</span><span class="n">usermeta2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.get_data_creator"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.get_data_creator">[docs]</a>    <span class="k">def</span> <span class="nf">get_data_creator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_creator</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the Data Creator</span>
+<span class="sd">        </span>
+<span class="sd">        :param data_creator:  DataCreator returned</span>
+<span class="sd">        :type  data_creator:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data_creator</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_data_creator</span><span class="p">(</span><span class="n">data_creator</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.get_format"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.get_format">[docs]</a>    <span class="k">def</span> <span class="nf">get_format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the File Format</span>
+<span class="sd">        </span>
+<span class="sd">        :param format:    Title returned</span>
+<span class="sd">        :type  format:    str_ref</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">format</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_format</span><span class="p">(</span><span class="nb">format</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.get_meta_creator"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.get_meta_creator">[docs]</a>    <span class="k">def</span> <span class="nf">get_meta_creator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta_creator</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the Meta Creator</span>
+<span class="sd">        </span>
+<span class="sd">        :param meta_creator:  MetaCreator returned</span>
+<span class="sd">        :type  meta_creator:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">meta_creator</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_meta_creator</span><span class="p">(</span><span class="n">meta_creator</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.get_project"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.get_project">[docs]</a>    <span class="k">def</span> <span class="nf">get_project</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the File Project</span>
+<span class="sd">        </span>
+<span class="sd">        :param project:   Title returned</span>
+<span class="sd">        :type  project:   str_ref</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">project</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_project</span><span class="p">(</span><span class="n">project</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.get_title"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.get_title">[docs]</a>    <span class="k">def</span> <span class="nf">get_title</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the Title</span>
+<span class="sd">        </span>
+<span class="sd">        :param title:     Title returned</span>
+<span class="sd">        :type  title:     str_ref</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">title</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_title</span><span class="p">(</span><span class="n">title</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.serial"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.serial">[docs]</a>    <span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_geo</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Serialize `GXUSERMETA &lt;geosoft.gxapi.GXUSERMETA&gt;` to a `GXBF &lt;geosoft.gxapi.GXBF&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param save_geo:  Output Geosoft Metadata?</span>
+<span class="sd">        :param file:      File name to save to</span>
+<span class="sd">        :type  save_geo:  bool</span>
+<span class="sd">        :type  file:      str</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_serial</span><span class="p">(</span><span class="n">save_geo</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.set_data_creation_date"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.set_data_creation_date">[docs]</a>    <span class="k">def</span> <span class="nf">set_data_creation_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the Data Creation Date</span>
+<span class="sd">        </span>
+<span class="sd">        :param date:      Date</span>
+<span class="sd">        :type  date:      float</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_data_creation_date</span><span class="p">(</span><span class="n">date</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.set_data_creator"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.set_data_creator">[docs]</a>    <span class="k">def</span> <span class="nf">set_data_creator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_creator</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the Data Creator</span>
+<span class="sd">        </span>
+<span class="sd">        :param data_creator:  DataCreator</span>
+<span class="sd">        :type  data_creator:  str</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_data_creator</span><span class="p">(</span><span class="n">data_creator</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.set_extents2d"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.set_extents2d">[docs]</a>    <span class="k">def</span> <span class="nf">set_extents2d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the 2d Extents</span>
+<span class="sd">        </span>
+<span class="sd">        :param min_x:     MinX</span>
+<span class="sd">        :param min_y:     MinY</span>
+<span class="sd">        :param max_x:     MaxX</span>
+<span class="sd">        :param max_y:     MaxY</span>
+<span class="sd">        :type  min_x:     float</span>
+<span class="sd">        :type  min_y:     float</span>
+<span class="sd">        :type  max_x:     float</span>
+<span class="sd">        :type  max_y:     float</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_extents2d</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.set_extents3d"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.set_extents3d">[docs]</a>    <span class="k">def</span> <span class="nf">set_extents3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the 3d Extents</span>
+<span class="sd">        </span>
+<span class="sd">        :param min_x:     MinX</span>
+<span class="sd">        :param min_y:     MinY</span>
+<span class="sd">        :param min_z:     MinZ</span>
+<span class="sd">        :param max_x:     MaxX</span>
+<span class="sd">        :param max_y:     MaxY</span>
+<span class="sd">        :param max_z:     MaxZ</span>
+<span class="sd">        :type  min_x:     float</span>
+<span class="sd">        :type  min_y:     float</span>
+<span class="sd">        :type  min_z:     float</span>
+<span class="sd">        :type  max_x:     float</span>
+<span class="sd">        :type  max_y:     float</span>
+<span class="sd">        :type  max_z:     float</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_extents3d</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.set_format"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.set_format">[docs]</a>    <span class="k">def</span> <span class="nf">set_format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the File Format</span>
+<span class="sd">        </span>
+<span class="sd">        :param format:    Format</span>
+<span class="sd">        :type  format:    str</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_format</span><span class="p">(</span><span class="nb">format</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.set_ipj"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.set_ipj">[docs]</a>    <span class="k">def</span> <span class="nf">set_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :param ipj:       Date</span>
+<span class="sd">        :type  ipj:       GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.set_meta_creation_date"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.set_meta_creation_date">[docs]</a>    <span class="k">def</span> <span class="nf">set_meta_creation_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the Meta Creation Date</span>
+<span class="sd">        </span>
+<span class="sd">        :param date:      Date</span>
+<span class="sd">        :type  date:      float</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_meta_creation_date</span><span class="p">(</span><span class="n">date</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.set_meta_creator"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.set_meta_creator">[docs]</a>    <span class="k">def</span> <span class="nf">set_meta_creator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta_creator</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the Meta Creator</span>
+<span class="sd">        </span>
+<span class="sd">        :param meta_creator:  MetaCreator</span>
+<span class="sd">        :type  meta_creator:  str</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_meta_creator</span><span class="p">(</span><span class="n">meta_creator</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.set_project"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.set_project">[docs]</a>    <span class="k">def</span> <span class="nf">set_project</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the File Project</span>
+<span class="sd">        </span>
+<span class="sd">        :param project:   Project</span>
+<span class="sd">        :type  project:   str</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_project</span><span class="p">(</span><span class="n">project</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.set_title"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.set_title">[docs]</a>    <span class="k">def</span> <span class="nf">set_title</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the Title</span>
+<span class="sd">        </span>
+<span class="sd">        :param title:     Title</span>
+<span class="sd">        :type  title:     str</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_title</span><span class="p">(</span><span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.update_extents_2d"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.update_extents_2d">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">update_extents_2d</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Edit an existing XML metadata file by</span>
+<span class="sd">        changing the extents and projection data</span>
+<span class="sd">        </span>
+<span class="sd">        :param filename:  Filename of existing metadata to update</span>
+<span class="sd">        :param ipj:       New projection</span>
+<span class="sd">        :param min_x:     New MinX value</span>
+<span class="sd">        :param min_y:     New MinY value</span>
+<span class="sd">        :param max_x:     New MaxX value</span>
+<span class="sd">        :param max_y:     New MaxY value</span>
+<span class="sd">        :type  filename:  str</span>
+<span class="sd">        :type  ipj:       GXIPJ</span>
+<span class="sd">        :type  min_x:     float</span>
+<span class="sd">        :type  min_y:     float</span>
+<span class="sd">        :type  max_x:     float</span>
+<span class="sd">        :type  max_y:     float</span>
+
+<span class="sd">        .. versionadded:: 7.0.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapUSERMETA</span><span class="o">.</span><span class="n">_update_extents_2d</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.update_file_type"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.update_file_type">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">update_file_type</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">new_file_type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Edit an existing XML metadata file by</span>
+<span class="sd">        changing the file type</span>
+<span class="sd">        </span>
+<span class="sd">        :param file_name:      Filename of existing metadata to update</span>
+<span class="sd">        :param new_file_type:  New file type</span>
+<span class="sd">        :type  file_name:      str</span>
+<span class="sd">        :type  new_file_type:  str</span>
+
+<span class="sd">        .. versionadded:: 7.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapUSERMETA</span><span class="o">.</span><span class="n">_update_file_type</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">new_file_type</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXUSERMETA.save_file_lineage"><a class="viewcode-back" href="../../../GXUSERMETA.html#geosoft.gxapi.GXUSERMETA.save_file_lineage">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">save_file_lineage</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">save_geo</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add lineage to XML</span>
+<span class="sd">        </span>
+<span class="sd">        :param file_name:  Filename of existing metadata to update</span>
+<span class="sd">        :param save_geo:   Output Geosoft Metadata?</span>
+<span class="sd">        :type  file_name:  str</span>
+<span class="sd">        :type  save_geo:   bool</span>
+
+<span class="sd">        .. versionadded:: 8.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapUSERMETA</span><span class="o">.</span><span class="n">_save_file_lineage</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">save_geo</span><span class="p">)</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXUSERMETA</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

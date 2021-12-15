@@ -1,0 +1,229 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXFLT &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXFLT</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXFLT</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXFLT"><a class="viewcode-back" href="../../../GXFLT.html#geosoft.gxapi.GXFLT">[docs]</a><span class="k">class</span> <span class="nc">GXFLT</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapFLT</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXFLT class.</span>
+
+<span class="sd">    The `GXFLT &lt;geosoft.gxapi.GXFLT&gt;` class allows the application of user-defined convolution filters to data in an OASIS database</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXFLT.__init__"><a class="viewcode-back" href="../../../GXFLT.html#geosoft.gxapi.GXFLT.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXFLT</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXFLT.null"><a class="viewcode-back" href="../../../GXFLT.html#geosoft.gxapi.GXFLT.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXFLT &lt;geosoft.gxapi.GXFLT&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXFLT &lt;geosoft.gxapi.GXFLT&gt;`</span>
+<span class="sd">        :rtype:   GXFLT</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXFLT</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXFLT.is_null"><a class="viewcode-back" href="../../../GXFLT.html#geosoft.gxapi.GXFLT.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+<div class="viewcode-block" id="GXFLT.create"><a class="viewcode-back" href="../../../GXFLT.html#geosoft.gxapi.GXFLT.create">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a filter from a comma/space delimited string.</span>
+<span class="sd">        </span>
+<span class="sd">        :param input:  Filter string</span>
+<span class="sd">        :type  input:  str</span>
+
+<span class="sd">        :returns:      `GXFLT &lt;geosoft.gxapi.GXFLT&gt;` Object</span>
+<span class="sd">        :rtype:        int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Terminates process if filter not found.</span>
+<span class="sd">        Sample Fraser Filter string:</span>
+
+<span class="sd">              &quot;-1,-1,1,1&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapFLT</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">input</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+
+<div class="viewcode-block" id="GXFLT.load"><a class="viewcode-back" href="../../../GXFLT.html#geosoft.gxapi.GXFLT.load">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load and return handle to a convolution filter.</span>
+<span class="sd">        </span>
+<span class="sd">        :param file:  Name of the filter File</span>
+<span class="sd">        :type  file:  str</span>
+
+<span class="sd">        :returns:     `GXFLT &lt;geosoft.gxapi.GXFLT&gt;` Object</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Terminates process if filter not found.</span>
+<span class="sd">        A filter file is an ASCII file that contains filter</span>
+<span class="sd">        coefficients, which are simply mumbers.  There can be</span>
+<span class="sd">        one coefficient to a line.  Blank lines and comment lines</span>
+<span class="sd">        are skipped.  Comment lines beginn with a forward slash</span>
+<span class="sd">        character in column 1.  Following is an example Fraser</span>
+<span class="sd">        Filter file:</span>
+
+<span class="sd">           /----------------------</span>
+<span class="sd">           / Fraser Filter</span>
+<span class="sd">           /----------------------</span>
+<span class="sd">           -1</span>
+<span class="sd">           -1</span>
+<span class="sd">           1</span>
+<span class="sd">           1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapFLT</span><span class="o">.</span><span class="n">_load</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div></div>
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXFLT</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

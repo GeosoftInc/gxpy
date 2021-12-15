@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXARCDH &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXARCDH</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXARCDH</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXARCDH"><a class="viewcode-back" href="../../../GXARCDH.html#geosoft.gxapi.GXARCDH">[docs]</a><span class="k">class</span> <span class="nc">GXARCDH</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCDH</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXARCDH class.</span>
+
+<span class="sd">    This library is not a class. It contains various utilities</span>
+<span class="sd">    used in the Target extension for ArcGIS.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXARCDH.__init__"><a class="viewcode-back" href="../../../GXARCDH.html#geosoft.gxapi.GXARCDH.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXARCDH</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXARCDH.null"><a class="viewcode-back" href="../../../GXARCDH.html#geosoft.gxapi.GXARCDH.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXARCDH &lt;geosoft.gxapi.GXARCDH&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXARCDH &lt;geosoft.gxapi.GXARCDH&gt;`</span>
+<span class="sd">        :rtype:   GXARCDH</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXARCDH</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXARCDH.is_null"><a class="viewcode-back" href="../../../GXARCDH.html#geosoft.gxapi.GXARCDH.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+<div class="viewcode-block" id="GXARCDH.close_project"><a class="viewcode-back" href="../../../GXARCDH.html#geosoft.gxapi.GXARCDH.close_project">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">close_project</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Closes the current `GXDH &lt;geosoft.gxapi.GXDH&gt;` project in the Target extension</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 8.0</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCDH</span><span class="o">.</span><span class="n">_close_project</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXARCDH.set_project"><a class="viewcode-back" href="../../../GXARCDH.html#geosoft.gxapi.GXARCDH.set_project">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">set_project</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">project</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the current `GXDH &lt;geosoft.gxapi.GXDH&gt;` project in the Target extension</span>
+<span class="sd">        </span>
+<span class="sd">        :param path:     Path String</span>
+<span class="sd">        :param project:  Project Name</span>
+<span class="sd">        :type  path:     str</span>
+<span class="sd">        :type  project:  str</span>
+
+<span class="sd">        .. versionadded:: 8.0</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCDH</span><span class="o">.</span><span class="n">_set_project</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">path</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">project</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXARCDH.set_string_file_gdb"><a class="viewcode-back" href="../../../GXARCDH.html#geosoft.gxapi.GXARCDH.set_string_file_gdb">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">set_string_file_gdb</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">string_file_gdb</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the current Geostring File Geodatabase in the Target extension</span>
+<span class="sd">        </span>
+<span class="sd">        :param string_file_gdb:  File Geodatabase</span>
+<span class="sd">        :type  string_file_gdb:  str</span>
+
+<span class="sd">        .. versionadded:: 8.0</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCDH</span><span class="o">.</span><span class="n">_set_string_file_gdb</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">string_file_gdb</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXARCDH.stop_editing_string_file_gdb"><a class="viewcode-back" href="../../../GXARCDH.html#geosoft.gxapi.GXARCDH.stop_editing_string_file_gdb">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">stop_editing_string_file_gdb</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Stops editing session for current string fGDB</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 8.0.1</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCDH</span><span class="o">.</span><span class="n">_stop_editing_string_file_gdb</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXARCDH.has_string_file_gdb_edits"><a class="viewcode-back" href="../../../GXARCDH.html#geosoft.gxapi.GXARCDH.has_string_file_gdb_edits">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">has_string_file_gdb_edits</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Is a Geostring File Geodatabase loaded and contains edits?</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 8.0.1</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCDH</span><span class="o">.</span><span class="n">_has_string_file_gdb_edits</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXARCDH.geostrings_extension_available"><a class="viewcode-back" href="../../../GXARCDH.html#geosoft.gxapi.GXARCDH.geostrings_extension_available">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">geostrings_extension_available</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Verifies if the geostrings extension in TfA is available. Return 1 if true, 0 otherwise</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 8.0.1</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCDH</span><span class="o">.</span><span class="n">_geostrings_extension_available</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXARCDH.get_current_string_file_gdb"><a class="viewcode-back" href="../../../GXARCDH.html#geosoft.gxapi.GXARCDH.get_current_string_file_gdb">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_current_string_file_gdb</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the current Geostring File Geodatabase.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Name returned</span>
+<span class="sd">        :type  name:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 8.0.1</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCDH</span><span class="o">.</span><span class="n">_get_current_string_file_gdb</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXARCDH.is_valid_fgdb_file_name"><a class="viewcode-back" href="../../../GXARCDH.html#geosoft.gxapi.GXARCDH.is_valid_fgdb_file_name">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">is_valid_fgdb_file_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">fgdb</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Is this a valid FGDB filename?</span>
+<span class="sd">        </span>
+<span class="sd">        :param fgdb:  FGDB filename</span>
+<span class="sd">        :type  fgdb:  str</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 8.0.1</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCDH</span><span class="o">.</span><span class="n">_is_valid_fgdb_file_name</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">fgdb</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXARCDH.is_valid_feature_class_name"><a class="viewcode-back" href="../../../GXARCDH.html#geosoft.gxapi.GXARCDH.is_valid_feature_class_name">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">is_valid_feature_class_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">feature_class_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Is this a valid featureclass name?</span>
+<span class="sd">        </span>
+<span class="sd">        :param feature_class_name:  Featureclass name</span>
+<span class="sd">        :type  feature_class_name:  str</span>
+<span class="sd">        :rtype:                     int</span>
+
+<span class="sd">        .. versionadded:: 8.0.1</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCDH</span><span class="o">.</span><span class="n">_is_valid_feature_class_name</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">feature_class_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXARCDH.s_prompt_for_esri_symbol"><a class="viewcode-back" href="../../../GXARCDH.html#geosoft.gxapi.GXARCDH.s_prompt_for_esri_symbol">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">s_prompt_for_esri_symbol</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">hwnd</span><span class="p">,</span> <span class="n">h_wnd</span><span class="p">,</span> <span class="n">input_xml_string</span><span class="p">,</span> <span class="n">xml</span><span class="p">,</span> <span class="n">fill_color</span><span class="p">,</span> <span class="n">edge_color</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Prompt the user to select an ESRI symbol and return it as an XML string. The output string will be empty if the user cancels the dialog.</span>
+<span class="sd">        </span>
+<span class="sd">        :param hwnd:              Window handle</span>
+<span class="sd">        :param h_wnd:             Initial symbol that you want displayed when the dialog is launched (use &quot;&quot; if none)</span>
+<span class="sd">        :param input_xml_string:  (This parameter is ignored if an initial symbol was specified) Initial symbol type that you want displayed when the dialog is launched (0 for Fill, 1 for Line)</span>
+<span class="sd">        :param xml:               Returned XML string representing the symbol that was chosen by the user</span>
+<span class="sd">        :param fill_color:        RGBA representation of fill color to be set</span>
+<span class="sd">        :param edge_color:        RGBA representation of edge color to be set</span>
+<span class="sd">        :type  hwnd:              int</span>
+<span class="sd">        :type  h_wnd:             str</span>
+<span class="sd">        :type  input_xml_string:  int</span>
+<span class="sd">        :type  xml:               str_ref</span>
+<span class="sd">        :type  fill_color:        int_ref</span>
+<span class="sd">        :type  edge_color:        int_ref</span>
+
+<span class="sd">        .. versionadded:: 8.2</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">xml</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fill_color</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCDH</span><span class="o">.</span><span class="n">_s_prompt_for_esri_symbol</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">hwnd</span><span class="p">,</span> <span class="n">h_wnd</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">input_xml_string</span><span class="p">,</span> <span class="n">xml</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">fill_color</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXARCDH</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

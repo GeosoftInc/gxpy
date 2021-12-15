@@ -1,0 +1,1058 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxpy.surface &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.surface</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxpy.surface</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Geosoft surfaces</span>
+
+<span class="sd">:Classes:</span>
+<span class="sd">    :`SurfaceDataset`:   Geosoft_surface dataset, contains zero or more `Surface` instances</span>
+<span class="sd">    :`Surface`:          Surfaces defined by one or more `geosoft.gxpy.geometry.Mesh` instances</span>
+
+<span class="sd">:Constants:</span>
+<span class="sd">    :MODE_READ:      `geosoft.gxpy.spatialdata.MODE_READ`</span>
+<span class="sd">    :MODE_READWRITE: `geosoft.gxpy.spatialdata.MODE_READWRITE`</span>
+<span class="sd">    :MODE_NEW:       `geosoft.gxpy.spatialdata.MODE_NEW`</span>
+<span class="sd">    :MODE_APPEND:    MODE_READWRITE</span>
+<span class="sd">    :STYLE_FLAT:     `geosoft.gxapi.SURFACERENDER_FILL`</span>
+<span class="sd">    :STYLE_SMOOTH:   `geosoft.gxapi.SURFACERENDER_SMOOTH`</span>
+<span class="sd">    :STYLE_EDGE:     `geosoft.gxapi.SURFACERENDER_EDGES`</span>
+
+<span class="sd">.. seealso:: `geosoft.gxpy.spatialdata`, `geosoft.gxapi.GXSURFACE`, `geosoft.gxapi.GXSURFACEITEM`</span>
+
+<span class="sd">.. note::</span>
+
+<span class="sd">    Regression tests provide usage examples:     </span>
+<span class="sd">    `Tests &lt;https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_surface.py&gt;`_</span>
+<span class="sd">    </span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Sequence</span>
+
+<span class="kn">import</span> <span class="nn">geosoft</span>
+<span class="kn">import</span> <span class="nn">geosoft.gxapi</span> <span class="k">as</span> <span class="nn">gxapi</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gx</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">coordinate_system</span> <span class="k">as</span> <span class="n">gxcs</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">utility</span> <span class="k">as</span> <span class="n">gxu</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">spatialdata</span> <span class="k">as</span> <span class="n">gxspd</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">view</span> <span class="k">as</span> <span class="n">gxview</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">vox</span> <span class="k">as</span> <span class="n">gxvox</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">vv</span> <span class="k">as</span> <span class="n">gxvv</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">group</span> <span class="k">as</span> <span class="n">gxg</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="nb">map</span> <span class="k">as</span> <span class="n">gxmap</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">geometry</span> <span class="k">as</span> <span class="n">gxgeo</span>
+
+<span class="n">__version__</span> <span class="o">=</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">__version__</span>
+
+
+<span class="k">def</span> <span class="nf">_t</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">gxpy</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="SurfaceException"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.SurfaceException">[docs]</a><span class="k">class</span> <span class="nc">SurfaceException</span><span class="p">(</span><span class="n">geosoft</span><span class="o">.</span><span class="n">GXRuntimeError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Exceptions from :mod:`geosoft.gxpy.surface`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<span class="k">def</span> <span class="nf">_surface_file_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">name</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">ext</span> <span class="o">==</span> <span class="s1">&#39;.geosoft_surface&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">name</span>
+    <span class="k">return</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;.geosoft_surface&#39;</span>
+
+
+<span class="k">def</span> <span class="nf">_surface_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">basename</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="delete_files"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.delete_files">[docs]</a><span class="k">def</span> <span class="nf">delete_files</span><span class="p">(</span><span class="n">surface_name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Delete all files associated with this surface dataset.</span>
+
+<span class="sd">    :param surface_name: name of the surface dataset file</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">gxspd</span><span class="o">.</span><span class="n">delete_files</span><span class="p">(</span><span class="n">_surface_file_name</span><span class="p">(</span><span class="n">surface_name</span><span class="p">))</span></div>
+
+
+<span class="c1"># constants</span>
+<span class="n">MODE_READ</span> <span class="o">=</span> <span class="n">gxspd</span><span class="o">.</span><span class="n">MODE_READ</span>
+<span class="n">MODE_READWRITE</span> <span class="o">=</span> <span class="n">gxspd</span><span class="o">.</span><span class="n">MODE_READWRITE</span>
+<span class="n">MODE_NEW</span> <span class="o">=</span> <span class="n">gxspd</span><span class="o">.</span><span class="n">MODE_NEW</span>
+<span class="n">MODE_APPEND</span> <span class="o">=</span> <span class="n">MODE_READWRITE</span>
+
+<span class="n">STYLE_FLAT</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">SURFACERENDER_FILL</span>
+<span class="n">STYLE_SMOOTH</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">SURFACERENDER_SMOOTH</span>
+<span class="n">STYLE_EDGE</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">SURFACERENDER_EDGES</span>
+
+
+<div class="viewcode-block" id="SurfaceDataset"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.SurfaceDataset">[docs]</a><span class="k">class</span> <span class="nc">SurfaceDataset</span><span class="p">(</span><span class="n">gxspd</span><span class="o">.</span><span class="n">SpatialData</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Surface dataset, which contains one or more `Surface` instances.</span>
+
+<span class="sd">    A Surface dataset is stored in a .geosoft_surface file.</span>
+
+<span class="sd">    Iterating yields `Surface` instances.</span>
+
+<span class="sd">    :Constructors:</span>
+
+<span class="sd">        ======================= ============================================</span>
+<span class="sd">        :meth:`open`            open an existing surface dataset</span>
+<span class="sd">        :meth:`new`             create a new surface dataset</span>
+<span class="sd">        :meth:`vox_surface`     isosurfaces created from a vox.</span>
+<span class="sd">        ======================= ============================================</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_open&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">:</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurface</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_surfaces</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="nb">super</span><span class="p">(</span><span class="n">SurfaceDataset</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_close</span><span class="p">()</span>
+                <span class="k">pass</span>
+
+<div class="viewcode-block" id="SurfaceDataset.__init__"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.SurfaceDataset.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gxsurface</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">file_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">file_name</span> <span class="o">=</span> <span class="n">_surface_file_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_file_name</span> <span class="o">=</span> <span class="n">file_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">_surface_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_file_name</span><span class="p">,</span>
+                         <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+                         <span class="n">overwrite</span><span class="o">=</span><span class="n">overwrite</span><span class="p">,</span>
+                         <span class="n">gxobj</span><span class="o">=</span><span class="n">gxsurface</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurface</span> <span class="o">=</span> <span class="n">gxsurface</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_next</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_surfaces</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_new</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">surface_count</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_refresh_surfaces</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">surface_count</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_next</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">raise</span> <span class="ne">StopIteration</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">surface</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_next</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_next</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="n">surface</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">surface_name_list</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+        <span class="n">gxsurfaceitem</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurface</span><span class="o">.</span><span class="n">get_surface_item</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">surface_guid</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Surface</span><span class="p">(</span><span class="n">gxsurfaceitem</span><span class="p">,</span> <span class="n">surface_dataset</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">render_properties</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<div class="viewcode-block" id="SurfaceDataset.open"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.SurfaceDataset.open">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">MODE_READ</span><span class="p">,</span> <span class="n">gxapi_surface</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Open an existing surface dataset.</span>
+
+<span class="sd">        :param name:            name of the surface dataset.</span>
+<span class="sd">        :param file_name:       file name of the surface dataset file, default is name.geosoft_surface.</span>
+<span class="sd">        :param mode:            open mode: MODE_READ or MODE_READWRITE</span>
+<span class="sd">        :param gxapi_surface:   `geosoft.gxapi.GXSURFACE` instance, or None to open the named surface file.</span>
+
+<span class="sd">        .. versionadded:: 9.3.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">file_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">file_name</span> <span class="o">=</span> <span class="n">_surface_file_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">gxapi_surface</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">gxapi_surface</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSURFACE</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">_surface_file_name</span><span class="p">(</span><span class="n">file_name</span><span class="p">),</span> <span class="n">mode</span><span class="p">)</span>
+
+        <span class="n">surface_dataset</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span> <span class="n">gxsurface</span><span class="o">=</span><span class="n">gxapi_surface</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+        <span class="n">surface_dataset</span><span class="o">.</span><span class="n">_new</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">return</span> <span class="n">surface_dataset</span></div>
+
+<div class="viewcode-block" id="SurfaceDataset.new"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.SurfaceDataset.new">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">new</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new surface dataset.</span>
+
+<span class="sd">        :param name:        dataset name, or a path to a persistent file. If None a temporary dataset is created.</span>
+<span class="sd">        :param temp:        True to create a temporary surface dataset.</span>
+<span class="sd">        :param overwrite:   True to overwrite existing persistent surface dataset file</span>
+<span class="sd">        :param coordinate_system:   coordinate system as required to create from `geosoft.gxpy.Coordinate_system`</span>
+
+<span class="sd">        .. versionadded:: 9.3.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">temp</span><span class="p">:</span>
+            <span class="n">file_name</span> <span class="o">=</span> <span class="n">gx</span><span class="o">.</span><span class="n">gx</span><span class="p">()</span><span class="o">.</span><span class="n">temp_file</span><span class="p">(</span><span class="s1">&#39;.geosoft_surface&#39;</span><span class="p">)</span>
+            <span class="n">overwrite</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">_surface_name</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">file_name</span> <span class="o">=</span> <span class="n">_surface_file_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">overwrite</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">SurfaceException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1"> exists. Use overwrite=True to overwrite existing surface dataset file.&#39;</span><span class="p">)</span><span class="o">.</span>
+                                   <span class="nb">format</span><span class="p">(</span><span class="n">file_name</span><span class="p">))</span>
+
+        <span class="n">gxsurface</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSURFACE</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">gxcs</span><span class="o">.</span><span class="n">Coordinate_system</span><span class="p">(</span><span class="n">coordinate_system</span><span class="p">)</span><span class="o">.</span><span class="n">gxipj</span><span class="p">)</span>
+        <span class="n">surface_dataset</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="p">,</span>
+                              <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span>
+                              <span class="n">gxsurface</span><span class="o">=</span><span class="n">gxsurface</span><span class="p">,</span>
+                              <span class="n">mode</span><span class="o">=</span><span class="n">MODE_NEW</span><span class="p">)</span>
+        <span class="n">surface_dataset</span><span class="o">.</span><span class="n">_new</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">return</span> <span class="n">surface_dataset</span></div>
+
+<div class="viewcode-block" id="SurfaceDataset.vox_surface"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.SurfaceDataset.vox_surface">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">vox_surface</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vox</span><span class="p">,</span> <span class="n">surfaces</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                    <span class="n">mode</span><span class="o">=</span><span class="n">MODE_NEW</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add voxel isosurfaces to a surface dataset.</span>
+<span class="sd">    </span>
+<span class="sd">        :param vox:             `geosoft.gxpy.Vox` instance</span>
+<span class="sd">        :param surfaces:        surface value, or a list of surface values</span>
+<span class="sd">        :param name:            Surface dataset name. The default will be vox.name.</span>
+<span class="sd">        :param file_name:       optional file name if different from name root, ignored if temp=True</span>
+<span class="sd">        :param color:           surface color, or a list of colors,</span>
+<span class="sd">                                For a list of surfaces, the default colour of each surface cycles through a list of</span>
+<span class="sd">                                (C_GREY, C_GREEN, C_YELLOW, C_BLUE, C_MAGENTA, C_RED, C_CYAN). If only one surface</span>
+<span class="sd">                                the default color is `gxgroup.C_GREY`.</span>
+<span class="sd">        :param opacity:         opacity 0 t0 1. (1. is opaque), or a list of opacities.</span>
+<span class="sd">                                For a list of surfaces default opacity is applied in increasingly</span>
+<span class="sd">                                opaque steps in the order of the surface list, such that the 5&#39;th</span>
+<span class="sd">                                and higher surfaces are opaque.</span>
+<span class="sd">        :param mode:            MODE_NEW to create a new surface dataset. MODE_APPEND to append to existing dataset.</span>
+<span class="sd">        :param temp:            True to create a temporary surface dataset.</span>
+<span class="sd">        :param overwrite:       True to overwrite if dataset exists and MODE_NEW.</span>
+
+<span class="sd">        .. versionadded:: 9.3.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">vox</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">if</span> <span class="n">temp</span><span class="p">:</span>
+            <span class="n">file_name</span> <span class="o">=</span> <span class="n">gx</span><span class="o">.</span><span class="n">gx</span><span class="p">()</span><span class="o">.</span><span class="n">temp_file</span><span class="p">(</span><span class="s1">&#39;.geosoft_surface&#39;</span><span class="p">)</span>
+            <span class="n">overwrite</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">file_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">file_name</span> <span class="o">=</span> <span class="n">_surface_file_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="n">MODE_NEW</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">overwrite</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">SurfaceException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s2">&quot;Cannot overwrite existing surface dataset: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file_name</span><span class="p">))</span>
+            <span class="n">gxspd</span><span class="o">.</span><span class="n">delete_files</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">surfaces</span><span class="p">,</span> <span class="s1">&#39;__iter__&#39;</span><span class="p">):</span>
+            <span class="n">surfaces</span> <span class="o">=</span> <span class="p">(</span><span class="n">surfaces</span><span class="p">,)</span>
+    
+        <span class="k">if</span> <span class="n">color</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="n">gxg</span><span class="o">.</span><span class="n">C_GREY</span><span class="p">,</span>
+                     <span class="n">gxg</span><span class="o">.</span><span class="n">C_GREEN</span><span class="p">,</span>
+                     <span class="n">gxg</span><span class="o">.</span><span class="n">C_YELLOW</span><span class="p">,</span>
+                     <span class="n">gxg</span><span class="o">.</span><span class="n">C_BLUE</span><span class="p">,</span>
+                     <span class="n">gxg</span><span class="o">.</span><span class="n">C_MAGENTA</span><span class="p">,</span>
+                     <span class="n">gxg</span><span class="o">.</span><span class="n">C_RED</span><span class="p">,</span>
+                     <span class="n">gxg</span><span class="o">.</span><span class="n">C_CYAN</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="s1">&#39;__iter__&#39;</span><span class="p">):</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="n">color</span><span class="p">,)</span>
+    
+        <span class="k">if</span> <span class="n">opacity</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">opacity</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">max_transparent_surfaces</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">gxg</span><span class="o">.</span><span class="n">MAX_TRANSPARENT</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">surfaces</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_transparent_surfaces</span><span class="p">):</span>
+                <span class="n">opacity</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">max_transparent_surfaces</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">opacity</span><span class="p">,</span> <span class="s1">&#39;__iter__&#39;</span><span class="p">):</span>
+            <span class="n">opacity</span> <span class="o">=</span> <span class="p">(</span><span class="n">opacity</span><span class="p">,)</span>
+    
+        <span class="n">transparent_count</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># cannot have more than MAX_TRANSPARENT transparent surfaces</span>
+        <span class="k">with</span> <span class="n">gxview</span><span class="o">.</span><span class="n">View_3d</span><span class="o">.</span><span class="n">new</span><span class="p">()</span> <span class="k">as</span> <span class="n">v3d</span><span class="p">:</span>
+            <span class="n">v3d_file</span> <span class="o">=</span> <span class="n">v3d</span><span class="o">.</span><span class="n">file_name</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">surfaces</span><span class="p">)):</span>
+
+                <span class="n">icolor</span> <span class="o">=</span> <span class="n">gxg</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="n">color</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">color</span><span class="p">)])</span>
+                <span class="n">trans</span> <span class="o">=</span> <span class="n">opacity</span><span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">opacity</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span>
+                <span class="k">if</span> <span class="n">trans</span> <span class="o">&lt;</span> <span class="mf">1.</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">transparent_count</span> <span class="o">&gt;</span> <span class="n">gxg</span><span class="o">.</span><span class="n">MAX_TRANSPARENT</span><span class="p">:</span>
+                        <span class="n">trans</span> <span class="o">=</span> <span class="mf">1.</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">transparent_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                <span class="n">gxapi</span><span class="o">.</span><span class="n">GXMVU</span><span class="o">.</span><span class="n">plot_voxel_surface2</span><span class="p">(</span><span class="n">v3d</span><span class="o">.</span><span class="n">gxview</span><span class="p">,</span>
+                                                <span class="n">vox</span><span class="o">.</span><span class="n">gxvox</span><span class="p">,</span>
+                                                <span class="n">surfaces</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                                                <span class="n">icolor</span><span class="o">.</span><span class="n">int_value</span><span class="p">,</span>
+                                                <span class="mf">1.</span><span class="p">,</span>
+                                                <span class="n">trans</span><span class="p">,</span>
+                                                <span class="n">file_name</span><span class="p">)</span>
+        <span class="n">gxview</span><span class="o">.</span><span class="n">delete_files</span><span class="p">(</span><span class="n">v3d_file</span><span class="p">)</span>
+        <span class="n">sd</span> <span class="o">=</span> <span class="n">SurfaceDataset</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="n">sd</span><span class="o">.</span><span class="n">unit_of_measure</span> <span class="o">=</span> <span class="n">vox</span><span class="o">.</span><span class="n">unit_of_measure</span>
+        <span class="k">return</span> <span class="n">sd</span></div>
+
+    <span class="k">def</span> <span class="nf">_refresh_surfaces</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_surfaces</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">gxlst</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXLST</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">gxsurface</span><span class="o">.</span><span class="n">get_surface_items</span><span class="p">(</span><span class="n">gxlst</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_surfaces</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">dict_from_lst</span><span class="p">(</span><span class="n">gxlst</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">is_new</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;True if this is a new surface dataset. Can only add to new datasets.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">gxsurface</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;`geosoft.gxapi.GXSURFACE` instance handle&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurface</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">surface_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;dictionary of surfaces keyed by GUID, values are the surface names&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_refresh_surfaces</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_surfaces</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">surface_name_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list of surface names&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">surface_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">surface_count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;number of surfaces in the dataset&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">surface_dict</span><span class="p">)</span>
+
+<div class="viewcode-block" id="SurfaceDataset.surface_guid"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.SurfaceDataset.surface_guid">[docs]</a>    <span class="k">def</span> <span class="nf">surface_guid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the guid of a surface based on the name.</span>
+
+<span class="sd">        :param name:    Name of the surface.  The first matching surface name is returned.</span>
+<span class="sd">        :return:        guid of the surface, or None if the surface not found</span>
+
+<span class="sd">        .. versionadded:: 9.3.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># just return the name if it is already a guid</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">surface_dict</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">name</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">guid</span><span class="p">,</span> <span class="n">sname</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">surface_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">sname</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">guid</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="SurfaceDataset.has_surface"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.SurfaceDataset.has_surface">[docs]</a>    <span class="k">def</span> <span class="nf">has_surface</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;returns True if this surface name or guid exists in the surface dataset.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">surface_guid</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="SurfaceDataset.add_surface"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.SurfaceDataset.add_surface">[docs]</a>    <span class="k">def</span> <span class="nf">add_surface</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surface</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a surface to the surface dataset.  One can only add surfaces to new datasets.</span>
+
+<span class="sd">        :param surface: `Surface` instance to add</span>
+
+<span class="sd">        .. versionadded:: 9.3.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_new</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">SurfaceException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Cannot add new surfaces to an existing surface dataset.&#39;</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_surface</span><span class="p">(</span><span class="n">surface</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">SurfaceException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Cannot overwrite existing surface </span><span class="si">{}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">surface</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">surface</span><span class="o">.</span><span class="n">faces_count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">SurfaceException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Cannot add an empty surface.&#39;</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">gxcs</span><span class="o">.</span><span class="n">is_known</span><span class="p">(</span><span class="n">surface</span><span class="o">.</span><span class="n">coordinate_system</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">gxcs</span><span class="o">.</span><span class="n">is_known</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coordinate_system</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">coordinate_system</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">coordinate_system</span>
+            <span class="k">elif</span> <span class="n">surface</span><span class="o">.</span><span class="n">coordinate_system</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coordinate_system</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">SurfaceException</span><span class="p">(</span><span class="s1">&#39;Coordinate systems are not the same.&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurface</span><span class="o">.</span><span class="n">add_surface_item</span><span class="p">(</span><span class="n">surface</span><span class="o">.</span><span class="n">gxsurfaceitem</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_surfaces</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="SurfaceDataset.add_surface_dataset"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.SurfaceDataset.add_surface_dataset">[docs]</a>    <span class="k">def</span> <span class="nf">add_surface_dataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surface_dataset</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add the surfaces from an existing surface dataset.</span>
+
+<span class="sd">        :param surface_dataset: `SurfaceDataset` instance or a file name</span>
+
+<span class="sd">        .. versionadded:: 9.3.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">surface_dataset</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">surface_dataset</span> <span class="o">=</span> <span class="n">SurfaceDataset</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">surface_dataset</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">surface_dataset</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_surface</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SurfaceDataset.view_3d"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.SurfaceDataset.view_3d">[docs]</a>    <span class="k">def</span> <span class="nf">view_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">plane_2d</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a 3d view (`geosoft.gxpy.view.View_3d`) that contains this `SurfaceDataset`.</span>
+
+<span class="sd">        :param file_name:   the name of a file for the 3d view. If None a temporary 3d view created.</span>
+<span class="sd">        :param overwrite:   True to overwrite existing file</span>
+<span class="sd">        :param plane_2d:    True to keep the 2D plane.  Only keep it if you intend to draw on it otherwise a grey</span>
+<span class="sd">                            plane will appear in the view.</span>
+
+<span class="sd">        .. versionadded:: 9.3</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">v3d</span> <span class="o">=</span> <span class="n">gxview</span><span class="o">.</span><span class="n">View_3d</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="n">overwrite</span><span class="p">)</span>
+        <span class="n">render</span><span class="p">(</span><span class="n">v3d</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">plane_2d</span><span class="p">:</span>
+            <span class="n">v3d</span><span class="o">.</span><span class="n">delete_plane</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">v3d</span></div>
+
+<div class="viewcode-block" id="SurfaceDataset.figure_map"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.SurfaceDataset.figure_map">[docs]</a>    <span class="k">def</span> <span class="nf">figure_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">legend_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                   <span class="n">features</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;LEGEND&#39;</span><span class="p">,</span> <span class="s1">&#39;NEATLINE&#39;</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a figure view file from an SurfaceDataset.</span>
+
+<span class="sd">        :param file_name:       the name of a file for the 3d view. If None a temporary 3d view created.</span>
+<span class="sd">        :param overwrite:       True to overwrite existing file</span>
+<span class="sd">        :param title:           Title added to the image</span>
+<span class="sd">        :param legend_label:    If plotting a legend make this the legend title.  The default is the unit_of_measure.</span>
+<span class="sd">        :param features:        list of features to place on the map, default is (&#39;LEGEND&#39;, &#39;NEATLINE&#39;)</span>
+
+<span class="sd">                                    =========== =========================================</span>
+<span class="sd">                                    &#39;LEGEND&#39;    draw a surface legend</span>
+<span class="sd">                                    &#39;NEATLINE&#39;  draw a neat-line around the image</span>
+<span class="sd">                                    =========== =========================================</span>
+
+<span class="sd">        :param kwargs:          passed to `geosoft.gxpy.map.Map.new`</span>
+
+<span class="sd">        .. versionadded:: 9.3</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># uppercase features, use a dict so we pop things we use and report error</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">features</span> <span class="o">=</span> <span class="p">(</span><span class="n">features</span><span class="p">,)</span>
+        <span class="n">feature_list</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="n">features</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">features</span><span class="p">:</span>
+                <span class="n">feature_list</span><span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">upper</span><span class="p">()]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">features</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">feature_list</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+        <span class="c1"># setup margins</span>
+        <span class="n">set_right_margin</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="s1">&#39;margins&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">):</span>
+
+            <span class="n">bottom_margin</span> <span class="o">=</span> <span class="mf">1.0</span>
+            <span class="k">if</span> <span class="n">title</span><span class="p">:</span>
+                <span class="n">bottom_margin</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">title</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span> <span class="o">*</span> <span class="mf">1.0</span>
+
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;margins&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">bottom_margin</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">set_right_margin</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="n">gmap</span> <span class="o">=</span> <span class="n">gxmap</span><span class="o">.</span><span class="n">Map</span><span class="o">.</span><span class="n">figure</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+                                <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span>
+                                <span class="n">overwrite</span><span class="o">=</span><span class="n">overwrite</span><span class="p">,</span>
+                                <span class="n">features</span><span class="o">=</span><span class="p">[],</span>
+                                <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
+                                <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="n">leg_width</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="s1">&#39;LEGEND&#39;</span> <span class="ow">in</span> <span class="n">features</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">gxview</span><span class="o">.</span><span class="n">View</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">gmap</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">v</span><span class="p">:</span>
+
+                <span class="n">box</span> <span class="o">=</span> <span class="n">gxgeo</span><span class="o">.</span><span class="n">Point2</span><span class="p">(((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)))</span> <span class="o">*</span> <span class="n">v</span><span class="o">.</span><span class="n">units_per_map_cm</span>
+                <span class="n">box</span> <span class="o">+=</span> <span class="n">gxgeo</span><span class="o">.</span><span class="n">Point</span><span class="p">((</span><span class="n">v</span><span class="o">.</span><span class="n">extent_maximum_xy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">v</span><span class="o">.</span><span class="n">units_per_map_cm</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">centroid_xy</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+                <span class="n">text_height</span> <span class="o">=</span> <span class="n">box</span><span class="o">.</span><span class="n">dimension_xy</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.7</span>
+                <span class="n">text_ref</span> <span class="o">=</span> <span class="n">gxgeo</span><span class="o">.</span><span class="n">Point</span><span class="p">((</span><span class="n">box</span><span class="o">.</span><span class="n">extent_maximum_xy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">v</span><span class="o">.</span><span class="n">units_per_map_cm</span><span class="p">,</span>
+                                        <span class="n">box</span><span class="o">.</span><span class="n">centroid_xy</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+                <span class="n">space</span> <span class="o">=</span> <span class="n">gxgeo</span><span class="o">.</span><span class="n">Point</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6</span> <span class="o">*</span> <span class="n">v</span><span class="o">.</span><span class="n">units_per_map_cm</span><span class="p">))</span>
+                <span class="n">leg_width</span> <span class="o">=</span> <span class="mf">0.</span>
+                <span class="k">with</span> <span class="n">gxg</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;_legend&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">g</span><span class="p">:</span>
+                    <span class="n">g</span><span class="o">.</span><span class="n">text_def</span> <span class="o">=</span> <span class="n">gxg</span><span class="o">.</span><span class="n">Text_def</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="n">text_height</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;K&#39;</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">surface_count</span><span class="p">):</span>
+                        <span class="n">surf</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">surface_count</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+                        <span class="n">g</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">box</span><span class="p">,</span>
+                                    <span class="n">pen</span><span class="o">=</span><span class="n">g</span><span class="o">.</span><span class="n">new_pen</span><span class="p">(</span><span class="n">line_thick</span><span class="o">=</span><span class="mf">0.025</span> <span class="o">*</span> <span class="n">v</span><span class="o">.</span><span class="n">units_per_map_cm</span><span class="p">,</span>
+                                                  <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="n">fill_color</span><span class="o">=</span><span class="n">surf</span><span class="o">.</span><span class="n">render_color</span><span class="p">))</span>
+                        <span class="n">g</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">surf</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">text_ref</span><span class="p">,</span> <span class="n">reference</span><span class="o">=</span><span class="n">gxg</span><span class="o">.</span><span class="n">REF_CENTER_LEFT</span><span class="p">)</span>
+                        <span class="n">textent</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">text_extent</span><span class="p">(</span><span class="n">surf</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">textent</span><span class="o">.</span><span class="n">dimension_xy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">leg_width</span><span class="p">:</span>
+                            <span class="n">leg_width</span> <span class="o">=</span> <span class="n">textent</span><span class="o">.</span><span class="n">dimension_xy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="n">box</span> <span class="o">-=</span> <span class="n">space</span>
+                        <span class="n">text_ref</span> <span class="o">-=</span> <span class="n">space</span>
+                <span class="n">leg_width</span> <span class="o">+=</span> <span class="n">text_ref</span><span class="o">.</span><span class="n">extent_minimum_xy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">box</span><span class="o">.</span><span class="n">extent_minimum_xy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">leg_width</span> <span class="o">/=</span> <span class="n">v</span><span class="o">.</span><span class="n">units_per_map_cm</span>
+
+        <span class="k">if</span> <span class="s1">&#39;NEATLINE&#39;</span> <span class="ow">in</span> <span class="n">features</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">set_right_margin</span> <span class="ow">and</span> <span class="n">leg_width</span><span class="p">:</span>
+                <span class="k">with</span> <span class="n">gxview</span><span class="o">.</span><span class="n">View</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">gmap</span><span class="p">,</span> <span class="s2">&quot;base&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">v</span><span class="p">:</span>
+                    <span class="n">leg_width</span> <span class="o">*=</span> <span class="n">v</span><span class="o">.</span><span class="n">units_per_map_cm</span>
+                    <span class="n">area</span> <span class="o">=</span> <span class="n">gxgeo</span><span class="o">.</span><span class="n">Point2</span><span class="p">((</span><span class="n">v</span><span class="o">.</span><span class="n">extent</span><span class="o">.</span><span class="n">p0</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">extent</span><span class="o">.</span><span class="n">p1</span> <span class="o">+</span> <span class="n">gxgeo</span><span class="o">.</span><span class="n">Point</span><span class="p">((</span><span class="n">leg_width</span><span class="p">,</span> <span class="mf">0.</span><span class="p">))))</span>
+                    <span class="n">v</span><span class="o">.</span><span class="n">locate</span><span class="p">(</span><span class="n">area</span><span class="o">=</span><span class="n">area</span><span class="o">.</span><span class="n">extent_xy</span><span class="p">)</span>
+
+            <span class="n">gmap</span><span class="o">.</span><span class="n">surround</span><span class="p">()</span>
+
+        <span class="n">area</span> <span class="o">=</span> <span class="n">gxview</span><span class="o">.</span><span class="n">View</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">gmap</span><span class="p">,</span> <span class="n">gmap</span><span class="o">.</span><span class="n">current_data_view</span><span class="p">)</span><span class="o">.</span><span class="n">extent_map_cm</span><span class="p">()</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="p">(</span><span class="n">area</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mf">10.</span><span class="p">,</span> <span class="n">area</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mf">10.</span><span class="p">,</span> <span class="n">area</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="mf">10.</span><span class="p">,</span> <span class="n">area</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="mf">10.</span><span class="p">)</span>
+
+        <span class="n">gmap</span><span class="o">.</span><span class="n">create_linked_3d_view</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">view_3d</span><span class="p">(),</span> <span class="n">area_on_map</span><span class="o">=</span><span class="n">area</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">gmap</span></div></div>
+
+
+<div class="viewcode-block" id="Surface"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.Surface">[docs]</a><span class="k">class</span> <span class="nc">Surface</span><span class="p">(</span><span class="n">gxspd</span><span class="o">.</span><span class="n">SpatialData</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A single surface, which contains one or more `geosoft.gxpy.geometry.Mesh` instances.</span>
+
+<span class="sd">    :param surface:             surface name or a `geosoft.gxapi.GXSURFACEITEM` instance.</span>
+<span class="sd">    :param surface_type:        surface type as a descriptive name, such as &quot;ISOSURFACE&quot;</span>
+<span class="sd">    :param surface_dataset:     optional `SurfaceDataset` instance in which to place a new `Surface`</span>
+<span class="sd">    :param mesh:                optional `geosoft.gxpy.geometry.Mesh` instance, or tuple (faces, verticies).</span>
+<span class="sd">    :param coordinate_system:   mesh coordinate system, which will become the surface coordinate system.</span>
+<span class="sd">    :param render_properties:   (color, opacity, style), default is</span>
+<span class="sd">                                (`geosoft.gxpy.group.C_GREY`, 1.0, `STYLE_FLAT`)</span>
+
+<span class="sd">    Iterating yields component `geosoft.gxpy.geometry.Mesh` instances.</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xtype</span><span class="p">,</span> <span class="n">xvalue</span><span class="p">,</span> <span class="n">xtraceback</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="fm">__del__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_close&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_close</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_open&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_surface_dataset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">gxcs</span><span class="o">.</span><span class="n">is_known</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_surface_dataset</span><span class="o">.</span><span class="n">coordinate_system</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">coordinate_system</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_surface_dataset</span><span class="o">.</span><span class="n">coordinate_system</span>
+                    <span class="k">elif</span> <span class="n">gxcs</span><span class="o">.</span><span class="n">is_known</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coordinate_system</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_surface_dataset</span><span class="o">.</span><span class="n">coordinate_system</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coordinate_system</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_surface_dataset</span><span class="o">.</span><span class="n">add_surface</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurfaceitem</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_surface_dataset</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_cs</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="nb">super</span><span class="p">(</span><span class="n">Surface</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_close</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">(</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">guid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">surface_type</span><span class="p">))</span>
+
+<div class="viewcode-block" id="Surface.__init__"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.Surface.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surface</span><span class="p">,</span> <span class="n">surface_type</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">surface_dataset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">mesh</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">render_properties</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">surface_dataset</span> <span class="ow">and</span> <span class="n">surface_dataset</span><span class="o">.</span><span class="n">has_surface</span><span class="p">(</span><span class="n">surface</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="n">SurfaceException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Cannot overwrite existing surface (</span><span class="si">{}</span><span class="s1">) in dataset (</span><span class="si">{}</span><span class="s1">).&#39;</span><span class="p">)</span>
+                                       <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="n">surface_dataset</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+
+            <span class="n">surface</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSURFACEITEM</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">surface_type</span><span class="p">,</span> <span class="n">surface</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_new_surface</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># always add new surfaces</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_new_surface</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurfaceitem</span> <span class="o">=</span> <span class="n">surface</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_surface_dataset</span> <span class="o">=</span> <span class="n">surface_dataset</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_computed_properties</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_next</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_properties</span> <span class="o">=</span> <span class="n">render_properties</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">gxobj</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_gxsurfaceitem</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">coordinate_system</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">surface_dataset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">gxcs</span><span class="o">.</span><span class="n">is_known</span><span class="p">(</span><span class="n">surface_dataset</span><span class="o">.</span><span class="n">coordinate_system</span><span class="p">):</span>
+                <span class="n">coordinate_system</span> <span class="o">=</span> <span class="n">surface_dataset</span><span class="o">.</span><span class="n">coordinate_system</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">coordinate_system</span> <span class="o">=</span> <span class="n">coordinate_system</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_extent</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">mesh</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">gxgeo</span><span class="o">.</span><span class="n">Mesh</span><span class="p">):</span>
+                <span class="n">mesh</span> <span class="o">=</span> <span class="n">gxgeo</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;_0&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">render_properties</span><span class="o">=</span><span class="n">render_properties</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">faces_count</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_update_extent</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">extent_xyz</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">component_count</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">component_count</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_next</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">raise</span> <span class="ne">StopIteration</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_next</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_update_extent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ext</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extent</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_extent</span> <span class="o">=</span> <span class="n">ext</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_extent</span> <span class="o">=</span> <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_extent</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ext</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                            <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_extent</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ext</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+                            <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_extent</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">ext</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span>
+                            <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_extent</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">ext</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span>
+                            <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_extent</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">ext</span><span class="p">[</span><span class="mi">4</span><span class="p">]),</span>
+                            <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_extent</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">ext</span><span class="p">[</span><span class="mi">5</span><span class="p">]))</span>
+
+    <span class="k">def</span> <span class="nf">_get_mesh_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">component</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+
+        <span class="n">f1</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+        <span class="n">f2</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+        <span class="n">f3</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+        <span class="n">vx</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">()</span>
+        <span class="n">vy</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">()</span>
+        <span class="n">vz</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurfaceitem</span><span class="o">.</span><span class="n">get_mesh</span><span class="p">(</span><span class="n">component</span><span class="p">,</span>
+                                     <span class="n">vx</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">vy</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">vz</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span>
+                                     <span class="n">f1</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">f2</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">f3</span><span class="o">.</span><span class="n">gxvv</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">f3</span><span class="p">),</span> <span class="p">(</span><span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">vz</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">extent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the surface extent as a `geosoft.gxpy.geometry.Point2` instance.</span>
+
+<span class="sd">        .. versionadded:: 9.3.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pmin</span> <span class="o">=</span> <span class="n">gxgeo</span><span class="o">.</span><span class="n">Point</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_extent</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extent</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extent</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+        <span class="n">pmax</span> <span class="o">=</span> <span class="n">gxgeo</span><span class="o">.</span><span class="n">Point</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_extent</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extent</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extent</span><span class="p">[</span><span class="mi">5</span><span class="p">]))</span>
+        <span class="k">return</span> <span class="n">gxgeo</span><span class="o">.</span><span class="n">Point2</span><span class="p">((</span><span class="n">pmin</span><span class="p">,</span> <span class="n">pmax</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">coordinate_system</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Surface.properties"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.Surface.properties">[docs]</a>    <span class="k">def</span> <span class="nf">properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">refresh</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Surface properties from `geosoft.gxapi.GXSURFACEITEM.get_properties_ex`.</span>
+
+<span class="sd">        :param refresh: if True, computed properties will be refreshed on next access.</span>
+
+<span class="sd">        .. versionadded:: 9.3.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">refresh</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">:</span>
+
+            <span class="n">stype</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+            <span class="n">source_guid</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+            <span class="n">source_name</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+            <span class="n">source_measure</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">float_ref</span><span class="p">()</span>
+            <span class="n">second_source_guid</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+            <span class="n">second_source_name</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+            <span class="n">second_source_option</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">int_ref</span><span class="p">()</span>
+            <span class="n">second_source_measure</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">float_ref</span><span class="p">()</span>
+            <span class="n">second_source_measure2</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">float_ref</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurfaceitem</span><span class="o">.</span><span class="n">get_properties_ex</span><span class="p">(</span><span class="n">stype</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span>
+                                                  <span class="n">source_guid</span><span class="p">,</span> <span class="n">source_name</span><span class="p">,</span> <span class="n">source_measure</span><span class="p">,</span>
+                                                  <span class="n">second_source_guid</span><span class="p">,</span> <span class="n">second_source_name</span><span class="p">,</span> <span class="n">second_source_option</span><span class="p">,</span>
+                                                  <span class="n">second_source_measure</span><span class="p">,</span> <span class="n">second_source_measure2</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="n">stype</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                                <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                                <span class="s1">&#39;source_guid&#39;</span><span class="p">:</span> <span class="n">source_guid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                                <span class="s1">&#39;source_dataset&#39;</span><span class="p">:</span> <span class="n">source_name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                                <span class="s1">&#39;source_measure&#39;</span><span class="p">:</span> <span class="n">source_measure</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                                <span class="s1">&#39;second_source_guid&#39;</span><span class="p">:</span> <span class="n">second_source_guid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                                <span class="s1">&#39;second_source_dataset&#39;</span><span class="p">:</span> <span class="n">second_source_name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                                <span class="s1">&#39;second_source_option&#39;</span><span class="p">:</span> <span class="n">second_source_option</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                                <span class="s1">&#39;second_source_measure&#39;</span><span class="p">:</span> <span class="n">second_source_measure</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                                <span class="s1">&#39;second_source_measure2&#39;</span><span class="p">:</span> <span class="n">second_source_measure2</span><span class="o">.</span><span class="n">value</span><span class="p">}</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span></div>
+
+<div class="viewcode-block" id="Surface.computed_properties"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.Surface.computed_properties">[docs]</a>    <span class="k">def</span> <span class="nf">computed_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">refresh</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Surface properties, see: `geosoft.gxapi.GXSURFACEITEM.compute_extended_info`.</span>
+
+<span class="sd">        :param refresh: if True, computed properties will be refreshed on next access.</span>
+<span class="sd">        :returns:       dictionary of properties, &#39;components&#39;, &#39;verticies&#39;, edges&#39;,</span>
+<span class="sd">                        &#39;triangles&#39;, &#39;inconsistent&#39;, &#39;invalid&#39;, &#39;intersect&#39;</span>
+
+<span class="sd">        .. versionadded:: 9.3.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">refresh</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_computed_properties</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_computed_properties</span><span class="p">:</span>
+
+            <span class="n">comp</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">int_ref</span><span class="p">()</span>
+            <span class="n">vert</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">int_ref</span><span class="p">()</span>
+            <span class="n">edge</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">int_ref</span><span class="p">()</span>
+            <span class="n">trng</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">int_ref</span><span class="p">()</span>
+            <span class="n">incn</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">int_ref</span><span class="p">()</span>
+            <span class="n">invd</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">int_ref</span><span class="p">()</span>
+            <span class="n">intr</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">int_ref</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurfaceitem</span><span class="o">.</span><span class="n">compute_extended_info</span><span class="p">(</span><span class="n">comp</span><span class="p">,</span> <span class="n">vert</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">trng</span><span class="p">,</span> <span class="n">incn</span><span class="p">,</span> <span class="n">invd</span><span class="p">,</span> <span class="n">intr</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_computed_properties</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;components&#39;</span><span class="p">:</span> <span class="n">comp</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                                         <span class="s1">&#39;verticies&#39;</span><span class="p">:</span> <span class="n">vert</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                                         <span class="s1">&#39;edges&#39;</span><span class="p">:</span> <span class="n">edge</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                                         <span class="s1">&#39;triangles&#39;</span><span class="p">:</span> <span class="n">trng</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                                         <span class="s1">&#39;inconsistent&#39;</span><span class="p">:</span> <span class="n">incn</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                                         <span class="s1">&#39;invalid&#39;</span><span class="p">:</span> <span class="n">invd</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                                         <span class="s1">&#39;intersect&#39;</span><span class="p">:</span> <span class="n">intr</span><span class="o">.</span><span class="n">value</span><span class="p">}</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_computed_properties</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">gxsurfaceitem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;the `geosoft.gxapi.GXSURFACEITEM` instance&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurfaceitem</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">guid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The GUID of this surface&quot;&quot;&quot;</span>
+        <span class="n">guid</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurfaceitem</span><span class="o">.</span><span class="n">get_guid</span><span class="p">(</span><span class="n">guid</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">guid</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;the name of this surface&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">properties</span><span class="p">()[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">surface_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;the defined surface type string&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">properties</span><span class="p">()[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">source_dataset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;the source dataset from which this surface was derived&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">properties</span><span class="p">()[</span><span class="s1">&#39;source_dataset&#39;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">source_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;the source measure&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">properties</span><span class="p">()[</span><span class="s1">&#39;source_measure&#39;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">unit_of_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;the unit of measure for data defined by this surface, often the isosurface value&quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_surface_dataset</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_surface_dataset</span><span class="o">.</span><span class="n">unit_of_measure</span>
+
+        <span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">properties</span><span class="p">()[</span><span class="s1">&#39;source_name&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">source</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">gxvox</span><span class="o">.</span><span class="n">Vox</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">source</span><span class="p">)</span><span class="o">.</span><span class="n">unit_of_measure</span>
+            <span class="k">except</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">gxapi</span><span class="o">.</span><span class="n">GXError</span><span class="p">:</span>
+                <span class="k">pass</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">component_count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;number of components to this surface, usually 1&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurfaceitem</span><span class="o">.</span><span class="n">num_components</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">verticies_count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;number of verticies&quot;&quot;&quot;</span>
+        <span class="n">vert</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">int_ref</span><span class="p">()</span>
+        <span class="n">tri</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">int_ref</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurfaceitem</span><span class="o">.</span><span class="n">get_geometry_info</span><span class="p">(</span><span class="n">vert</span><span class="p">,</span> <span class="n">tri</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">vert</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">faces_count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;number of triangular faces&quot;&quot;&quot;</span>
+        <span class="n">vert</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">int_ref</span><span class="p">()</span>
+        <span class="n">tri</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">int_ref</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurfaceitem</span><span class="o">.</span><span class="n">get_geometry_info</span><span class="p">(</span><span class="n">vert</span><span class="p">,</span> <span class="n">tri</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">tri</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">render_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The rendering properties for this surface as (color, opacity, style). Can be set.&quot;&quot;&quot;</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">int_ref</span><span class="p">()</span>
+        <span class="n">trans</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">float_ref</span><span class="p">()</span>
+        <span class="n">style</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">int_ref</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurfaceitem</span><span class="o">.</span><span class="n">get_default_render_properties</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">trans</span><span class="p">,</span> <span class="n">style</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">gxg</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="n">color</span><span class="o">.</span><span class="n">value</span><span class="p">),</span> <span class="n">trans</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">style</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="nd">@render_properties</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">render_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">props</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_surface</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">props</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">props</span> <span class="o">=</span> <span class="p">(</span><span class="n">gxg</span><span class="o">.</span><span class="n">C_GREY</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">STYLE_FLAT</span><span class="p">)</span>
+            <span class="n">c</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">props</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">gxg</span><span class="o">.</span><span class="n">Color</span><span class="p">):</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">int_value</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurfaceitem</span><span class="o">.</span><span class="n">set_default_render_properties</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">render_color</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;rendering colour as a `geosoft.gxpy.group.Color` instance&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">render_properties</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nd">@render_color</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">render_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">render_properties</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_properties</span> <span class="o">=</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">render_opacity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;group opacity, 0.0 (transparent) to 1.0 (opaque)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">render_properties</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@render_opacity</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">render_opacity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+        <span class="n">c</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">render_properties</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_properties</span> <span class="o">=</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">render_style</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;surface rendering style, one of STYLE constants&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">render_properties</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="nd">@render_style</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">render_style</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+        <span class="n">c</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">render_properties</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_properties</span> <span class="o">=</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the parent surface dataset metadata as a dictionary.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_surface_dataset</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_surface_dataset</span><span class="o">.</span><span class="n">metadata</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="Surface.mesh"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.Surface.mesh">[docs]</a>    <span class="k">def</span> <span class="nf">mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">component</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a component mesh as `geosoft.gxpy.geometry.Mesh` instance</span>
+
+<span class="sd">        :param component:   component number from a multi-component surface</span>
+<span class="sd">        :return:            (triangle_index_1, triangle_index_2, triangle_index_3), (vertex_x, vertex_y, vertex_z)</span>
+<span class="sd">                            as `geosoft.gxpy.vv.GXvv` instances</span>
+
+<span class="sd">        .. versionadded:: 9.3.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">f1</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+        <span class="n">f2</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+        <span class="n">f3</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+        <span class="n">vx</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">()</span>
+        <span class="n">vy</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">()</span>
+        <span class="n">vz</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurfaceitem</span><span class="o">.</span><span class="n">get_mesh</span><span class="p">(</span><span class="n">component</span><span class="p">,</span>
+                                     <span class="n">vx</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">vy</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">vz</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span>
+                                     <span class="n">f1</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">f2</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">f3</span><span class="o">.</span><span class="n">gxvv</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">gxgeo</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(((</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">f3</span><span class="p">),</span> <span class="p">(</span><span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">vz</span><span class="p">)))</span></div>
+
+<div class="viewcode-block" id="Surface.add_mesh"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.Surface.add_mesh">[docs]</a>    <span class="k">def</span> <span class="nf">add_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">render_properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a vv mesh to a new surface.</span>
+
+<span class="sd">        :param mesh:        mesh as ((f1vv, f2vv, f3vv), (xvv, yvv, zvv))</span>
+<span class="sd">        :param render_properties:  (color, opacity, style), where colour is a `geosoft.gxpy.group.Color`</span>
+<span class="sd">                            instance or a 32-bit Geosoft color integer, opacity is a value between</span>
+<span class="sd">                            0. (invisible) and 1. (opaque), and style is STYLE_FLAT, STYLE_SMOOTH or</span>
+<span class="sd">                            STYLE_EDGE.</span>
+<span class="sd">        :param coordinate_system: coordinate system for the verticies, default is the same as the surface</span>
+<span class="sd">        :returns:           component number, which will always be the last component.</span>
+
+<span class="sd">        .. versionadded:: 9.3</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_surface</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">SurfaceException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Cannot add to an existing surface (</span><span class="si">{}</span><span class="s1">) in surface dataset (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="p">)</span>
+                                   <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_surface_dataset</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">gxgeo</span><span class="o">.</span><span class="n">Mesh</span><span class="p">):</span>
+            <span class="n">mesh</span> <span class="o">=</span> <span class="n">gxgeo</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">)</span>
+        <span class="n">f1vv</span><span class="p">,</span> <span class="n">f2vv</span><span class="p">,</span> <span class="n">f3vv</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">faces_vv</span><span class="p">()</span>
+        <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">zvv</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">verticies_vv</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">coordinate_system</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">coordinate_system</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coordinate_system</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_surface_dataset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">required_cs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_surface_dataset</span><span class="o">.</span><span class="n">coordinate_system</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">required_cs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coordinate_system</span>
+        <span class="k">if</span> <span class="n">coordinate_system</span> <span class="o">!=</span> <span class="n">required_cs</span><span class="p">:</span>
+            <span class="n">gxcs</span><span class="o">.</span><span class="n">Coordinate_translate</span><span class="p">(</span><span class="n">coordinate_system</span><span class="p">,</span> <span class="n">required_cs</span><span class="p">)</span><span class="o">.</span><span class="n">convert_vv</span><span class="p">(</span><span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">zvv</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxsurfaceitem</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">xvv</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">yvv</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">zvv</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span>
+                                     <span class="n">f1vv</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">f2vv</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">f3vv</span><span class="o">.</span><span class="n">gxvv</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># extent</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_extent</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">extent_xyz</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">render_properties</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">render_properties</span> <span class="o">=</span> <span class="n">render_properties</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">component_count</span> <span class="o">-</span> <span class="mi">1</span></div></div>
+
+
+<div class="viewcode-block" id="render"><a class="viewcode-back" href="../../../geosoft.gxpy.surface.html#geosoft.gxpy.surface.render">[docs]</a><span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">surface</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Render a surface, surface dataset or surface dataset file in a 3D view.</span>
+
+<span class="sd">    :param view:        `geosoft.view.View_3d` instance</span>
+<span class="sd">    :param surface:     `Surface` instance, `SurfaceDataset` instance or a geosoft_surface file name.</span>
+<span class="sd">    :param group_name:  name for the group, which defaults to the source name</span>
+<span class="sd">    :param overwrite:   True to overwrite existing group</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        For a `Surface` or a `SurfaceDataset` instance a surface dataset file is created with a name constructed</span>
+<span class="sd">        from the view name and the fies name: *view_name.group_name.geosoft_surface*.</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">group_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">group_name</span> <span class="o">=</span> <span class="n">_surface_name</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">group_name</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="k">if</span> <span class="n">view</span><span class="o">.</span><span class="n">has_group</span><span class="p">(</span><span class="n">group_name</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">overwrite</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SurfaceException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Cannot overwerwrite existing group: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">group_name</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+
+        <span class="n">surface_dataset_file_name</span> <span class="o">=</span> <span class="n">_surface_file_name</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">file_name</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">surface</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">SurfaceDataset</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">surface_dataset_file_name</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="n">overwrite</span><span class="p">,</span>
+                                <span class="n">coordinate_system</span><span class="o">=</span><span class="n">view</span><span class="o">.</span><span class="n">coordinate_system</span><span class="p">)</span> <span class="k">as</span> <span class="n">new_sd</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="n">Surface</span><span class="p">):</span>
+                <span class="n">surface</span> <span class="o">=</span> <span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="p">)</span>
+            <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">surface</span><span class="p">:</span>
+                <span class="n">new_sd</span><span class="o">.</span><span class="n">add_surface</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+        <span class="n">surface</span> <span class="o">=</span> <span class="n">surface_dataset_file_name</span>
+
+    <span class="n">gxg</span><span class="o">.</span><span class="n">surface_group_from_file</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">surface</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="n">group_name</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="n">overwrite</span><span class="p">)</span></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.surface</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GX3DN class &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GX3DN class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GX3DN.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gx3dn-class">
+<span id="gx3dn"></span><h1>GX3DN class<a class="headerlink" href="#gx3dn-class" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="geosoft.gxapi.GX3DN">
+<em class="property">class </em><code class="sig-name descname">GX3DN</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN" title="Permalink to this definition">¶</a></dt>
+<dd><p>GX3DN class.</p>
+<p>This class manages the rendering of a 3D view. It allows
+the positioning of the camera, specification of the zoom
+as well as some rendering controls for the axis. It is
+directly related to the <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> class.</p>
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy one <a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GX3DN</span></code></a> object to another.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>source</strong> (<a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN"><em>GX3DN</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GX3DN</span></code></a> to Copy from</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.create">
+<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a <a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GX3DN</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GX3DN</span></code></a> Object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN">GX3DN</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.get_axis_color">
+<code class="sig-name descname">get_axis_color</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_axis_color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_axis_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the Axis draw color</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Axis Color</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.get_axis_font">
+<code class="sig-name descname">get_axis_font</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_axis_font"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_axis_font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the Axis font</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>font</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Font name</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.get_background_color">
+<code class="sig-name descname">get_background_color</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_background_color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_background_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the window background color</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Background Color value</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.get_point_of_view">
+<code class="sig-name descname">get_point_of_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">distance</span></em>, <em class="sig-param"><span class="n">declination</span></em>, <em class="sig-param"><span class="n">inclination</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_point_of_view"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_point_of_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get location of the point we are looking from</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>distance</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Distance from center relative to longest grid dimension (which is 1.0)</p></li>
+<li><p><strong>declination</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Declination, 0 to 360 CW from Y</p></li>
+<li><p><strong>inclination</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Inclination, -90 to +90</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.get_render_controls">
+<code class="sig-name descname">get_render_controls</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">box</span></em>, <em class="sig-param"><span class="n">axis</span></em>, <em class="sig-param"><span class="n">label_x</span></em>, <em class="sig-param"><span class="n">label_y</span></em>, <em class="sig-param"><span class="n">label_z</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_render_controls"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_render_controls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the rendering controls</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>box</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Render Bounding Box (0 or 1)</p></li>
+<li><p><strong>axis</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Render Axis (0 or 1)</p></li>
+<li><p><strong>label_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Label for X axis</p></li>
+<li><p><strong>label_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Label for Y axis</p></li>
+<li><p><strong>label_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Label for Z axis</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.get_scale">
+<code class="sig-name descname">get_scale</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_scale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the axis relative scales.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X Scale</p></li>
+<li><p><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y Scale</p></li>
+<li><p><strong>z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Z Scale</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.get_shading">
+<code class="sig-name descname">get_shading</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_shading"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_shading" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the shading control on or off</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Shading On/Off</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.is_null">
+<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.null">
+<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GX3DN</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GX3DN</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN">GX3DN</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.set_axis_color">
+<code class="sig-name descname">set_axis_color</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_axis_color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_axis_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the Axis draw color</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color</strong> (<em>int</em>) – Axis Color</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.set_axis_font">
+<code class="sig-name descname">set_axis_font</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_axis_font"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_axis_font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the Axis font</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>font</strong> (<em>str</em>) – Font name</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.set_background_color">
+<code class="sig-name descname">set_background_color</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_background_color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_background_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the window background color</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color</strong> (<em>int</em>) – Background Color</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.set_point_of_view">
+<code class="sig-name descname">set_point_of_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">distance</span></em>, <em class="sig-param"><span class="n">declination</span></em>, <em class="sig-param"><span class="n">inclination</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_point_of_view"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_point_of_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set location of the point we are looking from</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>distance</strong> (<em>float</em>) – Distance from center relative to longest grid dimension (which is 1.0)</p></li>
+<li><p><strong>declination</strong> (<em>float</em>) – Declination, 0 to 360 CW from Y</p></li>
+<li><p><strong>inclination</strong> (<em>float</em>) – Inclination, -90 to +90</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.set_render_controls">
+<code class="sig-name descname">set_render_controls</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">box</span></em>, <em class="sig-param"><span class="n">axis</span></em>, <em class="sig-param"><span class="n">label_x</span></em>, <em class="sig-param"><span class="n">label_y</span></em>, <em class="sig-param"><span class="n">label_z</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_render_controls"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_render_controls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the rendering controls</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>box</strong> (<em>int</em>) – Render Bounding Box (0 or 1)</p></li>
+<li><p><strong>axis</strong> (<em>int</em>) – Render Axis (0 or 1)</p></li>
+<li><p><strong>label_x</strong> (<em>str</em>) – Label for X axis</p></li>
+<li><p><strong>label_y</strong> (<em>str</em>) – Label for Y axis</p></li>
+<li><p><strong>label_z</strong> (<em>str</em>) – Label for Z axis</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.set_scale">
+<code class="sig-name descname">set_scale</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_scale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the axis relative scales.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – X Scale (default 1.0)</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y Scale (default 1.0)</p></li>
+<li><p><strong>z</strong> (<em>float</em>) – Z Scale (default 1.0)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> By default all scales are equal (1.0). By setting
+these scales, relative adjustments to the overall
+view of the 3D objects can be made. Note that they
+are relative to each other. Thus, setting the scaling
+to 5,5,5 is the same as 1,1,1. This is typically used
+to exaggerate one scale such as Z (1,1,5).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GX3DN.set_shading">
+<code class="sig-name descname">set_shading</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shading</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_shading"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_shading" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the shading control on or off</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>shading</strong> (<em>int</em>) – 0: Off, 1:  On.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GX3DN class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

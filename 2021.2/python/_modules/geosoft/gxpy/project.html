@@ -1,0 +1,653 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxpy.project &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.project</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxpy.project</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Geosoft desktop project interface, which provides access to an active and open Geosoft desktop project.</span>
+
+<span class="sd">:Classes:</span>
+
+<span class="sd">    ======================== =====================</span>
+<span class="sd">    :class:`Geosoft_project` the geosoft project</span>
+<span class="sd">    ======================== =====================</span>
+<span class="sd">    </span>
+<span class="sd">:Constants:</span>
+<span class="sd">    :DOC_TYPE_DATABASE:</span>
+<span class="sd">    :DOC_TYPE_GRID:</span>
+<span class="sd">    :DOC_TYPE_MAP:</span>
+<span class="sd">    :DOC_TYPE_3DV:</span>
+<span class="sd">    :DOC_TYPE_VOXEL:</span>
+<span class="sd">    :DOC_TYPE_VOXI:</span>
+<span class="sd">    :DOC_TYPE_GMS3D:</span>
+<span class="sd">    :DOC_TYPE_GMS2D:</span>
+<span class="sd">    :DOC_TYPE_ALL:</span>
+
+<span class="sd">.. seealso:: :mod:`geosoft.gxapi.GXPROJ`, :mod:`geosoft.gxapi.GXEDB`, :mod:`geosoft.gxapi.GXEMAP`</span>
+
+<span class="sd">.. note::</span>
+
+<span class="sd">    Test example:     </span>
+<span class="sd">    `geosoft project tests &lt;https://github.com/GeosoftInc/gxpy/blob/master/examples/om-extensions/test_project.py&gt;`_</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">geosoft</span>
+<span class="kn">import</span> <span class="nn">geosoft.gxapi</span> <span class="k">as</span> <span class="nn">gxapi</span>
+<span class="kn">from</span> <span class="nn">.utility</span> <span class="kn">import</span> <span class="n">dict_from_lst</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">vv</span> <span class="k">as</span> <span class="n">gxvv</span>
+
+<span class="n">__version__</span> <span class="o">=</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">__version__</span>
+
+
+<span class="k">def</span> <span class="nf">_t</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">s</span>
+
+<span class="n">DOC_TYPE_DATABASE</span> <span class="o">=</span> <span class="s2">&quot;Database&quot;</span>
+<span class="n">DOC_TYPE_GRID</span> <span class="o">=</span> <span class="s2">&quot;Grid&quot;</span>
+<span class="n">DOC_TYPE_MAP</span> <span class="o">=</span> <span class="s2">&quot;Map&quot;</span>
+<span class="n">DOC_TYPE_3DV</span> <span class="o">=</span> <span class="s2">&quot;3DView&quot;</span>
+<span class="n">DOC_TYPE_VOXEL</span> <span class="o">=</span> <span class="s2">&quot;Voxel&quot;</span>
+<span class="n">DOC_TYPE_VOXI</span> <span class="o">=</span> <span class="s2">&quot;VoxelInversion&quot;</span>
+<span class="n">DOC_TYPE_GMS3D</span> <span class="o">=</span> <span class="s2">&quot;GMS3D&quot;</span>
+<span class="n">DOC_TYPE_GMS2D</span> <span class="o">=</span> <span class="s2">&quot;GMS2D&quot;</span>
+<span class="n">DOC_TYPE_ALL</span> <span class="o">=</span> <span class="s2">&quot;All&quot;</span>
+
+<div class="viewcode-block" id="ProjectException"><a class="viewcode-back" href="../../../geosoft.gxpy.project.html#geosoft.gxpy.project.ProjectException">[docs]</a><span class="k">class</span> <span class="nc">ProjectException</span><span class="p">(</span><span class="n">geosoft</span><span class="o">.</span><span class="n">GXRuntimeError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Exceptions from :mod:`geosoft.gxpy.project`.</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="running_script"><a class="viewcode-back" href="../../../geosoft.gxpy.project.html#geosoft.gxpy.project.running_script">[docs]</a><span class="k">def</span> <span class="nf">running_script</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :returns: 1 if running from a script, 0 if running interactively.</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="ow">not</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Geosoft_project"><a class="viewcode-back" href="../../../geosoft.gxpy.project.html#geosoft.gxpy.project.Geosoft_project">[docs]</a><span class="k">class</span> <span class="nc">Geosoft_project</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Use this class to interact with an open Geosoft project. This singleton class is available only from an </span>
+<span class="sd">    extension running from an open Geosoft project.  </span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_list_open_docs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dtype</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;U2048&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">docvv</span><span class="p">:</span>
+            <span class="n">gxapi</span><span class="o">.</span><span class="n">GXPROJ</span><span class="o">.</span><span class="n">list_loaded_documents</span><span class="p">(</span><span class="n">docvv</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">dtype</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">docvv</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_list_project_docs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dtype</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;U2048&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">docvv</span><span class="p">:</span>
+            <span class="n">gxapi</span><span class="o">.</span><span class="n">GXPROJ</span><span class="o">.</span><span class="n">list_documents</span><span class="p">(</span><span class="n">docvv</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">dtype</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">docvv</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_current_doc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dtype</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+        <span class="n">gxapi</span><span class="o">.</span><span class="n">GXPROJ</span><span class="o">.</span><span class="n">current_document_of_type</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">dtype</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">(</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+<div class="viewcode-block" id="Geosoft_project.__init__"><a class="viewcode-back" href="../../../geosoft.gxpy.project.html#geosoft.gxpy.project.Geosoft_project.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">s</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+        <span class="n">gxapi</span><span class="o">.</span><span class="n">GXPROJ</span><span class="o">.</span><span class="n">get_name</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">project_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">project_file</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">gid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Geosoft ID of the user&quot;&quot;&quot;</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">geosoft</span><span class="o">.</span><span class="n">gxpy</span><span class="o">.</span><span class="n">gx</span><span class="o">.</span><span class="n">gx</span><span class="p">()</span><span class="o">.</span><span class="n">gid</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">project_databases</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list of databases in the project&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_project_docs</span><span class="p">(</span><span class="n">DOC_TYPE_DATABASE</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">project_grids</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list of grids in the project&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_project_docs</span><span class="p">(</span><span class="n">DOC_TYPE_GRID</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">project_maps</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list of maps in the project&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_project_docs</span><span class="p">(</span><span class="n">DOC_TYPE_MAP</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">project_3dv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list of geosoft_3dv (3D views) in the project&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_project_docs</span><span class="p">(</span><span class="n">DOC_TYPE_3DV</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">project_voxels</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list of voxels/voxettes in the project&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_project_docs</span><span class="p">(</span><span class="n">DOC_TYPE_VOXEL</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">project_voxi_models</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list of VOXI models in the project&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_project_docs</span><span class="p">(</span><span class="n">DOC_TYPE_VOXI</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">project_gmsys_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list of GM-SYS 3D models in the project&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_project_docs</span><span class="p">(</span><span class="n">DOC_TYPE_GMS3D</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">project_gmsys_2d</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list of GM-SYS 2D models in the project&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_project_docs</span><span class="p">(</span><span class="n">DOC_TYPE_GMS2D</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">open_databases</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list of databases open as a database document&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_open_docs</span><span class="p">(</span><span class="n">DOC_TYPE_DATABASE</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">open_grids</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list of grids open as a grid document&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_open_docs</span><span class="p">(</span><span class="n">DOC_TYPE_GRID</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">open_maps</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list of maps open as a map document&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_open_docs</span><span class="p">(</span><span class="n">DOC_TYPE_MAP</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">open_3dv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list of geosoft_3dv (3d views) open in a 3D viewer&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_open_docs</span><span class="p">(</span><span class="n">DOC_TYPE_3DV</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">open_voxels</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list of voxels/voxets open as a document&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_open_docs</span><span class="p">(</span><span class="n">DOC_TYPE_VOXEL</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">open_voxi_models</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list of VOXI models open as a document&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_open_docs</span><span class="p">(</span><span class="n">DOC_TYPE_VOXI</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">open_gmsys_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list of GM-SYS 3D models open as a document&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_open_docs</span><span class="p">(</span><span class="n">DOC_TYPE_GMS3D</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">open_gmsys_2d</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list of GM-SYS 2D models open as a document&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_open_docs</span><span class="p">(</span><span class="n">DOC_TYPE_GMS2D</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">current_database</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;the open database that has current (or most recent) focus&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_doc</span><span class="p">(</span><span class="n">DOC_TYPE_DATABASE</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">current_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;the open grid that has current (or most recent) focus&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_doc</span><span class="p">(</span><span class="n">DOC_TYPE_GRID</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">current_map</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;the open map that has current (or most recent) focus&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_doc</span><span class="p">(</span><span class="n">DOC_TYPE_MAP</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">current_3dv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;the open geosoft_3dv that has current (or most recent) focus&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_doc</span><span class="p">(</span><span class="n">DOC_TYPE_3DV</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">current_voxel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;the open voxel that has current (or most recent) focus&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_doc</span><span class="p">(</span><span class="n">DOC_TYPE_VOXEL</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">current_voxi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;the open VOXI model that has current (or most recent) focus&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_doc</span><span class="p">(</span><span class="n">DOC_TYPE_VOXI</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">current_gmsys_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;the open GM-SYS 3D model that has current (or most recent) focus&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_doc</span><span class="p">(</span><span class="n">DOC_TYPE_GMS3D</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">current_gmsys_2d</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;the open GM-SYS 2D model that has current (or most recent) focus&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_doc</span><span class="p">(</span><span class="n">DOC_TYPE_GMS2D</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">menus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Oasis montaj menu information: (default_menus, loaded_menus, user_menus)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">def_menus</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXLST</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
+        <span class="n">loaded_menus</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXLST</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
+        <span class="n">user_menus</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXLST</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
+        <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">get_loaded_menus</span><span class="p">(</span><span class="n">def_menus</span><span class="p">,</span> <span class="n">loaded_menus</span><span class="p">,</span> <span class="n">user_menus</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">dict_from_lst</span><span class="p">(</span><span class="n">def_menus</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span> \
+               <span class="nb">list</span><span class="p">(</span><span class="n">dict_from_lst</span><span class="p">(</span><span class="n">loaded_menus</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span> \
+               <span class="nb">list</span><span class="p">(</span><span class="n">dict_from_lst</span><span class="p">(</span><span class="n">user_menus</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+<div class="viewcode-block" id="Geosoft_project.current_db_state"><a class="viewcode-back" href="../../../geosoft.gxpy.project.html#geosoft.gxpy.project.Geosoft_project.current_db_state">[docs]</a>    <span class="k">def</span> <span class="nf">current_db_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the state of the current database.</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: dict of the current database state, {} if there is no current database.</span>
+<span class="sd">        </span>
+<span class="sd">            =================== ========================================================</span>
+<span class="sd">            &#39;disp_chan_list&#39;    list of displayed channels</span>
+<span class="sd">            &#39;selection&#39;         current selection as (line, channel, start_fid, end_fid)</span>
+<span class="sd">            =================== ========================================================</span>
+<span class="sd">            </span>
+<span class="sd">        .. versionadded:: 9.2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">sdb</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_database</span><span class="p">:</span>
+
+            <span class="n">glst</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXLST</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="mi">4096</span><span class="p">)</span>
+
+            <span class="n">edb</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXEDB</span><span class="o">.</span><span class="n">current_no_activate</span><span class="p">()</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">edb</span><span class="o">.</span><span class="n">disp_chan_lst</span><span class="p">(</span><span class="n">glst</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">sdb</span><span class="p">[</span><span class="s1">&#39;disp_chan_list&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dict_from_lst</span><span class="p">(</span><span class="n">glst</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sdb</span><span class="p">[</span><span class="s1">&#39;disp_chan_list&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="n">s</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+            <span class="n">sch</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+            <span class="n">sln</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+            <span class="n">sfd</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+            <span class="n">edb</span><span class="o">.</span><span class="n">get_current_selection</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">sch</span><span class="p">,</span> <span class="n">sln</span><span class="p">,</span> <span class="n">sfd</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">sch</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;[All]&#39;</span><span class="p">:</span>
+                <span class="n">sch</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span>
+            <span class="k">if</span> <span class="n">sln</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;[All]&#39;</span><span class="p">:</span>
+                <span class="n">sln</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span>
+            <span class="k">if</span> <span class="n">sfd</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;[All]&#39;</span><span class="p">:</span>
+                <span class="n">fd</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">sfd</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;[None]&quot;</span><span class="p">:</span>
+                <span class="n">fd</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">fd</span> <span class="o">=</span> <span class="n">sfd</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; to &#39;</span><span class="p">)</span>
+                <span class="n">fd</span> <span class="o">=</span> <span class="p">(</span><span class="n">fd</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">fd</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">sdb</span><span class="p">[</span><span class="s1">&#39;selection&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">sln</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sch</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fd</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">fd</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">sdb</span></div>
+
+<div class="viewcode-block" id="Geosoft_project.current_map_state"><a class="viewcode-back" href="../../../geosoft.gxpy.project.html#geosoft.gxpy.project.Geosoft_project.current_map_state">[docs]</a>    <span class="k">def</span> <span class="nf">current_map_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the state of the current map.</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: dict of the current map state, {} if no current map.</span>
+<span class="sd">            </span>
+<span class="sd">            =============== =========================================================</span>
+<span class="sd">            &#39;current_view&#39;  name of the current view</span>
+<span class="sd">            &#39;display_area&#39;  (min_x, min_y, max_x, max_y) in units of the current view</span>
+<span class="sd">            &#39;3d_view_name&#39;  if a 3D view, name of the view</span>
+<span class="sd">            &#39;point&#39;         (x, y) of the current selection point</span>
+<span class="sd">            &#39;cursor&#39;        (x, y) of the current cursor location</span>
+<span class="sd">            =============== =========================================================</span>
+<span class="sd">        </span>
+<span class="sd">        .. versionadded:: 9.2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">smap</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_map</span><span class="p">:</span>
+
+            <span class="n">fx</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">float_ref</span><span class="p">()</span>
+            <span class="n">fy</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">float_ref</span><span class="p">()</span>
+            <span class="n">fx2</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">float_ref</span><span class="p">()</span>
+            <span class="n">fy2</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">float_ref</span><span class="p">()</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+
+            <span class="n">smap</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">emap</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXEMAP</span><span class="o">.</span><span class="n">current_no_activate</span><span class="p">()</span>
+
+            <span class="n">emap</span><span class="o">.</span><span class="n">get_current_view</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+            <span class="n">smap</span><span class="p">[</span><span class="s1">&#39;current_view&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">value</span>
+
+            <span class="n">emap</span><span class="o">.</span><span class="n">get_display_area</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">fx2</span><span class="p">,</span> <span class="n">fy2</span><span class="p">)</span>
+            <span class="n">smap</span><span class="p">[</span><span class="s1">&#39;display_area&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">fx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fx2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fy2</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">emap</span><span class="o">.</span><span class="n">is_3d_view</span><span class="p">():</span>
+
+                <span class="n">emap</span><span class="o">.</span><span class="n">get_3d_view_name</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+                <span class="n">smap</span><span class="p">[</span><span class="s1">&#39;3d_view&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">value</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># 2D</span>
+
+
+                <span class="n">emap</span><span class="o">.</span><span class="n">get_cur_point</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">)</span>
+                <span class="n">smap</span><span class="p">[</span><span class="s2">&quot;point&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">fx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+                <span class="n">emap</span><span class="o">.</span><span class="n">get_cursor</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">)</span>
+                <span class="n">smap</span><span class="p">[</span><span class="s2">&quot;cursor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">fx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">smap</span></div></div>
+
+
+<div class="viewcode-block" id="user_message"><a class="viewcode-back" href="../../../geosoft.gxpy.project.html#geosoft.gxpy.project.user_message">[docs]</a><span class="k">def</span> <span class="nf">user_message</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Display a message to the user</span>
+<span class="sd">    </span>
+<span class="sd">    :param title:   message box title</span>
+<span class="sd">    :param message: message</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">display_message</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_user_input_gx</span><span class="p">(</span><span class="n">kind</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Resolve and run the user_input GX&quot;&quot;&quot;</span>
+    <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">set_string</span><span class="p">(</span><span class="s2">&quot;USER_INPUT&quot;</span><span class="p">,</span> <span class="s2">&quot;TYPE&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">kind</span><span class="p">))</span>
+    <span class="nb">dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">user_input</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">dir</span><span class="p">,</span> <span class="s1">&#39;user_input&#39;</span><span class="p">),</span> <span class="s1">&#39;user_input.gx&#39;</span><span class="p">)</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">run_gx</span><span class="p">(</span><span class="n">user_input</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ret</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">cancel_</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">ret</span>
+
+
+<div class="viewcode-block" id="pause"><a class="viewcode-back" href="../../../geosoft.gxpy.project.html#geosoft.gxpy.project.pause">[docs]</a><span class="k">def</span> <span class="nf">pause</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Pause...&#39;</span><span class="p">,</span> <span class="n">cancel</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Display a pause dialog, wait for user to press continue or cancel</span>
+<span class="sd">    </span>
+<span class="sd">    :param title:   The pause dialog title, default is &quot;Pause...&quot;</span>
+<span class="sd">    :param cancel:  If True, show a cancel button</span>
+<span class="sd">    :raises:        :py:ex:GXCancel if the user cancels the dialog</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">filter_parm_group</span><span class="p">(</span><span class="s2">&quot;USER_INPUT&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">set_string</span><span class="p">(</span><span class="s2">&quot;USER_INPUT&quot;</span><span class="p">,</span> <span class="s2">&quot;TITLE&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">title</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">cancel</span><span class="p">:</span>
+            <span class="n">_user_input_gx</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_user_input_gx</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">filter_parm_group</span><span class="p">(</span><span class="s2">&quot;USER_INPUT&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_user_input"><a class="viewcode-back" href="../../../geosoft.gxpy.project.html#geosoft.gxpy.project.get_user_input">[docs]</a><span class="k">def</span> <span class="nf">get_user_input</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Input required...&quot;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">items</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">filemask</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Display a dialog prompt on the Geosoft Desktop and wait for user input.</span>
+<span class="sd">    This method depends on `user_input.gx &lt;https://github.com/GeosoftInc/gxpy/tree/master/geosoft/gxpy/user_input&gt;`_</span>
+<span class="sd">    and can only be used from an extension running inside a Geosoft Desktop application.</span>
+
+<span class="sd">    :param title:       dialog box title.  A description can be added as a second-line using a line-break.</span>
+<span class="sd">                        example: &quot;Your title/nDescriptive help&quot;</span>
+<span class="sd">    :param prompt:      prompt string to present to the user.</span>
+<span class="sd">    :param kind:        kind of response required: &#39;string&#39;, &#39;int&#39;, &#39;float&#39;, &#39;file&#39;, &#39;colour&#39; or &#39;list&#39;</span>
+<span class="sd">    :param items:       comma-separated string or list/tuple of items for kind=&#39;list&#39;</span>
+<span class="sd">    :param default:     default value.  For multifile can be a string (&#39;|&#39; delimiter) or list/tuple.</span>
+<span class="sd">    :param filemask:    File type masks, Comma delimited, or a list/tuple.  Examples:</span>
+<span class="sd">                        &#39;.dat&#39;, &#39;\*.dat,\*.grd&#39;.  For multiple files if a specific type &#39;\*\*,\*.grd&#39;</span>
+
+<span class="sd">    :returns:       user response string, or a list of files if multi-file requested</span>
+<span class="sd">    :raise:         `GXCancel` if the user cancels the dialog</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">filter_parm_group</span><span class="p">(</span><span class="s2">&quot;USER_INPUT&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># what kind of dialog</span>
+        <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;color&#39;</span><span class="p">:</span>
+            <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;colour&#39;</span>
+        <span class="n">kind_list</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;string&#39;</span><span class="p">:</span>  <span class="mi">0</span><span class="p">,</span>
+                     <span class="s1">&#39;float&#39;</span><span class="p">:</span>   <span class="mi">1</span><span class="p">,</span>
+                     <span class="s1">&#39;int&#39;</span><span class="p">:</span>     <span class="mi">2</span><span class="p">,</span>
+                     <span class="s1">&#39;list&#39;</span><span class="p">:</span>    <span class="mi">3</span><span class="p">,</span>
+                     <span class="s1">&#39;colour&#39;</span><span class="p">:</span>  <span class="mi">4</span><span class="p">,</span>
+                     <span class="s1">&#39;file&#39;</span><span class="p">:</span>    <span class="mi">5</span><span class="p">,</span>
+                     <span class="s1">&#39;newfile&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+                     <span class="s1">&#39;oldfile&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">}</span>
+        <span class="n">kind</span> <span class="o">=</span> <span class="n">kind_list</span><span class="p">[</span><span class="n">kind</span><span class="p">]</span>
+
+        <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">set_string</span><span class="p">(</span><span class="s2">&quot;USER_INPUT&quot;</span><span class="p">,</span> <span class="s2">&quot;TITLE&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">title</span><span class="p">))</span>
+        <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">set_string</span><span class="p">(</span><span class="s2">&quot;USER_INPUT&quot;</span><span class="p">,</span> <span class="s2">&quot;PROMPT&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+
+        <span class="c1"># clean up filemask</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">filemask</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">filemask</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">filemask</span> <span class="o">=</span> <span class="s1">&#39;;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filemask</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">filemask</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">filemask</span> <span class="o">=</span> <span class="n">filemask</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">filemask</span> <span class="o">==</span> <span class="s1">&#39;**&#39;</span><span class="p">:</span>
+            <span class="n">filemask</span> <span class="o">=</span> <span class="s1">&#39;**;*.*&#39;</span>
+        <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">set_string</span><span class="p">(</span><span class="s2">&quot;USER_INPUT&quot;</span><span class="p">,</span> <span class="s2">&quot;FILEMASK&quot;</span><span class="p">,</span> <span class="n">filemask</span><span class="p">)</span>
+
+        <span class="c1"># make a list out of the items.</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">dict</span><span class="p">:</span>
+                <span class="n">items</span> <span class="o">=</span> <span class="p">[(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">items</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">items</span> <span class="o">=</span> <span class="n">items</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+            <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">set_string</span><span class="p">(</span><span class="s2">&quot;USER_INPUT&quot;</span><span class="p">,</span> <span class="s2">&quot;LIST&quot;</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">items</span><span class="p">))</span>
+
+            <span class="c1"># make sure default is in the list</span>
+            <span class="k">if</span> <span class="n">default</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">default</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># resolve default string</span>
+        <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="n">kind_list</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">default</span> <span class="o">=</span> <span class="n">default</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;|&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="s1">&#39;|&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">default</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">default</span> <span class="o">=</span> <span class="s1">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">default</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">default</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">set_string</span><span class="p">(</span><span class="s2">&quot;USER_INPUT&quot;</span><span class="p">,</span> <span class="s2">&quot;RESPONSE&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">default</span><span class="p">))</span>
+
+        <span class="c1"># show the dialog</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">_user_input_gx</span><span class="p">(</span><span class="n">kind</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">ret</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+
+            <span class="n">strr</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+            <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">gt_string</span><span class="p">(</span><span class="s2">&quot;USER_INPUT&quot;</span><span class="p">,</span> <span class="s2">&quot;RESPONSE&quot;</span><span class="p">,</span> <span class="n">strr</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="n">kind_list</span><span class="p">[</span><span class="s1">&#39;int&#39;</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">strr</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="n">kind_list</span><span class="p">[</span><span class="s1">&#39;float&#39;</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">strr</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="n">kind_list</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">filemask</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;**&#39;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">strr</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">strr</span><span class="o">.</span><span class="n">value</span>
+
+        <span class="k">raise</span> <span class="n">ProjectException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;GX Error (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ret</span><span class="p">))</span>
+
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">filter_parm_group</span><span class="p">(</span><span class="s2">&quot;USER_INPUT&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="add_document"><a class="viewcode-back" href="../../../geosoft.gxpy.project.html#geosoft.gxpy.project.add_document">[docs]</a><span class="k">def</span> <span class="nf">add_document</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Add a document to the project.  The document file can be any supported geosoft</span>
+<span class="sd">    document type.</span>
+
+<span class="sd">    :param doc:     file name for the document to open</span>
+<span class="sd">    :param type:    one of DOC_TYPE, default will decode the type from the file extension:</span>
+
+<span class="sd">            =================</span>
+<span class="sd">            DOC_TYPE_DATABASE</span>
+<span class="sd">            DOC_TYPE_GRID</span>
+<span class="sd">            DOC_TYPE_MAP</span>
+<span class="sd">            DOC_TYPE_3DV</span>
+<span class="sd">            DOC_TYPE_VOXEL</span>
+<span class="sd">            DOC_TYPE_VOXI</span>
+<span class="sd">            DOC_TYPE_GMS3D</span>
+<span class="sd">            DOC_TYPE_GMS2D</span>
+<span class="sd">            DOC_TYPE_ALL</span>
+<span class="sd">            =================</span>
+
+<span class="sd">    :param display: False to prevent opening of the document, though the document will be added</span>
+<span class="sd">                    as a document in the project explorer.</span>
+
+<span class="sd">    .. versionadded:: 9.3</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">type</span><span class="p">:</span>
+        <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">doc</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">ext</span> <span class="o">==</span> <span class="s1">&#39;.grd&#39;</span> <span class="ow">or</span> <span class="p">(</span><span class="s1">&#39;(&#39;</span> <span class="ow">in</span> <span class="n">ext</span><span class="p">):</span>
+            <span class="nb">type</span> <span class="o">=</span> <span class="n">DOC_TYPE_GRID</span>
+        <span class="k">elif</span> <span class="n">ext</span> <span class="o">==</span> <span class="s1">&#39;.gdb&#39;</span><span class="p">:</span>
+            <span class="nb">type</span> <span class="o">=</span> <span class="n">DOC_TYPE_DATABASE</span>
+        <span class="k">elif</span> <span class="n">ext</span> <span class="o">==</span> <span class="s1">&#39;.map&#39;</span><span class="p">:</span>
+            <span class="nb">type</span> <span class="o">=</span> <span class="n">DOC_TYPE_MAP</span>
+        <span class="k">elif</span> <span class="n">ext</span> <span class="o">==</span> <span class="s1">&#39;.geosoft_voxel&#39;</span><span class="p">:</span>
+            <span class="nb">type</span> <span class="o">=</span> <span class="n">DOC_TYPE_VOXEL</span>
+        <span class="k">elif</span> <span class="n">ext</span> <span class="o">==</span> <span class="s1">&#39;.geosoft_voxi&#39;</span><span class="p">:</span>
+            <span class="nb">type</span> <span class="o">=</span> <span class="n">DOC_TYPE_VOXI</span>
+        <span class="k">elif</span> <span class="n">ext</span> <span class="o">==</span> <span class="s1">&#39;.geosoft_3dv&#39;</span><span class="p">:</span>
+            <span class="nb">type</span> <span class="o">=</span> <span class="n">DOC_TYPE_3DV</span>
+        <span class="k">elif</span> <span class="n">ext</span> <span class="o">==</span> <span class="s1">&#39;.geosoft_gmsys2d&#39;</span><span class="p">:</span>
+            <span class="nb">type</span> <span class="o">=</span> <span class="n">DOC_TYPE_GMS2D</span>
+        <span class="k">elif</span> <span class="n">ext</span> <span class="o">==</span> <span class="s1">&#39;.geosoft_gmsys3d&#39;</span><span class="p">:</span>
+            <span class="nb">type</span> <span class="o">=</span> <span class="n">DOC_TYPE_GMS3D</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ProjectException</span><span class="p">(</span><span class="s1">&#39;Cannot determine document type for file extension </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ext</span><span class="p">))</span>
+
+    <span class="n">gxapi</span><span class="o">.</span><span class="n">GXPROJ</span><span class="o">.</span><span class="n">add_document</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">display</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="remove_document"><a class="viewcode-back" href="../../../geosoft.gxpy.project.html#geosoft.gxpy.project.remove_document">[docs]</a><span class="k">def</span> <span class="nf">remove_document</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Remove a document from the project.  The document is identified by the document name, which</span>
+<span class="sd">    is either a complete file path name, with qualifiers, or the name of the document in the project storage.</span>
+
+<span class="sd">    :param doc: document name (file and qualifiers if the document source is a file).</span>
+
+<span class="sd">    .. versionadded:: 9.3</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">gxapi</span><span class="o">.</span><span class="n">GXPROJ</span><span class="o">.</span><span class="n">remove_document</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.project</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

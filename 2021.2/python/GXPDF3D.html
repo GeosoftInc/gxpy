@@ -1,0 +1,208 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GXPDF3D class &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXPDF3D class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXPDF3D.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxpdf3d-class">
+<span id="gxpdf3d"></span><h1>GXPDF3D class<a class="headerlink" href="#gxpdf3d-class" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="geosoft.gxapi.GXPDF3D">
+<em class="property">class </em><code class="sig-name descname">GXPDF3D</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPDF3D.html#GXPDF3D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPDF3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXPDF3D class.</p>
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXPDF3D" title="geosoft.gxapi.GXPDF3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPDF3D</span></code></a> class provides the ability to create 3D PDFs.</p>
+<dl class="py method">
+<dt id="geosoft.gxapi.GXPDF3D.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPDF3D.html#GXPDF3D.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPDF3D.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXPDF3D.export_2d">
+<em class="property">classmethod </em><code class="sig-name descname">export_2d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_map</span></em>, <em class="sig-param"><span class="n">output_file</span></em>, <em class="sig-param"><span class="n">create_layersin_pdf</span></em>, <em class="sig-param"><span class="n">geospatial_pdf</span></em>, <em class="sig-param"><span class="n">open_pdf</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPDF3D.html#GXPDF3D.export_2d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPDF3D.export_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a 2D map to a PDF file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_map</strong> (<em>str</em>) – Input map file</p></li>
+<li><p><strong>output_file</strong> (<em>str</em>) – Output PDF file</p></li>
+<li><p><strong>create_layersin_pdf</strong> (<em>int</em>) – Create layers in PDF</p></li>
+<li><p><strong>geospatial_pdf</strong> (<em>int</em>) – Geospatial PDF</p></li>
+<li><p><strong>open_pdf</strong> (<em>int</em>) – Open PDF after export</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXPDF3D.is_null">
+<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPDF3D.html#GXPDF3D.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPDF3D.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXPDF3D.null">
+<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPDF3D.html#GXPDF3D.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPDF3D.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXPDF3D" title="geosoft.gxapi.GXPDF3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPDF3D</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXPDF3D" title="geosoft.gxapi.GXPDF3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPDF3D</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXPDF3D" title="geosoft.gxapi.GXPDF3D">GXPDF3D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXPDF3D.render">
+<em class="property">classmethod </em><code class="sig-name descname">render</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mview</span></em>, <em class="sig-param"><span class="n">file_name</span></em>, <em class="sig-param"><span class="n">resolution</span></em>, <em class="sig-param"><span class="n">no_clipping</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPDF3D.html#GXPDF3D.render"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPDF3D.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render a voxel, voxsurf and/or gensurf to pdf</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> handle</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – Filename</p></li>
+<li><p><strong>resolution</strong> (<em>int</em>) – Resolution</p></li>
+<li><p><strong>no_clipping</strong> (<em>int</em>) – Noclipping</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.4.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXPDF3D.render_to_page">
+<em class="property">classmethod </em><code class="sig-name descname">render_to_page</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mview</span></em>, <em class="sig-param"><span class="n">file_name</span></em>, <em class="sig-param"><span class="n">page_number</span></em>, <em class="sig-param"><span class="n">resolution</span></em>, <em class="sig-param"><span class="n">no_clip</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPDF3D.html#GXPDF3D.render_to_page"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPDF3D.render_to_page" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render a voxel, voxsurf and/or gensurf to a specified page on a pdf</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> handle</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – Filename</p></li>
+<li><p><strong>page_number</strong> (<em>int</em>) – Page number</p></li>
+<li><p><strong>resolution</strong> (<em>int</em>) – Resolution</p></li>
+<li><p><strong>no_clip</strong> (<em>int</em>) – Noclipping</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXPDF3D class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

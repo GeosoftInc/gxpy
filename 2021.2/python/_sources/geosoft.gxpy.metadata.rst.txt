@@ -1,0 +1,7 @@
+geosoft.gxpy.metadata submodule
+=============================================
+
+.. automodule:: geosoft.gxpy.metadata
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXSBF &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSBF</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXSBF</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXSBF"><a class="viewcode-back" href="../../../GXSBF.html#geosoft.gxapi.GXSBF">[docs]</a><span class="k">class</span> <span class="nc">GXSBF</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSBF</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXSBF class.</span>
+
+<span class="sd">    The `GXSBF &lt;geosoft.gxapi.GXSBF&gt;` class provides a means of storing data in a</span>
+<span class="sd">    file-type directory structure within a workspace, database</span>
+<span class="sd">    or map. Each of these three objects contains its own `GXSBF &lt;geosoft.gxapi.GXSBF&gt;` object,</span>
+<span class="sd">    which may be accessed using the `h_get_sys &lt;geosoft.gxapi.GXSBF.h_get_sys&gt;`, `h_get_db &lt;geosoft.gxapi.GXSBF.h_get_db&gt;` and</span>
+<span class="sd">    `h_get_map &lt;geosoft.gxapi.GXSBF.h_get_map&gt;` functions. To access data in a file, or create a</span>
+<span class="sd">    new file in the `GXSBF &lt;geosoft.gxapi.GXSBF&gt;` object, call the CreatSBF_BF function (see `GXBF &lt;geosoft.gxapi.GXBF&gt;`),</span>
+<span class="sd">    which will return a `GXBF &lt;geosoft.gxapi.GXBF&gt;` object to use.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXSBF.__init__"><a class="viewcode-back" href="../../../GXSBF.html#geosoft.gxapi.GXSBF.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXSBF</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXSBF.null"><a class="viewcode-back" href="../../../GXSBF.html#geosoft.gxapi.GXSBF.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXSBF &lt;geosoft.gxapi.GXSBF&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXSBF &lt;geosoft.gxapi.GXSBF&gt;`</span>
+<span class="sd">        :rtype:   GXSBF</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXSBF</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXSBF.is_null"><a class="viewcode-back" href="../../../GXSBF.html#geosoft.gxapi.GXSBF.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+
+<div class="viewcode-block" id="GXSBF.create"><a class="viewcode-back" href="../../../GXSBF.html#geosoft.gxapi.GXSBF.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">status</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a child `GXSBF &lt;geosoft.gxapi.GXSBF&gt;` object inside an `GXSBF &lt;geosoft.gxapi.GXSBF&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param file:    Directory name to open / create</span>
+<span class="sd">        :param status:  :ref:`SBF_OPEN`</span>
+<span class="sd">        :type  file:    str</span>
+<span class="sd">        :type  status:  int</span>
+
+<span class="sd">        :returns:       `GXSBF &lt;geosoft.gxapi.GXSBF&gt;` object, terminates if fails.</span>
+<span class="sd">        :rtype:         GXSBF</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">status</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXSBF</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSBF.create_obj_list"><a class="viewcode-back" href="../../../GXSBF.html#geosoft.gxapi.GXSBF.create_obj_list">[docs]</a>    <span class="k">def</span> <span class="nf">create_obj_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fills an `GXLST &lt;geosoft.gxapi.GXLST&gt;` with embedded storage names of an `GXSBF &lt;geosoft.gxapi.GXSBF&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param lst:   `GXLST &lt;geosoft.gxapi.GXLST&gt;` handle</span>
+<span class="sd">        :param type:  :ref:`SBF_TYPE`</span>
+<span class="sd">        :type  lst:   GXLST</span>
+<span class="sd">        :type  type:  int</span>
+
+<span class="sd">        .. versionadded:: 5.0.7</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Function will populate an `GXLST &lt;geosoft.gxapi.GXLST&gt;` object with embedded files (`SBF_TYPE_FILES &lt;geosoft.gxapi.SBF_TYPE_FILES&gt;`),</span>
+<span class="sd">        directories (`SBF_TYPE_DIRS &lt;geosoft.gxapi.SBF_TYPE_DIRS&gt;`), or both (pass `SBF_TYPE_BOTH &lt;geosoft.gxapi.SBF_TYPE_BOTH&gt;`) in an `GXSBF &lt;geosoft.gxapi.GXSBF&gt;`.</span>
+<span class="sd">        Along with the Name of the file or directory, a constant &quot;dir&quot; or &quot;file&quot; string is written</span>
+<span class="sd">        to the `GXLST &lt;geosoft.gxapi.GXLST&gt;` also.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_create_obj_list</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSBF.del_dir"><a class="viewcode-back" href="../../../GXSBF.html#geosoft.gxapi.GXSBF.del_dir">[docs]</a>    <span class="k">def</span> <span class="nf">del_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">dir</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete a directory (storage) from this storage.</span>
+<span class="sd">        </span>
+<span class="sd">        :param dir:  Dir/Storage Name</span>
+<span class="sd">        :type  dir:  str</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_del_dir</span><span class="p">(</span><span class="nb">dir</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSBF.del_file"><a class="viewcode-back" href="../../../GXSBF.html#geosoft.gxapi.GXSBF.del_file">[docs]</a>    <span class="k">def</span> <span class="nf">del_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete a file from this storage.</span>
+<span class="sd">        </span>
+<span class="sd">        :param file:  File Name</span>
+<span class="sd">        :type  file:  str</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_del_file</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+
+<div class="viewcode-block" id="GXSBF.h_get_db"><a class="viewcode-back" href="../../../GXSBF.html#geosoft.gxapi.GXSBF.h_get_db">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">h_get_db</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the embedded file storage from a database.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:  Database</span>
+<span class="sd">        :type  db:  GXDB</span>
+
+<span class="sd">        :returns:    `GXSBF &lt;geosoft.gxapi.GXSBF&gt;` Object</span>
+<span class="sd">        :rtype:      GXSBF</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSBF</span><span class="o">.</span><span class="n">_h_get_db</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXSBF</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GXSBF.h_get_map"><a class="viewcode-back" href="../../../GXSBF.html#geosoft.gxapi.GXSBF.h_get_map">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">h_get_map</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">map</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the embedded file storage from a map.</span>
+<span class="sd">        </span>
+<span class="sd">        :param map:  `GXMAP &lt;geosoft.gxapi.GXMAP&gt;` object</span>
+<span class="sd">        :type  map:  GXMAP</span>
+
+<span class="sd">        :returns:    `GXSBF &lt;geosoft.gxapi.GXSBF&gt;` Object</span>
+<span class="sd">        :rtype:      GXSBF</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSBF</span><span class="o">.</span><span class="n">_h_get_map</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">map</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXSBF</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GXSBF.h_get_sys"><a class="viewcode-back" href="../../../GXSBF.html#geosoft.gxapi.GXSBF.h_get_sys">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">h_get_sys</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the main embedded file storage (in workspace).</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    `GXSBF &lt;geosoft.gxapi.GXSBF&gt;` Object</span>
+<span class="sd">        :rtype:      GXSBF</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSBF</span><span class="o">.</span><span class="n">_h_get_sys</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXSBF</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSBF.exist_dir"><a class="viewcode-back" href="../../../GXSBF.html#geosoft.gxapi.GXSBF.exist_dir">[docs]</a>    <span class="k">def</span> <span class="nf">exist_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">dir</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check to see if a directory (storage) exists inside this storage.</span>
+<span class="sd">        </span>
+<span class="sd">        :param dir:  Dir/Storage Name</span>
+<span class="sd">        :type  dir:  str</span>
+
+<span class="sd">        :returns:    0 - Does not exist</span>
+<span class="sd">                     1 - Exists</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_exist_dir</span><span class="p">(</span><span class="nb">dir</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSBF.exist_file"><a class="viewcode-back" href="../../../GXSBF.html#geosoft.gxapi.GXSBF.exist_file">[docs]</a>    <span class="k">def</span> <span class="nf">exist_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check to see if a file exists inside this storage.</span>
+<span class="sd">        </span>
+<span class="sd">        :param file:  File Name</span>
+<span class="sd">        :type  file:  str</span>
+
+<span class="sd">        :returns:     0 - Does not exist</span>
+<span class="sd">                      1 - Exists</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_exist_file</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSBF.save_log"><a class="viewcode-back" href="../../../GXSBF.html#geosoft.gxapi.GXSBF.save_log">[docs]</a>    <span class="k">def</span> <span class="nf">save_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">file_save</span><span class="p">,</span> <span class="n">p5</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save an embedded file to an ASCII file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param dir:        Directory name in the Parent `GXSBF &lt;geosoft.gxapi.GXSBF&gt;`</span>
+<span class="sd">        :param file:       File name in the directory</span>
+<span class="sd">        :param file_save:  File to save as (as an ASCII file)</span>
+<span class="sd">        :param p5:         Append Mode: 0 - New file, 1 - Append file</span>
+<span class="sd">        :type  dir:        str</span>
+<span class="sd">        :type  file:       str</span>
+<span class="sd">        :type  file_save:  str</span>
+<span class="sd">        :type  p5:         int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save_log</span><span class="p">(</span><span class="nb">dir</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">file_save</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p5</span><span class="p">)</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSBF</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

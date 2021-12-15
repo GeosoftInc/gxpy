@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXDXFI &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDXFI</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXDXFI</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXDXFI"><a class="viewcode-back" href="../../../GXDXFI.html#geosoft.gxapi.GXDXFI">[docs]</a><span class="k">class</span> <span class="nc">GXDXFI</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDXFI</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXDXFI class.</span>
+
+<span class="sd">    The `GXDXFI &lt;geosoft.gxapi.GXDXFI&gt;` class is used for importing AutoCAD® dxf files into Geosoft maps.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXDXFI.__init__"><a class="viewcode-back" href="../../../GXDXFI.html#geosoft.gxapi.GXDXFI.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXDXFI</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXDXFI.null"><a class="viewcode-back" href="../../../GXDXFI.html#geosoft.gxapi.GXDXFI.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXDXFI &lt;geosoft.gxapi.GXDXFI&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXDXFI &lt;geosoft.gxapi.GXDXFI&gt;`</span>
+<span class="sd">        :rtype:   GXDXFI</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXDXFI</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXDXFI.is_null"><a class="viewcode-back" href="../../../GXDXFI.html#geosoft.gxapi.GXDXFI.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+<div class="viewcode-block" id="GXDXFI.create"><a class="viewcode-back" href="../../../GXDXFI.html#geosoft.gxapi.GXDXFI.create">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create `GXDXFI &lt;geosoft.gxapi.GXDXFI&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  DXF file name</span>
+<span class="sd">        :type  name:  str</span>
+
+<span class="sd">        :returns:     `GXDXFI &lt;geosoft.gxapi.GXDXFI&gt;` Object</span>
+<span class="sd">        :rtype:       GXDXFI</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDXFI</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXDXFI</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+
+<div class="viewcode-block" id="GXDXFI.dxf2_ply"><a class="viewcode-back" href="../../../GXDXFI.html#geosoft.gxapi.GXDXFI.dxf2_ply">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">dxf2_ply</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ply</span><span class="p">,</span> <span class="n">dxfi</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert a DXF file to a `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` object</span>
+<span class="sd">        </span>
+<span class="sd">        :param ply:   `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` handle</span>
+<span class="sd">        :param dxfi:  `GXDXFI &lt;geosoft.gxapi.GXDXFI&gt;` handle</span>
+<span class="sd">        :type  ply:   GXPLY</span>
+<span class="sd">        :type  dxfi:  GXDXFI</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDXFI</span><span class="o">.</span><span class="n">_dxf2_ply</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">ply</span><span class="p">,</span> <span class="n">dxfi</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXDXFI.dxf2_view_ex"><a class="viewcode-back" href="../../../GXDXFI.html#geosoft.gxapi.GXDXFI.dxf2_view_ex">[docs]</a>    <span class="k">def</span> <span class="nf">dxf2_view_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">max_pen</span><span class="p">,</span> <span class="n">pb_group</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">pb_one_color</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Draw entities in a DXF file to a view in a map</span>
+<span class="sd">        </span>
+<span class="sd">        :param max_pen:       User defined number of pens to use (can be `iDUMMY &lt;geosoft.gxapi.iDUMMY&gt;`)</span>
+<span class="sd">        :param pb_group:      TRUE to place entire DXF in one group</span>
+<span class="sd">        :param group:         Group name for one group (can be &quot;&quot; if above is FALSE)</span>
+<span class="sd">        :param pb_one_color:  TRUE to force one color</span>
+<span class="sd">        :param color:         :ref:`MVIEW_COLOR` (ignored if above is FALSE)</span>
+<span class="sd">        :type  view:          GXMVIEW</span>
+<span class="sd">        :type  max_pen:       int</span>
+<span class="sd">        :type  pb_group:      int</span>
+<span class="sd">        :type  group:         str</span>
+<span class="sd">        :type  pb_one_color:  int</span>
+<span class="sd">        :type  color:         int</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dxf2_view_ex</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">max_pen</span><span class="p">,</span> <span class="n">pb_group</span><span class="p">,</span> <span class="n">group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">pb_one_color</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXDXFI.dxf2_view_no_surfaces"><a class="viewcode-back" href="../../../GXDXFI.html#geosoft.gxapi.GXDXFI.dxf2_view_no_surfaces">[docs]</a>    <span class="k">def</span> <span class="nf">dxf2_view_no_surfaces</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">max_pen</span><span class="p">,</span> <span class="n">pb_group</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">pb_one_color</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Draw entities in a DXF file to a view in a map, but for 3D views skips all surfaces</span>
+<span class="sd">        </span>
+<span class="sd">        :param max_pen:       User defined number of pens to use (can be `iDUMMY &lt;geosoft.gxapi.iDUMMY&gt;`)</span>
+<span class="sd">        :param pb_group:      TRUE to place entire DXF in one group</span>
+<span class="sd">        :param group:         Group name for one group (can be &quot;&quot; if above is FALSE)</span>
+<span class="sd">        :param pb_one_color:  TRUE to force one color</span>
+<span class="sd">        :param color:         :ref:`MVIEW_COLOR` (ignored if above is FALSE)</span>
+<span class="sd">        :type  view:          GXMVIEW</span>
+<span class="sd">        :type  max_pen:       int</span>
+<span class="sd">        :type  pb_group:      int</span>
+<span class="sd">        :type  group:         str</span>
+<span class="sd">        :type  pb_one_color:  int</span>
+<span class="sd">        :type  color:         int</span>
+
+<span class="sd">        .. versionadded:: 9.7.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dxf2_view_no_surfaces</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">max_pen</span><span class="p">,</span> <span class="n">pb_group</span><span class="p">,</span> <span class="n">group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">pb_one_color</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXDXFI.get_range"><a class="viewcode-back" href="../../../GXDXFI.html#geosoft.gxapi.GXDXFI.get_range">[docs]</a>    <span class="k">def</span> <span class="nf">get_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get DXF data range</span>
+<span class="sd">        </span>
+<span class="sd">        :param min_x:  X min</span>
+<span class="sd">        :param max_x:  X max</span>
+<span class="sd">        :param min_y:  Y min</span>
+<span class="sd">        :param max_y:  Y max</span>
+<span class="sd">        :param min_z:  Z min</span>
+<span class="sd">        :param max_z:  Z max</span>
+<span class="sd">        :type  min_x:  float_ref</span>
+<span class="sd">        :type  max_x:  float_ref</span>
+<span class="sd">        :type  min_y:  float_ref</span>
+<span class="sd">        :type  max_y:  float_ref</span>
+<span class="sd">        :type  min_z:  float_ref</span>
+<span class="sd">        :type  max_z:  float_ref</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_range</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDXFI</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>
