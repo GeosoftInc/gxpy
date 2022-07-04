@@ -1,0 +1,857 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXLST &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXLST</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXLST</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXLST"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST">[docs]</a><span class="k">class</span> <span class="nc">GXLST</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapLST</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXLST class.</span>
+
+<span class="sd">    The `GXLST &lt;geosoft.gxapi.GXLST&gt;` class is used to create and retrieve lists,</span>
+<span class="sd">    and to perform specific actions on lists, including</span>
+<span class="sd">    retrieving list items, sorting lists and adding or</span>
+<span class="sd">    removing list items.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXLST.__init__"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXLST</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXLST.null"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXLST &lt;geosoft.gxapi.GXLST&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXLST &lt;geosoft.gxapi.GXLST&gt;`</span>
+<span class="sd">        :rtype:   GXLST</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXLST</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXLST.is_null"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+
+<div class="viewcode-block" id="GXLST.add_item"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.add_item">[docs]</a>    <span class="k">def</span> <span class="nf">add_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds an item to the end of the list.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Name of the Item</span>
+<span class="sd">        :param val:   Value of the Item</span>
+<span class="sd">        :type  name:  str</span>
+<span class="sd">        :type  val:   str</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_item</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">val</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLST.add_symb_item"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.add_symb_item">[docs]</a>    <span class="k">def</span> <span class="nf">add_symb_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">symb</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds a channel/line/blob name and symbol to a list.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Name of the channel, line or blob symbol</span>
+<span class="sd">        :param symb:  Symbol handle</span>
+<span class="sd">        :type  name:  str</span>
+<span class="sd">        :type  symb:  int</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** A number of `GXDB &lt;geosoft.gxapi.GXDB&gt;` functions return LSTs with the channel</span>
+<span class="sd">        or line name in the &quot;Name&quot; part of a `GXLST &lt;geosoft.gxapi.GXLST&gt;`, and the</span>
+<span class="sd">        handle (DB_SYMB) in the value part. This function lets</span>
+<span class="sd">        you quickly add a new item without the need of coverting</span>
+<span class="sd">        the handle into a string value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_symb_item</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">symb</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLST.add_unique_item"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.add_unique_item">[docs]</a>    <span class="k">def</span> <span class="nf">add_unique_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds a unique item to the end of the list.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Name of the Item</span>
+<span class="sd">        :param val:   Value of the Item</span>
+<span class="sd">        :type  name:  str</span>
+<span class="sd">        :type  val:   str</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Existing items that match the name are first removed.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_unique_item</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">val</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLST.append"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.append">[docs]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst2</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add the items in one list to another list.</span>
+<span class="sd">        </span>
+<span class="sd">        :param lst2:  List to append to the above `GXLST &lt;geosoft.gxapi.GXLST&gt;`.</span>
+<span class="sd">        :type  lst2:  GXLST</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Item names and values are added using &quot;`add_unique_item &lt;geosoft.gxapi.GXLST.add_unique_item&gt;`&quot;,</span>
+<span class="sd">        so that existing items with the same name are replaced, and if</span>
+<span class="sd">        items are duplicated in the appended `GXLST &lt;geosoft.gxapi.GXLST&gt;`, the last one will be</span>
+<span class="sd">        the one to remain after the process is complete.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_append</span><span class="p">(</span><span class="n">lst2</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXLST.assay_channel"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.assay_channel">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">assay_channel</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a `GXLST &lt;geosoft.gxapi.GXLST&gt;` of assay channel mask strings from file.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    `GXLST &lt;geosoft.gxapi.GXLST&gt;` Object</span>
+<span class="sd">        :rtype:      GXLST</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Searches the local directory, then user\\etc, then \\etc to see</span>
+<span class="sd">        if the file &quot;assaylist.csv&quot; exists.</span>
+<span class="sd">        The file contains strings of those channel names which are</span>
+<span class="sd">        to be interpreted as assay channels for geochemical processes.</span>
+<span class="sd">        Items can be on the same line, separated by commas, or on</span>
+<span class="sd">        separate lines (and combinations of both).</span>
+<span class="sd">        If this function is used in combination with the lFindItemMask_LST</span>
+<span class="sd">        function, then you can use mask-strings such as &quot;``*ppm``&quot;</span>
+<span class="sd">        The following is a sample file:</span>
+
+<span class="sd">        ``*ppm, *(ppm), *PPM, *(PPM), FeCl, MnO2``</span>
+<span class="sd">        ``&quot;Fe %&quot;``</span>
+<span class="sd">        ``FeO``</span>
+
+<span class="sd">        If the file is not found, or if no items are parsed, the list</span>
+<span class="sd">        is returned with zero size.</span>
+
+<span class="sd">        See the &quot;assaylist.csv&quot; file in the oasismontaj\\etc directory</span>
+<span class="sd">        for more details.</span>
+
+<span class="sd">        .. seealso::</span>
+
+<span class="sd">            `find_item_mask &lt;geosoft.gxapi.GXLST.find_item_mask&gt;`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapLST</span><span class="o">.</span><span class="n">_assay_channel</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXLST</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXLST.clear"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.clear">[docs]</a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Clear a list object.</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_clear</span><span class="p">()</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLST.convert_from_csv_string"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.convert_from_csv_string">[docs]</a>    <span class="k">def</span> <span class="nf">convert_from_csv_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buff</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load a `GXLST &lt;geosoft.gxapi.GXLST&gt;` with items from a string.</span>
+<span class="sd">        </span>
+<span class="sd">        :param buff:  Comma separated items</span>
+<span class="sd">        :type  buff:  str</span>
+
+<span class="sd">        .. versionadded:: 5.1.8</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Items in the input buffer must be separated with</span>
+<span class="sd">        commas.</span>
+<span class="sd">        Both the Name and Value in the list are set to the</span>
+<span class="sd">        item.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_convert_from_csv_string</span><span class="p">(</span><span class="n">buff</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLST.copy"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy one `GXLST &lt;geosoft.gxapi.GXLST&gt;` object to another.</span>
+<span class="sd">        </span>
+<span class="sd">        :param source:  Source List to Copy from</span>
+<span class="sd">        :type  source:  GXLST</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_copy</span><span class="p">(</span><span class="n">source</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXLST.create"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.create">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        creates a user controllable list. The list</span>
+<span class="sd">        is empty when created.</span>
+<span class="sd">        </span>
+<span class="sd">        :param width:  Width of the list to make. This number should be large enough for both the item name and the item value.  Must be &gt; 2 and &lt;= 4096.</span>
+<span class="sd">        :type  width:  int</span>
+
+<span class="sd">        :returns:      Handle to the List Object.</span>
+<span class="sd">        :rtype:        GXLST</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapLST</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">width</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXLST</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GXLST.create_s"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.create_s">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_s</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create `GXLST &lt;geosoft.gxapi.GXLST&gt;` from serialized source.</span>
+<span class="sd">        </span>
+<span class="sd">        :type  bf:  GXBF</span>
+
+<span class="sd">        :returns:    `GXLST &lt;geosoft.gxapi.GXLST&gt;` object</span>
+<span class="sd">        :rtype:      GXLST</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapLST</span><span class="o">.</span><span class="n">_create_s</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">bf</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXLST</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXLST.del_item"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.del_item">[docs]</a>    <span class="k">def</span> <span class="nf">del_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Removes an item from the list. All items below</span>
+<span class="sd">        it are shifted up one.</span>
+<span class="sd">        </span>
+<span class="sd">        :param item:  Item Number to Delete</span>
+<span class="sd">        :type  item:  int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_del_item</span><span class="p">(</span><span class="n">item</span><span class="p">)</span></div>
+        
+
+
+
+
+
+
+<div class="viewcode-block" id="GXLST.find_items"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.find_items">[docs]</a>    <span class="k">def</span> <span class="nf">find_items</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">lst2</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Searches a `GXLST &lt;geosoft.gxapi.GXLST&gt;` for items in a second `GXLST &lt;geosoft.gxapi.GXLST&gt;`, returns indices of those found.</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:  :ref:`LST_ITEM` data to do the search on</span>
+<span class="sd">        :param lst2:  Items to search for</span>
+<span class="sd">        :param vv:    `GS_LONG &lt;geosoft.gxapi.GS_LONG&gt;` `GXVV &lt;geosoft.gxapi.GXVV&gt;` of returned indices into the first `GXLST &lt;geosoft.gxapi.GXLST&gt;`.</span>
+<span class="sd">        :type  type:  int</span>
+<span class="sd">        :type  lst2:  GXLST</span>
+<span class="sd">        :type  vv:    GXVV</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** This is a much more efficient way of determining if items in</span>
+<span class="sd">        one `GXLST &lt;geosoft.gxapi.GXLST&gt;` are found in a second, than by calling `find_item &lt;geosoft.gxapi.GXLST.find_item&gt;`</span>
+<span class="sd">        repeatedly in a loop.</span>
+<span class="sd">        The returned INT `GXVV &lt;geosoft.gxapi.GXVV&gt;` contains the same number of items as</span>
+<span class="sd">        the &quot;search items&quot; `GXLST &lt;geosoft.gxapi.GXLST&gt;`, and contains -1 for items where the</span>
+<span class="sd">        value is not found, and the index of items that are found.</span>
+<span class="sd">        Comparisons are case-tolerant.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_find_items</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">lst2</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLST.gt_item"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.gt_item">[docs]</a>    <span class="k">def</span> <span class="nf">gt_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">buff</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This places the specified item into the buffer provided.</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:  :ref:`LST_ITEM` data to retrieve</span>
+<span class="sd">        :param item:  Item Number to Get</span>
+<span class="sd">        :param buff:  Buffer to Place Item Into</span>
+<span class="sd">        :type  type:  int</span>
+<span class="sd">        :type  item:  int</span>
+<span class="sd">        :type  buff:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** If item number is not in the list, the buffer will be &quot;&quot;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">buff</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gt_item</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">buff</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLST.gt_symb_item"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.gt_symb_item">[docs]</a>    <span class="k">def</span> <span class="nf">gt_symb_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">symb</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a channel/line/blob name and symbol from a list.</span>
+<span class="sd">        </span>
+<span class="sd">        :param item:  Item number to get</span>
+<span class="sd">        :param name:  Buffer to Place Symbol name into</span>
+<span class="sd">        :param symb:  Symbol handle</span>
+<span class="sd">        :type  item:  int</span>
+<span class="sd">        :type  name:  str_ref</span>
+<span class="sd">        :type  symb:  int_ref</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** A number of `GXDB &lt;geosoft.gxapi.GXDB&gt;` functions return LSTs with the channel</span>
+<span class="sd">        or line name in the &quot;Name&quot; part of a `GXLST &lt;geosoft.gxapi.GXLST&gt;`, and the</span>
+<span class="sd">        handle (DB_SYMB) in the value part. This function lets</span>
+<span class="sd">        you quickly retrieve both the name and symbol handle</span>
+<span class="sd">        for a given item, which needing to convert between types.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">symb</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gt_symb_item</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">symb</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLST.convert_to_csv_string"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.convert_to_csv_string">[docs]</a>    <span class="k">def</span> <span class="nf">convert_to_csv_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buff</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load a string with names from a `GXLST &lt;geosoft.gxapi.GXLST&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param buff:  Buffer to add items to</span>
+<span class="sd">        :type  buff:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 5.1.8</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The list name values are put into a string,</span>
+<span class="sd">        items separated by commas.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">buff</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_to_csv_string</span><span class="p">(</span><span class="n">buff</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLST.find_item"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.find_item">[docs]</a>    <span class="k">def</span> <span class="nf">find_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Searches the list for a specified item.</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:  :ref:`LST_ITEM` data to do the search on</span>
+<span class="sd">        :param name:  String to Search For</span>
+<span class="sd">        :type  type:  int</span>
+<span class="sd">        :type  name:  str</span>
+
+<span class="sd">        :returns:     x  - Item Number</span>
+<span class="sd">                      -1 - Not Found</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Comparisons are case-tolerant.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_item</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXLST.find_item_mask"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.find_item_mask">[docs]</a>    <span class="k">def</span> <span class="nf">find_item_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Searches the list for a specified item, list contains masks.</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:  :ref:`LST_ITEM` data to search</span>
+<span class="sd">        :param name:  String to try `GXLST &lt;geosoft.gxapi.GXLST&gt;` mask items on Search For</span>
+<span class="sd">        :type  type:  int</span>
+<span class="sd">        :type  name:  str</span>
+
+<span class="sd">        :returns:     x  - Item Number</span>
+<span class="sd">                      -1 - Not Found</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Comparsions are case-intolerant (unlike `find_item &lt;geosoft.gxapi.GXLST.find_item&gt;`).</span>
+<span class="sd">        This means items in the list such as &quot;``*(ppm)``&quot; will be</span>
+<span class="sd">        found if the input search string is &quot;Ni (ppm)&quot; or &quot;Ni(ppm)&quot;,</span>
+<span class="sd">        but not if it is &quot;Ni (PPM)&quot;, so you should include</span>
+<span class="sd">        both &quot;``*ppm*``&quot; and &quot;``*PPM*``&quot;.</span>
+
+<span class="sd">        It is NOT the input string that should be the mask, but</span>
+<span class="sd">        the `GXLST &lt;geosoft.gxapi.GXLST&gt;` items themselves</span>
+
+<span class="sd">        This function was designed originally for geochemical</span>
+<span class="sd">        processes in order to identify if a given channel name</span>
+<span class="sd">        indicates that the channel should be given the &quot;Assay&quot; class.</span>
+
+<span class="sd">        .. seealso::</span>
+
+<span class="sd">            `assay_channel &lt;geosoft.gxapi.GXLST.assay_channel&gt;`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_item_mask</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXLST.get_int"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.get_int">[docs]</a>    <span class="k">def</span> <span class="nf">get_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get an integer item.</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:  :ref:`LST_ITEM` data to retrieve</span>
+<span class="sd">        :param item:  Item Number to Get</span>
+<span class="sd">        :type  type:  int</span>
+<span class="sd">        :type  item:  int</span>
+
+<span class="sd">        :returns:     Integer, `iDUMMY &lt;geosoft.gxapi.iDUMMY&gt;` if conversion fails or string is empty.</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 5.1.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_int</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXLST.insert_item"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.insert_item">[docs]</a>    <span class="k">def</span> <span class="nf">insert_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds an item at a given location in the list.</span>
+<span class="sd">        </span>
+<span class="sd">        :param item:  Item index</span>
+<span class="sd">        :param name:  Name of the Item</span>
+<span class="sd">        :param val:   Value of the Item</span>
+<span class="sd">        :type  item:  int</span>
+<span class="sd">        :type  name:  str</span>
+<span class="sd">        :type  val:   str</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Index must be 0 &gt;= index &gt;= list size.</span>
+<span class="sd">        Items above the list index are shifted up one index value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_insert_item</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">val</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLST.size"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.size">[docs]</a>    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the number of items in the list.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    x - Number of items in the list.</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_size</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXLST.load_csv"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.load_csv">[docs]</a>    <span class="k">def</span> <span class="nf">load_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">csv</span><span class="p">,</span> <span class="n">name_field</span><span class="p">,</span> <span class="n">value_field</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load a list with data from a CSV file</span>
+<span class="sd">        </span>
+<span class="sd">        :param csv:          The CSV file</span>
+<span class="sd">        :param name_field:   Column label for the item name</span>
+<span class="sd">        :param value_field:  Column label for the item value</span>
+<span class="sd">        :type  csv:          str</span>
+<span class="sd">        :type  name_field:   str</span>
+<span class="sd">        :type  value_field:  str</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Both the Item and Value fields must be specified.</span>
+<span class="sd">        The CSV file must be comma delimited, and have</span>
+<span class="sd">        a header line with the field names.</span>
+<span class="sd">        Leading and trailing spaces are removed in the names and values.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_csv</span><span class="p">(</span><span class="n">csv</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name_field</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">value_field</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLST.load_file"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.load_file">[docs]</a>    <span class="k">def</span> <span class="nf">load_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set up a list from a list file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param file:  Name of the file</span>
+<span class="sd">        :type  file:  str</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** A list file is an ASCII file that contains list entries.</span>
+<span class="sd">        Each line for the file contains a list item name and an</span>
+<span class="sd">        optional list item value.  The name and value must be</span>
+<span class="sd">        delimited by a space, tab or comma.</span>
+<span class="sd">        If the item name or value contains spaces, tabs or commas,</span>
+<span class="sd">        it must be contined in quotes.</span>
+<span class="sd">        blank lines and lines that begin with a &#39;/&#39; character are</span>
+<span class="sd">        ignored.</span>
+
+<span class="sd">        The default extension is .lst.  If the file cannot</span>
+<span class="sd">        be found in the local directory, the GEOSOFT\\etc directory</span>
+<span class="sd">        is searched.</span>
+<span class="sd">        If it cannot be found, the list will be</span>
+<span class="sd">        empty.  Not finding a file is not an error.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_file</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLST.resource"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.resource">[docs]</a>    <span class="k">def</span> <span class="nf">resource</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load a GX List Resource into this list object.  The</span>
+<span class="sd">        entries are placed at the end of the list and are not</span>
+<span class="sd">        sorted.</span>
+<span class="sd">        </span>
+<span class="sd">        :param res:  Name of the Resource</span>
+<span class="sd">        :type  res:  str</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_resource</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLST.get_double"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.get_double">[docs]</a>    <span class="k">def</span> <span class="nf">get_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a real item.</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:  :ref:`LST_ITEM` data to retrieve</span>
+<span class="sd">        :param item:  Item Number to Get</span>
+<span class="sd">        :type  type:  int</span>
+<span class="sd">        :type  item:  int</span>
+
+<span class="sd">        :returns:     Real, `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;` if conversion fails or string is empty.</span>
+<span class="sd">        :rtype:       float</span>
+
+<span class="sd">        .. versionadded:: 5.1.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_double</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXLST.save_file"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.save_file">[docs]</a>    <span class="k">def</span> <span class="nf">save_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save a list to a file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param file:  Name of the file</span>
+<span class="sd">        :type  file:  str</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** A list file is an ASCII file that contains list entries.</span>
+<span class="sd">        Each line for the file contains a list item name and an</span>
+<span class="sd">        optional list item value.  The name and value must be</span>
+<span class="sd">        delimited by a space, tab or comma.</span>
+<span class="sd">        If the item name or value contains spaces, tabs or commas,</span>
+<span class="sd">        it must be contined in quotes.</span>
+<span class="sd">        blank lines and lines that begin with a &#39;/&#39; character are</span>
+<span class="sd">        ignored.</span>
+
+<span class="sd">        The default extension is .lst.  If the file has a full path</span>
+<span class="sd">        it will be created as specified.  Otherwise we look for the</span>
+<span class="sd">        file in the local then the GEOSOFT\\etc directory.  If the file</span>
+<span class="sd">        does not exist it will be created in the GEOSOFT\\etc directory.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save_file</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLST.select_csv_string_items"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.select_csv_string_items">[docs]</a>    <span class="k">def</span> <span class="nf">select_csv_string_items</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buff</span><span class="p">,</span> <span class="n">ls_to</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load a `GXLST &lt;geosoft.gxapi.GXLST&gt;` with items from a second `GXLST &lt;geosoft.gxapi.GXLST&gt;` found in a CSV string.</span>
+<span class="sd">        </span>
+<span class="sd">        :param buff:   Comma separated item names</span>
+<span class="sd">        :param ls_to:  `GXLST &lt;geosoft.gxapi.GXLST&gt;` to add selected items to</span>
+<span class="sd">        :type  buff:   str</span>
+<span class="sd">        :type  ls_to:  GXLST</span>
+
+<span class="sd">        .. versionadded:: 5.1.8</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Items in the input string must be separated with</span>
+<span class="sd">        commas. Parsing uses the sCommaTokens_GS function.</span>
+<span class="sd">        Both the name and value of the input `GXLST &lt;geosoft.gxapi.GXLST&gt;` items whose</span>
+<span class="sd">        name matches an item in the input string are</span>
+<span class="sd">        copied to the output `GXLST &lt;geosoft.gxapi.GXLST&gt;`.</span>
+<span class="sd">        Items are copied in the same order they appear in the</span>
+<span class="sd">        input string. Items in the string not found in the input `GXLST &lt;geosoft.gxapi.GXLST&gt;`</span>
+<span class="sd">        are ignored, and no error is registered.</span>
+<span class="sd">        Item matches are case-tolerant.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_select_csv_string_items</span><span class="p">(</span><span class="n">buff</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ls_to</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLST.serial"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.serial">[docs]</a>    <span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Serialize `GXLST &lt;geosoft.gxapi.GXLST&gt;` to a `GXBF &lt;geosoft.gxapi.GXBF&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :type  bf:   GXBF</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_serial</span><span class="p">(</span><span class="n">bf</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLST.set_item"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.set_item">[docs]</a>    <span class="k">def</span> <span class="nf">set_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">buff</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Place an item at a specified point in the `GXLST &lt;geosoft.gxapi.GXLST&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:  :ref:`LST_ITEM` data to insert</span>
+<span class="sd">        :param item:  Item Number to Set</span>
+<span class="sd">        :param buff:  Item to Set</span>
+<span class="sd">        :type  type:  int</span>
+<span class="sd">        :type  item:  int</span>
+<span class="sd">        :type  buff:  str</span>
+
+<span class="sd">        .. versionadded:: 5.1.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The existing item at the given index will be replaced.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_item</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">buff</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLST.sort"><a class="viewcode-back" href="../../../GXLST.html#geosoft.gxapi.GXLST.sort">[docs]</a>    <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="nb">ord</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sorts a list.</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:  :ref:`LST_ITEM` data to sort on</span>
+<span class="sd">        :param ord:   0 - Ascending, 1 - Decending</span>
+<span class="sd">        :type  type:  int</span>
+<span class="sd">        :type  ord:   int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sort</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="nb">ord</span><span class="p">)</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXLST</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

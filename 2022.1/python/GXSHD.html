@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GXSHD class &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXSHD class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXSHD class</a><ul>
+<li><a class="reference internal" href="#shd-fix-constants">SHD_FIX constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXSHD.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxshd-class">
+<span id="gxshd"></span><h1>GXSHD class<a class="headerlink" href="#gxshd-class" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="geosoft.gxapi.GXSHD">
+<em class="property">class </em><code class="sig-name descname">GXSHD</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSHD.html#GXSHD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSHD" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXSHD class.</p>
+<p>This class supports fast interactive shadowing in a map or grid document.</p>
+<p>The SHD object is created using the
+StartShading_EMAP method.</p>
+<dl class="py method">
+<dt id="geosoft.gxapi.GXSHD.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSHD.html#GXSHD.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSHD.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXSHD.end_shading">
+<code class="sig-name descname">end_shading</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">apply_changes</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSHD.html#GXSHD.end_shading"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSHD.end_shading" title="Permalink to this definition">¶</a></dt>
+<dd><p>This ends interactive shading and must be called if any interactive changes should be applied. Passing false to apply changes is equivalent to simply disposing handle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>apply_changes</strong> (<em>bool</em>) – Apply changes to map.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2021.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>StartShading_EMAP</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXSHD.is_null">
+<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSHD.html#GXSHD.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSHD.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXSHD.null">
+<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSHD.html#GXSHD.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSHD.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXSHD" title="geosoft.gxapi.GXSHD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSHD</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXSHD" title="geosoft.gxapi.GXSHD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSHD</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXSHD" title="geosoft.gxapi.GXSHD">GXSHD</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXSHD.refresh">
+<code class="sig-name descname">refresh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grid_path</span></em>, <em class="sig-param"><span class="n">inclination</span></em>, <em class="sig-param"><span class="n">declination</span></em>, <em class="sig-param"><span class="n">scale</span></em>, <em class="sig-param"><span class="n">contrast</span></em>, <em class="sig-param"><span class="n">brightness</span></em>, <em class="sig-param"><span class="n">wet_look</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSHD.html#GXSHD.refresh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSHD.refresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh the SHD with new shading parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grid_path</strong> (<em>str</em>) – Grid path returned</p></li>
+<li><p><strong>inclination</strong> (<em>float</em>) – inclination (degrees)</p></li>
+<li><p><strong>declination</strong> (<em>float</em>) – declination (degrees)</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – vertical scale relative to base scale</p></li>
+<li><p><strong>contrast</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – contrast 0-1 (recommended &gt;0.1, can change with wet_look changes)</p></li>
+<li><p><strong>brightness</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – brightness 0-1 (can change with wet_look changes)</p></li>
+<li><p><strong>wet_look</strong> (<em>bool</em>) – Apply wet-look effect (shading layer uses lighter distribution)?</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2021.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXSHD.track_interactive">
+<code class="sig-name descname">track_interactive</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">constraint</span></em>, <em class="sig-param"><span class="n">inclination</span></em>, <em class="sig-param"><span class="n">declination</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSHD.html#GXSHD.track_interactive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSHD.track_interactive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Track a line on map and get shading parameters based on its length and direction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>constraint</strong> (<em>int</em>) – <a class="reference internal" href="#shd-fix"><span class="std std-ref">SHD_FIX constants</span></a></p></li>
+<li><p><strong>inclination</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – returned inclination</p></li>
+<li><p><strong>declination</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – returned declination</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>0 if tracking completed successfully.
+1 if user cancelled or tracking failed.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2021.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="shd-fix-constants">
+<span id="shd-fix"></span><h2>SHD_FIX constants<a class="headerlink" href="#shd-fix-constants" title="Permalink to this headline">¶</a></h2>
+<p>Interactive tracking constraints.</p>
+<dl class="py data">
+<dt id="geosoft.gxapi.SHD_FIX_NONE">
+<code class="sig-name descname">SHD_FIX_NONE</code><a class="headerlink" href="#geosoft.gxapi.SHD_FIX_NONE" title="Permalink to this definition">¶</a></dt>
+<dd><p>None</p>
+<dl class="py attribute">
+<dt id="id0">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SHD_FIX_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.SHD_FIX_INCLINATION">
+<code class="sig-name descname">SHD_FIX_INCLINATION</code><a class="headerlink" href="#geosoft.gxapi.SHD_FIX_INCLINATION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inclination</p>
+<dl class="py attribute">
+<dt id="id3">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SHD_FIX_INCLINATION</code><em class="property"> = 1</em><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.SHD_FIX_DECLINATION">
+<code class="sig-name descname">SHD_FIX_DECLINATION</code><a class="headerlink" href="#geosoft.gxapi.SHD_FIX_DECLINATION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Declination</p>
+<dl class="py attribute">
+<dt id="id4">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SHD_FIX_DECLINATION</code><em class="property"> = 2</em><a class="headerlink" href="#id4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXSHD class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

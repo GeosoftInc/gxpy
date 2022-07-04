@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXVULCAN &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVULCAN</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXVULCAN</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXVULCAN"><a class="viewcode-back" href="../../../GXVULCAN.html#geosoft.gxapi.GXVULCAN">[docs]</a><span class="k">class</span> <span class="nc">GXVULCAN</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVULCAN</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXVULCAN class.</span>
+
+<span class="sd">    The `GXVULCAN &lt;geosoft.gxapi.GXVULCAN&gt;` class is used for importing Maptek® Vulcan block and triangulation files.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVULCAN.__init__"><a class="viewcode-back" href="../../../GXVULCAN.html#geosoft.gxapi.GXVULCAN.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXVULCAN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXVULCAN.null"><a class="viewcode-back" href="../../../GXVULCAN.html#geosoft.gxapi.GXVULCAN.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXVULCAN &lt;geosoft.gxapi.GXVULCAN&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXVULCAN &lt;geosoft.gxapi.GXVULCAN&gt;`</span>
+<span class="sd">        :rtype:   GXVULCAN</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXVULCAN</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXVULCAN.is_null"><a class="viewcode-back" href="../../../GXVULCAN.html#geosoft.gxapi.GXVULCAN.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+<div class="viewcode-block" id="GXVULCAN.is_valid_triangulation_file"><a class="viewcode-back" href="../../../GXVULCAN.html#geosoft.gxapi.GXVULCAN.is_valid_triangulation_file">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">is_valid_triangulation_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">triangulation_file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the given file can be opened as a Vulcan triangulation file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param triangulation_file:  Triangulation file</span>
+<span class="sd">        :type  triangulation_file:  str</span>
+
+<span class="sd">        :returns:                   0 - No</span>
+<span class="sd">                                    1 - Yes</span>
+<span class="sd">        :rtype:                     int</span>
+
+<span class="sd">        .. versionadded:: 8.4</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVULCAN</span><span class="o">.</span><span class="n">_is_valid_triangulation_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">triangulation_file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXVULCAN.is_valid_block_model_file"><a class="viewcode-back" href="../../../GXVULCAN.html#geosoft.gxapi.GXVULCAN.is_valid_block_model_file">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">is_valid_block_model_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">block_model_file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the given file can be opened as a Vulcan block model file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param block_model_file:  Block model file</span>
+<span class="sd">        :type  block_model_file:  str</span>
+
+<span class="sd">        :returns:                 0 - No</span>
+<span class="sd">                                  1 - Yes</span>
+<span class="sd">        :rtype:                   int</span>
+
+<span class="sd">        .. versionadded:: 8.4</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVULCAN</span><span class="o">.</span><span class="n">_is_valid_block_model_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">block_model_file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXVULCAN.triangulation_to_view"><a class="viewcode-back" href="../../../GXVULCAN.html#geosoft.gxapi.GXVULCAN.triangulation_to_view">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">triangulation_to_view</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">triangulation_file</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">new_group_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Draw triangle edges in a Vulcan triangulation file to a 3D view in a map.</span>
+<span class="sd">        </span>
+<span class="sd">        :param triangulation_file:  Triangulation file</span>
+<span class="sd">        :param ipj:                 Triangulation projection</span>
+<span class="sd">        :param mview:               Destination `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;`</span>
+<span class="sd">        :param new_group_name:      New group name</span>
+<span class="sd">        :type  triangulation_file:  str</span>
+<span class="sd">        :type  ipj:                 GXIPJ</span>
+<span class="sd">        :type  mview:               GXMVIEW</span>
+<span class="sd">        :type  new_group_name:      str</span>
+
+<span class="sd">        .. versionadded:: 8.4</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVULCAN</span><span class="o">.</span><span class="n">_triangulation_to_view</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">triangulation_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">new_group_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXVULCAN.get_block_model_variable_info"><a class="viewcode-back" href="../../../GXVULCAN.html#geosoft.gxapi.GXVULCAN.get_block_model_variable_info">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_block_model_variable_info</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">block_model_file</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Query a block model for the variable names and descriptions.</span>
+<span class="sd">        </span>
+<span class="sd">        :param block_model_file:  Block model file</span>
+<span class="sd">        :param query:             :ref:`BLOCK_MODEL_VARIABLE_TYPE` Which variables to return.</span>
+<span class="sd">        :param lst:               List used to return variable names/descriptions.</span>
+<span class="sd">        :type  block_model_file:  str</span>
+<span class="sd">        :type  query:             int</span>
+<span class="sd">        :type  lst:               GXLST</span>
+
+<span class="sd">        .. versionadded:: 8.4</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVULCAN</span><span class="o">.</span><span class="n">_get_block_model_variable_info</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">block_model_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">query</span><span class="p">,</span> <span class="n">lst</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXVULCAN.get_block_model_string_variable_values"><a class="viewcode-back" href="../../../GXVULCAN.html#geosoft.gxapi.GXVULCAN.get_block_model_string_variable_values">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_block_model_string_variable_values</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">block_model_file</span><span class="p">,</span> <span class="n">variable_name</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Query a block model for the values a string variable can assume.</span>
+<span class="sd">        </span>
+<span class="sd">        :param block_model_file:  Block model file</span>
+<span class="sd">        :param variable_name:     Variable name</span>
+<span class="sd">        :param lst:               List used to return variable names</span>
+<span class="sd">        :type  block_model_file:  str</span>
+<span class="sd">        :type  variable_name:     str</span>
+<span class="sd">        :type  lst:               GXLST</span>
+
+<span class="sd">        .. versionadded:: 8.4</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVULCAN</span><span class="o">.</span><span class="n">_get_block_model_string_variable_values</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">block_model_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">variable_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">lst</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXVULCAN.block_model_to_voxel"><a class="viewcode-back" href="../../../GXVULCAN.html#geosoft.gxapi.GXVULCAN.block_model_to_voxel">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">block_model_to_voxel</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">block_model_file</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">variable_to_export</span><span class="p">,</span> <span class="n">output_voxel_filename</span><span class="p">,</span> <span class="n">remove_default_values</span><span class="p">,</span> <span class="n">rock_code_filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a Geosoft voxel file from a Vulcan block model file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param block_model_file:       Block model file</span>
+<span class="sd">        :param ipj:                    Block model projection</span>
+<span class="sd">        :param variable_to_export:     Variable to import</span>
+<span class="sd">        :param output_voxel_filename:  Ouput voxel filename</span>
+<span class="sd">        :param remove_default_values:  Remove default values from input?</span>
+<span class="sd">        :param rock_code_filename:     Rock code file for string variable imports. Optional, unused for numeric variable imports.</span>
+<span class="sd">        :type  block_model_file:       str</span>
+<span class="sd">        :type  ipj:                    GXIPJ</span>
+<span class="sd">        :type  variable_to_export:     str</span>
+<span class="sd">        :type  output_voxel_filename:  str</span>
+<span class="sd">        :type  remove_default_values:  bool</span>
+<span class="sd">        :type  rock_code_filename:     str</span>
+
+<span class="sd">        .. versionadded:: 8.4</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVULCAN</span><span class="o">.</span><span class="n">_block_model_to_voxel</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">block_model_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">variable_to_export</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_voxel_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">remove_default_values</span><span class="p">,</span> <span class="n">rock_code_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVULCAN</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,405 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxpy.system &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.system</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxpy.system</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Geosoft system functions.</span>
+
+<span class="sd">.. note::</span>
+
+<span class="sd">    Regression tests provide usage examples: `Tests &lt;https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_system.py&gt;`_</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">gc</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">count</span>
+<span class="kn">import</span> <span class="nn">geosoft</span>
+
+<span class="n">__version__</span> <span class="o">=</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">__version__</span>
+
+
+<div class="viewcode-block" id="translate"><a class="viewcode-back" href="../../../geosoft.gxpy.system.html#geosoft.gxpy.system.translate">[docs]</a><span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Translate string to user language.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">s</span></div>
+
+
+<span class="k">def</span> <span class="nf">_t</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">translate</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_logit</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;function console printing decorator&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">logger</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> called with args(</span><span class="si">{}</span><span class="s1">), kwargs(</span><span class="si">{}</span><span class="s1">); returns(</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fn</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kw</span><span class="p">,</span> <span class="n">ret</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">ret</span>
+
+    <span class="k">return</span> <span class="n">logger</span>
+
+
+<div class="viewcode-block" id="app_name"><a class="viewcode-back" href="../../../geosoft.gxpy.system.html#geosoft.gxpy.system.app_name">[docs]</a><span class="k">def</span> <span class="nf">app_name</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns application script name.</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="func_name"><a class="viewcode-back" href="../../../geosoft.gxpy.system.html#geosoft.gxpy.system.func_name">[docs]</a><span class="k">def</span> <span class="nf">func_name</span><span class="p">(</span><span class="n">stack</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns function name.</span>
+
+<span class="sd">    :param stack:   depth into the calling stack, 0 (default) is this function, 1 is parent, etc.</span>
+<span class="sd">    :returns:       function name, None if too deep into the stack</span>
+
+<span class="sd">    .. versionchanged:: 9.2 added stack</span>
+<span class="sd">    .. versionadded:: 9.1</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">func</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">stack</span><span class="p">()[</span><span class="n">stack</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">func</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="call_location"><a class="viewcode-back" href="../../../geosoft.gxpy.system.html#geosoft.gxpy.system.call_location">[docs]</a><span class="k">def</span> <span class="nf">call_location</span><span class="p">(</span><span class="n">stack</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns function call location including file and line number as a string</span>
+
+<span class="sd">    :param stack:   depth into the calling stack, 0 (default) is this function, 1 is parent, etc.</span>
+<span class="sd">    :returns:       string formatted as &#39;&lt;file&gt;, line XX in &lt;function&gt;&#39;, empty string if too deep into the stack</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">stack_location</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">stack</span><span class="p">()[</span><span class="n">stack</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">file</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">func</span> <span class="o">=</span> <span class="n">stack_location</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, line </span><span class="si">{}</span><span class="s1"> in function </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span></div>
+
+<span class="k">def</span> <span class="nf">_parallel_foreach</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">threads</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">return_</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Apply f to each element of l, in parallel, called by parallel_map().</span>
+<span class="sd">    From: http://wiki.scipy.org/Cookbook/Multithreading</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">threads</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">iteratorlock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+        <span class="n">exceptions</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">return_</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">count</span><span class="p">(),</span> <span class="n">l</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">()</span>
+
+        <span class="k">def</span> <span class="nf">runall</span><span class="p">():</span>
+            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="n">iteratorlock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">exceptions</span><span class="p">:</span>
+                            <span class="k">return</span>
+                        <span class="n">v</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                    <span class="k">finally</span><span class="p">:</span>
+                        <span class="n">iteratorlock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+                <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+                    <span class="k">return</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">return_</span><span class="p">:</span>
+                        <span class="n">n</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">v</span>
+                        <span class="n">d</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">f</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="n">e</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
+                    <span class="n">iteratorlock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">exceptions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                    <span class="k">finally</span><span class="p">:</span>
+                        <span class="n">iteratorlock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+
+        <span class="n">threadlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">runall</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">threads</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">threadlist</span><span class="p">:</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">threadlist</span><span class="p">:</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">exceptions</span><span class="p">:</span>
+            <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">exceptions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">raise</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">return_</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">r</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">return_</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">l</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+                <span class="n">f</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="k">return</span>
+
+
+<div class="viewcode-block" id="parallel_map"><a class="viewcode-back" href="../../../geosoft.gxpy.system.html#geosoft.gxpy.system.parallel_map">[docs]</a><span class="k">def</span> <span class="nf">parallel_map</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">threads</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A parallel equivalent of the map() built-in Python function (it supports only one iterable argument though).</span>
+
+<span class="sd">    :param f:       function to run in parallel f(). Must be thread-safe, of course.</span>
+<span class="sd">    :param l:       iterable list of arguments to pass to each thread.  Use tuples for multiple arguments.</span>
+<span class="sd">    :param threads: number of threads to use, default is number of cores on computer</span>
+
+<span class="sd">    :returns:       list of results from each call to f(), in order of iterable l.</span>
+
+<span class="sd">    :example:</span>
+
+<span class="sd">    .. code::</span>
+
+<span class="sd">        import gxpy.system as gsys</span>
+
+<span class="sd">        def func(ab):</span>
+<span class="sd">            &#39;&#39;&#39;</span>
+<span class="sd">            :param ab:  tuple (a,b)</span>
+<span class="sd">            :returns:   a+b</span>
+<span class="sd">            &#39;&#39;&#39;</span>
+<span class="sd">            return ab[0] + ab[1]</span>
+
+<span class="sd">        # create list of 20 argument sets to calculate in parallel</span>
+<span class="sd">        data = [(1+i, 2+i) for i in range(20)]</span>
+
+<span class="sd">        # print results of running function in parallel</span>
+<span class="sd">        print(gsys.parallel_map(func, data))</span>
+<span class="sd">        # prints: [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41]</span>
+
+<span class="sd">        # same thing using a lambda function</span>
+<span class="sd">        print(gsys.parallel_map(lambda ab: ab[0] + ab[1], data))</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">threads</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">threads</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">_parallel_foreach</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">threads</span><span class="o">=</span><span class="n">threads</span><span class="p">,</span> <span class="n">return_</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<span class="c1">#############</span>
+<span class="c1"># classes</span>
+
+<div class="viewcode-block" id="GXSysException"><a class="viewcode-back" href="../../../geosoft.gxpy.system.html#geosoft.gxpy.system.GXSysException">[docs]</a><span class="k">class</span> <span class="nc">GXSysException</span><span class="p">(</span><span class="n">geosoft</span><span class="o">.</span><span class="n">GXRuntimeError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Exceptions from :mod:`geosoft.gxpy.system`.</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="wait_on_file"><a class="viewcode-back" href="../../../geosoft.gxpy.system.html#geosoft.gxpy.system.wait_on_file">[docs]</a><span class="k">def</span> <span class="nf">wait_on_file</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Working with large files on systems that cache the file can cause a situation</span>
+<span class="sd">    where the file is not yet completely written out before an attempt is made to open</span>
+<span class="sd">    a file that has just been closed.</span>
+
+<span class="sd">    Call this function to wait for the file to be available.  Best to do this right after</span>
+<span class="sd">    you know that you may have written out a large file, or in a try/except around a file</span>
+<span class="sd">    open.</span>
+
+<span class="sd">    :param fileName:</span>
+<span class="sd">    :wait:              time in milliseconds to wait between retries</span>
+<span class="sd">    :retries:           maximum number of retries</span>
+<span class="sd">    :raises:            GX_SysException if fail to get read access to the file.</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">tries</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">access</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">W_OK</span><span class="p">):</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="n">tries</span> <span class="o">&gt;=</span> <span class="n">retries</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">GXSysException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Unable to access </span><span class="si">{}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fileName</span><span class="p">))</span>
+        <span class="n">tries</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">wait</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_unzip</span><span class="p">(</span><span class="n">zip_file_name</span><span class="p">,</span> <span class="n">folder</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">zip_file_name</span><span class="p">)</span> <span class="k">as</span> <span class="n">zf</span><span class="p">:</span>
+        <span class="n">zf</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+        <span class="n">files</span> <span class="o">=</span> <span class="n">zf</span><span class="o">.</span><span class="n">namelist</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">files</span>
+
+
+<div class="viewcode-block" id="unzip"><a class="viewcode-back" href="../../../geosoft.gxpy.system.html#geosoft.gxpy.system.unzip">[docs]</a><span class="k">def</span> <span class="nf">unzip</span><span class="p">(</span><span class="n">zip_file_name</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">report</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">checkready</span><span class="o">=</span><span class="mi">25</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Decompress and write the content of a zip file to a folder.</span>
+
+<span class="sd">    :param zip_file_name:   zip file name, must have extension</span>
+<span class="sd">    :param folder:          folder to write results, create it it does not exist</span>
+<span class="sd">    :param report:          ignored</span>
+<span class="sd">    :param checkready:      time in 1/10 second to check completion of each file, default 25</span>
+<span class="sd">    :returns:               (folder that contains unzipped files, list of files)</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># get full path</span>
+    <span class="n">zip_file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">zip_file_name</span><span class="p">)</span>
+
+    <span class="c1"># if no folder, determine based on zip file name</span>
+    <span class="k">if</span> <span class="n">folder</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">zip_file_name</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># create a folder</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+
+    <span class="n">files</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">files</span> <span class="o">=</span> <span class="n">_unzip</span><span class="p">(</span><span class="n">zip_file_name</span><span class="p">,</span> <span class="n">folder</span><span class="p">)</span>
+
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">GXSysException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Cannot process zip file </span><span class="si">{}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">zip_file_name</span><span class="p">))</span>
+
+    <span class="k">finally</span><span class="p">:</span>
+
+        <span class="c1"># check that files are ready for access</span>
+        <span class="k">if</span> <span class="n">files</span> <span class="ow">and</span> <span class="n">checkready</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+                <span class="n">wait_on_file</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">wait</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">checkready</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">folder</span><span class="p">,</span> <span class="n">files</span></div>
+
+
+<div class="viewcode-block" id="remove_dir"><a class="viewcode-back" href="../../../geosoft.gxpy.system.html#geosoft.gxpy.system.remove_dir">[docs]</a><span class="k">def</span> <span class="nf">remove_dir</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">tries</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Robust directory removal, with timed retries to allow for OS timing lags.  If you need to use this</span>
+<span class="sd">    you may have a coding error in which you are not properly releasing a resource.</span>
+
+<span class="sd">    :param directory:   directory name, must be a directory</span>
+<span class="sd">    :param wait:        wait between retries in milliseconds</span>
+<span class="sd">    :param tries:       number of times to retry</span>
+
+<span class="sd">    .. versionadded:: 9.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+                <span class="k">return</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">t</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">t</span> <span class="o">&gt;=</span> <span class="n">tries</span><span class="p">:</span>
+                    <span class="k">raise</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">wait</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">)</span></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.system</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

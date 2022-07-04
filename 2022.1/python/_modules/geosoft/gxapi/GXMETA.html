@@ -1,0 +1,1105 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXMETA &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMETA</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXMETA</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXMETA"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA">[docs]</a><span class="k">class</span> <span class="nc">GXMETA</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMETA</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXMETA class.</span>
+
+<span class="sd">    A `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` object contains hierarchical organized metadata</span>
+<span class="sd">    of any type, including other objects.  `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` information</span>
+<span class="sd">    is organized in an XML-like structure based on a data</span>
+<span class="sd">    schema that describes the data hierarchy.   `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` objects</span>
+<span class="sd">    are used by many entities that need to store metadata</span>
+<span class="sd">    specific to the entities or to the application.</span>
+
+<span class="sd">    Metadata can be saved in databases and maps, as well as in</span>
+<span class="sd">    channels, lines, views and groups.  Oasis montaj objects</span>
+<span class="sd">    can be queried for their associated metadata, and if it</span>
+<span class="sd">    exists, the metadata can be retrieved and utilized by</span>
+<span class="sd">    other Oasis montaj processes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXMETA.__init__"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXMETA</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXMETA.null"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXMETA &lt;geosoft.gxapi.GXMETA&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXMETA &lt;geosoft.gxapi.GXMETA&gt;`</span>
+<span class="sd">        :rtype:   GXMETA</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXMETA</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXMETA.is_null"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Attribute</span>
+
+
+
+<div class="viewcode-block" id="GXMETA.create_attrib"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.create_attrib">[docs]</a>    <span class="k">def</span> <span class="nf">create_attrib</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ph_class</span><span class="p">,</span> <span class="n">ph_type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an attribute</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:      Attribute Name</span>
+<span class="sd">        :param ph_class:  Parent class or :ref:`META_CORE_CLASS`</span>
+<span class="sd">        :param ph_type:   Type of Attribute or :ref:`META_CORE_TYPE`</span>
+<span class="sd">        :type  name:      str</span>
+<span class="sd">        :type  ph_class:  int</span>
+<span class="sd">        :type  ph_type:   int</span>
+
+<span class="sd">        :returns:         x - Attribute Token</span>
+<span class="sd">        :rtype:           int</span>
+
+<span class="sd">        .. versionadded:: 6.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_attrib</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ph_class</span><span class="p">,</span> <span class="n">ph_type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMETA.delete_attrib"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.delete_attrib">[docs]</a>    <span class="k">def</span> <span class="nf">delete_attrib</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_attribute</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete Attrib from `GXMETA &lt;geosoft.gxapi.GXMETA&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_attribute:  Attrib to delete</span>
+<span class="sd">        :type  ph_attribute:  int</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_delete_attrib</span><span class="p">(</span><span class="n">ph_attribute</span><span class="p">)</span></div>
+        
+
+
+
+
+<span class="c1"># Browser</span>
+
+
+
+<div class="viewcode-block" id="GXMETA.set_attribute_editable"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.set_attribute_editable">[docs]</a>    <span class="k">def</span> <span class="nf">set_attribute_editable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_attribute</span><span class="p">,</span> <span class="n">editable</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Allow/disallow an attribute to be editable in the browser</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_attribute:  Attribute or :ref:`META_CORE_ATTRIB`</span>
+<span class="sd">        :param editable:      Editable Flag</span>
+<span class="sd">        :type  ph_attribute:  int</span>
+<span class="sd">        :type  editable:      int</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_attribute_editable</span><span class="p">(</span><span class="n">ph_attribute</span><span class="p">,</span> <span class="n">editable</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMETA.set_attribute_visible"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.set_attribute_visible">[docs]</a>    <span class="k">def</span> <span class="nf">set_attribute_visible</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_attribute</span><span class="p">,</span> <span class="n">visible</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Allow/disallow an attribute to be visible in the browser</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_attribute:  Attribute or :ref:`META_CORE_ATTRIB`</span>
+<span class="sd">        :param visible:       Editable Flag</span>
+<span class="sd">        :type  ph_attribute:  int</span>
+<span class="sd">        :type  visible:       int</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_attribute_visible</span><span class="p">(</span><span class="n">ph_attribute</span><span class="p">,</span> <span class="n">visible</span><span class="p">)</span></div>
+        
+
+
+
+
+<span class="c1"># Class</span>
+
+
+
+<div class="viewcode-block" id="GXMETA.create_class"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.create_class">[docs]</a>    <span class="k">def</span> <span class="nf">create_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ph_class</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a class</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:      Class Name</span>
+<span class="sd">        :param ph_class:  Parent class or `META_CORE_CLASS_Base &lt;geosoft.gxapi.META_CORE_CLASS_Base&gt;`</span>
+<span class="sd">        :type  name:      str</span>
+<span class="sd">        :type  ph_class:  int</span>
+
+<span class="sd">        :returns:         x - Class Token</span>
+<span class="sd">        :rtype:           int</span>
+
+<span class="sd">        .. versionadded:: 6.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_class</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ph_class</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMETA.delete_class"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.delete_class">[docs]</a>    <span class="k">def</span> <span class="nf">delete_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_class</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete Class from `GXMETA &lt;geosoft.gxapi.GXMETA&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_class:  Class to delete</span>
+<span class="sd">        :type  ph_class:  int</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_delete_class</span><span class="p">(</span><span class="n">ph_class</span><span class="p">)</span></div>
+        
+
+
+
+
+<span class="c1"># Core</span>
+
+
+
+<div class="viewcode-block" id="GXMETA.copy"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_meta</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy a `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` to another</span>
+<span class="sd">        </span>
+<span class="sd">        :param source_meta:  Source `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` object.</span>
+<span class="sd">        :type  source_meta:  GXMETA</span>
+
+<span class="sd">        .. versionadded:: 5.1.8</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_copy</span><span class="p">(</span><span class="n">source_meta</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMETA.create"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.create">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` Object</span>
+<span class="sd">        :rtype:      GXMETA</span>
+
+<span class="sd">        .. versionadded:: 5.0.8</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMETA</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXMETA</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GXMETA.create_s"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.create_s">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_s</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` Object from a `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :param bf:  `GXBF &lt;geosoft.gxapi.GXBF&gt;` to serialize from</span>
+<span class="sd">        :type  bf:  GXBF</span>
+
+<span class="sd">        :returns:    `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` Object</span>
+<span class="sd">        :rtype:      GXMETA</span>
+
+<span class="sd">        .. versionadded:: 5.1.8</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMETA</span><span class="o">.</span><span class="n">_create_s</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">bf</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXMETA</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+
+
+<div class="viewcode-block" id="GXMETA.serial"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.serial">[docs]</a>    <span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Serialize an `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` to a `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :param bf:    `GXBF &lt;geosoft.gxapi.GXBF&gt;` to serialize to</span>
+<span class="sd">        :type  bf:    GXBF</span>
+
+<span class="sd">        .. versionadded:: 5.1.8</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_serial</span><span class="p">(</span><span class="n">bf</span><span class="p">)</span></div>
+        
+
+
+
+
+<span class="c1"># Get Data</span>
+
+
+
+<div class="viewcode-block" id="GXMETA.find_data"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.find_data">[docs]</a>    <span class="k">def</span> <span class="nf">find_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Does this meta/attribute have a value ?</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_object:  Object</span>
+<span class="sd">        :param ph_attrib:  Attribute</span>
+<span class="sd">        :type  ph_object:  int</span>
+<span class="sd">        :type  ph_attrib:  int</span>
+
+<span class="sd">        :returns:          x  - Data Value</span>
+<span class="sd">                           `H_META_INVALID_TOKEN &lt;geosoft.gxapi.H_META_INVALID_TOKEN&gt;` - No</span>
+<span class="sd">        :rtype:            int</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_data</span><span class="p">(</span><span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMETA.get_attrib_bool"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.get_attrib_bool">[docs]</a>    <span class="k">def</span> <span class="nf">get_attrib_bool</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a boolean value to an attribute</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_object:  Object</span>
+<span class="sd">        :param ph_attrib:  Attribute</span>
+<span class="sd">        :param value:      Value to set</span>
+<span class="sd">        :type  ph_object:  int</span>
+<span class="sd">        :type  ph_attrib:  int</span>
+<span class="sd">        :type  value:      int_ref</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_attrib_bool</span><span class="p">(</span><span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMETA.get_attrib_enum"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.get_attrib_enum">[docs]</a>    <span class="k">def</span> <span class="nf">get_attrib_enum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get an enum value to an attribute (as an integer)</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_object:  Object</span>
+<span class="sd">        :param ph_attrib:  Attribute</span>
+<span class="sd">        :param value:      Value to set</span>
+<span class="sd">        :type  ph_object:  int</span>
+<span class="sd">        :type  ph_attrib:  int</span>
+<span class="sd">        :type  value:      int_ref</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_attrib_enum</span><span class="p">(</span><span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMETA.get_attrib_int"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.get_attrib_int">[docs]</a>    <span class="k">def</span> <span class="nf">get_attrib_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get an integer value to an attribute</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_object:  Object</span>
+<span class="sd">        :param ph_attrib:  Attribute</span>
+<span class="sd">        :param value:      Value to set</span>
+<span class="sd">        :type  ph_object:  int</span>
+<span class="sd">        :type  ph_attrib:  int</span>
+<span class="sd">        :type  value:      int_ref</span>
+
+<span class="sd">        .. versionadded:: 5.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_attrib_int</span><span class="p">(</span><span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMETA.get_attrib_double"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.get_attrib_double">[docs]</a>    <span class="k">def</span> <span class="nf">get_attrib_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get an integer value to an attribute</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_object:  Object</span>
+<span class="sd">        :param ph_attrib:  Attribute</span>
+<span class="sd">        :param value:      Value to set</span>
+<span class="sd">        :type  ph_object:  int</span>
+<span class="sd">        :type  ph_attrib:  int</span>
+<span class="sd">        :type  value:      float_ref</span>
+
+<span class="sd">        .. versionadded:: 5.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_attrib_double</span><span class="p">(</span><span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMETA.get_attrib_string"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.get_attrib_string">[docs]</a>    <span class="k">def</span> <span class="nf">get_attrib_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a string value to an attribute</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_object:  Object</span>
+<span class="sd">        :param ph_attrib:  Attribute</span>
+<span class="sd">        :param value:      String value to get</span>
+<span class="sd">        :type  ph_object:  int</span>
+<span class="sd">        :type  ph_attrib:  int</span>
+<span class="sd">        :type  value:      str_ref</span>
+
+<span class="sd">        .. versionadded:: 5.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_attrib_string</span><span class="p">(</span><span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMETA.has_value"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.has_value">[docs]</a>    <span class="k">def</span> <span class="nf">has_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Does this meta/attribute have a value set?</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_object:  Object</span>
+<span class="sd">        :param ph_attrib:  Attribute</span>
+<span class="sd">        :type  ph_object:  int</span>
+<span class="sd">        :type  ph_attrib:  int</span>
+<span class="sd">        :rtype:            bool</span>
+
+<span class="sd">        .. versionadded:: 6.0.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_value</span><span class="p">(</span><span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<span class="c1"># Import/Export</span>
+
+
+
+<div class="viewcode-block" id="GXMETA.export_table_csv"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.export_table_csv">[docs]</a>    <span class="k">def</span> <span class="nf">export_table_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_class</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Export all items in a class as a CSV</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_class:  Class of items to export</span>
+<span class="sd">        :param file:      Name of CSV file to produce</span>
+<span class="sd">        :type  ph_class:  int</span>
+<span class="sd">        :type  file:      str</span>
+
+<span class="sd">        .. versionadded:: 5.1.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_export_table_csv</span><span class="p">(</span><span class="n">ph_class</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMETA.import_table_csv"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.import_table_csv">[docs]</a>    <span class="k">def</span> <span class="nf">import_table_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_class</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Import a CSV into a class as items.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_class:  Class to import into</span>
+<span class="sd">        :param file:      Name of CSV file to load</span>
+<span class="sd">        :type  ph_class:  int</span>
+<span class="sd">        :type  file:      str</span>
+
+<span class="sd">        .. versionadded:: 5.1.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Field names in the CSV file that match attribute names in the class will be</span>
+<span class="sd">        imported into table entries in the class.  Usually this will be used with</span>
+<span class="sd">        a class created using the hCreateTable_SCHEMA method so that the contents of</span>
+<span class="sd">        class can be viewed as a table.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_import_table_csv</span><span class="p">(</span><span class="n">ph_class</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMETA.write_text"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.write_text">[docs]</a>    <span class="k">def</span> <span class="nf">write_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wa</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write the entire meta as a text file</span>
+<span class="sd">        </span>
+<span class="sd">        :param wa:    `GXWA &lt;geosoft.gxapi.GXWA&gt;` to write to</span>
+<span class="sd">        :type  wa:    GXWA</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_text</span><span class="p">(</span><span class="n">wa</span><span class="p">)</span></div>
+        
+
+
+
+
+<span class="c1"># Item</span>
+
+
+
+<div class="viewcode-block" id="GXMETA.delete_all_items"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.delete_all_items">[docs]</a>    <span class="k">def</span> <span class="nf">delete_all_items</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_class</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete all items in this class.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_class:  Class of items to delete</span>
+<span class="sd">        :type  ph_class:  int</span>
+
+<span class="sd">        .. versionadded:: 5.1.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_delete_all_items</span><span class="p">(</span><span class="n">ph_class</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMETA.delete_item"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.delete_item">[docs]</a>    <span class="k">def</span> <span class="nf">delete_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_item</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete item from `GXMETA &lt;geosoft.gxapi.GXMETA&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_item:  Item to delete</span>
+<span class="sd">        :type  ph_item:  int</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_delete_item</span><span class="p">(</span><span class="n">ph_item</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMETA.h_creat_item"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.h_creat_item">[docs]</a>    <span class="k">def</span> <span class="nf">h_creat_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ph_class</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates item in Class.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:      Unique item Name</span>
+<span class="sd">        :param ph_class:  Class (can be root)</span>
+<span class="sd">        :type  name:      str</span>
+<span class="sd">        :type  ph_class:  int</span>
+
+<span class="sd">        :returns:         x                    - Next Item</span>
+<span class="sd">                          `H_META_INVALID_TOKEN &lt;geosoft.gxapi.H_META_INVALID_TOKEN&gt;` - Error</span>
+<span class="sd">        :rtype:           int</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h_creat_item</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ph_class</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMETA.h_get_next_item"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.h_get_next_item">[docs]</a>    <span class="k">def</span> <span class="nf">h_get_next_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_class</span><span class="p">,</span> <span class="n">ph_token</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Count the number of items in a class</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_class:  Class</span>
+<span class="sd">        :param ph_token:  Starting Item (must `H_META_INVALID_TOKEN &lt;geosoft.gxapi.H_META_INVALID_TOKEN&gt;` for first item)</span>
+<span class="sd">        :type  ph_class:  int</span>
+<span class="sd">        :type  ph_token:  int</span>
+
+<span class="sd">        :returns:         x                    - Next Item</span>
+<span class="sd">                          `H_META_INVALID_TOKEN &lt;geosoft.gxapi.H_META_INVALID_TOKEN&gt;` - No more items</span>
+<span class="sd">        :rtype:           int</span>
+
+<span class="sd">        .. versionadded:: 5.1.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h_get_next_item</span><span class="p">(</span><span class="n">ph_class</span><span class="p">,</span> <span class="n">ph_token</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<span class="c1"># Object</span>
+
+
+
+<div class="viewcode-block" id="GXMETA.get_attrib_obj"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.get_attrib_obj">[docs]</a>    <span class="k">def</span> <span class="nf">get_attrib_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get an object from an attribute</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_object:  Object</span>
+<span class="sd">        :param ph_attrib:  Attribute</span>
+<span class="sd">        :param obj:        Object to get info into</span>
+<span class="sd">        :type  ph_object:  int</span>
+<span class="sd">        :type  ph_attrib:  int</span>
+<span class="sd">        :type  obj:        int</span>
+
+<span class="sd">        .. versionadded:: 5.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_attrib_obj</span><span class="p">(</span><span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMETA.set_attrib_obj"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.set_attrib_obj">[docs]</a>    <span class="k">def</span> <span class="nf">set_attrib_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set an object to an attribute</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_object:  Object</span>
+<span class="sd">        :param ph_attrib:  Attribute</span>
+<span class="sd">        :param obj:        Object to set</span>
+<span class="sd">        :type  ph_object:  int</span>
+<span class="sd">        :type  ph_attrib:  int</span>
+<span class="sd">        :type  obj:        int</span>
+
+<span class="sd">        .. versionadded:: 5.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_attrib_obj</span><span class="p">(</span><span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span></div>
+        
+
+
+
+
+<span class="c1"># Set Data</span>
+
+
+
+<div class="viewcode-block" id="GXMETA.set_attrib_bool"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.set_attrib_bool">[docs]</a>    <span class="k">def</span> <span class="nf">set_attrib_bool</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set a boolean value to an attribute</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_object:  Object</span>
+<span class="sd">        :param ph_attrib:  Attribute</span>
+<span class="sd">        :param value:      Value to set</span>
+<span class="sd">        :type  ph_object:  int</span>
+<span class="sd">        :type  ph_attrib:  int</span>
+<span class="sd">        :type  value:      int</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_attrib_bool</span><span class="p">(</span><span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMETA.set_attrib_enum"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.set_attrib_enum">[docs]</a>    <span class="k">def</span> <span class="nf">set_attrib_enum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set an enum value to an attribute (as an integer)</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_object:  Object</span>
+<span class="sd">        :param ph_attrib:  Attribute</span>
+<span class="sd">        :param value:      Value to set</span>
+<span class="sd">        :type  ph_object:  int</span>
+<span class="sd">        :type  ph_attrib:  int</span>
+<span class="sd">        :type  value:      int</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_attrib_enum</span><span class="p">(</span><span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMETA.set_attrib_int"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.set_attrib_int">[docs]</a>    <span class="k">def</span> <span class="nf">set_attrib_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set an integer value to an attribute</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_object:  Object</span>
+<span class="sd">        :param ph_attrib:  Attribute</span>
+<span class="sd">        :param value:      Value to set</span>
+<span class="sd">        :type  ph_object:  int</span>
+<span class="sd">        :type  ph_attrib:  int</span>
+<span class="sd">        :type  value:      int</span>
+
+<span class="sd">        .. versionadded:: 5.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_attrib_int</span><span class="p">(</span><span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMETA.set_attrib_double"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.set_attrib_double">[docs]</a>    <span class="k">def</span> <span class="nf">set_attrib_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set an integer value to an attribute</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_object:  Object</span>
+<span class="sd">        :param ph_attrib:  Attribute</span>
+<span class="sd">        :param value:      Value to set</span>
+<span class="sd">        :type  ph_object:  int</span>
+<span class="sd">        :type  ph_attrib:  int</span>
+<span class="sd">        :type  value:      float</span>
+
+<span class="sd">        .. versionadded:: 5.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_attrib_double</span><span class="p">(</span><span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMETA.set_attrib_string"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.set_attrib_string">[docs]</a>    <span class="k">def</span> <span class="nf">set_attrib_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set a string value to an attribute</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_object:  Object</span>
+<span class="sd">        :param ph_attrib:  Attribute</span>
+<span class="sd">        :param value:      String value to set</span>
+<span class="sd">        :type  ph_object:  int</span>
+<span class="sd">        :type  ph_attrib:  int</span>
+<span class="sd">        :type  value:      str</span>
+
+<span class="sd">        .. versionadded:: 5.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_attrib_string</span><span class="p">(</span><span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMETA.set_empty_attrib"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.set_empty_attrib">[docs]</a>    <span class="k">def</span> <span class="nf">set_empty_attrib</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set an empty attribute data holder</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_object:  MetaObject to set</span>
+<span class="sd">        :param ph_attrib:  Attribute MetaObject to set</span>
+<span class="sd">        :type  ph_object:  int</span>
+<span class="sd">        :type  ph_attrib:  int</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_empty_attrib</span><span class="p">(</span><span class="n">ph_object</span><span class="p">,</span> <span class="n">ph_attrib</span><span class="p">)</span></div>
+        
+
+
+
+
+<span class="c1"># Transfer</span>
+
+
+
+<div class="viewcode-block" id="GXMETA.h_copy_across_attribute"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.h_copy_across_attribute">[docs]</a>    <span class="k">def</span> <span class="nf">h_copy_across_attribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_meta</span><span class="p">,</span> <span class="n">ph_attribute</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy an Attribute from one `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` to another</span>
+<span class="sd">        </span>
+<span class="sd">        :param source_meta:   Source `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` object.</span>
+<span class="sd">        :param ph_attribute:  Attribute to copy</span>
+<span class="sd">        :type  source_meta:   GXMETA</span>
+<span class="sd">        :type  ph_attribute:  int</span>
+
+<span class="sd">        :returns:             x                  - Handle of Attribute</span>
+<span class="sd">                              META_INVALID_TOKEN - No visible data</span>
+<span class="sd">        :rtype:               int</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h_copy_across_attribute</span><span class="p">(</span><span class="n">source_meta</span><span class="p">,</span> <span class="n">ph_attribute</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMETA.h_copy_across_class"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.h_copy_across_class">[docs]</a>    <span class="k">def</span> <span class="nf">h_copy_across_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_meta</span><span class="p">,</span> <span class="n">ph_class</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy a Class from one `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` to another</span>
+<span class="sd">        </span>
+<span class="sd">        :param source_meta:  Source `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` object.</span>
+<span class="sd">        :param ph_class:     Class to copy</span>
+<span class="sd">        :type  source_meta:  GXMETA</span>
+<span class="sd">        :type  ph_class:     int</span>
+
+<span class="sd">        :returns:            x                  - Handle of Class</span>
+<span class="sd">                             META_INVALID_TOKEN - No visible data anywhere</span>
+<span class="sd">        :rtype:              int</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** This will copy all parent classes as well.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h_copy_across_class</span><span class="p">(</span><span class="n">source_meta</span><span class="p">,</span> <span class="n">ph_class</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMETA.h_copy_across_data"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.h_copy_across_data">[docs]</a>    <span class="k">def</span> <span class="nf">h_copy_across_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_meta</span><span class="p">,</span> <span class="n">ph_data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy a Data value from one `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` to another</span>
+<span class="sd">        </span>
+<span class="sd">        :param source_meta:  Source `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` object.</span>
+<span class="sd">        :param ph_data:      Data value to copy</span>
+<span class="sd">        :type  source_meta:  GXMETA</span>
+<span class="sd">        :type  ph_data:      int</span>
+
+<span class="sd">        :returns:            x                  - Handle of Data value</span>
+<span class="sd">                             META_INVALID_TOKEN - No visible data</span>
+<span class="sd">        :rtype:              int</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h_copy_across_data</span><span class="p">(</span><span class="n">source_meta</span><span class="p">,</span> <span class="n">ph_data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMETA.h_copy_across_item"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.h_copy_across_item">[docs]</a>    <span class="k">def</span> <span class="nf">h_copy_across_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_meta</span><span class="p">,</span> <span class="n">ph_item</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy an Item from one `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` to another</span>
+<span class="sd">        </span>
+<span class="sd">        :param source_meta:  Source `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` object.</span>
+<span class="sd">        :param ph_item:      Item to copy</span>
+<span class="sd">        :type  source_meta:  GXMETA</span>
+<span class="sd">        :type  ph_item:      int</span>
+
+<span class="sd">        :returns:            x                  - Handle of Item</span>
+<span class="sd">                             META_INVALID_TOKEN - No visible data</span>
+<span class="sd">        :rtype:              int</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h_copy_across_item</span><span class="p">(</span><span class="n">source_meta</span><span class="p">,</span> <span class="n">ph_item</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMETA.h_copy_across_type"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.h_copy_across_type">[docs]</a>    <span class="k">def</span> <span class="nf">h_copy_across_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_meta</span><span class="p">,</span> <span class="n">ph_type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy a Type from one `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` to another</span>
+<span class="sd">        </span>
+<span class="sd">        :param source_meta:  Source `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` object.</span>
+<span class="sd">        :param ph_type:      Type to copy</span>
+<span class="sd">        :type  source_meta:  GXMETA</span>
+<span class="sd">        :type  ph_type:      int</span>
+
+<span class="sd">        :returns:            x                  - Handle of type</span>
+<span class="sd">                             META_INVALID_TOKEN - No visible data anywhere</span>
+<span class="sd">        :rtype:              int</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Classes and parent types will also be copied.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h_copy_across_type</span><span class="p">(</span><span class="n">source_meta</span><span class="p">,</span> <span class="n">ph_type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMETA.move_datas_across"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.move_datas_across">[docs]</a>    <span class="k">def</span> <span class="nf">move_datas_across</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_meta</span><span class="p">,</span> <span class="n">ph_i_obj</span><span class="p">,</span> <span class="n">ph_o_obj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Moves data items from one `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` to another</span>
+<span class="sd">        </span>
+<span class="sd">        :param source_meta:  Source `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` Object</span>
+<span class="sd">        :param ph_i_obj:     Object to copy data from</span>
+<span class="sd">        :param ph_o_obj:     Object to copy data to</span>
+<span class="sd">        :type  source_meta:  GXMETA</span>
+<span class="sd">        :type  ph_i_obj:     int</span>
+<span class="sd">        :type  ph_o_obj:     int</span>
+
+<span class="sd">        .. versionadded:: 5.1.8</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_move_datas_across</span><span class="p">(</span><span class="n">source_meta</span><span class="p">,</span> <span class="n">ph_i_obj</span><span class="p">,</span> <span class="n">ph_o_obj</span><span class="p">)</span></div>
+        
+
+
+
+
+<span class="c1"># Type</span>
+
+
+
+<div class="viewcode-block" id="GXMETA.create_type"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.create_type">[docs]</a>    <span class="k">def</span> <span class="nf">create_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ph_class</span><span class="p">,</span> <span class="n">ph_type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an attribute</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:      Attribute Name</span>
+<span class="sd">        :param ph_class:  Parent Class or :ref:`META_CORE_CLASS`</span>
+<span class="sd">        :param ph_type:   Parent Type or :ref:`META_CORE_TYPE`</span>
+<span class="sd">        :type  name:      str</span>
+<span class="sd">        :type  ph_class:  int</span>
+<span class="sd">        :type  ph_type:   int</span>
+
+<span class="sd">        :returns:         x - Type Token</span>
+<span class="sd">        :rtype:           int</span>
+
+<span class="sd">        .. versionadded:: 6.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_type</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ph_class</span><span class="p">,</span> <span class="n">ph_type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMETA.delete_data"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.delete_data">[docs]</a>    <span class="k">def</span> <span class="nf">delete_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete Data from `GXMETA &lt;geosoft.gxapi.GXMETA&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_data:  Data to delete</span>
+<span class="sd">        :type  ph_data:  int</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_delete_data</span><span class="p">(</span><span class="n">ph_data</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMETA.delete_type"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.delete_type">[docs]</a>    <span class="k">def</span> <span class="nf">delete_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete Type from `GXMETA &lt;geosoft.gxapi.GXMETA&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_type:  Type to delete</span>
+<span class="sd">        :type  ph_type:  int</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_delete_type</span><span class="p">(</span><span class="n">ph_type</span><span class="p">)</span></div>
+        
+
+
+
+
+<span class="c1"># UMN</span>
+
+
+
+<div class="viewcode-block" id="GXMETA.get_obj_name"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.get_obj_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_obj_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the name of this item.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ph_object:  Object</span>
+<span class="sd">        :param name:       Name of object</span>
+<span class="sd">        :type  ph_object:  int</span>
+<span class="sd">        :type  name:       str_ref</span>
+
+<span class="sd">        .. versionadded:: 5.1.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_obj_name</span><span class="p">(</span><span class="n">ph_object</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMETA.resolve_umn"><a class="viewcode-back" href="../../../GXMETA.html#geosoft.gxapi.GXMETA.resolve_umn">[docs]</a>    <span class="k">def</span> <span class="nf">resolve_umn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">umn</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Resolve a Unique Meta Name (UMN) and find the token</span>
+<span class="sd">        </span>
+<span class="sd">        :param umn:   Unique Meta Name (UMN)</span>
+<span class="sd">        :type  umn:   str</span>
+
+<span class="sd">        :returns:     x                    - Token</span>
+<span class="sd">                      `H_META_INVALID_TOKEN &lt;geosoft.gxapi.H_META_INVALID_TOKEN&gt;` - Not found</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 5.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_umn</span><span class="p">(</span><span class="n">umn</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div></div>
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMETA</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

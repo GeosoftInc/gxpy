@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXUNC &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXUNC</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXUNC</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXUNC"><a class="viewcode-back" href="../../../GXUNC.html#geosoft.gxapi.GXUNC">[docs]</a><span class="k">class</span> <span class="nc">GXUNC</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapUNC</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXUNC class.</span>
+
+<span class="sd">    This library is not a class. Use the `GXUNC &lt;geosoft.gxapi.GXUNC&gt;` library functions</span>
+<span class="sd">    to work with Unicode characters and strings. Since version 6.2</span>
+<span class="sd">    all strings are represented internally in the the GX engine</span>
+<span class="sd">    as UTF-8. The character set concept was discarded as a way to</span>
+<span class="sd">    work with characters that does not fall within the normal</span>
+<span class="sd">    ASCII range 0x01-0x7F. The utilities here aids with any new</span>
+<span class="sd">    functionality that is now possible (e.g. an expanded symbol range</span>
+<span class="sd">    with TrueType fonts).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXUNC.__init__"><a class="viewcode-back" href="../../../GXUNC.html#geosoft.gxapi.GXUNC.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXUNC</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXUNC.null"><a class="viewcode-back" href="../../../GXUNC.html#geosoft.gxapi.GXUNC.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXUNC &lt;geosoft.gxapi.GXUNC&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXUNC &lt;geosoft.gxapi.GXUNC&gt;`</span>
+<span class="sd">        :rtype:   GXUNC</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXUNC</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXUNC.is_null"><a class="viewcode-back" href="../../../GXUNC.html#geosoft.gxapi.GXUNC.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># UTF</span>
+
+
+<div class="viewcode-block" id="GXUNC.is_valid_utf16_char"><a class="viewcode-back" href="../../../GXUNC.html#geosoft.gxapi.GXUNC.is_valid_utf16_char">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">is_valid_utf16_char</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ch</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the UTF-16 value is a valid Unicode character code point.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ch:  UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)</span>
+<span class="sd">        :type  ch:  int</span>
+<span class="sd">        :rtype:      bool</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapUNC</span><span class="o">.</span><span class="n">_is_valid_utf16_char</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">ch</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXUNC.valid_symbol"><a class="viewcode-back" href="../../../GXUNC.html#geosoft.gxapi.GXUNC.valid_symbol">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">valid_symbol</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">geofont</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        See if a Symbol number is valid in a particular font.</span>
+<span class="sd">        </span>
+<span class="sd">        :param face:     Face name (undecorated)</span>
+<span class="sd">        :param geofont:  Geosoft font?</span>
+<span class="sd">        :param number:   Symbol number</span>
+<span class="sd">        :type  face:     str</span>
+<span class="sd">        :type  geofont:  bool</span>
+<span class="sd">        :type  number:   int</span>
+<span class="sd">        :rtype:          bool</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapUNC</span><span class="o">.</span><span class="n">_valid_symbol</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">face</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">geofont</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXUNC.utf16_val_to_str"><a class="viewcode-back" href="../../../GXUNC.html#geosoft.gxapi.GXUNC.utf16_val_to_str">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">utf16_val_to_str</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert a UTF-16 value to a UTF-8 encoded string.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ch:       UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)</span>
+<span class="sd">        :param str_val:  Converted string</span>
+<span class="sd">        :type  ch:       int</span>
+<span class="sd">        :type  str_val:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** An empty string will be returned for invalid symbols</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapUNC</span><span class="o">.</span><span class="n">_utf16_val_to_str</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">ch</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXUNC.validate_symbols"><a class="viewcode-back" href="../../../GXUNC.html#geosoft.gxapi.GXUNC.validate_symbols">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">validate_symbols</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">geofont</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        High performance method to see if a set of symbols</span>
+<span class="sd">        are valid in a particular font.</span>
+<span class="sd">        </span>
+<span class="sd">        :param vv:       `GXVV &lt;geosoft.gxapi.GXVV&gt;` of symbols</span>
+<span class="sd">        :param face:     Face name (undecorated)</span>
+<span class="sd">        :param geofont:  Geosoft font?</span>
+<span class="sd">        :type  vv:       GXVV</span>
+<span class="sd">        :type  face:     str</span>
+<span class="sd">        :type  geofont:  bool</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Invalid symbols in the `GXVV &lt;geosoft.gxapi.GXVV&gt;` will be set to -1 by this call. `GXVV &lt;geosoft.gxapi.GXVV&gt;` has to be of type `GS_LONG &lt;geosoft.gxapi.GS_LONG&gt;`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapUNC</span><span class="o">.</span><span class="n">_validate_symbols</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="n">face</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">geofont</span><span class="p">)</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXUNC</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

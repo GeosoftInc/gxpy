@@ -1,0 +1,212 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GXMISC class &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXMISC class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXMISC.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxmisc-class">
+<span id="gxmisc"></span><h1>GXMISC class<a class="headerlink" href="#gxmisc-class" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="geosoft.gxapi.GXMISC">
+<em class="property">class </em><code class="sig-name descname">GXMISC</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMISC.html#GXMISC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMISC" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXMISC class.</p>
+<p>Not a class. A catch-all for miscellaneous geophysical
+methods, primarily file conversions.</p>
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMISC.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMISC.html#GXMISC.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMISC.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMISC.convert_cg3to_raw">
+<em class="property">classmethod </em><code class="sig-name descname">convert_cg3to_raw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cg3</span></em>, <em class="sig-param"><span class="n">raw</span></em>, <em class="sig-param"><span class="n">tide_corr_opt</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMISC.html#GXMISC.convert_cg3to_raw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMISC.convert_cg3to_raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a CG3 dump to RAW format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cg3</strong> (<em>str</em>) – Name of the CG3 file</p></li>
+<li><p><strong>raw</strong> (<em>str</em>) – Name of the RAW file</p></li>
+<li><p><strong>tide_corr_opt</strong> (<em>int</em>) – TideCorr Option: 1 - use geosoft, 0 - use CG3/CG5</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMISC.convert_cg5to_raw">
+<em class="property">classmethod </em><code class="sig-name descname">convert_cg5to_raw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cg5</span></em>, <em class="sig-param"><span class="n">raw</span></em>, <em class="sig-param"><span class="n">tide_corr_opt</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMISC.html#GXMISC.convert_cg5to_raw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMISC.convert_cg5to_raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a CG5 dump to RAW format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cg5</strong> (<em>str</em>) – Name of the CG5 file</p></li>
+<li><p><strong>raw</strong> (<em>str</em>) – Name of the RAW file</p></li>
+<li><p><strong>tide_corr_opt</strong> (<em>int</em>) – TideCorr Option: 1 - use geosoft, 0 - use CG3/CG5</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMISC.is_null">
+<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMISC.html#GXMISC.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMISC.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMISC.null">
+<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMISC.html#GXMISC.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMISC.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMISC" title="geosoft.gxapi.GXMISC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMISC</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXMISC" title="geosoft.gxapi.GXMISC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMISC</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXMISC" title="geosoft.gxapi.GXMISC">GXMISC</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMISC.ukoa2_tbl">
+<em class="property">classmethod </em><code class="sig-name descname">ukoa2_tbl</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ukoa</span></em>, <em class="sig-param"><span class="n">alias</span></em>, <em class="sig-param"><span class="n">tbl</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMISC.html#GXMISC.ukoa2_tbl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMISC.ukoa2_tbl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a UKOA file to a location TBL file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ukoa</strong> (<em>str</em>) – Name of the UKOA file</p></li>
+<li><p><strong>alias</strong> (<em>str</em>) – Line name alias table</p></li>
+<li><p><strong>tbl</strong> (<em>str</em>) – Name of the output table</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The TBL file will contain the following fields:</p>
+<p>= Line:string16
+= Station:long
+= Latitude:double
+= Longitude:double
+= X:double
+= Y:double
+= Elevation:double</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXMISC class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>
