@@ -1199,6 +1199,27 @@ class GXMAP(gxapi_cy.WrapMAP):
 
 
 
+    def dataset_file_path_list(self, lst):
+        """
+        Get a list of all dataset file paths in this map.
+        
+        :param lst:  List to hold the paths.  Paths may be up to 2080 characters in length.
+        :type  lst:  GXLST
+
+        .. versionadded:: 2022.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        .. seealso::
+
+            `GXLST <geosoft.gxapi.GXLST>` class.
+        """
+        self._dataset_file_path_list(lst)
+        
+
+
+
+
 
 ### endblock ClassImplementation
 ### block ClassExtend

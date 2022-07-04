@@ -217,6 +217,32 @@ class GXDCOL(gxapi_cy.WrapDCOL):
 
 
 
+    def update_zone_transform_parameters(self, index):
+        """
+        Recalculate the layer's ITR, based on the current type of the `GXDCOL <geosoft.gxapi.GXDCOL>`. Launches anappropriate zone transform type parameter GUI based on the current selection.
+        
+        :param index:  Index of layer
+        :type  index:  int
+
+        :returns:      0 - Ok
+                       1 - Cancel
+        :rtype:        int
+
+        .. versionadded:: 2022.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The transform type assumed is the current transform type for the `GXDCOL <geosoft.gxapi.GXDCOL>`. The dialogs
+        to enter parameters are shown for Linear, Log, Normal and Equal.
+        """
+        ret_val = self._update_zone_transform_parameters(index)
+        return ret_val
+
+
+
+
     def get_layer_statistics(self, index):
         """
         Get a `GXST <geosoft.gxapi.GXST>` filled with layer statistics

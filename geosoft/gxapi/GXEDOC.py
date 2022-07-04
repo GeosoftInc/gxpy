@@ -570,6 +570,51 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
 
 
+# Obsolete
+
+
+
+    def copy(self, output):
+        """
+        Copies a managed document to another document.
+        
+        :param output:  Name of output document
+        :type  output:  str
+        :rtype:         bool
+
+        .. versionadded:: 2022.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Copies a managed document to another document.
+        """
+        ret_val = self._copy(output.encode())
+        return ret_val
+
+
+
+
+    def save(self):
+        """
+        Save the managed document.
+        
+
+        .. versionadded:: 2022.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Save the managed document
+        """
+        self._save()
+        
+
+
+
+
 
 ### endblock ClassImplementation
 ### block ClassExtend

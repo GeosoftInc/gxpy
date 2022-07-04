@@ -338,6 +338,32 @@ class GXDU(gxapi_cy.WrapDU):
 
 
     @classmethod
+    def average_spacing(cls, db, line, xCh, yCh):
+        """
+        Returns the average spacing along a line.
+        This is a simple average of the individual point separations after dummies are removed.
+        Returns DUMMY if there are fewer than two valid locations.
+        
+        :param db:    Database
+        :param line:  Line handle
+        :param xCh:   X channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param yCh:   Y channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :type  db:    GXDB
+        :type  line:  int
+        :type  xCh:   int
+        :type  yCh:   int
+        :rtype:       float
+
+        .. versionadded:: 2022.1
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        ret_val = gxapi_cy.WrapDU._average_spacing(GXContext._get_tls_geo(), db, line, xCh, yCh)
+        return ret_val
+
+
+
+    @classmethod
     def base_data(cls, db, line, in_ch, time_ch, out_ch, tb):
         """
         This method corrects an entire database line using a

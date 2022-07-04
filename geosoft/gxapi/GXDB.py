@@ -1279,7 +1279,7 @@ class GXDB(gxapi_cy.WrapDB):
 
     def set_ipj(self, ch1, ch2, ipj):
         """
-        Set a `GXREG <geosoft.gxapi.GXREG>` object into a symbol
+        Set an `GXIPJ <geosoft.gxapi.GXIPJ>` object into a pair of (X, Y) channels
         
         :param ch1:  X channel
         :param ch2:  Y channel

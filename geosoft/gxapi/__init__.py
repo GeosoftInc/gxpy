@@ -7069,6 +7069,12 @@ GG_ELEMENT_YZ = 4
 	
 
 #
+# GXTRANSFORMLAYER Constants
+# 
+
+	
+
+#
 # GXTRND Constants
 # 
 
@@ -7466,6 +7472,7 @@ __all__ = [
     'GXTC',
     'GXTEST',
     'GXTIN',
+    'GXTRANSFORMLAYER',
     'GXTRND',
     'GXUNC',
     'GXVAU',
@@ -7602,6 +7609,7 @@ from .GXSTRINGS import GXSTRINGS
 from .GXTC import GXTC
 from .GXTEST import GXTEST
 from .GXTIN import GXTIN
+from .GXTRANSFORMLAYER import GXTRANSFORMLAYER
 from .GXTRND import GXTRND
 from .GXUNC import GXUNC
 from .GXVAU import GXVAU

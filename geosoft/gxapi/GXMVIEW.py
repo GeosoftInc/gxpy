@@ -4341,9 +4341,29 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
 
 
+    def get_folder_items_2d(self, parent_name):
+        """
+        Get the list of key-value pairs representing the name(key) and the type(value) of all children in the specified parent folders in the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+        
+        :param parent_name:  Parent folder name, or empty string for root MVIEW
+        :type  parent_name:  str
+        :rtype:              GXLST
+
+        .. versionadded:: 9.10
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Returns name/type pairs. Types can be 'Folder', 'Group' or 'Unknown'
+        """
+        ret_val = self._get_folder_items_2d(parent_name.encode())
+        return GXLST(ret_val)
+
+
+
+
     def add_folder_3d(self, name, parent_guid, guid):
         """
-        Add a folder to the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+        Add a 3DView folder to the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
         
         :param name:         Folder name
         :param parent_guid:  Folder parent GUID, or empty string for parent `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
@@ -4362,9 +4382,28 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
 
 
+    def add_folder_2d(self, name, parent_name):
+        """
+        Add a Map folder to the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+        
+        :param name:         Folder name
+        :param parent_name:  Parent folder name, or empty string for root `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+        :type  name:         str
+        :type  parent_name:  str
+
+        .. versionadded:: 2022.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._add_folder_2d(name.encode(), parent_name.encode())
+        
+
+
+
+
     def move_group_to_folder_3d(self, guid, group):
         """
-        Add group to a folder in `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+        Add group to a 3DView folder in `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
         
         :param guid:   Folder parent GUID, or empty string for parent `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
         :param group:  Group number
@@ -4381,9 +4420,28 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
 
 
+    def move_group_to_folder_2d(self, parent_name, group):
+        """
+        Add group to a Map folder in `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+        
+        :param parent_name:  Parent folder name, or empty string for root `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+        :param group:        Group number
+        :type  parent_name:  str
+        :type  group:        int
+
+        .. versionadded:: 2022.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._move_group_to_folder_2d(parent_name.encode(), group)
+        
+
+
+
+
     def delete_folder_3d(self, guid):
         """
-        Delete a folder.
+        Delete a Map folder.
         
         :param guid:   Folder GUID.
         :type  guid:   str
@@ -4393,6 +4451,23 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._delete_folder_3d(guid.encode())
+        
+
+
+
+
+    def delete_folder_2d(self, name):
+        """
+        Delete a 3DView folder.
+        
+        :param name:   Folder name.
+        :type  name:   str
+
+        .. versionadded:: 2022.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._delete_folder_2d(name.encode())
         
 
 

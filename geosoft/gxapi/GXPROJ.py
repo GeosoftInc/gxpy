@@ -155,6 +155,51 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
 
     @classmethod
+    def add_document_include_meta(cls, name, type, meta, display):
+        """
+        Adds (and opens) a document file in the current project.
+        
+        :param name:     Document name
+        :param type:     Type of document to add
+        :param meta:     Meta file to load
+        :param display:  :ref:`PROJ_DISPLAY`
+        :type  name:     str
+        :type  type:     str
+        :type  meta:     str
+        :type  display:  int
+
+        :returns:        0 - Ok
+                         1 - Error
+        :rtype:          int
+
+        .. versionadded:: 2022.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The passed file name must be a valid
+        file name complete with an extension and
+        qualifiers (if applicable).
+
+        The type string can be one of the following:
+
+            Database      
+            Grid          
+            Map           
+            3DView        
+            Geosurface
+            Voxel         
+            VoxelInversion
+            GMS3D         
+            GMS2D
+        """
+        ret_val = gxapi_cy.WrapPROJ._add_document_include_meta(GXContext._get_tls_geo(), name.encode(), type.encode(), meta.encode(), display)
+        return ret_val
+
+
+
+    @classmethod
     def add_grid_document(cls, name, colors, method, display):
         """
         Adds (and opens) a grid document file in the current project with a particular colour distribution and colour file.
@@ -529,28 +574,32 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
 
     @classmethod
-    def get_central_project_information(cls, instance, project, crs, branch, rev_id, rev_date, rev_note, rev_stage, rev_author):
+    def get_central_project_information(cls, instance, project, crs, branch, rev_id, rev_date, rev_note, rev_stage, rev_author, rev_server_url, rev_proj_url):
         """
         Get Central project information.
         
-        :param instance:    Instance name
-        :param project:     Project name
-        :param crs:         Coordinate Reference System
-        :param branch:      Branch name
-        :param rev_id:      Revision Id
-        :param rev_date:    Revision date
-        :param rev_note:    Revision note
-        :param rev_stage:   Revision stage
-        :param rev_author:  Revision author
-        :type  instance:    str_ref
-        :type  project:     str_ref
-        :type  crs:         str_ref
-        :type  branch:      str_ref
-        :type  rev_id:      str_ref
-        :type  rev_date:    str_ref
-        :type  rev_note:    str_ref
-        :type  rev_stage:   str_ref
-        :type  rev_author:  str_ref
+        :param instance:        Instance name
+        :param project:         Project name
+        :param crs:             Coordinate Reference System
+        :param branch:          Branch name
+        :param rev_id:          Revision Id
+        :param rev_date:        Revision date
+        :param rev_note:        Revision note
+        :param rev_stage:       Revision stage
+        :param rev_author:      Revision author
+        :param rev_server_url:  Revision server url
+        :param rev_proj_url:    Revision project url
+        :type  instance:        str_ref
+        :type  project:         str_ref
+        :type  crs:             str_ref
+        :type  branch:          str_ref
+        :type  rev_id:          str_ref
+        :type  rev_date:        str_ref
+        :type  rev_note:        str_ref
+        :type  rev_stage:       str_ref
+        :type  rev_author:      str_ref
+        :type  rev_server_url:  str_ref
+        :type  rev_proj_url:    str_ref
 
         .. versionadded:: 2021.2
 
@@ -560,8 +609,93 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Note:** Get Central project information.
         """
-        instance.value, project.value, crs.value, branch.value, rev_id.value, rev_date.value, rev_note.value, rev_stage.value, rev_author.value = gxapi_cy.WrapPROJ._get_central_project_information(GXContext._get_tls_geo(), instance.value.encode(), project.value.encode(), crs.value.encode(), branch.value.encode(), rev_id.value.encode(), rev_date.value.encode(), rev_note.value.encode(), rev_stage.value.encode(), rev_author.value.encode())
+        instance.value, project.value, crs.value, branch.value, rev_id.value, rev_date.value, rev_note.value, rev_stage.value, rev_author.value, rev_server_url.value, rev_proj_url.value = gxapi_cy.WrapPROJ._get_central_project_information(GXContext._get_tls_geo(), instance.value.encode(), project.value.encode(), crs.value.encode(), branch.value.encode(), rev_id.value.encode(), rev_date.value.encode(), rev_note.value.encode(), rev_stage.value.encode(), rev_author.value.encode(), rev_server_url.value.encode(), rev_proj_url.value.encode())
         
+
+
+
+    @classmethod
+    def save_document_view(cls, name, meta_file):
+        """
+        Save document view to a file.
+        
+        :param name:       Document name
+        :param meta_file:  save meta to file
+        :type  name:       str
+        :type  meta_file:  str
+
+        .. versionadded:: 2022.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Save document view to a file.
+        """
+        gxapi_cy.WrapPROJ._save_document_view(GXContext._get_tls_geo(), name.encode(), meta_file.encode())
+        
+
+
+
+    @classmethod
+    def get_default_project_path(cls, folder):
+        """
+        Get default project folder.
+        
+        :param folder:  Returned default path
+        :type  folder:  str_ref
+
+        .. versionadded:: 2022.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Get default project folder.
+        """
+        folder.value = gxapi_cy.WrapPROJ._get_default_project_path(GXContext._get_tls_geo(), folder.value.encode())
+        
+
+
+
+    @classmethod
+    def set_default_project_path(cls, folder):
+        """
+        Set default project folder.
+        
+        :param folder:  Default path
+        :type  folder:  str
+
+        .. versionadded:: 2022.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Set default project folder.
+        """
+        gxapi_cy.WrapPROJ._set_default_project_path(GXContext._get_tls_geo(), folder.encode())
+        
+
+
+
+    @classmethod
+    def has_pending_central_publish_event(cls):
+        """
+        Checks if there is a pending publish event.
+        
+        :rtype:      bool
+
+        .. versionadded:: 2022.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Checks if there is a pending publish event.
+        """
+        ret_val = gxapi_cy.WrapPROJ._has_pending_central_publish_event(GXContext._get_tls_geo())
+        return ret_val
 
 
 
