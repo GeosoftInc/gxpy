@@ -1,0 +1,5 @@
+/ SOM Analysis
+/---------------------------------------
+
+MENU "SOM Analysis"
+ITEM "Run SOM Analysis..." , som_om.py
