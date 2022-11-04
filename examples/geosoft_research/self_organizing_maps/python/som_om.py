@@ -37,7 +37,7 @@ def rungx():
     with gxpj.Geosoft_project() as pj:
         gdb_name = pj.current_database
         if not gdb_name:
-            gxpj.message(_('No current database'), _('An open database is required.'))
+            gxpj.user_message(_('No current database'), _('An open database is required.'))
         state = pj.current_db_state()
 
     # settings
