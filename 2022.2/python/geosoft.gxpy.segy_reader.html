@@ -1,0 +1,507 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxpy.segy_reader submodule &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.segy_reader submodule</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.segy_reader.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-geosoft.gxpy.segy_reader">
+<span id="geosoft-gxpy-segy-reader-submodule"></span><h1>geosoft.gxpy.segy_reader submodule<a class="headerlink" href="#module-geosoft.gxpy.segy_reader" title="Permalink to this headline">¶</a></h1>
+<p>Read SEG-Y files into geosoft databases, grids and voxels.
+:Classes:</p>
+<blockquote>
+<div><p><a class="reference internal" href="#geosoft.gxpy.segy_reader.SegyReader" title="geosoft.gxpy.segy_reader.SegyReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">SegyReader</span></code></a> Reads SEG-Y files and creates Geosoft grids or voxels</p>
+</div></blockquote>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.9.1.</span></p>
+</div>
+<dl class="py class">
+<dt id="geosoft.gxpy.segy_reader.DataType">
+<em class="property">class </em><code class="sig-name descname">DataType</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/segy_reader.html#DataType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.segy_reader.DataType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="geosoft.gxpy.segy_reader.DataType.IBM_FLOAT4">
+<code class="sig-name descname">IBM_FLOAT4</code><em class="property"> = 'IBM_float4'</em><a class="headerlink" href="#geosoft.gxpy.segy_reader.DataType.IBM_FLOAT4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.segy_reader.DataType.IEEE_FLOAT4">
+<code class="sig-name descname">IEEE_FLOAT4</code><em class="property"> = 'IEEE_float4'</em><a class="headerlink" href="#geosoft.gxpy.segy_reader.DataType.IEEE_FLOAT4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.segy_reader.DataType.INT16">
+<code class="sig-name descname">INT16</code><em class="property"> = 'int16'</em><a class="headerlink" href="#geosoft.gxpy.segy_reader.DataType.INT16" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.segy_reader.DataType.INT32">
+<code class="sig-name descname">INT32</code><em class="property"> = 'int32'</em><a class="headerlink" href="#geosoft.gxpy.segy_reader.DataType.INT32" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.segy_reader.DataType.INT8">
+<code class="sig-name descname">INT8</code><em class="property"> = 'int8'</em><a class="headerlink" href="#geosoft.gxpy.segy_reader.DataType.INT8" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.DataType.from_str">
+<em class="property">classmethod </em><code class="sig-name descname">from_str</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">str</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/segy_reader.html#DataType.from_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.segy_reader.DataType.from_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="geosoft.gxpy.segy_reader.Endianess">
+<em class="property">class </em><code class="sig-name descname">Endianess</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/segy_reader.html#Endianess"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.segy_reader.Endianess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="geosoft.gxpy.segy_reader.Endianess.BIG_ENDIAN">
+<code class="sig-name descname">BIG_ENDIAN</code><em class="property"> = False</em><a class="headerlink" href="#geosoft.gxpy.segy_reader.Endianess.BIG_ENDIAN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.segy_reader.Endianess.LITTLE_ENDIAN">
+<code class="sig-name descname">LITTLE_ENDIAN</code><em class="property"> = True</em><a class="headerlink" href="#geosoft.gxpy.segy_reader.Endianess.LITTLE_ENDIAN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="geosoft.gxpy.segy_reader.FieldMapping">
+<em class="property">class </em><code class="sig-name descname">FieldMapping</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/segy_reader.html#FieldMapping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.segy_reader.FieldMapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="geosoft.gxpy.segy_reader.FieldMapping.Crossline">
+<code class="sig-name descname">Crossline</code><em class="property"> = 'CROSSLINE'</em><a class="headerlink" href="#geosoft.gxpy.segy_reader.FieldMapping.Crossline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.segy_reader.FieldMapping.Inline">
+<code class="sig-name descname">Inline</code><em class="property"> = 'INLINE'</em><a class="headerlink" href="#geosoft.gxpy.segy_reader.FieldMapping.Inline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.segy_reader.FieldMapping.X">
+<code class="sig-name descname">X</code><em class="property"> = 'X'</em><a class="headerlink" href="#geosoft.gxpy.segy_reader.FieldMapping.X" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.segy_reader.FieldMapping.Y">
+<code class="sig-name descname">Y</code><em class="property"> = 'Y'</em><a class="headerlink" href="#geosoft.gxpy.segy_reader.FieldMapping.Y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="geosoft.gxpy.segy_reader.InlineCrosslineSanity">
+<em class="property">class </em><code class="sig-name descname">InlineCrosslineSanity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/segy_reader.html#InlineCrosslineSanity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.segy_reader.InlineCrosslineSanity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="geosoft.gxpy.segy_reader.InlineCrosslineSanity.MAYBE_SWAPPED">
+<code class="sig-name descname">MAYBE_SWAPPED</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.segy_reader.InlineCrosslineSanity.MAYBE_SWAPPED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.segy_reader.InlineCrosslineSanity.OK">
+<code class="sig-name descname">OK</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.segy_reader.InlineCrosslineSanity.OK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.segy_reader.InlineCrosslineSanity.ONLY_ONE_LINE">
+<code class="sig-name descname">ONLY_ONE_LINE</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.segy_reader.InlineCrosslineSanity.ONLY_ONE_LINE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.segy_reader.InlineCrosslineSanity.UNKNOWN_PROBLEM">
+<code class="sig-name descname">UNKNOWN_PROBLEM</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.segy_reader.InlineCrosslineSanity.UNKNOWN_PROBLEM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="geosoft.gxpy.segy_reader.SegyReader">
+<em class="property">class </em><code class="sig-name descname">SegyReader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">is3d</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">endianess</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/segy_reader.html#SegyReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>TODO: The GXSEGYREADER GetTiePoint and SetTiePoint functions are important and
+don’t have wrappers yet. Also, none of the filtering functionality is implemented.</p>
+<p>Reads a SEG-Y file and can generate Geosoft database, grid or voxel files from it.</p>
+<p>For many SEG-Y files, the following is all that’s needed to use this class:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">code</span><span class="p">::</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">geosoft.gxpy.segy_reader</span> <span class="k">as</span> <span class="nn">gxsegy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">segy</span> <span class="o">=</span> <span class="n">gxsegy</span><span class="o">.</span><span class="n">SegyReader</span><span class="p">(</span><span class="s1">&#39;c:/data/example.segy&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">segy</span><span class="o">.</span><span class="n">export_file</span><span class="p">(</span><span class="n">gdb</span><span class="o">=</span><span class="s1">&#39;c:/data/output.gdb&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Unfortunately, some SEG-Y files will require some configuration before they can be
+read properly. TODO: more documentation once the API is finalized.</p>
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">is3d</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">endianess</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/segy_reader.html#SegyReader.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the SegyReader object and do a quick initial scan of the SEG-Y file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> – The name of the SEG-Y file to read</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>:param is3d        True is the SEG-Y file is 3D, False if the file is 2D. If this</dt><dd><p>parameter is not specified, the reader will attempt to
+automatically determine if the file is 2D or 3D.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>endianess</strong> – Endianess.LITTLE_ENDIAN or Endianess.BIG_ENDIAN, specifying
+the endianess (byte order) of the SEG-Y file. Defaults to big-
+endian which is correct for most SEG-Y files.</p>
+</dd>
+</dl>
+<p>The new SegyReader object will read the first part of the SEG-Y file and attempt
+to determine the correct configuration. Most of the methods for this class are for
+querying and modifying that configuration.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.binary_header">
+<em class="property">property </em><code class="sig-name descname">binary_header</code><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.binary_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>The contents of the SEG-Y binary header, as a dictionary. Usefull for diagnostic
+purposes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.export_files">
+<code class="sig-name descname">export_files</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/segy_reader.html#SegyReader.export_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.export_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export the data in the SEG-Y file to the specified Geosoft files.</p>
+<p>What files are output depend on the keyword arguments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">param</span> <span class="n">gdb</span><span class="p">:</span>              <span class="n">The</span> <span class="n">filename</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Geosoft</span> <span class="n">database</span> <span class="n">file</span> <span class="n">to</span> <span class="n">export</span> <span class="n">to</span><span class="o">.</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>If this parameter is not specified, then no database is
+output.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>voxel</strong> – The filename of the Geosoft voxel file to export to.
+Only valid for 3D SEG-Y files. If this option is not
+specified, then no voxel file is output.</p></li>
+<li><p><strong>slice_prefix</strong> – The base path and filename for slice grids. If this
+argument is specified, then at least one of 
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">inline_slices</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">crossline_slices</span></code> or z_slices` must
+also be specified.</p></li>
+<li><p><strong>inline_slices</strong> – An array-like containing the inline coordinates for slice
+grids. If this argument is specified then, for each
+coordinate in the list a geosoft grid file is generated
+from the slice of the SEG-Y volume with that inline
+coordinate. The filename will consist of <code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_prefix</span></code>
+folowed by “_IL???.grd” where ??? is the inline
+coordinate. Only valid for 3D SEG-Y files.</p></li>
+<li><p><strong>crossline_slices</strong> – An array-like containing the crossline coordinates for 
+slice grids. If this argument is specified then, for each
+coordinate in the list a geosoft grid file is generated
+from the slice of the SEG-Y volume with that crossline
+coordinate. The filename will consist of <code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_prefix</span></code>
+folowed by “_XL???.grd” where ??? is the crossline
+coordinate. Only valid for 3D SEG-Y files.</p></li>
+<li><p><strong>z_slices</strong> – An array-like containing the trace index for slice
+grids. If this argument is specified then, for coordinate
+in the list a geosoft grid file is generated by taking
+the element at that index in the trace data for each
+trace. The filename will consist of <code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_prefix</span></code>
+folowed by “_Z???.grd” where ??? is the z coordinate.
+(The parameter values are array indices (0, for the top
+of the volumne, 1 for the next slice down, etc.) but the
+number in the file name is the z-coordinate in physical
+units (e.g. feet, metres, etc,)) Only
+valid for 3D SEG-Y files.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.field_configuration">
+<em class="property">property </em><code class="sig-name descname">field_configuration</code><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.field_configuration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.georeferencing">
+<em class="property">property </em><code class="sig-name descname">georeferencing</code><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.georeferencing" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a> object containing
+the coordinate system for the SEG-Y file and the generated output files.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.get_trace_data">
+<code class="sig-name descname">get_trace_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">trace_number</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/segy_reader.html#SegyReader.get_trace_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.get_trace_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.get_trace_header">
+<code class="sig-name descname">get_trace_header</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">trace_number</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/segy_reader.html#SegyReader.get_trace_header"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.get_trace_header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.get_trace_length_from_file_header">
+<code class="sig-name descname">get_trace_length_from_file_header</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">offset</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/segy_reader.html#SegyReader.get_trace_length_from_file_header"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.get_trace_length_from_file_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify that <a class="reference internal" href="#geosoft.gxpy.segy_reader.SegyReader.trace_length" title="geosoft.gxpy.segy_reader.SegyReader.trace_length"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trace_length</span></code></a> should be set to the value from the specified
+byte offset in the binary file header.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.get_trace_length_from_trace_header">
+<code class="sig-name descname">get_trace_length_from_trace_header</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">offset</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/segy_reader.html#SegyReader.get_trace_length_from_trace_header"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.get_trace_length_from_trace_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify that <a class="reference internal" href="#geosoft.gxpy.segy_reader.SegyReader.trace_length" title="geosoft.gxpy.segy_reader.SegyReader.trace_length"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trace_length</span></code></a> should be set to the value from the specified
+byte offset in the binary trace header.</p>
+<p>Even when this setting is used, the SEG-Y reader still requires that all traces
+be the same length.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.is_depth_or_time">
+<em class="property">property </em><code class="sig-name descname">is_depth_or_time</code><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.is_depth_or_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The “type” of z-units: either ZType.DEPTH or ZType.TIME.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.scan_file">
+<code class="sig-name descname">scan_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/segy_reader.html#SegyReader.scan_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.scan_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.text_header">
+<em class="property">property </em><code class="sig-name descname">text_header</code><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.text_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>The text header from the SEG-Y file as a string.</p>
+<p>This is human-readable text and often usefull for configuring the reader.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.trace_data_type">
+<em class="property">property </em><code class="sig-name descname">trace_data_type</code><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.trace_data_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The data type of the trace data in the SEG-Y file. Specified using one of the
+constants defined in the <a class="reference internal" href="#geosoft.gxpy.segy_reader.DataType" title="geosoft.gxpy.segy_reader.DataType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataType</span></code></a> Enum.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.trace_length">
+<em class="property">property </em><code class="sig-name descname">trace_length</code><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.trace_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of elements in each trace.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.trace_range">
+<em class="property">property </em><code class="sig-name descname">trace_range</code><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.trace_range" title="Permalink to this definition">¶</a></dt>
+<dd><p>The depth of the top and bottom of the traces.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.trace_sample_interval">
+<em class="property">property </em><code class="sig-name descname">trace_sample_interval</code><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.trace_sample_interval" title="Permalink to this definition">¶</a></dt>
+<dd><p>The interval between successive values in the trace data.
+E.g. microseconds or millimetres.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.xy_units">
+<em class="property">property </em><code class="sig-name descname">xy_units</code><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.xy_units" title="Permalink to this definition">¶</a></dt>
+<dd><p>The horizontal units or the SEG_Y</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.z_offset">
+<em class="property">property </em><code class="sig-name descname">z_offset</code><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.z_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Z-coordinate of the start (top) of each trace</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.z_offset_units">
+<em class="property">property </em><code class="sig-name descname">z_offset_units</code><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.z_offset_units" title="Permalink to this definition">¶</a></dt>
+<dd><p>The units used for <a class="reference internal" href="#geosoft.gxpy.segy_reader.SegyReader.z_offset" title="geosoft.gxpy.segy_reader.SegyReader.z_offset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">z_offset</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.SegyReader.z_units">
+<em class="property">property </em><code class="sig-name descname">z_units</code><a class="headerlink" href="#geosoft.gxpy.segy_reader.SegyReader.z_units" title="Permalink to this definition">¶</a></dt>
+<dd><p>The units used for <a class="reference internal" href="#geosoft.gxpy.segy_reader.SegyReader.trace_sample_interval" title="geosoft.gxpy.segy_reader.SegyReader.trace_sample_interval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trace_sample_interval</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="geosoft.gxpy.segy_reader.TraceConfigField">
+<em class="property">class </em><code class="sig-name descname">TraceConfigField</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ltb</span></em>, <em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/segy_reader.html#TraceConfigField"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.segy_reader.TraceConfigField" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>TODO: Not really finished.</p>
+<p>After the SEG-Y is scanned, <code class="xref py py-obj docutils literal notranslate"><span class="pre">SegyReader.field_configuration.fields</span></code> will contain a
+list of all the trace header fields that contain nonzero values.</p>
+<p>The EXPORT_TO_GDB field is used to indicate if the data from this field should be
+written to the GDB on export. The MAPPING field is used to indicate which fields
+should be interpreted as inline, crossline, x and y. For 3D SEG-Y files, exactly one
+field should be set to each of these values. For 2D files, only X and Y apply.</p>
+<p>The rest of the fields are read-only. I’ve defined the field names for all of them
+in __INIT__ but some of them are still missing accessors.</p>
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.TraceConfigField.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ltb</span></em>, <em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/segy_reader.html#TraceConfigField.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.segy_reader.TraceConfigField.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.TraceConfigField.export_to_gdb">
+<em class="property">property </em><code class="sig-name descname">export_to_gdb</code><a class="headerlink" href="#geosoft.gxpy.segy_reader.TraceConfigField.export_to_gdb" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.TraceConfigField.mapping">
+<em class="property">property </em><code class="sig-name descname">mapping</code><a class="headerlink" href="#geosoft.gxpy.segy_reader.TraceConfigField.mapping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.TraceConfigField.max">
+<em class="property">property </em><code class="sig-name descname">max</code><a class="headerlink" href="#geosoft.gxpy.segy_reader.TraceConfigField.max" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.TraceConfigField.min">
+<em class="property">property </em><code class="sig-name descname">min</code><a class="headerlink" href="#geosoft.gxpy.segy_reader.TraceConfigField.min" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.TraceConfigField.name">
+<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#geosoft.gxpy.segy_reader.TraceConfigField.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="geosoft.gxpy.segy_reader.TraceFieldConfiguration">
+<em class="property">class </em><code class="sig-name descname">TraceFieldConfiguration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ltb</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/segy_reader.html#TraceFieldConfiguration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.segy_reader.TraceFieldConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="geosoft.gxpy.segy_reader.TraceFieldConfiguration.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ltb</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/segy_reader.html#TraceFieldConfiguration.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.segy_reader.TraceFieldConfiguration.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="geosoft.gxpy.segy_reader.ZType">
+<em class="property">class </em><code class="sig-name descname">ZType</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/segy_reader.html#ZType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.segy_reader.ZType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="geosoft.gxpy.segy_reader.ZType.DEPTH">
+<code class="sig-name descname">DEPTH</code><em class="property"> = 'DEPTH'</em><a class="headerlink" href="#geosoft.gxpy.segy_reader.ZType.DEPTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.segy_reader.ZType.TIME">
+<code class="sig-name descname">TIME</code><em class="property"> = 'TIME'</em><a class="headerlink" href="#geosoft.gxpy.segy_reader.ZType.TIME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.segy_reader submodule</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

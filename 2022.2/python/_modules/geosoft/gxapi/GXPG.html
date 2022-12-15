@@ -1,0 +1,954 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXPG &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPG</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXPG</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXPG"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG">[docs]</a><span class="k">class</span> <span class="nc">GXPG</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPG</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXPG class.</span>
+
+<span class="sd">    Pager methods for large 2-D arrays</span>
+<span class="sd">    This class handles very-large 2-D arrays in which efficient</span>
+<span class="sd">    access is required along both rows and columns.</span>
+
+<span class="sd">    **Note:**</span>
+
+<span class="sd">    Typically a grid is accessed using the `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` class, and a `GXPG &lt;geosoft.gxapi.GXPG&gt;`</span>
+<span class="sd">    is obtained from the `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` using the `GXIMG.get_pg &lt;geosoft.gxapi.GXIMG.get_pg&gt;` function.</span>
+<span class="sd">    Following operations on the `GXPG &lt;geosoft.gxapi.GXPG&gt;`, it can be written back to</span>
+<span class="sd">    the `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` using `GXIMG.set_pg &lt;geosoft.gxapi.GXIMG.set_pg&gt;`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXPG.__init__"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXPG</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXPG.null"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXPG &lt;geosoft.gxapi.GXPG&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXPG &lt;geosoft.gxapi.GXPG&gt;`</span>
+<span class="sd">        :rtype:   GXPG</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXPG</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXPG.is_null"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+
+<span class="c1"># 2D Methods</span>
+
+
+
+<div class="viewcode-block" id="GXPG.copy"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pgs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy the data from one pager to another.</span>
+<span class="sd">        </span>
+<span class="sd">        :param pgs:  Source `GXPG &lt;geosoft.gxapi.GXPG&gt;` object</span>
+<span class="sd">        :type  pgs:  GXPG</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_copy</span><span class="p">(</span><span class="n">pgs</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.copy_subset"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.copy_subset">[docs]</a>    <span class="k">def</span> <span class="nf">copy_subset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pgs</span><span class="p">,</span> <span class="n">y_row_d</span><span class="p">,</span> <span class="n">x_col_d</span><span class="p">,</span> <span class="n">y_row_s</span><span class="p">,</span> <span class="n">x_col_s</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy a subset of data from one pager to another.</span>
+<span class="sd">        </span>
+<span class="sd">        :param pgs:      Source `GXPG &lt;geosoft.gxapi.GXPG&gt;` object</span>
+<span class="sd">        :param y_row_d:  Y (row) Origin on destination</span>
+<span class="sd">        :param x_col_d:  X (col) Origin on destination</span>
+<span class="sd">        :param y_row_s:  Y (row) Origin on source</span>
+<span class="sd">        :param x_col_s:  X (col) Origin on source</span>
+<span class="sd">        :param ny:       Number of Y (rows) to copy</span>
+<span class="sd">        :param nx:       Number of X (columns) to copy</span>
+<span class="sd">        :type  pgs:      GXPG</span>
+<span class="sd">        :type  y_row_d:  int</span>
+<span class="sd">        :type  x_col_d:  int</span>
+<span class="sd">        :type  y_row_s:  int</span>
+<span class="sd">        :type  x_col_s:  int</span>
+<span class="sd">        :type  ny:       int</span>
+<span class="sd">        :type  nx:       int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** 2D Only</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_copy_subset</span><span class="p">(</span><span class="n">pgs</span><span class="p">,</span> <span class="n">y_row_d</span><span class="p">,</span> <span class="n">x_col_d</span><span class="p">,</span> <span class="n">y_row_s</span><span class="p">,</span> <span class="n">x_col_s</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXPG.create"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.create">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a Pager object</span>
+<span class="sd">        </span>
+<span class="sd">        :param row:   # elements in y (# of row)</span>
+<span class="sd">        :param col:   # elements in x (# of column)</span>
+<span class="sd">        :param type:  :ref:`GS_TYPES`</span>
+<span class="sd">        :type  row:   int</span>
+<span class="sd">        :type  col:   int</span>
+<span class="sd">        :type  type:  int</span>
+
+<span class="sd">        :returns:     `GXPG &lt;geosoft.gxapi.GXPG&gt;` Object</span>
+<span class="sd">        :rtype:       GXPG</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPG</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXPG</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GXPG.create_s"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.create_s">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_s</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a 2D `GXPG &lt;geosoft.gxapi.GXPG&gt;` from serialized source.</span>
+<span class="sd">        </span>
+<span class="sd">        :type  bf:  GXBF</span>
+
+<span class="sd">        :returns:    `GXPG &lt;geosoft.gxapi.GXPG&gt;` Object</span>
+<span class="sd">        :rtype:      GXPG</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** For 3D pagers, use CreateBF_PG.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPG</span><span class="o">.</span><span class="n">_create_s</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">bf</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXPG</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+
+
+<div class="viewcode-block" id="GXPG.dummy"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.dummy">[docs]</a>    <span class="k">def</span> <span class="nf">dummy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the Entire pager to dummy.</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dummy</span><span class="p">()</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.e_type"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.e_type">[docs]</a>    <span class="k">def</span> <span class="nf">e_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the type of pager.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    :ref:`GS_TYPES`</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_e_type</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXPG.n_cols"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.n_cols">[docs]</a>    <span class="k">def</span> <span class="nf">n_cols</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the # of columns in pager.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    # of columns.</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n_cols</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXPG.n_rows"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.n_rows">[docs]</a>    <span class="k">def</span> <span class="nf">n_rows</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the # of rows in pager.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    # of rows.</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n_rows</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXPG.n_slices"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.n_slices">[docs]</a>    <span class="k">def</span> <span class="nf">n_slices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the # of slices (z) in pager.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    # of rows.</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n_slices</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXPG.range"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.range">[docs]</a>    <span class="k">def</span> <span class="nf">range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Computes the range of the entire pager.</span>
+<span class="sd">        </span>
+<span class="sd">        :param min:  Minimum Data (Dummy if no range)</span>
+<span class="sd">        :param max:  Maximum Data (Dummy if no range)</span>
+<span class="sd">        :type  min:  float_ref</span>
+<span class="sd">        :type  max:  float_ref</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_range</span><span class="p">(</span><span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.get"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read a single value from a 2D `GXPG &lt;geosoft.gxapi.GXPG&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :param col:  iBx - element # in x (column #)</span>
+<span class="sd">        :param row:  iBy - element # in y (row #)</span>
+<span class="sd">        :type  col:  int</span>
+<span class="sd">        :type  row:  int</span>
+<span class="sd">        :rtype:      float</span>
+
+<span class="sd">        .. versionadded:: 8.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** This is a low-performance method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">row</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXPG.set"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.set">[docs]</a>    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write a single value to a 2D `GXPG &lt;geosoft.gxapi.GXPG&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :param col:    iBx - element # in x (column #)</span>
+<span class="sd">        :param row:    iBy - element # in y (row #)</span>
+<span class="sd">        :param value:  value to set</span>
+<span class="sd">        :type  col:    int</span>
+<span class="sd">        :type  row:    int</span>
+<span class="sd">        :type  value:  float</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** This is a low-performance method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.read_col"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.read_col">[docs]</a>    <span class="k">def</span> <span class="nf">read_col</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read a set of elements in X (column) from pager into vv</span>
+<span class="sd">        </span>
+<span class="sd">        :param col:  iBx - element # in x (column #)</span>
+<span class="sd">        :param o:    iBy - begining element # in y to read (0 is the first)</span>
+<span class="sd">        :param n:    iNy - # elements to read (0 for whole vector)</span>
+<span class="sd">        :param vv:   hVV - `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
+<span class="sd">        :type  col:  int</span>
+<span class="sd">        :type  o:    int</span>
+<span class="sd">        :type  n:    int</span>
+<span class="sd">        :type  vv:   GXVV</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_read_col</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.read_row"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.read_row">[docs]</a>    <span class="k">def</span> <span class="nf">read_row</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read a set of elements in Y (row) from pager into vv</span>
+<span class="sd">        </span>
+<span class="sd">        :param row:  iBy - element # in y (row #)</span>
+<span class="sd">        :param o:    iBx - begining element # in x to read (0 is the first)</span>
+<span class="sd">        :param n:    iNx - # elements to read (0 for whole vector)</span>
+<span class="sd">        :param vv:   hVV - `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
+<span class="sd">        :type  row:  int</span>
+<span class="sd">        :type  o:    int</span>
+<span class="sd">        :type  n:    int</span>
+<span class="sd">        :type  vv:   GXVV</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_read_row</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.re_allocate"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.re_allocate">[docs]</a>    <span class="k">def</span> <span class="nf">re_allocate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_row</span><span class="p">,</span> <span class="n">n_col</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Changes the size of Pager</span>
+<span class="sd">        </span>
+<span class="sd">        :param n_row:  Number of Y (rows) to reallocate</span>
+<span class="sd">        :param n_col:  Number of X (columns) to reallocate</span>
+<span class="sd">        :type  n_row:  int</span>
+<span class="sd">        :type  n_col:  int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_re_allocate</span><span class="p">(</span><span class="n">n_row</span><span class="p">,</span> <span class="n">n_col</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.serial"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.serial">[docs]</a>    <span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Serialize a 2D `GXPG &lt;geosoft.gxapi.GXPG&gt;` to a `GXBF &lt;geosoft.gxapi.GXBF&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :type  bf:  GXBF</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** For 3D pagers, use `write_bf &lt;geosoft.gxapi.GXPG.write_bf&gt;`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_serial</span><span class="p">(</span><span class="n">bf</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.statistics"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.statistics">[docs]</a>    <span class="k">def</span> <span class="nf">statistics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the statistics of a pager object.</span>
+<span class="sd">        </span>
+<span class="sd">        :param st:  hST - statistics object</span>
+<span class="sd">        :type  st:  GXST</span>
+
+<span class="sd">        .. versionadded:: 6.3.1</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_statistics</span><span class="p">(</span><span class="n">st</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.write_col"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.write_col">[docs]</a>    <span class="k">def</span> <span class="nf">write_col</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write a set of elements in X (column) from vv into pager</span>
+<span class="sd">        </span>
+<span class="sd">        :param col:  iBx - element # in x (column #)</span>
+<span class="sd">        :param o:    iBy - begining element # in y to write (0 is the first)</span>
+<span class="sd">        :param n:    iNy - # elements to write (0 for whole vector)</span>
+<span class="sd">        :param vv:   hVV - `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
+<span class="sd">        :type  col:  int</span>
+<span class="sd">        :type  o:    int</span>
+<span class="sd">        :type  n:    int</span>
+<span class="sd">        :type  vv:   GXVV</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_col</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.write_row"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.write_row">[docs]</a>    <span class="k">def</span> <span class="nf">write_row</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write a set of elements in Y (row) from vv into pager</span>
+<span class="sd">        </span>
+<span class="sd">        :param row:  iBy - element # in y (row #)</span>
+<span class="sd">        :param o:    iBx - begining element # in x to write (0 is the first)</span>
+<span class="sd">        :param n:    iNx - # elements to write (0 for whole vector)</span>
+<span class="sd">        :param vv:   hVV - `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
+<span class="sd">        :type  row:  int</span>
+<span class="sd">        :type  o:    int</span>
+<span class="sd">        :type  n:    int</span>
+<span class="sd">        :type  vv:   GXVV</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_row</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+
+<span class="c1"># 3D Methods</span>
+
+
+
+<div class="viewcode-block" id="GXPG.copy_subset_3d"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.copy_subset_3d">[docs]</a>    <span class="k">def</span> <span class="nf">copy_subset_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pgs</span><span class="p">,</span> <span class="n">sliced</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">slices</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">n_slice</span><span class="p">,</span> <span class="n">n_row</span><span class="p">,</span> <span class="n">n_col</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy a subset of data from one pager to another.</span>
+<span class="sd">        </span>
+<span class="sd">        :param pgs:      Source `GXPG &lt;geosoft.gxapi.GXPG&gt;` object</span>
+<span class="sd">        :param sliced:   Z (slice) Origin on destination</span>
+<span class="sd">        :param n:        Y (row) Origin on destination</span>
+<span class="sd">        :param vv:       X (col) Origin on destination</span>
+<span class="sd">        :param slices:   Z (slice) Origin on source</span>
+<span class="sd">        :param rows:     Y (row) Origin on source</span>
+<span class="sd">        :param cols:     X (col) Origin on source</span>
+<span class="sd">        :param n_slice:  Number of Z (slice) to copy</span>
+<span class="sd">        :param n_row:    Number of Y (rows) to copy</span>
+<span class="sd">        :param n_col:    Number of X (columns) to copy</span>
+<span class="sd">        :type  pgs:      GXPG</span>
+<span class="sd">        :type  sliced:   int</span>
+<span class="sd">        :type  n:        int</span>
+<span class="sd">        :type  vv:       int</span>
+<span class="sd">        :type  slices:   int</span>
+<span class="sd">        :type  rows:     int</span>
+<span class="sd">        :type  cols:     int</span>
+<span class="sd">        :type  n_slice:  int</span>
+<span class="sd">        :type  n_row:    int</span>
+<span class="sd">        :type  n_col:    int</span>
+
+<span class="sd">        .. versionadded:: 8.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** 2D Only</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_copy_subset_3d</span><span class="p">(</span><span class="n">pgs</span><span class="p">,</span> <span class="n">sliced</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">slices</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">n_slice</span><span class="p">,</span> <span class="n">n_row</span><span class="p">,</span> <span class="n">n_col</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXPG.create_3d"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.create_3d">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_3d</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">slice</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a Pager object</span>
+<span class="sd">        </span>
+<span class="sd">        :param slice:  # elements in z (# of slices)</span>
+<span class="sd">        :param row:    # elements in y (# of row)</span>
+<span class="sd">        :param col:    # elements in x (# of column)</span>
+<span class="sd">        :param type:   :ref:`GS_TYPES`</span>
+<span class="sd">        :type  slice:  int</span>
+<span class="sd">        :type  row:    int</span>
+<span class="sd">        :type  col:    int</span>
+<span class="sd">        :type  type:   int</span>
+
+<span class="sd">        :returns:      `GXPG &lt;geosoft.gxapi.GXPG&gt;` Object</span>
+<span class="sd">        :rtype:        GXPG</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPG</span><span class="o">.</span><span class="n">_create_3d</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">slice</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXPG</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXPG.read_col_3d"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.read_col_3d">[docs]</a>    <span class="k">def</span> <span class="nf">read_col_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">slice</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read a set of elements in X (column) from pager into vv</span>
+<span class="sd">        </span>
+<span class="sd">        :param slice:  iBz - element # in z (slice #)</span>
+<span class="sd">        :param col:    iBx - element # in x (column #)</span>
+<span class="sd">        :param o:      iBy - begining element # in y to read (0 is the first)</span>
+<span class="sd">        :param n:      iNy - # elements to read (0 for whole vector)</span>
+<span class="sd">        :param vv:     hVV - `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
+<span class="sd">        :type  slice:  int</span>
+<span class="sd">        :type  col:    int</span>
+<span class="sd">        :type  o:      int</span>
+<span class="sd">        :type  n:      int</span>
+<span class="sd">        :type  vv:     GXVV</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_read_col_3d</span><span class="p">(</span><span class="nb">slice</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.read_row_3d"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.read_row_3d">[docs]</a>    <span class="k">def</span> <span class="nf">read_row_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">slice</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read a set of elements in Y (row) from pager into vv</span>
+<span class="sd">        </span>
+<span class="sd">        :param slice:  iBz - element # in z (slice #)</span>
+<span class="sd">        :param row:    iBy - element # in y (row #)</span>
+<span class="sd">        :param o:      iBx - begining element # in x to read (0 is the first)</span>
+<span class="sd">        :param n:      iNx - # elements to read (0 for whole vector)</span>
+<span class="sd">        :param vv:     hVV - `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
+<span class="sd">        :type  slice:  int</span>
+<span class="sd">        :type  row:    int</span>
+<span class="sd">        :type  o:      int</span>
+<span class="sd">        :type  n:      int</span>
+<span class="sd">        :type  vv:     GXVV</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_read_row_3d</span><span class="p">(</span><span class="nb">slice</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.read_trace_3d"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.read_trace_3d">[docs]</a>    <span class="k">def</span> <span class="nf">read_trace_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read a set of elements in Z (trace) from pager into vv</span>
+<span class="sd">        </span>
+<span class="sd">        :param col:  iBx - element # in x (column #)</span>
+<span class="sd">        :param row:  iBy - element # in y (row #)</span>
+<span class="sd">        :param o:    iBy - begining element # in z to read (0 is the first)</span>
+<span class="sd">        :param n:    iNy - # elements to read (0 for whole vector)</span>
+<span class="sd">        :param vv:   hVV - `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
+<span class="sd">        :type  col:  int</span>
+<span class="sd">        :type  row:  int</span>
+<span class="sd">        :type  o:    int</span>
+<span class="sd">        :type  n:    int</span>
+<span class="sd">        :type  vv:   GXVV</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_read_trace_3d</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.re_allocate_3d"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.re_allocate_3d">[docs]</a>    <span class="k">def</span> <span class="nf">re_allocate_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_slice</span><span class="p">,</span> <span class="n">n_row</span><span class="p">,</span> <span class="n">n_col</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Changes the size of 3D Pager</span>
+<span class="sd">        </span>
+<span class="sd">        :param n_slice:  Number of Z (slices) to reallocate</span>
+<span class="sd">        :param n_row:    Number of Y (rows) to reallocate</span>
+<span class="sd">        :param n_col:    Number of X (columns) to reallocate</span>
+<span class="sd">        :type  n_slice:  int</span>
+<span class="sd">        :type  n_row:    int</span>
+<span class="sd">        :type  n_col:    int</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_re_allocate_3d</span><span class="p">(</span><span class="n">n_slice</span><span class="p">,</span> <span class="n">n_row</span><span class="p">,</span> <span class="n">n_col</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.write_col_3d"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.write_col_3d">[docs]</a>    <span class="k">def</span> <span class="nf">write_col_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">slice</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write a set of elements in X (column) from vv into pager</span>
+<span class="sd">        </span>
+<span class="sd">        :param slice:  iBz - element # in z (slice #)</span>
+<span class="sd">        :param col:    iBx - element # in x (column #)</span>
+<span class="sd">        :param o:      iBy - begining element # in y to write (0 is the first)</span>
+<span class="sd">        :param n:      iNy - # elements to write (0 for whole vector)</span>
+<span class="sd">        :param vv:     hVV - `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
+<span class="sd">        :type  slice:  int</span>
+<span class="sd">        :type  col:    int</span>
+<span class="sd">        :type  o:      int</span>
+<span class="sd">        :type  n:      int</span>
+<span class="sd">        :type  vv:     GXVV</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_col_3d</span><span class="p">(</span><span class="nb">slice</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.write_row_3d"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.write_row_3d">[docs]</a>    <span class="k">def</span> <span class="nf">write_row_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">slice</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write a set of elements in Y (row) from vv into pager</span>
+<span class="sd">        </span>
+<span class="sd">        :param slice:  iBz - element # in z (slice #)</span>
+<span class="sd">        :param row:    iBy - element # in y (row #)</span>
+<span class="sd">        :param o:      iBx - begining element # in x to write (0 is the first)</span>
+<span class="sd">        :param n:      iNx - # elements to write (0 for whole vector)</span>
+<span class="sd">        :param vv:     hVV - `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
+<span class="sd">        :type  slice:  int</span>
+<span class="sd">        :type  row:    int</span>
+<span class="sd">        :type  o:      int</span>
+<span class="sd">        :type  n:      int</span>
+<span class="sd">        :type  vv:     GXVV</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_row_3d</span><span class="p">(</span><span class="nb">slice</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.write_trace_3d"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.write_trace_3d">[docs]</a>    <span class="k">def</span> <span class="nf">write_trace_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write a set of elements in Z (trace) from pager into vv</span>
+<span class="sd">        </span>
+<span class="sd">        :param col:  iBx - element # in x (column #)</span>
+<span class="sd">        :param row:  iBy - element # in y (row #)</span>
+<span class="sd">        :param o:    iBy - begining element # in z to read (0 is the first)</span>
+<span class="sd">        :param n:    iNy - # elements to read (0 for whole vector)</span>
+<span class="sd">        :param vv:   hVV - `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
+<span class="sd">        :type  col:  int</span>
+<span class="sd">        :type  row:  int</span>
+<span class="sd">        :type  o:    int</span>
+<span class="sd">        :type  n:    int</span>
+<span class="sd">        :type  vv:   GXVV</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_trace_3d</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+
+<span class="c1"># Utility Methods</span>
+
+
+
+<div class="viewcode-block" id="GXPG.read_bf"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.read_bf">[docs]</a>    <span class="k">def</span> <span class="nf">read_bf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">conv</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read the contents of a 2D or 3D pager to from a `GXBF &lt;geosoft.gxapi.GXBF&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param bf:     `GXBF &lt;geosoft.gxapi.GXBF&gt;` to read from</span>
+<span class="sd">        :param dir:    :ref:`PG_3D_DIR`</span>
+<span class="sd">        :param conv:   :ref:`PG_BF_CONV`</span>
+<span class="sd">        :param rev_x:  Reverse X</span>
+<span class="sd">        :param rev_y:  Reverse Y</span>
+<span class="sd">        :param rev_z:  Reverse Z</span>
+<span class="sd">        :type  bf:     GXBF</span>
+<span class="sd">        :type  dir:    int</span>
+<span class="sd">        :type  conv:   int</span>
+<span class="sd">        :type  rev_x:  int</span>
+<span class="sd">        :type  rev_y:  int</span>
+<span class="sd">        :type  rev_z:  int</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_read_bf</span><span class="p">(</span><span class="n">bf</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">conv</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.read_ra"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.read_ra">[docs]</a>    <span class="k">def</span> <span class="nf">read_ra</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummy</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read the contents of a 2D or 3D pager to from an `GXRA &lt;geosoft.gxapi.GXRA&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ra:     `GXRA &lt;geosoft.gxapi.GXRA&gt;` to read from</span>
+<span class="sd">        :param dir:    :ref:`PG_3D_DIR`</span>
+<span class="sd">        :param rev_x:  Reverse X</span>
+<span class="sd">        :param rev_y:  Reverse Y</span>
+<span class="sd">        :param rev_z:  Reverse Z</span>
+<span class="sd">        :param dummy:  Dummy</span>
+<span class="sd">        :type  ra:     GXRA</span>
+<span class="sd">        :type  dir:    int</span>
+<span class="sd">        :type  rev_x:  int</span>
+<span class="sd">        :type  rev_y:  int</span>
+<span class="sd">        :type  rev_z:  int</span>
+<span class="sd">        :type  dummy:  str</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Each line must hold only 1 value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_read_ra</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummy</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.write_bf"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.write_bf">[docs]</a>    <span class="k">def</span> <span class="nf">write_bf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">conv</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write the contents of a 2D or 3D pager to a `GXBF &lt;geosoft.gxapi.GXBF&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param bf:     `GXBF &lt;geosoft.gxapi.GXBF&gt;` to write to</span>
+<span class="sd">        :param dir:    :ref:`PG_3D_DIR`</span>
+<span class="sd">        :param conv:   :ref:`PG_BF_CONV`</span>
+<span class="sd">        :param rev_x:  Reverse X</span>
+<span class="sd">        :param rev_y:  Reverse Y</span>
+<span class="sd">        :param rev_z:  Reverse Z</span>
+<span class="sd">        :type  bf:     GXBF</span>
+<span class="sd">        :type  dir:    int</span>
+<span class="sd">        :type  conv:   int</span>
+<span class="sd">        :type  rev_x:  int</span>
+<span class="sd">        :type  rev_y:  int</span>
+<span class="sd">        :type  rev_z:  int</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_bf</span><span class="p">(</span><span class="n">bf</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">conv</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.write_bf_ex"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.write_bf_ex">[docs]</a>    <span class="k">def</span> <span class="nf">write_bf_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">conv</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">p_dummy</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write the contents of a 2D or 3D pager to a `GXBF &lt;geosoft.gxapi.GXBF&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param bf:       `GXBF &lt;geosoft.gxapi.GXBF&gt;` to write to</span>
+<span class="sd">        :param dir:      :ref:`PG_3D_DIR`</span>
+<span class="sd">        :param conv:     :ref:`PG_BF_CONV`</span>
+<span class="sd">        :param rev_x:    Reverse X</span>
+<span class="sd">        :param rev_y:    Reverse Y</span>
+<span class="sd">        :param rev_z:    Reverse Z</span>
+<span class="sd">        :param p_dummy:  Dummy value</span>
+<span class="sd">        :type  bf:       GXBF</span>
+<span class="sd">        :type  dir:      int</span>
+<span class="sd">        :type  conv:     int</span>
+<span class="sd">        :type  rev_x:    int</span>
+<span class="sd">        :type  rev_y:    int</span>
+<span class="sd">        :type  rev_z:    int</span>
+<span class="sd">        :type  p_dummy:  float</span>
+
+<span class="sd">        .. versionadded:: 9.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_bf_ex</span><span class="p">(</span><span class="n">bf</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">conv</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">p_dummy</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXPG.write_wa"><a class="viewcode-back" href="../../../GXPG.html#geosoft.gxapi.GXPG.write_wa">[docs]</a>    <span class="k">def</span> <span class="nf">write_wa</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wa</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummy</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write the contents of a 2D or 3D pager to a `GXWA &lt;geosoft.gxapi.GXWA&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :param wa:     `GXWA &lt;geosoft.gxapi.GXWA&gt;` to write to</span>
+<span class="sd">        :param dir:    :ref:`PG_3D_DIR`</span>
+<span class="sd">        :param rev_x:  Reverse X</span>
+<span class="sd">        :param rev_y:  Reverse Y</span>
+<span class="sd">        :param rev_z:  Reverse Z</span>
+<span class="sd">        :param dummy:  Dummy</span>
+<span class="sd">        :type  wa:     GXWA</span>
+<span class="sd">        :type  dir:    int</span>
+<span class="sd">        :type  rev_x:  int</span>
+<span class="sd">        :type  rev_y:  int</span>
+<span class="sd">        :type  rev_z:  int</span>
+<span class="sd">        :type  dummy:  str</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Each line will hold only 1 value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_wa</span><span class="p">(</span><span class="n">wa</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummy</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPG</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,532 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXMVG &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMVG</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXMVG</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+<span class="kn">from</span> <span class="nn">.GXMVIEW</span> <span class="kn">import</span> <span class="n">GXMVIEW</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXMVG"><a class="viewcode-back" href="../../../GXMVG.html#geosoft.gxapi.GXMVG">[docs]</a><span class="k">class</span> <span class="nc">GXMVG</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMVG</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXMVG class.</span>
+
+<span class="sd">    The `GXMVG &lt;geosoft.gxapi.GXMVG&gt;` class provides the ability to create view graphs.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXMVG.__init__"><a class="viewcode-back" href="../../../GXMVG.html#geosoft.gxapi.GXMVG.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXMVG</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXMVG.null"><a class="viewcode-back" href="../../../GXMVG.html#geosoft.gxapi.GXMVG.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXMVG &lt;geosoft.gxapi.GXMVG&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXMVG &lt;geosoft.gxapi.GXMVG&gt;`</span>
+<span class="sd">        :rtype:   GXMVG</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXMVG</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXMVG.is_null"><a class="viewcode-back" href="../../../GXMVG.html#geosoft.gxapi.GXMVG.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+
+<div class="viewcode-block" id="GXMVG.axis_x"><a class="viewcode-back" href="../../../GXMVG.html#geosoft.gxapi.GXMVG.axis_x">[docs]</a>    <span class="k">def</span> <span class="nf">axis_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d_y</span><span class="p">,</span> <span class="n">d_lx</span><span class="p">,</span> <span class="n">d_rx</span><span class="p">,</span> <span class="n">d_maj_int</span><span class="p">,</span> <span class="n">d_min_int</span><span class="p">,</span> <span class="n">d_size</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Draw an X axis</span>
+<span class="sd">        </span>
+<span class="sd">        :param d_y:        Y location in plot units (mm)</span>
+<span class="sd">        :param d_lx:       Left  X (rescaling unit)</span>
+<span class="sd">        :param d_rx:       Right X (rescaling unit)</span>
+<span class="sd">        :param d_maj_int:  Major tick interval (rescaling unit). Ticks drawn in decades in LOG or LOGLINEAR scale</span>
+<span class="sd">        :param d_min_int:  Minor tick interval  (rescaling unit). Not used in LOG/LOGLINEAR</span>
+<span class="sd">        :param d_size:     Tick size in view units (mm) (negative for down ticks)</span>
+<span class="sd">        :type  d_y:        float</span>
+<span class="sd">        :type  d_lx:       float</span>
+<span class="sd">        :type  d_rx:       float</span>
+<span class="sd">        :type  d_maj_int:  float</span>
+<span class="sd">        :type  d_min_int:  float</span>
+<span class="sd">        :type  d_size:     float</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** When Log annotation is applied, nice tick intervals will be</span>
+<span class="sd">        calculated</span>
+
+<span class="sd">        Obsolete</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_axis_x</span><span class="p">(</span><span class="n">d_y</span><span class="p">,</span> <span class="n">d_lx</span><span class="p">,</span> <span class="n">d_rx</span><span class="p">,</span> <span class="n">d_maj_int</span><span class="p">,</span> <span class="n">d_min_int</span><span class="p">,</span> <span class="n">d_size</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMVG.axis_y"><a class="viewcode-back" href="../../../GXMVG.html#geosoft.gxapi.GXMVG.axis_y">[docs]</a>    <span class="k">def</span> <span class="nf">axis_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d_x</span><span class="p">,</span> <span class="n">d_by</span><span class="p">,</span> <span class="n">d_ty</span><span class="p">,</span> <span class="n">d_maj_int</span><span class="p">,</span> <span class="n">d_min_int</span><span class="p">,</span> <span class="n">d_size</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Draw a  Y axis</span>
+<span class="sd">        </span>
+<span class="sd">        :param d_x:        X location in plot units (mm)</span>
+<span class="sd">        :param d_by:       Bottom Y (rescaling unit)</span>
+<span class="sd">        :param d_ty:       Top Y (rescaling unit)</span>
+<span class="sd">        :param d_maj_int:  Major tick interval (rescaling unit). Ticks drawn in decades in LOG or LOGLINEAR scale</span>
+<span class="sd">        :param d_min_int:  Minor tick interval  (rescaling unit). Not used in LOG/LOGLINEAR</span>
+<span class="sd">        :param d_size:     Tick size in plot units (mm)(negative for left ticks)</span>
+<span class="sd">        :type  d_x:        float</span>
+<span class="sd">        :type  d_by:       float</span>
+<span class="sd">        :type  d_ty:       float</span>
+<span class="sd">        :type  d_maj_int:  float</span>
+<span class="sd">        :type  d_min_int:  float</span>
+<span class="sd">        :type  d_size:     float</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** When Log annotation is applied, nice tick intervals will be</span>
+<span class="sd">        calculated</span>
+
+<span class="sd">        Obsolete</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_axis_y</span><span class="p">(</span><span class="n">d_x</span><span class="p">,</span> <span class="n">d_by</span><span class="p">,</span> <span class="n">d_ty</span><span class="p">,</span> <span class="n">d_maj_int</span><span class="p">,</span> <span class="n">d_min_int</span><span class="p">,</span> <span class="n">d_size</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMVG.create"><a class="viewcode-back" href="../../../GXMVG.html#geosoft.gxapi.GXMVG.create">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">xmin_m</span><span class="p">,</span> <span class="n">ymin_m</span><span class="p">,</span> <span class="n">xmax_m</span><span class="p">,</span> <span class="n">ymax_m</span><span class="p">,</span> <span class="n">xmin_u</span><span class="p">,</span> <span class="n">ymin_u</span><span class="p">,</span> <span class="n">xmax_u</span><span class="p">,</span> <span class="n">ymax_u</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a `GXMVG &lt;geosoft.gxapi.GXMVG&gt;` object</span>
+<span class="sd">        </span>
+<span class="sd">        :param map:     H_MAP handle</span>
+<span class="sd">        :param name:    View Name</span>
+<span class="sd">        :param xmin_m:  Minimum X in map unit (mm)</span>
+<span class="sd">        :param ymin_m:  Minimum Y in map unit (mm)</span>
+<span class="sd">        :param xmax_m:  Maximum X in map unit (mm)</span>
+<span class="sd">        :param ymax_m:  Maximum Y in map unit (mm)</span>
+<span class="sd">        :param xmin_u:  Minimum X in view unit (m for example)</span>
+<span class="sd">        :param ymin_u:  Minimum Y in view unit</span>
+<span class="sd">        :param xmax_u:  Maximum X in view unit</span>
+<span class="sd">        :param ymax_u:  Maximum Y in view unit</span>
+<span class="sd">        :type  map:     GXMAP</span>
+<span class="sd">        :type  name:    str</span>
+<span class="sd">        :type  xmin_m:  float</span>
+<span class="sd">        :type  ymin_m:  float</span>
+<span class="sd">        :type  xmax_m:  float</span>
+<span class="sd">        :type  ymax_m:  float</span>
+<span class="sd">        :type  xmin_u:  float</span>
+<span class="sd">        :type  ymin_u:  float</span>
+<span class="sd">        :type  xmax_u:  float</span>
+<span class="sd">        :type  ymax_u:  float</span>
+
+<span class="sd">        :returns:       `GXMVG &lt;geosoft.gxapi.GXMVG&gt;` handle (NULL if error)</span>
+<span class="sd">        :rtype:         GXMVG</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Obsolete</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMVG</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">map</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">xmin_m</span><span class="p">,</span> <span class="n">ymin_m</span><span class="p">,</span> <span class="n">xmax_m</span><span class="p">,</span> <span class="n">ymax_m</span><span class="p">,</span> <span class="n">xmin_u</span><span class="p">,</span> <span class="n">ymin_u</span><span class="p">,</span> <span class="n">xmax_u</span><span class="p">,</span> <span class="n">ymax_u</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXMVG</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+
+
+<div class="viewcode-block" id="GXMVG.get_mview"><a class="viewcode-back" href="../../../GXMVG.html#geosoft.gxapi.GXMVG.get_mview">[docs]</a>    <span class="k">def</span> <span class="nf">get_mview</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;` Handle of the Object.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;` Handle</span>
+<span class="sd">        :rtype:      GXMVIEW</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Obsolete</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_mview</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">GXMVIEW</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMVG.grid"><a class="viewcode-back" href="../../../GXMVG.html#geosoft.gxapi.GXMVG.grid">[docs]</a>    <span class="k">def</span> <span class="nf">grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d1st_x</span><span class="p">,</span> <span class="n">d1st_y</span><span class="p">,</span> <span class="n">d_x</span><span class="p">,</span> <span class="n">d_y</span><span class="p">,</span> <span class="n">d_dx</span><span class="p">,</span> <span class="n">d_dy</span><span class="p">,</span> <span class="n">l_type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Draw a grid in the current `GXMVG &lt;geosoft.gxapi.GXMVG&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :param d1st_x:  X position of 1st vertical grid line to draw (in rescaling unit)</span>
+<span class="sd">        :param d1st_y:  Y position of 1st horizontal grid line to draw (in rescaling unit)</span>
+<span class="sd">        :param d_x:     X grid increment of rescaled map unit (see above Rescaling functions)</span>
+<span class="sd">        :param d_y:     Y grid increment of rescaled map unit (see above Rescaling functions)</span>
+<span class="sd">        :param d_dx:    X dot increment/cross X size of rescaled map unit</span>
+<span class="sd">        :param d_dy:    Y dot increment/cross Y size of rescaled map unit</span>
+<span class="sd">        :param l_type:  :ref:`MVG_GRID`</span>
+<span class="sd">        :type  d1st_x:  float</span>
+<span class="sd">        :type  d1st_y:  float</span>
+<span class="sd">        :type  d_x:     float</span>
+<span class="sd">        :type  d_y:     float</span>
+<span class="sd">        :type  d_dx:    float</span>
+<span class="sd">        :type  d_dy:    float</span>
+<span class="sd">        :type  l_type:  int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The grid will be drawn in the current window.</span>
+
+<span class="sd">        In the LOG and LOGLINEAR rescaling modes, grids will be</span>
+<span class="sd">        drawn in decades and the X/Y grid increments will be</span>
+<span class="sd">        ignored.  In addition, grid lines at 0 (zero) and LOGMIN will be drawn.</span>
+
+<span class="sd">        Obsolete</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_grid</span><span class="p">(</span><span class="n">d1st_x</span><span class="p">,</span> <span class="n">d1st_y</span><span class="p">,</span> <span class="n">d_x</span><span class="p">,</span> <span class="n">d_y</span><span class="p">,</span> <span class="n">d_dx</span><span class="p">,</span> <span class="n">d_dy</span><span class="p">,</span> <span class="n">l_type</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMVG.label_x"><a class="viewcode-back" href="../../../GXMVG.html#geosoft.gxapi.GXMVG.label_x">[docs]</a>    <span class="k">def</span> <span class="nf">label_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">lx</span><span class="p">,</span> <span class="n">rx</span><span class="p">,</span> <span class="n">maj_int</span><span class="p">,</span> <span class="n">just</span><span class="p">,</span> <span class="n">bound</span><span class="p">,</span> <span class="n">orient</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Label annotations on the X axis</span>
+<span class="sd">        </span>
+<span class="sd">        :param y:        Y location in plot units (mm)</span>
+<span class="sd">        :param lx:       Left  X (rescaling unit)</span>
+<span class="sd">        :param rx:       Right X (rescaling unit)</span>
+<span class="sd">        :param maj_int:  Major tick interval (ignored if in LOG or LOGLINEAR rescaling)</span>
+<span class="sd">        :param just:     Label justification :ref:`MVG_LABEL_JUST`</span>
+<span class="sd">        :param bound:    Edge label bounding :ref:`MVG_LABEL_BOUND`</span>
+<span class="sd">        :param orient:   Label orientation   :ref:`MVG_LABEL_ORIENT`</span>
+<span class="sd">        :type  y:        float</span>
+<span class="sd">        :type  lx:       float</span>
+<span class="sd">        :type  rx:       float</span>
+<span class="sd">        :type  maj_int:  float</span>
+<span class="sd">        :type  just:     int</span>
+<span class="sd">        :type  bound:    int</span>
+<span class="sd">        :type  orient:   int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Label bounding will justify edge labels to be inside</span>
+<span class="sd">        the bar limits.</span>
+
+<span class="sd">        When Log annotation is applied, labels will be drawn in decades.</span>
+
+<span class="sd">        Obsolete</span>
+
+<span class="sd">        .. seealso::</span>
+
+<span class="sd">            sAxisX_MVG</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_label_x</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">lx</span><span class="p">,</span> <span class="n">rx</span><span class="p">,</span> <span class="n">maj_int</span><span class="p">,</span> <span class="n">just</span><span class="p">,</span> <span class="n">bound</span><span class="p">,</span> <span class="n">orient</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMVG.label_y"><a class="viewcode-back" href="../../../GXMVG.html#geosoft.gxapi.GXMVG.label_y">[docs]</a>    <span class="k">def</span> <span class="nf">label_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">ty</span><span class="p">,</span> <span class="n">maj_int</span><span class="p">,</span> <span class="n">just</span><span class="p">,</span> <span class="n">bound</span><span class="p">,</span> <span class="n">orient</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Label annotations on the Y axis</span>
+<span class="sd">        </span>
+<span class="sd">        :param x:        X location in plot units (mm)</span>
+<span class="sd">        :param by:       Bottom  Y (rescaling unit)</span>
+<span class="sd">        :param ty:       Top Y (rescaling unit)</span>
+<span class="sd">        :param maj_int:  Label interval (ignored if in LOG or LOGLINEAR rescaling)</span>
+<span class="sd">        :param just:     Label justification :ref:`MVG_LABEL_JUST`</span>
+<span class="sd">        :param bound:    Edge label bounding :ref:`MVG_LABEL_BOUND`</span>
+<span class="sd">        :param orient:   Label orientation   :ref:`MVG_LABEL_ORIENT`</span>
+<span class="sd">        :type  x:        float</span>
+<span class="sd">        :type  by:       float</span>
+<span class="sd">        :type  ty:       float</span>
+<span class="sd">        :type  maj_int:  float</span>
+<span class="sd">        :type  just:     int</span>
+<span class="sd">        :type  bound:    int</span>
+<span class="sd">        :type  orient:   int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Label bounding will justify edge labels to be inside</span>
+<span class="sd">        the bar limits.</span>
+
+<span class="sd">        When Log annotation is applied, labels will be drawn in decades.</span>
+
+<span class="sd">        Obsolete</span>
+
+<span class="sd">        .. seealso::</span>
+
+<span class="sd">            sAxisY_MVG</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_label_y</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">ty</span><span class="p">,</span> <span class="n">maj_int</span><span class="p">,</span> <span class="n">just</span><span class="p">,</span> <span class="n">bound</span><span class="p">,</span> <span class="n">orient</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMVG.poly_line_va"><a class="viewcode-back" href="../../../GXMVG.html#geosoft.gxapi.GXMVG.poly_line_va">[docs]</a>    <span class="k">def</span> <span class="nf">poly_line_va</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">draw</span><span class="p">,</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">va</span><span class="p">,</span> <span class="n">vv_array</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates PolyLines/polygons from `GXVV &lt;geosoft.gxapi.GXVV&gt;` and `GXVA &lt;geosoft.gxapi.GXVA&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param draw:      :ref:`MVG_DRAW`</span>
+<span class="sd">        :param wrap:      :ref:`MVG_WRAP`</span>
+<span class="sd">        :param vv_x:      X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param va:        Y VAs</span>
+<span class="sd">        :param vv_array:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` containing list of `GXVA &lt;geosoft.gxapi.GXVA&gt;` ranges, such as 1,2 40 ... Entire `GXVA &lt;geosoft.gxapi.GXVA&gt;` is drawn if this `GXVV &lt;geosoft.gxapi.GXVV&gt;` is empty.</span>
+<span class="sd">        :type  draw:      int</span>
+<span class="sd">        :type  wrap:      int</span>
+<span class="sd">        :type  vv_x:      GXVV</span>
+<span class="sd">        :type  va:        GXVA</span>
+<span class="sd">        :type  vv_array:  GXVV</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** If the `GXVV &lt;geosoft.gxapi.GXVV&gt;` contains dummies, the polylines</span>
+<span class="sd">        will break at the dummies; the polygons</span>
+<span class="sd">        will skip the dummies.</span>
+
+<span class="sd">        If wrapping is applied, POLYGON parameter is ignored and</span>
+<span class="sd">        only POLYLINES are drawn.</span>
+
+<span class="sd">        Obsolete</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_poly_line_va</span><span class="p">(</span><span class="n">draw</span><span class="p">,</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">va</span><span class="p">,</span> <span class="n">vv_array</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMVG.poly_line_vv"><a class="viewcode-back" href="../../../GXMVG.html#geosoft.gxapi.GXMVG.poly_line_vv">[docs]</a>    <span class="k">def</span> <span class="nf">poly_line_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">draw</span><span class="p">,</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates PolyLines/polygons from `GXVV &lt;geosoft.gxapi.GXVV&gt;` and `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param draw:  :ref:`MVG_DRAW`</span>
+<span class="sd">        :param wrap:  :ref:`MVG_WRAP`</span>
+<span class="sd">        :param vv_x:  X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vv_y:  Y `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :type  draw:  int</span>
+<span class="sd">        :type  wrap:  int</span>
+<span class="sd">        :type  vv_x:  GXVV</span>
+<span class="sd">        :type  vv_y:  GXVV</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** If the `GXVV &lt;geosoft.gxapi.GXVV&gt;` contains dummies, the polylines</span>
+<span class="sd">        will break at the dummies; the polygons</span>
+<span class="sd">        will skip the dummies.</span>
+
+<span class="sd">        If wrapping is applied, POLYGON parameter is ignored and</span>
+<span class="sd">        only POLYLINES are drawn.</span>
+
+<span class="sd">        Obsolete</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_poly_line_vv</span><span class="p">(</span><span class="n">draw</span><span class="p">,</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMVG.rescale_x_range"><a class="viewcode-back" href="../../../GXMVG.html#geosoft.gxapi.GXMVG.rescale_x_range">[docs]</a>    <span class="k">def</span> <span class="nf">rescale_x_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">log_min</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Re-scale horizontal axis</span>
+<span class="sd">        </span>
+<span class="sd">        :param scale:    :ref:`MVG_SCALE`</span>
+<span class="sd">        :param min:      Scale information: new minimum X</span>
+<span class="sd">        :param max:      Scale information: new maximum X</span>
+<span class="sd">        :param log_min:  Scale information: minimum X to apply log10, it is defined only for LOGLINEAR scale</span>
+<span class="sd">        :type  scale:    int</span>
+<span class="sd">        :type  min:      float</span>
+<span class="sd">        :type  max:      float</span>
+<span class="sd">        :type  log_min:  float</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** When RescaleX_MVG is used, only the scaling information</span>
+<span class="sd">        related to X axis will be considered</span>
+
+<span class="sd">        Obsolete</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_rescale_x_range</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">log_min</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMVG.rescale_y_range"><a class="viewcode-back" href="../../../GXMVG.html#geosoft.gxapi.GXMVG.rescale_y_range">[docs]</a>    <span class="k">def</span> <span class="nf">rescale_y_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">log_min</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Re-scale vertical axis</span>
+<span class="sd">        </span>
+<span class="sd">        :param scale:    :ref:`MVG_SCALE`</span>
+<span class="sd">        :param min:      Scale information: new minimum Y</span>
+<span class="sd">        :param max:      Scale information: new maximum Y</span>
+<span class="sd">        :param log_min:  Scale information: minimum Y to apply log10, it is defined only for LOGLINEAR scale</span>
+<span class="sd">        :type  scale:    int</span>
+<span class="sd">        :type  min:      float</span>
+<span class="sd">        :type  max:      float</span>
+<span class="sd">        :type  log_min:  float</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** When RescaleY_MVG is used, only the scaling information</span>
+<span class="sd">        related to Y axis will be considered</span>
+
+<span class="sd">        Obsolete</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_rescale_y_range</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">log_min</span><span class="p">)</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMVG</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

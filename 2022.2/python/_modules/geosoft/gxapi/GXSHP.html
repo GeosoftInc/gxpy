@@ -1,0 +1,660 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXSHP &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSHP</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXSHP</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXSHP"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP">[docs]</a><span class="k">class</span> <span class="nc">GXSHP</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSHP</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXSHP class.</span>
+
+<span class="sd">    The `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` class is used to create ESRI shape files.</span>
+
+<span class="sd">    **Note:**</span>
+
+<span class="sd">    Shape files contain a single &quot;geometry&quot; type, e.g.</span>
+<span class="sd">    points, arcs or polygons. They may be accompanied by</span>
+<span class="sd">    a DBF file containing attribute data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXSHP.__init__"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXSHP</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXSHP.null"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXSHP &lt;geosoft.gxapi.GXSHP&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXSHP &lt;geosoft.gxapi.GXSHP&gt;`</span>
+<span class="sd">        :rtype:   GXSHP</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXSHP</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXSHP.is_null"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+
+<div class="viewcode-block" id="GXSHP.append_item"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.append_item">[docs]</a>    <span class="k">def</span> <span class="nf">append_item</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Append the current item and data to an old `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` object.</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 7.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The currently stored `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` item and data are written to the</span>
+<span class="sd">        `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` geometry and data files. (If no data fields have been</span>
+<span class="sd">        defined, then the data file is not written).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_append_item</span><span class="p">()</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXSHP.create"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.create">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` object</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  File name</span>
+<span class="sd">        :param type:  :ref:`SHP_GEOM_TYPE`</span>
+<span class="sd">        :type  name:  str</span>
+<span class="sd">        :type  type:  int</span>
+
+<span class="sd">        :returns:     `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` object</span>
+<span class="sd">        :rtype:       GXSHP</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The file name is used to create the various files. The</span>
+<span class="sd">        file type and extension are added:</span>
+
+<span class="sd">        e.g. &quot;filename.shp&quot;,</span>
+<span class="sd">             &quot;filename.dbf&quot;</span>
+
+<span class="sd">        The following geometry types are currently supported:</span>
+
+<span class="sd">        Type                    Required geometry function.</span>
+
+<span class="sd">        `SHP_GEOM_TYPE_POINT &lt;geosoft.gxapi.SHP_GEOM_TYPE_POINT&gt;`     `set_point &lt;geosoft.gxapi.GXSHP.set_point&gt;`</span>
+<span class="sd">        `SHP_GEOM_TYPE_ARC &lt;geosoft.gxapi.SHP_GEOM_TYPE_ARC&gt;`       `set_arc &lt;geosoft.gxapi.GXSHP.set_arc&gt;`</span>
+<span class="sd">        `SHP_GEOM_TYPE_POLYGON &lt;geosoft.gxapi.SHP_GEOM_TYPE_POLYGON&gt;`   `set_polygon &lt;geosoft.gxapi.GXSHP.set_polygon&gt;`</span>
+
+<span class="sd">        `SHP_GEOM_TYPE_POINTZ &lt;geosoft.gxapi.SHP_GEOM_TYPE_POINTZ&gt;`    `set_point_z &lt;geosoft.gxapi.GXSHP.set_point_z&gt;`</span>
+<span class="sd">        `SHP_GEOM_TYPE_ARCZ &lt;geosoft.gxapi.SHP_GEOM_TYPE_ARCZ&gt;`      `set_arc_z &lt;geosoft.gxapi.GXSHP.set_arc_z&gt;`</span>
+<span class="sd">        `SHP_GEOM_TYPE_POLYGONZ &lt;geosoft.gxapi.SHP_GEOM_TYPE_POLYGONZ&gt;`  `set_polygon_z &lt;geosoft.gxapi.GXSHP.set_polygon_z&gt;`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSHP</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXSHP</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+
+
+<div class="viewcode-block" id="GXSHP.add_int_field"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.add_int_field">[docs]</a>    <span class="k">def</span> <span class="nf">add_int_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add an INT type data field to a shape file</span>
+<span class="sd">        </span>
+<span class="sd">        :param field:  Field name</span>
+<span class="sd">        :type  field:  str</span>
+
+<span class="sd">        :returns:      Index of the new field</span>
+<span class="sd">        :rtype:        int</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The returned field index should be used with the SetXXX_SHP</span>
+<span class="sd">        functions to set individual data values.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_int_field</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSHP.add_double_field"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.add_double_field">[docs]</a>    <span class="k">def</span> <span class="nf">add_double_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">dec</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a REAL type data field to a shape file</span>
+<span class="sd">        </span>
+<span class="sd">        :param field:  Field name</span>
+<span class="sd">        :param dec:    Number of decimal places</span>
+<span class="sd">        :type  field:  str</span>
+<span class="sd">        :type  dec:    int</span>
+
+<span class="sd">        :returns:      Index of the new field</span>
+<span class="sd">        :rtype:        int</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The returned field index should be used with the SetXXX_SHP</span>
+<span class="sd">        functions to set individual data values.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_double_field</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">dec</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSHP.add_string_field"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.add_string_field">[docs]</a>    <span class="k">def</span> <span class="nf">add_string_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a string type data field to a shape file</span>
+<span class="sd">        </span>
+<span class="sd">        :param field:  Field name</span>
+<span class="sd">        :param width:  Maximum number of characters in the string</span>
+<span class="sd">        :type  field:  str</span>
+<span class="sd">        :type  width:  int</span>
+
+<span class="sd">        :returns:      Index of the new field</span>
+<span class="sd">        :rtype:        int</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The returned field index should be used with the SetXXX_SHP</span>
+<span class="sd">        functions to set individual data values.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_string_field</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">width</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSHP.find_field"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.find_field">[docs]</a>    <span class="k">def</span> <span class="nf">find_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Find the index for a data field.</span>
+<span class="sd">        </span>
+<span class="sd">        :param field:  Field name</span>
+<span class="sd">        :type  field:  str</span>
+
+<span class="sd">        :returns:      The index, -1 if not found.</span>
+<span class="sd">        :rtype:        int</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_field</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSHP.max_id_num"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.max_id_num">[docs]</a>    <span class="k">def</span> <span class="nf">max_id_num</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the max ID number.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    The max ID number.</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 7.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_id_num</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSHP.num_fields"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.num_fields">[docs]</a>    <span class="k">def</span> <span class="nf">num_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the field number.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    The field number.</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 7.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_fields</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSHP.num_records"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.num_records">[docs]</a>    <span class="k">def</span> <span class="nf">num_records</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the record number.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    The record number.</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 7.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_records</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSHP.type"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.type">[docs]</a>    <span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` object&#39;s geometry type.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    The `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` object&#39;s geometry type (:ref:`SHP_GEOM_TYPE`)</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 7.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXSHP.open"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.open">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Open an old `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` object</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  File name</span>
+<span class="sd">        :type  name:  str</span>
+
+<span class="sd">        :returns:     `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` object</span>
+<span class="sd">        :rtype:       GXSHP</span>
+
+<span class="sd">        .. versionadded:: 7.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSHP</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXSHP</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSHP.set_arc"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_arc">[docs]</a>    <span class="k">def</span> <span class="nf">set_arc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write an XY arc (polyline) item.</span>
+<span class="sd">        </span>
+<span class="sd">        :param vv_x:  X locations</span>
+<span class="sd">        :param vv_y:  Y locations</span>
+<span class="sd">        :type  vv_x:  GXVV</span>
+<span class="sd">        :type  vv_y:  GXVV</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Can ONLY be used for `SHP_GEOM_TYPE_ARC &lt;geosoft.gxapi.SHP_GEOM_TYPE_ARC&gt;` files.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_arc</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSHP.set_arc_z"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_arc_z">[docs]</a>    <span class="k">def</span> <span class="nf">set_arc_z</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write an XYZ arc (polyline) item.</span>
+<span class="sd">        </span>
+<span class="sd">        :param vv_x:  X locations</span>
+<span class="sd">        :param vv_y:  Y locations</span>
+<span class="sd">        :param vv_z:  Z locations</span>
+<span class="sd">        :type  vv_x:  GXVV</span>
+<span class="sd">        :type  vv_y:  GXVV</span>
+<span class="sd">        :type  vv_z:  GXVV</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Can ONLY be used for `SHP_GEOM_TYPE_ARCZ &lt;geosoft.gxapi.SHP_GEOM_TYPE_ARCZ&gt;` files.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_arc_z</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSHP.set_int"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_int">[docs]</a>    <span class="k">def</span> <span class="nf">set_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set a data value to a int.</span>
+<span class="sd">        </span>
+<span class="sd">        :param index:  Data field index</span>
+<span class="sd">        :param val:    Input int value</span>
+<span class="sd">        :type  index:  int</span>
+<span class="sd">        :type  val:    int</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The input value is converted to the field&#39;s data type.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_int</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSHP.set_ipj"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_ipj">[docs]</a>    <span class="k">def</span> <span class="nf">set_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set a `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` object&#39;s projection.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ipj:  Input `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`</span>
+<span class="sd">        :type  ipj:  GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** If the `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` object has a projection, and it</span>
+<span class="sd">        is not `IPJ_TYPE_NONE &lt;geosoft.gxapi.IPJ_TYPE_NONE&gt;`, then it will be output</span>
+<span class="sd">        to a file with the .prj extension when the</span>
+<span class="sd">        first object is output.</span>
+<span class="sd">        This function should be called BEFORE the first</span>
+<span class="sd">        object is written.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSHP.set_point"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_point">[docs]</a>    <span class="k">def</span> <span class="nf">set_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write an XY point item.</span>
+<span class="sd">        </span>
+<span class="sd">        :param x:    X location</span>
+<span class="sd">        :param y:    Y location</span>
+<span class="sd">        :type  x:    float</span>
+<span class="sd">        :type  y:    float</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Can ONLY be used for `SHP_GEOM_TYPE_POINT &lt;geosoft.gxapi.SHP_GEOM_TYPE_POINT&gt;` files.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSHP.set_point_z"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_point_z">[docs]</a>    <span class="k">def</span> <span class="nf">set_point_z</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write an XYZ point item.</span>
+<span class="sd">        </span>
+<span class="sd">        :param x:    X location</span>
+<span class="sd">        :param y:    Y location</span>
+<span class="sd">        :param z:    Z location</span>
+<span class="sd">        :type  x:    float</span>
+<span class="sd">        :type  y:    float</span>
+<span class="sd">        :type  z:    float</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Can ONLY be used for `SHP_GEOM_TYPE_POINTZ &lt;geosoft.gxapi.SHP_GEOM_TYPE_POINTZ&gt;` files.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_point_z</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSHP.set_polygon"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_polygon">[docs]</a>    <span class="k">def</span> <span class="nf">set_polygon</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">inclusive</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write an XY polygon item.</span>
+<span class="sd">        </span>
+<span class="sd">        :param vv_x:       X locations</span>
+<span class="sd">        :param vv_y:       Y locations</span>
+<span class="sd">        :param inclusive:  ``True`` for outer ring polygon (inclusive/island), ``False`` for inner ring (exclusive/hole)</span>
+<span class="sd">        :type  vv_x:       GXVV</span>
+<span class="sd">        :type  vv_y:       GXVV</span>
+<span class="sd">        :type  inclusive:  bool</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Can ONLY be used for `SHP_GEOM_TYPE_POLYGON &lt;geosoft.gxapi.SHP_GEOM_TYPE_POLYGON&gt;` files.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_polygon</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">inclusive</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSHP.set_polygon_z"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_polygon_z">[docs]</a>    <span class="k">def</span> <span class="nf">set_polygon_z</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">inclusive</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write an XYZ polygon item.</span>
+<span class="sd">        </span>
+<span class="sd">        :param vv_x:       X locations</span>
+<span class="sd">        :param vv_y:       Y locations</span>
+<span class="sd">        :param vv_z:       Z locations</span>
+<span class="sd">        :param inclusive:  ``True`` for outer ring polygon (inclusive/island), ``False`` for inner ring (exclusive/hole)</span>
+<span class="sd">        :type  vv_x:       GXVV</span>
+<span class="sd">        :type  vv_y:       GXVV</span>
+<span class="sd">        :type  vv_z:       GXVV</span>
+<span class="sd">        :type  inclusive:  int</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Can ONLY be used for `SHP_GEOM_TYPE_POLYGONZ &lt;geosoft.gxapi.SHP_GEOM_TYPE_POLYGONZ&gt;` files.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_polygon_z</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">inclusive</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSHP.set_double"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_double">[docs]</a>    <span class="k">def</span> <span class="nf">set_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set a data value to a real.</span>
+<span class="sd">        </span>
+<span class="sd">        :param index:  Data field index</span>
+<span class="sd">        :param val:    Input real value</span>
+<span class="sd">        :type  index:  int</span>
+<span class="sd">        :type  val:    float</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The input value is converted to the field&#39;s data type.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_double</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSHP.set_string"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_string">[docs]</a>    <span class="k">def</span> <span class="nf">set_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set a data value to a string.</span>
+<span class="sd">        </span>
+<span class="sd">        :param index:    Data field index</span>
+<span class="sd">        :param str_val:  Input string value</span>
+<span class="sd">        :type  index:    int</span>
+<span class="sd">        :type  str_val:  str</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The input string is converted to the field&#39;s data type.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_string</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSHP.write_item"><a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.write_item">[docs]</a>    <span class="k">def</span> <span class="nf">write_item</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Output the current item and data.</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The currently stored `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` item and data are written to the</span>
+<span class="sd">        `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` geometry and data files. (If no data fields have been</span>
+<span class="sd">        defined, then the data file is not written).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_item</span><span class="p">()</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSHP</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

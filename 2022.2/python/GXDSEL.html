@@ -1,0 +1,489 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GXDSEL class &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXDSEL class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXDSEL class</a><ul>
+<li><a class="reference internal" href="#dsel-picture-quality-constants">DSEL_PICTURE_QUALITY constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXDSEL.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxdsel-class">
+<span id="gxdsel"></span><h1>GXDSEL class<a class="headerlink" href="#gxdsel-class" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="geosoft.gxapi.GXDSEL">
+<em class="property">class </em><code class="sig-name descname">GXDSEL</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDSEL.html#GXDSEL"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDSEL" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXDSEL class.</p>
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXDSEL" title="geosoft.gxapi.GXDSEL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDSEL</span></code></a> object is used to select subsets of data from the DATA object</p>
+<dl class="py method">
+<dt id="geosoft.gxapi.GXDSEL.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDSEL.html#GXDSEL.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDSEL.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXDSEL.create">
+<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDSEL.html#GXDSEL.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDSEL.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Selection object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXDSEL" title="geosoft.gxapi.GXDSEL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDSEL</span></code></a> handle, terminates if creation fails</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXDSEL" title="geosoft.gxapi.GXDSEL">GXDSEL</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXDSEL.data_significant_figures">
+<code class="sig-name descname">data_significant_figures</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sf</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDSEL.html#GXDSEL.data_significant_figures"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDSEL.data_significant_figures" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the data significant figures required</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sf</strong> (<em>float</em>) – Significant figures (positive, can be fractional)</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This is the number of significant figures that you require for the data.
+You can reduce this number to achieve better compression ratios.
+This should only be used when there is one data type in the data.</p>
+<p>See sSpatialResolution_DSEL to set the desired spatial resolution.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXDSEL.is_null">
+<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDSEL.html#GXDSEL.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDSEL.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXDSEL.meta_query">
+<code class="sig-name descname">meta_query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDSEL.html#GXDSEL.meta_query"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDSEL.meta_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify a metadata query string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>query</strong> (<em>str</em>) – Meta query string</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXDSEL.null">
+<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDSEL.html#GXDSEL.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDSEL.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXDSEL" title="geosoft.gxapi.GXDSEL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDSEL</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXDSEL" title="geosoft.gxapi.GXDSEL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDSEL</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXDSEL" title="geosoft.gxapi.GXDSEL">GXDSEL</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXDSEL.picture_quality">
+<code class="sig-name descname">picture_quality</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quality</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDSEL.html#GXDSEL.picture_quality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDSEL.picture_quality" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the quality of pictures being returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>quality</strong> (<em>int</em>) – Quality</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Affected Data Types: PICTURE</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXDSEL.request_all_info">
+<code class="sig-name descname">request_all_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDSEL.html#GXDSEL.request_all_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDSEL.request_all_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Request that all meta-data info be sent</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>request</strong> (<em>int</em>) – TRUE to for all data, FALSE - for normal data</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXDSEL.select_area">
+<code class="sig-name descname">select_area</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pply</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDSEL.html#GXDSEL.select_area"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDSEL.select_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select a complex clipping area</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pply</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> containing complex area (must contain a projection)</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The DAP server may not handle clipping and may return
+more data than requested.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXDSEL.select_rect">
+<code class="sig-name descname">select_rect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">min_x</span></em>, <em class="sig-param"><span class="n">min_y</span></em>, <em class="sig-param"><span class="n">max_x</span></em>, <em class="sig-param"><span class="n">max_y</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDSEL.html#GXDSEL.select_rect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDSEL.select_rect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select a rectangular area.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_x</strong> (<em>float</em>) – Min X</p></li>
+<li><p><strong>min_y</strong> (<em>float</em>) – Min Y</p></li>
+<li><p><strong>max_x</strong> (<em>float</em>) – Max X</p></li>
+<li><p><strong>max_y</strong> (<em>float</em>) – Max Y</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXDSEL.select_resolution">
+<code class="sig-name descname">select_resolution</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">res</span></em>, <em class="sig-param"><span class="n">force</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDSEL.html#GXDSEL.select_resolution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDSEL.select_resolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the resolution desired</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>res</strong> (<em>float</em>) – Minimum Resolution</p></li>
+<li><p><strong>force</strong> (<em>int</em>) – TRUE to force this resolution, if possible</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Resolution must be specified in the units of the selection <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a>.</p>
+<p>This will be the optimum data resoulution.  (grid cell for grids, data
+separation for other data types).
+You will normally get a reasonable resolution as near to or smaller than
+this unless sRequireResolution_DSEL has been set.</p>
+<p>Call sRequireResolution_DSEL with TRUE to force the client to re-sample
+the data to the resolution requested.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXDSEL.select_size">
+<code class="sig-name descname">select_size</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">width</span></em>, <em class="sig-param"><span class="n">height</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDSEL.html#GXDSEL.select_size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDSEL.select_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the image size desired</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> (<em>int</em>) – Image width in pixels</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – Image height in pixels</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXDSEL.set_extract_as_document">
+<code class="sig-name descname">set_extract_as_document</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDSEL.html#GXDSEL.set_extract_as_document"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDSEL.set_extract_as_document" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify that we want to extract this file as a document</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>int</em>) – TRUE (1) if we want as a document</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXDSEL.set_ipj">
+<code class="sig-name descname">set_ipj</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ipj</span></em>, <em class="sig-param"><span class="n">force</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDSEL.html#GXDSEL.set_ipj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDSEL.set_ipj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the desired projection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> to set</p></li>
+<li><p><strong>force</strong> (<em>int</em>) – TRUE to force reprojection, if possible</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If the server supports reprojection, the data will be
+reprojected at the server.</p>
+<p>If reprojection is not forced, the data may come in any projection.</p>
+<p>The spatial resolution and accuracy are accumed to be in the
+coordinate system defined by this <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXDSEL.spatial_accuracy">
+<code class="sig-name descname">spatial_accuracy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">acc</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDSEL.html#GXDSEL.spatial_accuracy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDSEL.spatial_accuracy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the spatial accuracy required.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>acc</strong> (<em>float</em>) – Spatial accuracy desired</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Must be specified in the units of the selection <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a>.</p>
+<p>The spatial accuracy is used improve compression performance for
+the spatial component of the data returned.
+You can reduce this number to achieve better compression ratios.
+This should only be used when there is one data type in the data.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="dsel-picture-quality-constants">
+<span id="dsel-picture-quality"></span><h2>DSEL_PICTURE_QUALITY constants<a class="headerlink" href="#dsel-picture-quality-constants" title="Permalink to this headline">¶</a></h2>
+<p>Line Label Formats</p>
+<dl class="py data">
+<dt id="geosoft.gxapi.DSEL_PICTURE_QUALITY_DEFAULT">
+<code class="sig-name descname">DSEL_PICTURE_QUALITY_DEFAULT</code><a class="headerlink" href="#geosoft.gxapi.DSEL_PICTURE_QUALITY_DEFAULT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default</p>
+<dl class="py attribute">
+<dt id="id0">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DSEL_PICTURE_QUALITY_DEFAULT</code><em class="property"> = 0</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.DSEL_PICTURE_QUALITY_LOSSLESS">
+<code class="sig-name descname">DSEL_PICTURE_QUALITY_LOSSLESS</code><a class="headerlink" href="#geosoft.gxapi.DSEL_PICTURE_QUALITY_LOSSLESS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lossless</p>
+<dl class="py attribute">
+<dt id="id12">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DSEL_PICTURE_QUALITY_LOSSLESS</code><em class="property"> = 1</em><a class="headerlink" href="#id12" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.DSEL_PICTURE_QUALITY_SEMILOSSY">
+<code class="sig-name descname">DSEL_PICTURE_QUALITY_SEMILOSSY</code><a class="headerlink" href="#geosoft.gxapi.DSEL_PICTURE_QUALITY_SEMILOSSY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Semilossy</p>
+<dl class="py attribute">
+<dt id="id13">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DSEL_PICTURE_QUALITY_SEMILOSSY</code><em class="property"> = 2</em><a class="headerlink" href="#id13" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.DSEL_PICTURE_QUALITY_LOSSY">
+<code class="sig-name descname">DSEL_PICTURE_QUALITY_LOSSY</code><a class="headerlink" href="#geosoft.gxapi.DSEL_PICTURE_QUALITY_LOSSY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lossy</p>
+<dl class="py attribute">
+<dt id="id14">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DSEL_PICTURE_QUALITY_LOSSY</code><em class="property"> = 3</em><a class="headerlink" href="#id14" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.DSEL_PICTURE_QUALITY_NATIVE">
+<code class="sig-name descname">DSEL_PICTURE_QUALITY_NATIVE</code><a class="headerlink" href="#geosoft.gxapi.DSEL_PICTURE_QUALITY_NATIVE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Native</p>
+<dl class="py attribute">
+<dt id="id15">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DSEL_PICTURE_QUALITY_NATIVE</code><em class="property"> = 4</em><a class="headerlink" href="#id15" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.DSEL_PICTURE_QUALITY_ECW">
+<code class="sig-name descname">DSEL_PICTURE_QUALITY_ECW</code><a class="headerlink" href="#geosoft.gxapi.DSEL_PICTURE_QUALITY_ECW" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ecw</p>
+<dl class="py attribute">
+<dt id="id16">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DSEL_PICTURE_QUALITY_ECW</code><em class="property"> = 5</em><a class="headerlink" href="#id16" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.DSEL_PICTURE_QUALITY_JPG">
+<code class="sig-name descname">DSEL_PICTURE_QUALITY_JPG</code><a class="headerlink" href="#geosoft.gxapi.DSEL_PICTURE_QUALITY_JPG" title="Permalink to this definition">¶</a></dt>
+<dd><p>Jpg</p>
+<dl class="py attribute">
+<dt id="id17">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DSEL_PICTURE_QUALITY_JPG</code><em class="property"> = 6</em><a class="headerlink" href="#id17" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.DSEL_PICTURE_QUALITY_PNG">
+<code class="sig-name descname">DSEL_PICTURE_QUALITY_PNG</code><a class="headerlink" href="#geosoft.gxapi.DSEL_PICTURE_QUALITY_PNG" title="Permalink to this definition">¶</a></dt>
+<dd><p>Png</p>
+<dl class="py attribute">
+<dt id="id18">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DSEL_PICTURE_QUALITY_PNG</code><em class="property"> = 7</em><a class="headerlink" href="#id18" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.DSEL_PICTURE_QUALITY_BMP">
+<code class="sig-name descname">DSEL_PICTURE_QUALITY_BMP</code><a class="headerlink" href="#geosoft.gxapi.DSEL_PICTURE_QUALITY_BMP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bmp</p>
+<dl class="py attribute">
+<dt id="id19">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DSEL_PICTURE_QUALITY_BMP</code><em class="property"> = 8</em><a class="headerlink" href="#id19" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.DSEL_PICTURE_QUALITY_TIF">
+<code class="sig-name descname">DSEL_PICTURE_QUALITY_TIF</code><a class="headerlink" href="#geosoft.gxapi.DSEL_PICTURE_QUALITY_TIF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tif</p>
+<dl class="py attribute">
+<dt id="id20">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DSEL_PICTURE_QUALITY_TIF</code><em class="property"> = 9</em><a class="headerlink" href="#id20" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXDSEL class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

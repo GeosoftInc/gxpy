@@ -1,0 +1,1616 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXIMG &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIMG</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXIMG</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+<span class="kn">from</span> <span class="nn">.GXPG</span> <span class="kn">import</span> <span class="n">GXPG</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXIMG"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG">[docs]</a><span class="k">class</span> <span class="nc">GXIMG</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMG</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXIMG class.</span>
+
+<span class="sd">    The `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` class performs read and write operations on grid</span>
+<span class="sd">    file data. When efficient access along both rows and columns</span>
+<span class="sd">    is desired the `GXPG &lt;geosoft.gxapi.GXPG&gt;` class is recommended (see `GXPG &lt;geosoft.gxapi.GXPG&gt;` and `GXPGU &lt;geosoft.gxapi.GXPGU&gt;`);</span>
+<span class="sd">    the `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` is first created, then the `GXPG &lt;geosoft.gxapi.GXPG&gt;` is obtained from</span>
+<span class="sd">    the `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` using `get_pg &lt;geosoft.gxapi.GXIMG.get_pg&gt;`.</span>
+
+<span class="sd">    **Note:**</span>
+
+<span class="sd">    The `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` methods use the XGD DATs to access grid files in different</span>
+<span class="sd">    formats.  The characteristics of a grid can be controlled using</span>
+<span class="sd">    decorations on a grid file name.  For example:</span>
+
+<span class="sd">    `create_new_file &lt;geosoft.gxapi.GXIMG.create_new_file&gt;`(`GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`,1,100,100,&quot;mag.grd&quot;);</span>
+<span class="sd">    -&gt; creates a new grid file &quot;mag.grd&quot; with all defaults.</span>
+
+<span class="sd">    `create_new_file &lt;geosoft.gxapi.GXIMG.create_new_file&gt;`(`GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`,1,100,100,&quot;mag.grd(GRD;comp=none)&quot;);</span>
+<span class="sd">    -&gt; creates a new grid file &quot;mag.grd&quot; with no compression.</span>
+
+<span class="sd">    `create_new_file &lt;geosoft.gxapi.GXIMG.create_new_file&gt;`(`GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`,1,100,100,&quot;mag.grd(GRD;comp=size;type=short&quot;);</span>
+<span class="sd">    -&gt; creates a new grid file &quot;mag.grd&quot; compressed for size, numbers</span>
+<span class="sd">    stored as 2-byte integers..</span>
+
+<span class="sd">    See :ref:`DAT_XGD`.DOC for information about file name decorations available</span>
+<span class="sd">    for all `GXDAT &lt;geosoft.gxapi.GXDAT&gt;` types.</span>
+
+<span class="sd">    Different grid types support different features.  For example, not all</span>
+<span class="sd">    grid types support projection information.  Geosoft will always create</span>
+<span class="sd">    a ``*.gi`` file that is used to store all such information that we require</span>
+<span class="sd">    from a grid.  If the grid does support this information, both the grid</span>
+<span class="sd">    and the ``*.gi`` file will contain the information.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIMG.__init__"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXIMG</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXIMG.null"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXIMG &lt;geosoft.gxapi.GXIMG&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXIMG &lt;geosoft.gxapi.GXIMG&gt;`</span>
+<span class="sd">        :rtype:   GXIMG</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXIMG</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXIMG.is_null"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+<div class="viewcode-block" id="GXIMG.average2"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.average2">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">average2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid_in</span><span class="p">,</span> <span class="n">grid_out</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Reduce the dimensions in a 2D pager by a factor of 2</span>
+<span class="sd">        </span>
+<span class="sd">        :param grid_in:   Name of source Grid</span>
+<span class="sd">        :param grid_out:  Name of output Grid</span>
+<span class="sd">        :type  grid_in:   str</span>
+<span class="sd">        :type  grid_out:  str</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** This method is useful for reducing the dimensions in a 2D pager by a factor of 2.</span>
+<span class="sd">        The output pager retains the same origin, but the X and Y spacing is double that of the original. Essentially,</span>
+<span class="sd">        the process removes all the even-indexed rows and columns, while leaving the locations of all the remaining</span>
+<span class="sd">        data points in the &quot;odd&quot; rows and columns unchanged.</span>
+
+<span class="sd">        The output values at the output data locations are created by performing an average of the original data point and</span>
+<span class="sd">        its valid surrounding data points; what is essentially a 3x3 smoothing filter.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMG</span><span class="o">.</span><span class="n">_average2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid_in</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid_out</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.copy"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">im_go</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy IMGs.</span>
+<span class="sd">        </span>
+<span class="sd">        :param im_go:  Target `GXIMG &lt;geosoft.gxapi.GXIMG&gt;`</span>
+<span class="sd">        :type  im_go:  GXIMG</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_copy</span><span class="p">(</span><span class="n">im_go</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXIMG.create"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.create">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">kx</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates an `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` not tied to a file at all</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:    Data type :ref:`GS_TYPES`</span>
+<span class="sd">        :param kx:      Grid orientation (KX): 1 (rows in X) -1 (rows in Y)</span>
+<span class="sd">        :param width:   Grid width</span>
+<span class="sd">        :param height:  Grid height</span>
+<span class="sd">        :type  type:    int</span>
+<span class="sd">        :type  kx:      int</span>
+<span class="sd">        :type  width:   int</span>
+<span class="sd">        :type  height:  int</span>
+
+<span class="sd">        :returns:       `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` object</span>
+<span class="sd">        :rtype:         GXIMG</span>
+
+<span class="sd">        .. versionadded:: 5.0.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Once destroyed all the data in this `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` is lost.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMG</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">type</span><span class="p">,</span> <span class="n">kx</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXIMG</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GXIMG.create_file"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.create_file">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates an Image object tied to a grid file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:  Data type, :ref:`GS_TYPES` or `GS_TYPE_DEFAULT &lt;geosoft.gxapi.GS_TYPE_DEFAULT&gt;` to use native `GXDAT &lt;geosoft.gxapi.GXDAT&gt;` type.</span>
+<span class="sd">        :param grid:  Name of the Grid to link to</span>
+<span class="sd">        :param mode:  Grid file open mode :ref:`IMG_FILE`</span>
+<span class="sd">        :type  type:  int</span>
+<span class="sd">        :type  grid:  str</span>
+<span class="sd">        :type  mode:  int</span>
+
+<span class="sd">        :returns:     `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` object</span>
+<span class="sd">        :rtype:       GXIMG</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** When the `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;` data type is chosen the actual on-disk</span>
+<span class="sd">        type of the input image will be used instead of `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`</span>
+<span class="sd">        if the on-disk values represent color data as opposed</span>
+<span class="sd">        to real numbers.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMG</span><span class="o">.</span><span class="n">_create_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">type</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mode</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXIMG</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GXIMG.create_mem"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.create_mem">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_mem</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">kx</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates an `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` object that is backed only by memory.</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:    Data type, :ref:`GS_TYPES`</span>
+<span class="sd">        :param kx:      Grid orientation (KX): 1 (rows in X) -1 (rows in Y)</span>
+<span class="sd">        :param width:   Grid width</span>
+<span class="sd">        :param height:  Grid height</span>
+<span class="sd">        :type  type:    int</span>
+<span class="sd">        :type  kx:      int</span>
+<span class="sd">        :type  width:   int</span>
+<span class="sd">        :type  height:  int</span>
+
+<span class="sd">        :returns:       `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` object</span>
+<span class="sd">        :rtype:         GXIMG</span>
+
+<span class="sd">        .. versionadded:: 5.0.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Once destroyed all the data is lost. This is temporary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMG</span><span class="o">.</span><span class="n">_create_mem</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">type</span><span class="p">,</span> <span class="n">kx</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXIMG</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GXIMG.create_new_file"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.create_new_file">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_new_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">kx</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">grid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a new image file</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:    Data type, :ref:`GS_TYPES` Cannot be `GS_TYPE_DEFAULT &lt;geosoft.gxapi.GS_TYPE_DEFAULT&gt;`</span>
+<span class="sd">        :param kx:      Grid orientation (KX): 1 (rows in X) -1 (rows in Y)</span>
+<span class="sd">        :param width:   Grid width</span>
+<span class="sd">        :param height:  Grid height</span>
+<span class="sd">        :param grid:    Name of the Grid to link to</span>
+<span class="sd">        :type  type:    int</span>
+<span class="sd">        :type  kx:      int</span>
+<span class="sd">        :type  width:   int</span>
+<span class="sd">        :type  height:  int</span>
+<span class="sd">        :type  grid:    str</span>
+
+<span class="sd">        :returns:       `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` object</span>
+<span class="sd">        :rtype:         GXIMG</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMG</span><span class="o">.</span><span class="n">_create_new_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">type</span><span class="p">,</span> <span class="n">kx</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXIMG</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GXIMG.create_out_file"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.create_out_file">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_out_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">img</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates an output image file using input image info.</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:  Data type, :ref:`GS_TYPES` or `GS_TYPE_DEFAULT &lt;geosoft.gxapi.GS_TYPE_DEFAULT&gt;`</span>
+<span class="sd">        :param grid:  Name of the Grid to link to</span>
+<span class="sd">        :param img:   Input Image for new image creation</span>
+<span class="sd">        :type  type:  int</span>
+<span class="sd">        :type  grid:  str</span>
+<span class="sd">        :type  img:   GXIMG</span>
+
+<span class="sd">        :returns:     `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` object</span>
+<span class="sd">        :rtype:       GXIMG</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** When the `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;` data type is chosen the actual on-disk</span>
+<span class="sd">        type of the input image will be used instead of `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`</span>
+<span class="sd">        if the on-disk values represent color data as opposed</span>
+<span class="sd">        to real numbers.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMG</span><span class="o">.</span><span class="n">_create_out_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">type</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">img</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXIMG</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.create_projected"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.create_projected">[docs]</a>    <span class="k">def</span> <span class="nf">create_projected</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies a projection to an image.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ipj:  Projection to apply</span>
+<span class="sd">        :type  ipj:  GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` now appears to be in the projected coordinate</span>
+<span class="sd">        system space.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_create_projected</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.create_projected2"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.create_projected2">[docs]</a>    <span class="k">def</span> <span class="nf">create_projected2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies a projection to an image, specify cell size.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ipj:        Projection to apply</span>
+<span class="sd">        :param cell_size:  Cell size</span>
+<span class="sd">        :type  ipj:        GXIPJ</span>
+<span class="sd">        :type  cell_size:  float</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` now appears to be in the projected coordinate</span>
+<span class="sd">        system space, with the specified cell size. If the cell</span>
+<span class="sd">        size is `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;` (`GS_R8DM &lt;geosoft.gxapi.GS_R8DM&gt;`), one is automatically calculated,</span>
+<span class="sd">        as with `create_projected &lt;geosoft.gxapi.GXIMG.create_projected&gt;`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_create_projected2</span><span class="p">(</span><span class="n">ipj</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.create_projected3"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.create_projected3">[docs]</a>    <span class="k">def</span> <span class="nf">create_projected3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">exp_pct</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Same as `create_projected2 &lt;geosoft.gxapi.GXIMG.create_projected2&gt;`, but set expansion of bounds.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ipj:        Projection to apply</span>
+<span class="sd">        :param cell_size:  Cell size</span>
+<span class="sd">        :param exp_pct:    Expansion percent (&gt;=0).</span>
+<span class="sd">        :type  ipj:        GXIPJ</span>
+<span class="sd">        :type  cell_size:  float</span>
+<span class="sd">        :type  exp_pct:    float</span>
+
+<span class="sd">        .. versionadded:: 6.3.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` now appears to be in the projected coordinate</span>
+<span class="sd">        system space, with the specified cell size. If the cell</span>
+<span class="sd">        size is `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;` (`GS_R8DM &lt;geosoft.gxapi.GS_R8DM&gt;`), one is automatically calculated,</span>
+<span class="sd">        as with `create_projected &lt;geosoft.gxapi.GXIMG.create_projected&gt;`.</span>
+<span class="sd">        The expansion percent expands the bounds of the projected grid</span>
+<span class="sd">        in order to allow for the curving of bounding edges. Normally,</span>
+<span class="sd">        edges are sampled in order to allow for curving, but this</span>
+<span class="sd">        parameter is set to 1.0 (for 1 percent) in the `create_projected &lt;geosoft.gxapi.GXIMG.create_projected&gt;`</span>
+<span class="sd">        and `create_projected2 &lt;geosoft.gxapi.GXIMG.create_projected2&gt;` wrappers, and will generally create a</span>
+<span class="sd">        white/dummy border around the new grid. This new method allows</span>
+<span class="sd">        you to specify the expansion, or turn it off (by setting it to 0).</span>
+<span class="sd">        If the value is set to `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;`, then expansion is left at 1.0,</span>
+<span class="sd">        the legacy behaviour.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_create_projected3</span><span class="p">(</span><span class="n">ipj</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">exp_pct</span><span class="p">)</span></div>
+        
+
+
+
+
+
+
+<div class="viewcode-block" id="GXIMG.extent"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.extent">[docs]</a>    <span class="k">def</span> <span class="nf">extent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the img extents</span>
+<span class="sd">        </span>
+<span class="sd">        :param min_x:  X minimum</span>
+<span class="sd">        :param min_y:  Y minimum</span>
+<span class="sd">        :param max_x:  X maximum</span>
+<span class="sd">        :param max_y:  Y maximum</span>
+<span class="sd">        :type  min_x:  float_ref</span>
+<span class="sd">        :type  min_y:  float_ref</span>
+<span class="sd">        :type  max_x:  float_ref</span>
+<span class="sd">        :type  max_y:  float_ref</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extent</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.geth_pg"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.geth_pg">[docs]</a>    <span class="k">def</span> <span class="nf">geth_pg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the actual pager of a grid.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    `GXPG &lt;geosoft.gxapi.GXPG&gt;` Object</span>
+<span class="sd">        :rtype:      GXPG</span>
+
+<span class="sd">        .. versionadded:: 5.0.8</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        .. seealso::</span>
+
+<span class="sd">            `get_pg &lt;geosoft.gxapi.GXIMG.get_pg&gt;` to get just a copy of the grid&#39;s pager.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_geth_pg</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">GXPG</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.get_info"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.get_info">[docs]</a>    <span class="k">def</span> <span class="nf">get_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">rot</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieves location information about this image.</span>
+<span class="sd">        </span>
+<span class="sd">        :param dx:   X element separation</span>
+<span class="sd">        :param dy:   Y element separation</span>
+<span class="sd">        :param xo:   X location of first point</span>
+<span class="sd">        :param yo:   Y location of first point</span>
+<span class="sd">        :param rot:  Grid X axis rotation deg. CCW from reference X</span>
+<span class="sd">        :type  dx:   float_ref</span>
+<span class="sd">        :type  dy:   float_ref</span>
+<span class="sd">        :type  xo:   float_ref</span>
+<span class="sd">        :type  yo:   float_ref</span>
+<span class="sd">        :type  rot:  float_ref</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">dx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">xo</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">yo</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rot</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_info</span><span class="p">(</span><span class="n">dx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">xo</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">yo</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rot</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.get_ipj"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.get_ipj">[docs]</a>    <span class="k">def</span> <span class="nf">get_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the projection of a grid.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ipj:  Projection of the grid</span>
+<span class="sd">        :type  ipj:  GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.get_meta"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.get_meta">[docs]</a>    <span class="k">def</span> <span class="nf">get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the metadata of a grid.</span>
+<span class="sd">        </span>
+<span class="sd">        :param meta:  Metadata of the grid</span>
+<span class="sd">        :type  meta:  GXMETA</span>
+
+<span class="sd">        .. versionadded:: 5.0.8</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_meta</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.get_pg"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.get_pg">[docs]</a>    <span class="k">def</span> <span class="nf">get_pg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pg</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a copy of the pager of a grid.</span>
+<span class="sd">        </span>
+<span class="sd">        :param pg:   `GXPG &lt;geosoft.gxapi.GXPG&gt;` object to hold pager of the grid</span>
+<span class="sd">        :type  pg:   GXPG</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        .. seealso::</span>
+
+<span class="sd">            `geth_pg &lt;geosoft.gxapi.GXIMG.geth_pg&gt;` to get the actual pager of the grid.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_pg</span><span class="p">(</span><span class="n">pg</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.get_projected_cell_size"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.get_projected_cell_size">[docs]</a>    <span class="k">def</span> <span class="nf">get_projected_cell_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns default cell size from projected image.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ipj:   Projection to apply</span>
+<span class="sd">        :param cell:  Returned cell size</span>
+<span class="sd">        :type  ipj:   GXIPJ</span>
+<span class="sd">        :type  cell:  float_ref</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Returns the cell size calculated by CreateProjected_PJIMG, or by</span>
+<span class="sd">        `create_projected2 &lt;geosoft.gxapi.GXIMG.create_projected2&gt;` when</span>
+<span class="sd">        `GS_R8DM &lt;geosoft.gxapi.GS_R8DM&gt;` is entered as the optional cell size. No inheritance</span>
+<span class="sd">        is actually performed to the input `GXIMG &lt;geosoft.gxapi.GXIMG&gt;`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cell</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_projected_cell_size</span><span class="p">(</span><span class="n">ipj</span><span class="p">,</span> <span class="n">cell</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.get_tr"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.get_tr">[docs]</a>    <span class="k">def</span> <span class="nf">get_tr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the trend information from a grid.</span>
+<span class="sd">        </span>
+<span class="sd">        :param tr:   Trend information from the grid</span>
+<span class="sd">        :type  tr:   GXTR</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_tr</span><span class="p">(</span><span class="n">tr</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.element_type"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.element_type">[docs]</a>    <span class="k">def</span> <span class="nf">element_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xg_dor_img</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the element type.</span>
+<span class="sd">        </span>
+<span class="sd">        :param xg_dor_img:  0 for XGD, 1 for `GXIMG &lt;geosoft.gxapi.GXIMG&gt;`</span>
+<span class="sd">        :type  xg_dor_img:  int</span>
+
+<span class="sd">        :returns:           Element type</span>
+<span class="sd">        :rtype:             int</span>
+
+<span class="sd">        .. versionadded:: 5.0.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_element_type</span><span class="p">(</span><span class="n">xg_dor_img</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.e_type"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.e_type">[docs]</a>    <span class="k">def</span> <span class="nf">e_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the element type.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    Element type</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Same as sElementType_IMG(img,1)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_e_type</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.get_def_itr"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.get_def_itr">[docs]</a>    <span class="k">def</span> <span class="nf">get_def_itr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">itr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get default transform, if it exists</span>
+<span class="sd">        </span>
+<span class="sd">        :param itr:  Transform</span>
+<span class="sd">        :type  itr:  GXITR</span>
+
+<span class="sd">        :returns:    0 - Okay</span>
+<span class="sd">                     1 - No default possible/available</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 5.0.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_def_itr</span><span class="p">(</span><span class="n">itr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.is_colour"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.is_colour">[docs]</a>    <span class="k">def</span> <span class="nf">is_colour</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Is this a Geosoft color grid?</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:      bool</span>
+
+<span class="sd">        .. versionadded:: 6.0.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_colour</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXIMG.is_valid_img_file"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.is_valid_img_file">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">is_valid_img_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Is this a valid `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` file?</span>
+<span class="sd">        </span>
+<span class="sd">        :param file:  File to check</span>
+<span class="sd">        :type  file:  str</span>
+<span class="sd">        :rtype:       bool</span>
+
+<span class="sd">        .. versionadded:: 8.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMG</span><span class="o">.</span><span class="n">_is_valid_img_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXIMG.is_valid_img_file_ex"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.is_valid_img_file_ex">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">is_valid_img_file_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">err_msg</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Is this a valid `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` file? Returns error message if it cannot be opened for any reason.</span>
+<span class="sd">        </span>
+<span class="sd">        :param file:     File to check</span>
+<span class="sd">        :param err_msg:  Error message registered if unable to open</span>
+<span class="sd">        :type  file:     str</span>
+<span class="sd">        :type  err_msg:  str_ref</span>
+<span class="sd">        :rtype:          bool</span>
+
+<span class="sd">        .. versionadded:: 8.0.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span><span class="p">,</span> <span class="n">err_msg</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMG</span><span class="o">.</span><span class="n">_is_valid_img_file_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">err_msg</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.ne"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.ne">[docs]</a>    <span class="k">def</span> <span class="nf">ne</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the # of elements in the optimal KX direction.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    # of elements in the optimal KX direction</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ne</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.inherit"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.inherit">[docs]</a>    <span class="k">def</span> <span class="nf">inherit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inherit a projection/new cell size on the `GXIMG &lt;geosoft.gxapi.GXIMG&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ipj:   Projection</span>
+<span class="sd">        :param cell:  Optional cell size</span>
+<span class="sd">        :type  ipj:   GXIPJ</span>
+<span class="sd">        :type  cell:  float</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** If cell size is `GS_R8DM &lt;geosoft.gxapi.GS_R8DM&gt;`, then &quot;nice&quot; values for the cell</span>
+<span class="sd">        size of the new projected grid will be determined so that</span>
+<span class="sd">        the new grid has about the same number of cells as the old.</span>
+<span class="sd">        If the cell size is specified, the inheritance will always</span>
+<span class="sd">        work, even if the input `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` is identical to the original</span>
+<span class="sd">        `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`, and the cell boundaries will be forced to be aligned</span>
+<span class="sd">        with the new cell size.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_inherit</span><span class="p">(</span><span class="n">ipj</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.inherit_img"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.inherit_img">[docs]</a>    <span class="k">def</span> <span class="nf">inherit_img</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">im_gs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Make a grids match in size and coordinate system</span>
+<span class="sd">        </span>
+<span class="sd">        :param im_gs:  Source `GXIMG &lt;geosoft.gxapi.GXIMG&gt;`</span>
+<span class="sd">        :type  im_gs:  GXIMG</span>
+
+<span class="sd">        .. versionadded:: 5.1.8</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_inherit_img</span><span class="p">(</span><span class="n">im_gs</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.nv"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.nv">[docs]</a>    <span class="k">def</span> <span class="nf">nv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the # of vectors in the optimal KX direction.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    # of vectors in the optimal KX direction</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nv</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.nx"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.nx">[docs]</a>    <span class="k">def</span> <span class="nf">nx</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the # of X elements.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    # of X elements.</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nx</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.ny"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.ny">[docs]</a>    <span class="k">def</span> <span class="nf">ny</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the # of Y elements.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    # of Y elements.</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ny</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.query_int"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.query_int">[docs]</a>    <span class="k">def</span> <span class="nf">query_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Query information about the `GXIMG &lt;geosoft.gxapi.GXIMG&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :param query:  :ref:`IMG_QUERY`</span>
+<span class="sd">        :type  query:  int</span>
+
+<span class="sd">        :returns:      Information requested, dummy if unknown or invalid.</span>
+<span class="sd">        :rtype:        int</span>
+
+<span class="sd">        .. versionadded:: 5.0.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** You can call either funtion to retrieve any data,</span>
+<span class="sd">        int or real.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_query_int</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.query_kx"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.query_kx">[docs]</a>    <span class="k">def</span> <span class="nf">query_kx</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Asks the `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` for the most efficient way to access the data.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    -1 by columns, 1 by rows, 0 rows and columns are equally efficient.</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_query_kx</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.set_def_itr"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.set_def_itr">[docs]</a>    <span class="k">def</span> <span class="nf">set_def_itr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">itr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set default transform</span>
+<span class="sd">        </span>
+<span class="sd">        :param itr:  Transform</span>
+<span class="sd">        :type  itr:  GXITR</span>
+
+<span class="sd">        :returns:    0 - Okay</span>
+<span class="sd">                     1 - No default possible/available</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 5.0.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set_def_itr</span><span class="p">(</span><span class="n">itr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXIMG.user_preference_to_plot_as_colour_shaded_grid"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.user_preference_to_plot_as_colour_shaded_grid">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">user_preference_to_plot_as_colour_shaded_grid</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the global setting.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    0 - User wishes to plot grids as regular (flat) grid</span>
+<span class="sd">                  1 - User wishes to plot grids as color-shaded grids</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 7.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMG</span><span class="o">.</span><span class="n">_user_preference_to_plot_as_colour_shaded_grid</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.load_img"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.load_img">[docs]</a>    <span class="k">def</span> <span class="nf">load_img</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">im_gi</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Loads an `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` into a master `GXIMG &lt;geosoft.gxapi.GXIMG&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param im_gi:  `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` to load</span>
+<span class="sd">        :type  im_gi:  GXIMG</span>
+
+<span class="sd">        .. versionadded:: 5.0.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The cell sizes and projections must be the same.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_img</span><span class="p">(</span><span class="n">im_gi</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.load_into_pager"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.load_into_pager">[docs]</a>    <span class="k">def</span> <span class="nf">load_into_pager</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` data from file into a pager to increase</span>
+<span class="sd">        access time.</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_into_pager</span><span class="p">()</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.opt_kx"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.opt_kx">[docs]</a>    <span class="k">def</span> <span class="nf">opt_kx</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kx</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Force optimal KX as desired.</span>
+<span class="sd">        </span>
+<span class="sd">        :param kx:   KX -1 by column 1 by row</span>
+<span class="sd">        :type  kx:   int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** This will force loading an image into a `GXPG &lt;geosoft.gxapi.GXPG&gt;` if it is not already</span>
+<span class="sd">        accessible in the direction requested.</span>
+
+<span class="sd">        Subsequent calls to methods that use the optimal KX will use the</span>
+<span class="sd">        KX set here.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_opt_kx</span><span class="p">(</span><span class="n">kx</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.read_v"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.read_v">[docs]</a>    <span class="k">def</span> <span class="nf">read_v</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">be</span><span class="p">,</span> <span class="n">ne</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read a vector in the optimal KX direction.</span>
+<span class="sd">        </span>
+<span class="sd">        :param v:    Vector to Read</span>
+<span class="sd">        :param be:   Begining element # to read (0 is the first)</span>
+<span class="sd">        :param ne:   # elements to read (0 for whole vector)</span>
+<span class="sd">        :param vv:   `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
+<span class="sd">        :type  v:    int</span>
+<span class="sd">        :type  be:   int</span>
+<span class="sd">        :type  ne:   int</span>
+<span class="sd">        :type  vv:   GXVV</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_read_v</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">be</span><span class="p">,</span> <span class="n">ne</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.read_x"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.read_x">[docs]</a>    <span class="k">def</span> <span class="nf">read_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read a column (constant X)</span>
+<span class="sd">        </span>
+<span class="sd">        :param bx:   X column</span>
+<span class="sd">        :param by:   Start Y to read</span>
+<span class="sd">        :param ny:   # Y to read (0 for whole vector)</span>
+<span class="sd">        :type  bx:   int</span>
+<span class="sd">        :type  by:   int</span>
+<span class="sd">        :type  ny:   int</span>
+<span class="sd">        :type  vv:   GXVV</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_read_x</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.read_y"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.read_y">[docs]</a>    <span class="k">def</span> <span class="nf">read_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">bx</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read a row (constant Y)</span>
+<span class="sd">        </span>
+<span class="sd">        :param by:   Y row</span>
+<span class="sd">        :param bx:   Start X to read</span>
+<span class="sd">        :param nx:   # X to read (0 for whole vector)</span>
+<span class="sd">        :type  by:   int</span>
+<span class="sd">        :type  bx:   int</span>
+<span class="sd">        :type  nx:   int</span>
+<span class="sd">        :type  vv:   GXVV</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_read_y</span><span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">bx</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXIMG.refresh_gi"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.refresh_gi">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">refresh_gi</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Refresh the GI of a grid after it has moved or changed.</span>
+<span class="sd">        </span>
+<span class="sd">        :param grid:  Grid name</span>
+<span class="sd">        :type  grid:  str</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMG</span><span class="o">.</span><span class="n">_refresh_gi</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.relocate"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.relocate">[docs]</a>    <span class="k">def</span> <span class="nf">relocate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">asp</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Re-locate a grid image.</span>
+<span class="sd">        </span>
+<span class="sd">        :param min_x:  Area X minimum</span>
+<span class="sd">        :param min_y:  Area Y minimum</span>
+<span class="sd">        :param max_x:  Area X maximum</span>
+<span class="sd">        :param max_y:  Area Y maximum</span>
+<span class="sd">        :param asp:    :ref:`IMG_RELOCATE`</span>
+<span class="sd">        :type  min_x:  float</span>
+<span class="sd">        :type  min_y:  float</span>
+<span class="sd">        :type  max_x:  float</span>
+<span class="sd">        :type  max_y:  float</span>
+<span class="sd">        :type  asp:    int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_relocate</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">asp</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXIMG.report"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.report">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">report</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">wa</span><span class="p">,</span> <span class="n">force</span><span class="p">,</span> <span class="n">decimals</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Writes grid info report to a file</span>
+<span class="sd">        </span>
+<span class="sd">        :param grid:      Grid name</span>
+<span class="sd">        :param wa:        Text file to write to</span>
+<span class="sd">        :param force:     Recalc statistics (0 - no; 1 - yes)</span>
+<span class="sd">        :param decimals:  Number of decimals to put in results</span>
+<span class="sd">        :param title:     Title for report</span>
+<span class="sd">        :type  grid:      str</span>
+<span class="sd">        :type  wa:        GXWA</span>
+<span class="sd">        :type  force:     int</span>
+<span class="sd">        :type  decimals:  int</span>
+<span class="sd">        :type  title:     str</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMG</span><span class="o">.</span><span class="n">_report</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">wa</span><span class="p">,</span> <span class="n">force</span><span class="p">,</span> <span class="n">decimals</span><span class="p">,</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXIMG.report_csv"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.report_csv">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">report_csv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">wa</span><span class="p">,</span> <span class="n">force</span><span class="p">,</span> <span class="n">decimals</span><span class="p">,</span> <span class="n">header</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Writes grid info as a line to a CSV file</span>
+<span class="sd">        </span>
+<span class="sd">        :param grid:      Grid name</span>
+<span class="sd">        :param wa:        Text file to write to</span>
+<span class="sd">        :param force:     Recalc statistics (0 - no; 1 - yes)</span>
+<span class="sd">        :param decimals:  Number of decimals to put in results</span>
+<span class="sd">        :param header:    Write header line (0 - no; 1 - yes)?</span>
+<span class="sd">        :type  grid:      str</span>
+<span class="sd">        :type  wa:        GXWA</span>
+<span class="sd">        :type  force:     int</span>
+<span class="sd">        :type  decimals:  int</span>
+<span class="sd">        :type  header:    int</span>
+
+<span class="sd">        .. versionadded:: 6.4.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Appends the stats as a CSV line to the input text file.</span>
+<span class="sd">        The header line should only be written to a new text file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMG</span><span class="o">.</span><span class="n">_report_csv</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">wa</span><span class="p">,</span> <span class="n">force</span><span class="p">,</span> <span class="n">decimals</span><span class="p">,</span> <span class="n">header</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.get_display_property"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.get_display_property">[docs]</a>    <span class="k">def</span> <span class="nf">get_display_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets display information about this image.</span>
+<span class="sd">        </span>
+<span class="sd">        :param query:  :ref:`IMG_DISPLAY_PROPERTY`</span>
+<span class="sd">        :type  query:  int</span>
+<span class="sd">        :rtype:        float</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** These values do not necessarily match the grid as currently displayed; they are retrieved and used whenever</span>
+<span class="sd">        the grid is displayed in a viewer or map, and are used (for instance) to set the default values</span>
+<span class="sd">        in the Display Grid GX.</span>
+<span class="sd">        Some values return only values of 0 or 1.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_display_property</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.get_z"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.get_z">[docs]</a>    <span class="k">def</span> <span class="nf">get_z</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the grid value at a point</span>
+<span class="sd">        </span>
+<span class="sd">        :param x:    X location in the grid projection</span>
+<span class="sd">        :param y:    Y location in the grid projection</span>
+<span class="sd">        :type  x:    float</span>
+<span class="sd">        :type  y:    float</span>
+
+<span class="sd">        :returns:    Grid value</span>
+<span class="sd">        :rtype:      float</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_z</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.query_double"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.query_double">[docs]</a>    <span class="k">def</span> <span class="nf">query_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Query information about the `GXIMG &lt;geosoft.gxapi.GXIMG&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :param query:  :ref:`IMG_QUERY`</span>
+<span class="sd">        :type  query:  int</span>
+
+<span class="sd">        :returns:      Information requested, dummy if unknown or invalid.</span>
+<span class="sd">        :rtype:        float</span>
+
+<span class="sd">        .. versionadded:: 5.0.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** You can call either funtion to retrieve any data,</span>
+<span class="sd">        int or real.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_query_double</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.set_display_property"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.set_display_property">[docs]</a>    <span class="k">def</span> <span class="nf">set_display_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets display information about this image.</span>
+<span class="sd">        </span>
+<span class="sd">        :param query:  :ref:`IMG_DISPLAY_PROPERTY`</span>
+<span class="sd">        :param value:  Value</span>
+<span class="sd">        :type  query:  int</span>
+<span class="sd">        :type  value:  float</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** These values do NOT take immediate effect; they are retrieved and used whenever</span>
+<span class="sd">        the grid is displayed in a viewer or map, and are used (for instance) to set the default values</span>
+<span class="sd">        in the Display Grid GX.</span>
+<span class="sd">        Some values take on only values of 0 or 1.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_display_property</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.get_shadow_grid_path"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.get_shadow_grid_path">[docs]</a>    <span class="k">def</span> <span class="nf">get_shadow_grid_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the name of a view.</span>
+<span class="sd">        </span>
+<span class="sd">        :param path:  Shadow grid path name returned</span>
+<span class="sd">        :type  path:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">path</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_shadow_grid_path</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.set_shadow_grid_path"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.set_shadow_grid_path">[docs]</a>    <span class="k">def</span> <span class="nf">set_shadow_grid_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets display information about this image.</span>
+<span class="sd">        </span>
+<span class="sd">        :param path:  Grid path for the shadow grid</span>
+<span class="sd">        :type  path:  str</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** This values does NOT take immediate effect; it is retrieved and used whenever</span>
+<span class="sd">        the grid is displayed in a viewer or map, and is used (for instance) to set the default value</span>
+<span class="sd">        in the Display Grid GX.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_shadow_grid_path</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.set_grid_unchanged"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.set_grid_unchanged">[docs]</a>    <span class="k">def</span> <span class="nf">set_grid_unchanged</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Mark the grid as unchanged so it will not output lineage</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_grid_unchanged</span><span class="p">()</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.set_info"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.set_info">[docs]</a>    <span class="k">def</span> <span class="nf">set_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">rot</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets location information about this image.</span>
+<span class="sd">        </span>
+<span class="sd">        :param dx:   X element separation</span>
+<span class="sd">        :param dy:   Y element separation</span>
+<span class="sd">        :param xo:   X location of first point</span>
+<span class="sd">        :param yo:   Y location of first point</span>
+<span class="sd">        :param rot:  Grid X axis rotation deg. CCW from reference X</span>
+<span class="sd">        :type  dx:   float</span>
+<span class="sd">        :type  dy:   float</span>
+<span class="sd">        :type  xo:   float</span>
+<span class="sd">        :type  yo:   float</span>
+<span class="sd">        :type  rot:  float</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Calls to this function should be made BEFORE calls to `set_ipj &lt;geosoft.gxapi.GXIMG.set_ipj&gt;`,</span>
+<span class="sd">        as the latter function sets up the bounding rectangle in the metadata.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_info</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">rot</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.set_ipj"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.set_ipj">[docs]</a>    <span class="k">def</span> <span class="nf">set_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the projection of a grid.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ipj:  Projection</span>
+<span class="sd">        :type  ipj:  GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Calls to this function should be made AFTER calls to `set_info &lt;geosoft.gxapi.GXIMG.set_info&gt;`,</span>
+<span class="sd">        as `set_ipj &lt;geosoft.gxapi.GXIMG.set_ipj&gt;` sets up the bounding rectangle in the metadata.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.set_meta"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.set_meta">[docs]</a>    <span class="k">def</span> <span class="nf">set_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the metadata of a grid.</span>
+<span class="sd">        </span>
+<span class="sd">        :param meta:  Metadata to add to the grid</span>
+<span class="sd">        :type  meta:  GXMETA</span>
+
+<span class="sd">        .. versionadded:: 5.0.8</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_meta</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.set_pg"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.set_pg">[docs]</a>    <span class="k">def</span> <span class="nf">set_pg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pg</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy a pager into the pager of a grid.</span>
+<span class="sd">        </span>
+<span class="sd">        :param pg:   Pager object to copy into the pager of the grid</span>
+<span class="sd">        :type  pg:   GXPG</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_pg</span><span class="p">(</span><span class="n">pg</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.set_tr"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.set_tr">[docs]</a>    <span class="k">def</span> <span class="nf">set_tr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the trend information to a grid.</span>
+<span class="sd">        </span>
+<span class="sd">        :param tr:   Trend information to set for the grid</span>
+<span class="sd">        :type  tr:   GXTR</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_tr</span><span class="p">(</span><span class="n">tr</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXIMG.sync"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.sync">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">sync</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Syncronize the Metadata for this Grid</span>
+<span class="sd">        </span>
+<span class="sd">        :param grid:  Grid name</span>
+<span class="sd">        :type  grid:  str</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMG</span><span class="o">.</span><span class="n">_sync</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.write_v"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.write_v">[docs]</a>    <span class="k">def</span> <span class="nf">write_v</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">be</span><span class="p">,</span> <span class="n">ne</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write a vector in the optimal KX direction.</span>
+<span class="sd">        </span>
+<span class="sd">        :param v:    Vector to write</span>
+<span class="sd">        :param be:   Begining element to write (0 is the first)</span>
+<span class="sd">        :param ne:   # elements to write (0 for whole vector)</span>
+<span class="sd">        :param vv:   `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
+<span class="sd">        :type  v:    int</span>
+<span class="sd">        :type  be:   int</span>
+<span class="sd">        :type  ne:   int</span>
+<span class="sd">        :type  vv:   GXVV</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_v</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">be</span><span class="p">,</span> <span class="n">ne</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.write_x"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.write_x">[docs]</a>    <span class="k">def</span> <span class="nf">write_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write a column (constant X)</span>
+<span class="sd">        </span>
+<span class="sd">        :param bx:   X column</span>
+<span class="sd">        :param by:   Start Y to write</span>
+<span class="sd">        :param ny:   # Y to write (0 for whole vector)</span>
+<span class="sd">        :type  bx:   int</span>
+<span class="sd">        :type  by:   int</span>
+<span class="sd">        :type  ny:   int</span>
+<span class="sd">        :type  vv:   GXVV</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_x</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.write_y"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.write_y">[docs]</a>    <span class="k">def</span> <span class="nf">write_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">bx</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write a row (constant Y)</span>
+<span class="sd">        </span>
+<span class="sd">        :param by:   Y row</span>
+<span class="sd">        :param bx:   Start X to write</span>
+<span class="sd">        :param nx:   # X write (0 for whole vector)</span>
+<span class="sd">        :type  by:   int</span>
+<span class="sd">        :type  bx:   int</span>
+<span class="sd">        :type  nx:   int</span>
+<span class="sd">        :type  vv:   GXVV</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_y</span><span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">bx</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.set_double_parameter"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.set_double_parameter">[docs]</a>    <span class="k">def</span> <span class="nf">set_double_parameter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Store a real parameter in an `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` object</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:   Parameter name (case insensitive)</span>
+<span class="sd">        :param value:  Parameter value to store</span>
+<span class="sd">        :type  name:   str</span>
+<span class="sd">        :type  value:  float</span>
+
+<span class="sd">        .. versionadded:: 8.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_double_parameter</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.get_double_parameter"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.get_double_parameter">[docs]</a>    <span class="k">def</span> <span class="nf">get_double_parameter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Store a real parameter in an `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` object</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Parameter name (case insensitive)</span>
+<span class="sd">        :type  name:  str</span>
+
+<span class="sd">        :returns:     Parameter value, `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;` if not found.</span>
+<span class="sd">        :rtype:       float</span>
+
+<span class="sd">        .. versionadded:: 8.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_double_parameter</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<span class="c1"># Faults</span>
+
+
+
+<div class="viewcode-block" id="GXIMG.number_of_faults"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.number_of_faults">[docs]</a>    <span class="k">def</span> <span class="nf">number_of_faults</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the number of individual fault traces stored in the IMG</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Faults are paths of (X, Y) locations, and are either polylines or polygons.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_number_of_faults</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.get_fault"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.get_fault">[docs]</a>    <span class="k">def</span> <span class="nf">get_fault</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">xVV</span><span class="p">,</span> <span class="n">yVV</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieve a fault trace</span>
+<span class="sd">        </span>
+<span class="sd">        :param index:  Fault index (0 to N-1)</span>
+<span class="sd">        :param xVV:    X locations `GXVV &lt;geosoft.gxapi.GXVV&gt;` (REAL)</span>
+<span class="sd">        :param yVV:    Y locations `GXVV &lt;geosoft.gxapi.GXVV&gt;` (REAL)</span>
+<span class="sd">        :param type:   Fault type :ref:`IMG_FAULT`</span>
+<span class="sd">        :type  index:  int</span>
+<span class="sd">        :type  xVV:    GXVV</span>
+<span class="sd">        :type  yVV:    GXVV</span>
+<span class="sd">        :type  type:   int_ref</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">type</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_fault</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">xVV</span><span class="p">,</span> <span class="n">yVV</span><span class="p">,</span> <span class="nb">type</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.add_fault"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.add_fault">[docs]</a>    <span class="k">def</span> <span class="nf">add_fault</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xVV</span><span class="p">,</span> <span class="n">yVV</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a fault trace</span>
+<span class="sd">        </span>
+<span class="sd">        :param xVV:   X locations `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param yVV:   Y locations `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param type:  Fault type :ref:`IMG_FAULT`</span>
+<span class="sd">        :type  xVV:   GXVV</span>
+<span class="sd">        :type  yVV:   GXVV</span>
+<span class="sd">        :type  type:  int</span>
+
+<span class="sd">        :returns:     index of the added fault</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The X and Y values cannot be dummies. Polygons require at least three locations, Polylines require at least two.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_fault</span><span class="p">(</span><span class="n">xVV</span><span class="p">,</span> <span class="n">yVV</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.delete_fault"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.delete_fault">[docs]</a>    <span class="k">def</span> <span class="nf">delete_fault</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete a fault trace</span>
+<span class="sd">        </span>
+<span class="sd">        :param index:  Fault index (0 to N-1)</span>
+<span class="sd">        :type  index:  int</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_delete_fault</span><span class="p">(</span><span class="n">index</span><span class="p">)</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIMG</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

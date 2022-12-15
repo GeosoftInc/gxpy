@@ -1,0 +1,1798 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXMULTIGRID3DUTIL &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMULTIGRID3DUTIL</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXMULTIGRID3DUTIL</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+<span class="kn">from</span> <span class="nn">.GXMULTIGRID3D</span> <span class="kn">import</span> <span class="n">GXMULTIGRID3D</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL">[docs]</a><span class="k">class</span> <span class="nc">GXMULTIGRID3DUTIL</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXMULTIGRID3DUTIL class.</span>
+
+<span class="sd">    High Performance 3D Grid.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.__init__"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXMULTIGRID3DUTIL</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.null"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXMULTIGRID3DUTIL &lt;geosoft.gxapi.GXMULTIGRID3DUTIL&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXMULTIGRID3DUTIL &lt;geosoft.gxapi.GXMULTIGRID3DUTIL&gt;`</span>
+<span class="sd">        :rtype:   GXMULTIGRID3DUTIL</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXMULTIGRID3DUTIL</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.is_null"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.import_from_xyz"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_xyz">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">import_from_xyz</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Import XYZ file into a Multi-Voxset</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Name of output Voxel file</span>
+<span class="sd">        :param ra:    `GXRA &lt;geosoft.gxapi.GXRA&gt;` To import from</span>
+<span class="sd">        :param type:  Data Type :ref:`GS_TYPES`</span>
+<span class="sd">        :param ipj:   Projection</span>
+<span class="sd">        :type  name:  str</span>
+<span class="sd">        :type  ra:    GXRA</span>
+<span class="sd">        :type  type:  int</span>
+<span class="sd">        :type  ipj:   GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_import_from_xyz</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ra</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.export_to_xyz"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_xyz">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">export_to_xyz</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid3d_file</span><span class="p">,</span> <span class="n">xyz</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummies</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Export a `GXMULTIGRID3D &lt;geosoft.gxapi.GXMULTIGRID3D&gt;` to an XYZ File</span>
+<span class="sd">        </span>
+<span class="sd">        :param grid3d_file:  Input Voxel file</span>
+<span class="sd">        :param xyz:          File Name</span>
+<span class="sd">        :param dir:          :ref:`DIRECTION3D`</span>
+<span class="sd">        :param rev_x:        Reverse X?</span>
+<span class="sd">        :param rev_y:        Reverse Y?</span>
+<span class="sd">        :param rev_z:        Reverse Z?</span>
+<span class="sd">        :param dummies:      Write Dummies?</span>
+<span class="sd">        :type  grid3d_file:  str</span>
+<span class="sd">        :type  xyz:          str</span>
+<span class="sd">        :type  dir:          int</span>
+<span class="sd">        :type  rev_x:        bool</span>
+<span class="sd">        :type  rev_y:        bool</span>
+<span class="sd">        :type  rev_z:        bool</span>
+<span class="sd">        :type  dummies:      bool</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_export_to_xyz</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid3d_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">xyz</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummies</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.export_to_binary"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_binary">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">export_to_binary</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid3d_file</span><span class="p">,</span> <span class="n">binary_file</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">swap</span><span class="p">,</span> <span class="n">output_type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Export contents of `GXMULTIGRID3D &lt;geosoft.gxapi.GXMULTIGRID3D&gt;` to a Binary File.</span>
+<span class="sd">        </span>
+<span class="sd">        :param grid3d_file:  Input Voxel file</span>
+<span class="sd">        :param binary_file:  Binary file to write to</span>
+<span class="sd">        :param dir:          :ref:`DIRECTION3D`</span>
+<span class="sd">        :param rev_x:        Reverse X?</span>
+<span class="sd">        :param rev_y:        Reverse Y?</span>
+<span class="sd">        :param rev_z:        Reverse Z?</span>
+<span class="sd">        :param swap:         Swap Bytes?</span>
+<span class="sd">        :param output_type:  Output Type (Geosoft Type)</span>
+<span class="sd">        :type  grid3d_file:  str</span>
+<span class="sd">        :type  binary_file:  str</span>
+<span class="sd">        :type  dir:          int</span>
+<span class="sd">        :type  rev_x:        bool</span>
+<span class="sd">        :type  rev_y:        bool</span>
+<span class="sd">        :type  rev_z:        bool</span>
+<span class="sd">        :type  swap:         bool</span>
+<span class="sd">        :type  output_type:  int</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_export_to_binary</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid3d_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">binary_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">swap</span><span class="p">,</span> <span class="n">output_type</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.export_to_binary_ex"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_binary_ex">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">export_to_binary_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid3d_file</span><span class="p">,</span> <span class="n">binary_file</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">swap</span><span class="p">,</span> <span class="n">dummy</span><span class="p">,</span> <span class="n">output_type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Export contents of `GXMULTIGRID3D &lt;geosoft.gxapi.GXMULTIGRID3D&gt;` to a Binary File, with dummy replacement.</span>
+<span class="sd">        </span>
+<span class="sd">        :param grid3d_file:  Input Voxel file</span>
+<span class="sd">        :param binary_file:  Binary file to write to</span>
+<span class="sd">        :param dir:          :ref:`DIRECTION3D`</span>
+<span class="sd">        :param rev_x:        Reverse X?</span>
+<span class="sd">        :param rev_y:        Reverse Y?</span>
+<span class="sd">        :param rev_z:        Reverse Z?</span>
+<span class="sd">        :param swap:         Swap Bytes?</span>
+<span class="sd">        :param dummy:        Replace dummy values with this value on export</span>
+<span class="sd">        :param output_type:  Output Type (Geosoft Type)</span>
+<span class="sd">        :type  grid3d_file:  str</span>
+<span class="sd">        :type  binary_file:  str</span>
+<span class="sd">        :type  dir:          int</span>
+<span class="sd">        :type  rev_x:        bool</span>
+<span class="sd">        :type  rev_y:        bool</span>
+<span class="sd">        :type  rev_z:        bool</span>
+<span class="sd">        :type  swap:         bool</span>
+<span class="sd">        :type  dummy:        float</span>
+<span class="sd">        :type  output_type:  int</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_export_to_binary_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid3d_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">binary_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">swap</span><span class="p">,</span> <span class="n">dummy</span><span class="p">,</span> <span class="n">output_type</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.export_to_xml"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_xml">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">export_to_xml</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid3d_file</span><span class="p">,</span> <span class="n">xml_file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Export a `GXMULTIGRID3D &lt;geosoft.gxapi.GXMULTIGRID3D&gt;` to XML</span>
+<span class="sd">        </span>
+<span class="sd">        :param grid3d_file:  Voxel file</span>
+<span class="sd">        :param xml_file:     XML file</span>
+<span class="sd">        :type  grid3d_file:  str</span>
+<span class="sd">        :type  xml_file:     str</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_export_to_xml</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid3d_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">xml_file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.check_equal_to_legacy_voxel"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.check_equal_to_legacy_voxel">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">check_equal_to_legacy_voxel</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid3d_file</span><span class="p">,</span> <span class="n">legacy_grid3d_file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compare `GXMULTIGRID3D &lt;geosoft.gxapi.GXMULTIGRID3D&gt;` to Legacy Voxel</span>
+<span class="sd">        </span>
+<span class="sd">        :param grid3d_file:         Voxel file</span>
+<span class="sd">        :param legacy_grid3d_file:  Legacy Voxel file</span>
+<span class="sd">        :type  grid3d_file:         str</span>
+<span class="sd">        :type  legacy_grid3d_file:  str</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_check_equal_to_legacy_voxel</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid3d_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">legacy_grid3d_file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.import_from_ubc"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_ubc">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">import_from_ubc</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">mod</span><span class="p">,</span> <span class="n">dummy</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Import UBC file into a MultiVoxset</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:   Name of output `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`</span>
+<span class="sd">        :param mesh:   Name of UBC Mesh File</span>
+<span class="sd">        :param mod:    Name of UBC Mod File</span>
+<span class="sd">        :param dummy:  Dummy Value</span>
+<span class="sd">        :param ipj:    Projection</span>
+<span class="sd">        :type  name:   str</span>
+<span class="sd">        :type  mesh:   str</span>
+<span class="sd">        :type  mod:    str</span>
+<span class="sd">        :type  dummy:  float</span>
+<span class="sd">        :type  ipj:    GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_import_from_ubc</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mesh</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mod</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">dummy</span><span class="p">,</span> <span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.import_from_gocad"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_gocad">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">import_from_gocad</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="nb">property</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">orientation</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Imports a MultiVoxset from a GOCAD File</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:         Name of output `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`</span>
+<span class="sd">        :param header:       Name of GOCAD Voxel file</span>
+<span class="sd">        :param property:     Propert name to import</span>
+<span class="sd">        :param orientation:  :ref:`GOCAD_ORIENTATION` OBSOLETE as of 9.7. The UVW axes and ZPOSITIVE values are read from the *.vo header and are handled on import automatically. By default ZPOSITIVE Elevation is assumed</span>
+<span class="sd">        :type  name:         str</span>
+<span class="sd">        :type  header:       str</span>
+<span class="sd">        :type  property:     str</span>
+<span class="sd">        :type  ipj:          GXIPJ</span>
+<span class="sd">        :type  orientation:  int</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_import_from_gocad</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">header</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">property</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">orientation</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.list_properties_gocad"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.list_properties_gocad">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">list_properties_gocad</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        List all the properties available in this GOCAD file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param header:  Name of GOCAD Voxel file</span>
+<span class="sd">        :param lst:     List object to populate</span>
+<span class="sd">        :type  header:  str</span>
+<span class="sd">        :type  lst:     GXLST</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_list_properties_gocad</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">header</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">lst</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.import_from_gdb"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_gdb">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">import_from_gdb</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid3d_file</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">symb</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Imports from a Geosoft Database</span>
+<span class="sd">        </span>
+<span class="sd">        :param grid3d_file:  Name of output Voxel file</span>
+<span class="sd">        :param db:           `GXDB &lt;geosoft.gxapi.GXDB&gt;` To import from</span>
+<span class="sd">        :param symb:         Symbol to import data from</span>
+<span class="sd">        :type  grid3d_file:  str</span>
+<span class="sd">        :type  db:           GXDB</span>
+<span class="sd">        :type  symb:         int</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_import_from_gdb</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid3d_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">symb</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.import_from_gdb_ignore_stored_voxel_geometry"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_gdb_ignore_stored_voxel_geometry">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">import_from_gdb_ignore_stored_voxel_geometry</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid3d_file</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">symb</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Imports from a Geosoft Database, but ignores any stored internal geometry</span>
+<span class="sd">        </span>
+<span class="sd">        :param grid3d_file:  Name of output Voxel file</span>
+<span class="sd">        :param db:           `GXDB &lt;geosoft.gxapi.GXDB&gt;` To import from</span>
+<span class="sd">        :param symb:         Symbol to import data from</span>
+<span class="sd">        :type  grid3d_file:  str</span>
+<span class="sd">        :type  db:           GXDB</span>
+<span class="sd">        :type  symb:         int</span>
+
+<span class="sd">        .. versionadded:: 2021.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_import_from_gdb_ignore_stored_voxel_geometry</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid3d_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">symb</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.database_contains_voxel_geometry"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.database_contains_voxel_geometry">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">database_contains_voxel_geometry</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns 1 if the original voxel geometry is stored inside the database</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:  `GXDB &lt;geosoft.gxapi.GXDB&gt;` To import from</span>
+<span class="sd">        :type  db:  GXDB</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 2021.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_database_contains_voxel_geometry</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.import_from_vector_gdb"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_vector_gdb">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">import_from_vector_gdb</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid3d_file</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">vector_type</span><span class="p">,</span> <span class="n">symb_x</span><span class="p">,</span> <span class="n">symb_y</span><span class="p">,</span> <span class="n">symb_z</span><span class="p">,</span> <span class="n">inc</span><span class="p">,</span> <span class="n">dec</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Imports from a Vector Geosoft Database</span>
+<span class="sd">        </span>
+<span class="sd">        :param grid3d_file:  Voxel Name</span>
+<span class="sd">        :param db:           `GXDB &lt;geosoft.gxapi.GXDB&gt;` To import from</span>
+<span class="sd">        :param vector_type:  VECTOR_IMPORTImport XYZ, UVW or Amplitude/Inclination/Declination channels</span>
+<span class="sd">        :param symb_x:       Symbol to import X, U or Amplitude data from</span>
+<span class="sd">        :param symb_y:       Symbol to import Y, V or Inclination data from</span>
+<span class="sd">        :param symb_z:       Symbol to import Z, W or Declination data from</span>
+<span class="sd">        :param inc:          Inclination value for `VOX_VECTORVOX_UVW &lt;geosoft.gxapi.VOX_VECTORVOX_UVW&gt;` (-90° to 90°)</span>
+<span class="sd">        :param dec:          Declination value for `VOX_VECTORVOX_UVW &lt;geosoft.gxapi.VOX_VECTORVOX_UVW&gt;` (-180° to 180°)</span>
+<span class="sd">        :type  grid3d_file:  str</span>
+<span class="sd">        :type  db:           GXDB</span>
+<span class="sd">        :type  vector_type:  int</span>
+<span class="sd">        :type  symb_x:       int</span>
+<span class="sd">        :type  symb_y:       int</span>
+<span class="sd">        :type  symb_z:       int</span>
+<span class="sd">        :type  inc:          float</span>
+<span class="sd">        :type  dec:          float</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_import_from_vector_gdb</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid3d_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">vector_type</span><span class="p">,</span> <span class="n">symb_x</span><span class="p">,</span> <span class="n">symb_y</span><span class="p">,</span> <span class="n">symb_z</span><span class="p">,</span> <span class="n">inc</span><span class="p">,</span> <span class="n">dec</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.export_to_segy"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_segy">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">export_to_segy</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">multigrid3d_file</span><span class="p">,</span> <span class="n">output_segy_filename</span><span class="p">,</span> <span class="n">sample_interval</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Export To SEGY</span>
+<span class="sd">        </span>
+<span class="sd">        :param multigrid3d_file:      Input Voxel file</span>
+<span class="sd">        :param output_segy_filename:  Output Segy file</span>
+<span class="sd">        :param sample_interval:       Sampling Internal</span>
+<span class="sd">        :type  multigrid3d_file:      str</span>
+<span class="sd">        :type  output_segy_filename:  str</span>
+<span class="sd">        :type  sample_interval:       float</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_export_to_segy</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">multigrid3d_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_segy_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">sample_interval</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.export_to_gdb"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_gdb">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">export_to_gdb</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid3d_file</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummies</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Export To GDB</span>
+<span class="sd">        </span>
+<span class="sd">        :param grid3d_file:  Input Voxel file</span>
+<span class="sd">        :param db:           Database</span>
+<span class="sd">        :param chan:         Channel Name</span>
+<span class="sd">        :param dir:          :ref:`DIRECTION3D`</span>
+<span class="sd">        :param rev_x:        Reverse X?</span>
+<span class="sd">        :param rev_y:        Reverse Y?</span>
+<span class="sd">        :param rev_z:        Reverse Z?</span>
+<span class="sd">        :param dummies:      Write Dummies?</span>
+<span class="sd">        :type  grid3d_file:  str</span>
+<span class="sd">        :type  db:           GXDB</span>
+<span class="sd">        :type  chan:         str</span>
+<span class="sd">        :type  dir:          int</span>
+<span class="sd">        :type  rev_x:        bool</span>
+<span class="sd">        :type  rev_y:        bool</span>
+<span class="sd">        :type  rev_z:        bool</span>
+<span class="sd">        :type  dummies:      bool</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_export_to_gdb</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid3d_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummies</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.export_to_wa"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_wa">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">export_to_wa</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">wa</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummy</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Export To GDB</span>
+<span class="sd">        </span>
+<span class="sd">        :param file_name:  Input Voxel file</span>
+<span class="sd">        :param wa:         `GXWA &lt;geosoft.gxapi.GXWA&gt;` File</span>
+<span class="sd">        :param dir:        :ref:`DIRECTION3D`</span>
+<span class="sd">        :param rev_x:      Reverse X?</span>
+<span class="sd">        :param rev_y:      Reverse Y?</span>
+<span class="sd">        :param rev_z:      Reverse Z?</span>
+<span class="sd">        :param dummy:      The Dummy string to write</span>
+<span class="sd">        :type  file_name:  str</span>
+<span class="sd">        :type  wa:         GXWA</span>
+<span class="sd">        :type  dir:        int</span>
+<span class="sd">        :type  rev_x:      bool</span>
+<span class="sd">        :type  rev_y:      bool</span>
+<span class="sd">        :type  rev_z:      bool</span>
+<span class="sd">        :type  dummy:      str</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_export_to_wa</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">wa</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummy</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.convert_double_to_vector"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.convert_double_to_vector">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">convert_double_to_vector</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x_file_name</span><span class="p">,</span> <span class="n">y_file_name</span><span class="p">,</span> <span class="n">z_file_name</span><span class="p">,</span> <span class="n">out_file_name</span><span class="p">,</span> <span class="n">inclination</span><span class="p">,</span> <span class="n">declination</span><span class="p">,</span> <span class="n">rotated</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert 3 Double Voxels to a Vector Voxel</span>
+<span class="sd">        </span>
+<span class="sd">        :param x_file_name:    Input X Voxel file</span>
+<span class="sd">        :param y_file_name:    Input Y Voxel file</span>
+<span class="sd">        :param z_file_name:    Input Z Voxel file</span>
+<span class="sd">        :param out_file_name:  Output Vector Voxel file</span>
+<span class="sd">        :param inclination:    Inclination</span>
+<span class="sd">        :param declination:    Declination</span>
+<span class="sd">        :param rotated:        Rotated?</span>
+<span class="sd">        :type  x_file_name:    str</span>
+<span class="sd">        :type  y_file_name:    str</span>
+<span class="sd">        :type  z_file_name:    str</span>
+<span class="sd">        :type  out_file_name:  str</span>
+<span class="sd">        :type  inclination:    float</span>
+<span class="sd">        :type  declination:    float</span>
+<span class="sd">        :type  rotated:        bool</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_convert_double_to_vector</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">x_file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">z_file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">out_file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">inclination</span><span class="p">,</span> <span class="n">declination</span><span class="p">,</span> <span class="n">rotated</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.convert_vector_to_double"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.convert_vector_to_double">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">convert_vector_to_double</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">x_file_name</span><span class="p">,</span> <span class="n">y_file_name</span><span class="p">,</span> <span class="n">z_file_name</span><span class="p">,</span> <span class="n">rotated</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert a Vector Voxel to 3 double Voxels</span>
+<span class="sd">        </span>
+<span class="sd">        :param file_name:    Input Vector Voxel file</span>
+<span class="sd">        :param x_file_name:  Output X Voxel file</span>
+<span class="sd">        :param y_file_name:  Output Y Voxel file</span>
+<span class="sd">        :param z_file_name:  Output Z Voxel file</span>
+<span class="sd">        :param rotated:      Rotated?</span>
+<span class="sd">        :type  file_name:    str</span>
+<span class="sd">        :type  x_file_name:  str</span>
+<span class="sd">        :type  y_file_name:  str</span>
+<span class="sd">        :type  z_file_name:  str</span>
+<span class="sd">        :type  rotated:      bool</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_convert_vector_to_double</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x_file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">z_file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rotated</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.convert_vector_to_double_using_rotation"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.convert_vector_to_double_using_rotation">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">convert_vector_to_double_using_rotation</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">x_file_name</span><span class="p">,</span> <span class="n">y_file_name</span><span class="p">,</span> <span class="n">z_file_name</span><span class="p">,</span> <span class="n">inclination</span><span class="p">,</span> <span class="n">declination</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert a Vector Voxel to 3 double Voxels using an external rotation. Internal rotations are ignored.</span>
+<span class="sd">        </span>
+<span class="sd">        :param file_name:    Input Vector Voxel file</span>
+<span class="sd">        :param x_file_name:  Output X Voxel file</span>
+<span class="sd">        :param y_file_name:  Output Y Voxel file</span>
+<span class="sd">        :param z_file_name:  Output Z Voxel file</span>
+<span class="sd">        :param inclination:  Inclination</span>
+<span class="sd">        :param declination:  Declination</span>
+<span class="sd">        :type  file_name:    str</span>
+<span class="sd">        :type  x_file_name:  str</span>
+<span class="sd">        :type  y_file_name:  str</span>
+<span class="sd">        :type  z_file_name:  str</span>
+<span class="sd">        :type  inclination:  float</span>
+<span class="sd">        :type  declination:  float</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_convert_vector_to_double_using_rotation</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x_file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">z_file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">inclination</span><span class="p">,</span> <span class="n">declination</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.convert_thematic_to_double"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.convert_thematic_to_double">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">convert_thematic_to_double</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_grid3d_filename</span><span class="p">,</span> <span class="n">translate_vv</span><span class="p">,</span> <span class="n">output_grid3d_filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert Thematic MultiVoxset to Double MultiVoxset</span>
+<span class="sd">        </span>
+<span class="sd">        :param input_grid3d_filename:   Input grid3d filename</span>
+<span class="sd">        :param translate_vv:            Translation VV handle</span>
+<span class="sd">        :param output_grid3d_filename:  Output grid3d filename</span>
+<span class="sd">        :type  input_grid3d_filename:   str</span>
+<span class="sd">        :type  translate_vv:            GXVV</span>
+<span class="sd">        :type  output_grid3d_filename:  str</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_convert_thematic_to_double</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">input_grid3d_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">translate_vv</span><span class="p">,</span> <span class="n">output_grid3d_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.convert_double_to_thematic"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.convert_double_to_thematic">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">convert_double_to_thematic</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_grid3d_filename</span><span class="p">,</span> <span class="n">translate_vv</span><span class="p">,</span> <span class="n">tpat</span><span class="p">,</span> <span class="n">output_grid3d_filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert Double MultiVoxset to Thematic MultiVoxset</span>
+<span class="sd">        </span>
+<span class="sd">        :param input_grid3d_filename:   Input grid3d filename</span>
+<span class="sd">        :param translate_vv:            Translation VV handle</span>
+<span class="sd">        :param tpat:                    `GXTPAT &lt;geosoft.gxapi.GXTPAT&gt;` object</span>
+<span class="sd">        :param output_grid3d_filename:  Output grid3d filename</span>
+<span class="sd">        :type  input_grid3d_filename:   str</span>
+<span class="sd">        :type  translate_vv:            GXVV</span>
+<span class="sd">        :type  tpat:                    GXTPAT</span>
+<span class="sd">        :type  output_grid3d_filename:  str</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_convert_double_to_thematic</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">input_grid3d_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">translate_vv</span><span class="p">,</span> <span class="n">tpat</span><span class="p">,</span> <span class="n">output_grid3d_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.convert_velocity_to_density"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.convert_velocity_to_density">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">convert_velocity_to_density</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_grid3d_filename</span><span class="p">,</span> <span class="n">input_scaling_factor</span><span class="p">,</span> <span class="n">input_lower_bound</span><span class="p">,</span> <span class="n">input_upper_bound</span><span class="p">,</span> <span class="n">a5</span><span class="p">,</span> <span class="n">a4</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a0</span><span class="p">,</span> <span class="n">output_scaling_factor</span><span class="p">,</span> <span class="n">output_grid3d_filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert Velocity MultiVoxset to Density MultiVoxset</span>
+<span class="sd">        </span>
+<span class="sd">        :param input_grid3d_filename:   Input grid3d filename</span>
+<span class="sd">        :param input_scaling_factor:    1.0, if this grid3d is in meters per second. Otherwise, a value by which each input cell is multiplied to convert it into meters per second.</span>
+<span class="sd">        :param input_lower_bound:       Lower bound on velocity values, in meters per second. If the input value (after being pre-multiplied by dInputScalingFactor) is less than this value, the output cell value will be DUMMY.</span>
+<span class="sd">        :param input_upper_bound:       Upper bound on velocity values, in meters per second. If the input value (after being pre-multiplied by dInputScalingFactor) is greater than this value, the output cell value will be DUMMY.</span>
+<span class="sd">        :param a5:                      Coefficient of fifth-order polynomial term.</span>
+<span class="sd">        :param a4:                      Coefficient of fourth-order polynomial term.</span>
+<span class="sd">        :param a3:                      Coefficient of third-order polynomial term.</span>
+<span class="sd">        :param a2:                      Coefficient of second-order polynomial term.</span>
+<span class="sd">        :param a1:                      Coefficient of first-order polynomial term.</span>
+<span class="sd">        :param a0:                      Constant offset of output.</span>
+<span class="sd">        :param output_scaling_factor:   1.0, to produce an output grid3d that has units of g/cm^3. If different units are desired, pass in a different value, which will be multiplied into each output grid3d cell.</span>
+<span class="sd">        :param output_grid3d_filename:  Output grid3d filename</span>
+<span class="sd">        :type  input_grid3d_filename:   str</span>
+<span class="sd">        :type  input_scaling_factor:    float</span>
+<span class="sd">        :type  input_lower_bound:       float</span>
+<span class="sd">        :type  input_upper_bound:       float</span>
+<span class="sd">        :type  a5:                      float</span>
+<span class="sd">        :type  a4:                      float</span>
+<span class="sd">        :type  a3:                      float</span>
+<span class="sd">        :type  a2:                      float</span>
+<span class="sd">        :type  a1:                      float</span>
+<span class="sd">        :type  a0:                      float</span>
+<span class="sd">        :type  output_scaling_factor:   float</span>
+<span class="sd">        :type  output_grid3d_filename:  str</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_convert_velocity_to_density</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">input_grid3d_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">input_scaling_factor</span><span class="p">,</span> <span class="n">input_lower_bound</span><span class="p">,</span> <span class="n">input_upper_bound</span><span class="p">,</span> <span class="n">a5</span><span class="p">,</span> <span class="n">a4</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a0</span><span class="p">,</span> <span class="n">output_scaling_factor</span><span class="p">,</span> <span class="n">output_grid3d_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.convert_density_to_velocity"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.convert_density_to_velocity">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">convert_density_to_velocity</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_grid3d_filename</span><span class="p">,</span> <span class="n">input_scaling_factor</span><span class="p">,</span> <span class="n">input_lower_bound</span><span class="p">,</span> <span class="n">input_upper_bound</span><span class="p">,</span> <span class="n">a5</span><span class="p">,</span> <span class="n">a4</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a0</span><span class="p">,</span> <span class="n">output_scaling_factor</span><span class="p">,</span> <span class="n">output_grid3d_filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert Density MultiVoxset to Velocity MultiVoxset</span>
+<span class="sd">        </span>
+<span class="sd">        :param input_grid3d_filename:   Input grid3d filename</span>
+<span class="sd">        :param input_scaling_factor:    1.0, if this grid3d is in meters per second. Otherwise, a value by which each input cell is multiplied to convert it into meters per second.</span>
+<span class="sd">        :param input_lower_bound:       Lower bound on velocity values, in meters per second. If the input value (after being pre-multiplied by dInputScalingFactor) is less than this value, the output cell value will be DUMMY.</span>
+<span class="sd">        :param input_upper_bound:       Upper bound on velocity values, in meters per second. If the input value (after being pre-multiplied by dInputScalingFactor) is greater than this value, the output cell value will be DUMMY.</span>
+<span class="sd">        :param a5:                      Coefficient of fifth-order polynomial term.</span>
+<span class="sd">        :param a4:                      Coefficient of fourth-order polynomial term.</span>
+<span class="sd">        :param a3:                      Coefficient of third-order polynomial term.</span>
+<span class="sd">        :param a2:                      Coefficient of second-order polynomial term.</span>
+<span class="sd">        :param a1:                      Coefficient of first-order polynomial term.</span>
+<span class="sd">        :param a0:                      Constant offset of output.</span>
+<span class="sd">        :param output_scaling_factor:   1.0, to produce an output grid3d that has units of g/cm^3. If different units are desired, pass in a different value, which will be multiplied into each output grid3d cell.</span>
+<span class="sd">        :param output_grid3d_filename:  Output grid3d filename</span>
+<span class="sd">        :type  input_grid3d_filename:   str</span>
+<span class="sd">        :type  input_scaling_factor:    float</span>
+<span class="sd">        :type  input_lower_bound:       float</span>
+<span class="sd">        :type  input_upper_bound:       float</span>
+<span class="sd">        :type  a5:                      float</span>
+<span class="sd">        :type  a4:                      float</span>
+<span class="sd">        :type  a3:                      float</span>
+<span class="sd">        :type  a2:                      float</span>
+<span class="sd">        :type  a1:                      float</span>
+<span class="sd">        :type  a0:                      float</span>
+<span class="sd">        :type  output_scaling_factor:   float</span>
+<span class="sd">        :type  output_grid3d_filename:  str</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_convert_density_to_velocity</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">input_grid3d_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">input_scaling_factor</span><span class="p">,</span> <span class="n">input_lower_bound</span><span class="p">,</span> <span class="n">input_upper_bound</span><span class="p">,</span> <span class="n">a5</span><span class="p">,</span> <span class="n">a4</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a0</span><span class="p">,</span> <span class="n">output_scaling_factor</span><span class="p">,</span> <span class="n">output_grid3d_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.get_gocad_location"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.get_gocad_location">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_gocad_location</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_grid3d_filename</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">vect_xx</span><span class="p">,</span> <span class="n">vect_xy</span><span class="p">,</span> <span class="n">vect_xz</span><span class="p">,</span> <span class="n">vect_yx</span><span class="p">,</span> <span class="n">vect_yy</span><span class="p">,</span> <span class="n">vect_yz</span><span class="p">,</span> <span class="n">vect_zx</span><span class="p">,</span> <span class="n">vect_zy</span><span class="p">,</span> <span class="n">vect_zz</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the location of a grid3d with origin and scaled xyz vectors for use with GOCAD.</span>
+<span class="sd">        </span>
+<span class="sd">        :param input_grid3d_filename:  Input grid3d filename</span>
+<span class="sd">        :param origin_x:               Origin X</span>
+<span class="sd">        :param origin_y:               Origin Y</span>
+<span class="sd">        :param origin_z:               Origin Z</span>
+<span class="sd">        :param vect_xx:                VectX X</span>
+<span class="sd">        :param vect_xy:                VectX Y</span>
+<span class="sd">        :param vect_xz:                VectX Z</span>
+<span class="sd">        :param vect_yx:                VectY X</span>
+<span class="sd">        :param vect_yy:                VectY Y</span>
+<span class="sd">        :param vect_yz:                VectY Z</span>
+<span class="sd">        :param vect_zx:                VectZ X</span>
+<span class="sd">        :param vect_zy:                VectZ Y</span>
+<span class="sd">        :param vect_zz:                VectZ Z</span>
+<span class="sd">        :type  input_grid3d_filename:  str</span>
+<span class="sd">        :type  origin_x:               float_ref</span>
+<span class="sd">        :type  origin_y:               float_ref</span>
+<span class="sd">        :type  origin_z:               float_ref</span>
+<span class="sd">        :type  vect_xx:                float_ref</span>
+<span class="sd">        :type  vect_xy:                float_ref</span>
+<span class="sd">        :type  vect_xz:                float_ref</span>
+<span class="sd">        :type  vect_yx:                float_ref</span>
+<span class="sd">        :type  vect_yy:                float_ref</span>
+<span class="sd">        :type  vect_yz:                float_ref</span>
+<span class="sd">        :type  vect_zx:                float_ref</span>
+<span class="sd">        :type  vect_zy:                float_ref</span>
+<span class="sd">        :type  vect_zz:                float_ref</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">origin_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_xx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_xy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_xz</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_yx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_yy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_yz</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_zx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_zy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_zz</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_get_gocad_location</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">input_grid3d_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">origin_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_xx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_xy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_xz</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_yx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_yy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_yz</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_zx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_zy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_zz</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.create_double_constant"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.create_double_constant">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_double_constant</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">oz</span><span class="p">,</span> <span class="n">cell_x</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">,</span> <span class="n">cell_z</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">size_z</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a double MultiVoxset with a constant value</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:    Name of output Voxel File</span>
+<span class="sd">        :param value:   Constant Value to use - DUMMY for a trully sparse grid3d</span>
+<span class="sd">        :param ox:      Origin X</span>
+<span class="sd">        :param oy:      Origin Y</span>
+<span class="sd">        :param oz:      Origin Z</span>
+<span class="sd">        :param cell_x:  Cell Size X</span>
+<span class="sd">        :param cell_y:  Cell Size Y</span>
+<span class="sd">        :param cell_z:  Cell Size Z</span>
+<span class="sd">        :param size_x:  Cell Count X</span>
+<span class="sd">        :param size_y:  Cell Count Y</span>
+<span class="sd">        :param size_z:  Cell Count Z</span>
+<span class="sd">        :param ipj:     Projection</span>
+<span class="sd">        :type  name:    str</span>
+<span class="sd">        :type  value:   float</span>
+<span class="sd">        :type  ox:      float</span>
+<span class="sd">        :type  oy:      float</span>
+<span class="sd">        :type  oz:      float</span>
+<span class="sd">        :type  cell_x:  float</span>
+<span class="sd">        :type  cell_y:  float</span>
+<span class="sd">        :type  cell_z:  float</span>
+<span class="sd">        :type  size_x:  int</span>
+<span class="sd">        :type  size_y:  int</span>
+<span class="sd">        :type  size_z:  int</span>
+<span class="sd">        :type  ipj:     GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_create_double_constant</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">value</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">oz</span><span class="p">,</span> <span class="n">cell_x</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">,</span> <span class="n">cell_z</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">size_z</span><span class="p">,</span> <span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.create_double_constant_copy"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.create_double_constant_copy">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_double_constant_copy</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">source_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a double MultiVoxset with a constant value based on an input voxel</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:         Name of output Voxel File</span>
+<span class="sd">        :param value:        Constant Value to use - DUMMY for a trully sparse grid3d</span>
+<span class="sd">        :param source_name:  Name of voxel to model</span>
+<span class="sd">        :type  name:         str</span>
+<span class="sd">        :type  value:        float</span>
+<span class="sd">        :type  source_name:  str</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_create_double_constant_copy</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">value</span><span class="p">,</span> <span class="n">source_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.create_thematic_constant"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.create_thematic_constant">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_thematic_constant</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">oz</span><span class="p">,</span> <span class="n">cell_x</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">,</span> <span class="n">cell_z</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">size_z</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a double MultiVoxset with a constant value</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:    Name of output Voxel File</span>
+<span class="sd">        :param value:   Constant Value to use - DUMMY for a trully sparse grid3d</span>
+<span class="sd">        :param ox:      Origin X</span>
+<span class="sd">        :param oy:      Origin Y</span>
+<span class="sd">        :param oz:      Origin Z</span>
+<span class="sd">        :param cell_x:  Cell Size X</span>
+<span class="sd">        :param cell_y:  Cell Size Y</span>
+<span class="sd">        :param cell_z:  Cell Size Z</span>
+<span class="sd">        :param size_x:  Cell Count X</span>
+<span class="sd">        :param size_y:  Cell Count Y</span>
+<span class="sd">        :param size_z:  Cell Count Z</span>
+<span class="sd">        :param ipj:     Projection</span>
+<span class="sd">        :type  name:    str</span>
+<span class="sd">        :type  value:   int</span>
+<span class="sd">        :type  ox:      float</span>
+<span class="sd">        :type  oy:      float</span>
+<span class="sd">        :type  oz:      float</span>
+<span class="sd">        :type  cell_x:  float</span>
+<span class="sd">        :type  cell_y:  float</span>
+<span class="sd">        :type  cell_z:  float</span>
+<span class="sd">        :type  size_x:  int</span>
+<span class="sd">        :type  size_y:  int</span>
+<span class="sd">        :type  size_z:  int</span>
+<span class="sd">        :type  ipj:     GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_create_thematic_constant</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">value</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">oz</span><span class="p">,</span> <span class="n">cell_x</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">,</span> <span class="n">cell_z</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">size_z</span><span class="p">,</span> <span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.create_vector_constant"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.create_vector_constant">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_vector_constant</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value_x</span><span class="p">,</span> <span class="n">value_y</span><span class="p">,</span> <span class="n">value_z</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">oz</span><span class="p">,</span> <span class="n">cell_x</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">,</span> <span class="n">cell_z</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">size_z</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a double MultiVoxset with a constant value</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:     Name of output Voxel File</span>
+<span class="sd">        :param value_x:  X Constant Value to use - DUMMY for a trully sparse grid3d</span>
+<span class="sd">        :param value_y:  Y Constant Value to use - DUMMY for a trully sparse grid3d</span>
+<span class="sd">        :param value_z:  Z Constant Value to use - DUMMY for a trully sparse grid3d</span>
+<span class="sd">        :param ox:       Origin X</span>
+<span class="sd">        :param oy:       Origin Y</span>
+<span class="sd">        :param oz:       Origin Z</span>
+<span class="sd">        :param cell_x:   Cell Size X</span>
+<span class="sd">        :param cell_y:   Cell Size Y</span>
+<span class="sd">        :param cell_z:   Cell Size Z</span>
+<span class="sd">        :param size_x:   Cell Count X</span>
+<span class="sd">        :param size_y:   Cell Count Y</span>
+<span class="sd">        :param size_z:   Cell Count Z</span>
+<span class="sd">        :param ipj:      Projection</span>
+<span class="sd">        :type  name:     str</span>
+<span class="sd">        :type  value_x:  float</span>
+<span class="sd">        :type  value_y:  float</span>
+<span class="sd">        :type  value_z:  float</span>
+<span class="sd">        :type  ox:       float</span>
+<span class="sd">        :type  oy:       float</span>
+<span class="sd">        :type  oz:       float</span>
+<span class="sd">        :type  cell_x:   float</span>
+<span class="sd">        :type  cell_y:   float</span>
+<span class="sd">        :type  cell_z:   float</span>
+<span class="sd">        :type  size_x:   int</span>
+<span class="sd">        :type  size_y:   int</span>
+<span class="sd">        :type  size_z:   int</span>
+<span class="sd">        :type  ipj:      GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_create_vector_constant</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">value_x</span><span class="p">,</span> <span class="n">value_y</span><span class="p">,</span> <span class="n">value_z</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">oz</span><span class="p">,</span> <span class="n">cell_x</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">,</span> <span class="n">cell_z</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">size_z</span><span class="p">,</span> <span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.create_double_constant_vv"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.create_double_constant_vv">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_double_constant_vv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">oz</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a double MultiVoxset with a constant value and non-uniform cell sizes</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:   Name of output Voxel</span>
+<span class="sd">        :param value:  The contant Value to fill with - DUMMY for a trully sparse grid3d</span>
+<span class="sd">        :param ox:     Origin X</span>
+<span class="sd">        :param oy:     Origin Y</span>
+<span class="sd">        :param oz:     Origin Z</span>
+<span class="sd">        :param cx:     Cell Sizes X</span>
+<span class="sd">        :param cy:     Cell Sizes Y</span>
+<span class="sd">        :param cz:     Cell Sizes Z</span>
+<span class="sd">        :param ipj:    Projection</span>
+<span class="sd">        :type  name:   str</span>
+<span class="sd">        :type  value:  float</span>
+<span class="sd">        :type  ox:     float</span>
+<span class="sd">        :type  oy:     float</span>
+<span class="sd">        :type  oz:     float</span>
+<span class="sd">        :type  cx:     GXVV</span>
+<span class="sd">        :type  cy:     GXVV</span>
+<span class="sd">        :type  cz:     GXVV</span>
+<span class="sd">        :type  ipj:    GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_create_double_constant_vv</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">value</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">oz</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.create_thematic_constant_vv"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.create_thematic_constant_vv">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_thematic_constant_vv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">oz</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a double MultiVoxset with a constant value and non-uniform cell sizes</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:   Name of output Voxel</span>
+<span class="sd">        :param value:  The contant Value to fill with - DUMMY for a trully sparse grid3d</span>
+<span class="sd">        :param ox:     Origin X</span>
+<span class="sd">        :param oy:     Origin Y</span>
+<span class="sd">        :param oz:     Origin Z</span>
+<span class="sd">        :param cx:     Cell Sizes X</span>
+<span class="sd">        :param cy:     Cell Sizes Y</span>
+<span class="sd">        :param cz:     Cell Sizes Z</span>
+<span class="sd">        :param ipj:    Projection</span>
+<span class="sd">        :type  name:   str</span>
+<span class="sd">        :type  value:  int</span>
+<span class="sd">        :type  ox:     float</span>
+<span class="sd">        :type  oy:     float</span>
+<span class="sd">        :type  oz:     float</span>
+<span class="sd">        :type  cx:     GXVV</span>
+<span class="sd">        :type  cy:     GXVV</span>
+<span class="sd">        :type  cz:     GXVV</span>
+<span class="sd">        :type  ipj:    GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_create_thematic_constant_vv</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">value</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">oz</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.create_vector_constant_vv"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.create_vector_constant_vv">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_vector_constant_vv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">x_value</span><span class="p">,</span> <span class="n">y_value</span><span class="p">,</span> <span class="n">z_value</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">oz</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a double MultiVoxset with a constant value and non-uniform cell sizes</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:     Name of output Voxel</span>
+<span class="sd">        :param x_value:  The X contant Value to fill with - DUMMY for a trully sparse grid3d</span>
+<span class="sd">        :param y_value:  The Y contant Value to fill with - DUMMY for a trully sparse grid3d</span>
+<span class="sd">        :param z_value:  The Z contant Value to fill with - DUMMY for a trully sparse grid3d</span>
+<span class="sd">        :param ox:       Origin X</span>
+<span class="sd">        :param oy:       Origin Y</span>
+<span class="sd">        :param oz:       Origin Z</span>
+<span class="sd">        :param cx:       Cell Sizes X</span>
+<span class="sd">        :param cy:       Cell Sizes Y</span>
+<span class="sd">        :param cz:       Cell Sizes Z</span>
+<span class="sd">        :param ipj:      Projection</span>
+<span class="sd">        :type  name:     str</span>
+<span class="sd">        :type  x_value:  float</span>
+<span class="sd">        :type  y_value:  float</span>
+<span class="sd">        :type  z_value:  float</span>
+<span class="sd">        :type  ox:       float</span>
+<span class="sd">        :type  oy:       float</span>
+<span class="sd">        :type  oz:       float</span>
+<span class="sd">        :type  cx:       GXVV</span>
+<span class="sd">        :type  cy:       GXVV</span>
+<span class="sd">        :type  cz:       GXVV</span>
+<span class="sd">        :type  ipj:      GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_create_vector_constant_vv</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x_value</span><span class="p">,</span> <span class="n">y_value</span><span class="p">,</span> <span class="n">z_value</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">oz</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.export_to_voxel"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_voxel">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">export_to_voxel</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">project_file</span><span class="p">,</span> <span class="n">multi_voxset_uuid</span><span class="p">,</span> <span class="n">multi_voxset_attribute</span><span class="p">,</span> <span class="n">grid3d_file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Exports a Multi-Voxset into a Voxel</span>
+<span class="sd">        </span>
+<span class="sd">        :param project_file:            Project file</span>
+<span class="sd">        :param multi_voxset_uuid:       Multi-Voxset UUID</span>
+<span class="sd">        :param multi_voxset_attribute:  Multi-Voxset attribute</span>
+<span class="sd">        :param grid3d_file:             Output Voxel file</span>
+<span class="sd">        :type  project_file:            str</span>
+<span class="sd">        :type  multi_voxset_uuid:       str</span>
+<span class="sd">        :type  multi_voxset_attribute:  str</span>
+<span class="sd">        :type  grid3d_file:             str</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_export_to_voxel</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">project_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">multi_voxset_uuid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">multi_voxset_attribute</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid3d_file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.import_from_voxel"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_voxel">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">import_from_voxel</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">project_file</span><span class="p">,</span> <span class="n">grid3d_file</span><span class="p">,</span> <span class="n">multi_voxset_attribute</span><span class="p">,</span> <span class="n">p_uuid_string</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Import a Voxel directly into a Multi-Voxset</span>
+<span class="sd">        </span>
+<span class="sd">        :param project_file:            Project file</span>
+<span class="sd">        :param grid3d_file:             Input Voxel file</span>
+<span class="sd">        :param multi_voxset_attribute:  Multi-Voxset attribute</span>
+<span class="sd">        :param p_uuid_string:           UUID string returned</span>
+<span class="sd">        :type  project_file:            str</span>
+<span class="sd">        :type  grid3d_file:             str</span>
+<span class="sd">        :type  multi_voxset_attribute:  str</span>
+<span class="sd">        :type  p_uuid_string:           str_ref</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">p_uuid_string</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_import_from_voxel</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">project_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid3d_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">multi_voxset_attribute</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p_uuid_string</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.import_from_datamine"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_datamine">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">import_from_datamine</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">grid3d</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a Geosoft Voxel file from a Datamine block model file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param file:    Datamine file name</span>
+<span class="sd">        :param field:   Field to use for data</span>
+<span class="sd">        :param ipj:     Projection to set</span>
+<span class="sd">        :param grid3d:  Output grid3d file name</span>
+<span class="sd">        :type  file:    str</span>
+<span class="sd">        :type  field:   str</span>
+<span class="sd">        :type  ipj:     GXIPJ</span>
+<span class="sd">        :type  grid3d:  str</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Create a Geosoft Voxel file from a Datamine block model file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_import_from_datamine</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">field</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">grid3d</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.compute_default_cell_size"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.compute_default_cell_size">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">compute_default_cell_size</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Used if the user does not provide a default cell size.</span>
+<span class="sd">        </span>
+<span class="sd">        :param min_x:  MinX</span>
+<span class="sd">        :param max_x:  MaxX</span>
+<span class="sd">        :param min_y:  MinY</span>
+<span class="sd">        :param max_y:  MaxY</span>
+<span class="sd">        :param min_z:  MinZ</span>
+<span class="sd">        :param max_z:  MaxZ</span>
+<span class="sd">        :type  min_x:  float</span>
+<span class="sd">        :type  max_x:  float</span>
+<span class="sd">        :type  min_y:  float</span>
+<span class="sd">        :type  max_y:  float</span>
+<span class="sd">        :type  min_z:  float</span>
+<span class="sd">        :type  max_z:  float</span>
+
+<span class="sd">        :returns:      Default Cell Size</span>
+<span class="sd">        :rtype:        float</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Compute a default cell size for a grid3d given a data range.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_compute_default_cell_size</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_z</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.filter"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.filter">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_file</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">filter_file</span><span class="p">,</span> <span class="n">n_passes</span><span class="p">,</span> <span class="n">interpolate_dummies</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Apply a 3D filter to a grid3d.</span>
+<span class="sd">        </span>
+<span class="sd">        :param input_file:           Name of the input grid3d</span>
+<span class="sd">        :param output_file:          Name of the output grid3d</span>
+<span class="sd">        :param filter:               :ref:`FILTER3D`</span>
+<span class="sd">        :param filter_file:          Filter file, if filter is `VOX_FILTER3D_FILE &lt;geosoft.gxapi.VOX_FILTER3D_FILE&gt;`</span>
+<span class="sd">        :param n_passes:             Number of filter passes</span>
+<span class="sd">        :param interpolate_dummies:  (1: interpolate dummies)</span>
+<span class="sd">        :type  input_file:           str</span>
+<span class="sd">        :type  output_file:          str</span>
+<span class="sd">        :type  filter:               int</span>
+<span class="sd">        :type  filter_file:          str</span>
+<span class="sd">        :type  n_passes:             int</span>
+<span class="sd">        :type  interpolate_dummies:  int</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_filter</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">input_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">filter_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">n_passes</span><span class="p">,</span> <span class="n">interpolate_dummies</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.invert_z"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.invert_z">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">invert_z</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_file</span><span class="p">,</span> <span class="n">output_file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Invert the Z values in the Grid3d.</span>
+<span class="sd">        </span>
+<span class="sd">        :param input_file:   Name of the input grid3d</span>
+<span class="sd">        :param output_file:  Name of the output grid3d</span>
+<span class="sd">        :type  input_file:   str</span>
+<span class="sd">        :type  output_file:  str</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_invert_z</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">input_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.extract_dem"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.extract_dem">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">extract_dem</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_file</span><span class="p">,</span> <span class="n">output_file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Extract a DEM grid from a voxel.</span>
+<span class="sd">        </span>
+<span class="sd">        :param input_file:   Name of the input grid3d</span>
+<span class="sd">        :param output_file:  Name of the output grid</span>
+<span class="sd">        :type  input_file:   str</span>
+<span class="sd">        :type  output_file:  str</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_extract_dem</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">input_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.clip_to_polygon"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.clip_to_polygon">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">clip_to_polygon</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_file</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">poly</span><span class="p">,</span> <span class="n">clip_dummies</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Invert the Z values in the Grid3d.</span>
+<span class="sd">        </span>
+<span class="sd">        :param input_file:    Name of the input grid3d</span>
+<span class="sd">        :param output_file:   Name of the output grid3d</span>
+<span class="sd">        :param poly:          Polygons to clip to</span>
+<span class="sd">        :param clip_dummies:  Clip Dummies (1) or leave them (0)</span>
+<span class="sd">        :type  input_file:    str</span>
+<span class="sd">        :type  output_file:   str</span>
+<span class="sd">        :type  poly:          GXPLY</span>
+<span class="sd">        :type  clip_dummies:  int</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_clip_to_polygon</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">input_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">poly</span><span class="p">,</span> <span class="n">clip_dummies</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.grid_direct_from_gdb"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.grid_direct_from_gdb">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">grid_direct_from_gdb</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">output_grid3d_filename</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">cell_count_x</span><span class="p">,</span> <span class="n">cell_count_y</span><span class="p">,</span> <span class="n">cell_count_z</span><span class="p">,</span> <span class="n">cell_size_x</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="p">,</span> <span class="n">cell_size_z</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x_channel</span><span class="p">,</span> <span class="n">y_channel</span><span class="p">,</span> <span class="n">z_channel</span><span class="p">,</span> <span class="n">data_channel</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a grid3d using direct gridding.</span>
+<span class="sd">        </span>
+<span class="sd">        :param output_grid3d_filename:  Output grid3d filename</span>
+<span class="sd">        :param origin_x:                Voxel origin X</span>
+<span class="sd">        :param origin_y:                Voxel origin Y</span>
+<span class="sd">        :param origin_z:                Voxel origin Z</span>
+<span class="sd">        :param cell_count_x:            Voxel cell count X</span>
+<span class="sd">        :param cell_count_y:            Voxel cell count Y</span>
+<span class="sd">        :param cell_count_z:            Voxel cell count Z</span>
+<span class="sd">        :param cell_size_x:             Voxel cell size X</span>
+<span class="sd">        :param cell_size_y:             Voxel cell size Y</span>
+<span class="sd">        :param cell_size_z:             Voxel cell size Z</span>
+<span class="sd">        :param method:                  :ref:`MULTIGRID3D_DIRECTGRID_METHOD`</span>
+<span class="sd">        :param db:                      Database</span>
+<span class="sd">        :param x_channel:               X channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param y_channel:               Y channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param z_channel:               Z channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param data_channel:            Data channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :type  output_grid3d_filename:  str</span>
+<span class="sd">        :type  origin_x:                float</span>
+<span class="sd">        :type  origin_y:                float</span>
+<span class="sd">        :type  origin_z:                float</span>
+<span class="sd">        :type  cell_count_x:            int</span>
+<span class="sd">        :type  cell_count_y:            int</span>
+<span class="sd">        :type  cell_count_z:            int</span>
+<span class="sd">        :type  cell_size_x:             float</span>
+<span class="sd">        :type  cell_size_y:             float</span>
+<span class="sd">        :type  cell_size_z:             float</span>
+<span class="sd">        :type  method:                  int</span>
+<span class="sd">        :type  db:                      GXDB</span>
+<span class="sd">        :type  x_channel:               int</span>
+<span class="sd">        :type  y_channel:               int</span>
+<span class="sd">        :type  z_channel:               int</span>
+<span class="sd">        :type  data_channel:            int</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The Z and Data channels may be array channels. If they are, the array sizes must match.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_grid_direct_from_gdb</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">output_grid3d_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">cell_count_x</span><span class="p">,</span> <span class="n">cell_count_y</span><span class="p">,</span> <span class="n">cell_count_z</span><span class="p">,</span> <span class="n">cell_size_x</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="p">,</span> <span class="n">cell_size_z</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x_channel</span><span class="p">,</span> <span class="n">y_channel</span><span class="p">,</span> <span class="n">z_channel</span><span class="p">,</span> <span class="n">data_channel</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.grid_idw_from_gdb"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.grid_idw_from_gdb">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">grid_idw_from_gdb</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">output_grid3d_filename</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">cell_count_x</span><span class="p">,</span> <span class="n">cell_count_y</span><span class="p">,</span> <span class="n">cell_count_z</span><span class="p">,</span> <span class="n">cell_size_x</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="p">,</span> <span class="n">cell_size_z</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x_channel</span><span class="p">,</span> <span class="n">y_channel</span><span class="p">,</span> <span class="n">z_channel</span><span class="p">,</span> <span class="n">data_channel</span><span class="p">,</span> <span class="n">weight_power</span><span class="p">,</span> <span class="n">weight_slope</span><span class="p">,</span> <span class="n">search_radius</span><span class="p">,</span> <span class="n">blanking_distance</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">log_base</span><span class="p">,</span> <span class="n">log_negative</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a grid3d using IDW gridding.</span>
+<span class="sd">        </span>
+<span class="sd">        :param output_grid3d_filename:  Output grid3d filename</span>
+<span class="sd">        :param origin_x:                Voxel origin X</span>
+<span class="sd">        :param origin_y:                Voxel origin Y</span>
+<span class="sd">        :param origin_z:                Voxel origin Z</span>
+<span class="sd">        :param cell_count_x:            Voxel cell count X</span>
+<span class="sd">        :param cell_count_y:            Voxel cell count Y</span>
+<span class="sd">        :param cell_count_z:            Voxel cell count Z</span>
+<span class="sd">        :param cell_size_x:             Voxel cell size X</span>
+<span class="sd">        :param cell_size_y:             Voxel cell size Y</span>
+<span class="sd">        :param cell_size_z:             Voxel cell size Z</span>
+<span class="sd">        :param db:                      Database</span>
+<span class="sd">        :param x_channel:               X channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param y_channel:               Y channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param z_channel:               Z channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param data_channel:            Data channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param weight_power:            Weight Power (default 2)</span>
+<span class="sd">        :param weight_slope:            Weight Slope (default 1)</span>
+<span class="sd">        :param search_radius:           Distance weighting limit (default = 4 * CUBE_ROOT(DX*DY*DZ))</span>
+<span class="sd">        :param blanking_distance:       Dummy values farther from data than this distance. (default = 4 * CUBE_ROOT(DX*DY*DZ))</span>
+<span class="sd">        :param log:                     Apply log transform to input data before gridding (0:No (default), 1:Yes)</span>
+<span class="sd">        :param log_base:                One of `VV_LOG_BASE_10 &lt;geosoft.gxapi.VV_LOG_BASE_10&gt;` (default) or :const:`VV_LOG_BASE_E</span>
+<span class="sd">        :param log_negative:            One of `VV_LOG_NEGATIVE_NO &lt;geosoft.gxapi.VV_LOG_NEGATIVE_NO&gt;` (default) or `VV_LOG_NEGATIVE_YES &lt;geosoft.gxapi.VV_LOG_NEGATIVE_YES&gt;`</span>
+<span class="sd">        :type  output_grid3d_filename:  str</span>
+<span class="sd">        :type  origin_x:                float</span>
+<span class="sd">        :type  origin_y:                float</span>
+<span class="sd">        :type  origin_z:                float</span>
+<span class="sd">        :type  cell_count_x:            int</span>
+<span class="sd">        :type  cell_count_y:            int</span>
+<span class="sd">        :type  cell_count_z:            int</span>
+<span class="sd">        :type  cell_size_x:             float</span>
+<span class="sd">        :type  cell_size_y:             float</span>
+<span class="sd">        :type  cell_size_z:             float</span>
+<span class="sd">        :type  db:                      GXDB</span>
+<span class="sd">        :type  x_channel:               int</span>
+<span class="sd">        :type  y_channel:               int</span>
+<span class="sd">        :type  z_channel:               int</span>
+<span class="sd">        :type  data_channel:            int</span>
+<span class="sd">        :type  weight_power:            float</span>
+<span class="sd">        :type  weight_slope:            float</span>
+<span class="sd">        :type  search_radius:           float</span>
+<span class="sd">        :type  blanking_distance:       float</span>
+<span class="sd">        :type  log:                     int</span>
+<span class="sd">        :type  log_base:                float</span>
+<span class="sd">        :type  log_negative:            int</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The Z and Data channels may be array channels. If they are, the array sizes must match.</span>
+<span class="sd">                          3D cells take on the averaged values within a search radius, weighted inversely by distance.</span>
+
+<span class="sd">                       Weighting can be controlled using the power and slope properties;</span>
+
+<span class="sd">                       weighting = 1 / (distance^wtpower + 1/slope) where distance is in</span>
+<span class="sd">                       units of grid cells (X dimenstion). Default is 0.0,</span>
+
+<span class="sd">                       If the blanking distance is set, all cells whose center point is not within the blanking distance of</span>
+<span class="sd">                       at least one data point are set to dummy.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_grid_idw_from_gdb</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">output_grid3d_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">cell_count_x</span><span class="p">,</span> <span class="n">cell_count_y</span><span class="p">,</span> <span class="n">cell_count_z</span><span class="p">,</span> <span class="n">cell_size_x</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="p">,</span> <span class="n">cell_size_z</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x_channel</span><span class="p">,</span> <span class="n">y_channel</span><span class="p">,</span> <span class="n">z_channel</span><span class="p">,</span> <span class="n">data_channel</span><span class="p">,</span> <span class="n">weight_power</span><span class="p">,</span> <span class="n">weight_slope</span><span class="p">,</span> <span class="n">search_radius</span><span class="p">,</span> <span class="n">blanking_distance</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">log_base</span><span class="p">,</span> <span class="n">log_negative</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.get_data_extents"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.get_data_extents">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_data_extents</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the voxel size that has non-dummy data.</span>
+<span class="sd">        </span>
+<span class="sd">        :param filename:  input filename</span>
+<span class="sd">        :param min_x:     Index of minimum valid data in X.</span>
+<span class="sd">        :param min_y:     Index of minimum valid data in Y.</span>
+<span class="sd">        :param min_z:     Index of minimum valid data in Z.</span>
+<span class="sd">        :param max_x:     Index of maximum valid data in X.</span>
+<span class="sd">        :param max_y:     Index of maximum valid data in Y.</span>
+<span class="sd">        :param max_z:     Index of maximum valid data in Z.</span>
+<span class="sd">        :type  filename:  str</span>
+<span class="sd">        :type  min_x:     int_ref</span>
+<span class="sd">        :type  min_y:     int_ref</span>
+<span class="sd">        :type  min_z:     int_ref</span>
+<span class="sd">        :type  max_x:     int_ref</span>
+<span class="sd">        :type  max_y:     int_ref</span>
+<span class="sd">        :type  max_z:     int_ref</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Find the non-dummy volume of a `GXMULTIGRID3D &lt;geosoft.gxapi.GXMULTIGRID3D&gt;` object. If the voxel is all dummies,</span>
+<span class="sd">        returns `iMAX &lt;geosoft.gxapi.iMAX&gt;` for the minima, and `iMIN &lt;geosoft.gxapi.iMIN&gt;` for the maxima.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_get_data_extents</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.get_data_ground_extents"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.get_data_ground_extents">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_data_ground_extents</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the voxel size in ground units that has non-dummy data.</span>
+<span class="sd">        </span>
+<span class="sd">        :param filename:  input filename</span>
+<span class="sd">        :param min_x:     Ground location of minimum valid data in X.</span>
+<span class="sd">        :param min_y:     Ground location of minimum valid data in Y.</span>
+<span class="sd">        :param min_z:     Ground location of minimum valid data in Z.</span>
+<span class="sd">        :param max_x:     Ground location of maximum valid data in X.</span>
+<span class="sd">        :param max_y:     Ground location of maximum valid data in Y.</span>
+<span class="sd">        :param max_z:     Ground location of maximum valid data in Z.</span>
+<span class="sd">        :type  filename:  str</span>
+<span class="sd">        :type  min_x:     float_ref</span>
+<span class="sd">        :type  min_y:     float_ref</span>
+<span class="sd">        :type  min_z:     float_ref</span>
+<span class="sd">        :type  max_x:     float_ref</span>
+<span class="sd">        :type  max_y:     float_ref</span>
+<span class="sd">        :type  max_z:     float_ref</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Find the non-dummy volume of a `GXMULTIGRID3D &lt;geosoft.gxapi.GXMULTIGRID3D&gt;` object. If the voxel is all dummies,</span>
+<span class="sd">        returns `iMAX &lt;geosoft.gxapi.iMAX&gt;` for the minima, and `iMIN &lt;geosoft.gxapi.iMIN&gt;` for the maxima.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_get_data_ground_extents</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.grid_points_from_gdb"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.grid_points_from_gdb">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">grid_points_from_gdb</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">var_only</span><span class="p">,</span> <span class="n">min_radius</span><span class="p">,</span> <span class="n">max_radius</span><span class="p">,</span> <span class="n">min_points</span><span class="p">,</span> <span class="n">max_points</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">slope</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="n">nugget</span><span class="p">,</span> <span class="n">sill</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x_channel</span><span class="p">,</span> <span class="n">y_channel</span><span class="p">,</span> <span class="n">z_channel</span><span class="p">,</span> <span class="n">data_channel</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Grid a grid3d from a database using kriging.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:          Output grid3d filename</span>
+<span class="sd">        :param error:         Output error grid3d filename</span>
+<span class="sd">        :param cell_size:     Cell size (DUMMY for default)</span>
+<span class="sd">        :param var_only:      Variogram Only</span>
+<span class="sd">        :param min_radius:    Minimum Search Radius (DUMMY for none)</span>
+<span class="sd">        :param max_radius:    Maximum Search Radius (DUMMY for none)</span>
+<span class="sd">        :param min_points:    Minimum Search Points</span>
+<span class="sd">        :param max_points:    Maximum Search Points</span>
+<span class="sd">        :param model:         Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</span>
+<span class="sd">        :param power:         Power</span>
+<span class="sd">        :param slope:         Slope</span>
+<span class="sd">        :param range:         Range</span>
+<span class="sd">        :param nugget:        Nugget</span>
+<span class="sd">        :param sill:          Sill</span>
+<span class="sd">        :param type:          :ref:`GS_TYPES`</span>
+<span class="sd">        :param db:            Database</span>
+<span class="sd">        :param x_channel:     X channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param y_channel:     Y channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param z_channel:     Z channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param data_channel:  Data channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :type  name:          str</span>
+<span class="sd">        :type  error:         str</span>
+<span class="sd">        :type  cell_size:     float</span>
+<span class="sd">        :type  var_only:      int</span>
+<span class="sd">        :type  min_radius:    float</span>
+<span class="sd">        :type  max_radius:    float</span>
+<span class="sd">        :type  min_points:    int</span>
+<span class="sd">        :type  max_points:    int</span>
+<span class="sd">        :type  model:         int</span>
+<span class="sd">        :type  power:         float</span>
+<span class="sd">        :type  slope:         float</span>
+<span class="sd">        :type  range:         float</span>
+<span class="sd">        :type  nugget:        float</span>
+<span class="sd">        :type  sill:          float</span>
+<span class="sd">        :type  type:          int</span>
+<span class="sd">        :type  db:            GXDB</span>
+<span class="sd">        :type  x_channel:     int</span>
+<span class="sd">        :type  y_channel:     int</span>
+<span class="sd">        :type  z_channel:     int</span>
+<span class="sd">        :type  data_channel:  int</span>
+<span class="sd">        :type  ipj:           GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_grid_points_from_gdb</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">error</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">var_only</span><span class="p">,</span> <span class="n">min_radius</span><span class="p">,</span> <span class="n">max_radius</span><span class="p">,</span> <span class="n">min_points</span><span class="p">,</span> <span class="n">max_points</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">slope</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="n">nugget</span><span class="p">,</span> <span class="n">sill</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x_channel</span><span class="p">,</span> <span class="n">y_channel</span><span class="p">,</span> <span class="n">z_channel</span><span class="p">,</span> <span class="n">data_channel</span><span class="p">,</span> <span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.grid_points_z_from_gdb"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.grid_points_z_from_gdb">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">grid_points_z_from_gdb</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">cell_size_z</span><span class="p">,</span> <span class="n">var_only</span><span class="p">,</span> <span class="n">min_radius</span><span class="p">,</span> <span class="n">max_radius</span><span class="p">,</span> <span class="n">min_points</span><span class="p">,</span> <span class="n">max_points</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">slope</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="n">nugget</span><span class="p">,</span> <span class="n">sill</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x_channel</span><span class="p">,</span> <span class="n">y_channel</span><span class="p">,</span> <span class="n">z_channel</span><span class="p">,</span> <span class="n">data_channel</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Grid a grid3d from a database (using variable Z&#39;s)</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:          Output grid3d filename</span>
+<span class="sd">        :param error:         Output error grid3d filename</span>
+<span class="sd">        :param cell_size:     Cell size (DUMMY for default)</span>
+<span class="sd">        :param cell_size_z:   Cell size in Z (&quot;&quot; for default)</span>
+<span class="sd">        :param var_only:      Variogram Only</span>
+<span class="sd">        :param min_radius:    Minimum Search Radius (DUMMY for none)</span>
+<span class="sd">        :param max_radius:    Maximum Search Radius (DUMMY for none)</span>
+<span class="sd">        :param min_points:    Minimum Search Points</span>
+<span class="sd">        :param max_points:    Maximum Search Points</span>
+<span class="sd">        :param model:         Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</span>
+<span class="sd">        :param power:         Power</span>
+<span class="sd">        :param slope:         Slope</span>
+<span class="sd">        :param range:         Range</span>
+<span class="sd">        :param nugget:        Nugget</span>
+<span class="sd">        :param sill:          Sill</span>
+<span class="sd">        :param type:          :ref:`GS_TYPES`</span>
+<span class="sd">        :param db:            Database</span>
+<span class="sd">        :param x_channel:     X channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param y_channel:     Y channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param z_channel:     Z channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param data_channel:  Data channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :type  name:          str</span>
+<span class="sd">        :type  error:         str</span>
+<span class="sd">        :type  cell_size:     float</span>
+<span class="sd">        :type  cell_size_z:   str</span>
+<span class="sd">        :type  var_only:      int</span>
+<span class="sd">        :type  min_radius:    float</span>
+<span class="sd">        :type  max_radius:    float</span>
+<span class="sd">        :type  min_points:    int</span>
+<span class="sd">        :type  max_points:    int</span>
+<span class="sd">        :type  model:         int</span>
+<span class="sd">        :type  power:         float</span>
+<span class="sd">        :type  slope:         float</span>
+<span class="sd">        :type  range:         float</span>
+<span class="sd">        :type  nugget:        float</span>
+<span class="sd">        :type  sill:          float</span>
+<span class="sd">        :type  type:          int</span>
+<span class="sd">        :type  db:            GXDB</span>
+<span class="sd">        :type  x_channel:     int</span>
+<span class="sd">        :type  y_channel:     int</span>
+<span class="sd">        :type  z_channel:     int</span>
+<span class="sd">        :type  data_channel:  int</span>
+<span class="sd">        :type  ipj:           GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_grid_points_z_from_gdb</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">error</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">cell_size_z</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">var_only</span><span class="p">,</span> <span class="n">min_radius</span><span class="p">,</span> <span class="n">max_radius</span><span class="p">,</span> <span class="n">min_points</span><span class="p">,</span> <span class="n">max_points</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">slope</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="n">nugget</span><span class="p">,</span> <span class="n">sill</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x_channel</span><span class="p">,</span> <span class="n">y_channel</span><span class="p">,</span> <span class="n">z_channel</span><span class="p">,</span> <span class="n">data_channel</span><span class="p">,</span> <span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.grid_points_z_ex_from_gdb"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.grid_points_z_ex_from_gdb">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">grid_points_z_ex_from_gdb</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">cell_size_z</span><span class="p">,</span> <span class="n">var_only</span><span class="p">,</span> <span class="n">min_radius</span><span class="p">,</span> <span class="n">max_radius</span><span class="p">,</span> <span class="n">min_points</span><span class="p">,</span> <span class="n">max_points</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">slope</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="n">nugget</span><span class="p">,</span> <span class="n">sill</span><span class="p">,</span> <span class="n">strike</span><span class="p">,</span> <span class="n">dip</span><span class="p">,</span> <span class="n">plunge</span><span class="p">,</span> <span class="n">along_strike_weight</span><span class="p">,</span> <span class="n">down_dip_weight</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x_channel</span><span class="p">,</span> <span class="n">y_channel</span><span class="p">,</span> <span class="n">z_channel</span><span class="p">,</span> <span class="n">data_channel</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Grid a grid3d from a database (using variable Z&#39;s)</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:                 Output grid3d filename</span>
+<span class="sd">        :param error:                Output error grid3d filename</span>
+<span class="sd">        :param cell_size:            Cell size (DUMMY for default)</span>
+<span class="sd">        :param cell_size_z:          Cell size in Z (&quot;&quot; for default)</span>
+<span class="sd">        :param var_only:             Variogram Only</span>
+<span class="sd">        :param min_radius:           Minimum Search Radius (DUMMY for none)</span>
+<span class="sd">        :param max_radius:           Maximum Search Radius (DUMMY for none)</span>
+<span class="sd">        :param min_points:           Minimum Search Points</span>
+<span class="sd">        :param max_points:           Maximum Search Points</span>
+<span class="sd">        :param model:                Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</span>
+<span class="sd">        :param power:                Power</span>
+<span class="sd">        :param slope:                Slope</span>
+<span class="sd">        :param range:                Range</span>
+<span class="sd">        :param nugget:               Nugget</span>
+<span class="sd">        :param sill:                 Sill</span>
+<span class="sd">        :param strike:               Strike</span>
+<span class="sd">        :param dip:                  Dip</span>
+<span class="sd">        :param plunge:               Plunge</span>
+<span class="sd">        :param along_strike_weight:  Strike Weight</span>
+<span class="sd">        :param down_dip_weight:      Dip Plane Weight</span>
+<span class="sd">        :param type:                 :ref:`GS_TYPES`</span>
+<span class="sd">        :param db:                   Database</span>
+<span class="sd">        :param x_channel:            X channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param y_channel:            Y channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param z_channel:            Z channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param data_channel:         Data channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :type  name:                 str</span>
+<span class="sd">        :type  error:                str</span>
+<span class="sd">        :type  cell_size:            float</span>
+<span class="sd">        :type  cell_size_z:          str</span>
+<span class="sd">        :type  var_only:             int</span>
+<span class="sd">        :type  min_radius:           float</span>
+<span class="sd">        :type  max_radius:           float</span>
+<span class="sd">        :type  min_points:           int</span>
+<span class="sd">        :type  max_points:           int</span>
+<span class="sd">        :type  model:                int</span>
+<span class="sd">        :type  power:                float</span>
+<span class="sd">        :type  slope:                float_ref</span>
+<span class="sd">        :type  range:                float_ref</span>
+<span class="sd">        :type  nugget:               float</span>
+<span class="sd">        :type  sill:                 float_ref</span>
+<span class="sd">        :type  strike:               float</span>
+<span class="sd">        :type  dip:                  float</span>
+<span class="sd">        :type  plunge:               float</span>
+<span class="sd">        :type  along_strike_weight:  float</span>
+<span class="sd">        :type  down_dip_weight:      float</span>
+<span class="sd">        :type  type:                 int</span>
+<span class="sd">        :type  db:                   GXDB</span>
+<span class="sd">        :type  x_channel:            int</span>
+<span class="sd">        :type  y_channel:            int</span>
+<span class="sd">        :type  z_channel:            int</span>
+<span class="sd">        :type  data_channel:         int</span>
+<span class="sd">        :type  ipj:                  GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">slope</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">range</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sill</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_grid_points_z_ex_from_gdb</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">error</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">cell_size_z</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">var_only</span><span class="p">,</span> <span class="n">min_radius</span><span class="p">,</span> <span class="n">max_radius</span><span class="p">,</span> <span class="n">min_points</span><span class="p">,</span> <span class="n">max_points</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">slope</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">range</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">nugget</span><span class="p">,</span> <span class="n">sill</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">strike</span><span class="p">,</span> <span class="n">dip</span><span class="p">,</span> <span class="n">plunge</span><span class="p">,</span> <span class="n">along_strike_weight</span><span class="p">,</span> <span class="n">down_dip_weight</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x_channel</span><span class="p">,</span> <span class="n">y_channel</span><span class="p">,</span> <span class="n">z_channel</span><span class="p">,</span> <span class="n">data_channel</span><span class="p">,</span> <span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.log_grid_points_z_ex_from_gdb"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.log_grid_points_z_ex_from_gdb">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">log_grid_points_z_ex_from_gdb</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">cell_size_z</span><span class="p">,</span> <span class="n">var_only</span><span class="p">,</span> <span class="n">min_radius</span><span class="p">,</span> <span class="n">max_radius</span><span class="p">,</span> <span class="n">min_points</span><span class="p">,</span> <span class="n">max_points</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">slope</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="n">nugget</span><span class="p">,</span> <span class="n">sill</span><span class="p">,</span> <span class="n">strike</span><span class="p">,</span> <span class="n">dip</span><span class="p">,</span> <span class="n">plunge</span><span class="p">,</span> <span class="n">along_strike_weight</span><span class="p">,</span> <span class="n">down_dip_weight</span><span class="p">,</span> <span class="n">log_opt</span><span class="p">,</span> <span class="n">min_log</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x_channel</span><span class="p">,</span> <span class="n">y_channel</span><span class="p">,</span> <span class="n">z_channel</span><span class="p">,</span> <span class="n">data_channel</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Log grid a grid3d from a database (using variable Z&#39;s)</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:                 Output grid3d filename</span>
+<span class="sd">        :param error:                Output error grid3d filename</span>
+<span class="sd">        :param cell_size:            Cell size (DUMMY for default)</span>
+<span class="sd">        :param cell_size_z:          Cell size in Z (&quot;&quot; for default)</span>
+<span class="sd">        :param var_only:             Variogram Only</span>
+<span class="sd">        :param min_radius:           Minimum Search Radius (DUMMY for none)</span>
+<span class="sd">        :param max_radius:           Maximum Search Radius (DUMMY for none)</span>
+<span class="sd">        :param min_points:           Minimum Search Points</span>
+<span class="sd">        :param max_points:           Maximum Search Points</span>
+<span class="sd">        :param model:                Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</span>
+<span class="sd">        :param power:                Power</span>
+<span class="sd">        :param slope:                Slope</span>
+<span class="sd">        :param range:                Range</span>
+<span class="sd">        :param nugget:               Nugget</span>
+<span class="sd">        :param sill:                 Sill</span>
+<span class="sd">        :param strike:               Strike</span>
+<span class="sd">        :param dip:                  Dip</span>
+<span class="sd">        :param plunge:               Plunge</span>
+<span class="sd">        :param along_strike_weight:  Strike Weight</span>
+<span class="sd">        :param down_dip_weight:      Dip Plane Weight</span>
+<span class="sd">        :param log_opt:              :ref:`VOX_GRID_LOGOPT` Log Option</span>
+<span class="sd">        :param min_log:              Minimum log</span>
+<span class="sd">        :param type:                 :ref:`GS_TYPES`</span>
+<span class="sd">        :param db:                   Database</span>
+<span class="sd">        :param x_channel:            X channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param y_channel:            Y channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param z_channel:            Z channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param data_channel:         Data channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :type  name:                 str</span>
+<span class="sd">        :type  error:                str</span>
+<span class="sd">        :type  cell_size:            float</span>
+<span class="sd">        :type  cell_size_z:          str</span>
+<span class="sd">        :type  var_only:             int</span>
+<span class="sd">        :type  min_radius:           float</span>
+<span class="sd">        :type  max_radius:           float</span>
+<span class="sd">        :type  min_points:           int</span>
+<span class="sd">        :type  max_points:           int</span>
+<span class="sd">        :type  model:                int</span>
+<span class="sd">        :type  power:                float</span>
+<span class="sd">        :type  slope:                float_ref</span>
+<span class="sd">        :type  range:                float_ref</span>
+<span class="sd">        :type  nugget:               float</span>
+<span class="sd">        :type  sill:                 float_ref</span>
+<span class="sd">        :type  strike:               float</span>
+<span class="sd">        :type  dip:                  float</span>
+<span class="sd">        :type  plunge:               float</span>
+<span class="sd">        :type  along_strike_weight:  float</span>
+<span class="sd">        :type  down_dip_weight:      float</span>
+<span class="sd">        :type  log_opt:              int</span>
+<span class="sd">        :type  min_log:              float</span>
+<span class="sd">        :type  type:                 int</span>
+<span class="sd">        :type  db:                   GXDB</span>
+<span class="sd">        :type  x_channel:            int</span>
+<span class="sd">        :type  y_channel:            int</span>
+<span class="sd">        :type  z_channel:            int</span>
+<span class="sd">        :type  data_channel:         int</span>
+<span class="sd">        :type  ipj:                  GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">slope</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">range</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sill</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_log_grid_points_z_ex_from_gdb</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">error</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">cell_size_z</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">var_only</span><span class="p">,</span> <span class="n">min_radius</span><span class="p">,</span> <span class="n">max_radius</span><span class="p">,</span> <span class="n">min_points</span><span class="p">,</span> <span class="n">max_points</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">slope</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">range</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">nugget</span><span class="p">,</span> <span class="n">sill</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">strike</span><span class="p">,</span> <span class="n">dip</span><span class="p">,</span> <span class="n">plunge</span><span class="p">,</span> <span class="n">along_strike_weight</span><span class="p">,</span> <span class="n">down_dip_weight</span><span class="p">,</span> <span class="n">log_opt</span><span class="p">,</span> <span class="n">min_log</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x_channel</span><span class="p">,</span> <span class="n">y_channel</span><span class="p">,</span> <span class="n">z_channel</span><span class="p">,</span> <span class="n">data_channel</span><span class="p">,</span> <span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.krig_from_gdb"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.krig_from_gdb">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">krig_from_gdb</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x_channel</span><span class="p">,</span> <span class="n">y_channel</span><span class="p">,</span> <span class="n">z_channel</span><span class="p">,</span> <span class="n">data_channel</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">reg</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A more compact and extensible form of `log_grid_points_z_ex_from_gdb &lt;geosoft.gxapi.GXMULTIGRID3DUTIL.log_grid_points_z_ex_from_gdb&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:          Output grid3d filename</span>
+<span class="sd">        :param cell_size:     Cell size (DUMMY for default)</span>
+<span class="sd">        :param type:          :ref:`GS_TYPES`</span>
+<span class="sd">        :param db:            Database</span>
+<span class="sd">        :param x_channel:     X channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param y_channel:     Y channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param z_channel:     Z channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param data_channel:  Data channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :type  name:          str</span>
+<span class="sd">        :type  cell_size:     float</span>
+<span class="sd">        :type  type:          int</span>
+<span class="sd">        :type  db:            GXDB</span>
+<span class="sd">        :type  x_channel:     int</span>
+<span class="sd">        :type  y_channel:     int</span>
+<span class="sd">        :type  z_channel:     int</span>
+<span class="sd">        :type  data_channel:  int</span>
+<span class="sd">        :type  ipj:           GXIPJ</span>
+<span class="sd">        :type  reg:           GXREG</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Optional Parameters.</span>
+
+<span class="sd">        If these values are not set in the `GXREG &lt;geosoft.gxapi.GXREG&gt;`, then default parameters will be used.</span>
+
+<span class="sd">        ERROR_VOXEL:		Output error grid3d filename (&quot;&quot; for none)</span>
+<span class="sd">        CELLSIZEZ:      Z Cell size string (space delimited, &quot;&quot; for default)</span>
+<span class="sd">        RADIUS_MIN:		Minimum Search Radius (REAL) (Default = 4) (Blanking Distance)</span>
+<span class="sd">        RADIUS_MAX:		Maximum Search Radius (REAL) (Default = 16)</span>
+<span class="sd">        SEARCH_MIN:		Minimum Search Points (INT) (Default = 16)</span>
+<span class="sd">        SEARCH_MAX:		Maximum Search Points (INT) (Default = 32)</span>
+<span class="sd">        VARIOGRAM_ONLY: Set to 1 to calculate the variogram only (INT) (Default = 0)</span>
+<span class="sd">        MODEL:				Variogram Model number 1-power, 2-sperical, 3-gaussian, 4-exponential  (INT) (Default = 2)</span>
+<span class="sd">        POWER:          Power (Default = DUMMY)</span>
+<span class="sd">        SLOPE:          Slope (REAL) (if input is DUMMY, value calculated and set on return)</span>
+<span class="sd">        RANGE:          Range (REAL) (if input is DUMMY, value calculated and set on return)</span>
+<span class="sd">        SILL :          Sill (REAL) (if input is DUMMY, value calculated and set on return)</span>
+<span class="sd">        STRIKE:				Strike (REAL) (Default = 0)</span>
+<span class="sd">        DIP:					Dip (REAL)	(Default = 90)</span>
+<span class="sd">        PLUNGE:				Plunge (REAL) (Default = 0)</span>
+<span class="sd">        STRIKE WEIGHT:	Along-Strike Weight (REAL) (Default = 1)</span>
+<span class="sd">        DIP_WEIGHT:      Down-Dip Weight (REAL) (Default = 1)</span>
+<span class="sd">        LOG_OPT:			One of :ref:`VOX_GRID_LOGOPT` (Default = 0)</span>
+<span class="sd">        MIN_LOG:			Log Minimum (REAL)	(Default = 1)</span>
+<span class="sd">        MIN_X:				Minimum X (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. multiple of cell size chosen)</span>
+<span class="sd">        MAX_X:				Maximum X (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)</span>
+<span class="sd">        MIN_Y:				Minimum Y (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. external multiple of cell size chosen)</span>
+<span class="sd">        MAX_Y:				Maximum Y (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)</span>
+<span class="sd">        MIN_Z:				Minimum Z (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. multiple of cell size chosen)</span>
+<span class="sd">        MAX_Z:				Maximum Z (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)A more compact and extensible form of `GXVOX.log_grid_points_z_ex &lt;geosoft.gxapi.GXVOX.log_grid_points_z_ex&gt;`. Only the most</span>
+<span class="sd">        basic parameters are entered directly. Optional parameters are passed via a `GXREG &lt;geosoft.gxapi.GXREG&gt;` object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_krig_from_gdb</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">cell_size</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x_channel</span><span class="p">,</span> <span class="n">y_channel</span><span class="p">,</span> <span class="n">z_channel</span><span class="p">,</span> <span class="n">data_channel</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">reg</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.create_subset"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.create_subset">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_subset</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_name</span><span class="p">,</span> <span class="n">output_name</span><span class="p">,</span> <span class="n">offset_x</span><span class="p">,</span> <span class="n">offset_y</span><span class="p">,</span> <span class="n">offset_z</span><span class="p">,</span> <span class="n">length_x</span><span class="p">,</span> <span class="n">length_y</span><span class="p">,</span> <span class="n">length_z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new MULTIGRID3D that is a subset of an exisiting MULTIGRID3D.</span>
+<span class="sd">        </span>
+<span class="sd">        :param input_name:   File Name of the MULTIGRID3D that will be subset</span>
+<span class="sd">        :param output_name:  File Name of the MULTIGRID3D that will be created</span>
+<span class="sd">        :param offset_x:     Starting location in X.</span>
+<span class="sd">        :param offset_y:     Starting location in Y.</span>
+<span class="sd">        :param offset_z:     Starting location in Z.</span>
+<span class="sd">        :param length_x:     Number of items to copy in X.</span>
+<span class="sd">        :param length_y:     Number of items to copy in Y.</span>
+<span class="sd">        :param length_z:     Number of items to copy in Z.</span>
+<span class="sd">        :type  input_name:   str</span>
+<span class="sd">        :type  output_name:  str</span>
+<span class="sd">        :type  offset_x:     int</span>
+<span class="sd">        :type  offset_y:     int</span>
+<span class="sd">        :type  offset_z:     int</span>
+<span class="sd">        :type  length_x:     int</span>
+<span class="sd">        :type  length_y:     int</span>
+<span class="sd">        :type  length_z:     int</span>
+<span class="sd">        :rtype:              GXMULTIGRID3D</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Creates a `GXMULTIGRID3D &lt;geosoft.gxapi.GXMULTIGRID3D&gt;` object that is a subset .</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_create_subset</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">input_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">offset_x</span><span class="p">,</span> <span class="n">offset_y</span><span class="p">,</span> <span class="n">offset_z</span><span class="p">,</span> <span class="n">length_x</span><span class="p">,</span> <span class="n">length_y</span><span class="p">,</span> <span class="n">length_z</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXMULTIGRID3D</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GXMULTIGRID3DUTIL.create_subset_from_double_extents"><a class="viewcode-back" href="../../../GXMULTIGRID3DUTIL.html#geosoft.gxapi.GXMULTIGRID3DUTIL.create_subset_from_double_extents">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_subset_from_double_extents</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_name</span><span class="p">,</span> <span class="n">output_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new MULTIGRID3D that is a subset of the non-dummy extents.</span>
+<span class="sd">        </span>
+<span class="sd">        :param input_name:   File Name of the MULTIGRID3D that will be subset</span>
+<span class="sd">        :param output_name:  File Name of the MULTIGRID3D that will be created</span>
+<span class="sd">        :type  input_name:   str</span>
+<span class="sd">        :type  output_name:  str</span>
+<span class="sd">        :rtype:              GXMULTIGRID3D</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Creates a `GXMULTIGRID3D &lt;geosoft.gxapi.GXMULTIGRID3D&gt;` object that is a subset with all dummy data regions removed.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3DUTIL</span><span class="o">.</span><span class="n">_create_subset_from_double_extents</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">input_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXMULTIGRID3D</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div></div>
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMULTIGRID3DUTIL</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>
