@@ -231,6 +231,46 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
 
 
+    @classmethod
+    def run_vv(cls, vv_x, vv_y, vv_z, ipj, ctl, grd, err_grd, in_var, out_var, log_file, vao):
+        """
+        Executes the Krigrid program directly on input data VVs.
+        
+        :param vv_x:      X data
+        :param vv_y:      Y data
+        :param vv_z:      Z (grid value) data
+        :param ipj:       Projection to put into grid
+        :param ctl:       KRIGRID control file.
+        :param grd:       (output grid name (not required if variogram analysis only))
+        :param err_grd:   (output error file, "" for none)
+        :param in_var:    (input variogram file, "" for none)
+        :param out_var:   (output variogram file, "" for none)
+        :param log_file:  (log file name, "" for default)
+        :param vao:       1 if Variogram Analysis Only, other wise 0
+        :type  vv_x:      GXVV
+        :type  vv_y:      GXVV
+        :type  vv_z:      GXVV
+        :type  ipj:       GXIPJ
+        :type  ctl:       str
+        :type  grd:       str
+        :type  err_grd:   str
+        :type  in_var:    str
+        :type  out_var:   str
+        :type  log_file:  str
+        :type  vao:       int
+
+        :returns:         0 OK, 1 Error.
+        :rtype:           int
+
+        .. versionadded:: 2022.2
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        ret_val = gxapi_cy.WrapKGRD._run_vv(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, ipj, ctl.encode(), grd.encode(), err_grd.encode(), in_var.encode(), out_var.encode(), log_file.encode(), vao)
+        return ret_val
+
+
+
 
     def save_parms(self, name):
         """

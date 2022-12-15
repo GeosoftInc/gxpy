@@ -28,6 +28,10 @@ Information to retrieve
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.ST_NZERO
+.. autodata:: geosoft.gxapi.ST_TOTAL
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.ST_TOTAL
 .. autodata:: geosoft.gxapi.ST_DUMMIES
     :annotation:
     
@@ -56,6 +60,10 @@ Information to retrieve
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.ST_MODE
+.. autodata:: geosoft.gxapi.ST_SIMPLE_MODE
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.ST_SIMPLE_MODE
 .. autodata:: geosoft.gxapi.ST_GEOMEAN
     :annotation:
     

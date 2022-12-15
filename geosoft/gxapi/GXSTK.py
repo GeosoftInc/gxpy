@@ -568,7 +568,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         """
         Set parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating drawing X/Y axis
         
-        :param bar_draw:       ?BARDRAW
+        :param bar_draw:       ?BARDRAW, :ref:`STK_AXIS_POS`
         :param min_loc:        Bottom Y/Left X location
         :param max_loc:        Top Y/Right X location
         :param thick:          ?BARLINETHICK  - Line thickness in mm. Default is 0.05
@@ -714,7 +714,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         """
         Set parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating X/Y axis labels
         
-        :param axis:        Bottom/Top or Left/Right axes
+        :param axis:        :ref:`STK_AXIS_POS`
         :param min_loc:     Bottom or Left axis label location
         :param min_orient:  Bottom or Left labels orientation.
         :param max_loc:     Top or Right axis label location
@@ -1002,6 +1002,31 @@ class GXSTK(gxapi_cy.WrapSTK):
         or 1.
         """
         self._set_va_index_start(index0)
+        
+
+
+
+
+    def set_error_plot_params(self, enabled, error_channel, elements_csv):
+        """
+        Set error bar plot parameters for the current profile.
+        
+        :param enabled:        Enable(1) or disable(0) error bar plot rendering.
+        :param error_channel:  The name of the error channel.
+        :param elements_csv:   A comma-separated list of integers pertaining to the array channel elementsto apply the error bar plot to. For example, supplying '1,2,7,10' will rendererror bar plots for the first, second, seventh and tenth array channel elementsof the source and error channels.
+        :type  enabled:        int
+        :type  error_channel:  str
+        :type  elements_csv:   str
+
+        .. versionadded:: 2022.2
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** Set parameters for the error bar plot that is associated with the current
+        profile.
+        See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
+        """
+        self._set_error_plot_params(enabled, error_channel.encode(), elements_csv.encode())
         
 
 

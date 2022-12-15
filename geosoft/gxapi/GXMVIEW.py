@@ -4851,6 +4851,45 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
 
 
+    def render_ex(self, hdc, left, bottom, right, top, min_x, min_y, max_x, max_y, asp, padding_pixel, text_rendering_hint):
+        """
+        Render a specified area of view onto a Windows DC handle, setting the type of it and returning the new data extents
+        
+        :param hdc:                  DC Handle
+        :param left:                 Left value of the render rect in Windows coordinates (bottom>top)
+        :param bottom:               Bottom value
+        :param right:                Right value
+        :param top:                  Top value
+        :param min_x:                Area X minimum
+        :param min_y:                Area Y minimum
+        :param max_x:                Area X maximum
+        :param max_y:                Area Y maximum
+        :param asp:                  :ref:`MVIEW_RELOCATE`
+        :param padding_pixel:        Add padding to avoid x/y axis border out of view if needed, default 0
+        :param text_rendering_hint:  A (GDI/Graphics) TextRenderingHint to apply while rendering the MVIEW. A value < 0or null reference will not effect the current TextRenderingHint.
+        :type  hdc:                  int
+        :type  left:                 int
+        :type  bottom:               int
+        :type  right:                int
+        :type  top:                  int
+        :type  min_x:                float_ref
+        :type  min_y:                float_ref
+        :type  max_x:                float_ref
+        :type  max_y:                float_ref
+        :type  asp:                  int
+        :type  padding_pixel:        int
+        :type  text_rendering_hint:  int
+
+        .. versionadded:: 2022.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        min_x.value, min_y.value, max_x.value, max_y.value = self._render_ex(hdc, left, bottom, right, top, min_x.value, min_y.value, max_x.value, max_y.value, asp, padding_pixel, text_rendering_hint)
+        
+
+
+
+
 # Utility Drawing
 
 

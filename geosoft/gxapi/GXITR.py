@@ -293,8 +293,41 @@ class GXITR(gxapi_cy.WrapITR):
         .. versionadded:: 5.1.2
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** If the number of individual populated zones calculated using an equal-area ITR is less than the number
+        of colours in the ITR, then an error message is displayed to that effect. If you want
+        to avoid this error message in your work-flow, call EqualAreaOrLinear_ITR, which
+        will apply a linear transform with the input number of colours, covering the whole range,
+        should the equal-area transform have a problem, and no error message will appear, even if
+        there is no valid data at all.
         """
         self._equal_area(st, contour)
+        
+
+
+
+
+    def equal_area_or_linear(self, st, contour):
+        """
+        Calculate an equal area transform.
+        
+        :param st:       Stat object with a histogram
+        :param contour:  Color contour interval or dummy for none
+        :type  st:       GXST
+        :type  contour:  float
+
+        .. versionadded:: 2022.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** If the number of individual populated zones calculated using an equal-area ITR is less than the number
+        of colours in the ITR, then EqualArea_ITR displays an error message is displayed to that effect. If you want
+        to avoid this error message in your work-flow, call this function, EqualAreaOrLinear_ITR, which
+        will apply a linear transform with the input number of colours, covering the whole range,
+        should the equal-area transform have a problem, and no error message will appear, even if
+        there is no valid data at all.
+        """
+        self._equal_area_or_linear(st, contour)
         
 
 

@@ -1891,6 +1891,42 @@ class GXMVU(gxapi_cy.WrapMVU):
 
 
     @classmethod
+    def plot_voxel_slice(cls, mview, vox, itr, x, y, dOrigin, dMin, dmax, res):
+        """
+        Extract a vertical slice from a voxel along a path and plot it to a 2D view.
+        
+        :param mview:    View
+        :param vox:      Voxel model
+        :param itr:      colour model
+        :param x:        x-values along the line
+        :param y:        y-values along the line
+        :param dOrigin:  Distance at the first XY location (normally 0.0)
+        :param dMin:     Starting distance to plot
+        :param dmax:     Ending distance to plot
+        :param res:      Sampling resolution
+        :type  mview:    GXMVIEW
+        :type  vox:      GXVOX
+        :type  itr:      GXITR
+        :type  x:        GXVV
+        :type  y:        GXVV
+        :type  dOrigin:  float
+        :type  dMin:     float
+        :type  dmax:     float
+        :type  res:      float
+
+        .. versionadded:: 2022.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** The path is splined linearly between points and sampled at the input interval.
+        The resulting vertical samples of cubes are plotted as "pixel strips" in the view.
+        """
+        gxapi_cy.WrapMVU._plot_voxel_slice(GXContext._get_tls_geo(), mview, vox, itr, x, y, dOrigin, dMin, dmax, res)
+        
+
+
+
+    @classmethod
     def plot_voxel_surface(cls, mview, vox, value, col, line_thick):
         """
         Extract an iso-surface from a voxel and plot it to a 2D or 3D view.

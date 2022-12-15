@@ -92,6 +92,12 @@ class GXError(geosoft.GXRuntimeError):
 import struct
 
 #
+# GX3DC Constants
+# 
+
+	
+
+#
 # GX3DN Constants
 # 
 
@@ -3225,6 +3231,8 @@ ST_ITEMS = 0
 ST_NPOS = 1
 #: Number of items equal to zero
 ST_NZERO = 22
+#: Total number of items (dummy and non-dummy)
+ST_TOTAL = 24
 #: St dummies
 ST_DUMMIES = 2
 #: St min
@@ -3237,8 +3245,10 @@ ST_RANGE = 5
 ST_MEAN = 6
 #: St median
 ST_MEDIAN = 7
-#: St mode
+#: Mode value (most often repeated value)
 ST_MODE = 8
+#: Mode value (using different algorithm)
+ST_SIMPLE_MODE = 23
 #: St geomean
 ST_GEOMEAN = 9
 #: St variance
@@ -6968,6 +6978,24 @@ STK_AXIS_X = 0
 STK_AXIS_Y = 1
 
 #
+# STK_AXIS_POS constants
+#
+# `GXSTK <geosoft.gxapi.GXSTK>` Axis defines. Use with STK_AXIS_X and STK_AXIS_Y
+
+#: Axis
+STK_AXIS_NONE = 0
+#: Left side only
+STK_AXIS_LEFT = 1
+#: Right side only
+STK_AXIS_RIGHT = 2
+#: Left and right sides
+STK_AXIS_BOTH = 3
+#: Bottom only
+STK_AXIS_BOTTOM = 1
+#: Top only
+STK_AXIS_TOP = 2
+
+#
 # STK_FLAG constants
 #
 # Stack flags
@@ -7344,6 +7372,7 @@ VVU_SRCHREPL_CASE_SENSITIVE = 1
 __all__ = [
 
     'GXContext',
+    'GX3DC',
     'GX3DN',
     'GX3DV',
     'GXAGG',
@@ -7481,6 +7510,7 @@ __all__ = [
 ]
 
 from .GXContext import GXContext
+from .GX3DC import GX3DC
 from .GX3DN import GX3DN
 from .GX3DV import GX3DV
 from .GXAGG import GXAGG

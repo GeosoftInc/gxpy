@@ -390,6 +390,35 @@ class GXVVU(gxapi_cy.WrapVVU):
 
 
     @classmethod
+    def distance_link_non_dummies(cls, vv_x, vv_y, vv_d, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr):
+        """
+        Create distance linking non-dummies `GXVV <geosoft.gxapi.GXVV>`
+        
+        :param vv_x:         X `GXVV <geosoft.gxapi.GXVV>`,REAL `GXVV <geosoft.gxapi.GXVV>`
+        :param vv_y:         Y `GXVV <geosoft.gxapi.GXVV>`,REAL `GXVV <geosoft.gxapi.GXVV>`
+        :param vv_d:         Output distance `GXVV <geosoft.gxapi.GXVV>`,REAL `GXVV <geosoft.gxapi.GXVV>`
+        :param x_fid_start:  X `GXVV <geosoft.gxapi.GXVV>` fid start
+        :param x_fid_incr:   X `GXVV <geosoft.gxapi.GXVV>` fid incr
+        :param y_fid_start:  Y `GXVV <geosoft.gxapi.GXVV>` fid start
+        :param y_fid_incr:   Y `GXVV <geosoft.gxapi.GXVV>` fid incr
+        :type  vv_x:         GXVV
+        :type  vv_y:         GXVV
+        :type  vv_d:         GXVV
+        :type  x_fid_start:  float
+        :type  x_fid_incr:   float
+        :type  y_fid_start:  float
+        :type  y_fid_incr:   float
+
+        .. versionadded:: 2022.2
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        gxapi_cy.WrapVVU._distance_link_non_dummies(GXContext._get_tls_geo(), vv_x, vv_y, vv_d, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr)
+        
+
+
+
+    @classmethod
     def distance_non_cumulative(cls, vv_x, vv_y, vv_d, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr):
         """
         Create a non cumulative distance `GXVV <geosoft.gxapi.GXVV>` i.e each
@@ -1745,6 +1774,63 @@ class GXVVU(gxapi_cy.WrapVVU):
         =========  ==============================================================
         """
         gxapi_cy.WrapVVU._qc(GXContext._get_tls_geo(), vv_i, vv_d, v_vf, nominal, max_tol, all_tol, dist, qc)
+        
+
+
+
+    @classmethod
+    def qc2(cls, vv_i, vv_d, v_vf, vv_drape, max_tol, all_tol, dist, qc):
+        """
+        Quality control on deviation of data from norm in a `GXVV <geosoft.gxapi.GXVV>`
+        
+        :param vv_i:      Input `GXVV <geosoft.gxapi.GXVV>` on which to apply quality control Required in `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` or `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`
+        :param vv_d:      Distance `GXVV <geosoft.gxapi.GXVV>` (NULL if criterion #2 does not apply). In `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` or `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`
+        :param v_vf:      Output flag `GXVV <geosoft.gxapi.GXVV>` with result 0,1,2,3,-1,-2,-3. Required in `GS_BYTE <geosoft.gxapi.GS_BYTE>`
+        :param vv_drape:  Drape elevation `GXVV <geosoft.gxapi.GXVV>` which is used instead of a constant nominal terrain clearance Required in `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` or `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`
+        :param max_tol:   Maximum tolerance/deviation applied to a single reading (criterion #1). `GS_R8DM <geosoft.gxapi.GS_R8DM>` if criterion #1 does not apply. Otherwise, must be positive value including 0.0
+        :param all_tol:   Allowed tolerance/deviation over a given distance (next parameter) (criterion #2). `GS_R8DM <geosoft.gxapi.GS_R8DM>` if criterion #2 does not apply. Otherwise, must be positive value including 0.0
+        :param dist:      The specified distance. `GS_R8DM <geosoft.gxapi.GS_R8DM>` if criterion #2 does not apply. Otherwise, must be positive value excluding 0.0
+        :param qc:        :ref:`QC_CRITERION`
+        :type  vv_i:      GXVV
+        :type  vv_d:      GXVV
+        :type  v_vf:      GXVV
+        :type  vv_drape:  GXVV
+        :type  max_tol:   float
+        :type  all_tol:   float
+        :type  dist:      float
+        :type  qc:        int
+
+        .. versionadded:: 2022.2
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** This function tests data in input `GXVV <geosoft.gxapi.GXVV>` against
+        two separate criteria. Each element of the output `GXVV <geosoft.gxapi.GXVV>`
+        will have one of the following indicators:
+
+        =========  ==============================================================
+        Indicator  Meaning
+        =========  ==============================================================
+          0        Input data passed both tests
+        ---------  --------------------------------------------------------------
+          1        The input data and is greater than the nominal value
+                   plus maximum tolerance/deviation (Criterion #1)
+        ---------  --------------------------------------------------------------
+          2        The input data over a specified distance is greater than the
+                   nominal value plus allowed tolerance (Criterion #2)
+        ---------  --------------------------------------------------------------
+          3        The input data failed on above two tests
+        ---------  --------------------------------------------------------------
+         -1        The input data and is less than the nominal value
+                   minus maximum tolerance (Criterion #1)
+        ---------  --------------------------------------------------------------
+         -2        The input data over a specified distance is less than the
+                   nominal value minus allowed tolerance (Criterion #2)
+        ---------  --------------------------------------------------------------
+         -3        The input data failed on above two tests
+        =========  ==============================================================
+        """
+        gxapi_cy.WrapVVU._qc2(GXContext._get_tls_geo(), vv_i, vv_d, v_vf, vv_drape, max_tol, all_tol, dist, qc)
         
 
 

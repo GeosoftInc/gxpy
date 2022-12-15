@@ -26,6 +26,39 @@ STK_AXIS constants
     .. autoattribute:: geosoft.gxapi.STK_AXIS_Y
 
 
+.. _STK_AXIS_POS:
+
+STK_AXIS_POS constants
+-----------------------------------------------------------------------
+
+`GXSTK <geosoft.gxapi.GXSTK>` Axis defines. Use with STK_AXIS_X and STK_AXIS_Y
+
+.. autodata:: geosoft.gxapi.STK_AXIS_NONE
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_AXIS_NONE
+.. autodata:: geosoft.gxapi.STK_AXIS_LEFT
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_AXIS_LEFT
+.. autodata:: geosoft.gxapi.STK_AXIS_RIGHT
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_AXIS_RIGHT
+.. autodata:: geosoft.gxapi.STK_AXIS_BOTH
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_AXIS_BOTH
+.. autodata:: geosoft.gxapi.STK_AXIS_BOTTOM
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_AXIS_BOTTOM
+.. autodata:: geosoft.gxapi.STK_AXIS_TOP
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.STK_AXIS_TOP
+
+
 .. _STK_FLAG:
 
 STK_FLAG constants

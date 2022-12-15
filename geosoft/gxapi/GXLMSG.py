@@ -48,6 +48,23 @@ class GXLMSG(gxapi_cy.WrapLMSG):
 
 
     @classmethod
+    def goto_line(cls, line):
+        """
+        Sends a 'go to line' message
+        
+        :param line:  Line name
+        :type  line:  str
+
+        .. versionadded:: 2022.2
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        gxapi_cy.WrapLMSG._goto_line(GXContext._get_tls_geo(), line.encode())
+        
+
+
+
+    @classmethod
     def goto_point(cls, x, y, z, ipj):
         """
         Sends a move cursor message

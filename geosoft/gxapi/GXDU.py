@@ -2745,6 +2745,39 @@ class GXDU(gxapi_cy.WrapDU):
 
 
     @classmethod
+    def interp_gap_and_fill(cls, db, line, i_ch, o_ch, inside, outside, gap, extend, fill):
+        """
+        Replace all dummies by interpolating from valid data.
+        
+        :param db:       Database
+        :param line:     Line handle
+        :param i_ch:     Channel to interpolate [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param o_ch:     Output interpolated channel [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
+        :param inside:   :ref:`DU_INTERP`
+        :param outside:  :ref:`DU_INTERP_EDGE`
+        :param gap:      Maximum gap to interpolate (fiducials)
+        :param extend:   Maximum items to extend at ends.
+        :param fill:     Value used to fill dummy channels.
+        :type  db:       GXDB
+        :type  line:     int
+        :type  i_ch:     int
+        :type  o_ch:     int
+        :type  inside:   int
+        :type  outside:  int
+        :type  gap:      int
+        :type  extend:   int
+        :type  fill:     float
+
+        .. versionadded:: 2022.2
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        gxapi_cy.WrapDU._interp_gap_and_fill(GXContext._get_tls_geo(), db, line, i_ch, o_ch, inside, outside, gap, extend, fill)
+        
+
+
+
+    @classmethod
     def intersect(cls, db, x_chan, y_chan, z_chan, tol, file):
         """
         Create Tie Line & Normal Line intersect table.
@@ -3020,6 +3053,31 @@ class GXDU(gxapi_cy.WrapDU):
         **Note:** Has its own format - space-delimited columns of data
         """
         gxapi_cy.WrapDU._load_gravity_cg6_to_line(GXContext._get_tls_geo(), db, data.encode(), line.encode())
+        
+
+
+
+    @classmethod
+    def load_gravity_cg6_ex(cls, db, data, line, date_format):
+        """
+        Load a CG-6 gravity survey file. Specify the name of the output line
+        
+        :param db:           Database
+        :param data:         Gravity data file
+        :param line:         line name - can be empty in which case it will create a line name from the input file name
+        :param date_format:  :ref:`DATE_FORMAT`
+        :type  db:           GXDB
+        :type  data:         str
+        :type  line:         str
+        :type  date_format:  int
+
+        .. versionadded:: 2022.2
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** Has its own format - space-delimited columns of data
+        """
+        gxapi_cy.WrapDU._load_gravity_cg6_ex(GXContext._get_tls_geo(), db, data.encode(), line.encode(), date_format)
         
 
 

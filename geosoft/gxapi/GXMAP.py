@@ -382,6 +382,21 @@ class GXMAP(gxapi_cy.WrapMAP):
 
 
 
+    def delete_empty_groups(self):
+        """
+        Remove empty groups in the map, do not delete empty views.
+        
+
+        .. versionadded:: 2022.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._delete_empty_groups()
+        
+
+
+
+
     def commit(self):
         """
         Commit any changes to a map.
