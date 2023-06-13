@@ -4,7 +4,7 @@ This is the repository for Seequent's Geosoft GX Developer support for Python de
 
 [GX Developer documentation](https://geosoftgxdev.atlassian.net/wiki/display/GD/Python+in+GX+Developer)
 
-From release 2022.2, tutorials for various subjects are available as Jupyter Notebooks, and are added as subjects are developed.  See the following github page for what is currently available:
+From release 9.6, tutorials for various subjects are available as Jupyter Notebooks, and are added as subjects are developed.  See the following github page for what is currently available:
 
 https://github.com/GeosoftInc/gxpy/tree/master/examples/jupyter_notebooks/Tutorials
 (Select the branch that matches the GX Developer version you are working with.)
@@ -28,7 +28,7 @@ If you encounter problems due to a non-standard installation you can also update
 
 ### Manual Configuration ###
 
-Uninstall Geosoft from Python, then install version 2022.2 as follows (you must have the Geosoft Desktop 2022.2 platform installed).
+Uninstall Geosoft from Python, then install version 9.6 as follows (you must have the Geosoft Desktop 9.6 platform installed).
 
 ```
 pip uninstall geosoft

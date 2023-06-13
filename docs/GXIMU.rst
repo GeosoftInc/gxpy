@@ -28,6 +28,10 @@ Overlapping area option
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.IMU_BOOL_OLAP_2
+.. autodata:: geosoft.gxapi.IMU_BOOL_OLAP_MINUS
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.IMU_BOOL_OLAP_MINUS
 
 
 .. _IMU_BOOL_OPT:

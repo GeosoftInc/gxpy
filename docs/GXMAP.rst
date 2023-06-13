@@ -100,6 +100,10 @@ Format   Description                  Type
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.MAP_EXPORT_FORMAT_GTIFF
+.. autodata:: geosoft.gxapi.MAP_EXPORT_FORMAT_CGTIFF
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.MAP_EXPORT_FORMAT_CGTIFF
 .. autodata:: geosoft.gxapi.MAP_EXPORT_FORMAT_MTIFF
     :annotation:
     
