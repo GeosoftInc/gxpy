@@ -1,0 +1,631 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXDMPPLY &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDMPPLY</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXDMPPLY</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXDMPPLY"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY">[docs]</a><span class="k">class</span> <span class="nc">GXDMPPLY</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDMPPLY</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXDMPPLY class.</span>
+
+<span class="sd">    Datamine Multiple polygon object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXDMPPLY.__init__"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXDMPPLY</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXDMPPLY.null"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXDMPPLY &lt;geosoft.gxapi.GXDMPPLY&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXDMPPLY &lt;geosoft.gxapi.GXDMPPLY&gt;`</span>
+<span class="sd">        :rtype:   GXDMPPLY</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXDMPPLY</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXDMPPLY.is_null"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.clear"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.clear">[docs]</a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Clear/remove all polygons from the `GXDMPPLY &lt;geosoft.gxapi.GXDMPPLY&gt;`.</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_clear</span><span class="p">()</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.copy"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy</span>
+<span class="sd">        </span>
+<span class="sd">        :param source:  Source</span>
+<span class="sd">        :type  source:  GXDMPPLY</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_copy</span><span class="p">(</span><span class="n">source</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.create"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.create">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a `GXDMPPLY &lt;geosoft.gxapi.GXDMPPLY&gt;` object.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    DMPLY Object</span>
+<span class="sd">        :rtype:      GXDMPPLY</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDMPPLY</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXDMPPLY</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.get_azimuth"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.get_azimuth">[docs]</a>    <span class="k">def</span> <span class="nf">get_azimuth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">az</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the azimuth of a given polygon.</span>
+<span class="sd">        </span>
+<span class="sd">        :param p:       Polygon number (1 to NP)</span>
+<span class="sd">        :param az:      Azimuth (degrees) (o)</span>
+<span class="sd">        :type  p:       int</span>
+<span class="sd">        :type  az:      float_ref</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The azimuth is the equivalent section azimuth,</span>
+<span class="sd">        equal to the azimuth of the normal vector plus</span>
+<span class="sd">        90 degrees.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">az</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_azimuth</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">az</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.get_extents"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.get_extents">[docs]</a>    <span class="k">def</span> <span class="nf">get_extents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the center, width and height of a given polygon.</span>
+<span class="sd">        </span>
+<span class="sd">        :param p:       Polygon number (1 to NP)</span>
+<span class="sd">        :param x:       Center point X (o)</span>
+<span class="sd">        :param y:       Center point Y (o)</span>
+<span class="sd">        :param z:       Center point Z (o)</span>
+<span class="sd">        :param w:       Width of polygon (in its plane) (o)</span>
+<span class="sd">        :param h:       Height of polygon (Z extent) (o)</span>
+<span class="sd">        :type  p:       int</span>
+<span class="sd">        :type  x:       float_ref</span>
+<span class="sd">        :type  y:       float_ref</span>
+<span class="sd">        :type  z:       float_ref</span>
+<span class="sd">        :type  w:       float_ref</span>
+<span class="sd">        :type  h:       float_ref</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">w</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">h</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_extents</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">w</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">h</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.get_joins"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.get_joins">[docs]</a>    <span class="k">def</span> <span class="nf">get_joins</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get join lines for each vertex in a specific polygon.</span>
+<span class="sd">        </span>
+<span class="sd">        :param p:       Polygon number (1 to N)</span>
+<span class="sd">        :param vv:      INT `GXVV &lt;geosoft.gxapi.GXVV&gt;` of join indices (1 to NJoins).</span>
+<span class="sd">        :type  p:       int</span>
+<span class="sd">        :type  vv:      GXVV</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** If a specific vertex is not joined, the returned value is 0.</span>
+<span class="sd">        If the vertex is joined, then the index of the join line (1 to NJoins)</span>
+<span class="sd">        is returned.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_joins</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.get_normal_vectors"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.get_normal_vectors">[docs]</a>    <span class="k">def</span> <span class="nf">get_normal_vectors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">z3</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the normal vectors of a given polygon.</span>
+<span class="sd">        </span>
+<span class="sd">        :param p:       Polygon number (1 to NP)</span>
+<span class="sd">        :param x1:      X component (o) (Horizontal azimuth vector)</span>
+<span class="sd">        :param y1:      Y component (o)</span>
+<span class="sd">        :param z1:      Z component (o)</span>
+<span class="sd">        :param x2:      X component (o) (Down-dip, in the vertical plane)</span>
+<span class="sd">        :param y2:      Y component (o)</span>
+<span class="sd">        :param z2:      Z component (o)</span>
+<span class="sd">        :param x3:      X component (o) (Normal vector)</span>
+<span class="sd">        :param y3:      Y component (o)</span>
+<span class="sd">        :param z3:      Z component (o)</span>
+<span class="sd">        :type  p:       int</span>
+<span class="sd">        :type  x1:      float_ref</span>
+<span class="sd">        :type  y1:      float_ref</span>
+<span class="sd">        :type  z1:      float_ref</span>
+<span class="sd">        :type  x2:      float_ref</span>
+<span class="sd">        :type  y2:      float_ref</span>
+<span class="sd">        :type  z2:      float_ref</span>
+<span class="sd">        :type  x3:      float_ref</span>
+<span class="sd">        :type  y3:      float_ref</span>
+<span class="sd">        :type  z3:      float_ref</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Three normalized vectors are returned.</span>
+<span class="sd">        The first is horizontal, in the plane of the polygon.</span>
+<span class="sd">        The second is in the vertical plane, corresponding to the</span>
+<span class="sd">        &quot;down-dip&quot; direction.</span>
+<span class="sd">        The third is the normal vector to the polygon plane.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z3</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_normal_vectors</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z3</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.get_poly"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.get_poly">[docs]</a>    <span class="k">def</span> <span class="nf">get_poly</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a specific polygon from a `GXDMPPLY &lt;geosoft.gxapi.GXDMPPLY&gt;` object.</span>
+<span class="sd">        </span>
+<span class="sd">        :param p:       Polygon number (1 to NP) (i)</span>
+<span class="sd">        :param vv_x:    X Locations (o)</span>
+<span class="sd">        :param vv_y:    Y Locations (o)</span>
+<span class="sd">        :param vv_z:    Z Locations (o)</span>
+<span class="sd">        :type  p:       int</span>
+<span class="sd">        :type  vv_x:    GXVV</span>
+<span class="sd">        :type  vv_y:    GXVV</span>
+<span class="sd">        :type  vv_z:    GXVV</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Get the number of points from the `GXVV &lt;geosoft.gxapi.GXVV&gt;` length.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_poly</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.get_swing"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.get_swing">[docs]</a>    <span class="k">def</span> <span class="nf">get_swing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">az</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the swing of a given polygon.</span>
+<span class="sd">        </span>
+<span class="sd">        :param p:       Polygon number (1 to NP)</span>
+<span class="sd">        :param az:      Swing (degrees) (o)</span>
+<span class="sd">        :type  p:       int</span>
+<span class="sd">        :type  az:      float_ref</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The swing is the equivalent section swing,</span>
+<span class="sd">        equal to zero for vertical plates, and increasing</span>
+<span class="sd">        as the normal vector goes from horizontal upward.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">az</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_swing</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">az</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.get_vertex"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.get_vertex">[docs]</a>    <span class="k">def</span> <span class="nf">get_vertex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a vertex location from a `GXDMPPLY &lt;geosoft.gxapi.GXDMPPLY&gt;` object.</span>
+<span class="sd">        </span>
+<span class="sd">        :param p:       Polygon number (1 to NP)</span>
+<span class="sd">        :param v:       Vertex number (1 to NV)</span>
+<span class="sd">        :param x:       X Location (o)</span>
+<span class="sd">        :param y:       Y Location (o)</span>
+<span class="sd">        :param z:       Z Location (o)</span>
+<span class="sd">        :type  p:       int</span>
+<span class="sd">        :type  v:       int</span>
+<span class="sd">        :type  x:       float_ref</span>
+<span class="sd">        :type  y:       float_ref</span>
+<span class="sd">        :type  z:       float_ref</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_vertex</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.num_joins"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.num_joins">[docs]</a>    <span class="k">def</span> <span class="nf">num_joins</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the number of joining lines in a `GXDMPPLY &lt;geosoft.gxapi.GXDMPPLY&gt;` object.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:       Number of joining lines</span>
+<span class="sd">        :rtype:         int</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_joins</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.num_polys"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.num_polys">[docs]</a>    <span class="k">def</span> <span class="nf">num_polys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the number of polygons in a `GXDMPPLY &lt;geosoft.gxapi.GXDMPPLY&gt;` object.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:       Number of polygons</span>
+<span class="sd">        :rtype:         int</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The value returned is the &quot;NP&quot; used in function descriptions</span>
+<span class="sd">        below.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_polys</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.num_vertices"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.num_vertices">[docs]</a>    <span class="k">def</span> <span class="nf">num_vertices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the number of vertices in a polygon.</span>
+<span class="sd">        </span>
+<span class="sd">        :param p:       Polygon number (1 to NP)</span>
+<span class="sd">        :type  p:       int</span>
+
+<span class="sd">        :returns:       Number of vertices in a polygon</span>
+<span class="sd">        :rtype:         int</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The value returned is the &quot;NV&quot; used in function descriptions</span>
+<span class="sd">        below.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_vertices</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.load"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Loads a Datamine polygon file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param file:    Name of the file to load</span>
+<span class="sd">        :type  file:    str</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.move_vertex"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.move_vertex">[docs]</a>    <span class="k">def</span> <span class="nf">move_vertex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Moves a vertex and any associated lines.</span>
+<span class="sd">        </span>
+<span class="sd">        :param p:       Polygon number (1 to NP)</span>
+<span class="sd">        :param v:       Vertex number (1 to NV)</span>
+<span class="sd">        :param x:       New location X</span>
+<span class="sd">        :param y:       New location Y</span>
+<span class="sd">        :param z:       New location Z</span>
+<span class="sd">        :type  p:       int</span>
+<span class="sd">        :type  v:       int</span>
+<span class="sd">        :type  x:       float</span>
+<span class="sd">        :type  y:       float</span>
+<span class="sd">        :type  z:       float</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_move_vertex</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.project_poly"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.project_poly">[docs]</a>    <span class="k">def</span> <span class="nf">project_poly</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="n">zp</span><span class="p">,</span> <span class="n">az</span><span class="p">,</span> <span class="n">swing</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Project a polygon onto a vertical plane.</span>
+<span class="sd">        </span>
+<span class="sd">        :param p:       Polygon number (1 to NP)</span>
+<span class="sd">        :param xp:      X location of plane origin in 3D</span>
+<span class="sd">        :param yp:      Y location of plane origin in 3D</span>
+<span class="sd">        :param zp:      Z location of plane origin in 3D</span>
+<span class="sd">        :param az:      Azimuth of the plane in degrees</span>
+<span class="sd">        :param swing:   Swing of the plane in degrees</span>
+<span class="sd">        :param vv_x:    X (horizontal along-section locations on vertical plane  (o)</span>
+<span class="sd">        :param vv_y:    Y (vertical locations on vertical plane  (o)</span>
+<span class="sd">        :param vv_z:    Z (horizontal distances perpendicular to the plane  (o)</span>
+<span class="sd">        :type  p:       int</span>
+<span class="sd">        :type  xp:      float</span>
+<span class="sd">        :type  yp:      float</span>
+<span class="sd">        :type  zp:      float</span>
+<span class="sd">        :type  az:      float</span>
+<span class="sd">        :type  swing:   float</span>
+<span class="sd">        :type  vv_x:    GXVV</span>
+<span class="sd">        :type  vv_y:    GXVV</span>
+<span class="sd">        :type  vv_z:    GXVV</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Gives the location in plane coordinates of a selected polygon,</span>
+<span class="sd">        after it has been projected perpendicularly onto the plane.</span>
+
+<span class="sd">        Plane coodinates: X - horizontal in plane</span>
+<span class="sd">                          Y - &quot;vertical&quot; in plane (can be a swing)</span>
+<span class="sd">                          Z - horizontal, &quot;perpendicular&quot; to plane (RH)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_project_poly</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="n">zp</span><span class="p">,</span> <span class="n">az</span><span class="p">,</span> <span class="n">swing</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.re_project_poly"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.re_project_poly">[docs]</a>    <span class="k">def</span> <span class="nf">re_project_poly</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="n">zp</span><span class="p">,</span> <span class="n">az</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_x3</span><span class="p">,</span> <span class="n">vv_y3</span><span class="p">,</span> <span class="n">vv_z3</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Recover polygon locations from 2D locations on vertical plane.</span>
+<span class="sd">        </span>
+<span class="sd">        :param p:       Polygon number (1 to lNP) (i)</span>
+<span class="sd">        :param xp:      X location of plane origin in 3D (i)</span>
+<span class="sd">        :param yp:      Y location of plane origin in 3D (i)</span>
+<span class="sd">        :param zp:      Z location of plane origin in 3D (i)</span>
+<span class="sd">        :param az:      Azimuth of the plane in degrees (i)</span>
+<span class="sd">        :param vv_x:    X locations on vertical plane  (i)</span>
+<span class="sd">        :param vv_y:    Y (actually Z) locations on vertical plane  (i)</span>
+<span class="sd">        :param vv_x3:   X Locations of polygon (o)</span>
+<span class="sd">        :param vv_y3:   Y Locations of polygon (o)</span>
+<span class="sd">        :param vv_z3:   Z Locations of polygon (o)</span>
+<span class="sd">        :type  p:       int</span>
+<span class="sd">        :type  xp:      float</span>
+<span class="sd">        :type  yp:      float</span>
+<span class="sd">        :type  zp:      float</span>
+<span class="sd">        :type  az:      float</span>
+<span class="sd">        :type  vv_x:    GXVV</span>
+<span class="sd">        :type  vv_y:    GXVV</span>
+<span class="sd">        :type  vv_x3:   GXVV</span>
+<span class="sd">        :type  vv_y3:   GXVV</span>
+<span class="sd">        :type  vv_z3:   GXVV</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** This is the inverse operation of `project_poly &lt;geosoft.gxapi.GXDMPPLY.project_poly&gt;`.</span>
+
+<span class="sd">        Input the 2D locations on the projected vertical plane. These locations</span>
+<span class="sd">        are projected back onto the original polygon plane.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_re_project_poly</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="n">zp</span><span class="p">,</span> <span class="n">az</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_x3</span><span class="p">,</span> <span class="n">vv_y3</span><span class="p">,</span> <span class="n">vv_z3</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.save"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save to a Datamine polygon file</span>
+<span class="sd">        </span>
+<span class="sd">        :param file:    Name of the file to save to</span>
+<span class="sd">        :type  file:    str</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXDMPPLY.set_poly"><a class="viewcode-back" href="../../../GXDMPPLY.html#geosoft.gxapi.GXDMPPLY.set_poly">[docs]</a>    <span class="k">def</span> <span class="nf">set_poly</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set a specific polygon into a `GXDMPPLY &lt;geosoft.gxapi.GXDMPPLY&gt;` object.</span>
+<span class="sd">        </span>
+<span class="sd">        :param p:       Polygon number (1 to NP) (i)</span>
+<span class="sd">        :param vv_x:    X Locations (i)</span>
+<span class="sd">        :param vv_y:    Y Locations (i)</span>
+<span class="sd">        :param vv_z:    Z Locations (i)</span>
+<span class="sd">        :type  p:       int</span>
+<span class="sd">        :type  vv_x:    GXVV</span>
+<span class="sd">        :type  vv_y:    GXVV</span>
+<span class="sd">        :type  vv_z:    GXVV</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Get the number of points from the `GXVV &lt;geosoft.gxapi.GXVV&gt;` length.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_poly</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDMPPLY</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,1371 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxpy.coordinate_system &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.coordinate_system</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxpy.coordinate_system</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Coodinate systems</span>
+
+<span class="sd">:Classes:</span>
+<span class="sd">    :`Coordinate_system`:    define a coordinate system</span>
+<span class="sd">    :`Coordinate_translate`: translate coordinates between coordinate systems</span>
+<span class="sd">    :`Wkt`:                  well-know coordinate system for ESRI interoperability</span>
+
+<span class="sd">Coordinate systems describe how cartesian coordinates are located ralative to the Earth.  Cartesian coordinates</span>
+<span class="sd">are right-handed (x, y, z) spatial ordinates that describe locations within a coordinate system frame of reference.</span>
+<span class="sd">For coordinates relative to a horizontal plane, positive z is up, usually equivalent to elevation relative to</span>
+<span class="sd">a vertical datum.</span>
+
+<span class="sd">Coordinate systems can be oriented in three dimensions using an `orientation` definition, which defines an (x0, y0, z0)</span>
+<span class="sd">origin and rotation (rx, ry, rz) around the X, Y and then Z axis relative to a base coordinate system.  </span>
+
+<span class="sd">Base coordinate systems are usually defined by &quot;well-known&quot; coordinate system projections on a datum of the earth.</span>
+
+<span class="sd">**Coordinate System Name**</span>
+
+<span class="sd">A coordinate system will also have a descriptive name that identifies the base system with a datum and &quot;well-known&quot;</span>
+<span class="sd">map projection description, plus optional orientation and vertical reference datum if defined.  Orientation</span>
+<span class="sd">parameters are enclosed in `&lt;&gt;` that define `&lt;x0, y0, z0, rx, ry, rz&gt;` (eg. `&lt;400000, 6200000,0,0,-90,0&gt;`).</span>
+<span class="sd">If a vertical reference datum is defined it will appear as a string in square brackets, for example  `[CGVD28]`.</span>
+
+<span class="sd">Example coordinate system names:</span>
+<span class="sd">    </span>
+<span class="sd">    .. code::</span>
+<span class="sd">    </span>
+<span class="sd">        &quot;NAD83 / UTM zone 15N&quot;</span>
+<span class="sd">        &quot;NAD83 / UTM zone 15N &lt;450000,6250000,0,0,0,-25&gt;&quot; # oriented system, rotated -25 degrees</span>
+<span class="sd">        &quot;NAD83 / UTM zone 15N [NAVD88]&quot;</span>
+<span class="sd">        &quot;NAD83 / UTM zone 15N &lt;450000,6250000,0,0,0,-25&gt; [NAVD88]&quot;</span>
+
+<span class="sd">The descriptive name for &quot;well-known&quot; coordinate systems is sufficient to describe the coordinate system from</span>
+<span class="sd">the `EPSG Geodetic Registry &lt;http://www.epsg.org/&gt;`_. To fully locate ad-hoc coordinates you will need</span>
+<span class="sd">the parameters defined in the GXF stings.  See :attr:`Coordinate_system.gxf`.</span>
+
+<span class="sd">:Constants:</span>
+<span class="sd">    :NAME: None</span>
+<span class="sd">    :NAME_HCS: gxapi.IPJ_NAME_PCS</span>
+<span class="sd">    :NAME_PROJECTION: gxapi.IPJ_NAME_PROJECTION</span>
+<span class="sd">    :NAME_METHOD: gxapi.IPJ_NAME_METHOD</span>
+<span class="sd">    :NAME_DATUM: gxapi.IPJ_NAME_DATUM</span>
+<span class="sd">    :NAME_ELLIPSOID: gxapi.IPJ_NAME_ELLIPSOID</span>
+<span class="sd">    :NAME_LDATUM: gxapi.IPJ_NAME_LDATUM</span>
+<span class="sd">    :NAME_UNIT: gxapi.IPJ_NAME_UNIT_ABBR</span>
+<span class="sd">    :NAME_UNIT_FULL: gxapi.IPJ_NAME_UNIT_FULL</span>
+<span class="sd">    :NAME_TYPE: gxapi.IPJ_NAME_TYPE</span>
+<span class="sd">    :NAME_LLDATUM: gxapi.IPJ_NAME_LLDATUM</span>
+<span class="sd">    :NAME_METHOD_PARMS: gxapi.IPJ_NAME_METHOD_PARMS</span>
+<span class="sd">    :NAME_METHOD_LABEL: gxapi.IPJ_NAME_METHOD_LABEL</span>
+<span class="sd">    :NAME_DATUM_PARMS: gxapi.IPJ_NAME_DATUM_PARMS</span>
+<span class="sd">    :NAME_LDATUM_PARMS: gxapi.IPJ_NAME_LDATUM_PARMS</span>
+<span class="sd">    :NAME_GEOID: gxapi.IPJ_NAME_GEOID</span>
+<span class="sd">    :NAME_LDATUMDESCRIPTION: gxapi.IPJ_NAME_LDATUMDESCRIPTION</span>
+<span class="sd">    :NAME_METHOD_PARMS_NATIVE: gxapi.IPJ_NAME_METHOD_PARMS_NATIVE</span>
+<span class="sd">    :NAME_ORIENTATION: gxapi.IPJ_NAME_ORIENTATION_PARMS</span>
+<span class="sd">    :NAME_VCS: -1</span>
+<span class="sd">    :NAME_HCS_VCS: -2</span>
+<span class="sd">    :LIST_COORDINATESYSTEM: gxapi.IPJ_PARM_LST_COORDINATESYSTEM</span>
+<span class="sd">    :LIST_DATUM: gxapi.IPJ_PARM_LST_DATUM</span>
+<span class="sd">    :LIST_PROJECTION: gxapi.IPJ_PARM_LST_PROJECTION</span>
+<span class="sd">    :LIST_UNITS: gxapi.IPJ_PARM_LST_UNITS</span>
+<span class="sd">    :LIST_UNITSDESCRIPTION: gxapi.IPJ_PARM_LST_UNITSDESCRIPTION</span>
+<span class="sd">    :LIST_LOCALDATUMDESCRIPTION: gxapi.IPJ_PARM_LST_LOCALDATUMDESCRIPTION</span>
+<span class="sd">    :LIST_LOCALDATUMNAME: gxapi.IPJ_PARM_LST_LOCALDATUMNAME</span>
+<span class="sd">    :PARM_DATUM: &#39;datum&#39;</span>
+<span class="sd">    :PARM_PROJECTION: &#39;transform&#39;</span>
+<span class="sd">    :PARM_UNITS: &#39;units&#39;</span>
+<span class="sd">    :PARM_LOCAL_DATUM: &#39;datumtrf&#39;</span>
+
+<span class="sd">.. seealso:: `geosoft.gxapi.GXIPJ`</span>
+
+<span class="sd">.. note::</span>
+
+<span class="sd">    Regression tests provide usage examples:</span>
+<span class="sd">    `tests &lt;https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py&gt;`_</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">geosoft</span>
+<span class="kn">import</span> <span class="nn">geosoft.gxapi</span> <span class="k">as</span> <span class="nn">gxapi</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">utility</span> <span class="k">as</span> <span class="n">gxu</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">dataframe</span> <span class="k">as</span> <span class="n">gxdf</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">vv</span> <span class="k">as</span> <span class="n">gxvv</span>
+
+<span class="n">__version__</span> <span class="o">=</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">__version__</span>
+
+
+<span class="k">def</span> <span class="nf">_t</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">gxpy</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+
+<span class="c1">#############</span>
+<span class="c1"># Constants</span>
+
+<span class="c1"># &#39;HCS&#39; and &#39;hcs&#39; refer to Horizontal Coordinate System</span>
+<span class="c1"># &#39;VCS&#39; and &#39;vcs&#39; refer to Vertical Coordinate System</span>
+
+<span class="n">NAME</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">NAME_HCS</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_NAME_PCS</span>
+<span class="n">NAME_PROJECTION</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_NAME_PROJECTION</span>
+<span class="n">NAME_METHOD</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_NAME_METHOD</span>
+<span class="n">NAME_DATUM</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_NAME_DATUM</span>
+<span class="n">NAME_ELLIPSOID</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_NAME_ELLIPSOID</span>
+<span class="n">NAME_LDATUM</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_NAME_LDATUM</span>
+<span class="n">NAME_UNIT</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_NAME_UNIT_ABBR</span>
+<span class="n">NAME_UNIT_FULL</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_NAME_UNIT_FULL</span>
+<span class="n">NAME_TYPE</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_NAME_TYPE</span>
+<span class="n">NAME_LLDATUM</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_NAME_LLDATUM</span>
+<span class="n">NAME_METHOD_PARMS</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_NAME_METHOD_PARMS</span>
+<span class="n">NAME_METHOD_LABEL</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_NAME_METHOD_LABEL</span>
+<span class="n">NAME_DATUM_PARMS</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_NAME_DATUM_PARMS</span>
+<span class="n">NAME_LDATUM_PARMS</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_NAME_LDATUM_PARMS</span>
+<span class="n">NAME_GEOID</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_NAME_GEOID</span>
+<span class="n">NAME_LDATUMDESCRIPTION</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_NAME_LDATUMDESCRIPTION</span>
+<span class="n">NAME_METHOD_PARMS_NATIVE</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_NAME_METHOD_PARMS_NATIVE</span>
+<span class="n">NAME_ORIENTATION</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_NAME_ORIENTATION_PARMS</span>
+<span class="n">NAME_VCS</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">NAME_HCS_VCS</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+
+<span class="n">LIST_COORDINATESYSTEM</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_PARM_LST_COORDINATESYSTEM</span>
+<span class="n">LIST_DATUM</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_PARM_LST_DATUM</span>
+<span class="n">LIST_PROJECTION</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_PARM_LST_PROJECTION</span>
+<span class="n">LIST_UNITS</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_PARM_LST_UNITS</span>
+<span class="n">LIST_UNITSDESCRIPTION</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_PARM_LST_UNITSDESCRIPTION</span>
+<span class="n">LIST_LOCALDATUMDESCRIPTION</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_PARM_LST_LOCALDATUMDESCRIPTION</span>
+<span class="n">LIST_LOCALDATUMNAME</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_PARM_LST_LOCALDATUMNAME</span>
+
+<span class="n">PARM_DATUM</span> <span class="o">=</span> <span class="s1">&#39;datum&#39;</span>
+<span class="n">PARM_PROJECTION</span> <span class="o">=</span> <span class="s1">&#39;transform&#39;</span>
+<span class="n">PARM_UNITS</span> <span class="o">=</span> <span class="s1">&#39;units&#39;</span>
+<span class="n">PARM_LOCAL_DATUM</span> <span class="o">=</span> <span class="s1">&#39;datumtrf&#39;</span>
+
+
+<div class="viewcode-block" id="CSException"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.CSException">[docs]</a><span class="k">class</span> <span class="nc">CSException</span><span class="p">(</span><span class="n">geosoft</span><span class="o">.</span><span class="n">GXRuntimeError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Exceptions from :mod:`geosoft.gxpy.coordinate_system`.</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="parameters"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.parameters">[docs]</a><span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="n">what</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get a dictionary of parameters for a coordinate system item.  Parameters are maintained in </span>
+<span class="sd">    csv coordinate system table files in the Geosoft Desktop Applications `csv` folder.</span>
+
+<span class="sd">    :param what:</span>
+<span class="sd">            | PARM_DATUM (from `datum.csv`)</span>
+<span class="sd">            | PARM_PROJECTION (from `transform.csv`)</span>
+<span class="sd">            | PARM_UNITS (from `units.csv`)</span>
+<span class="sd">            | PARM_LOCAL_DATUM (from `datumtrf.csv`)</span>
+<span class="sd">    :param key:     parameter key to find and return</span>
+<span class="sd">    :raises CSException: if table or key not found.</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">dct</span> <span class="o">=</span> <span class="n">gxdf</span><span class="o">.</span><span class="n">table_record</span><span class="p">(</span><span class="n">what</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">gxdf</span><span class="o">.</span><span class="n">DfException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">CSException</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">dct</span></div>
+
+
+<div class="viewcode-block" id="parameter_exists"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.parameter_exists">[docs]</a><span class="k">def</span> <span class="nf">parameter_exists</span><span class="p">(</span><span class="n">what</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Test if a parameter set exists in a coordinate system table.</span>
+<span class="sd">    </span>
+<span class="sd">    :param what:    see :func:`parameters`</span>
+<span class="sd">    :param key:     parameter key</span>
+<span class="sd">    :returns:       True if table/key exists</span>
+<span class="sd">    </span>
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">parameters</span><span class="p">(</span><span class="n">what</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">CSException</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<span class="n">_unknown_name</span> <span class="o">=</span> <span class="s1">&#39;*unknown&#39;</span>
+<span class="k">def</span> <span class="nf">_unknown</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">_unknown_name</span> <span class="ow">in</span> <span class="n">name</span>
+
+
+<div class="viewcode-block" id="name_list"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.name_list">[docs]</a><span class="k">def</span> <span class="nf">name_list</span><span class="p">(</span><span class="n">what</span><span class="p">,</span> <span class="n">datum_filter</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get a list of coordinate system names</span>
+<span class="sd">    </span>
+<span class="sd">    :param what:</span>
+<span class="sd">            | LIST_COORDINATESYSTEM</span>
+<span class="sd">            | LIST_DATUM</span>
+<span class="sd">            | LIST_PROJECTION</span>
+<span class="sd">            | LIST_UNITS</span>
+<span class="sd">            | LIST_LOCALDATUMDESCRIPTION</span>
+<span class="sd">            | LIST_LOCALDATUMNAME</span>
+<span class="sd">            | LIST_UNITSDESCRIPTION</span>
+
+<span class="sd">    :param datum_filter: name of a datum to filter results</span>
+
+<span class="sd">    :returns: sorted list of names</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">lst</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXLST</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">gxapi</span><span class="o">.</span><span class="n">GXIPJ</span><span class="o">.</span><span class="n">get_list</span><span class="p">(</span><span class="n">what</span><span class="p">,</span> <span class="n">datum_filter</span><span class="p">,</span> <span class="n">lst</span><span class="p">)</span>
+    <span class="n">namelist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">gxu</span><span class="o">.</span><span class="n">dict_from_lst</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
+    <span class="n">namelist</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">namelist</span></div>
+
+
+<span class="k">def</span> <span class="nf">_extract</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+    <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">frame</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39; </span><span class="se">\t</span><span class="s1">&quot;</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">end</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
+        <span class="n">sub</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span> <span class="n">end</span><span class="p">]</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">[:</span><span class="n">start</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="n">end</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sub</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39; </span><span class="se">\t</span><span class="s1">&quot;</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">),</span> <span class="n">sub</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39; </span><span class="se">\t</span><span class="s1">&quot;</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="hcs_orient_vcs_from_name"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.hcs_orient_vcs_from_name">[docs]</a><span class="k">def</span> <span class="nf">hcs_orient_vcs_from_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Split a full coordinate system name into its components. A name has the form &quot;hcs &lt;orient&gt; [vcs]&quot;</span>
+<span class="sd">    :param name:</span>
+<span class="sd">    :returns: hcs, orient, vcs</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">name</span><span class="p">,</span> <span class="n">vcs</span> <span class="o">=</span> <span class="n">_extract</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;[]&#39;</span><span class="p">)</span>
+    <span class="n">hcs</span><span class="p">,</span> <span class="n">orient</span> <span class="o">=</span> <span class="n">_extract</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;&lt;&gt;&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">hcs</span><span class="p">,</span> <span class="n">orient</span><span class="p">,</span> <span class="n">vcs</span></div>
+
+
+<div class="viewcode-block" id="name_from_hcs_orient_vcs"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.name_from_hcs_orient_vcs">[docs]</a><span class="k">def</span> <span class="nf">name_from_hcs_orient_vcs</span><span class="p">(</span><span class="n">hcs</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vcs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Construct a coordinate system name from an hcs, orientation and vcs.  If orient or vcs are None or</span>
+<span class="sd">    empty, the name will not include these parts.</span>
+
+<span class="sd">    :param hcs:     horizontal coordinate system string</span>
+<span class="sd">    :param orient:  orientation string</span>
+<span class="sd">    :param vcs:     vertical coordinate system string</span>
+<span class="sd">    :returns: &quot;hcs &lt;orient&gt; [vcs]&quot;</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">orient</span><span class="p">:</span>
+        <span class="n">orient</span> <span class="o">=</span> <span class="s1">&#39; &lt;&#39;</span> <span class="o">+</span> <span class="n">orient</span> <span class="o">+</span> <span class="s1">&#39;&gt;&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">orient</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+    <span class="k">if</span> <span class="n">vcs</span><span class="p">:</span>
+        <span class="n">vcs</span> <span class="o">=</span> <span class="s1">&#39; [&#39;</span> <span class="o">+</span> <span class="n">vcs</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">vcs</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+    <span class="k">return</span> <span class="n">hcs</span> <span class="o">+</span> <span class="n">orient</span> <span class="o">+</span> <span class="n">vcs</span></div>
+
+
+<div class="viewcode-block" id="list_from_wktsrs"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.list_from_wktsrs">[docs]</a><span class="k">def</span> <span class="nf">list_from_wktsrs</span><span class="p">(</span><span class="n">wkt</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a list from a wkt spatial reference string.</span>
+<span class="sd">    </span>
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">first_item</span><span class="p">(</span><span class="n">wkts</span><span class="p">):</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">wkts</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">==</span> <span class="s1">&#39;,&#39;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">wkts</span><span class="p">[:</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">),</span> <span class="n">wkts</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="s1">&#39;[&#39;</span><span class="p">:</span>
+                <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">c</span> <span class="o">==</span> <span class="s1">&#39;]&#39;</span><span class="p">:</span>
+                <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">wkts</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">),</span> <span class="s1">&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">parse_item</span><span class="p">(</span><span class="n">wkts</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">wkts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">wkts</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="s1">&#39;[&#39;</span> <span class="ow">in</span> <span class="n">wkts</span><span class="p">:</span>
+            <span class="n">bkt</span> <span class="o">=</span> <span class="n">wkts</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">)</span>
+            <span class="n">items</span> <span class="o">=</span> <span class="n">list_from_wktsrs</span><span class="p">(</span><span class="n">wkts</span><span class="p">[</span><span class="n">bkt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">dct</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="n">wkts</span><span class="p">[:</span><span class="n">bkt</span><span class="p">],</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">dct</span><span class="p">[</span><span class="s1">&#39;items&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="k">return</span> <span class="n">dct</span>
+
+        <span class="k">return</span> <span class="n">wkts</span>
+
+    <span class="n">wkt</span> <span class="o">=</span> <span class="n">wkt</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">wktlst</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">wkt</span><span class="p">:</span>
+        <span class="n">first</span><span class="p">,</span> <span class="n">wkt</span> <span class="o">=</span> <span class="n">first_item</span><span class="p">(</span><span class="n">wkt</span><span class="p">)</span>
+        <span class="n">wktlst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">parse_item</span><span class="p">(</span><span class="n">first</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">wktlst</span></div>
+
+
+<div class="viewcode-block" id="find_key"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.find_key">[docs]</a><span class="k">def</span> <span class="nf">find_key</span><span class="p">(</span><span class="n">wkt</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Find a key in the wkt, return it&#39;s name and items.</span>
+<span class="sd">    </span>
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">wkt</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">dict</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">w</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">w</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">w</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;items&#39;</span><span class="p">,</span> <span class="p">[])</span>
+
+            <span class="c1"># try the kids</span>
+            <span class="n">name</span><span class="p">,</span> <span class="n">items</span> <span class="o">=</span> <span class="n">find_key</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;items&#39;</span><span class="p">,</span> <span class="p">[]),</span> <span class="n">k</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">name</span><span class="p">,</span> <span class="n">items</span>
+
+    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">[]</span></div>
+
+
+<div class="viewcode-block" id="wkt_vcs"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.wkt_vcs">[docs]</a><span class="k">def</span> <span class="nf">wkt_vcs</span><span class="p">(</span><span class="n">vcs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compose a wkt VERTCS block from a Geosoft vcs string.</span>
+<span class="sd">    </span>
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s1">&#39;VERTCS[&quot;&#39;</span> <span class="o">+</span> <span class="n">vcs</span> <span class="o">+</span> <span class="s1">&#39;&quot;]&#39;</span></div>
+
+
+<div class="viewcode-block" id="Wkt"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Wkt">[docs]</a><span class="k">class</span> <span class="nc">Wkt</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Helper class to parse WKT-formatted spatial reference strings.</span>
+<span class="sd">    </span>
+<span class="sd">    :param wkt: wkt (well-known text) string that describes a coordinate system.</span>
+<span class="sd">    </span>
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">(</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_type</span><span class="p">,</span> <span class="n">_value</span><span class="p">,</span> <span class="n">_traceback</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<div class="viewcode-block" id="Wkt.__init__"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Wkt.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wkt</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_wkt</span> <span class="o">=</span> <span class="n">list_from_wktsrs</span><span class="p">(</span><span class="n">wkt</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">pcs</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">find_key</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_wkt</span><span class="p">,</span> <span class="s1">&#39;PROJCS&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gcs</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">find_key</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_wkt</span><span class="p">,</span> <span class="s1">&#39;GEOGCS&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vcs</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">find_key</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_wkt</span><span class="p">,</span> <span class="s1">&#39;VERTCS&#39;</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the ESRI coordinate system WKT string</span>
+<span class="sd">        </span>
+<span class="sd">        .. versionadded:: 9.2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pcs</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pcs</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gcs</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">vcs</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">+=</span> <span class="s1">&#39; [</span><span class="si">{}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vcs</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Wkt.find_key"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Wkt.find_key">[docs]</a>    <span class="k">def</span> <span class="nf">find_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the name and list of items for a key</span>
+<span class="sd">        </span>
+<span class="sd">        :param k:   the key to look for in the wkt</span>
+<span class="sd">        :returns:   name (&#39;&#39; if not found), list of parameters, ([] if no items)</span>
+<span class="sd">        </span>
+<span class="sd">        .. versionadded:: 9.2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">find_key</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_wkt</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="Coordinate_system"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system">[docs]</a><span class="k">class</span> <span class="nc">Coordinate_system</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Coordinate system class. A coordinate system defines a horizontal and vertical reference</span>
+<span class="sd">    system to locate (x, y, z) cartesian coordinates relative to the Earth.</span>
+
+<span class="sd">    :param coordinate_system:  a coordinate system can be created from a number of different forms:</span>
+<span class="sd">    </span>
+<span class="sd">                - Geosoft name string (ie. &quot;WGS 84 / UTM zone 32N [geodetic]&quot;)</span>
+
+<span class="sd">                - Geosoft xml with root &#39;projection&#39;, xmlns=&quot;http://www.geosoft.com/schema/geo&quot;</span>
+<span class="sd">                 </span>
+<span class="sd">                - ESRI WKT string (ie. &quot;PROJCS[&quot;WGS_1984_UTM_Zone_35N&quot;,GEOGCS[...&quot;)</span>
+<span class="sd">                 </span>
+<span class="sd">                - a dictionary that contains the coordinate system properties either as a set of xml properties</span>
+<span class="sd">                  from a Geosoft xml &#39;property&#39; definition, or as defined by **Dictionary Structure** below.</span>
+<span class="sd">                  </span>
+<span class="sd">                - a JSON string that contains the coordinate system properties</span>
+<span class="sd">                  </span>
+<span class="sd">                - a list that contains the 5 </span>
+<span class="sd">                  `GXF coordinate system strings &lt;http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File&gt;`_.</span>
+<span class="sd">                  For example: ``[&#39;&quot;WGS 84 / UTM zone 32N [geodetic]&quot;, &quot;WGS 84&quot;, &quot;UTM zone 32N&quot;, &quot;&quot;, &quot;&quot;]``</span>
+<span class="sd">                </span>
+<span class="sd">                - `geosoft.gxapi.GXIPJ` instance</span>
+<span class="sd">                 </span>
+<span class="sd">                - `Coordinate_system` instance, returns a copy</span>
+
+<span class="sd">                - None to create an unknown coordinate system.</span>
+<span class="sd">                </span>
+<span class="sd">                For examples refer to</span>
+<span class="sd">                `tests &lt;https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py&gt;`_</span>
+
+<span class="sd">    :Dictionary Structure:</span>
+<span class="sd">    </span>
+<span class="sd">        :Geosoft:       </span>
+
+<span class="sd">            .. code::</span>
+<span class="sd">    </span>
+<span class="sd">                {   &quot;type&quot;: &quot;Geosoft&quot;,</span>
+<span class="sd">                    &quot;name&quot;: name</span>
+<span class="sd">                    &quot;datum&quot;: datum</span>
+<span class="sd">                    &quot;method&quot;: method</span>
+<span class="sd">                    &quot;units&quot;: units</span>
+<span class="sd">                    &quot;local_datum&quot;: local datum transform</span>
+<span class="sd">                    &quot;orientation&quot;: x0, y0, z0, xR, yR, zR</span>
+<span class="sd">                    &quot;vcs&quot;: &quot;vertical coordinate system&quot;</span>
+<span class="sd">                }</span>
+<span class="sd">            </span>
+<span class="sd">            </span>
+<span class="sd">        :local:</span>
+<span class="sd">        </span>
+<span class="sd">            type &quot;local&quot; can be used to locate local coordinates in situations where one only has</span>
+<span class="sd">            the (longitude, latitude) of a point on local coordinate system and the orientation</span>
+<span class="sd">            of the local axis relative to geographic North.  Internally an Oblique Stereographic </span>
+<span class="sd">            projection is created with an origin at the defined origin point.</span>
+<span class="sd">        </span>
+<span class="sd">            .. code::</span>
+<span class="sd">                </span>
+<span class="sd">                {   &quot;type&quot;: &quot;local&quot;,</span>
+<span class="sd">                    &quot;lon_lat&quot;: (lon, lat) required longitude, latitude of &quot;origin&quot;, in degrees</span>
+<span class="sd">                    &quot;origin&quot;: (x0, y0) location of &quot;lon_lat&quot; on the local coordinate system, default is (0,0)</span>
+<span class="sd">                    &quot;azimuth&quot;: azimuth of rotation of local axiz relative to North.</span>
+<span class="sd">                    &quot;elevation&quot;: elevation of the origin in the vertical coordinate system, default is 0.</span>
+<span class="sd">                    &quot;datum&quot;: datum, default is &quot;WGS 84&quot;        </span>
+<span class="sd">                    &quot;local_datum&quot;: local datum transform, default is the default for the datum</span>
+<span class="sd">                    &quot;scale_factor&quot;: local scale factor, default is 0.9996 to be similar to UTM locally</span>
+<span class="sd">                    &quot;vcs&quot;: &quot;vertical coordinate system&quot; default is undefined.</span>
+<span class="sd">                }</span>
+
+<span class="sd">            :Example:</span>
+<span class="sd">            </span>
+<span class="sd">                cs = geosoft.gxpy.Coordinate_system({&#39;type&#39;: &#39;local&#39;, &#39;lon_lat&#39;: (-96, 43), &#39;azimuth&#39;: 25})</span>
+
+<span class="sd">        :EPSG: (http://www.epsg.org/)</span>
+
+<span class="sd">            .. code::</span>
+
+<span class="sd">                {   &quot;type&quot;: &quot;EPSG&quot;</span>
+<span class="sd">                    &quot;code&quot;: EPSG_code_number</span>
+<span class="sd">                    &quot;orientation&quot;: x0, y0, z0, xR, yR, zR</span>
+<span class="sd">                }</span>
+
+<span class="sd">        :ESRI: (http://webhelp.esri.com/arcgisserver/9.3/java/index.htm#geodatabases/the_ogc-607957855.htm)</span>
+
+<span class="sd">            .. code::</span>
+
+<span class="sd">                {   &quot;type&quot;: &quot;ESRI&quot;,</span>
+<span class="sd">                    &quot;wkt&quot;: wkt format string, starts with &quot;PROJCS[&quot; or &quot;GEOGCS[&quot;</span>
+<span class="sd">                    &quot;orientation&quot;: x0, y0, z0, xR, yR, zR</span>
+<span class="sd">                    &quot;vcs&quot;: &quot;vertical coordinate system&quot;</span>
+<span class="sd">                }</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">        supercedes `ipj` module.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">(</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_type</span><span class="p">,</span> <span class="n">_value</span><span class="p">,</span> <span class="n">_traceback</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="fm">__del__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_gxapi_ipj&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_gxapi_ipj</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Coordinate_system.__init__"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dict</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxapi_ipj</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXIPJ</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">coordinate_system</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">coordinate_system</span> <span class="o">=</span> <span class="n">_unknown_name</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">coordinate_system</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_from_str</span><span class="p">(</span><span class="n">coordinate_system</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">coordinate_system</span><span class="p">,</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXIPJ</span><span class="p">):</span>
+            <span class="n">coordinate_system</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gxipj</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">coordinate_system</span><span class="p">,</span> <span class="n">Coordinate_system</span><span class="p">):</span>
+            <span class="n">coordinate_system</span><span class="o">.</span><span class="n">gxipj</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gxipj</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">coordinate_system</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_from_dict</span><span class="p">(</span><span class="n">coordinate_system</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_from_gxf</span><span class="p">(</span><span class="n">coordinate_system</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">same_as</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Coordinate_system.local"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system.local">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">local</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lon_lat</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">origin</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">azimuth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">elevation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">datum</span><span class="o">=</span><span class="s2">&quot;WGS 84&quot;</span><span class="p">,</span>
+              <span class="n">local_datum</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scale_factor</span><span class="o">=</span><span class="mf">0.9996</span><span class="p">,</span> <span class="n">vcs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an ad-hoc local coordinate system.</span>
+
+<span class="sd">        :param lon_lat:         (longitude, latitude) of the center</span>
+<span class="sd">        :param origin:          (x, y) to assign to the center</span>
+<span class="sd">        :param azimuth:         local rotation of the system relative to geographic North, in degrees azimuth</span>
+<span class="sd">        :param elevation:       elevation for z = 0.</span>
+<span class="sd">        :param datum:           datum, default is &quot;WGS 84&quot;</span>
+<span class="sd">        :param local_datum:     local datum, default will be the default for the specified datum</span>
+<span class="sd">        :param scale_factor:    central scale factor. The default is 0.9996 as the most common map system</span>
+<span class="sd">                                is UTM and thus relative distances in the local system will be similar,</span>
+<span class="sd">                                though not the same, as UTM.</span>
+<span class="sd">        :param vcs:             name for the vertical coordinate system reference, default is unknown</span>
+
+<span class="sd">        Local coordinate systems are simple cartesian systems established for a specific purpose without</span>
+<span class="sd">        complete geodetic control, but for which one knows or can estimate the longitude, latitude of a point</span>
+<span class="sd">        on the local coordinate system. In this way local coordinates can be located reasonably well relative</span>
+<span class="sd">        to the Earth and and other Earth-refeerenced data.</span>
+
+<span class="sd">        The local system will be constructed as an oblique stereographic projection centered at the system</span>
+<span class="sd">        origin, which is similar to what one sees when looking at maps in Google maps.</span>
+
+<span class="sd">        .. versionadded:: 9.3.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">csdict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;local&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;lon_lat&#39;</span><span class="p">:</span><span class="n">lon_lat</span><span class="p">,</span>
+                  <span class="s1">&#39;origin&#39;</span><span class="p">:</span> <span class="n">origin</span><span class="p">,</span>
+                  <span class="s1">&#39;azimuth&#39;</span><span class="p">:</span> <span class="n">azimuth</span><span class="p">,</span>
+                  <span class="s1">&#39;elevation&#39;</span><span class="p">:</span> <span class="n">elevation</span><span class="p">,</span>
+                  <span class="s1">&#39;datum&#39;</span><span class="p">:</span> <span class="n">datum</span><span class="p">,</span>
+                  <span class="s1">&#39;scale_factor&#39;</span><span class="p">:</span> <span class="n">scale_factor</span><span class="p">}</span>
+        <span class="k">if</span> <span class="n">local_datum</span><span class="p">:</span>
+            <span class="n">csdict</span><span class="p">[</span><span class="s1">&#39;local_datum&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">local_datum</span>
+        <span class="k">if</span> <span class="n">vcs</span><span class="p">:</span>
+            <span class="n">csdict</span><span class="p">[</span><span class="s1">&#39;vcs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">vcs</span>
+
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">csdict</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">gxipj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; `geosoft.gxapi.GXIPJ` instance&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gxapi_ipj</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; coordinate system name as &#39;datum / projection &lt;orientation&gt; [vcs]&#39; &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">gxf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">units_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; name of the distance units (abbreviation)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cs_name</span><span class="p">(</span><span class="n">NAME_UNIT</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">unit_of_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; same as units_name, provided for naming consistency with other usage in gxpy.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">units_name</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">metres_per_unit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; the number metres per distance unit of the coordinate system.&quot;&quot;&quot;</span>
+        <span class="n">fr</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">float_ref</span><span class="p">()</span>
+        <span class="n">sr</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gxipj</span><span class="o">.</span><span class="n">get_units</span><span class="p">(</span><span class="n">fr</span><span class="p">,</span> <span class="n">sr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">fr</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">hcs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; horizontal coordinate system name&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cs_name</span><span class="p">(</span><span class="n">NAME_HCS</span><span class="p">)</span>
+                
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">vcs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Vertical coordinate system name.  Can be set.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cs_name</span><span class="p">(</span><span class="n">NAME_VCS</span><span class="p">)</span>
+
+    <span class="nd">@vcs</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">vcs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vcs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gxipj</span><span class="o">.</span><span class="n">set_vcs</span><span class="p">(</span><span class="n">vcs</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">is_oriented</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;True if the coordinate system has an orientation.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">gxipj</span><span class="o">.</span><span class="n">get_orientation</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_ORIENT_DEFAULT</span><span class="p">,</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IPJ_ORIENT_PLAN</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">orientation_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The name of an oriented section for display/reference purposes.</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">sr</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gxipj</span><span class="o">.</span><span class="n">get_orientation_name</span><span class="p">(</span><span class="n">sr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">sr</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">is_known</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        True if this is a known coordinate system.</span>
+
+<span class="sd">        .. versionadded:: 9.3</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">not_known</span> <span class="o">=</span> <span class="n">_unknown_name</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">not_known</span><span class="p">)]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="n">not_known</span>
+
+<div class="viewcode-block" id="Coordinate_system.coordinate_dict"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system.coordinate_dict">[docs]</a>    <span class="k">def</span> <span class="nf">coordinate_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns &quot;Geosoft&quot; dictionary of coordinate system attributes.</span>
+
+<span class="sd">        .. versionadded:: 9.2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dict</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="c1"># initially from GXF values</span>
+            <span class="n">gxf1</span><span class="p">,</span> <span class="n">gxf2</span><span class="p">,</span> <span class="n">gxf3</span><span class="p">,</span> <span class="n">gxf4</span><span class="p">,</span> <span class="n">gxf5</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gxf</span>
+            <span class="n">hcs</span><span class="p">,</span> <span class="n">orient</span><span class="p">,</span> <span class="n">vcs</span> <span class="o">=</span> <span class="n">hcs_orient_vcs_from_name</span><span class="p">(</span><span class="n">gxf1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Geosoft&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                          <span class="s2">&quot;datum&quot;</span><span class="p">:</span> <span class="n">gxf2</span><span class="p">,</span>
+                          <span class="s2">&quot;projection&quot;</span><span class="p">:</span> <span class="n">gxf3</span><span class="p">,</span>
+                          <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="n">gxf4</span><span class="p">,</span>
+                          <span class="s2">&quot;local_datum&quot;</span><span class="p">:</span> <span class="n">gxf5</span><span class="p">,</span>
+                          <span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="n">orient</span><span class="p">,</span>
+                          <span class="s2">&quot;vcs&quot;</span><span class="p">:</span> <span class="n">vcs</span>
+                          <span class="p">}</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dict</span></div>
+
+<div class="viewcode-block" id="Coordinate_system.same_hcs"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system.same_hcs">[docs]</a>    <span class="k">def</span> <span class="nf">same_hcs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return True if the HCS are the same.</span>
+<span class="sd">        </span>
+<span class="sd">        .. versionadded:: 9.2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">same_units</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">coordinate_dict</span><span class="p">()[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">coordinate_dict</span><span class="p">()[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">a</span> <span class="ow">and</span> <span class="n">b</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+
+        <span class="k">def</span> <span class="nf">same_orientation</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">a</span><span class="o">.</span><span class="n">_dict</span><span class="p">[</span><span class="s1">&#39;orientation&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="o">.</span><span class="n">_dict</span><span class="p">[</span><span class="s1">&#39;orientation&#39;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">same_units</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">same_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">is_known</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span><span class="p">(</span><span class="n">is_known</span><span class="p">(</span><span class="n">other</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gxipj</span><span class="o">.</span><span class="n">coordinate_systems_are_the_same</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">gxipj</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="Coordinate_system.same_vcs"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system.same_vcs">[docs]</a>    <span class="k">def</span> <span class="nf">same_vcs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return True if the VCS are the same.</span>
+<span class="sd">        </span>
+<span class="sd">        .. versionadded:: 9.2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">svcs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vcs</span>
+        <span class="n">ovcs</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">vcs</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">svcs</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">ovcs</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">svcs</span> <span class="o">==</span> <span class="n">ovcs</span></div>
+
+<div class="viewcode-block" id="Coordinate_system.same_as"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system.same_as">[docs]</a>    <span class="k">def</span> <span class="nf">same_as</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return True if both coordinate systems (HCS and VCS) are the same. </span>
+<span class="sd">        </span>
+<span class="sd">        .. versionadded:: 9.2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">other</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Coordinate_system</span><span class="p">):</span>
+            <span class="n">other</span> <span class="o">=</span> <span class="n">Coordinate_system</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">same_hcs</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">same_vcs</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_from_str</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cstr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setup coordinate systems from a string.</span>
+<span class="sd">        </span>
+<span class="sd">        .. versionadded:: 9.2</span>
+
+<span class="sd">        .. versionchanged:: 9.4 supports xml (first character is &#39;&lt;&#39;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="c1"># json string</span>
+        <span class="k">if</span> <span class="n">cstr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;{&#39;</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">jsondict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">cstr</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="c1"># try replacing single quotes</span>
+                <span class="n">jstr</span> <span class="o">=</span> <span class="n">cstr</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&quot;&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">jsondict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">jstr</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;&quot;Invalid JSON coordinate system string: &quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cstr</span><span class="p">))</span>
+                
+            <span class="bp">self</span><span class="o">.</span><span class="n">_from_dict</span><span class="p">(</span><span class="n">jsondict</span><span class="p">)</span>
+
+        <span class="c1"># xml</span>
+        <span class="k">elif</span> <span class="n">cstr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">xml</span> <span class="o">=</span> <span class="n">cstr</span>
+
+        <span class="c1"># ESRI WKT</span>
+        <span class="k">elif</span> <span class="s1">&#39;GEOGCS[&#39;</span> <span class="ow">in</span> <span class="n">cstr</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">gxipj</span><span class="o">.</span><span class="n">set_esri</span><span class="p">(</span><span class="n">cstr</span><span class="p">)</span>
+            <span class="n">vcs</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">Wkt</span><span class="p">(</span><span class="n">cstr</span><span class="p">)</span><span class="o">.</span><span class="n">find_key</span><span class="p">(</span><span class="s1">&#39;VERTCS&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">vcs</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">vcs</span> <span class="o">=</span> <span class="n">vcs</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_from_gxf</span><span class="p">([</span><span class="n">cstr</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">_from_gxf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gxfs</span><span class="p">):</span>
+
+        <span class="k">def</span> <span class="nf">raise_gxf_error</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">CSException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Unknown coordinate system:&#39;</span> <span class="o">+</span>
+                                 <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">       name&gt; </span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">+</span>
+                                 <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">      datum&gt; </span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">+</span>
+                                 <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> projection&gt; </span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">+</span>
+                                 <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">      units&gt; </span><span class="si">{}</span><span class="s1">&#39;</span> <span class="o">+</span>
+                                 <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">local datum&gt; </span><span class="si">{}</span><span class="s1">&#39;</span><span class="p">)</span>
+                              <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gxfs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">gxfs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">gxfs</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">gxfs</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">gxfs</span><span class="p">[</span><span class="mi">4</span><span class="p">]))</span>
+
+        <span class="n">gxf1</span><span class="p">,</span> <span class="n">gxf2</span><span class="p">,</span> <span class="n">gxf3</span><span class="p">,</span> <span class="n">gxf4</span><span class="p">,</span> <span class="n">gxf5</span> <span class="o">=</span> <span class="n">gxfs</span>
+        <span class="n">hcs</span><span class="p">,</span> <span class="n">orient</span><span class="p">,</span> <span class="n">vcs</span> <span class="o">=</span> <span class="n">hcs_orient_vcs_from_name</span><span class="p">(</span><span class="n">gxf1</span><span class="p">)</span>
+
+        <span class="c1"># if we get a name only, and it has a datum and projection, copy these.</span>
+        <span class="c1"># The challenge with a name only is that the &quot;datum / projection&quot; must exist as</span>
+        <span class="c1"># a known coordinate system, otherwise we cannot resolve it.  Users some times</span>
+        <span class="c1"># combine projections with different datums so copying the values allows for this</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">gxf2</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">gxf3</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="s1">&#39;/&#39;</span> <span class="ow">in</span> <span class="n">hcs</span><span class="p">:</span>
+                <span class="n">datum</span><span class="p">,</span> <span class="n">projection</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">hcs</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+                <span class="n">gxf2</span> <span class="o">=</span> <span class="n">datum</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="n">gxf3</span> <span class="o">=</span> <span class="n">projection</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">gxf2</span> <span class="o">=</span> <span class="n">hcs</span>
+
+        <span class="c1"># units only</span>
+        <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">_unknown</span><span class="p">(</span><span class="n">gxf1</span><span class="p">))</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">gxf3</span> <span class="ow">or</span> <span class="n">gxf4</span> <span class="ow">or</span> <span class="n">gxf5</span><span class="p">)</span> <span class="ow">and</span> <span class="n">parameter_exists</span><span class="p">(</span><span class="n">PARM_UNITS</span><span class="p">,</span> <span class="n">gxf1</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">gxipj</span><span class="o">.</span><span class="n">set_gxf</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">gxf1</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">gxipj</span><span class="o">.</span><span class="n">set_gxf</span><span class="p">(</span><span class="n">gxf1</span><span class="p">,</span> <span class="n">gxf2</span><span class="p">,</span> <span class="n">gxf3</span><span class="p">,</span> <span class="n">gxf4</span><span class="p">,</span> <span class="n">gxf5</span><span class="p">)</span>
+
+            <span class="k">except</span> <span class="p">(</span><span class="n">geosoft</span><span class="o">.</span><span class="n">gxapi</span><span class="o">.</span><span class="n">GXAPIError</span><span class="p">,</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">gxapi</span><span class="o">.</span><span class="n">GXError</span><span class="p">):</span>
+                <span class="n">raise_gxf_error</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_from_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">csdict</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an IPJ from a dictionary.</span>
+
+<span class="sd">        .. versionadded:: 9.2</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">cstype</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">cstype</span><span class="p">:</span>
+
+            <span class="c1"># first try Geosoft xml dictionary, if not try &#39;geosoft&#39; type</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s1">&#39;projection&#39;</span> <span class="ow">in</span> <span class="n">csdict</span><span class="p">:</span>
+                    <span class="n">dictxml</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">geosoft_xml_from_dict</span><span class="p">(</span><span class="n">csdict</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">dictxml</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">geosoft_xml_from_dict</span><span class="p">({</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span> <span class="n">csdict</span><span class="p">})</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">xml</span> <span class="o">=</span> <span class="n">dictxml</span>
+                <span class="k">return</span>
+            <span class="k">except</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">gxapi</span><span class="o">.</span><span class="n">GXError</span><span class="p">:</span>
+                <span class="n">cstype</span> <span class="o">=</span> <span class="s1">&#39;geosoft&#39;</span>
+
+        <span class="k">if</span> <span class="n">cstype</span> <span class="o">==</span> <span class="s1">&#39;geosoft&#39;</span><span class="p">:</span>
+            <span class="n">s1</span><span class="p">,</span> <span class="n">orient</span><span class="p">,</span> <span class="n">vcs</span> <span class="o">=</span> <span class="n">hcs_orient_vcs_from_name</span><span class="p">(</span><span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span>
+            <span class="n">orient</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;orientation&#39;</span><span class="p">,</span> <span class="n">orient</span><span class="p">)</span>
+            <span class="n">vcs</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;vcs&#39;</span><span class="p">,</span> <span class="n">vcs</span><span class="p">)</span>
+            <span class="n">s1</span> <span class="o">=</span> <span class="n">name_from_hcs_orient_vcs</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">orient</span><span class="p">,</span> <span class="n">vcs</span><span class="p">)</span>
+            <span class="n">s2</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;datum&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="n">s3</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;projection&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="n">s4</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;units&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="n">s5</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;local_datum&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_from_gxf</span><span class="p">([</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">s3</span><span class="p">,</span> <span class="n">s4</span><span class="p">,</span> <span class="n">s5</span><span class="p">])</span>
+
+        <span class="k">elif</span> <span class="n">cstype</span> <span class="o">==</span> <span class="s1">&#39;esri&#39;</span><span class="p">:</span>
+            <span class="n">wkt</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;wkt&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">wkt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;ESRI missing &#39;wkt&#39; property.&quot;</span><span class="p">)</span>
+
+            <span class="c1"># TODO: The following is a quick fix. Seems WKT strings returned from arcpy code in ArcGIS Pro can now</span>
+            <span class="c1"># contain trailing parameters like:</span>
+            <span class="c1"># ;-5121200 -9998400 450432031.862147;-100000 10000;-100000 10000;0.001;0.001;0.001;IsHighPrecision</span>
+            <span class="c1"># removed here to allow core code to parse. Investigate and move any resulting handling logic to core</span>
+            <span class="n">wkt</span> <span class="o">=</span> <span class="s1">&#39;]&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">wkt</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span>
+            <span class="c1"># TODO arcpy code could produce WKT strings with single quotes. Core code should be changed to be tolerant of this instead</span>
+            <span class="n">wkt</span> <span class="o">=</span> <span class="n">wkt</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">)</span>
+
+            <span class="c1"># add vertical datum reference from dict if not in the wkt</span>
+            <span class="n">vcs</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;vcs&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">vcs</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;VERTCS[&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">wkt</span><span class="p">):</span>
+                <span class="n">wkt</span> <span class="o">+=</span> <span class="n">wkt_vcs</span><span class="p">(</span><span class="n">vcs</span><span class="p">)</span>
+
+            <span class="c1"># clear any existing coordinate system - bug GX does not clear prior orientation</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">gxipj</span><span class="o">.</span><span class="n">set_gxf</span><span class="p">(</span><span class="s1">&#39;WGS 84 &lt;0,0,0,0,0,0&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">gxipj</span><span class="o">.</span><span class="n">set_esri</span><span class="p">(</span><span class="n">wkt</span><span class="p">)</span>
+
+            <span class="c1"># add orientation and vcs</span>
+            <span class="n">orient</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;orientation&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">orient</span> <span class="ow">or</span> <span class="n">vcs</span><span class="p">:</span>
+                <span class="n">gxfs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gxf</span>
+                <span class="n">gxfs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">name_from_hcs_orient_vcs</span><span class="p">(</span><span class="n">gxfs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">orient</span><span class="p">,</span> <span class="n">vcs</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_from_gxf</span><span class="p">(</span><span class="n">gxfs</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">cstype</span> <span class="o">==</span> <span class="s2">&quot;epsg&quot;</span><span class="p">:</span>
+            <span class="n">code</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">code</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;EPSG missing &#39;code&#39; property.&quot;</span><span class="p">)</span>
+            <span class="n">orient</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;orientation&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_from_gxf</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">code</span><span class="p">)</span> <span class="o">+</span> <span class="n">orient</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">])</span>
+
+        <span class="k">elif</span> <span class="n">cstype</span> <span class="o">==</span> <span class="s1">&#39;local&#39;</span><span class="p">:</span>
+            <span class="c1"># must at least have a latitude and longitude</span>
+            <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;lon_lat&#39;</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">lat</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">lon</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="n">CSException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s2">&quot;Local must define &#39;lon_lat&#39; of the local origin.&quot;</span><span class="p">))</span>
+            <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;origin&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+            <span class="n">azimuth</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;azimuth&#39;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+            <span class="n">sf</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;scale_factor&#39;</span><span class="p">,</span> <span class="mf">0.9996</span><span class="p">)</span>
+            <span class="n">units</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;units&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">)</span>
+            <span class="n">datum</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;datum&#39;</span><span class="p">,</span> <span class="s1">&#39;WGS 84&#39;</span><span class="p">)</span>
+            <span class="n">ldatum</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ldatum&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="n">elevation</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;elevation&#39;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+            <span class="n">proj</span> <span class="o">=</span> <span class="s1">&#39;&quot;Oblique Stereographic&quot;,</span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">,0,0&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">sf</span><span class="p">)</span>
+            <span class="n">vcs</span> <span class="o">=</span> <span class="n">csdict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;vcs&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">azimuth</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">elevation</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">):</span>
+                <span class="n">orient</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">orient</span> <span class="o">=</span> <span class="s1">&#39;0,0,</span><span class="si">{}</span><span class="s1">,0,0,</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">elevation</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">)</span>
+
+            <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> / *Local(</span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">datum</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span>
+            <span class="n">name_azimuth</span> <span class="o">=</span> <span class="n">name_from_hcs_orient_vcs</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">orient</span><span class="p">,</span> <span class="n">vcs</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_from_gxf</span><span class="p">([</span><span class="n">name_azimuth</span><span class="p">,</span> <span class="n">datum</span><span class="p">,</span> <span class="n">proj</span><span class="p">,</span> <span class="n">units</span><span class="p">,</span> <span class="n">ldatum</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">x0</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">y0</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="n">xx0</span><span class="p">,</span> <span class="n">yy0</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xyz_from_oriented</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="o">-</span><span class="n">x0</span><span class="p">,</span> <span class="o">-</span><span class="n">y0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span>
+                <span class="n">proj</span> <span class="o">=</span> <span class="s1">&#39;&quot;Oblique Stereographic&quot;,</span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">sf</span><span class="p">,</span> <span class="o">-</span><span class="n">xx0</span><span class="p">,</span> <span class="o">-</span><span class="n">yy0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_from_gxf</span><span class="p">([</span><span class="n">name</span><span class="p">,</span> <span class="n">datum</span><span class="p">,</span> <span class="n">proj</span><span class="p">,</span> <span class="n">units</span><span class="p">,</span> <span class="n">ldatum</span><span class="p">])</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Projection type &#39;</span><span class="si">{}</span><span class="s2">&#39; not supported.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cstype</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">gxf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The GXF string list from ipj. (http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File)</span>
+<span class="sd">    </span>
+<span class="sd">        The first string (gxf[0]) is the coordinate system name in the form:</span>
+<span class="sd">             </span>
+<span class="sd">             `datum / projection &lt;x0,y0,z0,rx,ry,rz&gt; [vcs]`</span>
+<span class="sd">             </span>
+<span class="sd">        The orientation parameters are between the &#39;&lt;&gt;&#39;, and will be omitted if all 0.</span>
+<span class="sd">        </span>
+<span class="sd">        &#39;vcs&#39; is the vertical coordinate system, and is omitted if the vcs is undefined. </span>
+<span class="sd">    </span>
+<span class="sd">        .. versionadded:: 9.2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">s1</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+        <span class="n">s2</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+        <span class="n">s3</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+        <span class="n">s4</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+        <span class="n">s5</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gxipj</span><span class="o">.</span><span class="n">get_gxf</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">s3</span><span class="p">,</span> <span class="n">s4</span><span class="p">,</span> <span class="n">s5</span><span class="p">)</span>
+        <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">s1</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&quot;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">s2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">s4</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">s5</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">lst</span>
+
+    <span class="nd">@gxf</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">gxf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gxfs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_from_gxf</span><span class="p">(</span><span class="n">gxfs</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">xml</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        xml of the coordinate system using Geosoft schema. Can be set.</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">xml</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gxipj</span><span class="o">.</span><span class="n">get_xml</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">xml</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="nd">@xml</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xml</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gxipj</span><span class="o">.</span><span class="n">set_xml</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">esri_wkt</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ESRI Well-Known-Text (wkt) format coordinate string</span>
+
+<span class="sd">        .. versionadded:: 9.3</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">sr</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxapi_ipj</span><span class="o">.</span><span class="n">get_esri</span><span class="p">(</span><span class="n">sr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">sr</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="nd">@esri_wkt</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">esri_wkt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gxfs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_from_str</span><span class="p">(</span><span class="n">gxfs</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        JSON formatted coordinate system string.</span>
+
+<span class="sd">        .. versionadded:: 9.3</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coordinate_dict</span><span class="p">())</span>
+
+    <span class="nd">@json</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_from_str</span><span class="p">(</span><span class="n">json_str</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Coordinate_system.cs_name"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system.cs_name">[docs]</a>    <span class="k">def</span> <span class="nf">cs_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">what</span><span class="o">=</span><span class="n">NAME</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return requested name.</span>
+
+<span class="sd">        :param what:</span>
+<span class="sd">                | NAME</span>
+<span class="sd">                | NAME_HCS</span>
+<span class="sd">                | NAME_VCS</span>
+<span class="sd">                | NAME_HCS_VCS</span>
+<span class="sd">                | NAME_PROJECTION</span>
+<span class="sd">                | NAME_METHOD</span>
+<span class="sd">                | NAME_DATUM</span>
+<span class="sd">                | NAME_ELLIPSOID</span>
+<span class="sd">                | NAME_LDATUM</span>
+<span class="sd">                | NAME_UNIT</span>
+<span class="sd">                | NAME_UNIT_FULL</span>
+<span class="sd">                | NAME_TYPE</span>
+<span class="sd">                | NAME_LLDATUM</span>
+<span class="sd">                | NAME_METHOD_PARMS</span>
+<span class="sd">                | NAME_METHOD_LABEL</span>
+<span class="sd">                | NAME_DATUM_PARMS</span>
+<span class="sd">                | NAME_LDATUM_PARMS</span>
+<span class="sd">                | NAME_GEOID</span>
+<span class="sd">                | NAME_LDATUMDESCRIPTION</span>
+<span class="sd">                | NAME_METHOD_PARMS_NATIVE</span>
+<span class="sd">                | NAME_ORIENTATION</span>
+
+<span class="sd">        If &#39;what&#39; is not specified, gxipj.NAME assumed, which returns the coordinate system display name.</span>
+
+<span class="sd">        :returns: The name requested</span>
+
+<span class="sd">        .. versionadded:: 9.2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">s</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">what</span> <span class="o">==</span> <span class="n">NAME</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">gxf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">csname</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gxf</span>
+            <span class="n">hcs</span><span class="p">,</span> <span class="n">orient</span><span class="p">,</span> <span class="n">vcs</span> <span class="o">=</span> <span class="n">hcs_orient_vcs_from_name</span><span class="p">(</span><span class="n">csname</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">what</span> <span class="o">==</span> <span class="n">NAME_HCS_VCS</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">name_from_hcs_orient_vcs</span><span class="p">(</span><span class="n">hcs</span><span class="p">,</span> <span class="n">orient</span><span class="p">,</span> <span class="n">vcs</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">what</span> <span class="o">==</span> <span class="n">NAME_HCS</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">name_from_hcs_orient_vcs</span><span class="p">(</span><span class="n">hcs</span><span class="p">,</span> <span class="n">orient</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">what</span> <span class="o">==</span> <span class="n">NAME_VCS</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">vcs</span>
+            <span class="k">if</span> <span class="n">what</span> <span class="o">==</span> <span class="n">NAME_DATUM</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">hcs</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">what</span> <span class="o">==</span> <span class="n">NAME_PROJECTION</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s1">&#39;/&#39;</span> <span class="ow">in</span> <span class="n">hcs</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">hcs</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">gxipj</span><span class="o">.</span><span class="n">get_name</span><span class="p">(</span><span class="n">what</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">value</span></div>
+
+    <span class="k">def</span> <span class="nf">_oriented_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">xyz</span><span class="p">,</span> <span class="n">column_ordered</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return oriented (x, y, z) coordinates from true base (x, y, z) coordinates.</span>
+
+<span class="sd">        :param xyz:             (x, y, z) or iterable</span>
+<span class="sd">        :param column_ordered:  if xyz is iterable, and this is True, the data is assumed to be</span>
+<span class="sd">                                column ordered and the results are returned column ordered.</span>
+<span class="sd">        :returns:               (x, y, z) in un-oriented space</span>
+
+<span class="sd">        .. versionadded:: 9.2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">xyz</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="n">xyz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xyz</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">xyz</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">],)</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">xyz</span><span class="p">[</span><span class="mi">1</span><span class="p">],)</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">xyz</span><span class="p">[</span><span class="mi">2</span><span class="p">],)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">column_ordered</span><span class="p">:</span>
+                <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">xyz</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">gxipj</span><span class="o">.</span><span class="n">convert_orientation_warp_vv</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">direction</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">xyz</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">xyz_column</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">np</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">np</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">np</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">column_ordered</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">xyz_column</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">xyz_column</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Coordinate_system.oriented_from_xyz"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system.oriented_from_xyz">[docs]</a>    <span class="k">def</span> <span class="nf">oriented_from_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xyz</span><span class="p">,</span> <span class="n">column_ordered</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return oriented (x, y, z) coordinates from true base (x, y, z) coordinates.</span>
+
+<span class="sd">        :param xyz:             (x, y, z) or iterable</span>
+<span class="sd">        :param column_ordered:  if xyz is iterable, and this is True, the data is assumed to be</span>
+<span class="sd">                                column ordered and the results are returned column ordered.</span>
+<span class="sd">        :returns:               (x, y, z) in un-oriented space</span>
+
+<span class="sd">        .. versionadded:: 9.2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_oriented_xyz</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">xyz</span><span class="p">,</span> <span class="n">column_ordered</span><span class="o">=</span><span class="n">column_ordered</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Coordinate_system.xyz_from_oriented"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system.xyz_from_oriented">[docs]</a>    <span class="k">def</span> <span class="nf">xyz_from_oriented</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xyz</span><span class="p">,</span> <span class="n">column_ordered</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return true base (x, y, z) coordinates from oriented (x, y, z) coordinates.</span>
+
+<span class="sd">        :param xyz:             (x, y, z) or iterable</span>
+<span class="sd">        :param column_ordered:  if xyz is iterable, and this is True, the data is assumed to be</span>
+<span class="sd">                                column ordered and the results are returned column ordered.</span>
+<span class="sd">        :returns:               (x, y, z) in oriented space</span>
+
+<span class="sd">        .. versionadded:: 9.2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_oriented_xyz</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">xyz</span><span class="p">,</span> <span class="n">column_ordered</span><span class="o">=</span><span class="n">column_ordered</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="is_known"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.is_known">[docs]</a><span class="k">def</span> <span class="nf">is_known</span><span class="p">(</span><span class="n">coordinate_system</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return True if this is a known coordinate system</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">coordinate_system</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">coordinate_system</span><span class="p">,</span> <span class="n">Coordinate_system</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">coordinate_system</span><span class="o">.</span><span class="n">is_known</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Coordinate_system</span><span class="p">(</span><span class="n">coordinate_system</span><span class="p">)</span><span class="o">.</span><span class="n">is_known</span>
+    <span class="k">except</span> <span class="n">CSException</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="Coordinate_translate"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_translate">[docs]</a><span class="k">class</span> <span class="nc">Coordinate_translate</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class to reproject coordinates between different coordinate systems.</span>
+
+<span class="sd">    :params cs_from:  from `Coordinate_system`</span>
+<span class="sd">    :params cs_to:    to `Coordinate_system`</span>
+
+<span class="sd">    .. versionadded:: 9.2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">(</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;PJ from </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s2"> to </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cs_from</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cs_to</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xtype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="n">_cs_from</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_cs_to</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_sr</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">str_ref</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Coordinate_translate.__init__"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_translate.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cs_from</span><span class="p">,</span> <span class="n">cs_to</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cs_from</span><span class="p">,</span> <span class="n">Coordinate_system</span><span class="p">):</span>
+            <span class="n">cs_from</span> <span class="o">=</span> <span class="n">Coordinate_system</span><span class="p">(</span><span class="n">cs_from</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cs_from</span> <span class="o">=</span> <span class="n">cs_from</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cs_to</span><span class="p">,</span> <span class="n">Coordinate_system</span><span class="p">):</span>
+            <span class="n">cs_to</span> <span class="o">=</span> <span class="n">Coordinate_system</span><span class="p">(</span><span class="n">cs_to</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cs_to</span> <span class="o">=</span> <span class="n">cs_to</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pj</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXPJ</span><span class="o">.</span><span class="n">create_ipj</span><span class="p">(</span><span class="n">cs_from</span><span class="o">.</span><span class="n">gxipj</span><span class="p">,</span> <span class="n">cs_to</span><span class="o">.</span><span class="n">gxipj</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Coordinate_translate.convert_vv"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_translate.convert_vv">[docs]</a>    <span class="k">def</span> <span class="nf">convert_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">zvv</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Project vv locations in-place.</span>
+
+<span class="sd">        :param xvv:     x locations as `geosoft.gxpy.vv.GXvv` instance</span>
+<span class="sd">        :param yvv:     y locations as `geosoft.gxpy.vv.GXvv` instance</span>
+<span class="sd">        :param zvv:     optional z locations as `geosoft.gxpy.vv.GXvv` instance</span>
+
+<span class="sd">        .. versionadded:: 9.3.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">xvvin</span> <span class="o">=</span> <span class="n">yvvin</span> <span class="o">=</span> <span class="n">zvvin</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">xvv</span><span class="o">.</span><span class="n">is_float64</span><span class="p">:</span>
+            <span class="n">xvvin</span> <span class="o">=</span> <span class="n">xvv</span>
+            <span class="n">xvv</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">(</span><span class="n">xvv</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">yvv</span><span class="o">.</span><span class="n">is_float64</span><span class="p">:</span>
+            <span class="n">yvvin</span> <span class="o">=</span> <span class="n">yvv</span>
+            <span class="n">yvv</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">(</span><span class="n">yvv</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">zvv</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">zvv</span><span class="o">.</span><span class="n">is_float64</span><span class="p">:</span>
+            <span class="n">zvvin</span> <span class="o">=</span> <span class="n">zvv</span>
+            <span class="n">zvv</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">(</span><span class="n">zvv</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">zvv</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pj</span><span class="o">.</span><span class="n">convert_vv3</span><span class="p">(</span><span class="n">xvv</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">yvv</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">zvv</span><span class="o">.</span><span class="n">gxvv</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pj</span><span class="o">.</span><span class="n">convert_vv</span><span class="p">(</span><span class="n">xvv</span><span class="o">.</span><span class="n">gxvv</span><span class="p">,</span> <span class="n">yvv</span><span class="o">.</span><span class="n">gxvv</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">xvvin</span><span class="p">:</span>
+            <span class="n">xvvin</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">xvv</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">yvvin</span><span class="p">:</span>
+            <span class="n">yvvin</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">yvv</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">zvvin</span><span class="p">:</span>
+            <span class="n">zvvin</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">zvv</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Coordinate_translate.convert"><a class="viewcode-back" href="../../../geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_translate.convert">[docs]</a>    <span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xyz</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Project data in array in which first columns are x,y or x,y,z.</span>
+
+<span class="sd">        Coordinates are reprojected in-place.</span>
+
+<span class="sd">        :param xyz: numply shape (n,2) or (n,3+), or list, or a single (x, y, z) tuple.</span>
+<span class="sd">                    Array dimension (n,2) for (x, y), (n,3+) for x,y,z.</span>
+<span class="sd">                    Only numpy arrays may have dimensions above 3.</span>
+<span class="sd">        :param in_place: if True, numpy array data is converted in-place.  Ignored for list or tuple</span>
+
+<span class="sd">        :example:</span>
+<span class="sd">            Given an array shape (500,6), which represents 500 data records with 6 columns</span>
+<span class="sd">            in which the first 3 columns are coordinates X, Y and Z.</span>
+
+<span class="sd">            .. code::</span>
+
+<span class="sd">                data = np.zeros((10,5), dtype=&#39;float&#39;) #then fill the array with some data</span>
+
+<span class="sd">                xy_only = pj.convert(data[:,2])     #transform x,y</span>
+<span class="sd">                xyz_only = pj.convert(data[:,3])    #transform x,y and z</span>
+<span class="sd">                all = pj.convert(data)              #transform x,y and z with data returned</span>
+<span class="sd">                </span>
+<span class="sd">        :returns:   projected data in the same form as passed (numpy array, list, or (x,y,z))</span>
+
+<span class="sd">        .. versionadded:: 9.2</span>
+
+<span class="sd">        .. versionchanged:: 9.3.1 conversion methods will return results in the same type as the input data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">xyz_in</span> <span class="o">=</span> <span class="n">xyz</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">xyz</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="n">xyz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xyz</span><span class="p">)</span>
+        <span class="n">npoints</span> <span class="o">=</span> <span class="n">xyz</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">npoints</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">in_place</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">xyz</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">xyz</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[]])</span>
+            <span class="k">return</span> <span class="p">[[]]</span>
+
+        <span class="k">if</span> <span class="n">xyz</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">xyz</span> <span class="o">=</span> <span class="n">xyz</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">xyz</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+            <span class="n">flatten_return</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">flatten_return</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">nd</span> <span class="o">=</span> <span class="n">xyz</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">nd</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">CSException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Data must have dimension 2 (x,y) or 3 for (x,y,z) or higher.&#39;</span><span class="p">))</span>
+
+        <span class="n">vvx</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">(</span><span class="n">xyz</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="n">vvy</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">(</span><span class="n">xyz</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">nd</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">vvz</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">GXvv</span><span class="p">(</span><span class="n">xyz</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">vvz</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">convert_vv</span><span class="p">(</span><span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">in_place</span><span class="p">:</span>
+            <span class="n">xyz</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">vvx</span><span class="o">.</span><span class="n">np</span>
+            <span class="n">xyz</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">vvy</span><span class="o">.</span><span class="n">np</span>
+            <span class="k">if</span> <span class="n">nd</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">xyz</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">vvz</span><span class="o">.</span><span class="n">np</span>
+            <span class="k">return</span> <span class="n">xyz</span>
+
+        <span class="k">if</span> <span class="n">nd</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">xyz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">vvx</span><span class="o">.</span><span class="n">np</span><span class="p">,</span> <span class="n">vvy</span><span class="o">.</span><span class="n">np</span><span class="p">,</span> <span class="n">vvz</span><span class="o">.</span><span class="n">np</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">xyz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">vvx</span><span class="o">.</span><span class="n">np</span><span class="p">,</span> <span class="n">vvy</span><span class="o">.</span><span class="n">np</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+
+        <span class="k">if</span> <span class="n">flatten_return</span><span class="p">:</span>
+            <span class="n">xyz</span> <span class="o">=</span> <span class="n">xyz</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">xyz_in</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">xyz</span>
+
+        <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">xyz_in</span><span class="p">,</span> <span class="s1">&#39;__iter__&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">xyz</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">nd</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span></div></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.coordinate_system</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

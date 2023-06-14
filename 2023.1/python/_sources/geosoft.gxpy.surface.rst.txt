@@ -1,0 +1,7 @@
+geosoft.gxpy.surface submodule
+=============================================
+
+.. automodule:: geosoft.gxpy.surface
+    :members:
+    :undoc-members:
+    :show-inheritance:

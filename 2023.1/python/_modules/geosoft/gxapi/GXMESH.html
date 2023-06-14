@@ -1,0 +1,585 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXMESH &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMESH</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXMESH</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXMESH"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH">[docs]</a><span class="k">class</span> <span class="nc">GXMESH</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESH</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXMESH class.</span>
+
+<span class="sd">    High Performance Surface API.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXMESH.__init__"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXMESH</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXMESH.null"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXMESH &lt;geosoft.gxapi.GXMESH&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXMESH &lt;geosoft.gxapi.GXMESH&gt;`</span>
+<span class="sd">        :rtype:   GXMESH</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXMESH</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXMESH.is_null"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+<div class="viewcode-block" id="GXMESH.create"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.create">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a new Mesh</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Mesh Name</span>
+<span class="sd">        :type  name:  str</span>
+
+<span class="sd">        :returns:     `GXMESH &lt;geosoft.gxapi.GXMESH&gt;` handle, terminates if creation fails</span>
+<span class="sd">        :rtype:       GXMESH</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESH</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXMESH</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GXMESH.open"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.open">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">fileName</span><span class="p">,</span> <span class="n">lstMeshNames</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Opens an existing Mesh</span>
+<span class="sd">        </span>
+<span class="sd">        :param fileName:      File Name</span>
+<span class="sd">        :param lstMeshNames:  `GXLST &lt;geosoft.gxapi.GXLST&gt;` to fill with Mesh Names</span>
+<span class="sd">        :type  fileName:      str</span>
+<span class="sd">        :type  lstMeshNames:  GXLST</span>
+
+<span class="sd">        :returns:             `GXMESH &lt;geosoft.gxapi.GXMESH&gt;` handle, terminates if creation fails</span>
+<span class="sd">        :rtype:               GXMESH</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESH</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">fileName</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">lstMeshNames</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXMESH</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMESH.insert_patch"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.insert_patch">[docs]</a>    <span class="k">def</span> <span class="nf">insert_patch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mesh_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inserts a new surface patch to the mesh specified by a unique ID</span>
+<span class="sd">        </span>
+<span class="sd">        :param mesh_name:  Mesh Name</span>
+<span class="sd">        :type  mesh_name:  str</span>
+
+<span class="sd">        :returns:          Patch ID of the inserted patch</span>
+<span class="sd">        :rtype:            int</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_insert_patch</span><span class="p">(</span><span class="n">mesh_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMESH.delete_patch"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.delete_patch">[docs]</a>    <span class="k">def</span> <span class="nf">delete_patch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mesh_name</span><span class="p">,</span> <span class="n">patch_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Deletes a patch specified by Patch ID from a mesh</span>
+<span class="sd">        </span>
+<span class="sd">        :param mesh_name:  Mesh Name</span>
+<span class="sd">        :param patch_id:   Patch ID</span>
+<span class="sd">        :type  mesh_name:  str</span>
+<span class="sd">        :type  patch_id:   int</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_delete_patch</span><span class="p">(</span><span class="n">mesh_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">patch_id</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMESH.patch_exists"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.patch_exists">[docs]</a>    <span class="k">def</span> <span class="nf">patch_exists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mesh_name</span><span class="p">,</span> <span class="n">patch_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Checks if a patch specified by a patch ID exists in a mesh</span>
+<span class="sd">        </span>
+<span class="sd">        :param mesh_name:  Mesh Name</span>
+<span class="sd">        :param patch_id:   Patch ID</span>
+<span class="sd">        :type  mesh_name:  str</span>
+<span class="sd">        :type  patch_id:   int</span>
+
+<span class="sd">        :returns:          TRUE if patch exists</span>
+<span class="sd">        :rtype:            bool</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_patch_exists</span><span class="p">(</span><span class="n">mesh_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">patch_id</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMESH.num_patches"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.num_patches">[docs]</a>    <span class="k">def</span> <span class="nf">num_patches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mesh_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the number of patches added to the mesh</span>
+<span class="sd">        </span>
+<span class="sd">        :param mesh_name:  Mesh Name</span>
+<span class="sd">        :type  mesh_name:  str</span>
+
+<span class="sd">        :returns:          The number of patches added to the mesh</span>
+<span class="sd">        :rtype:            int</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_patches</span><span class="p">(</span><span class="n">mesh_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMESH.add_vertex"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.add_vertex">[docs]</a>    <span class="k">def</span> <span class="nf">add_vertex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mesh_name</span><span class="p">,</span> <span class="n">patch_id</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds a vertex to a patch in a mesh</span>
+<span class="sd">        </span>
+<span class="sd">        :param mesh_name:  Mesh Name</span>
+<span class="sd">        :param patch_id:   Patch ID</span>
+<span class="sd">        :param x:          x coordinate of the vertex</span>
+<span class="sd">        :param y:          y coordinate of the vertex</span>
+<span class="sd">        :param z:          z coordinate of the vertex</span>
+<span class="sd">        :type  mesh_name:  str</span>
+<span class="sd">        :type  patch_id:   int</span>
+<span class="sd">        :type  x:          float</span>
+<span class="sd">        :type  y:          float</span>
+<span class="sd">        :type  z:          float</span>
+
+<span class="sd">        :returns:          Returns the vertex index of the added vertex</span>
+<span class="sd">        :rtype:            int</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_vertex</span><span class="p">(</span><span class="n">mesh_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">patch_id</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMESH.num_vertices"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.num_vertices">[docs]</a>    <span class="k">def</span> <span class="nf">num_vertices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mesh_name</span><span class="p">,</span> <span class="n">patch_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Number of vertices in a patch in mesh</span>
+<span class="sd">        </span>
+<span class="sd">        :param mesh_name:  Mesh Name</span>
+<span class="sd">        :param patch_id:   Patch ID</span>
+<span class="sd">        :type  mesh_name:  str</span>
+<span class="sd">        :type  patch_id:   int</span>
+
+<span class="sd">        :returns:          Returns the number of vertices in a patch</span>
+<span class="sd">        :rtype:            int</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_vertices</span><span class="p">(</span><span class="n">mesh_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">patch_id</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMESH.add_face"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.add_face">[docs]</a>    <span class="k">def</span> <span class="nf">add_face</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mesh_name</span><span class="p">,</span> <span class="n">patch_id</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds a face to a patch in a mesh</span>
+<span class="sd">        </span>
+<span class="sd">        :param mesh_name:  Mesh Name</span>
+<span class="sd">        :param patch_id:   Patch ID</span>
+<span class="sd">        :param v0:         Vertex index 0 for the face</span>
+<span class="sd">        :param v1:         Vertex index 1 for the face</span>
+<span class="sd">        :param v2:         Vertex index 2 for the face</span>
+<span class="sd">        :type  mesh_name:  str</span>
+<span class="sd">        :type  patch_id:   int</span>
+<span class="sd">        :type  v0:         int</span>
+<span class="sd">        :type  v1:         int</span>
+<span class="sd">        :type  v2:         int</span>
+
+<span class="sd">        :returns:          Returns the face index of the added face</span>
+<span class="sd">        :rtype:            int</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_face</span><span class="p">(</span><span class="n">mesh_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">patch_id</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMESH.num_faces"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.num_faces">[docs]</a>    <span class="k">def</span> <span class="nf">num_faces</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mesh_name</span><span class="p">,</span> <span class="n">patch_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Number of faces in a patch in mesh</span>
+<span class="sd">        </span>
+<span class="sd">        :param mesh_name:  Mesh Name</span>
+<span class="sd">        :param patch_id:   Patch ID</span>
+<span class="sd">        :type  mesh_name:  str</span>
+<span class="sd">        :type  patch_id:   int</span>
+
+<span class="sd">        :returns:          Returns the number of faces in a patch</span>
+<span class="sd">        :rtype:            int</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_faces</span><span class="p">(</span><span class="n">mesh_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">patch_id</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMESH.get_vertex_point"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.get_vertex_point">[docs]</a>    <span class="k">def</span> <span class="nf">get_vertex_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mesh_name</span><span class="p">,</span> <span class="n">patch_id</span><span class="p">,</span> <span class="n">vertex_index</span><span class="p">,</span> <span class="n">x_coordinate</span><span class="p">,</span> <span class="n">y_coordinate</span><span class="p">,</span> <span class="n">z_coordinate</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Number of faces in a patch in mesh</span>
+<span class="sd">        </span>
+<span class="sd">        :param mesh_name:     Mesh Name</span>
+<span class="sd">        :param patch_id:      Patch ID</span>
+<span class="sd">        :param vertex_index:  Vertex Index</span>
+<span class="sd">        :param x_coordinate:  X coordinate</span>
+<span class="sd">        :param y_coordinate:  Y coordinate</span>
+<span class="sd">        :param z_coordinate:  Z coordinate</span>
+<span class="sd">        :type  mesh_name:     str</span>
+<span class="sd">        :type  patch_id:      int</span>
+<span class="sd">        :type  vertex_index:  int</span>
+<span class="sd">        :type  x_coordinate:  float_ref</span>
+<span class="sd">        :type  y_coordinate:  float_ref</span>
+<span class="sd">        :type  z_coordinate:  float_ref</span>
+
+<span class="sd">        :returns:             Returns the number of faces in a patch</span>
+<span class="sd">        :rtype:               int</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span><span class="p">,</span> <span class="n">x_coordinate</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_coordinate</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z_coordinate</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_vertex_point</span><span class="p">(</span><span class="n">mesh_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">patch_id</span><span class="p">,</span> <span class="n">vertex_index</span><span class="p">,</span> <span class="n">x_coordinate</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_coordinate</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z_coordinate</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMESH.get_vertices"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.get_vertices">[docs]</a>    <span class="k">def</span> <span class="nf">get_vertices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mesh_name</span><span class="p">,</span> <span class="n">patch_id</span><span class="p">,</span> <span class="n">vert_v_vx</span><span class="p">,</span> <span class="n">vert_v_vy</span><span class="p">,</span> <span class="n">vert_v_vz</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns all the vertices in a patch</span>
+<span class="sd">        </span>
+<span class="sd">        :param mesh_name:  Mesh Name</span>
+<span class="sd">        :param patch_id:   Patch ID</span>
+<span class="sd">        :param vert_v_vx:  Vertices X</span>
+<span class="sd">        :param vert_v_vy:  Vertices Y</span>
+<span class="sd">        :param vert_v_vz:  Vertices Z</span>
+<span class="sd">        :type  mesh_name:  str</span>
+<span class="sd">        :type  patch_id:   int</span>
+<span class="sd">        :type  vert_v_vx:  GXVV</span>
+<span class="sd">        :type  vert_v_vy:  GXVV</span>
+<span class="sd">        :type  vert_v_vz:  GXVV</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_vertices</span><span class="p">(</span><span class="n">mesh_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">patch_id</span><span class="p">,</span> <span class="n">vert_v_vx</span><span class="p">,</span> <span class="n">vert_v_vy</span><span class="p">,</span> <span class="n">vert_v_vz</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMESH.get_faces"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.get_faces">[docs]</a>    <span class="k">def</span> <span class="nf">get_faces</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mesh_name</span><span class="p">,</span> <span class="n">patch_id</span><span class="p">,</span> <span class="n">face_v_1</span><span class="p">,</span> <span class="n">face_v_2</span><span class="p">,</span> <span class="n">face_v_3</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns all the faces comprising of vertex indices in a patch</span>
+<span class="sd">        </span>
+<span class="sd">        :param mesh_name:  Mesh Name</span>
+<span class="sd">        :param patch_id:   Patch ID</span>
+<span class="sd">        :param face_v_1:   Face vertex 1</span>
+<span class="sd">        :param face_v_2:   Face vertex 2</span>
+<span class="sd">        :param face_v_3:   Face vertex 3</span>
+<span class="sd">        :type  mesh_name:  str</span>
+<span class="sd">        :type  patch_id:   int</span>
+<span class="sd">        :type  face_v_1:   GXVV</span>
+<span class="sd">        :type  face_v_2:   GXVV</span>
+<span class="sd">        :type  face_v_3:   GXVV</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_faces</span><span class="p">(</span><span class="n">mesh_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">patch_id</span><span class="p">,</span> <span class="n">face_v_1</span><span class="p">,</span> <span class="n">face_v_2</span><span class="p">,</span> <span class="n">face_v_3</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMESH.insert_attributes"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.insert_attributes">[docs]</a>    <span class="k">def</span> <span class="nf">insert_attributes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mesh_name</span><span class="p">,</span> <span class="n">attribute_name</span><span class="p">,</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">attribute_type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inserts an attribute set to a mesh</span>
+<span class="sd">        </span>
+<span class="sd">        :param mesh_name:       Mesh Name</span>
+<span class="sd">        :param attribute_name:  Attribute Name</span>
+<span class="sd">        :param data_type:       :ref:`ATTRIBUTE_DATA_TYPE`</span>
+<span class="sd">        :param attribute_type:  :ref:`ATTRIBUTE_TYPE`</span>
+<span class="sd">        :type  mesh_name:       str</span>
+<span class="sd">        :type  attribute_name:  str</span>
+<span class="sd">        :type  data_type:       int</span>
+<span class="sd">        :type  attribute_type:  int</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_insert_attributes</span><span class="p">(</span><span class="n">mesh_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">attribute_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">attribute_type</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMESH.set_attribute_values"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.set_attribute_values">[docs]</a>    <span class="k">def</span> <span class="nf">set_attribute_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mesh_name</span><span class="p">,</span> <span class="n">attribute_name</span><span class="p">,</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">attribute_type</span><span class="p">,</span> <span class="n">patch_id</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inserts an attribute set to a mesh</span>
+<span class="sd">        </span>
+<span class="sd">        :param mesh_name:       Mesh Name</span>
+<span class="sd">        :param attribute_name:  Attribute Name</span>
+<span class="sd">        :param data_type:       :ref:`ATTRIBUTE_DATA_TYPE`</span>
+<span class="sd">        :param attribute_type:  :ref:`ATTRIBUTE_TYPE`</span>
+<span class="sd">        :param patch_id:        Patch ID</span>
+<span class="sd">        :param vv:              Attributes VV `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :type  mesh_name:       str</span>
+<span class="sd">        :type  attribute_name:  str</span>
+<span class="sd">        :type  data_type:       int</span>
+<span class="sd">        :type  attribute_type:  int</span>
+<span class="sd">        :type  patch_id:        int</span>
+<span class="sd">        :type  vv:              GXVV</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_attribute_values</span><span class="p">(</span><span class="n">mesh_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">attribute_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">attribute_type</span><span class="p">,</span> <span class="n">patch_id</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMESH.get_attribute_values"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.get_attribute_values">[docs]</a>    <span class="k">def</span> <span class="nf">get_attribute_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mesh_name</span><span class="p">,</span> <span class="n">attribute_name</span><span class="p">,</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">attribute_type</span><span class="p">,</span> <span class="n">patch_id</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inserts an attribute set to a mesh</span>
+<span class="sd">        </span>
+<span class="sd">        :param mesh_name:       Mesh Name</span>
+<span class="sd">        :param attribute_name:  Attribute Name</span>
+<span class="sd">        :param data_type:       :ref:`ATTRIBUTE_DATA_TYPE`</span>
+<span class="sd">        :param attribute_type:  :ref:`ATTRIBUTE_TYPE`</span>
+<span class="sd">        :param patch_id:        Patch ID</span>
+<span class="sd">        :param vv:              Attributes VV `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :type  mesh_name:       str</span>
+<span class="sd">        :type  attribute_name:  str</span>
+<span class="sd">        :type  data_type:       int</span>
+<span class="sd">        :type  attribute_type:  int</span>
+<span class="sd">        :type  patch_id:        int</span>
+<span class="sd">        :type  vv:              GXVV</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_attribute_values</span><span class="p">(</span><span class="n">mesh_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">attribute_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">attribute_type</span><span class="p">,</span> <span class="n">patch_id</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMESH.import_grid_to_mesh"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.import_grid_to_mesh">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">import_grid_to_mesh</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid_file_name</span><span class="p">,</span> <span class="n">geosurface_filename</span><span class="p">,</span> <span class="n">surface_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Imports a Grid to a Surface. Creates a new Geosurface file for the surface</span>
+<span class="sd">        </span>
+<span class="sd">        :param grid_file_name:       Grid File Name</span>
+<span class="sd">        :param geosurface_filename:  Surface File Name</span>
+<span class="sd">        :param surface_name:         Surface Item Name within the file</span>
+<span class="sd">        :type  grid_file_name:       str</span>
+<span class="sd">        :type  geosurface_filename:  str</span>
+<span class="sd">        :type  surface_name:         str</span>
+
+<span class="sd">        :returns:                    `GXMESH &lt;geosoft.gxapi.GXMESH&gt;` handle, terminates if creation fails</span>
+<span class="sd">        :rtype:                      GXMESH</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESH</span><span class="o">.</span><span class="n">_import_grid_to_mesh</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid_file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">geosurface_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">surface_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXMESH</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXMESH.save"><a class="viewcode-back" href="../../../GXMESH.html#geosoft.gxapi.GXMESH.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Saves Mesh to the Project Cache and Geosurface file</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save</span><span class="p">()</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMESH</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>
