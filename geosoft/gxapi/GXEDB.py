@@ -2356,6 +2356,34 @@ class GXEDB(gxapi_cy.WrapEDB):
 
 
 
+# Obsolete
+
+
+
+    def load_channel_after(self, chan_to_move, chan_to_move_after):
+        """
+        Loads the channel after specified channel
+        
+        :param chan_to_move:        Channel name
+        :param chan_to_move_after:  Channel name
+        :type  chan_to_move:        str
+        :type  chan_to_move_after:  str
+
+        .. versionadded:: 2023.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If the channel to locate does not exist it will load the channel in the default location.
+        If the channel to be loaded is already loaded, no changes will be made.
+        """
+        self._load_channel_after(chan_to_move.encode(), chan_to_move_after.encode())
+        
+
+
+
+
 
 ### endblock ClassImplementation
 ### block ClassExtend

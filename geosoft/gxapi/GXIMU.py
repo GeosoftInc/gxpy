@@ -182,6 +182,34 @@ class GXIMU(gxapi_cy.WrapIMU):
 
 
     @classmethod
+    def decimate_crooked_section_grid(cls, img, dec_X, dec_y, out):
+        """
+        Decimate a crooked section grid.
+        
+        :param img:    Input grid IMG
+        :param dec_X:  :def:Decimation factor along section (>=1)
+        :param dec_y:  :def:Decimation factor down section (>=1)
+        :param out:    File name of output grid
+        :type  img:    GXIMG
+        :type  dec_X:  int
+        :type  dec_y:  int
+        :type  out:    str
+
+        .. versionadded:: 2023.0
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** For decimation factor N, every MN'th value is selected
+        for M = 0, 1, 2, ...
+        The full distance is recalculated based on the remaining
+        points because it will almost certainly be smaller.
+        """
+        gxapi_cy.WrapIMU._decimate_crooked_section_grid(GXContext._get_tls_geo(), img, dec_X, dec_y, out.encode())
+        
+
+
+
+    @classmethod
     def export_grid_without_data_section_xml(cls, grid, crc, file):
         """
         Export a Grid minus the data section as an XML file.

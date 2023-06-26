@@ -338,6 +338,33 @@ class GXDU(gxapi_cy.WrapDU):
 
 
     @classmethod
+    def avg_azimuth2(cls, db, xCh, yCh, precision, azimuth):
+        """
+        Returns average azimuth of selected lines.
+        
+        :param db:         Database Object
+        :param xCh:        X channel name
+        :param yCh:        Y channel name
+        :param precision:  Precision in degrees (1 to 45)
+        :param azimuth:    Azimuth value returned
+        :type  db:         GXDB
+        :type  xCh:        str
+        :type  yCh:        str
+        :type  precision:  float
+        :type  azimuth:    float_ref
+
+        .. versionadded:: 2023.1
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** Same as AvgAzimuth, but input the X and Y channels to use.
+        """
+        azimuth.value = gxapi_cy.WrapDU._avg_azimuth2(GXContext._get_tls_geo(), db, xCh.encode(), yCh.encode(), precision, azimuth.value)
+        
+
+
+
+    @classmethod
     def average_spacing(cls, db, line, xCh, yCh):
         """
         Returns the average spacing along a line.
@@ -1720,6 +1747,109 @@ class GXDU(gxapi_cy.WrapDU):
         where the mask channel is not a dummy are collected.
         """
         gxapi_cy.WrapDU._get_chan_data_vv(GXContext._get_tls_geo(), db, chan, mask, vv)
+        
+
+
+
+    @classmethod
+    def get_gridding_azimuth_to_minimize_padding(cls, db, xCh, yCh, mCh, x1, y1, x2, y2, x3, y3, x4, y4):
+        """
+        Return the gridding azimuth (degrees CW from north) that minimizes padding.
+        
+        :param db:   Database
+        :param xCh:  X channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param yCh:  Y channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param mCh:  Data or mask channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param x1:   Returned Corner 1 - X
+        :param y1:   Returned Corner 1 - Y
+        :param x2:   Returned Corner 2 - X
+        :param y2:   Returned Corner 2 - Y
+        :param x3:   Returned Corner 3 - X
+        :param y3:   Returned Corner 3 - Y
+        :param x4:   Returned Corner 4 - X
+        :param y4:   Returned Corner 4 - Y
+        :type  db:   GXDB
+        :type  xCh:  int
+        :type  yCh:  int
+        :type  mCh:  int
+        :type  x1:   float_ref
+        :type  y1:   float_ref
+        :type  x2:   float_ref
+        :type  y2:   float_ref
+        :type  x3:   float_ref
+        :type  y3:   float_ref
+        :type  x4:   float_ref
+        :type  y4:   float_ref
+        :rtype:      float
+
+        .. versionadded:: 2023.1
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** Especially if the survey lines do not run N-S or E-W, gridding parallel to the XY axes
+        results in up to half the gridding area being dummies (padding), which is not only
+        inefficient, but affects processes like filtering. This algorithm determines the data
+        rotation required such that the gridding extents rectangle fit around the data minimizes the
+        amount of padding. The result is good to the nearest degree.
+
+        The corner points are returned and include a buffer around the edge equal to 1% of the maximum height/width.
+
+        The returned azimuth will be in the range 0 to 89.
+
+        Operates on all selected lines.
+        """
+        ret_val, x1.value, y1.value, x2.value, y2.value, x3.value, y3.value, x4.value, y4.value = gxapi_cy.WrapDU._get_gridding_azimuth_to_minimize_padding(GXContext._get_tls_geo(), db, xCh, yCh, mCh, x1.value, y1.value, x2.value, y2.value, x3.value, y3.value, x4.value, y4.value)
+        return ret_val
+
+
+
+    @classmethod
+    def get_angled_bounding_rectangle(cls, db, xCh, yCh, mCh, azimuth, x1, y1, x2, y2, x3, y3, x4, y4):
+        """
+        Return the angled bounding rectangle for data to be gridded on an angle.
+        
+        :param db:       Database
+        :param xCh:      X channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param yCh:      Y channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param mCh:      Data or mask channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param azimuth:  Input Azimuth Angle - degrees CW from North
+        :param x1:       Returned Corner 1 - X
+        :param y1:       Returned Corner 1 - Y
+        :param x2:       Returned Corner 2 - X
+        :param y2:       Returned Corner 2 - Y
+        :param x3:       Returned Corner 3 - X
+        :param y3:       Returned Corner 3 - Y
+        :param x4:       Returned Corner 4 - X
+        :param y4:       Returned Corner 4 - Y
+        :type  db:       GXDB
+        :type  xCh:      int
+        :type  yCh:      int
+        :type  mCh:      int
+        :type  azimuth:  float
+        :type  x1:       float_ref
+        :type  y1:       float_ref
+        :type  x2:       float_ref
+        :type  y2:       float_ref
+        :type  x3:       float_ref
+        :type  y3:       float_ref
+        :type  x4:       float_ref
+        :type  y4:       float_ref
+
+        .. versionadded:: 2023.1
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** Especially if the survey lines do not run N-S or E-W, gridding parallel to the XY axes
+        results in up to half the gridding area being dummies (padding), which is not only
+        inefficient, but affects processes like filtering.
+        This routine returns the rotated extents rectangle for a given gridding azimuth.
+        The data is rotated CCW by the input azimuth. The N-S and E-W extents of the rotated
+        data are determined and the bounding points rotated back by the input azimuth to locate
+        the angled bounding rectangle around the input data. As with GetGriddingAzimuthToMinimizePadding_DU
+        the extents are padded in each direction by 1% of the maximum height/width
+        Operates on all selected lines.
+        """
+        x1.value, y1.value, x2.value, y2.value, x3.value, y3.value, x4.value, y4.value = gxapi_cy.WrapDU._get_angled_bounding_rectangle(GXContext._get_tls_geo(), db, xCh, yCh, mCh, azimuth, x1.value, y1.value, x2.value, y2.value, x3.value, y3.value, x4.value, y4.value)
         
 
 

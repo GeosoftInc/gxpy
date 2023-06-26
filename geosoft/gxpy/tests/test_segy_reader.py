@@ -276,7 +276,7 @@ class Test(GXPYTest):
         self.start()
         with segy.SegyReader(self.testfile_3d) as target:
             config = target.field_configuration
-            self.assertEqual(len(config.fields), 14)
+            self.assertEqual(len(config.fields), 15)
             self.assertEqual(
                 config.fields[2].mapping, segy.FieldMapping.Crossline)
 
@@ -288,7 +288,7 @@ class Test(GXPYTest):
             config.fields[1].mapping = segy.FieldMapping.Crossline
             target.field_configuration = config
             config2 = target.field_configuration
-            self.assertEqual(len(config2.fields), 14)
+            self.assertEqual(len(config2.fields), 15)
             self.assertEqual(
                 config2.fields[2].mapping, segy.FieldMapping.Inline)
 

@@ -2186,7 +2186,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         the view may be rotated. In addition, when viewed in a map,
         a view with this `GXIPJ <geosoft.gxapi.GXIPJ>` will give a status bar location (X, Y, Z)
         of the actual location in space, as opposed to just the X, Y of
-        the view plane itself. When a rotation angle (CCW) is specified,
+        the view plane itself. When a rotation azimuth angle (CW) is specified,
         the input (X, Y) location is the point about which the coordinate
         system is rotated. For instance, you can rotate a grid about its corner
         (XC, YC) by giving it a Plan View orientation (XC, YC, ZElevation, Rot).
