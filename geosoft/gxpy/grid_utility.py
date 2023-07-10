@@ -39,6 +39,7 @@ BOOL_SIZE_MAX = gxapi.IMU_BOOL_SIZING_MAX
 BOOL_OVERLAP_AVERAGE = gxapi.IMU_BOOL_OLAP_AVE
 BOOL_OVERLAP_GRID1 = gxapi.IMU_BOOL_OLAP_1
 BOOL_OVERLAP_GRID2 = gxapi.IMU_BOOL_OLAP_2
+BOOL_OVERLAP_MINUS = gxapi.IMU_BOOL_OLAP_MINUS
 
 TREND_EDGE = gxapi.IMU_TREND_EDGE
 TREND_ALL = gxapi.IMU_TREND_ALL
@@ -479,9 +480,10 @@ def grid_bool(g1, g2, joined_grid=None, opt=1, size=3, olap=1):
     :param olap:    what to do with overlapping valid points, default uses grid 1
 
         ==================== ==================================
-        BOOL_OVERLAP_AVERAGE averave values where grids overlap
+        BOOL_OVERLAP_AVERAGE average values where grids overlap
         BOOL_OVERLAP_GRID1   use g1 where grids overlap
         BOOL_OVERLAP_GRID2   use g2 where grids overlap
+        BOOL_OVERLAP_MINUS   use g1 - g2 where grids overlap
         ==================== ==================================
 
     :returns:       `Grid` instance of the merged output grid, must be closed with a call to close().

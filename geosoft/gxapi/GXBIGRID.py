@@ -251,6 +251,35 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
 
 
+    @classmethod
+    def get_default_cell_size(cls, db, x, y, z, cell):
+        """
+        Get default cell size value.
+        
+        :param db:    Handle to a database
+        :param x:     Y Channel
+        :param y:     X Channel
+        :param z:     Data channel
+        :param cell:  cell size
+        :type  db:    GXDB
+        :type  x:     str
+        :type  y:     str
+        :type  z:     str
+        :type  cell:  float_ref
+
+        :returns:     0 - Ok
+                      1 - Error
+        :rtype:       int
+
+        .. versionadded:: 2023.1
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        ret_val, cell.value = gxapi_cy.WrapBIGRID._get_default_cell_size(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), cell.value)
+        return ret_val
+
+
+
 
 
 ### endblock ClassImplementation

@@ -700,6 +700,28 @@ class GXDB(gxapi_cy.WrapDB):
 
 
 
+    def get_modification_count(self):
+        """
+        Gets the modification count from the database.
+        
+        :rtype:      int
+
+        .. versionadded:: 2023.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** A running count of the times a database has been modified between commits.
+        Useful, for instance to be able to discard changes made by a GX on a database that are required
+        for the operation of the GX but which the user does not want to persist, and to avoid the Save changes
+        question when you go to change the database. So if the count is 0 when you start, it is safe to call
+        Discard_DB on exit without worrying about throwing away changes made previously.
+        """
+        ret_val = self._get_modification_count()
+        return ret_val
+
+
+
+
     def get_reg_symb_setting_int(self, symb, name):
         """
         Get an integer-valued `GXREG <geosoft.gxapi.GXREG>` setting from a symbol reg

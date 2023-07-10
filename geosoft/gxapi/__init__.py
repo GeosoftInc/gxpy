@@ -1247,6 +1247,8 @@ IMU_BOOL_OLAP_AVE = 0
 IMU_BOOL_OLAP_1 = 1
 #: Overlap values use grid 2 value
 IMU_BOOL_OLAP_2 = 2
+#: Overlap values use (grid 1 value - grid 2 value)
+IMU_BOOL_OLAP_MINUS = 4
 
 #
 # IMU_BOOL_OPT constants
@@ -1933,6 +1935,8 @@ MAP_EXPORT_FORMAT_DXF12 = "DXF12"
 MAP_EXPORT_FORMAT_DXF13 = "DXF13"
 #: "GTIFF"  GeoTIFF (``*.tif``),             Color Image
 MAP_EXPORT_FORMAT_GTIFF = "GTIFF"
+#: "CGTIFF"  GeoTIFF Compressed (``*.tif``), Color Image
+MAP_EXPORT_FORMAT_CGTIFF = "CGTIFF"
 #: "MTIFF"  MapInfo TIFF (``*.tif``)         Color Image
 MAP_EXPORT_FORMAT_MTIFF = "MTIFF"
 #: "ATIFF"  ArcView TIFF (``*.tif``)         Color Image
