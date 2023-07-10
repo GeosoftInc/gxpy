@@ -1,0 +1,409 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxpy.spatialdata &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.spatialdata</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxpy.spatialdata</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Geosoft spatial data base class.</span>
+
+<span class="sd">Spatial datasets are collections of geometric objects that have associated data, typically persisting in</span>
+<span class="sd">a named file. Examples are Geosoft databases, grids, voxels, geosoft_surfaces.</span>
+
+<span class="sd">:Classes:</span>
+
+<span class="sd">    ============= ===================================================================================</span>
+<span class="sd">    `SpatialData` base class for Geosoft spatial data, inherits from `geosoft.gxpy.geometry.Geometry`</span>
+<span class="sd">    ============= ===================================================================================</span>
+
+<span class="sd">**Constants**</span>
+
+<span class="sd">`mode=` file open mode constants</span>
+
+<span class="sd">   ============== == ====================================================</span>
+<span class="sd">   FILE_READ       0 open for read, files are not changed</span>
+<span class="sd">   FILE_READWRITE  1 open for read and write, files can be changed</span>
+<span class="sd">   FILE_NEW        2 new file, accompanied by `overwrite=` parameter</span>
+<span class="sd">   ============== == ====================================================</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">geosoft</span>
+<span class="kn">import</span> <span class="nn">geosoft.gxapi</span> <span class="k">as</span> <span class="nn">gxapi</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gx</span> <span class="k">as</span> <span class="n">gx</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">utility</span> <span class="k">as</span> <span class="n">gxu</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">geometry</span> <span class="k">as</span> <span class="n">gxgm</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">coordinate_system</span> <span class="k">as</span> <span class="n">gxcs</span>
+
+<span class="n">__version__</span> <span class="o">=</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">__version__</span>
+
+
+<span class="k">def</span> <span class="nf">_t</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">geosoft</span><span class="o">.</span><span class="n">gxpy</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="SpatialException"><a class="viewcode-back" href="../../../geosoft.gxpy.spatialdata.html#geosoft.gxpy.spatialdata.SpatialException">[docs]</a><span class="k">class</span> <span class="nc">SpatialException</span><span class="p">(</span><span class="n">geosoft</span><span class="o">.</span><span class="n">GXRuntimeError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Exceptions from `geosoft.gxpy.spatial_data`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="delete_files"><a class="viewcode-back" href="../../../geosoft.gxpy.spatialdata.html#geosoft.gxpy.spatialdata.delete_files">[docs]</a><span class="k">def</span> <span class="nf">delete_files</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Delete file and xml file</span>
+
+<span class="sd">    :param file_name: base file name</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">df</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+    <span class="k">if</span> <span class="n">file_name</span><span class="p">:</span>
+
+        <span class="n">df</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="n">df</span><span class="p">(</span><span class="n">file_name</span> <span class="o">+</span> <span class="s1">&#39;.xml&#39;</span><span class="p">)</span></div>
+
+
+<span class="n">MODE_READ</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">MODE_READWRITE</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">MODE_NEW</span> <span class="o">=</span> <span class="mi">2</span>
+
+
+<div class="viewcode-block" id="find_meta_branch"><a class="viewcode-back" href="../../../geosoft.gxpy.spatialdata.html#geosoft.gxpy.spatialdata.find_meta_branch">[docs]</a><span class="k">def</span> <span class="nf">find_meta_branch</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the lowest branch in the meta dictionary that contains the item.</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">meta</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">meta</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">meta</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">value</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">meta</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">find_meta_branch</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="coordinate_system_from_metadata"><a class="viewcode-back" href="../../../geosoft.gxpy.spatialdata.html#geosoft.gxpy.spatialdata.coordinate_system_from_metadata">[docs]</a><span class="k">def</span> <span class="nf">coordinate_system_from_metadata</span><span class="p">(</span><span class="n">meta</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a `geosoft.gxpy.coordinate_system.Coordinate_system` instance from metadata.</span>
+
+<span class="sd">    :param meta:    metadata dictionary</span>
+<span class="sd">    :return:        `geosoft.gxpy.coordinate_system.Coordinate_system`, or None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">geometa</span> <span class="o">=</span> <span class="n">find_meta_branch</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;geosoft&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">geometa</span><span class="p">:</span>
+            <span class="n">projection</span> <span class="o">=</span> <span class="n">find_meta_branch</span><span class="p">(</span><span class="n">geometa</span><span class="p">[</span><span class="s1">&#39;geosoft&#39;</span><span class="p">],</span> <span class="s1">&#39;projection&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">projection</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">gxcs</span><span class="o">.</span><span class="n">Coordinate_system</span><span class="p">(</span><span class="n">projection</span><span class="p">[</span><span class="s1">&#39;projection&#39;</span><span class="p">])</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="coordinate_system_from_metadata_file"><a class="viewcode-back" href="../../../geosoft.gxpy.spatialdata.html#geosoft.gxpy.spatialdata.coordinate_system_from_metadata_file">[docs]</a><span class="k">def</span> <span class="nf">coordinate_system_from_metadata_file</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a `geosoft.gxpy.coordinate_system.Coordinate_system` instance from metadata.</span>
+
+<span class="sd">    :param file_name:    spatial dataset name.</span>
+<span class="sd">    :return:            `geosoft.gxpy.coordinate_system.Coordinate_system`, or None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">coordinate_system_from_metadata</span><span class="p">(</span><span class="n">gxu</span><span class="o">.</span><span class="n">geosoft_metadata</span><span class="p">(</span><span class="n">file_name</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="extent_from_metadata"><a class="viewcode-back" href="../../../geosoft.gxpy.spatialdata.html#geosoft.gxpy.spatialdata.extent_from_metadata">[docs]</a><span class="k">def</span> <span class="nf">extent_from_metadata</span><span class="p">(</span><span class="n">meta</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return spatial dataset extent from geosoft metadata.</span>
+
+<span class="sd">    :param meta:                metadata dictionary</span>
+<span class="sd">    :return:                    `geosoft.gxpy.geometry.Point2` instance</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">meta</span> <span class="o">=</span> <span class="n">find_meta_branch</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;geosoft&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">meta</span><span class="p">:</span>
+        <span class="n">cs</span> <span class="o">=</span> <span class="n">coordinate_system_from_metadata</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">ex</span> <span class="o">=</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;geosoft&#39;</span><span class="p">][</span><span class="s1">&#39;dataset&#39;</span><span class="p">][</span><span class="s1">&#39;georeference&#39;</span><span class="p">][</span><span class="s1">&#39;dataextents&#39;</span><span class="p">][</span><span class="s1">&#39;extent3d&#39;</span><span class="p">]</span>
+            <span class="n">minp</span> <span class="o">=</span> <span class="n">gxgm</span><span class="o">.</span><span class="n">Point</span><span class="p">((</span><span class="nb">float</span><span class="p">(</span><span class="n">ex</span><span class="p">[</span><span class="s1">&#39;@minx&#39;</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">ex</span><span class="p">[</span><span class="s1">&#39;@miny&#39;</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">ex</span><span class="p">[</span><span class="s1">&#39;@minz&#39;</span><span class="p">])))</span>
+            <span class="n">maxp</span> <span class="o">=</span> <span class="n">gxgm</span><span class="o">.</span><span class="n">Point</span><span class="p">((</span><span class="nb">float</span><span class="p">(</span><span class="n">ex</span><span class="p">[</span><span class="s1">&#39;@maxx&#39;</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">ex</span><span class="p">[</span><span class="s1">&#39;@maxy&#39;</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">ex</span><span class="p">[</span><span class="s1">&#39;@maxz&#39;</span><span class="p">])))</span>
+            <span class="k">return</span> <span class="n">gxgm</span><span class="o">.</span><span class="n">Point2</span><span class="p">((</span><span class="n">minp</span><span class="p">,</span> <span class="n">maxp</span><span class="p">),</span> <span class="n">cs</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="extent_from_metadata_file"><a class="viewcode-back" href="../../../geosoft.gxpy.spatialdata.html#geosoft.gxpy.spatialdata.extent_from_metadata_file">[docs]</a><span class="k">def</span> <span class="nf">extent_from_metadata_file</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return spatial dataset extent from file metadata .xml file</span>
+
+<span class="sd">    :param file_name:           spatial dataset file</span>
+<span class="sd">    :return:                    `geosoft.gxpy.geometry.Point2` instance</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">extent_from_metadata</span><span class="p">(</span><span class="n">gxu</span><span class="o">.</span><span class="n">geosoft_metadata</span><span class="p">(</span><span class="n">file_name</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="SpatialData"><a class="viewcode-back" href="../../../geosoft.gxpy.spatialdata.html#geosoft.gxpy.spatialdata.SpatialData">[docs]</a><span class="k">class</span> <span class="nc">SpatialData</span><span class="p">(</span><span class="n">gxgm</span><span class="o">.</span><span class="n">Geometry</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Base class for spatial datasets.</span>
+
+<span class="sd">    :param name:        dataset name.</span>
+<span class="sd">    :param file_name:   file name for this dataset.</span>
+<span class="sd">    :param mode:        file mode, MODE_READ, MODE_READWRITE or MODE_NEW.  The default is MODE_NEW.</span>
+<span class="sd">    :param overwrite:   Default is False. If True will raise an error if MODE_NEW and file_name exists.</span>
+<span class="sd">    :param gxobj:       Base GXAPI spatial dataset object, default is None.  If passed the base object is used</span>
+<span class="sd">                        to resolve common named methods like *`get_ipj()`*.</span>
+
+<span class="sd">    :Properties:</span>
+<span class="sd">    </span>
+<span class="sd">        properties of `geosoft.gxpy.geometry.Geometry` plus:</span>
+
+<span class="sd">        ================== =============================================================</span>
+<span class="sd">        `file_name`        file name</span>
+<span class="sd">        `metadata`         metadata dictionary</span>
+<span class="sd">        `unit_of_measure`  primary data unit of measurement</span>
+<span class="sd">        ================== =============================================================</span>
+
+<span class="sd">    .. versionadded:: 9.3.1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="fm">__del__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_close&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_close</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_open&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">:</span>
+
+                <span class="n">gx</span><span class="o">.</span><span class="n">pop_resource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_open</span> <span class="o">=</span> <span class="kc">None</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metadata_changed</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">!=</span> <span class="n">MODE_READ</span><span class="p">:</span>
+                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file_name</span> <span class="o">+</span> <span class="s1">&#39;.xml&#39;</span><span class="p">,</span> <span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">gxu</span><span class="o">.</span><span class="n">xml_from_dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span><span class="p">))</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_gxobj</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">(</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+<div class="viewcode-block" id="SpatialData.__init__"><a class="viewcode-back" href="../../../geosoft.gxpy.spatialdata.html#geosoft.gxpy.spatialdata.SpatialData.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">MODE_NEW</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">file_name</span><span class="p">:</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file_name</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+                
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">file_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">mode</span> <span class="o">!=</span> <span class="n">MODE_NEW</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">SpatialException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Cannot read from an unnammed dataset&#39;</span><span class="p">))</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="n">MODE_NEW</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gxobj</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">overwrite</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="n">SpatialException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1"> exists. Use overwrite=True to overwrite existing dataset file.&#39;</span><span class="p">)</span><span class="o">.</span>
+                                           <span class="nb">format</span><span class="p">(</span><span class="n">file_name</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="n">SpatialException</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Cannot find dataset file </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span>
+                                           <span class="nb">format</span><span class="p">(</span><span class="n">file_name</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_file_name</span> <span class="o">=</span> <span class="n">file_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">=</span> <span class="n">mode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metadata_changed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metadata_root</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_open</span> <span class="o">=</span> <span class="n">gx</span><span class="o">.</span><span class="n">track_resource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_init_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">geosoft_metadata</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metadata_root</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span><span class="o">.</span><span class="n">items</span><span class="p">())[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">file_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;dataset primary file name&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file_name</span>
+
+<div class="viewcode-block" id="SpatialData.close"><a class="viewcode-back" href="../../../geosoft.gxpy.spatialdata.html#geosoft.gxpy.spatialdata.SpatialData.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;close the dataset.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_close</span><span class="p">()</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dataset_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Dataset open mode&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the dataset metadata as a dictionary.  Can be set, in which case</span>
+<span class="sd">        the dictionary items passed will be added to, or replace existing metadata.</span>
+
+<span class="sd">        .. seealso:: Geosoft metadata</span>
+<span class="sd">            `Schema &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GXD93/pages/78184638/Geosoft+Metadata+Schema&gt;`</span>
+
+<span class="sd">        .. versionadded:: 9.3.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_init_metadata</span><span class="p">()</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_metadata_root</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@metadata</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_init_metadata</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_metadata_root</span><span class="p">]</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">merge_dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_metadata_root</span><span class="p">],</span> <span class="n">meta</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metadata_changed</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">unit_of_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Units of measurement (a string) for the primary scalar data associated with this dataset.</span>
+
+<span class="sd">        Can be set.</span>
+
+<span class="sd">        .. versionadded:: 9.3.1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">uom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;geosoft&#39;</span><span class="p">][</span><span class="s1">&#39;dataset&#39;</span><span class="p">][</span><span class="s1">&#39;geo:unitofmeasurement&#39;</span><span class="p">][</span><span class="s1">&#39;#text&#39;</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">uom</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">return</span> <span class="n">uom</span>
+
+    <span class="nd">@unit_of_measure</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">unit_of_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uom</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;geosoft&#39;</span><span class="p">:</span>
+                             <span class="p">{</span><span class="s1">&#39;@xmlns&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.geosoft.com/schema/geo&#39;</span><span class="p">,</span>
+                              <span class="s1">&#39;dataset&#39;</span><span class="p">:</span>
+                                  <span class="p">{</span><span class="s1">&#39;geo:unitofmeasurement&#39;</span><span class="p">:</span>
+                                       <span class="p">{</span><span class="s1">&#39;@xmlns:geo&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.geosoft.com/schema/geo&#39;</span><span class="p">,</span>
+                                        <span class="s1">&#39;#text&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">uom</span><span class="p">)}}}}</span></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.spatialdata</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

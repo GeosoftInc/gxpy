@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXTRND &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXTRND</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXTRND</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXTRND"><a class="viewcode-back" href="../../../GXTRND.html#geosoft.gxapi.GXTRND">[docs]</a><span class="k">class</span> <span class="nc">GXTRND</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapTRND</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXTRND class.</span>
+
+<span class="sd">    The `GXTRND &lt;geosoft.gxapi.GXTRND&gt;` methods are used to determine trend directions in database data by locating</span>
+<span class="sd">    maxima and minima along lines and joining them in a specified direction.</span>
+<span class="sd">    The resulting trend lines are appended to the database and used by gridding methods</span>
+<span class="sd">    such as Bigrid and Rangrid to enforce features in the specified direction.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXTRND.__init__"><a class="viewcode-back" href="../../../GXTRND.html#geosoft.gxapi.GXTRND.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXTRND</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXTRND.null"><a class="viewcode-back" href="../../../GXTRND.html#geosoft.gxapi.GXTRND.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXTRND &lt;geosoft.gxapi.GXTRND&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXTRND &lt;geosoft.gxapi.GXTRND&gt;`</span>
+<span class="sd">        :rtype:   GXTRND</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXTRND</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXTRND.is_null"><a class="viewcode-back" href="../../../GXTRND.html#geosoft.gxapi.GXTRND.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+<div class="viewcode-block" id="GXTRND.get_max_min"><a class="viewcode-back" href="../../../GXTRND.html#geosoft.gxapi.GXTRND.get_max_min">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_max_min</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">vv_xm</span><span class="p">,</span> <span class="n">v_vym</span><span class="p">,</span> <span class="n">v_vzm</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">trnd</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Find the max/min nodes in a line.</span>
+<span class="sd">        </span>
+<span class="sd">        :param vv_x:    X Channel</span>
+<span class="sd">        :param vv_y:    Y Channel</span>
+<span class="sd">        :param vv_z:    Data Channel</span>
+<span class="sd">        :param vv_xm:   X MaxMin (returned)</span>
+<span class="sd">        :param v_vym:   Y MaxMin (returned)</span>
+<span class="sd">        :param v_vzm:   Data MaxMin (returned)</span>
+<span class="sd">        :param window:  MaxMin Window</span>
+<span class="sd">        :param trnd:    :ref:`TRND_NODE`</span>
+<span class="sd">        :type  vv_x:    GXVV</span>
+<span class="sd">        :type  vv_y:    GXVV</span>
+<span class="sd">        :type  vv_z:    GXVV</span>
+<span class="sd">        :type  vv_xm:   GXVV</span>
+<span class="sd">        :type  v_vym:   GXVV</span>
+<span class="sd">        :type  v_vzm:   GXVV</span>
+<span class="sd">        :type  window:  float</span>
+<span class="sd">        :type  trnd:    int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Trend lines positions consist of X and Y VVs</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapTRND</span><span class="o">.</span><span class="n">_get_max_min</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">vv_xm</span><span class="p">,</span> <span class="n">v_vym</span><span class="p">,</span> <span class="n">v_vzm</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">trnd</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXTRND.get_mesh"><a class="viewcode-back" href="../../../GXTRND.html#geosoft.gxapi.GXTRND.get_mesh">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_mesh</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">max_length</span><span class="p">,</span> <span class="n">mesh_vv</span><span class="p">,</span> <span class="n">trnd</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the lines in a trend mesh.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:          Database</span>
+<span class="sd">        :param chan:        Selected channel</span>
+<span class="sd">        :param window:      MaxMin Window</span>
+<span class="sd">        :param max_length:  Maximum join length</span>
+<span class="sd">        :param mesh_vv:     `GXVV &lt;geosoft.gxapi.GXVV&gt;` of type GS_D2POINT (returned)</span>
+<span class="sd">        :param trnd:        :ref:`TRND_NODE`</span>
+<span class="sd">        :type  db:          GXDB</span>
+<span class="sd">        :type  chan:        str</span>
+<span class="sd">        :type  window:      float</span>
+<span class="sd">        :type  max_length:  float</span>
+<span class="sd">        :type  mesh_vv:     GXVV</span>
+<span class="sd">        :type  trnd:        int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapTRND</span><span class="o">.</span><span class="n">_get_mesh</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">window</span><span class="p">,</span> <span class="n">max_length</span><span class="p">,</span> <span class="n">mesh_vv</span><span class="p">,</span> <span class="n">trnd</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXTRND.trnd_db"><a class="viewcode-back" href="../../../GXTRND.html#geosoft.gxapi.GXTRND.trnd_db">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">trnd_db</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">deviation</span><span class="p">,</span> <span class="n">max_length</span><span class="p">,</span> <span class="n">deflection</span><span class="p">,</span> <span class="n">min_length</span><span class="p">,</span> <span class="n">resample</span><span class="p">,</span> <span class="n">br_angle</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Uses a selected channel to find data trends in a database.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:          Database handle</span>
+<span class="sd">        :param chan:        Selected channel</span>
+<span class="sd">        :param window:      MaxMin Window</span>
+<span class="sd">        :param angle:       Preferred angle, degrees CCW from X</span>
+<span class="sd">        :param deviation:   Allowed deviation</span>
+<span class="sd">        :param max_length:  Longest join</span>
+<span class="sd">        :param deflection:  Maximum deflection in join (can be `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;`)</span>
+<span class="sd">        :param min_length:  Minimum length for trend lines (can be `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;`)</span>
+<span class="sd">        :param resample:    Resampling distance (can be `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;`)</span>
+<span class="sd">        :param br_angle:    Breaking angle, degrees CCW from X (can be `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;`)</span>
+<span class="sd">        :type  db:          GXDB</span>
+<span class="sd">        :type  chan:        str</span>
+<span class="sd">        :type  window:      float</span>
+<span class="sd">        :type  angle:       float</span>
+<span class="sd">        :type  deviation:   float</span>
+<span class="sd">        :type  max_length:  float</span>
+<span class="sd">        :type  deflection:  float</span>
+<span class="sd">        :type  min_length:  float</span>
+<span class="sd">        :type  resample:    float</span>
+<span class="sd">        :type  br_angle:    float</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapTRND</span><span class="o">.</span><span class="n">_trnd_db</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">window</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">deviation</span><span class="p">,</span> <span class="n">max_length</span><span class="p">,</span> <span class="n">deflection</span><span class="p">,</span> <span class="n">min_length</span><span class="p">,</span> <span class="n">resample</span><span class="p">,</span> <span class="n">br_angle</span><span class="p">)</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXTRND</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

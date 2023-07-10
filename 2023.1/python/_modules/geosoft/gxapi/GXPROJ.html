@@ -1,0 +1,818 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXPROJ &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPROJ</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXPROJ</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXPROJ"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ">[docs]</a><span class="k">class</span> <span class="nc">GXPROJ</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXPROJ class.</span>
+
+<span class="sd">    Project functions</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXPROJ.__init__"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXPROJ</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXPROJ.null"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXPROJ &lt;geosoft.gxapi.GXPROJ&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXPROJ &lt;geosoft.gxapi.GXPROJ&gt;`</span>
+<span class="sd">        :rtype:   GXPROJ</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXPROJ</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXPROJ.is_null"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Drag-and-drop methods</span>
+
+
+<div class="viewcode-block" id="GXPROJ.drop_map_clip_data"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.drop_map_clip_data">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">drop_map_clip_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">hglobal</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Drop Map clipboard data in the current project (workspace background)</span>
+<span class="sd">        </span>
+<span class="sd">        :param hglobal:  Handle to Global Clipboard data</span>
+<span class="sd">        :type  hglobal:  int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_drop_map_clip_data</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">hglobal</span><span class="p">)</span></div>
+        
+
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+<div class="viewcode-block" id="GXPROJ.add_document"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.add_document">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">add_document</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">display</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds (and opens) a document file in the current project.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:     Document name</span>
+<span class="sd">        :param type:     Type of document to add</span>
+<span class="sd">        :param display:  :ref:`PROJ_DISPLAY`</span>
+<span class="sd">        :type  name:     str</span>
+<span class="sd">        :type  type:     str</span>
+<span class="sd">        :type  display:  int</span>
+
+<span class="sd">        :returns:        0 - Ok</span>
+<span class="sd">                         1 - Error</span>
+<span class="sd">        :rtype:          int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** The passed file name must be a valid</span>
+<span class="sd">        file name complete with an extension and</span>
+<span class="sd">        qualifiers (if applicable).</span>
+
+<span class="sd">        The type string can be one of the following:</span>
+
+<span class="sd">            Database      </span>
+<span class="sd">            Grid          </span>
+<span class="sd">            Map           </span>
+<span class="sd">            3DView        </span>
+<span class="sd">            Geosurface</span>
+<span class="sd">            Voxel         </span>
+<span class="sd">            VoxelInversion</span>
+<span class="sd">            GMS3D         </span>
+<span class="sd">            GMS2D</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_add_document</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">display</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXPROJ.add_document_without_opening"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.add_document_without_opening">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">add_document_without_opening</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds (and opens) a document file in the current project.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Document name</span>
+<span class="sd">        :param type:  Type of document to add</span>
+<span class="sd">        :type  name:  str</span>
+<span class="sd">        :type  type:  str</span>
+
+<span class="sd">        :returns:     0 - Ok</span>
+<span class="sd">                      1 - Error</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 8.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** The passed file name must be a valid</span>
+<span class="sd">        file name complete with an extension and</span>
+<span class="sd">        qualifiers (if applicable).</span>
+
+<span class="sd">        The type string can be one of the following:</span>
+
+<span class="sd">            Database      </span>
+<span class="sd">            Grid          </span>
+<span class="sd">            Map           </span>
+<span class="sd">            3DView        </span>
+<span class="sd">            Geosurface</span>
+<span class="sd">            Voxel         </span>
+<span class="sd">            VoxelInversion</span>
+<span class="sd">            GMS3D         </span>
+<span class="sd">            GMS2D</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_add_document_without_opening</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXPROJ.add_document_include_meta"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.add_document_include_meta">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">add_document_include_meta</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">display</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds (and opens) a document file in the current project.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:     Document name</span>
+<span class="sd">        :param type:     Type of document to add</span>
+<span class="sd">        :param meta:     Meta file to load</span>
+<span class="sd">        :param display:  :ref:`PROJ_DISPLAY`</span>
+<span class="sd">        :type  name:     str</span>
+<span class="sd">        :type  type:     str</span>
+<span class="sd">        :type  meta:     str</span>
+<span class="sd">        :type  display:  int</span>
+
+<span class="sd">        :returns:        0 - Ok</span>
+<span class="sd">                         1 - Error</span>
+<span class="sd">        :rtype:          int</span>
+
+<span class="sd">        .. versionadded:: 2022.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** The passed file name must be a valid</span>
+<span class="sd">        file name complete with an extension and</span>
+<span class="sd">        qualifiers (if applicable).</span>
+
+<span class="sd">        The type string can be one of the following:</span>
+
+<span class="sd">            Database      </span>
+<span class="sd">            Grid          </span>
+<span class="sd">            Map           </span>
+<span class="sd">            3DView        </span>
+<span class="sd">            Geosurface</span>
+<span class="sd">            Voxel         </span>
+<span class="sd">            VoxelInversion</span>
+<span class="sd">            GMS3D         </span>
+<span class="sd">            GMS2D</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_add_document_include_meta</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">meta</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">display</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXPROJ.add_grid_document"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.add_grid_document">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">add_grid_document</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">display</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds (and opens) a grid document file in the current project with a particular colour distribution and colour file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:     Document name</span>
+<span class="sd">        :param colors:   Colour zone file to use</span>
+<span class="sd">        :param method:   Colour method to use - one of the ITR_ZONE_XXXX values</span>
+<span class="sd">        :param display:  :ref:`PROJ_DISPLAY`</span>
+<span class="sd">        :type  name:     str</span>
+<span class="sd">        :type  colors:   str</span>
+<span class="sd">        :type  method:   int</span>
+<span class="sd">        :type  display:  int</span>
+
+<span class="sd">        :returns:        0 - Ok</span>
+<span class="sd">                         1 - Error</span>
+<span class="sd">        :rtype:          int</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** The passed file name must be a valid Grid document</span>
+<span class="sd">        with an extension and qualifiers (if applicable).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_add_grid_document</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">colors</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">method</span><span class="p">,</span> <span class="n">display</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXPROJ.get_command_environment"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.get_command_environment">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_command_environment</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The current command environment</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    :ref:`COMMAND_ENV`</span>
+
+<span class="sd">                  Notes									</span>
+
+<span class="sd">                  We are moving towards embedded tools and menus and this setting can be</span>
+<span class="sd">                  queried from the project to determine how specific commands should react.</span>
+<span class="sd">                  Only 3D viewer is currently making use of this.</span>
+
+<span class="sd">                  If new Command environment enum values are added, then update the iGetCommandEnvironment_PROJ() function</span>
+<span class="sd">                  in geogxgui\\gxx_app.cpp and in the COMMAND_ENVIRONMENT enums in geoengine.core\\include\\obj\\objgp.h.</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_command_environment</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXPROJ.list_documents"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.list_documents">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">list_documents</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">gvv</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fills a `GXVV &lt;geosoft.gxapi.GXVV&gt;` with documents of a certain type.</span>
+<span class="sd">        </span>
+<span class="sd">        :param gvv:   `GXVV &lt;geosoft.gxapi.GXVV&gt;` of type -`STR_FILE &lt;geosoft.gxapi.STR_FILE&gt;`</span>
+<span class="sd">        :param type:  Type of document to obtain</span>
+<span class="sd">        :type  gvv:   GXVV</span>
+<span class="sd">        :type  type:  str</span>
+
+<span class="sd">        :returns:     The number of documents listed in the `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** The type string can be one of the following:</span>
+<span class="sd">        Database         List Databases.</span>
+<span class="sd">        Grid             List Grids.</span>
+<span class="sd">        Map              List Maps.</span>
+<span class="sd">        3DView           List 3D Views.</span>
+<span class="sd">        Geosurface       List Geosurfaces.</span>
+<span class="sd">        Voxel            List Voxels.</span>
+<span class="sd">        VoxelInversion   List VOXI Documents.</span>
+<span class="sd">        `GXMXD &lt;geosoft.gxapi.GXMXD&gt;`              List ArcGIS MXDs.</span>
+<span class="sd">        GMS3D            List GM-SYS 3D Models.</span>
+<span class="sd">        GMS2D            List GM-SYS 2D Models.</span>
+<span class="sd">        All              Lists all files.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_list_documents</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">gvv</span><span class="p">,</span> <span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXPROJ.list_loaded_documents"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.list_loaded_documents">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">list_loaded_documents</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">gvv</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fills a `GXVV &lt;geosoft.gxapi.GXVV&gt;` with loaded documents of a certain type.</span>
+<span class="sd">        </span>
+<span class="sd">        :param gvv:   `GXVV &lt;geosoft.gxapi.GXVV&gt;` of type -`STR_FILE &lt;geosoft.gxapi.STR_FILE&gt;`&gt;</span>
+<span class="sd">        :param type:  Type of document to obtain</span>
+<span class="sd">        :type  gvv:   GXVV</span>
+<span class="sd">        :type  type:  str</span>
+
+<span class="sd">        :returns:     The number of loaded documents listed in the `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 9.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** The type string can be one of the following:</span>
+<span class="sd">        Database         List Databases.</span>
+<span class="sd">        Grid             List Grids.</span>
+<span class="sd">        Map              List Maps.</span>
+<span class="sd">        3DView           List 3D Views.</span>
+<span class="sd">        Geosurface       List Geosurfaces.</span>
+<span class="sd">        Voxel            List Voxels.</span>
+<span class="sd">        VoxelInversion   List VOXI Documents.</span>
+<span class="sd">        `GXMXD &lt;geosoft.gxapi.GXMXD&gt;`              List ArcGIS MXDs.</span>
+<span class="sd">        GMS3D            List GM-SYS 3D Models.</span>
+<span class="sd">        GMS2D            List GM-SYS 2D Models.</span>
+<span class="sd">        All              Lists all files.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_list_loaded_documents</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">gvv</span><span class="p">,</span> <span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXPROJ.current_document"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.current_document">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">current_document</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the name and type of the loaded document with focus.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Name (empty if none currently loaded)</span>
+<span class="sd">        :param type:  Type</span>
+<span class="sd">        :type  name:  str_ref</span>
+<span class="sd">        :type  type:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 9.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">type</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_current_document</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXPROJ.current_document_of_type"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.current_document_of_type">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">current_document_of_type</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the name of a loaded document of a specific type.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Name (empty if none currently loaded)</span>
+<span class="sd">        :param type:  Type</span>
+<span class="sd">        :type  name:  str_ref</span>
+<span class="sd">        :type  type:  str</span>
+
+<span class="sd">        .. versionadded:: 9.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_current_document_of_type</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXPROJ.list_tools"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.list_tools">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">list_tools</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fills an `GXLST &lt;geosoft.gxapi.GXLST&gt;` object with tools of a certain type and</span>
+<span class="sd">        notes the current visibility setting.</span>
+<span class="sd">        </span>
+<span class="sd">        :param lst:   `GXLST &lt;geosoft.gxapi.GXLST&gt;` object to hold list</span>
+<span class="sd">        :param type:  :ref:`TOOL_TYPE`</span>
+<span class="sd">        :type  lst:   GXLST</span>
+<span class="sd">        :type  type:  int</span>
+
+<span class="sd">        :returns:     The number of tools found.</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** GX will terminate if there is an error.</span>
+
+<span class="sd">        `GXLST &lt;geosoft.gxapi.GXLST&gt;` object will hold the tool name in the name column and</span>
+<span class="sd">        include whether the tool is currently visible in the value</span>
+<span class="sd">        column (1=visible, 0-hidden).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_list_tools</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">lst</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXPROJ.remove_document"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.remove_document">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">remove_document</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Removes (and closes if visible) a document from the current project.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Document name</span>
+<span class="sd">        :type  name:  str</span>
+
+<span class="sd">        :returns:     0 - Ok</span>
+<span class="sd">                      1 - Document not found in project</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** The passed file name must be a valid</span>
+<span class="sd">        file name complete with an extension and</span>
+<span class="sd">        qualifiers (if applicable).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_remove_document</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXPROJ.remove_tool"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.remove_tool">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">remove_tool</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Removes (and closes if visible) a auxiliary tool from the current project.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Tool name</span>
+<span class="sd">        :type  name:  str</span>
+
+<span class="sd">        :returns:     0 - Ok</span>
+<span class="sd">                      1 - Tool not found in project</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Nothing</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_remove_tool</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXPROJ.save_close_documents"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.save_close_documents">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">save_close_documents</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Saves and closes (if visible) documents contained in the current project.</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:  Type of document to save / close</span>
+<span class="sd">        :type  type:  str</span>
+
+<span class="sd">        :returns:     0  - Ok</span>
+<span class="sd">                      -1 - User hit cancel in save dialog</span>
+<span class="sd">                      1  - Error</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** This wrapper brings up the save dialog tool to allow</span>
+<span class="sd">        the user to save the modified documents for this project.</span>
+<span class="sd">        Only documents that have actually changed will be listed.</span>
+
+<span class="sd">        The type string can be one of the following:</span>
+
+<span class="sd">            Database      </span>
+<span class="sd">            Grid          </span>
+<span class="sd">            Map           </span>
+<span class="sd">            3DView        </span>
+<span class="sd">            Geosurface</span>
+<span class="sd">            Voxel         </span>
+<span class="sd">            VoxelInversion</span>
+<span class="sd">            GMS3D         </span>
+<span class="sd">            GMS2D</span>
+<span class="sd">            All</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_save_close_documents</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXPROJ.get_name"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.get_name">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the name of the project file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  name</span>
+<span class="sd">        :type  name:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 8.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Return the name of the project file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_name</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXPROJ.get_server_and_project_guid"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.get_server_and_project_guid">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_server_and_project_guid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">server_id</span><span class="p">,</span> <span class="n">project_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the unique identifier of the project and server.</span>
+<span class="sd">        </span>
+<span class="sd">        :param server_id:   Server ID</span>
+<span class="sd">        :param project_id:  Project ID</span>
+<span class="sd">        :type  server_id:   str_ref</span>
+<span class="sd">        :type  project_id:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Return the unique identifier of the project and server.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">server_id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">project_id</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_server_and_project_guid</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">server_id</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">project_id</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXPROJ.set_central_project_information"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.set_central_project_information">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">set_central_project_information</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">server_guid</span><span class="p">,</span> <span class="n">project_guid</span><span class="p">,</span> <span class="n">branch_id</span><span class="p">,</span> <span class="n">revision_id</span><span class="p">,</span> <span class="n">cs_info</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set Central project information.</span>
+<span class="sd">        </span>
+<span class="sd">        :param server_guid:   server guid</span>
+<span class="sd">        :param project_guid:  project guid</span>
+<span class="sd">        :param branch_id:     branch ID</span>
+<span class="sd">        :param revision_id:   revision ID</span>
+<span class="sd">        :param cs_info:       Coordinate system information, either EPSG or WKT</span>
+<span class="sd">        :type  server_guid:   str</span>
+<span class="sd">        :type  project_guid:  str</span>
+<span class="sd">        :type  branch_id:     int</span>
+<span class="sd">        :type  revision_id:   int</span>
+<span class="sd">        :type  cs_info:       str</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Set Central project information.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_set_central_project_information</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">server_guid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">project_guid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">branch_id</span><span class="p">,</span> <span class="n">revision_id</span><span class="p">,</span> <span class="n">cs_info</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXPROJ.get_central_project_information"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.get_central_project_information">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_central_project_information</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">crs</span><span class="p">,</span> <span class="n">branch</span><span class="p">,</span> <span class="n">rev_id</span><span class="p">,</span> <span class="n">rev_date</span><span class="p">,</span> <span class="n">rev_note</span><span class="p">,</span> <span class="n">rev_stage</span><span class="p">,</span> <span class="n">rev_author</span><span class="p">,</span> <span class="n">rev_server_url</span><span class="p">,</span> <span class="n">rev_proj_url</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Central project information.</span>
+<span class="sd">        </span>
+<span class="sd">        :param instance:        Instance name</span>
+<span class="sd">        :param project:         Project name</span>
+<span class="sd">        :param crs:             Coordinate Reference System</span>
+<span class="sd">        :param branch:          Branch name</span>
+<span class="sd">        :param rev_id:          Revision Id</span>
+<span class="sd">        :param rev_date:        Revision date</span>
+<span class="sd">        :param rev_note:        Revision note</span>
+<span class="sd">        :param rev_stage:       Revision stage</span>
+<span class="sd">        :param rev_author:      Revision author</span>
+<span class="sd">        :param rev_server_url:  Revision server url</span>
+<span class="sd">        :param rev_proj_url:    Revision project url</span>
+<span class="sd">        :type  instance:        str_ref</span>
+<span class="sd">        :type  project:         str_ref</span>
+<span class="sd">        :type  crs:             str_ref</span>
+<span class="sd">        :type  branch:          str_ref</span>
+<span class="sd">        :type  rev_id:          str_ref</span>
+<span class="sd">        :type  rev_date:        str_ref</span>
+<span class="sd">        :type  rev_note:        str_ref</span>
+<span class="sd">        :type  rev_stage:       str_ref</span>
+<span class="sd">        :type  rev_author:      str_ref</span>
+<span class="sd">        :type  rev_server_url:  str_ref</span>
+<span class="sd">        :type  rev_proj_url:    str_ref</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Get Central project information.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">instance</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">project</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">crs</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">branch</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_date</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_note</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_stage</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_author</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_server_url</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_proj_url</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_central_project_information</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">instance</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">project</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">crs</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">branch</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_id</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_date</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_note</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_stage</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_author</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_server_url</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_proj_url</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXPROJ.save_document_view"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.save_document_view">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">save_document_view</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">meta_file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save document view to a file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:       Document name</span>
+<span class="sd">        :param meta_file:  save meta to file</span>
+<span class="sd">        :type  name:       str</span>
+<span class="sd">        :type  meta_file:  str</span>
+
+<span class="sd">        .. versionadded:: 2022.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Save document view to a file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_save_document_view</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">meta_file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXPROJ.get_default_project_path"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.get_default_project_path">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_default_project_path</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">folder</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get default project folder.</span>
+<span class="sd">        </span>
+<span class="sd">        :param folder:  Returned default path</span>
+<span class="sd">        :type  folder:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 2022.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Get default project folder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">folder</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_default_project_path</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">folder</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXPROJ.set_default_project_path"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.set_default_project_path">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">set_default_project_path</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">folder</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set default project folder.</span>
+<span class="sd">        </span>
+<span class="sd">        :param folder:  Default path</span>
+<span class="sd">        :type  folder:  str</span>
+
+<span class="sd">        .. versionadded:: 2022.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Set default project folder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_set_default_project_path</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">folder</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXPROJ.has_pending_central_publish_event"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.has_pending_central_publish_event">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">has_pending_central_publish_event</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Checks if there is a pending publish event.</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:      bool</span>
+
+<span class="sd">        .. versionadded:: 2022.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Checks if there is a pending publish event.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_has_pending_central_publish_event</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div></div>
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPROJ</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

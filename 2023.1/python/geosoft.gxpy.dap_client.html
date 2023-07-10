@@ -1,0 +1,849 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxpy.dap_client submodule &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.dap_client submodule</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.dap_client.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-geosoft.gxpy.dap_client">
+<span id="geosoft-gxpy-dap-client-submodule"></span><h1>geosoft.gxpy.dap_client submodule<a class="headerlink" href="#module-geosoft.gxpy.dap_client" title="Permalink to this headline">¶</a></h1>
+<p>Geosoft dap server handling.</p>
+<dl class="field-list">
+<dt class="field-odd">Classes</dt>
+<dd class="field-odd"><table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#geosoft.gxpy.dap_client.DapClient" title="geosoft.gxpy.dap_client.DapClient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DapClient</span></code></a></p></td>
+<td><p>Geosoft dap client</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#geosoft.gxpy.dap_client.DataType" title="geosoft.gxpy.dap_client.DataType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataType</span></code></a></p></td>
+<td><p>data type</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#geosoft.gxpy.dap_client.GridExtractFormat" title="geosoft.gxpy.dap_client.GridExtractFormat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GridExtractFormat</span></code></a></p></td>
+<td><p>return format for extracting a grid</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#geosoft.gxpy.dap_client.ExtractProgressStatus" title="geosoft.gxpy.dap_client.ExtractProgressStatus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExtractProgressStatus</span></code></a></p></td>
+<td><p>progress</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#geosoft.gxpy.dap_client.DataExtract" title="geosoft.gxpy.dap_client.DataExtract"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataExtract</span></code></a></p></td>
+<td><p>data extraction</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#geosoft.gxpy.dap_client.BoundingBox" title="geosoft.gxpy.dap_client.BoundingBox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BoundingBox</span></code></a></p></td>
+<td><p>bounding box</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#geosoft.gxpy.dap_client.DataCard" title="geosoft.gxpy.dap_client.DataCard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataCard</span></code></a></p></td>
+<td><p>data information</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#geosoft.gxpy.dap_client.SearchFilter" title="geosoft.gxpy.dap_client.SearchFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SearchFilter</span></code></a></p></td>
+<td><p>search filter</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#geosoft.gxpy.dap_client.ResultFilter" title="geosoft.gxpy.dap_client.ResultFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ResultFilter</span></code></a></p></td>
+<td><p>result filter</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#geosoft.gxpy.dap_client.SearchParameters" title="geosoft.gxpy.dap_client.SearchParameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SearchParameters</span></code></a></p></td>
+<td><p>search parameters</p></td>
+</tr>
+</tbody>
+</table>
+<p>Regression tests provide usage examples:     
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_dap.py">Tests</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<dl class="py class">
+<dt id="geosoft.gxpy.dap_client.BoundingBox">
+<em class="property">class </em><code class="sig-name descname">BoundingBox</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">minx</span><span class="o">=</span><span class="default_value">- 180</span></em>, <em class="sig-param"><span class="n">miny</span><span class="o">=</span><span class="default_value">- 90</span></em>, <em class="sig-param"><span class="n">minz</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">maxx</span><span class="o">=</span><span class="default_value">180</span></em>, <em class="sig-param"><span class="n">maxy</span><span class="o">=</span><span class="default_value">90</span></em>, <em class="sig-param"><span class="n">maxz</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">coordinate_system</span><span class="o">=</span><span class="default_value">'WGS 84'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#BoundingBox"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.BoundingBox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Bounding box instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>minx</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">MinX</span></code></p></li>
+<li><p><strong>miny</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">MinY</span></code></p></li>
+<li><p><strong>minz</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">MinZ</span></code></p></li>
+<li><p><strong>maxx</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">MaxX</span></code></p></li>
+<li><p><strong>maxy</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">MaxY</span></code></p></li>
+<li><p><strong>maxz</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">MaxZ</span></code></p></li>
+<li><p><strong>coordinate_system</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">CoordinateSystem</span></code>
+any supported coordinate system representation. Default is “WGS 84”.</p></li>
+<li><p><strong>cs_as_xml</strong> – True to force the coordinate_system to be xml.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.BoundingBox.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">minx</span><span class="o">=</span><span class="default_value">- 180</span></em>, <em class="sig-param"><span class="n">miny</span><span class="o">=</span><span class="default_value">- 90</span></em>, <em class="sig-param"><span class="n">minz</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">maxx</span><span class="o">=</span><span class="default_value">180</span></em>, <em class="sig-param"><span class="n">maxy</span><span class="o">=</span><span class="default_value">90</span></em>, <em class="sig-param"><span class="n">maxz</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">coordinate_system</span><span class="o">=</span><span class="default_value">'WGS 84'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#BoundingBox.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.BoundingBox.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="geosoft.gxpy.dap_client.DapClient">
+<em class="property">class </em><code class="sig-name descname">DapClient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="o">=</span><span class="default_value">'http://dap.geosoft.com/'</span></em>, <em class="sig-param"><span class="n">get_catalog</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#DapClient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.DapClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Sequence</span></code></p>
+<p>DapClient class to communicate with a Geosoft DAP server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – url of the server, default is ‘<a class="reference external" href="http://dap.geosoft.com/">http://dap.geosoft.com/</a>’</p></li>
+<li><p><strong>get_catalog</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> to get the server catalog.  If <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code> (the default) call method <a class="reference internal" href="#geosoft.gxpy.dap_client.DapClient.catalog" title="geosoft.gxpy.dap_client.DapClient.catalog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">catalog()</span></code></a>
+to get the retrieve the catalog from the server. The catalog is cached as
+part of the instance.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DapClient.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="o">=</span><span class="default_value">'http://dap.geosoft.com/'</span></em>, <em class="sig-param"><span class="n">get_catalog</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#DapClient.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.DapClient.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DapClient.catalog">
+<code class="sig-name descname">catalog</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search_parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">refresh</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#DapClient.catalog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.DapClient.catalog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a filtered catalog list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>search_parameters</strong> – search filter, instance of <a class="reference internal" href="#geosoft.gxpy.dap_client.SearchParameters" title="geosoft.gxpy.dap_client.SearchParameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SearchParameters</span></code></a></p></li>
+<li><p><strong>refresh</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> to force a refresh, otherwise cached catalog is returned</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of server catalog entries as <a class="reference internal" href="#geosoft.gxpy.dap_client.DataCard" title="geosoft.gxpy.dap_client.DataCard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataCard</span></code></a> instances</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DapClient.configuration">
+<em class="property">property </em><code class="sig-name descname">configuration</code><a class="headerlink" href="#geosoft.gxpy.dap_client.DapClient.configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return service configuration info.</p>
+<p>See <a class="reference external" href="http://dap.geosoft.com/REST/service/help/operations/GetConfiguration">http://dap.geosoft.com/REST/service/help/operations/GetConfiguration</a></p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DapClient.datacard_from_id">
+<code class="sig-name descname">datacard_from_id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#DapClient.datacard_from_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.DapClient.datacard_from_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <a class="reference internal" href="#geosoft.gxpy.dap_client.DataCard" title="geosoft.gxpy.dap_client.DataCard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataCard</span></code></a> instance based on the dataset ID #</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> – dataset id</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxpy.dap_client.DataCard" title="geosoft.gxpy.dap_client.DataCard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataCard</span></code></a> instance</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DapClient.fetch_data">
+<code class="sig-name descname">fetch_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datacard</span></em>, <em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">extent</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">resolution</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_seconds</span><span class="o">=</span><span class="default_value">3600</span></em>, <em class="sig-param"><span class="n">progress</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cadence</span><span class="o">=</span><span class="default_value">5</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#DapClient.fetch_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.DapClient.fetch_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetch data from the server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>datacard</strong> – <a class="reference internal" href="#geosoft.gxpy.dap_client.DataCard" title="geosoft.gxpy.dap_client.DataCard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataCard</span></code></a> instance, or a dataset description (hierarchy, title) or just title.</p></li>
+<li><p><strong>filename</strong> – file name in which to plase data, default is a temporary geosoft gris file.</p></li>
+<li><p><strong>extent</strong> – <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Point2</span></code></a> instance, or a <a class="reference internal" href="#geosoft.gxpy.dap_client.BoundingBox" title="geosoft.gxpy.dap_client.BoundingBox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BoundingBox</span></code></a> instance</p></li>
+<li><p><strong>resolution</strong> – data resolution in the length units of the extent coordinate system</p></li>
+<li><p><strong>max_seconds</strong> – maximum number of seconds to wait for the process to finish</p></li>
+<li><p><strong>progress</strong> – callback that can report progress, for example <code class="xref py py-obj docutils literal notranslate"><span class="pre">progress=print</span></code> will print to the console</p></li>
+<li><p><strong>cadence</strong> – time in seconds between checking on server preparation status.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>data file name, which may be a temporry file.  Temporary files will only persist
+during the live of the current context.</p>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geosoft.gxpy.gx</span> <span class="k">as</span> <span class="nn">gx</span>
+<span class="kn">import</span> <span class="nn">geosoft.gxpy.dap_client</span> <span class="k">as</span> <span class="nn">gxdap</span><span class="p">:</span>
+
+<span class="n">gx</span><span class="o">.</span><span class="n">GXpy</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="n">gxdap</span><span class="o">.</span><span class="n">DapClient</span><span class="p">()</span> <span class="k">as</span> <span class="n">dap</span><span class="p">:</span>
+
+    <span class="c1"># some point data</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">dap</span><span class="p">[</span><span class="s1">&#39;Kimberlite Indicator Mineral Grain Chemistry&#39;</span><span class="p">]</span>
+    <span class="n">extent</span> <span class="o">=</span> <span class="n">gxgeo</span><span class="o">.</span><span class="n">Point2</span><span class="p">(((</span><span class="o">-</span><span class="mi">112</span><span class="p">,</span> <span class="mi">65</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">111</span><span class="p">,</span> <span class="mf">65.5</span><span class="p">)),</span> <span class="n">coordinate_system</span><span class="o">=</span><span class="s1">&#39;NAD83&#39;</span><span class="p">)</span>
+    <span class="n">data_file</span> <span class="o">=</span> <span class="n">dap</span><span class="o">.</span><span class="n">fetch_data</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="nb">print</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DapClient.fetch_image">
+<code class="sig-name descname">fetch_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datacard</span></em>, <em class="sig-param"><span class="n">extent</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">resolution</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#DapClient.fetch_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.DapClient.fetch_image" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DapClient.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">what</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#DapClient.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.DapClient.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>GET information from the server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>what</strong> – string of what to get. for example “dataset/properties/265” retrieves
+the dataset properties for dataset 265.  See <a class="reference external" href="http://dap.geosoft.com/REST/dataset/help">http://dap.geosoft.com/REST/dataset/help</a>
+for a list of the kinds of things you can get about a dataset.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>requested info as a dict.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DapClient.post">
+<code class="sig-name descname">post</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">what</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#DapClient.post"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.DapClient.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>POST information from the server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>what</strong> – string of what to post.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>returned info as a dict.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DapClient.url">
+<em class="property">property </em><code class="sig-name descname">url</code><a class="headerlink" href="#geosoft.gxpy.dap_client.DapClient.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Server url.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="geosoft.gxpy.dap_client.DapClientException">
+<em class="property">exception </em><code class="sig-name descname">DapClientException</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#DapClientException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.DapClientException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.GXRuntimeError</span></code></p>
+<p>Exceptions from <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.dap</span></code>.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="geosoft.gxpy.dap_client.DataCard">
+<em class="property">class </em><code class="sig-name descname">DataCard</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dap</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">type</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">hierarchy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stylesheet</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">extents</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_original</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#DataCard"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.DataCard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Geometry</span></code></a></p>
+<p>Single dataset information instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dap</strong> – <a class="reference internal" href="#geosoft.gxpy.dap_client.DapClient" title="geosoft.gxpy.dap_client.DapClient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DapClient</span></code></a> instance</p></li>
+<li><p><strong>id</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">Id</span></code> unique dataset identifier property</p></li>
+<li><p><strong>title</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">Title</span></code> property</p></li>
+<li><p><strong>type</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">Type</span></code> dataset type, one of <a class="reference internal" href="#geosoft.gxpy.dap_client.DataType" title="geosoft.gxpy.dap_client.DataType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataType</span></code></a> values.</p></li>
+<li><p><strong>hierarchy</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">Hierarchy</span></code> location in the catalog hierarchy</p></li>
+<li><p><strong>stylesheet</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">Stylesheet</span></code> metadata style sheet</p></li>
+<li><p><strong>extents</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">Extents</span></code> is a <a class="reference internal" href="#geosoft.gxpy.dap_client.BoundingBox" title="geosoft.gxpy.dap_client.BoundingBox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BoundingBox</span></code></a> instance</p></li>
+<li><p><strong>has_original</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">HasOriginal</span></code> True if the original data is available</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DataCard.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dap</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">type</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">hierarchy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stylesheet</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">extents</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_original</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#DataCard.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.DataCard.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DataCard.dap_client">
+<em class="property">property </em><code class="sig-name descname">dap_client</code><a class="headerlink" href="#geosoft.gxpy.dap_client.DataCard.dap_client" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#geosoft.gxpy.dap_client.DapClient" title="geosoft.gxpy.dap_client.DapClient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DapClient</span></code></a> instance for this dataset, may be None if card is not yet associated with a server.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DataCard.disclaimer">
+<em class="property">property </em><code class="sig-name descname">disclaimer</code><a class="headerlink" href="#geosoft.gxpy.dap_client.DataCard.disclaimer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disclaimer: <a class="reference external" href="http://dap.geosoft.com/REST/dataset/help/operations/GetDisclaimer">http://dap.geosoft.com/REST/dataset/help/operations/GetDisclaimer</a></p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DataCard.document_properties">
+<em class="property">property </em><code class="sig-name descname">document_properties</code><a class="headerlink" href="#geosoft.gxpy.dap_client.DataCard.document_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Properties of the dataset as a document.</p>
+<p><a class="reference external" href="http://dap.geosoft.com/REST/dataset/help/operations/GetDocumentProperties">http://dap.geosoft.com/REST/dataset/help/operations/GetDocumentProperties</a></p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DataCard.edition">
+<em class="property">property </em><code class="sig-name descname">edition</code><a class="headerlink" href="#geosoft.gxpy.dap_client.DataCard.edition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edition: <a class="reference external" href="http://dap.geosoft.com/REST/dataset/help/operations/GetEdition">http://dap.geosoft.com/REST/dataset/help/operations/GetEdition</a></p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DataCard.extent">
+<em class="property">property </em><code class="sig-name descname">extent</code><a class="headerlink" href="#geosoft.gxpy.dap_client.DataCard.extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object extent as a <code class="xref py py-obj docutils literal notranslate"><span class="pre">Point2</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DataCard.grid_properties">
+<em class="property">property </em><code class="sig-name descname">grid_properties</code><a class="headerlink" href="#geosoft.gxpy.dap_client.DataCard.grid_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grid data properties, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code> if not a grid dataset.</p>
+<p><a class="reference external" href="http://dap.geosoft.com/REST/dataset/help/operations/GetGridProperties">http://dap.geosoft.com/REST/dataset/help/operations/GetGridProperties</a></p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DataCard.info">
+<em class="property">property </em><code class="sig-name descname">info</code><a class="headerlink" href="#geosoft.gxpy.dap_client.DataCard.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dataset info: <a class="reference external" href="http://dap.geosoft.com/REST/dataset/help/operations/GetDatasetById">http://dap.geosoft.com/REST/dataset/help/operations/GetDatasetById</a></p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DataCard.map_properties">
+<em class="property">property </em><code class="sig-name descname">map_properties</code><a class="headerlink" href="#geosoft.gxpy.dap_client.DataCard.map_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map properties, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code> if not a map.</p>
+<p><a class="reference external" href="http://dap.geosoft.com/REST/dataset/help/operations/GetMapProperties">http://dap.geosoft.com/REST/dataset/help/operations/GetMapProperties</a></p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DataCard.metadata">
+<em class="property">property </em><code class="sig-name descname">metadata</code><a class="headerlink" href="#geosoft.gxpy.dap_client.DataCard.metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metadata: <a class="reference external" href="http://dap.geosoft.com/REST/dataset/help/operations/GetMetadata">http://dap.geosoft.com/REST/dataset/help/operations/GetMetadata</a></p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DataCard.permission">
+<em class="property">property </em><code class="sig-name descname">permission</code><a class="headerlink" href="#geosoft.gxpy.dap_client.DataCard.permission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Permission: <a class="reference external" href="http://dap.geosoft.com/REST/dataset/help/operations/GetPermission">http://dap.geosoft.com/REST/dataset/help/operations/GetPermission</a></p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DataCard.point_properties">
+<em class="property">property </em><code class="sig-name descname">point_properties</code><a class="headerlink" href="#geosoft.gxpy.dap_client.DataCard.point_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Point properties, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code> if not a point (hxyz) dataset.</p>
+<p><a class="reference external" href="http://dap.geosoft.com/REST/dataset/help/operations/GetHXYZProperties">http://dap.geosoft.com/REST/dataset/help/operations/GetHXYZProperties</a></p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DataCard.spatial_properties">
+<em class="property">property </em><code class="sig-name descname">spatial_properties</code><a class="headerlink" href="#geosoft.gxpy.dap_client.DataCard.spatial_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Spatial properties: <a class="reference external" href="http://dap.geosoft.com/REST/dataset/help/operations/GetProperties">http://dap.geosoft.com/REST/dataset/help/operations/GetProperties</a></p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DataCard.voxel_properties">
+<em class="property">property </em><code class="sig-name descname">voxel_properties</code><a class="headerlink" href="#geosoft.gxpy.dap_client.DataCard.voxel_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Voxel properties, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code> if not a voxel.</p>
+<p><a class="reference external" href="http://dap.geosoft.com/REST/dataset/help/operations/GetVoxelProperties">http://dap.geosoft.com/REST/dataset/help/operations/GetVoxelProperties</a></p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="geosoft.gxpy.dap_client.DataExtract">
+<em class="property">class </em><code class="sig-name descname">DataExtract</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">extents</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">resolution</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">format</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#DataExtract"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.DataExtract" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Data extraction instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> – name of the data file</p></li>
+<li><p><strong>extents</strong> – data extent as a <a class="reference internal" href="#geosoft.gxpy.dap_client.BoundingBox" title="geosoft.gxpy.dap_client.BoundingBox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BoundingBox</span></code></a> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geopmetry.Point2</span></code> instance</p></li>
+<li><p><strong>resolution</strong> – desired resolution in the distance units of the extents coordinate system</p></li>
+<li><p><strong>format</strong> – one of the extraction formats for the data type, default is the first format.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DataExtract.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">extents</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">resolution</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">format</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#DataExtract.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.DataExtract.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="geosoft.gxpy.dap_client.DataType">
+<em class="property">class </em><code class="sig-name descname">DataType</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#DataType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>Supported data types</p>
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.ArcGIS">
+<code class="sig-name descname">ArcGIS</code><em class="property"> = 9</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.ArcGIS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.Database">
+<code class="sig-name descname">Database</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.Database" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.Document">
+<code class="sig-name descname">Document</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.Document" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.Drillhole">
+<code class="sig-name descname">Drillhole</code><em class="property"> = 14</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.Drillhole" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.GMSYS2D">
+<code class="sig-name descname">GMSYS2D</code><em class="property"> = 22</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.GMSYS2D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.GMSYS3D">
+<code class="sig-name descname">GMSYS3D</code><em class="property"> = 18</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.GMSYS3D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.Generic">
+<code class="sig-name descname">Generic</code><em class="property"> = 7</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.Generic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.GeosoftOffline">
+<code class="sig-name descname">GeosoftOffline</code><em class="property"> = 24</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.GeosoftOffline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.Geostring">
+<code class="sig-name descname">Geostring</code><em class="property"> = 17</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.Geostring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.Geosurface">
+<code class="sig-name descname">Geosurface</code><em class="property"> = 21</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.Geosurface" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.Grid">
+<code class="sig-name descname">Grid</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.Grid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.GridSection">
+<code class="sig-name descname">GridSection</code><em class="property"> = 12</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.GridSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.ImageServer">
+<code class="sig-name descname">ImageServer</code><em class="property"> = 10</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.ImageServer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.Map">
+<code class="sig-name descname">Map</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.Map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.NoData">
+<code class="sig-name descname">NoData</code><em class="property"> = 15</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.NoData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.PDF">
+<code class="sig-name descname">PDF</code><em class="property"> = 20</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.PDF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.Picture">
+<code class="sig-name descname">Picture</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.Picture" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.PictureSection">
+<code class="sig-name descname">PictureSection</code><em class="property"> = 11</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.PictureSection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.Point">
+<code class="sig-name descname">Point</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.Point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.ProjectZip">
+<code class="sig-name descname">ProjectZip</code><em class="property"> = 13</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.ProjectZip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.SPF">
+<code class="sig-name descname">SPF</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.SPF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.ThreeDV">
+<code class="sig-name descname">ThreeDV</code><em class="property"> = 16</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.ThreeDV" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.VOXI">
+<code class="sig-name descname">VOXI</code><em class="property"> = 19</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.VOXI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.VectorVoxel">
+<code class="sig-name descname">VectorVoxel</code><em class="property"> = 23</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.VectorVoxel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.DataType.Voxel">
+<code class="sig-name descname">Voxel</code><em class="property"> = 8</em><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.Voxel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DataType.datatype_default_extension">
+<code class="sig-name descname">datatype_default_extension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#DataType.datatype_default_extension"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.datatype_default_extension" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.DataType.extract_url">
+<code class="sig-name descname">extract_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#DataType.extract_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.DataType.extract_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="geosoft.gxpy.dap_client.ExtractProgressStatus">
+<em class="property">class </em><code class="sig-name descname">ExtractProgressStatus</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#ExtractProgressStatus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.ExtractProgressStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.ExtractProgressStatus.Cancelled">
+<code class="sig-name descname">Cancelled</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxpy.dap_client.ExtractProgressStatus.Cancelled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.ExtractProgressStatus.Complete">
+<code class="sig-name descname">Complete</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.dap_client.ExtractProgressStatus.Complete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.ExtractProgressStatus.Compress">
+<code class="sig-name descname">Compress</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.dap_client.ExtractProgressStatus.Compress" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.ExtractProgressStatus.Extract">
+<code class="sig-name descname">Extract</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.dap_client.ExtractProgressStatus.Extract" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.ExtractProgressStatus.Failed">
+<code class="sig-name descname">Failed</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxpy.dap_client.ExtractProgressStatus.Failed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.ExtractProgressStatus.Prepare">
+<code class="sig-name descname">Prepare</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.dap_client.ExtractProgressStatus.Prepare" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="geosoft.gxpy.dap_client.GridExtractFormat">
+<em class="property">class </em><code class="sig-name descname">GridExtractFormat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#GridExtractFormat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.GridExtractFormat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.GridExtractFormat.BIL">
+<code class="sig-name descname">BIL</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.dap_client.GridExtractFormat.BIL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.GridExtractFormat.ERMapper">
+<code class="sig-name descname">ERMapper</code><em class="property"> = 13</em><a class="headerlink" href="#geosoft.gxpy.dap_client.GridExtractFormat.ERMapper" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.GridExtractFormat.ESRIBinaryRaster">
+<code class="sig-name descname">ESRIBinaryRaster</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.dap_client.GridExtractFormat.ESRIBinaryRaster" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.GridExtractFormat.GXFCompressed">
+<code class="sig-name descname">GXFCompressed</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxpy.dap_client.GridExtractFormat.GXFCompressed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.GridExtractFormat.GXFText">
+<code class="sig-name descname">GXFText</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxpy.dap_client.GridExtractFormat.GXFText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.GridExtractFormat.Geopak">
+<code class="sig-name descname">Geopak</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxpy.dap_client.GridExtractFormat.Geopak" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.GridExtractFormat.GeosoftCompressed">
+<code class="sig-name descname">GeosoftCompressed</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.dap_client.GridExtractFormat.GeosoftCompressed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.GridExtractFormat.GeosoftUncompressed">
+<code class="sig-name descname">GeosoftUncompressed</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.dap_client.GridExtractFormat.GeosoftUncompressed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.GridExtractFormat.ODDFPC">
+<code class="sig-name descname">ODDFPC</code><em class="property"> = 7</em><a class="headerlink" href="#geosoft.gxpy.dap_client.GridExtractFormat.ODDFPC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.GridExtractFormat.ODDFUnix">
+<code class="sig-name descname">ODDFUnix</code><em class="property"> = 8</em><a class="headerlink" href="#geosoft.gxpy.dap_client.GridExtractFormat.ODDFUnix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.GridExtractFormat.SurferV6">
+<code class="sig-name descname">SurferV6</code><em class="property"> = 9</em><a class="headerlink" href="#geosoft.gxpy.dap_client.GridExtractFormat.SurferV6" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.GridExtractFormat.SurferV7">
+<code class="sig-name descname">SurferV7</code><em class="property"> = 10</em><a class="headerlink" href="#geosoft.gxpy.dap_client.GridExtractFormat.SurferV7" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.GridExtractFormat.USGSPC">
+<code class="sig-name descname">USGSPC</code><em class="property"> = 11</em><a class="headerlink" href="#geosoft.gxpy.dap_client.GridExtractFormat.USGSPC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="geosoft.gxpy.dap_client.GridExtractFormat.USGSUnix">
+<code class="sig-name descname">USGSUnix</code><em class="property"> = 12</em><a class="headerlink" href="#geosoft.gxpy.dap_client.GridExtractFormat.USGSUnix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="geosoft.gxpy.dap_client.ResultFilter">
+<em class="property">class </em><code class="sig-name descname">ResultFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">depth</span><span class="o">=</span><span class="default_value">2147483647</span></em>, <em class="sig-param"><span class="n">start_index</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">max_results</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">valid_path</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#ResultFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.ResultFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Results filter instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – to this location in the hierarchy</p></li>
+<li><p><strong>depth</strong> – to this depth in the hierarchy, default no depth limit</p></li>
+<li><p><strong>start_index</strong> – start index in the list</p></li>
+<li><p><strong>max_results</strong> – maximum results to include</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.ResultFilter.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">depth</span><span class="o">=</span><span class="default_value">2147483647</span></em>, <em class="sig-param"><span class="n">start_index</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">max_results</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">valid_path</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#ResultFilter.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.ResultFilter.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="geosoft.gxpy.dap_client.SearchFilter">
+<em class="property">class </em><code class="sig-name descname">SearchFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">free_text_query</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">structured_metadata_query</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">extents</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">entirely_within</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">version</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#SearchFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.SearchFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Search filter instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>free_text_query</strong> – title/keyword search filter</p></li>
+<li><p><strong>structured_metadata_query</strong> – </p></li>
+<li><p><strong>extents</strong> – <a class="reference internal" href="#geosoft.gxpy.dap_client.BoundingBox" title="geosoft.gxpy.dap_client.BoundingBox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BoundingBox</span></code></a> instance</p></li>
+<li><p><strong>entirely_within</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> for completely enclosed data, <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code> for intersecting data.</p></li>
+<li><p><strong>version</strong> – minimum version, default is 1.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.SearchFilter.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">free_text_query</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">structured_metadata_query</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">extents</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">entirely_within</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">version</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#SearchFilter.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.SearchFilter.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="geosoft.gxpy.dap_client.SearchParameters">
+<em class="property">class </em><code class="sig-name descname">SearchParameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search_filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">result_filter</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#SearchParameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.SearchParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Search parameter instance, defined by a <a class="reference internal" href="#geosoft.gxpy.dap_client.SearchFilter" title="geosoft.gxpy.dap_client.SearchFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SearchFilter</span></code></a> and a <a class="reference internal" href="#geosoft.gxpy.dap_client.ResultFilter" title="geosoft.gxpy.dap_client.ResultFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ResultFilter</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>search_filter</strong> – <a class="reference internal" href="#geosoft.gxpy.dap_client.SearchFilter" title="geosoft.gxpy.dap_client.SearchFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SearchFilter</span></code></a> instance</p></li>
+<li><p><strong>result_filter</strong> – <a class="reference internal" href="#geosoft.gxpy.dap_client.ResultFilter" title="geosoft.gxpy.dap_client.ResultFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ResultFilter</span></code></a> instance</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<dl class="py method">
+<dt id="geosoft.gxpy.dap_client.SearchParameters.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search_filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">result_filter</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/dap_client.html#SearchParameters.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.dap_client.SearchParameters.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.dap_client submodule</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

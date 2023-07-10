@@ -1,0 +1,718 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GXARCMAP class &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXARCMAP class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXARCMAP class</a><ul>
+<li><a class="reference internal" href="#arcmap-load-flags-constants">ARCMAP_LOAD_FLAGS constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXARCMAP.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxarcmap-class">
+<span id="gxarcmap"></span><h1>GXARCMAP class<a class="headerlink" href="#gxarcmap-class" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="geosoft.gxapi.GXARCMAP">
+<em class="property">class </em><code class="sig-name descname">GXARCMAP</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXARCMAP class.</p>
+<p>This library is not a class. It contains various utilities
+used in maps and layers by the Geosoft extensions for ArcGIS.</p>
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.change_size">
+<em class="property">classmethod </em><code class="sig-name descname">change_size</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.change_size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.change_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the custom page size of the ArcGIS Map document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – X Size (mm)</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y Size (mm)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.display_in_3d_view">
+<em class="property">classmethod </em><code class="sig-name descname">display_in_3d_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.display_in_3d_view"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.display_in_3d_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display a file in 3D view</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>str</em>) – File Name</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.export_feature_layer_by_name_to_3d_file">
+<em class="property">classmethod </em><code class="sig-name descname">export_feature_layer_by_name_to_3d_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mxd_file</span></em>, <em class="sig-param"><span class="n">dataframe_name</span></em>, <em class="sig-param"><span class="n">layer_name</span></em>, <em class="sig-param"><span class="n">output_file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.export_feature_layer_by_name_to_3d_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.export_feature_layer_by_name_to_3d_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports the shapes from a feature layer of the ArcMap document to a 3D File.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mxd_file</strong> (<em>str</em>) – <a class="reference internal" href="GXMXD.html#geosoft.gxapi.GXMXD" title="geosoft.gxapi.GXMXD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMXD</span></code></a> filename</p></li>
+<li><p><strong>dataframe_name</strong> (<em>str</em>) – Dataframe name</p></li>
+<li><p><strong>layer_name</strong> (<em>str</em>) – Layer name</p></li>
+<li><p><strong>output_file</strong> (<em>str</em>) – Output file name</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.export_selected_feature_layer_to_3d_file">
+<em class="property">classmethod </em><code class="sig-name descname">export_selected_feature_layer_to_3d_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">output_file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.export_selected_feature_layer_to_3d_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.export_selected_feature_layer_to_3d_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports the shapes from the currently selected feature layer (if any) in ArcMap to a 3D file (only on oriented frames i.e. sections).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>output_file</strong> (<em>str</em>) – Output file name</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.get_current_document_info">
+<em class="property">classmethod </em><code class="sig-name descname">get_current_document_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mxd</span></em>, <em class="sig-param"><span class="n">layer</span></em>, <em class="sig-param"><span class="n">map</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.get_current_document_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.get_current_document_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get some info on the current <a class="reference internal" href="GXMXD.html#geosoft.gxapi.GXMXD" title="geosoft.gxapi.GXMXD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMXD</span></code></a> in ArcMap and selected layer (if any)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mxd</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – <a class="reference internal" href="GXMXD.html#geosoft.gxapi.GXMXD" title="geosoft.gxapi.GXMXD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMXD</span></code></a> filename</p></li>
+<li><p><strong>layer</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Selected Layer name (If a layer is selected)</p></li>
+<li><p><strong>map</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Dataframe name containing selected layer (If a layer is selected)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.get_ipj_for_predefined_esri_gcs">
+<em class="property">classmethod </em><code class="sig-name descname">get_ipj_for_predefined_esri_gcs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ipj</span></em>, <em class="sig-param"><span class="n">esri_gcs_code</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.get_ipj_for_predefined_esri_gcs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.get_ipj_for_predefined_esri_gcs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fills an <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> with a predefined ESRI GCS</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> to fill</p></li>
+<li><p><strong>esri_gcs_code</strong> (<em>int</em>) – Predefined ESRI GCS Code</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.get_ipj_for_predefined_esri_pcs">
+<em class="property">classmethod </em><code class="sig-name descname">get_ipj_for_predefined_esri_pcs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ipj</span></em>, <em class="sig-param"><span class="n">esri_pcs_code</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.get_ipj_for_predefined_esri_pcs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.get_ipj_for_predefined_esri_pcs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fills an <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> with a predefined ESRI PCS</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> to fill</p></li>
+<li><p><strong>esri_pcs_code</strong> (<em>int</em>) – Predefined ESRI PCS Code</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.get_number_of_selected_layers">
+<em class="property">classmethod </em><code class="sig-name descname">get_number_of_selected_layers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.get_number_of_selected_layers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.get_number_of_selected_layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of selected layers in the TOC</p>
+<p>Returns                                                                  The number of layers selected.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.get_selected_layer_info">
+<em class="property">classmethod </em><code class="sig-name descname">get_selected_layer_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layer_number</span></em>, <em class="sig-param"><span class="n">layer</span></em>, <em class="sig-param"><span class="n">map</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.get_selected_layer_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.get_selected_layer_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the name info on the specified selected layer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>layer_number</strong> (<em>int</em>) – Selected layer number</p></li>
+<li><p><strong>layer</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Selected Layer name</p></li>
+<li><p><strong>map</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Dataframe name containing selected layer</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.is_null">
+<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.load_lyr">
+<em class="property">classmethod </em><code class="sig-name descname">load_lyr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.load_lyr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.load_lyr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a LYR file to the current data frame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>str</em>) – File Name</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.load_map">
+<em class="property">classmethod </em><code class="sig-name descname">load_map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">map</span></em>, <em class="sig-param"><span class="n">view</span></em>, <em class="sig-param"><span class="n">extra_csv</span></em>, <em class="sig-param"><span class="n">layer_tag</span></em>, <em class="sig-param"><span class="n">fit</span></em>, <em class="sig-param"><span class="n">activate</span></em>, <em class="sig-param"><span class="n">prefix</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.load_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.load_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a Geosoft map into the current ArcMap document</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>map</strong> (<em>str</em>) – Map File Name</p></li>
+<li><p><strong>view</strong> (<em>str</em>) – View Name</p></li>
+<li><p><strong>extra_csv</strong> (<em>str</em>) – Optional Extra Datasets CSV Filename (Rasters and shape files to display with layers)</p></li>
+<li><p><strong>layer_tag</strong> (<em>str</em>) – Optional frame/layer tag (suffix)</p></li>
+<li><p><strong>fit</strong> (<em>int</em>) – Fit to map size</p></li>
+<li><p><strong>activate</strong> (<em>bool</em>) – Activate view (3D)</p></li>
+<li><p><strong>prefix</strong> (<em>bool</em>) – Layer name tag is prefix</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The extra datasets CSV should contain the the following fields:</p>
+<blockquote>
+<div><p>ID          -  Unique identifier
+DATASOURCE  -  Filename
+TYPE        -  RASTER and SHAPE supported
+MAPMATCH    -  Map to associate with (used for grouping logic)
+VIEWMATCH   -  View to match with in associated map (used for grouping logic)
+ZONEFILE    -  Used for type RASTER</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.load_map_ex">
+<em class="property">classmethod </em><code class="sig-name descname">load_map_ex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">map</span></em>, <em class="sig-param"><span class="n">view</span></em>, <em class="sig-param"><span class="n">extra_csv</span></em>, <em class="sig-param"><span class="n">layer_tag</span></em>, <em class="sig-param"><span class="n">flags</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.load_map_ex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.load_map_ex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a Geosoft map into the ArcMap document, specifying which View to use as Data view.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>map</strong> (<em>str</em>) – Map File Name</p></li>
+<li><p><strong>view</strong> (<em>str</em>) – View Name</p></li>
+<li><p><strong>extra_csv</strong> (<em>str</em>) – Optional Extra Datasets CSV Filename (Rasters and shape files to display with layers)</p></li>
+<li><p><strong>layer_tag</strong> (<em>str</em>) – Optional frame/layer tag (suffix)</p></li>
+<li><p><strong>flags</strong> (<em>int</em>) – Combination of <a class="reference internal" href="#arcmap-load-flags"><span class="std std-ref">ARCMAP_LOAD_FLAGS constants</span></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>0 - OK
+1 - Error
+-1 - Canceled</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The extra datasets CSV should contain the the following fields:</p>
+<blockquote>
+<div><p>ID          -  Unique identifier
+DATASOURCE  -  Filename
+TYPE        -  RASTER and SHAPE supported
+MAPMATCH    -  Map to associate with (used for grouping logic)
+VIEWMATCH   -  View to match with in associated map (used for grouping logic)
+ZONEFILE    -  Used for type RASTER</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.load_map_view">
+<em class="property">classmethod </em><code class="sig-name descname">load_map_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">map</span></em>, <em class="sig-param"><span class="n">view</span></em>, <em class="sig-param"><span class="n">layer</span></em>, <em class="sig-param"><span class="n">all</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.load_map_view"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.load_map_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a Geosoft Map as a layer into the current data frame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>map</strong> (<em>str</em>) – Map File Name</p></li>
+<li><p><strong>view</strong> (<em>str</em>) – View Name</p></li>
+<li><p><strong>layer</strong> (<em>str</em>) – Layer Name</p></li>
+<li><p><strong>all</strong> (<em>int</em>) – Pass TRUE to also render other views in map (Use second parameter view for location)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.load_raster">
+<em class="property">classmethod </em><code class="sig-name descname">load_raster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.load_raster"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.load_raster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a raster file to the current data frame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>str</em>) – File Name</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Loads any file type recognized as “raster” formats by ARC <a class="reference internal" href="GXGIS.html#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a>.
+This includes geosoft GRD files.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.load_raster_ex">
+<em class="property">classmethod </em><code class="sig-name descname">load_raster_ex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.load_raster_ex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.load_raster_ex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a raster file to the current data frame and create associated files</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>str</em>) – File Name</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Loads any file type recognized as “raster” formats by ARC <a class="reference internal" href="GXGIS.html#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a>.
+This includes geosoft GRD files.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.load_shape">
+<em class="property">classmethod </em><code class="sig-name descname">load_shape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">layer_prefix</span></em>, <em class="sig-param"><span class="n">layer_suffix</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.load_shape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.load_shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSHP</span></code></a> file to the current data frame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file</strong> (<em>str</em>) – File Name</p></li>
+<li><p><strong>layer_prefix</strong> (<em>str</em>) – Layer Name Prefix: An underscore is added automatically</p></li>
+<li><p><strong>layer_suffix</strong> (<em>str</em>) – Layer Name Suffix  An underscore is added automatically</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The input layer name is created using the (optional) prefix and suffix as follows:</p>
+<p>Prefix_NAME_Suffix</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.load_spf">
+<em class="property">classmethod </em><code class="sig-name descname">load_spf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shp</span></em>, <em class="sig-param"><span class="n">num_shp</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.load_spf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.load_spf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load all the shape files generated by importing a SPF into ArcMap.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shp</strong> (<em>str</em>) – List of shape files to load</p></li>
+<li><p><strong>num_shp</strong> (<em>int</em>) – Number of shape files</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>0- OK, 1 - Error, -1 - Cancel</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.map_view_to_shape">
+<em class="property">classmethod </em><code class="sig-name descname">map_view_to_shape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">map</span></em>, <em class="sig-param"><span class="n">view</span></em>, <em class="sig-param"><span class="n">shp</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.map_view_to_shape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.map_view_to_shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSHP</span></code></a> file(s) from a Geosoft Map view.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>map</strong> (<em>str</em>) – Map File Name</p></li>
+<li><p><strong>view</strong> (<em>str</em>) – View Name</p></li>
+<li><p><strong>shp</strong> (<em>str</em>) – <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSHP</span></code></a> File Name</p></li>
+<li><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List to fill with shape files created</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The output <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSHP</span></code></a> file name(s) are made up as follows
+(where NAME is the input <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSHP</span></code></a> file name):</p>
+<blockquote>
+<div><p>NAME_pt.shp    (point objects)
+NAME_ln.shp    (line or arc objects)
+NAME_pg.shp    (polygon objects)</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.null">
+<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXARCMAP" title="geosoft.gxapi.GXARCMAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXARCMAP</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXARCMAP" title="geosoft.gxapi.GXARCMAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXARCMAP</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXARCMAP" title="geosoft.gxapi.GXARCMAP">GXARCMAP</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.query_size">
+<em class="property">classmethod </em><code class="sig-name descname">query_size</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.query_size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.query_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query the page size in mm of the entire map page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X Size (mm)</p></li>
+<li><p><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y Size (mm)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.show_layer_by_name_in_3d">
+<em class="property">classmethod </em><code class="sig-name descname">show_layer_by_name_in_3d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mxd_file</span></em>, <em class="sig-param"><span class="n">dataframe_name</span></em>, <em class="sig-param"><span class="n">layer_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.show_layer_by_name_in_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.show_layer_by_name_in_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows a layer in ArcMap in a 3D view in an <a class="reference internal" href="GXMXD.html#geosoft.gxapi.GXMXD" title="geosoft.gxapi.GXMXD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMXD</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mxd_file</strong> (<em>str</em>) – <a class="reference internal" href="GXMXD.html#geosoft.gxapi.GXMXD" title="geosoft.gxapi.GXMXD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMXD</span></code></a> filename</p></li>
+<li><p><strong>dataframe_name</strong> (<em>str</em>) – Dataframe name</p></li>
+<li><p><strong>layer_name</strong> (<em>str</em>) – Layer name</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXARCMAP.show_selected_layers_in_3d">
+<em class="property">classmethod </em><code class="sig-name descname">show_selected_layers_in_3d</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXARCMAP.html#GXARCMAP.show_selected_layers_in_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXARCMAP.show_selected_layers_in_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows the selected layers in ArcMap in a 3D view</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="arcmap-load-flags-constants">
+<span id="arcmap-load-flags"></span><h2>ARCMAP_LOAD_FLAGS constants<a class="headerlink" href="#arcmap-load-flags-constants" title="Permalink to this headline">¶</a></h2>
+<p>Flags that can be combined and passed to iLoadMap_ARCMAP</p>
+<dl class="py data">
+<dt id="geosoft.gxapi.ARCMAP_LOAD_DELFRAME">
+<code class="sig-name descname">ARCMAP_LOAD_DELFRAME</code><a class="headerlink" href="#geosoft.gxapi.ARCMAP_LOAD_DELFRAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>If an existing frame is found delete it</p>
+<dl class="py attribute">
+<dt id="id0">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ARCMAP_LOAD_DELFRAME</code><em class="property"> = 1</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.ARCMAP_LOAD_DELLAYER">
+<code class="sig-name descname">ARCMAP_LOAD_DELLAYER</code><a class="headerlink" href="#geosoft.gxapi.ARCMAP_LOAD_DELLAYER" title="Permalink to this definition">¶</a></dt>
+<dd><p>If an existing layer is found delete it</p>
+<dl class="py attribute">
+<dt id="id20">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ARCMAP_LOAD_DELLAYER</code><em class="property"> = 2</em><a class="headerlink" href="#id20" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.ARCMAP_LOAD_EXISTFRAME">
+<code class="sig-name descname">ARCMAP_LOAD_EXISTFRAME</code><a class="headerlink" href="#geosoft.gxapi.ARCMAP_LOAD_EXISTFRAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>If an existing frame is found add new layers to it</p>
+<dl class="py attribute">
+<dt id="id21">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ARCMAP_LOAD_EXISTFRAME</code><em class="property"> = 4</em><a class="headerlink" href="#id21" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.ARCMAP_LOAD_COPYLAYER">
+<code class="sig-name descname">ARCMAP_LOAD_COPYLAYER</code><a class="headerlink" href="#geosoft.gxapi.ARCMAP_LOAD_COPYLAYER" title="Permalink to this definition">¶</a></dt>
+<dd><p>If an existing layer is found make a copy</p>
+<dl class="py attribute">
+<dt id="id22">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ARCMAP_LOAD_COPYLAYER</code><em class="property"> = 8</em><a class="headerlink" href="#id22" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.ARCMAP_LOAD_HIDESIBLINGS">
+<code class="sig-name descname">ARCMAP_LOAD_HIDESIBLINGS</code><a class="headerlink" href="#geosoft.gxapi.ARCMAP_LOAD_HIDESIBLINGS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide all other existing layers in frame</p>
+<dl class="py attribute">
+<dt id="id23">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ARCMAP_LOAD_HIDESIBLINGS</code><em class="property"> = 16</em><a class="headerlink" href="#id23" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.ARCMAP_LOAD_PREFIXMAPFRAME">
+<code class="sig-name descname">ARCMAP_LOAD_PREFIXMAPFRAME</code><a class="headerlink" href="#geosoft.gxapi.ARCMAP_LOAD_PREFIXMAPFRAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prefix the map filename part as part of the frame name</p>
+<dl class="py attribute">
+<dt id="id24">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ARCMAP_LOAD_PREFIXMAPFRAME</code><em class="property"> = 32</em><a class="headerlink" href="#id24" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.ARCMAP_LOAD_PREFIXMAPLAYER">
+<code class="sig-name descname">ARCMAP_LOAD_PREFIXMAPLAYER</code><a class="headerlink" href="#geosoft.gxapi.ARCMAP_LOAD_PREFIXMAPLAYER" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prefix the map filename part as part of the layer name</p>
+<dl class="py attribute">
+<dt id="id25">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ARCMAP_LOAD_PREFIXMAPLAYER</code><em class="property"> = 64</em><a class="headerlink" href="#id25" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.ARCMAP_LOAD_MERGETOSINGLEVIEW">
+<code class="sig-name descname">ARCMAP_LOAD_MERGETOSINGLEVIEW</code><a class="headerlink" href="#geosoft.gxapi.ARCMAP_LOAD_MERGETOSINGLEVIEW" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will render all views in single layer with the data view defining the coordinate system</p>
+<dl class="py attribute">
+<dt id="id26">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ARCMAP_LOAD_MERGETOSINGLEVIEW</code><em class="property"> = 128</em><a class="headerlink" href="#id26" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.ARCMAP_LOAD_INTOCURRENTFRAME">
+<code class="sig-name descname">ARCMAP_LOAD_INTOCURRENTFRAME</code><a class="headerlink" href="#geosoft.gxapi.ARCMAP_LOAD_INTOCURRENTFRAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load everything into the current data frame</p>
+<dl class="py attribute">
+<dt id="id27">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ARCMAP_LOAD_INTOCURRENTFRAME</code><em class="property"> = 256</em><a class="headerlink" href="#id27" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.ARCMAP_LOAD_NOMAPLAYERS">
+<code class="sig-name descname">ARCMAP_LOAD_NOMAPLAYERS</code><a class="headerlink" href="#geosoft.gxapi.ARCMAP_LOAD_NOMAPLAYERS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the map only for sizing data frames in layout, only load extra datasets.</p>
+<dl class="py attribute">
+<dt id="id28">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ARCMAP_LOAD_NOMAPLAYERS</code><em class="property"> = 512</em><a class="headerlink" href="#id28" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.ARCMAP_LOAD_ACTIVATE">
+<code class="sig-name descname">ARCMAP_LOAD_ACTIVATE</code><a class="headerlink" href="#geosoft.gxapi.ARCMAP_LOAD_ACTIVATE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Activates the main quickmap layer when done (e.g. 3D Viewer)</p>
+<dl class="py attribute">
+<dt id="id29">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ARCMAP_LOAD_ACTIVATE</code><em class="property"> = 1024</em><a class="headerlink" href="#id29" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.ARCMAP_LOAD_NEW">
+<code class="sig-name descname">ARCMAP_LOAD_NEW</code><a class="headerlink" href="#geosoft.gxapi.ARCMAP_LOAD_NEW" title="Permalink to this definition">¶</a></dt>
+<dd><p>New method for loading maps introduced in 7.1. Will mimic what happens in montaj (i.e. base groups and 3D become graphics and views gets split into separate LYRs).</p>
+<dl class="py attribute">
+<dt id="id30">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ARCMAP_LOAD_NEW</code><em class="property"> = 2048</em><a class="headerlink" href="#id30" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.ARCMAP_LOAD_NAMETAGISPREFIX">
+<code class="sig-name descname">ARCMAP_LOAD_NAMETAGISPREFIX</code><a class="headerlink" href="#geosoft.gxapi.ARCMAP_LOAD_NAMETAGISPREFIX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use a provided name tag as prefix when naming a newly created map layer.</p>
+<dl class="py attribute">
+<dt id="id31">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ARCMAP_LOAD_NAMETAGISPREFIX</code><em class="property"> = 4096</em><a class="headerlink" href="#id31" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXARCMAP class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>
