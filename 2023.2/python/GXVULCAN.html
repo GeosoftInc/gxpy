@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GXVULCAN class &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
+    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXVULCAN class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXVULCAN class</a><ul>
+<li><a class="reference internal" href="#block-model-variable-type-constants">BLOCK_MODEL_VARIABLE_TYPE constants</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXVULCAN.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gxvulcan-class">
+<span id="gxvulcan"></span><h1>GXVULCAN class<a class="headerlink" href="#gxvulcan-class" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="geosoft.gxapi.GXVULCAN">
+<em class="property">class </em><code class="sig-name descname">GXVULCAN</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVULCAN.html#GXVULCAN"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVULCAN" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXVULCAN class.</p>
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXVULCAN" title="geosoft.gxapi.GXVULCAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVULCAN</span></code></a> class is used for importing Maptek® Vulcan block and triangulation files.</p>
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVULCAN.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVULCAN.html#GXVULCAN.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVULCAN.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVULCAN.block_model_to_voxel">
+<em class="property">classmethod </em><code class="sig-name descname">block_model_to_voxel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block_model_file</span></em>, <em class="sig-param"><span class="n">ipj</span></em>, <em class="sig-param"><span class="n">variable_to_export</span></em>, <em class="sig-param"><span class="n">output_voxel_filename</span></em>, <em class="sig-param"><span class="n">remove_default_values</span></em>, <em class="sig-param"><span class="n">rock_code_filename</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVULCAN.html#GXVULCAN.block_model_to_voxel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVULCAN.block_model_to_voxel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Geosoft voxel file from a Vulcan block model file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>block_model_file</strong> (<em>str</em>) – Block model file</p></li>
+<li><p><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Block model projection</p></li>
+<li><p><strong>variable_to_export</strong> (<em>str</em>) – Variable to import</p></li>
+<li><p><strong>output_voxel_filename</strong> (<em>str</em>) – Ouput voxel filename</p></li>
+<li><p><strong>remove_default_values</strong> (<em>bool</em>) – Remove default values from input?</p></li>
+<li><p><strong>rock_code_filename</strong> (<em>str</em>) – Rock code file for string variable imports. Optional, unused for numeric variable imports.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVULCAN.get_block_model_string_variable_values">
+<em class="property">classmethod </em><code class="sig-name descname">get_block_model_string_variable_values</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block_model_file</span></em>, <em class="sig-param"><span class="n">variable_name</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVULCAN.html#GXVULCAN.get_block_model_string_variable_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVULCAN.get_block_model_string_variable_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query a block model for the values a string variable can assume.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>block_model_file</strong> (<em>str</em>) – Block model file</p></li>
+<li><p><strong>variable_name</strong> (<em>str</em>) – Variable name</p></li>
+<li><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List used to return variable names</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVULCAN.get_block_model_variable_info">
+<em class="property">classmethod </em><code class="sig-name descname">get_block_model_variable_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block_model_file</span></em>, <em class="sig-param"><span class="n">query</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVULCAN.html#GXVULCAN.get_block_model_variable_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVULCAN.get_block_model_variable_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query a block model for the variable names and descriptions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>block_model_file</strong> (<em>str</em>) – Block model file</p></li>
+<li><p><strong>query</strong> (<em>int</em>) – <a class="reference internal" href="#block-model-variable-type"><span class="std std-ref">BLOCK_MODEL_VARIABLE_TYPE constants</span></a> Which variables to return.</p></li>
+<li><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List used to return variable names/descriptions.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVULCAN.is_null">
+<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVULCAN.html#GXVULCAN.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVULCAN.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVULCAN.is_valid_block_model_file">
+<em class="property">classmethod </em><code class="sig-name descname">is_valid_block_model_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block_model_file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVULCAN.html#GXVULCAN.is_valid_block_model_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVULCAN.is_valid_block_model_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the given file can be opened as a Vulcan block model file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>block_model_file</strong> (<em>str</em>) – Block model file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>0 - No
+1 - Yes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVULCAN.is_valid_triangulation_file">
+<em class="property">classmethod </em><code class="sig-name descname">is_valid_triangulation_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">triangulation_file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVULCAN.html#GXVULCAN.is_valid_triangulation_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVULCAN.is_valid_triangulation_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the given file can be opened as a Vulcan triangulation file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>triangulation_file</strong> (<em>str</em>) – Triangulation file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>0 - No
+1 - Yes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVULCAN.null">
+<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVULCAN.html#GXVULCAN.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVULCAN.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXVULCAN" title="geosoft.gxapi.GXVULCAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVULCAN</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXVULCAN" title="geosoft.gxapi.GXVULCAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVULCAN</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVULCAN" title="geosoft.gxapi.GXVULCAN">GXVULCAN</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXVULCAN.triangulation_to_view">
+<em class="property">classmethod </em><code class="sig-name descname">triangulation_to_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">triangulation_file</span></em>, <em class="sig-param"><span class="n">ipj</span></em>, <em class="sig-param"><span class="n">mview</span></em>, <em class="sig-param"><span class="n">new_group_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVULCAN.html#GXVULCAN.triangulation_to_view"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVULCAN.triangulation_to_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw triangle edges in a Vulcan triangulation file to a 3D view in a map.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>triangulation_file</strong> (<em>str</em>) – Triangulation file</p></li>
+<li><p><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Triangulation projection</p></li>
+<li><p><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – Destination <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a></p></li>
+<li><p><strong>new_group_name</strong> (<em>str</em>) – New group name</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="block-model-variable-type-constants">
+<span id="block-model-variable-type"></span><h2>BLOCK_MODEL_VARIABLE_TYPE constants<a class="headerlink" href="#block-model-variable-type-constants" title="Permalink to this headline">¶</a></h2>
+<p>Which variables to return from sReadBlockModelVariableInfo</p>
+<dl class="py data">
+<dt id="geosoft.gxapi.BLOCK_MODEL_NUMERIC_VARIABLE">
+<code class="sig-name descname">BLOCK_MODEL_NUMERIC_VARIABLE</code><a class="headerlink" href="#geosoft.gxapi.BLOCK_MODEL_NUMERIC_VARIABLE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return numeric variable names</p>
+<dl class="py attribute">
+<dt id="id0">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">BLOCK_MODEL_NUMERIC_VARIABLE</code><em class="property"> = 1</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.BLOCK_MODEL_STRING_VARIABLE">
+<code class="sig-name descname">BLOCK_MODEL_STRING_VARIABLE</code><a class="headerlink" href="#geosoft.gxapi.BLOCK_MODEL_STRING_VARIABLE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return string variable names</p>
+<dl class="py attribute">
+<dt id="id6">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">BLOCK_MODEL_STRING_VARIABLE</code><em class="property"> = 2</em><a class="headerlink" href="#id6" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXVULCAN class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,1185 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXGU &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXGU</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXGU</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXGU"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU">[docs]</a><span class="k">class</span> <span class="nc">GXGU</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXGU class.</span>
+
+<span class="sd">    Not a class. A catch-all group of functions performing</span>
+<span class="sd">    various geophysical processes, including the calculation</span>
+<span class="sd">    of simple EM model responses, certain instrument dump</span>
+<span class="sd">    file imports, and 2D Euler deconvolution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXGU.__init__"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXGU</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXGU.null"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXGU &lt;geosoft.gxapi.GXGU&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXGU &lt;geosoft.gxapi.GXGU&gt;`</span>
+<span class="sd">        :rtype:   GXGU</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXGU</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXGU.is_null"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+<div class="viewcode-block" id="GXGU.dipole_mag"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.dipole_mag">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">dipole_mag</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">xyz_file</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">inc</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate a dipole magnetic field into XYZ file</span>
+<span class="sd">        </span>
+<span class="sd">        :param xyz_file:  sXYZ</span>
+<span class="sd">        :param depth:     rDepth</span>
+<span class="sd">        :param inc:       rInc</span>
+<span class="sd">        :param nx:        iNX</span>
+<span class="sd">        :param ny:        iNY</span>
+<span class="sd">        :param dx:        rDX</span>
+<span class="sd">        :param dy:        rDY</span>
+<span class="sd">        :type  xyz_file:  str</span>
+<span class="sd">        :type  depth:     float</span>
+<span class="sd">        :type  inc:       float</span>
+<span class="sd">        :type  nx:        int</span>
+<span class="sd">        :type  ny:        int</span>
+<span class="sd">        :type  dx:        float</span>
+<span class="sd">        :type  dy:        float</span>
+
+<span class="sd">        .. versionadded:: 5.1.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_dipole_mag</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">xyz_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">depth</span><span class="p">,</span> <span class="n">inc</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.em_half_space_inv"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.em_half_space_inv">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">em_half_space_inv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">coil_spacing</span><span class="p">,</span> <span class="n">coil_frequency</span><span class="p">,</span> <span class="n">coil_configuration</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="n">vv_height</span><span class="p">,</span> <span class="n">vv_in_phase</span><span class="p">,</span> <span class="n">vv_quadrature</span><span class="p">,</span> <span class="n">vv_res</span><span class="p">,</span> <span class="n">inv</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">start_val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inverts EM responses to the best halfspace model.</span>
+<span class="sd">        </span>
+<span class="sd">        :param coil_spacing:        Coil spacing: error if == 0</span>
+<span class="sd">        :param coil_frequency:      Frequency</span>
+<span class="sd">        :param coil_configuration:  :ref:`EMLAY_GEOMETRY`</span>
+<span class="sd">        :param tol:                 Fractional error in best fit resistivity</span>
+<span class="sd">        :param threshold:           Don&#39;t invert values below this</span>
+<span class="sd">        :param vv_height:           Height above ground</span>
+<span class="sd">        :param vv_in_phase:         In-phase part (ppm)</span>
+<span class="sd">        :param vv_quadrature:       Quadrature part (ppm)</span>
+<span class="sd">        :param vv_res:              On return - inverted halfspace resistivities</span>
+<span class="sd">        :param inv:                 :ref:`EM_INV`</span>
+<span class="sd">        :param err:                 :ref:`EM_ERR`</span>
+<span class="sd">        :param start_val:           Starting value for inversion (can be `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;`)</span>
+<span class="sd">        :type  coil_spacing:        float</span>
+<span class="sd">        :type  coil_frequency:      float</span>
+<span class="sd">        :type  coil_configuration:  int</span>
+<span class="sd">        :type  tol:                 float</span>
+<span class="sd">        :type  threshold:           float</span>
+<span class="sd">        :type  vv_height:           GXVV</span>
+<span class="sd">        :type  vv_in_phase:         GXVV</span>
+<span class="sd">        :type  vv_quadrature:       GXVV</span>
+<span class="sd">        :type  vv_res:              GXVV</span>
+<span class="sd">        :type  inv:                 int</span>
+<span class="sd">        :type  err:                 int</span>
+<span class="sd">        :type  start_val:           float</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_em_half_space_inv</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">coil_spacing</span><span class="p">,</span> <span class="n">coil_frequency</span><span class="p">,</span> <span class="n">coil_configuration</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="n">vv_height</span><span class="p">,</span> <span class="n">vv_in_phase</span><span class="p">,</span> <span class="n">vv_quadrature</span><span class="p">,</span> <span class="n">vv_res</span><span class="p">,</span> <span class="n">inv</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">start_val</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.em_half_space_vv"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.em_half_space_vv">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">em_half_space_vv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">coil_spacing</span><span class="p">,</span> <span class="n">coil_frequency</span><span class="p">,</span> <span class="n">coil_configuration</span><span class="p">,</span> <span class="n">rvv</span><span class="p">,</span> <span class="n">hvv</span><span class="p">,</span> <span class="n">ivv</span><span class="p">,</span> <span class="n">qvv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        EM Halfspace forward model response.</span>
+<span class="sd">        </span>
+<span class="sd">        :param coil_spacing:        Coil separation</span>
+<span class="sd">        :param coil_frequency:      Frequency</span>
+<span class="sd">        :param coil_configuration:  :ref:`EMLAY_GEOMETRY`</span>
+<span class="sd">        :param rvv:                 Input resistivity values</span>
+<span class="sd">        :param hvv:                 Input height values</span>
+<span class="sd">        :param ivv:                 Output In-phase</span>
+<span class="sd">        :param qvv:                 Output Quadrature-phase</span>
+<span class="sd">        :type  coil_spacing:        float</span>
+<span class="sd">        :type  coil_frequency:      float</span>
+<span class="sd">        :type  coil_configuration:  int</span>
+<span class="sd">        :type  rvv:                 GXVV</span>
+<span class="sd">        :type  hvv:                 GXVV</span>
+<span class="sd">        :type  ivv:                 GXVV</span>
+<span class="sd">        :type  qvv:                 GXVV</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_em_half_space_vv</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">coil_spacing</span><span class="p">,</span> <span class="n">coil_frequency</span><span class="p">,</span> <span class="n">coil_configuration</span><span class="p">,</span> <span class="n">rvv</span><span class="p">,</span> <span class="n">hvv</span><span class="p">,</span> <span class="n">ivv</span><span class="p">,</span> <span class="n">qvv</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.geometrics2_db"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.geometrics2_db">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">geometrics2_db</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">log_wa</span><span class="p">,</span> <span class="n">survey_mode</span><span class="p">,</span> <span class="n">line_dir</span><span class="p">,</span> <span class="n">corner</span><span class="p">,</span> <span class="n">bi_uni</span><span class="p">,</span> <span class="n">corner_x</span><span class="p">,</span> <span class="n">corner_y</span><span class="p">,</span> <span class="n">mark_space</span><span class="p">,</span> <span class="n">line_space</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert a Geometrics STN file to a database.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:           `GXDB &lt;geosoft.gxapi.GXDB&gt;` handle</span>
+<span class="sd">        :param ra:           `GXRA &lt;geosoft.gxapi.GXRA&gt;` handle, STN file</span>
+<span class="sd">        :param log_wa:       Log file `GXWA &lt;geosoft.gxapi.GXWA&gt;` handle</span>
+<span class="sd">        :param survey_mode:  Simple mode (1) or Mapped mode (2)</span>
+<span class="sd">        :param line_dir:     Survey line orientation:  North-south - 0 East-west   - 1</span>
+<span class="sd">        :param corner:       Starting survey position: SW - 0, NW - 1, SE - 2, NE - 3,</span>
+<span class="sd">        :param bi_uni:       Bidirectional (0) or Unidirectional (1)</span>
+<span class="sd">        :param corner_x:     Starting position X</span>
+<span class="sd">        :param corner_y:     Starting position Y</span>
+<span class="sd">        :param mark_space:   Mark spacing</span>
+<span class="sd">        :param line_space:   Line spacing</span>
+<span class="sd">        :type  db:           GXDB</span>
+<span class="sd">        :type  ra:           GXRA</span>
+<span class="sd">        :type  log_wa:       GXWA</span>
+<span class="sd">        :type  survey_mode:  int</span>
+<span class="sd">        :type  line_dir:     int</span>
+<span class="sd">        :type  corner:       int</span>
+<span class="sd">        :type  bi_uni:       int</span>
+<span class="sd">        :type  corner_x:     float</span>
+<span class="sd">        :type  corner_y:     float</span>
+<span class="sd">        :type  mark_space:   float</span>
+<span class="sd">        :type  line_space:   float</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Assumes that the database is new and empty. If not, existing channels</span>
+<span class="sd">        with names X, Y, Mag1, Mag2, Time, Date, and Mark will deleted and then created.  </span>
+<span class="sd">        Existing lines will be erased and then created if they are the same as the new ones.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_geometrics2_db</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">log_wa</span><span class="p">,</span> <span class="n">survey_mode</span><span class="p">,</span> <span class="n">line_dir</span><span class="p">,</span> <span class="n">corner</span><span class="p">,</span> <span class="n">bi_uni</span><span class="p">,</span> <span class="n">corner_x</span><span class="p">,</span> <span class="n">corner_y</span><span class="p">,</span> <span class="n">mark_space</span><span class="p">,</span> <span class="n">line_space</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.geometrics2_tbl"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.geometrics2_tbl">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">geometrics2_tbl</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">wa</span><span class="p">,</span> <span class="n">log_wa</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert a Geometrics station file (STN) to a table file (TBL)</span>
+<span class="sd">        </span>
+<span class="sd">        :param ra:      `GXRA &lt;geosoft.gxapi.GXRA&gt;` handle, input station file</span>
+<span class="sd">        :param wa:      Output TBL file</span>
+<span class="sd">        :param log_wa:  Log file `GXWA &lt;geosoft.gxapi.GXWA&gt;` handle</span>
+<span class="sd">        :type  ra:      GXRA</span>
+<span class="sd">        :type  wa:      GXWA</span>
+<span class="sd">        :type  log_wa:  GXWA</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_geometrics2_tbl</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">ra</span><span class="p">,</span> <span class="n">wa</span><span class="p">,</span> <span class="n">log_wa</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.geometrics_qc"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.geometrics_qc">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">geometrics_qc</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">wa</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">in_vv</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="n">min_coord</span><span class="p">,</span> <span class="n">max_coord</span><span class="p">,</span> <span class="n">out_vv</span><span class="p">,</span> <span class="n">flag_vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Correct reading positions in a database.</span>
+<span class="sd">        </span>
+<span class="sd">        :param wa:         Output error log file</span>
+<span class="sd">        :param line:       Database line number. For output to log file only</span>
+<span class="sd">        :param in_vv:      Input `GXVV &lt;geosoft.gxapi.GXVV&gt;`, `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`</span>
+<span class="sd">        :param tol:        Tolerance defined as percentage, say 50.0 means 50%. Must be &gt;=0.0 Lower bound = (Normal Density) - (Normal Density)*Tolerance Upper bound = (Normal Density) + (Normal Density)*Tolerance</span>
+<span class="sd">        :param min_coord:  Minimum coordinate (X or Y)</span>
+<span class="sd">        :param max_coord:  Maximum coordinate (X or Y)</span>
+<span class="sd">        :param out_vv:     Output `GXVV &lt;geosoft.gxapi.GXVV&gt;`, `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`</span>
+<span class="sd">        :param flag_vv:    Output Flag `GXVV &lt;geosoft.gxapi.GXVV&gt;`, `GS_LONG &lt;geosoft.gxapi.GS_LONG&gt;`</span>
+<span class="sd">        :type  wa:         GXWA</span>
+<span class="sd">        :type  line:       str</span>
+<span class="sd">        :type  in_vv:      GXVV</span>
+<span class="sd">        :type  tol:        float</span>
+<span class="sd">        :type  min_coord:  float</span>
+<span class="sd">        :type  max_coord:  float</span>
+<span class="sd">        :type  out_vv:     GXVV</span>
+<span class="sd">        :type  flag_vv:    GXVV</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** There are six cases to consider:</span>
+
+<span class="sd">        ========    ====  =============  ========================================</span>
+<span class="sd">        Case        Flag  Solutions      Symptoms</span>
+<span class="sd">        ========    ====  =============  ========================================</span>
+<span class="sd">        CASE 1A:    0     No correction  Recorded and actual Line lengths same</span>
+<span class="sd">                                         Reading densities vary slightly (passed</span>
+<span class="sd">                                         the tolerance test)</span>
+<span class="sd">        --------    ----  -------------  ----------------------------------------</span>
+<span class="sd">        CASE 1B     -1    No correction  Line lengths same</span>
+<span class="sd">                                         Reading densities vary and cannot</span>
+<span class="sd">                                         pass the tolerance test</span>
+<span class="sd">        --------    ----  -------------  ----------------------------------------</span>
+<span class="sd">        CASE 2A     1     Corrected by   Recorded line length too short</span>
+<span class="sd">                          extension      Possible high readings in segment(s)</span>
+<span class="sd">                                         Corrected (by extending) and actual</span>
+<span class="sd">                                         lengths become the same</span>
+<span class="sd">        --------    ----  -------------  ----------------------------------------</span>
+<span class="sd">        CASE 2B     2     Corrected by   Recorded line length too short</span>
+<span class="sd">                          interpolation  Possible high readings in segment(s)</span>
+<span class="sd">                                         Corrected (by extending) and actual</span>
+<span class="sd">                                         lengths are not same. Interpolation is</span>
+<span class="sd">                                         then applied</span>
+<span class="sd">        --------    ----  -------------  ----------------------------------------</span>
+<span class="sd">        CASE 3A     1     Corrected by   Recorded line length too long</span>
+<span class="sd">                          shifting or    Possible low readings in segment(s)</span>
+<span class="sd">                          (shrank)       Corrected (by shifting) and actual</span>
+<span class="sd">                                         lengths are same</span>
+<span class="sd">        --------    ----  -------------  ----------------------------------------</span>
+<span class="sd">        CASE 3B     2     Corrected by   Recorded line length too long</span>
+<span class="sd">                          interpolation  Possible low readings in segment(s)</span>
+<span class="sd">                                         Corrected (by shifting) and actual</span>
+<span class="sd">                                         lengths are not same. Interpolation</span>
+<span class="sd">                                         is then applied</span>
+<span class="sd">        ========    ====  =============  ========================================</span>
+
+
+<span class="sd">        TERMINOLOGY:</span>
+
+<span class="sd">        Segments</span>
+<span class="sd">             A segment refers to the distance and its contents between</span>
+<span class="sd">             two adjacent fiducial markers</span>
+
+<span class="sd">        Normal Density</span>
+<span class="sd">             The density (number of readings) shared by the segments in</span>
+<span class="sd">             a survey line. The number of segments with the density is greater </span>
+<span class="sd">             than the number of segments having a different density in a line.</span>
+
+<span class="sd">        Tolerance and Bound:</span>
+<span class="sd">             Tolerance is defined as a percentage, say ``50% (=0.5)``.</span>
+<span class="sd">             Based on the tolerance, a lower bound and upper bound</span>
+
+<span class="sd">             can be defined:</span>
+
+<span class="sd">             ::</span>
+
+<span class="sd">                 Lower bound = (Normal Density) - (Normal Density)*Tolerance</span>
+<span class="sd">                 Upper bound = (Normal Density) - (Normal Density)*Tolerance</span>
+
+<span class="sd">             Segments will pass the tolerance test if the number of readings</span>
+<span class="sd">             falls within the Lower and Upper Bounds.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_geometrics_qc</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">wa</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">in_vv</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="n">min_coord</span><span class="p">,</span> <span class="n">max_coord</span><span class="p">,</span> <span class="n">out_vv</span><span class="p">,</span> <span class="n">flag_vv</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.geonics3138_dump2_db"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.geonics3138_dump2_db">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">geonics3138_dump2_db</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">r_ah</span><span class="p">,</span> <span class="n">r_ad</span><span class="p">,</span> <span class="n">log_wa</span><span class="p">,</span> <span class="n">line_mult</span><span class="p">,</span> <span class="n">stat_mult</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert a Geonics EM31/EM38 file in dump format to a database.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:         `GXDB &lt;geosoft.gxapi.GXDB&gt;` handle</span>
+<span class="sd">        :param r_ah:       `GXRA &lt;geosoft.gxapi.GXRA&gt;` handle, Header file</span>
+<span class="sd">        :param r_ad:       `GXRA &lt;geosoft.gxapi.GXRA&gt;` handle, Dump file</span>
+<span class="sd">        :param log_wa:     Log file `GXWA &lt;geosoft.gxapi.GXWA&gt;` handle</span>
+<span class="sd">        :param line_mult:  Line multiplier</span>
+<span class="sd">        :param stat_mult:  Station multiplier</span>
+<span class="sd">        :type  db:         GXDB</span>
+<span class="sd">        :type  r_ah:       GXRA</span>
+<span class="sd">        :type  r_ad:       GXRA</span>
+<span class="sd">        :type  log_wa:     GXWA</span>
+<span class="sd">        :type  line_mult:  float</span>
+<span class="sd">        :type  stat_mult:  float</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Assumes that the database is new and empty. If not, existing channels</span>
+<span class="sd">        with names X, Y, Station, Conductivity, Inphase, Quadrature,</span>
+<span class="sd">        and Time will deleted and then created.  Existing lines will</span>
+<span class="sd">        be erased and then created if they are the same as the new ones.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_geonics3138_dump2_db</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">r_ah</span><span class="p">,</span> <span class="n">r_ad</span><span class="p">,</span> <span class="n">log_wa</span><span class="p">,</span> <span class="n">line_mult</span><span class="p">,</span> <span class="n">stat_mult</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.geonics61_dump2_db"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.geonics61_dump2_db">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">geonics61_dump2_db</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">log_wa</span><span class="p">,</span> <span class="n">line_mult</span><span class="p">,</span> <span class="n">stat_mult</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert a Geonics EM61 file in dump format to a database.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:         `GXDB &lt;geosoft.gxapi.GXDB&gt;` handle</span>
+<span class="sd">        :param ra:         `GXRA &lt;geosoft.gxapi.GXRA&gt;` handle, dump file</span>
+<span class="sd">        :param log_wa:     Log file `GXWA &lt;geosoft.gxapi.GXWA&gt;` handle</span>
+<span class="sd">        :param line_mult:  Line multiplier</span>
+<span class="sd">        :param stat_mult:  Station multiplier - Not used in the calculation</span>
+<span class="sd">        :type  db:         GXDB</span>
+<span class="sd">        :type  ra:         GXRA</span>
+<span class="sd">        :type  log_wa:     GXWA</span>
+<span class="sd">        :type  line_mult:  float</span>
+<span class="sd">        :type  stat_mult:  float</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Assumes that the database is new and empty. If not, existing channels</span>
+<span class="sd">        with names X, Y, Station, Conductivity, Inphase, Quadrature,</span>
+<span class="sd">        and Time will deleted and then created.  Existing lines will</span>
+<span class="sd">        be erased and then created if they are the same as the new ones.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_geonics61_dump2_db</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">log_wa</span><span class="p">,</span> <span class="n">line_mult</span><span class="p">,</span> <span class="n">stat_mult</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.geonics_dat2_db"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.geonics_dat2_db">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">geonics_dat2_db</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">log_wa</span><span class="p">,</span> <span class="n">line_mult</span><span class="p">,</span> <span class="n">stat_mult</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert a Geonics EM31/EM38/EM61 file in `GXDAT &lt;geosoft.gxapi.GXDAT&gt;` format to a database.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:         `GXDB &lt;geosoft.gxapi.GXDB&gt;` handle</span>
+<span class="sd">        :param ra:         `GXRA &lt;geosoft.gxapi.GXRA&gt;` handle</span>
+<span class="sd">        :param log_wa:     Log file `GXWA &lt;geosoft.gxapi.GXWA&gt;` handle</span>
+<span class="sd">        :param line_mult:  Line multiplier</span>
+<span class="sd">        :param stat_mult:  Station multiplier - Not used in the calculation</span>
+<span class="sd">        :type  db:         GXDB</span>
+<span class="sd">        :type  ra:         GXRA</span>
+<span class="sd">        :type  log_wa:     GXWA</span>
+<span class="sd">        :type  line_mult:  float</span>
+<span class="sd">        :type  stat_mult:  float</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Assumes that the database is new and empty. If not, existing channels</span>
+<span class="sd">        with names X, Y, Station, Conductivity, Inphase, Quadrature,</span>
+<span class="sd">        and Time will deleted and then created.  Existing lines will</span>
+<span class="sd">        be erased and then created if they are the same as the new ones.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_geonics_dat2_db</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">log_wa</span><span class="p">,</span> <span class="n">line_mult</span><span class="p">,</span> <span class="n">stat_mult</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.gr_curv_cor"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.gr_curv_cor">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">gr_curv_cor</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_elev</span><span class="p">,</span> <span class="n">vv_lat</span><span class="p">,</span> <span class="n">vv_boug</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gravity Curvature (Bullard B) Correction to Bouguer anomaly</span>
+<span class="sd">        </span>
+<span class="sd">        :param vv_elev:  Input Elevation `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vv_lat:   Input Latitude `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vv_boug:  Bouguer `GXVV &lt;geosoft.gxapi.GXVV&gt;` for Curvature Correction</span>
+<span class="sd">        :type  vv_elev:  GXVV</span>
+<span class="sd">        :type  vv_lat:   GXVV</span>
+<span class="sd">        :type  vv_boug:  GXVV</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_gr_curv_cor</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_elev</span><span class="p">,</span> <span class="n">vv_lat</span><span class="p">,</span> <span class="n">vv_boug</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.gr_curv_cor_ex"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.gr_curv_cor_ex">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">gr_curv_cor_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_elev</span><span class="p">,</span> <span class="n">vv_lat</span><span class="p">,</span> <span class="n">vv_boug</span><span class="p">,</span> <span class="n">rho</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gravity Curvature (Bullard B) Correction to Bouguer anomaly, with user input cap density.</span>
+<span class="sd">        </span>
+<span class="sd">        :param vv_elev:  Input Elevation `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vv_lat:   Input Latitude `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vv_boug:  Bouguer `GXVV &lt;geosoft.gxapi.GXVV&gt;` for Curvature Correction</span>
+<span class="sd">        :param rho:      Cap Density (g/cm^3</span>
+<span class="sd">        :type  vv_elev:  GXVV</span>
+<span class="sd">        :type  vv_lat:   GXVV</span>
+<span class="sd">        :type  vv_boug:  GXVV</span>
+<span class="sd">        :type  rho:      float</span>
+
+<span class="sd">        .. versionadded:: 8.0.1</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_gr_curv_cor_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_elev</span><span class="p">,</span> <span class="n">vv_lat</span><span class="p">,</span> <span class="n">vv_boug</span><span class="p">,</span> <span class="n">rho</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.gr_demvv"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.gr_demvv">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">gr_demvv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">im_gdem</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get gravity DEM grid `GXVV &lt;geosoft.gxapi.GXVV&gt;` for Bouguer anomaly</span>
+<span class="sd">        </span>
+<span class="sd">        :param im_gdem:  DEM grid</span>
+<span class="sd">        :param vv_x:     Input X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vv_y:     Input Y `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vv_z:     Output DEM `GXVV &lt;geosoft.gxapi.GXVV&gt;` for Bouguer Correction</span>
+<span class="sd">        :type  im_gdem:  GXIMG</span>
+<span class="sd">        :type  vv_x:     GXVV</span>
+<span class="sd">        :type  vv_y:     GXVV</span>
+<span class="sd">        :type  vv_z:     GXVV</span>
+
+<span class="sd">        .. versionadded:: 6.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_gr_demvv</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">im_gdem</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.gr_test"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.gr_test">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">gr_test</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">xm</span><span class="p">,</span> <span class="n">ym</span><span class="p">,</span> <span class="n">zm</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_g3</span><span class="p">,</span> <span class="n">vv_g4</span><span class="p">,</span> <span class="n">vv_g1</span><span class="p">,</span> <span class="n">vv_g2</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test triangular prism gravity calculation</span>
+<span class="sd">        </span>
+<span class="sd">        :param xm:     dXm  - model dimension x</span>
+<span class="sd">        :param ym:     dYm  - model dimension y</span>
+<span class="sd">        :param zm:     dZm  - model depth</span>
+<span class="sd">        :param vv_x:   VVx  - stations x</span>
+<span class="sd">        :param vv_y:   VVy  - stations y</span>
+<span class="sd">        :param vv_g3:  VVg3 - 2 triangular prism gravity results</span>
+<span class="sd">        :param vv_g4:  VVg4 - regtangular prism gravity results</span>
+<span class="sd">        :param vv_g1:  VVg1 - lower triangular prism gravity results</span>
+<span class="sd">        :param vv_g2:  VVg2 - upper triangular prism gravity results</span>
+<span class="sd">        :type  xm:     float</span>
+<span class="sd">        :type  ym:     float</span>
+<span class="sd">        :type  zm:     float</span>
+<span class="sd">        :type  vv_x:   GXVV</span>
+<span class="sd">        :type  vv_y:   GXVV</span>
+<span class="sd">        :type  vv_g3:  GXVV</span>
+<span class="sd">        :type  vv_g4:  GXVV</span>
+<span class="sd">        :type  vv_g1:  GXVV</span>
+<span class="sd">        :type  vv_g2:  GXVV</span>
+
+<span class="sd">        .. versionadded:: 5.1.4</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_gr_test</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">xm</span><span class="p">,</span> <span class="n">ym</span><span class="p">,</span> <span class="n">zm</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_g3</span><span class="p">,</span> <span class="n">vv_g4</span><span class="p">,</span> <span class="n">vv_g1</span><span class="p">,</span> <span class="n">vv_g2</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.gravity_still_reading_correction"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.gravity_still_reading_correction">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">gravity_still_reading_correction</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">grav_in</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">still</span><span class="p">,</span> <span class="n">grav_out</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gravity Still Reading Correction on selected lines.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:        Database</span>
+<span class="sd">        :param grav_in:   Input gravity channel handle [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param date:      Input date channel handle [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param time:      Input time channel handle [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param still:     Still readings file</span>
+<span class="sd">        :param grav_out:  Output gravity channel handle [`DB_LOCK_READWRITE &lt;geosoft.gxapi.DB_LOCK_READWRITE&gt;`]</span>
+<span class="sd">        :type  db:        GXDB</span>
+<span class="sd">        :type  grav_in:   int</span>
+<span class="sd">        :type  date:      int</span>
+<span class="sd">        :type  time:      int</span>
+<span class="sd">        :type  still:     str</span>
+<span class="sd">        :type  grav_out:  int</span>
+
+<span class="sd">        .. versionadded:: 8.5</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_gravity_still_reading_correction</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">grav_in</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">still</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grav_out</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.gravity_still_reading_database_correction"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.gravity_still_reading_database_correction">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">gravity_still_reading_database_correction</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">grav_in</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">stillDB</span><span class="p">,</span> <span class="n">station_channel</span><span class="p">,</span> <span class="n">date_channel</span><span class="p">,</span> <span class="n">time_channel</span><span class="p">,</span> <span class="n">readings_channel</span><span class="p">,</span> <span class="n">grav_out</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gravity Still Reading Correction on selected lines, using a still readings database</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:                Database</span>
+<span class="sd">        :param grav_in:           Input gravity channel handle [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param date:              Input date channel handle [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param time:              Input time channel handle [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param stillDB:           Still readings database</span>
+<span class="sd">        :param station_channel:   station channel in still readings database</span>
+<span class="sd">        :param date_channel:      date channel in still readings database</span>
+<span class="sd">        :param time_channel:      time channel in still readings database</span>
+<span class="sd">        :param readings_channel:  readings (gravity) channel in still readings database</span>
+<span class="sd">        :param grav_out:          Output gravity channel handle [`DB_LOCK_READWRITE &lt;geosoft.gxapi.DB_LOCK_READWRITE&gt;`]</span>
+<span class="sd">        :type  db:                GXDB</span>
+<span class="sd">        :type  grav_in:           int</span>
+<span class="sd">        :type  date:              int</span>
+<span class="sd">        :type  time:              int</span>
+<span class="sd">        :type  stillDB:           GXDB</span>
+<span class="sd">        :type  station_channel:   str</span>
+<span class="sd">        :type  date_channel:      str</span>
+<span class="sd">        :type  time_channel:      str</span>
+<span class="sd">        :type  readings_channel:  str</span>
+<span class="sd">        :type  grav_out:          int</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_gravity_still_reading_database_correction</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">grav_in</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">stillDB</span><span class="p">,</span> <span class="n">station_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">date_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">time_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">readings_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grav_out</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.despike_em_array"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.despike_em_array">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">despike_em_array</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_in</span><span class="p">,</span> <span class="n">vv_noise</span><span class="p">,</span> <span class="n">vv_out</span><span class="p">,</span> <span class="n">num_removed</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Despike a time-series with individual noise levels</span>
+<span class="sd">        </span>
+<span class="sd">        :param vv_in:        `GXVV &lt;geosoft.gxapi.GXVV&gt;` input time series)</span>
+<span class="sd">        :param vv_noise:     `GXVV &lt;geosoft.gxapi.GXVV&gt;` individual noise values)</span>
+<span class="sd">        :param vv_out:       `GXVV &lt;geosoft.gxapi.GXVV&gt;` despiked output time series</span>
+<span class="sd">        :param num_removed:  Number of spikes removed - returned</span>
+<span class="sd">        :type  vv_in:        GXVV</span>
+<span class="sd">        :type  vv_noise:     GXVV</span>
+<span class="sd">        :type  vv_out:       GXVV</span>
+<span class="sd">        :type  num_removed:  int_ref</span>
+
+<span class="sd">        .. versionadded:: 9.5</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Remove spikes from a single EM time-series decay curve. Each point has its own noise level.</span>
+<span class="sd">        The algorithm is to be determined.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">num_removed</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_despike_em_array</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_in</span><span class="p">,</span> <span class="n">vv_noise</span><span class="p">,</span> <span class="n">vv_out</span><span class="p">,</span> <span class="n">num_removed</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.em_layer"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.em_layer">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">em_layer</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">coil_spacing</span><span class="p">,</span> <span class="n">coil_frequency</span><span class="p">,</span> <span class="n">coil_height</span><span class="p">,</span> <span class="n">coil_configuration</span><span class="p">,</span> <span class="n">n_layers</span><span class="p">,</span> <span class="n">vv_thickness</span><span class="p">,</span> <span class="n">vv_sigma</span><span class="p">,</span> <span class="n">in_phase</span><span class="p">,</span> <span class="n">quadrature</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate the EM response of a layered earth model.</span>
+<span class="sd">        </span>
+<span class="sd">        :param coil_spacing:        Coil spacing, error if == 0</span>
+<span class="sd">        :param coil_frequency:      Coil frequency</span>
+<span class="sd">        :param coil_height:         Coil height above layer [0]</span>
+<span class="sd">        :param coil_configuration:  :ref:`EMLAY_GEOMETRY`</span>
+<span class="sd">        :param n_layers:            Number of layers (including lower halfspace)</span>
+<span class="sd">        :param vv_thickness:        sNLayer-1 thicknesses  [0] to [sNLayer-2]</span>
+<span class="sd">        :param vv_sigma:            sNLayer conductivities [0] to [sNLayer-1]</span>
+<span class="sd">        :param in_phase:            On return - in-phase part (ppm)</span>
+<span class="sd">        :param quadrature:          On return - quadrature part (ppm)</span>
+<span class="sd">        :type  coil_spacing:        float</span>
+<span class="sd">        :type  coil_frequency:      float</span>
+<span class="sd">        :type  coil_height:         float</span>
+<span class="sd">        :type  coil_configuration:  int</span>
+<span class="sd">        :type  n_layers:            int</span>
+<span class="sd">        :type  vv_thickness:        GXVV</span>
+<span class="sd">        :type  vv_sigma:            GXVV</span>
+<span class="sd">        :type  in_phase:            float_ref</span>
+<span class="sd">        :type  quadrature:          float_ref</span>
+
+<span class="sd">        :returns:                   0 of OK</span>
+<span class="sd">                                    1 if some error</span>
+<span class="sd">        :rtype:                     int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span><span class="p">,</span> <span class="n">in_phase</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">quadrature</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_em_layer</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">coil_spacing</span><span class="p">,</span> <span class="n">coil_frequency</span><span class="p">,</span> <span class="n">coil_height</span><span class="p">,</span> <span class="n">coil_configuration</span><span class="p">,</span> <span class="n">n_layers</span><span class="p">,</span> <span class="n">vv_thickness</span><span class="p">,</span> <span class="n">vv_sigma</span><span class="p">,</span> <span class="n">in_phase</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">quadrature</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXGU.em_plate"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.em_plate">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">em_plate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">strike_length</span><span class="p">,</span> <span class="n">dip_length</span><span class="p">,</span> <span class="n">strike</span><span class="p">,</span> <span class="n">dip</span><span class="p">,</span> <span class="n">plunge</span><span class="p">,</span> <span class="n">x_off</span><span class="p">,</span> <span class="n">y_off</span><span class="p">,</span> <span class="n">z_off</span><span class="p">,</span> <span class="n">plate_depth</span><span class="p">,</span> <span class="n">n_spons</span><span class="p">,</span> <span class="n">sig_tvv</span><span class="p">,</span> <span class="n">tx_orient</span><span class="p">,</span> <span class="n">tx_freq</span><span class="p">,</span> <span class="n">tx_dt</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">xivv</span><span class="p">,</span> <span class="n">yivv</span><span class="p">,</span> <span class="n">zivv</span><span class="p">,</span> <span class="n">xqvv</span><span class="p">,</span> <span class="n">yqvv</span><span class="p">,</span> <span class="n">zqvv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate the conductance of a thin plate model.</span>
+<span class="sd">        </span>
+<span class="sd">        :param strike_length:  Plate strike length (m)</span>
+<span class="sd">        :param dip_length:     Plate dip length (m)</span>
+<span class="sd">        :param strike:         Plate strike (degrees) from X axis</span>
+<span class="sd">        :param dip:            Plate dip (degrees) from horizontal</span>
+<span class="sd">        :param plunge:         Plate plunge (degrees) from horizontal</span>
+<span class="sd">        :param x_off:          Rx offset in X from Tx</span>
+<span class="sd">        :param y_off:          Rx offset in Y from Tx</span>
+<span class="sd">        :param z_off:          Rx offset in Z from Tx (+&#39;ve down)</span>
+<span class="sd">        :param plate_depth:    Depth below Tx</span>
+<span class="sd">        :param n_spons:        :ref:`EMPLATE_DOMAIN`</span>
+<span class="sd">        :param sig_tvv:        The plate conductances (`GXVV &lt;geosoft.gxapi.GXVV&gt;` length &lt;= 100)</span>
+<span class="sd">        :param tx_orient:      :ref:`EMPLATE_TX`</span>
+<span class="sd">        :param tx_freq:        Tx frequency (for `EMPLATE_TIME &lt;geosoft.gxapi.EMPLATE_TIME&gt;`)</span>
+<span class="sd">        :param tx_dt:          Tx time window spacing (for `EMPLATE_TIME &lt;geosoft.gxapi.EMPLATE_TIME&gt;`)</span>
+<span class="sd">        :param params:         The frequency/time parameters (SI units: f[Hz] or t[s])</span>
+<span class="sd">        :param xivv:           On return - X in-phase part (ppm)</span>
+<span class="sd">        :param yivv:           On return - Y in-phase part (ppm)</span>
+<span class="sd">        :param zivv:           On return - Z in-phase part (ppm)</span>
+<span class="sd">        :param xqvv:           On return - X quadrature part (ppm)</span>
+<span class="sd">        :param yqvv:           On return - Y quadrature part (ppm)</span>
+<span class="sd">        :param zqvv:           On return - Z quadrature part (ppm)</span>
+<span class="sd">        :type  strike_length:  float</span>
+<span class="sd">        :type  dip_length:     float</span>
+<span class="sd">        :type  strike:         float</span>
+<span class="sd">        :type  dip:            float</span>
+<span class="sd">        :type  plunge:         float</span>
+<span class="sd">        :type  x_off:          float</span>
+<span class="sd">        :type  y_off:          float</span>
+<span class="sd">        :type  z_off:          float</span>
+<span class="sd">        :type  plate_depth:    float</span>
+<span class="sd">        :type  n_spons:        int</span>
+<span class="sd">        :type  sig_tvv:        GXVV</span>
+<span class="sd">        :type  tx_orient:      int</span>
+<span class="sd">        :type  tx_freq:        float</span>
+<span class="sd">        :type  tx_dt:          float</span>
+<span class="sd">        :type  params:         float</span>
+<span class="sd">        :type  xivv:           GXVV</span>
+<span class="sd">        :type  yivv:           GXVV</span>
+<span class="sd">        :type  zivv:           GXVV</span>
+<span class="sd">        :type  xqvv:           GXVV</span>
+<span class="sd">        :type  yqvv:           GXVV</span>
+<span class="sd">        :type  zqvv:           GXVV</span>
+
+<span class="sd">        :returns:              0 of OK</span>
+<span class="sd">                               1 if some error</span>
+<span class="sd">        :rtype:                int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_em_plate</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">strike_length</span><span class="p">,</span> <span class="n">dip_length</span><span class="p">,</span> <span class="n">strike</span><span class="p">,</span> <span class="n">dip</span><span class="p">,</span> <span class="n">plunge</span><span class="p">,</span> <span class="n">x_off</span><span class="p">,</span> <span class="n">y_off</span><span class="p">,</span> <span class="n">z_off</span><span class="p">,</span> <span class="n">plate_depth</span><span class="p">,</span> <span class="n">n_spons</span><span class="p">,</span> <span class="n">sig_tvv</span><span class="p">,</span> <span class="n">tx_orient</span><span class="p">,</span> <span class="n">tx_freq</span><span class="p">,</span> <span class="n">tx_dt</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">xivv</span><span class="p">,</span> <span class="n">yivv</span><span class="p">,</span> <span class="n">zivv</span><span class="p">,</span> <span class="n">xqvv</span><span class="p">,</span> <span class="n">yqvv</span><span class="p">,</span> <span class="n">zqvv</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXGU.gen_ux_detect_symbols_group_name"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.gen_ux_detect_symbols_group_name">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">gen_ux_detect_symbols_group_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">target_gdb</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">ostr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a group name string for UX-Detect symbols</span>
+<span class="sd">        </span>
+<span class="sd">        :param target_gdb:  Input Targets database name</span>
+<span class="sd">        :param targets:     Input Targets group (line) name</span>
+<span class="sd">        :param ostr:        Output group name string</span>
+<span class="sd">        :type  target_gdb:  str</span>
+<span class="sd">        :type  targets:     str</span>
+<span class="sd">        :type  ostr:        str_ref</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Start a new group for the symbols in the UX-Detect system.</span>
+<span class="sd">        The Target GDB is often in the form &quot;GDB_Targets&quot;, where</span>
+<span class="sd">        &quot;GDB&quot; is the original data. Cut off the part including the</span>
+<span class="sd">        underscore when creating the map, so you don&#39;t get map group</span>
+<span class="sd">        Names like &quot;SYMBOLS_UxData_Targets_Targets&quot;.</span>
+
+<span class="sd">        .. seealso::</span>
+
+<span class="sd">            `GXSTR.gen_group_name &lt;geosoft.gxapi.GXSTR.gen_group_name&gt;`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ostr</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_gen_ux_detect_symbols_group_name</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">target_gdb</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">targets</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ostr</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.import_daarc500_ethernet"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.import_daarc500_ethernet">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">import_daarc500_ethernet</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Import Ethernet data from the RMS Instruments DAARC500.</span>
+<span class="sd">        </span>
+<span class="sd">        :param file:    File to import</span>
+<span class="sd">        :param output:  Output binary file</span>
+<span class="sd">        :param bytes:   Returned number of bytes per block</span>
+<span class="sd">        :type  file:    str</span>
+<span class="sd">        :type  output:  str</span>
+<span class="sd">        :type  bytes:   int_ref</span>
+
+<span class="sd">        .. versionadded:: 7.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Imports Ethernet data recorded</span>
+<span class="sd">        by the RMS Instruments DAARC500 instrument, and outputs the data</span>
+<span class="sd">        to a new binary file, returning the number of bytes per</span>
+<span class="sd">        block, to make it easier to import the data using the regular binary import.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">bytes</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_import_daarc500_ethernet</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.import_daarc500_serial"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.import_daarc500_serial">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">import_daarc500_serial</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Import Serial data from the RMS Instruments DAARC500.</span>
+<span class="sd">        </span>
+<span class="sd">        :param file:     File to import</span>
+<span class="sd">        :param channel:  Channel to import, 1-8</span>
+<span class="sd">        :param output:   Output binary file</span>
+<span class="sd">        :param bytes:    Returned number of bytes per block</span>
+<span class="sd">        :type  file:     str</span>
+<span class="sd">        :type  channel:  int</span>
+<span class="sd">        :type  output:   str</span>
+<span class="sd">        :type  bytes:    int_ref</span>
+
+<span class="sd">        .. versionadded:: 7.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Imports a single channel of the up to 8 serial data channels recorded</span>
+<span class="sd">        by the RMS Instruments DAARC500 instrument, and outputs the data for</span>
+<span class="sd">        that channel to a new binary file, returning the number of bytes per</span>
+<span class="sd">        block, to make it easier to import the data using the regular binary import.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">bytes</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_import_daarc500_serial</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">channel</span><span class="p">,</span> <span class="n">output</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.import_p190"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.import_p190">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">import_p190</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">rec_type</span><span class="p">,</span> <span class="n">wa</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Import navigation data in the P190 format.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:        Database handle</span>
+<span class="sd">        :param file:      P190 file name</span>
+<span class="sd">        :param rec_type:  Single letter code, e.g. &quot;C&quot;, &quot;E&quot;, &quot;S&quot;, &quot;T&quot; or &quot;V&quot;, or blank for all records.</span>
+<span class="sd">        :param wa:        Log file</span>
+<span class="sd">        :type  db:        GXDB</span>
+<span class="sd">        :type  file:      str</span>
+<span class="sd">        :type  rec_type:  str</span>
+<span class="sd">        :type  wa:        GXWA</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Imports the data, and, if projection information is included</span>
+<span class="sd">        set the &quot;X&quot; and &quot;Y&quot; channel projection info. (Note: the last file</span>
+<span class="sd">        imported always takes precedence).</span>
+<span class="sd">        Different record types are imported to separate lines, but in the</span>
+<span class="sd">        same order as in the file. Data in existing lines is overwritten.</span>
+<span class="sd">        If the record type is specified, only records beginning with that</span>
+<span class="sd">        letter are imported, otherwise all records (except for the header &quot;H&quot;</span>
+<span class="sd">        records) are imported.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_import_p190</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rec_type</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">wa</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.lag_daarc500_gps"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.lag_daarc500_gps">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">lag_daarc500_gps</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mag_fid_vv</span><span class="p">,</span> <span class="n">mag_event_vv</span><span class="p">,</span> <span class="n">gps_fid_vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Lag the GPS fid values for the DAARC500 import.</span>
+<span class="sd">        </span>
+<span class="sd">        :param mag_fid_vv:    Mag fid values   (`GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`)</span>
+<span class="sd">        :param mag_event_vv:  Mag event values (`GS_LONG &lt;geosoft.gxapi.GS_LONG&gt;`)</span>
+<span class="sd">        :param gps_fid_vv:    GPS fid values (`GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`, altered on return)</span>
+<span class="sd">        :type  mag_fid_vv:    GXVV</span>
+<span class="sd">        :type  mag_event_vv:  GXVV</span>
+<span class="sd">        :type  gps_fid_vv:    GXVV</span>
+
+<span class="sd">        .. versionadded:: 7.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The fiducial times recorded for the GPS in the RMS Instrument DAARC500</span>
+<span class="sd">        are delayed, and associated with the &quot;wrong&quot; fid value. They should actually</span>
+<span class="sd">        be moved to the previous fid value in the mag data where the event flag is non-zero.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_lag_daarc500_gps</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mag_fid_vv</span><span class="p">,</span> <span class="n">mag_event_vv</span><span class="p">,</span> <span class="n">gps_fid_vv</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.magnetic_tilt_depth"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.magnetic_tilt_depth">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">magnetic_tilt_depth</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">tilt_deriv_grid</span><span class="p">,</span> <span class="n">horiz_deriv_grid</span><span class="p">,</span> <span class="n">database</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate the depth of magnetic sources based on the tilt depth method by Ahmed Salem et al.</span>
+<span class="sd">        </span>
+<span class="sd">        :param tilt_deriv_grid:   Tilt derivative grid</span>
+<span class="sd">        :param horiz_deriv_grid:  Horizontal derivative grid</span>
+<span class="sd">        :param database:          Output database name (will overwrite existing)</span>
+<span class="sd">        :type  tilt_deriv_grid:   str</span>
+<span class="sd">        :type  horiz_deriv_grid:  str</span>
+<span class="sd">        :type  database:          str</span>
+
+<span class="sd">        .. versionadded:: 9.9</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Tilt-Depth is a magnetic depth estimation method that lends itself to rapid mapping of sedimentary basins without the complexity of unraveling the depth solutions from methods that give multiple solutions (e.g. Euler deconvolution).</span>
+<span class="sd">        Reference: Sedimentary basins reconnaissance using the magnetic Tilt-Depth method by Ahmed Salem et al.</span>
+<span class="sd">        Exploration Geophysics, 2010, 41, 198-209.</span>
+<span class="sd">        Rick Blakely &amp; Gerry Connard have extended and improved this method, as have other authors.</span>
+<span class="sd">        The 0-value contour of the tilt derivative grid is sampled to a new database, and the horizontal derivative</span>
+<span class="sd">        grid is sampled at those locations. The inverse of the horizontal derivative values are output to the Tilt_Depth channel.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_magnetic_tilt_depth</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">tilt_deriv_grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">horiz_deriv_grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">database</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.maxwell_plate_corners"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.maxwell_plate_corners">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">maxwell_plate_corners</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">dip</span><span class="p">,</span> <span class="n">dip_dir</span><span class="p">,</span> <span class="n">plunge</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">z3</span><span class="p">,</span> <span class="n">x4</span><span class="p">,</span> <span class="n">y4</span><span class="p">,</span> <span class="n">z4</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate the corner point locations for a Maxwell Plate.</span>
+<span class="sd">        </span>
+<span class="sd">        :param x:        Top-center point, X</span>
+<span class="sd">        :param y:        Top-center point, Y</span>
+<span class="sd">        :param z:        Top-center point, Z</span>
+<span class="sd">        :param dip:      Dip</span>
+<span class="sd">        :param dip_dir:  Dip-direction</span>
+<span class="sd">        :param plunge:   Plunge</span>
+<span class="sd">        :param length:   Length</span>
+<span class="sd">        :param width:    Width (height)</span>
+<span class="sd">        :param x1:       [returned] Corner 1 X</span>
+<span class="sd">        :param y1:       [returned] Corner 1 Y</span>
+<span class="sd">        :param z1:       [returned] Corner 1 Z</span>
+<span class="sd">        :param x2:       [returned] Corner 2 X</span>
+<span class="sd">        :param y2:       [returned] Corner 2 Y</span>
+<span class="sd">        :param z2:       [returned] Corner 2 Z</span>
+<span class="sd">        :param x3:       [returned] Corner 3 X</span>
+<span class="sd">        :param y3:       [returned] Corner 3 Y</span>
+<span class="sd">        :param z3:       [returned] Corner 3 Z</span>
+<span class="sd">        :param x4:       [returned] Corner 4 X</span>
+<span class="sd">        :param y4:       [returned] Corner 4 Y</span>
+<span class="sd">        :param z4:       [returned] Corner 4 Z</span>
+<span class="sd">        :type  x:        float</span>
+<span class="sd">        :type  y:        float</span>
+<span class="sd">        :type  z:        float</span>
+<span class="sd">        :type  dip:      float</span>
+<span class="sd">        :type  dip_dir:  float</span>
+<span class="sd">        :type  plunge:   float</span>
+<span class="sd">        :type  length:   float</span>
+<span class="sd">        :type  width:    float</span>
+<span class="sd">        :type  x1:       float_ref</span>
+<span class="sd">        :type  y1:       float_ref</span>
+<span class="sd">        :type  z1:       float_ref</span>
+<span class="sd">        :type  x2:       float_ref</span>
+<span class="sd">        :type  y2:       float_ref</span>
+<span class="sd">        :type  z2:       float_ref</span>
+<span class="sd">        :type  x3:       float_ref</span>
+<span class="sd">        :type  y3:       float_ref</span>
+<span class="sd">        :type  z3:       float_ref</span>
+<span class="sd">        :type  x4:       float_ref</span>
+<span class="sd">        :type  y4:       float_ref</span>
+<span class="sd">        :type  z4:       float_ref</span>
+
+<span class="sd">        .. versionadded:: 6.1</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** This routine calculates the corner locations of plates defined in the Maxwell Plate</span>
+<span class="sd">        program, given the top-center location and plate geometry parameters.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x4</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y4</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z4</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_maxwell_plate_corners</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">dip</span><span class="p">,</span> <span class="n">dip_dir</span><span class="p">,</span> <span class="n">plunge</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">x1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x4</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y4</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z4</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.scan_daarc500_ethernet"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.scan_daarc500_ethernet">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">scan_daarc500_ethernet</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">items</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Scan Ethernet data from the RMS Instruments DAARC500.</span>
+<span class="sd">        </span>
+<span class="sd">        :param file:   File to import</span>
+<span class="sd">        :param type:   Recognized type</span>
+<span class="sd">        :param items:  Number of items</span>
+<span class="sd">        :type  file:   str</span>
+<span class="sd">        :type  type:   int_ref</span>
+<span class="sd">        :type  items:  int_ref</span>
+
+<span class="sd">        .. versionadded:: 7.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Scans the file to see what data type is in the Ethernet file.</span>
+<span class="sd">        Currently only detects GR820 types.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">type</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">items</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_scan_daarc500_ethernet</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">items</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.scan_daarc500_serial"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.scan_daarc500_serial">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">scan_daarc500_serial</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">vv_type</span><span class="p">,</span> <span class="n">vv_items</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Scan Serial data from the RMS Instruments DAARC500.</span>
+<span class="sd">        </span>
+<span class="sd">        :param file:      File to import</span>
+<span class="sd">        :param vv_type:   8 Recognized types - `GS_LONG &lt;geosoft.gxapi.GS_LONG&gt;`</span>
+<span class="sd">        :param vv_items:  8 Numbers of items - `GS_LONG &lt;geosoft.gxapi.GS_LONG&gt;`</span>
+<span class="sd">        :type  file:      str</span>
+<span class="sd">        :type  vv_type:   GXVV</span>
+<span class="sd">        :type  vv_items:  GXVV</span>
+
+<span class="sd">        .. versionadded:: 7.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Scans the file to see which of the 8 serial channels were used to store data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_scan_daarc500_serial</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">vv_type</span><span class="p">,</span> <span class="n">vv_items</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.vv_euler"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.vv_euler">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">vv_euler</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_xin</span><span class="p">,</span> <span class="n">vv_yin</span><span class="p">,</span> <span class="n">img_data</span><span class="p">,</span> <span class="n">imgx</span><span class="p">,</span> <span class="n">imgy</span><span class="p">,</span> <span class="n">imgz</span><span class="p">,</span> <span class="n">vv_xout</span><span class="p">,</span> <span class="n">vv_yout</span><span class="p">,</span> <span class="n">vv_depth</span><span class="p">,</span> <span class="n">vvdc</span><span class="p">,</span> <span class="n">vv_zer</span><span class="p">,</span> <span class="n">vvx_yer</span><span class="p">,</span> <span class="n">wnd_sz</span><span class="p">,</span> <span class="n">si</span><span class="p">,</span> <span class="n">wt_pow</span><span class="p">,</span> <span class="n">x_yfit</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Euler solutions of depth from VVs and grids.</span>
+<span class="sd">        </span>
+<span class="sd">        :param vv_xin:    Input X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vv_yin:    Input Y `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param img_data:  Field grid</span>
+<span class="sd">        :param imgx:      dF/dX grid</span>
+<span class="sd">        :param imgy:      dF/dY grid</span>
+<span class="sd">        :param imgz:      dF/dZ grid</span>
+<span class="sd">        :param vv_xout:   Output X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vv_yout:   Output Y `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vv_depth:  Output depth `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vvdc:      Output background field `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vv_zer:    Output depth uncertainty `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vvx_yer:   Output XY uncertainty `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param wnd_sz:    Window size</span>
+<span class="sd">        :param si:        Structure index</span>
+<span class="sd">        :param wt_pow:    Weighting factor</span>
+<span class="sd">        :param x_yfit:    :ref:`PEAKEULER_XY`</span>
+<span class="sd">        :type  vv_xin:    GXVV</span>
+<span class="sd">        :type  vv_yin:    GXVV</span>
+<span class="sd">        :type  img_data:  GXIMG</span>
+<span class="sd">        :type  imgx:      GXIMG</span>
+<span class="sd">        :type  imgy:      GXIMG</span>
+<span class="sd">        :type  imgz:      GXIMG</span>
+<span class="sd">        :type  vv_xout:   GXVV</span>
+<span class="sd">        :type  vv_yout:   GXVV</span>
+<span class="sd">        :type  vv_depth:  GXVV</span>
+<span class="sd">        :type  vvdc:      GXVV</span>
+<span class="sd">        :type  vv_zer:    GXVV</span>
+<span class="sd">        :type  vvx_yer:   GXVV</span>
+<span class="sd">        :type  wnd_sz:    int</span>
+<span class="sd">        :type  si:        float</span>
+<span class="sd">        :type  wt_pow:    float</span>
+<span class="sd">        :type  x_yfit:    int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** All VVs must be REAL</span>
+
+<span class="sd">        The output X and Y values are the same as the inputs,</span>
+<span class="sd">        except if `PEAKEULER_XY_FIT &lt;geosoft.gxapi.PEAKEULER_XY_FIT&gt;` is selected. All other</span>
+<span class="sd">        output values are set to dummy if:</span>
+
+<span class="sd">             a) The input X or Y is a dummy</span>
+<span class="sd">             b) The derived window size is a dummy.</span>
+<span class="sd">             c) The derived solution is outside the range</span>
+<span class="sd">             d) The solution is invalid (singular matrix)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_vv_euler</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_xin</span><span class="p">,</span> <span class="n">vv_yin</span><span class="p">,</span> <span class="n">img_data</span><span class="p">,</span> <span class="n">imgx</span><span class="p">,</span> <span class="n">imgy</span><span class="p">,</span> <span class="n">imgz</span><span class="p">,</span> <span class="n">vv_xout</span><span class="p">,</span> <span class="n">vv_yout</span><span class="p">,</span> <span class="n">vv_depth</span><span class="p">,</span> <span class="n">vvdc</span><span class="p">,</span> <span class="n">vv_zer</span><span class="p">,</span> <span class="n">vvx_yer</span><span class="p">,</span> <span class="n">wnd_sz</span><span class="p">,</span> <span class="n">si</span><span class="p">,</span> <span class="n">wt_pow</span><span class="p">,</span> <span class="n">x_yfit</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGU.vv_euler2"><a class="viewcode-back" href="../../../GXGU.html#geosoft.gxapi.GXGU.vv_euler2">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">vv_euler2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_xin</span><span class="p">,</span> <span class="n">vv_yin</span><span class="p">,</span> <span class="n">img_data</span><span class="p">,</span> <span class="n">imgx</span><span class="p">,</span> <span class="n">imgy</span><span class="p">,</span> <span class="n">imgz</span><span class="p">,</span> <span class="n">vv_xout</span><span class="p">,</span> <span class="n">vv_yout</span><span class="p">,</span> <span class="n">vv_depth</span><span class="p">,</span> <span class="n">vvdc</span><span class="p">,</span> <span class="n">vv_zer</span><span class="p">,</span> <span class="n">vvx_yer</span><span class="p">,</span> <span class="n">vv_wnd</span><span class="p">,</span> <span class="n">si</span><span class="p">,</span> <span class="n">wt_pow</span><span class="p">,</span> <span class="n">x_yfit</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Euler solutions of depth from VVs and grids (method 2).</span>
+<span class="sd">        </span>
+<span class="sd">        :param vv_xin:    Input X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vv_yin:    Input Y `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param img_data:  Field grid</span>
+<span class="sd">        :param imgx:      dF/dX grid</span>
+<span class="sd">        :param imgy:      dF/dY grid</span>
+<span class="sd">        :param imgz:      dF/dZ grid</span>
+<span class="sd">        :param vv_xout:   Output X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vv_yout:   Output Y `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vv_depth:  Output depth `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vvdc:      Output background field `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vv_zer:    Output depth uncertainty `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vvx_yer:   Output XY uncertainty `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vv_wnd:    Window size (diameters of targets)</span>
+<span class="sd">        :param si:        Structure index</span>
+<span class="sd">        :param wt_pow:    Weighting factor</span>
+<span class="sd">        :param x_yfit:    :ref:`PEAKEULER_XY`</span>
+<span class="sd">        :type  vv_xin:    GXVV</span>
+<span class="sd">        :type  vv_yin:    GXVV</span>
+<span class="sd">        :type  img_data:  GXIMG</span>
+<span class="sd">        :type  imgx:      GXIMG</span>
+<span class="sd">        :type  imgy:      GXIMG</span>
+<span class="sd">        :type  imgz:      GXIMG</span>
+<span class="sd">        :type  vv_xout:   GXVV</span>
+<span class="sd">        :type  vv_yout:   GXVV</span>
+<span class="sd">        :type  vv_depth:  GXVV</span>
+<span class="sd">        :type  vvdc:      GXVV</span>
+<span class="sd">        :type  vv_zer:    GXVV</span>
+<span class="sd">        :type  vvx_yer:   GXVV</span>
+<span class="sd">        :type  vv_wnd:    GXVV</span>
+<span class="sd">        :type  si:        float</span>
+<span class="sd">        :type  wt_pow:    float</span>
+<span class="sd">        :type  x_yfit:    int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** All VVs must be REAL</span>
+
+<span class="sd">        .. seealso::</span>
+
+<span class="sd">            `vv_euler &lt;geosoft.gxapi.GXGU.vv_euler&gt;`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGU</span><span class="o">.</span><span class="n">_vv_euler2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_xin</span><span class="p">,</span> <span class="n">vv_yin</span><span class="p">,</span> <span class="n">img_data</span><span class="p">,</span> <span class="n">imgx</span><span class="p">,</span> <span class="n">imgy</span><span class="p">,</span> <span class="n">imgz</span><span class="p">,</span> <span class="n">vv_xout</span><span class="p">,</span> <span class="n">vv_yout</span><span class="p">,</span> <span class="n">vv_depth</span><span class="p">,</span> <span class="n">vvdc</span><span class="p">,</span> <span class="n">vv_zer</span><span class="p">,</span> <span class="n">vvx_yer</span><span class="p">,</span> <span class="n">vv_wnd</span><span class="p">,</span> <span class="n">si</span><span class="p">,</span> <span class="n">wt_pow</span><span class="p">,</span> <span class="n">x_yfit</span><span class="p">)</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXGU</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

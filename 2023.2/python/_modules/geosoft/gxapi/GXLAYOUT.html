@@ -1,0 +1,453 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXLAYOUT &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXLAYOUT</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXLAYOUT</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXLAYOUT"><a class="viewcode-back" href="../../../GXLAYOUT.html#geosoft.gxapi.GXLAYOUT">[docs]</a><span class="k">class</span> <span class="nc">GXLAYOUT</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapLAYOUT</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXLAYOUT class.</span>
+
+<span class="sd">    Layout class for generic relative layout calculation</span>
+
+<span class="sd">    The relative layout algorithm allows a logical organization of layout rectangles.</span>
+<span class="sd">    You can set constraints with English-like semantics. For example:</span>
+
+<span class="sd">    &quot;Set the left side of rectangle 1 equal to the right side of rectangle 2 plus 10 pixels.&quot;</span>
+<span class="sd">    &quot;Set the bottom of rectangle 1 to 25 percent of the height of rectangle 2.&quot;</span>
+<span class="sd">    &quot;Move node 1 such that its bottom is equal to the top of rectangle 2 minus 10 pixels.&quot;</span>
+
+<span class="sd">    The last constraint set would enjoy priority over any others as it would be</span>
+<span class="sd">    the last one that would influence the rectangle calculations. See the notes for iSetConstraint</span>
+<span class="sd">    for more details.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXLAYOUT.__init__"><a class="viewcode-back" href="../../../GXLAYOUT.html#geosoft.gxapi.GXLAYOUT.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXLAYOUT</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXLAYOUT.null"><a class="viewcode-back" href="../../../GXLAYOUT.html#geosoft.gxapi.GXLAYOUT.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXLAYOUT &lt;geosoft.gxapi.GXLAYOUT&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXLAYOUT &lt;geosoft.gxapi.GXLAYOUT&gt;`</span>
+<span class="sd">        :rtype:   GXLAYOUT</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXLAYOUT</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXLAYOUT.is_null"><a class="viewcode-back" href="../../../GXLAYOUT.html#geosoft.gxapi.GXLAYOUT.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+
+<div class="viewcode-block" id="GXLAYOUT.calculate_rects"><a class="viewcode-back" href="../../../GXLAYOUT.html#geosoft.gxapi.GXLAYOUT.calculate_rects">[docs]</a>    <span class="k">def</span> <span class="nf">calculate_rects</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate new positions based on initial conditions and constraints</span>
+<span class="sd">        </span>
+<span class="sd">        :param min_x:   Parent Rectangle Min X after calculation</span>
+<span class="sd">        :param min_y:   Parent Rectangle Min Y after calculation</span>
+<span class="sd">        :param max_x:   Parent Rectangle Max X after calculation</span>
+<span class="sd">        :param max_y:   Parent Rectangle Max Y after calculation</span>
+<span class="sd">        :type  min_x:   float_ref</span>
+<span class="sd">        :type  min_y:   float_ref</span>
+<span class="sd">        :type  max_x:   float_ref</span>
+<span class="sd">        :type  max_y:   float_ref</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Use iGetRectangle to obtain the results for the other rectangles. Depending</span>
+<span class="sd">        on the constraints set the parent rectangle may also change</span>
+<span class="sd">        after the calculation (returned here for convenience).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_rects</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLAYOUT.clear_all"><a class="viewcode-back" href="../../../GXLAYOUT.html#geosoft.gxapi.GXLAYOUT.clear_all">[docs]</a>    <span class="k">def</span> <span class="nf">clear_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Remove all children and constraints from layout</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_clear_all</span><span class="p">()</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLAYOUT.clear_constraints"><a class="viewcode-back" href="../../../GXLAYOUT.html#geosoft.gxapi.GXLAYOUT.clear_constraints">[docs]</a>    <span class="k">def</span> <span class="nf">clear_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Remove all constraints from layout</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_clear_constraints</span><span class="p">()</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXLAYOUT.create"><a class="viewcode-back" href="../../../GXLAYOUT.html#geosoft.gxapi.GXLAYOUT.create">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a layout calculation object</span>
+<span class="sd">        </span>
+<span class="sd">        :param num:   Initial number of objects (may be 0)</span>
+<span class="sd">        :param name:  Optional name of parent layout (may be empty)</span>
+<span class="sd">        :type  num:   int</span>
+<span class="sd">        :type  name:  str</span>
+
+<span class="sd">        :returns:     `GXLAYOUT &lt;geosoft.gxapi.GXLAYOUT&gt;` object.</span>
+<span class="sd">        :rtype:       GXLAYOUT</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapLAYOUT</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">num</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXLAYOUT</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+
+
+<div class="viewcode-block" id="GXLAYOUT.get_rectangle"><a class="viewcode-back" href="../../../GXLAYOUT.html#geosoft.gxapi.GXLAYOUT.get_rectangle">[docs]</a>    <span class="k">def</span> <span class="nf">get_rectangle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rect</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the current bounds for a rectangle or the parent layout</span>
+<span class="sd">        </span>
+<span class="sd">        :param rect:    Rectangle to get info for (-1 for parent)</span>
+<span class="sd">        :param min_x:   Rectangle Min X</span>
+<span class="sd">        :param min_y:   Rectangle Min Y</span>
+<span class="sd">        :param max_x:   Rectangle Max X</span>
+<span class="sd">        :param max_y:   Rectangle Max Y</span>
+<span class="sd">        :type  rect:    int</span>
+<span class="sd">        :type  min_x:   float_ref</span>
+<span class="sd">        :type  min_y:   float_ref</span>
+<span class="sd">        :type  max_x:   float_ref</span>
+<span class="sd">        :type  max_y:   float_ref</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_rectangle</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLAYOUT.get_rect_name"><a class="viewcode-back" href="../../../GXLAYOUT.html#geosoft.gxapi.GXLAYOUT.get_rect_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_rect_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rect</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets an optional name the current info for a rectangle or the parent layout</span>
+<span class="sd">        </span>
+<span class="sd">        :param rect:    Rectangle to get info for (-1 for parent)</span>
+<span class="sd">        :param name:    Buffer for name of the rectangle</span>
+<span class="sd">        :type  rect:    int</span>
+<span class="sd">        :type  name:    str_ref</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_rect_name</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLAYOUT.add_constraint"><a class="viewcode-back" href="../../../GXLAYOUT.html#geosoft.gxapi.GXLAYOUT.add_constraint">[docs]</a>    <span class="k">def</span> <span class="nf">add_constraint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rect_from</span><span class="p">,</span> <span class="n">constr_from</span><span class="p">,</span> <span class="n">rect_to</span><span class="p">,</span> <span class="n">constr_to</span><span class="p">,</span> <span class="n">o_mod</span><span class="p">,</span> <span class="n">m_mod</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a constraint between any two rectangles or to one with absolute positioning</span>
+<span class="sd">        </span>
+<span class="sd">        :param rect_from:    From rectangle (Or -1 for parent)</span>
+<span class="sd">        :param constr_from:  :ref:`LAYOUT_CONSTR` From constraint flag</span>
+<span class="sd">        :param rect_to:      To rectangle (Or -1 for parent Or -2 for absolute positioning)</span>
+<span class="sd">        :param constr_to:    :ref:`LAYOUT_CONSTR` To constraint flag</span>
+<span class="sd">        :param o_mod:        Offset modifier</span>
+<span class="sd">        :param m_mod:        Multiplicative modifier</span>
+<span class="sd">        :type  rect_from:    int</span>
+<span class="sd">        :type  constr_from:  int</span>
+<span class="sd">        :type  rect_to:      int</span>
+<span class="sd">        :type  constr_to:    int</span>
+<span class="sd">        :type  o_mod:        float</span>
+<span class="sd">        :type  m_mod:        float</span>
+
+<span class="sd">        :returns:            0 - OK</span>
+<span class="sd">                             1 - Error</span>
+<span class="sd">        :rtype:              int</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Constraints can be applied between 2 rectangles in the layout, or to 1 rectangle with</span>
+<span class="sd">        absolute positioning. Use the constraints to control left, right, bottom, top,</span>
+<span class="sd">        width, height, or centering configurations. Examples:</span>
+
+<span class="sd">        (ordered as rectangle from, constraint from, rectangle to, constraint to, offset modifier, multiplicative modifier)</span>
+
+<span class="sd">        A, `LAYOUT_CONSTR_LEFT &lt;geosoft.gxapi.LAYOUT_CONSTR_LEFT&gt;`, B, `LAYOUT_CONSTR_LEFT &lt;geosoft.gxapi.LAYOUT_CONSTR_LEFT&gt;`, 0, 0, 1.0 		               Set left position of A equal to left pos of B</span>
+<span class="sd">        A, `LAYOUT_CONSTR_LEFT &lt;geosoft.gxapi.LAYOUT_CONSTR_LEFT&gt;`, B, `LAYOUT_CONSTR_RIGHT &lt;geosoft.gxapi.LAYOUT_CONSTR_RIGHT&gt;`, 0, 0, 1.0		               Set left pos of A equal to right of B</span>
+
+<span class="sd">        The offset modifier is used for additive manipulation of constraints</span>
+<span class="sd">        A, `LAYOUT_CONSTR_LEFT &lt;geosoft.gxapi.LAYOUT_CONSTR_LEFT&gt;`, B, `LAYOUT_CONSTR_LEFT &lt;geosoft.gxapi.LAYOUT_CONSTR_LEFT&gt;`, 10, 0, 1.0		               Set left pos of A equal to left of B, plus 10</span>
+<span class="sd">        A, `LAYOUT_CONSTR_BOTTOM &lt;geosoft.gxapi.LAYOUT_CONSTR_BOTTOM&gt;`, B, `LAYOUT_CONSTR_TOP &lt;geosoft.gxapi.LAYOUT_CONSTR_TOP&gt;`, -20, 0, 1.0	               Set bottom of A equal to top of B, minus 20</span>
+
+<span class="sd">        Multiplicative manipulation of constraints</span>
+<span class="sd">        A, `LAYOUT_CONSTR_WIDTH &lt;geosoft.gxapi.LAYOUT_CONSTR_WIDTH&gt;`, B, `LAYOUT_CONSTR_WIDTH &lt;geosoft.gxapi.LAYOUT_CONSTR_WIDTH&gt;`, 0, 0.5	                  Set the width of A equal to 0.5 times the width of B</span>
+<span class="sd">        A, `LAYOUT_CONSTR_HEIGHT &lt;geosoft.gxapi.LAYOUT_CONSTR_HEIGHT&gt;`, B, `LAYOUT_CONSTR_WIDTH &lt;geosoft.gxapi.LAYOUT_CONSTR_WIDTH&gt;`, 0, 1.2	                  Set the height of A equal to 1.2 times the width of B</span>
+
+<span class="sd">        You can use BOTH the multiplicative and offset modifiers in conjunction (multiplicative gets precedence)</span>
+<span class="sd">        A, `LAYOUT_CONSTR_WIDTH &lt;geosoft.gxapi.LAYOUT_CONSTR_WIDTH&gt;`, B, `LAYOUT_CONSTR_WIDTH &lt;geosoft.gxapi.LAYOUT_CONSTR_WIDTH&gt;`, 10, 0.5 	                  A(width) = (0.5 * B(width)) + 10</span>
+<span class="sd">        A, `LAYOUT_CONSTR_LEFT &lt;geosoft.gxapi.LAYOUT_CONSTR_LEFT&gt;`, B, `LAYOUT_CONSTR_WIDTH &lt;geosoft.gxapi.LAYOUT_CONSTR_WIDTH&gt;`, -20, 0.1	                  A(left) = (0.1 * B(width)) + (-20)</span>
+
+<span class="sd">        If second node is -2, use absolute positioning</span>
+<span class="sd">        A,`LAYOUT_CONSTR_LEFT &lt;geosoft.gxapi.LAYOUT_CONSTR_LEFT&gt;`,-2,&lt;ignored&gt;,25,&lt;ignored&gt;,&lt;ignored&gt; 	               Position left of A at position 25</span>
+<span class="sd">        A,`LAYOUT_CONSTR_WIDTH &lt;geosoft.gxapi.LAYOUT_CONSTR_WIDTH&gt;`,-2,&lt;ignored&gt;,30,&lt;ignored&gt;,&lt;ignored&gt;	               Set width of A to 30</span>
+
+<span class="sd">        Use the MOVE constraints to move an entire window without resizing</span>
+<span class="sd">        A, `LAYOUT_CONSTR_MOVEL &lt;geosoft.gxapi.LAYOUT_CONSTR_MOVEL&gt;`, B, `LAYOUT_CONSTR_LEFT &lt;geosoft.gxapi.LAYOUT_CONSTR_LEFT&gt;`, 0, 0, 1.0	                  Move node A, align left with left side of B</span>
+<span class="sd">        A, `LAYOUT_CONSTR_MOVEL &lt;geosoft.gxapi.LAYOUT_CONSTR_MOVEL&gt;`, B, `LAYOUT_CONSTR_RIGHT &lt;geosoft.gxapi.LAYOUT_CONSTR_RIGHT&gt;`, 0, 0, 1.0	               Move node A, align left with right side of B</span>
+<span class="sd">        A, `LAYOUT_CONSTR_MOVET &lt;geosoft.gxapi.LAYOUT_CONSTR_MOVET&gt;`, B, `LAYOUT_CONSTR_WIDTH &lt;geosoft.gxapi.LAYOUT_CONSTR_WIDTH&gt;`, 0, 0, 1.0	               Move node A, align bottom to position equal to width of B</span>
+<span class="sd">        A, `LAYOUT_CONSTR_MOVER &lt;geosoft.gxapi.LAYOUT_CONSTR_MOVER&gt;`, B, `LAYOUT_CONSTR_RIGHT &lt;geosoft.gxapi.LAYOUT_CONSTR_RIGHT&gt;`, 10, 1.1	                  Move node A, align right to 1.1*right of B, plus 10</span>
+<span class="sd">        A, `LAYOUT_CONSTR_MOVEL &lt;geosoft.gxapi.LAYOUT_CONSTR_MOVEL&gt;`, NULL, 10, 0, 1.0	                                 Move node A, align left at position 10</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_constraint</span><span class="p">(</span><span class="n">rect_from</span><span class="p">,</span> <span class="n">constr_from</span><span class="p">,</span> <span class="n">rect_to</span><span class="p">,</span> <span class="n">constr_to</span><span class="p">,</span> <span class="n">o_mod</span><span class="p">,</span> <span class="n">m_mod</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXLAYOUT.add_rectangle"><a class="viewcode-back" href="../../../GXLAYOUT.html#geosoft.gxapi.GXLAYOUT.add_rectangle">[docs]</a>    <span class="k">def</span> <span class="nf">add_rectangle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds a rectangle as one of the layout&#39;s children (Higer.</span>
+<span class="sd">        </span>
+<span class="sd">        :param min_x:   Rectangle Min X   (All 0&#39;s for undefined allowed)</span>
+<span class="sd">        :param min_y:   Rectangle Min Y</span>
+<span class="sd">        :param max_x:   Rectangle Max X</span>
+<span class="sd">        :param max_y:   Rectangle Max Y</span>
+<span class="sd">        :type  min_x:   float</span>
+<span class="sd">        :type  min_y:   float</span>
+<span class="sd">        :type  max_x:   float</span>
+<span class="sd">        :type  max_y:   float</span>
+
+<span class="sd">        :returns:       Rectangle number, -1 on error</span>
+<span class="sd">        :rtype:         int</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_rectangle</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXLAYOUT.num_rectangles"><a class="viewcode-back" href="../../../GXLAYOUT.html#geosoft.gxapi.GXLAYOUT.num_rectangles">[docs]</a>    <span class="k">def</span> <span class="nf">num_rectangles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the number of children in the list.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:       Number of rectangles not counting the parent</span>
+<span class="sd">        :rtype:         int</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_rectangles</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXLAYOUT.set_rectangle"><a class="viewcode-back" href="../../../GXLAYOUT.html#geosoft.gxapi.GXLAYOUT.set_rectangle">[docs]</a>    <span class="k">def</span> <span class="nf">set_rectangle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rect</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the current bounds for a rectangle previously added to the layout</span>
+<span class="sd">        </span>
+<span class="sd">        :param rect:    Rectangle to set info for (-1 for parent)</span>
+<span class="sd">        :param min_x:   Rectangle Min X</span>
+<span class="sd">        :param min_y:   Rectangle Min Y</span>
+<span class="sd">        :param max_x:   Rectangle Max X</span>
+<span class="sd">        :param max_y:   Rectangle Max Y</span>
+<span class="sd">        :type  rect:    int</span>
+<span class="sd">        :type  min_x:   float</span>
+<span class="sd">        :type  min_y:   float</span>
+<span class="sd">        :type  max_x:   float</span>
+<span class="sd">        :type  max_y:   float</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_rectangle</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXLAYOUT.set_rectangle_name"><a class="viewcode-back" href="../../../GXLAYOUT.html#geosoft.gxapi.GXLAYOUT.set_rectangle_name">[docs]</a>    <span class="k">def</span> <span class="nf">set_rectangle_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rect</span><span class="p">,</span> <span class="n">p3</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets an optional name the current info for a rectangle or the parent layout</span>
+<span class="sd">        </span>
+<span class="sd">        :param rect:    Rectangle to set info for (-1 for parent)</span>
+<span class="sd">        :param p3:      Name</span>
+<span class="sd">        :type  rect:    int</span>
+<span class="sd">        :type  p3:      str</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_rectangle_name</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span> <span class="n">p3</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXLAYOUT</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

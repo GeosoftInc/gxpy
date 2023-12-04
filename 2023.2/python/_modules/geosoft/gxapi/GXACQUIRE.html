@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXACQUIRE &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXACQUIRE</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXACQUIRE</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXACQUIRE"><a class="viewcode-back" href="../../../GXACQUIRE.html#geosoft.gxapi.GXACQUIRE">[docs]</a><span class="k">class</span> <span class="nc">GXACQUIRE</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapACQUIRE</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXACQUIRE class.</span>
+
+<span class="sd">    This class is used to import acQuire data. It uses the</span>
+<span class="sd">    public acQuire API.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXACQUIRE.__init__"><a class="viewcode-back" href="../../../GXACQUIRE.html#geosoft.gxapi.GXACQUIRE.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXACQUIRE</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXACQUIRE.null"><a class="viewcode-back" href="../../../GXACQUIRE.html#geosoft.gxapi.GXACQUIRE.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXACQUIRE &lt;geosoft.gxapi.GXACQUIRE&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXACQUIRE &lt;geosoft.gxapi.GXACQUIRE&gt;`</span>
+<span class="sd">        :rtype:   GXACQUIRE</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXACQUIRE</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXACQUIRE.is_null"><a class="viewcode-back" href="../../../GXACQUIRE.html#geosoft.gxapi.GXACQUIRE.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+<div class="viewcode-block" id="GXACQUIRE.create"><a class="viewcode-back" href="../../../GXACQUIRE.html#geosoft.gxapi.GXACQUIRE.create">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an acQuire object</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    acQuire Object</span>
+<span class="sd">        :rtype:      GXACQUIRE</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapACQUIRE</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXACQUIRE</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXACQUIRE.delete_empty_chan"><a class="viewcode-back" href="../../../GXACQUIRE.html#geosoft.gxapi.GXACQUIRE.delete_empty_chan">[docs]</a>    <span class="k">def</span> <span class="nf">delete_empty_chan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete empty channels</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:     Database</span>
+<span class="sd">        :type  db:     GXDB</span>
+
+<span class="sd">        .. versionadded:: 6.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_delete_empty_chan</span><span class="p">(</span><span class="n">db</span><span class="p">)</span></div>
+        
+
+
+
+
+
+
+<div class="viewcode-block" id="GXACQUIRE.import_hole"><a class="viewcode-back" href="../../../GXACQUIRE.html#geosoft.gxapi.GXACQUIRE.import_hole">[docs]</a>    <span class="k">def</span> <span class="nf">import_hole</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proj</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">para</span><span class="p">,</span> <span class="n">geo_vv</span><span class="p">,</span> <span class="n">delete_existing</span><span class="p">,</span> <span class="n">convert</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Import Drillhole data acQuire database into a GDB</span>
+<span class="sd">        </span>
+<span class="sd">        :param proj:             Project name</span>
+<span class="sd">        :param dir:              Project directory</span>
+<span class="sd">        :param para:             Parameter File</span>
+<span class="sd">        :param geo_vv:           List of geology name database</span>
+<span class="sd">        :param delete_existing:  0: Write to existing databases (overwrite holes), 1: Delete existing databases.</span>
+<span class="sd">        :param convert:          Convert Negatives (0,1)</span>
+<span class="sd">        :type  proj:             str</span>
+<span class="sd">        :type  dir:              str</span>
+<span class="sd">        :type  para:             str</span>
+<span class="sd">        :type  geo_vv:           GXVV</span>
+<span class="sd">        :type  delete_existing:  int</span>
+<span class="sd">        :type  convert:          int</span>
+
+<span class="sd">        :returns:                0 - Ok</span>
+<span class="sd">                                 1 - Error (Will not stop GX)</span>
+<span class="sd">        :rtype:                  int</span>
+
+<span class="sd">        .. versionadded:: 6.0.1</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Point data and polygon data are saved into Dnnn lines in GDB,</span>
+<span class="sd">        nnn representing incremental number starting from 0</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_import_hole</span><span class="p">(</span><span class="n">proj</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">dir</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">para</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">geo_vv</span><span class="p">,</span> <span class="n">delete_existing</span><span class="p">,</span> <span class="n">convert</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXACQUIRE.import_point"><a class="viewcode-back" href="../../../GXACQUIRE.html#geosoft.gxapi.GXACQUIRE.import_point">[docs]</a>    <span class="k">def</span> <span class="nf">import_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">para</span><span class="p">,</span> <span class="n">convert</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Import Point Sample data acQuire database into a GDB</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:       Geosoft GDB</span>
+<span class="sd">        :param para:     Parameter File</span>
+<span class="sd">        :param convert:  Convert Negatives (0,1)</span>
+<span class="sd">        :type  db:       GXDB</span>
+<span class="sd">        :type  para:     str</span>
+<span class="sd">        :type  convert:  int</span>
+
+<span class="sd">        :returns:        0 - Ok</span>
+<span class="sd">                         1 - Error (Will not stop GX)</span>
+<span class="sd">        :rtype:          int</span>
+
+<span class="sd">        .. versionadded:: 6.0.1</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Data existing in the receiving GDB file will be over-written.</span>
+<span class="sd">        Point data and polygon data are saved into Dnnn lines in GDB,</span>
+<span class="sd">        nnn representing incremental number starting from 0</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_import_point</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">para</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">convert</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXACQUIRE.selection_tool"><a class="viewcode-back" href="../../../GXACQUIRE.html#geosoft.gxapi.GXACQUIRE.selection_tool">[docs]</a>    <span class="k">def</span> <span class="nf">selection_tool</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selection_file</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Run the acQuire Selection Tool.</span>
+<span class="sd">        </span>
+<span class="sd">        :param selection_file:  Selection File Name</span>
+<span class="sd">        :param mode:            :ref:`ACQUIRE_SEL`</span>
+<span class="sd">        :type  selection_file:  str</span>
+<span class="sd">        :type  mode:            int</span>
+
+<span class="sd">        :returns:               0 - Ok</span>
+<span class="sd">                                1 - if user cancels</span>
+<span class="sd">        :rtype:                 int</span>
+
+<span class="sd">        .. versionadded:: 6.0.1</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The selection file will be loaded (if present) and then</span>
+<span class="sd">        the user can make selections then the selections are saved</span>
+<span class="sd">        back in the selection file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selection_tool</span><span class="p">(</span><span class="n">selection_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mode</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXACQUIRE.selection_tool_force_grid_selection"><a class="viewcode-back" href="../../../GXACQUIRE.html#geosoft.gxapi.GXACQUIRE.selection_tool_force_grid_selection">[docs]</a>    <span class="k">def</span> <span class="nf">selection_tool_force_grid_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selection_file</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Run the acQuire Selection Tool, but force selection of destination grid.</span>
+<span class="sd">        </span>
+<span class="sd">        :param selection_file:  Selection File Name</span>
+<span class="sd">        :param mode:            :ref:`ACQUIRE_SEL`</span>
+<span class="sd">        :type  selection_file:  str</span>
+<span class="sd">        :type  mode:            int</span>
+
+<span class="sd">        :returns:               0 - Ok</span>
+<span class="sd">                                1 - if user cancels</span>
+<span class="sd">        :rtype:                 int</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The selection file will be loaded (if present) and then</span>
+<span class="sd">        the user can make selections then the selections are saved</span>
+<span class="sd">        back in the selection file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selection_tool_force_grid_selection</span><span class="p">(</span><span class="n">selection_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mode</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXACQUIRE.get_selection_info"><a class="viewcode-back" href="../../../GXACQUIRE.html#geosoft.gxapi.GXACQUIRE.get_selection_info">[docs]</a>    <span class="k">def</span> <span class="nf">get_selection_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selection_file</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">destination_grid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get some information from existing selection file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param selection_file:    Selection File Name</span>
+<span class="sd">        :param mode:              :ref:`ACQUIRE_SEL`</span>
+<span class="sd">        :param destination_grid:  0 - Destination grid was not selected</span>
+<span class="sd">                                  1 - Destination grid was selected</span>
+<span class="sd">        :type  selection_file:    str</span>
+<span class="sd">        :type  mode:              int_ref</span>
+<span class="sd">        :type  destination_grid:  int_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">mode</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">destination_grid</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_selection_info</span><span class="p">(</span><span class="n">selection_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mode</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">destination_grid</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXACQUIRE</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>
