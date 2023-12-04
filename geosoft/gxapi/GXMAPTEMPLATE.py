@@ -270,6 +270,40 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
 
 
+# Miscellaneous
+
+
+    @classmethod
+    def get_media_size(cls, name, full_page_width, full_page_height, plot_width, plot_height):
+        """
+        Get full width, full height, plot width and plot height in cm for a specific media or template name
+        
+        :param name:              Page size name
+        :param full_page_width:   Full width of page in cm (`rDUMMY` if name not found)
+        :param full_page_height:  Full height of page in cm (`rDUMMY` if name not found)
+        :param plot_width:        Plot width of page in cm (`rDUMMY` if name not found)
+        :param plot_height:       Plot height of page in cm (`rDUMMY` if name not found)
+        :type  name:              str
+        :type  full_page_width:   float_ref
+        :type  full_page_height:  float_ref
+        :type  plot_width:        float_ref
+        :type  plot_height:       float_ref
+
+        .. versionadded:: 2023.2
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** The user 'media.csv' file is searched first. If the name is not found
+        then the 'maptmpl.csv' file is searched, and if a template name is matched
+        the sizes of the associated media name are returned.
+        If a template is specified, the orientation is taken into account for the media.
+        """
+        full_page_width.value, full_page_height.value, plot_width.value, plot_height.value = gxapi_cy.WrapMAPTEMPLATE._get_media_size(GXContext._get_tls_geo(), name.encode(), full_page_width.value, full_page_height.value, plot_width.value, plot_height.value)
+        
+
+
+
+
 
 ### endblock ClassImplementation
 ### block ClassExtend

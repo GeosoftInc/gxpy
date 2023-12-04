@@ -3237,6 +3237,8 @@ ST_NPOS = 1
 ST_NZERO = 22
 #: Total number of items (dummy and non-dummy)
 ST_TOTAL = 24
+#: Number of empty strings from string inputs
+ST_NEMPTYSTRINGS = 25
 #: St dummies
 ST_DUMMIES = 2
 #: St min
@@ -6841,7 +6843,19 @@ PROJ_DISPLAY_NO = 0
 #: Display the object unless user set option not to
 PROJ_DISPLAY_YES = 1
 #: Always display the object
-PROJ_DISPLAY_ALWAYS = 2	
+PROJ_DISPLAY_ALWAYS = 2
+
+#
+# PROJ_OMS constants
+#
+# Script registration
+
+#: Buffer size for script primary and secondary names
+PROJ_OMS_NAME_SIZE = 32
+#: Buffer size for the date/time string
+PROJ_OMS_DATETIME_SIZE = 24
+#: Buffer size for process ID
+PROJ_OMS_PROCESSID_SIZE = 16	
 
 #
 # GXRGRD Constants

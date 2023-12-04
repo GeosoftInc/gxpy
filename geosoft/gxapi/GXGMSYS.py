@@ -64,6 +64,23 @@ class GXGMSYS(gxapi_cy.WrapGMSYS):
 
 
 
+    @classmethod
+    def remove_legacy_gms(cls, model):
+        """
+        Completely remove a legacy GSMSYS-2D GMS model file and folders
+        
+        :param model:  Model name
+        :type  model:  str
+
+        .. versionadded:: 2023.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapGMSYS._remove_legacy_gms(GXContext._get_tls_geo(), model.encode())
+        
+
+
+
 
 
 ### endblock ClassImplementation

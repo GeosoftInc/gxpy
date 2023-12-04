@@ -228,6 +228,38 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
 
 
+    @classmethod
+    def run3(cls, db, x, y, z, ctl, grd, log):
+        """
+        Executes the Rangrid program directly on a database. Specify log file
+        
+        :param db:   Handle to a database
+        :param x:    Y Channel
+        :param y:    X Channel
+        :param z:    Data channel
+        :param ctl:  RANGRID control file.
+        :param grd:  Output grid name
+        :param log:  Log file name (default "rangrid.log")
+        :type  db:   GXDB
+        :type  x:    str
+        :type  y:    str
+        :type  z:    str
+        :type  ctl:  str
+        :type  grd:  str
+        :type  log:  str
+
+        :returns:    0, always.
+        :rtype:      int
+
+        .. versionadded:: 2023.2
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        ret_val = gxapi_cy.WrapRGRD._run3(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode(), log.encode())
+        return ret_val
+
+
+
 
     def save_parms(self, name):
         """

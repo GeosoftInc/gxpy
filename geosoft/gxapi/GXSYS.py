@@ -1195,6 +1195,23 @@ class GXSYS(gxapi_cy.WrapSYS):
 
 
     @classmethod
+    def delete_directory(cls, directory):
+        """
+        Delete a directory and all files/subdirectories contained therein.
+        
+        :param directory:  Name of directory to delete
+        :type  directory:  str
+
+        .. versionadded:: 2023.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapSYS._delete_directory(GXContext._get_tls_geo(), directory.encode())
+        
+
+
+
+    @classmethod
     def dir_exist(cls, dir):
         """
         Check to see if a directory exists

@@ -50,6 +50,31 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
 
     @classmethod
+    def cross_correlation_pg(cls, pg1, pg2, normalise, pgo):
+        """
+        Calculate the cross-correlation of two transform pagers: 
+        The complex conjugate of (r, i) items in the first pager are 
+        multiplied by the second pager (r, i) values.
+        
+        :param pg1:        Input pager 1
+        :param pg2:        Input pager 2
+        :param normalise:  0 - do not normalise, 1 - result is normalised by max value
+        :param pgo:        Output pager
+        :type  pg1:        GXPG
+        :type  pg2:        GXPG
+        :type  normalise:  int
+        :type  pgo:        GXPG
+
+        .. versionadded:: 2023.2
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        gxapi_cy.WrapFFT2._cross_correlation_pg(GXContext._get_tls_geo(), pg1, pg2, normalise, pgo)
+        
+
+
+
+    @classmethod
     def fft2_in(cls, im_gi, trn_fil, spc_fil):
         """
         `GXFFT2 <geosoft.gxapi.GXFFT2>` transform

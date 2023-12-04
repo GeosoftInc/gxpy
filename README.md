@@ -28,7 +28,7 @@ If you encounter problems due to a non-standard installation you can also update
 
 ### Manual Configuration ###
 
-Uninstall Geosoft from Python, then install version 2023.1 as follows (you must have the Geosoft Desktop 2023.1 platform installed).
+Uninstall Geosoft from Python, then install version 2023.2 as follows (you must have the Geosoft Desktop 2023.2 platform installed).
 
 ```
 pip uninstall geosoft
@@ -42,9 +42,9 @@ pip install geosoft --upgrade
 ```
 
 ### Version Compatibility ###
-The base GX API, which is exposed to Python by the ___geosoft.gxapi___ module, is consistent across versions. This means that earlier versions of ___geosoft.pxpy___ will work with Geosoft Desktop 2023.1. While we recommend that older scripts be updated to conform to the 2023.1 API, should you need support for multiple versions of ___geosoft.gxpy___ you can create separate Anaconda Python environments for each version. For example, you might create an environment ___'py35_gx91'___ for Python 3.5 and the GX API version 9.1, ___'py36_gx92'___ for Python 3.6 and GX Developer 9.2 and 'py36_gx96' for GX Developer 9.6. If you do not depend on earlier versions of the GX Developer Python API it is best to use only the most recently released API.
+The base GX API, which is exposed to Python by the ___geosoft.gxapi___ module, is consistent across versions. This means that earlier versions of ___geosoft.pxpy___ will work with Geosoft Desktop 2023.2. While we recommend that older scripts be updated to conform to the 2023.2 API, should you need support for multiple versions of ___geosoft.gxpy___ you can create separate Anaconda Python environments for each version. For example, you might create an environment ___'py35_gx91'___ for Python 3.5 and the GX API version 9.1, ___'py36_gx92'___ for Python 3.6 and GX Developer 9.2 and 'py36_gx96' for GX Developer 9.6. If you do not depend on earlier versions of the GX Developer Python API it is best to use only the most recently released API.
 
-Version 2023.1 supports Python 3.7, 3.8, 3.9 and 3.10. If you need Python 3.4 support, install geosoft version 9.2.1, which will work with both Geosoft Desktop versions 9.2 and 9.5, but will not contain any methods and classes introduced since version 9.2. If you need Python 3.5 support, install geosoft version 9.5, which will work with both Geosoft Desktop and redistributable versions 9.5 and 9.6, but will not contain any methods and classes introduced since version 9.6.
+Version 2023.2 supports Python 3.7, 3.8, 3.9 and 3.10. If you need Python 3.4 support, install geosoft version 9.2.1, which will work with both Geosoft Desktop versions 9.2 and 9.5, but will not contain any methods and classes introduced since version 9.2. If you need Python 3.5 support, install geosoft version 9.5, which will work with both Geosoft Desktop and redistributable versions 9.5 and 9.6, but will not contain any methods and classes introduced since version 9.6.
 
 License
 -------

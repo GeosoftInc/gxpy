@@ -729,6 +729,31 @@ class GXVA(gxapi_cy.WrapVA):
 
 
 
+    def set_int_n(self, start, n, value):
+        """
+        Set N rows of integer elements in a `GXVA <geosoft.gxapi.GXVA>`.
+        
+        :param start:  Start row index (>= 0)
+        :param n:      # of rows to set (-1 sets all rows to end)
+        :param value:  Value to set
+        :type  start:  int
+        :type  n:      int
+        :type  value:  int
+
+        .. versionadded:: 2023.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Element row starting index being set cannot be < 0.
+        If the element row index is >= current `GXVA <geosoft.gxapi.GXVA>` length, the `GXVA <geosoft.gxapi.GXVA>` length is
+        increased.
+        """
+        self._set_int_n(start, n, value)
+        
+
+
+
+
     def set_ln(self, rows):
         """
         Set the length (number of rows) of the `GXVA <geosoft.gxapi.GXVA>`

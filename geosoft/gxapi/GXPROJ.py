@@ -700,6 +700,102 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
 
 
+# OMS_Scripting
+
+
+    @classmethod
+    def register_background_script(cls, name, name2, script, log, save_log, output_files, file_to_delete, process_id):
+        """
+        Register an OMS script launched from the project
+        
+        :param name:            Name for the process
+        :param name2:           Secondary name for the process
+        :param script:          file name of the script. Script should self-delete to indicate process has completed
+        :param log:             file name of the output log (optional). Will contain info about this script run
+        :param save_log:        1 - log file is temporary and deleted on OM close. 0 - do not delete on OM close
+        :param output_files:    List of output documents created by the script.
+        :param file_to_delete:  File to delete (optional). Will also delete files with same name and .tmp and .xml extensions
+        :param process_id:      Process ID - used to check status or kill the process
+        :type  name:            str
+        :type  name2:           str
+        :type  script:          str
+        :type  log:             str
+        :type  save_log:        int
+        :type  output_files:    GXVV
+        :type  file_to_delete:  str
+        :type  process_id:      str
+
+        .. versionadded:: 2022.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Allows the project to track the progress/failure/success of scripts launched in the background
+        """
+        gxapi_cy.WrapPROJ._register_background_script(GXContext._get_tls_geo(), name.encode(), name2.encode(), script.encode(), log.encode(), save_log, output_files, file_to_delete.encode(), process_id.encode())
+        
+
+
+
+    @classmethod
+    def get_registered_background_script(cls, index, date_time, name, name2, script, log, output_files, process_id):
+        """
+        Retrieve info on a registered OMS script launched from the project
+        
+        :param index:         Index for the process (input) 0 to N-1
+        :param date_time:     Date/Time string in format DD/MM/YYYY hh:mm:ss
+        :param name:          Name for the process (output)
+        :param name2:         Secondary name for the process (output)
+        :param script:        file name of the script (output)
+        :param log:           file name of the output log (returned, can be empty).
+        :param output_files:  List of output documents created by the script. of size -`STR_FILE <geosoft.gxapi.STR_FILE>`
+        :param process_id:    Process ID (returned)
+        :type  index:         int
+        :type  date_time:     str_ref
+        :type  name:          str_ref
+        :type  name2:         str_ref
+        :type  script:        str_ref
+        :type  log:           str_ref
+        :type  output_files:  GXVV
+        :type  process_id:    str_ref
+
+        .. versionadded:: 2022.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** reference by index
+        """
+        date_time.value, name.value, name2.value, script.value, log.value, process_id.value = gxapi_cy.WrapPROJ._get_registered_background_script(GXContext._get_tls_geo(), index, date_time.value.encode(), name.value.encode(), name2.value.encode(), script.value.encode(), log.value.encode(), output_files, process_id.value.encode())
+        
+
+
+
+    @classmethod
+    def get_num_registered_background_scripts(cls):
+        """
+        Register a OMS script launched from the project
+        
+
+        :returns:    The number of registered background scripts: in progress, finished, failed, deleted etc.
+        :rtype:      int
+
+        .. versionadded:: 2022.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Allows the project to track the progress/failure/success of scripts launched in the background
+        """
+        ret_val = gxapi_cy.WrapPROJ._get_num_registered_background_scripts(GXContext._get_tls_geo())
+        return ret_val
+
+
+
+
 
 ### endblock ClassImplementation
 ### block ClassExtend
