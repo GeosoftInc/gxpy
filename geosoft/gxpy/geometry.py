@@ -381,7 +381,7 @@ class Point(Geometry, Sequence):
                 lp = len(p)
                 if lp == 1:
                     v = float(p[0])
-                    self.p = np.array((v, v, v), dtype=np.float)
+                    self.p = np.array((v, v, v), dtype=np.float_)
                 else:
                     self.p = np.empty(3)
                     if lp == 2:
@@ -751,7 +751,7 @@ class PPoint(Geometry, Sequence):
         super().__init__(coordinate_system=coordinate_system, name=name, **kwargs)
 
         def blankpp(length):
-            pp = np.empty(length * 3, dtype=np.float).reshape((length, 3))
+            pp = np.empty(length * 3, dtype=np.float_).reshape((length, 3))
             pp.fill(np.nan)
             pp[:, 2] = z
             return pp

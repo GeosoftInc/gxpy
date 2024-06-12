@@ -80,7 +80,7 @@ class GX3DC(gxapi_cy.Wrap3DC):
         """
         Retrieves the GeoView associated with the 3D container.
         
-        :rtype:       Type.INT64_T
+        :rtype:       9
 
         .. versionadded:: 2022.2
 

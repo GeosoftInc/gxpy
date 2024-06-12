@@ -555,7 +555,7 @@ class Test(GXPYTest):
     def test_mesh(self):
         self.start()
 
-        v = list(np.array(range(27), dtype=np.float).reshape(-1, 3))
+        v = list(np.array(range(27), dtype=np.float_).reshape(-1, 3))
         f = list(np.array(range(len(v))).reshape(-1, 3))
         m = gxgeo.Mesh((f, v))
         self.assertEqual(len(m.faces), len(f))

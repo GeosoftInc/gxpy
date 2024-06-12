@@ -624,9 +624,9 @@ class Surface(gxspd.SpatialData, Sequence):
 
     def _get_mesh_vv(self, component=0):
 
-        f1 = gxvv.GXvv(dtype=np.int)
-        f2 = gxvv.GXvv(dtype=np.int)
-        f3 = gxvv.GXvv(dtype=np.int)
+        f1 = gxvv.GXvv(dtype=np.int_)
+        f2 = gxvv.GXvv(dtype=np.int_)
+        f3 = gxvv.GXvv(dtype=np.int_)
         vx = gxvv.GXvv()
         vy = gxvv.GXvv()
         vz = gxvv.GXvv()
@@ -858,9 +858,9 @@ class Surface(gxspd.SpatialData, Sequence):
         .. versionadded:: 9.3.1
         """
 
-        f1 = gxvv.GXvv(dtype=np.int)
-        f2 = gxvv.GXvv(dtype=np.int)
-        f3 = gxvv.GXvv(dtype=np.int)
+        f1 = gxvv.GXvv(dtype=np.int_)
+        f2 = gxvv.GXvv(dtype=np.int_)
+        f3 = gxvv.GXvv(dtype=np.int_)
         vx = gxvv.GXvv()
         vy = gxvv.GXvv()
         vz = gxvv.GXvv()

@@ -145,6 +145,10 @@ Geosoft directory defines
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.GEO_DIRECTORY_USER_GX
+.. autodata:: geosoft.gxapi.GEO_DIRECTORY_USER_TBL_FAVOURITES
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.GEO_DIRECTORY_USER_TBL_FAVOURITES
 
 
 .. _REG_DOMAIN:
@@ -425,6 +429,40 @@ Font types
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.SYS_FONT_TT
+
+
+.. _SYS_FILE_FORM:
+
+SYS_FILE_FORM constants
+-----------------------------------------------------------------------
+
+File Open Mode
+
+.. autodata:: geosoft.gxapi.SYS_FILE_FORM_OPEN
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SYS_FILE_FORM_OPEN
+.. autodata:: geosoft.gxapi.SYS_FILE_FORM_SAVE
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SYS_FILE_FORM_SAVE
+
+
+.. _SYS_DAT_FILE:
+
+SYS_DAT_FILE constants
+-----------------------------------------------------------------------
+
+DAT File Type
+
+.. autodata:: geosoft.gxapi.SYS_DAT_FILE_GRID
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SYS_DAT_FILE_GRID
+.. autodata:: geosoft.gxapi.SYS_DAT_FILE_IMAG
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SYS_DAT_FILE_IMAG
 
 
 .. _SYS_INFO:

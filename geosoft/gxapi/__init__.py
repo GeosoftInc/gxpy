@@ -266,6 +266,28 @@ CSYMB_COLOR_EDGE = 0
 CSYMB_COLOR_FILL = 1	
 
 #
+# GXCSYMB3D Constants
+# 
+
+
+
+#
+# CSYMB3D_SYMBOL constants
+#
+# Color Symbol Type defines
+
+#: Csymb symbol sphere
+CSYMB_SYMBOL_SPHERE = 30
+#: Csymb symbol cube
+CSYMB_SYMBOL_CUBE = 31
+#: Csymb symbol cylinder
+CSYMB_SYMBOL_CYLINDER = 32
+#: Csymb symbol cone
+CSYMB_SYMBOL_CONE = 33
+#: Csymb symbol dot
+CSYMB_SYMBOL_DOT = 34	
+
+#
 # GXDAT Constants
 # 
 
@@ -2610,6 +2632,8 @@ MVIEW_IS_VECTOR3D = 12
 MVIEW_IS_GENSURF = 13
 #: Voxsurf
 MVIEW_IS_VOXSURF = 14
+#: Csymb3d
+MVIEW_IS_CSYMB3D = 15
 
 #
 # MVIEW_LABEL_BOUND constants
@@ -3495,6 +3519,8 @@ GEO_DIRECTORY_PYGX = 24
 GEO_DIRECTORY_USER_PYGX = 25
 #: Geosoft\\user\\gx
 GEO_DIRECTORY_USER_GX = 26
+#: Geosoft\\user\\tbl\\favourites
+GEO_DIRECTORY_USER_TBL_FAVOURITES = 27
 
 #
 # REG_DOMAIN constants
@@ -3642,6 +3668,26 @@ SYS_DIR_USER_STYLESHEETS = 212
 SYS_FONT_GFN = 1
 #: Available TrueType fonts
 SYS_FONT_TT = 0
+
+#
+# SYS_FILE_FORM constants
+#
+# File Open Mode
+
+#: Open File Mode
+SYS_FILE_FORM_OPEN = 0
+#: Save File Mode
+SYS_FILE_FORM_SAVE = 1
+
+#
+# SYS_DAT_FILE constants
+#
+# DAT File Type
+
+#: Grid Files
+SYS_DAT_FILE_GRID = 1
+#: Image Files
+SYS_DAT_FILE_IMAG = 2
 
 #
 # SYS_INFO constants
@@ -7396,6 +7442,7 @@ __all__ = [
     'GXAGG',
     'GXBF',
     'GXCSYMB',
+    'GXCSYMB3D',
     'GXDAT',
     'GXDATALINKD',
     'GXDATAMINE',
@@ -7534,6 +7581,7 @@ from .GX3DV import GX3DV
 from .GXAGG import GXAGG
 from .GXBF import GXBF
 from .GXCSYMB import GXCSYMB
+from .GXCSYMB3D import GXCSYMB3D
 from .GXDAT import GXDAT
 from .GXDATALINKD import GXDATALINKD
 from .GXDATAMINE import GXDATAMINE

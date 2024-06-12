@@ -4045,9 +4045,40 @@ class GXDU(gxapi_cy.WrapDU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
-        **Note:** Values in result channel
+        **Note:** Values in result channel. Interpolation based on the current IMG render option (linear or nearest)
         """
         gxapi_cy.WrapDU._sample_img_line_lst(GXContext._get_tls_geo(), db, lst, ix_ch, iy_ch, o_ch, img)
+        
+
+
+
+    @classmethod
+    def sample_img_line_lst_ex(cls, db, lst, ix_ch, iy_ch, o_ch, img, interp_method):
+        """
+        Sample an `GXIMG <geosoft.gxapi.GXIMG>` at a specified X and Y, for a `GXLST <geosoft.gxapi.GXLST>` of lines.
+        
+        :param db:             Database
+        :param lst:            `GXLST <geosoft.gxapi.GXLST>` of (Line Name, Line Handle) values to sample
+        :param ix_ch:          X Input Channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param iy_ch:          Y Input Channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
+        :param o_ch:           Z Output Channel sampled from `GXIMG <geosoft.gxapi.GXIMG>` [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
+        :param img:            `GXIMG <geosoft.gxapi.GXIMG>` handle
+        :param interp_method:  0: INTERP (linear) or 1: NEAREST (pixel)
+        :type  db:             GXDB
+        :type  lst:            GXLST
+        :type  ix_ch:          int
+        :type  iy_ch:          int
+        :type  o_ch:           int
+        :type  img:            GXIMG
+        :type  interp_method:  int
+
+        .. versionadded:: 2024.1
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** Values in result channel
+        """
+        gxapi_cy.WrapDU._sample_img_line_lst_ex(GXContext._get_tls_geo(), db, lst, ix_ch, iy_ch, o_ch, img, interp_method)
         
 
 

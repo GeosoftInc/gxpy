@@ -414,11 +414,11 @@ class GXpyContext:
         self.folder_user = gxu.folder_user()
 
         # determine license
-        try:
-            # test if we can create a GXST2 instance, which requires a minimal license
-            gxapi.GXST2.create()
+        
+        intrinsic = gxapi.GXSYS.check_intrinsic(100, "Oasis Montaj")
+        if intrinsic == 1:
             self._entitled = True
-        except gxapi.GXAPIError:
+        else:
             self._entitled = False
 
         # create a log file

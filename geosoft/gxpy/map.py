@@ -534,15 +534,16 @@ class Map:
                            0, scale, gxapi.rDUMMY,
                            m_left, m_right, m_bottom, m_top,
                            float(inside_margin))
-
-        with gxv.View.open(map, '*data') as view:
-            view.coordinate_system = coordinate_system
+        
+        if not no_data_view:
+            with gxv.View.open(map, '*data') as view:
+                view.coordinate_system = coordinate_system
         set_registry(map,
                      'figure' if (map_style == STYLE_FIGURE) else 'map',
                      inside_margin)
-
+        
         map._make_base_mm()
-
+        
         return map
 
     @property

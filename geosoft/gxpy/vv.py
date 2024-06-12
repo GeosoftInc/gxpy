@@ -215,7 +215,7 @@ class GXvv(Sequence):
         else:
             self._gxvv = gxapi.GXVV.create_ext(self._gxtype, len)
 
-        self.fid = fid
+        fid = fid
         self._next = 0
         self._unit_of_measure = unit_of_measure
 

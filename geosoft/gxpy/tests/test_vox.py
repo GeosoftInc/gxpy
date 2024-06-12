@@ -72,7 +72,7 @@ class Test(GXPYTest):
             self.assertEqual(vox[50, 65, 18], (441075.0, 6129425.0, 370.34108924865723, 0.00019816514181249432))
             self.assertEqual(vox[0, 0, 0], (vox.origin_x, vox.origin_y, vox.origin_z, None))
 
-        with gxvox.Vox.open(self.vox_file, dtype=np.int) as vox:
+        with gxvox.Vox.open(self.vox_file, dtype=np.int_) as vox:
             valid = 0
             dummy = 0
             sum = 0.
@@ -90,15 +90,15 @@ class Test(GXPYTest):
             self.assertEqual(vox[0, 0, 0], (vox.origin_x, vox.origin_y, vox.origin_z, None))
 
             data = vox.np()
-            self.assertEqual(data.dtype, np.int)
+            self.assertEqual(data.dtype, np.int_)
 
             data = vox.np(dtype=np.float64)
             self.assertEqual(data.dtype, np.float64)
 
-        data = gxvox.Vox.open(self.vox_file, dtype=np.int).np(dtype=np.float64)
+        data = gxvox.Vox.open(self.vox_file, dtype=np.int_).np(dtype=np.float64)
         self.assertEqual(data.dtype, np.float64)
-        data = gxvox.Vox.open(self.vox_file, dtype=np.float64).np(dtype=np.int)
-        self.assertEqual(data.dtype, np.int)
+        data = gxvox.Vox.open(self.vox_file, dtype=np.float64).np(dtype=np.int_)
+        self.assertEqual(data.dtype, np.int_)
 
     def test_value(self):
         self.start()

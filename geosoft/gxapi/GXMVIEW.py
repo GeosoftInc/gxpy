@@ -6,6 +6,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXAGG import GXAGG
 from .GXBF import GXBF
 from .GXCSYMB import GXCSYMB
+from .GXCSYMB3D import GXCSYMB3D
 from .GXDATALINKD import GXDATALINKD
 from .GXITR import GXITR
 from .GXLST import GXLST
@@ -3362,6 +3363,46 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         """
         self._draw_vectors_3d(group.encode(), vv_x, vv_y, vv_z, vv_vx, vv_vy, vv_vz, itr, scale_for_max_vector, height_base_ratio, max_base_size_ratio)
         
+
+
+
+
+    def csymb_3d(self, CSYMB3D, name):
+        """
+        Add a 3D coloured symbol (`GXCSYMB3D <geosoft.gxapi.GXCSYMB3D>`) object to the view.
+        
+        :param name:     Name Maximum length is `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`
+        :type  CSYMB3D:  GXCSYMB3D
+        :type  name:     str
+
+        .. versionadded:: 2024.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._csymb_3d(CSYMB3D, name.encode())
+        
+
+
+
+
+    def get_csymb_3d(self, group):
+        """
+        Get an existing 3D coloured symbol `GXCSYMB3D <geosoft.gxapi.GXCSYMB3D>` object from the view.
+        
+        :param group:  Group number
+        :type  group:  int
+
+        :returns:      `GXCSYMB3D <geosoft.gxapi.GXCSYMB3D>` object
+        :rtype:        GXCSYMB3D
+
+        .. versionadded:: 2024.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** This method returns a cached object owned by the `GXMVIEW <geosoft.gxapi.GXMVIEW>` and will be destroyed automatically when the `GXMVIEW <geosoft.gxapi.GXMVIEW>` is disposed
+        """
+        ret_val = self._get_csymb_3d(group)
+        return GXCSYMB3D(ret_val)
 
 
 

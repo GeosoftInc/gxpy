@@ -152,7 +152,7 @@ class Test(GXPYTest):
                 self.assertEqual(len(ch), 3)
                 self.assertEqual(fid, (0.0, 1.0))
 
-                ch = gdb.new_channel('four', dtype=np.int)
+                ch = gdb.new_channel('four', dtype=np.int_)
                 line = list(lines)[0]
                 gdb.write_channel(line, ch, [10, 20, 30, 40], fid=(-1.5, 2))
                 npd, ch, fid = gdb.read_line(line)
@@ -166,7 +166,7 @@ class Test(GXPYTest):
                 self.assertTrue(np.isnan(npd[1][2]))
                 self.assertTrue(np.isnan(npd[6][2]))
 
-                npd, ch, fid = gdb.read_line(line, 'four', dtype=np.int)
+                npd, ch, fid = gdb.read_line(line, 'four', dtype=np.int_)
                 self.assertEqual(npd.shape, (4, 1))
                 self.assertEqual(len(ch), 1)
                 self.assertEqual(fid, (-1.5, 2.0))
@@ -559,7 +559,7 @@ class Test(GXPYTest):
             vv = gxvv.GXvv(dtype=np.float64)
             vv.set_data(np.array([1,2,3,4], dtype=np.int64))
             gdb.write_channel_vv('D590875', 'test', vv)
-            npd,ch,fid = gdb.read_line('D590875', channels=['test'], dtype=np.int)
+            npd,ch,fid = gdb.read_line('D590875', channels=['test'], dtype=np.int_)
             self.assertEqual(npd.shape,(4,1))
             self.assertEqual(npd[:,0].tolist(),[1,2,3,4])
 
@@ -611,7 +611,7 @@ class Test(GXPYTest):
             vv = gxvv.GXvv(dtype=np.float64)
             vv.set_data(np.array([1,2,3,4], dtype=np.int64))
             gdb.write_channel_vv('D590875', 'test', vv)
-            npd,ch,fid = gdb.read_line('D590875', channels=['test'], dtype=np.int)
+            npd,ch,fid = gdb.read_line('D590875', channels=['test'], dtype=np.int_)
             self.assertEqual(npd.shape,(4,1))
             self.assertEqual(npd[:,0].tolist(),[1,2,3,4])
 
@@ -657,21 +657,21 @@ class Test(GXPYTest):
 
             gdb.delete_channel('test')
             gdb.new_channel('test', np.float64)
-            gdb.write_channel('D590875','test',np.array([1,2,3,4],dtype=np.int))
-            npd,ch,fid = gdb.read_line('D590875',channels=['test'],dtype=np.int)
+            gdb.write_channel('D590875','test',np.array([1,2,3,4],dtype=np.int_))
+            npd,ch,fid = gdb.read_line('D590875',channels=['test'],dtype=np.int_)
             self.assertEqual(npd.shape,(4,1))
             self.assertEqual(npd[:,0].tolist(),[1,2,3,4])
 
             gdb.delete_channel('test')
             gdb.new_channel('test', np.int32)
-            gdb.write_channel('D590875','test',np.array([1,2,3,4],dtype=np.int))
+            gdb.write_channel('D590875','test',np.array([1,2,3,4],dtype=np.int_))
             npd,ch,fid = gdb.read_line('D590875',channels=['test'])
             self.assertEqual(npd.shape,(4,1))
             self.assertEqual(npd[:,0].tolist(),[1.0,2.0,3.0,4.0])
 
             gdb.delete_channel('test')
             gdb.new_channel('test', dtype=np.int32)
-            gdb.write_channel('D590875','test',np.array([1,2,3,4],dtype=np.int),fid=(3,2))
+            gdb.write_channel('D590875','test',np.array([1,2,3,4],dtype=np.int_),fid=(3,2))
             npd,ch,fid = gdb.read_line('D590875',channels=['test'])
             self.assertEqual(npd.shape,(4,1))
             self.assertEqual(npd[:,0].tolist(),[1.0,2.0,3.0,4.0])
@@ -679,7 +679,7 @@ class Test(GXPYTest):
             self.assertEqual(fid[1],2.0)
 
             gdb.new_channel('test', np.int32)
-            gdb.write_channel('D590875', 'test', np.array([1,2,3,4], dtype=np.int), fid=(2.50,0.33))
+            gdb.write_channel('D590875', 'test', np.array([1,2,3,4], dtype=np.int_), fid=(2.50,0.33))
             npd,ch,fid = gdb.read_line('D590875', channels=['test'])
             self.assertEqual(npd.shape,(4,1))
             self.assertEqual(npd[:,0].tolist(),[1.0,2.0,3.0,4.0])
@@ -719,11 +719,11 @@ class Test(GXPYTest):
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
 
             gdb.delete_channel('test')
-            gdb.new_channel('test',dtype=np.int)
-            dummy = gxu.gx_dummy(np.int)
+            gdb.new_channel('test',dtype=np.int_)
+            dummy = gxu.gx_dummy(np.int_)
 
             gdb.write_channel('D590875', 'test', np.array([1, 2, dummy, 4]))
-            npd, ch, fid = gdb.read_line('D590875', channels=['test'], dtype=np.int)
+            npd, ch, fid = gdb.read_line('D590875', channels=['test'], dtype=np.int_)
             self.assertEqual(npd.shape,(4,1))
             self.assertEqual(npd[:,0].tolist(),[1,2,dummy,4])
 
@@ -852,9 +852,9 @@ class Test(GXPYTest):
                 self.stp = 2
 
                 gdb.delete_channel('testlist')
-                gdb.new_channel('testlist',dtype=np.int)
-                gdb.write_channel('D578625', 'testlist', np.array([1,2,3,4,4,4,5,6,7,7,7,6,5,4], dtype=np.int))
-                gdb.write_channel('D2', 'testlist', np.array([12,12,12,13,13,13], dtype=np.int))
+                gdb.new_channel('testlist',dtype=np.int_)
+                gdb.write_channel('D578625', 'testlist', np.array([1,2,3,4,4,4,5,6,7,7,7,6,5,4], dtype=np.int_))
+                gdb.write_channel('D2', 'testlist', np.array([12,12,12,13,13,13], dtype=np.int_))
 
                 listVal = gdb.list_values('testlist', umax=100, stop=enough)
                 listVal.sort()
@@ -882,10 +882,10 @@ class Test(GXPYTest):
                     im = Image.open(im_handle)
                     im.thumbnail( (20,20), Image.ANTIALIAS)
                     imageIn = np.asarray(im,dtype=np.float32)
-                gdb.new_channel('R',dtype=np.int)
-                gdb.new_channel('G',dtype=np.int)
-                gdb.new_channel('B', dtype=np.int)
-                gdb.new_channel('A', dtype=np.int)
+                gdb.new_channel('R',dtype=np.int_)
+                gdb.new_channel('G',dtype=np.int_)
+                gdb.new_channel('B', dtype=np.int_)
+                gdb.new_channel('A', dtype=np.int_)
                 for l in range(imageIn.shape[0]):
                     gdb.write_line('L{}'.format(l), imageIn[l,:,:], channels=['R','G','B','A'])
 

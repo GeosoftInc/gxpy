@@ -3,6 +3,7 @@
 # NOTICE: Do not edit anything here, it is generated code
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
+from .GXLST import GXLST
 from .GXRA import GXRA
 from .GXWA import GXWA
 
@@ -630,7 +631,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         .. seealso::
 
-            `run_gx_ex <geosoft.gxapi.GXSYS.run_gx_ex>`, `set_interactive <geosoft.gxapi.GXSYS.set_interactive>` and `run_gs <geosoft.gxapi.GXSYS.run_gs>`
+            `set_interactive <geosoft.gxapi.GXSYS.set_interactive>` and `run_gs <geosoft.gxapi.GXSYS.run_gs>`
         """
         ret_val = gxapi_cy.WrapSYS._run_gx(GXContext._get_tls_geo(), gx.encode())
         return ret_val
@@ -647,47 +648,17 @@ class GXSYS(gxapi_cy.WrapSYS):
         :type  gx:         str
         :type  init_info:  str
 
-        :returns:          Return value of the GX set by `set_return <geosoft.gxapi.GXSYS.set_return>` (0 by default). Terminates on error or cancel.
+        :returns:          Exit status of the GX:
+                           -1 cancelled
+                           0 success
+                           1 ended with an error.
         :rtype:            int
 
         .. versionadded:: 9.9
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
-
-        .. seealso::
-
-            `set_return <geosoft.gxapi.GXSYS.set_return>`
         """
         ret_val = gxapi_cy.WrapSYS._run_python(GXContext._get_tls_geo(), gx.encode(), init_info.encode())
-        return ret_val
-
-
-
-    @classmethod
-    def run_gx_ex(cls, gx, ret):
-        """
-        Run a GX.
-        
-        :param gx:   Name of GX to run.
-        :param ret:  Return value set in the child GX (0 by default)
-        :type  gx:   str
-        :type  ret:  int_ref
-
-        :returns:    Exit status of the GX:
-                     -1 cancelled
-                     0 success
-                     1 ended with an error.
-        :rtype:      int
-
-        .. versionadded:: 5.0
-
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
-
-        .. seealso::
-
-            `run_gx <geosoft.gxapi.GXSYS.run_gx>`, `set_return <geosoft.gxapi.GXSYS.set_return>`
-        """
-        ret_val, ret.value = gxapi_cy.WrapSYS._run_gx_ex(GXContext._get_tls_geo(), gx.encode(), ret.value)
         return ret_val
 
 
@@ -702,7 +673,10 @@ class GXSYS(gxapi_cy.WrapSYS):
         :type  mnu:  str
         :type  pdf:  str
 
-        :returns:    Exit status of the task, 0 usually means success.
+        :returns:    Exit status:
+                     -1 cancelled
+                     0 success
+                     1 ended with an error.
         :rtype:      int
 
         .. versionadded:: 5.0
@@ -749,25 +723,6 @@ class GXSYS(gxapi_cy.WrapSYS):
         """
         ret_val = gxapi_cy.WrapSYS._shell_execute(GXContext._get_tls_geo(), verb.encode(), file.encode(), parameters.encode(), directory.encode(), show)
         return ret_val
-
-
-
-    @classmethod
-    def set_return(cls, ret):
-        """
-        Set the return value of a GX.
-        
-        :param ret:  Return Value
-        :type  ret:  int
-
-        .. versionadded:: 5.0
-
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
-
-        **Note:** This value is returned in the `run_gx_ex <geosoft.gxapi.GXSYS.run_gx_ex>` call only.
-        """
-        gxapi_cy.WrapSYS._set_return(GXContext._get_tls_geo(), ret)
-        
 
 
 
@@ -2769,6 +2724,23 @@ class GXSYS(gxapi_cy.WrapSYS):
 
 
 
+    @classmethod
+    def log_background_task(cls, location):
+        """
+        This method logs that a background task was run
+        
+        :param location:  Location that launched the background task
+        :type  location:  str
+
+        .. versionadded:: 2014.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapSYS._log_background_task(GXContext._get_tls_geo(), location.encode())
+        
+
+
+
 
 # Multithreading
 
@@ -4216,6 +4188,23 @@ class GXSYS(gxapi_cy.WrapSYS):
 
 
 
+    @classmethod
+    def set_background_run(cls, mode):
+        """
+        Sets the environment as running in the background.
+        
+        :param mode:  1 - background run is true, 0 background run is false
+        :type  mode:  int
+
+        .. versionadded:: 2024.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        gxapi_cy.WrapSYS._set_background_run(GXContext._get_tls_geo(), mode)
+        
+
+
+
 
 # Workspace
 
@@ -4336,6 +4325,35 @@ class GXSYS(gxapi_cy.WrapSYS):
         """
         ret_val = gxapi_cy.WrapSYS._is_encrypted_string(GXContext._get_tls_geo(), input.encode())
         return ret_val
+
+
+
+
+# Miscellaneous
+
+
+    @classmethod
+    def dat_list_lst(cls, DAT_Type, FileOpenMode, FileType):
+        """
+        Returns a LST of Grid/Image types as names and qualifiers as values`GXLST <geosoft.gxapi.GXLST>`
+        Example:
+        NAME:  "Geosoft default (*.grd)"
+        VALUE: "GRD"
+        
+        :param DAT_Type:      DAT type - currently only 'XGD'
+        :param FileOpenMode:  :ref:`SYS_FILE_FORM`
+        :param FileType:      :ref:`SYS_DAT_FILE` sum for both
+        :type  DAT_Type:      str
+        :type  FileOpenMode:  int
+        :type  FileType:      int
+        :rtype:               GXLST
+
+        .. versionadded:: 2024.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val = gxapi_cy.WrapSYS._dat_list_lst(GXContext._get_tls_geo(), DAT_Type.encode(), FileOpenMode, FileType)
+        return GXLST(ret_val)
 
 
 

@@ -57,6 +57,7 @@
     <Content Include="docs\GXCHIMERA.rst" />
     <Content Include="docs\GXCOM.rst" />
     <Content Include="docs\GXCSYMB.rst" />
+    <Content Include="docs\GXCSYMB3D.rst" />
     <Content Include="docs\GXDAT.rst" />
     <Content Include="docs\GXDATALINKD.rst" />
     <Content Include="docs\GXDATAMINE.rst" />
@@ -192,6 +193,7 @@
     <Content Include="docs\transform\pygen\GXCHIMERA.rst" />
     <Content Include="docs\transform\pygen\GXCOM.rst" />
     <Content Include="docs\transform\pygen\GXCSYMB.rst" />
+    <Content Include="docs\transform\pygen\GXCSYMB3D.rst" />
     <Content Include="docs\transform\pygen\GXDAT.rst" />
     <Content Include="docs\transform\pygen\GXDATALINKD.rst" />
     <Content Include="docs\transform\pygen\GXDATAMINE.rst" />
@@ -333,6 +335,7 @@
     <Content Include="docs\_build\html\GXCHIMERA.html" />
     <Content Include="docs\_build\html\GXCOM.html" />
     <Content Include="docs\_build\html\GXCSYMB.html" />
+    <Content Include="docs\_build\html\GXCSYMB3D.html" />
     <Content Include="docs\_build\html\GXDAT.html" />
     <Content Include="docs\_build\html\GXDATALINKD.html" />
     <Content Include="docs\_build\html\GXDATAMINE.html" />
@@ -476,6 +479,7 @@
     <Content Include="docs\_build\html\_sources\GXCHIMERA.rst.txt" />
     <Content Include="docs\_build\html\_sources\GXCOM.rst.txt" />
     <Content Include="docs\_build\html\_sources\GXCSYMB.rst.txt" />
+    <Content Include="docs\_build\html\_sources\GXCSYMB3D.rst.txt" />
     <Content Include="docs\_build\html\_sources\GXDAT.rst.txt" />
     <Content Include="docs\_build\html\_sources\GXDATALINKD.rst.txt" />
     <Content Include="docs\_build\html\_sources\GXDATAMINE.rst.txt" />
@@ -793,6 +797,7 @@
     <Compile Include="geosoft\gxapi\GXCOM.py" />
     <Compile Include="geosoft\gxapi\GXContext.py" />
     <Compile Include="geosoft\gxapi\GXCSYMB.py" />
+    <Compile Include="geosoft\gxapi\GXCSYMB3D.py" />
     <Compile Include="geosoft\gxapi\GXDAT.py" />
     <Compile Include="geosoft\gxapi\GXDATALINKD.py" />
     <Compile Include="geosoft\gxapi\GXDATAMINE.py" />

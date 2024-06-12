@@ -891,6 +891,144 @@ class GXMAP(gxapi_cy.WrapMAP):
 
 
 
+    def remove_grid(self, grid, removed):
+        """
+        Remove references to a grid from a map.
+        
+        :param grid:     grid file name to remove
+        :param removed:  if the grid link is removed, returns 1, else returns 0
+        :type  grid:     str
+        :type  removed:  int_ref
+
+        .. versionadded:: 2024.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** If the grid is the only one in the AGG, the AGG group is deleted, otherwise
+        only the BAND containing the reference is deleted from the AGG.
+        Any COLORBAR or GRIDHIST group associated with the AGG group is deleted.
+        This is name-dependent, and will not work if a user has renamed the color bar
+        or grid histogram.
+        """
+        removed.value = self._remove_grid(grid.encode(), removed.value)
+        
+
+
+
+
+    def remove_geosurface(self, surface, removed):
+        """
+        Remove all geosurface groups from a map that are linked to a specific geosurface file.
+        
+        :param surface:  geosurface file name to remove
+        :param removed:  if at least one surface group is removed, returns 1, else returns 0
+        :type  surface:  str
+        :type  removed:  int_ref
+
+        .. versionadded:: 2024.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        removed.value = self._remove_geosurface(surface.encode(), removed.value)
+        
+
+
+
+
+    def remove_voxel(self, surface, removed):
+        """
+        Remove all voxel groups from a map that are linked to a specific voxel file.
+        
+        :param surface:  voxel file name to remove
+        :param removed:  if at least one voxel group is removed, returns 1, else returns 0
+        :type  surface:  str
+        :type  removed:  int_ref
+
+        .. versionadded:: 2024.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        removed.value = self._remove_voxel(surface.encode(), removed.value)
+        
+
+
+
+
+    def repair_broken_grid_links(self, grid, repaired):
+        """
+        Replaces/repairs references to a grid inside a map.
+        
+        :param grid:      new grid file name path (must resolve to an existing file)
+        :param repaired:  if grid link is repaired, returns 1, else returns 0
+        :type  grid:      str
+        :type  repaired:  int_ref
+
+        .. versionadded:: 2024.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** The replacement/repair occurs only if the original reference, bearing the same
+        file name and extension, does not resolve to an existing grid. (Working links 
+        will not be affected).
+        The replacement path must resolve to an existing grid, and if possible will be
+        stored as a relative path to the map.
+        """
+        repaired.value = self._repair_broken_grid_links(grid.encode(), repaired.value)
+        
+
+
+
+
+    def repair_broken_geosurface_links(self, surface, repaired):
+        """
+        Replaces/repairs references to a geosurface inside a map.
+        
+        :param surface:   new geosurface file name path (must resolve to an existing file)
+        :param repaired:  if the link is repaired, returns 1, else returns 0
+        :type  surface:   str
+        :type  repaired:  int_ref
+
+        .. versionadded:: 2024.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** The replacement/repair occurs only if the original reference, bearing the same
+        file name, does not resolve to an existing geosurface. (Working links 
+        will not be affected).
+        The replacement path must resolve to an existing geosurface, and if possible will be
+        stored as a relative path to the map.
+        """
+        repaired.value = self._repair_broken_geosurface_links(surface.encode(), repaired.value)
+        
+
+
+
+
+    def repair_broken_voxel_links(self, voxel, repaired):
+        """
+        Replaces/repairs references to a Geosoft Voxel inside a map.
+        
+        :param voxel:     new voxel file name path (must resolve to an existing file)
+        :param repaired:  if the link is repaired, returns 1, else returns 0
+        :type  voxel:     str
+        :type  repaired:  int_ref
+
+        .. versionadded:: 2024.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** The replacement/repair occurs only if the original reference, bearing the same
+        file name, does not resolve to an existing voxel. (Working links 
+        will not be affected).
+        The replacement path must resolve to an existing voxel, and if possible will be
+        stored as a relative path to the map.
+        """
+        repaired.value = self._repair_broken_voxel_links(voxel.encode(), repaired.value)
+        
+
+
+
+
     def resize_all(self):
         """
         Resize a map to the extents of all views.

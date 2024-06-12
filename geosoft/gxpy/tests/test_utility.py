@@ -26,13 +26,13 @@ class Test(GXPYTest):
         self.assertEqual(gxu.gx_dtype("<U18"),-72) # x4 for full range of UTF-8 characters
         self.assertEqual(gxu.gx_dtype('uint64'),gxapi.GS_ULONG64)
 
-        self.assertEqual(gxu.dtype_gx(gxapi.GS_DOUBLE), np.float)
+        self.assertEqual(gxu.dtype_gx(gxapi.GS_DOUBLE), np.float_)
         self.assertEqual(gxu.dtype_gx(gxapi.GS_FLOAT), np.float32)
         self.assertEqual(gxu.dtype_gx(gxapi.GS_LONG), np.int32)
         self.assertEqual(gxu.dtype_gx(-2000).str, "<U2000")
         self.assertEqual(gxu.dtype_gx(gxapi.GS_ULONG64), np.uint64)
 
-        self.assertEqual(gxu.gx_dummy(np.float),gxapi.rDUMMY)
+        self.assertEqual(gxu.gx_dummy(np.float_),gxapi.rDUMMY)
         self.assertEqual(gxu.gx_dummy(np.int32),gxapi.iDUMMY)
         self.assertEqual(gxu.gx_dummy(np.int64),gxapi.GS_S8DM)
         self.assertEqual(gxu.gx_dummy(np.str_), '')
@@ -84,8 +84,8 @@ class Test(GXPYTest):
         self.assertEqual(gxu.gx_dtype_dimension(np.float64, 2), gxapi.GS_DOUBLE2D)
         self.assertEqual(gxu.gx_dtype_dimension(np.float64, 3), gxapi.GS_DOUBLE3D)
 
-        self.assertRaises(gxu.UtilityException, gxu.gx_dtype_dimension, np.int, 2)
-        self.assertRaises(gxu.UtilityException, gxu.gx_dtype_dimension, np.int, 3)
+        self.assertRaises(gxu.UtilityException, gxu.gx_dtype_dimension, np.int_, 2)
+        self.assertRaises(gxu.UtilityException, gxu.gx_dtype_dimension, np.int_, 3)
         self.assertRaises(gxu.UtilityException, gxu.gx_dtype_dimension, np.float32, 4)
 
         npd = np.array([[1,1],[2,2],[-127,1],[3,3]],dtype=gxu.dtype_gx(gxapi.GS_BYTE))

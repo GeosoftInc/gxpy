@@ -677,7 +677,6 @@ class Grid(gxgm.Geometry):
                 yc = data[3]
             else:
                 xc, yc, _ = gdb.xyz_channels
-            discard = True
 
         else:
             gdb = gdb_from_data(data)
