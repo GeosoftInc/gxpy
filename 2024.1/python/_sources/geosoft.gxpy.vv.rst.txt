@@ -1,0 +1,49 @@
+﻿geosoft.gxpy.vv
+===============
+
+.. automodule:: geosoft.gxpy.vv
+
+   
+   
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+   
+      MAX_VV_BYTES
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _t
+      np_from_vvset
+      vvset_from_np
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      GXvv
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      VVException
+   
+   
+
+
+

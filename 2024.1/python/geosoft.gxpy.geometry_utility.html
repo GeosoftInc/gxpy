@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>geosoft.gxpy.geometry_utility &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.geometry_utility</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.geometry_utility.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-geosoft.gxpy.geometry_utility">
+<span id="geosoft-gxpy-geometry-utility"></span><h1>geosoft.gxpy.geometry_utility<a class="headerlink" href="#module-geosoft.gxpy.geometry_utility" title="Link to this heading">¶</a></h1>
+<p>Geometry utilities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constants<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="field-list simple">
+<dt class="field-odd">SPLINE_LINEAR<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXVVU.html#id119" title="geosoft.gxapi.VVU_SPL_LINEAR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.VVU_SPL_LINEAR</span></code></a></p>
+</dd>
+<dt class="field-even">SPLINE_CUBIC<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="GXVVU.html#id120" title="geosoft.gxapi.VVU_SPL_CUBIC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.VVU_SPL_CUBIC</span></code></a></p>
+</dd>
+<dt class="field-odd">SPLINE_AKIMA<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXVVU.html#id121" title="geosoft.gxapi.VVU_SPL_AKIMA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.VVU_SPL_AKIMA</span></code></a></p>
+</dd>
+<dt class="field-even">SPLINE_NEAREST<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="GXVVU.html#id122" title="geosoft.gxapi.VVU_SPL_NEAREST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.VVU_SPL_NEAREST</span></code></a></p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="geosoft.gxpy.geometry.html#module-geosoft.gxpy.geometry" title="geosoft.gxpy.geometry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry</span></code></a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Regression tests provide usage examples:     
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_geometry_utility.py">Tests</a></p>
+</div>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_t</span></code>(s)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">resample</span></code>(pp, interval[, spline, closed])</p></td>
+<td><p>Return points resampled at a constant separation along the trace of points.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Exceptions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeometryUtilityException</span></code>(message)</p></td>
+<td><p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.geometry_utility" title="geosoft.gxpy.geometry_utility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry_utility</span></code></a>.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.geometry_utility</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

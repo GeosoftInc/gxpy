@@ -1,0 +1,730 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXUSERMETA class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXUSERMETA class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">GXUSERMETA class</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.__init__"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.compare"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.compare()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.create"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.create()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.create_s"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.create_s()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.get_data_creation_date"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.get_data_creation_date()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.get_data_creator"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.get_data_creator()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.get_extents2d"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.get_extents2d()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.get_extents3d"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.get_extents3d()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.get_format"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.get_format()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.get_ipj"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.get_ipj()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.get_meta_creation_date"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.get_meta_creation_date()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.get_meta_creator"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.get_meta_creator()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.get_project"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.get_project()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.get_title"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.get_title()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.get_xml_format"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.get_xml_format()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.is_null"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.null"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.save_file_lineage"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.save_file_lineage()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.serial"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.serial()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.set_data_creation_date"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.set_data_creation_date()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.set_data_creator"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.set_data_creator()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.set_extents2d"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.set_extents2d()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.set_extents3d"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.set_extents3d()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.set_format"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.set_format()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.set_ipj"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.set_ipj()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.set_meta_creation_date"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.set_meta_creation_date()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.set_meta_creator"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.set_meta_creator()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.set_project"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.set_project()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.set_title"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.set_title()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.set_xml_format"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.set_xml_format()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.update_extents_2d"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.update_extents_2d()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA.update_file_type"><code class="docutils literal notranslate"><span class="pre">GXUSERMETA.update_file_type()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#usermeta-format-constants">USERMETA_FORMAT constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.USERMETA_FORMAT_DEFAULT"><code class="docutils literal notranslate"><span class="pre">USERMETA_FORMAT_DEFAULT</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.USERMETA_FORMAT_DEFAULT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.USERMETA_FORMAT_ISO"><code class="docutils literal notranslate"><span class="pre">USERMETA_FORMAT_ISO</span></code></a></li>
+<li><a class="reference internal" href="#id29"><code class="docutils literal notranslate"><span class="pre">gxapi.USERMETA_FORMAT_ISO</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.USERMETA_FORMAT_FGDC"><code class="docutils literal notranslate"><span class="pre">USERMETA_FORMAT_FGDC</span></code></a></li>
+<li><a class="reference internal" href="#id30"><code class="docutils literal notranslate"><span class="pre">gxapi.USERMETA_FORMAT_FGDC</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXUSERMETA.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="gxusermeta-class">
+<span id="gxusermeta"></span><h1>GXUSERMETA class<a class="headerlink" href="#gxusermeta-class" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXUSERMETA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA" title="Link to this definition">¶</a></dt>
+<dd><p>GXUSERMETA class.</p>
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXUSERMETA" title="geosoft.gxapi.GXUSERMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXUSERMETA</span></code></a> class handles user style metadata tied to real
+data.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.compare">
+<span class="sig-name descname"><span class="pre">compare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usermeta2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.compare"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.compare" title="Link to this definition">¶</a></dt>
+<dd><p>Compare 2 <a class="reference internal" href="#geosoft.gxapi.GXUSERMETA" title="geosoft.gxapi.GXUSERMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXUSERMETA</span></code></a>’s</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>usermeta2</strong> (<a class="reference internal" href="#geosoft.gxapi.GXUSERMETA" title="geosoft.gxapi.GXUSERMETA.GXUSERMETA"><em>GXUSERMETA</em></a>) – Second UERMETA</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0 - No
+1 - Yes</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.create" title="Link to this definition">¶</a></dt>
+<dd><p>Creates an empty <a class="reference internal" href="#geosoft.gxapi.GXUSERMETA" title="geosoft.gxapi.GXUSERMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXUSERMETA</span></code></a> object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>format</strong> (<em>int</em>) – <a class="reference internal" href="#usermeta-format"><span class="std std-ref">USERMETA_FORMAT constants</span></a> Type of Meta to create</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA" title="geosoft.gxapi.GXUSERMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXUSERMETA</span></code></a> Object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA" title="geosoft.gxapi.GXUSERMETA.GXUSERMETA">GXUSERMETA</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.create_s">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_s</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.create_s"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.create_s" title="Link to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXUSERMETA" title="geosoft.gxapi.GXUSERMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXUSERMETA</span></code></a> from a file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>str</em>) – File Name</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA" title="geosoft.gxapi.GXUSERMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXUSERMETA</span></code></a> Object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA" title="geosoft.gxapi.GXUSERMETA.GXUSERMETA">GXUSERMETA</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.get_data_creation_date">
+<span class="sig-name descname"><span class="pre">get_data_creation_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.get_data_creation_date"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.get_data_creation_date" title="Link to this definition">¶</a></dt>
+<dd><p>Get the Data Creation Date</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>date</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Date</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.get_data_creator">
+<span class="sig-name descname"><span class="pre">get_data_creator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_creator</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.get_data_creator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.get_data_creator" title="Link to this definition">¶</a></dt>
+<dd><p>Get the Data Creator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data_creator</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – DataCreator returned</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.get_extents2d">
+<span class="sig-name descname"><span class="pre">get_extents2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.get_extents2d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.get_extents2d" title="Link to this definition">¶</a></dt>
+<dd><p>Get the 2d Extents</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – MinX</p></li>
+<li><p><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – MinY</p></li>
+<li><p><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – MaxX</p></li>
+<li><p><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – MaxY</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.get_extents3d">
+<span class="sig-name descname"><span class="pre">get_extents3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.get_extents3d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.get_extents3d" title="Link to this definition">¶</a></dt>
+<dd><p>Get the 3d Extents</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – MinX</p></li>
+<li><p><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – MinY</p></li>
+<li><p><strong>min_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – MinZ</p></li>
+<li><p><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – MaxX</p></li>
+<li><p><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – MaxY</p></li>
+<li><p><strong>max_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – MaxZ</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.get_format">
+<span class="sig-name descname"><span class="pre">get_format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.get_format"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.get_format" title="Link to this definition">¶</a></dt>
+<dd><p>Get the File Format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>format</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Title returned</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.get_ipj">
+<span class="sig-name descname"><span class="pre">get_ipj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ipj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.get_ipj"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.get_ipj" title="Link to this definition">¶</a></dt>
+<dd><p>Get the <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Date</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.get_meta_creation_date">
+<span class="sig-name descname"><span class="pre">get_meta_creation_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.get_meta_creation_date"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.get_meta_creation_date" title="Link to this definition">¶</a></dt>
+<dd><p>Get the Meta Creation Date</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>date</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Date</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.get_meta_creator">
+<span class="sig-name descname"><span class="pre">get_meta_creator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta_creator</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.get_meta_creator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.get_meta_creator" title="Link to this definition">¶</a></dt>
+<dd><p>Get the Meta Creator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>meta_creator</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – MetaCreator returned</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.get_project">
+<span class="sig-name descname"><span class="pre">get_project</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.get_project"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.get_project" title="Link to this definition">¶</a></dt>
+<dd><p>Get the File Project</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>project</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Title returned</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.get_title">
+<span class="sig-name descname"><span class="pre">get_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.get_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.get_title" title="Link to this definition">¶</a></dt>
+<dd><p>Get the Title</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>title</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Title returned</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.get_xml_format">
+<span class="sig-name descname"><span class="pre">get_xml_format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.get_xml_format"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.get_xml_format" title="Link to this definition">¶</a></dt>
+<dd><p>Get the XML Format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>format</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – <a class="reference internal" href="#usermeta-format"><span class="std std-ref">USERMETA_FORMAT constants</span></a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.is_null" title="Link to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.null" title="Link to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXUSERMETA" title="geosoft.gxapi.GXUSERMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXUSERMETA</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXUSERMETA" title="geosoft.gxapi.GXUSERMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXUSERMETA</span></code></a></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA" title="geosoft.gxapi.GXUSERMETA.GXUSERMETA">GXUSERMETA</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.save_file_lineage">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save_file_lineage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_geo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.save_file_lineage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.save_file_lineage" title="Link to this definition">¶</a></dt>
+<dd><p>Add lineage to XML</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>str</em>) – Filename of existing metadata to update</p></li>
+<li><p><strong>save_geo</strong> (<em>bool</em>) – Output Geosoft Metadata?</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.serial">
+<span class="sig-name descname"><span class="pre">serial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_geo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.serial"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.serial" title="Link to this definition">¶</a></dt>
+<dd><p>Serialize <a class="reference internal" href="#geosoft.gxapi.GXUSERMETA" title="geosoft.gxapi.GXUSERMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXUSERMETA</span></code></a> to a <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>save_geo</strong> (<em>bool</em>) – Output Geosoft Metadata?</p></li>
+<li><p><strong>file</strong> (<em>str</em>) – File name to save to</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.set_data_creation_date">
+<span class="sig-name descname"><span class="pre">set_data_creation_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.set_data_creation_date"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.set_data_creation_date" title="Link to this definition">¶</a></dt>
+<dd><p>Set the Data Creation Date</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>date</strong> (<em>float</em>) – Date</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.set_data_creator">
+<span class="sig-name descname"><span class="pre">set_data_creator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_creator</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.set_data_creator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.set_data_creator" title="Link to this definition">¶</a></dt>
+<dd><p>Set the Data Creator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data_creator</strong> (<em>str</em>) – DataCreator</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.set_extents2d">
+<span class="sig-name descname"><span class="pre">set_extents2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.set_extents2d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.set_extents2d" title="Link to this definition">¶</a></dt>
+<dd><p>Set the 2d Extents</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_x</strong> (<em>float</em>) – MinX</p></li>
+<li><p><strong>min_y</strong> (<em>float</em>) – MinY</p></li>
+<li><p><strong>max_x</strong> (<em>float</em>) – MaxX</p></li>
+<li><p><strong>max_y</strong> (<em>float</em>) – MaxY</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.set_extents3d">
+<span class="sig-name descname"><span class="pre">set_extents3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.set_extents3d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.set_extents3d" title="Link to this definition">¶</a></dt>
+<dd><p>Set the 3d Extents</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_x</strong> (<em>float</em>) – MinX</p></li>
+<li><p><strong>min_y</strong> (<em>float</em>) – MinY</p></li>
+<li><p><strong>min_z</strong> (<em>float</em>) – MinZ</p></li>
+<li><p><strong>max_x</strong> (<em>float</em>) – MaxX</p></li>
+<li><p><strong>max_y</strong> (<em>float</em>) – MaxY</p></li>
+<li><p><strong>max_z</strong> (<em>float</em>) – MaxZ</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.set_format">
+<span class="sig-name descname"><span class="pre">set_format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.set_format"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.set_format" title="Link to this definition">¶</a></dt>
+<dd><p>Set the File Format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>format</strong> (<em>str</em>) – Format</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.set_ipj">
+<span class="sig-name descname"><span class="pre">set_ipj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ipj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.set_ipj"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.set_ipj" title="Link to this definition">¶</a></dt>
+<dd><p>Set the <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Date</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.set_meta_creation_date">
+<span class="sig-name descname"><span class="pre">set_meta_creation_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.set_meta_creation_date"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.set_meta_creation_date" title="Link to this definition">¶</a></dt>
+<dd><p>Set the Meta Creation Date</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>date</strong> (<em>float</em>) – Date</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.set_meta_creator">
+<span class="sig-name descname"><span class="pre">set_meta_creator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta_creator</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.set_meta_creator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.set_meta_creator" title="Link to this definition">¶</a></dt>
+<dd><p>Set the Meta Creator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>meta_creator</strong> (<em>str</em>) – MetaCreator</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.set_project">
+<span class="sig-name descname"><span class="pre">set_project</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.set_project"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.set_project" title="Link to this definition">¶</a></dt>
+<dd><p>Set the File Project</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>project</strong> (<em>str</em>) – Project</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.set_title">
+<span class="sig-name descname"><span class="pre">set_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.set_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.set_title" title="Link to this definition">¶</a></dt>
+<dd><p>Set the Title</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>title</strong> (<em>str</em>) – Title</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.set_xml_format">
+<span class="sig-name descname"><span class="pre">set_xml_format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.set_xml_format"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.set_xml_format" title="Link to this definition">¶</a></dt>
+<dd><p>Get the XML Format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>format</strong> (<em>int</em>) – <a class="reference internal" href="#usermeta-format"><span class="std std-ref">USERMETA_FORMAT constants</span></a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.update_extents_2d">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_extents_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ipj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.update_extents_2d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.update_extents_2d" title="Link to this definition">¶</a></dt>
+<dd><p>Edit an existing XML metadata file by
+changing the extents and projection data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – Filename of existing metadata to update</p></li>
+<li><p><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – New projection</p></li>
+<li><p><strong>min_x</strong> (<em>float</em>) – New MinX value</p></li>
+<li><p><strong>min_y</strong> (<em>float</em>) – New MinY value</p></li>
+<li><p><strong>max_x</strong> (<em>float</em>) – New MaxX value</p></li>
+<li><p><strong>max_y</strong> (<em>float</em>) – New MaxY value</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXUSERMETA.update_file_type">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_file_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_file_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXUSERMETA.html#GXUSERMETA.update_file_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXUSERMETA.update_file_type" title="Link to this definition">¶</a></dt>
+<dd><p>Edit an existing XML metadata file by
+changing the file type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>str</em>) – Filename of existing metadata to update</p></li>
+<li><p><strong>new_file_type</strong> (<em>str</em>) – New file type</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+</dd></dl>
+
+<section id="usermeta-format-constants">
+<span id="usermeta-format"></span><h2>USERMETA_FORMAT constants<a class="headerlink" href="#usermeta-format-constants" title="Link to this heading">¶</a></h2>
+<p><a class="reference internal" href="#geosoft.gxapi.GXUSERMETA" title="geosoft.gxapi.GXUSERMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXUSERMETA</span></code></a> Format Types</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.USERMETA_FORMAT_DEFAULT">
+<span class="sig-name descname"><span class="pre">USERMETA_FORMAT_DEFAULT</span></span><a class="headerlink" href="#geosoft.gxapi.USERMETA_FORMAT_DEFAULT" title="Link to this definition">¶</a></dt>
+<dd><p>Use the standard type for the system</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">USERMETA_FORMAT_DEFAULT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.USERMETA_FORMAT_ISO">
+<span class="sig-name descname"><span class="pre">USERMETA_FORMAT_ISO</span></span><a class="headerlink" href="#geosoft.gxapi.USERMETA_FORMAT_ISO" title="Link to this definition">¶</a></dt>
+<dd><p>ISO 19139 standard</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id29">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">USERMETA_FORMAT_ISO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.USERMETA_FORMAT_FGDC">
+<span class="sig-name descname"><span class="pre">USERMETA_FORMAT_FGDC</span></span><a class="headerlink" href="#geosoft.gxapi.USERMETA_FORMAT_FGDC" title="Link to this definition">¶</a></dt>
+<dd><p>FGDC Metadata Standard</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id30">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">USERMETA_FORMAT_FGDC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id30" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXUSERMETA class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

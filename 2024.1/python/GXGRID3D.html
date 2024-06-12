@@ -1,0 +1,621 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXGRID3D class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXGRID3D class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">GXGRID3D class</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D"><code class="docutils literal notranslate"><span class="pre">GXGRID3D</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.__init__"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.fill_double"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.fill_double()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.fill_thematic"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.fill_thematic()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.fill_vector"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.fill_vector()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.get_double_stats"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.get_double_stats()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.get_elements_in_block_x"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.get_elements_in_block_x()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.get_elements_in_block_y"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.get_elements_in_block_y()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.get_elements_in_block_z"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.get_elements_in_block_z()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.get_thematic_stats"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.get_thematic_stats()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.get_tpat"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.get_tpat()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.get_type"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.get_type()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.get_vector_stats"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.get_vector_stats()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.is_double"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.is_double()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.is_null"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.is_thematic"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.is_thematic()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.is_vector"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.is_vector()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.null"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.read_x"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.read_x()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.read_y"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.read_y()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.read_z"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.read_z()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.set_tpat"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.set_tpat()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.write_x"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.write_x()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.write_y"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.write_y()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGRID3D.write_z"><code class="docutils literal notranslate"><span class="pre">GXGRID3D.write_z()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#grid3d-type-constants">GRID3D_TYPE constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GRID3D_DOUBLE"><code class="docutils literal notranslate"><span class="pre">GRID3D_DOUBLE</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.GRID3D_DOUBLE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GRID3D_VECTOR"><code class="docutils literal notranslate"><span class="pre">GRID3D_VECTOR</span></code></a></li>
+<li><a class="reference internal" href="#id21"><code class="docutils literal notranslate"><span class="pre">gxapi.GRID3D_VECTOR</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GRID3D_THEMATIC"><code class="docutils literal notranslate"><span class="pre">GRID3D_THEMATIC</span></code></a></li>
+<li><a class="reference internal" href="#id22"><code class="docutils literal notranslate"><span class="pre">gxapi.GRID3D_THEMATIC</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXGRID3D.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="gxgrid3d-class">
+<span id="gxgrid3d"></span><h1>GXGRID3D class<a class="headerlink" href="#gxgrid3d-class" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXGRID3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D" title="Link to this definition">¶</a></dt>
+<dd><p>GXGRID3D class.</p>
+<p>High Performance 3D Grid.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.fill_double">
+<span class="sig-name descname"><span class="pre">fill_double</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.fill_double"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.fill_double" title="Link to this definition">¶</a></dt>
+<dd><p>Fill the grid3d with a single double value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>float</em>) – Fill Value</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.fill_thematic">
+<span class="sig-name descname"><span class="pre">fill_thematic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.fill_thematic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.fill_thematic" title="Link to this definition">¶</a></dt>
+<dd><p>Fill the grid3d with a single thematic value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>int</em>) – Fill Value</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.fill_vector">
+<span class="sig-name descname"><span class="pre">fill_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.fill_vector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.fill_vector" title="Link to this definition">¶</a></dt>
+<dd><p>Fill the grid3d with a single vector value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value_x</strong> (<em>float</em>) – Fill Value X</p></li>
+<li><p><strong>value_y</strong> (<em>float</em>) – Fill Value Y</p></li>
+<li><p><strong>value_z</strong> (<em>float</em>) – Fill Value Z</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.get_double_stats">
+<span class="sig-name descname"><span class="pre">get_double_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_valid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_dummies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stddev</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.get_double_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.get_double_stats" title="Link to this definition">¶</a></dt>
+<dd><p>Get Double statistics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_valid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of valid values</p></li>
+<li><p><strong>num_dummies</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of invalid values</p></li>
+<li><p><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Min value</p></li>
+<li><p><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum value</p></li>
+<li><p><strong>mean</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Mean value</p></li>
+<li><p><strong>stddev</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Standard Deviation</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.get_elements_in_block_x">
+<span class="sig-name descname"><span class="pre">get_elements_in_block_x</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.get_elements_in_block_x"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.get_elements_in_block_x" title="Link to this definition">¶</a></dt>
+<dd><p>Get the number of cells in the block in the X direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.get_elements_in_block_y">
+<span class="sig-name descname"><span class="pre">get_elements_in_block_y</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.get_elements_in_block_y"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.get_elements_in_block_y" title="Link to this definition">¶</a></dt>
+<dd><p>Get the number of cells in the block in the Y direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.get_elements_in_block_z">
+<span class="sig-name descname"><span class="pre">get_elements_in_block_z</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.get_elements_in_block_z"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.get_elements_in_block_z" title="Link to this definition">¶</a></dt>
+<dd><p>Get the number of cells in the block in the Z direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.get_thematic_stats">
+<span class="sig-name descname"><span class="pre">get_thematic_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_valid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_dummies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stddev</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.get_thematic_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.get_thematic_stats" title="Link to this definition">¶</a></dt>
+<dd><p>Get Thematic Data statistics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_valid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of valid values</p></li>
+<li><p><strong>num_dummies</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of invalid values</p></li>
+<li><p><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Min value</p></li>
+<li><p><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Maximum value</p></li>
+<li><p><strong>mean</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Mean value</p></li>
+<li><p><strong>stddev</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Standard Deviation</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.get_tpat">
+<span class="sig-name descname"><span class="pre">get_tpat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ipj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.get_tpat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.get_tpat" title="Link to this definition">¶</a></dt>
+<dd><p>Get the TPAT from the thematic grid3d.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ipj</strong> (<a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><em>GXTPAT</em></a>) – <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTPAT</span></code></a> object</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.get_type">
+<span class="sig-name descname"><span class="pre">get_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.get_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.get_type" title="Link to this definition">¶</a></dt>
+<dd><p>Get the type of this GRID3D</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.get_vector_stats">
+<span class="sig-name descname"><span class="pre">get_vector_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_valid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_dummies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mean_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mean_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mean_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stddev_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stddev_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stddev_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.get_vector_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.get_vector_stats" title="Link to this definition">¶</a></dt>
+<dd><p>Get Vector Data statistics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_valid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of valid values</p></li>
+<li><p><strong>num_dummies</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of invalid values</p></li>
+<li><p><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Min X value</p></li>
+<li><p><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Min Y value</p></li>
+<li><p><strong>min_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Min Z value</p></li>
+<li><p><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum X value</p></li>
+<li><p><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum Y value</p></li>
+<li><p><strong>max_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum Z value</p></li>
+<li><p><strong>mean_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Mean X value</p></li>
+<li><p><strong>mean_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Mean Y value</p></li>
+<li><p><strong>mean_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Mean Z value</p></li>
+<li><p><strong>stddev_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Standard X Deviation</p></li>
+<li><p><strong>stddev_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Standard Y Deviation</p></li>
+<li><p><strong>stddev_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Standard Z Deviation</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.is_double">
+<span class="sig-name descname"><span class="pre">is_double</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.is_double"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.is_double" title="Link to this definition">¶</a></dt>
+<dd><p>Does this grid3d contain floating point data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.is_null" title="Link to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.is_thematic">
+<span class="sig-name descname"><span class="pre">is_thematic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.is_thematic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.is_thematic" title="Link to this definition">¶</a></dt>
+<dd><p>Does this grid3d contain thematic data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.is_vector">
+<span class="sig-name descname"><span class="pre">is_vector</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.is_vector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.is_vector" title="Link to this definition">¶</a></dt>
+<dd><p>Does this grid3d contain vector data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.null" title="Link to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXGRID3D" title="geosoft.gxapi.GXGRID3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGRID3D</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXGRID3D" title="geosoft.gxapi.GXGRID3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGRID3D</span></code></a></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXGRID3D" title="geosoft.gxapi.GXGRID3D.GXGRID3D">GXGRID3D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.read_x">
+<span class="sig-name descname"><span class="pre">read_x</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VV</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.read_x"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.read_x" title="Link to this definition">¶</a></dt>
+<dd><p>Read data from a GRID3D in the x direction (MOST EFFICIENT)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – X location</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – Y location</p></li>
+<li><p><strong>z</strong> (<em>int</em>) – Z location</p></li>
+<li><p><strong>VV</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – VV Containing Data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.read_y">
+<span class="sig-name descname"><span class="pre">read_y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VV</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.read_y"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.read_y" title="Link to this definition">¶</a></dt>
+<dd><p>Read data from a GRID3D in the Y direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – X location</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – Y location</p></li>
+<li><p><strong>z</strong> (<em>int</em>) – Z location</p></li>
+<li><p><strong>VV</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – VV Containing Data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.read_z">
+<span class="sig-name descname"><span class="pre">read_z</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VV</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.read_z"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.read_z" title="Link to this definition">¶</a></dt>
+<dd><p>Read data from a GRID3D in the Z direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – X location</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – Y location</p></li>
+<li><p><strong>z</strong> (<em>int</em>) – Z location</p></li>
+<li><p><strong>VV</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – VV Containing Data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.set_tpat">
+<span class="sig-name descname"><span class="pre">set_tpat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ipj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.set_tpat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.set_tpat" title="Link to this definition">¶</a></dt>
+<dd><p>Set the TPAT of a thematic grid3d.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ipj</strong> (<a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><em>GXTPAT</em></a>) – <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTPAT</span></code></a> object</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.write_x">
+<span class="sig-name descname"><span class="pre">write_x</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VV</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.write_x"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.write_x" title="Link to this definition">¶</a></dt>
+<dd><p>Write data to a GRID3D in the X direction (MOST EFFICIENT)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – X location</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – Y location</p></li>
+<li><p><strong>z</strong> (<em>int</em>) – Z location</p></li>
+<li><p><strong>VV</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – VV Containing Data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.write_y">
+<span class="sig-name descname"><span class="pre">write_y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VV</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.write_y"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.write_y" title="Link to this definition">¶</a></dt>
+<dd><p>Write data to a GRID3D in the Y direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – X location</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – Y location</p></li>
+<li><p><strong>z</strong> (<em>int</em>) – Z location</p></li>
+<li><p><strong>VV</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – VV Containing Data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGRID3D.write_z">
+<span class="sig-name descname"><span class="pre">write_z</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VV</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGRID3D.html#GXGRID3D.write_z"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGRID3D.write_z" title="Link to this definition">¶</a></dt>
+<dd><p>Write data to a GRID3D in the Z direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – X location</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – Y location</p></li>
+<li><p><strong>z</strong> (<em>int</em>) – Z location</p></li>
+<li><p><strong>VV</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – VV Containing Data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+</dd></dl>
+
+<section id="grid3d-type-constants">
+<span id="grid3d-type"></span><h2>GRID3D_TYPE constants<a class="headerlink" href="#grid3d-type-constants" title="Link to this heading">¶</a></h2>
+<p>Type of Voxset</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GRID3D_DOUBLE">
+<span class="sig-name descname"><span class="pre">GRID3D_DOUBLE</span></span><a class="headerlink" href="#geosoft.gxapi.GRID3D_DOUBLE" title="Link to this definition">¶</a></dt>
+<dd><p>DOUBLE</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GRID3D_DOUBLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GRID3D_VECTOR">
+<span class="sig-name descname"><span class="pre">GRID3D_VECTOR</span></span><a class="headerlink" href="#geosoft.gxapi.GRID3D_VECTOR" title="Link to this definition">¶</a></dt>
+<dd><p>VECTOR</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id21">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GRID3D_VECTOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id21" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GRID3D_THEMATIC">
+<span class="sig-name descname"><span class="pre">GRID3D_THEMATIC</span></span><a class="headerlink" href="#geosoft.gxapi.GRID3D_THEMATIC" title="Link to this definition">¶</a></dt>
+<dd><p>THEMATIC</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id22">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GRID3D_THEMATIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id22" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXGRID3D class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>geosoft.gxpy.geometry &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.geometry</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.geometry.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-geosoft.gxpy.geometry">
+<span id="geosoft-gxpy-geometry"></span><h1>geosoft.gxpy.geometry<a class="headerlink" href="#module-geosoft.gxpy.geometry" title="Link to this heading">¶</a></h1>
+<p>Spatial geometric objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Classes<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="field-list simple">
+<dt class="field-odd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Geometry</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>base class for all geometries</p>
+</dd>
+<dt class="field-even"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Point</span></code><span class="colon">:</span></dt>
+<dd class="field-even"><p>(x, y, z) point</p>
+</dd>
+<dt class="field-odd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Point2</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>pair of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Point</span></code> instances that define a line, or box, etc.</p>
+</dd>
+<dt class="field-even"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PPoint</span></code><span class="colon">:</span></dt>
+<dd class="field-even"><p>multiple <code class="xref py py-obj docutils literal notranslate"><span class="pre">Point</span></code> instances</p>
+</dd>
+<dt class="field-odd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mesh</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>mesh surface made up of triangular faces defined by verticies</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Regression tests provide usage examples: 
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_geometry.py">geometry tests</a></p>
+</div>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_geo_cs</span></code>(g, geo_class, coordinate_system, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_t</span></code>(s)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">extent_union</span></code>(g1, g2)</p></td>
+<td><p>Return the spatial union of two spatial objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">first_coordinate_system</span></code>(geo_objects)</p></td>
+<td><p>Return the first found known coordinate system in the list</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Geometry</span></code>([coordinate_system, name, gxobj])</p></td>
+<td><p>Geometry base class for all geometries and spatial objects in Geosoft.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mesh</span></code>(mesh[, coordinate_system])</p></td>
+<td><p>Mesh - set of triangular faces, which are indexes into verticies.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">PPoint</span></code>(xyz[, coordinate_system, z, name])</p></td>
+<td><p>Poly-Point class.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Point</span></code>(p[, coordinate_system, name, z])</p></td>
+<td><p>Spatial location (x,y,z).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Point2</span></code>(p[, coordinate_system, name, z])</p></td>
+<td><p>Two points, for a line, or a rectangle, or a cube.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Exceptions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeometryException</span></code>(message)</p></td>
+<td><p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.geometry" title="geosoft.gxpy.geometry"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry</span></code></a>.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.geometry</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

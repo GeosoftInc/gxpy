@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXSQLSRV class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXSQLSRV class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">GXSQLSRV class</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSQLSRV"><code class="docutils literal notranslate"><span class="pre">GXSQLSRV</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSQLSRV.__init__"><code class="docutils literal notranslate"><span class="pre">GXSQLSRV.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSQLSRV.attach_mdf"><code class="docutils literal notranslate"><span class="pre">GXSQLSRV.attach_mdf()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSQLSRV.detach_db"><code class="docutils literal notranslate"><span class="pre">GXSQLSRV.detach_db()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSQLSRV.get_database_languages_lst"><code class="docutils literal notranslate"><span class="pre">GXSQLSRV.get_database_languages_lst()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSQLSRV.get_databases_lst"><code class="docutils literal notranslate"><span class="pre">GXSQLSRV.get_databases_lst()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSQLSRV.get_login_gui"><code class="docutils literal notranslate"><span class="pre">GXSQLSRV.get_login_gui()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSQLSRV.get_servers_lst"><code class="docutils literal notranslate"><span class="pre">GXSQLSRV.get_servers_lst()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSQLSRV.is_null"><code class="docutils literal notranslate"><span class="pre">GXSQLSRV.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSQLSRV.null"><code class="docutils literal notranslate"><span class="pre">GXSQLSRV.null()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mfcsql-driver-constants">MFCSQL_DRIVER constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.MFCSQL_DRIVER_NOPROMPT"><code class="docutils literal notranslate"><span class="pre">MFCSQL_DRIVER_NOPROMPT</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.MFCSQL_DRIVER_NOPROMPT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.MFCSQL_DRIVER_COMPLETE"><code class="docutils literal notranslate"><span class="pre">MFCSQL_DRIVER_COMPLETE</span></code></a></li>
+<li><a class="reference internal" href="#id6"><code class="docutils literal notranslate"><span class="pre">gxapi.MFCSQL_DRIVER_COMPLETE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.MFCSQL_DRIVER_PROMPT"><code class="docutils literal notranslate"><span class="pre">MFCSQL_DRIVER_PROMPT</span></code></a></li>
+<li><a class="reference internal" href="#id7"><code class="docutils literal notranslate"><span class="pre">gxapi.MFCSQL_DRIVER_PROMPT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.MFCSQL_DRIVER_COMPLETE_REQUIRED"><code class="docutils literal notranslate"><span class="pre">MFCSQL_DRIVER_COMPLETE_REQUIRED</span></code></a></li>
+<li><a class="reference internal" href="#id8"><code class="docutils literal notranslate"><span class="pre">gxapi.MFCSQL_DRIVER_COMPLETE_REQUIRED</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXSQLSRV.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="gxsqlsrv-class">
+<span id="gxsqlsrv"></span><h1>GXSQLSRV class<a class="headerlink" href="#gxsqlsrv-class" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSQLSRV">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXSQLSRV</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSQLSRV.html#GXSQLSRV"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV" title="Link to this definition">¶</a></dt>
+<dd><p>GXSQLSRV class.</p>
+<p>SQL Server and MSDE utility functions</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSQLSRV.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSQLSRV.html#GXSQLSRV.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSQLSRV.attach_mdf">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">attach_mdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">server</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mdf_file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ldf_file_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSQLSRV.html#GXSQLSRV.attach_mdf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.attach_mdf" title="Link to this definition">¶</a></dt>
+<dd><p>Attaches an MDF SQL server file to a server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>server</strong> (<em>str</em>) – SQL server to use</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – User name (if blank assume NT Integrated Security)</p></li>
+<li><p><strong>password</strong> (<em>str</em>) – Password</p></li>
+<li><p><strong>db</strong> (<em>str</em>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> name</p></li>
+<li><p><strong>mdf_file_name</strong> (<em>str</em>) – MDF name</p></li>
+<li><p><strong>ldf_file_name</strong> (<em>str</em>) – LDF name (if blank, tries single db attach)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0 - OK
+1 - <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Operation Canceled
+Terminates on Error</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The file’s path need to be visible as local files on the server.
+Network drives and substitutes may not work.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSQLSRV.detach_db">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">detach_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">server</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSQLSRV.html#GXSQLSRV.detach_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.detach_db" title="Link to this definition">¶</a></dt>
+<dd><p>Detaches a SQL Server database from a server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>server</strong> (<em>str</em>) – SQL server to use</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – User name (if blank assume NT Integrated Security)</p></li>
+<li><p><strong>password</strong> (<em>str</em>) – Password</p></li>
+<li><p><strong>db</strong> (<em>str</em>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0 - OK
+1 - <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Operation Canceled</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSQLSRV.get_database_languages_lst">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_database_languages_lst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_auth</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSQLSRV.html#GXSQLSRV.get_database_languages_lst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.get_database_languages_lst" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of the languages into <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>server</strong> (<em>str</em>) – SQL server to use</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – User name</p></li>
+<li><p><strong>password</strong> (<em>str</em>) – Password</p></li>
+<li><p><strong>win_auth</strong> (<em>int</em>) – 0 - SQL authentication, 1 - NT integrated securty</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of languages</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSQLSRV.get_databases_lst">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_databases_lst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_auth</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSQLSRV.html#GXSQLSRV.get_databases_lst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.get_databases_lst" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of the database into <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>server</strong> (<em>str</em>) – SQL server to use</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – User name</p></li>
+<li><p><strong>password</strong> (<em>str</em>) – Password</p></li>
+<li><p><strong>win_auth</strong> (<em>int</em>) – 0 - SQL authentication, 1 - NT integrated securty</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of database</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSQLSRV.get_login_gui">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_login_gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">server</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_auth</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSQLSRV.html#GXSQLSRV.get_login_gui"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.get_login_gui" title="Link to this definition">¶</a></dt>
+<dd><p>Get/Test login information to SQL Server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>server</strong> (<em>str</em>) – SQL server to use</p></li>
+<li><p><strong>user</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – User name (default &amp; returned)</p></li>
+<li><p><strong>password</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Password (default &amp; returned)</p></li>
+<li><p><strong>mode</strong> (<em>int</em>) – <a class="reference internal" href="#mfcsql-driver"><span class="std std-ref">MFCSQL_DRIVER constants</span></a></p></li>
+<li><p><strong>win_auth</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Windows Authentication (default &amp; returned)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSQLSRV.get_servers_lst">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_servers_lst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSQLSRV.html#GXSQLSRV.get_servers_lst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.get_servers_lst" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of the visible servers into <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of servers</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSQLSRV.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSQLSRV.html#GXSQLSRV.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.is_null" title="Link to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSQLSRV.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSQLSRV.html#GXSQLSRV.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSQLSRV.null" title="Link to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXSQLSRV" title="geosoft.gxapi.GXSQLSRV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSQLSRV</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXSQLSRV" title="geosoft.gxapi.GXSQLSRV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSQLSRV</span></code></a></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXSQLSRV" title="geosoft.gxapi.GXSQLSRV.GXSQLSRV">GXSQLSRV</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<section id="mfcsql-driver-constants">
+<span id="mfcsql-driver"></span><h2>MFCSQL_DRIVER constants<a class="headerlink" href="#mfcsql-driver-constants" title="Link to this heading">¶</a></h2>
+<p>SQL Server Driver</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.MFCSQL_DRIVER_NOPROMPT">
+<span class="sig-name descname"><span class="pre">MFCSQL_DRIVER_NOPROMPT</span></span><a class="headerlink" href="#geosoft.gxapi.MFCSQL_DRIVER_NOPROMPT" title="Link to this definition">¶</a></dt>
+<dd><p>No dialog box, Error if authentication parameters are wrong</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MFCSQL_DRIVER_NOPROMPT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.MFCSQL_DRIVER_COMPLETE">
+<span class="sig-name descname"><span class="pre">MFCSQL_DRIVER_COMPLETE</span></span><a class="headerlink" href="#geosoft.gxapi.MFCSQL_DRIVER_COMPLETE" title="Link to this definition">¶</a></dt>
+<dd><p>Only shows dialog box if authentication parameters are wrong</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MFCSQL_DRIVER_COMPLETE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id6" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.MFCSQL_DRIVER_PROMPT">
+<span class="sig-name descname"><span class="pre">MFCSQL_DRIVER_PROMPT</span></span><a class="headerlink" href="#geosoft.gxapi.MFCSQL_DRIVER_PROMPT" title="Link to this definition">¶</a></dt>
+<dd><p>Always show dialog box, with option to change parameter</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id7">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MFCSQL_DRIVER_PROMPT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id7" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.MFCSQL_DRIVER_COMPLETE_REQUIRED">
+<span class="sig-name descname"><span class="pre">MFCSQL_DRIVER_COMPLETE_REQUIRED</span></span><a class="headerlink" href="#geosoft.gxapi.MFCSQL_DRIVER_COMPLETE_REQUIRED" title="Link to this definition">¶</a></dt>
+<dd><p>Same as <a class="reference internal" href="#id6" title="geosoft.gxapi.MFCSQL_DRIVER_COMPLETE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MFCSQL_DRIVER_COMPLETE</span></code></a> except only missing parameters are editable</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MFCSQL_DRIVER_COMPLETE_REQUIRED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id8" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXSQLSRV class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

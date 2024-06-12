@@ -1,0 +1,1422 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXGEOSOFT class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXGEOSOFT class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">GXGEOSOFT class</a><ul>
+<li><a class="reference internal" href="#crc-init-value-constants">CRC_INIT_VALUE constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.CRC_INIT_VALUE"><code class="docutils literal notranslate"><span class="pre">CRC_INIT_VALUE</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.CRC_INIT_VALUE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#date-format-constants">DATE_FORMAT constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.DATE_FORMAT_YYYYMMDD"><code class="docutils literal notranslate"><span class="pre">DATE_FORMAT_YYYYMMDD</span></code></a></li>
+<li><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">gxapi.DATE_FORMAT_YYYYMMDD</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.DATE_FORMAT_DDMMYYYY"><code class="docutils literal notranslate"><span class="pre">DATE_FORMAT_DDMMYYYY</span></code></a></li>
+<li><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">gxapi.DATE_FORMAT_DDMMYYYY</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.DATE_FORMAT_MMDDYYYY"><code class="docutils literal notranslate"><span class="pre">DATE_FORMAT_MMDDYYYY</span></code></a></li>
+<li><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">gxapi.DATE_FORMAT_MMDDYYYY</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geo-dummy-constants">GEO_DUMMY constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.iDUMMY"><code class="docutils literal notranslate"><span class="pre">iDUMMY</span></code></a></li>
+<li><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">gxapi.iDUMMY</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.rDUMMY"><code class="docutils literal notranslate"><span class="pre">rDUMMY</span></code></a></li>
+<li><a class="reference internal" href="#id5"><code class="docutils literal notranslate"><span class="pre">gxapi.rDUMMY</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geo-full-limits-constants">GEO_FULL_LIMITS constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_S1MX"><code class="docutils literal notranslate"><span class="pre">GS_S1MX</span></code></a></li>
+<li><a class="reference internal" href="#id6"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_S1MX</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_S1MN"><code class="docutils literal notranslate"><span class="pre">GS_S1MN</span></code></a></li>
+<li><a class="reference internal" href="#id7"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_S1MN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_S1DM"><code class="docutils literal notranslate"><span class="pre">GS_S1DM</span></code></a></li>
+<li><a class="reference internal" href="#id8"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_S1DM</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_U1MX"><code class="docutils literal notranslate"><span class="pre">GS_U1MX</span></code></a></li>
+<li><a class="reference internal" href="#id9"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_U1MX</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_U1MN"><code class="docutils literal notranslate"><span class="pre">GS_U1MN</span></code></a></li>
+<li><a class="reference internal" href="#id10"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_U1MN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_U1DM"><code class="docutils literal notranslate"><span class="pre">GS_U1DM</span></code></a></li>
+<li><a class="reference internal" href="#id11"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_U1DM</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_S2MX"><code class="docutils literal notranslate"><span class="pre">GS_S2MX</span></code></a></li>
+<li><a class="reference internal" href="#id12"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_S2MX</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_S2MN"><code class="docutils literal notranslate"><span class="pre">GS_S2MN</span></code></a></li>
+<li><a class="reference internal" href="#id13"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_S2MN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_S2DM"><code class="docutils literal notranslate"><span class="pre">GS_S2DM</span></code></a></li>
+<li><a class="reference internal" href="#id14"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_S2DM</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_U2MX"><code class="docutils literal notranslate"><span class="pre">GS_U2MX</span></code></a></li>
+<li><a class="reference internal" href="#id15"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_U2MX</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_U2MN"><code class="docutils literal notranslate"><span class="pre">GS_U2MN</span></code></a></li>
+<li><a class="reference internal" href="#id16"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_U2MN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_U2DM"><code class="docutils literal notranslate"><span class="pre">GS_U2DM</span></code></a></li>
+<li><a class="reference internal" href="#id17"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_U2DM</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_S4MX"><code class="docutils literal notranslate"><span class="pre">GS_S4MX</span></code></a></li>
+<li><a class="reference internal" href="#id18"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_S4MX</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_S4MN"><code class="docutils literal notranslate"><span class="pre">GS_S4MN</span></code></a></li>
+<li><a class="reference internal" href="#id19"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_S4MN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_S4DM"><code class="docutils literal notranslate"><span class="pre">GS_S4DM</span></code></a></li>
+<li><a class="reference internal" href="#id20"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_S4DM</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_U4MX"><code class="docutils literal notranslate"><span class="pre">GS_U4MX</span></code></a></li>
+<li><a class="reference internal" href="#id21"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_U4MX</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_U4MN"><code class="docutils literal notranslate"><span class="pre">GS_U4MN</span></code></a></li>
+<li><a class="reference internal" href="#id22"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_U4MN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_U4DM"><code class="docutils literal notranslate"><span class="pre">GS_U4DM</span></code></a></li>
+<li><a class="reference internal" href="#id23"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_U4DM</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_S8MX"><code class="docutils literal notranslate"><span class="pre">GS_S8MX</span></code></a></li>
+<li><a class="reference internal" href="#id24"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_S8MX</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_S8MN"><code class="docutils literal notranslate"><span class="pre">GS_S8MN</span></code></a></li>
+<li><a class="reference internal" href="#id25"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_S8MN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_S8DM"><code class="docutils literal notranslate"><span class="pre">GS_S8DM</span></code></a></li>
+<li><a class="reference internal" href="#id26"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_S8DM</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_U8MX"><code class="docutils literal notranslate"><span class="pre">GS_U8MX</span></code></a></li>
+<li><a class="reference internal" href="#id27"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_U8MX</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_U8MN"><code class="docutils literal notranslate"><span class="pre">GS_U8MN</span></code></a></li>
+<li><a class="reference internal" href="#id28"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_U8MN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_U8DM"><code class="docutils literal notranslate"><span class="pre">GS_U8DM</span></code></a></li>
+<li><a class="reference internal" href="#id29"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_U8DM</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_R4MX"><code class="docutils literal notranslate"><span class="pre">GS_R4MX</span></code></a></li>
+<li><a class="reference internal" href="#id30"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_R4MX</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_R4MN"><code class="docutils literal notranslate"><span class="pre">GS_R4MN</span></code></a></li>
+<li><a class="reference internal" href="#id31"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_R4MN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_R4DM"><code class="docutils literal notranslate"><span class="pre">GS_R4DM</span></code></a></li>
+<li><a class="reference internal" href="#id32"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_R4DM</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_R8MX"><code class="docutils literal notranslate"><span class="pre">GS_R8MX</span></code></a></li>
+<li><a class="reference internal" href="#id33"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_R8MX</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_R8MN"><code class="docutils literal notranslate"><span class="pre">GS_R8MN</span></code></a></li>
+<li><a class="reference internal" href="#id34"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_R8MN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_R8DM"><code class="docutils literal notranslate"><span class="pre">GS_R8DM</span></code></a></li>
+<li><a class="reference internal" href="#id35"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_R8DM</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_R4EPSILON"><code class="docutils literal notranslate"><span class="pre">GS_R4EPSILON</span></code></a></li>
+<li><a class="reference internal" href="#id36"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_R4EPSILON</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_R8EPSILON"><code class="docutils literal notranslate"><span class="pre">GS_R8EPSILON</span></code></a></li>
+<li><a class="reference internal" href="#id37"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_R8EPSILON</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geo-limits-constants">GEO_LIMITS constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.iMIN"><code class="docutils literal notranslate"><span class="pre">iMIN</span></code></a></li>
+<li><a class="reference internal" href="#id38"><code class="docutils literal notranslate"><span class="pre">gxapi.iMIN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.iMAX"><code class="docutils literal notranslate"><span class="pre">iMAX</span></code></a></li>
+<li><a class="reference internal" href="#id39"><code class="docutils literal notranslate"><span class="pre">gxapi.iMAX</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.rMIN"><code class="docutils literal notranslate"><span class="pre">rMIN</span></code></a></li>
+<li><a class="reference internal" href="#id40"><code class="docutils literal notranslate"><span class="pre">gxapi.rMIN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.rMAX"><code class="docutils literal notranslate"><span class="pre">rMAX</span></code></a></li>
+<li><a class="reference internal" href="#id41"><code class="docutils literal notranslate"><span class="pre">gxapi.rMAX</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geo-string-size-constants">GEO_STRING_SIZE constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.STR_DEFAULT"><code class="docutils literal notranslate"><span class="pre">STR_DEFAULT</span></code></a></li>
+<li><a class="reference internal" href="#id42"><code class="docutils literal notranslate"><span class="pre">gxapi.STR_DEFAULT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.STR_DEFAULT_SHORT"><code class="docutils literal notranslate"><span class="pre">STR_DEFAULT_SHORT</span></code></a></li>
+<li><a class="reference internal" href="#id43"><code class="docutils literal notranslate"><span class="pre">gxapi.STR_DEFAULT_SHORT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.STR_DEFAULT_LONG"><code class="docutils literal notranslate"><span class="pre">STR_DEFAULT_LONG</span></code></a></li>
+<li><a class="reference internal" href="#id44"><code class="docutils literal notranslate"><span class="pre">gxapi.STR_DEFAULT_LONG</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.STR_ERROR"><code class="docutils literal notranslate"><span class="pre">STR_ERROR</span></code></a></li>
+<li><a class="reference internal" href="#id45"><code class="docutils literal notranslate"><span class="pre">gxapi.STR_ERROR</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.STR_VERY_LONG"><code class="docutils literal notranslate"><span class="pre">STR_VERY_LONG</span></code></a></li>
+<li><a class="reference internal" href="#id46"><code class="docutils literal notranslate"><span class="pre">gxapi.STR_VERY_LONG</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.STR_VIEW"><code class="docutils literal notranslate"><span class="pre">STR_VIEW</span></code></a></li>
+<li><a class="reference internal" href="#id47"><code class="docutils literal notranslate"><span class="pre">gxapi.STR_VIEW</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.STR_GROUP"><code class="docutils literal notranslate"><span class="pre">STR_GROUP</span></code></a></li>
+<li><a class="reference internal" href="#id48"><code class="docutils literal notranslate"><span class="pre">gxapi.STR_GROUP</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.STR_VIEW_GROUP"><code class="docutils literal notranslate"><span class="pre">STR_VIEW_GROUP</span></code></a></li>
+<li><a class="reference internal" href="#id49"><code class="docutils literal notranslate"><span class="pre">gxapi.STR_VIEW_GROUP</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.STR_FILE"><code class="docutils literal notranslate"><span class="pre">STR_FILE</span></code></a></li>
+<li><a class="reference internal" href="#id50"><code class="docutils literal notranslate"><span class="pre">gxapi.STR_FILE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.STR_MULTI_FILE"><code class="docutils literal notranslate"><span class="pre">STR_MULTI_FILE</span></code></a></li>
+<li><a class="reference internal" href="#id51"><code class="docutils literal notranslate"><span class="pre">gxapi.STR_MULTI_FILE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.STR_DB_SYMBOL"><code class="docutils literal notranslate"><span class="pre">STR_DB_SYMBOL</span></code></a></li>
+<li><a class="reference internal" href="#id52"><code class="docutils literal notranslate"><span class="pre">gxapi.STR_DB_SYMBOL</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.STR_GXF"><code class="docutils literal notranslate"><span class="pre">STR_GXF</span></code></a></li>
+<li><a class="reference internal" href="#id53"><code class="docutils literal notranslate"><span class="pre">gxapi.STR_GXF</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.STR_MAX_PATH"><code class="docutils literal notranslate"><span class="pre">STR_MAX_PATH</span></code></a></li>
+<li><a class="reference internal" href="#id54"><code class="docutils literal notranslate"><span class="pre">gxapi.STR_MAX_PATH</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.STR_MULTI_PATH"><code class="docutils literal notranslate"><span class="pre">STR_MULTI_PATH</span></code></a></li>
+<li><a class="reference internal" href="#id55"><code class="docutils literal notranslate"><span class="pre">gxapi.STR_MULTI_PATH</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_MAX_PATH"><code class="docutils literal notranslate"><span class="pre">GS_MAX_PATH</span></code></a></li>
+<li><a class="reference internal" href="#id56"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_MAX_PATH</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_MULTI_PATH"><code class="docutils literal notranslate"><span class="pre">GS_MULTI_PATH</span></code></a></li>
+<li><a class="reference internal" href="#id57"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_MULTI_PATH</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geo-var-constants">GEO_VAR constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_INT"><code class="docutils literal notranslate"><span class="pre">GS_INT</span></code></a></li>
+<li><a class="reference internal" href="#id58"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_INT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_REAL"><code class="docutils literal notranslate"><span class="pre">GS_REAL</span></code></a></li>
+<li><a class="reference internal" href="#id59"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_REAL</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gs-formats-constants">GS_FORMATS constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.FORMAT_DECIMAL"><code class="docutils literal notranslate"><span class="pre">FORMAT_DECIMAL</span></code></a></li>
+<li><a class="reference internal" href="#id60"><code class="docutils literal notranslate"><span class="pre">gxapi.FORMAT_DECIMAL</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FORMAT_SIG_DIG"><code class="docutils literal notranslate"><span class="pre">FORMAT_SIG_DIG</span></code></a></li>
+<li><a class="reference internal" href="#id61"><code class="docutils literal notranslate"><span class="pre">gxapi.FORMAT_SIG_DIG</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FORMAT_EXP"><code class="docutils literal notranslate"><span class="pre">FORMAT_EXP</span></code></a></li>
+<li><a class="reference internal" href="#id62"><code class="docutils literal notranslate"><span class="pre">gxapi.FORMAT_EXP</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FORMAT_TIME_COLON"><code class="docutils literal notranslate"><span class="pre">FORMAT_TIME_COLON</span></code></a></li>
+<li><a class="reference internal" href="#id63"><code class="docutils literal notranslate"><span class="pre">gxapi.FORMAT_TIME_COLON</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FORMAT_TIME_HMS"><code class="docutils literal notranslate"><span class="pre">FORMAT_TIME_HMS</span></code></a></li>
+<li><a class="reference internal" href="#id64"><code class="docutils literal notranslate"><span class="pre">gxapi.FORMAT_TIME_HMS</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FORMAT_TIME_HHMMSS"><code class="docutils literal notranslate"><span class="pre">FORMAT_TIME_HHMMSS</span></code></a></li>
+<li><a class="reference internal" href="#id65"><code class="docutils literal notranslate"><span class="pre">gxapi.FORMAT_TIME_HHMMSS</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FORMAT_DATE_YYYYMMDD"><code class="docutils literal notranslate"><span class="pre">FORMAT_DATE_YYYYMMDD</span></code></a></li>
+<li><a class="reference internal" href="#id66"><code class="docutils literal notranslate"><span class="pre">gxapi.FORMAT_DATE_YYYYMMDD</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FORMAT_DATE_DDMMYYYY"><code class="docutils literal notranslate"><span class="pre">FORMAT_DATE_DDMMYYYY</span></code></a></li>
+<li><a class="reference internal" href="#id67"><code class="docutils literal notranslate"><span class="pre">gxapi.FORMAT_DATE_DDMMYYYY</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FORMAT_DATE_MMDDYYYY"><code class="docutils literal notranslate"><span class="pre">FORMAT_DATE_MMDDYYYY</span></code></a></li>
+<li><a class="reference internal" href="#id68"><code class="docutils literal notranslate"><span class="pre">gxapi.FORMAT_DATE_MMDDYYYY</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FORMAT_GEOGRAPHIC"><code class="docutils literal notranslate"><span class="pre">FORMAT_GEOGRAPHIC</span></code></a></li>
+<li><a class="reference internal" href="#id69"><code class="docutils literal notranslate"><span class="pre">gxapi.FORMAT_GEOGRAPHIC</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FORMAT_GEOGRAPHIC_1"><code class="docutils literal notranslate"><span class="pre">FORMAT_GEOGRAPHIC_1</span></code></a></li>
+<li><a class="reference internal" href="#id70"><code class="docutils literal notranslate"><span class="pre">gxapi.FORMAT_GEOGRAPHIC_1</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FORMAT_GEOGRAPHIC_2"><code class="docutils literal notranslate"><span class="pre">FORMAT_GEOGRAPHIC_2</span></code></a></li>
+<li><a class="reference internal" href="#id71"><code class="docutils literal notranslate"><span class="pre">gxapi.FORMAT_GEOGRAPHIC_2</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FORMAT_GEOGRAPHIC_3"><code class="docutils literal notranslate"><span class="pre">FORMAT_GEOGRAPHIC_3</span></code></a></li>
+<li><a class="reference internal" href="#id72"><code class="docutils literal notranslate"><span class="pre">gxapi.FORMAT_GEOGRAPHIC_3</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gs-types-constants">GS_TYPES constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_BYTE"><code class="docutils literal notranslate"><span class="pre">GS_BYTE</span></code></a></li>
+<li><a class="reference internal" href="#id73"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_BYTE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_USHORT"><code class="docutils literal notranslate"><span class="pre">GS_USHORT</span></code></a></li>
+<li><a class="reference internal" href="#id74"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_USHORT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_SHORT"><code class="docutils literal notranslate"><span class="pre">GS_SHORT</span></code></a></li>
+<li><a class="reference internal" href="#id75"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_SHORT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_LONG"><code class="docutils literal notranslate"><span class="pre">GS_LONG</span></code></a></li>
+<li><a class="reference internal" href="#id76"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_LONG</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_FLOAT"><code class="docutils literal notranslate"><span class="pre">GS_FLOAT</span></code></a></li>
+<li><a class="reference internal" href="#id77"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_FLOAT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_DOUBLE"><code class="docutils literal notranslate"><span class="pre">GS_DOUBLE</span></code></a></li>
+<li><a class="reference internal" href="#id78"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DOUBLE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_UBYTE"><code class="docutils literal notranslate"><span class="pre">GS_UBYTE</span></code></a></li>
+<li><a class="reference internal" href="#id79"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_UBYTE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_ULONG"><code class="docutils literal notranslate"><span class="pre">GS_ULONG</span></code></a></li>
+<li><a class="reference internal" href="#id80"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_ULONG</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_LONG64"><code class="docutils literal notranslate"><span class="pre">GS_LONG64</span></code></a></li>
+<li><a class="reference internal" href="#id81"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_LONG64</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_ULONG64"><code class="docutils literal notranslate"><span class="pre">GS_ULONG64</span></code></a></li>
+<li><a class="reference internal" href="#id82"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_ULONG64</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_FLOAT3D"><code class="docutils literal notranslate"><span class="pre">GS_FLOAT3D</span></code></a></li>
+<li><a class="reference internal" href="#id83"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_FLOAT3D</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_DOUBLE3D"><code class="docutils literal notranslate"><span class="pre">GS_DOUBLE3D</span></code></a></li>
+<li><a class="reference internal" href="#id84"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DOUBLE3D</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_FLOAT2D"><code class="docutils literal notranslate"><span class="pre">GS_FLOAT2D</span></code></a></li>
+<li><a class="reference internal" href="#id85"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_FLOAT2D</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_DOUBLE2D"><code class="docutils literal notranslate"><span class="pre">GS_DOUBLE2D</span></code></a></li>
+<li><a class="reference internal" href="#id86"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DOUBLE2D</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_MAXTYPE"><code class="docutils literal notranslate"><span class="pre">GS_MAXTYPE</span></code></a></li>
+<li><a class="reference internal" href="#id87"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_MAXTYPE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GS_TYPE_DEFAULT"><code class="docutils literal notranslate"><span class="pre">GS_TYPE_DEFAULT</span></code></a></li>
+<li><a class="reference internal" href="#id88"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_TYPE_DEFAULT</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sys-crypt-key-constants">SYS_CRYPT_KEY constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.SYS_CRYPT_LICENSE_KEY"><code class="docutils literal notranslate"><span class="pre">SYS_CRYPT_LICENSE_KEY</span></code></a></li>
+<li><a class="reference internal" href="#id89"><code class="docutils literal notranslate"><span class="pre">gxapi.SYS_CRYPT_LICENSE_KEY</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.SYS_CRYPT_COMPUTER_ID"><code class="docutils literal notranslate"><span class="pre">SYS_CRYPT_COMPUTER_ID</span></code></a></li>
+<li><a class="reference internal" href="#id90"><code class="docutils literal notranslate"><span class="pre">gxapi.SYS_CRYPT_COMPUTER_ID</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.SYS_CRYPT_GLOBAL_ID"><code class="docutils literal notranslate"><span class="pre">SYS_CRYPT_GLOBAL_ID</span></code></a></li>
+<li><a class="reference internal" href="#id91"><code class="docutils literal notranslate"><span class="pre">gxapi.SYS_CRYPT_GLOBAL_ID</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#time-format-constants">TIME_FORMAT constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.TIME_FORMAT_COLON"><code class="docutils literal notranslate"><span class="pre">TIME_FORMAT_COLON</span></code></a></li>
+<li><a class="reference internal" href="#id92"><code class="docutils literal notranslate"><span class="pre">gxapi.TIME_FORMAT_COLON</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.TIME_FORMAT_HMS"><code class="docutils literal notranslate"><span class="pre">TIME_FORMAT_HMS</span></code></a></li>
+<li><a class="reference internal" href="#id93"><code class="docutils literal notranslate"><span class="pre">gxapi.TIME_FORMAT_HMS</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXGEOSOFT.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="gxgeosoft-class">
+<span id="gxgeosoft"></span><h1>GXGEOSOFT class<a class="headerlink" href="#gxgeosoft-class" title="Link to this heading">¶</a></h1>
+<p>This is not a class but a collection of global defines. It
+is used by all functions.</p>
+<section id="crc-init-value-constants">
+<span id="crc-init-value"></span><h2>CRC_INIT_VALUE constants<a class="headerlink" href="#crc-init-value-constants" title="Link to this heading">¶</a></h2>
+<p>Initial value for starting a CRC</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.CRC_INIT_VALUE">
+<span class="sig-name descname"><span class="pre">CRC_INIT_VALUE</span></span><a class="headerlink" href="#geosoft.gxapi.CRC_INIT_VALUE" title="Link to this definition">¶</a></dt>
+<dd><p>0xFFFFFFFF</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">CRC_INIT_VALUE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4294967295</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="date-format-constants">
+<span id="date-format"></span><h2>DATE_FORMAT constants<a class="headerlink" href="#date-format-constants" title="Link to this heading">¶</a></h2>
+<p>Old Date formats</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.DATE_FORMAT_YYYYMMDD">
+<span class="sig-name descname"><span class="pre">DATE_FORMAT_YYYYMMDD</span></span><a class="headerlink" href="#geosoft.gxapi.DATE_FORMAT_YYYYMMDD" title="Link to this definition">¶</a></dt>
+<dd><p>Standard Date (YYYY/MM/DD, YY/MM/DD, YYYYMMDD or YYMMDD, space or / delimited)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DATE_FORMAT_YYYYMMDD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id1" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.DATE_FORMAT_DDMMYYYY">
+<span class="sig-name descname"><span class="pre">DATE_FORMAT_DDMMYYYY</span></span><a class="headerlink" href="#geosoft.gxapi.DATE_FORMAT_DDMMYYYY" title="Link to this definition">¶</a></dt>
+<dd><p>Date (DD/MM/YYYY or DD/MM/YY century 20 if YY&gt;50, DISC compliant)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DATE_FORMAT_DDMMYYYY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id2" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.DATE_FORMAT_MMDDYYYY">
+<span class="sig-name descname"><span class="pre">DATE_FORMAT_MMDDYYYY</span></span><a class="headerlink" href="#geosoft.gxapi.DATE_FORMAT_MMDDYYYY" title="Link to this definition">¶</a></dt>
+<dd><p>Date (MM/DD/YYYY or MM/DD/YY century 19)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DATE_FORMAT_MMDDYYYY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id3" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="geo-dummy-constants">
+<span id="geo-dummy"></span><h2>GEO_DUMMY constants<a class="headerlink" href="#geo-dummy-constants" title="Link to this heading">¶</a></h2>
+<p>Special numbers indicating NULLL</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.iDUMMY">
+<span class="sig-name descname"><span class="pre">iDUMMY</span></span><a class="headerlink" href="#geosoft.gxapi.iDUMMY" title="Link to this definition">¶</a></dt>
+<dd><p>Integer Dummy (-2147483647)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">iDUMMY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-2147483647</span></em><a class="headerlink" href="#id4" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.rDUMMY">
+<span class="sig-name descname"><span class="pre">rDUMMY</span></span><a class="headerlink" href="#geosoft.gxapi.rDUMMY" title="Link to this definition">¶</a></dt>
+<dd><p>Floating Point Dummy (-1.0E32)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">rDUMMY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1e+32</span></em><a class="headerlink" href="#id5" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="geo-full-limits-constants">
+<span id="geo-full-limits"></span><h2>GEO_FULL_LIMITS constants<a class="headerlink" href="#geo-full-limits-constants" title="Link to this heading">¶</a></h2>
+<p>Data ranges of all Geosoft types</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_S1MX">
+<span class="sig-name descname"><span class="pre">GS_S1MX</span></span><a class="headerlink" href="#geosoft.gxapi.GS_S1MX" title="Link to this definition">¶</a></dt>
+<dd><p>(signed char   )   127</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_S1MX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">127</span></em><a class="headerlink" href="#id6" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_S1MN">
+<span class="sig-name descname"><span class="pre">GS_S1MN</span></span><a class="headerlink" href="#geosoft.gxapi.GS_S1MN" title="Link to this definition">¶</a></dt>
+<dd><p>(signed char   )  -126</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id7">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_S1MN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-126</span></em><a class="headerlink" href="#id7" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_S1DM">
+<span class="sig-name descname"><span class="pre">GS_S1DM</span></span><a class="headerlink" href="#geosoft.gxapi.GS_S1DM" title="Link to this definition">¶</a></dt>
+<dd><p>(signed char   )  -127</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_S1DM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-127</span></em><a class="headerlink" href="#id8" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_U1MX">
+<span class="sig-name descname"><span class="pre">GS_U1MX</span></span><a class="headerlink" href="#geosoft.gxapi.GS_U1MX" title="Link to this definition">¶</a></dt>
+<dd><p>(unsigned char )   254U</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id9">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_U1MX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">254</span></em><a class="headerlink" href="#id9" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_U1MN">
+<span class="sig-name descname"><span class="pre">GS_U1MN</span></span><a class="headerlink" href="#geosoft.gxapi.GS_U1MN" title="Link to this definition">¶</a></dt>
+<dd><p>(unsigned char )   0U</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id10">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_U1MN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id10" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_U1DM">
+<span class="sig-name descname"><span class="pre">GS_U1DM</span></span><a class="headerlink" href="#geosoft.gxapi.GS_U1DM" title="Link to this definition">¶</a></dt>
+<dd><p>(unsigned char )   255U</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id11">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_U1DM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">255</span></em><a class="headerlink" href="#id11" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_S2MX">
+<span class="sig-name descname"><span class="pre">GS_S2MX</span></span><a class="headerlink" href="#geosoft.gxapi.GS_S2MX" title="Link to this definition">¶</a></dt>
+<dd><p>(short         )   32767</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id12">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_S2MX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32767</span></em><a class="headerlink" href="#id12" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_S2MN">
+<span class="sig-name descname"><span class="pre">GS_S2MN</span></span><a class="headerlink" href="#geosoft.gxapi.GS_S2MN" title="Link to this definition">¶</a></dt>
+<dd><p>(short         )  -32766</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id13">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_S2MN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-32766</span></em><a class="headerlink" href="#id13" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_S2DM">
+<span class="sig-name descname"><span class="pre">GS_S2DM</span></span><a class="headerlink" href="#geosoft.gxapi.GS_S2DM" title="Link to this definition">¶</a></dt>
+<dd><p>(short         )  -32767</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id14">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_S2DM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-32767</span></em><a class="headerlink" href="#id14" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_U2MX">
+<span class="sig-name descname"><span class="pre">GS_U2MX</span></span><a class="headerlink" href="#geosoft.gxapi.GS_U2MX" title="Link to this definition">¶</a></dt>
+<dd><p>(unsigned short)   65534U</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id15">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_U2MX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">65534</span></em><a class="headerlink" href="#id15" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_U2MN">
+<span class="sig-name descname"><span class="pre">GS_U2MN</span></span><a class="headerlink" href="#geosoft.gxapi.GS_U2MN" title="Link to this definition">¶</a></dt>
+<dd><p>(unsigned short)   0U</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id16">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_U2MN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id16" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_U2DM">
+<span class="sig-name descname"><span class="pre">GS_U2DM</span></span><a class="headerlink" href="#geosoft.gxapi.GS_U2DM" title="Link to this definition">¶</a></dt>
+<dd><p>(unsigned short)   65535U</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id17">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_U2DM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">65535</span></em><a class="headerlink" href="#id17" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_S4MX">
+<span class="sig-name descname"><span class="pre">GS_S4MX</span></span><a class="headerlink" href="#geosoft.gxapi.GS_S4MX" title="Link to this definition">¶</a></dt>
+<dd><p>2147483647L</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id18">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_S4MX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2147483647</span></em><a class="headerlink" href="#id18" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_S4MN">
+<span class="sig-name descname"><span class="pre">GS_S4MN</span></span><a class="headerlink" href="#geosoft.gxapi.GS_S4MN" title="Link to this definition">¶</a></dt>
+<dd><p>-2147483646L</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id19">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_S4MN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-2147483646</span></em><a class="headerlink" href="#id19" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_S4DM">
+<span class="sig-name descname"><span class="pre">GS_S4DM</span></span><a class="headerlink" href="#geosoft.gxapi.GS_S4DM" title="Link to this definition">¶</a></dt>
+<dd><p>-2147483647L</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id20">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_S4DM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-2147483647</span></em><a class="headerlink" href="#id20" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_U4MX">
+<span class="sig-name descname"><span class="pre">GS_U4MX</span></span><a class="headerlink" href="#geosoft.gxapi.GS_U4MX" title="Link to this definition">¶</a></dt>
+<dd><p>(unsigned long )   0xFFFFFFFE</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id21">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_U4MX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4294967294</span></em><a class="headerlink" href="#id21" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_U4MN">
+<span class="sig-name descname"><span class="pre">GS_U4MN</span></span><a class="headerlink" href="#geosoft.gxapi.GS_U4MN" title="Link to this definition">¶</a></dt>
+<dd><p>(unsigned long )   0x00000000</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id22">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_U4MN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id22" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_U4DM">
+<span class="sig-name descname"><span class="pre">GS_U4DM</span></span><a class="headerlink" href="#geosoft.gxapi.GS_U4DM" title="Link to this definition">¶</a></dt>
+<dd><p>(unsigned long )   0xFFFFFFFF</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id23">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_U4DM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4294967295</span></em><a class="headerlink" href="#id23" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_S8MX">
+<span class="sig-name descname"><span class="pre">GS_S8MX</span></span><a class="headerlink" href="#geosoft.gxapi.GS_S8MX" title="Link to this definition">¶</a></dt>
+<dd><p>(__GS_INT64    )   0x7FFFFFFFFFFFFFFF</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id24">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_S8MX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9223372036854775807</span></em><a class="headerlink" href="#id24" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_S8MN">
+<span class="sig-name descname"><span class="pre">GS_S8MN</span></span><a class="headerlink" href="#geosoft.gxapi.GS_S8MN" title="Link to this definition">¶</a></dt>
+<dd><p>(__GS_INT64    )   0x8000000000000001</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id25">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_S8MN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-9223372036854775807</span></em><a class="headerlink" href="#id25" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_S8DM">
+<span class="sig-name descname"><span class="pre">GS_S8DM</span></span><a class="headerlink" href="#geosoft.gxapi.GS_S8DM" title="Link to this definition">¶</a></dt>
+<dd><p>(__GS_INT64    )   0x8000000000000000</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id26">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_S8DM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-9223372036854775808</span></em><a class="headerlink" href="#id26" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_U8MX">
+<span class="sig-name descname"><span class="pre">GS_U8MX</span></span><a class="headerlink" href="#geosoft.gxapi.GS_U8MX" title="Link to this definition">¶</a></dt>
+<dd><p>(__GS_UINT64   )   0xFFFFFFFFFFFFFFFE</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id27">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_U8MX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">18446744073709551614</span></em><a class="headerlink" href="#id27" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_U8MN">
+<span class="sig-name descname"><span class="pre">GS_U8MN</span></span><a class="headerlink" href="#geosoft.gxapi.GS_U8MN" title="Link to this definition">¶</a></dt>
+<dd><p>(__GS_UINT64   )   0x0000000000000000</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id28">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_U8MN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_U8DM">
+<span class="sig-name descname"><span class="pre">GS_U8DM</span></span><a class="headerlink" href="#geosoft.gxapi.GS_U8DM" title="Link to this definition">¶</a></dt>
+<dd><p>(__GS_UINT64   )   0xFFFFFFFFFFFFFFFF</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id29">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_U8DM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">18446744073709551615</span></em><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_R4MX">
+<span class="sig-name descname"><span class="pre">GS_R4MX</span></span><a class="headerlink" href="#geosoft.gxapi.GS_R4MX" title="Link to this definition">¶</a></dt>
+<dd><p>(float         )   1.0E32   (In C these must be declared as external constants:)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id30">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_R4MX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1e+32</span></em><a class="headerlink" href="#id30" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_R4MN">
+<span class="sig-name descname"><span class="pre">GS_R4MN</span></span><a class="headerlink" href="#geosoft.gxapi.GS_R4MN" title="Link to this definition">¶</a></dt>
+<dd><p>(float         )  -0.9E32     const float r4min=(float)-0.9E32,</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id31">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_R4MN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-9e+31</span></em><a class="headerlink" href="#id31" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_R4DM">
+<span class="sig-name descname"><span class="pre">GS_R4DM</span></span><a class="headerlink" href="#geosoft.gxapi.GS_R4DM" title="Link to this definition">¶</a></dt>
+<dd><p>(float         )  -1.0E32                 r4max=(float)1.0E32,
+r4dum=(float)-1.0E32;</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id32">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_R4DM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1e+32</span></em><a class="headerlink" href="#id32" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_R8MX">
+<span class="sig-name descname"><span class="pre">GS_R8MX</span></span><a class="headerlink" href="#geosoft.gxapi.GS_R8MX" title="Link to this definition">¶</a></dt>
+<dd><p>(double        )   1.0E32</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id33">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_R8MX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1e+32</span></em><a class="headerlink" href="#id33" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_R8MN">
+<span class="sig-name descname"><span class="pre">GS_R8MN</span></span><a class="headerlink" href="#geosoft.gxapi.GS_R8MN" title="Link to this definition">¶</a></dt>
+<dd><p>(double        )  -0.9E32</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id34">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_R8MN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-9e+31</span></em><a class="headerlink" href="#id34" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_R8DM">
+<span class="sig-name descname"><span class="pre">GS_R8DM</span></span><a class="headerlink" href="#geosoft.gxapi.GS_R8DM" title="Link to this definition">¶</a></dt>
+<dd><p>(double        )  -1.0E32</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id35">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_R8DM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1e+32</span></em><a class="headerlink" href="#id35" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_R4EPSILON">
+<span class="sig-name descname"><span class="pre">GS_R4EPSILON</span></span><a class="headerlink" href="#geosoft.gxapi.GS_R4EPSILON" title="Link to this definition">¶</a></dt>
+<dd><p>(float         )   1.0E-32</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id36">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_R4EPSILON</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1e-32</span></em><a class="headerlink" href="#id36" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_R8EPSILON">
+<span class="sig-name descname"><span class="pre">GS_R8EPSILON</span></span><a class="headerlink" href="#geosoft.gxapi.GS_R8EPSILON" title="Link to this definition">¶</a></dt>
+<dd><p>(double        )   1.0E-32</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id37">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_R8EPSILON</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1e-32</span></em><a class="headerlink" href="#id37" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="geo-limits-constants">
+<span id="geo-limits"></span><h2>GEO_LIMITS constants<a class="headerlink" href="#geo-limits-constants" title="Link to this heading">¶</a></h2>
+<p>Data ranges of numbers</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.iMIN">
+<span class="sig-name descname"><span class="pre">iMIN</span></span><a class="headerlink" href="#geosoft.gxapi.iMIN" title="Link to this definition">¶</a></dt>
+<dd><p>Smallest Integer (-2147483646)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id38">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">iMIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-2147483646</span></em><a class="headerlink" href="#id38" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.iMAX">
+<span class="sig-name descname"><span class="pre">iMAX</span></span><a class="headerlink" href="#geosoft.gxapi.iMAX" title="Link to this definition">¶</a></dt>
+<dd><p>Largest Integer (2147483647)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id39">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">iMAX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2147483647</span></em><a class="headerlink" href="#id39" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.rMIN">
+<span class="sig-name descname"><span class="pre">rMIN</span></span><a class="headerlink" href="#geosoft.gxapi.rMIN" title="Link to this definition">¶</a></dt>
+<dd><p>Smallest Floating Point (-0.9E32)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id40">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">rMIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-9e+31</span></em><a class="headerlink" href="#id40" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.rMAX">
+<span class="sig-name descname"><span class="pre">rMAX</span></span><a class="headerlink" href="#geosoft.gxapi.rMAX" title="Link to this definition">¶</a></dt>
+<dd><p>Largest Floating Point (1.0E32)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id41">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">rMAX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1e+32</span></em><a class="headerlink" href="#id41" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="geo-string-size-constants">
+<span id="geo-string-size"></span><h2>GEO_STRING_SIZE constants<a class="headerlink" href="#geo-string-size-constants" title="Link to this heading">¶</a></h2>
+<p>Default string sized for different uses
+GX’s must use these unless there is a
+very good reason not to. The path strings
+here are generally larger than what is possible
+in the OS, but it is defined as such for Unicode
+conversion reasons.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.STR_DEFAULT">
+<span class="sig-name descname"><span class="pre">STR_DEFAULT</span></span><a class="headerlink" href="#geosoft.gxapi.STR_DEFAULT" title="Link to this definition">¶</a></dt>
+<dd><p>Default Size for almost everything (128 characters)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id42">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STR_DEFAULT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">128</span></em><a class="headerlink" href="#id42" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.STR_DEFAULT_SHORT">
+<span class="sig-name descname"><span class="pre">STR_DEFAULT_SHORT</span></span><a class="headerlink" href="#geosoft.gxapi.STR_DEFAULT_SHORT" title="Link to this definition">¶</a></dt>
+<dd><p>Default Size for a short string (64 characters)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id43">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STR_DEFAULT_SHORT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">64</span></em><a class="headerlink" href="#id43" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.STR_DEFAULT_LONG">
+<span class="sig-name descname"><span class="pre">STR_DEFAULT_LONG</span></span><a class="headerlink" href="#geosoft.gxapi.STR_DEFAULT_LONG" title="Link to this definition">¶</a></dt>
+<dd><p>Default Size for a long string (1024 characters)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id44">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STR_DEFAULT_LONG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1024</span></em><a class="headerlink" href="#id44" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.STR_ERROR">
+<span class="sig-name descname"><span class="pre">STR_ERROR</span></span><a class="headerlink" href="#geosoft.gxapi.STR_ERROR" title="Link to this definition">¶</a></dt>
+<dd><p>Default Size for an error string (2048 characters)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id45">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STR_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2048</span></em><a class="headerlink" href="#id45" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.STR_VERY_LONG">
+<span class="sig-name descname"><span class="pre">STR_VERY_LONG</span></span><a class="headerlink" href="#geosoft.gxapi.STR_VERY_LONG" title="Link to this definition">¶</a></dt>
+<dd><p>Default Size for a long string (16384 characters)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id46">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STR_VERY_LONG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16384</span></em><a class="headerlink" href="#id46" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.STR_VIEW">
+<span class="sig-name descname"><span class="pre">STR_VIEW</span></span><a class="headerlink" href="#geosoft.gxapi.STR_VIEW" title="Link to this definition">¶</a></dt>
+<dd><p>Name of a View (2080)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id47">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STR_VIEW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2080</span></em><a class="headerlink" href="#id47" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.STR_GROUP">
+<span class="sig-name descname"><span class="pre">STR_GROUP</span></span><a class="headerlink" href="#geosoft.gxapi.STR_GROUP" title="Link to this definition">¶</a></dt>
+<dd><p>Name of a Group (1040)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id48">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STR_GROUP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1040</span></em><a class="headerlink" href="#id48" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.STR_VIEW_GROUP">
+<span class="sig-name descname"><span class="pre">STR_VIEW_GROUP</span></span><a class="headerlink" href="#geosoft.gxapi.STR_VIEW_GROUP" title="Link to this definition">¶</a></dt>
+<dd><p>Combined View/Group Name (2080)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id49">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STR_VIEW_GROUP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2080</span></em><a class="headerlink" href="#id49" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.STR_FILE">
+<span class="sig-name descname"><span class="pre">STR_FILE</span></span><a class="headerlink" href="#geosoft.gxapi.STR_FILE" title="Link to this definition">¶</a></dt>
+<dd><p>Name of a file (1040)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id50">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STR_FILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1040</span></em><a class="headerlink" href="#id50" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.STR_MULTI_FILE">
+<span class="sig-name descname"><span class="pre">STR_MULTI_FILE</span></span><a class="headerlink" href="#geosoft.gxapi.STR_MULTI_FILE" title="Link to this definition">¶</a></dt>
+<dd><p>Name of multiple files (16384)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id51">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STR_MULTI_FILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16384</span></em><a class="headerlink" href="#id51" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.STR_DB_SYMBOL">
+<span class="sig-name descname"><span class="pre">STR_DB_SYMBOL</span></span><a class="headerlink" href="#geosoft.gxapi.STR_DB_SYMBOL" title="Link to this definition">¶</a></dt>
+<dd><p>Name of database symbol (64)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id52">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STR_DB_SYMBOL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">64</span></em><a class="headerlink" href="#id52" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.STR_GXF">
+<span class="sig-name descname"><span class="pre">STR_GXF</span></span><a class="headerlink" href="#geosoft.gxapi.STR_GXF" title="Link to this definition">¶</a></dt>
+<dd><p>Size of strings for GXF projection info (160).</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id53">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STR_GXF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">160</span></em><a class="headerlink" href="#id53" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.STR_MAX_PATH">
+<span class="sig-name descname"><span class="pre">STR_MAX_PATH</span></span><a class="headerlink" href="#geosoft.gxapi.STR_MAX_PATH" title="Link to this definition">¶</a></dt>
+<dd><p>Maximum path length (1040)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id54">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STR_MAX_PATH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1040</span></em><a class="headerlink" href="#id54" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.STR_MULTI_PATH">
+<span class="sig-name descname"><span class="pre">STR_MULTI_PATH</span></span><a class="headerlink" href="#geosoft.gxapi.STR_MULTI_PATH" title="Link to this definition">¶</a></dt>
+<dd><p>Multi-file path (16384)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id55">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STR_MULTI_PATH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16384</span></em><a class="headerlink" href="#id55" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_MAX_PATH">
+<span class="sig-name descname"><span class="pre">GS_MAX_PATH</span></span><a class="headerlink" href="#geosoft.gxapi.GS_MAX_PATH" title="Link to this definition">¶</a></dt>
+<dd><p>Same as <a class="reference internal" href="#id50" title="geosoft.gxapi.STR_FILE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">STR_FILE</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id56">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_MAX_PATH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1040</span></em><a class="headerlink" href="#id56" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_MULTI_PATH">
+<span class="sig-name descname"><span class="pre">GS_MULTI_PATH</span></span><a class="headerlink" href="#geosoft.gxapi.GS_MULTI_PATH" title="Link to this definition">¶</a></dt>
+<dd><p>Same as <a class="reference internal" href="#id51" title="geosoft.gxapi.STR_MULTI_FILE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">STR_MULTI_FILE</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id57">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_MULTI_PATH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16384</span></em><a class="headerlink" href="#id57" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="geo-var-constants">
+<span id="geo-var"></span><h2>GEO_VAR constants<a class="headerlink" href="#geo-var-constants" title="Link to this heading">¶</a></h2>
+<p>Variable types.
+Use -X for strings of X length</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_INT">
+<span class="sig-name descname"><span class="pre">GS_INT</span></span><a class="headerlink" href="#geosoft.gxapi.GS_INT" title="Link to this definition">¶</a></dt>
+<dd><p>Integer (long)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id58">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_INT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id58" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_REAL">
+<span class="sig-name descname"><span class="pre">GS_REAL</span></span><a class="headerlink" href="#geosoft.gxapi.GS_REAL" title="Link to this definition">¶</a></dt>
+<dd><p>Floating Point (double)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id59">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_REAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id59" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="gs-formats-constants">
+<span id="gs-formats"></span><h2>GS_FORMATS constants<a class="headerlink" href="#gs-formats-constants" title="Link to this heading">¶</a></h2>
+<p>Special use data types. String are indicated by a
+negative maximum string length (including NULL).</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.FORMAT_DECIMAL">
+<span class="sig-name descname"><span class="pre">FORMAT_DECIMAL</span></span><a class="headerlink" href="#geosoft.gxapi.FORMAT_DECIMAL" title="Link to this definition">¶</a></dt>
+<dd><p>Standard numbers (-134.534)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id60">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FORMAT_DECIMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id60" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.FORMAT_SIG_DIG">
+<span class="sig-name descname"><span class="pre">FORMAT_SIG_DIG</span></span><a class="headerlink" href="#geosoft.gxapi.FORMAT_SIG_DIG" title="Link to this definition">¶</a></dt>
+<dd><p>Decimals imply number of significant digits</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id61">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FORMAT_SIG_DIG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id61" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.FORMAT_EXP">
+<span class="sig-name descname"><span class="pre">FORMAT_EXP</span></span><a class="headerlink" href="#geosoft.gxapi.FORMAT_EXP" title="Link to this definition">¶</a></dt>
+<dd><p>Exponential notation (-1.345e45)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id62">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FORMAT_EXP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id62" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.FORMAT_TIME_COLON">
+<span class="sig-name descname"><span class="pre">FORMAT_TIME_COLON</span></span><a class="headerlink" href="#geosoft.gxapi.FORMAT_TIME_COLON" title="Link to this definition">¶</a></dt>
+<dd><p>Standard Time (HH:MM:SS.SSSS)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id63">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FORMAT_TIME_COLON</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id63" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.FORMAT_TIME_HMS">
+<span class="sig-name descname"><span class="pre">FORMAT_TIME_HMS</span></span><a class="headerlink" href="#geosoft.gxapi.FORMAT_TIME_HMS" title="Link to this definition">¶</a></dt>
+<dd><p>Time (HH.MMSSSSSSS)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id64">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FORMAT_TIME_HMS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#id64" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.FORMAT_TIME_HHMMSS">
+<span class="sig-name descname"><span class="pre">FORMAT_TIME_HHMMSS</span></span><a class="headerlink" href="#geosoft.gxapi.FORMAT_TIME_HHMMSS" title="Link to this definition">¶</a></dt>
+<dd><p>Time (HHMMSS)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id65">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FORMAT_TIME_HHMMSS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#id65" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.FORMAT_DATE_YYYYMMDD">
+<span class="sig-name descname"><span class="pre">FORMAT_DATE_YYYYMMDD</span></span><a class="headerlink" href="#geosoft.gxapi.FORMAT_DATE_YYYYMMDD" title="Link to this definition">¶</a></dt>
+<dd><p>Standard Date (YYYY/MM/DD, YY/MM/DD, YYYYMMDD or YYMMDD, space or / delimited)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id66">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FORMAT_DATE_YYYYMMDD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id66" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.FORMAT_DATE_DDMMYYYY">
+<span class="sig-name descname"><span class="pre">FORMAT_DATE_DDMMYYYY</span></span><a class="headerlink" href="#geosoft.gxapi.FORMAT_DATE_DDMMYYYY" title="Link to this definition">¶</a></dt>
+<dd><p>Date (DD/MM/YYYY or DD/MM/YY century 20 if YY&gt;50, DISC compliant)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id67">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FORMAT_DATE_DDMMYYYY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id67" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.FORMAT_DATE_MMDDYYYY">
+<span class="sig-name descname"><span class="pre">FORMAT_DATE_MMDDYYYY</span></span><a class="headerlink" href="#geosoft.gxapi.FORMAT_DATE_MMDDYYYY" title="Link to this definition">¶</a></dt>
+<dd><p>Date (MM/DD/YYYY or MM/DD/YY century 19)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id68">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FORMAT_DATE_MMDDYYYY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#id68" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.FORMAT_GEOGRAPHIC">
+<span class="sig-name descname"><span class="pre">FORMAT_GEOGRAPHIC</span></span><a class="headerlink" href="#geosoft.gxapi.FORMAT_GEOGRAPHIC" title="Link to this definition">¶</a></dt>
+<dd><p>Standard Geographical (DEG.MM.SS.SSS)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id69">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FORMAT_GEOGRAPHIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id69" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.FORMAT_GEOGRAPHIC_1">
+<span class="sig-name descname"><span class="pre">FORMAT_GEOGRAPHIC_1</span></span><a class="headerlink" href="#geosoft.gxapi.FORMAT_GEOGRAPHIC_1" title="Link to this definition">¶</a></dt>
+<dd><p>GeoGraph (DEG:MM:SS.SSS)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id70">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FORMAT_GEOGRAPHIC_1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#id70" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.FORMAT_GEOGRAPHIC_2">
+<span class="sig-name descname"><span class="pre">FORMAT_GEOGRAPHIC_2</span></span><a class="headerlink" href="#geosoft.gxapi.FORMAT_GEOGRAPHIC_2" title="Link to this definition">¶</a></dt>
+<dd><p>GeoGraph (DEG.MMSSSSS)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id71">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FORMAT_GEOGRAPHIC_2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em><a class="headerlink" href="#id71" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.FORMAT_GEOGRAPHIC_3">
+<span class="sig-name descname"><span class="pre">FORMAT_GEOGRAPHIC_3</span></span><a class="headerlink" href="#geosoft.gxapi.FORMAT_GEOGRAPHIC_3" title="Link to this definition">¶</a></dt>
+<dd><p>GeoGraph (DEGMMmmmm or DEGMM.mmmm or DEG.MM.mmmm)  (mmmm: decimal minute)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id72">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FORMAT_GEOGRAPHIC_3</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">12</span></em><a class="headerlink" href="#id72" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="gs-types-constants">
+<span id="gs-types"></span><h2>GS_TYPES constants<a class="headerlink" href="#gs-types-constants" title="Link to this heading">¶</a></h2>
+<p>Special use data types. String are indicated by a
+negative maximum string length (including NULL).</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_BYTE">
+<span class="sig-name descname"><span class="pre">GS_BYTE</span></span><a class="headerlink" href="#geosoft.gxapi.GS_BYTE" title="Link to this definition">¶</a></dt>
+<dd><p>Signed Byte</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id73">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_BYTE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id73" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_USHORT">
+<span class="sig-name descname"><span class="pre">GS_USHORT</span></span><a class="headerlink" href="#geosoft.gxapi.GS_USHORT" title="Link to this definition">¶</a></dt>
+<dd><p>Unsigned Short</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id74">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_USHORT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id74" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_SHORT">
+<span class="sig-name descname"><span class="pre">GS_SHORT</span></span><a class="headerlink" href="#geosoft.gxapi.GS_SHORT" title="Link to this definition">¶</a></dt>
+<dd><p>Signed Short</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id75">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_SHORT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id75" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_LONG">
+<span class="sig-name descname"><span class="pre">GS_LONG</span></span><a class="headerlink" href="#geosoft.gxapi.GS_LONG" title="Link to this definition">¶</a></dt>
+<dd><p>Signed Long</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id76">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_LONG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id76" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_FLOAT">
+<span class="sig-name descname"><span class="pre">GS_FLOAT</span></span><a class="headerlink" href="#geosoft.gxapi.GS_FLOAT" title="Link to this definition">¶</a></dt>
+<dd><p>32-Bit floating point</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id77">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_FLOAT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id77" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_DOUBLE">
+<span class="sig-name descname"><span class="pre">GS_DOUBLE</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DOUBLE" title="Link to this definition">¶</a></dt>
+<dd><p>64-Bit floating point</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id78">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DOUBLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id78" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_UBYTE">
+<span class="sig-name descname"><span class="pre">GS_UBYTE</span></span><a class="headerlink" href="#geosoft.gxapi.GS_UBYTE" title="Link to this definition">¶</a></dt>
+<dd><p>Unsigned byte</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id79">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_UBYTE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id79" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_ULONG">
+<span class="sig-name descname"><span class="pre">GS_ULONG</span></span><a class="headerlink" href="#geosoft.gxapi.GS_ULONG" title="Link to this definition">¶</a></dt>
+<dd><p>Unsigned Long</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id80">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_ULONG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#id80" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_LONG64">
+<span class="sig-name descname"><span class="pre">GS_LONG64</span></span><a class="headerlink" href="#geosoft.gxapi.GS_LONG64" title="Link to this definition">¶</a></dt>
+<dd><p>64-Bit signed long</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id81">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_LONG64</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#id81" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_ULONG64">
+<span class="sig-name descname"><span class="pre">GS_ULONG64</span></span><a class="headerlink" href="#geosoft.gxapi.GS_ULONG64" title="Link to this definition">¶</a></dt>
+<dd><p>64-Bit unsigned long</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id82">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_ULONG64</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#id82" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_FLOAT3D">
+<span class="sig-name descname"><span class="pre">GS_FLOAT3D</span></span><a class="headerlink" href="#geosoft.gxapi.GS_FLOAT3D" title="Link to this definition">¶</a></dt>
+<dd><p>3 x 32-Bit floating point</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id83">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_FLOAT3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#id83" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_DOUBLE3D">
+<span class="sig-name descname"><span class="pre">GS_DOUBLE3D</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DOUBLE3D" title="Link to this definition">¶</a></dt>
+<dd><p>3 x 64-Bit floating point</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id84">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DOUBLE3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em><a class="headerlink" href="#id84" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_FLOAT2D">
+<span class="sig-name descname"><span class="pre">GS_FLOAT2D</span></span><a class="headerlink" href="#geosoft.gxapi.GS_FLOAT2D" title="Link to this definition">¶</a></dt>
+<dd><p>2 x 32-Bit floating point</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id85">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_FLOAT2D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">12</span></em><a class="headerlink" href="#id85" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_DOUBLE2D">
+<span class="sig-name descname"><span class="pre">GS_DOUBLE2D</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DOUBLE2D" title="Link to this definition">¶</a></dt>
+<dd><p>2 x 64-Bit floating point</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id86">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DOUBLE2D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">13</span></em><a class="headerlink" href="#id86" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_MAXTYPE">
+<span class="sig-name descname"><span class="pre">GS_MAXTYPE</span></span><a class="headerlink" href="#geosoft.gxapi.GS_MAXTYPE" title="Link to this definition">¶</a></dt>
+<dd><p>Maximum supported type (<a class="reference internal" href="#id86" title="geosoft.gxapi.GS_DOUBLE2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DOUBLE2D</span></code></a>)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id87">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_MAXTYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">13</span></em><a class="headerlink" href="#id87" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.GS_TYPE_DEFAULT">
+<span class="sig-name descname"><span class="pre">GS_TYPE_DEFAULT</span></span><a class="headerlink" href="#geosoft.gxapi.GS_TYPE_DEFAULT" title="Link to this definition">¶</a></dt>
+<dd><p>Default. Can be used only when a method specifically allows a default type.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id88">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_TYPE_DEFAULT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-32767</span></em><a class="headerlink" href="#id88" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="sys-crypt-key-constants">
+<span id="sys-crypt-key"></span><h2>SYS_CRYPT_KEY constants<a class="headerlink" href="#sys-crypt-key-constants" title="Link to this heading">¶</a></h2>
+<p>Special Encryption Keys</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.SYS_CRYPT_LICENSE_KEY">
+<span class="sig-name descname"><span class="pre">SYS_CRYPT_LICENSE_KEY</span></span><a class="headerlink" href="#geosoft.gxapi.SYS_CRYPT_LICENSE_KEY" title="Link to this definition">¶</a></dt>
+<dd><p>Using the current license key</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id89">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SYS_CRYPT_LICENSE_KEY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'{***LICENSE_KEY***}'</span></em><a class="headerlink" href="#id89" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.SYS_CRYPT_COMPUTER_ID">
+<span class="sig-name descname"><span class="pre">SYS_CRYPT_COMPUTER_ID</span></span><a class="headerlink" href="#geosoft.gxapi.SYS_CRYPT_COMPUTER_ID" title="Link to this definition">¶</a></dt>
+<dd><p>Use the current computer ID</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id90">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SYS_CRYPT_COMPUTER_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'{***COMPUTER_ID***}'</span></em><a class="headerlink" href="#id90" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.SYS_CRYPT_GLOBAL_ID">
+<span class="sig-name descname"><span class="pre">SYS_CRYPT_GLOBAL_ID</span></span><a class="headerlink" href="#geosoft.gxapi.SYS_CRYPT_GLOBAL_ID" title="Link to this definition">¶</a></dt>
+<dd><p>Use the non-changing computer ID</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id91">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SYS_CRYPT_GLOBAL_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'{***GLOBAL_COMPUTER_ID***}'</span></em><a class="headerlink" href="#id91" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="time-format-constants">
+<span id="time-format"></span><h2>TIME_FORMAT constants<a class="headerlink" href="#time-format-constants" title="Link to this heading">¶</a></h2>
+<p>Old Time formats</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.TIME_FORMAT_COLON">
+<span class="sig-name descname"><span class="pre">TIME_FORMAT_COLON</span></span><a class="headerlink" href="#geosoft.gxapi.TIME_FORMAT_COLON" title="Link to this definition">¶</a></dt>
+<dd><p>Standard Time (HH:MM:SS.SSSS)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id92">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TIME_FORMAT_COLON</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id92" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.TIME_FORMAT_HMS">
+<span class="sig-name descname"><span class="pre">TIME_FORMAT_HMS</span></span><a class="headerlink" href="#geosoft.gxapi.TIME_FORMAT_HMS" title="Link to this definition">¶</a></dt>
+<dd><p>Time (HH.MMSSSSSSS)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id93">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TIME_FORMAT_HMS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id93" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXGEOSOFT class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

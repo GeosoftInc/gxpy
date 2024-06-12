@@ -1,0 +1,480 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXKGRD &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXKGRD</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXKGRD</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXKGRD">
+<a class="viewcode-back" href="../../../GXKGRD.html#geosoft.gxapi.GXKGRD">[docs]</a>
+<span class="k">class</span> <span class="nc">GXKGRD</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapKGRD</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXKGRD class.</span>
+
+<span class="sd">    The `GXKGRD &lt;geosoft.gxapi.GXKGRD&gt;` object is used as a storage place for the control</span>
+<span class="sd">    parameters that the Krigrid program needs to execute. The</span>
+<span class="sd">    Run_KGRD function executes the Krigrid program using the</span>
+<span class="sd">    `GXKGRD &lt;geosoft.gxapi.GXKGRD&gt;` object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXKGRD.__init__">
+<a class="viewcode-back" href="../../../GXKGRD.html#geosoft.gxapi.GXKGRD.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXKGRD</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GXKGRD.null">
+<a class="viewcode-back" href="../../../GXKGRD.html#geosoft.gxapi.GXKGRD.null">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXKGRD &lt;geosoft.gxapi.GXKGRD&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXKGRD &lt;geosoft.gxapi.GXKGRD&gt;`</span>
+<span class="sd">        :rtype:   GXKGRD</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXKGRD</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="GXKGRD.is_null">
+<a class="viewcode-back" href="../../../GXKGRD.html#geosoft.gxapi.GXKGRD.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+
+<div class="viewcode-block" id="GXKGRD.clear">
+<a class="viewcode-back" href="../../../GXKGRD.html#geosoft.gxapi.GXKGRD.clear">[docs]</a>
+    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Clears all the parameters in a `GXKGRD &lt;geosoft.gxapi.GXKGRD&gt;` object</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_clear</span><span class="p">()</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXKGRD.create">
+<a class="viewcode-back" href="../../../GXKGRD.html#geosoft.gxapi.GXKGRD.create">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a handle to a Krigrid object</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    `GXKGRD &lt;geosoft.gxapi.GXKGRD&gt;` Object</span>
+<span class="sd">        :rtype:      GXKGRD</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The Krigrid object is initially empty. It will store the</span>
+<span class="sd">        control file parameters which the Krigrid program needs</span>
+<span class="sd">        to execute. Use the LoadParms_KGRD method to get the</span>
+<span class="sd">        control file parameters into the `GXKGRD &lt;geosoft.gxapi.GXKGRD&gt;` object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapKGRD</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXKGRD</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+
+
+
+<div class="viewcode-block" id="GXKGRD.load_parms">
+<a class="viewcode-back" href="../../../GXKGRD.html#geosoft.gxapi.GXKGRD.load_parms">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieves a Krigrid object&#39;s control parameters from a file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param file:  Name of file to get the parameter settings from</span>
+<span class="sd">        :type  file:  str</span>
+
+<span class="sd">        :returns:     0 OK, 1 Error.</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 6.0.1</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** If the control file name passed into this function is a file</span>
+<span class="sd">        which does not exist, then the defaults for a Krigrid control</span>
+<span class="sd">        file will be generated and put into the `GXKGRD &lt;geosoft.gxapi.GXKGRD&gt;` object.</span>
+<span class="sd">        Otherwise, the control file&#39;s settings are retrieved from</span>
+<span class="sd">        the file and loaded into the `GXKGRD &lt;geosoft.gxapi.GXKGRD&gt;` object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_parms</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+
+<div class="viewcode-block" id="GXKGRD.run">
+<a class="viewcode-back" href="../../../GXKGRD.html#geosoft.gxapi.GXKGRD.run">[docs]</a>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zchan</span><span class="p">,</span> <span class="n">in_dat</span><span class="p">,</span> <span class="n">out_grd_dat</span><span class="p">,</span> <span class="n">out_err_dat</span><span class="p">,</span> <span class="n">in_var_name</span><span class="p">,</span> <span class="n">out_var_name</span><span class="p">,</span> <span class="n">vao</span><span class="p">,</span> <span class="n">vi</span><span class="p">,</span> <span class="n">vo</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Executes the Krigrid program, using the input channel and</span>
+<span class="sd">        output file parameters.</span>
+<span class="sd">        </span>
+<span class="sd">        :param zchan:         Name of Z Channel to perfrom gridding on</span>
+<span class="sd">        :param in_dat:        Handle to source `GXDAT &lt;geosoft.gxapi.GXDAT&gt;` object (from database)</span>
+<span class="sd">        :param out_grd_dat:   Handle to output grid file `GXDAT &lt;geosoft.gxapi.GXDAT&gt;`</span>
+<span class="sd">        :param out_err_dat:   Handle to output error grid file `GXDAT &lt;geosoft.gxapi.GXDAT&gt;` ((`GXDAT &lt;geosoft.gxapi.GXDAT&gt;`)0) if no error grid required</span>
+<span class="sd">        :param in_var_name:   Name of input variogram file</span>
+<span class="sd">        :param out_var_name:  Name of output variogram file</span>
+<span class="sd">        :param vao:           Flag of variogram only</span>
+<span class="sd">        :param vi:            Flag of input variogram</span>
+<span class="sd">        :param vo:            Flag of output variogram</span>
+<span class="sd">        :type  zchan:         str</span>
+<span class="sd">        :type  in_dat:        GXDAT</span>
+<span class="sd">        :type  out_grd_dat:   GXDAT</span>
+<span class="sd">        :type  out_err_dat:   GXDAT</span>
+<span class="sd">        :type  in_var_name:   str</span>
+<span class="sd">        :type  out_var_name:  str</span>
+<span class="sd">        :type  vao:           int</span>
+<span class="sd">        :type  vi:            int</span>
+<span class="sd">        :type  vo:            int</span>
+
+<span class="sd">        :returns:             0 OK, 1 Error.</span>
+<span class="sd">        :rtype:               int</span>
+
+<span class="sd">        .. versionadded:: 6.0.1</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run</span><span class="p">(</span><span class="n">zchan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">in_dat</span><span class="p">,</span> <span class="n">out_grd_dat</span><span class="p">,</span> <span class="n">out_err_dat</span><span class="p">,</span> <span class="n">in_var_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">out_var_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">vao</span><span class="p">,</span> <span class="n">vi</span><span class="p">,</span> <span class="n">vo</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXKGRD.run2">
+<a class="viewcode-back" href="../../../GXKGRD.html#geosoft.gxapi.GXKGRD.run2">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">run2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">ctl</span><span class="p">,</span> <span class="n">grd</span><span class="p">,</span> <span class="n">err_grd</span><span class="p">,</span> <span class="n">in_var</span><span class="p">,</span> <span class="n">out_var</span><span class="p">,</span> <span class="n">vao</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Executes the Krigrid program directly on a database.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:       Handle to a database</span>
+<span class="sd">        :param x:        Y Channel</span>
+<span class="sd">        :param y:        X Channel</span>
+<span class="sd">        :param z:        Data channel</span>
+<span class="sd">        :param ctl:      KRIGRID control file.</span>
+<span class="sd">        :param grd:      (output grid name (not required if variogram analysis only))</span>
+<span class="sd">        :param err_grd:  (output error file, &quot;&quot; for none)</span>
+<span class="sd">        :param in_var:   (input variogram file, &quot;&quot; for none)</span>
+<span class="sd">        :param out_var:  (output variogram file, &quot;&quot; for none)</span>
+<span class="sd">        :param vao:      1 if Variogram Analysis Only, other wise 0</span>
+<span class="sd">        :type  db:       GXDB</span>
+<span class="sd">        :type  x:        str</span>
+<span class="sd">        :type  y:        str</span>
+<span class="sd">        :type  z:        str</span>
+<span class="sd">        :type  ctl:      str</span>
+<span class="sd">        :type  grd:      str</span>
+<span class="sd">        :type  err_grd:  str</span>
+<span class="sd">        :type  in_var:   str</span>
+<span class="sd">        :type  out_var:  str</span>
+<span class="sd">        :type  vao:      int</span>
+
+<span class="sd">        :returns:        0 OK, 1 Error.</span>
+<span class="sd">        :rtype:          int</span>
+
+<span class="sd">        .. versionadded:: 6.0.1</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapKGRD</span><span class="o">.</span><span class="n">_run2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">z</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ctl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grd</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">err_grd</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">in_var</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">out_var</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">vao</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXKGRD.run3">
+<a class="viewcode-back" href="../../../GXKGRD.html#geosoft.gxapi.GXKGRD.run3">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">run3</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">ctl</span><span class="p">,</span> <span class="n">grd</span><span class="p">,</span> <span class="n">err_grd</span><span class="p">,</span> <span class="n">in_var</span><span class="p">,</span> <span class="n">out_var</span><span class="p">,</span> <span class="n">log_file</span><span class="p">,</span> <span class="n">vao</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Executes the Krigrid program directly on a database and specifies the log file</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:        Handle to a database</span>
+<span class="sd">        :param x:         Y Channel</span>
+<span class="sd">        :param y:         X Channel</span>
+<span class="sd">        :param z:         Data channel</span>
+<span class="sd">        :param ctl:       KRIGRID control file.</span>
+<span class="sd">        :param grd:       (output grid name (not required if variogram analysis only))</span>
+<span class="sd">        :param err_grd:   (output error file, &quot;&quot; for none)</span>
+<span class="sd">        :param in_var:    (input variogram file, &quot;&quot; for none)</span>
+<span class="sd">        :param out_var:   (output variogram file, &quot;&quot; for none)</span>
+<span class="sd">        :param log_file:  (log file name, &quot;&quot; for default)</span>
+<span class="sd">        :param vao:       1 if Variogram Analysis Only, other wise 0</span>
+<span class="sd">        :type  db:        GXDB</span>
+<span class="sd">        :type  x:         str</span>
+<span class="sd">        :type  y:         str</span>
+<span class="sd">        :type  z:         str</span>
+<span class="sd">        :type  ctl:       str</span>
+<span class="sd">        :type  grd:       str</span>
+<span class="sd">        :type  err_grd:   str</span>
+<span class="sd">        :type  in_var:    str</span>
+<span class="sd">        :type  out_var:   str</span>
+<span class="sd">        :type  log_file:  str</span>
+<span class="sd">        :type  vao:       int</span>
+
+<span class="sd">        :returns:         0 OK, 1 Error.</span>
+<span class="sd">        :rtype:           int</span>
+
+<span class="sd">        .. versionadded:: 6.4</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapKGRD</span><span class="o">.</span><span class="n">_run3</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">z</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ctl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grd</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">err_grd</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">in_var</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">out_var</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">log_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">vao</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXKGRD.run_vv">
+<a class="viewcode-back" href="../../../GXKGRD.html#geosoft.gxapi.GXKGRD.run_vv">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">run_vv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">ctl</span><span class="p">,</span> <span class="n">grd</span><span class="p">,</span> <span class="n">err_grd</span><span class="p">,</span> <span class="n">in_var</span><span class="p">,</span> <span class="n">out_var</span><span class="p">,</span> <span class="n">log_file</span><span class="p">,</span> <span class="n">vao</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Executes the Krigrid program directly on input data VVs.</span>
+<span class="sd">        </span>
+<span class="sd">        :param vv_x:      X data</span>
+<span class="sd">        :param vv_y:      Y data</span>
+<span class="sd">        :param vv_z:      Z (grid value) data</span>
+<span class="sd">        :param ipj:       Projection to put into grid</span>
+<span class="sd">        :param ctl:       KRIGRID control file.</span>
+<span class="sd">        :param grd:       (output grid name (not required if variogram analysis only))</span>
+<span class="sd">        :param err_grd:   (output error file, &quot;&quot; for none)</span>
+<span class="sd">        :param in_var:    (input variogram file, &quot;&quot; for none)</span>
+<span class="sd">        :param out_var:   (output variogram file, &quot;&quot; for none)</span>
+<span class="sd">        :param log_file:  (log file name, &quot;&quot; for default)</span>
+<span class="sd">        :param vao:       1 if Variogram Analysis Only, other wise 0</span>
+<span class="sd">        :type  vv_x:      GXVV</span>
+<span class="sd">        :type  vv_y:      GXVV</span>
+<span class="sd">        :type  vv_z:      GXVV</span>
+<span class="sd">        :type  ipj:       GXIPJ</span>
+<span class="sd">        :type  ctl:       str</span>
+<span class="sd">        :type  grd:       str</span>
+<span class="sd">        :type  err_grd:   str</span>
+<span class="sd">        :type  in_var:    str</span>
+<span class="sd">        :type  out_var:   str</span>
+<span class="sd">        :type  log_file:  str</span>
+<span class="sd">        :type  vao:       int</span>
+
+<span class="sd">        :returns:         0 OK, 1 Error.</span>
+<span class="sd">        :rtype:           int</span>
+
+<span class="sd">        .. versionadded:: 2022.2</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapKGRD</span><span class="o">.</span><span class="n">_run_vv</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">ctl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grd</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">err_grd</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">in_var</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">out_var</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">log_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">vao</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+
+<div class="viewcode-block" id="GXKGRD.save_parms">
+<a class="viewcode-back" href="../../../GXKGRD.html#geosoft.gxapi.GXKGRD.save_parms">[docs]</a>
+    <span class="k">def</span> <span class="nf">save_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Puts the Krigrid object&#39;s control parameters back into</span>
+<span class="sd">        its control file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Name of file to put the parameter settings into</span>
+<span class="sd">        :type  name:  str</span>
+
+<span class="sd">        :returns:     0 OK, 1 Error.</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 6.0.1</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** If the control file did not previously exist, it will be</span>
+<span class="sd">        created. Otherwise, the old file will be overwritten.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_save_parms</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXKGRD.get_defaults">
+<a class="viewcode-back" href="../../../GXKGRD.html#geosoft.gxapi.GXKGRD.get_defaults">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_defaults</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">blankingDistance</span><span class="p">,</span> <span class="n">lowPassDesamplingFactor</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get default blanking distance and low-pass desampling factor.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:                       Handle to a database</span>
+<span class="sd">        :param x:                        Y Channel</span>
+<span class="sd">        :param y:                        X Channel</span>
+<span class="sd">        :param z:                        Data channel</span>
+<span class="sd">        :param blankingDistance:         blanking distance</span>
+<span class="sd">        :param lowPassDesamplingFactor:  low-pass desampling factor</span>
+<span class="sd">        :type  db:                       GXDB</span>
+<span class="sd">        :type  x:                        str</span>
+<span class="sd">        :type  y:                        str</span>
+<span class="sd">        :type  z:                        str</span>
+<span class="sd">        :type  blankingDistance:         float_ref</span>
+<span class="sd">        :type  lowPassDesamplingFactor:  int_ref</span>
+
+<span class="sd">        :returns:                        0 OK, 1 Error.</span>
+<span class="sd">        :rtype:                          int</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span><span class="p">,</span> <span class="n">blankingDistance</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lowPassDesamplingFactor</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapKGRD</span><span class="o">.</span><span class="n">_get_defaults</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">z</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">blankingDistance</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lowPassDesamplingFactor</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+</div>
+
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXKGRD</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

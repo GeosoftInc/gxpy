@@ -1,0 +1,46 @@
+﻿geosoft.gxpy.surface
+====================
+
+.. automodule:: geosoft.gxpy.surface
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _surface_file_name
+      _surface_name
+      _t
+      delete_files
+      render
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Surface
+      SurfaceDataset
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      SurfaceException
+   
+   
+
+
+

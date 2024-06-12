@@ -1,0 +1,48 @@
+﻿geosoft.gxpy.geometry
+=====================
+
+.. automodule:: geosoft.gxpy.geometry
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _geo_cs
+      _t
+      extent_union
+      first_coordinate_system
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Geometry
+      Mesh
+      PPoint
+      Point
+      Point2
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      GeometryException
+   
+   
+
+
+

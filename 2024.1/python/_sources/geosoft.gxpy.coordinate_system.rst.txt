@@ -1,0 +1,54 @@
+﻿geosoft.gxpy.coordinate\_system
+===============================
+
+.. automodule:: geosoft.gxpy.coordinate_system
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _extract
+      _t
+      _unknown
+      find_key
+      hcs_orient_vcs_from_name
+      is_known
+      list_from_wktsrs
+      name_from_hcs_orient_vcs
+      name_list
+      parameter_exists
+      parameters
+      wkt_vcs
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Coordinate_system
+      Coordinate_translate
+      Wkt
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      CSException
+   
+   
+
+
+

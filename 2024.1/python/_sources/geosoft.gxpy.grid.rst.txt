@@ -1,0 +1,53 @@
+﻿geosoft.gxpy.grid
+=================
+
+.. automodule:: geosoft.gxpy.grid
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _t
+      _transform_color_int_to_rgba
+      array_locations
+      decorate_name
+      delete_files
+      figure_map
+      gridBool
+      gridMosaic
+      grid_bool
+      grid_mosaic
+      image_file
+      name_parts
+      reopen
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Grid
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      GridException
+   
+   
+
+
+

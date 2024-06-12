@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>geosoft.gxpy.group &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.group</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.group.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-geosoft.gxpy.group">
+<span id="geosoft-gxpy-group"></span><h1>geosoft.gxpy.group<a class="headerlink" href="#module-geosoft.gxpy.group" title="Link to this heading">¶</a></h1>
+<p>A Geosoft View (<code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.view.View</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.view.View_3d</span></code>) contains graphical elements as
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">Group</span></code> instances. Groups are named and are available to a user in a Geosoft viewer, which allows groups to
+be turned on or off, modify the transparency, or be deleted.</p>
+<p>2D views can only accept 2D groups, while a 3D view can accept both 2D and 3D groups. When a 2D group is placed
+in a 3D view, the group is placed on a the active plane inside the 3D view</p>
+<dl class="field-list simple">
+<dt class="field-odd">Classes<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="field-list simple">
+<dt class="field-odd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Group</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>base class for named rendering groups in 2D and 3D views.</p>
+</dd>
+<dt class="field-even"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Draw</span></code><span class="colon">:</span></dt>
+<dd class="field-even"><p>2D drawing group, handles 2D drawing to a view or plane in a 3D view</p>
+</dd>
+<dt class="field-odd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Draw_3d</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>3D grawing group for 3D objects placed in a 3d view</p>
+</dd>
+<dt class="field-even"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Color_symbols_group</span></code><span class="colon">:</span></dt>
+<dd class="field-even"><p>group for 2D symbols rendered based on data values</p>
+</dd>
+<dt class="field-odd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Aggregate_group</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>group that contains a <code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.agg.Aggregate_image</span></code> instance</p>
+</dd>
+<dt class="field-even"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Color</span></code><span class="colon">:</span></dt>
+<dd class="field-even"><p>colour definition</p>
+</dd>
+<dt class="field-odd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Color_map</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>maps values to colors</p>
+</dd>
+<dt class="field-even"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pen</span></code><span class="colon">:</span></dt>
+<dd class="field-even"><p>pen definition, includes line colour, thickness and pattern, and fill.</p>
+</dd>
+<dt class="field-odd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Text_def</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>defined text characteristics</p>
+</dd>
+<dt class="field-even"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VoxDisplayGroup</span></code><span class="colon">:</span></dt>
+<dd class="field-even"><p>a ‘geosoft.gxpy.vox.VoxDisplay` in a <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.view.View_3d</span></code></p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Constants<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="field-list simple">
+<dt class="field-odd">GROUP_NAME_SIZE<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.view.VIEW_NAME_SIZE</span></code></p>
+</dd>
+<dt class="field-even">NEW<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="GXMVIEW.html#id309" title="geosoft.gxapi.MVIEW_GROUP_NEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_GROUP_NEW</span></code></a></p>
+</dd>
+<dt class="field-odd">APPEND<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXMVIEW.html#id310" title="geosoft.gxapi.MVIEW_GROUP_APPEND"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_GROUP_APPEND</span></code></a></p>
+</dd>
+<dt class="field-even">READ_ONLY<span class="colon">:</span></dt>
+<dd class="field-even"><p>max(NEW, APPEND) + 1</p>
+</dd>
+<dt class="field-odd">REPLACE<span class="colon">:</span></dt>
+<dd class="field-odd"><p>READ_ONLY + 1</p>
+</dd>
+<dt class="field-even">SMOOTH_NONE<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="GXMVIEW.html#id350" title="geosoft.gxapi.MVIEW_SMOOTH_NEAREST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_SMOOTH_NEAREST</span></code></a></p>
+</dd>
+<dt class="field-odd">SMOOTH_CUBIC<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXMVIEW.html#id351" title="geosoft.gxapi.MVIEW_SMOOTH_CUBIC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_SMOOTH_CUBIC</span></code></a></p>
+</dd>
+<dt class="field-even">SMOOTH_AKIMA<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="GXMVIEW.html#id352" title="geosoft.gxapi.MVIEW_SMOOTH_AKIMA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_SMOOTH_AKIMA</span></code></a></p>
+</dd>
+<dt class="field-odd">TILE_RECTANGULAR<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXMVIEW.html#id353" title="geosoft.gxapi.MVIEW_TILE_RECTANGULAR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_TILE_RECTANGULAR</span></code></a></p>
+</dd>
+<dt class="field-even">TILE_DIAGONAL<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="GXMVIEW.html#id354" title="geosoft.gxapi.MVIEW_TILE_DIAGONAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_TILE_DIAGONAL</span></code></a></p>
+</dd>
+<dt class="field-odd">TILE_TRIANGULAR<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXMVIEW.html#id355" title="geosoft.gxapi.MVIEW_TILE_TRIANGULAR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_TILE_TRIANGULAR</span></code></a></p>
+</dd>
+<dt class="field-even">TILE_RANDOM<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="GXMVIEW.html#id356" title="geosoft.gxapi.MVIEW_TILE_RANDOM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_TILE_RANDOM</span></code></a></p>
+</dd>
+<dt class="field-odd">UNIT_VIEW<span class="colon">:</span></dt>
+<dd class="field-odd"><p>0</p>
+</dd>
+<dt class="field-even">UNIT_MAP<span class="colon">:</span></dt>
+<dd class="field-even"><p>2</p>
+</dd>
+<dt class="field-odd">UNIT_VIEW_UNWARPED<span class="colon">:</span></dt>
+<dd class="field-odd"><p>3</p>
+</dd>
+<dt class="field-even">GRATICULE_DOT<span class="colon">:</span></dt>
+<dd class="field-even"><p>0</p>
+</dd>
+<dt class="field-odd">GRATICULE_LINE<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1</p>
+</dd>
+<dt class="field-even">GRATICULE_CROSS<span class="colon">:</span></dt>
+<dd class="field-even"><p>2</p>
+</dd>
+<dt class="field-odd">LINE_STYLE_SOLID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1</p>
+</dd>
+<dt class="field-even">LINE_STYLE_LONG<span class="colon">:</span></dt>
+<dd class="field-even"><p>2</p>
+</dd>
+<dt class="field-odd">LINE_STYLE_DOTTED<span class="colon">:</span></dt>
+<dd class="field-odd"><p>3</p>
+</dd>
+<dt class="field-even">LINE_STYLE_SHORT<span class="colon">:</span></dt>
+<dd class="field-even"><p>4</p>
+</dd>
+<dt class="field-odd">LINE_STYLE_LONG_SHORT_LONG<span class="colon">:</span></dt>
+<dd class="field-odd"><p>5</p>
+</dd>
+<dt class="field-even">LINE_STYLE_LONG_DOT_LONG<span class="colon">:</span></dt>
+<dd class="field-even"><p>6</p>
+</dd>
+<dt class="field-odd">SYMBOL_NONE<span class="colon">:</span></dt>
+<dd class="field-odd"><p>0</p>
+</dd>
+<dt class="field-even">SYMBOL_DOT<span class="colon">:</span></dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">SYMBOL_PLUS<span class="colon">:</span></dt>
+<dd class="field-odd"><p>2</p>
+</dd>
+<dt class="field-even">SYMBOL_X<span class="colon">:</span></dt>
+<dd class="field-even"><p>3</p>
+</dd>
+<dt class="field-odd">SYMBOL_BOX<span class="colon">:</span></dt>
+<dd class="field-odd"><p>4</p>
+</dd>
+<dt class="field-even">SYMBOL_TRIANGLE<span class="colon">:</span></dt>
+<dd class="field-even"><p>5</p>
+</dd>
+<dt class="field-odd">SYMBOL_INVERTED_TRIANGLE<span class="colon">:</span></dt>
+<dd class="field-odd"><p>6</p>
+</dd>
+<dt class="field-even">SYMBOL_HEXAGON<span class="colon">:</span></dt>
+<dd class="field-even"><p>7</p>
+</dd>
+<dt class="field-odd">SYMBOL_SMALL_BOX<span class="colon">:</span></dt>
+<dd class="field-odd"><p>8</p>
+</dd>
+<dt class="field-even">SYMBOL_SMALL_DIAMOND<span class="colon">:</span></dt>
+<dd class="field-even"><p>9</p>
+</dd>
+<dt class="field-odd">SYMBOL_CIRCLE<span class="colon">:</span></dt>
+<dd class="field-odd"><p>20</p>
+</dd>
+<dt class="field-even">SYMBOL_3D_SPHERE<span class="colon">:</span></dt>
+<dd class="field-even"><p>0</p>
+</dd>
+<dt class="field-odd">SYMBOL_3D_CUBE<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1</p>
+</dd>
+<dt class="field-even">SYMBOL_3D_CYLINDER<span class="colon">:</span></dt>
+<dd class="field-even"><p>2</p>
+</dd>
+<dt class="field-odd">SYMBOL_3D_CONE<span class="colon">:</span></dt>
+<dd class="field-odd"><p>3</p>
+</dd>
+<dt class="field-even">FONT_WEIGHT_ULTRALIGHT<span class="colon">:</span></dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">FONT_WEIGHT_LIGHT<span class="colon">:</span></dt>
+<dd class="field-odd"><p>2</p>
+</dd>
+<dt class="field-even">FONT_WEIGHT_MEDIUM<span class="colon">:</span></dt>
+<dd class="field-even"><p>3</p>
+</dd>
+<dt class="field-odd">FONT_WEIGHT_BOLD<span class="colon">:</span></dt>
+<dd class="field-odd"><p>4</p>
+</dd>
+<dt class="field-even">FONT_WEIGHT_XBOLD<span class="colon">:</span></dt>
+<dd class="field-even"><p>5</p>
+</dd>
+<dt class="field-odd">FONT_WEIGHT_XXBOLD<span class="colon">:</span></dt>
+<dd class="field-odd"><p>6</p>
+</dd>
+<dt class="field-even">CMODEL_RGB<span class="colon">:</span></dt>
+<dd class="field-even"><p>0</p>
+</dd>
+<dt class="field-odd">CMODEL_CMY<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1</p>
+</dd>
+<dt class="field-even">CMODEL_HSV<span class="colon">:</span></dt>
+<dd class="field-even"><p>2</p>
+</dd>
+<dt class="field-odd">C_BLACK<span class="colon">:</span></dt>
+<dd class="field-odd"><p>67108863</p>
+</dd>
+<dt class="field-even">C_RED<span class="colon">:</span></dt>
+<dd class="field-even"><p>33554687</p>
+</dd>
+<dt class="field-odd">C_GREEN<span class="colon">:</span></dt>
+<dd class="field-odd"><p>33619712</p>
+</dd>
+<dt class="field-even">C_BLUE<span class="colon">:</span></dt>
+<dd class="field-even"><p>50266112</p>
+</dd>
+<dt class="field-odd">C_CYAN<span class="colon">:</span></dt>
+<dd class="field-odd"><p>50331903</p>
+</dd>
+<dt class="field-even">C_MAGENTA<span class="colon">:</span></dt>
+<dd class="field-even"><p>50396928</p>
+</dd>
+<dt class="field-odd">C_YELLOW<span class="colon">:</span></dt>
+<dd class="field-odd"><p>67043328</p>
+</dd>
+<dt class="field-even">C_GREY<span class="colon">:</span></dt>
+<dd class="field-even"><p>41975936</p>
+</dd>
+<dt class="field-odd">C_LT_RED<span class="colon">:</span></dt>
+<dd class="field-odd"><p>54542336</p>
+</dd>
+<dt class="field-even">C_LT_GREEN<span class="colon">:</span></dt>
+<dd class="field-even"><p>54526016</p>
+</dd>
+<dt class="field-odd">C_LT_BLUE<span class="colon">:</span></dt>
+<dd class="field-odd"><p>50348096</p>
+</dd>
+<dt class="field-even">C_LT_CYAN<span class="colon">:</span></dt>
+<dd class="field-even"><p>50331712</p>
+</dd>
+<dt class="field-odd">C_LT_MAGENTA<span class="colon">:</span></dt>
+<dd class="field-odd"><p>50348032</p>
+</dd>
+<dt class="field-even">C_LT_YELLOW<span class="colon">:</span></dt>
+<dd class="field-even"><p>54525952</p>
+</dd>
+<dt class="field-odd">C_LT_GREY<span class="colon">:</span></dt>
+<dd class="field-odd"><p>54542400</p>
+</dd>
+<dt class="field-even">C_GREY10<span class="colon">:</span></dt>
+<dd class="field-even"><p>51910680</p>
+</dd>
+<dt class="field-odd">C_GREY25<span class="colon">:</span></dt>
+<dd class="field-odd"><p>54542400</p>
+</dd>
+<dt class="field-even">C_GREY50<span class="colon">:</span></dt>
+<dd class="field-even"><p>41975936</p>
+</dd>
+<dt class="field-odd">C_WHITE<span class="colon">:</span></dt>
+<dd class="field-odd"><p>50331648</p>
+</dd>
+<dt class="field-even">C_TRANSPARENT<span class="colon">:</span></dt>
+<dd class="field-even"><p>0</p>
+</dd>
+<dt class="field-odd">REF_BOTTOM_LEFT<span class="colon">:</span></dt>
+<dd class="field-odd"><p>0</p>
+</dd>
+<dt class="field-even">REF_BOTTOM_CENTER<span class="colon">:</span></dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">REF_BOTTOM_RIGHT<span class="colon">:</span></dt>
+<dd class="field-odd"><p>2</p>
+</dd>
+<dt class="field-even">REF_CENTER_LEFT<span class="colon">:</span></dt>
+<dd class="field-even"><p>3</p>
+</dd>
+<dt class="field-odd">REF_CENTER<span class="colon">:</span></dt>
+<dd class="field-odd"><p>4</p>
+</dd>
+<dt class="field-even">REF_CENTER_RIGHT<span class="colon">:</span></dt>
+<dd class="field-even"><p>5</p>
+</dd>
+<dt class="field-odd">REF_TOP_LEFT<span class="colon">:</span></dt>
+<dd class="field-odd"><p>6</p>
+</dd>
+<dt class="field-even">REF_TOP_CENTER<span class="colon">:</span></dt>
+<dd class="field-even"><p>7</p>
+</dd>
+<dt class="field-odd">REF_TOP_RIGHT<span class="colon">:</span></dt>
+<dd class="field-odd"><p>8</p>
+</dd>
+<dt class="field-even">GROUP_ALL<span class="colon">:</span></dt>
+<dd class="field-even"><p>0</p>
+</dd>
+<dt class="field-odd">GROUP_MARKED<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1</p>
+</dd>
+<dt class="field-even">GROUP_VISIBLE<span class="colon">:</span></dt>
+<dd class="field-even"><p>2</p>
+</dd>
+<dt class="field-odd">GROUP_AGG<span class="colon">:</span></dt>
+<dd class="field-odd"><p>3</p>
+</dd>
+<dt class="field-even">GROUP_CSYMB<span class="colon">:</span></dt>
+<dd class="field-even"><p>4</p>
+</dd>
+<dt class="field-odd">GROUP_VOXD<span class="colon">:</span></dt>
+<dd class="field-odd"><p>5</p>
+</dd>
+<dt class="field-even">LOCATE_FIT<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="GXMVIEW.html#id347" title="geosoft.gxapi.MVIEW_RELOCATE_FIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_RELOCATE_FIT</span></code></a></p>
+</dd>
+<dt class="field-odd">LOCATE_FIT_KEEP_ASPECT<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXMVIEW.html#id348" title="geosoft.gxapi.MVIEW_RELOCATE_ASPECT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_RELOCATE_ASPECT</span></code></a></p>
+</dd>
+<dt class="field-even">LOCATE_CENTER<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="GXMVIEW.html#id349" title="geosoft.gxapi.MVIEW_RELOCATE_ASPECT_CENTER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_RELOCATE_ASPECT_CENTER</span></code></a></p>
+</dd>
+<dt class="field-odd">COLOR_BAR_RIGHT<span class="colon">:</span></dt>
+<dd class="field-odd"><p>0</p>
+</dd>
+<dt class="field-even">COLOR_BAR_LEFT<span class="colon">:</span></dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">COLOR_BAR_BOTTOM<span class="colon">:</span></dt>
+<dd class="field-odd"><p>2</p>
+</dd>
+<dt class="field-even">COLOR_BAR_TOP<span class="colon">:</span></dt>
+<dd class="field-even"><p>3</p>
+</dd>
+<dt class="field-odd">COLOR_BAR_ANNOTATE_RIGHT<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1</p>
+</dd>
+<dt class="field-even">COLOR_BAR_ANNOTATE_LEFT<span class="colon">:</span></dt>
+<dd class="field-even"><p>-1</p>
+</dd>
+<dt class="field-odd">COLOR_BAR_ANNOTATE_TOP<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1</p>
+</dd>
+<dt class="field-even">COLOR_BAR_ANNOTATE_BOTTOM<span class="colon">:</span></dt>
+<dd class="field-even"><p>-1</p>
+</dd>
+<dt class="field-odd">CYLINDER_OPEN<span class="colon">:</span></dt>
+<dd class="field-odd"><p>0</p>
+</dd>
+<dt class="field-even">CYLINDER_CLOSE_START<span class="colon">:</span></dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">CYLINDER_CLOSE_END<span class="colon">:</span></dt>
+<dd class="field-odd"><p>2</p>
+</dd>
+<dt class="field-even">CYLINDER_CLOSE_ALL<span class="colon">:</span></dt>
+<dd class="field-even"><p>3</p>
+</dd>
+<dt class="field-odd">POINT_STYLE_DOT<span class="colon">:</span></dt>
+<dd class="field-odd"><p>0</p>
+</dd>
+<dt class="field-even">POINT_STYLE_SPHERE<span class="colon">:</span></dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">LINE3D_STYLE_LINE<span class="colon">:</span></dt>
+<dd class="field-odd"><p>0</p>
+</dd>
+<dt class="field-even">LINE3D_STYLE_TUBE<span class="colon">:</span></dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">LINE3D_STYLE_TUBE_JOINED<span class="colon">:</span></dt>
+<dd class="field-odd"><p>2</p>
+</dd>
+<dt class="field-even">SURFACE_FLAT<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="GXMVIEW.html#id291" title="geosoft.gxapi.MVIEW_DRAWOBJ3D_MODE_FLAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_DRAWOBJ3D_MODE_FLAT</span></code></a></p>
+</dd>
+<dt class="field-odd">SURFACE_SMOOTH<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXMVIEW.html#id292" title="geosoft.gxapi.MVIEW_DRAWOBJ3D_MODE_SMOOTH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.MVIEW_DRAWOBJ3D_MODE_SMOOTH</span></code></a></p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Regression tests provide usage examples:
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_group.py">group drawing tests</a></p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="geosoft.gxpy.view.html#module-geosoft.gxpy.view" title="geosoft.gxpy.view"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.view</span></code></a>, <a class="reference internal" href="geosoft.gxpy.map.html#module-geosoft.gxpy.map" title="geosoft.gxpy.map"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.map</span></code></a></p>
+<p><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxapi.GXMVIEW</span></code></a>, <a class="reference internal" href="GXMVU.html#geosoft.gxapi.GXMVU" title="geosoft.gxapi.GXMVU"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxapi.GXMVU</span></code></a></p>
+</div>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_draw</span></code>(func)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_make_point</span></code>(p)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_make_point2</span></code>(p2)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_make_ppoint</span></code>(p)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_t</span></code>(s)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">color_from_string</span></code>(cstr)</p></td>
+<td><p>Return a Geosoft color number from a color string.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">contour</span></code>(view, group_name, grid_file_name[, ...])</p></td>
+<td><p>Create a contour group from a grid file.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">edge_reference</span></code>(area, reference)</p></td>
+<td><p>Location of a reference point of an area.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">face_normals_np</span></code>(faces, verticies)</p></td>
+<td><p>Return normals of the verticies based on tringular faces, assuming right-hand winding of vertex for each face.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">font_weight_from_line_thickness</span></code>(line_thick, ...)</p></td>
+<td><p>Returns font weight for a text height and line thickness.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">legend_color_bar</span></code>(view, group_name, cmap[, ...])</p></td>
+<td><p>Draw a color bar legend from :class:Color_map coloring definitions.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">surface_group_from_file</span></code>(v3d, file_name[, ...])</p></td>
+<td><p>Create a 3D surface group from a surface dataset file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">thickness_from_font_weight</span></code>(weight, height)</p></td>
+<td><p>Returns the line thickness appropriate for a text weight.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">vertex_normals_np</span></code>(faces, verticies[, ...])</p></td>
+<td><p>Return normals of the verticies based on tringular faces, assuming right-hand winding of vertex for each face.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">vertex_normals_vv</span></code>(faces, verticies[, ...])</p></td>
+<td><p>Return normals of the verticies based on tringular faces, assuming right-hand winding of vertex for each face.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Aggregate_group</span></code>(view, group_name, mode)</p></td>
+<td><p>Aggregate group in a view</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Color</span></code>(color[, model])</p></td>
+<td><p>Colours, which are stored as a 32-bit color integer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Color_map</span></code>([cmap, title, unit_of_measure])</p></td>
+<td><p>Color map for establishing data color mapping for things like aggregates and color symbols.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Color_symbols_group</span></code>(view, group_name, **kwargs)</p></td>
+<td><p>Data represented as colored symbols based on a <code class="xref py py-class docutils literal notranslate"><span class="pre">Color_map</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Draw</span></code>(*args, **kwargs)</p></td>
+<td><p>Create (start) a drawing group for 2D drawing elements.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Draw_3d</span></code>(view, *args[, render_backfaces])</p></td>
+<td><p>Create a 3D drawing group within a 3D view.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Group</span></code>(view[, name, plane, view_lock, mode, ...])</p></td>
+<td><p>Geosoft group class.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pen</span></code>(**kwargs)</p></td>
+<td><p>Geosoft Pen class.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Text_def</span></code>(**kwargs)</p></td>
+<td><p>Text definition:</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">VoxDisplayGroup</span></code>(view3d, group_name[, mode])</p></td>
+<td><p>Vox display group in a view.  Use class methods <code class="xref py py-obj docutils literal notranslate"><span class="pre">new()</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">open()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Exceptions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">GroupException</span></code>(message)</p></td>
+<td><p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.group" title="geosoft.gxpy.group"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.group</span></code></a>.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.group</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

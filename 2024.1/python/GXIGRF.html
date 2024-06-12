@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXIGRF class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXIGRF class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">GXIGRF class</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXIGRF"><code class="docutils literal notranslate"><span class="pre">GXIGRF</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXIGRF.__init__"><code class="docutils literal notranslate"><span class="pre">GXIGRF.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXIGRF.calc"><code class="docutils literal notranslate"><span class="pre">GXIGRF.calc()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXIGRF.calc_vv"><code class="docutils literal notranslate"><span class="pre">GXIGRF.calc_vv()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXIGRF.create"><code class="docutils literal notranslate"><span class="pre">GXIGRF.create()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXIGRF.date_range"><code class="docutils literal notranslate"><span class="pre">GXIGRF.date_range()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXIGRF.is_null"><code class="docutils literal notranslate"><span class="pre">GXIGRF.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXIGRF.null"><code class="docutils literal notranslate"><span class="pre">GXIGRF.null()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXIGRF.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="gxigrf-class">
+<span id="gxigrf"></span><h1>GXIGRF class<a class="headerlink" href="#gxigrf-class" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXIGRF">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXIGRF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIGRF.html#GXIGRF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXIGRF" title="Link to this definition">¶</a></dt>
+<dd><p>GXIGRF class.</p>
+<p>International Geomagnetic Reference Field
+Methods to work with <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a> objects. The <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a> object
+contains data for the <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a> model of the geomagnetic
+reference field.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXIGRF.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIGRF.html#GXIGRF.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXIGRF.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXIGRF.calc">
+<span class="sig-name descname"><span class="pre">calc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">el</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIGRF.html#GXIGRF.calc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXIGRF.calc" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a> data for a given <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a> model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>el</strong> (<em>float</em>) – Elevation (metres)</p></li>
+<li><p><strong>lon</strong> (<em>float</em>) – Longitude (-180 to 180)</p></li>
+<li><p><strong>lat</strong> (<em>float</em>) – Latitude  (-90 to 90) Returns</p></li>
+<li><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Field strength</p></li>
+<li><p><strong>inc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Field inclination</p></li>
+<li><p><strong>dec</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Field declination</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Calculate <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a> data (total field, inclination, and declination)
+for a given <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a> model. The model used will be the same as that
+obtained with <a class="reference internal" href="#geosoft.gxapi.GXIGRF.create" title="geosoft.gxapi.GXIGRF.create"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXIGRF.calc_vv">
+<span class="sig-name descname"><span class="pre">calc_vv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gv_vel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gv_vlon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gv_vlat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gv_vfs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gv_vinc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gv_vdec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIGRF.html#GXIGRF.calc_vv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXIGRF.calc_vv" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a> data <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>’s for a given <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a> model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gv_vel</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input elevation data (metres)</p></li>
+<li><p><strong>gv_vlon</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input longitude data (-180 to 180)</p></li>
+<li><p><strong>gv_vlat</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input latitude data  (-90 to 90)</p></li>
+<li><p><strong>gv_vfs</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output total field</p></li>
+<li><p><strong>gv_vinc</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output inclination</p></li>
+<li><p><strong>gv_vdec</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output declination</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Calculate <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a> data (total field, inclination, and declination)
+for a given <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a> model. The model used will be the same as that
+obtained with <a class="reference internal" href="#geosoft.gxapi.GXIGRF.create" title="geosoft.gxapi.GXIGRF.create"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create</span></code></a>.
+All of the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>’s should be the same length. The function
+will abort if they are not.</p>
+<p>No assumption is made on what data types are contained by
+any of the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>’s. However, all total field, inclination, and
+declination values are internally calculated as real data.
+These values will be converted to the types contained in the
+output <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>’s.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXIGRF.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIGRF.html#GXIGRF.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXIGRF.create" title="Link to this definition">¶</a></dt>
+<dd><p>Create an <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>date</strong> (<em>float</em>) – Date required</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – Year of the <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a> model to use</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – Name of the <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a> reference data file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a> Object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF.GXIGRF">GXIGRF</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> If the year of the <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a> model is dummy, then
+the <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a> year nearest to the line’s date will
+be used. Otherwise, the specified year is used.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXIGRF.date_range">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">date_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIGRF.html#GXIGRF.date_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXIGRF.date_range" title="Link to this definition">¶</a></dt>
+<dd><p>Determine the range of years covered by an <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a> or DGRF file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>str</em>) – Model data file name</p></li>
+<li><p><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum year  (<a class="reference internal" href="GXGEOSOFT.html#id41" title="geosoft.gxapi.rMAX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rMAX</span></code></a> if none found)</p></li>
+<li><p><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum year  (<a class="reference internal" href="GXGEOSOFT.html#id40" title="geosoft.gxapi.rMIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rMIN</span></code></a> if none found)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> This is useful when using a DGRF file, because the system is set
+up only to calculate for years within the date range, and will
+return an error otherwise.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXIGRF.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIGRF.html#GXIGRF.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXIGRF.is_null" title="Link to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXIGRF.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIGRF.html#GXIGRF.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXIGRF.null" title="Link to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIGRF</span></code></a></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXIGRF" title="geosoft.gxapi.GXIGRF.GXIGRF">GXIGRF</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXIGRF class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

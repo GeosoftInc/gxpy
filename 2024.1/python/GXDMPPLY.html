@@ -1,0 +1,572 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXDMPPLY class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXDMPPLY class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">GXDMPPLY class</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.__init__"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.clear"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.clear()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.copy"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.copy()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.create"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.create()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.get_azimuth"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.get_azimuth()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.get_extents"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.get_extents()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.get_joins"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.get_joins()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.get_normal_vectors"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.get_normal_vectors()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.get_poly"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.get_poly()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.get_swing"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.get_swing()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.get_vertex"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.get_vertex()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.is_null"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.load"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.load()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.move_vertex"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.move_vertex()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.null"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.num_joins"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.num_joins()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.num_polys"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.num_polys()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.num_vertices"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.num_vertices()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.project_poly"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.project_poly()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.re_project_poly"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.re_project_poly()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.save"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.save()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.set_poly"><code class="docutils literal notranslate"><span class="pre">GXDMPPLY.set_poly()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXDMPPLY.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="gxdmpply-class">
+<span id="gxdmpply"></span><h1>GXDMPPLY class<a class="headerlink" href="#gxdmpply-class" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXDMPPLY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY" title="Link to this definition">¶</a></dt>
+<dd><p>GXDMPPLY class.</p>
+<p>Datamine Multiple polygon object</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.clear" title="Link to this definition">¶</a></dt>
+<dd><p>Clear/remove all polygons from the <a class="reference internal" href="#geosoft.gxapi.GXDMPPLY" title="geosoft.gxapi.GXDMPPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDMPPLY</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.copy" title="Link to this definition">¶</a></dt>
+<dd><p>Copy</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>source</strong> (<a class="reference internal" href="#geosoft.gxapi.GXDMPPLY" title="geosoft.gxapi.GXDMPPLY.GXDMPPLY"><em>GXDMPPLY</em></a>) – Source</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.create" title="Link to this definition">¶</a></dt>
+<dd><p>Creates a <a class="reference internal" href="#geosoft.gxapi.GXDMPPLY" title="geosoft.gxapi.GXDMPPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDMPPLY</span></code></a> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DMPLY Object</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY" title="geosoft.gxapi.GXDMPPLY.GXDMPPLY">GXDMPPLY</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.get_azimuth">
+<span class="sig-name descname"><span class="pre">get_azimuth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">az</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.get_azimuth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.get_azimuth" title="Link to this definition">¶</a></dt>
+<dd><p>Get the azimuth of a given polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<em>int</em>) – Polygon number (1 to NP)</p></li>
+<li><p><strong>az</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Azimuth (degrees) (o)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The azimuth is the equivalent section azimuth,
+equal to the azimuth of the normal vector plus
+90 degrees.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.get_extents">
+<span class="sig-name descname"><span class="pre">get_extents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.get_extents"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.get_extents" title="Link to this definition">¶</a></dt>
+<dd><p>Get the center, width and height of a given polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<em>int</em>) – Polygon number (1 to NP)</p></li>
+<li><p><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Center point X (o)</p></li>
+<li><p><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Center point Y (o)</p></li>
+<li><p><strong>z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Center point Z (o)</p></li>
+<li><p><strong>w</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Width of polygon (in its plane) (o)</p></li>
+<li><p><strong>h</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Height of polygon (Z extent) (o)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.get_joins">
+<span class="sig-name descname"><span class="pre">get_joins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.get_joins"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.get_joins" title="Link to this definition">¶</a></dt>
+<dd><p>Get join lines for each vertex in a specific polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<em>int</em>) – Polygon number (1 to N)</p></li>
+<li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – INT <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> of join indices (1 to NJoins).</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> If a specific vertex is not joined, the returned value is 0.
+If the vertex is joined, then the index of the join line (1 to NJoins)
+is returned.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.get_normal_vectors">
+<span class="sig-name descname"><span class="pre">get_normal_vectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.get_normal_vectors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.get_normal_vectors" title="Link to this definition">¶</a></dt>
+<dd><p>Get the normal vectors of a given polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<em>int</em>) – Polygon number (1 to NP)</p></li>
+<li><p><strong>x1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X component (o) (Horizontal azimuth vector)</p></li>
+<li><p><strong>y1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y component (o)</p></li>
+<li><p><strong>z1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Z component (o)</p></li>
+<li><p><strong>x2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X component (o) (Down-dip, in the vertical plane)</p></li>
+<li><p><strong>y2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y component (o)</p></li>
+<li><p><strong>z2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Z component (o)</p></li>
+<li><p><strong>x3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X component (o) (Normal vector)</p></li>
+<li><p><strong>y3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y component (o)</p></li>
+<li><p><strong>z3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Z component (o)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Three normalized vectors are returned.
+The first is horizontal, in the plane of the polygon.
+The second is in the vertical plane, corresponding to the
+“down-dip” direction.
+The third is the normal vector to the polygon plane.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.get_poly">
+<span class="sig-name descname"><span class="pre">get_poly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.get_poly"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.get_poly" title="Link to this definition">¶</a></dt>
+<dd><p>Get a specific polygon from a <a class="reference internal" href="#geosoft.gxapi.GXDMPPLY" title="geosoft.gxapi.GXDMPPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDMPPLY</span></code></a> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<em>int</em>) – Polygon number (1 to NP) (i)</p></li>
+<li><p><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X Locations (o)</p></li>
+<li><p><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y Locations (o)</p></li>
+<li><p><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z Locations (o)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Get the number of points from the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> length.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.get_swing">
+<span class="sig-name descname"><span class="pre">get_swing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">az</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.get_swing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.get_swing" title="Link to this definition">¶</a></dt>
+<dd><p>Get the swing of a given polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<em>int</em>) – Polygon number (1 to NP)</p></li>
+<li><p><strong>az</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Swing (degrees) (o)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The swing is the equivalent section swing,
+equal to zero for vertical plates, and increasing
+as the normal vector goes from horizontal upward.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.get_vertex">
+<span class="sig-name descname"><span class="pre">get_vertex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.get_vertex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.get_vertex" title="Link to this definition">¶</a></dt>
+<dd><p>Get a vertex location from a <a class="reference internal" href="#geosoft.gxapi.GXDMPPLY" title="geosoft.gxapi.GXDMPPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDMPPLY</span></code></a> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<em>int</em>) – Polygon number (1 to NP)</p></li>
+<li><p><strong>v</strong> (<em>int</em>) – Vertex number (1 to NV)</p></li>
+<li><p><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X Location (o)</p></li>
+<li><p><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y Location (o)</p></li>
+<li><p><strong>z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Z Location (o)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.is_null" title="Link to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.load" title="Link to this definition">¶</a></dt>
+<dd><p>Loads a Datamine polygon file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>str</em>) – Name of the file to load</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.move_vertex">
+<span class="sig-name descname"><span class="pre">move_vertex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.move_vertex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.move_vertex" title="Link to this definition">¶</a></dt>
+<dd><p>Moves a vertex and any associated lines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<em>int</em>) – Polygon number (1 to NP)</p></li>
+<li><p><strong>v</strong> (<em>int</em>) – Vertex number (1 to NV)</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – New location X</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – New location Y</p></li>
+<li><p><strong>z</strong> (<em>float</em>) – New location Z</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.null" title="Link to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXDMPPLY" title="geosoft.gxapi.GXDMPPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDMPPLY</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXDMPPLY" title="geosoft.gxapi.GXDMPPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDMPPLY</span></code></a></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXDMPPLY" title="geosoft.gxapi.GXDMPPLY.GXDMPPLY">GXDMPPLY</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.num_joins">
+<span class="sig-name descname"><span class="pre">num_joins</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.num_joins"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.num_joins" title="Link to this definition">¶</a></dt>
+<dd><p>Get the number of joining lines in a <a class="reference internal" href="#geosoft.gxapi.GXDMPPLY" title="geosoft.gxapi.GXDMPPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDMPPLY</span></code></a> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of joining lines</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.num_polys">
+<span class="sig-name descname"><span class="pre">num_polys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.num_polys"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.num_polys" title="Link to this definition">¶</a></dt>
+<dd><p>Get the number of polygons in a <a class="reference internal" href="#geosoft.gxapi.GXDMPPLY" title="geosoft.gxapi.GXDMPPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDMPPLY</span></code></a> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of polygons</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The value returned is the “NP” used in function descriptions
+below.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.num_vertices">
+<span class="sig-name descname"><span class="pre">num_vertices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.num_vertices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.num_vertices" title="Link to this definition">¶</a></dt>
+<dd><p>Get the number of vertices in a polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p</strong> (<em>int</em>) – Polygon number (1 to NP)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of vertices in a polygon</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The value returned is the “NV” used in function descriptions
+below.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.project_poly">
+<span class="sig-name descname"><span class="pre">project_poly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">az</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.project_poly"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.project_poly" title="Link to this definition">¶</a></dt>
+<dd><p>Project a polygon onto a vertical plane.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<em>int</em>) – Polygon number (1 to NP)</p></li>
+<li><p><strong>xp</strong> (<em>float</em>) – X location of plane origin in 3D</p></li>
+<li><p><strong>yp</strong> (<em>float</em>) – Y location of plane origin in 3D</p></li>
+<li><p><strong>zp</strong> (<em>float</em>) – Z location of plane origin in 3D</p></li>
+<li><p><strong>az</strong> (<em>float</em>) – Azimuth of the plane in degrees</p></li>
+<li><p><strong>swing</strong> (<em>float</em>) – Swing of the plane in degrees</p></li>
+<li><p><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X (horizontal along-section locations on vertical plane  (o)</p></li>
+<li><p><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y (vertical locations on vertical plane  (o)</p></li>
+<li><p><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z (horizontal distances perpendicular to the plane  (o)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Gives the location in plane coordinates of a selected polygon,
+after it has been projected perpendicularly onto the plane.</p>
+<dl class="simple">
+<dt>Plane coodinates: X - horizontal in plane</dt><dd><p>Y - “vertical” in plane (can be a swing)
+Z - horizontal, “perpendicular” to plane (RH)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.re_project_poly">
+<span class="sig-name descname"><span class="pre">re_project_poly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">az</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_z3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.re_project_poly"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.re_project_poly" title="Link to this definition">¶</a></dt>
+<dd><p>Recover polygon locations from 2D locations on vertical plane.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<em>int</em>) – Polygon number (1 to lNP) (i)</p></li>
+<li><p><strong>xp</strong> (<em>float</em>) – X location of plane origin in 3D (i)</p></li>
+<li><p><strong>yp</strong> (<em>float</em>) – Y location of plane origin in 3D (i)</p></li>
+<li><p><strong>zp</strong> (<em>float</em>) – Z location of plane origin in 3D (i)</p></li>
+<li><p><strong>az</strong> (<em>float</em>) – Azimuth of the plane in degrees (i)</p></li>
+<li><p><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations on vertical plane  (i)</p></li>
+<li><p><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y (actually Z) locations on vertical plane  (i)</p></li>
+<li><p><strong>vv_x3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X Locations of polygon (o)</p></li>
+<li><p><strong>vv_y3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y Locations of polygon (o)</p></li>
+<li><p><strong>vv_z3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z Locations of polygon (o)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> This is the inverse operation of <a class="reference internal" href="#geosoft.gxapi.GXDMPPLY.project_poly" title="geosoft.gxapi.GXDMPPLY.project_poly"><code class="xref py py-obj docutils literal notranslate"><span class="pre">project_poly</span></code></a>.</p>
+<p>Input the 2D locations on the projected vertical plane. These locations
+are projected back onto the original polygon plane.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.save" title="Link to this definition">¶</a></dt>
+<dd><p>Save to a Datamine polygon file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>str</em>) – Name of the file to save to</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDMPPLY.set_poly">
+<span class="sig-name descname"><span class="pre">set_poly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDMPPLY.html#GXDMPPLY.set_poly"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDMPPLY.set_poly" title="Link to this definition">¶</a></dt>
+<dd><p>Set a specific polygon into a <a class="reference internal" href="#geosoft.gxapi.GXDMPPLY" title="geosoft.gxapi.GXDMPPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDMPPLY</span></code></a> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<em>int</em>) – Polygon number (1 to NP) (i)</p></li>
+<li><p><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X Locations (i)</p></li>
+<li><p><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y Locations (i)</p></li>
+<li><p><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z Locations (i)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Get the number of points from the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> length.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXDMPPLY class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

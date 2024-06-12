@@ -1,0 +1,64 @@
+﻿geosoft.gxpy.group
+==================
+
+.. automodule:: geosoft.gxpy.group
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _draw
+      _make_point
+      _make_point2
+      _make_ppoint
+      _t
+      color_from_string
+      contour
+      edge_reference
+      face_normals_np
+      font_weight_from_line_thickness
+      legend_color_bar
+      surface_group_from_file
+      thickness_from_font_weight
+      vertex_normals_np
+      vertex_normals_vv
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Aggregate_group
+      Color
+      Color_map
+      Color_symbols_group
+      Draw
+      Draw_3d
+      Group
+      Pen
+      Text_def
+      VoxDisplayGroup
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      GroupException
+   
+   
+
+
+

@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXVM class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXVM class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">GXVM class</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVM"><code class="docutils literal notranslate"><span class="pre">GXVM</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVM.__init__"><code class="docutils literal notranslate"><span class="pre">GXVM.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVM.create"><code class="docutils literal notranslate"><span class="pre">GXVM.create()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVM.create_ext"><code class="docutils literal notranslate"><span class="pre">GXVM.create_ext()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVM.get_double"><code class="docutils literal notranslate"><span class="pre">GXVM.get_double()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVM.get_int"><code class="docutils literal notranslate"><span class="pre">GXVM.get_int()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVM.get_string"><code class="docutils literal notranslate"><span class="pre">GXVM.get_string()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVM.is_null"><code class="docutils literal notranslate"><span class="pre">GXVM.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVM.length"><code class="docutils literal notranslate"><span class="pre">GXVM.length()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVM.null"><code class="docutils literal notranslate"><span class="pre">GXVM.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVM.re_size"><code class="docutils literal notranslate"><span class="pre">GXVM.re_size()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVM.set_double"><code class="docutils literal notranslate"><span class="pre">GXVM.set_double()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVM.set_int"><code class="docutils literal notranslate"><span class="pre">GXVM.set_int()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVM.set_string"><code class="docutils literal notranslate"><span class="pre">GXVM.set_string()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXVM.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="gxvm-class">
+<span id="gxvm"></span><h1>GXVM class<a class="headerlink" href="#gxvm-class" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVM">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXVM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVM.html#GXVM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVM" title="Link to this definition">¶</a></dt>
+<dd><p>GXVM class.</p>
+<p>In-memory vector data methods
+The <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> class will store vector (array) data in a memory buffer which
+can be accessed using the <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> methods.
+The main use for the <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> class is to store data in a single physical
+memory location.  This memory can then be accessed by a user DLL using
+the <code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGEO.get_ptr_vm</span></code> function defined in gx_extern.h.
+<a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> memory can be any size, but a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> is intended for handling relatively
+small sets of data compared to a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>, which can work efficiently with
+very large volumes of data.  The acceptable maximum <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> size depends on
+the operating system and the performance requirements of an application.
+The best performance is achieved when all <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> memory can be stored
+comfortably within the the available system RAM.  If all <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> memory
+will not fit in the system RAM, the operating system virtual memory
+manager will be used to swap memory to the operations systems virtual
+memory paging file.  Note that the operating system virtual memory
+manager is much slower than the manager used by Geosoft when working with
+very large arrays in a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</p>
+<p>See <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> for methods to move data between a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> and a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVM.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVM.html#GXVM.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVM.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVM.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVM.html#GXVM.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVM.create" title="Link to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#geo-var"><span class="std std-ref">GEO_VAR constants</span></a></p></li>
+<li><p><strong>elements</strong> (<em>int</em>) – <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> length (less than 16777215)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> Object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM.GXVM">GXVM</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> elements are initialized to dummies.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVM.create_ext">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_ext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVM.html#GXVM.create_ext"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVM.create_ext" title="Link to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>, using one of the <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> special data types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></p></li>
+<li><p><strong>elements</strong> (<em>int</em>) – <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> length (less than 16777215)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> Object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM.GXVM">GXVM</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.4.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> elements are initialized to dummies.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVM.get_double">
+<span class="sig-name descname"><span class="pre">get_double</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVM.html#GXVM.get_double"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVM.get_double" title="Link to this definition">¶</a></dt>
+<dd><p>Get a real element from a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>element</strong> (<em>int</em>) – Element wanted</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Element wanted, or <a class="reference internal" href="GXGEOSOFT.html#id5" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>
+if the value is dummy or outside of the range of data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVM.get_int">
+<span class="sig-name descname"><span class="pre">get_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVM.html#GXVM.get_int"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVM.get_int" title="Link to this definition">¶</a></dt>
+<dd><p>Get an integer element from a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>element</strong> (<em>int</em>) – Element wanted</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Element wanted, or <a class="reference internal" href="GXGEOSOFT.html#id4" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iDUMMY</span></code></a>
+if the value is dummy or outside of the range of data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVM.get_string">
+<span class="sig-name descname"><span class="pre">get_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str_val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVM.html#GXVM.get_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVM.get_string" title="Link to this definition">¶</a></dt>
+<dd><p>Get a string element from a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>element</strong> (<em>int</em>) – Element wanted</p></li>
+<li><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String in which to place element</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Returns element wanted, or blank string
+if the value is dummy or outside of the range of data.</p>
+<p>Type conversions are performed if necessary.  Dummy values
+are converted to “*” string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVM.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVM.html#GXVM.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVM.is_null" title="Link to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVM.length">
+<span class="sig-name descname"><span class="pre">length</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVM.html#GXVM.length"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVM.length" title="Link to this definition">¶</a></dt>
+<dd><p>Returns current <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> length.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p># of elements in the <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVM.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVM.html#GXVM.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVM.null" title="Link to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM.GXVM">GXVM</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVM.re_size">
+<span class="sig-name descname"><span class="pre">re_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newsize</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVM.html#GXVM.re_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVM.re_size" title="Link to this definition">¶</a></dt>
+<dd><p>Re-set the size of a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>newsize</strong> (<em>int</em>) – New size (number of elements)</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If increasing the <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> size, new elements are set to dummies.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVM.set_double">
+<span class="sig-name descname"><span class="pre">set_double</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVM.html#GXVM.set_double"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVM.set_double" title="Link to this definition">¶</a></dt>
+<dd><p>Set a real element in a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>element</strong> (<em>int</em>) – Element to set</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – Value to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Element being set cannot be &lt; 0.</p>
+<p>If the element is &gt; current <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> length, the <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> length is
+increased.  Reallocating <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> lengths can lead to fragmented
+memory and should be avoided if possible.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVM.set_int">
+<span class="sig-name descname"><span class="pre">set_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVM.html#GXVM.set_int"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVM.set_int" title="Link to this definition">¶</a></dt>
+<dd><p>Set an integer element in a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>element</strong> (<em>int</em>) – Element to set</p></li>
+<li><p><strong>value</strong> (<em>int</em>) – Value to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Element being set cannot be &lt; 0.</p>
+<p>If the element is &gt; current <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> length, the <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> length is
+increased.  Reallocating <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> lengths can lead to fragmented
+memory and should be avoided if possible.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVM.set_string">
+<span class="sig-name descname"><span class="pre">set_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVM.html#GXVM.set_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVM.set_string" title="Link to this definition">¶</a></dt>
+<dd><p>Set a string element in a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>element</strong> (<em>int</em>) – Element to set</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – String to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Element being set cannot be &lt; 0.</p>
+<p>If the element is &gt; current <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> length, the <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> length is
+increased.  Reallocating <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> lengths can lead to fragmented
+memory and should be avoided if possible.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXVM class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

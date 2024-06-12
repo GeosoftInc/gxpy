@@ -1,0 +1,48 @@
+﻿geosoft.gxpy.gdb
+================
+
+.. automodule:: geosoft.gxpy.gdb
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _gdb_name
+      _t
+      _va_width
+      create_line_name
+      delete_files
+      is_valid_line_name
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Channel
+      Geosoft_gdb
+      Line
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      GdbException
+   
+   
+
+
+

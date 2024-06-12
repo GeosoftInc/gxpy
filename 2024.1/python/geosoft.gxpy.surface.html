@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>geosoft.gxpy.surface &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.surface</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxpy.surface.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-geosoft.gxpy.surface">
+<span id="geosoft-gxpy-surface"></span><h1>geosoft.gxpy.surface<a class="headerlink" href="#module-geosoft.gxpy.surface" title="Link to this heading">¶</a></h1>
+<p>Geosoft surfaces</p>
+<dl class="field-list simple">
+<dt class="field-odd">Classes<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="field-list simple">
+<dt class="field-odd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SurfaceDataset</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>Geosoft_surface dataset, contains zero or more <code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code> instances</p>
+</dd>
+<dt class="field-even"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code><span class="colon">:</span></dt>
+<dd class="field-even"><p>Surfaces defined by one or more <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Mesh</span></code> instances</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Constants<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="field-list simple">
+<dt class="field-odd">MODE_READ<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata.MODE_READ</span></code></p>
+</dd>
+<dt class="field-even">MODE_READWRITE<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata.MODE_READWRITE</span></code></p>
+</dd>
+<dt class="field-odd">MODE_NEW<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata.MODE_NEW</span></code></p>
+</dd>
+<dt class="field-even">MODE_APPEND<span class="colon">:</span></dt>
+<dd class="field-even"><p>MODE_READWRITE</p>
+</dd>
+<dt class="field-odd">STYLE_FLAT<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXSURFACEITEM.html#id17" title="geosoft.gxapi.SURFACERENDER_FILL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.SURFACERENDER_FILL</span></code></a></p>
+</dd>
+<dt class="field-even">STYLE_SMOOTH<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="GXSURFACEITEM.html#id0" title="geosoft.gxapi.SURFACERENDER_SMOOTH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.SURFACERENDER_SMOOTH</span></code></a></p>
+</dd>
+<dt class="field-odd">STYLE_EDGE<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXSURFACEITEM.html#id18" title="geosoft.gxapi.SURFACERENDER_EDGES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.SURFACERENDER_EDGES</span></code></a></p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="geosoft.gxpy.spatialdata.html#module-geosoft.gxpy.spatialdata" title="geosoft.gxpy.spatialdata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata</span></code></a>, <a class="reference internal" href="GXSURFACE.html#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSURFACE</span></code></a>, <a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSURFACEITEM</span></code></a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Regression tests provide usage examples:     
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_surface.py">Tests</a></p>
+</div>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_surface_file_name</span></code>(name)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_surface_name</span></code>(name)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_t</span></code>(s)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_files</span></code>(surface_name)</p></td>
+<td><p>Delete all files associated with this surface dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">render</span></code>(view, surface[, group_name, overwrite])</p></td>
+<td><p>Render a surface, surface dataset or surface dataset file in a 3D view.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code>(surface[, surface_type, ...])</p></td>
+<td><p>A single surface, which contains one or more <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Mesh</span></code> instances.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">SurfaceDataset</span></code>(name[, file_name, gxsurface, ...])</p></td>
+<td><p>Surface dataset, which contains one or more <code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code> instances.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Exceptions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">SurfaceException</span></code>(message)</p></td>
+<td><p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.surface" title="geosoft.gxpy.surface"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.surface</span></code></a>.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.surface</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

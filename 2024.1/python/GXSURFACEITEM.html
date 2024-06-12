@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXSURFACEITEM class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXSURFACEITEM class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">GXSURFACEITEM class</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.__init__"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.add_mesh"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.add_mesh()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.compute_extended_info"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.compute_extended_info()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.compute_poly_line_intersections"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.compute_poly_line_intersections()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.create"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.create()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.get_default_render_properties"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.get_default_render_properties()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.get_extents"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.get_extents()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.get_geometry_info"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.get_geometry_info()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.get_guid"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.get_guid()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.get_info"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.get_info()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.get_mesh"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.get_mesh()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.get_mesh_info"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.get_mesh_info()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.get_properties"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.get_properties()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.get_properties_ex"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.get_properties_ex()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.intersects_bounding_box"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.intersects_bounding_box()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.is_null"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.null"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.num_components"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.num_components()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.set_default_render_properties"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.set_default_render_properties()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.set_properties"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.set_properties()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.set_properties_ex"><code class="docutils literal notranslate"><span class="pre">GXSURFACEITEM.set_properties_ex()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#surfacerender-mode-constants">SURFACERENDER_MODE constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.SURFACERENDER_SMOOTH"><code class="docutils literal notranslate"><span class="pre">SURFACERENDER_SMOOTH</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.SURFACERENDER_SMOOTH</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.SURFACERENDER_FILL"><code class="docutils literal notranslate"><span class="pre">SURFACERENDER_FILL</span></code></a></li>
+<li><a class="reference internal" href="#id17"><code class="docutils literal notranslate"><span class="pre">gxapi.SURFACERENDER_FILL</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.SURFACERENDER_EDGES"><code class="docutils literal notranslate"><span class="pre">SURFACERENDER_EDGES</span></code></a></li>
+<li><a class="reference internal" href="#id18"><code class="docutils literal notranslate"><span class="pre">gxapi.SURFACERENDER_EDGES</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXSURFACEITEM.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="gxsurfaceitem-class">
+<span id="gxsurfaceitem"></span><h1>GXSURFACEITEM class<a class="headerlink" href="#gxsurfaceitem-class" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXSURFACEITEM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM" title="Link to this definition">¶</a></dt>
+<dd><p>GXSURFACEITEM class.</p>
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACEITEM</span></code></a> allows you to create, read and alter Geosurface files (<code class="docutils literal notranslate"><span class="pre">*.geosoft_surface</span></code>).
+A Geosurface file can contain one or more surface items (see <a class="reference internal" href="GXSURFACE.html#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACE</span></code></a> class). A surface item can
+contains one or more triangular polyhedral meshes.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.add_mesh">
+<span class="sig-name descname"><span class="pre">add_mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vert_v_vx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vert_v_vy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vert_v_vz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tri_vv_pt1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tri_vv_pt2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tri_vv_pt3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.add_mesh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.add_mesh" title="Link to this definition">¶</a></dt>
+<dd><p>Adds a triangular polyhedral mesh component to the surface item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vert_v_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertices X location</p></li>
+<li><p><strong>vert_v_vy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertices Y location</p></li>
+<li><p><strong>vert_v_vz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertices Z location</p></li>
+<li><p><strong>tri_vv_pt1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Triangles 1st Vertex</p></li>
+<li><p><strong>tri_vv_pt2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Triangles 2nd Vertex</p></li>
+<li><p><strong>tri_vv_pt3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Triangles 3rd Vertex</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The index of the component added.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.compute_extended_info">
+<span class="sig-name descname"><span class="pre">compute_extended_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">components</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">triangles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inconsistent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">invalid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intersectiona</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.compute_extended_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.compute_extended_info" title="Link to this definition">¶</a></dt>
+<dd><p>Compute more information (including validation) about of all mesh components in the surface item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>components</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of inner components (recomputed)</p></li>
+<li><p><strong>vertices</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Total number of valid vertices</p></li>
+<li><p><strong>edges</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Total number of valid edges</p></li>
+<li><p><strong>triangles</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Total number of valid triangles</p></li>
+<li><p><strong>inconsistent</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of inconsistent triangles</p></li>
+<li><p><strong>invalid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of invalid triangles</p></li>
+<li><p><strong>intersectiona</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of self intersections</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.compute_poly_line_intersections">
+<span class="sig-name descname"><span class="pre">compute_poly_line_intersections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_z_out</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.compute_poly_line_intersections"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.compute_poly_line_intersections" title="Link to this definition">¶</a></dt>
+<dd><p>Compute intersections of a 3D PolyLine with a <a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACEITEM</span></code></a> Object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X coordinates.</p></li>
+<li><p><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y coordinates.</p></li>
+<li><p><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z coordinates.</p></li>
+<li><p><strong>vv_x_out</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X coordinates.</p></li>
+<li><p><strong>vv_y_out</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y coordinates.</p></li>
+<li><p><strong>vv_z_out</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z coordinates.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.create" title="Link to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACEITEM</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>str</em>) – Type</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACEITEM</span></code></a> Object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM.GXSURFACEITEM">GXSURFACEITEM</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.set_properties" title="geosoft.gxapi.GXSURFACEITEM.set_properties"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_properties</span></code></a> and <a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM.set_default_render_properties" title="geosoft.gxapi.GXSURFACEITEM.set_default_render_properties"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_default_render_properties</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.get_default_render_properties">
+<span class="sig-name descname"><span class="pre">get_default_render_properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transparency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.get_default_render_properties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.get_default_render_properties" title="Link to this definition">¶</a></dt>
+<dd><p>Gets default render properties of the surface item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>color</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Color</p></li>
+<li><p><strong>transparency</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Transparency</p></li>
+<li><p><strong>render_mode</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – <a class="reference internal" href="#surfacerender-mode"><span class="std std-ref">SURFACERENDER_MODE constants</span></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.color" title="geosoft.gxapi.GXMVIEW.color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.color</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.get_extents">
+<span class="sig-name descname"><span class="pre">get_extents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.get_extents"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.get_extents" title="Link to this definition">¶</a></dt>
+<dd><p>Get the spatial range of the the surface item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum valid data in X.</p></li>
+<li><p><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum valid data in Y.</p></li>
+<li><p><strong>min_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum valid data in Z.</p></li>
+<li><p><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum valid data in X.</p></li>
+<li><p><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum valid data in Y.</p></li>
+<li><p><strong>max_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum valid data in Z.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.get_geometry_info">
+<span class="sig-name descname"><span class="pre">get_geometry_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">triangles</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.get_geometry_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.get_geometry_info" title="Link to this definition">¶</a></dt>
+<dd><p>Get the total number of vertices and triangles of all mesh components in item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertices</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Total number of vertices</p></li>
+<li><p><strong>triangles</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Total number of triangles</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.get_guid">
+<span class="sig-name descname"><span class="pre">get_guid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.get_guid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.get_guid" title="Link to this definition">¶</a></dt>
+<dd><p>Gets the GUID of the surface item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>guid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – GUID</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The value returned by this call will not be valid for newly created items until after a call to <a class="reference internal" href="GXSURFACE.html#geosoft.gxapi.GXSURFACE.add_surface_item" title="geosoft.gxapi.GXSURFACE.add_surface_item"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACE.add_surface_item</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.get_info">
+<span class="sig-name descname"><span class="pre">get_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">closed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">area</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume_confidence_interval</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.get_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.get_info" title="Link to this definition">¶</a></dt>
+<dd><p>Gets information about the surface item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>closed</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.bool_ref" title="geosoft.gxapi.bool_ref"><em>bool_ref</em></a>) – indicating if all meshes in item is closed</p></li>
+<li><p><strong>area</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Area</p></li>
+<li><p><strong>volume</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Volume</p></li>
+<li><p><strong>volume_confidence_interval</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Volume confidence interval</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.get_mesh">
+<span class="sig-name descname"><span class="pre">get_mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vert_v_vx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vert_v_vy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vert_v_vz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tri_vv_pt1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tri_vv_pt2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tri_vv_pt3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.get_mesh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.get_mesh" title="Link to this definition">¶</a></dt>
+<dd><p>Gets a triangular polyhedral mesh of a component in the surface item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – Index of the component</p></li>
+<li><p><strong>vert_v_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertices X</p></li>
+<li><p><strong>vert_v_vy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertices Y</p></li>
+<li><p><strong>vert_v_vz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertices Z</p></li>
+<li><p><strong>tri_vv_pt1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Triangles 1st Vertex</p></li>
+<li><p><strong>tri_vv_pt2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Triangles 2nd Vertex</p></li>
+<li><p><strong>tri_vv_pt3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Triangles 3rd Vertex</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.get_mesh_info">
+<span class="sig-name descname"><span class="pre">get_mesh_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_inner_comps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">area</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume_confidence_interval</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.get_mesh_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.get_mesh_info" title="Link to this definition">¶</a></dt>
+<dd><p>Gets information about a triangular polyhedral mesh component in the surface item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – Index of the component</p></li>
+<li><p><strong>closed</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.bool_ref" title="geosoft.gxapi.bool_ref"><em>bool_ref</em></a>) – indicating if mesh is closed</p></li>
+<li><p><strong>n_inner_comps</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Number of inner components</p></li>
+<li><p><strong>area</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Area</p></li>
+<li><p><strong>volume</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Volume</p></li>
+<li><p><strong>volume_confidence_interval</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Volume confidence interval</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.get_properties">
+<span class="sig-name descname"><span class="pre">get_properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_guid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_measure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary_source_guid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary_source_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary_source_measure</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.get_properties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.get_properties" title="Link to this definition">¶</a></dt>
+<dd><p>Gets the properties of the surface item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Type</p></li>
+<li><p><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name</p></li>
+<li><p><strong>source_guid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – SourceGuid</p></li>
+<li><p><strong>source_name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – SourceName</p></li>
+<li><p><strong>source_measure</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – SourceMeasure</p></li>
+<li><p><strong>secondary_source_guid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – SecondarySourceGuid</p></li>
+<li><p><strong>secondary_source_name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – SecondarySourceName</p></li>
+<li><p><strong>secondary_source_measure</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – SecondarySourceMeasure</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.get_properties_ex">
+<span class="sig-name descname"><span class="pre">get_properties_ex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_guid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_measure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary_source_guid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary_source_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary_source_option</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary_source_measure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary_source_measure2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.get_properties_ex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.get_properties_ex" title="Link to this definition">¶</a></dt>
+<dd><p>Gets the properties of the surface item  (includes new properties introduced in 8.5).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Type</p></li>
+<li><p><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name</p></li>
+<li><p><strong>source_guid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – SourceGuid</p></li>
+<li><p><strong>source_name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – SourceName</p></li>
+<li><p><strong>source_measure</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – SourceMeasure</p></li>
+<li><p><strong>secondary_source_guid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – SecondarySourceGuid</p></li>
+<li><p><strong>secondary_source_name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – SecondarySourceName</p></li>
+<li><p><strong>secondary_source_option</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – SecondarySourceOption</p></li>
+<li><p><strong>secondary_source_measure</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – SecondarySourceMeasure</p></li>
+<li><p><strong>secondary_source_measure2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – SecondarySourceMeasure2</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.intersects_bounding_box">
+<span class="sig-name descname"><span class="pre">intersects_bounding_box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.intersects_bounding_box"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.intersects_bounding_box" title="Link to this definition">¶</a></dt>
+<dd><p>Checks intersections of a bounding box with a <a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACEITEM</span></code></a> Object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_x</strong> (<em>float</em>) – Min X</p></li>
+<li><p><strong>min_y</strong> (<em>float</em>) – Min Y</p></li>
+<li><p><strong>min_z</strong> (<em>float</em>) – Min Z</p></li>
+<li><p><strong>max_x</strong> (<em>float</em>) – Max X</p></li>
+<li><p><strong>max_y</strong> (<em>float</em>) – Max Y</p></li>
+<li><p><strong>max_z</strong> (<em>float</em>) – Max Z</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.is_null" title="Link to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.null" title="Link to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACEITEM</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACEITEM</span></code></a></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM.GXSURFACEITEM">GXSURFACEITEM</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.num_components">
+<span class="sig-name descname"><span class="pre">num_components</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.num_components"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.num_components" title="Link to this definition">¶</a></dt>
+<dd><p>Get the number of components in the surface item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of components in the surface item.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.set_default_render_properties">
+<span class="sig-name descname"><span class="pre">set_default_render_properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transparency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.set_default_render_properties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.set_default_render_properties" title="Link to this definition">¶</a></dt>
+<dd><p>Sets default render properties of the surface item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>color</strong> (<em>int</em>) – Color</p></li>
+<li><p><strong>transparency</strong> (<em>float</em>) – Transparency</p></li>
+<li><p><strong>render_mode</strong> (<em>int</em>) – <a class="reference internal" href="#surfacerender-mode"><span class="std std-ref">SURFACERENDER_MODE constants</span></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.color" title="geosoft.gxapi.GXMVIEW.color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.color</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.set_properties">
+<span class="sig-name descname"><span class="pre">set_properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_guid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_measure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary_source_guid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary_source_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary_source_measure</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.set_properties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.set_properties" title="Link to this definition">¶</a></dt>
+<dd><p>Sets the properties of the surface item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>str</em>) – Type</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Name</p></li>
+<li><p><strong>source_guid</strong> (<em>str</em>) – SourceGuid</p></li>
+<li><p><strong>source_name</strong> (<em>str</em>) – SourceName</p></li>
+<li><p><strong>source_measure</strong> (<em>float</em>) – SourceMeasure</p></li>
+<li><p><strong>secondary_source_guid</strong> (<em>str</em>) – SecondarySourceGuid</p></li>
+<li><p><strong>secondary_source_name</strong> (<em>str</em>) – SecondarySourceName</p></li>
+<li><p><strong>secondary_source_measure</strong> (<em>float</em>) – SecondarySourceMeasure</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.generate_guid" title="geosoft.gxapi.GXSYS.generate_guid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSYS.generate_guid</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACEITEM.set_properties_ex">
+<span class="sig-name descname"><span class="pre">set_properties_ex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_guid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_measure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary_source_guid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary_source_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary_source_option</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary_source_measure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary_source_measure2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACEITEM.html#GXSURFACEITEM.set_properties_ex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.set_properties_ex" title="Link to this definition">¶</a></dt>
+<dd><p>Sets the properties of the surface item (includes new properties introduced in 8.5).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>str</em>) – Type</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Name</p></li>
+<li><p><strong>source_guid</strong> (<em>str</em>) – SourceGuid</p></li>
+<li><p><strong>source_name</strong> (<em>str</em>) – SourceName</p></li>
+<li><p><strong>source_measure</strong> (<em>float</em>) – SourceMeasure</p></li>
+<li><p><strong>secondary_source_guid</strong> (<em>str</em>) – SecondarySourceGuid</p></li>
+<li><p><strong>secondary_source_name</strong> (<em>str</em>) – SecondarySourceName</p></li>
+<li><p><strong>secondary_source_option</strong> (<em>int</em>) – SecondarySourceOption</p></li>
+<li><p><strong>secondary_source_measure</strong> (<em>float</em>) – SecondarySourceMeasure</p></li>
+<li><p><strong>secondary_source_measure2</strong> (<em>float</em>) – SecondarySourceMeasure2</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.generate_guid" title="geosoft.gxapi.GXSYS.generate_guid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSYS.generate_guid</span></code></a></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<section id="surfacerender-mode-constants">
+<span id="surfacerender-mode"></span><h2>SURFACERENDER_MODE constants<a class="headerlink" href="#surfacerender-mode-constants" title="Link to this heading">¶</a></h2>
+<p>Open Modes</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.SURFACERENDER_SMOOTH">
+<span class="sig-name descname"><span class="pre">SURFACERENDER_SMOOTH</span></span><a class="headerlink" href="#geosoft.gxapi.SURFACERENDER_SMOOTH" title="Link to this definition">¶</a></dt>
+<dd><p>Surfacerender smooth</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SURFACERENDER_SMOOTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.SURFACERENDER_FILL">
+<span class="sig-name descname"><span class="pre">SURFACERENDER_FILL</span></span><a class="headerlink" href="#geosoft.gxapi.SURFACERENDER_FILL" title="Link to this definition">¶</a></dt>
+<dd><p>Surfacerender fill</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id17">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SURFACERENDER_FILL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id17" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.SURFACERENDER_EDGES">
+<span class="sig-name descname"><span class="pre">SURFACERENDER_EDGES</span></span><a class="headerlink" href="#geosoft.gxapi.SURFACERENDER_EDGES" title="Link to this definition">¶</a></dt>
+<dd><p>Surfacerender edges</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id18">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SURFACERENDER_EDGES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id18" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXSURFACEITEM class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

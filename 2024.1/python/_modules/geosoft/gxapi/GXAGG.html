@@ -1,0 +1,561 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXAGG &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXAGG</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXAGG</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+<span class="kn">from</span> <span class="nn">.GXST</span> <span class="kn">import</span> <span class="n">GXST</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXAGG">
+<a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG">[docs]</a>
+<span class="k">class</span> <span class="nc">GXAGG</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapAGG</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXAGG class.</span>
+
+<span class="sd">    The `GXAGG &lt;geosoft.gxapi.GXAGG&gt;` class is used to handle image display on maps.</span>
+<span class="sd">    An aggregate contains one or more image layers (LAY) with</span>
+<span class="sd">    each layer representing a grid or image file. The `GXAGG &lt;geosoft.gxapi.GXAGG&gt;`</span>
+<span class="sd">    will combine all the layers to form one image</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXAGG.__init__">
+<a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXAGG</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GXAGG.null">
+<a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG.null">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXAGG &lt;geosoft.gxapi.GXAGG&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXAGG &lt;geosoft.gxapi.GXAGG&gt;`</span>
+<span class="sd">        :rtype:   GXAGG</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXAGG</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="GXAGG.is_null">
+<a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+
+<div class="viewcode-block" id="GXAGG.set_model">
+<a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG.set_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the Color Model</span>
+<span class="sd">        </span>
+<span class="sd">        :param model:  :ref:`AGG_MODEL`</span>
+<span class="sd">        :type  model:  int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXAGG.change_brightness">
+<a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG.change_brightness">[docs]</a>
+    <span class="k">def</span> <span class="nf">change_brightness</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brt</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Change the brightness.</span>
+<span class="sd">        </span>
+<span class="sd">        :param brt:  -1.0 - black; 0.0 no change; 1.0 white</span>
+<span class="sd">        :type  brt:  float</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** 0.0 brightness does nothing.</span>
+<span class="sd">        -1.0 to 0.0 makes colors darker, -1.0 is black</span>
+<span class="sd">        0.0 to 1.0 makes colors lighter, 1.0 is white</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_change_brightness</span><span class="p">(</span><span class="n">brt</span><span class="p">)</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXAGG.create">
+<a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG.create">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an aggregate</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    `GXAGG &lt;geosoft.gxapi.GXAGG&gt;` object</span>
+<span class="sd">        :rtype:      GXAGG</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapAGG</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXAGG</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXAGG.create_map">
+<a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG.create_map">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_map</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create `GXAGG &lt;geosoft.gxapi.GXAGG&gt;` from Map with Group name.</span>
+<span class="sd">        </span>
+<span class="sd">        :param map:   `GXMAP &lt;geosoft.gxapi.GXMAP&gt;` on which to place the view</span>
+<span class="sd">        :param name:  `GXAGG &lt;geosoft.gxapi.GXAGG&gt;` group name</span>
+<span class="sd">        :type  map:   GXMAP</span>
+<span class="sd">        :type  name:  str</span>
+
+<span class="sd">        :returns:     `GXAGG &lt;geosoft.gxapi.GXAGG&gt;` object</span>
+<span class="sd">        :rtype:       GXAGG</span>
+
+<span class="sd">        .. versionadded:: 5.0.5</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The Agg Group name must include the View name with a</span>
+<span class="sd">        backslash separating the view name and group name; e.g.</span>
+<span class="sd">        &quot;Data\\AGG_test&quot; (when used as a string, the double slash</span>
+<span class="sd">        represents as single \\).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapAGG</span><span class="o">.</span><span class="n">_create_map</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">map</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXAGG</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+
+
+
+<div class="viewcode-block" id="GXAGG.get_layer_itr">
+<a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG.get_layer_itr">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_layer_itr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="n">itr</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the `GXITR &lt;geosoft.gxapi.GXITR&gt;` of a layer</span>
+<span class="sd">        </span>
+<span class="sd">        :param layer:  Layer number</span>
+<span class="sd">        :type  layer:  int</span>
+<span class="sd">        :type  itr:    GXITR</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Layers are numbered from 0, consecutively in the order they are</span>
+<span class="sd">        placed in the aggregate.</span>
+
+<span class="sd">        An error will occur if the layer does not exist.</span>
+
+<span class="sd">        Caller must create/destroy `GXITR &lt;geosoft.gxapi.GXITR&gt;`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_layer_itr</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">itr</span><span class="p">)</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXAGG.get_layer_st">
+<a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG.get_layer_st">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_layer_st</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a `GXST &lt;geosoft.gxapi.GXST&gt;` filled with layer statistics</span>
+<span class="sd">        </span>
+<span class="sd">        :param layer:  Layer number</span>
+<span class="sd">        :type  layer:  int</span>
+
+<span class="sd">        :returns:      `GXST &lt;geosoft.gxapi.GXST&gt;` object</span>
+<span class="sd">        :rtype:        GXST</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Layers are numbered from 0, consecutively in the order they are</span>
+<span class="sd">        placed in the aggregate.</span>
+
+<span class="sd">        An error will occur if the layer does not exist.</span>
+
+<span class="sd">        Caller must create/destroy `GXITR &lt;geosoft.gxapi.GXITR&gt;`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_layer_st</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXST</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+
+<div class="viewcode-block" id="GXAGG.list_img">
+<a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG.list_img">[docs]</a>
+    <span class="k">def</span> <span class="nf">list_img</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gvv</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Lists file names of all the IMGs inside of the `GXAGG &lt;geosoft.gxapi.GXAGG&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param gvv:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` of type -`STR_FILE &lt;geosoft.gxapi.STR_FILE&gt;`</span>
+<span class="sd">        :type  gvv:  GXVV</span>
+
+<span class="sd">        :returns:    The number of IMGs.</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 5.0.6</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The returned `GXVV &lt;geosoft.gxapi.GXVV&gt;` contains the file names.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_img</span><span class="p">(</span><span class="n">gvv</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+
+<div class="viewcode-block" id="GXAGG.num_layers">
+<a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG.num_layers">[docs]</a>
+    <span class="k">def</span> <span class="nf">num_layers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the number of layers in an aggregate.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    The number of layers in an aggregate.</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_layers</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+
+<div class="viewcode-block" id="GXAGG.layer_img">
+<a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG.layer_img">[docs]</a>
+    <span class="k">def</span> <span class="nf">layer_img</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">cont</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add an image as a layer in an aggregate.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:   Grid name</span>
+<span class="sd">        :param zone:   :ref:`AGG_LAYER_ZONE` transform to use if color table has none defined.</span>
+<span class="sd">        :param color:  Color table name, &quot;&quot; for default This can be a .TBL .ZON .`GXITR &lt;geosoft.gxapi.GXITR&gt;` or .`GXAGG &lt;geosoft.gxapi.GXAGG&gt;` file .TBL is the default</span>
+<span class="sd">        :param cont:   Color contour interval or `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;` for default</span>
+<span class="sd">        :type  name:   str</span>
+<span class="sd">        :type  zone:   int</span>
+<span class="sd">        :type  color:  str</span>
+<span class="sd">        :type  cont:   float</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        .. seealso::</span>
+
+<span class="sd">            `layer_shade_img &lt;geosoft.gxapi.GXAGG.layer_shade_img&gt;`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_layer_img</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">cont</span><span class="p">)</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXAGG.layer_img_ex">
+<a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG.layer_img_ex">[docs]</a>
+    <span class="k">def</span> <span class="nf">layer_img_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">cont</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add an image as a layer in an aggregate.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:   Grid name</span>
+<span class="sd">        :param zone:   :ref:`AGG_LAYER_ZONE` transform to use if color table has none defined.</span>
+<span class="sd">        :param color:  Color table name, &quot;&quot; for default This can be a .TBL .ZON .`GXITR &lt;geosoft.gxapi.GXITR&gt;` or .`GXAGG &lt;geosoft.gxapi.GXAGG&gt;` file .TBL is the default</span>
+<span class="sd">        :param min:    Minimum value or `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;` for default</span>
+<span class="sd">        :param max:    Maximum value or `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;` for default</span>
+<span class="sd">        :param cont:   Color contour interval or `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;` for default</span>
+<span class="sd">        :type  name:   str</span>
+<span class="sd">        :type  zone:   int</span>
+<span class="sd">        :type  color:  str</span>
+<span class="sd">        :type  min:    float</span>
+<span class="sd">        :type  max:    float</span>
+<span class="sd">        :type  cont:   float</span>
+
+<span class="sd">        .. versionadded:: 8.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        .. seealso::</span>
+
+<span class="sd">            `layer_shade_img &lt;geosoft.gxapi.GXAGG.layer_shade_img&gt;`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_layer_img_ex</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">cont</span><span class="p">)</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXAGG.layer_shade_img">
+<a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG.layer_shade_img">[docs]</a>
+    <span class="k">def</span> <span class="nf">layer_shade_img</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">inc</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">scl</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a shaded image as a layer in an aggregate.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:   Grid name</span>
+<span class="sd">        :param color:  Color table name, &quot;&quot; for default</span>
+<span class="sd">        :param inc:    Inclination</span>
+<span class="sd">        :param dec:    Declination</span>
+<span class="sd">        :param scl:    Scale (`rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;` for default, returns value used)</span>
+<span class="sd">        :type  name:   str</span>
+<span class="sd">        :type  color:  str</span>
+<span class="sd">        :type  inc:    float</span>
+<span class="sd">        :type  dec:    float</span>
+<span class="sd">        :type  scl:    float_ref</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** A new grid file will be created to hold the shaded</span>
+<span class="sd">        image data.  This file will have the same name as the</span>
+<span class="sd">        original grid but with &quot;_s&quot; added to the root name.</span>
+<span class="sd">        It will always be located in the workspace directory</span>
+<span class="sd">        regardless of the location of the original source image.</span>
+<span class="sd">        If the file already exists, it will replaced.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">scl</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_layer_shade_img</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">color</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">inc</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">scl</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXAGG.get_brightness">
+<a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG.get_brightness">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_brightness</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the brightness setting of the `GXAGG &lt;geosoft.gxapi.GXAGG&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:      float</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Brightness can range from -1.0 (black) to 1.0 (white).</span>
+<span class="sd">        This brightness control is relative to the normal color</span>
+<span class="sd">        when the `GXAGG &lt;geosoft.gxapi.GXAGG&gt;` is created.</span>
+
+<span class="sd">        `GXAGG &lt;geosoft.gxapi.GXAGG&gt;` brightness depends on the brightness of the `GXITR &lt;geosoft.gxapi.GXITR&gt;` of each layer.</span>
+<span class="sd">        Calling dGetBright_AGG will poll all layers, and if all have the same</span>
+<span class="sd">        brightness, this is returned.  If any of the layers have a different</span>
+<span class="sd">        brightness, the current brightness of each layer is changed to be</span>
+<span class="sd">        the reference brightness (0.0)and the brightness value of 0.0 is</span>
+<span class="sd">        returned.</span>
+
+<span class="sd">        .. seealso::</span>
+
+<span class="sd">            `change_brightness &lt;geosoft.gxapi.GXAGG.change_brightness&gt;`, `get_brightness &lt;geosoft.gxapi.GXAGG.get_brightness&gt;`, `change_brightness &lt;geosoft.gxapi.GXAGG.change_brightness&gt;`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_brightness</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+
+<div class="viewcode-block" id="GXAGG.set_layer_itr">
+<a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG.set_layer_itr">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_layer_itr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="n">itr</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the `GXITR &lt;geosoft.gxapi.GXITR&gt;` of a layer</span>
+<span class="sd">        </span>
+<span class="sd">        :param layer:  Layer number</span>
+<span class="sd">        :type  layer:  int</span>
+<span class="sd">        :type  itr:    GXITR</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Layers are numbered from 0, consecutively in the order they are</span>
+<span class="sd">        placed in the aggregate.</span>
+
+<span class="sd">        An error will occur if the layer does not exist.</span>
+
+<span class="sd">        Caller must create/destroy `GXITR &lt;geosoft.gxapi.GXITR&gt;`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_layer_itr</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">itr</span><span class="p">)</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXAGG.set_render_method">
+<a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG.set_render_method">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_render_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the Rendering Method</span>
+<span class="sd">        </span>
+<span class="sd">        :param method:  :ref:`AGG_RENDER`</span>
+<span class="sd">        :type  method:  int</span>
+
+<span class="sd">        .. versionadded:: 5.1.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_render_method</span><span class="p">(</span><span class="n">method</span><span class="p">)</span></div>
+</div>
+
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXAGG</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

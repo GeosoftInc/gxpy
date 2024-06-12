@@ -1,0 +1,852 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXST class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXST class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">GXST class</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST"><code class="docutils literal notranslate"><span class="pre">GXST</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST.__init__"><code class="docutils literal notranslate"><span class="pre">GXST.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST.create"><code class="docutils literal notranslate"><span class="pre">GXST.create()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST.create_exact"><code class="docutils literal notranslate"><span class="pre">GXST.create_exact()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST.data"><code class="docutils literal notranslate"><span class="pre">GXST.data()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST.data_vv"><code class="docutils literal notranslate"><span class="pre">GXST.data_vv()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST.equivalent_percentile"><code class="docutils literal notranslate"><span class="pre">GXST.equivalent_percentile()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST.equivalent_value"><code class="docutils literal notranslate"><span class="pre">GXST.equivalent_value()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST.get_histogram_bins"><code class="docutils literal notranslate"><span class="pre">GXST.get_histogram_bins()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST.get_histogram_info"><code class="docutils literal notranslate"><span class="pre">GXST.get_histogram_info()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST.get_info"><code class="docutils literal notranslate"><span class="pre">GXST.get_info()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST.get_norm_prob"><code class="docutils literal notranslate"><span class="pre">GXST.get_norm_prob()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST.get_norm_prob_x"><code class="docutils literal notranslate"><span class="pre">GXST.get_norm_prob_x()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST.histogram"><code class="docutils literal notranslate"><span class="pre">GXST.histogram()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST.histogram2"><code class="docutils literal notranslate"><span class="pre">GXST.histogram2()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST.is_null"><code class="docutils literal notranslate"><span class="pre">GXST.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST.normal_test"><code class="docutils literal notranslate"><span class="pre">GXST.normal_test()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST.null"><code class="docutils literal notranslate"><span class="pre">GXST.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST.reset"><code class="docutils literal notranslate"><span class="pre">GXST.reset()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#st-info-constants">ST_INFO constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_ITEMS"><code class="docutils literal notranslate"><span class="pre">ST_ITEMS</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_ITEMS</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_NPOS"><code class="docutils literal notranslate"><span class="pre">ST_NPOS</span></code></a></li>
+<li><a class="reference internal" href="#id15"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_NPOS</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_NZERO"><code class="docutils literal notranslate"><span class="pre">ST_NZERO</span></code></a></li>
+<li><a class="reference internal" href="#id16"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_NZERO</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_TOTAL"><code class="docutils literal notranslate"><span class="pre">ST_TOTAL</span></code></a></li>
+<li><a class="reference internal" href="#id17"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_TOTAL</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_NEMPTYSTRINGS"><code class="docutils literal notranslate"><span class="pre">ST_NEMPTYSTRINGS</span></code></a></li>
+<li><a class="reference internal" href="#id18"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_NEMPTYSTRINGS</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_DUMMIES"><code class="docutils literal notranslate"><span class="pre">ST_DUMMIES</span></code></a></li>
+<li><a class="reference internal" href="#id19"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_DUMMIES</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_MIN"><code class="docutils literal notranslate"><span class="pre">ST_MIN</span></code></a></li>
+<li><a class="reference internal" href="#id20"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_MIN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_MAX"><code class="docutils literal notranslate"><span class="pre">ST_MAX</span></code></a></li>
+<li><a class="reference internal" href="#id21"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_MAX</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_RANGE"><code class="docutils literal notranslate"><span class="pre">ST_RANGE</span></code></a></li>
+<li><a class="reference internal" href="#id22"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_RANGE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_MEAN"><code class="docutils literal notranslate"><span class="pre">ST_MEAN</span></code></a></li>
+<li><a class="reference internal" href="#id23"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_MEAN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_MEDIAN"><code class="docutils literal notranslate"><span class="pre">ST_MEDIAN</span></code></a></li>
+<li><a class="reference internal" href="#id24"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_MEDIAN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_MODE"><code class="docutils literal notranslate"><span class="pre">ST_MODE</span></code></a></li>
+<li><a class="reference internal" href="#id25"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_MODE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_SIMPLE_MODE"><code class="docutils literal notranslate"><span class="pre">ST_SIMPLE_MODE</span></code></a></li>
+<li><a class="reference internal" href="#id26"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_SIMPLE_MODE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_GEOMEAN"><code class="docutils literal notranslate"><span class="pre">ST_GEOMEAN</span></code></a></li>
+<li><a class="reference internal" href="#id27"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_GEOMEAN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_VARIANCE"><code class="docutils literal notranslate"><span class="pre">ST_VARIANCE</span></code></a></li>
+<li><a class="reference internal" href="#id28"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_VARIANCE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_STDDEV"><code class="docutils literal notranslate"><span class="pre">ST_STDDEV</span></code></a></li>
+<li><a class="reference internal" href="#id29"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_STDDEV</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_STDERR"><code class="docutils literal notranslate"><span class="pre">ST_STDERR</span></code></a></li>
+<li><a class="reference internal" href="#id30"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_STDERR</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_SKEW"><code class="docutils literal notranslate"><span class="pre">ST_SKEW</span></code></a></li>
+<li><a class="reference internal" href="#id31"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_SKEW</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_KURTOSIS"><code class="docutils literal notranslate"><span class="pre">ST_KURTOSIS</span></code></a></li>
+<li><a class="reference internal" href="#id32"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_KURTOSIS</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_BASE"><code class="docutils literal notranslate"><span class="pre">ST_BASE</span></code></a></li>
+<li><a class="reference internal" href="#id33"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_BASE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_SUM"><code class="docutils literal notranslate"><span class="pre">ST_SUM</span></code></a></li>
+<li><a class="reference internal" href="#id34"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_SUM</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_SUM2"><code class="docutils literal notranslate"><span class="pre">ST_SUM2</span></code></a></li>
+<li><a class="reference internal" href="#id35"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_SUM2</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_SUM3"><code class="docutils literal notranslate"><span class="pre">ST_SUM3</span></code></a></li>
+<li><a class="reference internal" href="#id36"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_SUM3</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_SUM4"><code class="docutils literal notranslate"><span class="pre">ST_SUM4</span></code></a></li>
+<li><a class="reference internal" href="#id37"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_SUM4</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_MINPOS"><code class="docutils literal notranslate"><span class="pre">ST_MINPOS</span></code></a></li>
+<li><a class="reference internal" href="#id38"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_MINPOS</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST_HIST_MAXCOUNT"><code class="docutils literal notranslate"><span class="pre">ST_HIST_MAXCOUNT</span></code></a></li>
+<li><a class="reference internal" href="#id39"><code class="docutils literal notranslate"><span class="pre">gxapi.ST_HIST_MAXCOUNT</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXST.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="gxst-class">
+<span id="gxst"></span><h1>GXST class<a class="headerlink" href="#gxst-class" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXST</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST" title="Link to this definition">¶</a></dt>
+<dd><p>GXST class.</p>
+<p>Mono-variate statistics. The <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> class is used to accumulate statistical
+information about a set of data. This class is usually used in conjunction
+with others. For instance, <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.stat" title="geosoft.gxapi.GXDU.stat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDU.stat</span></code></a> (see <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU" title="geosoft.gxapi.GXDU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDU</span></code></a>) will add a channel’s
+data to the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> object, and sComputeST_IMG (see <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a>) will compute
+statistics for a grid.</p>
+<p><strong>Note:</strong></p>
+<p id="histogram-ranges"><strong>* Histogram ranges and color zone ranges *</strong></p>
+<p>Histogram bins are defined with inclusive minima and exclusive maxima;
+for instance if Min = 0 and Inc = 1, then the second bin would include
+all values z such that  0 &gt;= z &gt; 1 (the first bin has all values &lt; 0).</p>
+<p>Color zones used in displaying grids (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a>, ZON etc…) are the
+opposite, with exclusive minima and inclusive maxima.
+For instance, if a zone is defined from 0 to 1, then it would
+contain all values of z such that 0 &gt; z &gt;= 1.</p>
+<p>These definitions mean that it is impossible to perfectly assign
+<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> colors to individual bars of a histogram. The best work-around
+when the data values are integers is to define the color zones using
+0.5 values between the integers. A general work-around is to make the
+number of histogram bins much larger than the number of color zones.</p>
+<p>See also  <a class="reference internal" href="GXST2.html#geosoft.gxapi.GXST2" title="geosoft.gxapi.GXST2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST2</span></code></a> (bi-variate statistics)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST.create" title="Link to this definition">¶</a></dt>
+<dd><p>This method creates a statistics object which is used to
+accumulate statistics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> Object</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST.GXST">GXST</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST.create_exact">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_exact</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST.create_exact"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST.create_exact" title="Link to this definition">¶</a></dt>
+<dd><p>This method creates a statistics object which stores
+all values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> Object</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST.GXST">GXST</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST.data">
+<span class="sig-name descname"><span class="pre">data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST.data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST.data" title="Link to this definition">¶</a></dt>
+<dd><p>Add this value to the statistics object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>float</em>) – Value to Add</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST.data_vv">
+<span class="sig-name descname"><span class="pre">data_vv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST.data_vv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST.data_vv" title="Link to this definition">¶</a></dt>
+<dd><p>Add all the values in this <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> to the statistics object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> object</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST.equivalent_percentile">
+<span class="sig-name descname"><span class="pre">equivalent_percentile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST.equivalent_percentile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST.equivalent_percentile" title="Link to this definition">¶</a></dt>
+<dd><p>Return corresponding Percentile for a Value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>float</em>) – Input value</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The percentile at the given value (0 - 100)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Statistics and histogram must have been calculated prior to
+calling this method</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST.equivalent_value">
+<span class="sig-name descname"><span class="pre">equivalent_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">percent</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST.equivalent_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST.equivalent_value" title="Link to this definition">¶</a></dt>
+<dd><p>Return corresponding Value for a Percentile</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>percent</strong> (<em>float</em>) – Input percentile (0 - 100)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value at the given percentile.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Statistics and histogram must have been calculated prior to
+calling this method</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST.get_histogram_bins">
+<span class="sig-name descname"><span class="pre">get_histogram_bins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST.get_histogram_bins"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST.get_histogram_bins" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve number of items in each hostogram bin</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> for numbers of items</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The length of the returned <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> is set to the total
+number of bins. If a histogram is not defined in
+the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a>, then the returned length is zero.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST.get_histogram_info">
+<span class="sig-name descname"><span class="pre">get_histogram_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">div</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST.get_histogram_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST.get_histogram_info" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve number of bins, min and max value in histogram</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>div</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – # of bins</p></li>
+<li><p><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Min (value at start of 2nd bin)</p></li>
+<li><p><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Max (value at end of 2nd last bin)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The items correspond to those in <a class="reference internal" href="#geosoft.gxapi.GXST.histogram2" title="geosoft.gxapi.GXST.histogram2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">histogram2</span></code></a>.
+If a histogram is not defined in
+the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a>, then the returned number of bins is zero, and
+the min and max values will be dummies.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST.get_info">
+<span class="sig-name descname"><span class="pre">get_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST.get_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST.get_info" title="Link to this definition">¶</a></dt>
+<dd><p>This method allows you to retrieve (and compute) the
+information from the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>int</em>) – <a class="reference internal" href="#st-info"><span class="std std-ref">ST_INFO constants</span></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Data you asked for
+<a class="reference internal" href="GXGEOSOFT.html#id35" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_R8DM</span></code></a> for none</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The following can only be determined if the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> has recorded
+a histogram: <a class="reference internal" href="#id24" title="geosoft.gxapi.ST_MEDIAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_MEDIAN</span></code></a>, <a class="reference internal" href="#id25" title="geosoft.gxapi.ST_MODE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_MODE</span></code></a></p>
+<p><a class="reference internal" href="#id38" title="geosoft.gxapi.ST_MINPOS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_MINPOS</span></code></a> can be used to retrieve the smallest value greater
+than zero, but not from <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> objects recovered from serialized object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST.get_norm_prob">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_norm_prob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST.get_norm_prob"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST.get_norm_prob" title="Link to this definition">¶</a></dt>
+<dd><p>Return percent value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>float</em>) – Real</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>real</p>
+<p>Notes                        this function is based on Normal Cumulative distribution function
+mit to about 5 standard deviations</p>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST.get_norm_prob_x">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_norm_prob_x</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">percent</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST.get_norm_prob_x"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST.get_norm_prob_x" title="Link to this definition">¶</a></dt>
+<dd><p>Return number of sigmas from 50% a given percent is</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>percent</strong> (<em>float</em>) – Real</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>real</p>
+<p>Notes                  this function is based on Normal Cumulative distribution function
+mit to about 5 standard deviations</p>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST.histogram">
+<span class="sig-name descname"><span class="pre">histogram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bins</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST.histogram"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST.histogram" title="Link to this definition">¶</a></dt>
+<dd><p>This method prepares <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> for recording histogram.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bins</strong> (<em>int</em>) – # of bins</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The Number of bins includes the one before the minimum
+and the one after the maximum, so it must be a value &gt;2.</p>
+<p>IMPORTANT: This function gets the histogram minimum and
+maximum from the current min and max values stored in the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a>,
+so this is equivalent to calling <a class="reference internal" href="#geosoft.gxapi.GXST.histogram2" title="geosoft.gxapi.GXST.histogram2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">histogram2</span></code></a> with</p>
+<p><code class="docutils literal notranslate"><span class="pre">#bins,</span> <span class="pre">Min,</span> <span class="pre">(Max-Min)/(#</span> <span class="pre">bins</span> <span class="pre">-2))</span></code></p>
+<p>You should already have the data loaded in order to call this
+function.</p>
+<p>See <a class="reference internal" href="#histogram-ranges">histogram_ranges</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST.histogram2">
+<span class="sig-name descname"><span class="pre">histogram2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST.histogram2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST.histogram2" title="Link to this definition">¶</a></dt>
+<dd><p>This method prepares <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> for recording histogram.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bins</strong> (<em>int</em>) – # of bins</p></li>
+<li><p><strong>min</strong> (<em>float</em>) – Min</p></li>
+<li><p><strong>max</strong> (<em>float</em>) – Max</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The Number of bins includes the one before the minimum
+and the one after the maximum, so it must be a value &gt;2.
+The width of the individual bins will be (Min-Max)/(# - 2)</p>
+<p>See <a class="reference internal" href="#histogram-ranges">histogram_ranges</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST.is_null" title="Link to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST.normal_test">
+<span class="sig-name descname"><span class="pre">normal_test</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST.normal_test"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST.normal_test" title="Link to this definition">¶</a></dt>
+<dd><p>Test the “normality” of the histogram distribution</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The normality statistic.
+Terminates if no histogram in the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> object.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This function compares the histogram to a normal curve with the
+same mean and standard deviation. The individual counts are normalized
+by the total counts, the bin width and the standard deviation.
+For each bin, the rms difference between the expected probability and
+the normalized count is summed, and the final result is normalized by
+the total number of bins. In this way histograms with different means,
+standard deviations, number of bins and counts can be compared.
+If the histogram were perfectly normal, then a value of 0 would be returned.
+The more “non-normal”, the higher the statistic.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST.null" title="Link to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST.GXST">GXST</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST.html#GXST.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST.reset" title="Link to this definition">¶</a></dt>
+<dd><p>Resets the Statistics.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+</dd></dl>
+
+<section id="st-info-constants">
+<span id="st-info"></span><h2>ST_INFO constants<a class="headerlink" href="#st-info-constants" title="Link to this heading">¶</a></h2>
+<p>Information to retrieve</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_ITEMS">
+<span class="sig-name descname"><span class="pre">ST_ITEMS</span></span><a class="headerlink" href="#geosoft.gxapi.ST_ITEMS" title="Link to this definition">¶</a></dt>
+<dd><p>Number of non-dummy items</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_ITEMS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_NPOS">
+<span class="sig-name descname"><span class="pre">ST_NPOS</span></span><a class="headerlink" href="#geosoft.gxapi.ST_NPOS" title="Link to this definition">¶</a></dt>
+<dd><p>Number of items greater than zero</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id15">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_NPOS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id15" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_NZERO">
+<span class="sig-name descname"><span class="pre">ST_NZERO</span></span><a class="headerlink" href="#geosoft.gxapi.ST_NZERO" title="Link to this definition">¶</a></dt>
+<dd><p>Number of items equal to zero</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id16">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_NZERO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">22</span></em><a class="headerlink" href="#id16" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_TOTAL">
+<span class="sig-name descname"><span class="pre">ST_TOTAL</span></span><a class="headerlink" href="#geosoft.gxapi.ST_TOTAL" title="Link to this definition">¶</a></dt>
+<dd><p>Total number of items (dummy and non-dummy)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id17">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_TOTAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">24</span></em><a class="headerlink" href="#id17" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_NEMPTYSTRINGS">
+<span class="sig-name descname"><span class="pre">ST_NEMPTYSTRINGS</span></span><a class="headerlink" href="#geosoft.gxapi.ST_NEMPTYSTRINGS" title="Link to this definition">¶</a></dt>
+<dd><p>Number of empty strings from string inputs</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id18">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_NEMPTYSTRINGS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">25</span></em><a class="headerlink" href="#id18" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_DUMMIES">
+<span class="sig-name descname"><span class="pre">ST_DUMMIES</span></span><a class="headerlink" href="#geosoft.gxapi.ST_DUMMIES" title="Link to this definition">¶</a></dt>
+<dd><p>St dummies</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id19">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_DUMMIES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id19" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_MIN">
+<span class="sig-name descname"><span class="pre">ST_MIN</span></span><a class="headerlink" href="#geosoft.gxapi.ST_MIN" title="Link to this definition">¶</a></dt>
+<dd><p>St min</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id20">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_MIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id20" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_MAX">
+<span class="sig-name descname"><span class="pre">ST_MAX</span></span><a class="headerlink" href="#geosoft.gxapi.ST_MAX" title="Link to this definition">¶</a></dt>
+<dd><p>St max</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id21">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_MAX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id21" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_RANGE">
+<span class="sig-name descname"><span class="pre">ST_RANGE</span></span><a class="headerlink" href="#geosoft.gxapi.ST_RANGE" title="Link to this definition">¶</a></dt>
+<dd><p>St range</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id22">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_RANGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id22" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_MEAN">
+<span class="sig-name descname"><span class="pre">ST_MEAN</span></span><a class="headerlink" href="#geosoft.gxapi.ST_MEAN" title="Link to this definition">¶</a></dt>
+<dd><p>St mean</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id23">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_MEAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id23" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_MEDIAN">
+<span class="sig-name descname"><span class="pre">ST_MEDIAN</span></span><a class="headerlink" href="#geosoft.gxapi.ST_MEDIAN" title="Link to this definition">¶</a></dt>
+<dd><p>St median</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id24">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_MEDIAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#id24" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_MODE">
+<span class="sig-name descname"><span class="pre">ST_MODE</span></span><a class="headerlink" href="#geosoft.gxapi.ST_MODE" title="Link to this definition">¶</a></dt>
+<dd><p>Mode value (most often repeated value)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id25">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_MODE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#id25" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_SIMPLE_MODE">
+<span class="sig-name descname"><span class="pre">ST_SIMPLE_MODE</span></span><a class="headerlink" href="#geosoft.gxapi.ST_SIMPLE_MODE" title="Link to this definition">¶</a></dt>
+<dd><p>Mode value (using different algorithm)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id26">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_SIMPLE_MODE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23</span></em><a class="headerlink" href="#id26" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_GEOMEAN">
+<span class="sig-name descname"><span class="pre">ST_GEOMEAN</span></span><a class="headerlink" href="#geosoft.gxapi.ST_GEOMEAN" title="Link to this definition">¶</a></dt>
+<dd><p>St geomean</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id27">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_GEOMEAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#id27" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_VARIANCE">
+<span class="sig-name descname"><span class="pre">ST_VARIANCE</span></span><a class="headerlink" href="#geosoft.gxapi.ST_VARIANCE" title="Link to this definition">¶</a></dt>
+<dd><p>St variance</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id28">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_VARIANCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_STDDEV">
+<span class="sig-name descname"><span class="pre">ST_STDDEV</span></span><a class="headerlink" href="#geosoft.gxapi.ST_STDDEV" title="Link to this definition">¶</a></dt>
+<dd><p>St stddev</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id29">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_STDDEV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_STDERR">
+<span class="sig-name descname"><span class="pre">ST_STDERR</span></span><a class="headerlink" href="#geosoft.gxapi.ST_STDERR" title="Link to this definition">¶</a></dt>
+<dd><p>St stderr</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id30">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_STDERR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">12</span></em><a class="headerlink" href="#id30" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_SKEW">
+<span class="sig-name descname"><span class="pre">ST_SKEW</span></span><a class="headerlink" href="#geosoft.gxapi.ST_SKEW" title="Link to this definition">¶</a></dt>
+<dd><p>St skew</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id31">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_SKEW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">13</span></em><a class="headerlink" href="#id31" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_KURTOSIS">
+<span class="sig-name descname"><span class="pre">ST_KURTOSIS</span></span><a class="headerlink" href="#geosoft.gxapi.ST_KURTOSIS" title="Link to this definition">¶</a></dt>
+<dd><p>St kurtosis</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id32">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_KURTOSIS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">14</span></em><a class="headerlink" href="#id32" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_BASE">
+<span class="sig-name descname"><span class="pre">ST_BASE</span></span><a class="headerlink" href="#geosoft.gxapi.ST_BASE" title="Link to this definition">¶</a></dt>
+<dd><p>St base</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id33">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_BASE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em><a class="headerlink" href="#id33" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_SUM">
+<span class="sig-name descname"><span class="pre">ST_SUM</span></span><a class="headerlink" href="#geosoft.gxapi.ST_SUM" title="Link to this definition">¶</a></dt>
+<dd><p>Sums and sums of powers</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id34">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_SUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#id34" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_SUM2">
+<span class="sig-name descname"><span class="pre">ST_SUM2</span></span><a class="headerlink" href="#geosoft.gxapi.ST_SUM2" title="Link to this definition">¶</a></dt>
+<dd><p>St sum2</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id35">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_SUM2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">17</span></em><a class="headerlink" href="#id35" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_SUM3">
+<span class="sig-name descname"><span class="pre">ST_SUM3</span></span><a class="headerlink" href="#geosoft.gxapi.ST_SUM3" title="Link to this definition">¶</a></dt>
+<dd><p>St sum3</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id36">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_SUM3</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">18</span></em><a class="headerlink" href="#id36" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_SUM4">
+<span class="sig-name descname"><span class="pre">ST_SUM4</span></span><a class="headerlink" href="#geosoft.gxapi.ST_SUM4" title="Link to this definition">¶</a></dt>
+<dd><p>St sum4</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id37">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_SUM4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">19</span></em><a class="headerlink" href="#id37" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_MINPOS">
+<span class="sig-name descname"><span class="pre">ST_MINPOS</span></span><a class="headerlink" href="#geosoft.gxapi.ST_MINPOS" title="Link to this definition">¶</a></dt>
+<dd><p>Smallest value greater than zero.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id38">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_MINPOS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">21</span></em><a class="headerlink" href="#id38" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.ST_HIST_MAXCOUNT">
+<span class="sig-name descname"><span class="pre">ST_HIST_MAXCOUNT</span></span><a class="headerlink" href="#geosoft.gxapi.ST_HIST_MAXCOUNT" title="Link to this definition">¶</a></dt>
+<dd><p>St hist maxcount</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id39">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST_HIST_MAXCOUNT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">100</span></em><a class="headerlink" href="#id39" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXST class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

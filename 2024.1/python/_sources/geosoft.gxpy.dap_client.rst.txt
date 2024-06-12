@@ -1,0 +1,52 @@
+﻿geosoft.gxpy.dap\_client
+========================
+
+.. automodule:: geosoft.gxpy.dap_client
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _decode_object
+      _json_default
+      _t
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      BoundingBox
+      DapClient
+      DataCard
+      DataExtract
+      DataType
+      ExtractProgressStatus
+      GridExtractFormat
+      ResultFilter
+      SearchFilter
+      SearchParameters
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      DapClientException
+   
+   
+
+
+

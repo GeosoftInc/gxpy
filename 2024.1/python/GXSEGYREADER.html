@@ -1,0 +1,1467 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXSEGYREADER class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXSEGYREADER class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">GXSEGYREADER class</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.__init__"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.add_trace_filter"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.add_trace_filter()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.check_sane_inline_crossline"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.check_sane_inline_crossline()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.clear_trace_dummy_value"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.clear_trace_dummy_value()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.clear_trace_filters"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.clear_trace_filters()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.clear_user_range"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.clear_user_range()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.clear_user_z_range"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.clear_user_z_range()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.count_traces_that_pass_filters"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.count_traces_that_pass_filters()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.estimate_number_of_traces"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.estimate_number_of_traces()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.export_files"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.export_files()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.export_voxel_and_database"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.export_voxel_and_database()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_binary_header"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_binary_header()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_clip_xy_extents"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_clip_xy_extents()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_endianess"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_endianess()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_field_configuration"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_field_configuration()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_georeferencing"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_georeferencing()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_inline_and_crossline_azimuths"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_inline_and_crossline_azimuths()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_is_3d"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_is_3d()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_last_sample_at"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_last_sample_at()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_num_trace_data_types"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_num_trace_data_types()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_possible_z_units"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_possible_z_units()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_sample_interval"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_sample_interval()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_sample_interval_configuration"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_sample_interval_configuration()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_slice_filenames"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_slice_filenames()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_text_header"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_text_header()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_tie_point"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_tie_point()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_trace_count"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_trace_count()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_trace_data"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_trace_data()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_trace_data_at"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_trace_data_at()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_trace_data_type"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_trace_data_type()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_trace_data_type_display_name"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_trace_data_type_display_name()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_trace_data_type_name"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_trace_data_type_name()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_trace_header_as_json"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_trace_header_as_json()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_trace_header_at"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_trace_header_at()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_trace_length"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_trace_length()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_trace_length_configuration"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_trace_length_configuration()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_voxel_cell_size"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_voxel_cell_size()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_voxel_dimensions"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_voxel_dimensions()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_xy_units"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_xy_units()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_z_offset"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_z_offset()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_z_offset_configuration"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_z_offset_configuration()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_z_offset_units"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_z_offset_units()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_z_type"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_z_type()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.get_z_units"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.get_z_units()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.is_null"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.list_binary_header_fields"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.list_binary_header_fields()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.list_trace_header_fields"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.list_trace_header_fields()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.null"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.open_file"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.open_file()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.override_navigation_2d"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.override_navigation_2d()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.recalculate_georeferencing"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.recalculate_georeferencing()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.reset_tie_points"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.reset_tie_points()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.scan_file"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.scan_file()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_auto_voxel_cell_size_xy"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_auto_voxel_cell_size_xy()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_crossline_slice_indices"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_crossline_slice_indices()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_endianess"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_endianess()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_field_configuration"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_field_configuration()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_gdb_output_filename"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_gdb_output_filename()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_georeferencing"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_georeferencing()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_inline_slice_indices"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_inline_slice_indices()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_is_3d"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_is_3d()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_sample_interval_configuration"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_sample_interval_configuration()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_section_output_filename"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_section_output_filename()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_slice_output_prefix"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_slice_output_prefix()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_tie_point"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_tie_point()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_trace_data_type"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_trace_data_type()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_trace_dummy_value"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_trace_dummy_value()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_trace_length_configuration"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_trace_length_configuration()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_user_crossline_range"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_user_crossline_range()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_user_inline_range"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_user_inline_range()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_user_voxel_cell_size_xy"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_user_voxel_cell_size_xy()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_user_z_range"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_user_z_range()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_voxel_output_filename"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_voxel_output_filename()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_z_decimation"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_z_decimation()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_z_offset_configuration"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_z_offset_configuration()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_z_offset_units"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_z_offset_units()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_z_slice_indices"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_z_slice_indices()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_z_type"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_z_type()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER.set_z_units"><code class="docutils literal notranslate"><span class="pre">GXSEGYREADER.set_z_units()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXSEGYREADER.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="gxsegyreader-class">
+<span id="gxsegyreader"></span><h1>GXSEGYREADER class<a class="headerlink" href="#gxsegyreader-class" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXSEGYREADER</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER" title="Link to this definition">¶</a></dt>
+<dd><p>GXSEGYREADER class.</p>
+<p>Convert 3D SEG Y files to voxel or database.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.add_trace_filter">
+<span class="sig-name descname"><span class="pre">add_trace_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.add_trace_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.add_trace_filter" title="Link to this definition">¶</a></dt>
+<dd><p>Add a filter based on trace header fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>offset</strong> (<em>int</em>) – byte-offset of the field to filter by.</p></li>
+<li><p><strong>value1</strong> (<em>int</em>) – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">constraint</span></code> is EQUAL and NOT_EQUAL, this is the value to compare the field to. For IN_RANGE and NOT_IN_RANGE, this is the minimum.</p></li>
+<li><p><strong>value2</strong> (<em>int</em>) – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">constraint</span></code> is EQUAL and NOT_EQUAL, this parameter is ignored For IN_RANGE and NOT_IN_RANGE, this is the maximum.</p></li>
+<li><p><strong>constraint</strong> (<em>str</em>) – How the values are compared. Can be “IN_RANGE”, “NOT_IN_RANGE”, “EQUAL” or “NOT_EQUAL”.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.check_sane_inline_crossline">
+<span class="sig-name descname"><span class="pre">check_sane_inline_crossline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">is_sane</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">possibly_swapped</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_one_line</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.check_sane_inline_crossline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.check_sane_inline_crossline" title="Link to this definition">¶</a></dt>
+<dd><p>Checks if the currently-configured inline and crossline fields seem sensible.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>is_sane</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.bool_ref" title="geosoft.gxapi.bool_ref"><em>bool_ref</em></a>) – True is inline/crossline values seem sensible.</p></li>
+<li><p><strong>possibly_swapped</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.bool_ref" title="geosoft.gxapi.bool_ref"><em>bool_ref</em></a>) – True if it looks like the inline and crossline fields are swapped.</p></li>
+<li><p><strong>only_one_line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.bool_ref" title="geosoft.gxapi.bool_ref"><em>bool_ref</em></a>) – True if it looks like the file only contains one line. This may mean the file is 2D.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.clear_trace_dummy_value">
+<span class="sig-name descname"><span class="pre">clear_trace_dummy_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.clear_trace_dummy_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.clear_trace_dummy_value" title="Link to this definition">¶</a></dt>
+<dd><p>Disables the trace dummy value.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.clear_trace_filters">
+<span class="sig-name descname"><span class="pre">clear_trace_filters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.clear_trace_filters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.clear_trace_filters" title="Link to this definition">¶</a></dt>
+<dd><p>Remove all active trace filters.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.clear_user_range">
+<span class="sig-name descname"><span class="pre">clear_user_range</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.clear_user_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.clear_user_range" title="Link to this definition">¶</a></dt>
+<dd><p>Clears inline and crossline ranges to clamp to.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.clear_user_z_range">
+<span class="sig-name descname"><span class="pre">clear_user_z_range</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.clear_user_z_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.clear_user_z_range" title="Link to this definition">¶</a></dt>
+<dd><p>Clears Z-range to clamp to, disbling z-clamping.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.count_traces_that_pass_filters">
+<span class="sig-name descname"><span class="pre">count_traces_that_pass_filters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.count_traces_that_pass_filters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.count_traces_that_pass_filters" title="Link to this definition">¶</a></dt>
+<dd><p>Count the number of traces that pass the currently-configured trace filters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.estimate_number_of_traces">
+<span class="sig-name descname"><span class="pre">estimate_number_of_traces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_of_samples</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.estimate_number_of_traces"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.estimate_number_of_traces" title="Link to this definition">¶</a></dt>
+<dd><p>Get the number of traces that would be in the SEG-Y file, given a trace length and data type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_type_name</strong> (<em>str</em>) – The name of a supported data type.</p></li>
+<li><p><strong>number_of_samples</strong> (<em>int</em>) – The number of samples to return</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.export_files">
+<span class="sig-name descname"><span class="pre">export_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.export_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.export_files" title="Link to this definition">¶</a></dt>
+<dd><p>Exports contents of SEG Y file to voxel and/or database.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.export_voxel_and_database">
+<span class="sig-name descname"><span class="pre">export_voxel_and_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">voxel_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gdb_filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.export_voxel_and_database"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.export_voxel_and_database" title="Link to this definition">¶</a></dt>
+<dd><p>Exports contents of SEG Y file to voxel and/or database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>voxel_filename</strong> (<em>str</em>) – Output voxel file name</p></li>
+<li><p><strong>gdb_filename</strong> (<em>str</em>) – Output database file name</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_binary_header">
+<span class="sig-name descname"><span class="pre">get_binary_header</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_binary_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_binary_header" title="Link to this definition">¶</a></dt>
+<dd><p>Get the SEG Y file’s binary header.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="field-list simple">
+<dt class="field-odd">class:’LTB’ containing three columns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the field name, offset, and value. The value column will be in text form, suitable for display to the end user.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB">GXLTB</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_clip_xy_extents">
+<span class="sig-name descname"><span class="pre">get_clip_xy_extents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">is_clip_valid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_max</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_clip_xy_extents"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_clip_xy_extents" title="Link to this definition">¶</a></dt>
+<dd><p>Gets the X,Y extents to clip the voxel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>is_clip_valid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – is clip area valid</p></li>
+<li><p><strong>x_min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – minimum X value</p></li>
+<li><p><strong>x_max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – maximum X value</p></li>
+<li><p><strong>y_min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – minimum Y value</p></li>
+<li><p><strong>y_max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – maximum Y value</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_endianess">
+<span class="sig-name descname"><span class="pre">get_endianess</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_endianess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_endianess" title="Link to this definition">¶</a></dt>
+<dd><p>Returns true if the file is little endian. false if it is big endian.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_field_configuration">
+<span class="sig-name descname"><span class="pre">get_field_configuration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_field_configuration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_field_configuration" title="Link to this definition">¶</a></dt>
+<dd><p>Returns information on the data in the trace headers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>:class:’LTB’ containing trace header information</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB">GXLTB</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_georeferencing">
+<span class="sig-name descname"><span class="pre">get_georeferencing</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_georeferencing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_georeferencing" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the georeferencing of the voxel that would be exported with the current configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ">GXIPJ</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_inline_and_crossline_azimuths">
+<span class="sig-name descname"><span class="pre">get_inline_and_crossline_azimuths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inline_azimuth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crossline_azimuth</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_inline_and_crossline_azimuths"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_inline_and_crossline_azimuths" title="Link to this definition">¶</a></dt>
+<dd><p>Get the inline and crossline azimuths, in degrees</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inline_azimuth</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Inline azimuth</p></li>
+<li><p><strong>crossline_azimuth</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Crossline azimuth</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_is_3d">
+<span class="sig-name descname"><span class="pre">get_is_3d</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_is_3d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_is_3d" title="Link to this definition">¶</a></dt>
+<dd><p>Returns true if the file is 3D false if it is 2D.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_last_sample_at">
+<span class="sig-name descname"><span class="pre">get_last_sample_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_last_sample_at"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_last_sample_at" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the depth of the last sample in the traces, in the units specified by <code class="xref py py-obj docutils literal notranslate"><span class="pre">SetZUnits()</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Out-parameter containing the depth of the last sample in the traces.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_num_trace_data_types">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_num_trace_data_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_num_trace_data_types"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_num_trace_data_types" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the number of supported trace data types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_possible_z_units">
+<span class="sig-name descname"><span class="pre">get_possible_z_units</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z_units_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_possible_z_units"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_possible_z_units" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of the possible values that can be passed to <code class="xref py py-obj docutils literal notranslate"><span class="pre">SetZUnits()</span></code>. The values returned by this function depend on what the z-type is set to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>z_units_list</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – List of possible z-units,separated by newlines</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_sample_interval">
+<span class="sig-name descname"><span class="pre">get_sample_interval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_interval</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_sample_interval"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_sample_interval" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the sample interval of the trace data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sample_interval</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – output parameter for sample interval</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_sample_interval_configuration">
+<span class="sig-name descname"><span class="pre">get_sample_interval_configuration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">which_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_sample_interval_configuration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_sample_interval_configuration" title="Link to this definition">¶</a></dt>
+<dd><p>Specifies where the sample interval comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>which_header</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Out-parameter indicating which header contains the trace length: “file_header” “trace_header”, or “none”</p></li>
+<li><p><strong>location</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Out-parameter containing the byte offset of the field within the header (if applicable)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_slice_filenames">
+<span class="sig-name descname"><span class="pre">get_slice_filenames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_slice_filenames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_slice_filenames" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a list of the filenames of the XY slices that will be exported.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename_list</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – List of filenames,separated by newlines</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_text_header">
+<span class="sig-name descname"><span class="pre">get_text_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_text_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_text_header" title="Link to this definition">¶</a></dt>
+<dd><p>Get the SEG Y file’s text header.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – The text header contents.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_tie_point">
+<span class="sig-name descname"><span class="pre">get_tie_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cross_line</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_tie_point"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_tie_point" title="Link to this definition">¶</a></dt>
+<dd><p>Return  the currently-active tie points. If SetTiePoints() has not already been called, then the returned points will be the automatically-selected ones.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>i</strong> (<em>int</em>) – Tie point indexl must be 0, 1 or 2.</p></li>
+<li><p><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – x-coordinate</p></li>
+<li><p><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – inline-coordinate</p></li>
+<li><p><strong>in_line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Tie point index.</p></li>
+<li><p><strong>cross_line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – crossline-coordinate</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_trace_count">
+<span class="sig-name descname"><span class="pre">get_trace_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">count</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_trace_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_trace_count" title="Link to this definition">¶</a></dt>
+<dd><p>Get the number of traces in the SEG Y file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>count</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Trace count</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_trace_data">
+<span class="sig-name descname"><span class="pre">get_trace_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trace_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_trace_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_trace_data" title="Link to this definition">¶</a></dt>
+<dd><p>Get the SEG Y trace file header data for a particular starting trace</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>trace_number</strong> (<em>int</em>) – Which trace to read</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>:class:’VV’ containing the data from the trace header</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV">GXVV</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.10.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_trace_data_at">
+<span class="sig-name descname"><span class="pre">get_trace_data_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_of_samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_trace</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_big_endian</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_trace_data_at"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_trace_data_at" title="Link to this definition">¶</a></dt>
+<dd><p>Get the SEG Y trace file data for a particular data type, number of samples, and starting trace</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_type_name</strong> (<em>str</em>) – The name of a supported data type.</p></li>
+<li><p><strong>number_of_samples</strong> (<em>int</em>) – The number of samples to return</p></li>
+<li><p><strong>current_trace</strong> (<em>int</em>) – The trace to start at</p></li>
+<li><p><strong>is_big_endian</strong> (<em>int</em>) – 1 for big endian, 0 for small</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>:class:’VV’ containing the data from the traces</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV">GXVV</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_trace_data_type">
+<span class="sig-name descname"><span class="pre">get_trace_data_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_trace_data_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_trace_data_type" title="Link to this definition">¶</a></dt>
+<dd><p>Get the data type of the trace data. This will match one of the names rfeturned by <code class="xref py py-obj docutils literal notranslate"><span class="pre">GetTraceDataTypeName()</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – The name of data type.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_trace_data_type_display_name">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_trace_data_type_display_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_trace_data_type_display_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_trace_data_type_display_name" title="Link to this definition">¶</a></dt>
+<dd><p>Get a string, suitable for displaying to the user, describing the type returned by passing the same <code class="xref py py-obj docutils literal notranslate"><span class="pre">index</span></code> value to <code class="xref py py-obj docutils literal notranslate"><span class="pre">GetTraceDataTypeName()</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – Which name to return.</p></li>
+<li><p><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – The display name of a supported data type.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_trace_data_type_name">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_trace_data_type_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_trace_data_type_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_trace_data_type_name" title="Link to this definition">¶</a></dt>
+<dd><p>Get the name of one of the available data types. These are the names used as identifiers in this API. To get a name suitable for displaying to the user, use <a href="#id30"><span class="problematic" id="id31">`</span></a>GetTraceDataTypeDisplayName() instead.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – Which name to return. Call this function  for each value between 0 and the value returned by <code class="xref py py-obj docutils literal notranslate"><span class="pre">GetNumTraceTypes()</span></code> to get a full list of the available types.</p></li>
+<li><p><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – The name of a supported data type.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_trace_header_as_json">
+<span class="sig-name descname"><span class="pre">get_trace_header_as_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trace_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_trace_header_as_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_trace_header_as_json" title="Link to this definition">¶</a></dt>
+<dd><p>Return the contents of a trace header as JSON.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trace_number</strong> (<em>int</em>) – Which trace to read</p></li>
+<li><p><strong>text</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Trace header as JSON.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.10.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_trace_header_at">
+<span class="sig-name descname"><span class="pre">get_trace_header_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_of_samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_trace</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_big_endian</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_trace_header_at"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_trace_header_at" title="Link to this definition">¶</a></dt>
+<dd><p>Get the SEG Y trace file header data for a particular starting trace</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_type_name</strong> (<em>str</em>) – The name of a supported data type.</p></li>
+<li><p><strong>number_of_samples</strong> (<em>int</em>) – The number of samples to return</p></li>
+<li><p><strong>current_trace</strong> (<em>int</em>) – The trace to start at</p></li>
+<li><p><strong>is_big_endian</strong> (<em>int</em>) – 1 for big endian, 0 for small</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>:class:’VV’ containing the data from the trace header</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV">GXVV</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_trace_length">
+<span class="sig-name descname"><span class="pre">get_trace_length</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_trace_length"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_trace_length" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the number of data samples per trace.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_trace_length_configuration">
+<span class="sig-name descname"><span class="pre">get_trace_length_configuration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">which_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_trace_length_configuration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_trace_length_configuration" title="Link to this definition">¶</a></dt>
+<dd><p>Specifies where the trace length comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>which_header</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Out-parameter indicating which header contains the trace length: “file_header” “trace_header”, or “none”</p></li>
+<li><p><strong>location</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Out-parameter containing the byte offset of the field within the header (if applicable)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_voxel_cell_size">
+<span class="sig-name descname"><span class="pre">get_voxel_cell_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_voxel_cell_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_voxel_cell_size" title="Link to this definition">¶</a></dt>
+<dd><p>Get the cell size of the voxel that would be exported with the current configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Voxel cell size along X</p></li>
+<li><p><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Voxel cell size along Y</p></li>
+<li><p><strong>z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Voxel cell size along Z</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_voxel_dimensions">
+<span class="sig-name descname"><span class="pre">get_voxel_dimensions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_voxel_dimensions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_voxel_dimensions" title="Link to this definition">¶</a></dt>
+<dd><p>Get the size of the voxel that would be exported with the current configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Voxel size along X</p></li>
+<li><p><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Voxel size along Y</p></li>
+<li><p><strong>z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Voxel size along Z</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_xy_units">
+<span class="sig-name descname"><span class="pre">get_xy_units</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xy_units</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_xy_units"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_xy_units" title="Link to this definition">¶</a></dt>
+<dd><p>Get the currently-specified xy-units.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>xy_units</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – The name of the units.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_z_offset">
+<span class="sig-name descname"><span class="pre">get_z_offset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z_offset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_z_offset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_z_offset" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the z-offset (time delay) of the trace data. Positive values correspond to a deeper top-of-trace; negative values to a higher top-of-trace.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>z_offset</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – The z offset/time delay</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_z_offset_configuration">
+<span class="sig-name descname"><span class="pre">get_z_offset_configuration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">which_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_z_offset_configuration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_z_offset_configuration" title="Link to this definition">¶</a></dt>
+<dd><p>Specifies where the z-offset (time delay) comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>which_header</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Out-parameter indicating which header contains the z offset: “file_header” “trace_header”, or “none”</p></li>
+<li><p><strong>location</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Out-parameter containing the byte offset of the field within the header (if applicable)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_z_offset_units">
+<span class="sig-name descname"><span class="pre">get_z_offset_units</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z_units</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_z_offset_units"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_z_offset_units" title="Link to this definition">¶</a></dt>
+<dd><p>Get the currently-specified units for the z offset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>z_units</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – List of possible z-units,separated by newlines</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_z_type">
+<span class="sig-name descname"><span class="pre">get_z_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_z_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_z_type" title="Link to this definition">¶</a></dt>
+<dd><p>Indicate if the z-dimension is time or depth.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>z_type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Either “DEPTH” or “TIME”.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.get_z_units">
+<span class="sig-name descname"><span class="pre">get_z_units</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z_units</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_z_units"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_z_units" title="Link to this definition">¶</a></dt>
+<dd><p>Get the currently-specified z-units.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>z_units</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – The name of the z-units.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.is_null" title="Link to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.list_binary_header_fields">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">list_binary_header_fields</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.list_binary_header_fields"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.list_binary_header_fields" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the names and offsets of the fields in the binary header.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB">GXLTB</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.list_trace_header_fields">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">list_trace_header_fields</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.list_trace_header_fields"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.list_trace_header_fields" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the names and offsets of the fields in the trace header.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB">GXLTB</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.null" title="Link to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER" title="geosoft.gxapi.GXSEGYREADER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEGYREADER</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER" title="geosoft.gxapi.GXSEGYREADER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEGYREADER</span></code></a></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER" title="geosoft.gxapi.GXSEGYREADER.GXSEGYREADER">GXSEGYREADER</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.open_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">open_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.open_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.open_file" title="Link to this definition">¶</a></dt>
+<dd><p>Opens a 3D SEG Y file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – File name</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER" title="geosoft.gxapi.GXSEGYREADER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEGYREADER</span></code></a> handle, terminates if creation fails.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXSEGYREADER" title="geosoft.gxapi.GXSEGYREADER.GXSEGYREADER">GXSEGYREADER</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.override_navigation_2d">
+<span class="sig-name descname"><span class="pre">override_navigation_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shotpoint_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_coordinates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_coordinates</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.override_navigation_2d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.override_navigation_2d" title="Link to this definition">¶</a></dt>
+<dd><p>Specify the X/Y coordinates of the traces, instead of using values from the trace headers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shotpoint_coords</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – The shotpoint coordinates, asread from the trace headers.</p></li>
+<li><p><strong>x_coordinates</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – The x-coordinates</p></li>
+<li><p><strong>y_coordinates</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – The y-coordinates</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.recalculate_georeferencing">
+<span class="sig-name descname"><span class="pre">recalculate_georeferencing</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.recalculate_georeferencing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.recalculate_georeferencing" title="Link to this definition">¶</a></dt>
+<dd><p>Recalculate georeferencing; call after configuration has changed.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.reset_tie_points">
+<span class="sig-name descname"><span class="pre">reset_tie_points</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.reset_tie_points"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.reset_tie_points" title="Link to this definition">¶</a></dt>
+<dd><p>Discard user-supplied tie points and auto-choose new ones..</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.scan_file">
+<span class="sig-name descname"><span class="pre">scan_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.scan_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.scan_file" title="Link to this definition">¶</a></dt>
+<dd><p>Scans the SEG Y file, and attempts to guess the layout.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_auto_voxel_cell_size_xy">
+<span class="sig-name descname"><span class="pre">set_auto_voxel_cell_size_xy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_auto_voxel_cell_size_xy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_auto_voxel_cell_size_xy" title="Link to this definition">¶</a></dt>
+<dd><p>Set the XY cell size of the voxel that would be exported to the dimensions calculated from the tie points..</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_crossline_slice_indices">
+<span class="sig-name descname"><span class="pre">set_crossline_slice_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_crossline_slice_indices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_crossline_slice_indices" title="Link to this definition">¶</a></dt>
+<dd><p>Which crossline slices to export to a section grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>indices</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Which crossline values to export.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_endianess">
+<span class="sig-name descname"><span class="pre">set_endianess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">is_little_endian</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_endianess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_endianess" title="Link to this definition">¶</a></dt>
+<dd><p>Set the endianess of the file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>is_little_endian</strong> (<em>bool</em>) – True is file is little endian, false for big endian.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_field_configuration">
+<span class="sig-name descname"><span class="pre">set_field_configuration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">configuration</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_field_configuration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_field_configuration" title="Link to this definition">¶</a></dt>
+<dd><p>Sets the interpretation of the fields in the SEG Y file, and specifies which fields should be exported to GDB.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>configuration</strong> (<a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><em>GXLTB</em></a>) – <a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLTB</span></code></a> following the same format as returned by <code class="xref py py-obj docutils literal notranslate"><span class="pre">GetFieldConfiguration()</span></code>.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_gdb_output_filename">
+<span class="sig-name descname"><span class="pre">set_gdb_output_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_gdb_output_filename"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_gdb_output_filename" title="Link to this definition">¶</a></dt>
+<dd><p>Exports contents of SEG Y file to a database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – Output database file name</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_georeferencing">
+<span class="sig-name descname"><span class="pre">set_georeferencing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ipj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_georeferencing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_georeferencing" title="Link to this definition">¶</a></dt>
+<dd><p>Sets the georeferencing of the voxel that would be exported with the current configuration.</p>
+<dl class="field-list simple">
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_inline_slice_indices">
+<span class="sig-name descname"><span class="pre">set_inline_slice_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_inline_slice_indices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_inline_slice_indices" title="Link to this definition">¶</a></dt>
+<dd><p>Which inline slices to export to a section grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>indices</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Which inline values to export.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_is_3d">
+<span class="sig-name descname"><span class="pre">set_is_3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">is_3d</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_is_3d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_is_3d" title="Link to this definition">¶</a></dt>
+<dd><p>Specify if the input SEG-Y file is 3D or 2D.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>is_3d</strong> (<em>bool</em>) – True is file is 3D, false for 2D.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_sample_interval_configuration">
+<span class="sig-name descname"><span class="pre">set_sample_interval_configuration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">which_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_or_value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_sample_interval_configuration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_sample_interval_configuration" title="Link to this definition">¶</a></dt>
+<dd><p>Specifies where the sample interval comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>which_header</strong> (<em>str</em>) – Which header contains the sample interval: “file_header”, “trace_header” or “none”</p></li>
+<li><p><strong>location</strong> (<em>int</em>) – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">which_header</span></code> is “file_header” or “trace_header”, then this parameter is the offset of the field containing the sample interval. If <code class="xref py py-obj docutils literal notranslate"><span class="pre">which_header</span></code> is “none”, thenthis parameter is ignored.</p></li>
+<li><p><strong>location_or_value</strong> (<em>float</em>) – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">which_header</span></code> is “file_header” or “trace_header”, then this parameter is ignored. If <code class="xref py py-obj docutils literal notranslate"><span class="pre">which_header</span></code> is “none”, thenthis parameter is the sample interval.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_section_output_filename">
+<span class="sig-name descname"><span class="pre">set_section_output_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_section_output_filename"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_section_output_filename" title="Link to this definition">¶</a></dt>
+<dd><p>Exports contents of SEG Y file to a crooked section.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – Output crooked section file name</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_slice_output_prefix">
+<span class="sig-name descname"><span class="pre">set_slice_output_prefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_slice_output_prefix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_slice_output_prefix" title="Link to this definition">¶</a></dt>
+<dd><p>Exports inline or crossline slices to a section grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prefix</strong> (<em>str</em>) – Output section file name prefix</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_tie_point">
+<span class="sig-name descname"><span class="pre">set_tie_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cross_line</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_tie_point"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_tie_point" title="Link to this definition">¶</a></dt>
+<dd><p>Set the currently-active tie points. If SetTiePoints() has not already been called, then the returned points will be the automatically-selected ones.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>i</strong> (<em>int</em>) – Tie point index.</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – x-coordinate</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – inline-coordinate</p></li>
+<li><p><strong>in_line</strong> (<em>int</em>) – Tie point index.</p></li>
+<li><p><strong>cross_line</strong> (<em>int</em>) – crossline-coordinate</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_trace_data_type">
+<span class="sig-name descname"><span class="pre">set_trace_data_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_trace_data_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_trace_data_type" title="Link to this definition">¶</a></dt>
+<dd><p>Set the data type of the trace data. This must match one of the names returned by <code class="xref py py-obj docutils literal notranslate"><span class="pre">GetTraceDataTypeName()</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of data type.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_trace_dummy_value">
+<span class="sig-name descname"><span class="pre">set_trace_dummy_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dummy_value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_trace_dummy_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_trace_dummy_value" title="Link to this definition">¶</a></dt>
+<dd><p>Sets the trace dummy value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dummy_value</strong> (<em>float</em>) – trace dummy value</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_trace_length_configuration">
+<span class="sig-name descname"><span class="pre">set_trace_length_configuration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">which_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_or_value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_trace_length_configuration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_trace_length_configuration" title="Link to this definition">¶</a></dt>
+<dd><p>Specifies where the trace length comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>which_header</strong> (<em>str</em>) – Which header contains the trace length: “file_header”, “trace_header” or “none”</p></li>
+<li><p><strong>location_or_value</strong> (<em>int</em>) – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">which_header</span></code> is “file_header” or “trace_header”, then this parameter is the offset of the field containing the trace length. If <code class="xref py py-obj docutils literal notranslate"><span class="pre">which_header</span></code> is “none”, then this parameter is the actual trace length.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_user_crossline_range">
+<span class="sig-name descname"><span class="pre">set_user_crossline_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">crossline_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crossline_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crossline_stride</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_user_crossline_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_user_crossline_range" title="Link to this definition">¶</a></dt>
+<dd><p>Sets crossline-range to clamp to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>crossline_min</strong> (<em>int</em>) – crossline minimum</p></li>
+<li><p><strong>crossline_max</strong> (<em>int</em>) – crossline maximum</p></li>
+<li><p><strong>crossline_stride</strong> (<em>int</em>) – crossline stride</p></li>
+<li><p><strong>factor</strong> (<em>int</em>) – Decimation factor</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_user_inline_range">
+<span class="sig-name descname"><span class="pre">set_user_inline_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inline_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inline_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inline_stride</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_user_inline_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_user_inline_range" title="Link to this definition">¶</a></dt>
+<dd><p>Sets inline-range to clamp to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inline_min</strong> (<em>int</em>) – inline minimum</p></li>
+<li><p><strong>inline_max</strong> (<em>int</em>) – inline maximum</p></li>
+<li><p><strong>inline_stride</strong> (<em>int</em>) – inline stride</p></li>
+<li><p><strong>factor</strong> (<em>int</em>) – Decimation factor</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_user_voxel_cell_size_xy">
+<span class="sig-name descname"><span class="pre">set_user_voxel_cell_size_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_user_voxel_cell_size_xy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_user_voxel_cell_size_xy" title="Link to this definition">¶</a></dt>
+<dd><p>Set the XY cell size of the voxel that would be exported with the current configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – Voxel cell size along X</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Voxel cell size along Y</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_user_z_range">
+<span class="sig-name descname"><span class="pre">set_user_z_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_max</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_user_z_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_user_z_range" title="Link to this definition">¶</a></dt>
+<dd><p>Sets Z-range to clamp to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z_min</strong> (<em>float</em>) – Z minimum</p></li>
+<li><p><strong>z_max</strong> (<em>float</em>) – Z maximum</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_voxel_output_filename">
+<span class="sig-name descname"><span class="pre">set_voxel_output_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_voxel_output_filename"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_voxel_output_filename" title="Link to this definition">¶</a></dt>
+<dd><p>Exports contents of SEG Y file to voxel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – Output voxel file name</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_z_decimation">
+<span class="sig-name descname"><span class="pre">set_z_decimation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_z_decimation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_z_decimation" title="Link to this definition">¶</a></dt>
+<dd><p>Sets Z decimation factor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>factor</strong> (<em>int</em>) – Decimation factor</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_z_offset_configuration">
+<span class="sig-name descname"><span class="pre">set_z_offset_configuration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">which_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_z_offset_configuration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_z_offset_configuration" title="Link to this definition">¶</a></dt>
+<dd><p>Specifies where the z-offset (time delay) comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>which_header</strong> (<em>str</em>) – Which header contains the z offset: “file_header”, “trace_header” or “none”</p></li>
+<li><p><strong>location</strong> (<em>int</em>) – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">which_header</span></code> is “file_header” or “trace_header”, then this parameter is the offset of the field. If <code class="xref py py-obj docutils literal notranslate"><span class="pre">which_header</span></code> is “none”, then this parameter is ignored.</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">which_header</span></code> is “file_header” or “trace_header”, then this parameter is ignored. If <code class="xref py py-obj docutils literal notranslate"><span class="pre">which_header</span></code> is “none”, then this parameter is the z offset.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_z_offset_units">
+<span class="sig-name descname"><span class="pre">set_z_offset_units</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z_units</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_z_offset_units"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_z_offset_units" title="Link to this definition">¶</a></dt>
+<dd><p>Set the units that the z-offset is in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>z_units</strong> (<em>str</em>) – The Z units. Must be one of the strings returned by <code class="xref py py-obj docutils literal notranslate"><span class="pre">GetPossibleZUnits()</span></code>.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_z_slice_indices">
+<span class="sig-name descname"><span class="pre">set_z_slice_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_z_slice_indices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_z_slice_indices" title="Link to this definition">¶</a></dt>
+<dd><p>Which z slices to export to a section grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>indices</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Which z values to export.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_z_type">
+<span class="sig-name descname"><span class="pre">set_z_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_z_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_z_type" title="Link to this definition">¶</a></dt>
+<dd><p>Specify if the z-dimension is time or depth.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>z_type</strong> (<em>str</em>) – Either “DEPTH” or “TIME”.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEGYREADER.set_z_units">
+<span class="sig-name descname"><span class="pre">set_z_units</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z_units</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.set_z_units"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.set_z_units" title="Link to this definition">¶</a></dt>
+<dd><p>Set the z-units.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>z_units</strong> (<em>str</em>) – The Z units. Must be one of the strings returned by <code class="xref py py-obj docutils literal notranslate"><span class="pre">GetPossibleZUnits()</span></code>.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXSEGYREADER class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

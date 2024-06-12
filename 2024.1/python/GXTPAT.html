@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXTPAT class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXTPAT class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">GXTPAT class</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXTPAT"><code class="docutils literal notranslate"><span class="pre">GXTPAT</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXTPAT.__init__"><code class="docutils literal notranslate"><span class="pre">GXTPAT.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXTPAT.add_color"><code class="docutils literal notranslate"><span class="pre">GXTPAT.add_color()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXTPAT.code"><code class="docutils literal notranslate"><span class="pre">GXTPAT.code()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXTPAT.create"><code class="docutils literal notranslate"><span class="pre">GXTPAT.create()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXTPAT.get_solid_pattern"><code class="docutils literal notranslate"><span class="pre">GXTPAT.get_solid_pattern()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXTPAT.is_null"><code class="docutils literal notranslate"><span class="pre">GXTPAT.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXTPAT.load_csv"><code class="docutils literal notranslate"><span class="pre">GXTPAT.load_csv()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXTPAT.null"><code class="docutils literal notranslate"><span class="pre">GXTPAT.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXTPAT.setup_translation_vv"><code class="docutils literal notranslate"><span class="pre">GXTPAT.setup_translation_vv()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXTPAT.size"><code class="docutils literal notranslate"><span class="pre">GXTPAT.size()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tpat-string-size-constants">TPAT_STRING_SIZE constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.TPAT_CODE_SIZE"><code class="docutils literal notranslate"><span class="pre">TPAT_CODE_SIZE</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.TPAT_CODE_SIZE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.TPAT_LABEL_SIZE"><code class="docutils literal notranslate"><span class="pre">TPAT_LABEL_SIZE</span></code></a></li>
+<li><a class="reference internal" href="#id7"><code class="docutils literal notranslate"><span class="pre">gxapi.TPAT_LABEL_SIZE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.TPAT_DESC_SIZE"><code class="docutils literal notranslate"><span class="pre">TPAT_DESC_SIZE</span></code></a></li>
+<li><a class="reference internal" href="#id8"><code class="docutils literal notranslate"><span class="pre">gxapi.TPAT_DESC_SIZE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.TPAT_SYMBFONT_SIZE"><code class="docutils literal notranslate"><span class="pre">TPAT_SYMBFONT_SIZE</span></code></a></li>
+<li><a class="reference internal" href="#id9"><code class="docutils literal notranslate"><span class="pre">gxapi.TPAT_SYMBFONT_SIZE</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXTPAT.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="gxtpat-class">
+<span id="gxtpat"></span><h1>GXTPAT class<a class="headerlink" href="#gxtpat-class" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXTPAT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXTPAT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTPAT.html#GXTPAT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTPAT" title="Link to this definition">¶</a></dt>
+<dd><p>GXTPAT class.</p>
+<p>The full name of the pattern.
+ex: “felsic volcanics”
+Code:          Short-form of the pattern description. This is the value
+which typically appears (for instance) in the “Rock code”
+channel in a Wholeplot From-To data group.
+ex: “FVOL”
+The code is CASE-SENSITIVE.</p>
+<p>Label:         Text to use as a short-form in labels, graphs etc.
+By default, this is the same as the code.
+ex: “FVol.”
+Pattern Attributes:  (See DEFAULT.`GXPAT &lt;geosoft.gxapi.GXPAT&gt;` in srcetc for more inforation)
+Pattern:       The Pattern Index; defined in DEFAULT.`GXPAT &lt;geosoft.gxapi.GXPAT&gt;`, or in the user’s
+USER.`GXPAT &lt;geosoft.gxapi.GXPAT&gt;` file. If not specified, defaults to 0 (solid fill).
+Size:          The pattern tile size. If not specified, defaults to 2.0mm.
+Density:       The tiling density. If not specified, defaults to 1.0.
+Thickness:     The line thickness in the tile, expressed as a integer
+percentage (0-100) of the tile size.
+Color:        The pattern line work color. If not specified, defaults to black.</p>
+<p>Background color: The pattern background color. If not specified, defaults to
+transparent (C_ANY_NONE)</p>
+<p>Symbols:</p>
+<p>Symbol Font     The name of the symbol font to use for a given symbol index</p>
+<p>Symbol Number   Index into the font.</p>
+<p>Symbol Rotation: Rotation in degrees CCW.</p>
+<p>Symbol Scaling  Additional scale factor to apply to symbol size (Default 1.0)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXTPAT.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTPAT.html#GXTPAT.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTPAT.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXTPAT.add_color">
+<span class="sig-name descname"><span class="pre">add_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">descr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTPAT.html#GXTPAT.add_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTPAT.add_color" title="Link to this definition">¶</a></dt>
+<dd><p>Add a new color to the list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>code</strong> (<em>str</em>) – Code (required - CASE SENSITIVE)</p></li>
+<li><p><strong>label</strong> (<em>str</em>) – Label (optional, can be “”)</p></li>
+<li><p><strong>descr</strong> (<em>str</em>) – Description (optional, can be “”)</p></li>
+<li><p><strong>color</strong> (<em>int</em>) – Color (use <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.color" title="geosoft.gxapi.GXMVIEW.color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.color</span></code></a> to convert to int).</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The new code must be unique; not in the existing list.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXTPAT.code">
+<span class="sig-name descname"><span class="pre">code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTPAT.html#GXTPAT.code"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTPAT.code" title="Link to this definition">¶</a></dt>
+<dd><p>Find the index of a given thematic pattern</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>code</strong> (<em>str</em>) – Pattern code (case sensitive)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The code index, -1 if not found</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXTPAT.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTPAT.html#GXTPAT.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTPAT.create" title="Link to this definition">¶</a></dt>
+<dd><p>Creates an empty thematic pattern object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTPAT</span></code></a> object</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT.GXTPAT">GXTPAT</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXTPAT.get_solid_pattern">
+<span class="sig-name descname"><span class="pre">get_solid_pattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">descr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTPAT.html#GXTPAT.get_solid_pattern"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTPAT.get_solid_pattern" title="Link to this definition">¶</a></dt>
+<dd><p>Get solid pattern info from the <a class="reference internal" href="#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTPAT</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – Index</p></li>
+<li><p><strong>code</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned Code</p></li>
+<li><p><strong>label</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned Label</p></li>
+<li><p><strong>descr</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned Description</p></li>
+<li><p><strong>color</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Color.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Returns the solid color, pattern foreground color, or symbol
+color, along with the code, label and description.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXTPAT.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTPAT.html#GXTPAT.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTPAT.is_null" title="Link to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXTPAT.load_csv">
+<span class="sig-name descname"><span class="pre">load_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTPAT.html#GXTPAT.load_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTPAT.load_csv" title="Link to this definition">¶</a></dt>
+<dd><p>Load thematic patterns from a CSV file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>str</em>) – Thematic Pattern file name</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The type of thematic patterns file is recognized from the types
+of fields found inside it.</p>
+<p>The following fields are identified. Only the “CODE” field is
+required, as the “default” thematic pattern is a solid black color.</p>
+<p>CODE   The pattern code (required by all types - CASE SENSITIVE)
+LABEL  Longer text identifier to use in legends etc. (up to 31 characters)
+DESCRIPTION Much longer text string (up to 127 characters).</p>
+<p>COLOR  Line color used in patterns, and for solid colors, the color.
+If only this field is found (and none below), the pattern file
+is assumed to be type TPAT_TYPE_COLOR.</p>
+<p>PATTERN         Geosoft pattern ID.
+PAT_SIZE        Pattern tile size, or symbol size (default 2mm)
+PAT_DENSITY     Pattern tile density (default 1.0)
+PAT_THICKNESS   Pattern line thickness as % of size (default 5)
+BACK_COLOR      Background color for the pattern. Also used for symbols
+(Default background is transparent).</p>
+<p>SYMBFONT        Symbol font (e.g. “symbols.gfn”)
+SYMBNUM         Symbol number of the current font
+SYMBROT         Symbol rotation
+SYMBSCL         Additional scaling factor applied to the current size</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXTPAT.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTPAT.html#GXTPAT.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTPAT.null" title="Link to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTPAT</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTPAT</span></code></a></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT.GXTPAT">GXTPAT</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXTPAT.setup_translation_vv">
+<span class="sig-name descname"><span class="pre">setup_translation_vv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ltb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTPAT.html#GXTPAT.setup_translation_vv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTPAT.setup_translation_vv" title="Link to this definition">¶</a></dt>
+<dd><p>Initializes a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> used to map <a class="reference internal" href="#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTPAT</span></code></a> indices to output values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ltb</strong> (<a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><em>GXLTB</em></a>) – Table containing <a class="reference internal" href="#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTPAT</span></code></a> codes as the key</p></li>
+<li><p><strong>field</strong> (<em>int</em>) – Field in <a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLTB</span></code></a> with the output values (numeric or string)</p></li>
+<li><p><strong>vv_values</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Returned values for each <a class="reference internal" href="#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTPAT</span></code></a> index</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The input <a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLTB</span></code></a> object should have key values matching the <a class="reference internal" href="#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTPAT</span></code></a> codes.
+Whether the matches are case sensitive or not is dependent on how the
+<a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLTB</span></code></a> oject was created (see ltb.h).
+The <a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLTB</span></code></a> field values are converted to the output <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXTPAT.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTPAT.html#GXTPAT.size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTPAT.size" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the number of rows (items) in the <a class="reference internal" href="#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTPAT</span></code></a> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of <a class="reference internal" href="#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTPAT</span></code></a> items.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+</dd></dl>
+
+<section id="tpat-string-size-constants">
+<span id="tpat-string-size"></span><h2>TPAT_STRING_SIZE constants<a class="headerlink" href="#tpat-string-size-constants" title="Link to this heading">¶</a></h2>
+<p>Default string sizes.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.TPAT_CODE_SIZE">
+<span class="sig-name descname"><span class="pre">TPAT_CODE_SIZE</span></span><a class="headerlink" href="#geosoft.gxapi.TPAT_CODE_SIZE" title="Link to this definition">¶</a></dt>
+<dd><p>Tpat code size</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TPAT_CODE_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">21</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.TPAT_LABEL_SIZE">
+<span class="sig-name descname"><span class="pre">TPAT_LABEL_SIZE</span></span><a class="headerlink" href="#geosoft.gxapi.TPAT_LABEL_SIZE" title="Link to this definition">¶</a></dt>
+<dd><p>Tpat label size</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id7">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TPAT_LABEL_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#id7" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.TPAT_DESC_SIZE">
+<span class="sig-name descname"><span class="pre">TPAT_DESC_SIZE</span></span><a class="headerlink" href="#geosoft.gxapi.TPAT_DESC_SIZE" title="Link to this definition">¶</a></dt>
+<dd><p>Tpat desc size</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TPAT_DESC_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">128</span></em><a class="headerlink" href="#id8" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.TPAT_SYMBFONT_SIZE">
+<span class="sig-name descname"><span class="pre">TPAT_SYMBFONT_SIZE</span></span><a class="headerlink" href="#geosoft.gxapi.TPAT_SYMBFONT_SIZE" title="Link to this definition">¶</a></dt>
+<dd><p>Tpat symbfont size</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id9">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TPAT_SYMBFONT_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#id9" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXTPAT class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>
