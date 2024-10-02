@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXITR &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <title>geosoft.gxapi.GXITR &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXITR</a></li> 
@@ -134,6 +134,40 @@
 
 
 <span class="c1"># Miscellaneous</span>
+
+
+
+<div class="viewcode-block" id="GXITR.set_name"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_name">[docs]</a>    <span class="k">def</span> <span class="nf">set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the name of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Name to set</span>
+<span class="sd">        :type  name:  str</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXITR.get_name"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the name of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Name returned</span>
+<span class="sd">        :type  name:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
 
 
 
@@ -396,6 +430,28 @@
 
 
 
+<div class="viewcode-block" id="GXITR.get_zone_base_color"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_zone_base_color">[docs]</a>    <span class="k">def</span> <span class="nf">get_zone_base_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the base color in a zone of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :param zone:   Number of the zone to set.</span>
+<span class="sd">        :param color:  :ref:`MVIEW_COLOR`</span>
+<span class="sd">        :type  zone:   int</span>
+<span class="sd">        :type  color:  int_ref</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Valid indices are 0 to N-1, where N is the size of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`.</span>
+<span class="sd">        The base colour is the colour in the ITR before any brightness is applied.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">color</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_zone_base_color</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
 <div class="viewcode-block" id="GXITR.color_value"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.color_value">[docs]</a>    <span class="k">def</span> <span class="nf">color_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Transform single data value to color</span>
@@ -451,6 +507,60 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_zone_model_type</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXITR.get_zone_model"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_zone_model">[docs]</a>    <span class="k">def</span> <span class="nf">get_zone_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">parameters</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the `GXITR &lt;geosoft.gxapi.GXITR&gt;` zone model (e.g. Linear, LogLin, Equal Area) and the accompanying values (if defined)</span>
+<span class="sd">        </span>
+<span class="sd">        :param model:       :ref:`ITR_ZONE_MODEL`</span>
+<span class="sd">        :param parameters:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` object (REAL): see notes for values returned</span>
+<span class="sd">        :type  model:       int_ref</span>
+<span class="sd">        :type  parameters:  GXVV</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The following parameters are returned for the following values returned for :ref:`ITR_ZONE_MODEL`:</span>
+<span class="sd">        ITR_ZONE_MODEL_LINEAR: [0]: Contour, [1]: Min, [2]: Max</span>
+<span class="sd">        ITR_ZONE_MODEL_LOGLIN: [0]: Contour, [1]: Min, [2]: Max</span>
+<span class="sd">        ITR_ZONE_MODEL_NORMAL: [0]: Contour, [1]: Mean, [2]: Standard Deviation, [3]: Exponent</span>
+<span class="sd">        ITR_ZONE_MODEL_EQUAL: [0]: Contour</span>
+<span class="sd">        All other types do not return any values (the VV will be empty).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_zone_model</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">parameters</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXITR.set_zone_model"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_zone_model">[docs]</a>    <span class="k">def</span> <span class="nf">set_zone_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">parameters</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the `GXITR &lt;geosoft.gxapi.GXITR&gt;` zone model (e.g. Linear, LogLin, Equal Area) and the accompanying values (if defined)</span>
+<span class="sd">        </span>
+<span class="sd">        :param model:       :ref:`ITR_ZONE_MODEL`</span>
+<span class="sd">        :param parameters:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` object (REAL): see notes for values returned</span>
+<span class="sd">        :type  model:       int</span>
+<span class="sd">        :type  parameters:  GXVV</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The following parameters are required for the following values of :ref:`ITR_ZONE_MODEL`:</span>
+<span class="sd">        ITR_ZONE_MODEL_LINEAR: [0]: Contour, [1]: Min, [2]: Max</span>
+<span class="sd">        ITR_ZONE_MODEL_LOGLIN: [0]: Contour, [1]: Min, [2]: Max</span>
+<span class="sd">        ITR_ZONE_MODEL_NORMAL: [0]: Contour, [1]: Mean, [2]: Standard Deviation, [3]: Exponent</span>
+<span class="sd">        ITR_ZONE_MODEL_EQUAL: [0]: Contour</span>
+<span class="sd">        All other types do not require any values (the VV will be empty).</span>
+<span class="sd">        NOTE: This will not change the actual ranges, so care is needed when using this function that the input</span>
+<span class="sd">        specification accurately reflects the actual ranges.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_zone_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">parameters</span><span class="p">)</span></div>
+        
 
 
 
@@ -574,9 +684,55 @@
 
 <span class="sd">        .. seealso::</span>
 
-<span class="sd">            `change_brightness &lt;geosoft.gxapi.GXITR.change_brightness&gt;`, `GXAGG.get_brightness &lt;geosoft.gxapi.GXAGG.get_brightness&gt;`, `GXAGG.change_brightness &lt;geosoft.gxapi.GXAGG.change_brightness&gt;`</span>
+<span class="sd">            `change_brightness &lt;geosoft.gxapi.GXITR.change_brightness&gt;`, `get_contrast &lt;geosoft.gxapi.GXITR.get_contrast&gt;`, `set_bright_contrast &lt;geosoft.gxapi.GXITR.set_bright_contrast&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_brightness</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXITR.get_contrast"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_contrast">[docs]</a>    <span class="k">def</span> <span class="nf">get_contrast</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the contrast setting of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    The contrast setting of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
+<span class="sd">        :rtype:      float</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Brightness can range from 0.0 (flat) to 1.0 (normal full contrast).</span>
+
+<span class="sd">        .. seealso::</span>
+
+<span class="sd">            `change_brightness &lt;geosoft.gxapi.GXITR.change_brightness&gt;`, `GXAGG.get_brightness &lt;geosoft.gxapi.GXAGG.get_brightness&gt;`, `set_bright_contrast &lt;geosoft.gxapi.GXITR.set_bright_contrast&gt;`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_contrast</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXITR.get_contour"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_contour">[docs]</a>    <span class="k">def</span> <span class="nf">get_contour</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the contour value associated with the current transform model of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    The contour setting of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
+<span class="sd">        :rtype:      float</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The Linear, Normal and Equal-Area transforms accept a contour value as part of their definitions on creation.</span>
+<span class="sd">        All the colour-breaks are rounded to the nearest integral multiple of the contour value (if defined).</span>
+<span class="sd">        This function returns the value defined, and rDUMMY if none is defined.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_contour</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
 
@@ -790,10 +946,80 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
-<span class="sd">        **Note:** Valid indices are 0 to N-1, where N is the size of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`.</span>
+<span class="sd">        **Note:** &quot;</span>
+<span class="sd">                       Valid indices are 0 to N-1, where N is the size of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`.</span>
+<span class="sd">                       This function modifies the colours as rendered, including applied</span>
+<span class="sd">                       brightness, and triggers an internal reset of the ITR brightness</span>
+<span class="sd">                       to zero, with all the &quot;rendered&quot; colours becoming the &quot;base&quot; colours.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_zone_color</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span></div>
         
+
+
+
+
+<div class="viewcode-block" id="GXITR.set_zone_base_color"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_zone_base_color">[docs]</a>    <span class="k">def</span> <span class="nf">set_zone_base_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the color in a zone of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :param zone:   Number of the zone to set.</span>
+<span class="sd">        :param color:  :ref:`MVIEW_COLOR`</span>
+<span class="sd">        :type  zone:   int</span>
+<span class="sd">        :type  color:  int</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** &quot;</span>
+<span class="sd">                       Valid indices are 0 to N-1, where N is the size of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`.</span>
+<span class="sd">                       This function modifies the &quot;base&quot; colours directly. The base colours have</span>
+<span class="sd">                       the current brightness applied to produce the rendered colours. The </span>
+<span class="sd">                       internal brightness remains unchanged.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_zone_base_color</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXITR.set_zone_active"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_zone_active">[docs]</a>    <span class="k">def</span> <span class="nf">set_zone_active</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">active</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set whether a zone of the `GXITR &lt;geosoft.gxapi.GXITR&gt;` is active (1) or rendered trasparent (0)</span>
+<span class="sd">        </span>
+<span class="sd">        :param zone:    Number of the zone to set.</span>
+<span class="sd">        :param active:  1: active, 0: inactive (transparent)</span>
+<span class="sd">        :type  zone:    int</span>
+<span class="sd">        :type  active:  int</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Valid indices are 0 to N-1, where N is the size of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_zone_active</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">active</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXITR.get_zone_active"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_zone_active">[docs]</a>    <span class="k">def</span> <span class="nf">get_zone_active</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get whether a zone of the `GXITR &lt;geosoft.gxapi.GXITR&gt;` is active (1) or rendered trasparent (0)</span>
+<span class="sd">        </span>
+<span class="sd">        :param zone:  Number of the zone to set.</span>
+<span class="sd">        :type  zone:  int</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Valid indices are 0 to N-1, where N is the size of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_zone_active</span><span class="p">(</span><span class="n">zone</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
 
 
 
@@ -843,7 +1069,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXITR</a></li> 

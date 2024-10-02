@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXDH &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <title>geosoft.gxapi.GXDH &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDH</a></li> 
@@ -4093,6 +4093,34 @@
 
 
 
+<div class="viewcode-block" id="GXDH.update_template_blob"><a class="viewcode-back" href="../../../GXDH.html#geosoft.gxapi.GXDH.update_template_blob">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">update_template_blob</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">templDestination</span><span class="p">,</span> <span class="n">templSource</span><span class="p">,</span> <span class="n">imp_type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the import template and store to the database if necessary.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:                `GXDB &lt;geosoft.gxapi.GXDB&gt;` Handle</span>
+<span class="sd">        :param templDestination:  Destination template name</span>
+<span class="sd">        :param templSource:       Source template name</span>
+<span class="sd">        :param imp_type:          :ref:`DH_DATA`</span>
+<span class="sd">        :type  db:                GXDB</span>
+<span class="sd">        :type  templDestination:  str</span>
+<span class="sd">        :type  templSource:       str</span>
+<span class="sd">        :type  imp_type:          int</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The template will be updated using another template.</span>
+
+<span class="sd">        The import types correspond to the DHIMPORT.IMPTYPE variable:</span>
+<span class="sd">        0: ASCII, 1: Database/XLS, 2: ODBC</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDH</span><span class="o">.</span><span class="n">_update_template_blob</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">templDestination</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">templSource</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">imp_type</span><span class="p">)</span></div>
+        
+
+
+
 
 <div class="viewcode-block" id="GXDH.significant_intersections_db"><a class="viewcode-back" href="../../../GXDH.html#geosoft.gxapi.GXDH.significant_intersections_db">[docs]</a>    <span class="k">def</span> <span class="nf">significant_intersections_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mast_db</span><span class="p">,</span> <span class="n">comp_db</span><span class="p">,</span> <span class="n">hol_sel</span><span class="p">,</span> <span class="n">assay_ch</span><span class="p">,</span> <span class="n">cut_off_grade</span><span class="p">,</span> <span class="n">clip_grade</span><span class="p">,</span> <span class="n">min_composite_thickness</span><span class="p">,</span> <span class="n">min_composite_grade</span><span class="p">,</span> <span class="n">max_internal_dilution_length</span><span class="p">,</span> <span class="n">min_internal_dilution_grade</span><span class="p">,</span> <span class="n">grade_for_missing_assays</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -4342,7 +4370,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDH</a></li> 

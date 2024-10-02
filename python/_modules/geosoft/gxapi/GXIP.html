@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXIP &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <title>geosoft.gxapi.GXIP &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIP</a></li> 
@@ -1707,6 +1707,83 @@
 
 
 
+<div class="viewcode-block" id="GXIP.recalculate_derived_data"><a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.recalculate_derived_data">[docs]</a>    <span class="k">def</span> <span class="nf">recalculate_derived_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_handle</span><span class="p">,</span> <span class="n">channel_list</span><span class="p">,</span> <span class="n">recalculate_xyz</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Recalculate derived channel values.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:               Database</span>
+<span class="sd">        :param line_handle:      line handle  [`DB_LOCK_READWRITE &lt;geosoft.gxapi.DB_LOCK_READWRITE&gt;`]</span>
+<span class="sd">        :param channel_list:     `GXLST &lt;geosoft.gxapi.GXLST&gt;` object - channel name overrides</span>
+<span class="sd">        :param recalculate_xyz:  Recalculate XYZ locations (TRUE or FALSE)?</span>
+<span class="sd">        :type  db:               GXDB</span>
+<span class="sd">        :type  line_handle:      int</span>
+<span class="sd">        :type  channel_list:     GXLST</span>
+<span class="sd">        :type  recalculate_xyz:  int</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** This function recalculates &quot;derived&quot; channel values from</span>
+<span class="sd">        &quot;core&quot; data. It duplicates and extends the functionality</span>
+<span class="sd">        of RecalateEx_IP by allowing for the input/output channel</span>
+<span class="sd">        names to be overridden, with extra control on what is calculated.</span>
+
+<span class="sd">            1. Recalculates the &quot;STN&quot; and &quot;N&quot; channels (depending on the system).</span>
+<span class="sd">            2. Recalculates the apparent resistivity &quot;ResCalc&quot;,</span>
+<span class="sd">               average &quot;IP_Avg&quot; and metal factor &quot;MF&quot; channels</span>
+<span class="sd">            3. Recalculates the &quot;X&quot; and &quot;Y&quot; channels. One of these will</span>
+<span class="sd">               be equal to &quot;STN&quot;, the other to the internally stored</span>
+<span class="sd">               line number for the current line.</span>
+<span class="sd">            4. Recalculate the &quot;Z&quot; channel, based on the current &quot;Topo&quot;</span>
+<span class="sd">               channel, and the &quot;N&quot; values.</span>
+
+<span class="sd">        Channel overrides are passed via a LST object, with the channel key (type)</span>
+<span class="sd">        passed in the LST_ITEM_NAME part, and the channel name passed in the </span>
+<span class="sd">        LST_ITEM_VALUE part.</span>
+
+<span class="sd">        The following channel overrides supported </span>
+<span class="sd">        (NOTE: Different behaviours for 2D and 3D arrays)</span>
+
+<span class="sd">        3D Electrode location channels (IP_ARRAY_3D_XXX):</span>
+<span class="sd">            &quot;R1X&quot;, &quot;R1Y&quot;, &quot;R1Z&quot;, &quot;R2X&quot;, &quot;R2Y&quot;, &quot;R2Z&quot;,</span>
+<span class="sd">            &quot;T1X&quot;, &quot;T1Y&quot;, &quot;T1Z&quot;, &quot;T2X&quot;, &quot;T2Y&quot;, &quot;T2Z&quot; </span>
+<span class="sd">            (electrodes not included or set to &quot;&quot; are not read)</span>
+
+<span class="sd">        or IN-LINE arrays (DPDP, PLDP, PLPL, GRAD)</span>
+<span class="sd">            &quot;R1X&quot;, &quot;R2X&quot;, &quot;T1X&quot;, &quot;T2X&quot;  (In-line locations)</span>
+<span class="sd">            &quot;R1Y&quot;, &quot;R2Y&quot;, &quot;T1Y&quot;, &quot;T2Y&quot;  (Across-line locations)</span>
+<span class="sd">            &quot;R1Z&quot;, &quot;R2Z&quot;, &quot;T1Z&quot;, &quot;T2Z&quot;  (Z)</span>
+<span class="sd">            (for any electrode not include or set to &quot;&quot; the default channel name For</span>
+<span class="sd">             the array line direction, or the defined distant electrode location</span>
+<span class="sd">             is used)</span>
+
+<span class="sd">        Other input channels overridden if defined:</span>
+<span class="sd">            &quot;Vp&quot; (primary voltage - must be in mV)</span>
+<span class="sd">            &quot;I&quot; (current - must be in A)</span>
+
+<span class="sd">        Other output channels overridden if defined (if you DON&#39;T want the</span>
+<span class="sd">        various output channels modified, then set the override values to &quot;&quot;):</span>
+<span class="sd">            &quot;MF&quot; (metal factor) - formulation defined in settings, </span>
+<span class="sd">            &quot;AvgIP&quot; (average IP)</span>
+<span class="sd">            &quot;AppRes&quot; (apparent resistivity)</span>
+<span class="sd">            &quot;N&quot; (Pseudo-section pseudo-depth)</span>
+<span class="sd">            &quot;Stn&quot; (Station value)</span>
+<span class="sd">            &quot;X&quot; (Station &quot;X&quot; value)</span>
+<span class="sd">            &quot;Y&quot; (Station &quot;Y&quot; value)</span>
+<span class="sd">            &quot;Z&quot; (Station &quot;Z&quot; value)</span>
+<span class="sd">            &quot;Topo&quot; (Ground elevation at station location)</span>
+
+<span class="sd">         Recalculating XYZ will result in any channel grid makers from the IPIMPGRID.GX</span>
+<span class="sd">         being re-run, then if a maker exists for the Topo channel it is re-run, and</span>
+<span class="sd">         finally the Z channel is recalculated (see &quot;RecalculateZ_IP&quot;).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_recalculate_derived_data</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line_handle</span><span class="p">,</span> <span class="n">channel_list</span><span class="p">,</span> <span class="n">recalculate_xyz</span><span class="p">)</span></div>
+        
+
+
+
+
 <div class="viewcode-block" id="GXIP.recalculate_z"><a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.recalculate_z">[docs]</a>    <span class="k">def</span> <span class="nf">recalculate_z</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Recalculate Z channel values.</span>
@@ -2191,7 +2268,52 @@
 <span class="sd">        **Note:** You can use this list (for instance) to add the created grids to the project list.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_grids_vv</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">GXVV</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">GXVV</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIP.get_line_data"><a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.get_line_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_line_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">vv_R1X</span><span class="p">,</span> <span class="n">vv_R1Y</span><span class="p">,</span> <span class="n">vv_R2X</span><span class="p">,</span> <span class="n">vv_R2Y</span><span class="p">,</span> <span class="n">vv_T1X</span><span class="p">,</span> <span class="n">vv_T1Y</span><span class="p">,</span> <span class="n">vv_T2X</span><span class="p">,</span> <span class="n">vv_T2Y</span><span class="p">,</span> <span class="n">vv_QC_IP</span><span class="p">,</span> <span class="n">vv_QC_Res</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">vv_data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get electrodes, data and mask values for a single line.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:         `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
+<span class="sd">        :param line:       Line name (&quot;&quot; for all selected lines)</span>
+<span class="sd">        :param vv_R1X:     RX1 x locations (returned)</span>
+<span class="sd">        :param vv_R1Y:     RX1 y locations (returned)</span>
+<span class="sd">        :param vv_R2X:     RX2 x locations (returned)</span>
+<span class="sd">        :param vv_R2Y:     RX2 y locations (returned)</span>
+<span class="sd">        :param vv_T1X:     TX1 x locations (returned)</span>
+<span class="sd">        :param vv_T1Y:     TX1 y locations (returned)</span>
+<span class="sd">        :param vv_T2X:     TX2 x locations (returned)</span>
+<span class="sd">        :param vv_T2Y:     TX2 y locations (returned)</span>
+<span class="sd">        :param vv_QC_IP:   `GXIP &lt;geosoft.gxapi.GXIP&gt;` QC channel values (&quot;QC&quot; or &quot;QC_IP&quot;) (returned)</span>
+<span class="sd">        :param vv_QC_Res:  Resistivity QC channel values (&quot;QC_RES&quot;) (returned)</span>
+<span class="sd">        :param data:       data channel (optional)</span>
+<span class="sd">        :param vv_data:    data channel values (returned)</span>
+<span class="sd">        :type  db:         GXDB</span>
+<span class="sd">        :type  line:       str</span>
+<span class="sd">        :type  vv_R1X:     GXVV</span>
+<span class="sd">        :type  vv_R1Y:     GXVV</span>
+<span class="sd">        :type  vv_R2X:     GXVV</span>
+<span class="sd">        :type  vv_R2Y:     GXVV</span>
+<span class="sd">        :type  vv_T1X:     GXVV</span>
+<span class="sd">        :type  vv_T1Y:     GXVV</span>
+<span class="sd">        :type  vv_T2X:     GXVV</span>
+<span class="sd">        :type  vv_T2Y:     GXVV</span>
+<span class="sd">        :type  vv_QC_IP:   GXVV</span>
+<span class="sd">        :type  vv_QC_Res:  GXVV</span>
+<span class="sd">        :type  data:       str</span>
+<span class="sd">        :type  vv_data:    GXVV</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** True XY locations are returned for 2D arrays. Distant Electrode locations may be dummies.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_line_data</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">vv_R1X</span><span class="p">,</span> <span class="n">vv_R1Y</span><span class="p">,</span> <span class="n">vv_R2X</span><span class="p">,</span> <span class="n">vv_R2Y</span><span class="p">,</span> <span class="n">vv_T1X</span><span class="p">,</span> <span class="n">vv_T1Y</span><span class="p">,</span> <span class="n">vv_T2X</span><span class="p">,</span> <span class="n">vv_T2Y</span><span class="p">,</span> <span class="n">vv_QC_IP</span><span class="p">,</span> <span class="n">vv_QC_Res</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">vv_data</span><span class="p">)</span></div></div>
+        
 
 
 
@@ -2220,7 +2342,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIP</a></li> 

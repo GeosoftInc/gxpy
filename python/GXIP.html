@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXIP class &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <title>GXIP class &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXIP class</a></li> 
       </ul>
     </div>
@@ -727,6 +727,37 @@ Values returned for all currently selected lines.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="geosoft.gxapi.GXIP.get_line_data">
+<code class="sig-name descname">get_line_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">line</span></em>, <em class="sig-param"><span class="n">vv_R1X</span></em>, <em class="sig-param"><span class="n">vv_R1Y</span></em>, <em class="sig-param"><span class="n">vv_R2X</span></em>, <em class="sig-param"><span class="n">vv_R2Y</span></em>, <em class="sig-param"><span class="n">vv_T1X</span></em>, <em class="sig-param"><span class="n">vv_T1Y</span></em>, <em class="sig-param"><span class="n">vv_T2X</span></em>, <em class="sig-param"><span class="n">vv_T2Y</span></em>, <em class="sig-param"><span class="n">vv_QC_IP</span></em>, <em class="sig-param"><span class="n">vv_QC_Res</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">vv_data</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIP.html#GXIP.get_line_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXIP.get_line_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get electrodes, data and mask values for a single line.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> object</p></li>
+<li><p><strong>line</strong> (<em>str</em>) – Line name (“” for all selected lines)</p></li>
+<li><p><strong>vv_R1X</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – RX1 x locations (returned)</p></li>
+<li><p><strong>vv_R1Y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – RX1 y locations (returned)</p></li>
+<li><p><strong>vv_R2X</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – RX2 x locations (returned)</p></li>
+<li><p><strong>vv_R2Y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – RX2 y locations (returned)</p></li>
+<li><p><strong>vv_T1X</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – TX1 x locations (returned)</p></li>
+<li><p><strong>vv_T1Y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – TX1 y locations (returned)</p></li>
+<li><p><strong>vv_T2X</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – TX2 x locations (returned)</p></li>
+<li><p><strong>vv_T2Y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – TX2 y locations (returned)</p></li>
+<li><p><strong>vv_QC_IP</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIP</span></code></a> QC channel values (“QC” or “QC_IP”) (returned)</p></li>
+<li><p><strong>vv_QC_Res</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Resistivity QC channel values (“QC_RES”) (returned)</p></li>
+<li><p><strong>data</strong> (<em>str</em>) – data channel (optional)</p></li>
+<li><p><strong>vv_data</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – data channel values (returned)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.10.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> True XY locations are returned for 2D arrays. Distant Electrode locations may be dummies.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="geosoft.gxapi.GXIP.get_n_value_lst">
 <code class="sig-name descname">get_n_value_lst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIP.html#GXIP.get_n_value_lst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXIP.get_n_value_lst" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fill a list with unique N values in selected lines.</p>
@@ -1145,7 +1176,7 @@ as well as the topo (X, Z) values.</p>
 <li><p><strong>file</strong> (<em>str</em>) – FLD file name</p></li>
 <li><p><strong>line</strong> (<em>float</em>) – Line number (will be scaled if applicable)</p></li>
 <li><p><strong>scale</strong> (<em>int</em>) – <a class="reference internal" href="#ip-stnscale"><span class="std std-ref">IP_STNSCALE constants</span></a></p></li>
-<li><p><strong>mult</strong> (<em>float</em>) – Line, station multiplier (for <a class="reference internal" href="#id116" title="geosoft.gxapi.IP_STNSCALE_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IP_STNSCALE_VALUE</span></code></a>)</p></li>
+<li><p><strong>mult</strong> (<em>float</em>) – Line, station multiplier (for <a class="reference internal" href="#id118" title="geosoft.gxapi.IP_STNSCALE_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IP_STNSCALE_VALUE</span></code></a>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -1166,7 +1197,7 @@ as well as the topo (X, Z) values.</p>
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database to import to</p></li>
 <li><p><strong>file</strong> (<em>str</em>) – FLD file name</p></li>
 <li><p><strong>scale</strong> (<em>int</em>) – <a class="reference internal" href="#ip-stnscale"><span class="std std-ref">IP_STNSCALE constants</span></a></p></li>
-<li><p><strong>mult</strong> (<em>float</em>) – Line, station multiplier (for <a class="reference internal" href="#id116" title="geosoft.gxapi.IP_STNSCALE_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IP_STNSCALE_VALUE</span></code></a>)</p></li>
+<li><p><strong>mult</strong> (<em>float</em>) – Line, station multiplier (for <a class="reference internal" href="#id118" title="geosoft.gxapi.IP_STNSCALE_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IP_STNSCALE_VALUE</span></code></a>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -1571,6 +1602,83 @@ would have to call <a class="reference internal" href="#geosoft.gxapi.GXIP.recal
 </dd></dl>
 
 <dl class="py method">
+<dt id="geosoft.gxapi.GXIP.recalculate_derived_data">
+<code class="sig-name descname">recalculate_derived_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">line_handle</span></em>, <em class="sig-param"><span class="n">channel_list</span></em>, <em class="sig-param"><span class="n">recalculate_xyz</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIP.html#GXIP.recalculate_derived_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXIP.recalculate_derived_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recalculate derived channel values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</p></li>
+<li><p><strong>line_handle</strong> (<em>int</em>) – line handle  [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>]</p></li>
+<li><p><strong>channel_list</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> object - channel name overrides</p></li>
+<li><p><strong>recalculate_xyz</strong> (<em>int</em>) – Recalculate XYZ locations (TRUE or FALSE)?</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.10.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> This function recalculates “derived” channel values from
+“core” data. It duplicates and extends the functionality
+of RecalateEx_IP by allowing for the input/output channel
+names to be overridden, with extra control on what is calculated.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Recalculates the “STN” and “N” channels (depending on the system).</p></li>
+<li><p>Recalculates the apparent resistivity “ResCalc”,
+average “IP_Avg” and metal factor “MF” channels</p></li>
+<li><p>Recalculates the “X” and “Y” channels. One of these will
+be equal to “STN”, the other to the internally stored
+line number for the current line.</p></li>
+<li><p>Recalculate the “Z” channel, based on the current “Topo”
+channel, and the “N” values.</p></li>
+</ol>
+</div></blockquote>
+<p>Channel overrides are passed via a LST object, with the channel key (type)
+passed in the LST_ITEM_NAME part, and the channel name passed in the 
+LST_ITEM_VALUE part.</p>
+<p>The following channel overrides supported 
+(NOTE: Different behaviours for 2D and 3D arrays)</p>
+<dl>
+<dt>3D Electrode location channels (IP_ARRAY_3D_XXX):</dt><dd><p>“R1X”, “R1Y”, “R1Z”, “R2X”, “R2Y”, “R2Z”,
+“T1X”, “T1Y”, “T1Z”, “T2X”, “T2Y”, “T2Z” 
+(electrodes not included or set to “” are not read)</p>
+</dd>
+<dt>or IN-LINE arrays (DPDP, PLDP, PLPL, GRAD)</dt><dd><p>“R1X”, “R2X”, “T1X”, “T2X”  (In-line locations)
+“R1Y”, “R2Y”, “T1Y”, “T2Y”  (Across-line locations)
+“R1Z”, “R2Z”, “T1Z”, “T2Z”  (Z)
+(for any electrode not include or set to “” the default channel name For</p>
+<blockquote>
+<div><p>the array line direction, or the defined distant electrode location
+is used)</p>
+</div></blockquote>
+</dd>
+<dt>Other input channels overridden if defined:</dt><dd><p>“Vp” (primary voltage - must be in mV)
+“I” (current - must be in A)</p>
+</dd>
+</dl>
+<p>Other output channels overridden if defined (if you DON’T want the
+various output channels modified, then set the override values to “”):</p>
+<blockquote>
+<div><blockquote>
+<div><p>“MF” (metal factor) - formulation defined in settings, 
+“AvgIP” (average IP)
+“AppRes” (apparent resistivity)
+“N” (Pseudo-section pseudo-depth)
+“Stn” (Station value)
+“X” (Station “X” value)
+“Y” (Station “Y” value)
+“Z” (Station “Z” value)
+“Topo” (Ground elevation at station location)</p>
+</div></blockquote>
+<p>Recalculating XYZ will result in any channel grid makers from the IPIMPGRID.GX
+being re-run, then if a maker exists for the Topo channel it is re-run, and
+finally the Z channel is recalculated (see “RecalculateZ_IP”).</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
 <dt id="geosoft.gxapi.GXIP.recalculate_ex">
 <code class="sig-name descname">recalculate_ex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">recalculate_xyz</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIP.html#GXIP.recalculate_ex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXIP.recalculate_ex" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recalculate derived channel values, with option for including/excluding location calculations.</p>
@@ -1886,8 +1994,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_ARRAY_PLDP</code><a class="headerlink" href="#geosoft.gxapi.IP_ARRAY_PLDP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pldp</p>
 <dl class="py attribute">
-<dt id="id74">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_ARRAY_PLDP</code><em class="property"> = 1</em><a class="headerlink" href="#id74" title="Permalink to this definition">¶</a></dt>
+<dt id="id76">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_ARRAY_PLDP</code><em class="property"> = 1</em><a class="headerlink" href="#id76" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1897,8 +2005,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_ARRAY_PLPL</code><a class="headerlink" href="#geosoft.gxapi.IP_ARRAY_PLPL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plpl</p>
 <dl class="py attribute">
-<dt id="id75">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_ARRAY_PLPL</code><em class="property"> = 2</em><a class="headerlink" href="#id75" title="Permalink to this definition">¶</a></dt>
+<dt id="id77">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_ARRAY_PLPL</code><em class="property"> = 2</em><a class="headerlink" href="#id77" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1908,8 +2016,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_ARRAY_GRAD</code><a class="headerlink" href="#geosoft.gxapi.IP_ARRAY_GRAD" title="Permalink to this definition">¶</a></dt>
 <dd><p>Grad</p>
 <dl class="py attribute">
-<dt id="id76">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_ARRAY_GRAD</code><em class="property"> = 3</em><a class="headerlink" href="#id76" title="Permalink to this definition">¶</a></dt>
+<dt id="id78">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_ARRAY_GRAD</code><em class="property"> = 3</em><a class="headerlink" href="#id78" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1919,8 +2027,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_ARRAY_WENNER</code><a class="headerlink" href="#geosoft.gxapi.IP_ARRAY_WENNER" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wenner</p>
 <dl class="py attribute">
-<dt id="id77">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_ARRAY_WENNER</code><em class="property"> = 5</em><a class="headerlink" href="#id77" title="Permalink to this definition">¶</a></dt>
+<dt id="id79">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_ARRAY_WENNER</code><em class="property"> = 5</em><a class="headerlink" href="#id79" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1930,8 +2038,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_ARRAY_SCHLUMBERGER</code><a class="headerlink" href="#geosoft.gxapi.IP_ARRAY_SCHLUMBERGER" title="Permalink to this definition">¶</a></dt>
 <dd><p>Schlumberger</p>
 <dl class="py attribute">
-<dt id="id78">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_ARRAY_SCHLUMBERGER</code><em class="property"> = 6</em><a class="headerlink" href="#id78" title="Permalink to this definition">¶</a></dt>
+<dt id="id80">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_ARRAY_SCHLUMBERGER</code><em class="property"> = 6</em><a class="headerlink" href="#id80" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1941,8 +2049,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_ARRAY_UNKNOWN</code><a class="headerlink" href="#geosoft.gxapi.IP_ARRAY_UNKNOWN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unknown</p>
 <dl class="py attribute">
-<dt id="id79">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_ARRAY_UNKNOWN</code><em class="property"> = 7</em><a class="headerlink" href="#id79" title="Permalink to this definition">¶</a></dt>
+<dt id="id81">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_ARRAY_UNKNOWN</code><em class="property"> = 7</em><a class="headerlink" href="#id81" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1952,8 +2060,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_ARRAY_3D</code><a class="headerlink" href="#geosoft.gxapi.IP_ARRAY_3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>3d</p>
 <dl class="py attribute">
-<dt id="id80">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_ARRAY_3D</code><em class="property"> = 9</em><a class="headerlink" href="#id80" title="Permalink to this definition">¶</a></dt>
+<dt id="id82">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_ARRAY_3D</code><em class="property"> = 9</em><a class="headerlink" href="#id82" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1963,8 +2071,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_ARRAY_3D_PLDP</code><a class="headerlink" href="#geosoft.gxapi.IP_ARRAY_3D_PLDP" title="Permalink to this definition">¶</a></dt>
 <dd><p>3d pldp</p>
 <dl class="py attribute">
-<dt id="id81">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_ARRAY_3D_PLDP</code><em class="property"> = 10</em><a class="headerlink" href="#id81" title="Permalink to this definition">¶</a></dt>
+<dt id="id83">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_ARRAY_3D_PLDP</code><em class="property"> = 10</em><a class="headerlink" href="#id83" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1974,8 +2082,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_ARRAY_3D_PLPL</code><a class="headerlink" href="#geosoft.gxapi.IP_ARRAY_3D_PLPL" title="Permalink to this definition">¶</a></dt>
 <dd><p>3d plpl</p>
 <dl class="py attribute">
-<dt id="id82">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_ARRAY_3D_PLPL</code><em class="property"> = 11</em><a class="headerlink" href="#id82" title="Permalink to this definition">¶</a></dt>
+<dt id="id84">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_ARRAY_3D_PLPL</code><em class="property"> = 11</em><a class="headerlink" href="#id84" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1989,8 +2097,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_CHANNELS_DISPLAYED</code><a class="headerlink" href="#geosoft.gxapi.IP_CHANNELS_DISPLAYED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Displayed</p>
 <dl class="py attribute">
-<dt id="id83">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_CHANNELS_DISPLAYED</code><em class="property"> = 0</em><a class="headerlink" href="#id83" title="Permalink to this definition">¶</a></dt>
+<dt id="id85">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_CHANNELS_DISPLAYED</code><em class="property"> = 0</em><a class="headerlink" href="#id85" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2000,8 +2108,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_CHANNELS_SELECTED</code><a class="headerlink" href="#geosoft.gxapi.IP_CHANNELS_SELECTED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selected</p>
 <dl class="py attribute">
-<dt id="id84">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_CHANNELS_SELECTED</code><em class="property"> = 1</em><a class="headerlink" href="#id84" title="Permalink to this definition">¶</a></dt>
+<dt id="id86">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_CHANNELS_SELECTED</code><em class="property"> = 1</em><a class="headerlink" href="#id86" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2011,8 +2119,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_CHANNELS_ALL</code><a class="headerlink" href="#geosoft.gxapi.IP_CHANNELS_ALL" title="Permalink to this definition">¶</a></dt>
 <dd><p>All</p>
 <dl class="py attribute">
-<dt id="id85">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_CHANNELS_ALL</code><em class="property"> = 2</em><a class="headerlink" href="#id85" title="Permalink to this definition">¶</a></dt>
+<dt id="id87">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_CHANNELS_ALL</code><em class="property"> = 2</em><a class="headerlink" href="#id87" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2026,8 +2134,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_DOMAIN_NONE</code><a class="headerlink" href="#geosoft.gxapi.IP_DOMAIN_NONE" title="Permalink to this definition">¶</a></dt>
 <dd><p>None</p>
 <dl class="py attribute">
-<dt id="id86">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_DOMAIN_NONE</code><em class="property"> = -1</em><a class="headerlink" href="#id86" title="Permalink to this definition">¶</a></dt>
+<dt id="id88">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_DOMAIN_NONE</code><em class="property"> = -1</em><a class="headerlink" href="#id88" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2037,8 +2145,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_DOMAIN_TIME</code><a class="headerlink" href="#geosoft.gxapi.IP_DOMAIN_TIME" title="Permalink to this definition">¶</a></dt>
 <dd><p>Time</p>
 <dl class="py attribute">
-<dt id="id87">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_DOMAIN_TIME</code><em class="property"> = 0</em><a class="headerlink" href="#id87" title="Permalink to this definition">¶</a></dt>
+<dt id="id89">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_DOMAIN_TIME</code><em class="property"> = 0</em><a class="headerlink" href="#id89" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2048,8 +2156,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_DOMAIN_FREQUENCY</code><a class="headerlink" href="#geosoft.gxapi.IP_DOMAIN_FREQUENCY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Frequency</p>
 <dl class="py attribute">
-<dt id="id88">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_DOMAIN_FREQUENCY</code><em class="property"> = 1</em><a class="headerlink" href="#id88" title="Permalink to this definition">¶</a></dt>
+<dt id="id90">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_DOMAIN_FREQUENCY</code><em class="property"> = 1</em><a class="headerlink" href="#id90" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2059,8 +2167,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_DOMAIN_BOTH</code><a class="headerlink" href="#geosoft.gxapi.IP_DOMAIN_BOTH" title="Permalink to this definition">¶</a></dt>
 <dd><p>Both</p>
 <dl class="py attribute">
-<dt id="id89">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_DOMAIN_BOTH</code><em class="property"> = 2</em><a class="headerlink" href="#id89" title="Permalink to this definition">¶</a></dt>
+<dt id="id91">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_DOMAIN_BOTH</code><em class="property"> = 2</em><a class="headerlink" href="#id91" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2074,8 +2182,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_DUPLICATE_APPEND</code><a class="headerlink" href="#geosoft.gxapi.IP_DUPLICATE_APPEND" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append</p>
 <dl class="py attribute">
-<dt id="id90">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_DUPLICATE_APPEND</code><em class="property"> = 0</em><a class="headerlink" href="#id90" title="Permalink to this definition">¶</a></dt>
+<dt id="id92">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_DUPLICATE_APPEND</code><em class="property"> = 0</em><a class="headerlink" href="#id92" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2085,8 +2193,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_DUPLICATE_OVERWRITE</code><a class="headerlink" href="#geosoft.gxapi.IP_DUPLICATE_OVERWRITE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite</p>
 <dl class="py attribute">
-<dt id="id91">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_DUPLICATE_OVERWRITE</code><em class="property"> = 1</em><a class="headerlink" href="#id91" title="Permalink to this definition">¶</a></dt>
+<dt id="id93">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_DUPLICATE_OVERWRITE</code><em class="property"> = 1</em><a class="headerlink" href="#id93" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2109,8 +2217,8 @@ Window List Syntax:</p>
 </dd>
 </dl>
 <dl class="py attribute">
-<dt id="id92">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_FILTER_PANTLEG</code><em class="property"> = 1</em><a class="headerlink" href="#id92" title="Permalink to this definition">¶</a></dt>
+<dt id="id94">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_FILTER_PANTLEG</code><em class="property"> = 1</em><a class="headerlink" href="#id94" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2129,8 +2237,8 @@ Window List Syntax:</p>
 </dd>
 </dl>
 <dl class="py attribute">
-<dt id="id93">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_FILTER_PANTLEGP</code><em class="property"> = 2</em><a class="headerlink" href="#id93" title="Permalink to this definition">¶</a></dt>
+<dt id="id95">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_FILTER_PANTLEGP</code><em class="property"> = 2</em><a class="headerlink" href="#id95" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2145,12 +2253,12 @@ Window List Syntax:</p>
 </pre></div>
 </div>
 <dl class="simple">
-<dt>/* * * <a href="#id94"><span class="problematic" id="id95">*</span></a>\ n3</dt><dd><p>:  :</p>
+<dt>/* * * <a href="#id96"><span class="problematic" id="id97">*</span></a>\ n3</dt><dd><p>:  :</p>
 </dd>
 </dl>
 <dl class="py attribute">
-<dt id="id96">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_FILTER_PYRIAMID</code><em class="property"> = 3</em><a class="headerlink" href="#id96" title="Permalink to this definition">¶</a></dt>
+<dt id="id98">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_FILTER_PYRIAMID</code><em class="property"> = 3</em><a class="headerlink" href="#id98" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2165,12 +2273,12 @@ Window List Syntax:</p>
 </pre></div>
 </div>
 <dl class="simple">
-<dt>/* * <a href="#id97"><span class="problematic" id="id98">*</span></a>\ n3</dt><dd><p>:  :</p>
+<dt>/* * <a href="#id99"><span class="problematic" id="id100">*</span></a>\ n3</dt><dd><p>:  :</p>
 </dd>
 </dl>
 <dl class="py attribute">
-<dt id="id99">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_FILTER_PYRIAMIDP</code><em class="property"> = 4</em><a class="headerlink" href="#id99" title="Permalink to this definition">¶</a></dt>
+<dt id="id101">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_FILTER_PYRIAMIDP</code><em class="property"> = 4</em><a class="headerlink" href="#id101" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2184,8 +2292,8 @@ Window List Syntax:</p>
 <code class="sig-name descname">IP_I2XIMPMODE_REPLACE</code><a class="headerlink" href="#geosoft.gxapi.IP_I2XIMPMODE_REPLACE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recreates the line from scratch.</p>
 <dl class="py attribute">
-<dt id="id100">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_I2XIMPMODE_REPLACE</code><em class="property"> = 0</em><a class="headerlink" href="#id100" title="Permalink to this definition">¶</a></dt>
+<dt id="id102">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_I2XIMPMODE_REPLACE</code><em class="property"> = 0</em><a class="headerlink" href="#id102" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2196,8 +2304,8 @@ Window List Syntax:</p>
 <dd><p>Looks for matching Tx1 and N values and
 replaces data in matching lines only.</p>
 <dl class="py attribute">
-<dt id="id101">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_I2XIMPMODE_MERGE</code><em class="property"> = 1</em><a class="headerlink" href="#id101" title="Permalink to this definition">¶</a></dt>
+<dt id="id103">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_I2XIMPMODE_MERGE</code><em class="property"> = 1</em><a class="headerlink" href="#id103" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2211,8 +2319,8 @@ replaces data in matching lines only.</p>
 <code class="sig-name descname">IP_I2XINV_IMAGE</code><a class="headerlink" href="#geosoft.gxapi.IP_I2XINV_IMAGE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Image</p>
 <dl class="py attribute">
-<dt id="id102">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_I2XINV_IMAGE</code><em class="property"> = 0</em><a class="headerlink" href="#id102" title="Permalink to this definition">¶</a></dt>
+<dt id="id104">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_I2XINV_IMAGE</code><em class="property"> = 0</em><a class="headerlink" href="#id104" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2222,8 +2330,8 @@ replaces data in matching lines only.</p>
 <code class="sig-name descname">IP_I2XINV_ZONGE</code><a class="headerlink" href="#geosoft.gxapi.IP_I2XINV_ZONGE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Zonge</p>
 <dl class="py attribute">
-<dt id="id103">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_I2XINV_ZONGE</code><em class="property"> = 1</em><a class="headerlink" href="#id103" title="Permalink to this definition">¶</a></dt>
+<dt id="id105">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_I2XINV_ZONGE</code><em class="property"> = 1</em><a class="headerlink" href="#id105" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2237,8 +2345,8 @@ replaces data in matching lines only.</p>
 <code class="sig-name descname">IP_LINES_DISPLAYED</code><a class="headerlink" href="#geosoft.gxapi.IP_LINES_DISPLAYED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Displayed</p>
 <dl class="py attribute">
-<dt id="id104">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_LINES_DISPLAYED</code><em class="property"> = 0</em><a class="headerlink" href="#id104" title="Permalink to this definition">¶</a></dt>
+<dt id="id106">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_LINES_DISPLAYED</code><em class="property"> = 0</em><a class="headerlink" href="#id106" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2248,8 +2356,8 @@ replaces data in matching lines only.</p>
 <code class="sig-name descname">IP_LINES_SELECTED</code><a class="headerlink" href="#geosoft.gxapi.IP_LINES_SELECTED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selected</p>
 <dl class="py attribute">
-<dt id="id105">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_LINES_SELECTED</code><em class="property"> = 1</em><a class="headerlink" href="#id105" title="Permalink to this definition">¶</a></dt>
+<dt id="id107">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_LINES_SELECTED</code><em class="property"> = 1</em><a class="headerlink" href="#id107" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2259,8 +2367,8 @@ replaces data in matching lines only.</p>
 <code class="sig-name descname">IP_LINES_ALL</code><a class="headerlink" href="#geosoft.gxapi.IP_LINES_ALL" title="Permalink to this definition">¶</a></dt>
 <dd><p>All</p>
 <dl class="py attribute">
-<dt id="id106">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_LINES_ALL</code><em class="property"> = 2</em><a class="headerlink" href="#id106" title="Permalink to this definition">¶</a></dt>
+<dt id="id108">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_LINES_ALL</code><em class="property"> = 2</em><a class="headerlink" href="#id108" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2274,8 +2382,8 @@ replaces data in matching lines only.</p>
 <code class="sig-name descname">IP_PLOT_PSEUDOSECTION</code><a class="headerlink" href="#geosoft.gxapi.IP_PLOT_PSEUDOSECTION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pseudosection</p>
 <dl class="py attribute">
-<dt id="id107">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_PLOT_PSEUDOSECTION</code><em class="property"> = 0</em><a class="headerlink" href="#id107" title="Permalink to this definition">¶</a></dt>
+<dt id="id109">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_PLOT_PSEUDOSECTION</code><em class="property"> = 0</em><a class="headerlink" href="#id109" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2285,8 +2393,8 @@ replaces data in matching lines only.</p>
 <code class="sig-name descname">IP_PLOT_STACKEDSECTION</code><a class="headerlink" href="#geosoft.gxapi.IP_PLOT_STACKEDSECTION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stackedsection</p>
 <dl class="py attribute">
-<dt id="id108">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_PLOT_STACKEDSECTION</code><em class="property"> = 1</em><a class="headerlink" href="#id108" title="Permalink to this definition">¶</a></dt>
+<dt id="id110">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_PLOT_STACKEDSECTION</code><em class="property"> = 1</em><a class="headerlink" href="#id110" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2300,8 +2408,8 @@ replaces data in matching lines only.</p>
 <code class="sig-name descname">IP_QCTYPE_RESISTIVITY</code><a class="headerlink" href="#geosoft.gxapi.IP_QCTYPE_RESISTIVITY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resistivity</p>
 <dl class="py attribute">
-<dt id="id109">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_QCTYPE_RESISTIVITY</code><em class="property"> = 0</em><a class="headerlink" href="#id109" title="Permalink to this definition">¶</a></dt>
+<dt id="id111">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_QCTYPE_RESISTIVITY</code><em class="property"> = 0</em><a class="headerlink" href="#id111" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2311,8 +2419,8 @@ replaces data in matching lines only.</p>
 <code class="sig-name descname">IP_QCTYPE_IP</code><a class="headerlink" href="#geosoft.gxapi.IP_QCTYPE_IP" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#geosoft.gxapi.GXIP" title="geosoft.gxapi.GXIP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIP</span></code></a></p>
 <dl class="py attribute">
-<dt id="id110">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_QCTYPE_IP</code><em class="property"> = 1</em><a class="headerlink" href="#id110" title="Permalink to this definition">¶</a></dt>
+<dt id="id112">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_QCTYPE_IP</code><em class="property"> = 1</em><a class="headerlink" href="#id112" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2328,8 +2436,8 @@ replaces data in matching lines only.</p>
 original lines by rotating the sections as desired to their true
 locations. (At present only N-S and E-W sections are supported).</p>
 <dl class="py attribute">
-<dt id="id111">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_STACK_TYPE_MAP</code><em class="property"> = 0</em><a class="headerlink" href="#id111" title="Permalink to this definition">¶</a></dt>
+<dt id="id113">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_STACK_TYPE_MAP</code><em class="property"> = 0</em><a class="headerlink" href="#id113" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2340,8 +2448,8 @@ locations. (At present only N-S and E-W sections are supported).</p>
 <dd><p>Spaces the sections equally, with enough room to
 guarantee no overlap with high N-values or closely spaced lines.</p>
 <dl class="py attribute">
-<dt id="id112">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_STACK_TYPE_EQUAL</code><em class="property"> = 1</em><a class="headerlink" href="#id112" title="Permalink to this definition">¶</a></dt>
+<dt id="id114">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_STACK_TYPE_EQUAL</code><em class="property"> = 1</em><a class="headerlink" href="#id114" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2351,8 +2459,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_STACK_TYPE_GEOGRAPHIC</code><a class="headerlink" href="#geosoft.gxapi.IP_STACK_TYPE_GEOGRAPHIC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Now the same as IP_STACK_MAP</p>
 <dl class="py attribute">
-<dt id="id113">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_STACK_TYPE_GEOGRAPHIC</code><em class="property"> = 2</em><a class="headerlink" href="#id113" title="Permalink to this definition">¶</a></dt>
+<dt id="id115">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_STACK_TYPE_GEOGRAPHIC</code><em class="property"> = 2</em><a class="headerlink" href="#id115" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2366,8 +2474,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_STNSCALE_NONE</code><a class="headerlink" href="#geosoft.gxapi.IP_STNSCALE_NONE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Station numbers become X or Y locations</p>
 <dl class="py attribute">
-<dt id="id114">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_STNSCALE_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#id114" title="Permalink to this definition">¶</a></dt>
+<dt id="id116">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_STNSCALE_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#id116" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2377,8 +2485,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_STNSCALE_ASPACE</code><a class="headerlink" href="#geosoft.gxapi.IP_STNSCALE_ASPACE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Multiply station numbers by the A spacing</p>
 <dl class="py attribute">
-<dt id="id115">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_STNSCALE_ASPACE</code><em class="property"> = 1</em><a class="headerlink" href="#id115" title="Permalink to this definition">¶</a></dt>
+<dt id="id117">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_STNSCALE_ASPACE</code><em class="property"> = 1</em><a class="headerlink" href="#id117" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2388,8 +2496,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_STNSCALE_VALUE</code><a class="headerlink" href="#geosoft.gxapi.IP_STNSCALE_VALUE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Multiply by an input value.</p>
 <dl class="py attribute">
-<dt id="id116">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_STNSCALE_VALUE</code><em class="property"> = 2</em><a class="headerlink" href="#id116" title="Permalink to this definition">¶</a></dt>
+<dt id="id118">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_STNSCALE_VALUE</code><em class="property"> = 2</em><a class="headerlink" href="#id118" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2399,8 +2507,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_STNSCALE_FILE</code><a class="headerlink" href="#geosoft.gxapi.IP_STNSCALE_FILE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Look up locations from a CSV Line/Station/X/Y file</p>
 <dl class="py attribute">
-<dt id="id117">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_STNSCALE_FILE</code><em class="property"> = 3</em><a class="headerlink" href="#id117" title="Permalink to this definition">¶</a></dt>
+<dt id="id119">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_STNSCALE_FILE</code><em class="property"> = 3</em><a class="headerlink" href="#id119" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2414,8 +2522,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_SYS_IPDATA</code><a class="headerlink" href="#geosoft.gxapi.IP_SYS_IPDATA" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ipdata</p>
 <dl class="py attribute">
-<dt id="id118">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_IPDATA</code><em class="property"> = 0</em><a class="headerlink" href="#id118" title="Permalink to this definition">¶</a></dt>
+<dt id="id120">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_IPDATA</code><em class="property"> = 0</em><a class="headerlink" href="#id120" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2425,8 +2533,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_SYS_IP2</code><a class="headerlink" href="#geosoft.gxapi.IP_SYS_IP2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ip2</p>
 <dl class="py attribute">
-<dt id="id119">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_IP2</code><em class="property"> = 1</em><a class="headerlink" href="#id119" title="Permalink to this definition">¶</a></dt>
+<dt id="id121">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_IP2</code><em class="property"> = 1</em><a class="headerlink" href="#id121" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2436,8 +2544,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_SYS_IP6</code><a class="headerlink" href="#geosoft.gxapi.IP_SYS_IP6" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ip6</p>
 <dl class="py attribute">
-<dt id="id120">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_IP6</code><em class="property"> = 2</em><a class="headerlink" href="#id120" title="Permalink to this definition">¶</a></dt>
+<dt id="id122">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_IP6</code><em class="property"> = 2</em><a class="headerlink" href="#id122" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2447,8 +2555,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_SYS_IP10</code><a class="headerlink" href="#geosoft.gxapi.IP_SYS_IP10" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ip10</p>
 <dl class="py attribute">
-<dt id="id121">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_IP10</code><em class="property"> = 3</em><a class="headerlink" href="#id121" title="Permalink to this definition">¶</a></dt>
+<dt id="id123">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_IP10</code><em class="property"> = 3</em><a class="headerlink" href="#id123" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2458,8 +2566,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_SYS_SYSCALR2</code><a class="headerlink" href="#geosoft.gxapi.IP_SYS_SYSCALR2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Syscalr2</p>
 <dl class="py attribute">
-<dt id="id122">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_SYSCALR2</code><em class="property"> = 4</em><a class="headerlink" href="#id122" title="Permalink to this definition">¶</a></dt>
+<dt id="id124">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_SYSCALR2</code><em class="property"> = 4</em><a class="headerlink" href="#id124" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2469,8 +2577,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_SYS_IPR11</code><a class="headerlink" href="#geosoft.gxapi.IP_SYS_IPR11" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ipr11</p>
 <dl class="py attribute">
-<dt id="id123">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_IPR11</code><em class="property"> = 5</em><a class="headerlink" href="#id123" title="Permalink to this definition">¶</a></dt>
+<dt id="id125">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_IPR11</code><em class="property"> = 5</em><a class="headerlink" href="#id125" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2480,8 +2588,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_SYS_IPR12</code><a class="headerlink" href="#geosoft.gxapi.IP_SYS_IPR12" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ipr12</p>
 <dl class="py attribute">
-<dt id="id124">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_IPR12</code><em class="property"> = 6</em><a class="headerlink" href="#id124" title="Permalink to this definition">¶</a></dt>
+<dt id="id126">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_IPR12</code><em class="property"> = 6</em><a class="headerlink" href="#id126" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2491,8 +2599,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_SYS_PHOENIX</code><a class="headerlink" href="#geosoft.gxapi.IP_SYS_PHOENIX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Phoenix</p>
 <dl class="py attribute">
-<dt id="id125">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_PHOENIX</code><em class="property"> = 7</em><a class="headerlink" href="#id125" title="Permalink to this definition">¶</a></dt>
+<dt id="id127">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_PHOENIX</code><em class="property"> = 7</em><a class="headerlink" href="#id127" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2502,8 +2610,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_SYS_PHOENIX_V2</code><a class="headerlink" href="#geosoft.gxapi.IP_SYS_PHOENIX_V2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Phoenix v2</p>
 <dl class="py attribute">
-<dt id="id126">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_PHOENIX_V2</code><em class="property"> = 8</em><a class="headerlink" href="#id126" title="Permalink to this definition">¶</a></dt>
+<dt id="id128">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_PHOENIX_V2</code><em class="property"> = 8</em><a class="headerlink" href="#id128" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2513,8 +2621,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_SYS_ELREC_PRO</code><a class="headerlink" href="#geosoft.gxapi.IP_SYS_ELREC_PRO" title="Permalink to this definition">¶</a></dt>
 <dd><p>Elrec pro</p>
 <dl class="py attribute">
-<dt id="id127">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_ELREC_PRO</code><em class="property"> = 9</em><a class="headerlink" href="#id127" title="Permalink to this definition">¶</a></dt>
+<dt id="id129">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_ELREC_PRO</code><em class="property"> = 9</em><a class="headerlink" href="#id129" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2524,8 +2632,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_SYS_PROSYS_II</code><a class="headerlink" href="#geosoft.gxapi.IP_SYS_PROSYS_II" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prosys ii</p>
 <dl class="py attribute">
-<dt id="id128">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_PROSYS_II</code><em class="property"> = 10</em><a class="headerlink" href="#id128" title="Permalink to this definition">¶</a></dt>
+<dt id="id130">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_SYS_PROSYS_II</code><em class="property"> = 10</em><a class="headerlink" href="#id130" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2539,8 +2647,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_UBC_CONTROL_NONE</code><a class="headerlink" href="#geosoft.gxapi.IP_UBC_CONTROL_NONE" title="Permalink to this definition">¶</a></dt>
 <dd><p>None</p>
 <dl class="py attribute">
-<dt id="id129">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_UBC_CONTROL_NONE</code><em class="property"> = -1</em><a class="headerlink" href="#id129" title="Permalink to this definition">¶</a></dt>
+<dt id="id131">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_UBC_CONTROL_NONE</code><em class="property"> = -1</em><a class="headerlink" href="#id131" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2550,8 +2658,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_UBC_CONTROL_DEFAULT</code><a class="headerlink" href="#geosoft.gxapi.IP_UBC_CONTROL_DEFAULT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Default</p>
 <dl class="py attribute">
-<dt id="id130">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_UBC_CONTROL_DEFAULT</code><em class="property"> = 0</em><a class="headerlink" href="#id130" title="Permalink to this definition">¶</a></dt>
+<dt id="id132">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_UBC_CONTROL_DEFAULT</code><em class="property"> = 0</em><a class="headerlink" href="#id132" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2561,8 +2669,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_UBC_CONTROL_FILE</code><a class="headerlink" href="#geosoft.gxapi.IP_UBC_CONTROL_FILE" title="Permalink to this definition">¶</a></dt>
 <dd><p>File</p>
 <dl class="py attribute">
-<dt id="id131">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_UBC_CONTROL_FILE</code><em class="property"> = 1</em><a class="headerlink" href="#id131" title="Permalink to this definition">¶</a></dt>
+<dt id="id133">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_UBC_CONTROL_FILE</code><em class="property"> = 1</em><a class="headerlink" href="#id133" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2572,8 +2680,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_UBC_CONTROL_VALUE</code><a class="headerlink" href="#geosoft.gxapi.IP_UBC_CONTROL_VALUE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Value</p>
 <dl class="py attribute">
-<dt id="id132">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_UBC_CONTROL_VALUE</code><em class="property"> = 2</em><a class="headerlink" href="#id132" title="Permalink to this definition">¶</a></dt>
+<dt id="id134">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_UBC_CONTROL_VALUE</code><em class="property"> = 2</em><a class="headerlink" href="#id134" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2583,8 +2691,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_UBC_CONTROL_LENGTH</code><a class="headerlink" href="#geosoft.gxapi.IP_UBC_CONTROL_LENGTH" title="Permalink to this definition">¶</a></dt>
 <dd><p>Length</p>
 <dl class="py attribute">
-<dt id="id133">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_UBC_CONTROL_LENGTH</code><em class="property"> = 3</em><a class="headerlink" href="#id133" title="Permalink to this definition">¶</a></dt>
+<dt id="id135">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_UBC_CONTROL_LENGTH</code><em class="property"> = 3</em><a class="headerlink" href="#id135" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2598,8 +2706,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_PLDP_CONV_CLOSE_RX</code><a class="headerlink" href="#geosoft.gxapi.IP_PLDP_CONV_CLOSE_RX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Close rx</p>
 <dl class="py attribute">
-<dt id="id134">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_PLDP_CONV_CLOSE_RX</code><em class="property"> = 0</em><a class="headerlink" href="#id134" title="Permalink to this definition">¶</a></dt>
+<dt id="id136">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_PLDP_CONV_CLOSE_RX</code><em class="property"> = 0</em><a class="headerlink" href="#id136" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2609,8 +2717,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_PLDP_CONV_MID_RX</code><a class="headerlink" href="#geosoft.gxapi.IP_PLDP_CONV_MID_RX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mid rx</p>
 <dl class="py attribute">
-<dt id="id135">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_PLDP_CONV_MID_RX</code><em class="property"> = 1</em><a class="headerlink" href="#id135" title="Permalink to this definition">¶</a></dt>
+<dt id="id137">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_PLDP_CONV_MID_RX</code><em class="property"> = 1</em><a class="headerlink" href="#id137" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2620,8 +2728,8 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
 <code class="sig-name descname">IP_PLDP_CONV_DISTANT_RX</code><a class="headerlink" href="#geosoft.gxapi.IP_PLDP_CONV_DISTANT_RX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Distant rx</p>
 <dl class="py attribute">
-<dt id="id136">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_PLDP_CONV_DISTANT_RX</code><em class="property"> = 2</em><a class="headerlink" href="#id136" title="Permalink to this definition">¶</a></dt>
+<dt id="id138">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IP_PLDP_CONV_DISTANT_RX</code><em class="property"> = 2</em><a class="headerlink" href="#id138" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2642,7 +2750,7 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXIP class</a></li> 
       </ul>
     </div>

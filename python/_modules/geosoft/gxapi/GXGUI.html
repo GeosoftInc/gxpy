@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXGUI &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <title>geosoft.gxapi.GXGUI &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXGUI</a></li> 
@@ -315,6 +315,33 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_grid_stat_hist</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXGUI.grid_stat_hist5"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.grid_stat_hist5">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">grid_stat_hist5</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid_name_1</span><span class="p">,</span> <span class="n">grid_name_2</span><span class="p">,</span> <span class="n">grid_name_3</span><span class="p">,</span> <span class="n">grid_name_4</span><span class="p">,</span> <span class="n">grid_name_5</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Display Histogram of up to 5 different grids</span>
+<span class="sd">        </span>
+<span class="sd">        :param grid_name_1:  Name of the first grid to get stats from (required)</span>
+<span class="sd">        :param grid_name_2:  Optional name of the second grid to get stats from</span>
+<span class="sd">        :param grid_name_3:  Optional name of the third grid to get stats from</span>
+<span class="sd">        :param grid_name_4:  Optional name of the fourth grid to get stats from</span>
+<span class="sd">        :param grid_name_5:  Optional name of the fifth grid to get stats from</span>
+<span class="sd">        :type  grid_name_1:  str</span>
+<span class="sd">        :type  grid_name_2:  str</span>
+<span class="sd">        :type  grid_name_3:  str</span>
+<span class="sd">        :type  grid_name_4:  str</span>
+<span class="sd">        :type  grid_name_5:  str</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_grid_stat_hist5</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid_name_1</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid_name_2</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid_name_3</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid_name_4</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid_name_5</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
         
 
 
@@ -1312,6 +1339,35 @@
 <span class="sd">        from the name of the table opened - e.g. &quot;HOLELOCATION.i4&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">connect</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">temp</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">table</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">type</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_import_drill_database_odbc</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">connect</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">temp</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">table</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">reg</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXGUI.configure_connection"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.configure_connection">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">configure_connection</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">connect</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Configures connection string from ODBC database data.</span>
+<span class="sd">        </span>
+<span class="sd">        :param connect:  Connection string</span>
+<span class="sd">        :param temp:     Template to make</span>
+<span class="sd">        :param table:    Name of table</span>
+<span class="sd">        :type  connect:  str_ref</span>
+<span class="sd">        :type  temp:     str_ref</span>
+<span class="sd">        :type  table:    str_ref</span>
+
+<span class="sd">        :returns:        0 - OK</span>
+<span class="sd">                         -1 - Cancel</span>
+<span class="sd">        :rtype:          int</span>
+
+<span class="sd">        .. versionadded:: 9.9.1</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span><span class="p">,</span> <span class="n">connect</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">temp</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">table</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_configure_connection</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">connect</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">temp</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">table</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
 
@@ -2724,7 +2780,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXGUI</a></li> 

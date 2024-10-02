@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXSYS &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <title>geosoft.gxapi.GXSYS &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSYS</a></li> 
@@ -2146,6 +2146,56 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">id</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSYS</span><span class="o">.</span><span class="n">_get_geosoft_id</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">id</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXSYS.publish_datasets_to_central"><a class="viewcode-back" href="../../../GXSYS.html#geosoft.gxapi.GXSYS.publish_datasets_to_central">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">publish_datasets_to_central</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">instance_uuid</span><span class="p">,</span> <span class="n">project_uuid</span><span class="p">,</span> <span class="n">project_name</span><span class="p">,</span> <span class="n">central_server_guid</span><span class="p">,</span> <span class="n">central_branch_id</span><span class="p">,</span> <span class="n">central_revision_id</span><span class="p">,</span> <span class="n">metadata_as_json</span><span class="p">,</span> <span class="n">parent_event_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Publish datasets to Central</span>
+<span class="sd">        </span>
+<span class="sd">        :param instance_uuid:        Central Instance UUID</span>
+<span class="sd">        :param project_uuid:         Project UUID</span>
+<span class="sd">        :param project_name:         Project name</span>
+<span class="sd">        :param central_server_guid:  Central server GUID</span>
+<span class="sd">        :param central_branch_id:    Branch ID</span>
+<span class="sd">        :param central_revision_id:  Revision ID</span>
+<span class="sd">        :param metadata_as_json:     metadata as JSON</span>
+<span class="sd">        :param parent_event_id:      Parent Event ID</span>
+<span class="sd">        :type  instance_uuid:        str</span>
+<span class="sd">        :type  project_uuid:         str</span>
+<span class="sd">        :type  project_name:         str</span>
+<span class="sd">        :type  central_server_guid:  str_ref</span>
+<span class="sd">        :type  central_branch_id:    int_ref</span>
+<span class="sd">        :type  central_revision_id:  int_ref</span>
+<span class="sd">        :type  metadata_as_json:     str</span>
+<span class="sd">        :type  parent_event_id:      str</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">central_server_guid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">central_branch_id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">central_revision_id</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSYS</span><span class="o">.</span><span class="n">_publish_datasets_to_central</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">instance_uuid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">project_uuid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">project_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">central_server_guid</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">central_branch_id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">central_revision_id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">metadata_as_json</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">parent_event_id</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXSYS.get_publish_path_for_central"><a class="viewcode-back" href="../../../GXSYS.html#geosoft.gxapi.GXSYS.get_publish_path_for_central">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_publish_path_for_central</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">project_uuid</span><span class="p">,</span> <span class="n">cache_path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get cache path to publish datasets to Central</span>
+<span class="sd">        </span>
+<span class="sd">        :param project_uuid:  Project UUID</span>
+<span class="sd">        :param cache_path:    Returned cache path</span>
+<span class="sd">        :type  project_uuid:  str</span>
+<span class="sd">        :type  cache_path:    str_ref</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cache_path</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSYS</span><span class="o">.</span><span class="n">_get_publish_path_for_central</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">project_uuid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">cache_path</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
         
 
 
@@ -4411,7 +4461,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSYS</a></li> 

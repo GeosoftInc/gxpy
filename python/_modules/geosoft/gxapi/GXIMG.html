@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXIMG &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <title>geosoft.gxapi.GXIMG &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIMG</a></li> 
@@ -1108,6 +1108,29 @@
 
 
 
+<div class="viewcode-block" id="GXIMG.get_display_property"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.get_display_property">[docs]</a>    <span class="k">def</span> <span class="nf">get_display_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets display information about this image.</span>
+<span class="sd">        </span>
+<span class="sd">        :param query:  :ref:`IMG_DISPLAY_PROPERTY`</span>
+<span class="sd">        :type  query:  int</span>
+<span class="sd">        :rtype:        float</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** These values do not necessarily match the grid as currently displayed; they are retrieved and used whenever</span>
+<span class="sd">        the grid is displayed in a viewer or map, and are used (for instance) to set the default values</span>
+<span class="sd">        in the Display Grid GX.</span>
+<span class="sd">        Some values return only values of 0 or 1.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_display_property</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
 <div class="viewcode-block" id="GXIMG.get_z"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.get_z">[docs]</a>    <span class="k">def</span> <span class="nf">get_z</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the grid value at a point</span>
@@ -1149,6 +1172,68 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_query_double</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.set_display_property"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.set_display_property">[docs]</a>    <span class="k">def</span> <span class="nf">set_display_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets display information about this image.</span>
+<span class="sd">        </span>
+<span class="sd">        :param query:  :ref:`IMG_DISPLAY_PROPERTY`</span>
+<span class="sd">        :param value:  Value</span>
+<span class="sd">        :type  query:  int</span>
+<span class="sd">        :type  value:  float</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** These values do NOT take immediate effect; they are retrieved and used whenever</span>
+<span class="sd">        the grid is displayed in a viewer or map, and are used (for instance) to set the default values</span>
+<span class="sd">        in the Display Grid GX.</span>
+<span class="sd">        Some values take on only values of 0 or 1.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_display_property</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.get_shadow_grid_path"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.get_shadow_grid_path">[docs]</a>    <span class="k">def</span> <span class="nf">get_shadow_grid_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the name of a view.</span>
+<span class="sd">        </span>
+<span class="sd">        :param path:  Shadow grid path name returned</span>
+<span class="sd">        :type  path:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">path</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_shadow_grid_path</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.set_shadow_grid_path"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.set_shadow_grid_path">[docs]</a>    <span class="k">def</span> <span class="nf">set_shadow_grid_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets display information about this image.</span>
+<span class="sd">        </span>
+<span class="sd">        :param path:  Grid path for the shadow grid</span>
+<span class="sd">        :type  path:  str</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** This values does NOT take immediate effect; it is retrieved and used whenever</span>
+<span class="sd">        the grid is displayed in a viewer or map, and is used (for instance) to set the default value</span>
+<span class="sd">        in the Display Grid GX.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_shadow_grid_path</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
 
 
 
@@ -1385,7 +1470,95 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_double_parameter</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
-        <span class="k">return</span> <span class="n">ret_val</span></div></div>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<span class="c1"># Faults</span>
+
+
+
+<div class="viewcode-block" id="GXIMG.number_of_faults"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.number_of_faults">[docs]</a>    <span class="k">def</span> <span class="nf">number_of_faults</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the number of individual fault traces stored in the IMG</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Faults are paths of (X, Y) locations, and are either polylines or polygons.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_number_of_faults</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.get_fault"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.get_fault">[docs]</a>    <span class="k">def</span> <span class="nf">get_fault</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">xVV</span><span class="p">,</span> <span class="n">yVV</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieve a fault trace</span>
+<span class="sd">        </span>
+<span class="sd">        :param index:  Fault index (0 to N-1)</span>
+<span class="sd">        :param xVV:    X locations `GXVV &lt;geosoft.gxapi.GXVV&gt;` (REAL)</span>
+<span class="sd">        :param yVV:    Y locations `GXVV &lt;geosoft.gxapi.GXVV&gt;` (REAL)</span>
+<span class="sd">        :param type:   Fault type :ref:`IMG_FAULT`</span>
+<span class="sd">        :type  index:  int</span>
+<span class="sd">        :type  xVV:    GXVV</span>
+<span class="sd">        :type  yVV:    GXVV</span>
+<span class="sd">        :type  type:   int_ref</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">type</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_fault</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">xVV</span><span class="p">,</span> <span class="n">yVV</span><span class="p">,</span> <span class="nb">type</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIMG.add_fault"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.add_fault">[docs]</a>    <span class="k">def</span> <span class="nf">add_fault</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xVV</span><span class="p">,</span> <span class="n">yVV</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a fault trace</span>
+<span class="sd">        </span>
+<span class="sd">        :param xVV:   X locations `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param yVV:   Y locations `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param type:  Fault type :ref:`IMG_FAULT`</span>
+<span class="sd">        :type  xVV:   GXVV</span>
+<span class="sd">        :type  yVV:   GXVV</span>
+<span class="sd">        :type  type:  int</span>
+
+<span class="sd">        :returns:     index of the added fault</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The X and Y values cannot be dummies. Polygons require at least three locations, Polylines require at least two.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_fault</span><span class="p">(</span><span class="n">xVV</span><span class="p">,</span> <span class="n">yVV</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIMG.delete_fault"><a class="viewcode-back" href="../../../GXIMG.html#geosoft.gxapi.GXIMG.delete_fault">[docs]</a>    <span class="k">def</span> <span class="nf">delete_fault</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete a fault trace</span>
+<span class="sd">        </span>
+<span class="sd">        :param index:  Fault index (0 to N-1)</span>
+<span class="sd">        :type  index:  int</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_delete_fault</span><span class="p">(</span><span class="n">index</span><span class="p">)</span></div></div>
+        
 
 
 
@@ -1414,7 +1587,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIMG</a></li> 

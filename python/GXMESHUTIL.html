@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXMESHUTIL class &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <title>GXMESHUTIL class &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXMESHUTIL class</a></li> 
       </ul>
     </div>
@@ -41,6 +41,8 @@
 <li><a class="reference internal" href="#">GXMESHUTIL class</a><ul>
 <li><a class="reference internal" href="#surface-clip-mode-constants">SURFACE_CLIP_MODE constants</a></li>
 <li><a class="reference internal" href="#surface-clip-status-constants">SURFACE_CLIP_STATUS constants</a></li>
+<li><a class="reference internal" href="#surface-projection-method-constants">SURFACE_PROJECTION_METHOD constants</a></li>
+<li><a class="reference internal" href="#surface-transformation-method-constants">SURFACE_TRANSFORMATION_METHOD constants</a></li>
 </ul>
 </li>
 </ul>
@@ -81,6 +83,30 @@
 <dt id="geosoft.gxapi.GXMESHUTIL.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMESHUTIL.html#GXMESHUTIL.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMESHUTIL.apply_transformation">
+<em class="property">classmethod </em><code class="sig-name descname">apply_transformation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inputSurfaceFile</span></em>, <em class="sig-param"><span class="n">inputSurfaceName</span></em>, <em class="sig-param"><span class="n">outputSurfaceFile</span></em>, <em class="sig-param"><span class="n">outputSurfaceName</span></em>, <em class="sig-param"><span class="n">transformationMethod</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMESHUTIL.html#GXMESHUTIL.apply_transformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.apply_transformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies a transformation to a surface, see :ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>SURFACE_TRANSFORMATION_METHOD`for available operations. The existing mesh will be preserved, and a new mesh will be created with the target name in the target file. Reprojection willbe handled automatically in the case that the coordinate systems differ.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputSurfaceFile</strong> (<em>str</em>) – Input surface file name</p></li>
+<li><p><strong>inputSurfaceName</strong> (<em>str</em>) – Input surface layer (mesh) name</p></li>
+<li><p><strong>outputSurfaceFile</strong> (<em>str</em>) – Output surface file name</p></li>
+<li><p><strong>outputSurfaceName</strong> (<em>str</em>) – Output surface layer (mesh) name</p></li>
+<li><p><strong>transformationMethod</strong> (<em>int</em>) – <a class="reference internal" href="#surface-transformation-method"><span class="std std-ref">SURFACE_TRANSFORMATION_METHOD constants</span></a></p></li>
+<li><p><strong>x</strong> (<em>float</em>) – X transformation component</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y transformation component</p></li>
+<li><p><strong>z</strong> (<em>float</em>) – Z transformation component</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2021.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -280,6 +306,25 @@
 </dd></dl>
 
 <dl class="py method">
+<dt id="geosoft.gxapi.GXMESHUTIL.copy_mesh_to_geo_surface_file">
+<em class="property">classmethod </em><code class="sig-name descname">copy_mesh_to_geo_surface_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_surface_filename</span></em>, <em class="sig-param"><span class="n">surface_name</span></em>, <em class="sig-param"><span class="n">output_surface_filename</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMESHUTIL.html#GXMESHUTIL.copy_mesh_to_geo_surface_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.copy_mesh_to_geo_surface_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy a mesh from one geosurface file to another</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_surface_filename</strong> (<em>str</em>) – Input Geosurface file name</p></li>
+<li><p><strong>surface_name</strong> (<em>str</em>) – Geosurface surface name</p></li>
+<li><p><strong>output_surface_filename</strong> (<em>str</em>) – Output Geosurface file name</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2021.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="geosoft.gxapi.GXMESHUTIL.does_surface_intersect">
 <em class="property">classmethod </em><code class="sig-name descname">does_surface_intersect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">primarySurfaceFile</span></em>, <em class="sig-param"><span class="n">primarySurface</span></em>, <em class="sig-param"><span class="n">secondarySurfaceFile</span></em>, <em class="sig-param"><span class="n">secondarySurface</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMESHUTIL.html#GXMESHUTIL.does_surface_intersect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.does_surface_intersect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if the two surfaces intersect at all</p>
@@ -398,6 +443,46 @@
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMESHUTIL.project_geosurface_onto_grid">
+<em class="property">classmethod </em><code class="sig-name descname">project_geosurface_onto_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">surface_filename</span></em>, <em class="sig-param"><span class="n">surface_name</span></em>, <em class="sig-param"><span class="n">input_geometry_grid</span></em>, <em class="sig-param"><span class="n">projection_method</span></em>, <em class="sig-param"><span class="n">output_grid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMESHUTIL.html#GXMESHUTIL.project_geosurface_onto_grid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.project_geosurface_onto_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Repoject surface with the coordinate system of the <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>surface_filename</strong> (<em>str</em>) – Input Geosurface file name</p></li>
+<li><p><strong>surface_name</strong> (<em>str</em>) – Geosurface surface name</p></li>
+<li><p><strong>input_geometry_grid</strong> (<em>str</em>) – Input Geometry grid</p></li>
+<li><p><strong>projection_method</strong> (<em>int</em>) – <a class="reference internal" href="#surface-projection-method"><span class="std std-ref">SURFACE_PROJECTION_METHOD constants</span></a></p></li>
+<li><p><strong>output_grid</strong> (<em>str</em>) – Output grid</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2021.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMESHUTIL.reproject_geosurface_file">
+<em class="property">classmethod </em><code class="sig-name descname">reproject_geosurface_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_surface_filename</span></em>, <em class="sig-param"><span class="n">output_surface_filename</span></em>, <em class="sig-param"><span class="n">ipj</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMESHUTIL.html#GXMESHUTIL.reproject_geosurface_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMESHUTIL.reproject_geosurface_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Repoject surface with the coordinate system of the <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_surface_filename</strong> (<em>str</em>) – Input Geosurface file name</p></li>
+<li><p><strong>output_surface_filename</strong> (<em>str</em>) – Output Geosurface file name</p></li>
+<li><p><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> in which to place the new Geosurface coordinate system</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2021.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
 </dd></dl>
 
 <div class="section" id="surface-clip-mode-constants">
@@ -419,8 +504,8 @@
 <code class="sig-name descname">SURFACE_CLIP_BELOW</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_CLIP_BELOW" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output the surface item below clipper surface</p>
 <dl class="py attribute">
-<dt id="id12">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_CLIP_BELOW</code><em class="property"> = 1</em><a class="headerlink" href="#id12" title="Permalink to this definition">¶</a></dt>
+<dt id="id18">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_CLIP_BELOW</code><em class="property"> = 1</em><a class="headerlink" href="#id18" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -430,8 +515,8 @@
 <code class="sig-name descname">SURFACE_CLIP_BOTH</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_CLIP_BOTH" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output the surface items both above &amp; below the clipper surface</p>
 <dl class="py attribute">
-<dt id="id13">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_CLIP_BOTH</code><em class="property"> = 2</em><a class="headerlink" href="#id13" title="Permalink to this definition">¶</a></dt>
+<dt id="id19">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_CLIP_BOTH</code><em class="property"> = 2</em><a class="headerlink" href="#id19" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -445,8 +530,8 @@
 <code class="sig-name descname">SURFACE_CLIP_SUCCESS</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_CLIP_SUCCESS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Surface clipping successful</p>
 <dl class="py attribute">
-<dt id="id14">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_CLIP_SUCCESS</code><em class="property"> = 0</em><a class="headerlink" href="#id14" title="Permalink to this definition">¶</a></dt>
+<dt id="id20">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_CLIP_SUCCESS</code><em class="property"> = 0</em><a class="headerlink" href="#id20" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -456,8 +541,8 @@
 <code class="sig-name descname">SURFACE_CLIP_SUCCESS_EMPTY</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_CLIP_SUCCESS_EMPTY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Surface clipping successful, but with empty output</p>
 <dl class="py attribute">
-<dt id="id15">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_CLIP_SUCCESS_EMPTY</code><em class="property"> = 1</em><a class="headerlink" href="#id15" title="Permalink to this definition">¶</a></dt>
+<dt id="id21">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_CLIP_SUCCESS_EMPTY</code><em class="property"> = 1</em><a class="headerlink" href="#id21" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -467,8 +552,71 @@
 <code class="sig-name descname">SURFACE_CLIP_FAIL</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_CLIP_FAIL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Surface clipping fail</p>
 <dl class="py attribute">
-<dt id="id16">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_CLIP_FAIL</code><em class="property"> = 2</em><a class="headerlink" href="#id16" title="Permalink to this definition">¶</a></dt>
+<dt id="id22">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_CLIP_FAIL</code><em class="property"> = 2</em><a class="headerlink" href="#id22" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="surface-projection-method-constants">
+<span id="surface-projection-method"></span><h2>SURFACE_PROJECTION_METHOD constants<a class="headerlink" href="#surface-projection-method-constants" title="Permalink to this headline">¶</a></h2>
+<p>Surface projection method</p>
+<dl class="py data">
+<dt id="geosoft.gxapi.SURFACE_PROJECTION_MAXIMUM">
+<code class="sig-name descname">SURFACE_PROJECTION_MAXIMUM</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_PROJECTION_MAXIMUM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum value: first intersection from the top</p>
+<dl class="py attribute">
+<dt id="id23">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_PROJECTION_MAXIMUM</code><em class="property"> = 0</em><a class="headerlink" href="#id23" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.SURFACE_PROJECTION_MINIMUM">
+<code class="sig-name descname">SURFACE_PROJECTION_MINIMUM</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_PROJECTION_MINIMUM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum value: first intersection from the bottom</p>
+<dl class="py attribute">
+<dt id="id24">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_PROJECTION_MINIMUM</code><em class="property"> = 1</em><a class="headerlink" href="#id24" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.SURFACE_PROJECTION_AVERAGE">
+<code class="sig-name descname">SURFACE_PROJECTION_AVERAGE</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_PROJECTION_AVERAGE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average value: all intersections</p>
+<dl class="py attribute">
+<dt id="id25">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_PROJECTION_AVERAGE</code><em class="property"> = 2</em><a class="headerlink" href="#id25" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="surface-transformation-method-constants">
+<span id="surface-transformation-method"></span><h2>SURFACE_TRANSFORMATION_METHOD constants<a class="headerlink" href="#surface-transformation-method-constants" title="Permalink to this headline">¶</a></h2>
+<p>Surface transformation method</p>
+<dl class="py data">
+<dt id="geosoft.gxapi.SURFACE_TRANSFORMATION_METHOD_SHIFT">
+<code class="sig-name descname">SURFACE_TRANSFORMATION_METHOD_SHIFT</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_TRANSFORMATION_METHOD_SHIFT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transforms the surface by shifting it, provided dX, dY, dZ</p>
+<dl class="py attribute">
+<dt id="id26">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_TRANSFORMATION_METHOD_SHIFT</code><em class="property"> = 0</em><a class="headerlink" href="#id26" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.SURFACE_TRANSFORMATION_METHOD_SCALE">
+<code class="sig-name descname">SURFACE_TRANSFORMATION_METHOD_SCALE</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_TRANSFORMATION_METHOD_SCALE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transforms the surface by scaling it, provided sX, sY, sZ</p>
+<dl class="py attribute">
+<dt id="id27">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SURFACE_TRANSFORMATION_METHOD_SCALE</code><em class="property"> = 1</em><a class="headerlink" href="#id27" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -489,7 +637,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXMESHUTIL class</a></li> 
       </ul>
     </div>

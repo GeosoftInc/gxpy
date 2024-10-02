@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXPG class &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <title>GXPG class &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXPG class</a></li> 
       </ul>
     </div>
@@ -575,6 +575,26 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 </dd></dl>
 
 <dl class="py method">
+<dt id="geosoft.gxapi.GXPG.set">
+<code class="sig-name descname">set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">col</span></em>, <em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPG.html#GXPG.set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPG.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a single value to a 2D <a class="reference internal" href="#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>col</strong> (<em>int</em>) – iBx - element # in x (column #)</p></li>
+<li><p><strong>row</strong> (<em>int</em>) – iBy - element # in y (row #)</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – value to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.10.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This is a low-performance method.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="geosoft.gxapi.GXPG.statistics">
 <code class="sig-name descname">statistics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">st</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPG.html#GXPG.statistics"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPG.statistics" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the statistics of a pager object.</p>
@@ -781,8 +801,8 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <code class="sig-name descname">PG_3D_DIR_YXZ</code><a class="headerlink" href="#geosoft.gxapi.PG_3D_DIR_YXZ" title="Permalink to this definition">¶</a></dt>
 <dd><p>Yxz</p>
 <dl class="py attribute">
-<dt id="id31">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PG_3D_DIR_YXZ</code><em class="property"> = 1</em><a class="headerlink" href="#id31" title="Permalink to this definition">¶</a></dt>
+<dt id="id32">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PG_3D_DIR_YXZ</code><em class="property"> = 1</em><a class="headerlink" href="#id32" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -792,8 +812,8 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <code class="sig-name descname">PG_3D_DIR_XZY</code><a class="headerlink" href="#geosoft.gxapi.PG_3D_DIR_XZY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Xzy</p>
 <dl class="py attribute">
-<dt id="id32">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PG_3D_DIR_XZY</code><em class="property"> = 2</em><a class="headerlink" href="#id32" title="Permalink to this definition">¶</a></dt>
+<dt id="id33">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PG_3D_DIR_XZY</code><em class="property"> = 2</em><a class="headerlink" href="#id33" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -803,8 +823,8 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <code class="sig-name descname">PG_3D_DIR_YZX</code><a class="headerlink" href="#geosoft.gxapi.PG_3D_DIR_YZX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Yzx</p>
 <dl class="py attribute">
-<dt id="id33">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PG_3D_DIR_YZX</code><em class="property"> = 3</em><a class="headerlink" href="#id33" title="Permalink to this definition">¶</a></dt>
+<dt id="id34">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PG_3D_DIR_YZX</code><em class="property"> = 3</em><a class="headerlink" href="#id34" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -814,8 +834,8 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <code class="sig-name descname">PG_3D_DIR_ZXY</code><a class="headerlink" href="#geosoft.gxapi.PG_3D_DIR_ZXY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Zxy</p>
 <dl class="py attribute">
-<dt id="id34">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PG_3D_DIR_ZXY</code><em class="property"> = 4</em><a class="headerlink" href="#id34" title="Permalink to this definition">¶</a></dt>
+<dt id="id35">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PG_3D_DIR_ZXY</code><em class="property"> = 4</em><a class="headerlink" href="#id35" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -825,8 +845,8 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <code class="sig-name descname">PG_3D_DIR_ZYX</code><a class="headerlink" href="#geosoft.gxapi.PG_3D_DIR_ZYX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Zyx</p>
 <dl class="py attribute">
-<dt id="id35">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PG_3D_DIR_ZYX</code><em class="property"> = 5</em><a class="headerlink" href="#id35" title="Permalink to this definition">¶</a></dt>
+<dt id="id36">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PG_3D_DIR_ZYX</code><em class="property"> = 5</em><a class="headerlink" href="#id36" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -840,8 +860,8 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <code class="sig-name descname">PG_BF_CONV_NONE</code><a class="headerlink" href="#geosoft.gxapi.PG_BF_CONV_NONE" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Data is in Raw form</p>
 <dl class="py attribute">
-<dt id="id36">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PG_BF_CONV_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#id36" title="Permalink to this definition">¶</a></dt>
+<dt id="id37">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PG_BF_CONV_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#id37" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -851,8 +871,8 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
 <code class="sig-name descname">PG_BF_CONV_SWAP</code><a class="headerlink" href="#geosoft.gxapi.PG_BF_CONV_SWAP" title="Permalink to this definition">¶</a></dt>
 <dd><p>The data needs to be byte swapped</p>
 <dl class="py attribute">
-<dt id="id37">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PG_BF_CONV_SWAP</code><em class="property"> = 1</em><a class="headerlink" href="#id37" title="Permalink to this definition">¶</a></dt>
+<dt id="id38">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PG_BF_CONV_SWAP</code><em class="property"> = 1</em><a class="headerlink" href="#id38" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -873,7 +893,7 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="g
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXPG class</a></li> 
       </ul>
     </div>

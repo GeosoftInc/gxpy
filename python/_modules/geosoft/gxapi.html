@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <title>geosoft.gxapi &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
     <link rel="stylesheet" href="../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi</a></li> 
       </ul>
@@ -1176,6 +1176,40 @@
 
 
 <span class="c1">#</span>
+<span class="c1"># IMG_DISPLAY_PROPERTY constants</span>
+<span class="c1">#</span>
+<span class="c1"># Image display property</span>
+
+<span class="c1">#: Shading inclination</span>
+<span class="n">IMG_SHADING_INCLINATION</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">#: Shading declination</span>
+<span class="n">IMG_SHADING_DECLINATION</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1">#: Shading scale</span>
+<span class="n">IMG_SHADING_SCALE</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="c1">#: Shading contrast (0-1)</span>
+<span class="n">IMG_SHADING_CONTRAST</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="c1">#: Shading brightness (0-1)</span>
+<span class="n">IMG_SHADING_BRIGHTNESS</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="c1">#: Shading wet look (0 or 1)?</span>
+<span class="n">IMG_SHADING_WETLOOK</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="c1">#: Zone colours reversed from originals (0 or 1)?</span>
+<span class="n">IMG_COLOURS_REVERSED</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="c1">#: Is smoothing enabled (0 or 1)?</span>
+<span class="n">IMG_SMOOTHING_ENABLED</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="c1">#: Is shading enabled (0 or 1)?</span>
+<span class="n">IMG_SHADING_ENABLED</span> <span class="o">=</span> <span class="mi">8</span>
+
+<span class="c1">#</span>
+<span class="c1"># IMG_FAULT constants</span>
+<span class="c1">#</span>
+<span class="c1"># Fault type</span>
+
+<span class="c1">#: Polyline</span>
+<span class="n">IMG_FAULT_POLYLINE</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">#: Polygon</span>
+<span class="n">IMG_FAULT_POLYGON</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1">#</span>
 <span class="c1"># IMG_FILE constants</span>
 <span class="c1">#</span>
 <span class="c1"># Image open modes</span>
@@ -1765,7 +1799,9 @@
 <span class="c1">#: The `GXITR &lt;geosoft.gxapi.GXITR&gt;` is set up with an equal area transform.</span>
 <span class="n">ITR_ZONE_MODEL_EQUAL</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="c1">#: The `GXITR &lt;geosoft.gxapi.GXITR&gt;` is set up with a log-linear transform.</span>
-<span class="n">ITR_MODEL_LOGLIN</span> <span class="o">=</span> <span class="mi">4</span>	
+<span class="n">ITR_MODEL_LOGLIN</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="c1">#: The `GXITR &lt;geosoft.gxapi.GXITR&gt;` is set up with a log-linear transform.</span>
+<span class="n">ITR_ZONE_MODEL_LOGLIN</span> <span class="o">=</span> <span class="mi">4</span>	
 
 <span class="c1">#</span>
 <span class="c1"># GXKML Constants</span>
@@ -2116,7 +2152,29 @@
 <span class="c1">#: Surface clipping successful, but with empty output</span>
 <span class="n">SURFACE_CLIP_SUCCESS_EMPTY</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="c1">#: Surface clipping fail</span>
-<span class="n">SURFACE_CLIP_FAIL</span> <span class="o">=</span> <span class="mi">2</span>	
+<span class="n">SURFACE_CLIP_FAIL</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1">#</span>
+<span class="c1"># SURFACE_PROJECTION_METHOD constants</span>
+<span class="c1">#</span>
+<span class="c1"># Surface projection method</span>
+
+<span class="c1">#: Maximum value: first intersection from the top</span>
+<span class="n">SURFACE_PROJECTION_MAXIMUM</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">#: Minimum value: first intersection from the bottom</span>
+<span class="n">SURFACE_PROJECTION_MINIMUM</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1">#: Average value: all intersections</span>
+<span class="n">SURFACE_PROJECTION_AVERAGE</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1">#</span>
+<span class="c1"># SURFACE_TRANSFORMATION_METHOD constants</span>
+<span class="c1">#</span>
+<span class="c1"># Surface transformation method</span>
+
+<span class="c1">#: Transforms the surface by shifting it, provided dX, dY, dZ</span>
+<span class="n">SURFACE_TRANSFORMATION_METHOD_SHIFT</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">#: Transforms the surface by scaling it, provided sX, sY, sZ</span>
+<span class="n">SURFACE_TRANSFORMATION_METHOD_SCALE</span> <span class="o">=</span> <span class="mi">1</span>	
 
 <span class="c1">#</span>
 <span class="c1"># GXMETA Constants</span>
@@ -3902,7 +3960,7 @@
 <span class="c1"># TaskDialog Common Buttons</span>
 
 <span class="c1">#: No common buttons.</span>
-<span class="n">TD_BUTTON_NONE</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">TD_BUTTON_NONE</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="c1">#: Button results in `TD_ID_OK &lt;geosoft.gxapi.TD_ID_OK&gt;` return value.</span>
 <span class="n">TD_BUTTON_OK</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="c1">#: Button results in `TD_ID_YES &lt;geosoft.gxapi.TD_ID_YES&gt;` return value.</span>
@@ -4583,6 +4641,48 @@
 <span class="n">COM_STOPBITS_ONE5</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="c1">#: Two</span>
 <span class="n">COM_STOPBITS_TWO</span> <span class="o">=</span> <span class="mi">2</span>	
+
+<span class="c1">#</span>
+<span class="c1"># GXDCOL Constants</span>
+<span class="c1"># </span>
+
+
+
+<span class="c1">#</span>
+<span class="c1"># BRIGHT constants</span>
+<span class="c1">#</span>
+<span class="c1"># Brightness type</span>
+
+<span class="c1">#: Set the brightness of all the layers</span>
+<span class="n">BRIGHT_ALL</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">#: Set the brightness of the current layer</span>
+<span class="n">BRIGHT_LAYER</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1">#</span>
+<span class="c1"># BRIGHTNESS_TYPES constants</span>
+<span class="c1">#</span>
+<span class="c1"># Detrending option</span>
+
+<span class="c1">#: Can set the brightness only for object as a whole</span>
+<span class="n">BRIGHTNESS_ALL</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">#: Can set the brightness for object as a whole and for individual layers</span>
+<span class="n">BRIGHTNESS_ALL_AND_LAYERS</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1">#</span>
+<span class="c1"># DCOL_TYPE constants</span>
+<span class="c1">#</span>
+<span class="c1"># Layer type</span>
+
+<span class="c1">#: Unknown</span>
+<span class="n">DCOL_TYPE_UNKNOWN</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">#: Grid</span>
+<span class="n">DCOL_TYPE_GRID</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1">#: Symbols</span>
+<span class="n">DCOL_TYPE_SYMBOLS</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="c1">#: Voxel</span>
+<span class="n">DCOL_TYPE_VOXEL</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="c1">#: Vector voxel</span>
+<span class="n">DCOL_TYPE_VECTOR_VOXEL</span> <span class="o">=</span> <span class="mi">4</span>	
 
 <span class="c1">#</span>
 <span class="c1"># GXDGW Constants</span>
@@ -6853,6 +6953,24 @@
 <span class="n">SEMPLOT_PLOT_UNKNOWN</span> <span class="o">=</span> <span class="mi">3</span>	
 
 <span class="c1">#</span>
+<span class="c1"># GXSHD Constants</span>
+<span class="c1"># </span>
+
+
+
+<span class="c1">#</span>
+<span class="c1"># SHD_FIX constants</span>
+<span class="c1">#</span>
+<span class="c1"># Interactive tracking constraints.</span>
+
+<span class="c1">#: None</span>
+<span class="n">SHD_FIX_NONE</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">#: Inclination</span>
+<span class="n">SHD_FIX_INCLINATION</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1">#: Declination</span>
+<span class="n">SHD_FIX_DECLINATION</span> <span class="o">=</span> <span class="mi">2</span>	
+
+<span class="c1">#</span>
 <span class="c1"># GXSHP Constants</span>
 <span class="c1"># </span>
 
@@ -7365,6 +7483,7 @@
     <span class="s1">&#39;GXBIGRID&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXCHIMERA&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXCOM&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;GXDCOL&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXDGW&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXDH&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXDMPPLY&#39;</span><span class="p">,</span>
@@ -7402,6 +7521,7 @@
     <span class="s1">&#39;GXPROJ&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXRGRD&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXSEMPLOT&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;GXSHD&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXSHP&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXSQLSRV&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXSTK&#39;</span><span class="p">,</span>
@@ -7499,6 +7619,7 @@
 <span class="kn">from</span> <span class="nn">.GXBIGRID</span> <span class="kn">import</span> <span class="n">GXBIGRID</span>
 <span class="kn">from</span> <span class="nn">.GXCHIMERA</span> <span class="kn">import</span> <span class="n">GXCHIMERA</span>
 <span class="kn">from</span> <span class="nn">.GXCOM</span> <span class="kn">import</span> <span class="n">GXCOM</span>
+<span class="kn">from</span> <span class="nn">.GXDCOL</span> <span class="kn">import</span> <span class="n">GXDCOL</span>
 <span class="kn">from</span> <span class="nn">.GXDGW</span> <span class="kn">import</span> <span class="n">GXDGW</span>
 <span class="kn">from</span> <span class="nn">.GXDH</span> <span class="kn">import</span> <span class="n">GXDH</span>
 <span class="kn">from</span> <span class="nn">.GXDMPPLY</span> <span class="kn">import</span> <span class="n">GXDMPPLY</span>
@@ -7536,6 +7657,7 @@
 <span class="kn">from</span> <span class="nn">.GXPROJ</span> <span class="kn">import</span> <span class="n">GXPROJ</span>
 <span class="kn">from</span> <span class="nn">.GXRGRD</span> <span class="kn">import</span> <span class="n">GXRGRD</span>
 <span class="kn">from</span> <span class="nn">.GXSEMPLOT</span> <span class="kn">import</span> <span class="n">GXSEMPLOT</span>
+<span class="kn">from</span> <span class="nn">.GXSHD</span> <span class="kn">import</span> <span class="n">GXSHD</span>
 <span class="kn">from</span> <span class="nn">.GXSHP</span> <span class="kn">import</span> <span class="n">GXSHP</span>
 <span class="kn">from</span> <span class="nn">.GXSQLSRV</span> <span class="kn">import</span> <span class="n">GXSQLSRV</span>
 <span class="kn">from</span> <span class="nn">.GXSTK</span> <span class="kn">import</span> <span class="n">GXSTK</span>
@@ -7568,7 +7690,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi</a></li> 
       </ul>

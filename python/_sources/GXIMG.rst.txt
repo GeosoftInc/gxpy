@@ -9,6 +9,68 @@ GXIMG class
    :members:
 
 
+.. _IMG_DISPLAY_PROPERTY:
+
+IMG_DISPLAY_PROPERTY constants
+-----------------------------------------------------------------------
+
+Image display property
+
+.. autodata:: geosoft.gxapi.IMG_SHADING_INCLINATION
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.IMG_SHADING_INCLINATION
+.. autodata:: geosoft.gxapi.IMG_SHADING_DECLINATION
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.IMG_SHADING_DECLINATION
+.. autodata:: geosoft.gxapi.IMG_SHADING_SCALE
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.IMG_SHADING_SCALE
+.. autodata:: geosoft.gxapi.IMG_SHADING_CONTRAST
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.IMG_SHADING_CONTRAST
+.. autodata:: geosoft.gxapi.IMG_SHADING_BRIGHTNESS
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.IMG_SHADING_BRIGHTNESS
+.. autodata:: geosoft.gxapi.IMG_SHADING_WETLOOK
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.IMG_SHADING_WETLOOK
+.. autodata:: geosoft.gxapi.IMG_COLOURS_REVERSED
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.IMG_COLOURS_REVERSED
+.. autodata:: geosoft.gxapi.IMG_SMOOTHING_ENABLED
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.IMG_SMOOTHING_ENABLED
+.. autodata:: geosoft.gxapi.IMG_SHADING_ENABLED
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.IMG_SHADING_ENABLED
+
+
+.. _IMG_FAULT:
+
+IMG_FAULT constants
+-----------------------------------------------------------------------
+
+Fault type
+
+.. autodata:: geosoft.gxapi.IMG_FAULT_POLYLINE
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.IMG_FAULT_POLYLINE
+.. autodata:: geosoft.gxapi.IMG_FAULT_POLYGON
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.IMG_FAULT_POLYGON
+
+
 .. _IMG_FILE:
 
 IMG_FILE constants

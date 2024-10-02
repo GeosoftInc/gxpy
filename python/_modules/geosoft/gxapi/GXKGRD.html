@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXKGRD &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <title>geosoft.gxapi.GXKGRD &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXKGRD</a></li> 
@@ -316,6 +316,36 @@
 <span class="sd">        created. Otherwise, the old file will be overwritten.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_save_parms</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXKGRD.get_defaults"><a class="viewcode-back" href="../../../GXKGRD.html#geosoft.gxapi.GXKGRD.get_defaults">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_defaults</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">blankingDistance</span><span class="p">,</span> <span class="n">lowPassDesamplingFactor</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get default blanking distance and low-pass desampling factor.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:                       Handle to a database</span>
+<span class="sd">        :param x:                        Y Channel</span>
+<span class="sd">        :param y:                        X Channel</span>
+<span class="sd">        :param z:                        Data channel</span>
+<span class="sd">        :param blankingDistance:         blanking distance</span>
+<span class="sd">        :param lowPassDesamplingFactor:  low-pass desampling factor</span>
+<span class="sd">        :type  db:                       GXDB</span>
+<span class="sd">        :type  x:                        str</span>
+<span class="sd">        :type  y:                        str</span>
+<span class="sd">        :type  z:                        str</span>
+<span class="sd">        :type  blankingDistance:         float_ref</span>
+<span class="sd">        :type  lowPassDesamplingFactor:  int_ref</span>
+
+<span class="sd">        :returns:                        0 OK, 1 Error.</span>
+<span class="sd">        :rtype:                          int</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span><span class="p">,</span> <span class="n">blankingDistance</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lowPassDesamplingFactor</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapKGRD</span><span class="o">.</span><span class="n">_get_defaults</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">z</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">blankingDistance</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lowPassDesamplingFactor</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div></div>
 
 
@@ -345,7 +375,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXKGRD</a></li> 

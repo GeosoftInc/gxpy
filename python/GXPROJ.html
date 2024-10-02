@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXPROJ class &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <title>GXPROJ class &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXPROJ class</a></li> 
       </ul>
     </div>
@@ -252,6 +252,33 @@ with an extension and qualifiers (if applicable).</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="geosoft.gxapi.GXPROJ.get_central_project_information">
+<em class="property">classmethod </em><code class="sig-name descname">get_central_project_information</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">instance</span></em>, <em class="sig-param"><span class="n">project</span></em>, <em class="sig-param"><span class="n">crs</span></em>, <em class="sig-param"><span class="n">branch</span></em>, <em class="sig-param"><span class="n">rev_id</span></em>, <em class="sig-param"><span class="n">rev_date</span></em>, <em class="sig-param"><span class="n">rev_note</span></em>, <em class="sig-param"><span class="n">rev_stage</span></em>, <em class="sig-param"><span class="n">rev_author</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPROJ.html#GXPROJ.get_central_project_information"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPROJ.get_central_project_information" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Central project information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>instance</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Instance name</p></li>
+<li><p><strong>project</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Project name</p></li>
+<li><p><strong>crs</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Coordinate Reference System</p></li>
+<li><p><strong>branch</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Branch name</p></li>
+<li><p><strong>rev_id</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Revision Id</p></li>
+<li><p><strong>rev_date</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Revision date</p></li>
+<li><p><strong>rev_note</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Revision note</p></li>
+<li><p><strong>rev_stage</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Revision stage</p></li>
+<li><p><strong>rev_author</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Revision author</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2021.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Get Central project information.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="geosoft.gxapi.GXPROJ.get_command_environment">
 <em class="property">classmethod </em><code class="sig-name descname">get_command_environment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPROJ.html#GXPROJ.get_command_environment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPROJ.get_command_environment" title="Permalink to this definition">¶</a></dt>
 <dd><p>The current command environment</p>
@@ -292,6 +319,26 @@ in geogxguigxx_app.cpp and in the COMMAND_ENVIRONMENT enums in geoengine.coreinc
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 <p><strong>Note:</strong> Return the name of the project file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXPROJ.get_server_and_project_guid">
+<em class="property">classmethod </em><code class="sig-name descname">get_server_and_project_guid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">server_id</span></em>, <em class="sig-param"><span class="n">project_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPROJ.html#GXPROJ.get_server_and_project_guid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPROJ.get_server_and_project_guid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the unique identifier of the project and server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>server_id</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Server ID</p></li>
+<li><p><strong>project_id</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Project ID</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2021.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Return the unique identifier of the project and server.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -516,6 +563,29 @@ All</p>
 </div></blockquote>
 </dd></dl>
 
+<dl class="py method">
+<dt id="geosoft.gxapi.GXPROJ.set_central_project_information">
+<em class="property">classmethod </em><code class="sig-name descname">set_central_project_information</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">server_guid</span></em>, <em class="sig-param"><span class="n">project_guid</span></em>, <em class="sig-param"><span class="n">branch_id</span></em>, <em class="sig-param"><span class="n">revision_id</span></em>, <em class="sig-param"><span class="n">cs_info</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPROJ.html#GXPROJ.set_central_project_information"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPROJ.set_central_project_information" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set Central project information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>server_guid</strong> (<em>str</em>) – server guid</p></li>
+<li><p><strong>project_guid</strong> (<em>str</em>) – project guid</p></li>
+<li><p><strong>branch_id</strong> (<em>int</em>) – branch ID</p></li>
+<li><p><strong>revision_id</strong> (<em>int</em>) – revision ID</p></li>
+<li><p><strong>cs_info</strong> (<em>str</em>) – Coordinate system information, either EPSG or WKT</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2021.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Set Central project information.</p>
+</dd></dl>
+
 </dd></dl>
 
 <div class="section" id="command-env-constants">
@@ -537,8 +607,8 @@ All</p>
 <code class="sig-name descname">COMMAND_ENV_IN3DVIEWER</code><a class="headerlink" href="#geosoft.gxapi.COMMAND_ENV_IN3DVIEWER" title="Permalink to this definition">¶</a></dt>
 <dd><p>Executing from inside 3D Viewer</p>
 <dl class="py attribute">
-<dt id="id14">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">COMMAND_ENV_IN3DVIEWER</code><em class="property"> = 1</em><a class="headerlink" href="#id14" title="Permalink to this definition">¶</a></dt>
+<dt id="id17">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">COMMAND_ENV_IN3DVIEWER</code><em class="property"> = 1</em><a class="headerlink" href="#id17" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -552,8 +622,8 @@ All</p>
 <code class="sig-name descname">TOOL_TYPE_DEFAULT</code><a class="headerlink" href="#geosoft.gxapi.TOOL_TYPE_DEFAULT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft created default tools</p>
 <dl class="py attribute">
-<dt id="id15">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">TOOL_TYPE_DEFAULT</code><em class="property"> = 0</em><a class="headerlink" href="#id15" title="Permalink to this definition">¶</a></dt>
+<dt id="id18">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">TOOL_TYPE_DEFAULT</code><em class="property"> = 0</em><a class="headerlink" href="#id18" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -563,8 +633,8 @@ All</p>
 <code class="sig-name descname">TOOL_TYPE_AUXILIARY</code><a class="headerlink" href="#geosoft.gxapi.TOOL_TYPE_AUXILIARY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Auxiliary tools (including custom XTools)</p>
 <dl class="py attribute">
-<dt id="id16">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">TOOL_TYPE_AUXILIARY</code><em class="property"> = 1</em><a class="headerlink" href="#id16" title="Permalink to this definition">¶</a></dt>
+<dt id="id19">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">TOOL_TYPE_AUXILIARY</code><em class="property"> = 1</em><a class="headerlink" href="#id19" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -574,8 +644,8 @@ All</p>
 <code class="sig-name descname">TOOL_TYPE_ALL</code><a class="headerlink" href="#geosoft.gxapi.TOOL_TYPE_ALL" title="Permalink to this definition">¶</a></dt>
 <dd><p>All tools</p>
 <dl class="py attribute">
-<dt id="id17">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">TOOL_TYPE_ALL</code><em class="property"> = 2</em><a class="headerlink" href="#id17" title="Permalink to this definition">¶</a></dt>
+<dt id="id20">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">TOOL_TYPE_ALL</code><em class="property"> = 2</em><a class="headerlink" href="#id20" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -589,8 +659,8 @@ All</p>
 <code class="sig-name descname">PROJ_DISPLAY_NO</code><a class="headerlink" href="#geosoft.gxapi.PROJ_DISPLAY_NO" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do not display the object</p>
 <dl class="py attribute">
-<dt id="id18">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PROJ_DISPLAY_NO</code><em class="property"> = 0</em><a class="headerlink" href="#id18" title="Permalink to this definition">¶</a></dt>
+<dt id="id21">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PROJ_DISPLAY_NO</code><em class="property"> = 0</em><a class="headerlink" href="#id21" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -600,8 +670,8 @@ All</p>
 <code class="sig-name descname">PROJ_DISPLAY_YES</code><a class="headerlink" href="#geosoft.gxapi.PROJ_DISPLAY_YES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the object unless user set option not to</p>
 <dl class="py attribute">
-<dt id="id19">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PROJ_DISPLAY_YES</code><em class="property"> = 1</em><a class="headerlink" href="#id19" title="Permalink to this definition">¶</a></dt>
+<dt id="id22">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PROJ_DISPLAY_YES</code><em class="property"> = 1</em><a class="headerlink" href="#id22" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -611,8 +681,8 @@ All</p>
 <code class="sig-name descname">PROJ_DISPLAY_ALWAYS</code><a class="headerlink" href="#geosoft.gxapi.PROJ_DISPLAY_ALWAYS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Always display the object</p>
 <dl class="py attribute">
-<dt id="id20">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PROJ_DISPLAY_ALWAYS</code><em class="property"> = 2</em><a class="headerlink" href="#id20" title="Permalink to this definition">¶</a></dt>
+<dt id="id23">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PROJ_DISPLAY_ALWAYS</code><em class="property"> = 2</em><a class="headerlink" href="#id23" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -633,7 +703,7 @@ All</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXPROJ class</a></li> 
       </ul>
     </div>

@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXIMG class &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <title>GXIMG class &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXIMG class</a></li> 
       </ul>
     </div>
@@ -39,6 +39,8 @@
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">GXIMG class</a><ul>
+<li><a class="reference internal" href="#img-display-property-constants">IMG_DISPLAY_PROPERTY constants</a></li>
+<li><a class="reference internal" href="#img-fault-constants">IMG_FAULT constants</a></li>
 <li><a class="reference internal" href="#img-file-constants">IMG_FILE constants</a></li>
 <li><a class="reference internal" href="#img-query-constants">IMG_QUERY constants</a></li>
 <li><a class="reference internal" href="#img-relocate-constants">IMG_RELOCATE constants</a></li>
@@ -104,6 +106,32 @@ and the <code class="docutils literal notranslate"><span class="pre">*.gi</span>
 <dt id="geosoft.gxapi.GXIMG.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIMG.html#GXIMG.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXIMG.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXIMG.add_fault">
+<code class="sig-name descname">add_fault</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xVV</span></em>, <em class="sig-param"><span class="n">yVV</span></em>, <em class="sig-param"><span class="n">type</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIMG.html#GXIMG.add_fault"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXIMG.add_fault" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a fault trace</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xVV</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></p></li>
+<li><p><strong>yVV</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></p></li>
+<li><p><strong>type</strong> (<em>int</em>) – Fault type <a class="reference internal" href="#img-fault"><span class="std std-ref">IMG_FAULT constants</span></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>index of the added fault</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.10.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The X and Y values cannot be dummies. Polygons require at least three locations, Polylines require at least two.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -356,6 +384,21 @@ the legacy behaviour.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="geosoft.gxapi.GXIMG.delete_fault">
+<code class="sig-name descname">delete_fault</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIMG.html#GXIMG.delete_fault"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXIMG.delete_fault" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a fault trace</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Fault index (0 to N-1)</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.10.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="geosoft.gxapi.GXIMG.e_type">
 <code class="sig-name descname">e_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIMG.html#GXIMG.e_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXIMG.e_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the element type.</p>
@@ -438,6 +481,28 @@ the legacy behaviour.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="geosoft.gxapi.GXIMG.get_display_property">
+<code class="sig-name descname">get_display_property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIMG.html#GXIMG.get_display_property"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXIMG.get_display_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets display information about this image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>query</strong> (<em>int</em>) – <a class="reference internal" href="#img-display-property"><span class="std std-ref">IMG_DISPLAY_PROPERTY constants</span></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2021.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> These values do not necessarily match the grid as currently displayed; they are retrieved and used whenever
+the grid is displayed in a viewer or map, and are used (for instance) to set the default values
+in the Display Grid GX.
+Some values return only values of 0 or 1.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="geosoft.gxapi.GXIMG.get_double_parameter">
 <code class="sig-name descname">get_double_parameter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIMG.html#GXIMG.get_double_parameter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXIMG.get_double_parameter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Store a real parameter in an <a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> object</p>
@@ -454,6 +519,26 @@ the legacy behaviour.</p>
 </dl>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 8.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXIMG.get_fault">
+<code class="sig-name descname">get_fault</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">xVV</span></em>, <em class="sig-param"><span class="n">yVV</span></em>, <em class="sig-param"><span class="n">type</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIMG.html#GXIMG.get_fault"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXIMG.get_fault" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a fault trace</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – Fault index (0 to N-1)</p></li>
+<li><p><strong>xVV</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> (REAL)</p></li>
+<li><p><strong>yVV</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> (REAL)</p></li>
+<li><p><strong>type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Fault type <a class="reference internal" href="#img-fault"><span class="std std-ref">IMG_FAULT constants</span></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.10.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -548,6 +633,21 @@ the legacy behaviour.</p>
 <a class="reference internal" href="#geosoft.gxapi.GXIMG.create_projected2" title="geosoft.gxapi.GXIMG.create_projected2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_projected2</span></code></a> when
 <a class="reference internal" href="GXGEOSOFT.html#id35" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_R8DM</span></code></a> is entered as the optional cell size. No inheritance
 is actually performed to the input <a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXIMG.get_shadow_grid_path">
+<code class="sig-name descname">get_shadow_grid_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIMG.html#GXIMG.get_shadow_grid_path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXIMG.get_shadow_grid_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the name of a view.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Shadow grid path name returned</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2021.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -776,6 +876,22 @@ access time.</p>
 <dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG">GXIMG</a></p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXIMG.number_of_faults">
+<code class="sig-name descname">number_of_faults</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIMG.html#GXIMG.number_of_faults"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXIMG.number_of_faults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of individual fault traces stored in the IMG</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.10.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Faults are paths of (X, Y) locations, and are either polylines or polygons.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1076,6 +1192,28 @@ The header line should only be written to a new text file.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="geosoft.gxapi.GXIMG.set_display_property">
+<code class="sig-name descname">set_display_property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIMG.html#GXIMG.set_display_property"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXIMG.set_display_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets display information about this image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>int</em>) – <a class="reference internal" href="#img-display-property"><span class="std std-ref">IMG_DISPLAY_PROPERTY constants</span></a></p></li>
+<li><p><strong>value</strong> (<em>float</em>) – Value</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2021.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> These values do NOT take immediate effect; they are retrieved and used whenever
+the grid is displayed in a viewer or map, and are used (for instance) to set the default values
+in the Display Grid GX.
+Some values take on only values of 0 or 1.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="geosoft.gxapi.GXIMG.set_double_parameter">
 <code class="sig-name descname">set_double_parameter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIMG.html#GXIMG.set_double_parameter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXIMG.set_double_parameter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Store a real parameter in an <a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> object</p>
@@ -1171,6 +1309,24 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXIMG.set_shadow_grid_path">
+<code class="sig-name descname">set_shadow_grid_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIMG.html#GXIMG.set_shadow_grid_path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXIMG.set_shadow_grid_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets display information about this image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – Grid path for the shadow grid</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2021.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This values does NOT take immediate effect; it is retrieved and used whenever
+the grid is displayed in a viewer or map, and is used (for instance) to set the default value
+in the Display Grid GX.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1282,6 +1438,135 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 
 </dd></dl>
 
+<div class="section" id="img-display-property-constants">
+<span id="img-display-property"></span><h2>IMG_DISPLAY_PROPERTY constants<a class="headerlink" href="#img-display-property-constants" title="Permalink to this headline">¶</a></h2>
+<p>Image display property</p>
+<dl class="py data">
+<dt id="geosoft.gxapi.IMG_SHADING_INCLINATION">
+<code class="sig-name descname">IMG_SHADING_INCLINATION</code><a class="headerlink" href="#geosoft.gxapi.IMG_SHADING_INCLINATION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shading inclination</p>
+<dl class="py attribute">
+<dt id="id0">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_SHADING_INCLINATION</code><em class="property"> = 0</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.IMG_SHADING_DECLINATION">
+<code class="sig-name descname">IMG_SHADING_DECLINATION</code><a class="headerlink" href="#geosoft.gxapi.IMG_SHADING_DECLINATION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shading declination</p>
+<dl class="py attribute">
+<dt id="id66">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_SHADING_DECLINATION</code><em class="property"> = 1</em><a class="headerlink" href="#id66" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.IMG_SHADING_SCALE">
+<code class="sig-name descname">IMG_SHADING_SCALE</code><a class="headerlink" href="#geosoft.gxapi.IMG_SHADING_SCALE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shading scale</p>
+<dl class="py attribute">
+<dt id="id67">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_SHADING_SCALE</code><em class="property"> = 2</em><a class="headerlink" href="#id67" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.IMG_SHADING_CONTRAST">
+<code class="sig-name descname">IMG_SHADING_CONTRAST</code><a class="headerlink" href="#geosoft.gxapi.IMG_SHADING_CONTRAST" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shading contrast (0-1)</p>
+<dl class="py attribute">
+<dt id="id68">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_SHADING_CONTRAST</code><em class="property"> = 3</em><a class="headerlink" href="#id68" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.IMG_SHADING_BRIGHTNESS">
+<code class="sig-name descname">IMG_SHADING_BRIGHTNESS</code><a class="headerlink" href="#geosoft.gxapi.IMG_SHADING_BRIGHTNESS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shading brightness (0-1)</p>
+<dl class="py attribute">
+<dt id="id69">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_SHADING_BRIGHTNESS</code><em class="property"> = 4</em><a class="headerlink" href="#id69" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.IMG_SHADING_WETLOOK">
+<code class="sig-name descname">IMG_SHADING_WETLOOK</code><a class="headerlink" href="#geosoft.gxapi.IMG_SHADING_WETLOOK" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shading wet look (0 or 1)?</p>
+<dl class="py attribute">
+<dt id="id70">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_SHADING_WETLOOK</code><em class="property"> = 5</em><a class="headerlink" href="#id70" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.IMG_COLOURS_REVERSED">
+<code class="sig-name descname">IMG_COLOURS_REVERSED</code><a class="headerlink" href="#geosoft.gxapi.IMG_COLOURS_REVERSED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zone colours reversed from originals (0 or 1)?</p>
+<dl class="py attribute">
+<dt id="id71">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_COLOURS_REVERSED</code><em class="property"> = 6</em><a class="headerlink" href="#id71" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.IMG_SMOOTHING_ENABLED">
+<code class="sig-name descname">IMG_SMOOTHING_ENABLED</code><a class="headerlink" href="#geosoft.gxapi.IMG_SMOOTHING_ENABLED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is smoothing enabled (0 or 1)?</p>
+<dl class="py attribute">
+<dt id="id72">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_SMOOTHING_ENABLED</code><em class="property"> = 7</em><a class="headerlink" href="#id72" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.IMG_SHADING_ENABLED">
+<code class="sig-name descname">IMG_SHADING_ENABLED</code><a class="headerlink" href="#geosoft.gxapi.IMG_SHADING_ENABLED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is shading enabled (0 or 1)?</p>
+<dl class="py attribute">
+<dt id="id73">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_SHADING_ENABLED</code><em class="property"> = 8</em><a class="headerlink" href="#id73" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="img-fault-constants">
+<span id="img-fault"></span><h2>IMG_FAULT constants<a class="headerlink" href="#img-fault-constants" title="Permalink to this headline">¶</a></h2>
+<p>Fault type</p>
+<dl class="py data">
+<dt id="geosoft.gxapi.IMG_FAULT_POLYLINE">
+<code class="sig-name descname">IMG_FAULT_POLYLINE</code><a class="headerlink" href="#geosoft.gxapi.IMG_FAULT_POLYLINE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Polyline</p>
+<dl class="py attribute">
+<dt id="id74">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_FAULT_POLYLINE</code><em class="property"> = 0</em><a class="headerlink" href="#id74" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.IMG_FAULT_POLYGON">
+<code class="sig-name descname">IMG_FAULT_POLYGON</code><a class="headerlink" href="#geosoft.gxapi.IMG_FAULT_POLYGON" title="Permalink to this definition">¶</a></dt>
+<dd><p>Polygon</p>
+<dl class="py attribute">
+<dt id="id75">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_FAULT_POLYGON</code><em class="property"> = 1</em><a class="headerlink" href="#id75" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="img-file-constants">
 <span id="img-file"></span><h2>IMG_FILE constants<a class="headerlink" href="#img-file-constants" title="Permalink to this headline">¶</a></h2>
 <p>Image open modes</p>
@@ -1290,8 +1575,8 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <code class="sig-name descname">IMG_FILE_READONLY</code><a class="headerlink" href="#geosoft.gxapi.IMG_FILE_READONLY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reading only</p>
 <dl class="py attribute">
-<dt id="id0">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_FILE_READONLY</code><em class="property"> = 0</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dt id="id76">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_FILE_READONLY</code><em class="property"> = 0</em><a class="headerlink" href="#id76" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1301,8 +1586,8 @@ as <a class="reference internal" href="#geosoft.gxapi.GXIMG.set_ipj" title="geos
 <code class="sig-name descname">IMG_FILE_READWRITE</code><a class="headerlink" href="#geosoft.gxapi.IMG_FILE_READWRITE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reading and writting</p>
 <dl class="py attribute">
-<dt id="id58">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_FILE_READWRITE</code><em class="property"> = 2</em><a class="headerlink" href="#id58" title="Permalink to this definition">¶</a></dt>
+<dt id="id77">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_FILE_READWRITE</code><em class="property"> = 2</em><a class="headerlink" href="#id77" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1316,8 +1601,8 @@ to the original grid (dat), the changed projection
 or location information will be passed on to the grid,
 otherwise changes will only occur in the .gi file.</p>
 <dl class="py attribute">
-<dt id="id59">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_FILE_READORWRITE</code><em class="property"> = 3</em><a class="headerlink" href="#id59" title="Permalink to this definition">¶</a></dt>
+<dt id="id78">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_FILE_READORWRITE</code><em class="property"> = 3</em><a class="headerlink" href="#id78" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1331,8 +1616,8 @@ otherwise changes will only occur in the .gi file.</p>
 <code class="sig-name descname">IMG_QUERY_iWRITE</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iWRITE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Iwrite</p>
 <dl class="py attribute">
-<dt id="id60">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iWRITE</code><em class="property"> = 0</em><a class="headerlink" href="#id60" title="Permalink to this definition">¶</a></dt>
+<dt id="id79">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iWRITE</code><em class="property"> = 0</em><a class="headerlink" href="#id79" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1342,8 +1627,8 @@ otherwise changes will only occur in the .gi file.</p>
 <code class="sig-name descname">IMG_QUERY_iPG</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iPG" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ipg</p>
 <dl class="py attribute">
-<dt id="id61">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iPG</code><em class="property"> = 1</em><a class="headerlink" href="#id61" title="Permalink to this definition">¶</a></dt>
+<dt id="id80">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iPG</code><em class="property"> = 1</em><a class="headerlink" href="#id80" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1353,8 +1638,8 @@ otherwise changes will only occur in the .gi file.</p>
 <code class="sig-name descname">IMG_QUERY_iWRITEPG</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iWRITEPG" title="Permalink to this definition">¶</a></dt>
 <dd><p>Iwritepg</p>
 <dl class="py attribute">
-<dt id="id62">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iWRITEPG</code><em class="property"> = 2</em><a class="headerlink" href="#id62" title="Permalink to this definition">¶</a></dt>
+<dt id="id81">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iWRITEPG</code><em class="property"> = 2</em><a class="headerlink" href="#id81" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1364,8 +1649,8 @@ otherwise changes will only occur in the .gi file.</p>
 <code class="sig-name descname">IMG_QUERY_iIMGTYPE</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iIMGTYPE" title="Permalink to this definition">¶</a></dt>
 <dd><p>The element type used to open the <a class="reference internal" href="#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a>.</p>
 <dl class="py attribute">
-<dt id="id63">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iIMGTYPE</code><em class="property"> = 3</em><a class="headerlink" href="#id63" title="Permalink to this definition">¶</a></dt>
+<dt id="id82">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iIMGTYPE</code><em class="property"> = 3</em><a class="headerlink" href="#id82" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1381,8 +1666,8 @@ Types are:   0 - byte
 4 - 32-bit float
 5 - 64-bit double</p>
 <dl class="py attribute">
-<dt id="id64">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iDATTYPE</code><em class="property"> = 4</em><a class="headerlink" href="#id64" title="Permalink to this definition">¶</a></dt>
+<dt id="id83">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iDATTYPE</code><em class="property"> = 4</em><a class="headerlink" href="#id83" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1394,8 +1679,8 @@ Types are:   0 - byte
 1 - pixelate
 2 - color</p>
 <dl class="py attribute">
-<dt id="id65">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iRENDER</code><em class="property"> = 5</em><a class="headerlink" href="#id65" title="Permalink to this definition">¶</a></dt>
+<dt id="id84">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iRENDER</code><em class="property"> = 5</em><a class="headerlink" href="#id84" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1405,8 +1690,8 @@ Types are:   0 - byte
 <code class="sig-name descname">IMG_QUERY_iKX</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iKX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ikx</p>
 <dl class="py attribute">
-<dt id="id66">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iKX</code><em class="property"> = 6</em><a class="headerlink" href="#id66" title="Permalink to this definition">¶</a></dt>
+<dt id="id85">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iKX</code><em class="property"> = 6</em><a class="headerlink" href="#id85" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1416,8 +1701,8 @@ Types are:   0 - byte
 <code class="sig-name descname">IMG_QUERY_iNX</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iNX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inx</p>
 <dl class="py attribute">
-<dt id="id67">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iNX</code><em class="property"> = 7</em><a class="headerlink" href="#id67" title="Permalink to this definition">¶</a></dt>
+<dt id="id86">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iNX</code><em class="property"> = 7</em><a class="headerlink" href="#id86" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1427,8 +1712,8 @@ Types are:   0 - byte
 <code class="sig-name descname">IMG_QUERY_iNY</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iNY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Iny</p>
 <dl class="py attribute">
-<dt id="id68">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iNY</code><em class="property"> = 8</em><a class="headerlink" href="#id68" title="Permalink to this definition">¶</a></dt>
+<dt id="id87">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iNY</code><em class="property"> = 8</em><a class="headerlink" href="#id87" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1438,8 +1723,8 @@ Types are:   0 - byte
 <code class="sig-name descname">IMG_QUERY_iNV</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iNV" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inv</p>
 <dl class="py attribute">
-<dt id="id69">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iNV</code><em class="property"> = 9</em><a class="headerlink" href="#id69" title="Permalink to this definition">¶</a></dt>
+<dt id="id88">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iNV</code><em class="property"> = 9</em><a class="headerlink" href="#id88" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1449,8 +1734,8 @@ Types are:   0 - byte
 <code class="sig-name descname">IMG_QUERY_iNE</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_iNE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ine</p>
 <dl class="py attribute">
-<dt id="id70">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iNE</code><em class="property"> = 10</em><a class="headerlink" href="#id70" title="Permalink to this definition">¶</a></dt>
+<dt id="id89">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_iNE</code><em class="property"> = 10</em><a class="headerlink" href="#id89" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1460,8 +1745,8 @@ Types are:   0 - byte
 <code class="sig-name descname">IMG_QUERY_rXO</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_rXO" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rxo</p>
 <dl class="py attribute">
-<dt id="id71">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_rXO</code><em class="property"> = 11</em><a class="headerlink" href="#id71" title="Permalink to this definition">¶</a></dt>
+<dt id="id90">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_rXO</code><em class="property"> = 11</em><a class="headerlink" href="#id90" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1471,8 +1756,8 @@ Types are:   0 - byte
 <code class="sig-name descname">IMG_QUERY_rYO</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_rYO" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ryo</p>
 <dl class="py attribute">
-<dt id="id72">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_rYO</code><em class="property"> = 12</em><a class="headerlink" href="#id72" title="Permalink to this definition">¶</a></dt>
+<dt id="id91">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_rYO</code><em class="property"> = 12</em><a class="headerlink" href="#id91" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1482,8 +1767,8 @@ Types are:   0 - byte
 <code class="sig-name descname">IMG_QUERY_rDX</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_rDX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rdx</p>
 <dl class="py attribute">
-<dt id="id73">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_rDX</code><em class="property"> = 13</em><a class="headerlink" href="#id73" title="Permalink to this definition">¶</a></dt>
+<dt id="id92">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_rDX</code><em class="property"> = 13</em><a class="headerlink" href="#id92" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1493,8 +1778,8 @@ Types are:   0 - byte
 <code class="sig-name descname">IMG_QUERY_rDY</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_rDY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rdy</p>
 <dl class="py attribute">
-<dt id="id74">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_rDY</code><em class="property"> = 14</em><a class="headerlink" href="#id74" title="Permalink to this definition">¶</a></dt>
+<dt id="id93">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_rDY</code><em class="property"> = 14</em><a class="headerlink" href="#id93" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1504,8 +1789,8 @@ Types are:   0 - byte
 <code class="sig-name descname">IMG_QUERY_rROT</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_rROT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rrot</p>
 <dl class="py attribute">
-<dt id="id75">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_rROT</code><em class="property"> = 15</em><a class="headerlink" href="#id75" title="Permalink to this definition">¶</a></dt>
+<dt id="id94">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_rROT</code><em class="property"> = 15</em><a class="headerlink" href="#id94" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1515,8 +1800,8 @@ Types are:   0 - byte
 <code class="sig-name descname">IMG_QUERY_rBASE</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_rBASE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rbase</p>
 <dl class="py attribute">
-<dt id="id76">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_rBASE</code><em class="property"> = 16</em><a class="headerlink" href="#id76" title="Permalink to this definition">¶</a></dt>
+<dt id="id95">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_rBASE</code><em class="property"> = 16</em><a class="headerlink" href="#id95" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1526,8 +1811,8 @@ Types are:   0 - byte
 <code class="sig-name descname">IMG_QUERY_rMULT</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_rMULT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rmult</p>
 <dl class="py attribute">
-<dt id="id77">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_rMULT</code><em class="property"> = 17</em><a class="headerlink" href="#id77" title="Permalink to this definition">¶</a></dt>
+<dt id="id96">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_rMULT</code><em class="property"> = 17</em><a class="headerlink" href="#id96" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1537,8 +1822,8 @@ Types are:   0 - byte
 <code class="sig-name descname">IMG_QUERY_rCOMPRESSION_RATIO</code><a class="headerlink" href="#geosoft.gxapi.IMG_QUERY_rCOMPRESSION_RATIO" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rcompression ratio</p>
 <dl class="py attribute">
-<dt id="id78">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_rCOMPRESSION_RATIO</code><em class="property"> = 18</em><a class="headerlink" href="#id78" title="Permalink to this definition">¶</a></dt>
+<dt id="id97">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_QUERY_rCOMPRESSION_RATIO</code><em class="property"> = 18</em><a class="headerlink" href="#id97" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1552,8 +1837,8 @@ Types are:   0 - byte
 <code class="sig-name descname">IMG_RELOCATE_FIT</code><a class="headerlink" href="#geosoft.gxapi.IMG_RELOCATE_FIT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Will fit the image to fill the specified area</p>
 <dl class="py attribute">
-<dt id="id79">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_RELOCATE_FIT</code><em class="property"> = 0</em><a class="headerlink" href="#id79" title="Permalink to this definition">¶</a></dt>
+<dt id="id98">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_RELOCATE_FIT</code><em class="property"> = 0</em><a class="headerlink" href="#id98" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1563,8 +1848,8 @@ Types are:   0 - byte
 <code class="sig-name descname">IMG_RELOCATE_ASPECT</code><a class="headerlink" href="#geosoft.gxapi.IMG_RELOCATE_ASPECT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Will maintain aspect ratio</p>
 <dl class="py attribute">
-<dt id="id80">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_RELOCATE_ASPECT</code><em class="property"> = 1</em><a class="headerlink" href="#id80" title="Permalink to this definition">¶</a></dt>
+<dt id="id99">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMG_RELOCATE_ASPECT</code><em class="property"> = 1</em><a class="headerlink" href="#id99" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1585,7 +1870,7 @@ Types are:   0 - byte
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXIMG class</a></li> 
       </ul>
     </div>

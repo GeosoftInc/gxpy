@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXBIGRID class &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <title>GXBIGRID class &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXBIGRID class</a></li> 
       </ul>
     </div>
@@ -105,6 +105,41 @@ assumes data is collected in semi-straight lines.</p>
 control file parameters which the Bigrid program needs
 to execute. Use the LoadParms_BIGRID method to get the
 control file parameters into the <a class="reference internal" href="#geosoft.gxapi.GXBIGRID" title="geosoft.gxapi.GXBIGRID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBIGRID</span></code></a> object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXBIGRID.get_defaults">
+<em class="property">classmethod </em><code class="sig-name descname">get_defaults</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">z</span></em>, <em class="sig-param"><span class="n">cell</span></em>, <em class="sig-param"><span class="n">maxLineSeparation</span></em>, <em class="sig-param"><span class="n">maxPointSeparation</span></em>, <em class="sig-param"><span class="n">trendAngle</span></em>, <em class="sig-param"><span class="n">lowPassWavelength</span></em>, <em class="sig-param"><span class="n">highPass</span></em>, <em class="sig-param"><span class="n">noneLinear</span></em>, <em class="sig-param"><span class="n">preFilter</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXBIGRID.html#GXBIGRID.get_defaults"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXBIGRID.get_defaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get default values for max line separation, max point separation and trend angle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Handle to a database</p></li>
+<li><p><strong>x</strong> (<em>str</em>) – Y Channel</p></li>
+<li><p><strong>y</strong> (<em>str</em>) – X Channel</p></li>
+<li><p><strong>z</strong> (<em>str</em>) – Data channel</p></li>
+<li><p><strong>cell</strong> (<em>float</em>) – cell size</p></li>
+<li><p><strong>maxLineSeparation</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – max line separation</p></li>
+<li><p><strong>maxPointSeparation</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – max point separation</p></li>
+<li><p><strong>trendAngle</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – trend angle</p></li>
+<li><p><strong>lowPassWavelength</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – low-pass filter wavelength</p></li>
+<li><p><strong>highPass</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – high-pass filter wavelength</p></li>
+<li><p><strong>noneLinear</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – non-linear filter tolerance</p></li>
+<li><p><strong>preFilter</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – pre-filter sample increment</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>0 - Ok
+1 - Error</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2021.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -265,7 +300,7 @@ created. Otherwise, the old file will be overwritten.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXBIGRID class</a></li> 
       </ul>
     </div>

@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXAGG &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <title>geosoft.gxapi.GXAGG &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXAGG</a></li> 
@@ -68,6 +68,7 @@
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+<span class="kn">from</span> <span class="nn">.GXST</span> <span class="kn">import</span> <span class="n">GXST</span>
 
 
 <span class="c1">### endblock ClassImports</span>
@@ -222,6 +223,33 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_layer_itr</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">itr</span><span class="p">)</span></div>
         
+
+
+
+
+<div class="viewcode-block" id="GXAGG.get_layer_st"><a class="viewcode-back" href="../../../GXAGG.html#geosoft.gxapi.GXAGG.get_layer_st">[docs]</a>    <span class="k">def</span> <span class="nf">get_layer_st</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a `GXST &lt;geosoft.gxapi.GXST&gt;` filled with layer statistics</span>
+<span class="sd">        </span>
+<span class="sd">        :param layer:  Layer number</span>
+<span class="sd">        :type  layer:  int</span>
+
+<span class="sd">        :returns:      `GXST &lt;geosoft.gxapi.GXST&gt;` object</span>
+<span class="sd">        :rtype:        GXST</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Layers are numbered from 0, consecutively in the order they are</span>
+<span class="sd">        placed in the aggregate.</span>
+
+<span class="sd">        An error will occur if the layer does not exist.</span>
+
+<span class="sd">        Caller must create/destroy `GXITR &lt;geosoft.gxapi.GXITR&gt;`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_layer_st</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXST</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
 
 
@@ -453,7 +481,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXAGG</a></li> 

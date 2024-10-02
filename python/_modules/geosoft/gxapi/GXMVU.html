@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXMVU &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <title>geosoft.gxapi.GXMVU &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMVU</a></li> 
@@ -654,6 +654,41 @@
 <span class="sd">        DIVISION_STYLE         One of MVU_DIVISION_STYLE_XXX (DEFAULT = `MVU_DIVISION_STYLE_LINES &lt;geosoft.gxapi.MVU_DIVISION_STYLE_LINES&gt;`)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMVU</span><span class="o">.</span><span class="n">_color_bar_reg</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">itr2</span><span class="p">,</span> <span class="n">reg</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMVU.color_bar_reg_ex"><a class="viewcode-back" href="../../../GXMVU.html#geosoft.gxapi.GXMVU.color_bar_reg_ex">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">color_bar_reg_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">st_hist</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">itr2</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a Color Bar in view</span>
+<span class="sd">        </span>
+<span class="sd">        :param mview:    View</span>
+<span class="sd">        :param st_hist:  `GXST &lt;geosoft.gxapi.GXST&gt;` with histogram info of original</span>
+<span class="sd">        :param itr:      Itr</span>
+<span class="sd">        :param itr2:     Optional 2nd Itr (can be null)</span>
+<span class="sd">        :param reg:      Parameters</span>
+<span class="sd">        :param vv:       Ranges</span>
+<span class="sd">        :type  mview:    GXMVIEW</span>
+<span class="sd">        :type  st_hist:  GXST</span>
+<span class="sd">        :type  itr:      GXITR</span>
+<span class="sd">        :type  itr2:     GXITR</span>
+<span class="sd">        :type  reg:      GXREG</span>
+<span class="sd">        :type  vv:       GXVV</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** See `color_bar_reg &lt;geosoft.gxapi.GXMVU.color_bar_reg&gt;`.  This is the same except for the</span>
+<span class="sd">        additional Ranges VV parameter.        </span>
+<span class="sd">        The VV is not part of the REG object, it contains the interval values for the exact interval option from an ASCII file.</span>
+
+<span class="sd">        .. seealso::</span>
+
+<span class="sd">            `color_bar_reg &lt;geosoft.gxapi.GXMVU.color_bar_reg&gt;`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMVU</span><span class="o">.</span><span class="n">_color_bar_reg_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">st_hist</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">itr2</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
         
 
 
@@ -2509,7 +2544,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMVU</a></li> 

@@ -949,6 +949,124 @@ geosoft.gxapi module history
 ==========================================
 
   
+Version 2021.2
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXAGG.get_layer_st` Get a `GXST <geosoft.gxapi.GXST>` filled with layer statistics
+
+:func:`geosoft.gxapi.GXBIGRID.get_defaults` Get default values for max line separation, max point separation and trend angle.
+
+:func:`geosoft.gxapi.GXCSYMB.get_stat` Get the `GXST <geosoft.gxapi.GXST>` of the `GXCSYMB <geosoft.gxapi.GXCSYMB>`
+
+:func:`geosoft.gxapi.GXDCOL.end` TODO
+
+:func:`geosoft.gxapi.GXDCOL.get_brightness_type` Is brightness set separately by layer and by object or just by object?
+
+:func:`geosoft.gxapi.GXDCOL.get_brightness` Get the brightness of a single layer, or all the layers
+
+:func:`geosoft.gxapi.GXDCOL.get_layer_histogram` Get a `GXVV <geosoft.gxapi.GXVV>` filled with histogram bin counts for each zone of the ITR
+
+:func:`geosoft.gxapi.GXDCOL.get_layer_info` Get a layer's information
+
+:func:`geosoft.gxapi.GXDCOL.get_layer_itr` Get a layer's ITR
+
+:func:`geosoft.gxapi.GXDCOL.get_layer_statistics` Get a `GXST <geosoft.gxapi.GXST>` filled with layer statistics
+
+:func:`geosoft.gxapi.GXDCOL.get_transparency` Get the transparency. This is returned for the entire map group.
+
+:func:`geosoft.gxapi.GXDCOL.get_type` Get a layer's type
+
+:func:`geosoft.gxapi.GXDCOL.number_of_layers` Get the number of layers.
+
+:func:`geosoft.gxapi.GXDCOL.reset` Reset the AGG back to its initial state. Same as cancelling out of the colour tool and restarting; all layers are reset.
+
+:func:`geosoft.gxapi.GXDCOL.save_layer_itr` Save the layer's ITR to a file. A dialog prompts for the file name.
+
+:func:`geosoft.gxapi.GXDCOL.set_brightness` Set the brightness of a single layer, or all the layers
+
+:func:`geosoft.gxapi.GXDCOL.set_itr_transform_from_layer` Set the input ITR transform to the provided type, based on the statistics of the chosen layer.
+
+:func:`geosoft.gxapi.GXDCOL.set_layer_itr` Set a layer's ITR
+
+:func:`geosoft.gxapi.GXDCOL.set_transparency` Set the transparency. This is set for the entire map group.
+
+:func:`geosoft.gxapi.GXDCOL.update_zone_transform_type` Recalculate the layer's ITR to the provided type, based on the statistics of the chosen layer.
+
+:func:`geosoft.gxapi.GXGUI.grid_stat_hist5` Display Histogram of up to 5 different grids
+
+:func:`geosoft.gxapi.GXIMG.get_display_property` Gets display information about this image.
+
+:func:`geosoft.gxapi.GXIMG.get_shadow_grid_path` Gets the name of a view.
+
+:func:`geosoft.gxapi.GXIMG.set_display_property` Sets display information about this image.
+
+:func:`geosoft.gxapi.GXIMG.set_shadow_grid_path` Sets display information about this image.
+
+:func:`geosoft.gxapi.GXITR.get_contour` Get the contour value associated with the current transform model of the `GXITR <geosoft.gxapi.GXITR>`
+
+:func:`geosoft.gxapi.GXITR.get_contrast` Get the contrast setting of the `GXITR <geosoft.gxapi.GXITR>`
+
+:func:`geosoft.gxapi.GXITR.get_name` Get the name of the `GXITR <geosoft.gxapi.GXITR>`.
+
+:func:`geosoft.gxapi.GXITR.get_zone_active` Get whether a zone of the `GXITR <geosoft.gxapi.GXITR>` is active (1) or rendered trasparent (0)
+
+:func:`geosoft.gxapi.GXITR.get_zone_base_color` Get the base color in a zone of the `GXITR <geosoft.gxapi.GXITR>`
+
+:func:`geosoft.gxapi.GXITR.get_zone_model` Get the `GXITR <geosoft.gxapi.GXITR>` zone model (e.g. Linear, LogLin, Equal Area) and the accompanying values (if defined)
+
+:func:`geosoft.gxapi.GXITR.set_name` Set the name of the `GXITR <geosoft.gxapi.GXITR>`.
+
+:func:`geosoft.gxapi.GXITR.set_zone_active` Set whether a zone of the `GXITR <geosoft.gxapi.GXITR>` is active (1) or rendered trasparent (0)
+
+:func:`geosoft.gxapi.GXITR.set_zone_base_color` Set the color in a zone of the `GXITR <geosoft.gxapi.GXITR>`
+
+:func:`geosoft.gxapi.GXITR.set_zone_model` Set the `GXITR <geosoft.gxapi.GXITR>` zone model (e.g. Linear, LogLin, Equal Area) and the accompanying values (if defined)
+
+:func:`geosoft.gxapi.GXKGRD.get_defaults` Get default blanking distance and low-pass desampling factor.
+
+:func:`geosoft.gxapi.GXMESHUTIL.apply_transformation` Applies a transformation to a surface, see :ref:`SURFACE_TRANSFORMATION_METHOD`for available operations. The existing mesh will be preserved, and a new mesh will be created with the target name in the target file. Reprojection willbe handled automatically in the case that the coordinate systems differ.
+
+:func:`geosoft.gxapi.GXMESHUTIL.copy_mesh_to_geo_surface_file` Copy a mesh from one geosurface file to another
+
+:func:`geosoft.gxapi.GXMESHUTIL.project_geosurface_onto_grid` Repoject surface with the coordinate system of the `GXIPJ <geosoft.gxapi.GXIPJ>`.
+
+:func:`geosoft.gxapi.GXMESHUTIL.reproject_geosurface_file` Repoject surface with the coordinate system of the `GXIPJ <geosoft.gxapi.GXIPJ>`.
+
+:func:`geosoft.gxapi.GXPROJ.get_central_project_information` Get Central project information.
+
+:func:`geosoft.gxapi.GXPROJ.get_server_and_project_guid` Return the unique identifier of the project and server.
+
+:func:`geosoft.gxapi.GXPROJ.set_central_project_information` Set Central project information.
+
+:func:`geosoft.gxapi.GXSHD.end_shading` This ends interactive shading and must be called if any interactive changes should be applied. Passing false to apply changes is equivalent to simply disposing handle.
+
+:func:`geosoft.gxapi.GXSHD.refresh` Refresh the SHD with new shading parameters.
+
+:func:`geosoft.gxapi.GXSHD.track_interactive` Track a line on map and get shading parameters based on its length and direction.
+
+:func:`geosoft.gxapi.GXSYS.get_publish_path_for_central` Get cache path to publish datasets to Central
+
+:func:`geosoft.gxapi.GXSYS.publish_datasets_to_central` Publish datasets to Central
+
+
+  
+Version 2021.1
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.database_contains_voxel_geometry` Returns 1 if the original voxel geometry is stored inside the database
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_gdb_ignore_stored_voxel_geometry` Imports from a Geosoft Database, but ignores any stored internal geometry
+
+
+  
 Version 9.10
 -----------------
 
@@ -956,7 +1074,21 @@ Version 9.10
 New Functions
 ^^^^^^^^^^^^^
 
+:func:`geosoft.gxapi.GXDH.update_template_blob` Update the import template and store to the database if necessary.
+
 :func:`geosoft.gxapi.GXDU.sort_index_n` Create an ordered index from any number of channels.  The order of rows where compared items are the same is preserved.
+
+:func:`geosoft.gxapi.GXIMG.add_fault` Add a fault trace
+
+:func:`geosoft.gxapi.GXIMG.delete_fault` Delete a fault trace
+
+:func:`geosoft.gxapi.GXIMG.get_fault` Retrieve a fault trace
+
+:func:`geosoft.gxapi.GXIMG.number_of_faults` Returns the number of individual fault traces stored in the IMG
+
+:func:`geosoft.gxapi.GXIP.get_line_data` Get electrodes, data and mask values for a single line.
+
+:func:`geosoft.gxapi.GXIP.recalculate_derived_data` Recalculate derived channel values.
 
 :func:`geosoft.gxapi.GXIPJ.add_as_favourite_coordinate_system` Add as favourite coordinate system to Settings.
 
@@ -984,9 +1116,32 @@ New Functions
 
 :func:`geosoft.gxapi.GXKML.import_3d_polygon` Imports a KML 3D polygon into a provided view.
 
+:func:`geosoft.gxapi.GXMVIEW.add_folder_3d` Add a folder to the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+
+:func:`geosoft.gxapi.GXMVIEW.delete_folder_3d` Delete a folder.
+
+:func:`geosoft.gxapi.GXMVIEW.get_folder_items_3d` Get the list of folders in the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+
+:func:`geosoft.gxapi.GXMVIEW.move_group_to_folder_3d` Add group to a folder in `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+
+:func:`geosoft.gxapi.GXMVU.color_bar_reg_ex` Create a Color Bar in view
+
+:func:`geosoft.gxapi.GXPG.set` Write a single value to a 2D `GXPG <geosoft.gxapi.GXPG>`
+
 :func:`geosoft.gxapi.GXSEGYREADER.get_trace_data` Get the SEG Y trace file header data for a particular starting trace
 
 :func:`geosoft.gxapi.GXSEGYREADER.get_trace_header_as_json` Return the contents of a trace header as JSON.
+
+
+  
+Version 9.9.1
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXGUI.configure_connection` Configures connection string from ODBC database data.
 
 
   

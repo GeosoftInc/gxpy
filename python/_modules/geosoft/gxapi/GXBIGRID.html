@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXBIGRID &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <title>geosoft.gxapi.GXBIGRID &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXBIGRID</a></li> 
@@ -268,8 +268,51 @@
 <span class="sd">        **Note:** If the control file did not previously exist, it will be</span>
 <span class="sd">        created. Otherwise, the old file will be overwritten.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_save_parms</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save_parms</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
         
+
+
+
+<div class="viewcode-block" id="GXBIGRID.get_defaults"><a class="viewcode-back" href="../../../GXBIGRID.html#geosoft.gxapi.GXBIGRID.get_defaults">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_defaults</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">maxLineSeparation</span><span class="p">,</span> <span class="n">maxPointSeparation</span><span class="p">,</span> <span class="n">trendAngle</span><span class="p">,</span> <span class="n">lowPassWavelength</span><span class="p">,</span> <span class="n">highPass</span><span class="p">,</span> <span class="n">noneLinear</span><span class="p">,</span> <span class="n">preFilter</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get default values for max line separation, max point separation and trend angle.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:                  Handle to a database</span>
+<span class="sd">        :param x:                   Y Channel</span>
+<span class="sd">        :param y:                   X Channel</span>
+<span class="sd">        :param z:                   Data channel</span>
+<span class="sd">        :param cell:                cell size</span>
+<span class="sd">        :param maxLineSeparation:   max line separation</span>
+<span class="sd">        :param maxPointSeparation:  max point separation</span>
+<span class="sd">        :param trendAngle:          trend angle</span>
+<span class="sd">        :param lowPassWavelength:   low-pass filter wavelength</span>
+<span class="sd">        :param highPass:            high-pass filter wavelength</span>
+<span class="sd">        :param noneLinear:          non-linear filter tolerance</span>
+<span class="sd">        :param preFilter:           pre-filter sample increment</span>
+<span class="sd">        :type  db:                  GXDB</span>
+<span class="sd">        :type  x:                   str</span>
+<span class="sd">        :type  y:                   str</span>
+<span class="sd">        :type  z:                   str</span>
+<span class="sd">        :type  cell:                float</span>
+<span class="sd">        :type  maxLineSeparation:   float_ref</span>
+<span class="sd">        :type  maxPointSeparation:  float_ref</span>
+<span class="sd">        :type  trendAngle:          float_ref</span>
+<span class="sd">        :type  lowPassWavelength:   float_ref</span>
+<span class="sd">        :type  highPass:            float_ref</span>
+<span class="sd">        :type  noneLinear:          float_ref</span>
+<span class="sd">        :type  preFilter:           float_ref</span>
+
+<span class="sd">        :returns:                   0 - Ok</span>
+<span class="sd">                                    1 - Error</span>
+<span class="sd">        :rtype:                     int</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span><span class="p">,</span> <span class="n">maxLineSeparation</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">maxPointSeparation</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">trendAngle</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lowPassWavelength</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">highPass</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">noneLinear</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">preFilter</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapBIGRID</span><span class="o">.</span><span class="n">_get_defaults</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">z</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">cell</span><span class="p">,</span> <span class="n">maxLineSeparation</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">maxPointSeparation</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">trendAngle</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lowPassWavelength</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">highPass</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">noneLinear</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">preFilter</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div></div>
 
 
 
@@ -298,7 +341,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXBIGRID</a></li> 

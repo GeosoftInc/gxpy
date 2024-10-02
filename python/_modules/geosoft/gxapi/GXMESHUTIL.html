@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXMESHUTIL &#8212; Geosoft GX Python API 9.10.0 documentation</title>
+    <title>geosoft.gxapi.GXMESHUTIL &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMESHUTIL</a></li> 
@@ -432,7 +432,105 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="o">.</span><span class="n">_extract_isosurface_from_voxel</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">voxelFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">surfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">surfaceName</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">contourMin</span><span class="p">,</span> <span class="n">contourMax</span><span class="p">,</span> <span class="n">close</span><span class="p">)</span></div></div>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="o">.</span><span class="n">_extract_isosurface_from_voxel</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">voxelFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">surfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">surfaceName</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">contourMin</span><span class="p">,</span> <span class="n">contourMax</span><span class="p">,</span> <span class="n">close</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMESHUTIL.reproject_geosurface_file"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.reproject_geosurface_file">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">reproject_geosurface_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_surface_filename</span><span class="p">,</span> <span class="n">output_surface_filename</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Repoject surface with the coordinate system of the `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param input_surface_filename:   Input Geosurface file name</span>
+<span class="sd">        :param output_surface_filename:  Output Geosurface file name</span>
+<span class="sd">        :param ipj:                      `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` in which to place the new Geosurface coordinate system</span>
+<span class="sd">        :type  input_surface_filename:   str</span>
+<span class="sd">        :type  output_surface_filename:  str</span>
+<span class="sd">        :type  ipj:                      GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="o">.</span><span class="n">_reproject_geosurface_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">input_surface_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_surface_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMESHUTIL.project_geosurface_onto_grid"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.project_geosurface_onto_grid">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">project_geosurface_onto_grid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">surface_filename</span><span class="p">,</span> <span class="n">surface_name</span><span class="p">,</span> <span class="n">input_geometry_grid</span><span class="p">,</span> <span class="n">projection_method</span><span class="p">,</span> <span class="n">output_grid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Repoject surface with the coordinate system of the `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param surface_filename:     Input Geosurface file name</span>
+<span class="sd">        :param surface_name:         Geosurface surface name</span>
+<span class="sd">        :param input_geometry_grid:  Input Geometry grid</span>
+<span class="sd">        :param projection_method:    :ref:`SURFACE_PROJECTION_METHOD`</span>
+<span class="sd">        :param output_grid:          Output grid</span>
+<span class="sd">        :type  surface_filename:     str</span>
+<span class="sd">        :type  surface_name:         str</span>
+<span class="sd">        :type  input_geometry_grid:  str</span>
+<span class="sd">        :type  projection_method:    int</span>
+<span class="sd">        :type  output_grid:          str</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="o">.</span><span class="n">_project_geosurface_onto_grid</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">surface_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">surface_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">input_geometry_grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">projection_method</span><span class="p">,</span> <span class="n">output_grid</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMESHUTIL.copy_mesh_to_geo_surface_file"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.copy_mesh_to_geo_surface_file">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">copy_mesh_to_geo_surface_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_surface_filename</span><span class="p">,</span> <span class="n">surface_name</span><span class="p">,</span> <span class="n">output_surface_filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy a mesh from one geosurface file to another</span>
+<span class="sd">        </span>
+<span class="sd">        :param input_surface_filename:   Input Geosurface file name</span>
+<span class="sd">        :param surface_name:             Geosurface surface name</span>
+<span class="sd">        :param output_surface_filename:  Output Geosurface file name</span>
+<span class="sd">        :type  input_surface_filename:   str</span>
+<span class="sd">        :type  surface_name:             str</span>
+<span class="sd">        :type  output_surface_filename:  str</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="o">.</span><span class="n">_copy_mesh_to_geo_surface_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">input_surface_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">surface_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_surface_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXMESHUTIL.apply_transformation"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.apply_transformation">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">apply_transformation</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">inputSurfaceFile</span><span class="p">,</span> <span class="n">inputSurfaceName</span><span class="p">,</span> <span class="n">outputSurfaceFile</span><span class="p">,</span> <span class="n">outputSurfaceName</span><span class="p">,</span> <span class="n">transformationMethod</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies a transformation to a surface, see :ref:`SURFACE_TRANSFORMATION_METHOD`for available operations. The existing mesh will be preserved, and a new mesh will be created with the target name in the target file. Reprojection willbe handled automatically in the case that the coordinate systems differ.</span>
+<span class="sd">        </span>
+<span class="sd">        :param inputSurfaceFile:      Input surface file name</span>
+<span class="sd">        :param inputSurfaceName:      Input surface layer (mesh) name</span>
+<span class="sd">        :param outputSurfaceFile:     Output surface file name</span>
+<span class="sd">        :param outputSurfaceName:     Output surface layer (mesh) name</span>
+<span class="sd">        :param transformationMethod:  :ref:`SURFACE_TRANSFORMATION_METHOD`</span>
+<span class="sd">        :param x:                     X transformation component</span>
+<span class="sd">        :param y:                     Y transformation component</span>
+<span class="sd">        :param z:                     Z transformation component</span>
+<span class="sd">        :type  inputSurfaceFile:      str</span>
+<span class="sd">        :type  inputSurfaceName:      str</span>
+<span class="sd">        :type  outputSurfaceFile:     str</span>
+<span class="sd">        :type  outputSurfaceName:     str</span>
+<span class="sd">        :type  transformationMethod:  int</span>
+<span class="sd">        :type  x:                     float</span>
+<span class="sd">        :type  y:                     float</span>
+<span class="sd">        :type  z:                     float</span>
+
+<span class="sd">        .. versionadded:: 2021.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="o">.</span><span class="n">_apply_transformation</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">inputSurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">inputSurfaceName</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">outputSurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">outputSurfaceName</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">transformationMethod</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span></div></div>
         
 
 
@@ -462,7 +560,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMESHUTIL</a></li> 
