@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXFFT2 &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
+    <title>geosoft.gxapi.GXFFT2 &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXFFT2</a></li> 
@@ -112,6 +112,31 @@
 
 
 <span class="c1"># Miscellaneous</span>
+
+
+<div class="viewcode-block" id="GXFFT2.cross_correlation_pg"><a class="viewcode-back" href="../../../GXFFT2.html#geosoft.gxapi.GXFFT2.cross_correlation_pg">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">cross_correlation_pg</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg1</span><span class="p">,</span> <span class="n">pg2</span><span class="p">,</span> <span class="n">normalise</span><span class="p">,</span> <span class="n">pgo</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate the cross-correlation of two transform pagers: </span>
+<span class="sd">        The complex conjugate of (r, i) items in the first pager are </span>
+<span class="sd">        multiplied by the second pager (r, i) values.</span>
+<span class="sd">        </span>
+<span class="sd">        :param pg1:        Input pager 1</span>
+<span class="sd">        :param pg2:        Input pager 2</span>
+<span class="sd">        :param normalise:  0 - do not normalise, 1 - result is normalised by max value</span>
+<span class="sd">        :param pgo:        Output pager</span>
+<span class="sd">        :type  pg1:        GXPG</span>
+<span class="sd">        :type  pg2:        GXPG</span>
+<span class="sd">        :type  normalise:  int</span>
+<span class="sd">        :type  pgo:        GXPG</span>
+
+<span class="sd">        .. versionadded:: 2023.2</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapFFT2</span><span class="o">.</span><span class="n">_cross_correlation_pg</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg1</span><span class="p">,</span> <span class="n">pg2</span><span class="p">,</span> <span class="n">normalise</span><span class="p">,</span> <span class="n">pgo</span><span class="p">)</span></div>
+        
+
 
 
 <div class="viewcode-block" id="GXFFT2.fft2_in"><a class="viewcode-back" href="../../../GXFFT2.html#geosoft.gxapi.GXFFT2.fft2_in">[docs]</a>    <span class="nd">@classmethod</span>
@@ -399,7 +424,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXFFT2</a></li> 

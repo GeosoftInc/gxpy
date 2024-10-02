@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXVA &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
+    <title>geosoft.gxapi.GXVA &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVA</a></li> 
@@ -794,6 +794,31 @@
 
 
 
+<div class="viewcode-block" id="GXVA.set_int_n"><a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.set_int_n">[docs]</a>    <span class="k">def</span> <span class="nf">set_int_n</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set N rows of integer elements in a `GXVA &lt;geosoft.gxapi.GXVA&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param start:  Start row index (&gt;= 0)</span>
+<span class="sd">        :param n:      # of rows to set (-1 sets all rows to end)</span>
+<span class="sd">        :param value:  Value to set</span>
+<span class="sd">        :type  start:  int</span>
+<span class="sd">        :type  n:      int</span>
+<span class="sd">        :type  value:  int</span>
+
+<span class="sd">        .. versionadded:: 2023.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Element row starting index being set cannot be &lt; 0.</span>
+<span class="sd">        If the element row index is &gt;= current `GXVA &lt;geosoft.gxapi.GXVA&gt;` length, the `GXVA &lt;geosoft.gxapi.GXVA&gt;` length is</span>
+<span class="sd">        increased.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_int_n</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
 <div class="viewcode-block" id="GXVA.set_ln"><a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.set_ln">[docs]</a>    <span class="k">def</span> <span class="nf">set_ln</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rows</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the length (number of rows) of the `GXVA &lt;geosoft.gxapi.GXVA&gt;`</span>
@@ -1069,7 +1094,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVA</a></li> 

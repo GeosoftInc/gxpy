@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXFFT2 class &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
+    <title>GXFFT2 class &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXFFT2 class</a></li> 
       </ul>
     </div>
@@ -82,6 +82,28 @@ their own <a class="reference internal" href="#geosoft.gxapi.GXFFT2" title="geos
 <dt id="geosoft.gxapi.GXFFT2.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT2.html#GXFFT2.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT2.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXFFT2.cross_correlation_pg">
+<em class="property">classmethod </em><code class="sig-name descname">cross_correlation_pg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg1</span></em>, <em class="sig-param"><span class="n">pg2</span></em>, <em class="sig-param"><span class="n">normalise</span></em>, <em class="sig-param"><span class="n">pgo</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT2.html#GXFFT2.cross_correlation_pg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT2.cross_correlation_pg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the cross-correlation of two transform pagers: 
+The complex conjugate of (r, i) items in the first pager are 
+multiplied by the second pager (r, i) values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pg1</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input pager 1</p></li>
+<li><p><strong>pg2</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input pager 2</p></li>
+<li><p><strong>normalise</strong> (<em>int</em>) – 0 - do not normalise, 1 - result is normalised by max value</p></li>
+<li><p><strong>pgo</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Output pager</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2023.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -365,8 +387,8 @@ their own <a class="reference internal" href="#geosoft.gxapi.GXFFT2" title="geos
 <code class="sig-name descname">FFT2_PG_INVERSE</code><a class="headerlink" href="#geosoft.gxapi.FFT2_PG_INVERSE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inverse</p>
 <dl class="py attribute">
-<dt id="id11">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">FFT2_PG_INVERSE</code><em class="property"> = 1</em><a class="headerlink" href="#id11" title="Permalink to this definition">¶</a></dt>
+<dt id="id12">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">FFT2_PG_INVERSE</code><em class="property"> = 1</em><a class="headerlink" href="#id12" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -387,7 +409,7 @@ their own <a class="reference internal" href="#geosoft.gxapi.GXFFT2" title="geos
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXFFT2 class</a></li> 
       </ul>
     </div>

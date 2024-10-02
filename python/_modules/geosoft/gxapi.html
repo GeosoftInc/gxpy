@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
+    <title>geosoft.gxapi &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
     <link rel="stylesheet" href="../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi</a></li> 
       </ul>
@@ -3300,6 +3300,8 @@
 <span class="n">ST_NZERO</span> <span class="o">=</span> <span class="mi">22</span>
 <span class="c1">#: Total number of items (dummy and non-dummy)</span>
 <span class="n">ST_TOTAL</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="c1">#: Number of empty strings from string inputs</span>
+<span class="n">ST_NEMPTYSTRINGS</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="c1">#: St dummies</span>
 <span class="n">ST_DUMMIES</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="c1">#: St min</span>
@@ -6904,7 +6906,19 @@
 <span class="c1">#: Display the object unless user set option not to</span>
 <span class="n">PROJ_DISPLAY_YES</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="c1">#: Always display the object</span>
-<span class="n">PROJ_DISPLAY_ALWAYS</span> <span class="o">=</span> <span class="mi">2</span>	
+<span class="n">PROJ_DISPLAY_ALWAYS</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1">#</span>
+<span class="c1"># PROJ_OMS constants</span>
+<span class="c1">#</span>
+<span class="c1"># Script registration</span>
+
+<span class="c1">#: Buffer size for script primary and secondary names</span>
+<span class="n">PROJ_OMS_NAME_SIZE</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="c1">#: Buffer size for the date/time string</span>
+<span class="n">PROJ_OMS_DATETIME_SIZE</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="c1">#: Buffer size for process ID</span>
+<span class="n">PROJ_OMS_PROCESSID_SIZE</span> <span class="o">=</span> <span class="mi">16</span>	
 
 <span class="c1">#</span>
 <span class="c1"># GXRGRD Constants</span>
@@ -7732,7 +7746,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi</a></li> 
       </ul>

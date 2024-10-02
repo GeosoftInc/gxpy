@@ -32,6 +32,10 @@ Information to retrieve
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.ST_TOTAL
+.. autodata:: geosoft.gxapi.ST_NEMPTYSTRINGS
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.ST_NEMPTYSTRINGS
 .. autodata:: geosoft.gxapi.ST_DUMMIES
     :annotation:
     

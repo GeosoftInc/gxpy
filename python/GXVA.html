@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXVA class &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
+    <title>GXVA class &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXVA class</a></li> 
       </ul>
     </div>
@@ -811,6 +811,28 @@ increased.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="geosoft.gxapi.GXVA.set_int_n">
+<code class="sig-name descname">set_int_n</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.set_int_n"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.set_int_n" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set N rows of integer elements in a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>int</em>) – Start row index (&gt;= 0)</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – # of rows to set (-1 sets all rows to end)</p></li>
+<li><p><strong>value</strong> (<em>int</em>) – Value to set</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2023.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Element row starting index being set cannot be &lt; 0.
+If the element row index is &gt;= current <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> length, the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> length is
+increased.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="geosoft.gxapi.GXVA.set_ln">
 <code class="sig-name descname">set_ln</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rows</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.set_ln"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.set_ln" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the length (number of rows) of the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a></p>
@@ -954,8 +976,8 @@ If any values are dummy, the result will be dummy.</p>
 <code class="sig-name descname">VA_AVERAGE_COLUMNS</code><a class="headerlink" href="#geosoft.gxapi.VA_AVERAGE_COLUMNS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Average the Columns</p>
 <dl class="py attribute">
-<dt id="id37">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">VA_AVERAGE_COLUMNS</code><em class="property"> = 1</em><a class="headerlink" href="#id37" title="Permalink to this definition">¶</a></dt>
+<dt id="id38">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">VA_AVERAGE_COLUMNS</code><em class="property"> = 1</em><a class="headerlink" href="#id38" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -969,8 +991,8 @@ If any values are dummy, the result will be dummy.</p>
 <code class="sig-name descname">VA_ROW</code><a class="headerlink" href="#geosoft.gxapi.VA_ROW" title="Permalink to this definition">¶</a></dt>
 <dd><p>Row</p>
 <dl class="py attribute">
-<dt id="id38">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">VA_ROW</code><em class="property"> = 0</em><a class="headerlink" href="#id38" title="Permalink to this definition">¶</a></dt>
+<dt id="id39">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">VA_ROW</code><em class="property"> = 0</em><a class="headerlink" href="#id39" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -980,8 +1002,8 @@ If any values are dummy, the result will be dummy.</p>
 <code class="sig-name descname">VA_COL</code><a class="headerlink" href="#geosoft.gxapi.VA_COL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Column</p>
 <dl class="py attribute">
-<dt id="id39">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">VA_COL</code><em class="property"> = 1</em><a class="headerlink" href="#id39" title="Permalink to this definition">¶</a></dt>
+<dt id="id40">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">VA_COL</code><em class="property"> = 1</em><a class="headerlink" href="#id40" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1002,7 +1024,7 @@ If any values are dummy, the result will be dummy.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXVA class</a></li> 
       </ul>
     </div>

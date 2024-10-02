@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXPROJ class &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
+    <title>GXPROJ class &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXPROJ class</a></li> 
       </ul>
     </div>
@@ -42,6 +42,7 @@
 <li><a class="reference internal" href="#command-env-constants">COMMAND_ENV constants</a></li>
 <li><a class="reference internal" href="#tool-type-constants">TOOL_TYPE constants</a></li>
 <li><a class="reference internal" href="#proj-display-constants">PROJ_DISPLAY constants</a></li>
+<li><a class="reference internal" href="#proj-oms-constants">PROJ_OMS constants</a></li>
 </ul>
 </li>
 </ul>
@@ -384,6 +385,52 @@ in geogxguigxx_app.cpp and in the COMMAND_ENVIRONMENT enums in geoengine.coreinc
 </dd></dl>
 
 <dl class="py method">
+<dt id="geosoft.gxapi.GXPROJ.get_num_registered_background_scripts">
+<em class="property">classmethod </em><code class="sig-name descname">get_num_registered_background_scripts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPROJ.html#GXPROJ.get_num_registered_background_scripts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPROJ.get_num_registered_background_scripts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a OMS script launched from the project</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The number of registered background scripts: in progress, finished, failed, deleted etc.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2022.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Allows the project to track the progress/failure/success of scripts launched in the background</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXPROJ.get_registered_background_script">
+<em class="property">classmethod </em><code class="sig-name descname">get_registered_background_script</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">date_time</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">name2</span></em>, <em class="sig-param"><span class="n">script</span></em>, <em class="sig-param"><span class="n">log</span></em>, <em class="sig-param"><span class="n">output_files</span></em>, <em class="sig-param"><span class="n">process_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPROJ.html#GXPROJ.get_registered_background_script"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPROJ.get_registered_background_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve info on a registered OMS script launched from the project</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – Index for the process (input) 0 to N-1</p></li>
+<li><p><strong>date_time</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Date/Time string in format DD/MM/YYYY hh:mm:ss</p></li>
+<li><p><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name for the process (output)</p></li>
+<li><p><strong>name2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Secondary name for the process (output)</p></li>
+<li><p><strong>script</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – file name of the script (output)</p></li>
+<li><p><strong>log</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – file name of the output log (returned, can be empty).</p></li>
+<li><p><strong>output_files</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – List of output documents created by the script. of size -<a class="reference internal" href="GXGEOSOFT.html#id50" title="geosoft.gxapi.STR_FILE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">STR_FILE</span></code></a></p></li>
+<li><p><strong>process_id</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Process ID (returned)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2022.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> reference by index</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="geosoft.gxapi.GXPROJ.get_server_and_project_guid">
 <em class="property">classmethod </em><code class="sig-name descname">get_server_and_project_guid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">server_id</span></em>, <em class="sig-param"><span class="n">project_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPROJ.html#GXPROJ.get_server_and_project_guid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPROJ.get_server_and_project_guid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the unique identifier of the project and server.</p>
@@ -550,6 +597,32 @@ column (1=visible, 0-hidden).</p>
 <dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXPROJ" title="geosoft.gxapi.GXPROJ">GXPROJ</a></p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXPROJ.register_background_script">
+<em class="property">classmethod </em><code class="sig-name descname">register_background_script</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">name2</span></em>, <em class="sig-param"><span class="n">script</span></em>, <em class="sig-param"><span class="n">log</span></em>, <em class="sig-param"><span class="n">save_log</span></em>, <em class="sig-param"><span class="n">output_files</span></em>, <em class="sig-param"><span class="n">file_to_delete</span></em>, <em class="sig-param"><span class="n">process_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPROJ.html#GXPROJ.register_background_script"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPROJ.register_background_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register an OMS script launched from the project</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name for the process</p></li>
+<li><p><strong>name2</strong> (<em>str</em>) – Secondary name for the process</p></li>
+<li><p><strong>script</strong> (<em>str</em>) – file name of the script. Script should self-delete to indicate process has completed</p></li>
+<li><p><strong>log</strong> (<em>str</em>) – file name of the output log (optional). Will contain info about this script run</p></li>
+<li><p><strong>save_log</strong> (<em>int</em>) – 1 - log file is temporary and deleted on OM close. 0 - do not delete on OM close</p></li>
+<li><p><strong>output_files</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – List of output documents created by the script.</p></li>
+<li><p><strong>file_to_delete</strong> (<em>str</em>) – File to delete (optional). Will also delete files with same name and .tmp and .xml extensions</p></li>
+<li><p><strong>process_id</strong> (<em>str</em>) – Process ID - used to check status or kill the process</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2022.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Allows the project to track the progress/failure/success of scripts launched in the background</p>
 </dd></dl>
 
 <dl class="py method">
@@ -723,8 +796,8 @@ All</p>
 <code class="sig-name descname">COMMAND_ENV_IN3DVIEWER</code><a class="headerlink" href="#geosoft.gxapi.COMMAND_ENV_IN3DVIEWER" title="Permalink to this definition">¶</a></dt>
 <dd><p>Executing from inside 3D Viewer</p>
 <dl class="py attribute">
-<dt id="id22">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">COMMAND_ENV_IN3DVIEWER</code><em class="property"> = 1</em><a class="headerlink" href="#id22" title="Permalink to this definition">¶</a></dt>
+<dt id="id25">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">COMMAND_ENV_IN3DVIEWER</code><em class="property"> = 1</em><a class="headerlink" href="#id25" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -738,8 +811,8 @@ All</p>
 <code class="sig-name descname">TOOL_TYPE_DEFAULT</code><a class="headerlink" href="#geosoft.gxapi.TOOL_TYPE_DEFAULT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geosoft created default tools</p>
 <dl class="py attribute">
-<dt id="id23">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">TOOL_TYPE_DEFAULT</code><em class="property"> = 0</em><a class="headerlink" href="#id23" title="Permalink to this definition">¶</a></dt>
+<dt id="id26">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">TOOL_TYPE_DEFAULT</code><em class="property"> = 0</em><a class="headerlink" href="#id26" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -749,8 +822,8 @@ All</p>
 <code class="sig-name descname">TOOL_TYPE_AUXILIARY</code><a class="headerlink" href="#geosoft.gxapi.TOOL_TYPE_AUXILIARY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Auxiliary tools (including custom XTools)</p>
 <dl class="py attribute">
-<dt id="id24">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">TOOL_TYPE_AUXILIARY</code><em class="property"> = 1</em><a class="headerlink" href="#id24" title="Permalink to this definition">¶</a></dt>
+<dt id="id27">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">TOOL_TYPE_AUXILIARY</code><em class="property"> = 1</em><a class="headerlink" href="#id27" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -760,8 +833,8 @@ All</p>
 <code class="sig-name descname">TOOL_TYPE_ALL</code><a class="headerlink" href="#geosoft.gxapi.TOOL_TYPE_ALL" title="Permalink to this definition">¶</a></dt>
 <dd><p>All tools</p>
 <dl class="py attribute">
-<dt id="id25">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">TOOL_TYPE_ALL</code><em class="property"> = 2</em><a class="headerlink" href="#id25" title="Permalink to this definition">¶</a></dt>
+<dt id="id28">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">TOOL_TYPE_ALL</code><em class="property"> = 2</em><a class="headerlink" href="#id28" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -775,8 +848,8 @@ All</p>
 <code class="sig-name descname">PROJ_DISPLAY_NO</code><a class="headerlink" href="#geosoft.gxapi.PROJ_DISPLAY_NO" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do not display the object</p>
 <dl class="py attribute">
-<dt id="id26">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PROJ_DISPLAY_NO</code><em class="property"> = 0</em><a class="headerlink" href="#id26" title="Permalink to this definition">¶</a></dt>
+<dt id="id29">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PROJ_DISPLAY_NO</code><em class="property"> = 0</em><a class="headerlink" href="#id29" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -786,8 +859,8 @@ All</p>
 <code class="sig-name descname">PROJ_DISPLAY_YES</code><a class="headerlink" href="#geosoft.gxapi.PROJ_DISPLAY_YES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the object unless user set option not to</p>
 <dl class="py attribute">
-<dt id="id27">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PROJ_DISPLAY_YES</code><em class="property"> = 1</em><a class="headerlink" href="#id27" title="Permalink to this definition">¶</a></dt>
+<dt id="id30">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PROJ_DISPLAY_YES</code><em class="property"> = 1</em><a class="headerlink" href="#id30" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -797,8 +870,45 @@ All</p>
 <code class="sig-name descname">PROJ_DISPLAY_ALWAYS</code><a class="headerlink" href="#geosoft.gxapi.PROJ_DISPLAY_ALWAYS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Always display the object</p>
 <dl class="py attribute">
-<dt id="id28">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PROJ_DISPLAY_ALWAYS</code><em class="property"> = 2</em><a class="headerlink" href="#id28" title="Permalink to this definition">¶</a></dt>
+<dt id="id31">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PROJ_DISPLAY_ALWAYS</code><em class="property"> = 2</em><a class="headerlink" href="#id31" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="proj-oms-constants">
+<span id="proj-oms"></span><h2>PROJ_OMS constants<a class="headerlink" href="#proj-oms-constants" title="Permalink to this headline">¶</a></h2>
+<p>Script registration</p>
+<dl class="py data">
+<dt id="geosoft.gxapi.PROJ_OMS_NAME_SIZE">
+<code class="sig-name descname">PROJ_OMS_NAME_SIZE</code><a class="headerlink" href="#geosoft.gxapi.PROJ_OMS_NAME_SIZE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Buffer size for script primary and secondary names</p>
+<dl class="py attribute">
+<dt id="id32">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PROJ_OMS_NAME_SIZE</code><em class="property"> = 32</em><a class="headerlink" href="#id32" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.PROJ_OMS_DATETIME_SIZE">
+<code class="sig-name descname">PROJ_OMS_DATETIME_SIZE</code><a class="headerlink" href="#geosoft.gxapi.PROJ_OMS_DATETIME_SIZE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Buffer size for the date/time string</p>
+<dl class="py attribute">
+<dt id="id33">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PROJ_OMS_DATETIME_SIZE</code><em class="property"> = 24</em><a class="headerlink" href="#id33" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.PROJ_OMS_PROCESSID_SIZE">
+<code class="sig-name descname">PROJ_OMS_PROCESSID_SIZE</code><a class="headerlink" href="#geosoft.gxapi.PROJ_OMS_PROCESSID_SIZE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Buffer size for process ID</p>
+<dl class="py attribute">
+<dt id="id34">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PROJ_OMS_PROCESSID_SIZE</code><em class="property"> = 16</em><a class="headerlink" href="#id34" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -819,7 +929,7 @@ All</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXPROJ class</a></li> 
       </ul>
     </div>

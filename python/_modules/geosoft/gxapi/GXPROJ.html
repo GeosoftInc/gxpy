@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXPROJ &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
+    <title>geosoft.gxapi.GXPROJ &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPROJ</a></li> 
@@ -760,6 +760,102 @@
 <span class="sd">        **Note:** Checks if there is a pending publish event.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_has_pending_central_publish_event</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<span class="c1"># OMS_Scripting</span>
+
+
+<div class="viewcode-block" id="GXPROJ.register_background_script"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.register_background_script">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">register_background_script</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">name2</span><span class="p">,</span> <span class="n">script</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">save_log</span><span class="p">,</span> <span class="n">output_files</span><span class="p">,</span> <span class="n">file_to_delete</span><span class="p">,</span> <span class="n">process_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Register an OMS script launched from the project</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:            Name for the process</span>
+<span class="sd">        :param name2:           Secondary name for the process</span>
+<span class="sd">        :param script:          file name of the script. Script should self-delete to indicate process has completed</span>
+<span class="sd">        :param log:             file name of the output log (optional). Will contain info about this script run</span>
+<span class="sd">        :param save_log:        1 - log file is temporary and deleted on OM close. 0 - do not delete on OM close</span>
+<span class="sd">        :param output_files:    List of output documents created by the script.</span>
+<span class="sd">        :param file_to_delete:  File to delete (optional). Will also delete files with same name and .tmp and .xml extensions</span>
+<span class="sd">        :param process_id:      Process ID - used to check status or kill the process</span>
+<span class="sd">        :type  name:            str</span>
+<span class="sd">        :type  name2:           str</span>
+<span class="sd">        :type  script:          str</span>
+<span class="sd">        :type  log:             str</span>
+<span class="sd">        :type  save_log:        int</span>
+<span class="sd">        :type  output_files:    GXVV</span>
+<span class="sd">        :type  file_to_delete:  str</span>
+<span class="sd">        :type  process_id:      str</span>
+
+<span class="sd">        .. versionadded:: 2022.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Allows the project to track the progress/failure/success of scripts launched in the background</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_register_background_script</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name2</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">script</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">log</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">save_log</span><span class="p">,</span> <span class="n">output_files</span><span class="p">,</span> <span class="n">file_to_delete</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">process_id</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXPROJ.get_registered_background_script"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.get_registered_background_script">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_registered_background_script</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">date_time</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">name2</span><span class="p">,</span> <span class="n">script</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">output_files</span><span class="p">,</span> <span class="n">process_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieve info on a registered OMS script launched from the project</span>
+<span class="sd">        </span>
+<span class="sd">        :param index:         Index for the process (input) 0 to N-1</span>
+<span class="sd">        :param date_time:     Date/Time string in format DD/MM/YYYY hh:mm:ss</span>
+<span class="sd">        :param name:          Name for the process (output)</span>
+<span class="sd">        :param name2:         Secondary name for the process (output)</span>
+<span class="sd">        :param script:        file name of the script (output)</span>
+<span class="sd">        :param log:           file name of the output log (returned, can be empty).</span>
+<span class="sd">        :param output_files:  List of output documents created by the script. of size -`STR_FILE &lt;geosoft.gxapi.STR_FILE&gt;`</span>
+<span class="sd">        :param process_id:    Process ID (returned)</span>
+<span class="sd">        :type  index:         int</span>
+<span class="sd">        :type  date_time:     str_ref</span>
+<span class="sd">        :type  name:          str_ref</span>
+<span class="sd">        :type  name2:         str_ref</span>
+<span class="sd">        :type  script:        str_ref</span>
+<span class="sd">        :type  log:           str_ref</span>
+<span class="sd">        :type  output_files:  GXVV</span>
+<span class="sd">        :type  process_id:    str_ref</span>
+
+<span class="sd">        .. versionadded:: 2022.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** reference by index</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">date_time</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">name2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">script</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">process_id</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_registered_background_script</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">index</span><span class="p">,</span> <span class="n">date_time</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name2</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">script</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">log</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_files</span><span class="p">,</span> <span class="n">process_id</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXPROJ.get_num_registered_background_scripts"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.get_num_registered_background_scripts">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_num_registered_background_scripts</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Register a OMS script launched from the project</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    The number of registered background scripts: in progress, finished, failed, deleted etc.</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 2022.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Allows the project to track the progress/failure/success of scripts launched in the background</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_num_registered_background_scripts</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div></div>
 
 
@@ -789,7 +885,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPROJ</a></li> 

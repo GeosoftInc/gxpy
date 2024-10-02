@@ -67,4 +67,25 @@ How to display an object
     
     .. autoattribute:: geosoft.gxapi.PROJ_DISPLAY_ALWAYS
 
+
+.. _PROJ_OMS:
+
+PROJ_OMS constants
+-----------------------------------------------------------------------
+
+Script registration
+
+.. autodata:: geosoft.gxapi.PROJ_OMS_NAME_SIZE
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.PROJ_OMS_NAME_SIZE
+.. autodata:: geosoft.gxapi.PROJ_OMS_DATETIME_SIZE
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.PROJ_OMS_DATETIME_SIZE
+.. autodata:: geosoft.gxapi.PROJ_OMS_PROCESSID_SIZE
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.PROJ_OMS_PROCESSID_SIZE
+
 	

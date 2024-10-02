@@ -949,6 +949,27 @@ geosoft.gxapi module history
 ==========================================
 
   
+Version 2023.2
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXFFT2.cross_correlation_pg` Calculate the cross-correlation of two transform pagers:
+
+:func:`geosoft.gxapi.GXGMSYS.remove_legacy_gms` Completely remove a legacy GSMSYS-2D GMS model file and folders
+
+:func:`geosoft.gxapi.GXMAPTEMPLATE.get_media_size` Get full width, full height, plot width and plot height in cm for a specific media or template name
+
+:func:`geosoft.gxapi.GXRGRD.run3` Executes the Rangrid program directly on a database. Specify log file
+
+:func:`geosoft.gxapi.GXSYS.delete_directory` Delete a directory and all files/subdirectories contained therein.
+
+:func:`geosoft.gxapi.GXVA.set_int_n` Set N rows of integer elements in a `GXVA <geosoft.gxapi.GXVA>`.
+
+
+  
 Version 2023.1
 -----------------
 
@@ -1009,6 +1030,12 @@ New Functions
 :func:`geosoft.gxapi.GXMVIEW.render_ex` Render a specified area of view onto a Windows DC handle, setting the type of it and returning the new data extents
 
 :func:`geosoft.gxapi.GXMVU.plot_voxel_slice` Extract a vertical slice from a voxel along a path and plot it to a 2D view.
+
+:func:`geosoft.gxapi.GXPROJ.get_num_registered_background_scripts` Register a OMS script launched from the project
+
+:func:`geosoft.gxapi.GXPROJ.get_registered_background_script` Retrieve info on a registered OMS script launched from the project
+
+:func:`geosoft.gxapi.GXPROJ.register_background_script` Register an OMS script launched from the project
 
 :func:`geosoft.gxapi.GXSTK.set_error_plot_params` Set error bar plot parameters for the current profile.
 

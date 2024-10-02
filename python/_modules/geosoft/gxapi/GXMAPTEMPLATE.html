@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXMAPTEMPLATE &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
+    <title>geosoft.gxapi.GXMAPTEMPLATE &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMAPTEMPLATE</a></li> 
@@ -329,7 +329,41 @@
 <span class="sd">        by passing a null DC handle. This help to plot the view contents</span>
 <span class="sd">        preview from another location.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_render_preview_map_production</span><span class="p">(</span><span class="n">hdc</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div></div>
+        <span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_render_preview_map_production</span><span class="p">(</span><span class="n">hdc</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+<div class="viewcode-block" id="GXMAPTEMPLATE.get_media_size"><a class="viewcode-back" href="../../../GXMAPTEMPLATE.html#geosoft.gxapi.GXMAPTEMPLATE.get_media_size">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_media_size</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">full_page_width</span><span class="p">,</span> <span class="n">full_page_height</span><span class="p">,</span> <span class="n">plot_width</span><span class="p">,</span> <span class="n">plot_height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get full width, full height, plot width and plot height in cm for a specific media or template name</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:              Page size name</span>
+<span class="sd">        :param full_page_width:   Full width of page in cm (`rDUMMY` if name not found)</span>
+<span class="sd">        :param full_page_height:  Full height of page in cm (`rDUMMY` if name not found)</span>
+<span class="sd">        :param plot_width:        Plot width of page in cm (`rDUMMY` if name not found)</span>
+<span class="sd">        :param plot_height:       Plot height of page in cm (`rDUMMY` if name not found)</span>
+<span class="sd">        :type  name:              str</span>
+<span class="sd">        :type  full_page_width:   float_ref</span>
+<span class="sd">        :type  full_page_height:  float_ref</span>
+<span class="sd">        :type  plot_width:        float_ref</span>
+<span class="sd">        :type  plot_height:       float_ref</span>
+
+<span class="sd">        .. versionadded:: 2023.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The user &#39;media.csv&#39; file is searched first. If the name is not found</span>
+<span class="sd">        then the &#39;maptmpl.csv&#39; file is searched, and if a template name is matched</span>
+<span class="sd">        the sizes of the associated media name are returned.</span>
+<span class="sd">        If a template is specified, the orientation is taken into account for the media.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">full_page_width</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">full_page_height</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">plot_width</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">plot_height</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMAPTEMPLATE</span><span class="o">.</span><span class="n">_get_media_size</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">full_page_width</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">full_page_height</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">plot_width</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">plot_height</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div></div>
         
 
 
@@ -359,7 +393,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMAPTEMPLATE</a></li> 
