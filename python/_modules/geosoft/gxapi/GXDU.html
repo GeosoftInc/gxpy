@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXDU &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
+    <title>geosoft.gxapi.GXDU &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDU</a></li> 
@@ -398,6 +398,33 @@
 <span class="sd">        approximates the trend direction of the lines.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">azimuth</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDU</span><span class="o">.</span><span class="n">_avg_azimuth</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">precision</span><span class="p">,</span> <span class="n">azimuth</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXDU.avg_azimuth2"><a class="viewcode-back" href="../../../GXDU.html#geosoft.gxapi.GXDU.avg_azimuth2">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">avg_azimuth2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">xCh</span><span class="p">,</span> <span class="n">yCh</span><span class="p">,</span> <span class="n">precision</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns average azimuth of selected lines.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:         Database Object</span>
+<span class="sd">        :param xCh:        X channel name</span>
+<span class="sd">        :param yCh:        Y channel name</span>
+<span class="sd">        :param precision:  Precision in degrees (1 to 45)</span>
+<span class="sd">        :param azimuth:    Azimuth value returned</span>
+<span class="sd">        :type  db:         GXDB</span>
+<span class="sd">        :type  xCh:        str</span>
+<span class="sd">        :type  yCh:        str</span>
+<span class="sd">        :type  precision:  float</span>
+<span class="sd">        :type  azimuth:    float_ref</span>
+
+<span class="sd">        .. versionadded:: 2023.1</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Same as AvgAzimuth, but input the X and Y channels to use.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">azimuth</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDU</span><span class="o">.</span><span class="n">_avg_azimuth2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">xCh</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">yCh</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">precision</span><span class="p">,</span> <span class="n">azimuth</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
         
 
 
@@ -1785,6 +1812,109 @@
 <span class="sd">        where the mask channel is not a dummy are collected.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDU</span><span class="o">.</span><span class="n">_get_chan_data_vv</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXDU.get_gridding_azimuth_to_minimize_padding"><a class="viewcode-back" href="../../../GXDU.html#geosoft.gxapi.GXDU.get_gridding_azimuth_to_minimize_padding">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_gridding_azimuth_to_minimize_padding</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">xCh</span><span class="p">,</span> <span class="n">yCh</span><span class="p">,</span> <span class="n">mCh</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">x4</span><span class="p">,</span> <span class="n">y4</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the gridding azimuth (degrees CW from north) that minimizes padding.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:   Database</span>
+<span class="sd">        :param xCh:  X channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param yCh:  Y channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param mCh:  Data or mask channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param x1:   Returned Corner 1 - X</span>
+<span class="sd">        :param y1:   Returned Corner 1 - Y</span>
+<span class="sd">        :param x2:   Returned Corner 2 - X</span>
+<span class="sd">        :param y2:   Returned Corner 2 - Y</span>
+<span class="sd">        :param x3:   Returned Corner 3 - X</span>
+<span class="sd">        :param y3:   Returned Corner 3 - Y</span>
+<span class="sd">        :param x4:   Returned Corner 4 - X</span>
+<span class="sd">        :param y4:   Returned Corner 4 - Y</span>
+<span class="sd">        :type  db:   GXDB</span>
+<span class="sd">        :type  xCh:  int</span>
+<span class="sd">        :type  yCh:  int</span>
+<span class="sd">        :type  mCh:  int</span>
+<span class="sd">        :type  x1:   float_ref</span>
+<span class="sd">        :type  y1:   float_ref</span>
+<span class="sd">        :type  x2:   float_ref</span>
+<span class="sd">        :type  y2:   float_ref</span>
+<span class="sd">        :type  x3:   float_ref</span>
+<span class="sd">        :type  y3:   float_ref</span>
+<span class="sd">        :type  x4:   float_ref</span>
+<span class="sd">        :type  y4:   float_ref</span>
+<span class="sd">        :rtype:      float</span>
+
+<span class="sd">        .. versionadded:: 2023.1</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Especially if the survey lines do not run N-S or E-W, gridding parallel to the XY axes</span>
+<span class="sd">        results in up to half the gridding area being dummies (padding), which is not only</span>
+<span class="sd">        inefficient, but affects processes like filtering. This algorithm determines the data</span>
+<span class="sd">        rotation required such that the gridding extents rectangle fit around the data minimizes the</span>
+<span class="sd">        amount of padding. The result is good to the nearest degree.</span>
+
+<span class="sd">        The corner points are returned and include a buffer around the edge equal to 1% of the maximum height/width.</span>
+
+<span class="sd">        The returned azimuth will be in the range 0 to 89.</span>
+
+<span class="sd">        Operates on all selected lines.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span><span class="p">,</span> <span class="n">x1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x4</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y4</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDU</span><span class="o">.</span><span class="n">_get_gridding_azimuth_to_minimize_padding</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">xCh</span><span class="p">,</span> <span class="n">yCh</span><span class="p">,</span> <span class="n">mCh</span><span class="p">,</span> <span class="n">x1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x4</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y4</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXDU.get_angled_bounding_rectangle"><a class="viewcode-back" href="../../../GXDU.html#geosoft.gxapi.GXDU.get_angled_bounding_rectangle">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_angled_bounding_rectangle</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">xCh</span><span class="p">,</span> <span class="n">yCh</span><span class="p">,</span> <span class="n">mCh</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">x4</span><span class="p">,</span> <span class="n">y4</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the angled bounding rectangle for data to be gridded on an angle.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:       Database</span>
+<span class="sd">        :param xCh:      X channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param yCh:      Y channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param mCh:      Data or mask channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param azimuth:  Input Azimuth Angle - degrees CW from North</span>
+<span class="sd">        :param x1:       Returned Corner 1 - X</span>
+<span class="sd">        :param y1:       Returned Corner 1 - Y</span>
+<span class="sd">        :param x2:       Returned Corner 2 - X</span>
+<span class="sd">        :param y2:       Returned Corner 2 - Y</span>
+<span class="sd">        :param x3:       Returned Corner 3 - X</span>
+<span class="sd">        :param y3:       Returned Corner 3 - Y</span>
+<span class="sd">        :param x4:       Returned Corner 4 - X</span>
+<span class="sd">        :param y4:       Returned Corner 4 - Y</span>
+<span class="sd">        :type  db:       GXDB</span>
+<span class="sd">        :type  xCh:      int</span>
+<span class="sd">        :type  yCh:      int</span>
+<span class="sd">        :type  mCh:      int</span>
+<span class="sd">        :type  azimuth:  float</span>
+<span class="sd">        :type  x1:       float_ref</span>
+<span class="sd">        :type  y1:       float_ref</span>
+<span class="sd">        :type  x2:       float_ref</span>
+<span class="sd">        :type  y2:       float_ref</span>
+<span class="sd">        :type  x3:       float_ref</span>
+<span class="sd">        :type  y3:       float_ref</span>
+<span class="sd">        :type  x4:       float_ref</span>
+<span class="sd">        :type  y4:       float_ref</span>
+
+<span class="sd">        .. versionadded:: 2023.1</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Especially if the survey lines do not run N-S or E-W, gridding parallel to the XY axes</span>
+<span class="sd">        results in up to half the gridding area being dummies (padding), which is not only</span>
+<span class="sd">        inefficient, but affects processes like filtering.</span>
+<span class="sd">        This routine returns the rotated extents rectangle for a given gridding azimuth.</span>
+<span class="sd">        The data is rotated CCW by the input azimuth. The N-S and E-W extents of the rotated</span>
+<span class="sd">        data are determined and the bounding points rotated back by the input azimuth to locate</span>
+<span class="sd">        the angled bounding rectangle around the input data. As with GetGriddingAzimuthToMinimizePadding_DU</span>
+<span class="sd">        the extents are padded in each direction by 1% of the maximum height/width</span>
+<span class="sd">        Operates on all selected lines.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x4</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y4</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDU</span><span class="o">.</span><span class="n">_get_angled_bounding_rectangle</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">xCh</span><span class="p">,</span> <span class="n">yCh</span><span class="p">,</span> <span class="n">mCh</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">,</span> <span class="n">x1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x4</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y4</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
         
 
 
@@ -5457,7 +5587,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDU</a></li> 
@@ -5465,7 +5595,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2022, Geosoft Inc.
+        &#169; Copyright 2023, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

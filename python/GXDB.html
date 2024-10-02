@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXDB class &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
+    <title>GXDB class &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXDB class</a></li> 
       </ul>
     </div>
@@ -801,7 +801,7 @@ letters of their blob names to avoid any possible conflicts.</p>
 <li><p><strong>symb</strong> (<em>int</em>) – <a class="reference internal" href="#db-symb-type"><span class="std std-ref">DB_SYMB_TYPE constants</span></a></p></li>
 <li><p><strong>owner</strong> (<em>int</em>) – <a class="reference internal" href="#db-own"><span class="std std-ref">DB_OWN constants</span></a></p></li>
 <li><p><strong>category</strong> (<em>int</em>) – <a class="reference internal" href="#db-category-user"><span class="std std-ref">DB_CATEGORY_USER constants</span></a>, <a class="reference internal" href="#db-category-line"><span class="std std-ref">DB_CATEGORY_LINE constants</span></a>, <a class="reference internal" href="#db-category-chan"><span class="std std-ref">DB_CATEGORY_CHAN constants</span></a>, <a class="reference internal" href="#db-category-blob"><span class="std std-ref">DB_CATEGORY_BLOB constants</span></a></p></li>
-<li><p><strong>extra</strong> (<em>int</em>) – Extra info, which depends on <a class="reference internal" href="#db-symb-type"><span class="std std-ref">DB_SYMB_TYPE constants</span></a> <a class="reference internal" href="#id260" title="geosoft.gxapi.DB_SYMB_CHAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_SYMB_CHAN</span></code></a> - element width for a <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> channel ignores for all other <a class="reference internal" href="#db-symb-type"><span class="std std-ref">DB_SYMB_TYPE constants</span></a> types</p></li>
+<li><p><strong>extra</strong> (<em>int</em>) – Extra info, which depends on <a class="reference internal" href="#db-symb-type"><span class="std std-ref">DB_SYMB_TYPE constants</span></a> <a class="reference internal" href="#id261" title="geosoft.gxapi.DB_SYMB_CHAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_SYMB_CHAN</span></code></a> - element width for a <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> channel ignores for all other <a class="reference internal" href="#db-symb-type"><span class="std std-ref">DB_SYMB_TYPE constants</span></a> types</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -820,7 +820,7 @@ letters of their blob names to avoid any possible conflicts.</p>
 enter a negative number for the channel category below.
 For instance, “-32” will create a string channel with
 32 characters per item.</p>
-<p>Symbol name for <a class="reference internal" href="#id195" title="geosoft.gxapi.DB_CATEGORY_LINE_FLIGHT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CATEGORY_LINE_FLIGHT</span></code></a> must conform to
+<p>Symbol name for <a class="reference internal" href="#id196" title="geosoft.gxapi.DB_CATEGORY_LINE_FLIGHT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CATEGORY_LINE_FLIGHT</span></code></a> must conform to
 the following line naming syntax:</p>
 <p>[type][number.version:flight]</p>
 <p>Type can be: L - normal line
@@ -1105,7 +1105,7 @@ in the database.</p>
 GetXYZChan_DB function, the following behaviour has
 been introduced as of v5.1.3:  (also true for “Y”).</p>
 <p><code class="xref py py-obj docutils literal notranslate"><span class="pre">exist_symb</span></code>) is now equivalent to:</p>
-<p>GetXYZChan_DB(hDB, <a class="reference internal" href="#id208" title="geosoft.gxapi.DB_CHAN_X"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CHAN_X</span></code></a>, sXCh);
+<p>GetXYZChan_DB(hDB, <a class="reference internal" href="#id209" title="geosoft.gxapi.DB_CHAN_X"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CHAN_X</span></code></a>, sXCh);
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">exist_symb</span></code>);</p>
 <p>In other words, the current X or Y is searched for, not
 necessarily the literal “X” or “Y”. This ensures that newer
@@ -1124,7 +1124,7 @@ work with older GXs expecting “X” and “Y”.</p>
 <dd class="field-odd"><p><strong>chan</strong> (<em>str</em>) – Name of channel</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Channel Handle, <a class="reference internal" href="#id273" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if not defined</p>
+<dd class="field-even"><p>Channel Handle, <a class="reference internal" href="#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if not defined</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>int</p>
@@ -1155,7 +1155,7 @@ The new <a class="reference internal" href="#geosoft.gxapi.GXDB.find_chan" title
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Symbol Handle, <a class="reference internal" href="#id273" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if not defined</p>
+<dd class="field-even"><p>Symbol Handle, <a class="reference internal" href="#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if not defined</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>int</p>
@@ -1302,7 +1302,7 @@ given channel handle.</p>
 <p><strong>Note:</strong> The channel label is stored in the “CLASS” parameter
 of the channel reg. If no class is defined, then an
 empty string is returned.
-The channel must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1325,7 +1325,7 @@ to the right of the decimal point.</p>
 <p><span class="versionmodified added">New in version 6.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1377,7 +1377,7 @@ given channel handle.</p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The returned format is one of the <a class="reference internal" href="#db-chan-format"><span class="std std-ref">DB_CHAN_FORMAT constants</span></a>.
-The channel must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1427,7 +1427,7 @@ performance is not an issue.</p>
 <p><strong>Note:</strong> The channel label is stored in the “LABEL” parameter
 of the channel reg.  If the setting is empty, the
 channel name is returned.
-The channel must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1447,7 +1447,7 @@ given channel handle.</p>
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1487,7 +1487,7 @@ call <a class="reference internal" href="#geosoft.gxapi.GXDB.set_chan_order_lst"
 <p><span class="versionmodified added">New in version 6.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1535,7 +1535,7 @@ given channel handle.</p>
 <p><strong>Note:</strong> The type returned is one of the <a class="reference internal" href="#db-category-chan"><span class="std std-ref">DB_CATEGORY_CHAN constants</span></a>.
 Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL
 or string types.
-The channel must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1556,7 +1556,7 @@ The channel must be locked <a class="reference internal" href="#id253" title="ge
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The unit label is stored in the “UNITS” parameter
 of the channel reg.
-The channel must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1654,7 +1654,7 @@ given channel handle.</p>
 <p><span class="versionmodified added">New in version 6.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1763,8 +1763,8 @@ specified Channel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>symb</strong> (<em>int</em>) – Group line - <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a> or <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a></p></li>
-<li><p><strong>cl</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned class name - max size = <a class="reference internal" href="#id217" title="geosoft.gxapi.DB_GROUP_CLASS_SIZE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_GROUP_CLASS_SIZE</span></code></a> - 1</p></li>
+<li><p><strong>symb</strong> (<em>int</em>) – Group line - <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a></p></li>
+<li><p><strong>cl</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned class name - max size = <a class="reference internal" href="#id218" title="geosoft.gxapi.DB_GROUP_CLASS_SIZE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_GROUP_CLASS_SIZE</span></code></a> - 1</p></li>
 </ul>
 </dd>
 </dl>
@@ -1861,7 +1861,7 @@ Channel must be locked for READONLY or READWRITE.</p>
 <p><span class="versionmodified added">New in version 5.1.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1901,6 +1901,26 @@ Channel must be locked for READONLY or READWRITE.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="geosoft.gxapi.GXDB.get_modification_count">
+<code class="sig-name descname">get_modification_count</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDB.html#GXDB.get_modification_count"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDB.get_modification_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the modification count from the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2023.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> A running count of the times a database has been modified between commits.
+Useful, for instance to be able to discard changes made by a GX on a database that are required
+for the operation of the GX but which the user does not want to persist, and to avoid the Save changes
+question when you go to change the database. So if the count is 0 when you start, it is safe to call
+Discard_DB on exit without worrying about throwing away changes made previously.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="geosoft.gxapi.GXDB.get_name">
 <code class="sig-name descname">get_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">psz_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDB.html#GXDB.get_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDB.get_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets a name from the database.</p>
@@ -1925,7 +1945,7 @@ Channel must be locked for READONLY or READWRITE.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>symb</strong> (<em>int</em>) – Symbol, <a class="reference internal" href="#id273" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> for the database <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a></p></li>
+<li><p><strong>symb</strong> (<em>int</em>) – Symbol, <a class="reference internal" href="#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> for the database <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a></p></li>
 <li><p><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) – <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a> to copy data into</p></li>
 </ul>
 </dd>
@@ -1943,7 +1963,7 @@ Channel must be locked for READONLY or READWRITE.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>symb</strong> (<em>int</em>) – Symbol, <a class="reference internal" href="#id273" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> for the database <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a></p></li>
+<li><p><strong>symb</strong> (<em>int</em>) – Symbol, <a class="reference internal" href="#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> for the database <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a></p></li>
 <li><p><strong>name</strong> (<em>str</em>) – <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a> entry name</p></li>
 <li><p><strong>setting</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned setting</p></li>
 </ul>
@@ -1977,7 +1997,7 @@ setting is to be Get and or Set, use the <a class="reference internal" href="GXR
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>symb</strong> (<em>int</em>) – Symbol, <a class="reference internal" href="#id273" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> for the database <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a></p></li>
+<li><p><strong>symb</strong> (<em>int</em>) – Symbol, <a class="reference internal" href="#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> for the database <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a></p></li>
 <li><p><strong>name</strong> (<em>str</em>) – <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a> entry name</p></li>
 </ul>
 </dd>
@@ -2006,7 +2026,7 @@ setting is to be Get and or Set, use the <a class="reference internal" href="GXR
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>symb</strong> (<em>int</em>) – Symbol, <a class="reference internal" href="#id273" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> for the database <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a></p></li>
+<li><p><strong>symb</strong> (<em>int</em>) – Symbol, <a class="reference internal" href="#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> for the database <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a></p></li>
 <li><p><strong>name</strong> (<em>str</em>) – <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a> entry name</p></li>
 </ul>
 </dd>
@@ -2084,7 +2104,7 @@ setting is to be Get and or Set, use the <a class="reference internal" href="GXR
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> See GetChanName_DB for more information
-The channel must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -2094,7 +2114,7 @@ The channel must be locked <a class="reference internal" href="#id253" title="ge
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>)</p></li>
+<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>)</p></li>
 <li><p><strong>domain</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – <a class="reference internal" href="#db-array-basetype"><span class="std std-ref">DB_ARRAY_BASETYPE constants</span></a></p></li>
 <li><p><strong>base</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Optional offset or base frequency</p></li>
 <li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Values (one per array channel column) (REAL)</p></li>
@@ -2143,7 +2163,7 @@ The channel must be locked <a class="reference internal" href="#id253" title="ge
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
+<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
 <li><p><strong>file</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Zone file name, “” to clear.</p></li>
 </ul>
 </dd>
@@ -2162,7 +2182,7 @@ The channel must be locked <a class="reference internal" href="#id253" title="ge
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
+<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
 <li><p><strong>option</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Option  “Profile”, “Section” or “Section and Profile”</p></li>
 </ul>
 </dd>
@@ -2180,7 +2200,7 @@ The channel must be locked <a class="reference internal" href="#id253" title="ge
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
+<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
 <li><p><strong>base</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Base value (rDummy for none)</p></li>
 <li><p><strong>range</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Range value (rDummy for none)</p></li>
 </ul>
@@ -2200,7 +2220,7 @@ The channel must be locked <a class="reference internal" href="#id253" title="ge
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
+<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
 <li><p><strong>file</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Zone file name</p></li>
 </ul>
 </dd>
@@ -2219,7 +2239,7 @@ The channel must be locked <a class="reference internal" href="#id253" title="ge
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
+<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
 <li><p><strong>min_w</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – First window (0 to N-2, iDummy for default)</p></li>
 <li><p><strong>max_w</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Last window (1 to N-1, iDummy for default)</p></li>
 </ul>
@@ -2262,10 +2282,10 @@ If none is defined, then returns “X”, “Y” or “Z”.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><p>x - Symbol Handle
-<a class="reference internal" href="#id273" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> - Symbol not found</p>
+<a class="reference internal" href="#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> - Symbol not found</p>
 <p>searches for the “current” X, Y or Z channel.
 If none is defined, then looks for “X”, “Y” or “Z” channel
-If the channel is defined, but not present, returns <a class="reference internal" href="#id273" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a>.</p>
+If the channel is defined, but not present, returns <a class="reference internal" href="#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a>.</p>
 </p>
 </dd>
 <dt class="field-odd">Return type</dt>
@@ -2537,10 +2557,10 @@ the Line methods is a valid line.</p>
 <p><span class="versionmodified added">New in version 5.1.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 <p>This function simply returns a value set using the <a class="reference internal" href="#geosoft.gxapi.GXDB.set_line_bearing" title="geosoft.gxapi.GXDB.set_line_bearing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_line_bearing</span></code></a>
 function. It returns <a class="reference internal" href="GXGEOSOFT.html#id5" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a> for line categories other than
-<a class="reference internal" href="#id195" title="geosoft.gxapi.DB_CATEGORY_LINE_FLIGHT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CATEGORY_LINE_FLIGHT</span></code></a>.</p>
+<a class="reference internal" href="#id196" title="geosoft.gxapi.DB_CATEGORY_LINE_FLIGHT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CATEGORY_LINE_FLIGHT</span></code></a>.</p>
 <p>To calculate the line azimuth based on the first and
 last non-dummy locations, use the <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.direction" title="geosoft.gxapi.GXDU.direction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDU.direction</span></code></a> function.</p>
 <div class="admonition seealso">
@@ -2568,7 +2588,7 @@ last non-dummy locations, use the <a class="reference internal" href="GXDU.html#
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -2590,7 +2610,7 @@ last non-dummy locations, use the <a class="reference internal" href="GXDU.html#
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -2612,7 +2632,7 @@ last non-dummy locations, use the <a class="reference internal" href="GXDU.html#
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -2681,7 +2701,7 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The line must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The line must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -2700,7 +2720,7 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The line must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The line must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -2722,7 +2742,7 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The line must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The line must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -2744,7 +2764,7 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The line must be locked <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The line must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> or <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -3053,7 +3073,7 @@ if a <a class="reference internal" href="#geosoft.gxapi.GXDB" title="geosoft.gxa
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>symb</strong> (<em>int</em>) – Blob (<a class="reference internal" href="#id258" title="geosoft.gxapi.DB_SYMB_BLOB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_SYMB_BLOB</span></code></a>) to read into <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> from database</p></li>
+<li><p><strong>symb</strong> (<em>int</em>) – Blob (<a class="reference internal" href="#id259" title="geosoft.gxapi.DB_SYMB_BLOB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_SYMB_BLOB</span></code></a>) to read into <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> from database</p></li>
 <li><p><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – File to read blob from</p></li>
 </ul>
 </dd>
@@ -3082,7 +3102,7 @@ if a <a class="reference internal" href="#geosoft.gxapi.GXDB" title="geosoft.gxa
 <p><span class="versionmodified added">New in version 9.9.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The line must be locked :const:<a href="#id129"><span class="problematic" id="id130">`</span></a>DB_LOCK_READWRITE’
+<p><strong>Note:</strong> The line must be locked :const:<a href="#id130"><span class="problematic" id="id131">`</span></a>DB_LOCK_READWRITE’
 Sets/resets the name of an existing line directly from line type, number, and version.
 The line number can be any combination of letters and numbers,
 i.e. XU324, 98765, A, 23NGV etc.
@@ -3181,10 +3201,10 @@ placed in the value part of the <a class="reference internal" href="GXLST.html#g
 <p><span class="versionmodified added">New in version 7.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> Value to set must be either <a class="reference internal" href="#id207" title="geosoft.gxapi.DB_CHAN_PROTECTED"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CHAN_PROTECTED</span></code></a> or
-<a class="reference internal" href="#id206" title="geosoft.gxapi.DB_CHAN_UNPROTECTED"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CHAN_UNPROTECTED</span></code></a>
+<p><strong>Note:</strong> Value to set must be either <a class="reference internal" href="#id208" title="geosoft.gxapi.DB_CHAN_PROTECTED"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CHAN_PROTECTED</span></code></a> or
+<a class="reference internal" href="#id207" title="geosoft.gxapi.DB_CHAN_UNPROTECTED"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CHAN_UNPROTECTED</span></code></a>
 This method does its own channel locking/unlocking.
-Channels already lock <a class="reference internal" href="#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> are ignored.</p>
+Channels already lock <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a> are ignored.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -3205,7 +3225,7 @@ Channels already lock <a class="reference internal" href="#id253" title="geosoft
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The channel class is stored in the “CLASS” parameter
 of the channel reg.
-The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+The channel must be locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -3226,7 +3246,7 @@ to the right of the decimal point.</p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The number of display digits must be from 0 to 50.
-The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+The channel must be locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -3267,7 +3287,7 @@ performance is not an issue.</p>
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -3310,7 +3330,7 @@ performance is not an issue.</p>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The channel label is stored in the “LABEL” parameter
 of the channel reg.
-The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+The channel must be locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -3329,7 +3349,7 @@ The channel must be locked <a class="reference internal" href="#id254" title="ge
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -3366,9 +3386,9 @@ status.</p>
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> Value to set must be either <a class="reference internal" href="#id207" title="geosoft.gxapi.DB_CHAN_PROTECTED"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CHAN_PROTECTED</span></code></a> or
-<a class="reference internal" href="#id206" title="geosoft.gxapi.DB_CHAN_UNPROTECTED"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CHAN_UNPROTECTED</span></code></a>
-The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> Value to set must be either <a class="reference internal" href="#id208" title="geosoft.gxapi.DB_CHAN_PROTECTED"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CHAN_PROTECTED</span></code></a> or
+<a class="reference internal" href="#id207" title="geosoft.gxapi.DB_CHAN_UNPROTECTED"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CHAN_UNPROTECTED</span></code></a>
+The channel must be locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -3410,7 +3430,7 @@ given channel handle.</p>
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -3430,7 +3450,7 @@ given channel handle.</p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The number of display digits must be from 0 to 50.
-The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+The channel must be locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -3461,8 +3481,8 @@ increment of a channel. The Increment should never be 0.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>symb</strong> (<em>int</em>) – Group line - <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p></li>
-<li><p><strong>cl</strong> (<em>str</em>) – <a class="reference internal" href="#id217" title="geosoft.gxapi.DB_GROUP_CLASS_SIZE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_GROUP_CLASS_SIZE</span></code></a></p></li>
+<li><p><strong>symb</strong> (<em>int</em>) – Group line - <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p></li>
+<li><p><strong>cl</strong> (<em>str</em>) – <a class="reference internal" href="#id218" title="geosoft.gxapi.DB_GROUP_CLASS_SIZE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_GROUP_CLASS_SIZE</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
@@ -3539,11 +3559,11 @@ Channel must be locked for READONLY or READWRITE.</p>
 <p><span class="versionmodified added">New in version 5.1.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 <p>This function simply sets a value in the line’s metadata
 that is retrieved using the <a class="reference internal" href="#geosoft.gxapi.GXDB.line_bearing" title="geosoft.gxapi.GXDB.line_bearing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">line_bearing</span></code></a>
 function. It terminates for line categories other than
-<a class="reference internal" href="#id195" title="geosoft.gxapi.DB_CATEGORY_LINE_FLIGHT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CATEGORY_LINE_FLIGHT</span></code></a>.</p>
+<a class="reference internal" href="#id196" title="geosoft.gxapi.DB_CATEGORY_LINE_FLIGHT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CATEGORY_LINE_FLIGHT</span></code></a>.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="#geosoft.gxapi.GXDB.line_bearing" title="geosoft.gxapi.GXDB.line_bearing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">line_bearing</span></code></a>, <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.direction" title="geosoft.gxapi.GXDU.direction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDU.direction</span></code></a></p>
@@ -3566,7 +3586,7 @@ function. It terminates for line categories other than
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -3585,7 +3605,7 @@ function. It terminates for line categories other than
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -3675,7 +3695,7 @@ i.e. XU324, 98765, A, 23NGV etc.</p>
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -3712,7 +3732,7 @@ i.e. XU324, 98765, A, 23NGV etc.</p>
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -3731,7 +3751,7 @@ i.e. XU324, 98765, A, 23NGV etc.</p>
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
+<p><strong>Note:</strong> The channel must be locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -3756,7 +3776,7 @@ i.e. XU324, 98765, A, 23NGV etc.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>symb</strong> (<em>int</em>) – Symbol, <a class="reference internal" href="#id273" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> for the database <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a></p></li>
+<li><p><strong>symb</strong> (<em>int</em>) – Symbol, <a class="reference internal" href="#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> for the database <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a></p></li>
 <li><p><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) – <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a> to set into Blob</p></li>
 </ul>
 </dd>
@@ -3774,7 +3794,7 @@ i.e. XU324, 98765, A, 23NGV etc.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>symb</strong> (<em>int</em>) – Symbol, <a class="reference internal" href="#id273" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> for the database <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a></p></li>
+<li><p><strong>symb</strong> (<em>int</em>) – Symbol, <a class="reference internal" href="#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> for the database <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a></p></li>
 <li><p><strong>name</strong> (<em>str</em>) – <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a> entry name</p></li>
 <li><p><strong>setting</strong> (<em>str</em>) – Setting</p></li>
 </ul>
@@ -3824,7 +3844,7 @@ setting is to be Get and or Set, use the <a class="reference internal" href="GXR
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
+<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
 <li><p><strong>domain</strong> (<em>int</em>) – <a class="reference internal" href="#db-array-basetype"><span class="std std-ref">DB_ARRAY_BASETYPE constants</span></a></p></li>
 <li><p><strong>base</strong> (<em>float</em>) – Optional offset or base frequency</p></li>
 <li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Values (one per array channel column) (REAL)</p></li>
@@ -3847,7 +3867,7 @@ setting is to be Get and or Set, use the <a class="reference internal" href="GXR
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
+<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
 <li><p><strong>file</strong> (<em>str</em>) – Zone file name, “” to clear.</p></li>
 </ul>
 </dd>
@@ -3894,7 +3914,7 @@ into the corresponding range above using the following formula:</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
+<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
 <li><p><strong>option</strong> (<em>str</em>) – Option  “Profile”, “Section” or “Section and Profile”</p></li>
 </ul>
 </dd>
@@ -3912,7 +3932,7 @@ into the corresponding range above using the following formula:</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
+<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
 <li><p><strong>base</strong> (<em>float</em>) – Base value (rDummy for none)</p></li>
 <li><p><strong>range</strong> (<em>float</em>) – Range value (rDummy for none)</p></li>
 </ul>
@@ -3935,7 +3955,7 @@ is used.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
+<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
 <li><p><strong>file</strong> (<em>str</em>) – Zone file name</p></li>
 </ul>
 </dd>
@@ -3955,7 +3975,7 @@ file does not exist, or if it is not a valid color zone file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
+<li><p><strong>ch</strong> (<em>int</em>) – Channel (Locked <a class="reference internal" href="#id255" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>)</p></li>
 <li><p><strong>min_w</strong> (<em>int</em>) – First window (0 to N-1, iDummy for default)</p></li>
 <li><p><strong>max_w</strong> (<em>int</em>) – Last window (0 to N-1, iDummy for default)</p></li>
 </ul>
@@ -4201,7 +4221,7 @@ The <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geo
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>symb</strong> (<em>int</em>) – Blob (<a class="reference internal" href="#id258" title="geosoft.gxapi.DB_SYMB_BLOB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_SYMB_BLOB</span></code></a>) to write into database from file</p></li>
+<li><p><strong>symb</strong> (<em>int</em>) – Blob (<a class="reference internal" href="#id259" title="geosoft.gxapi.DB_SYMB_BLOB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_SYMB_BLOB</span></code></a>) to write into database from file</p></li>
 <li><p><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – File to write blob into</p></li>
 </ul>
 </dd>
@@ -4237,8 +4257,8 @@ The <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geo
 <code class="sig-name descname">DB_CATEGORY_BLOB_NORMAL</code><a class="headerlink" href="#geosoft.gxapi.DB_CATEGORY_BLOB_NORMAL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Normal</p>
 <dl class="py attribute">
-<dt id="id184">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_BLOB_NORMAL</code><em class="property"> = 0</em><a class="headerlink" href="#id184" title="Permalink to this definition">¶</a></dt>
+<dt id="id185">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_BLOB_NORMAL</code><em class="property"> = 0</em><a class="headerlink" href="#id185" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4256,8 +4276,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CATEGORY_CHAN_BYTE</code><a class="headerlink" href="#geosoft.gxapi.DB_CATEGORY_CHAN_BYTE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Byte</p>
 <dl class="py attribute">
-<dt id="id185">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_BYTE</code><em class="property"> = 0</em><a class="headerlink" href="#id185" title="Permalink to this definition">¶</a></dt>
+<dt id="id186">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_BYTE</code><em class="property"> = 0</em><a class="headerlink" href="#id186" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4267,8 +4287,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CATEGORY_CHAN_USHORT</code><a class="headerlink" href="#geosoft.gxapi.DB_CATEGORY_CHAN_USHORT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ushort</p>
 <dl class="py attribute">
-<dt id="id186">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_USHORT</code><em class="property"> = 1</em><a class="headerlink" href="#id186" title="Permalink to this definition">¶</a></dt>
+<dt id="id187">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_USHORT</code><em class="property"> = 1</em><a class="headerlink" href="#id187" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4278,8 +4298,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CATEGORY_CHAN_SHORT</code><a class="headerlink" href="#geosoft.gxapi.DB_CATEGORY_CHAN_SHORT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Short</p>
 <dl class="py attribute">
-<dt id="id187">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_SHORT</code><em class="property"> = 2</em><a class="headerlink" href="#id187" title="Permalink to this definition">¶</a></dt>
+<dt id="id188">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_SHORT</code><em class="property"> = 2</em><a class="headerlink" href="#id188" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4289,8 +4309,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CATEGORY_CHAN_LONG</code><a class="headerlink" href="#geosoft.gxapi.DB_CATEGORY_CHAN_LONG" title="Permalink to this definition">¶</a></dt>
 <dd><p>Long</p>
 <dl class="py attribute">
-<dt id="id188">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_LONG</code><em class="property"> = 3</em><a class="headerlink" href="#id188" title="Permalink to this definition">¶</a></dt>
+<dt id="id189">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_LONG</code><em class="property"> = 3</em><a class="headerlink" href="#id189" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4300,8 +4320,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CATEGORY_CHAN_FLOAT</code><a class="headerlink" href="#geosoft.gxapi.DB_CATEGORY_CHAN_FLOAT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Float</p>
 <dl class="py attribute">
-<dt id="id189">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_FLOAT</code><em class="property"> = 4</em><a class="headerlink" href="#id189" title="Permalink to this definition">¶</a></dt>
+<dt id="id190">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_FLOAT</code><em class="property"> = 4</em><a class="headerlink" href="#id190" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4311,8 +4331,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CATEGORY_CHAN_DOUBLE</code><a class="headerlink" href="#geosoft.gxapi.DB_CATEGORY_CHAN_DOUBLE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Double</p>
 <dl class="py attribute">
-<dt id="id190">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_DOUBLE</code><em class="property"> = 5</em><a class="headerlink" href="#id190" title="Permalink to this definition">¶</a></dt>
+<dt id="id191">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_DOUBLE</code><em class="property"> = 5</em><a class="headerlink" href="#id191" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4322,8 +4342,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CATEGORY_CHAN_UBYTE</code><a class="headerlink" href="#geosoft.gxapi.DB_CATEGORY_CHAN_UBYTE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ubyte</p>
 <dl class="py attribute">
-<dt id="id191">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_UBYTE</code><em class="property"> = 6</em><a class="headerlink" href="#id191" title="Permalink to this definition">¶</a></dt>
+<dt id="id192">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_UBYTE</code><em class="property"> = 6</em><a class="headerlink" href="#id192" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4333,8 +4353,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CATEGORY_CHAN_ULONG</code><a class="headerlink" href="#geosoft.gxapi.DB_CATEGORY_CHAN_ULONG" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ulong</p>
 <dl class="py attribute">
-<dt id="id192">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_ULONG</code><em class="property"> = 7</em><a class="headerlink" href="#id192" title="Permalink to this definition">¶</a></dt>
+<dt id="id193">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_ULONG</code><em class="property"> = 7</em><a class="headerlink" href="#id193" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4344,8 +4364,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CATEGORY_CHAN_LONG64</code><a class="headerlink" href="#geosoft.gxapi.DB_CATEGORY_CHAN_LONG64" title="Permalink to this definition">¶</a></dt>
 <dd><p>Long64</p>
 <dl class="py attribute">
-<dt id="id193">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_LONG64</code><em class="property"> = 8</em><a class="headerlink" href="#id193" title="Permalink to this definition">¶</a></dt>
+<dt id="id194">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_LONG64</code><em class="property"> = 8</em><a class="headerlink" href="#id194" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4355,8 +4375,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CATEGORY_CHAN_ULONG64</code><a class="headerlink" href="#geosoft.gxapi.DB_CATEGORY_CHAN_ULONG64" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ulong64</p>
 <dl class="py attribute">
-<dt id="id194">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_ULONG64</code><em class="property"> = 9</em><a class="headerlink" href="#id194" title="Permalink to this definition">¶</a></dt>
+<dt id="id195">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_CHAN_ULONG64</code><em class="property"> = 9</em><a class="headerlink" href="#id195" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4370,8 +4390,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CATEGORY_LINE_FLIGHT</code><a class="headerlink" href="#geosoft.gxapi.DB_CATEGORY_LINE_FLIGHT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Flight</p>
 <dl class="py attribute">
-<dt id="id195">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_LINE_FLIGHT</code><em class="property"> = 100</em><a class="headerlink" href="#id195" title="Permalink to this definition">¶</a></dt>
+<dt id="id196">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_LINE_FLIGHT</code><em class="property"> = 100</em><a class="headerlink" href="#id196" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4381,8 +4401,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CATEGORY_LINE_GROUP</code><a class="headerlink" href="#geosoft.gxapi.DB_CATEGORY_LINE_GROUP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Group</p>
 <dl class="py attribute">
-<dt id="id196">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_LINE_GROUP</code><em class="property"> = 200</em><a class="headerlink" href="#id196" title="Permalink to this definition">¶</a></dt>
+<dt id="id197">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_LINE_GROUP</code><em class="property"> = 200</em><a class="headerlink" href="#id197" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4390,10 +4410,10 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <dl class="py data">
 <dt id="geosoft.gxapi.DB_CATEGORY_LINE_NORMAL">
 <code class="sig-name descname">DB_CATEGORY_LINE_NORMAL</code><a class="headerlink" href="#geosoft.gxapi.DB_CATEGORY_LINE_NORMAL" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as <a class="reference internal" href="#id195" title="geosoft.gxapi.DB_CATEGORY_LINE_FLIGHT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CATEGORY_LINE_FLIGHT</span></code></a></p>
+<dd><p>Same as <a class="reference internal" href="#id196" title="geosoft.gxapi.DB_CATEGORY_LINE_FLIGHT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CATEGORY_LINE_FLIGHT</span></code></a></p>
 <dl class="py attribute">
-<dt id="id197">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_LINE_NORMAL</code><em class="property"> = 100</em><a class="headerlink" href="#id197" title="Permalink to this definition">¶</a></dt>
+<dt id="id198">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_LINE_NORMAL</code><em class="property"> = 100</em><a class="headerlink" href="#id198" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4407,8 +4427,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CATEGORY_USER_NORMAL</code><a class="headerlink" href="#geosoft.gxapi.DB_CATEGORY_USER_NORMAL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Normal</p>
 <dl class="py attribute">
-<dt id="id198">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_USER_NORMAL</code><em class="property"> = 0</em><a class="headerlink" href="#id198" title="Permalink to this definition">¶</a></dt>
+<dt id="id199">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CATEGORY_USER_NORMAL</code><em class="property"> = 0</em><a class="headerlink" href="#id199" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4422,8 +4442,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CHAN_FORMAT_NORMAL</code><a class="headerlink" href="#geosoft.gxapi.DB_CHAN_FORMAT_NORMAL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Normal</p>
 <dl class="py attribute">
-<dt id="id199">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_FORMAT_NORMAL</code><em class="property"> = 0</em><a class="headerlink" href="#id199" title="Permalink to this definition">¶</a></dt>
+<dt id="id200">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_FORMAT_NORMAL</code><em class="property"> = 0</em><a class="headerlink" href="#id200" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4433,8 +4453,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CHAN_FORMAT_EXP</code><a class="headerlink" href="#geosoft.gxapi.DB_CHAN_FORMAT_EXP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exp</p>
 <dl class="py attribute">
-<dt id="id200">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_FORMAT_EXP</code><em class="property"> = 1</em><a class="headerlink" href="#id200" title="Permalink to this definition">¶</a></dt>
+<dt id="id201">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_FORMAT_EXP</code><em class="property"> = 1</em><a class="headerlink" href="#id201" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4444,8 +4464,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CHAN_FORMAT_TIME</code><a class="headerlink" href="#geosoft.gxapi.DB_CHAN_FORMAT_TIME" title="Permalink to this definition">¶</a></dt>
 <dd><p>Time</p>
 <dl class="py attribute">
-<dt id="id201">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_FORMAT_TIME</code><em class="property"> = 2</em><a class="headerlink" href="#id201" title="Permalink to this definition">¶</a></dt>
+<dt id="id202">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_FORMAT_TIME</code><em class="property"> = 2</em><a class="headerlink" href="#id202" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4455,8 +4475,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CHAN_FORMAT_DATE</code><a class="headerlink" href="#geosoft.gxapi.DB_CHAN_FORMAT_DATE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Date</p>
 <dl class="py attribute">
-<dt id="id202">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_FORMAT_DATE</code><em class="property"> = 3</em><a class="headerlink" href="#id202" title="Permalink to this definition">¶</a></dt>
+<dt id="id203">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_FORMAT_DATE</code><em class="property"> = 3</em><a class="headerlink" href="#id203" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4466,8 +4486,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CHAN_FORMAT_GEOGR</code><a class="headerlink" href="#geosoft.gxapi.DB_CHAN_FORMAT_GEOGR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geogr</p>
 <dl class="py attribute">
-<dt id="id203">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_FORMAT_GEOGR</code><em class="property"> = 4</em><a class="headerlink" href="#id203" title="Permalink to this definition">¶</a></dt>
+<dt id="id204">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_FORMAT_GEOGR</code><em class="property"> = 4</em><a class="headerlink" href="#id204" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4477,8 +4497,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CHAN_FORMAT_SIGDIG</code><a class="headerlink" href="#geosoft.gxapi.DB_CHAN_FORMAT_SIGDIG" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sigdig</p>
 <dl class="py attribute">
-<dt id="id204">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_FORMAT_SIGDIG</code><em class="property"> = 5</em><a class="headerlink" href="#id204" title="Permalink to this definition">¶</a></dt>
+<dt id="id205">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_FORMAT_SIGDIG</code><em class="property"> = 5</em><a class="headerlink" href="#id205" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4488,8 +4508,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CHAN_FORMAT_HEX</code><a class="headerlink" href="#geosoft.gxapi.DB_CHAN_FORMAT_HEX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hex</p>
 <dl class="py attribute">
-<dt id="id205">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_FORMAT_HEX</code><em class="property"> = 6</em><a class="headerlink" href="#id205" title="Permalink to this definition">¶</a></dt>
+<dt id="id206">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_FORMAT_HEX</code><em class="property"> = 6</em><a class="headerlink" href="#id206" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4503,8 +4523,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CHAN_UNPROTECTED</code><a class="headerlink" href="#geosoft.gxapi.DB_CHAN_UNPROTECTED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Db chan unprotected</p>
 <dl class="py attribute">
-<dt id="id206">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_UNPROTECTED</code><em class="property"> = 0</em><a class="headerlink" href="#id206" title="Permalink to this definition">¶</a></dt>
+<dt id="id207">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_UNPROTECTED</code><em class="property"> = 0</em><a class="headerlink" href="#id207" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4514,8 +4534,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CHAN_PROTECTED</code><a class="headerlink" href="#geosoft.gxapi.DB_CHAN_PROTECTED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Db chan protected</p>
 <dl class="py attribute">
-<dt id="id207">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_PROTECTED</code><em class="property"> = 1</em><a class="headerlink" href="#id207" title="Permalink to this definition">¶</a></dt>
+<dt id="id208">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_PROTECTED</code><em class="property"> = 1</em><a class="headerlink" href="#id208" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4529,8 +4549,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CHAN_X</code><a class="headerlink" href="#geosoft.gxapi.DB_CHAN_X" title="Permalink to this definition">¶</a></dt>
 <dd><p>Db chan x</p>
 <dl class="py attribute">
-<dt id="id208">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_X</code><em class="property"> = 0</em><a class="headerlink" href="#id208" title="Permalink to this definition">¶</a></dt>
+<dt id="id209">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_X</code><em class="property"> = 0</em><a class="headerlink" href="#id209" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4540,8 +4560,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CHAN_Y</code><a class="headerlink" href="#geosoft.gxapi.DB_CHAN_Y" title="Permalink to this definition">¶</a></dt>
 <dd><p>Db chan y</p>
 <dl class="py attribute">
-<dt id="id209">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_Y</code><em class="property"> = 1</em><a class="headerlink" href="#id209" title="Permalink to this definition">¶</a></dt>
+<dt id="id210">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_Y</code><em class="property"> = 1</em><a class="headerlink" href="#id210" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4551,8 +4571,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_CHAN_Z</code><a class="headerlink" href="#geosoft.gxapi.DB_CHAN_Z" title="Permalink to this definition">¶</a></dt>
 <dd><p>Db chan z</p>
 <dl class="py attribute">
-<dt id="id210">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_Z</code><em class="property"> = 2</em><a class="headerlink" href="#id210" title="Permalink to this definition">¶</a></dt>
+<dt id="id211">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_CHAN_Z</code><em class="property"> = 2</em><a class="headerlink" href="#id211" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4566,8 +4586,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_COMP_NONE</code><a class="headerlink" href="#geosoft.gxapi.DB_COMP_NONE" title="Permalink to this definition">¶</a></dt>
 <dd><p>None</p>
 <dl class="py attribute">
-<dt id="id211">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_COMP_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#id211" title="Permalink to this definition">¶</a></dt>
+<dt id="id212">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_COMP_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#id212" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4577,8 +4597,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_COMP_SPEED</code><a class="headerlink" href="#geosoft.gxapi.DB_COMP_SPEED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Speed</p>
 <dl class="py attribute">
-<dt id="id212">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_COMP_SPEED</code><em class="property"> = 1</em><a class="headerlink" href="#id212" title="Permalink to this definition">¶</a></dt>
+<dt id="id213">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_COMP_SPEED</code><em class="property"> = 1</em><a class="headerlink" href="#id213" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4588,8 +4608,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_COMP_SIZE</code><a class="headerlink" href="#geosoft.gxapi.DB_COMP_SIZE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Size</p>
 <dl class="py attribute">
-<dt id="id213">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_COMP_SIZE</code><em class="property"> = 2</em><a class="headerlink" href="#id213" title="Permalink to this definition">¶</a></dt>
+<dt id="id214">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_COMP_SIZE</code><em class="property"> = 2</em><a class="headerlink" href="#id214" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4603,8 +4623,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_COORDPAIR_NONE</code><a class="headerlink" href="#geosoft.gxapi.DB_COORDPAIR_NONE" title="Permalink to this definition">¶</a></dt>
 <dd><p>None</p>
 <dl class="py attribute">
-<dt id="id214">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_COORDPAIR_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#id214" title="Permalink to this definition">¶</a></dt>
+<dt id="id215">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_COORDPAIR_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#id215" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4614,8 +4634,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_COORDPAIR_X</code><a class="headerlink" href="#geosoft.gxapi.DB_COORDPAIR_X" title="Permalink to this definition">¶</a></dt>
 <dd><p>X</p>
 <dl class="py attribute">
-<dt id="id215">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_COORDPAIR_X</code><em class="property"> = 1</em><a class="headerlink" href="#id215" title="Permalink to this definition">¶</a></dt>
+<dt id="id216">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_COORDPAIR_X</code><em class="property"> = 1</em><a class="headerlink" href="#id216" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4625,8 +4645,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_COORDPAIR_Y</code><a class="headerlink" href="#geosoft.gxapi.DB_COORDPAIR_Y" title="Permalink to this definition">¶</a></dt>
 <dd><p>Y</p>
 <dl class="py attribute">
-<dt id="id216">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_COORDPAIR_Y</code><em class="property"> = 2</em><a class="headerlink" href="#id216" title="Permalink to this definition">¶</a></dt>
+<dt id="id217">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_COORDPAIR_Y</code><em class="property"> = 2</em><a class="headerlink" href="#id217" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4640,8 +4660,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_GROUP_CLASS_SIZE</code><a class="headerlink" href="#geosoft.gxapi.DB_GROUP_CLASS_SIZE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Db group class size</p>
 <dl class="py attribute">
-<dt id="id217">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_GROUP_CLASS_SIZE</code><em class="property"> = 16</em><a class="headerlink" href="#id217" title="Permalink to this definition">¶</a></dt>
+<dt id="id218">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_GROUP_CLASS_SIZE</code><em class="property"> = 16</em><a class="headerlink" href="#id218" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4655,8 +4675,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_INFO_BLOBS_MAX</code><a class="headerlink" href="#geosoft.gxapi.DB_INFO_BLOBS_MAX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum Number of Blobs in the Database</p>
 <dl class="py attribute">
-<dt id="id218">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_BLOBS_MAX</code><em class="property"> = 0</em><a class="headerlink" href="#id218" title="Permalink to this definition">¶</a></dt>
+<dt id="id219">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_BLOBS_MAX</code><em class="property"> = 0</em><a class="headerlink" href="#id219" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4666,8 +4686,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_INFO_LINES_MAX</code><a class="headerlink" href="#geosoft.gxapi.DB_INFO_LINES_MAX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum number of lines in the database</p>
 <dl class="py attribute">
-<dt id="id219">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_LINES_MAX</code><em class="property"> = 1</em><a class="headerlink" href="#id219" title="Permalink to this definition">¶</a></dt>
+<dt id="id220">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_LINES_MAX</code><em class="property"> = 1</em><a class="headerlink" href="#id220" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4677,8 +4697,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_INFO_CHANS_MAX</code><a class="headerlink" href="#geosoft.gxapi.DB_INFO_CHANS_MAX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum Number of Channels in the Database</p>
 <dl class="py attribute">
-<dt id="id220">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_CHANS_MAX</code><em class="property"> = 2</em><a class="headerlink" href="#id220" title="Permalink to this definition">¶</a></dt>
+<dt id="id221">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_CHANS_MAX</code><em class="property"> = 2</em><a class="headerlink" href="#id221" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4688,8 +4708,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_INFO_USERS_MAX</code><a class="headerlink" href="#geosoft.gxapi.DB_INFO_USERS_MAX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum number of Users</p>
 <dl class="py attribute">
-<dt id="id221">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_USERS_MAX</code><em class="property"> = 3</em><a class="headerlink" href="#id221" title="Permalink to this definition">¶</a></dt>
+<dt id="id222">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_USERS_MAX</code><em class="property"> = 3</em><a class="headerlink" href="#id222" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4699,8 +4719,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_INFO_BLOBS_USED</code><a class="headerlink" href="#geosoft.gxapi.DB_INFO_BLOBS_USED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of Blobs currently used</p>
 <dl class="py attribute">
-<dt id="id222">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_BLOBS_USED</code><em class="property"> = 4</em><a class="headerlink" href="#id222" title="Permalink to this definition">¶</a></dt>
+<dt id="id223">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_BLOBS_USED</code><em class="property"> = 4</em><a class="headerlink" href="#id223" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4710,8 +4730,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_INFO_LINES_USED</code><a class="headerlink" href="#geosoft.gxapi.DB_INFO_LINES_USED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of Lines currently used</p>
 <dl class="py attribute">
-<dt id="id223">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_LINES_USED</code><em class="property"> = 5</em><a class="headerlink" href="#id223" title="Permalink to this definition">¶</a></dt>
+<dt id="id224">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_LINES_USED</code><em class="property"> = 5</em><a class="headerlink" href="#id224" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4721,8 +4741,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_INFO_CHANS_USED</code><a class="headerlink" href="#geosoft.gxapi.DB_INFO_CHANS_USED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of Channels currently used</p>
 <dl class="py attribute">
-<dt id="id224">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_CHANS_USED</code><em class="property"> = 6</em><a class="headerlink" href="#id224" title="Permalink to this definition">¶</a></dt>
+<dt id="id225">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_CHANS_USED</code><em class="property"> = 6</em><a class="headerlink" href="#id225" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4732,8 +4752,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_INFO_USERS_USED</code><a class="headerlink" href="#geosoft.gxapi.DB_INFO_USERS_USED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of Users in the database</p>
 <dl class="py attribute">
-<dt id="id225">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_USERS_USED</code><em class="property"> = 7</em><a class="headerlink" href="#id225" title="Permalink to this definition">¶</a></dt>
+<dt id="id226">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_USERS_USED</code><em class="property"> = 7</em><a class="headerlink" href="#id226" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4743,8 +4763,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_INFO_PAGE_SIZE</code><a class="headerlink" href="#geosoft.gxapi.DB_INFO_PAGE_SIZE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Size of the smallest database block in bytes</p>
 <dl class="py attribute">
-<dt id="id226">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_PAGE_SIZE</code><em class="property"> = 8</em><a class="headerlink" href="#id226" title="Permalink to this definition">¶</a></dt>
+<dt id="id227">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_PAGE_SIZE</code><em class="property"> = 8</em><a class="headerlink" href="#id227" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4754,8 +4774,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_INFO_DATA_SIZE</code><a class="headerlink" href="#geosoft.gxapi.DB_INFO_DATA_SIZE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of Blocks in Entire Database</p>
 <dl class="py attribute">
-<dt id="id227">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_DATA_SIZE</code><em class="property"> = 9</em><a class="headerlink" href="#id227" title="Permalink to this definition">¶</a></dt>
+<dt id="id228">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_DATA_SIZE</code><em class="property"> = 9</em><a class="headerlink" href="#id228" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4765,8 +4785,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_INFO_LOST_SIZE</code><a class="headerlink" href="#geosoft.gxapi.DB_INFO_LOST_SIZE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of Lost Blocks in the Database</p>
 <dl class="py attribute">
-<dt id="id228">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_LOST_SIZE</code><em class="property"> = 10</em><a class="headerlink" href="#id228" title="Permalink to this definition">¶</a></dt>
+<dt id="id229">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_LOST_SIZE</code><em class="property"> = 10</em><a class="headerlink" href="#id229" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4776,8 +4796,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_INFO_FREE_SIZE</code><a class="headerlink" href="#geosoft.gxapi.DB_INFO_FREE_SIZE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of Free Blocks in the Database</p>
 <dl class="py attribute">
-<dt id="id229">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_FREE_SIZE</code><em class="property"> = 11</em><a class="headerlink" href="#id229" title="Permalink to this definition">¶</a></dt>
+<dt id="id230">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_FREE_SIZE</code><em class="property"> = 11</em><a class="headerlink" href="#id230" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4787,8 +4807,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_INFO_COMP_LEVEL</code><a class="headerlink" href="#geosoft.gxapi.DB_INFO_COMP_LEVEL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compression Level in use</p>
 <dl class="py attribute">
-<dt id="id230">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_COMP_LEVEL</code><em class="property"> = 16</em><a class="headerlink" href="#id230" title="Permalink to this definition">¶</a></dt>
+<dt id="id231">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_COMP_LEVEL</code><em class="property"> = 16</em><a class="headerlink" href="#id231" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4798,8 +4818,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_INFO_BLOB_SIZE</code><a class="headerlink" href="#geosoft.gxapi.DB_INFO_BLOB_SIZE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of pages given to blobs</p>
 <dl class="py attribute">
-<dt id="id231">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_BLOB_SIZE</code><em class="property"> = 19</em><a class="headerlink" href="#id231" title="Permalink to this definition">¶</a></dt>
+<dt id="id232">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_BLOB_SIZE</code><em class="property"> = 19</em><a class="headerlink" href="#id232" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4809,8 +4829,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_INFO_FILE_SIZE</code><a class="headerlink" href="#geosoft.gxapi.DB_INFO_FILE_SIZE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Entire Size of File (in kbytes)</p>
 <dl class="py attribute">
-<dt id="id232">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_FILE_SIZE</code><em class="property"> = 17</em><a class="headerlink" href="#id232" title="Permalink to this definition">¶</a></dt>
+<dt id="id233">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_FILE_SIZE</code><em class="property"> = 17</em><a class="headerlink" href="#id233" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4820,8 +4840,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_INFO_INDEX_SIZE</code><a class="headerlink" href="#geosoft.gxapi.DB_INFO_INDEX_SIZE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Size of Index (in kbytes)</p>
 <dl class="py attribute">
-<dt id="id233">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_INDEX_SIZE</code><em class="property"> = 18</em><a class="headerlink" href="#id233" title="Permalink to this definition">¶</a></dt>
+<dt id="id234">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_INDEX_SIZE</code><em class="property"> = 18</em><a class="headerlink" href="#id234" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4831,8 +4851,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_INFO_MAX_BLOCK_SIZE</code><a class="headerlink" href="#geosoft.gxapi.DB_INFO_MAX_BLOCK_SIZE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Naximum number of bytes in a block</p>
 <dl class="py attribute">
-<dt id="id234">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_MAX_BLOCK_SIZE</code><em class="property"> = 20</em><a class="headerlink" href="#id234" title="Permalink to this definition">¶</a></dt>
+<dt id="id235">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_MAX_BLOCK_SIZE</code><em class="property"> = 20</em><a class="headerlink" href="#id235" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4842,8 +4862,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_INFO_CHANGESLOST</code><a class="headerlink" href="#geosoft.gxapi.DB_INFO_CHANGESLOST" title="Permalink to this definition">¶</a></dt>
 <dd><p>Will changes to this database be lost when this database is closed?</p>
 <dl class="py attribute">
-<dt id="id235">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_CHANGESLOST</code><em class="property"> = 21</em><a class="headerlink" href="#id235" title="Permalink to this definition">¶</a></dt>
+<dt id="id236">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_INFO_CHANGESLOST</code><em class="property"> = 21</em><a class="headerlink" href="#id236" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4857,8 +4877,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LINE_LABEL_FORMAT_LINE</code><a class="headerlink" href="#geosoft.gxapi.DB_LINE_LABEL_FORMAT_LINE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Line</p>
 <dl class="py attribute">
-<dt id="id236">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_LABEL_FORMAT_LINE</code><em class="property"> = 1</em><a class="headerlink" href="#id236" title="Permalink to this definition">¶</a></dt>
+<dt id="id237">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_LABEL_FORMAT_LINE</code><em class="property"> = 1</em><a class="headerlink" href="#id237" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4868,8 +4888,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LINE_LABEL_FORMAT_VERSION</code><a class="headerlink" href="#geosoft.gxapi.DB_LINE_LABEL_FORMAT_VERSION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Version</p>
 <dl class="py attribute">
-<dt id="id237">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_LABEL_FORMAT_VERSION</code><em class="property"> = 2</em><a class="headerlink" href="#id237" title="Permalink to this definition">¶</a></dt>
+<dt id="id238">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_LABEL_FORMAT_VERSION</code><em class="property"> = 2</em><a class="headerlink" href="#id238" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4879,8 +4899,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LINE_LABEL_FORMAT_TYPE</code><a class="headerlink" href="#geosoft.gxapi.DB_LINE_LABEL_FORMAT_TYPE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type</p>
 <dl class="py attribute">
-<dt id="id238">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_LABEL_FORMAT_TYPE</code><em class="property"> = 4</em><a class="headerlink" href="#id238" title="Permalink to this definition">¶</a></dt>
+<dt id="id239">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_LABEL_FORMAT_TYPE</code><em class="property"> = 4</em><a class="headerlink" href="#id239" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4890,8 +4910,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LINE_LABEL_FORMAT_FLIGHT</code><a class="headerlink" href="#geosoft.gxapi.DB_LINE_LABEL_FORMAT_FLIGHT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Flight</p>
 <dl class="py attribute">
-<dt id="id239">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_LABEL_FORMAT_FLIGHT</code><em class="property"> = 8</em><a class="headerlink" href="#id239" title="Permalink to this definition">¶</a></dt>
+<dt id="id240">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_LABEL_FORMAT_FLIGHT</code><em class="property"> = 8</em><a class="headerlink" href="#id240" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4901,8 +4921,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LINE_LABEL_FORMAT_FULL</code><a class="headerlink" href="#geosoft.gxapi.DB_LINE_LABEL_FORMAT_FULL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Full</p>
 <dl class="py attribute">
-<dt id="id240">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_LABEL_FORMAT_FULL</code><em class="property"> = 15</em><a class="headerlink" href="#id240" title="Permalink to this definition">¶</a></dt>
+<dt id="id241">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_LABEL_FORMAT_FULL</code><em class="property"> = 15</em><a class="headerlink" href="#id241" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4912,8 +4932,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LINE_LABEL_FORMAT_DATE</code><a class="headerlink" href="#geosoft.gxapi.DB_LINE_LABEL_FORMAT_DATE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Date</p>
 <dl class="py attribute">
-<dt id="id241">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_LABEL_FORMAT_DATE</code><em class="property"> = 16</em><a class="headerlink" href="#id241" title="Permalink to this definition">¶</a></dt>
+<dt id="id242">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_LABEL_FORMAT_DATE</code><em class="property"> = 16</em><a class="headerlink" href="#id242" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4923,8 +4943,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LINE_LABEL_FORMAT_LINK</code><a class="headerlink" href="#geosoft.gxapi.DB_LINE_LABEL_FORMAT_LINK" title="Permalink to this definition">¶</a></dt>
 <dd><p>Link</p>
 <dl class="py attribute">
-<dt id="id242">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_LABEL_FORMAT_LINK</code><em class="property"> = 7</em><a class="headerlink" href="#id242" title="Permalink to this definition">¶</a></dt>
+<dt id="id243">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_LABEL_FORMAT_LINK</code><em class="property"> = 7</em><a class="headerlink" href="#id243" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4938,8 +4958,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LINE_SELECT_INCLUDE</code><a class="headerlink" href="#geosoft.gxapi.DB_LINE_SELECT_INCLUDE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Include</p>
 <dl class="py attribute">
-<dt id="id243">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_SELECT_INCLUDE</code><em class="property"> = 0</em><a class="headerlink" href="#id243" title="Permalink to this definition">¶</a></dt>
+<dt id="id244">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_SELECT_INCLUDE</code><em class="property"> = 0</em><a class="headerlink" href="#id244" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4949,8 +4969,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LINE_SELECT_EXCLUDE</code><a class="headerlink" href="#geosoft.gxapi.DB_LINE_SELECT_EXCLUDE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exclude</p>
 <dl class="py attribute">
-<dt id="id244">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_SELECT_EXCLUDE</code><em class="property"> = 1</em><a class="headerlink" href="#id244" title="Permalink to this definition">¶</a></dt>
+<dt id="id245">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_SELECT_EXCLUDE</code><em class="property"> = 1</em><a class="headerlink" href="#id245" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4964,8 +4984,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LINE_TYPE_NORMAL</code><a class="headerlink" href="#geosoft.gxapi.DB_LINE_TYPE_NORMAL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Normal</p>
 <dl class="py attribute">
-<dt id="id245">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_TYPE_NORMAL</code><em class="property"> = 0</em><a class="headerlink" href="#id245" title="Permalink to this definition">¶</a></dt>
+<dt id="id246">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_TYPE_NORMAL</code><em class="property"> = 0</em><a class="headerlink" href="#id246" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4975,8 +4995,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LINE_TYPE_BASE</code><a class="headerlink" href="#geosoft.gxapi.DB_LINE_TYPE_BASE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base</p>
 <dl class="py attribute">
-<dt id="id246">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_TYPE_BASE</code><em class="property"> = 1</em><a class="headerlink" href="#id246" title="Permalink to this definition">¶</a></dt>
+<dt id="id247">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_TYPE_BASE</code><em class="property"> = 1</em><a class="headerlink" href="#id247" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4986,8 +5006,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LINE_TYPE_TIE</code><a class="headerlink" href="#geosoft.gxapi.DB_LINE_TYPE_TIE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tie</p>
 <dl class="py attribute">
-<dt id="id247">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_TYPE_TIE</code><em class="property"> = 2</em><a class="headerlink" href="#id247" title="Permalink to this definition">¶</a></dt>
+<dt id="id248">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_TYPE_TIE</code><em class="property"> = 2</em><a class="headerlink" href="#id248" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4997,8 +5017,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LINE_TYPE_TEST</code><a class="headerlink" href="#geosoft.gxapi.DB_LINE_TYPE_TEST" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test</p>
 <dl class="py attribute">
-<dt id="id248">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_TYPE_TEST</code><em class="property"> = 3</em><a class="headerlink" href="#id248" title="Permalink to this definition">¶</a></dt>
+<dt id="id249">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_TYPE_TEST</code><em class="property"> = 3</em><a class="headerlink" href="#id249" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5008,8 +5028,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LINE_TYPE_TREND</code><a class="headerlink" href="#geosoft.gxapi.DB_LINE_TYPE_TREND" title="Permalink to this definition">¶</a></dt>
 <dd><p>Trend</p>
 <dl class="py attribute">
-<dt id="id249">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_TYPE_TREND</code><em class="property"> = 4</em><a class="headerlink" href="#id249" title="Permalink to this definition">¶</a></dt>
+<dt id="id250">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_TYPE_TREND</code><em class="property"> = 4</em><a class="headerlink" href="#id250" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5019,8 +5039,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LINE_TYPE_SPECIAL</code><a class="headerlink" href="#geosoft.gxapi.DB_LINE_TYPE_SPECIAL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Special</p>
 <dl class="py attribute">
-<dt id="id250">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_TYPE_SPECIAL</code><em class="property"> = 5</em><a class="headerlink" href="#id250" title="Permalink to this definition">¶</a></dt>
+<dt id="id251">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_TYPE_SPECIAL</code><em class="property"> = 5</em><a class="headerlink" href="#id251" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5030,8 +5050,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LINE_TYPE_RANDOM</code><a class="headerlink" href="#geosoft.gxapi.DB_LINE_TYPE_RANDOM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Random</p>
 <dl class="py attribute">
-<dt id="id251">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_TYPE_RANDOM</code><em class="property"> = 6</em><a class="headerlink" href="#id251" title="Permalink to this definition">¶</a></dt>
+<dt id="id252">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LINE_TYPE_RANDOM</code><em class="property"> = 6</em><a class="headerlink" href="#id252" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5045,8 +5065,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LOCK_NONE</code><a class="headerlink" href="#geosoft.gxapi.DB_LOCK_NONE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used only by GetSymbLock_DB</p>
 <dl class="py attribute">
-<dt id="id252">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LOCK_NONE</code><em class="property"> = -1</em><a class="headerlink" href="#id252" title="Permalink to this definition">¶</a></dt>
+<dt id="id253">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LOCK_NONE</code><em class="property"> = -1</em><a class="headerlink" href="#id253" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5056,8 +5076,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LOCK_READONLY</code><a class="headerlink" href="#geosoft.gxapi.DB_LOCK_READONLY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Readonly</p>
 <dl class="py attribute">
-<dt id="id253">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LOCK_READONLY</code><em class="property"> = 0</em><a class="headerlink" href="#id253" title="Permalink to this definition">¶</a></dt>
+<dt id="id254">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LOCK_READONLY</code><em class="property"> = 0</em><a class="headerlink" href="#id254" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5067,8 +5087,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_LOCK_READWRITE</code><a class="headerlink" href="#geosoft.gxapi.DB_LOCK_READWRITE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Readwrite</p>
 <dl class="py attribute">
-<dt id="id254">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LOCK_READWRITE</code><em class="property"> = 1</em><a class="headerlink" href="#id254" title="Permalink to this definition">¶</a></dt>
+<dt id="id255">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_LOCK_READWRITE</code><em class="property"> = 1</em><a class="headerlink" href="#id255" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5082,8 +5102,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_NAME_FILE</code><a class="headerlink" href="#geosoft.gxapi.DB_NAME_FILE" title="Permalink to this definition">¶</a></dt>
 <dd><p>File</p>
 <dl class="py attribute">
-<dt id="id255">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_NAME_FILE</code><em class="property"> = 0</em><a class="headerlink" href="#id255" title="Permalink to this definition">¶</a></dt>
+<dt id="id256">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_NAME_FILE</code><em class="property"> = 0</em><a class="headerlink" href="#id256" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5097,8 +5117,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_OWN_SHARED</code><a class="headerlink" href="#geosoft.gxapi.DB_OWN_SHARED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shared</p>
 <dl class="py attribute">
-<dt id="id256">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_OWN_SHARED</code><em class="property"> = 0</em><a class="headerlink" href="#id256" title="Permalink to this definition">¶</a></dt>
+<dt id="id257">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_OWN_SHARED</code><em class="property"> = 0</em><a class="headerlink" href="#id257" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5108,8 +5128,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_OWN_USER</code><a class="headerlink" href="#geosoft.gxapi.DB_OWN_USER" title="Permalink to this definition">¶</a></dt>
 <dd><p>User</p>
 <dl class="py attribute">
-<dt id="id257">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_OWN_USER</code><em class="property"> = 1</em><a class="headerlink" href="#id257" title="Permalink to this definition">¶</a></dt>
+<dt id="id258">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_OWN_USER</code><em class="property"> = 1</em><a class="headerlink" href="#id258" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5123,8 +5143,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_SYMB_BLOB</code><a class="headerlink" href="#geosoft.gxapi.DB_SYMB_BLOB" title="Permalink to this definition">¶</a></dt>
 <dd><p>Db symb blob</p>
 <dl class="py attribute">
-<dt id="id258">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_SYMB_BLOB</code><em class="property"> = 0</em><a class="headerlink" href="#id258" title="Permalink to this definition">¶</a></dt>
+<dt id="id259">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_SYMB_BLOB</code><em class="property"> = 0</em><a class="headerlink" href="#id259" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5134,8 +5154,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_SYMB_LINE</code><a class="headerlink" href="#geosoft.gxapi.DB_SYMB_LINE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Db symb line</p>
 <dl class="py attribute">
-<dt id="id259">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_SYMB_LINE</code><em class="property"> = 1</em><a class="headerlink" href="#id259" title="Permalink to this definition">¶</a></dt>
+<dt id="id260">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_SYMB_LINE</code><em class="property"> = 1</em><a class="headerlink" href="#id260" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5145,8 +5165,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_SYMB_CHAN</code><a class="headerlink" href="#geosoft.gxapi.DB_SYMB_CHAN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Db symb chan</p>
 <dl class="py attribute">
-<dt id="id260">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_SYMB_CHAN</code><em class="property"> = 2</em><a class="headerlink" href="#id260" title="Permalink to this definition">¶</a></dt>
+<dt id="id261">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_SYMB_CHAN</code><em class="property"> = 2</em><a class="headerlink" href="#id261" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5156,8 +5176,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_SYMB_USER</code><a class="headerlink" href="#geosoft.gxapi.DB_SYMB_USER" title="Permalink to this definition">¶</a></dt>
 <dd><p>Db symb user</p>
 <dl class="py attribute">
-<dt id="id261">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_SYMB_USER</code><em class="property"> = 3</em><a class="headerlink" href="#id261" title="Permalink to this definition">¶</a></dt>
+<dt id="id262">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_SYMB_USER</code><em class="property"> = 3</em><a class="headerlink" href="#id262" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5171,8 +5191,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_SYMB_NAME_SIZE</code><a class="headerlink" href="#geosoft.gxapi.DB_SYMB_NAME_SIZE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same <a class="reference internal" href="GXGEOSOFT.html#id52" title="geosoft.gxapi.STR_DB_SYMBOL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">STR_DB_SYMBOL</span></code></a></p>
 <dl class="py attribute">
-<dt id="id262">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_SYMB_NAME_SIZE</code><em class="property"> = 64</em><a class="headerlink" href="#id262" title="Permalink to this definition">¶</a></dt>
+<dt id="id263">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_SYMB_NAME_SIZE</code><em class="property"> = 64</em><a class="headerlink" href="#id263" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5186,8 +5206,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_WAIT_NONE</code><a class="headerlink" href="#geosoft.gxapi.DB_WAIT_NONE" title="Permalink to this definition">¶</a></dt>
 <dd><p>None</p>
 <dl class="py attribute">
-<dt id="id263">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_WAIT_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#id263" title="Permalink to this definition">¶</a></dt>
+<dt id="id264">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_WAIT_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#id264" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5197,8 +5217,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_WAIT_INFINITY</code><a class="headerlink" href="#geosoft.gxapi.DB_WAIT_INFINITY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Infinity</p>
 <dl class="py attribute">
-<dt id="id264">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_WAIT_INFINITY</code><em class="property"> = -1</em><a class="headerlink" href="#id264" title="Permalink to this definition">¶</a></dt>
+<dt id="id265">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_WAIT_INFINITY</code><em class="property"> = -1</em><a class="headerlink" href="#id265" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5212,8 +5232,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_ARRAY_BASETYPE_NONE</code><a class="headerlink" href="#geosoft.gxapi.DB_ARRAY_BASETYPE_NONE" title="Permalink to this definition">¶</a></dt>
 <dd><p>None</p>
 <dl class="py attribute">
-<dt id="id265">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_ARRAY_BASETYPE_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#id265" title="Permalink to this definition">¶</a></dt>
+<dt id="id266">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_ARRAY_BASETYPE_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#id266" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5223,8 +5243,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_ARRAY_BASETYPE_TIME_WINDOWS</code><a class="headerlink" href="#geosoft.gxapi.DB_ARRAY_BASETYPE_TIME_WINDOWS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Time windows</p>
 <dl class="py attribute">
-<dt id="id266">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_ARRAY_BASETYPE_TIME_WINDOWS</code><em class="property"> = 1</em><a class="headerlink" href="#id266" title="Permalink to this definition">¶</a></dt>
+<dt id="id267">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_ARRAY_BASETYPE_TIME_WINDOWS</code><em class="property"> = 1</em><a class="headerlink" href="#id267" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5234,8 +5254,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_ARRAY_BASETYPE_TIMES</code><a class="headerlink" href="#geosoft.gxapi.DB_ARRAY_BASETYPE_TIMES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Times</p>
 <dl class="py attribute">
-<dt id="id267">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_ARRAY_BASETYPE_TIMES</code><em class="property"> = 2</em><a class="headerlink" href="#id267" title="Permalink to this definition">¶</a></dt>
+<dt id="id268">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_ARRAY_BASETYPE_TIMES</code><em class="property"> = 2</em><a class="headerlink" href="#id268" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5245,8 +5265,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_ARRAY_BASETYPE_FREQUENCIES</code><a class="headerlink" href="#geosoft.gxapi.DB_ARRAY_BASETYPE_FREQUENCIES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Frequencies</p>
 <dl class="py attribute">
-<dt id="id268">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_ARRAY_BASETYPE_FREQUENCIES</code><em class="property"> = 3</em><a class="headerlink" href="#id268" title="Permalink to this definition">¶</a></dt>
+<dt id="id269">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_ARRAY_BASETYPE_FREQUENCIES</code><em class="property"> = 3</em><a class="headerlink" href="#id269" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5256,8 +5276,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_ARRAY_BASETYPE_ELEVATIONS</code><a class="headerlink" href="#geosoft.gxapi.DB_ARRAY_BASETYPE_ELEVATIONS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Elevations</p>
 <dl class="py attribute">
-<dt id="id269">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_ARRAY_BASETYPE_ELEVATIONS</code><em class="property"> = 4</em><a class="headerlink" href="#id269" title="Permalink to this definition">¶</a></dt>
+<dt id="id270">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_ARRAY_BASETYPE_ELEVATIONS</code><em class="property"> = 4</em><a class="headerlink" href="#id270" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5267,8 +5287,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_ARRAY_BASETYPE_DEPTHS</code><a class="headerlink" href="#geosoft.gxapi.DB_ARRAY_BASETYPE_DEPTHS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Depths</p>
 <dl class="py attribute">
-<dt id="id270">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_ARRAY_BASETYPE_DEPTHS</code><em class="property"> = 5</em><a class="headerlink" href="#id270" title="Permalink to this definition">¶</a></dt>
+<dt id="id271">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_ARRAY_BASETYPE_DEPTHS</code><em class="property"> = 5</em><a class="headerlink" href="#id271" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5278,8 +5298,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_ARRAY_BASETYPE_VELOCITIES</code><a class="headerlink" href="#geosoft.gxapi.DB_ARRAY_BASETYPE_VELOCITIES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Velocities</p>
 <dl class="py attribute">
-<dt id="id271">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_ARRAY_BASETYPE_VELOCITIES</code><em class="property"> = 6</em><a class="headerlink" href="#id271" title="Permalink to this definition">¶</a></dt>
+<dt id="id272">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_ARRAY_BASETYPE_VELOCITIES</code><em class="property"> = 6</em><a class="headerlink" href="#id272" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5289,8 +5309,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">DB_ARRAY_BASETYPE_DISCRETE_TIME_WINDOWS</code><a class="headerlink" href="#geosoft.gxapi.DB_ARRAY_BASETYPE_DISCRETE_TIME_WINDOWS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Discrete time windows</p>
 <dl class="py attribute">
-<dt id="id272">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_ARRAY_BASETYPE_DISCRETE_TIME_WINDOWS</code><em class="property"> = 7</em><a class="headerlink" href="#id272" title="Permalink to this definition">¶</a></dt>
+<dt id="id273">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_ARRAY_BASETYPE_DISCRETE_TIME_WINDOWS</code><em class="property"> = 7</em><a class="headerlink" href="#id273" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5304,8 +5324,8 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
 <code class="sig-name descname">NULLSYMB</code><a class="headerlink" href="#geosoft.gxapi.NULLSYMB" title="Permalink to this definition">¶</a></dt>
 <dd><p>Nullsymb</p>
 <dl class="py attribute">
-<dt id="id273">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">NULLSYMB</code><em class="property"> = -1</em><a class="headerlink" href="#id273" title="Permalink to this definition">¶</a></dt>
+<dt id="id274">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">NULLSYMB</code><em class="property"> = -1</em><a class="headerlink" href="#id274" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5326,13 +5346,13 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXDB class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2022, Geosoft Inc.
+        &#169; Copyright 2023, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

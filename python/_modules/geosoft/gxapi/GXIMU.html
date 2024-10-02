@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXIMU &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
+    <title>geosoft.gxapi.GXIMU &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIMU</a></li> 
@@ -243,6 +243,34 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_crc_inexact</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">pul_crc</span><span class="p">,</span> <span class="n">float_bits</span><span class="p">,</span> <span class="n">double_bits</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXIMU.decimate_crooked_section_grid"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.decimate_crooked_section_grid">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">decimate_crooked_section_grid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">dec_X</span><span class="p">,</span> <span class="n">dec_y</span><span class="p">,</span> <span class="n">out</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Decimate a crooked section grid.</span>
+<span class="sd">        </span>
+<span class="sd">        :param img:    Input grid IMG</span>
+<span class="sd">        :param dec_X:  :def:Decimation factor along section (&gt;=1)</span>
+<span class="sd">        :param dec_y:  :def:Decimation factor down section (&gt;=1)</span>
+<span class="sd">        :param out:    File name of output grid</span>
+<span class="sd">        :type  img:    GXIMG</span>
+<span class="sd">        :type  dec_X:  int</span>
+<span class="sd">        :type  dec_y:  int</span>
+<span class="sd">        :type  out:    str</span>
+
+<span class="sd">        .. versionadded:: 2023.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** For decimation factor N, every MN&#39;th value is selected</span>
+<span class="sd">        for M = 0, 1, 2, ...</span>
+<span class="sd">        The full distance is recalculated based on the remaining</span>
+<span class="sd">        points because it will almost certainly be smaller.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_decimate_crooked_section_grid</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">dec_X</span><span class="p">,</span> <span class="n">dec_y</span><span class="p">,</span> <span class="n">out</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
 
 
 
@@ -1986,7 +2014,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIMU</a></li> 
@@ -1994,7 +2022,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2022, Geosoft Inc.
+        &#169; Copyright 2023, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

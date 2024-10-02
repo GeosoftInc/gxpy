@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXPGU &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
+    <title>geosoft.gxapi.GXPGU &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPGU</a></li> 
@@ -1343,6 +1343,50 @@
 
 
 
+<div class="viewcode-block" id="GXPGU.direct_gridding_db2"><a class="viewcode-back" href="../../../GXPGU.html#geosoft.gxapi.GXPGU.direct_gridding_db2">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">direct_gridding_db2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">xMax</span><span class="p">,</span> <span class="n">yMax</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Direct-gridding method, `GXDB &lt;geosoft.gxapi.GXDB&gt;` version.</span>
+<span class="sd">        </span>
+<span class="sd">        :param pg:      Input grid</span>
+<span class="sd">        :param xo:      X origin of grid</span>
+<span class="sd">        :param yo:      Y origin of grid</span>
+<span class="sd">        :param xMax:    X extent of grid</span>
+<span class="sd">        :param yMax:    Y extent of grid</span>
+<span class="sd">        :param dx:      X cell size</span>
+<span class="sd">        :param dy:      Y cell size</span>
+<span class="sd">        :param rot:     Rotation angle (degrees CCW).</span>
+<span class="sd">        :param db:      Database</span>
+<span class="sd">        :param x:       X Channel [READONLY]</span>
+<span class="sd">        :param y:       Y Channel [READONLY]</span>
+<span class="sd">        :param z:       Data Channel [READONLY]</span>
+<span class="sd">        :param method:  :ref:`PGU_DIRECTGRID`</span>
+<span class="sd">        :type  pg:      GXPG</span>
+<span class="sd">        :type  xo:      float</span>
+<span class="sd">        :type  yo:      float</span>
+<span class="sd">        :type  xMax:    float</span>
+<span class="sd">        :type  yMax:    float</span>
+<span class="sd">        :type  dx:      float</span>
+<span class="sd">        :type  dy:      float</span>
+<span class="sd">        :type  rot:     float</span>
+<span class="sd">        :type  db:      GXDB</span>
+<span class="sd">        :type  x:       int</span>
+<span class="sd">        :type  y:       int</span>
+<span class="sd">        :type  z:       int</span>
+<span class="sd">        :type  method:  int</span>
+
+<span class="sd">        .. versionadded:: 2023.1</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Grid cells take on the specified statistic of the values inside the</span>
+<span class="sd">        cell area. Grid cells containing no data values are set to dummy.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_direct_gridding_db2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">xMax</span><span class="p">,</span> <span class="n">yMax</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span></div>
+        
+
+
+
 <div class="viewcode-block" id="GXPGU.direct_gridding_db_3d"><a class="viewcode-back" href="../../../GXPGU.html#geosoft.gxapi.GXPGU.direct_gridding_db_3d">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">direct_gridding_db_3d</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">zo</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">dz</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1452,7 +1496,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPGU</a></li> 
@@ -1460,7 +1504,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2022, Geosoft Inc.
+        &#169; Copyright 2023, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

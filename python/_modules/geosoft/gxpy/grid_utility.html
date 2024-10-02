@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxpy.grid_utility &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
+    <title>geosoft.gxpy.grid_utility &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.grid_utility</a></li> 
       </ul>
@@ -102,6 +102,7 @@
 <span class="n">BOOL_OVERLAP_AVERAGE</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IMU_BOOL_OLAP_AVE</span>
 <span class="n">BOOL_OVERLAP_GRID1</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IMU_BOOL_OLAP_1</span>
 <span class="n">BOOL_OVERLAP_GRID2</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IMU_BOOL_OLAP_2</span>
+<span class="n">BOOL_OVERLAP_MINUS</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IMU_BOOL_OLAP_MINUS</span>
 
 <span class="n">TREND_EDGE</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IMU_TREND_EDGE</span>
 <span class="n">TREND_ALL</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">IMU_TREND_ALL</span>
@@ -542,9 +543,10 @@
 <span class="sd">    :param olap:    what to do with overlapping valid points, default uses grid 1</span>
 
 <span class="sd">        ==================== ==================================</span>
-<span class="sd">        BOOL_OVERLAP_AVERAGE averave values where grids overlap</span>
+<span class="sd">        BOOL_OVERLAP_AVERAGE average values where grids overlap</span>
 <span class="sd">        BOOL_OVERLAP_GRID1   use g1 where grids overlap</span>
 <span class="sd">        BOOL_OVERLAP_GRID2   use g2 where grids overlap</span>
+<span class="sd">        BOOL_OVERLAP_MINUS   use g1 - g2 where grids overlap</span>
 <span class="sd">        ==================== ==================================</span>
 
 <span class="sd">    :returns:       `Grid` instance of the merged output grid, must be closed with a call to close().</span>
@@ -902,14 +904,14 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.grid_utility</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2022, Geosoft Inc.
+        &#169; Copyright 2023, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

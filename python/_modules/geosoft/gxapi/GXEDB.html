@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXEDB &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
+    <title>geosoft.gxapi.GXEDB &#8212; Geosoft GX Python API 2023.1.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXEDB</a></li> 
@@ -2415,7 +2415,35 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_load_with_view_control</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">edb</span><span class="p">,</span> <span class="n">window</span><span class="p">)</span></div></div>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_load_with_view_control</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">edb</span><span class="p">,</span> <span class="n">window</span><span class="p">)</span></div>
+        
+
+
+
+
+<span class="c1"># Obsolete</span>
+
+
+
+<div class="viewcode-block" id="GXEDB.load_channel_after"><a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.load_channel_after">[docs]</a>    <span class="k">def</span> <span class="nf">load_channel_after</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan_to_move</span><span class="p">,</span> <span class="n">chan_to_move_after</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Loads the channel after specified channel</span>
+<span class="sd">        </span>
+<span class="sd">        :param chan_to_move:        Channel name</span>
+<span class="sd">        :param chan_to_move_after:  Channel name</span>
+<span class="sd">        :type  chan_to_move:        str</span>
+<span class="sd">        :type  chan_to_move_after:  str</span>
+
+<span class="sd">        .. versionadded:: 2023.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** If the channel to locate does not exist it will load the channel in the default location.</span>
+<span class="sd">        If the channel to be loaded is already loaded, no changes will be made.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_channel_after</span><span class="p">(</span><span class="n">chan_to_move</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan_to_move_after</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div></div>
         
 
 
@@ -2445,7 +2473,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXEDB</a></li> 
@@ -2453,7 +2481,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2022, Geosoft Inc.
+        &#169; Copyright 2023, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

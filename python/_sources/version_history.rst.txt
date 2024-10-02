@@ -949,6 +949,40 @@ geosoft.gxapi module history
 ==========================================
 
   
+Version 2023.1
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXBIGRID.get_default_cell_size` Get default cell size value.
+
+:func:`geosoft.gxapi.GXDU.avg_azimuth2` Returns average azimuth of selected lines.
+
+:func:`geosoft.gxapi.GXDU.get_angled_bounding_rectangle` Return the angled bounding rectangle for data to be gridded on an angle.
+
+:func:`geosoft.gxapi.GXDU.get_gridding_azimuth_to_minimize_padding` Return the gridding azimuth (degrees CW from north) that minimizes padding.
+
+:func:`geosoft.gxapi.GXEDB.load_channel_after` Loads the channel after specified channel
+
+:func:`geosoft.gxapi.GXPGU.direct_gridding_db2` Direct-gridding method, `GXDB <geosoft.gxapi.GXDB>` version.
+
+
+  
+Version 2023.0
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXDB.get_modification_count` Gets the modification count from the database.
+
+:func:`geosoft.gxapi.GXIMU.decimate_crooked_section_grid` Decimate a crooked section grid.
+
+
+  
 Version 2022.2
 -----------------
 
