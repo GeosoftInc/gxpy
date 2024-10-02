@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXContext &#8212; Geosoft GX Python API 9.9.0 documentation</title>
+    <title>geosoft.gxapi.GXContext &#8212; Geosoft GX Python API 9.10.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXContext</a></li> 
@@ -84,20 +84,26 @@
 
 <span class="sd">    .. seealso::</span>
 
-<span class="sd">        Class :class:`.gxpy.gx.GXpy`</span>
+<span class="sd">        Method :func:`.gxpy.gx.GXpy`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span>
 
     <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_release_tls_geo</span><span class="p">:</span>
-            <span class="n">_tls</span><span class="o">.</span><span class="n">_gxa_geo</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="fm">__del__</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_release_tls_geo</span><span class="p">:</span>
-            <span class="n">_tls</span><span class="o">.</span><span class="n">_gxa_geo</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">global</span> <span class="n">_tls</span>
+            <span class="n">tls_geo</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">_tls</span><span class="p">,</span> <span class="s1">&#39;_gxa_geo&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">tls_geo</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">del</span> <span class="n">_tls</span><span class="o">.</span><span class="n">_gxa_geo</span>
+                <span class="n">_tls</span><span class="o">.</span><span class="n">_gxa_geo</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">tls_geo</span><span class="o">.</span><span class="n">_destroy</span><span class="p">()</span>
 
 <div class="viewcode-block" id="GXContext.__init__"><a class="viewcode-back" href="../../../geosoft.gxapi.html#geosoft.gxapi.GXContext.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wrapper</span><span class="p">):</span>
+        <span class="k">global</span> <span class="n">_tls</span>
         <span class="n">tls_geo</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">_tls</span><span class="p">,</span> <span class="s1">&#39;_gxa_geo&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">tls_geo</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">_tls</span><span class="o">.</span><span class="n">_gxa_geo</span> <span class="o">=</span> <span class="n">wrapper</span>
@@ -106,14 +112,20 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_release_tls_geo</span> <span class="o">=</span> <span class="kc">False</span></div>
 
     <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_try_get_tls_geo</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">global</span> <span class="n">_tls</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">_tls</span><span class="p">,</span> <span class="s1">&#39;_gxa_geo&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_get_tls_geo</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="n">tls_geo</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">_tls</span><span class="p">,</span> <span class="s1">&#39;_gxa_geo&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">tls_geo</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_try_get_tls_geo</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">tls_geo</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">GXAPIError</span><span class="p">(</span><span class="s2">&quot;A GXContext instance has not been created for current thread yet, or the original context has been released.&quot;</span><span class="p">);</span>
+            <span class="k">raise</span> <span class="n">GXAPIError</span><span class="p">(</span><span class="s2">&quot;A GXContext instance has not been created for current thread yet, &quot;</span>
+                             <span class="s2">&quot;or the original context has been released.&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">tls_geo</span>
 
 <div class="viewcode-block" id="GXContext.create"><a class="viewcode-back" href="../../../geosoft.gxapi.html#geosoft.gxapi.GXContext.create">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">application</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">wind_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">flags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;Core&#39;</span><span class="p">,</span> <span class="n">per_user_key</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">application</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">wind_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;Core&#39;</span><span class="p">,</span> <span class="n">per_user_key</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                <span class="n">redist_override</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">redist_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">user_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">temp_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates the GX execution context (will return the current one if it exists).</span>
@@ -149,6 +161,7 @@
 
 <span class="sd">        .. versionadded:: 9.1</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">global</span> <span class="n">_tls</span>
         <span class="n">tls_geo</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">_tls</span><span class="p">,</span> <span class="s1">&#39;_gxa_geo&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">tls_geo</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_geodist_init</span><span class="p">:</span>
@@ -192,9 +205,9 @@
         <span class="k">finally</span><span class="p">:</span>
             <span class="n">winreg</span><span class="o">.</span><span class="n">CloseKey</span><span class="p">(</span><span class="n">env_key</span><span class="p">)</span></div>
 
-
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_create_internal</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">internal_p_geo</span><span class="p">):</span>
+        <span class="k">global</span> <span class="n">_tls</span>
         <span class="n">tls_geo</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">_tls</span><span class="p">,</span> <span class="s1">&#39;_gxa_geo&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">tls_geo</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">p_geo</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGeo</span><span class="p">()</span>
@@ -209,15 +222,16 @@
         <span class="k">return</span> <span class="n">p_geo</span><span class="o">.</span><span class="n">_internal_p</span><span class="p">()</span>
 
     <span class="n">_geodist_init</span> <span class="o">=</span> <span class="kc">False</span>
+
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_geosoft_dist_init</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dist_dir</span><span class="p">,</span> <span class="n">dll_name</span><span class="o">=</span><span class="s1">&#39;geodist.dll&#39;</span><span class="p">):</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGeo</span><span class="o">.</span><span class="n">geosoft_dist_init</span><span class="p">(</span><span class="n">dist_dir</span><span class="p">,</span> <span class="n">dll_name</span><span class="p">)</span>
-        <span class="n">_geodist_init</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">_geodist_init</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_set_geosoft_redist_overrides</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">redist_dir</span><span class="p">,</span> <span class="n">user_dir</span><span class="p">,</span> <span class="n">temp_dir</span><span class="p">,</span> <span class="n">dll_name</span><span class="o">=</span><span class="s1">&#39;geodist.dll&#39;</span><span class="p">):</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGeo</span><span class="o">.</span><span class="n">set_geosoft_redist_overrides</span><span class="p">(</span><span class="n">redist_dir</span><span class="p">,</span> <span class="n">user_dir</span><span class="p">,</span> <span class="n">temp_dir</span><span class="p">,</span> <span class="n">dll_name</span><span class="p">)</span>
-        <span class="n">_geodist_init</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">_geodist_init</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_redirect_std_streams</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
@@ -272,7 +286,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">p_geo</span> <span class="o">=</span> <span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">p_geo</span><span class="o">.</span><span class="n">has_ui_console</span><span class="p">()</span></div>
-    
+
 <div class="viewcode-block" id="GXContext.is_ui_console_visible"><a class="viewcode-back" href="../../../geosoft.gxapi.html#geosoft.gxapi.GXContext.is_ui_console_visible">[docs]</a>    <span class="k">def</span> <span class="nf">is_ui_console_visible</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Checks if a console owned by UI applications is visible</span>
@@ -321,7 +335,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXContext</a></li> 
@@ -329,7 +343,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2020, Geosoft Inc.
+        &#169; Copyright 2021, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXPROJ &#8212; Geosoft GX Python API 9.9.0 documentation</title>
+    <title>geosoft.gxapi.GXPROJ &#8212; Geosoft GX Python API 9.10.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPROJ</a></li> 
@@ -259,9 +259,14 @@
 
 <span class="sd">        :returns:    :ref:`COMMAND_ENV`</span>
 
-<span class="sd">                  Notes									We are moving towards embedded tools and menus and this setting can be</span>
+<span class="sd">                  Notes									</span>
+
+<span class="sd">                  We are moving towards embedded tools and menus and this setting can be</span>
 <span class="sd">                  queried from the project to determine how specific commands should react.</span>
 <span class="sd">                  Only 3D viewer is currently making use of this.</span>
+
+<span class="sd">                  If new Command environment enum values are added, then update the iGetCommandEnvironment_PROJ() function</span>
+<span class="sd">                  in geogxgui\\gxx_app.cpp and in the COMMAND_ENVIRONMENT enums in geoengine.core\\include\\obj\\objgp.h.</span>
 <span class="sd">        :rtype:      int</span>
 
 <span class="sd">        .. versionadded:: 5.0</span>
@@ -561,7 +566,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPROJ</a></li> 
@@ -569,7 +574,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2020, Geosoft Inc.
+        &#169; Copyright 2021, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

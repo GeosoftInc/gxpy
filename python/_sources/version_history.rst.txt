@@ -35,6 +35,8 @@ New Functions
 
 :func:`geosoft.gxpy.gdb.Line.delete_data` Delete all data in a line but keep the line
 
+:func:`geosoft.gxpy.gx.GXpyContext.run_gx` Runs a GX.
+
 
   
 Version 9.5
@@ -153,6 +155,17 @@ New Functions
 :func:`geosoft.gxpy.utility.geosoft_xml_from_dict` Return a unicode XML string of a dictionary with geosoft namespace defined.
 
 :func:`geosoft.gxpy.view.CrookedPath.set_in_geosoft_ipj` Set the crooked-path in the `geosoft.gxapi.GXIPJ` instance of the coordinate system.
+
+
+  
+Version 9.3.2
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxpy.gx.GXpyContext.remove_stale_temporary_files` Removes stale temporary files from the current instance temporary file folder.
 
 
   
@@ -359,6 +372,8 @@ New Functions
 :func:`geosoft.gxpy.group.color_from_string` Return a Geosoft color number from a color string.
 
 :func:`geosoft.gxpy.group.contour` Create a contour group from a grid file.  A default contour interval is determined from the grid.
+
+:func:`geosoft.gxpy.gx.GXpyContext.has_entitlement` Returns True if the user has this entitlement.
 
 :func:`geosoft.gxpy.map.Map.crc_image` Return the CRC of a map based on the output bitmap image.
 
@@ -615,6 +630,16 @@ New Functions
 
 :func:`geosoft.gxpy.group.thickness_from_font_weight` Returns the line thickness appropriate for a text weight.
 
+:func:`geosoft.gxpy.gx.GXpyContext.elapsed_seconds` Return the elapsed seconds since this GX instance started.
+
+:func:`geosoft.gxpy.gx.GXpyContext.keep_temp_folder` Keep temporary file folder setting.
+
+:func:`geosoft.gxpy.gx.GXpyContext.log` Log a string to the log file or log call-back as defined when creating :class:`GXpy` instance.
+
+:func:`geosoft.gxpy.gx.GXpyContext.temp_file` Return a unique temporary file name as a full path.  The temporary file is created in
+
+:func:`geosoft.gxpy.gx.GXpyContext.temp_folder` Return the GX temporary folder path.
+
 :func:`geosoft.gxpy.gx.pop_resource` Pop a tracked resource off the resource stack.
 
 :func:`geosoft.gxpy.gx.track_resource` Track a resource.  Resource tracking is useful for debugging resource leaks.  If you create a class
@@ -739,6 +764,8 @@ New Classes
 
 :class:`geosoft.gxpy.grid.Grid` Grid and image class.
 
+:class:`geosoft.gxpy.gx.GXpyContext` Geosoft GX context.  There should be only one instance of this created per thread. To simplify usage, use the
+
 :class:`geosoft.gxpy.va.GXva` VA class wrapper.
 
 :class:`geosoft.gxpy.vv.GXvv` VV class wrapper.
@@ -843,6 +870,12 @@ New Functions
 
 :func:`geosoft.gxpy.grid_utility.sample` Return grid values sampled at the point locations.
 
+:func:`geosoft.gxpy.gx.GXpyContext.disable_app` Disables application windows to allow modal Python UI.
+
+:func:`geosoft.gxpy.gx.GXpyContext.enable_app` Enables application windows to allow modal Python UI.
+
+:func:`geosoft.gxpy.gx.GXpyContext.entitlements` :returns: The current user entitlements as a dictionary.
+
 :func:`geosoft.gxpy.project.dict_from_lst` Return a dictionary from a Geosoft `geosoft.gxapi.GXLST` instance.
 
 :func:`geosoft.gxpy.project.get_user_input` Display a dialog prompt on the Geosoft Desktop and wait for user input.
@@ -916,6 +949,47 @@ geosoft.gxapi module history
 ==========================================
 
   
+Version 9.10
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXDU.sort_index_n` Create an ordered index from any number of channels.  The order of rows where compared items are the same is preserved.
+
+:func:`geosoft.gxapi.GXIPJ.add_as_favourite_coordinate_system` Add as favourite coordinate system to Settings.
+
+:func:`geosoft.gxapi.GXIPJ.compare_datums_to_specified_tolerance_with_feedback` Compare the datums of two coordinate systems, but allows for a specified accuracy and returns the reason if they are different
+
+:func:`geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same_to_specified_tolerance_with_feedback` Same as `coordinate_systems_are_the_same <geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same>`, but allows for a specified accuracy and returns the reason if they are different
+
+:func:`geosoft.gxapi.GXIPJ.copy_orientation` Copy any orientation and/or warp from one `GXIPJ <geosoft.gxapi.GXIPJ>` to another.
+
+:func:`geosoft.gxapi.GXIPJ.get_authority_id` Get Authority ID (e.g. EPSG, ESRI) for coordinate system or `iDUMMY <geosoft.gxapi.iDUMMY>` if unknown.
+
+:func:`geosoft.gxapi.GXIPJ.get_epsgid_for_datum` Get EPSG ID for datum of coordinate system or `iDUMMY <geosoft.gxapi.iDUMMY>` if unknown.
+
+:func:`geosoft.gxapi.GXIPJ.get_favourite_coordinate_system` Get a favourite coordinate system from Settings.
+
+:func:`geosoft.gxapi.GXIPJ.get_number_of_favourite_coordinate_systems` Get number of favourite coordinate systems in Settings.
+
+:func:`geosoft.gxapi.GXIPJ.orientations_are_the_same_to_specified_tolerance_with_feedback` Same as `orientations_are_the_same <geosoft.gxapi.GXIPJ.orientations_are_the_same>`, but allows for small numerical differences
+
+:func:`geosoft.gxapi.GXIPJ.remove_favourite_coordinate_system` Remove favourite coordinate system from Settings.
+
+:func:`geosoft.gxapi.GXIPJ.warps_are_the_same_to_specified_tolerance_with_feedback` Same as `warps_are_the_same <geosoft.gxapi.GXIPJ.warps_are_the_same>`, but allows for a specified accuracy and returns the reason if they are different
+
+:func:`geosoft.gxapi.GXKML.import_3d_line_path` Imports a KML 3D LinePath into a provided view.
+
+:func:`geosoft.gxapi.GXKML.import_3d_polygon` Imports a KML 3D polygon into a provided view.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_trace_data` Get the SEG Y trace file header data for a particular starting trace
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_trace_header_as_json` Return the contents of a trace header as JSON.
+
+
+  
 Version 9.9
 -----------------
 
@@ -934,6 +1008,8 @@ New Functions
 :func:`geosoft.gxapi.GXGU.magnetic_tilt_depth` Calculate the depth of magnetic sources based on the tilt depth method by Ahmed Salem et al.
 
 :func:`geosoft.gxapi.GXGUI.dat_file_form_ex` Grid and Image file Open/Save Form for Multiple/Single file selections and optional filter list sorting.
+
+:func:`geosoft.gxapi.GXIMU.grid_vc` Apply vertical continuation convolution filter to a grid.
 
 :func:`geosoft.gxapi.GXMAP.rename_view` Renames a view in this map.
 

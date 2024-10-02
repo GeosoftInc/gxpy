@@ -69,6 +69,7 @@ These are the low-level library classes and functions that make up the GX API.
    GXIPJ
    GXITR
    GXKGRD
+   GXKML
    GXLAYOUT
    GXLL2
    GXLMSG

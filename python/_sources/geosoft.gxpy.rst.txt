@@ -31,6 +31,7 @@ The following sub-modules organize functions into logical groups.
    geosoft.gxpy.map
    geosoft.gxpy.metadata
    geosoft.gxpy.project
+   geosoft.gxpy.segy_reader
    geosoft.gxpy.spatialdata
    geosoft.gxpy.surface
    geosoft.gxpy.system

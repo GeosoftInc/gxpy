@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXSEGYREADER class &#8212; Geosoft GX Python API 9.9.0 documentation</title>
+    <title>GXSEGYREADER class &#8212; Geosoft GX Python API 9.10.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXSEGYREADER class</a></li> 
       </ul>
     </div>
@@ -487,6 +487,27 @@
 </dd></dl>
 
 <dl class="py method">
+<dt id="geosoft.gxapi.GXSEGYREADER.get_trace_data">
+<code class="sig-name descname">get_trace_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">trace_number</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_trace_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_trace_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the SEG Y trace file header data for a particular starting trace</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>trace_number</strong> (<em>int</em>) – Which trace to read</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>:class:’VV’ containing the data from the trace header</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV">GXVV</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.10.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="geosoft.gxapi.GXSEGYREADER.get_trace_data_at">
 <code class="sig-name descname">get_trace_data_at</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_type_name</span></em>, <em class="sig-param"><span class="n">number_of_samples</span></em>, <em class="sig-param"><span class="n">current_trace</span></em>, <em class="sig-param"><span class="n">is_big_endian</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_trace_data_at"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_trace_data_at" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the SEG Y trace file data for a particular data type, number of samples, and starting trace</p>
@@ -548,7 +569,7 @@
 <dl class="py method">
 <dt id="geosoft.gxapi.GXSEGYREADER.get_trace_data_type_name">
 <em class="property">classmethod </em><code class="sig-name descname">get_trace_data_type_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_trace_data_type_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_trace_data_type_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the name of one of the available data types. These are the names used as identifiers in this API. To get a name suitable for displaying to the user, use <a href="#id29"><span class="problematic" id="id30">`</span></a>GetTraceDataTypeDisplayName() instead.</p>
+<dd><p>Get the name of one of the available data types. These are the names used as identifiers in this API. To get a name suitable for displaying to the user, use <a href="#id30"><span class="problematic" id="id31">`</span></a>GetTraceDataTypeDisplayName() instead.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -559,6 +580,24 @@
 </dl>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 9.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXSEGYREADER.get_trace_header_as_json">
+<code class="sig-name descname">get_trace_header_as_json</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">trace_number</span></em>, <em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEGYREADER.html#GXSEGYREADER.get_trace_header_as_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEGYREADER.get_trace_header_as_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the contents of a trace header as JSON.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trace_number</strong> (<em>int</em>) – Which trace to read</p></li>
+<li><p><strong>text</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Trace header as JSON.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.10.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
@@ -1313,13 +1352,13 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXSEGYREADER class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2020, Geosoft Inc.
+        &#169; Copyright 2021, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

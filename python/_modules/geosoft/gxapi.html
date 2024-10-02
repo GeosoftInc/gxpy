@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi &#8212; Geosoft GX Python API 9.9.0 documentation</title>
+    <title>geosoft.gxapi &#8212; Geosoft GX Python API 9.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi</a></li> 
       </ul>
@@ -1766,6 +1766,24 @@
 <span class="n">ITR_ZONE_MODEL_EQUAL</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="c1">#: The `GXITR &lt;geosoft.gxapi.GXITR&gt;` is set up with a log-linear transform.</span>
 <span class="n">ITR_MODEL_LOGLIN</span> <span class="o">=</span> <span class="mi">4</span>	
+
+<span class="c1">#</span>
+<span class="c1"># GXKML Constants</span>
+<span class="c1"># </span>
+
+
+
+<span class="c1">#</span>
+<span class="c1"># KML_ALT constants</span>
+<span class="c1">#</span>
+<span class="c1"># KML Altitude values.</span>
+
+<span class="c1">#: Clamptoground</span>
+<span class="n">KML_ALT_CLAMPTOGROUND</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">#: Relativetoground</span>
+<span class="n">KML_ALT_RELATIVETOGROUND</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1">#: Absolute</span>
+<span class="n">KML_ALT_ABSOLUTE</span> <span class="o">=</span> <span class="mi">2</span>	
 
 <span class="c1">#</span>
 <span class="c1"># GXLAYOUT Constants</span>
@@ -3573,6 +3591,8 @@
 <span class="n">SYS_DIR_GEOSOFT_STYLESHEETS</span> <span class="o">=</span> <span class="mi">120</span>
 <span class="c1">#: TBL folder</span>
 <span class="n">SYS_DIR_GEOSOFT_TBL</span> <span class="o">=</span> <span class="mi">121</span>
+<span class="c1">#: PYTHON folder</span>
+<span class="n">SYS_DIR_GEOSOFT_PYTHON</span> <span class="o">=</span> <span class="mi">127</span>
 <span class="c1">#: User CSV Folder</span>
 <span class="n">SYS_DIR_USER_CSV</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="c1">#: User ETC Folder</span>
@@ -7289,6 +7309,7 @@
     <span class="s1">&#39;GXIMU&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXIPJ&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXITR&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;GXKML&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXLAYOUT&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXLL2&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXLPT&#39;</span><span class="p">,</span>
@@ -7422,6 +7443,7 @@
 <span class="kn">from</span> <span class="nn">.GXIMU</span> <span class="kn">import</span> <span class="n">GXIMU</span>
 <span class="kn">from</span> <span class="nn">.GXIPJ</span> <span class="kn">import</span> <span class="n">GXIPJ</span>
 <span class="kn">from</span> <span class="nn">.GXITR</span> <span class="kn">import</span> <span class="n">GXITR</span>
+<span class="kn">from</span> <span class="nn">.GXKML</span> <span class="kn">import</span> <span class="n">GXKML</span>
 <span class="kn">from</span> <span class="nn">.GXLAYOUT</span> <span class="kn">import</span> <span class="n">GXLAYOUT</span>
 <span class="kn">from</span> <span class="nn">.GXLL2</span> <span class="kn">import</span> <span class="n">GXLL2</span>
 <span class="kn">from</span> <span class="nn">.GXLPT</span> <span class="kn">import</span> <span class="n">GXLPT</span>
@@ -7546,14 +7568,14 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2020, Geosoft Inc.
+        &#169; Copyright 2021, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxpy.gx &#8212; Geosoft GX Python API 9.9.0 documentation</title>
+    <title>geosoft.gxpy.gx &#8212; Geosoft GX Python API 9.10.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.gx</a></li> 
       </ul>
@@ -84,6 +84,7 @@
 <span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">import</span> <span class="nn">atexit</span>
 <span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">import</span> <span class="nn">threading</span>
 
 <span class="kn">import</span> <span class="nn">geosoft</span>
 <span class="kn">import</span> <span class="nn">geosoft.gxapi</span> <span class="k">as</span> <span class="nn">gxapi</span>
@@ -105,97 +106,44 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span></div>
 
+
 <span class="n">_singleton_getattr_default</span> <span class="o">=</span> <span class="nb">object</span><span class="p">()</span>
-
-<span class="k">class</span> <span class="nc">_DisposableSingletonContainer</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    A singleton container class. overrides __getattr__ to appear as an instance of the wrapped singleon class.</span>
-<span class="sd">    Provides reset mechanism via a reset callback.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">reset</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_reset</span> <span class="o">=</span> <span class="n">reset</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_inherited</span> <span class="o">=</span> <span class="n">parent</span>
-
-    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span>
-
-    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_type</span><span class="p">,</span> <span class="n">_value</span><span class="p">,</span> <span class="n">_traceback</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="fm">__del__</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reset</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_reset</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">_singleton_getattr_default</span><span class="p">):</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_inherited</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">default</span> <span class="ow">is</span> <span class="n">_singleton_getattr_default</span><span class="p">:</span>
-                <span class="k">raise</span>
-            <span class="k">return</span> <span class="n">default</span>
-
-<span class="k">class</span> <span class="nc">_SingletonWrapper</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The singleton wrapper class. Used by _singleton decorator to ensure a single instantiation</span>
-<span class="sd">    of a class, reset by the release of the first instance.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_class</span> <span class="o">=</span> <span class="bp">cls</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span> <span class="o">=</span> <span class="kc">None</span>
-
-    <span class="k">def</span> <span class="nf">_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span> <span class="o">=</span> <span class="kc">None</span>
-
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns a single instance of decorated class&quot;&quot;&quot;</span>
-
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_instance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_class</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">_DisposableSingletonContainer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reset</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">_DisposableSingletonContainer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_instance</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">_singleton</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The singleton decorator.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Do not wrap class during documentation generation</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;GEOSOFT_SPHINX_BUILD&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>
-       <span class="k">return</span> <span class="bp">cls</span>
-    <span class="k">return</span> <span class="n">_SingletonWrapper</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
-
+<span class="n">_is_sphinx_build</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;GEOSOFT_SPHINX_BUILD&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span>
+<span class="n">_tls</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">local</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">_get_gx_instance</span><span class="p">():</span>
-    <span class="k">return</span> <span class="n">GXpy</span><span class="o">.</span><span class="n">_instance</span>
+    <span class="k">return</span> <span class="n">GXpyContext</span><span class="o">.</span><span class="n">_get_instance</span><span class="p">()</span>
+
 
 <span class="k">def</span> <span class="nf">_have_gx</span><span class="p">():</span>
-    <span class="k">return</span> <span class="n">GXpy</span><span class="o">.</span><span class="n">_instance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">GXpyContext</span><span class="o">.</span><span class="n">_get_instance</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
 
 
-<span class="n">_res_id</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">_res_heap</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">_max_resource_heap</span> <span class="o">=</span> <span class="mi">1000000</span>
-<span class="n">_stack_depth</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">_max_warnings</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">_stale_age</span> <span class="o">=</span> <span class="mf">24.</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
-<span class="n">_remove_stale_geosoft_temp_files</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="n">_NULL_ID</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-
-
-<span class="k">def</span> <span class="nf">_reset_globals</span><span class="p">():</span>
-    <span class="k">global</span> <span class="n">_res_id</span>
-    <span class="k">global</span> <span class="n">_res_heap</span>
-    <span class="k">global</span> <span class="n">_max_resource_heap</span>
-    <span class="k">global</span> <span class="n">_stack_depth</span>
-    <span class="k">global</span> <span class="n">_max_warnings</span>
-
-    <span class="n">GXpy</span><span class="o">.</span><span class="n">_reset</span><span class="p">()</span>
+<div class="viewcode-block" id="TLSGlobals"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.TLSGlobals">[docs]</a><span class="k">class</span> <span class="nc">TLSGlobals</span><span class="p">:</span>
     <span class="n">_res_id</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">_res_heap</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">_max_resource_heap</span> <span class="o">=</span> <span class="mi">1000000</span>
     <span class="n">_stack_depth</span> <span class="o">=</span> <span class="mi">5</span>
     <span class="n">_max_warnings</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">_NULL_ID</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span></div>
+
+
+<span class="k">def</span> <span class="nf">_get_tls_globals</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">_tls</span>
+    <span class="n">tls_globals</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">_tls</span><span class="p">,</span> <span class="s1">&#39;_gxpy_tls_globals&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">tls_globals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">tls_globals</span>
+    <span class="k">if</span> <span class="n">_tls</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">_tls</span><span class="o">.</span><span class="n">_gxpy_tls_globals</span> <span class="o">=</span> <span class="n">TLSGlobals</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">_tls</span><span class="o">.</span><span class="n">_gxpy_tls_globals</span>
+
+
+<span class="k">def</span> <span class="nf">_reset_tls_globals</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">_tls</span>
+    <span class="c1"># Reset singlton wrappers</span>
+    <span class="n">_tls</span><span class="o">.</span><span class="n">_gxpy_tls_globals</span> <span class="o">=</span> <span class="kc">None</span>
+
 
 <div class="viewcode-block" id="track_resource"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.track_resource">[docs]</a><span class="k">def</span> <span class="nf">track_resource</span><span class="p">(</span><span class="n">resource_class</span><span class="p">,</span> <span class="n">info</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -211,22 +159,20 @@
 
 <span class="sd">    .. versionadded:: 9.2</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">global</span> <span class="n">_res_id</span>
-    <span class="k">global</span> <span class="n">_res_heap</span>
-    <span class="k">global</span> <span class="n">_stack_depth</span>
-    <span class="k">if</span> <span class="n">_res_id</span> <span class="o">&lt;</span> <span class="n">_max_resource_heap</span><span class="p">:</span>
-        <span class="n">_res_id</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">tls_globals</span> <span class="o">=</span> <span class="n">_get_tls_globals</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">tls_globals</span><span class="o">.</span><span class="n">_res_id</span> <span class="o">&lt;</span> <span class="n">tls_globals</span><span class="o">.</span><span class="n">_max_resource_heap</span><span class="p">:</span>
+        <span class="n">tls_globals</span><span class="o">.</span><span class="n">_res_id</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="n">rs</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">:&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">resource_class</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">_stack_depth</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tls_globals</span><span class="o">.</span><span class="n">_stack_depth</span><span class="p">):</span>
             <span class="n">f</span> <span class="o">=</span> <span class="n">gxs</span><span class="o">.</span><span class="n">func_name</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">f</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">break</span>
             <span class="n">rs</span> <span class="o">+=</span> <span class="s1">&#39;&lt;</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gxs</span><span class="o">.</span><span class="n">func_name</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span>
         <span class="n">rs</span> <span class="o">+=</span> <span class="s1">&#39; [</span><span class="si">{}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
-        <span class="n">_res_heap</span><span class="p">[</span><span class="n">_res_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">rs</span>
-        <span class="k">return</span> <span class="n">_res_id</span>
+        <span class="n">tls_globals</span><span class="o">.</span><span class="n">_res_heap</span><span class="p">[</span><span class="n">tls_globals</span><span class="o">.</span><span class="n">_res_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">rs</span>
+        <span class="k">return</span> <span class="n">tls_globals</span><span class="o">.</span><span class="n">_res_id</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">_NULL_ID</span></div>
+        <span class="k">return</span> <span class="n">tls_globals</span><span class="o">.</span><span class="n">_NULL_ID</span></div>
 
 
 <div class="viewcode-block" id="pop_resource"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.pop_resource">[docs]</a><span class="k">def</span> <span class="nf">pop_resource</span><span class="p">(</span><span class="n">res_id</span><span class="p">):</span>
@@ -241,10 +187,11 @@
 <span class="sd">        changed id to res_id to avoid built-in shadow</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">res_id</span> <span class="o">!=</span> <span class="n">_NULL_ID</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_res_heap</span><span class="p">):</span>
+    <span class="n">tls_globals</span> <span class="o">=</span> <span class="n">_get_tls_globals</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">res_id</span> <span class="o">!=</span> <span class="n">tls_globals</span><span class="o">.</span><span class="n">_NULL_ID</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tls_globals</span><span class="o">.</span><span class="n">_res_heap</span><span class="p">):</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="k">del</span> <span class="p">(</span><span class="n">_res_heap</span><span class="p">[</span><span class="n">res_id</span><span class="p">])</span>
+                <span class="k">del</span> <span class="p">(</span><span class="n">tls_globals</span><span class="o">.</span><span class="n">_res_heap</span><span class="p">[</span><span class="n">res_id</span><span class="p">])</span>
             <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
                 <span class="k">pass</span></div>
 
@@ -257,100 +204,72 @@
                    <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">fnc</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">excinfo</span><span class="p">)))</span>
 
 
-<span class="k">def</span> <span class="nf">_remove_stale_gx_temporary_folders</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot; removes stale gx temporary folders from user&#39;s geosoft temp folder&quot;&quot;&quot;</span>
-
-    <span class="k">global</span> <span class="n">_stale_age</span>
-
-    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">gxu</span><span class="o">.</span><span class="n">folder_temp</span><span class="p">(</span><span class="kc">False</span><span class="p">))):</span>
-        <span class="n">ff</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gxu</span><span class="o">.</span><span class="n">folder_temp</span><span class="p">(</span><span class="kc">False</span><span class="p">),</span> <span class="n">filename</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">ff</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">filename</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;_gx_&#39;</span> <span class="ow">or</span> <span class="n">_remove_stale_geosoft_temp_files</span><span class="p">:</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">gxu</span><span class="o">.</span><span class="n">is_path_locked</span><span class="p">(</span><span class="n">ff</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">_stale_age</span><span class="p">):</span>
-                    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">ff</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">onerror</span><span class="o">=</span><span class="n">_log_file_error</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">_remove_stale_geosoft_temp_files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">gxu</span><span class="o">.</span><span class="n">is_file_locked</span><span class="p">(</span><span class="n">ff</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">_stale_age</span><span class="p">):</span>
-                <span class="k">try</span><span class="p">:</span>
-                    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">ff</span><span class="p">)</span>
-                <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-                    <span class="n">_log_file_error</span><span class="p">(</span><span class="s1">&#39;os.remove&#39;</span><span class="p">,</span> <span class="n">ff</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">_remove_stale_geosoft_temporary_files</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot; removes stale geosoft temporary files and folders from user&#39;s geosoft temp folder&quot;&quot;&quot;</span>
-
-    <span class="k">global</span> <span class="n">_stale_age</span>
-
-    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">gxu</span><span class="o">.</span><span class="n">folder_temp</span><span class="p">(</span><span class="kc">False</span><span class="p">))):</span>
-        <span class="n">ff</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gxu</span><span class="o">.</span><span class="n">folder_temp</span><span class="p">(</span><span class="kc">False</span><span class="p">),</span> <span class="n">filename</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">ff</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">filename</span> <span class="o">==</span> <span class="s1">&#39;TempFileStacks&#39;</span><span class="p">:</span>
-                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">ff</span><span class="p">)):</span>
-                    <span class="n">item</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gxu</span><span class="o">.</span><span class="n">folder_temp</span><span class="p">(</span><span class="kc">False</span><span class="p">),</span> <span class="n">filename</span><span class="p">),</span> <span class="n">item</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="ow">not</span> <span class="n">gxu</span><span class="o">.</span><span class="n">is_file_locked</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">_stale_age</span><span class="p">):</span>
-                        <span class="n">gxu</span><span class="o">.</span><span class="n">delete_file</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-
-            <span class="k">elif</span> <span class="ow">not</span> <span class="n">gxu</span><span class="o">.</span><span class="n">is_path_locked</span><span class="p">(</span><span class="n">ff</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">_stale_age</span><span class="p">):</span>
-                <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">ff</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">onerror</span><span class="o">=</span><span class="n">_log_file_error</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">gxu</span><span class="o">.</span><span class="n">is_file_locked</span><span class="p">(</span><span class="n">ff</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">_stale_age</span><span class="p">):</span>
-                <span class="n">gxu</span><span class="o">.</span><span class="n">delete_file</span><span class="p">(</span><span class="n">ff</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">_exit_cleanup</span><span class="p">():</span>
-    <span class="k">global</span> <span class="n">_gx</span>
-    <span class="k">global</span> <span class="n">_res_heap</span>
-    <span class="k">global</span> <span class="n">_max_warnings</span>
-    <span class="k">global</span> <span class="n">_remove_stale_geosoft_temp_files</span>
-
-    <span class="k">if</span> <span class="n">_have_gx</span><span class="p">():</span>
-        <span class="n">gx</span> <span class="o">=</span> <span class="n">_get_gx_instance</span><span class="p">()</span>
-        <span class="n">gx</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">GX closing&#39;</span><span class="p">)</span>
-        <span class="n">atexit</span><span class="o">.</span><span class="n">unregister</span><span class="p">(</span><span class="n">_exit_cleanup</span><span class="p">)</span>
-
-        <span class="n">temp_folder</span> <span class="o">=</span> <span class="n">gx</span><span class="o">.</span><span class="n">temp_folder</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">temp_folder</span> <span class="ow">and</span> <span class="p">(</span><span class="n">temp_folder</span> <span class="o">!=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">folder_temp</span><span class="p">()):</span>
-            <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">temp_folder</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">onerror</span><span class="o">=</span><span class="n">_log_file_error</span><span class="p">)</span>
-
-        <span class="n">_remove_stale_gx_temporary_folders</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">_remove_stale_geosoft_temp_files</span><span class="p">:</span>
-            <span class="n">_remove_stale_geosoft_temporary_files</span><span class="p">()</span>
-
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_res_heap</span><span class="p">):</span>
-            <span class="c1"># resources were created but not deleted or removed</span>
-            <span class="n">gx</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Warning - cleaning up resources that are still open:&#39;</span><span class="p">))</span>
-            <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">_res_heap</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">_max_warnings</span><span class="p">:</span>
-                    <span class="n">_gx</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;    and there are </span><span class="si">{}</span><span class="s1"> more (change GXpy(max_warnings=) to see more)...&#39;</span>
-                               <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">_res_heap</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span><span class="p">)))</span>
-                    <span class="k">break</span>
-                <span class="n">_gx</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
-                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">gx</span><span class="o">.</span><span class="n">close_log</span><span class="p">()</span>
-        <span class="n">gx</span><span class="o">.</span><span class="n">_tkframe</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="n">gx</span><span class="o">.</span><span class="n">_gxapi</span> <span class="o">=</span> <span class="kc">None</span>
-
-        <span class="n">gx</span><span class="o">.</span><span class="n">_clean_redist_folders</span><span class="p">()</span>
-
-        <span class="k">del</span> <span class="n">gx</span>
-
-    <span class="n">_reset_globals</span><span class="p">()</span>
-
-
 <div class="viewcode-block" id="gx"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.gx">[docs]</a><span class="k">def</span> <span class="nf">gx</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Returns the `GXpy` instance.  Initializes to default state in not initialized.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">GXpy</span><span class="p">()</span></div>
+    <span class="sd">&quot;&quot;&quot;Returns the current thread `GXpy` instance.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">_have_gx</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXAPIError</span><span class="p">(</span><span class="s2">&quot;A GXpy instance has not been created for current thread yet, &quot;</span>
+                               <span class="s2">&quot;or the original context has been released.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">_get_gx_instance</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXpy"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy">[docs]</a><span class="nd">@_singleton</span>
-<span class="k">class</span> <span class="nc">GXpy</span><span class="p">:</span>
+<div class="viewcode-block" id="GXpy"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy">[docs]</a><span class="k">def</span> <span class="nf">GXpy</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="n">__version__</span><span class="p">,</span> <span class="n">parent_window</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_res_heap</span><span class="o">=</span><span class="mi">10000000</span><span class="p">,</span> <span class="n">res_stack</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+         <span class="n">max_warnings</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">suppress_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;Core&#39;</span><span class="p">,</span> <span class="n">per_user_key</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">redist_override</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+         <span class="n">redist_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">user_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">temp_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Geosoft GX context.  This is a singleton class, so subsequent creation returns an instance</span>
-<span class="sd">    identical to the initial creation. This also means that initialization arguments are ignored</span>
-<span class="sd">    on a subsequent instantiation.</span>
+<span class="sd">        Instantiate a Geosoft GX context.  There should be only one instance of this created per thread.</span>
+<span class="sd">        To simplify usage, use this method to instantiaate the context and the :func:`.gxpy.gx.gx` methods instead</span>
+<span class="sd">        to obtain the current thread instance.</span>
 
-<span class="sd">    This class does not need to be instantiated by desktop extensions as the context is provided</span>
-<span class="sd">    by the Geosoft desktop application.  If called, the desktop context is returned.</span>
+<span class="sd">        It is a good idea to use the with statement pattern to ensure timely cleanup of unmanaged resources.</span>
+
+<span class="sd">        :parameters:</span>
+<span class="sd">            :name:              application name, default is the script name</span>
+<span class="sd">            :version:           application version number, default Geosoft version</span>
+<span class="sd">            :parent_window:     ID of the parent window.  A parent window is required for GUI-dependent</span>
+<span class="sd">                                functions to work.  Set `parent_window=-1` to create a Tkinter frame that</span>
+<span class="sd">                                provides a default parent window handle for GUI/Viewer functions.</span>
+<span class="sd">            :log:               name of a file to record logging information, or a call-back function that</span>
+<span class="sd">                                accepts a string.  Specifying `log=&#39;&#39;` will log to a default file named</span>
+<span class="sd">                                using the current date and time.  If not provided calls to log()</span>
+<span class="sd">                                are ignored.</span>
+<span class="sd">            :max_res_heap:      If logging is on, open gxpy resources (like grids, or databases) are tracked.</span>
+<span class="sd">                                This is the maximum size of resource heap for tracking open resources.</span>
+<span class="sd">                                Set to 0 to not track resources. On exit, if any resources remain open</span>
+<span class="sd">                                a warning is logged together with a list of the open resources, each with a</span>
+<span class="sd">                                call stack to help find the function that created the resources.</span>
+<span class="sd">            :res_stack:         Depth of the call-stack to report for open-resource warning.</span>
+<span class="sd">            :max_warnings:      Maximum number of resource warnings to report.</span>
+<span class="sd">            :suppress_progress: True to suppress progress reporting (default False)</span>
+<span class="sd">            :key:               Default Geosoft registry key to use (in absence of geosoft.key file) to discover</span>
+<span class="sd">                                GX developer common redistributables or Desktop Applications software (default &#39;Core&#39;)</span>
+<span class="sd">            :per_user_key:      Use per-user registry instead of local machine (default False)</span>
+<span class="sd">            :redist_override:   Override registry mechanism to discover redistributables with redist_dir,</span>
+<span class="sd">                                user_dir and temp_dir parameters. (default False)</span>
+<span class="sd">            :redist_dir:        Path containing the redistributable files, i.e. containing bin, csv and other folders.</span>
+<span class="sd">                                Only used if redist_override is True (default None)</span>
+<span class="sd">            :user_dir:          Writable path to directory containing the user redistributable files.</span>
+<span class="sd">                                Only used if redist_override is True (default None). If redist_override is True and</span>
+<span class="sd">                                user_dir is None a unique folder in system temp will be used for this purpose.</span>
+<span class="sd">            :temp_dir:          Path to use for temporary files. Only used if redist_override is True (default None)</span>
+<span class="sd">                                If redist_override is True and temp_dir is None a unique folder in system temp will</span>
+<span class="sd">                                be used for this purpose.</span>
+
+<span class="sd">    .. seealso::</span>
+
+<span class="sd">        Class :class:`.gxpy.gx.GXpyContext`</span>
+<span class="sd">&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">GXpyContext</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">parent_window</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">max_res_heap</span><span class="p">,</span> <span class="n">res_stack</span><span class="p">,</span> <span class="n">max_warnings</span><span class="p">,</span> <span class="n">suppress_progress</span><span class="p">,</span>
+                       <span class="n">key</span><span class="p">,</span> <span class="n">per_user_key</span><span class="p">,</span> <span class="n">redist_override</span><span class="p">,</span> <span class="n">redist_dir</span><span class="p">,</span> <span class="n">user_dir</span><span class="p">,</span> <span class="n">temp_dir</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GXpyContext"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpyContext">[docs]</a><span class="k">class</span> <span class="nc">GXpyContext</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Geosoft GX context.  There should be only one instance of this created per thread. To simplify usage, use the</span>
+<span class="sd">    :func:`.gxpy.gx.GXpy` and :func:`.gxpy.gx.gx` methods instead of instantiating this class directly.</span>
+
+<span class="sd">    This class does not need to be instantiated by the main thread in Oasis montaj desktop extension scripts,</span>
+<span class="sd">    since the context is instantiated prior to entering the rungx method. If called, the desktop context is returned.</span>
+
+<span class="sd">    It is a good idea to use the with statement pattern to ensure timely cleanup of unmanaged resources.</span>
 
 <span class="sd">    :parameters:</span>
 <span class="sd">        :name:              application name, default is the script name</span>
@@ -397,13 +316,6 @@
 <span class="sd">        :folder_temp:       Geosoft temporary folder</span>
 <span class="sd">        :folder_user:       Geosoft Desktop installation &#39;user&#39; folder</span>
 
-<span class="sd">    :Private properties for special use:</span>
-<span class="sd">        :_stale_age:        stale temporary files older than this age (in seconds) will be removed upon loss</span>
-<span class="sd">                            of context.  The default is 24 hours (24*60*60 seconds).</span>
-<span class="sd">        :__remove_stale_geosoft_temp_files: if True, also remove Geosoft temporary files that may heve</span>
-<span class="sd">                            been created by other processes. The default is False, in which case only stale temporary</span>
-<span class="sd">                            files created by geosoft.gxpy processes will be removed.</span>
-
 <span class="sd">    :raises:</span>
 <span class="sd">        :GXException(): if unable to create context</span>
 
@@ -423,28 +335,69 @@
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;GID: </span><span class="si">{}</span><span class="s2">, class: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">license_class</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">_exit_cleanup</span><span class="p">()</span>
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
 
-<div class="viewcode-block" id="GXpy.__init__"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="n">__version__</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_type</span><span class="p">,</span> <span class="n">_value</span><span class="p">,</span> <span class="n">_traceback</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="fm">__del__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">()</span>
+
+    <span class="n">_gxpy_deleted</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">_delete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_gxpy_deleted&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_gxpy_deleted</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">tls_globals</span> <span class="o">=</span> <span class="n">_get_tls_globals</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">tls_globals</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">GX closing&#39;</span><span class="p">)</span>
+
+            <span class="n">temp_folder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">temp_folder</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">temp_folder</span> <span class="ow">and</span> <span class="p">(</span><span class="n">temp_folder</span> <span class="o">!=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">folder_temp</span><span class="p">()):</span>
+                <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">temp_folder</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">onerror</span><span class="o">=</span><span class="n">_log_file_error</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tls_globals</span><span class="o">.</span><span class="n">_res_heap</span><span class="p">):</span>
+                <span class="c1"># resources were created but not deleted or removed</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;Warning - cleaning up resources that are still open:&#39;</span><span class="p">))</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">tls_globals</span><span class="o">.</span><span class="n">_res_heap</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+                    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">tls_globals</span><span class="o">.</span><span class="n">_max_warnings</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span><span class="s1">&#39;    and there are </span><span class="si">{}</span><span class="s1"> more (change GXpy(max_warnings=) to see more)...&#39;</span>
+                                    <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tls_globals</span><span class="o">.</span><span class="n">_res_heap</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span><span class="p">)))</span>
+                        <span class="k">break</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+                    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">close_log</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_clean_redist_folders</span><span class="p">()</span>
+
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tkframe</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_gxapi</span><span class="o">.</span><span class="fm">__del__</span><span class="p">()</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gxapi</span>
+            <span class="n">GXpyContext</span><span class="o">.</span><span class="n">_set_instance</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+<div class="viewcode-block" id="GXpyContext.__init__"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpyContext.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="n">__version__</span><span class="p">,</span>
                  <span class="n">parent_window</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">max_res_heap</span><span class="o">=</span><span class="mi">10000000</span><span class="p">,</span> <span class="n">res_stack</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">max_warnings</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
                  <span class="n">suppress_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;Core&#39;</span><span class="p">,</span> <span class="n">per_user_key</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                  <span class="n">redist_override</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">redist_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">user_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">temp_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">_have_gx</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXAPIError</span><span class="p">(</span><span class="s2">&quot;A GXpy instance has already been created for current thread.&quot;</span><span class="p">)</span>
 
-        <span class="k">global</span> <span class="n">_max_resource_heap</span>
-        <span class="k">global</span> <span class="n">_stack_depth</span>
-        <span class="k">global</span> <span class="n">_max_warnings</span>
+        <span class="n">tls_globals</span> <span class="o">=</span> <span class="n">_get_tls_globals</span><span class="p">()</span>
 
         <span class="c1"># Reset testing UUID base with every init</span>
         <span class="n">gxu</span><span class="o">.</span><span class="n">d_uuid_count</span> <span class="o">=</span> <span class="mi">1</span>
 
         <span class="k">if</span> <span class="n">log</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">_max_resource_heap</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">tls_globals</span><span class="o">.</span><span class="n">_max_resource_heap</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">_max_resource_heap</span> <span class="o">=</span> <span class="n">max_res_heap</span>
-            <span class="n">_stack_depth</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">res_stack</span><span class="p">)</span>
-            <span class="n">_max_warnings</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_warnings</span><span class="p">)</span>
+            <span class="n">tls_globals</span><span class="o">.</span><span class="n">_max_resource_heap</span> <span class="o">=</span> <span class="n">max_res_heap</span>
+            <span class="n">tls_globals</span><span class="o">.</span><span class="n">_stack_depth</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">res_stack</span><span class="p">)</span>
+            <span class="n">tls_globals</span><span class="o">.</span><span class="n">_max_warnings</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_warnings</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_enter_count</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_redist_dir</span> <span class="o">=</span> <span class="n">redist_dir</span>
@@ -461,6 +414,7 @@
                 <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="n">_t</span><span class="p">(</span>
                     <span class="s1">&#39;Unable to import the pythoncom module, which is needed for GUI APIs to work.&#39;</span><span class="p">))</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tkframe</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="n">parent_window</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_tkframe</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
             <span class="n">parent_window</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tkframe</span><span class="o">.</span><span class="n">winfo_id</span><span class="p">()</span>
@@ -568,8 +522,20 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
-        <span class="n">atexit</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">_exit_cleanup</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">GX open&#39;</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">GX open&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gxpy_deleted</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">GXpyContext</span><span class="o">.</span><span class="n">_set_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+    <span class="n">_tls_instance_name</span> <span class="o">=</span> <span class="s1">&#39;_GXpyContext_tls_instance&#39;</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_set_instance</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+        <span class="k">global</span> <span class="n">_tls</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="n">_tls</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_tls_instance_name</span><span class="p">,</span> <span class="n">instance</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_get_instance</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">global</span> <span class="n">_tls</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">_tls</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_tls_instance_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_log_to_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
 
@@ -732,7 +698,7 @@
         <span class="n">gxapi</span><span class="o">.</span><span class="n">GXSYS</span><span class="o">.</span><span class="n">get_sys_info</span><span class="p">(</span><span class="n">gxapi</span><span class="o">.</span><span class="n">SYS_INFO_VERSION_SP</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
 
-<div class="viewcode-block" id="GXpy.remove_stale_temporary_files"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy.remove_stale_temporary_files">[docs]</a>    <span class="k">def</span> <span class="nf">remove_stale_temporary_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span><span class="p">):</span>
+<div class="viewcode-block" id="GXpyContext.remove_stale_temporary_files"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpyContext.remove_stale_temporary_files">[docs]</a>    <span class="k">def</span> <span class="nf">remove_stale_temporary_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Removes stale temporary files from the current instance temporary file folder.</span>
 
@@ -760,7 +726,7 @@
 
         <span class="n">remove_all_files</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">temp_folder</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="GXpy.disable_app"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy.disable_app">[docs]</a>    <span class="k">def</span> <span class="nf">disable_app</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="GXpyContext.disable_app"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpyContext.disable_app">[docs]</a>    <span class="k">def</span> <span class="nf">disable_app</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Disables application windows to allow modal Python UI.</span>
 <span class="sd">        Call before opening your own UI window.</span>
@@ -769,7 +735,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_gxapi</span><span class="o">.</span><span class="n">enable_application_windows</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXpy.enable_app"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy.enable_app">[docs]</a>    <span class="k">def</span> <span class="nf">enable_app</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="GXpyContext.enable_app"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpyContext.enable_app">[docs]</a>    <span class="k">def</span> <span class="nf">enable_app</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Enables application windows to allow modal Python UI.</span>
 <span class="sd">        Call before returning control to OM.</span>
@@ -778,7 +744,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_gxapi</span><span class="o">.</span><span class="n">enable_application_windows</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXpy.entitlements"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy.entitlements">[docs]</a>    <span class="k">def</span> <span class="nf">entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="GXpyContext.entitlements"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpyContext.entitlements">[docs]</a>    <span class="k">def</span> <span class="nf">entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        :returns: The current user entitlements as a dictionary.</span>
 
@@ -791,7 +757,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_entitlements</span> <span class="o">=</span> <span class="n">gxu</span><span class="o">.</span><span class="n">dict_from_lst</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_entitlements</span></div>
 
-<div class="viewcode-block" id="GXpy.has_entitlement"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy.has_entitlement">[docs]</a>    <span class="k">def</span> <span class="nf">has_entitlement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ent</span><span class="p">):</span>
+<div class="viewcode-block" id="GXpyContext.has_entitlement"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpyContext.has_entitlement">[docs]</a>    <span class="k">def</span> <span class="nf">has_entitlement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ent</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns True if the user has this entitlement.</span>
 
@@ -867,7 +833,7 @@
         <span class="k">return</span> <span class="n">lc</span><span class="o">.</span><span class="n">value</span>
 
 
-<div class="viewcode-block" id="GXpy.run_gx"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy.run_gx">[docs]</a>    <span class="k">def</span> <span class="nf">run_gx</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gx</span><span class="p">):</span>
+<div class="viewcode-block" id="GXpyContext.run_gx"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpyContext.run_gx">[docs]</a>    <span class="k">def</span> <span class="nf">run_gx</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gx</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Runs a GX.</span>
 
@@ -895,7 +861,7 @@
 
         <span class="k">return</span> <span class="n">success</span><span class="p">,</span> <span class="n">cancelled</span><span class="p">,</span> <span class="n">exit_val</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">error_list</span><span class="p">,</span> <span class="n">warning_list</span></div>
 
-<div class="viewcode-block" id="GXpy.temp_folder"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy.temp_folder">[docs]</a>    <span class="k">def</span> <span class="nf">temp_folder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="GXpyContext.temp_folder"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpyContext.temp_folder">[docs]</a>    <span class="k">def</span> <span class="nf">temp_folder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the GX temporary folder path.</span>
 
@@ -932,7 +898,7 @@
         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_redist_user_temp_cleanup&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_redist_temp_dir_cleanup</span><span class="p">:</span>
             <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_redist_temp_dir</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<div class="viewcode-block" id="GXpy.keep_temp_folder"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy.keep_temp_folder">[docs]</a>    <span class="k">def</span> <span class="nf">keep_temp_folder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="GXpyContext.keep_temp_folder"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpyContext.keep_temp_folder">[docs]</a>    <span class="k">def</span> <span class="nf">keep_temp_folder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Keep temporary file folder setting.</span>
 
@@ -942,7 +908,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_keep_temp_files</span> <span class="o">=</span> <span class="n">keep</span></div>
 
-<div class="viewcode-block" id="GXpy.temp_file"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy.temp_file">[docs]</a>    <span class="k">def</span> <span class="nf">temp_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="GXpyContext.temp_file"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpyContext.temp_file">[docs]</a>    <span class="k">def</span> <span class="nf">temp_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a unique temporary file name as a full path.  The temporary file is created in</span>
 <span class="sd">        the instance temporary folder and will be deleted when this GXpy instance is deleted.</span>
@@ -957,7 +923,7 @@
             <span class="n">ext</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">ext</span>
         <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">temp_folder</span><span class="p">(),</span> <span class="n">gxu</span><span class="o">.</span><span class="n">uuid</span><span class="p">()</span> <span class="o">+</span> <span class="n">ext</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXpy.environment"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy.environment">[docs]</a>    <span class="k">def</span> <span class="nf">environment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">formated_indent</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="GXpyContext.environment"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpyContext.environment">[docs]</a>    <span class="k">def</span> <span class="nf">environment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">formated_indent</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        .. deprecated:: 9.2 replaced by properties.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -979,7 +945,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">info</span></div>
 
-<div class="viewcode-block" id="GXpy.log"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy.log">[docs]</a>    <span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="GXpyContext.log"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpyContext.log">[docs]</a>    <span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Log a string to the log file or log call-back as defined when creating :class:`GXpy` instance.</span>
 
@@ -994,17 +960,18 @@
 
 <span class="sd">        .. versionadded:: 9.2</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">log_it</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_log_it&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">log_it</span><span class="p">:</span>
+            <span class="n">log_it</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span></div>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_log_it</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_log_it</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span></div>
-
-<div class="viewcode-block" id="GXpy.close_log"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy.close_log">[docs]</a>    <span class="k">def</span> <span class="nf">close_log</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="GXpyContext.close_log"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpyContext.close_log">[docs]</a>    <span class="k">def</span> <span class="nf">close_log</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;close logging&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;GX closed&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logf</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_logf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+        <span class="n">logf</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_logf&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">logf</span><span class="p">:</span>
+            <span class="n">logf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXpy.elapsed_seconds"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy.elapsed_seconds">[docs]</a>    <span class="k">def</span> <span class="nf">elapsed_seconds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="GXpyContext.elapsed_seconds"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpyContext.elapsed_seconds">[docs]</a>    <span class="k">def</span> <span class="nf">elapsed_seconds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the elapsed seconds since this GX instance started.</span>
 <span class="sd">        The elapsed time is logged if logging is on.</span>
@@ -1033,21 +1000,21 @@
     <span class="c1">####################################################</span>
     <span class="c1"># deprecated</span>
 
-<div class="viewcode-block" id="GXpy.folder_workspace"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy.folder_workspace">[docs]</a>    <span class="k">def</span> <span class="nf">folder_workspace</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="GXpyContext.folder_workspace"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpyContext.folder_workspace">[docs]</a>    <span class="k">def</span> <span class="nf">folder_workspace</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        .. deprecated:: 9.2 use :meth:`geosoft.gxpy.utility.folder_workspace`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">gxu</span><span class="o">.</span><span class="n">folder_workspace</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXpy.folder_temp"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy.folder_temp">[docs]</a>    <span class="k">def</span> <span class="nf">folder_temp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="GXpyContext.folder_temp"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpyContext.folder_temp">[docs]</a>    <span class="k">def</span> <span class="nf">folder_temp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        .. deprecated:: 9.2 use :meth:`geosoft.gxpy.utility.folder_temp`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">gxu</span><span class="o">.</span><span class="n">folder_temp</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXpy.folder_user"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy.folder_user">[docs]</a>    <span class="k">def</span> <span class="nf">folder_user</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="GXpyContext.folder_user"><a class="viewcode-back" href="../../../geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpyContext.folder_user">[docs]</a>    <span class="k">def</span> <span class="nf">folder_user</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        .. deprecated:: 9.2 use :meth:`geosoft.gxpy.utility.folder_user`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1067,14 +1034,14 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.gx</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2020, Geosoft Inc.
+        &#169; Copyright 2021, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

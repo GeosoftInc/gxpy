@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXDU class &#8212; Geosoft GX Python API 9.9.0 documentation</title>
+    <title>GXDU class &#8212; Geosoft GX Python API 9.10.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXDU class</a></li> 
       </ul>
     </div>
@@ -928,7 +928,7 @@ non-dummy locations in the X and Y reference channels.</p>
 <li><p><strong>y_ch</strong> (<em>int</em>) – Channel Y, unlocked</p></li>
 <li><p><strong>option</strong> (<em>int</em>) – <a class="reference internal" href="#db-dup"><span class="std std-ref">DB_DUP constants</span></a></p></li>
 <li><p><strong>single</strong> (<em>int</em>) – <a class="reference internal" href="#db-dupedit"><span class="std std-ref">DB_DUPEDIT constants</span></a></p></li>
-<li><p><strong>fid_num</strong> (<em>float</em>) – Fiducial number (required if <a class="reference internal" href="#id165" title="geosoft.gxapi.DB_DUPEDIT_SINGLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_DUPEDIT_SINGLE</span></code></a>)</p></li>
+<li><p><strong>fid_num</strong> (<em>float</em>) – Fiducial number (required if <a class="reference internal" href="#id166" title="geosoft.gxapi.DB_DUPEDIT_SINGLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_DUPEDIT_SINGLE</span></code></a>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -1139,7 +1139,7 @@ if it is (1) a group and (2) selected, else save the first selected
 group. —
 Option to filter out data where one of the channels has a dummy in it.
 Option to allow a header with the channel names.</p>
-<p>The <a class="reference internal" href="#id167" title="geosoft.gxapi.DU_CHANNELS_DISPLAYED"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_CHANNELS_DISPLAYED</span></code></a> option can be used to export any selection of
+<p>The <a class="reference internal" href="#id168" title="geosoft.gxapi.DU_CHANNELS_DISPLAYED"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_CHANNELS_DISPLAYED</span></code></a> option can be used to export any selection of
 channels, listed by the symbols (DB_SYMB) values, cast to int values and
 stored in a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</p>
 </dd></dl>
@@ -3707,7 +3707,7 @@ template listing all the channels and all the ALIAS lines.</p>
 <dl class="py method">
 <dt id="geosoft.gxapi.GXDU.sort_index">
 <em class="property">classmethod </em><code class="sig-name descname">sort_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">line</span></em>, <em class="sig-param"><span class="n">ch</span></em>, <em class="sig-param"><span class="n">in_ch</span></em>, <em class="sig-param"><span class="n">sort</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDU.html#GXDU.sort_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDU.sort_index" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create an ordered index of the contents of a channel.</p>
+<dd><p>Create an ordered index of the contents of a channel. The order of rows where compared items are the same is preserved.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3728,7 +3728,7 @@ template listing all the channels and all the ALIAS lines.</p>
 <dl class="py method">
 <dt id="geosoft.gxapi.GXDU.sort_index2">
 <em class="property">classmethod </em><code class="sig-name descname">sort_index2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">line</span></em>, <em class="sig-param"><span class="n">ch1</span></em>, <em class="sig-param"><span class="n">sort1</span></em>, <em class="sig-param"><span class="n">ch2</span></em>, <em class="sig-param"><span class="n">sort2</span></em>, <em class="sig-param"><span class="n">in_ch</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDU.html#GXDU.sort_index2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDU.sort_index2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create an ordered index from two channels</p>
+<dd><p>Create an ordered index from two channels.  The order of rows where compared items are the same is preserved.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3744,6 +3744,27 @@ template listing all the channels and all the ALIAS lines.</p>
 </dl>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXDU.sort_index_n">
+<em class="property">classmethod </em><code class="sig-name descname">sort_index_n</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">line</span></em>, <em class="sig-param"><span class="n">chVV</span></em>, <em class="sig-param"><span class="n">orderVV</span></em>, <em class="sig-param"><span class="n">in_ch</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDU.html#GXDU.sort_index_n"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDU.sort_index_n" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an ordered index from any number of channels.  The order of rows where compared items are the same is preserved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line symbol</p></li>
+<li><p><strong>chVV</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – VV of channel symbols (INT). Sort by these channels [<a class="reference internal" href="GXDB.html#id253" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>orderVV</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – VV of sort order values (INT, one for each channel) <a class="reference internal" href="#du-sort"><span class="std std-ref">DU_SORT constants</span></a></p></li>
+<li><p><strong>in_ch</strong> (<em>int</em>) – Output index channel (should be int) [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READWRITE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READWRITE</span></code></a>]</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.10.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
@@ -3810,8 +3831,8 @@ a specified distance. Additional options to discard too-short lines</p>
 <li><p><strong>break_on_separation_distance</strong> (<em>float</em>) – Break on data XY separation greater than (can be <a class="reference internal" href="GXGEOSOFT.html#id5" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>)</p></li>
 <li><p><strong>save_discards</strong> (<em>int</em>) – Whether to save too-short segments as special lines or to discard them</p></li>
 <li><p><strong>method</strong> (<em>int</em>) – <a class="reference internal" href="#du-splitline"><span class="std std-ref">DU_SPLITLINE constants</span></a> ONLY DU_SPLITLINEXY_SEQUENTIAL and DU_SPLITLINEXY_VERSIONS</p></li>
-<li><p><strong>first_line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – First line in the sequence, for <a class="reference internal" href="#id231" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a>. On return, the next line in the sequence.</p></li>
-<li><p><strong>line_inc</strong> (<em>int</em>) – Increment in the line number sequence, for <a class="reference internal" href="#id231" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a></p></li>
+<li><p><strong>first_line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – First line in the sequence, for <a class="reference internal" href="#id232" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a>. On return, the next line in the sequence.</p></li>
+<li><p><strong>line_inc</strong> (<em>int</em>) – Increment in the line number sequence, for <a class="reference internal" href="#id232" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a></p></li>
 <li><p><strong>reset_fi_ds</strong> (<em>int</em>) – Reset starting fiducials to zero (0: No, 1: Yes)</p></li>
 </ul>
 </dd>
@@ -3840,9 +3861,9 @@ a specified distance. Additional options to discard too-short lines</p>
 <li><p><strong>break_on_separation_distance</strong> (<em>float</em>) – Break on data XY separation greater than (can be <a class="reference internal" href="GXGEOSOFT.html#id5" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>)</p></li>
 <li><p><strong>save_discards</strong> (<em>int</em>) – Whether to save too-short segments as special lines or to discard them</p></li>
 <li><p><strong>method</strong> (<em>int</em>) – <a class="reference internal" href="#du-splitline"><span class="std std-ref">DU_SPLITLINE constants</span></a> ONLY DU_SPLITLINEXY_SEQUENTIAL and DU_SPLITLINEXY_VERSIONS</p></li>
-<li><p><strong>first_line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – First line in the sequence, for <a class="reference internal" href="#id231" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a>. On return, the next line in the sequence.</p></li>
-<li><p><strong>line_inc</strong> (<em>int</em>) – Increment in the line number sequence, for <a class="reference internal" href="#id231" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a></p></li>
-<li><p><strong>retain_line_type</strong> (<em>int</em>) – Maintain line types for <a class="reference internal" href="#id231" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a>  (0: No, 1: Yes)</p></li>
+<li><p><strong>first_line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – First line in the sequence, for <a class="reference internal" href="#id232" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a>. On return, the next line in the sequence.</p></li>
+<li><p><strong>line_inc</strong> (<em>int</em>) – Increment in the line number sequence, for <a class="reference internal" href="#id232" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a></p></li>
+<li><p><strong>retain_line_type</strong> (<em>int</em>) – Maintain line types for <a class="reference internal" href="#id232" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a>  (0: No, 1: Yes)</p></li>
 <li><p><strong>reset_fi_ds</strong> (<em>int</em>) – Reset starting fiducials to zero (0: No, 1: Yes)</p></li>
 </ul>
 </dd>
@@ -3870,8 +3891,8 @@ options for the output line names.</p>
 <li><p><strong>tolrnc</strong> (<em>float</em>) – Lateral tolerance, DUMMY for the default (10% of the separation between the first two points.</p></li>
 <li><p><strong>down_tol</strong> (<em>float</em>) – Downline Tolerance, DUMMY for none</p></li>
 <li><p><strong>method</strong> (<em>int</em>) – <a class="reference internal" href="#du-splitline"><span class="std std-ref">DU_SPLITLINE constants</span></a></p></li>
-<li><p><strong>first_line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – First line in the sequence, for <a class="reference internal" href="#id231" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a>. On return, the next line in the sequence.</p></li>
-<li><p><strong>line_inc</strong> (<em>int</em>) – Increment in the line number sequence, for <a class="reference internal" href="#id231" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a></p></li>
+<li><p><strong>first_line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – First line in the sequence, for <a class="reference internal" href="#id232" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a>. On return, the next line in the sequence.</p></li>
+<li><p><strong>line_inc</strong> (<em>int</em>) – Increment in the line number sequence, for <a class="reference internal" href="#id232" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
@@ -3898,8 +3919,8 @@ options for the output line names.</p>
 <li><p><strong>tolrnc</strong> (<em>float</em>) – Lateral tolerance, DUMMY for the default (10% of the separation between the first two points.</p></li>
 <li><p><strong>down_tol</strong> (<em>float</em>) – Downline Tolerance, DUMMY for none</p></li>
 <li><p><strong>method</strong> (<em>int</em>) – <a class="reference internal" href="#du-splitline"><span class="std std-ref">DU_SPLITLINE constants</span></a></p></li>
-<li><p><strong>first_line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – First line in the sequence, for <a class="reference internal" href="#id231" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a>. On return, the next line in the sequence.</p></li>
-<li><p><strong>line_inc</strong> (<em>int</em>) – Increment in the line number sequence, for <a class="reference internal" href="#id231" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a></p></li>
+<li><p><strong>first_line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – First line in the sequence, for <a class="reference internal" href="#id232" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a>. On return, the next line in the sequence.</p></li>
+<li><p><strong>line_inc</strong> (<em>int</em>) – Increment in the line number sequence, for <a class="reference internal" href="#id232" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a></p></li>
 <li><p><strong>reset_fi_ds</strong> (<em>int</em>) – Reset starting fiducials to zero (0: No, 1: Yes)</p></li>
 </ul>
 </dd>
@@ -3927,9 +3948,9 @@ options for the output line names.</p>
 <li><p><strong>tolrnc</strong> (<em>float</em>) – Lateral tolerance, DUMMY for the default (10% of the separation between the first two points.</p></li>
 <li><p><strong>down_tol</strong> (<em>float</em>) – Downline Tolerance, DUMMY for none</p></li>
 <li><p><strong>method</strong> (<em>int</em>) – <a class="reference internal" href="#du-splitline"><span class="std std-ref">DU_SPLITLINE constants</span></a></p></li>
-<li><p><strong>first_line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – First line in the sequence, for <a class="reference internal" href="#id231" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a>. On return, the next line in the sequence.</p></li>
-<li><p><strong>line_inc</strong> (<em>int</em>) – Increment in the line number sequence, for <a class="reference internal" href="#id231" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a></p></li>
-<li><p><strong>retain_line_type</strong> (<em>int</em>) – Maintain line types for <a class="reference internal" href="#id231" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a>  (0: No, 1: Yes)</p></li>
+<li><p><strong>first_line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – First line in the sequence, for <a class="reference internal" href="#id232" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a>. On return, the next line in the sequence.</p></li>
+<li><p><strong>line_inc</strong> (<em>int</em>) – Increment in the line number sequence, for <a class="reference internal" href="#id232" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a></p></li>
+<li><p><strong>retain_line_type</strong> (<em>int</em>) – Maintain line types for <a class="reference internal" href="#id232" title="geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DU_SPLITLINE_SEQUENTIAL</span></code></a>  (0: No, 1: Yes)</p></li>
 <li><p><strong>reset_fi_ds</strong> (<em>int</em>) – Reset starting fiducials to zero (0: No, 1: Yes)</p></li>
 </ul>
 </dd>
@@ -4391,8 +4412,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DB_DUP_AVERAGE</code><a class="headerlink" href="#geosoft.gxapi.DB_DUP_AVERAGE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Average</p>
 <dl class="py attribute">
-<dt id="id160">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_DUP_AVERAGE</code><em class="property"> = 2</em><a class="headerlink" href="#id160" title="Permalink to this definition">¶</a></dt>
+<dt id="id161">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_DUP_AVERAGE</code><em class="property"> = 2</em><a class="headerlink" href="#id161" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4402,8 +4423,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DB_DUP_MINIMUM</code><a class="headerlink" href="#geosoft.gxapi.DB_DUP_MINIMUM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum</p>
 <dl class="py attribute">
-<dt id="id161">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_DUP_MINIMUM</code><em class="property"> = 3</em><a class="headerlink" href="#id161" title="Permalink to this definition">¶</a></dt>
+<dt id="id162">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_DUP_MINIMUM</code><em class="property"> = 3</em><a class="headerlink" href="#id162" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4413,8 +4434,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DB_DUP_MAXIMUM</code><a class="headerlink" href="#geosoft.gxapi.DB_DUP_MAXIMUM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum</p>
 <dl class="py attribute">
-<dt id="id162">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_DUP_MAXIMUM</code><em class="property"> = 4</em><a class="headerlink" href="#id162" title="Permalink to this definition">¶</a></dt>
+<dt id="id163">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_DUP_MAXIMUM</code><em class="property"> = 4</em><a class="headerlink" href="#id163" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4424,8 +4445,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DB_DUP_MEDIAN</code><a class="headerlink" href="#geosoft.gxapi.DB_DUP_MEDIAN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Median</p>
 <dl class="py attribute">
-<dt id="id163">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_DUP_MEDIAN</code><em class="property"> = 5</em><a class="headerlink" href="#id163" title="Permalink to this definition">¶</a></dt>
+<dt id="id164">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_DUP_MEDIAN</code><em class="property"> = 5</em><a class="headerlink" href="#id164" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4435,8 +4456,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DB_DUP_LAST</code><a class="headerlink" href="#geosoft.gxapi.DB_DUP_LAST" title="Permalink to this definition">¶</a></dt>
 <dd><p>Last</p>
 <dl class="py attribute">
-<dt id="id164">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_DUP_LAST</code><em class="property"> = 6</em><a class="headerlink" href="#id164" title="Permalink to this definition">¶</a></dt>
+<dt id="id165">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_DUP_LAST</code><em class="property"> = 6</em><a class="headerlink" href="#id165" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4450,8 +4471,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DB_DUPEDIT_SINGLE</code><a class="headerlink" href="#geosoft.gxapi.DB_DUPEDIT_SINGLE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Single</p>
 <dl class="py attribute">
-<dt id="id165">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_DUPEDIT_SINGLE</code><em class="property"> = 0</em><a class="headerlink" href="#id165" title="Permalink to this definition">¶</a></dt>
+<dt id="id166">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_DUPEDIT_SINGLE</code><em class="property"> = 0</em><a class="headerlink" href="#id166" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4461,8 +4482,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DB_DUPEDIT_ALL</code><a class="headerlink" href="#geosoft.gxapi.DB_DUPEDIT_ALL" title="Permalink to this definition">¶</a></dt>
 <dd><p>All</p>
 <dl class="py attribute">
-<dt id="id166">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_DUPEDIT_ALL</code><em class="property"> = 1</em><a class="headerlink" href="#id166" title="Permalink to this definition">¶</a></dt>
+<dt id="id167">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DB_DUPEDIT_ALL</code><em class="property"> = 1</em><a class="headerlink" href="#id167" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4476,8 +4497,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_CHANNELS_DISPLAYED</code><a class="headerlink" href="#geosoft.gxapi.DU_CHANNELS_DISPLAYED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Displayed</p>
 <dl class="py attribute">
-<dt id="id167">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_CHANNELS_DISPLAYED</code><em class="property"> = 0</em><a class="headerlink" href="#id167" title="Permalink to this definition">¶</a></dt>
+<dt id="id168">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_CHANNELS_DISPLAYED</code><em class="property"> = 0</em><a class="headerlink" href="#id168" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4487,8 +4508,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_CHANNELS_ALL</code><a class="headerlink" href="#geosoft.gxapi.DU_CHANNELS_ALL" title="Permalink to this definition">¶</a></dt>
 <dd><p>All</p>
 <dl class="py attribute">
-<dt id="id168">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_CHANNELS_ALL</code><em class="property"> = 1</em><a class="headerlink" href="#id168" title="Permalink to this definition">¶</a></dt>
+<dt id="id169">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_CHANNELS_ALL</code><em class="property"> = 1</em><a class="headerlink" href="#id169" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4502,8 +4523,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_EXPORT_CSV</code><a class="headerlink" href="#geosoft.gxapi.DU_EXPORT_CSV" title="Permalink to this definition">¶</a></dt>
 <dd><p>Csv</p>
 <dl class="py attribute">
-<dt id="id169">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_EXPORT_CSV</code><em class="property"> = 0</em><a class="headerlink" href="#id169" title="Permalink to this definition">¶</a></dt>
+<dt id="id170">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_EXPORT_CSV</code><em class="property"> = 0</em><a class="headerlink" href="#id170" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4513,8 +4534,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_EXPORT_ODDF</code><a class="headerlink" href="#geosoft.gxapi.DU_EXPORT_ODDF" title="Permalink to this definition">¶</a></dt>
 <dd><p>Oddf</p>
 <dl class="py attribute">
-<dt id="id170">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_EXPORT_ODDF</code><em class="property"> = 1</em><a class="headerlink" href="#id170" title="Permalink to this definition">¶</a></dt>
+<dt id="id171">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_EXPORT_ODDF</code><em class="property"> = 1</em><a class="headerlink" href="#id171" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4524,8 +4545,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_EXPORT_POST_PC</code><a class="headerlink" href="#geosoft.gxapi.DU_EXPORT_POST_PC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Post pc</p>
 <dl class="py attribute">
-<dt id="id171">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_EXPORT_POST_PC</code><em class="property"> = 2</em><a class="headerlink" href="#id171" title="Permalink to this definition">¶</a></dt>
+<dt id="id172">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_EXPORT_POST_PC</code><em class="property"> = 2</em><a class="headerlink" href="#id172" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4535,8 +4556,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_EXPORT_POST_UNIX</code><a class="headerlink" href="#geosoft.gxapi.DU_EXPORT_POST_UNIX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Post unix</p>
 <dl class="py attribute">
-<dt id="id172">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_EXPORT_POST_UNIX</code><em class="property"> = 3</em><a class="headerlink" href="#id172" title="Permalink to this definition">¶</a></dt>
+<dt id="id173">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_EXPORT_POST_UNIX</code><em class="property"> = 3</em><a class="headerlink" href="#id173" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4550,8 +4571,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_FILL_INSIDE</code><a class="headerlink" href="#geosoft.gxapi.DU_FILL_INSIDE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inside</p>
 <dl class="py attribute">
-<dt id="id173">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_FILL_INSIDE</code><em class="property"> = 0</em><a class="headerlink" href="#id173" title="Permalink to this definition">¶</a></dt>
+<dt id="id174">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_FILL_INSIDE</code><em class="property"> = 0</em><a class="headerlink" href="#id174" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4561,8 +4582,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_FILL_OUTSIDE</code><a class="headerlink" href="#geosoft.gxapi.DU_FILL_OUTSIDE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Outside</p>
 <dl class="py attribute">
-<dt id="id174">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_FILL_OUTSIDE</code><em class="property"> = 1</em><a class="headerlink" href="#id174" title="Permalink to this definition">¶</a></dt>
+<dt id="id175">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_FILL_OUTSIDE</code><em class="property"> = 1</em><a class="headerlink" href="#id175" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4576,8 +4597,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_IMPORT_APPEND</code><a class="headerlink" href="#geosoft.gxapi.DU_IMPORT_APPEND" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append</p>
 <dl class="py attribute">
-<dt id="id175">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_IMPORT_APPEND</code><em class="property"> = 0</em><a class="headerlink" href="#id175" title="Permalink to this definition">¶</a></dt>
+<dt id="id176">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_IMPORT_APPEND</code><em class="property"> = 0</em><a class="headerlink" href="#id176" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4587,8 +4608,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_IMPORT_REPLACE</code><a class="headerlink" href="#geosoft.gxapi.DU_IMPORT_REPLACE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replace</p>
 <dl class="py attribute">
-<dt id="id176">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_IMPORT_REPLACE</code><em class="property"> = 1</em><a class="headerlink" href="#id176" title="Permalink to this definition">¶</a></dt>
+<dt id="id177">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_IMPORT_REPLACE</code><em class="property"> = 1</em><a class="headerlink" href="#id177" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4598,8 +4619,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_IMPORT_MERGE</code><a class="headerlink" href="#geosoft.gxapi.DU_IMPORT_MERGE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Merge</p>
 <dl class="py attribute">
-<dt id="id177">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_IMPORT_MERGE</code><em class="property"> = 2</em><a class="headerlink" href="#id177" title="Permalink to this definition">¶</a></dt>
+<dt id="id178">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_IMPORT_MERGE</code><em class="property"> = 2</em><a class="headerlink" href="#id178" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4609,8 +4630,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_IMPORT_MERGE_APPEND</code><a class="headerlink" href="#geosoft.gxapi.DU_IMPORT_MERGE_APPEND" title="Permalink to this definition">¶</a></dt>
 <dd><p>Merge append</p>
 <dl class="py attribute">
-<dt id="id178">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_IMPORT_MERGE_APPEND</code><em class="property"> = 3</em><a class="headerlink" href="#id178" title="Permalink to this definition">¶</a></dt>
+<dt id="id179">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_IMPORT_MERGE_APPEND</code><em class="property"> = 3</em><a class="headerlink" href="#id179" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4624,8 +4645,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_INTERP_NEAREST</code><a class="headerlink" href="#geosoft.gxapi.DU_INTERP_NEAREST" title="Permalink to this definition">¶</a></dt>
 <dd><p>Nearest</p>
 <dl class="py attribute">
-<dt id="id179">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_INTERP_NEAREST</code><em class="property"> = 1</em><a class="headerlink" href="#id179" title="Permalink to this definition">¶</a></dt>
+<dt id="id180">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_INTERP_NEAREST</code><em class="property"> = 1</em><a class="headerlink" href="#id180" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4635,8 +4656,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_INTERP_LINEAR</code><a class="headerlink" href="#geosoft.gxapi.DU_INTERP_LINEAR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Linear</p>
 <dl class="py attribute">
-<dt id="id180">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_INTERP_LINEAR</code><em class="property"> = 2</em><a class="headerlink" href="#id180" title="Permalink to this definition">¶</a></dt>
+<dt id="id181">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_INTERP_LINEAR</code><em class="property"> = 2</em><a class="headerlink" href="#id181" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4646,8 +4667,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_INTERP_CUBIC</code><a class="headerlink" href="#geosoft.gxapi.DU_INTERP_CUBIC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cubic</p>
 <dl class="py attribute">
-<dt id="id181">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_INTERP_CUBIC</code><em class="property"> = 3</em><a class="headerlink" href="#id181" title="Permalink to this definition">¶</a></dt>
+<dt id="id182">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_INTERP_CUBIC</code><em class="property"> = 3</em><a class="headerlink" href="#id182" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4657,8 +4678,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_INTERP_AKIMA</code><a class="headerlink" href="#geosoft.gxapi.DU_INTERP_AKIMA" title="Permalink to this definition">¶</a></dt>
 <dd><p>Akima</p>
 <dl class="py attribute">
-<dt id="id182">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_INTERP_AKIMA</code><em class="property"> = 4</em><a class="headerlink" href="#id182" title="Permalink to this definition">¶</a></dt>
+<dt id="id183">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_INTERP_AKIMA</code><em class="property"> = 4</em><a class="headerlink" href="#id183" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4668,8 +4689,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_INTERP_PREDICT</code><a class="headerlink" href="#geosoft.gxapi.DU_INTERP_PREDICT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict</p>
 <dl class="py attribute">
-<dt id="id183">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_INTERP_PREDICT</code><em class="property"> = 5</em><a class="headerlink" href="#id183" title="Permalink to this definition">¶</a></dt>
+<dt id="id184">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_INTERP_PREDICT</code><em class="property"> = 5</em><a class="headerlink" href="#id184" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4683,8 +4704,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_INTERP_EDGE_NONE</code><a class="headerlink" href="#geosoft.gxapi.DU_INTERP_EDGE_NONE" title="Permalink to this definition">¶</a></dt>
 <dd><p>None</p>
 <dl class="py attribute">
-<dt id="id184">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_INTERP_EDGE_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#id184" title="Permalink to this definition">¶</a></dt>
+<dt id="id185">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_INTERP_EDGE_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#id185" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4694,8 +4715,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_INTERP_EDGE_SAME</code><a class="headerlink" href="#geosoft.gxapi.DU_INTERP_EDGE_SAME" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same</p>
 <dl class="py attribute">
-<dt id="id185">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_INTERP_EDGE_SAME</code><em class="property"> = 1</em><a class="headerlink" href="#id185" title="Permalink to this definition">¶</a></dt>
+<dt id="id186">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_INTERP_EDGE_SAME</code><em class="property"> = 1</em><a class="headerlink" href="#id186" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4705,8 +4726,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_INTERP_EDGE_NEAREST</code><a class="headerlink" href="#geosoft.gxapi.DU_INTERP_EDGE_NEAREST" title="Permalink to this definition">¶</a></dt>
 <dd><p>Nearest</p>
 <dl class="py attribute">
-<dt id="id186">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_INTERP_EDGE_NEAREST</code><em class="property"> = 2</em><a class="headerlink" href="#id186" title="Permalink to this definition">¶</a></dt>
+<dt id="id187">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_INTERP_EDGE_NEAREST</code><em class="property"> = 2</em><a class="headerlink" href="#id187" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4716,8 +4737,8 @@ channels are separated by a single space character.</p>
 <code class="sig-name descname">DU_INTERP_EDGE_LINEAR</code><a class="headerlink" href="#geosoft.gxapi.DU_INTERP_EDGE_LINEAR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Linear</p>
 <dl class="py attribute">
-<dt id="id187">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_INTERP_EDGE_LINEAR</code><em class="property"> = 3</em><a class="headerlink" href="#id187" title="Permalink to this definition">¶</a></dt>
+<dt id="id188">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_INTERP_EDGE_LINEAR</code><em class="property"> = 3</em><a class="headerlink" href="#id188" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4734,8 +4755,8 @@ characters to be used as delimiters.  Use C style escape
 sequences to identify non-printable characters.  The
 default delimiters for FREE format files are ” \t,”.</p>
 <dl class="py attribute">
-<dt id="id188">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LAB_TYPE_FREE</code><em class="property"> = 1</em><a class="headerlink" href="#id188" title="Permalink to this definition">¶</a></dt>
+<dt id="id189">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LAB_TYPE_FREE</code><em class="property"> = 1</em><a class="headerlink" href="#id189" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4747,8 +4768,8 @@ default delimiters for FREE format files are ” \t,”.</p>
 characters to be removed before comma delimiting.  The
 default for COMMA delimited files is ” \t”.</p>
 <dl class="py attribute">
-<dt id="id189">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LAB_TYPE_COMMA</code><em class="property"> = 2</em><a class="headerlink" href="#id189" title="Permalink to this definition">¶</a></dt>
+<dt id="id190">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LAB_TYPE_COMMA</code><em class="property"> = 2</em><a class="headerlink" href="#id190" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4762,8 +4783,8 @@ default for COMMA delimited files is ” \t”.</p>
 <code class="sig-name descname">DU_LEVEL_LINES</code><a class="headerlink" href="#geosoft.gxapi.DU_LEVEL_LINES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract line corrections</p>
 <dl class="py attribute">
-<dt id="id190">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LEVEL_LINES</code><em class="property"> = 0</em><a class="headerlink" href="#id190" title="Permalink to this definition">¶</a></dt>
+<dt id="id191">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LEVEL_LINES</code><em class="property"> = 0</em><a class="headerlink" href="#id191" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4773,8 +4794,8 @@ default for COMMA delimited files is ” \t”.</p>
 <code class="sig-name descname">DU_LEVEL_TIES</code><a class="headerlink" href="#geosoft.gxapi.DU_LEVEL_TIES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract tie corrections</p>
 <dl class="py attribute">
-<dt id="id191">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LEVEL_TIES</code><em class="property"> = 1</em><a class="headerlink" href="#id191" title="Permalink to this definition">¶</a></dt>
+<dt id="id192">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LEVEL_TIES</code><em class="property"> = 1</em><a class="headerlink" href="#id192" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4784,8 +4805,8 @@ default for COMMA delimited files is ” \t”.</p>
 <code class="sig-name descname">DU_LEVEL_ALL</code><a class="headerlink" href="#geosoft.gxapi.DU_LEVEL_ALL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract all corrections</p>
 <dl class="py attribute">
-<dt id="id192">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LEVEL_ALL</code><em class="property"> = 2</em><a class="headerlink" href="#id192" title="Permalink to this definition">¶</a></dt>
+<dt id="id193">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LEVEL_ALL</code><em class="property"> = 2</em><a class="headerlink" href="#id193" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4799,8 +4820,8 @@ default for COMMA delimited files is ” \t”.</p>
 <code class="sig-name descname">DU_LINEOUT_SINGLE</code><a class="headerlink" href="#geosoft.gxapi.DU_LINEOUT_SINGLE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Single</p>
 <dl class="py attribute">
-<dt id="id193">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LINEOUT_SINGLE</code><em class="property"> = 0</em><a class="headerlink" href="#id193" title="Permalink to this definition">¶</a></dt>
+<dt id="id194">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LINEOUT_SINGLE</code><em class="property"> = 0</em><a class="headerlink" href="#id194" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4810,8 +4831,8 @@ default for COMMA delimited files is ” \t”.</p>
 <code class="sig-name descname">DU_LINEOUT_MULTIPLE</code><a class="headerlink" href="#geosoft.gxapi.DU_LINEOUT_MULTIPLE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Multiple</p>
 <dl class="py attribute">
-<dt id="id194">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LINEOUT_MULTIPLE</code><em class="property"> = 1</em><a class="headerlink" href="#id194" title="Permalink to this definition">¶</a></dt>
+<dt id="id195">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LINEOUT_MULTIPLE</code><em class="property"> = 1</em><a class="headerlink" href="#id195" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4825,8 +4846,8 @@ default for COMMA delimited files is ” \t”.</p>
 <code class="sig-name descname">DU_FEATURE_TYPE_OUTPUT_POINT</code><a class="headerlink" href="#geosoft.gxapi.DU_FEATURE_TYPE_OUTPUT_POINT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Point</p>
 <dl class="py attribute">
-<dt id="id195">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_FEATURE_TYPE_OUTPUT_POINT</code><em class="property"> = 0</em><a class="headerlink" href="#id195" title="Permalink to this definition">¶</a></dt>
+<dt id="id196">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_FEATURE_TYPE_OUTPUT_POINT</code><em class="property"> = 0</em><a class="headerlink" href="#id196" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4836,8 +4857,8 @@ default for COMMA delimited files is ” \t”.</p>
 <code class="sig-name descname">DU_FEATURE_TYPE_OUTPUT_LINE</code><a class="headerlink" href="#geosoft.gxapi.DU_FEATURE_TYPE_OUTPUT_LINE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Line</p>
 <dl class="py attribute">
-<dt id="id196">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_FEATURE_TYPE_OUTPUT_LINE</code><em class="property"> = 1</em><a class="headerlink" href="#id196" title="Permalink to this definition">¶</a></dt>
+<dt id="id197">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_FEATURE_TYPE_OUTPUT_LINE</code><em class="property"> = 1</em><a class="headerlink" href="#id197" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4851,8 +4872,8 @@ default for COMMA delimited files is ” \t”.</p>
 <code class="sig-name descname">DU_GEODATABASE_EXPORT_TYPE_OVERWRITE_GEODATABASE</code><a class="headerlink" href="#geosoft.gxapi.DU_GEODATABASE_EXPORT_TYPE_OVERWRITE_GEODATABASE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite geodatabase</p>
 <dl class="py attribute">
-<dt id="id197">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_GEODATABASE_EXPORT_TYPE_OVERWRITE_GEODATABASE</code><em class="property"> = 0</em><a class="headerlink" href="#id197" title="Permalink to this definition">¶</a></dt>
+<dt id="id198">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_GEODATABASE_EXPORT_TYPE_OVERWRITE_GEODATABASE</code><em class="property"> = 0</em><a class="headerlink" href="#id198" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4862,8 +4883,8 @@ default for COMMA delimited files is ” \t”.</p>
 <code class="sig-name descname">DU_GEODATABASE_EXPORT_TYPE_OVERWRITE_FEATURECLASS</code><a class="headerlink" href="#geosoft.gxapi.DU_GEODATABASE_EXPORT_TYPE_OVERWRITE_FEATURECLASS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite featureclass</p>
 <dl class="py attribute">
-<dt id="id198">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_GEODATABASE_EXPORT_TYPE_OVERWRITE_FEATURECLASS</code><em class="property"> = 1</em><a class="headerlink" href="#id198" title="Permalink to this definition">¶</a></dt>
+<dt id="id199">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_GEODATABASE_EXPORT_TYPE_OVERWRITE_FEATURECLASS</code><em class="property"> = 1</em><a class="headerlink" href="#id199" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4873,8 +4894,8 @@ default for COMMA delimited files is ” \t”.</p>
 <code class="sig-name descname">DU_GEODATABASE_EXPORT_TYPE_APPEND</code><a class="headerlink" href="#geosoft.gxapi.DU_GEODATABASE_EXPORT_TYPE_APPEND" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append</p>
 <dl class="py attribute">
-<dt id="id199">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_GEODATABASE_EXPORT_TYPE_APPEND</code><em class="property"> = 2</em><a class="headerlink" href="#id199" title="Permalink to this definition">¶</a></dt>
+<dt id="id200">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_GEODATABASE_EXPORT_TYPE_APPEND</code><em class="property"> = 2</em><a class="headerlink" href="#id200" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4888,8 +4909,8 @@ default for COMMA delimited files is ” \t”.</p>
 <code class="sig-name descname">DU_LINES_DISPLAYED</code><a class="headerlink" href="#geosoft.gxapi.DU_LINES_DISPLAYED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Displayed</p>
 <dl class="py attribute">
-<dt id="id200">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LINES_DISPLAYED</code><em class="property"> = 0</em><a class="headerlink" href="#id200" title="Permalink to this definition">¶</a></dt>
+<dt id="id201">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LINES_DISPLAYED</code><em class="property"> = 0</em><a class="headerlink" href="#id201" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4899,8 +4920,8 @@ default for COMMA delimited files is ” \t”.</p>
 <code class="sig-name descname">DU_LINES_SELECTED</code><a class="headerlink" href="#geosoft.gxapi.DU_LINES_SELECTED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selected</p>
 <dl class="py attribute">
-<dt id="id201">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LINES_SELECTED</code><em class="property"> = 1</em><a class="headerlink" href="#id201" title="Permalink to this definition">¶</a></dt>
+<dt id="id202">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LINES_SELECTED</code><em class="property"> = 1</em><a class="headerlink" href="#id202" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4910,8 +4931,8 @@ default for COMMA delimited files is ” \t”.</p>
 <code class="sig-name descname">DU_LINES_ALL</code><a class="headerlink" href="#geosoft.gxapi.DU_LINES_ALL" title="Permalink to this definition">¶</a></dt>
 <dd><p>All</p>
 <dl class="py attribute">
-<dt id="id202">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LINES_ALL</code><em class="property"> = 2</em><a class="headerlink" href="#id202" title="Permalink to this definition">¶</a></dt>
+<dt id="id203">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LINES_ALL</code><em class="property"> = 2</em><a class="headerlink" href="#id203" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4925,8 +4946,8 @@ default for COMMA delimited files is ” \t”.</p>
 <code class="sig-name descname">DU_LOADLTB_REPLACE</code><a class="headerlink" href="#geosoft.gxapi.DU_LOADLTB_REPLACE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replace</p>
 <dl class="py attribute">
-<dt id="id203">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOADLTB_REPLACE</code><em class="property"> = 0</em><a class="headerlink" href="#id203" title="Permalink to this definition">¶</a></dt>
+<dt id="id204">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOADLTB_REPLACE</code><em class="property"> = 0</em><a class="headerlink" href="#id204" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4936,8 +4957,8 @@ default for COMMA delimited files is ” \t”.</p>
 <code class="sig-name descname">DU_LOADLTB_APPEND</code><a class="headerlink" href="#geosoft.gxapi.DU_LOADLTB_APPEND" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append</p>
 <dl class="py attribute">
-<dt id="id204">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOADLTB_APPEND</code><em class="property"> = 1</em><a class="headerlink" href="#id204" title="Permalink to this definition">¶</a></dt>
+<dt id="id205">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOADLTB_APPEND</code><em class="property"> = 1</em><a class="headerlink" href="#id205" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4952,8 +4973,8 @@ default for COMMA delimited files is ” \t”.</p>
 <dd><p>Requires an exact match in all indexes.
 Results will dummy if Indexes are not found.</p>
 <dl class="py attribute">
-<dt id="id205">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOOKUP_EXACT</code><em class="property"> = 0</em><a class="headerlink" href="#id205" title="Permalink to this definition">¶</a></dt>
+<dt id="id206">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOOKUP_EXACT</code><em class="property"> = 0</em><a class="headerlink" href="#id206" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4967,8 +4988,8 @@ the lookup value.
 The results will be dummy only if the first index
 does not have a match.</p>
 <dl class="py attribute">
-<dt id="id206">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOOKUP_NEAREST</code><em class="property"> = 1</em><a class="headerlink" href="#id206" title="Permalink to this definition">¶</a></dt>
+<dt id="id207">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOOKUP_NEAREST</code><em class="property"> = 1</em><a class="headerlink" href="#id207" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4980,8 +5001,8 @@ does not have a match.</p>
 be interpolated between the two nearest
 framing values in the table.</p>
 <dl class="py attribute">
-<dt id="id207">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOOKUP_INTERPOLATE</code><em class="property"> = 2</em><a class="headerlink" href="#id207" title="Permalink to this definition">¶</a></dt>
+<dt id="id208">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOOKUP_INTERPOLATE</code><em class="property"> = 2</em><a class="headerlink" href="#id208" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4998,8 +5019,8 @@ b) the secondary index channel for
 double index lookups.
 Values not in data spacing are dummy.</p>
 <dl class="py attribute">
-<dt id="id208">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOOKUP_NEARESTCLOSE</code><em class="property"> = 3</em><a class="headerlink" href="#id208" title="Permalink to this definition">¶</a></dt>
+<dt id="id209">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOOKUP_NEARESTCLOSE</code><em class="property"> = 3</em><a class="headerlink" href="#id209" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5016,8 +5037,8 @@ b) the secondary index channel for
 double index lookups.
 Values not in data spacing are dummy.</p>
 <dl class="py attribute">
-<dt id="id209">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOOKUP_INTERPCLOSE</code><em class="property"> = 4</em><a class="headerlink" href="#id209" title="Permalink to this definition">¶</a></dt>
+<dt id="id210">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOOKUP_INTERPCLOSE</code><em class="property"> = 4</em><a class="headerlink" href="#id210" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5027,8 +5048,8 @@ Values not in data spacing are dummy.</p>
 <code class="sig-name descname">DU_LOOKUP_INTERPOLATE_DUMMYOUTSIDE</code><a class="headerlink" href="#geosoft.gxapi.DU_LOOKUP_INTERPOLATE_DUMMYOUTSIDE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interpolate between values, dummy beyond two ends</p>
 <dl class="py attribute">
-<dt id="id210">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOOKUP_INTERPOLATE_DUMMYOUTSIDE</code><em class="property"> = 5</em><a class="headerlink" href="#id210" title="Permalink to this definition">¶</a></dt>
+<dt id="id211">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOOKUP_INTERPOLATE_DUMMYOUTSIDE</code><em class="property"> = 5</em><a class="headerlink" href="#id211" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5038,8 +5059,8 @@ Values not in data spacing are dummy.</p>
 <code class="sig-name descname">DU_LOOKUP_INTERPOLATE_CONSTOUTSIDE</code><a class="headerlink" href="#geosoft.gxapi.DU_LOOKUP_INTERPOLATE_CONSTOUTSIDE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interpolate between values, constant end values beyond two ends</p>
 <dl class="py attribute">
-<dt id="id211">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOOKUP_INTERPOLATE_CONSTOUTSIDE</code><em class="property"> = 6</em><a class="headerlink" href="#id211" title="Permalink to this definition">¶</a></dt>
+<dt id="id212">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOOKUP_INTERPOLATE_CONSTOUTSIDE</code><em class="property"> = 6</em><a class="headerlink" href="#id212" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5049,8 +5070,8 @@ Values not in data spacing are dummy.</p>
 <code class="sig-name descname">DU_LOOKUP_INTERPOLATE_EXTPLOUTSIDE</code><a class="headerlink" href="#geosoft.gxapi.DU_LOOKUP_INTERPOLATE_EXTPLOUTSIDE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interpolate between values, extrapolate beyond two ends</p>
 <dl class="py attribute">
-<dt id="id212">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOOKUP_INTERPOLATE_EXTPLOUTSIDE</code><em class="property"> = 7</em><a class="headerlink" href="#id212" title="Permalink to this definition">¶</a></dt>
+<dt id="id213">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOOKUP_INTERPOLATE_EXTPLOUTSIDE</code><em class="property"> = 7</em><a class="headerlink" href="#id213" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5060,8 +5081,8 @@ Values not in data spacing are dummy.</p>
 <code class="sig-name descname">DU_LOOKUP_MAXOPTION</code><a class="headerlink" href="#geosoft.gxapi.DU_LOOKUP_MAXOPTION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum option value</p>
 <dl class="py attribute">
-<dt id="id213">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOOKUP_MAXOPTION</code><em class="property"> = 8</em><a class="headerlink" href="#id213" title="Permalink to this definition">¶</a></dt>
+<dt id="id214">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_LOOKUP_MAXOPTION</code><em class="property"> = 8</em><a class="headerlink" href="#id214" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5075,8 +5096,8 @@ Values not in data spacing are dummy.</p>
 <code class="sig-name descname">DU_MASK_INSIDE</code><a class="headerlink" href="#geosoft.gxapi.DU_MASK_INSIDE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inside</p>
 <dl class="py attribute">
-<dt id="id214">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MASK_INSIDE</code><em class="property"> = 0</em><a class="headerlink" href="#id214" title="Permalink to this definition">¶</a></dt>
+<dt id="id215">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MASK_INSIDE</code><em class="property"> = 0</em><a class="headerlink" href="#id215" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5086,8 +5107,8 @@ Values not in data spacing are dummy.</p>
 <code class="sig-name descname">DU_MASK_OUTSIDE</code><a class="headerlink" href="#geosoft.gxapi.DU_MASK_OUTSIDE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Outside</p>
 <dl class="py attribute">
-<dt id="id215">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MASK_OUTSIDE</code><em class="property"> = 1</em><a class="headerlink" href="#id215" title="Permalink to this definition">¶</a></dt>
+<dt id="id216">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MASK_OUTSIDE</code><em class="property"> = 1</em><a class="headerlink" href="#id216" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5101,8 +5122,8 @@ Values not in data spacing are dummy.</p>
 <code class="sig-name descname">DU_MERGE_APPEND</code><a class="headerlink" href="#geosoft.gxapi.DU_MERGE_APPEND" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append</p>
 <dl class="py attribute">
-<dt id="id216">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MERGE_APPEND</code><em class="property"> = 0</em><a class="headerlink" href="#id216" title="Permalink to this definition">¶</a></dt>
+<dt id="id217">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MERGE_APPEND</code><em class="property"> = 0</em><a class="headerlink" href="#id217" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5118,8 +5139,8 @@ Values not in data spacing are dummy.</p>
 range will always be dummied out.  If the insertion point
 is before start of data, the fid start is changed.</p>
 <dl class="py attribute">
-<dt id="id217">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MODFID_INSERT</code><em class="property"> = 0</em><a class="headerlink" href="#id217" title="Permalink to this definition">¶</a></dt>
+<dt id="id218">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MODFID_INSERT</code><em class="property"> = 0</em><a class="headerlink" href="#id218" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5129,8 +5150,8 @@ is before start of data, the fid start is changed.</p>
 <code class="sig-name descname">DU_MODFID_DELETE</code><a class="headerlink" href="#geosoft.gxapi.DU_MODFID_DELETE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Will delete the range of fids.</p>
 <dl class="py attribute">
-<dt id="id218">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MODFID_DELETE</code><em class="property"> = 1</em><a class="headerlink" href="#id218" title="Permalink to this definition">¶</a></dt>
+<dt id="id219">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MODFID_DELETE</code><em class="property"> = 1</em><a class="headerlink" href="#id219" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5142,8 +5163,8 @@ is before start of data, the fid start is changed.</p>
 add fids to the start or end of the existing data.  The
 data is not moved with repect to the current fid locations.</p>
 <dl class="py attribute">
-<dt id="id219">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MODFID_APPEND</code><em class="property"> = 2</em><a class="headerlink" href="#id219" title="Permalink to this definition">¶</a></dt>
+<dt id="id220">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MODFID_APPEND</code><em class="property"> = 2</em><a class="headerlink" href="#id220" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5157,8 +5178,8 @@ data is not moved with repect to the current fid locations.</p>
 <code class="sig-name descname">DU_MOVE_ABSOLUTE</code><a class="headerlink" href="#geosoft.gxapi.DU_MOVE_ABSOLUTE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Move input to absolute value in control channel</p>
 <dl class="py attribute">
-<dt id="id220">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MOVE_ABSOLUTE</code><em class="property"> = 0</em><a class="headerlink" href="#id220" title="Permalink to this definition">¶</a></dt>
+<dt id="id221">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MOVE_ABSOLUTE</code><em class="property"> = 0</em><a class="headerlink" href="#id221" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5168,8 +5189,8 @@ data is not moved with repect to the current fid locations.</p>
 <code class="sig-name descname">DU_MOVE_MINUS</code><a class="headerlink" href="#geosoft.gxapi.DU_MOVE_MINUS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Subtract control channel from input channel</p>
 <dl class="py attribute">
-<dt id="id221">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MOVE_MINUS</code><em class="property"> = 1</em><a class="headerlink" href="#id221" title="Permalink to this definition">¶</a></dt>
+<dt id="id222">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MOVE_MINUS</code><em class="property"> = 1</em><a class="headerlink" href="#id222" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5179,8 +5200,8 @@ data is not moved with repect to the current fid locations.</p>
 <code class="sig-name descname">DU_MOVE_PLUS</code><a class="headerlink" href="#geosoft.gxapi.DU_MOVE_PLUS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add control channel to input channel</p>
 <dl class="py attribute">
-<dt id="id222">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MOVE_PLUS</code><em class="property"> = 2</em><a class="headerlink" href="#id222" title="Permalink to this definition">¶</a></dt>
+<dt id="id223">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MOVE_PLUS</code><em class="property"> = 2</em><a class="headerlink" href="#id223" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5192,8 +5213,8 @@ data is not moved with repect to the current fid locations.</p>
 based on the control channel, assuming both the input and control
 vary linearly inside the gaps</p>
 <dl class="py attribute">
-<dt id="id223">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MOVE_INTERP</code><em class="property"> = 3</em><a class="headerlink" href="#id223" title="Permalink to this definition">¶</a></dt>
+<dt id="id224">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_MOVE_INTERP</code><em class="property"> = 3</em><a class="headerlink" href="#id224" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5207,8 +5228,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">DU_REFID_LINEAR</code><a class="headerlink" href="#geosoft.gxapi.DU_REFID_LINEAR" title="Permalink to this definition">¶</a></dt>
 <dd><p>0</p>
 <dl class="py attribute">
-<dt id="id224">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_REFID_LINEAR</code><em class="property"> = 0</em><a class="headerlink" href="#id224" title="Permalink to this definition">¶</a></dt>
+<dt id="id225">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_REFID_LINEAR</code><em class="property"> = 0</em><a class="headerlink" href="#id225" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5218,8 +5239,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">DU_REFID_MINCUR</code><a class="headerlink" href="#geosoft.gxapi.DU_REFID_MINCUR" title="Permalink to this definition">¶</a></dt>
 <dd><p>1</p>
 <dl class="py attribute">
-<dt id="id225">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_REFID_MINCUR</code><em class="property"> = 1</em><a class="headerlink" href="#id225" title="Permalink to this definition">¶</a></dt>
+<dt id="id226">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_REFID_MINCUR</code><em class="property"> = 1</em><a class="headerlink" href="#id226" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5229,8 +5250,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">DU_REFID_AKIMA</code><a class="headerlink" href="#geosoft.gxapi.DU_REFID_AKIMA" title="Permalink to this definition">¶</a></dt>
 <dd><p>2</p>
 <dl class="py attribute">
-<dt id="id226">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_REFID_AKIMA</code><em class="property"> = 2</em><a class="headerlink" href="#id226" title="Permalink to this definition">¶</a></dt>
+<dt id="id227">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_REFID_AKIMA</code><em class="property"> = 2</em><a class="headerlink" href="#id227" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5240,8 +5261,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">DU_REFID_NEAREST</code><a class="headerlink" href="#geosoft.gxapi.DU_REFID_NEAREST" title="Permalink to this definition">¶</a></dt>
 <dd><p>3</p>
 <dl class="py attribute">
-<dt id="id227">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_REFID_NEAREST</code><em class="property"> = 3</em><a class="headerlink" href="#id227" title="Permalink to this definition">¶</a></dt>
+<dt id="id228">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_REFID_NEAREST</code><em class="property"> = 3</em><a class="headerlink" href="#id228" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5255,8 +5276,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">DU_SORT_ASCENDING</code><a class="headerlink" href="#geosoft.gxapi.DU_SORT_ASCENDING" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ascending</p>
 <dl class="py attribute">
-<dt id="id228">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_SORT_ASCENDING</code><em class="property"> = 0</em><a class="headerlink" href="#id228" title="Permalink to this definition">¶</a></dt>
+<dt id="id229">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_SORT_ASCENDING</code><em class="property"> = 0</em><a class="headerlink" href="#id229" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5266,8 +5287,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">DU_SORT_DESCENDING</code><a class="headerlink" href="#geosoft.gxapi.DU_SORT_DESCENDING" title="Permalink to this definition">¶</a></dt>
 <dd><p>Descending</p>
 <dl class="py attribute">
-<dt id="id229">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_SORT_DESCENDING</code><em class="property"> = 1</em><a class="headerlink" href="#id229" title="Permalink to this definition">¶</a></dt>
+<dt id="id230">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_SORT_DESCENDING</code><em class="property"> = 1</em><a class="headerlink" href="#id230" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5281,8 +5302,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">DU_SPLITLINE_XYPOSITION</code><a class="headerlink" href="#geosoft.gxapi.DU_SPLITLINE_XYPOSITION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Xyposition</p>
 <dl class="py attribute">
-<dt id="id230">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_SPLITLINE_XYPOSITION</code><em class="property"> = 0</em><a class="headerlink" href="#id230" title="Permalink to this definition">¶</a></dt>
+<dt id="id231">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_SPLITLINE_XYPOSITION</code><em class="property"> = 0</em><a class="headerlink" href="#id231" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5292,8 +5313,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">DU_SPLITLINE_SEQUENTIAL</code><a class="headerlink" href="#geosoft.gxapi.DU_SPLITLINE_SEQUENTIAL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sequential</p>
 <dl class="py attribute">
-<dt id="id231">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_SPLITLINE_SEQUENTIAL</code><em class="property"> = 1</em><a class="headerlink" href="#id231" title="Permalink to this definition">¶</a></dt>
+<dt id="id232">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_SPLITLINE_SEQUENTIAL</code><em class="property"> = 1</em><a class="headerlink" href="#id232" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5303,8 +5324,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">DU_SPLITLINE_TOVERSIONS</code><a class="headerlink" href="#geosoft.gxapi.DU_SPLITLINE_TOVERSIONS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Toversions</p>
 <dl class="py attribute">
-<dt id="id232">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_SPLITLINE_TOVERSIONS</code><em class="property"> = 2</em><a class="headerlink" href="#id232" title="Permalink to this definition">¶</a></dt>
+<dt id="id233">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_SPLITLINE_TOVERSIONS</code><em class="property"> = 2</em><a class="headerlink" href="#id233" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5318,8 +5339,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">DU_STORAGE_LINE</code><a class="headerlink" href="#geosoft.gxapi.DU_STORAGE_LINE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Line</p>
 <dl class="py attribute">
-<dt id="id233">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_STORAGE_LINE</code><em class="property"> = 0</em><a class="headerlink" href="#id233" title="Permalink to this definition">¶</a></dt>
+<dt id="id234">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_STORAGE_LINE</code><em class="property"> = 0</em><a class="headerlink" href="#id234" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5329,8 +5350,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">DU_STORAGE_GROUP</code><a class="headerlink" href="#geosoft.gxapi.DU_STORAGE_GROUP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Group</p>
 <dl class="py attribute">
-<dt id="id234">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_STORAGE_GROUP</code><em class="property"> = 1</em><a class="headerlink" href="#id234" title="Permalink to this definition">¶</a></dt>
+<dt id="id235">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_STORAGE_GROUP</code><em class="property"> = 1</em><a class="headerlink" href="#id235" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5344,8 +5365,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">QC_PLAN_SURVEYLINE</code><a class="headerlink" href="#geosoft.gxapi.QC_PLAN_SURVEYLINE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Qc plan surveyline</p>
 <dl class="py attribute">
-<dt id="id235">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">QC_PLAN_SURVEYLINE</code><em class="property"> = 0</em><a class="headerlink" href="#id235" title="Permalink to this definition">¶</a></dt>
+<dt id="id236">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">QC_PLAN_SURVEYLINE</code><em class="property"> = 0</em><a class="headerlink" href="#id236" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5355,8 +5376,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">QC_PLAN_TIELINE</code><a class="headerlink" href="#geosoft.gxapi.QC_PLAN_TIELINE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Qc plan tieline</p>
 <dl class="py attribute">
-<dt id="id236">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">QC_PLAN_TIELINE</code><em class="property"> = 1</em><a class="headerlink" href="#id236" title="Permalink to this definition">¶</a></dt>
+<dt id="id237">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">QC_PLAN_TIELINE</code><em class="property"> = 1</em><a class="headerlink" href="#id237" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5366,8 +5387,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">QC_PLAN_BOTHLINES</code><a class="headerlink" href="#geosoft.gxapi.QC_PLAN_BOTHLINES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Qc plan bothlines</p>
 <dl class="py attribute">
-<dt id="id237">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">QC_PLAN_BOTHLINES</code><em class="property"> = 2</em><a class="headerlink" href="#id237" title="Permalink to this definition">¶</a></dt>
+<dt id="id238">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">QC_PLAN_BOTHLINES</code><em class="property"> = 2</em><a class="headerlink" href="#id238" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5381,8 +5402,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">DU_DISTANCE_CHANNEL_MAINTAIN_DIRECTION</code><a class="headerlink" href="#geosoft.gxapi.DU_DISTANCE_CHANNEL_MAINTAIN_DIRECTION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Zero distance is always at the start of the line.</p>
 <dl class="py attribute">
-<dt id="id238">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_DISTANCE_CHANNEL_MAINTAIN_DIRECTION</code><em class="property"> = 0</em><a class="headerlink" href="#id238" title="Permalink to this definition">¶</a></dt>
+<dt id="id239">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_DISTANCE_CHANNEL_MAINTAIN_DIRECTION</code><em class="property"> = 0</em><a class="headerlink" href="#id239" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5392,8 +5413,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">DU_DISTANCE_CHANNEL_CARTESIAN_COORDINATES</code><a class="headerlink" href="#geosoft.gxapi.DU_DISTANCE_CHANNEL_CARTESIAN_COORDINATES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Put zero at the end of the line with min X if X changes most, or min Y if Y changes most</p>
 <dl class="py attribute">
-<dt id="id239">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_DISTANCE_CHANNEL_CARTESIAN_COORDINATES</code><em class="property"> = 1</em><a class="headerlink" href="#id239" title="Permalink to this definition">¶</a></dt>
+<dt id="id240">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_DISTANCE_CHANNEL_CARTESIAN_COORDINATES</code><em class="property"> = 1</em><a class="headerlink" href="#id240" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5407,8 +5428,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">DU_DIRECTGRID_MIN</code><a class="headerlink" href="#geosoft.gxapi.DU_DIRECTGRID_MIN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Du directgrid min</p>
 <dl class="py attribute">
-<dt id="id240">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_DIRECTGRID_MIN</code><em class="property"> = 0</em><a class="headerlink" href="#id240" title="Permalink to this definition">¶</a></dt>
+<dt id="id241">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_DIRECTGRID_MIN</code><em class="property"> = 0</em><a class="headerlink" href="#id241" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5418,8 +5439,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">DU_DIRECTGRID_MAX</code><a class="headerlink" href="#geosoft.gxapi.DU_DIRECTGRID_MAX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Du directgrid max</p>
 <dl class="py attribute">
-<dt id="id241">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_DIRECTGRID_MAX</code><em class="property"> = 1</em><a class="headerlink" href="#id241" title="Permalink to this definition">¶</a></dt>
+<dt id="id242">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_DIRECTGRID_MAX</code><em class="property"> = 1</em><a class="headerlink" href="#id242" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5429,8 +5450,8 @@ vary linearly inside the gaps</p>
 <code class="sig-name descname">DU_DIRECTGRID_MEAN</code><a class="headerlink" href="#geosoft.gxapi.DU_DIRECTGRID_MEAN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Du directgrid mean</p>
 <dl class="py attribute">
-<dt id="id242">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_DIRECTGRID_MEAN</code><em class="property"> = 2</em><a class="headerlink" href="#id242" title="Permalink to this definition">¶</a></dt>
+<dt id="id243">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DU_DIRECTGRID_MEAN</code><em class="property"> = 2</em><a class="headerlink" href="#id243" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5451,13 +5472,13 @@ vary linearly inside the gaps</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXDU class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2020, Geosoft Inc.
+        &#169; Copyright 2021, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

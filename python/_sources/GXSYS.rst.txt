@@ -348,6 +348,10 @@ SYS_DIR constants
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.SYS_DIR_GEOSOFT_TBL
+.. autodata:: geosoft.gxapi.SYS_DIR_GEOSOFT_PYTHON
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SYS_DIR_GEOSOFT_PYTHON
 .. autodata:: geosoft.gxapi.SYS_DIR_USER_CSV
     :annotation:
     

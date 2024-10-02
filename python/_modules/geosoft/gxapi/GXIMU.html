@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXIMU &#8212; Geosoft GX Python API 9.9.0 documentation</title>
+    <title>geosoft.gxapi.GXIMU &#8212; Geosoft GX Python API 9.10.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIMU</a></li> 
@@ -1328,6 +1328,29 @@
 
 
 
+<div class="viewcode-block" id="GXIMU.grid_vc"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_vc">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">grid_vc</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">im_gi</span><span class="p">,</span> <span class="n">im_go</span><span class="p">,</span> <span class="n">updown</span><span class="p">,</span> <span class="n">distance</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Apply vertical continuation convolution filter to a grid.</span>
+<span class="sd">        </span>
+<span class="sd">        :param im_gi:     Input image</span>
+<span class="sd">        :param im_go:     Output image</span>
+<span class="sd">        :param updown:    1 to calculate continuation upward, 0 downward</span>
+<span class="sd">        :param distance:  Continuation distance</span>
+<span class="sd">        :type  im_gi:     GXIMG</span>
+<span class="sd">        :type  im_go:     GXIMG</span>
+<span class="sd">        :type  updown:    int</span>
+<span class="sd">        :type  distance:  float</span>
+
+<span class="sd">        .. versionadded:: 9.9</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_vc</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">im_gi</span><span class="p">,</span> <span class="n">im_go</span><span class="p">,</span> <span class="n">updown</span><span class="p">,</span> <span class="n">distance</span><span class="p">)</span></div>
+        
+
+
+
 <div class="viewcode-block" id="GXIMU.grid_vd"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_vd">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_vd</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">im_gi</span><span class="p">,</span> <span class="n">im_go</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1963,7 +1986,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIMU</a></li> 
@@ -1971,7 +1994,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2020, Geosoft Inc.
+        &#169; Copyright 2021, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXDU &#8212; Geosoft GX Python API 9.9.0 documentation</title>
+    <title>geosoft.gxapi.GXDU &#8212; Geosoft GX Python API 9.10.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDU</a></li> 
@@ -4021,7 +4021,7 @@
 <div class="viewcode-block" id="GXDU.sort_index"><a class="viewcode-back" href="../../../GXDU.html#geosoft.gxapi.GXDU.sort_index">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">sort_index</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">in_ch</span><span class="p">,</span> <span class="n">sort</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Create an ordered index of the contents of a channel.</span>
+<span class="sd">        Create an ordered index of the contents of a channel. The order of rows where compared items are the same is preserved.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     Database</span>
 <span class="sd">        :param line:   Line symbol</span>
@@ -4046,7 +4046,7 @@
 <div class="viewcode-block" id="GXDU.sort_index2"><a class="viewcode-back" href="../../../GXDU.html#geosoft.gxapi.GXDU.sort_index2">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">sort_index2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">ch1</span><span class="p">,</span> <span class="n">sort1</span><span class="p">,</span> <span class="n">ch2</span><span class="p">,</span> <span class="n">sort2</span><span class="p">,</span> <span class="n">in_ch</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Create an ordered index from two channels</span>
+<span class="sd">        Create an ordered index from two channels.  The order of rows where compared items are the same is preserved.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     Database</span>
 <span class="sd">        :param line:   Line symbol</span>
@@ -4068,6 +4068,31 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDU</span><span class="o">.</span><span class="n">_sort_index2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">ch1</span><span class="p">,</span> <span class="n">sort1</span><span class="p">,</span> <span class="n">ch2</span><span class="p">,</span> <span class="n">sort2</span><span class="p">,</span> <span class="n">in_ch</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXDU.sort_index_n"><a class="viewcode-back" href="../../../GXDU.html#geosoft.gxapi.GXDU.sort_index_n">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">sort_index_n</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">chVV</span><span class="p">,</span> <span class="n">orderVV</span><span class="p">,</span> <span class="n">in_ch</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an ordered index from any number of channels.  The order of rows where compared items are the same is preserved.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:       Database</span>
+<span class="sd">        :param line:     Line symbol</span>
+<span class="sd">        :param chVV:     VV of channel symbols (INT). Sort by these channels [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param orderVV:  VV of sort order values (INT, one for each channel) :ref:`DU_SORT`</span>
+<span class="sd">        :param in_ch:    Output index channel (should be int) [`DB_LOCK_READWRITE &lt;geosoft.gxapi.DB_LOCK_READWRITE&gt;`]</span>
+<span class="sd">        :type  db:       GXDB</span>
+<span class="sd">        :type  line:     int</span>
+<span class="sd">        :type  chVV:     GXVV</span>
+<span class="sd">        :type  orderVV:  GXVV</span>
+<span class="sd">        :type  in_ch:    int</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDU</span><span class="o">.</span><span class="n">_sort_index_n</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">chVV</span><span class="p">,</span> <span class="n">orderVV</span><span class="p">,</span> <span class="n">in_ch</span><span class="p">)</span></div>
         
 
 
@@ -5348,7 +5373,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDU</a></li> 
@@ -5356,7 +5381,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2020, Geosoft Inc.
+        &#169; Copyright 2021, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

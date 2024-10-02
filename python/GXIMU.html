@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXIMU class &#8212; Geosoft GX Python API 9.9.0 documentation</title>
+    <title>GXIMU class &#8212; Geosoft GX Python API 9.10.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXIMU class</a></li> 
       </ul>
     </div>
@@ -1104,6 +1104,26 @@ not succeed.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="geosoft.gxapi.GXIMU.grid_vc">
+<em class="property">classmethod </em><code class="sig-name descname">grid_vc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">im_gi</span></em>, <em class="sig-param"><span class="n">im_go</span></em>, <em class="sig-param"><span class="n">updown</span></em>, <em class="sig-param"><span class="n">distance</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIMU.html#GXIMU.grid_vc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_vc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply vertical continuation convolution filter to a grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>im_gi</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Input image</p></li>
+<li><p><strong>im_go</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Output image</p></li>
+<li><p><strong>updown</strong> (<em>int</em>) – 1 to calculate continuation upward, 0 downward</p></li>
+<li><p><strong>distance</strong> (<em>float</em>) – Continuation distance</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.9.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="geosoft.gxapi.GXIMU.grid_vd">
 <em class="property">classmethod </em><code class="sig-name descname">grid_vd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">im_gi</span></em>, <em class="sig-param"><span class="n">im_go</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIMU.html#GXIMU.grid_vd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXIMU.grid_vd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply vertical derivative convolution filter to a grid.</p>
@@ -1568,7 +1588,7 @@ It scans each row and and column and finds the first non-dummy
 position at the start and end, and then determines the coordinates
 at those points.
 If the grid has no data, no <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> object, or if the Source Type of
-the <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> is not <a class="reference internal" href="GXIPJ.html#id142" title="geosoft.gxapi.IPJ_TYPE_PCS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IPJ_TYPE_PCS</span></code></a> (projected coordinate system), then the
+the <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> is not <a class="reference internal" href="GXIPJ.html#id153" title="geosoft.gxapi.IPJ_TYPE_PCS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IPJ_TYPE_PCS</span></code></a> (projected coordinate system), then the
 returned values are dummies (<a class="reference internal" href="GXGEOSOFT.html#id35" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_R8DM</span></code></a>).</p>
 </dd></dl>
 
@@ -1695,8 +1715,8 @@ GridPLYEx function except that you get to alter the
 <code class="sig-name descname">IMU_BOOL_OLAP_1</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_OLAP_1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overlap values use grid 1 value</p>
 <dl class="py attribute">
-<dt id="id61">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_BOOL_OLAP_1</code><em class="property"> = 1</em><a class="headerlink" href="#id61" title="Permalink to this definition">¶</a></dt>
+<dt id="id62">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_BOOL_OLAP_1</code><em class="property"> = 1</em><a class="headerlink" href="#id62" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1706,8 +1726,8 @@ GridPLYEx function except that you get to alter the
 <code class="sig-name descname">IMU_BOOL_OLAP_2</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_OLAP_2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overlap values use grid 2 value</p>
 <dl class="py attribute">
-<dt id="id62">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_BOOL_OLAP_2</code><em class="property"> = 2</em><a class="headerlink" href="#id62" title="Permalink to this definition">¶</a></dt>
+<dt id="id63">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_BOOL_OLAP_2</code><em class="property"> = 2</em><a class="headerlink" href="#id63" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1721,8 +1741,8 @@ GridPLYEx function except that you get to alter the
 <code class="sig-name descname">IMU_BOOL_OPT_AND</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_OPT_AND" title="Permalink to this definition">¶</a></dt>
 <dd><p>Valid areas are only where grids overlap</p>
 <dl class="py attribute">
-<dt id="id63">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_BOOL_OPT_AND</code><em class="property"> = 0</em><a class="headerlink" href="#id63" title="Permalink to this definition">¶</a></dt>
+<dt id="id64">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_BOOL_OPT_AND</code><em class="property"> = 0</em><a class="headerlink" href="#id64" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1732,8 +1752,8 @@ GridPLYEx function except that you get to alter the
 <code class="sig-name descname">IMU_BOOL_OPT_OR</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_OPT_OR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Valid areas are where either grid is a valid value</p>
 <dl class="py attribute">
-<dt id="id64">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_BOOL_OPT_OR</code><em class="property"> = 1</em><a class="headerlink" href="#id64" title="Permalink to this definition">¶</a></dt>
+<dt id="id65">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_BOOL_OPT_OR</code><em class="property"> = 1</em><a class="headerlink" href="#id65" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1743,8 +1763,8 @@ GridPLYEx function except that you get to alter the
 <code class="sig-name descname">IMU_BOOL_OPT_XOR</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_OPT_XOR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overlap areas are dummied</p>
 <dl class="py attribute">
-<dt id="id65">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_BOOL_OPT_XOR</code><em class="property"> = 2</em><a class="headerlink" href="#id65" title="Permalink to this definition">¶</a></dt>
+<dt id="id66">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_BOOL_OPT_XOR</code><em class="property"> = 2</em><a class="headerlink" href="#id66" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1758,8 +1778,8 @@ GridPLYEx function except that you get to alter the
 <code class="sig-name descname">IMU_BOOL_SIZING_MIN</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_SIZING_MIN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output grid is sized to overlapping region</p>
 <dl class="py attribute">
-<dt id="id66">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_BOOL_SIZING_MIN</code><em class="property"> = 0</em><a class="headerlink" href="#id66" title="Permalink to this definition">¶</a></dt>
+<dt id="id67">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_BOOL_SIZING_MIN</code><em class="property"> = 0</em><a class="headerlink" href="#id67" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1769,8 +1789,8 @@ GridPLYEx function except that you get to alter the
 <code class="sig-name descname">IMU_BOOL_SIZING_0</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_SIZING_0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output grid is sized to grid 1</p>
 <dl class="py attribute">
-<dt id="id67">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_BOOL_SIZING_0</code><em class="property"> = 1</em><a class="headerlink" href="#id67" title="Permalink to this definition">¶</a></dt>
+<dt id="id68">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_BOOL_SIZING_0</code><em class="property"> = 1</em><a class="headerlink" href="#id68" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1780,8 +1800,8 @@ GridPLYEx function except that you get to alter the
 <code class="sig-name descname">IMU_BOOL_SIZING_1</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_SIZING_1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output grid is sized to grid 2</p>
 <dl class="py attribute">
-<dt id="id68">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_BOOL_SIZING_1</code><em class="property"> = 2</em><a class="headerlink" href="#id68" title="Permalink to this definition">¶</a></dt>
+<dt id="id69">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_BOOL_SIZING_1</code><em class="property"> = 2</em><a class="headerlink" href="#id69" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1791,8 +1811,8 @@ GridPLYEx function except that you get to alter the
 <code class="sig-name descname">IMU_BOOL_SIZING_MAX</code><a class="headerlink" href="#geosoft.gxapi.IMU_BOOL_SIZING_MAX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output grid is sized to maximum combined area of both grids</p>
 <dl class="py attribute">
-<dt id="id69">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_BOOL_SIZING_MAX</code><em class="property"> = 3</em><a class="headerlink" href="#id69" title="Permalink to this definition">¶</a></dt>
+<dt id="id70">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_BOOL_SIZING_MAX</code><em class="property"> = 3</em><a class="headerlink" href="#id70" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1806,8 +1826,8 @@ GridPLYEx function except that you get to alter the
 <code class="sig-name descname">IMU_DOUBLE_CRC_BITS_EXACT</code><a class="headerlink" href="#geosoft.gxapi.IMU_DOUBLE_CRC_BITS_EXACT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exact CRC</p>
 <dl class="py attribute">
-<dt id="id70">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_DOUBLE_CRC_BITS_EXACT</code><em class="property"> = 0</em><a class="headerlink" href="#id70" title="Permalink to this definition">¶</a></dt>
+<dt id="id71">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_DOUBLE_CRC_BITS_EXACT</code><em class="property"> = 0</em><a class="headerlink" href="#id71" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1817,8 +1837,8 @@ GridPLYEx function except that you get to alter the
 <code class="sig-name descname">IMU_DOUBLE_CRC_BITS_DEFAULT</code><a class="headerlink" href="#geosoft.gxapi.IMU_DOUBLE_CRC_BITS_DEFAULT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Default inaccuracy in double (10 Bits)</p>
 <dl class="py attribute">
-<dt id="id71">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_DOUBLE_CRC_BITS_DEFAULT</code><em class="property"> = 10</em><a class="headerlink" href="#id71" title="Permalink to this definition">¶</a></dt>
+<dt id="id72">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_DOUBLE_CRC_BITS_DEFAULT</code><em class="property"> = 10</em><a class="headerlink" href="#id72" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1828,8 +1848,8 @@ GridPLYEx function except that you get to alter the
 <code class="sig-name descname">IMU_DOUBLE_CRC_BITS_MAX</code><a class="headerlink" href="#geosoft.gxapi.IMU_DOUBLE_CRC_BITS_MAX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum number of inaccuracy bits (51 Bits)</p>
 <dl class="py attribute">
-<dt id="id72">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_DOUBLE_CRC_BITS_MAX</code><em class="property"> = 51</em><a class="headerlink" href="#id72" title="Permalink to this definition">¶</a></dt>
+<dt id="id73">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_DOUBLE_CRC_BITS_MAX</code><em class="property"> = 51</em><a class="headerlink" href="#id73" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1843,8 +1863,8 @@ GridPLYEx function except that you get to alter the
 <code class="sig-name descname">IMU_EXPAND_SHAPE_RECTANGLE</code><a class="headerlink" href="#geosoft.gxapi.IMU_EXPAND_SHAPE_RECTANGLE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rectangle</p>
 <dl class="py attribute">
-<dt id="id73">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_EXPAND_SHAPE_RECTANGLE</code><em class="property"> = 0</em><a class="headerlink" href="#id73" title="Permalink to this definition">¶</a></dt>
+<dt id="id74">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_EXPAND_SHAPE_RECTANGLE</code><em class="property"> = 0</em><a class="headerlink" href="#id74" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1854,8 +1874,8 @@ GridPLYEx function except that you get to alter the
 <code class="sig-name descname">IMU_EXPAND_SHAPE_SQUARE</code><a class="headerlink" href="#geosoft.gxapi.IMU_EXPAND_SHAPE_SQUARE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Square</p>
 <dl class="py attribute">
-<dt id="id74">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_EXPAND_SHAPE_SQUARE</code><em class="property"> = 1</em><a class="headerlink" href="#id74" title="Permalink to this definition">¶</a></dt>
+<dt id="id75">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_EXPAND_SHAPE_SQUARE</code><em class="property"> = 1</em><a class="headerlink" href="#id75" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1869,8 +1889,8 @@ GridPLYEx function except that you get to alter the
 <code class="sig-name descname">IMU_FILL_ROLLOPT_LINEAR</code><a class="headerlink" href="#geosoft.gxapi.IMU_FILL_ROLLOPT_LINEAR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Linear</p>
 <dl class="py attribute">
-<dt id="id75">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FILL_ROLLOPT_LINEAR</code><em class="property"> = 1</em><a class="headerlink" href="#id75" title="Permalink to this definition">¶</a></dt>
+<dt id="id76">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FILL_ROLLOPT_LINEAR</code><em class="property"> = 1</em><a class="headerlink" href="#id76" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1880,8 +1900,8 @@ GridPLYEx function except that you get to alter the
 <code class="sig-name descname">IMU_FILL_ROLLOPT_SQUARE</code><a class="headerlink" href="#geosoft.gxapi.IMU_FILL_ROLLOPT_SQUARE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Square</p>
 <dl class="py attribute">
-<dt id="id76">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FILL_ROLLOPT_SQUARE</code><em class="property"> = 2</em><a class="headerlink" href="#id76" title="Permalink to this definition">¶</a></dt>
+<dt id="id77">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FILL_ROLLOPT_SQUARE</code><em class="property"> = 2</em><a class="headerlink" href="#id77" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1896,8 +1916,8 @@ values are dummy</p>
 <code class="sig-name descname">IMU_FILT_DUMMY_NO</code><a class="headerlink" href="#geosoft.gxapi.IMU_FILT_DUMMY_NO" title="Permalink to this definition">¶</a></dt>
 <dd><p>No</p>
 <dl class="py attribute">
-<dt id="id77">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FILT_DUMMY_NO</code><em class="property"> = 0</em><a class="headerlink" href="#id77" title="Permalink to this definition">¶</a></dt>
+<dt id="id78">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FILT_DUMMY_NO</code><em class="property"> = 0</em><a class="headerlink" href="#id78" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1907,8 +1927,8 @@ values are dummy</p>
 <code class="sig-name descname">IMU_FILT_DUMMY_YES</code><a class="headerlink" href="#geosoft.gxapi.IMU_FILT_DUMMY_YES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Yes</p>
 <dl class="py attribute">
-<dt id="id78">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FILT_DUMMY_YES</code><em class="property"> = 1</em><a class="headerlink" href="#id78" title="Permalink to this definition">¶</a></dt>
+<dt id="id79">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FILT_DUMMY_YES</code><em class="property"> = 1</em><a class="headerlink" href="#id79" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1923,8 +1943,8 @@ filter values</p>
 <code class="sig-name descname">IMU_FILT_FILE_NO</code><a class="headerlink" href="#geosoft.gxapi.IMU_FILT_FILE_NO" title="Permalink to this definition">¶</a></dt>
 <dd><p>No</p>
 <dl class="py attribute">
-<dt id="id79">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FILT_FILE_NO</code><em class="property"> = 0</em><a class="headerlink" href="#id79" title="Permalink to this definition">¶</a></dt>
+<dt id="id80">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FILT_FILE_NO</code><em class="property"> = 0</em><a class="headerlink" href="#id80" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1934,8 +1954,8 @@ filter values</p>
 <code class="sig-name descname">IMU_FILT_FILE_YES</code><a class="headerlink" href="#geosoft.gxapi.IMU_FILT_FILE_YES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Yes</p>
 <dl class="py attribute">
-<dt id="id80">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FILT_FILE_YES</code><em class="property"> = 1</em><a class="headerlink" href="#id80" title="Permalink to this definition">¶</a></dt>
+<dt id="id81">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FILT_FILE_YES</code><em class="property"> = 1</em><a class="headerlink" href="#id81" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1950,8 +1970,8 @@ is being applied (X direction, Y direction, none at all)</p>
 <code class="sig-name descname">IMU_FILT_HZDRV_NO</code><a class="headerlink" href="#geosoft.gxapi.IMU_FILT_HZDRV_NO" title="Permalink to this definition">¶</a></dt>
 <dd><p>No</p>
 <dl class="py attribute">
-<dt id="id81">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FILT_HZDRV_NO</code><em class="property"> = 0</em><a class="headerlink" href="#id81" title="Permalink to this definition">¶</a></dt>
+<dt id="id82">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FILT_HZDRV_NO</code><em class="property"> = 0</em><a class="headerlink" href="#id82" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1961,8 +1981,8 @@ is being applied (X direction, Y direction, none at all)</p>
 <code class="sig-name descname">IMU_FILT_HZDRV_X</code><a class="headerlink" href="#geosoft.gxapi.IMU_FILT_HZDRV_X" title="Permalink to this definition">¶</a></dt>
 <dd><p>X</p>
 <dl class="py attribute">
-<dt id="id82">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FILT_HZDRV_X</code><em class="property"> = 1</em><a class="headerlink" href="#id82" title="Permalink to this definition">¶</a></dt>
+<dt id="id83">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FILT_HZDRV_X</code><em class="property"> = 1</em><a class="headerlink" href="#id83" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1972,8 +1992,8 @@ is being applied (X direction, Y direction, none at all)</p>
 <code class="sig-name descname">IMU_FILT_HZDRV_Y</code><a class="headerlink" href="#geosoft.gxapi.IMU_FILT_HZDRV_Y" title="Permalink to this definition">¶</a></dt>
 <dd><p>Y</p>
 <dl class="py attribute">
-<dt id="id83">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FILT_HZDRV_Y</code><em class="property"> = 2</em><a class="headerlink" href="#id83" title="Permalink to this definition">¶</a></dt>
+<dt id="id84">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FILT_HZDRV_Y</code><em class="property"> = 2</em><a class="headerlink" href="#id84" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1987,8 +2007,8 @@ is being applied (X direction, Y direction, none at all)</p>
 <code class="sig-name descname">IMU_FLOAT_CRC_BITS_EXACT</code><a class="headerlink" href="#geosoft.gxapi.IMU_FLOAT_CRC_BITS_EXACT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exact CRC</p>
 <dl class="py attribute">
-<dt id="id84">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FLOAT_CRC_BITS_EXACT</code><em class="property"> = 0</em><a class="headerlink" href="#id84" title="Permalink to this definition">¶</a></dt>
+<dt id="id85">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FLOAT_CRC_BITS_EXACT</code><em class="property"> = 0</em><a class="headerlink" href="#id85" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1998,8 +2018,8 @@ is being applied (X direction, Y direction, none at all)</p>
 <code class="sig-name descname">IMU_FLOAT_CRC_BITS_DEFAULT</code><a class="headerlink" href="#geosoft.gxapi.IMU_FLOAT_CRC_BITS_DEFAULT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Default inaccuracy in floats (7 Bits)</p>
 <dl class="py attribute">
-<dt id="id85">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FLOAT_CRC_BITS_DEFAULT</code><em class="property"> = 7</em><a class="headerlink" href="#id85" title="Permalink to this definition">¶</a></dt>
+<dt id="id86">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FLOAT_CRC_BITS_DEFAULT</code><em class="property"> = 7</em><a class="headerlink" href="#id86" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2009,8 +2029,8 @@ is being applied (X direction, Y direction, none at all)</p>
 <code class="sig-name descname">IMU_FLOAT_CRC_BITS_MAX</code><a class="headerlink" href="#geosoft.gxapi.IMU_FLOAT_CRC_BITS_MAX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum number of inaccuracy bits (22 Bits)</p>
 <dl class="py attribute">
-<dt id="id86">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FLOAT_CRC_BITS_MAX</code><em class="property"> = 22</em><a class="headerlink" href="#id86" title="Permalink to this definition">¶</a></dt>
+<dt id="id87">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_FLOAT_CRC_BITS_MAX</code><em class="property"> = 22</em><a class="headerlink" href="#id87" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2024,8 +2044,8 @@ is being applied (X direction, Y direction, none at all)</p>
 <code class="sig-name descname">IMU_MASK_INSIDE</code><a class="headerlink" href="#geosoft.gxapi.IMU_MASK_INSIDE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inside</p>
 <dl class="py attribute">
-<dt id="id87">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_MASK_INSIDE</code><em class="property"> = 0</em><a class="headerlink" href="#id87" title="Permalink to this definition">¶</a></dt>
+<dt id="id88">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_MASK_INSIDE</code><em class="property"> = 0</em><a class="headerlink" href="#id88" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2035,8 +2055,8 @@ is being applied (X direction, Y direction, none at all)</p>
 <code class="sig-name descname">IMU_MASK_OUTSIDE</code><a class="headerlink" href="#geosoft.gxapi.IMU_MASK_OUTSIDE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Outside</p>
 <dl class="py attribute">
-<dt id="id88">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_MASK_OUTSIDE</code><em class="property"> = 1</em><a class="headerlink" href="#id88" title="Permalink to this definition">¶</a></dt>
+<dt id="id89">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_MASK_OUTSIDE</code><em class="property"> = 1</em><a class="headerlink" href="#id89" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2050,8 +2070,8 @@ is being applied (X direction, Y direction, none at all)</p>
 <code class="sig-name descname">IMU_STAT_FORCED_NO</code><a class="headerlink" href="#geosoft.gxapi.IMU_STAT_FORCED_NO" title="Permalink to this definition">¶</a></dt>
 <dd><p>No</p>
 <dl class="py attribute">
-<dt id="id89">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_STAT_FORCED_NO</code><em class="property"> = 0</em><a class="headerlink" href="#id89" title="Permalink to this definition">¶</a></dt>
+<dt id="id90">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_STAT_FORCED_NO</code><em class="property"> = 0</em><a class="headerlink" href="#id90" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2061,8 +2081,8 @@ is being applied (X direction, Y direction, none at all)</p>
 <code class="sig-name descname">IMU_STAT_FORCED_YES</code><a class="headerlink" href="#geosoft.gxapi.IMU_STAT_FORCED_YES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Yes</p>
 <dl class="py attribute">
-<dt id="id90">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_STAT_FORCED_YES</code><em class="property"> = 1</em><a class="headerlink" href="#id90" title="Permalink to this definition">¶</a></dt>
+<dt id="id91">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_STAT_FORCED_YES</code><em class="property"> = 1</em><a class="headerlink" href="#id91" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2077,8 +2097,8 @@ implies original grid lines:</p>
 <code class="sig-name descname">IMU_TRANS_DEFAULT</code><a class="headerlink" href="#geosoft.gxapi.IMU_TRANS_DEFAULT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Can be ANY orientation</p>
 <dl class="py attribute">
-<dt id="id91">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_TRANS_DEFAULT</code><em class="property"> = 0</em><a class="headerlink" href="#id91" title="Permalink to this definition">¶</a></dt>
+<dt id="id92">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_TRANS_DEFAULT</code><em class="property"> = 0</em><a class="headerlink" href="#id92" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2088,8 +2108,8 @@ implies original grid lines:</p>
 <code class="sig-name descname">IMU_TRANS_Y</code><a class="headerlink" href="#geosoft.gxapi.IMU_TRANS_Y" title="Permalink to this definition">¶</a></dt>
 <dd><p>MUST be parallel to Y-Axis</p>
 <dl class="py attribute">
-<dt id="id92">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_TRANS_Y</code><em class="property"> = 1</em><a class="headerlink" href="#id92" title="Permalink to this definition">¶</a></dt>
+<dt id="id93">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_TRANS_Y</code><em class="property"> = 1</em><a class="headerlink" href="#id93" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2099,8 +2119,8 @@ implies original grid lines:</p>
 <code class="sig-name descname">IMU_TRANS_X</code><a class="headerlink" href="#geosoft.gxapi.IMU_TRANS_X" title="Permalink to this definition">¶</a></dt>
 <dd><p>MUST be parallel to X-Axis</p>
 <dl class="py attribute">
-<dt id="id93">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_TRANS_X</code><em class="property"> = -1</em><a class="headerlink" href="#id93" title="Permalink to this definition">¶</a></dt>
+<dt id="id94">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_TRANS_X</code><em class="property"> = -1</em><a class="headerlink" href="#id94" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2114,8 +2134,8 @@ implies original grid lines:</p>
 <code class="sig-name descname">IMU_TREND_ALL</code><a class="headerlink" href="#geosoft.gxapi.IMU_TREND_ALL" title="Permalink to this definition">¶</a></dt>
 <dd><p>All</p>
 <dl class="py attribute">
-<dt id="id94">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_TREND_ALL</code><em class="property"> = 0</em><a class="headerlink" href="#id94" title="Permalink to this definition">¶</a></dt>
+<dt id="id95">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_TREND_ALL</code><em class="property"> = 0</em><a class="headerlink" href="#id95" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2125,8 +2145,8 @@ implies original grid lines:</p>
 <code class="sig-name descname">IMU_TREND_EDGE</code><a class="headerlink" href="#geosoft.gxapi.IMU_TREND_EDGE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Edge</p>
 <dl class="py attribute">
-<dt id="id95">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_TREND_EDGE</code><em class="property"> = 1</em><a class="headerlink" href="#id95" title="Permalink to this definition">¶</a></dt>
+<dt id="id96">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_TREND_EDGE</code><em class="property"> = 1</em><a class="headerlink" href="#id96" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2140,8 +2160,8 @@ implies original grid lines:</p>
 <code class="sig-name descname">IMU_WIND_GRID</code><a class="headerlink" href="#geosoft.gxapi.IMU_WIND_GRID" title="Permalink to this definition">¶</a></dt>
 <dd><p>Imu wind grid</p>
 <dl class="py attribute">
-<dt id="id96">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_WIND_GRID</code><em class="property"> = 0</em><a class="headerlink" href="#id96" title="Permalink to this definition">¶</a></dt>
+<dt id="id97">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_WIND_GRID</code><em class="property"> = 0</em><a class="headerlink" href="#id97" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2151,8 +2171,8 @@ implies original grid lines:</p>
 <code class="sig-name descname">IMU_WIND_GROUND</code><a class="headerlink" href="#geosoft.gxapi.IMU_WIND_GROUND" title="Permalink to this definition">¶</a></dt>
 <dd><p>Imu wind ground</p>
 <dl class="py attribute">
-<dt id="id97">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_WIND_GROUND</code><em class="property"> = 1</em><a class="headerlink" href="#id97" title="Permalink to this definition">¶</a></dt>
+<dt id="id98">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_WIND_GROUND</code><em class="property"> = 1</em><a class="headerlink" href="#id98" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2166,8 +2186,8 @@ implies original grid lines:</p>
 <code class="sig-name descname">IMU_WIND_DUMMY</code><a class="headerlink" href="#geosoft.gxapi.IMU_WIND_DUMMY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Imu wind dummy</p>
 <dl class="py attribute">
-<dt id="id98">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_WIND_DUMMY</code><em class="property"> = 0</em><a class="headerlink" href="#id98" title="Permalink to this definition">¶</a></dt>
+<dt id="id99">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_WIND_DUMMY</code><em class="property"> = 0</em><a class="headerlink" href="#id99" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2177,8 +2197,8 @@ implies original grid lines:</p>
 <code class="sig-name descname">IMU_WIND_CLIP</code><a class="headerlink" href="#geosoft.gxapi.IMU_WIND_CLIP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Imu wind clip</p>
 <dl class="py attribute">
-<dt id="id99">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_WIND_CLIP</code><em class="property"> = 1</em><a class="headerlink" href="#id99" title="Permalink to this definition">¶</a></dt>
+<dt id="id100">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_WIND_CLIP</code><em class="property"> = 1</em><a class="headerlink" href="#id100" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2193,8 +2213,8 @@ station numbers.</p>
 <code class="sig-name descname">IMU_XYZ_INDEX_NO</code><a class="headerlink" href="#geosoft.gxapi.IMU_XYZ_INDEX_NO" title="Permalink to this definition">¶</a></dt>
 <dd><p>No</p>
 <dl class="py attribute">
-<dt id="id100">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_XYZ_INDEX_NO</code><em class="property"> = 0</em><a class="headerlink" href="#id100" title="Permalink to this definition">¶</a></dt>
+<dt id="id101">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_XYZ_INDEX_NO</code><em class="property"> = 0</em><a class="headerlink" href="#id101" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2204,8 +2224,8 @@ station numbers.</p>
 <code class="sig-name descname">IMU_XYZ_INDEX_YES</code><a class="headerlink" href="#geosoft.gxapi.IMU_XYZ_INDEX_YES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Yes</p>
 <dl class="py attribute">
-<dt id="id101">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_XYZ_INDEX_YES</code><em class="property"> = 1</em><a class="headerlink" href="#id101" title="Permalink to this definition">¶</a></dt>
+<dt id="id102">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_XYZ_INDEX_YES</code><em class="property"> = 1</em><a class="headerlink" href="#id102" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2219,8 +2239,8 @@ station numbers.</p>
 <code class="sig-name descname">IMU_XYZ_LABEL_NO</code><a class="headerlink" href="#geosoft.gxapi.IMU_XYZ_LABEL_NO" title="Permalink to this definition">¶</a></dt>
 <dd><p>No</p>
 <dl class="py attribute">
-<dt id="id102">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_XYZ_LABEL_NO</code><em class="property"> = 1</em><a class="headerlink" href="#id102" title="Permalink to this definition">¶</a></dt>
+<dt id="id103">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_XYZ_LABEL_NO</code><em class="property"> = 1</em><a class="headerlink" href="#id103" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2230,8 +2250,8 @@ station numbers.</p>
 <code class="sig-name descname">IMU_XYZ_LABEL_YES</code><a class="headerlink" href="#geosoft.gxapi.IMU_XYZ_LABEL_YES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Yes</p>
 <dl class="py attribute">
-<dt id="id103">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_XYZ_LABEL_YES</code><em class="property"> = 0</em><a class="headerlink" href="#id103" title="Permalink to this definition">¶</a></dt>
+<dt id="id104">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">IMU_XYZ_LABEL_YES</code><em class="property"> = 0</em><a class="headerlink" href="#id104" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2252,13 +2272,13 @@ station numbers.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXIMU class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2020, Geosoft Inc.
+        &#169; Copyright 2021, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXIPJ &#8212; Geosoft GX Python API 9.9.0 documentation</title>
+    <title>geosoft.gxapi.GXIPJ &#8212; Geosoft GX Python API 9.10.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIPJ</a></li> 
@@ -340,7 +340,7 @@
 
 <div class="viewcode-block" id="GXIPJ.clear_orientation"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.clear_orientation">[docs]</a>    <span class="k">def</span> <span class="nf">clear_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Clear an orientation warp from an `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`.</span>
+<span class="sd">        Clear any orientation and/or warp from an `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`.</span>
 <span class="sd">        </span>
 
 <span class="sd">        .. versionadded:: 5.1.6</span>
@@ -348,6 +348,23 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_clear_orientation</span><span class="p">()</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIPJ.copy_orientation"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.copy_orientation">[docs]</a>    <span class="k">def</span> <span class="nf">copy_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip_jd</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy any orientation and/or warp from one `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` to another.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ip_jd:  Destination `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`</span>
+<span class="sd">        :type  ip_jd:  GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_copy_orientation</span><span class="p">(</span><span class="n">ip_jd</span><span class="p">)</span></div>
         
 
 
@@ -769,6 +786,40 @@
 
 
 
+<div class="viewcode-block" id="GXIPJ.compare_datums_to_specified_tolerance_with_feedback"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.compare_datums_to_specified_tolerance_with_feedback">[docs]</a>    <span class="k">def</span> <span class="nf">compare_datums_to_specified_tolerance_with_feedback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">,</span> <span class="n">sig_digits</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compare the datums of two coordinate systems, but allows for a specified accuracy and returns the reason if they are different</span>
+<span class="sd">        </span>
+<span class="sd">        :param ipj2:        `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` 2</span>
+<span class="sd">        :param sig_digits:  Significant digits (0 for exact)</span>
+<span class="sd">        :param str_val:     Reason if different returned</span>
+<span class="sd">        :type  ipj2:        GXIPJ</span>
+<span class="sd">        :type  sig_digits:  int</span>
+<span class="sd">        :type  str_val:     str_ref</span>
+
+<span class="sd">        :returns:           0 - Datums are different</span>
+<span class="sd">                            1 - Datums are the same, but different LDT</span>
+<span class="sd">                            2 - Datums and LTD are the same</span>
+<span class="sd">        :rtype:             int</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** To transform between different datums requires the use of a local</span>
+<span class="sd">        datum transform.  The local datum transform can be defined when</span>
+<span class="sd">        a coordinate system is created, but the definition is optional.</span>
+<span class="sd">        This function will test that the local datum transforms are defined.</span>
+<span class="sd">        Note that a coordinate transformation between datums without a</span>
+<span class="sd">        local datum transform is still possible, but only the effect of</span>
+<span class="sd">        ellipsoid shape will be modelled in the transform.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compare_datums_to_specified_tolerance_with_feedback</span><span class="p">(</span><span class="n">ipj2</span><span class="p">,</span> <span class="n">sig_digits</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
 <div class="viewcode-block" id="GXIPJ.convert_warp"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.convert_warp">[docs]</a>    <span class="k">def</span> <span class="nf">convert_warp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">f_forward</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Converts a point X, Y, Z to the new `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` plane.</span>
@@ -858,6 +909,33 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coordinate_systems_are_the_same_within_a_small_tolerance</span><span class="p">(</span><span class="n">ipj2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIPJ.coordinate_systems_are_the_same_to_specified_tolerance_with_feedback"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same_to_specified_tolerance_with_feedback">[docs]</a>    <span class="k">def</span> <span class="nf">coordinate_systems_are_the_same_to_specified_tolerance_with_feedback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">,</span> <span class="n">sig_digits</span><span class="p">,</span> <span class="n">sig_digits_EN</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Same as `coordinate_systems_are_the_same &lt;geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same&gt;`, but allows for a specified accuracy and returns the reason if they are different</span>
+<span class="sd">        </span>
+<span class="sd">        :param ipj2:           `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` 2</span>
+<span class="sd">        :param sig_digits:     Significant digits (0 for exact)</span>
+<span class="sd">        :param sig_digits_EN:  Significant digits for high-precision parameters like easting and northing (0 for exact)</span>
+<span class="sd">        :param str_val:        Reason if different returned</span>
+<span class="sd">        :type  ipj2:           GXIPJ</span>
+<span class="sd">        :type  sig_digits:     int</span>
+<span class="sd">        :type  sig_digits_EN:  int</span>
+<span class="sd">        :type  str_val:        str_ref</span>
+
+<span class="sd">        :returns:              0 - No</span>
+<span class="sd">                               1 - Yes</span>
+<span class="sd">        :rtype:                int</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coordinate_systems_are_the_same_to_specified_tolerance_with_feedback</span><span class="p">(</span><span class="n">ipj2</span><span class="p">,</span> <span class="n">sig_digits</span><span class="p">,</span> <span class="n">sig_digits_EN</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
 
@@ -1192,6 +1270,31 @@
 
 
 
+<div class="viewcode-block" id="GXIPJ.orientations_are_the_same_to_specified_tolerance_with_feedback"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.orientations_are_the_same_to_specified_tolerance_with_feedback">[docs]</a>    <span class="k">def</span> <span class="nf">orientations_are_the_same_to_specified_tolerance_with_feedback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">,</span> <span class="n">sig_digits</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Same as `orientations_are_the_same &lt;geosoft.gxapi.GXIPJ.orientations_are_the_same&gt;`, but allows for small numerical differences</span>
+<span class="sd">        </span>
+<span class="sd">        :param ipj2:        `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` 2</span>
+<span class="sd">        :param sig_digits:  Significant digits (0 for exact)</span>
+<span class="sd">        :param str_val:     Reason if different returned</span>
+<span class="sd">        :type  ipj2:        GXIPJ</span>
+<span class="sd">        :type  sig_digits:  int</span>
+<span class="sd">        :type  str_val:     str_ref</span>
+
+<span class="sd">        :returns:           0 - No</span>
+<span class="sd">                            1 - Yes</span>
+<span class="sd">        :rtype:             int</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_orientations_are_the_same_to_specified_tolerance_with_feedback</span><span class="p">(</span><span class="n">ipj2</span><span class="p">,</span> <span class="n">sig_digits</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
 <div class="viewcode-block" id="GXIPJ.has_section_orientation"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.has_section_orientation">[docs]</a>    <span class="k">def</span> <span class="nf">has_section_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Does this projection contain an orientation used by section plots?</span>
@@ -1406,6 +1509,31 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_warps_are_the_same_within_a_small_tolerance</span><span class="p">(</span><span class="n">ipj2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIPJ.warps_are_the_same_to_specified_tolerance_with_feedback"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.warps_are_the_same_to_specified_tolerance_with_feedback">[docs]</a>    <span class="k">def</span> <span class="nf">warps_are_the_same_to_specified_tolerance_with_feedback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">,</span> <span class="n">sig_digits</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Same as `warps_are_the_same &lt;geosoft.gxapi.GXIPJ.warps_are_the_same&gt;`, but allows for a specified accuracy and returns the reason if they are different</span>
+<span class="sd">        </span>
+<span class="sd">        :param ipj2:        `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` 2</span>
+<span class="sd">        :param sig_digits:  Significant digits (0 for exact)</span>
+<span class="sd">        :param str_val:     Reason if different returned</span>
+<span class="sd">        :type  ipj2:        GXIPJ</span>
+<span class="sd">        :type  sig_digits:  int</span>
+<span class="sd">        :type  str_val:     str_ref</span>
+
+<span class="sd">        :returns:           0 - No</span>
+<span class="sd">                            1 - Yes</span>
+<span class="sd">        :rtype:             int</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_warps_are_the_same_to_specified_tolerance_with_feedback</span><span class="p">(</span><span class="n">ipj2</span><span class="p">,</span> <span class="n">sig_digits</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
 
@@ -2393,7 +2521,111 @@
 <span class="sd">        **Note:** Reproject a section grid to a new `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`, adjusting its orientation and registration so that</span>
 <span class="sd">        it remains in the same location.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">x0</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y0</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rot</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reproject_section_grid</span><span class="p">(</span><span class="n">output_ipj</span><span class="p">,</span> <span class="n">x0</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y0</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rot</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div></div>
+        <span class="n">x0</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y0</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rot</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reproject_section_grid</span><span class="p">(</span><span class="n">output_ipj</span><span class="p">,</span> <span class="n">x0</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y0</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rot</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXIPJ.get_authority_id"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_authority_id">[docs]</a>    <span class="k">def</span> <span class="nf">get_authority_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">authority</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Authority ID (e.g. EPSG, ESRI) for coordinate system or `iDUMMY &lt;geosoft.gxapi.iDUMMY&gt;` if unknown.</span>
+<span class="sd">        </span>
+<span class="sd">        :param authority:  Authority ID (e.g. EPSG and ESRI)</span>
+<span class="sd">        :type  authority:  str_ref</span>
+
+<span class="sd">        :returns:          :ref:`IPJ_ORIENT`</span>
+<span class="sd">        :rtype:            int</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span><span class="p">,</span> <span class="n">authority</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_authority_id</span><span class="p">(</span><span class="n">authority</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIPJ.get_epsgid_for_datum"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_epsgid_for_datum">[docs]</a>    <span class="k">def</span> <span class="nf">get_epsgid_for_datum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get EPSG ID for datum of coordinate system or `iDUMMY &lt;geosoft.gxapi.iDUMMY&gt;` if unknown.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    :ref:`IPJ_ORIENT`</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_epsgid_for_datum</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXIPJ.add_as_favourite_coordinate_system"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.add_as_favourite_coordinate_system">[docs]</a>    <span class="k">def</span> <span class="nf">add_as_favourite_coordinate_system</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add as favourite coordinate system to Settings.</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_as_favourite_coordinate_system</span><span class="p">()</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXIPJ.get_number_of_favourite_coordinate_systems"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_number_of_favourite_coordinate_systems">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_number_of_favourite_coordinate_systems</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get number of favourite coordinate systems in Settings.</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIPJ</span><span class="o">.</span><span class="n">_get_number_of_favourite_coordinate_systems</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXIPJ.get_favourite_coordinate_system"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_favourite_coordinate_system">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_favourite_coordinate_system</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a favourite coordinate system from Settings.</span>
+<span class="sd">        </span>
+<span class="sd">        :param index:  Index of item.</span>
+<span class="sd">        :type  index:  int</span>
+<span class="sd">        :rtype:        GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIPJ</span><span class="o">.</span><span class="n">_get_favourite_coordinate_system</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">index</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXIPJ</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GXIPJ.remove_favourite_coordinate_system"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.remove_favourite_coordinate_system">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">remove_favourite_coordinate_system</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Remove favourite coordinate system from Settings.</span>
+<span class="sd">        </span>
+<span class="sd">        :param index:  Index of item.</span>
+<span class="sd">        :type  index:  int</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIPJ</span><span class="o">.</span><span class="n">_remove_favourite_coordinate_system</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">index</span><span class="p">)</span></div></div>
         
 
 
@@ -2423,7 +2655,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIPJ</a></li> 
@@ -2431,7 +2663,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2020, Geosoft Inc.
+        &#169; Copyright 2021, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
