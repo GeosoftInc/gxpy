@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXMVU &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
+    <title>geosoft.gxapi.GXMVU &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMVU</a></li> 
@@ -1955,6 +1955,42 @@
 
 
 
+<div class="viewcode-block" id="GXMVU.plot_voxel_slice"><a class="viewcode-back" href="../../../GXMVU.html#geosoft.gxapi.GXMVU.plot_voxel_slice">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">plot_voxel_slice</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">vox</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">dOrigin</span><span class="p">,</span> <span class="n">dMin</span><span class="p">,</span> <span class="n">dmax</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Extract a vertical slice from a voxel along a path and plot it to a 2D view.</span>
+<span class="sd">        </span>
+<span class="sd">        :param mview:    View</span>
+<span class="sd">        :param vox:      Voxel model</span>
+<span class="sd">        :param itr:      colour model</span>
+<span class="sd">        :param x:        x-values along the line</span>
+<span class="sd">        :param y:        y-values along the line</span>
+<span class="sd">        :param dOrigin:  Distance at the first XY location (normally 0.0)</span>
+<span class="sd">        :param dMin:     Starting distance to plot</span>
+<span class="sd">        :param dmax:     Ending distance to plot</span>
+<span class="sd">        :param res:      Sampling resolution</span>
+<span class="sd">        :type  mview:    GXMVIEW</span>
+<span class="sd">        :type  vox:      GXVOX</span>
+<span class="sd">        :type  itr:      GXITR</span>
+<span class="sd">        :type  x:        GXVV</span>
+<span class="sd">        :type  y:        GXVV</span>
+<span class="sd">        :type  dOrigin:  float</span>
+<span class="sd">        :type  dMin:     float</span>
+<span class="sd">        :type  dmax:     float</span>
+<span class="sd">        :type  res:      float</span>
+
+<span class="sd">        .. versionadded:: 2022.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The path is splined linearly between points and sampled at the input interval.</span>
+<span class="sd">        The resulting vertical samples of cubes are plotted as &quot;pixel strips&quot; in the view.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMVU</span><span class="o">.</span><span class="n">_plot_voxel_slice</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">vox</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">dOrigin</span><span class="p">,</span> <span class="n">dMin</span><span class="p">,</span> <span class="n">dmax</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span></div>
+        
+
+
+
 <div class="viewcode-block" id="GXMVU.plot_voxel_surface"><a class="viewcode-back" href="../../../GXMVU.html#geosoft.gxapi.GXMVU.plot_voxel_surface">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">plot_voxel_surface</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">vox</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">line_thick</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -2544,7 +2580,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMVU</a></li> 

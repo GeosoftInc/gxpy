@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXGUI class &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
+    <title>GXGUI class &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXGUI class</a></li> 
       </ul>
     </div>
@@ -128,7 +128,7 @@ file import wizards, and the Histogram and Scatter tools.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Color (modified)</p></li>
-<li><p><strong>no_col</strong> (<em>int</em>) – Ask about <a class="reference internal" href="GXMVIEW.html#id271" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">C_TRANSPARENT</span></code></a> if white is selected (1: yes, 0: no)?</p></li>
+<li><p><strong>no_col</strong> (<em>int</em>) – Ask about <a class="reference internal" href="GXMVIEW.html#id272" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">C_TRANSPARENT</span></code></a> if white is selected (1: yes, 0: no)?</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -145,13 +145,13 @@ file import wizards, and the Histogram and Scatter tools.</p>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 <p><strong>Note:</strong> Color value is set on input, and new value returned.
-If the input color type is <a class="reference internal" href="GXMVIEW.html#id271" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">C_TRANSPARENT</span></code></a>, then the color
+If the input color type is <a class="reference internal" href="GXMVIEW.html#id272" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">C_TRANSPARENT</span></code></a>, then the color
 is set to white, if any other type is input the output is
 guaranteed to be of the same type.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">no_col</span></code> is 1, then on exit, if white is
 selected, the user is prompted: ‘Do you want white (Yes) or
 “None” (No) ?’ and the color is converted as requested.
-If this is not the case, the <a class="reference internal" href="GXMVIEW.html#id271" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">C_TRANSPARENT</span></code></a> is converted
+If this is not the case, the <a class="reference internal" href="GXMVIEW.html#id272" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">C_TRANSPARENT</span></code></a> is converted
 to white (if “Ok” is selected) and no choice is offered.</p>
 </dd></dl>
 
@@ -1980,7 +1980,7 @@ the file extension.</p>
 <li><p><strong>thick</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Current Thick (0-100)   // returned</p></li>
 <li><p><strong>dense</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Current Density,        // returned</p></li>
 <li><p><strong>col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Current Pattern Color   // passed in and returned</p></li>
-<li><p><strong>back_col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Current Background Color  // passed in and returned; can be <a class="reference internal" href="GXMVIEW.html#id271" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">C_TRANSPARENT</span></code></a></p></li>
+<li><p><strong>back_col</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Current Background Color  // passed in and returned; can be <a class="reference internal" href="GXMVIEW.html#id272" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">C_TRANSPARENT</span></code></a></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -2077,7 +2077,7 @@ A value of 2 means they overlap each other.</p>
 <li><p><strong>thick</strong> (<em>int</em>) – Pattern thick (0-100)   // input <a class="reference internal" href="GXGEOSOFT.html#id20" title="geosoft.gxapi.GS_S4DM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_S4DM</span></code></a> to use default</p></li>
 <li><p><strong>dense</strong> (<em>float</em>) – Pattern density,        // input <a class="reference internal" href="GXGEOSOFT.html#id35" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_R8DM</span></code></a> to use default</p></li>
 <li><p><strong>col</strong> (<em>int</em>) – Pattern color        // input <a class="reference internal" href="GXGEOSOFT.html#id20" title="geosoft.gxapi.GS_S4DM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_S4DM</span></code></a> to use default</p></li>
-<li><p><strong>back_col</strong> (<em>int</em>) – Pattern background color // input <a class="reference internal" href="GXGEOSOFT.html#id20" title="geosoft.gxapi.GS_S4DM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_S4DM</span></code></a> to use default; can be <a class="reference internal" href="GXMVIEW.html#id271" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">C_TRANSPARENT</span></code></a></p></li>
+<li><p><strong>back_col</strong> (<em>int</em>) – Pattern background color // input <a class="reference internal" href="GXGEOSOFT.html#id20" title="geosoft.gxapi.GS_S4DM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_S4DM</span></code></a> to use default; can be <a class="reference internal" href="GXMVIEW.html#id272" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">C_TRANSPARENT</span></code></a></p></li>
 <li><p><strong>is_enabled</strong> (<em>int</em>) – Is this window enabled?</p></li>
 <li><p><strong>is_button</strong> (<em>int</em>) – Is this a button?</p></li>
 <li><p><strong>is_selected</strong> (<em>int</em>) – Is this window selected?</p></li>
@@ -4595,7 +4595,7 @@ allow modification of projections (e.g. the OM Viewer).</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXGUI class</a></li> 
       </ul>
     </div>

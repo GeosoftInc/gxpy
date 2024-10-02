@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXKGRD class &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
+    <title>GXKGRD class &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXKGRD class</a></li> 
       </ul>
     </div>
@@ -289,6 +289,39 @@ output file parameters.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="geosoft.gxapi.GXKGRD.run_vv">
+<em class="property">classmethod </em><code class="sig-name descname">run_vv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vv_x</span></em>, <em class="sig-param"><span class="n">vv_y</span></em>, <em class="sig-param"><span class="n">vv_z</span></em>, <em class="sig-param"><span class="n">ipj</span></em>, <em class="sig-param"><span class="n">ctl</span></em>, <em class="sig-param"><span class="n">grd</span></em>, <em class="sig-param"><span class="n">err_grd</span></em>, <em class="sig-param"><span class="n">in_var</span></em>, <em class="sig-param"><span class="n">out_var</span></em>, <em class="sig-param"><span class="n">log_file</span></em>, <em class="sig-param"><span class="n">vao</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXKGRD.html#GXKGRD.run_vv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXKGRD.run_vv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes the Krigrid program directly on input data VVs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X data</p></li>
+<li><p><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y data</p></li>
+<li><p><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z (grid value) data</p></li>
+<li><p><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection to put into grid</p></li>
+<li><p><strong>ctl</strong> (<em>str</em>) – KRIGRID control file.</p></li>
+<li><p><strong>grd</strong> (<em>str</em>) – (output grid name (not required if variogram analysis only))</p></li>
+<li><p><strong>err_grd</strong> (<em>str</em>) – (output error file, “” for none)</p></li>
+<li><p><strong>in_var</strong> (<em>str</em>) – (input variogram file, “” for none)</p></li>
+<li><p><strong>out_var</strong> (<em>str</em>) – (output variogram file, “” for none)</p></li>
+<li><p><strong>log_file</strong> (<em>str</em>) – (log file name, “” for default)</p></li>
+<li><p><strong>vao</strong> (<em>int</em>) – 1 if Variogram Analysis Only, other wise 0</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>0 OK, 1 Error.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2022.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="geosoft.gxapi.GXKGRD.save_parms">
 <code class="sig-name descname">save_parms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXKGRD.html#GXKGRD.save_parms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXKGRD.save_parms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Puts the Krigrid object’s control parameters back into
@@ -329,7 +362,7 @@ created. Otherwise, the old file will be overwritten.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXKGRD class</a></li> 
       </ul>
     </div>

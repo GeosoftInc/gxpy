@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXITR &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
+    <title>geosoft.gxapi.GXITR &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXITR</a></li> 
@@ -358,8 +358,41 @@
 <span class="sd">        .. versionadded:: 5.1.2</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** If the number of individual populated zones calculated using an equal-area ITR is less than the number</span>
+<span class="sd">        of colours in the ITR, then an error message is displayed to that effect. If you want</span>
+<span class="sd">        to avoid this error message in your work-flow, call EqualAreaOrLinear_ITR, which</span>
+<span class="sd">        will apply a linear transform with the input number of colours, covering the whole range,</span>
+<span class="sd">        should the equal-area transform have a problem, and no error message will appear, even if</span>
+<span class="sd">        there is no valid data at all.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_equal_area</span><span class="p">(</span><span class="n">st</span><span class="p">,</span> <span class="n">contour</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXITR.equal_area_or_linear"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.equal_area_or_linear">[docs]</a>    <span class="k">def</span> <span class="nf">equal_area_or_linear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">contour</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate an equal area transform.</span>
+<span class="sd">        </span>
+<span class="sd">        :param st:       Stat object with a histogram</span>
+<span class="sd">        :param contour:  Color contour interval or dummy for none</span>
+<span class="sd">        :type  st:       GXST</span>
+<span class="sd">        :type  contour:  float</span>
+
+<span class="sd">        .. versionadded:: 2022.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** If the number of individual populated zones calculated using an equal-area ITR is less than the number</span>
+<span class="sd">        of colours in the ITR, then EqualArea_ITR displays an error message is displayed to that effect. If you want</span>
+<span class="sd">        to avoid this error message in your work-flow, call this function, EqualAreaOrLinear_ITR, which</span>
+<span class="sd">        will apply a linear transform with the input number of colours, covering the whole range,</span>
+<span class="sd">        should the equal-area transform have a problem, and no error message will appear, even if</span>
+<span class="sd">        there is no valid data at all.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_equal_area_or_linear</span><span class="p">(</span><span class="n">st</span><span class="p">,</span> <span class="n">contour</span><span class="p">)</span></div>
         
 
 
@@ -1069,7 +1102,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXITR</a></li> 

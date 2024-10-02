@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXVVU &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
+    <title>geosoft.gxapi.GXVVU &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVVU</a></li> 
@@ -450,6 +450,35 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_distance</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">x_fid_start</span><span class="p">,</span> <span class="n">x_fid_incr</span><span class="p">,</span> <span class="n">y_fid_start</span><span class="p">,</span> <span class="n">y_fid_incr</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXVVU.distance_link_non_dummies"><a class="viewcode-back" href="../../../GXVVU.html#geosoft.gxapi.GXVVU.distance_link_non_dummies">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">distance_link_non_dummies</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">x_fid_start</span><span class="p">,</span> <span class="n">x_fid_incr</span><span class="p">,</span> <span class="n">y_fid_start</span><span class="p">,</span> <span class="n">y_fid_incr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create distance linking non-dummies `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :param vv_x:         X `GXVV &lt;geosoft.gxapi.GXVV&gt;`,REAL `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vv_y:         Y `GXVV &lt;geosoft.gxapi.GXVV&gt;`,REAL `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param vv_d:         Output distance `GXVV &lt;geosoft.gxapi.GXVV&gt;`,REAL `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        :param x_fid_start:  X `GXVV &lt;geosoft.gxapi.GXVV&gt;` fid start</span>
+<span class="sd">        :param x_fid_incr:   X `GXVV &lt;geosoft.gxapi.GXVV&gt;` fid incr</span>
+<span class="sd">        :param y_fid_start:  Y `GXVV &lt;geosoft.gxapi.GXVV&gt;` fid start</span>
+<span class="sd">        :param y_fid_incr:   Y `GXVV &lt;geosoft.gxapi.GXVV&gt;` fid incr</span>
+<span class="sd">        :type  vv_x:         GXVV</span>
+<span class="sd">        :type  vv_y:         GXVV</span>
+<span class="sd">        :type  vv_d:         GXVV</span>
+<span class="sd">        :type  x_fid_start:  float</span>
+<span class="sd">        :type  x_fid_incr:   float</span>
+<span class="sd">        :type  y_fid_start:  float</span>
+<span class="sd">        :type  y_fid_incr:   float</span>
+
+<span class="sd">        .. versionadded:: 2022.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_distance_link_non_dummies</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">x_fid_start</span><span class="p">,</span> <span class="n">x_fid_incr</span><span class="p">,</span> <span class="n">y_fid_start</span><span class="p">,</span> <span class="n">y_fid_incr</span><span class="p">)</span></div>
         
 
 
@@ -1814,6 +1843,63 @@
 
 
 
+<div class="viewcode-block" id="GXVVU.qc2"><a class="viewcode-back" href="../../../GXVVU.html#geosoft.gxapi.GXVVU.qc2">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">qc2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">v_vf</span><span class="p">,</span> <span class="n">vv_drape</span><span class="p">,</span> <span class="n">max_tol</span><span class="p">,</span> <span class="n">all_tol</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">qc</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Quality control on deviation of data from norm in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :param vv_i:      Input `GXVV &lt;geosoft.gxapi.GXVV&gt;` on which to apply quality control Required in `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;` or `GS_FLOAT &lt;geosoft.gxapi.GS_FLOAT&gt;`</span>
+<span class="sd">        :param vv_d:      Distance `GXVV &lt;geosoft.gxapi.GXVV&gt;` (NULL if criterion #2 does not apply). In `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;` or `GS_FLOAT &lt;geosoft.gxapi.GS_FLOAT&gt;`</span>
+<span class="sd">        :param v_vf:      Output flag `GXVV &lt;geosoft.gxapi.GXVV&gt;` with result 0,1,2,3,-1,-2,-3. Required in `GS_BYTE &lt;geosoft.gxapi.GS_BYTE&gt;`</span>
+<span class="sd">        :param vv_drape:  Drape elevation `GXVV &lt;geosoft.gxapi.GXVV&gt;` which is used instead of a constant nominal terrain clearance Required in `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;` or `GS_FLOAT &lt;geosoft.gxapi.GS_FLOAT&gt;`</span>
+<span class="sd">        :param max_tol:   Maximum tolerance/deviation applied to a single reading (criterion #1). `GS_R8DM &lt;geosoft.gxapi.GS_R8DM&gt;` if criterion #1 does not apply. Otherwise, must be positive value including 0.0</span>
+<span class="sd">        :param all_tol:   Allowed tolerance/deviation over a given distance (next parameter) (criterion #2). `GS_R8DM &lt;geosoft.gxapi.GS_R8DM&gt;` if criterion #2 does not apply. Otherwise, must be positive value including 0.0</span>
+<span class="sd">        :param dist:      The specified distance. `GS_R8DM &lt;geosoft.gxapi.GS_R8DM&gt;` if criterion #2 does not apply. Otherwise, must be positive value excluding 0.0</span>
+<span class="sd">        :param qc:        :ref:`QC_CRITERION`</span>
+<span class="sd">        :type  vv_i:      GXVV</span>
+<span class="sd">        :type  vv_d:      GXVV</span>
+<span class="sd">        :type  v_vf:      GXVV</span>
+<span class="sd">        :type  vv_drape:  GXVV</span>
+<span class="sd">        :type  max_tol:   float</span>
+<span class="sd">        :type  all_tol:   float</span>
+<span class="sd">        :type  dist:      float</span>
+<span class="sd">        :type  qc:        int</span>
+
+<span class="sd">        .. versionadded:: 2022.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** This function tests data in input `GXVV &lt;geosoft.gxapi.GXVV&gt;` against</span>
+<span class="sd">        two separate criteria. Each element of the output `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
+<span class="sd">        will have one of the following indicators:</span>
+
+<span class="sd">        =========  ==============================================================</span>
+<span class="sd">        Indicator  Meaning</span>
+<span class="sd">        =========  ==============================================================</span>
+<span class="sd">          0        Input data passed both tests</span>
+<span class="sd">        ---------  --------------------------------------------------------------</span>
+<span class="sd">          1        The input data and is greater than the nominal value</span>
+<span class="sd">                   plus maximum tolerance/deviation (Criterion #1)</span>
+<span class="sd">        ---------  --------------------------------------------------------------</span>
+<span class="sd">          2        The input data over a specified distance is greater than the</span>
+<span class="sd">                   nominal value plus allowed tolerance (Criterion #2)</span>
+<span class="sd">        ---------  --------------------------------------------------------------</span>
+<span class="sd">          3        The input data failed on above two tests</span>
+<span class="sd">        ---------  --------------------------------------------------------------</span>
+<span class="sd">         -1        The input data and is less than the nominal value</span>
+<span class="sd">                   minus maximum tolerance (Criterion #1)</span>
+<span class="sd">        ---------  --------------------------------------------------------------</span>
+<span class="sd">         -2        The input data over a specified distance is less than the</span>
+<span class="sd">                   nominal value minus allowed tolerance (Criterion #2)</span>
+<span class="sd">        ---------  --------------------------------------------------------------</span>
+<span class="sd">         -3        The input data failed on above two tests</span>
+<span class="sd">        =========  ==============================================================</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_qc2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">v_vf</span><span class="p">,</span> <span class="n">vv_drape</span><span class="p">,</span> <span class="n">max_tol</span><span class="p">,</span> <span class="n">all_tol</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">qc</span><span class="p">)</span></div>
+        
+
+
+
 <div class="viewcode-block" id="GXVVU.range_vector_mag"><a class="viewcode-back" href="../../../GXVVU.html#geosoft.gxapi.GXVVU.range_vector_mag">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">range_vector_mag</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv1</span><span class="p">,</span> <span class="n">vv2</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -2455,7 +2541,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVVU</a></li> 

@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXSTK class &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
+    <title>GXSTK class &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXSTK class</a></li> 
       </ul>
     </div>
@@ -40,6 +40,7 @@
   <ul>
 <li><a class="reference internal" href="#">GXSTK class</a><ul>
 <li><a class="reference internal" href="#stk-axis-constants">STK_AXIS constants</a></li>
+<li><a class="reference internal" href="#stk-axis-pos-constants">STK_AXIS_POS constants</a></li>
 <li><a class="reference internal" href="#stk-flag-constants">STK_FLAG constants</a></li>
 <li><a class="reference internal" href="#stk-grid-constants">STK_GRID constants</a></li>
 </ul>
@@ -497,7 +498,7 @@ or for values &gt; 1.e7, <a class="reference internal" href="GXDB.html#id200" ti
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>bar_draw</strong> (<em>int</em>) – ?BARDRAW</p></li>
+<li><p><strong>bar_draw</strong> (<em>int</em>) – ?BARDRAW, <a class="reference internal" href="#stk-axis-pos"><span class="std std-ref">STK_AXIS_POS constants</span></a></p></li>
 <li><p><strong>min_loc</strong> (<em>float</em>) – Bottom Y/Left X location</p></li>
 <li><p><strong>max_loc</strong> (<em>float</em>) – Top Y/Right X location</p></li>
 <li><p><strong>thick</strong> (<em>float</em>) – ?BARLINETHICK  - Line thickness in mm. Default is 0.05</p></li>
@@ -516,6 +517,28 @@ or for values &gt; 1.e7, <a class="reference internal" href="GXDB.html#id200" ti
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters
 ? mark in the note represent either X and Y</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="geosoft.gxapi.GXSTK.set_error_plot_params">
+<code class="sig-name descname">set_error_plot_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">enabled</span></em>, <em class="sig-param"><span class="n">error_channel</span></em>, <em class="sig-param"><span class="n">elements_csv</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSTK.html#GXSTK.set_error_plot_params"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSTK.set_error_plot_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set error bar plot parameters for the current profile.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>enabled</strong> (<em>int</em>) – Enable(1) or disable(0) error bar plot rendering.</p></li>
+<li><p><strong>error_channel</strong> (<em>str</em>) – The name of the error channel.</p></li>
+<li><p><strong>elements_csv</strong> (<em>str</em>) – A comma-separated list of integers pertaining to the array channel elementsto apply the error bar plot to. For example, supplying ‘1,2,7,10’ will rendererror bar plots for the first, second, seventh and tenth array channel elementsof the source and error channels.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2022.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Set parameters for the error bar plot that is associated with the current
+profile.
+See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters</p>
 </dd></dl>
 
 <dl class="py method">
@@ -623,7 +646,7 @@ or for values &gt; 1.e7, <a class="reference internal" href="GXDB.html#id200" ti
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>axis</strong> (<em>int</em>) – Bottom/Top or Left/Right axes</p></li>
+<li><p><strong>axis</strong> (<em>int</em>) – <a class="reference internal" href="#stk-axis-pos"><span class="std std-ref">STK_AXIS_POS constants</span></a></p></li>
 <li><p><strong>min_loc</strong> (<em>float</em>) – Bottom or Left axis label location</p></li>
 <li><p><strong>min_orient</strong> (<em>int</em>) – Bottom or Left labels orientation.</p></li>
 <li><p><strong>max_loc</strong> (<em>float</em>) – Top or Right axis label location</p></li>
@@ -854,8 +877,78 @@ or 1.</p>
 <code class="sig-name descname">STK_AXIS_Y</code><a class="headerlink" href="#geosoft.gxapi.STK_AXIS_Y" title="Permalink to this definition">¶</a></dt>
 <dd><p>Y Axis</p>
 <dl class="py attribute">
-<dt id="id27">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_AXIS_Y</code><em class="property"> = 1</em><a class="headerlink" href="#id27" title="Permalink to this definition">¶</a></dt>
+<dt id="id28">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_AXIS_Y</code><em class="property"> = 1</em><a class="headerlink" href="#id28" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="stk-axis-pos-constants">
+<span id="stk-axis-pos"></span><h2>STK_AXIS_POS constants<a class="headerlink" href="#stk-axis-pos-constants" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> Axis defines. Use with STK_AXIS_X and STK_AXIS_Y</p>
+<dl class="py data">
+<dt id="geosoft.gxapi.STK_AXIS_NONE">
+<code class="sig-name descname">STK_AXIS_NONE</code><a class="headerlink" href="#geosoft.gxapi.STK_AXIS_NONE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Axis</p>
+<dl class="py attribute">
+<dt id="id29">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_AXIS_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#id29" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.STK_AXIS_LEFT">
+<code class="sig-name descname">STK_AXIS_LEFT</code><a class="headerlink" href="#geosoft.gxapi.STK_AXIS_LEFT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Left side only</p>
+<dl class="py attribute">
+<dt id="id30">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_AXIS_LEFT</code><em class="property"> = 1</em><a class="headerlink" href="#id30" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.STK_AXIS_RIGHT">
+<code class="sig-name descname">STK_AXIS_RIGHT</code><a class="headerlink" href="#geosoft.gxapi.STK_AXIS_RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Right side only</p>
+<dl class="py attribute">
+<dt id="id31">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_AXIS_RIGHT</code><em class="property"> = 2</em><a class="headerlink" href="#id31" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.STK_AXIS_BOTH">
+<code class="sig-name descname">STK_AXIS_BOTH</code><a class="headerlink" href="#geosoft.gxapi.STK_AXIS_BOTH" title="Permalink to this definition">¶</a></dt>
+<dd><p>Left and right sides</p>
+<dl class="py attribute">
+<dt id="id32">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_AXIS_BOTH</code><em class="property"> = 3</em><a class="headerlink" href="#id32" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.STK_AXIS_BOTTOM">
+<code class="sig-name descname">STK_AXIS_BOTTOM</code><a class="headerlink" href="#geosoft.gxapi.STK_AXIS_BOTTOM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bottom only</p>
+<dl class="py attribute">
+<dt id="id33">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_AXIS_BOTTOM</code><em class="property"> = 1</em><a class="headerlink" href="#id33" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.STK_AXIS_TOP">
+<code class="sig-name descname">STK_AXIS_TOP</code><a class="headerlink" href="#geosoft.gxapi.STK_AXIS_TOP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Top only</p>
+<dl class="py attribute">
+<dt id="id34">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_AXIS_TOP</code><em class="property"> = 2</em><a class="headerlink" href="#id34" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -869,8 +962,8 @@ or 1.</p>
 <code class="sig-name descname">STK_FLAG_PROFILE</code><a class="headerlink" href="#geosoft.gxapi.STK_FLAG_PROFILE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Profile</p>
 <dl class="py attribute">
-<dt id="id28">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_PROFILE</code><em class="property"> = 0</em><a class="headerlink" href="#id28" title="Permalink to this definition">¶</a></dt>
+<dt id="id35">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_PROFILE</code><em class="property"> = 0</em><a class="headerlink" href="#id35" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -880,8 +973,8 @@ or 1.</p>
 <code class="sig-name descname">STK_FLAG_FID</code><a class="headerlink" href="#geosoft.gxapi.STK_FLAG_FID" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fid</p>
 <dl class="py attribute">
-<dt id="id29">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_FID</code><em class="property"> = 1</em><a class="headerlink" href="#id29" title="Permalink to this definition">¶</a></dt>
+<dt id="id36">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_FID</code><em class="property"> = 1</em><a class="headerlink" href="#id36" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -891,8 +984,8 @@ or 1.</p>
 <code class="sig-name descname">STK_FLAG_SYMBOL</code><a class="headerlink" href="#geosoft.gxapi.STK_FLAG_SYMBOL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Symbol</p>
 <dl class="py attribute">
-<dt id="id30">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_SYMBOL</code><em class="property"> = 2</em><a class="headerlink" href="#id30" title="Permalink to this definition">¶</a></dt>
+<dt id="id37">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_SYMBOL</code><em class="property"> = 2</em><a class="headerlink" href="#id37" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -902,8 +995,8 @@ or 1.</p>
 <code class="sig-name descname">STK_FLAG_XBAR</code><a class="headerlink" href="#geosoft.gxapi.STK_FLAG_XBAR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Xbar</p>
 <dl class="py attribute">
-<dt id="id31">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_XBAR</code><em class="property"> = 3</em><a class="headerlink" href="#id31" title="Permalink to this definition">¶</a></dt>
+<dt id="id38">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_XBAR</code><em class="property"> = 3</em><a class="headerlink" href="#id38" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -913,8 +1006,8 @@ or 1.</p>
 <code class="sig-name descname">STK_FLAG_XLABEL</code><a class="headerlink" href="#geosoft.gxapi.STK_FLAG_XLABEL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Xlabel</p>
 <dl class="py attribute">
-<dt id="id32">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_XLABEL</code><em class="property"> = 4</em><a class="headerlink" href="#id32" title="Permalink to this definition">¶</a></dt>
+<dt id="id39">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_XLABEL</code><em class="property"> = 4</em><a class="headerlink" href="#id39" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -924,8 +1017,8 @@ or 1.</p>
 <code class="sig-name descname">STK_FLAG_XTITLE</code><a class="headerlink" href="#geosoft.gxapi.STK_FLAG_XTITLE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Xtitle</p>
 <dl class="py attribute">
-<dt id="id33">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_XTITLE</code><em class="property"> = 5</em><a class="headerlink" href="#id33" title="Permalink to this definition">¶</a></dt>
+<dt id="id40">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_XTITLE</code><em class="property"> = 5</em><a class="headerlink" href="#id40" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -935,8 +1028,8 @@ or 1.</p>
 <code class="sig-name descname">STK_FLAG_YBAR</code><a class="headerlink" href="#geosoft.gxapi.STK_FLAG_YBAR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ybar</p>
 <dl class="py attribute">
-<dt id="id34">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_YBAR</code><em class="property"> = 6</em><a class="headerlink" href="#id34" title="Permalink to this definition">¶</a></dt>
+<dt id="id41">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_YBAR</code><em class="property"> = 6</em><a class="headerlink" href="#id41" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -946,8 +1039,8 @@ or 1.</p>
 <code class="sig-name descname">STK_FLAG_YLABEL</code><a class="headerlink" href="#geosoft.gxapi.STK_FLAG_YLABEL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ylabel</p>
 <dl class="py attribute">
-<dt id="id35">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_YLABEL</code><em class="property"> = 7</em><a class="headerlink" href="#id35" title="Permalink to this definition">¶</a></dt>
+<dt id="id42">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_YLABEL</code><em class="property"> = 7</em><a class="headerlink" href="#id42" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -957,8 +1050,8 @@ or 1.</p>
 <code class="sig-name descname">STK_FLAG_YTITLE</code><a class="headerlink" href="#geosoft.gxapi.STK_FLAG_YTITLE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ytitle</p>
 <dl class="py attribute">
-<dt id="id36">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_YTITLE</code><em class="property"> = 8</em><a class="headerlink" href="#id36" title="Permalink to this definition">¶</a></dt>
+<dt id="id43">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_YTITLE</code><em class="property"> = 8</em><a class="headerlink" href="#id43" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -968,8 +1061,8 @@ or 1.</p>
 <code class="sig-name descname">STK_FLAG_GRID1</code><a class="headerlink" href="#geosoft.gxapi.STK_FLAG_GRID1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Grid1</p>
 <dl class="py attribute">
-<dt id="id37">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_GRID1</code><em class="property"> = 9</em><a class="headerlink" href="#id37" title="Permalink to this definition">¶</a></dt>
+<dt id="id44">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_GRID1</code><em class="property"> = 9</em><a class="headerlink" href="#id44" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -979,8 +1072,8 @@ or 1.</p>
 <code class="sig-name descname">STK_FLAG_GRID2</code><a class="headerlink" href="#geosoft.gxapi.STK_FLAG_GRID2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Grid2</p>
 <dl class="py attribute">
-<dt id="id38">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_GRID2</code><em class="property"> = 10</em><a class="headerlink" href="#id38" title="Permalink to this definition">¶</a></dt>
+<dt id="id45">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_FLAG_GRID2</code><em class="property"> = 10</em><a class="headerlink" href="#id45" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -994,8 +1087,8 @@ or 1.</p>
 <code class="sig-name descname">STK_GRID_PRIMARY</code><a class="headerlink" href="#geosoft.gxapi.STK_GRID_PRIMARY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Primary Grid</p>
 <dl class="py attribute">
-<dt id="id39">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_GRID_PRIMARY</code><em class="property"> = 0</em><a class="headerlink" href="#id39" title="Permalink to this definition">¶</a></dt>
+<dt id="id46">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_GRID_PRIMARY</code><em class="property"> = 0</em><a class="headerlink" href="#id46" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1005,8 +1098,8 @@ or 1.</p>
 <code class="sig-name descname">STK_GRID_SECONDARY</code><a class="headerlink" href="#geosoft.gxapi.STK_GRID_SECONDARY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Secondary Grid</p>
 <dl class="py attribute">
-<dt id="id40">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_GRID_SECONDARY</code><em class="property"> = 1</em><a class="headerlink" href="#id40" title="Permalink to this definition">¶</a></dt>
+<dt id="id47">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">STK_GRID_SECONDARY</code><em class="property"> = 1</em><a class="headerlink" href="#id47" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1027,7 +1120,7 @@ or 1.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXSTK class</a></li> 
       </ul>
     </div>

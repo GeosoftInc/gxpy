@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXSTK &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
+    <title>geosoft.gxapi.GXSTK &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSTK</a></li> 
@@ -633,7 +633,7 @@
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object relating drawing X/Y axis</span>
 <span class="sd">        </span>
-<span class="sd">        :param bar_draw:       ?BARDRAW</span>
+<span class="sd">        :param bar_draw:       ?BARDRAW, :ref:`STK_AXIS_POS`</span>
 <span class="sd">        :param min_loc:        Bottom Y/Left X location</span>
 <span class="sd">        :param max_loc:        Top Y/Right X location</span>
 <span class="sd">        :param thick:          ?BARLINETHICK  - Line thickness in mm. Default is 0.05</span>
@@ -779,7 +779,7 @@
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object relating X/Y axis labels</span>
 <span class="sd">        </span>
-<span class="sd">        :param axis:        Bottom/Top or Left/Right axes</span>
+<span class="sd">        :param axis:        :ref:`STK_AXIS_POS`</span>
 <span class="sd">        :param min_loc:     Bottom or Left axis label location</span>
 <span class="sd">        :param min_orient:  Bottom or Left labels orientation.</span>
 <span class="sd">        :param max_loc:     Top or Right axis label location</span>
@@ -1066,7 +1066,32 @@
 <span class="sd">        begin at 0. Use this function to start them at either 0</span>
 <span class="sd">        or 1.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_set_va_index_start</span><span class="p">(</span><span class="n">index0</span><span class="p">)</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_va_index_start</span><span class="p">(</span><span class="n">index0</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSTK.set_error_plot_params"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_error_plot_params">[docs]</a>    <span class="k">def</span> <span class="nf">set_error_plot_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">error_channel</span><span class="p">,</span> <span class="n">elements_csv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set error bar plot parameters for the current profile.</span>
+<span class="sd">        </span>
+<span class="sd">        :param enabled:        Enable(1) or disable(0) error bar plot rendering.</span>
+<span class="sd">        :param error_channel:  The name of the error channel.</span>
+<span class="sd">        :param elements_csv:   A comma-separated list of integers pertaining to the array channel elementsto apply the error bar plot to. For example, supplying &#39;1,2,7,10&#39; will rendererror bar plots for the first, second, seventh and tenth array channel elementsof the source and error channels.</span>
+<span class="sd">        :type  enabled:        int</span>
+<span class="sd">        :type  error_channel:  str</span>
+<span class="sd">        :type  elements_csv:   str</span>
+
+<span class="sd">        .. versionadded:: 2022.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Set parameters for the error bar plot that is associated with the current</span>
+<span class="sd">        profile.</span>
+<span class="sd">        See `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` for detailed description of all function parameters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_error_plot_params</span><span class="p">(</span><span class="n">enabled</span><span class="p">,</span> <span class="n">error_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">elements_csv</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div></div>
         
 
 
@@ -1096,7 +1121,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSTK</a></li> 

@@ -10,6 +10,7 @@ These are the low-level library classes and functions that make up the GX API.
 
    geosoft.gxapi
    GXGEOSOFT
+   GX3DC
    GX3DN
    GX3DV
    GXACQUIRE

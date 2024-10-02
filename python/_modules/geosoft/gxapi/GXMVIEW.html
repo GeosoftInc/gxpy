@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXMVIEW &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
+    <title>geosoft.gxapi.GXMVIEW &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMVIEW</a></li> 
@@ -4916,6 +4916,45 @@
 
 
 
+<div class="viewcode-block" id="GXMVIEW.render_ex"><a class="viewcode-back" href="../../../GXMVIEW.html#geosoft.gxapi.GXMVIEW.render_ex">[docs]</a>    <span class="k">def</span> <span class="nf">render_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdc</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">asp</span><span class="p">,</span> <span class="n">padding_pixel</span><span class="p">,</span> <span class="n">text_rendering_hint</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Render a specified area of view onto a Windows DC handle, setting the type of it and returning the new data extents</span>
+<span class="sd">        </span>
+<span class="sd">        :param hdc:                  DC Handle</span>
+<span class="sd">        :param left:                 Left value of the render rect in Windows coordinates (bottom&gt;top)</span>
+<span class="sd">        :param bottom:               Bottom value</span>
+<span class="sd">        :param right:                Right value</span>
+<span class="sd">        :param top:                  Top value</span>
+<span class="sd">        :param min_x:                Area X minimum</span>
+<span class="sd">        :param min_y:                Area Y minimum</span>
+<span class="sd">        :param max_x:                Area X maximum</span>
+<span class="sd">        :param max_y:                Area Y maximum</span>
+<span class="sd">        :param asp:                  :ref:`MVIEW_RELOCATE`</span>
+<span class="sd">        :param padding_pixel:        Add padding to avoid x/y axis border out of view if needed, default 0</span>
+<span class="sd">        :param text_rendering_hint:  A (GDI/Graphics) TextRenderingHint to apply while rendering the MVIEW. A value &lt; 0or null reference will not effect the current TextRenderingHint.</span>
+<span class="sd">        :type  hdc:                  int</span>
+<span class="sd">        :type  left:                 int</span>
+<span class="sd">        :type  bottom:               int</span>
+<span class="sd">        :type  right:                int</span>
+<span class="sd">        :type  top:                  int</span>
+<span class="sd">        :type  min_x:                float_ref</span>
+<span class="sd">        :type  min_y:                float_ref</span>
+<span class="sd">        :type  max_x:                float_ref</span>
+<span class="sd">        :type  max_y:                float_ref</span>
+<span class="sd">        :type  asp:                  int</span>
+<span class="sd">        :type  padding_pixel:        int</span>
+<span class="sd">        :type  text_rendering_hint:  int</span>
+
+<span class="sd">        .. versionadded:: 2022.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_render_ex</span><span class="p">(</span><span class="n">hdc</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">asp</span><span class="p">,</span> <span class="n">padding_pixel</span><span class="p">,</span> <span class="n">text_rendering_hint</span><span class="p">)</span></div>
+        
+
+
+
+
 <span class="c1"># Utility Drawing</span>
 
 
@@ -6033,7 +6072,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMVIEW</a></li> 

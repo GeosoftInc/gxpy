@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXDU &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
+    <title>geosoft.gxapi.GXDU &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDU</a></li> 
@@ -2809,6 +2809,39 @@
 
 
 
+<div class="viewcode-block" id="GXDU.interp_gap_and_fill"><a class="viewcode-back" href="../../../GXDU.html#geosoft.gxapi.GXDU.interp_gap_and_fill">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">interp_gap_and_fill</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">i_ch</span><span class="p">,</span> <span class="n">o_ch</span><span class="p">,</span> <span class="n">inside</span><span class="p">,</span> <span class="n">outside</span><span class="p">,</span> <span class="n">gap</span><span class="p">,</span> <span class="n">extend</span><span class="p">,</span> <span class="n">fill</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Replace all dummies by interpolating from valid data.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:       Database</span>
+<span class="sd">        :param line:     Line handle</span>
+<span class="sd">        :param i_ch:     Channel to interpolate [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param o_ch:     Output interpolated channel [`DB_LOCK_READWRITE &lt;geosoft.gxapi.DB_LOCK_READWRITE&gt;`]</span>
+<span class="sd">        :param inside:   :ref:`DU_INTERP`</span>
+<span class="sd">        :param outside:  :ref:`DU_INTERP_EDGE`</span>
+<span class="sd">        :param gap:      Maximum gap to interpolate (fiducials)</span>
+<span class="sd">        :param extend:   Maximum items to extend at ends.</span>
+<span class="sd">        :param fill:     Value used to fill dummy channels.</span>
+<span class="sd">        :type  db:       GXDB</span>
+<span class="sd">        :type  line:     int</span>
+<span class="sd">        :type  i_ch:     int</span>
+<span class="sd">        :type  o_ch:     int</span>
+<span class="sd">        :type  inside:   int</span>
+<span class="sd">        :type  outside:  int</span>
+<span class="sd">        :type  gap:      int</span>
+<span class="sd">        :type  extend:   int</span>
+<span class="sd">        :type  fill:     float</span>
+
+<span class="sd">        .. versionadded:: 2022.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDU</span><span class="o">.</span><span class="n">_interp_gap_and_fill</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">i_ch</span><span class="p">,</span> <span class="n">o_ch</span><span class="p">,</span> <span class="n">inside</span><span class="p">,</span> <span class="n">outside</span><span class="p">,</span> <span class="n">gap</span><span class="p">,</span> <span class="n">extend</span><span class="p">,</span> <span class="n">fill</span><span class="p">)</span></div>
+        
+
+
+
 <div class="viewcode-block" id="GXDU.intersect"><a class="viewcode-back" href="../../../GXDU.html#geosoft.gxapi.GXDU.intersect">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">intersect</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x_chan</span><span class="p">,</span> <span class="n">y_chan</span><span class="p">,</span> <span class="n">z_chan</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -3085,6 +3118,31 @@
 <span class="sd">        **Note:** Has its own format - space-delimited columns of data</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDU</span><span class="o">.</span><span class="n">_load_gravity_cg6_to_line</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXDU.load_gravity_cg6_ex"><a class="viewcode-back" href="../../../GXDU.html#geosoft.gxapi.GXDU.load_gravity_cg6_ex">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">load_gravity_cg6_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">date_format</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load a CG-6 gravity survey file. Specify the name of the output line</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:           Database</span>
+<span class="sd">        :param data:         Gravity data file</span>
+<span class="sd">        :param line:         line name - can be empty in which case it will create a line name from the input file name</span>
+<span class="sd">        :param date_format:  :ref:`DATE_FORMAT`</span>
+<span class="sd">        :type  db:           GXDB</span>
+<span class="sd">        :type  data:         str</span>
+<span class="sd">        :type  line:         str</span>
+<span class="sd">        :type  date_format:  int</span>
+
+<span class="sd">        .. versionadded:: 2022.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Has its own format - space-delimited columns of data</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDU</span><span class="o">.</span><span class="n">_load_gravity_cg6_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">date_format</span><span class="p">)</span></div>
         
 
 
@@ -5399,7 +5457,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDU</a></li> 

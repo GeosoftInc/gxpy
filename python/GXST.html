@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXST class &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
+    <title>GXST class &#8212; Geosoft GX Python API 2022.2.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXST class</a></li> 
       </ul>
     </div>
@@ -278,8 +278,8 @@ information from the <a class="reference internal" href="#geosoft.gxapi.GXST" ti
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The following can only be determined if the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> has recorded
-a histogram: <a class="reference internal" href="#id22" title="geosoft.gxapi.ST_MEDIAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_MEDIAN</span></code></a>, <a class="reference internal" href="#id23" title="geosoft.gxapi.ST_MODE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_MODE</span></code></a></p>
-<p><a class="reference internal" href="#id35" title="geosoft.gxapi.ST_MINPOS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_MINPOS</span></code></a> can be used to retrieve the smallest value greater
+a histogram: <a class="reference internal" href="#id23" title="geosoft.gxapi.ST_MEDIAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_MEDIAN</span></code></a>, <a class="reference internal" href="#id24" title="geosoft.gxapi.ST_MODE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_MODE</span></code></a></p>
+<p><a class="reference internal" href="#id37" title="geosoft.gxapi.ST_MINPOS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_MINPOS</span></code></a> can be used to retrieve the smallest value greater
 than zero, but not from <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> objects recovered from serialized object.</p>
 </dd></dl>
 
@@ -483,12 +483,23 @@ The more “non-normal”, the higher the statistic.</p>
 </dd></dl>
 
 <dl class="py data">
+<dt id="geosoft.gxapi.ST_TOTAL">
+<code class="sig-name descname">ST_TOTAL</code><a class="headerlink" href="#geosoft.gxapi.ST_TOTAL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Total number of items (dummy and non-dummy)</p>
+<dl class="py attribute">
+<dt id="id17">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_TOTAL</code><em class="property"> = 24</em><a class="headerlink" href="#id17" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
 <dt id="geosoft.gxapi.ST_DUMMIES">
 <code class="sig-name descname">ST_DUMMIES</code><a class="headerlink" href="#geosoft.gxapi.ST_DUMMIES" title="Permalink to this definition">¶</a></dt>
 <dd><p>St dummies</p>
 <dl class="py attribute">
-<dt id="id17">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_DUMMIES</code><em class="property"> = 2</em><a class="headerlink" href="#id17" title="Permalink to this definition">¶</a></dt>
+<dt id="id18">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_DUMMIES</code><em class="property"> = 2</em><a class="headerlink" href="#id18" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -498,8 +509,8 @@ The more “non-normal”, the higher the statistic.</p>
 <code class="sig-name descname">ST_MIN</code><a class="headerlink" href="#geosoft.gxapi.ST_MIN" title="Permalink to this definition">¶</a></dt>
 <dd><p>St min</p>
 <dl class="py attribute">
-<dt id="id18">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_MIN</code><em class="property"> = 3</em><a class="headerlink" href="#id18" title="Permalink to this definition">¶</a></dt>
+<dt id="id19">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_MIN</code><em class="property"> = 3</em><a class="headerlink" href="#id19" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -509,8 +520,8 @@ The more “non-normal”, the higher the statistic.</p>
 <code class="sig-name descname">ST_MAX</code><a class="headerlink" href="#geosoft.gxapi.ST_MAX" title="Permalink to this definition">¶</a></dt>
 <dd><p>St max</p>
 <dl class="py attribute">
-<dt id="id19">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_MAX</code><em class="property"> = 4</em><a class="headerlink" href="#id19" title="Permalink to this definition">¶</a></dt>
+<dt id="id20">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_MAX</code><em class="property"> = 4</em><a class="headerlink" href="#id20" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -520,8 +531,8 @@ The more “non-normal”, the higher the statistic.</p>
 <code class="sig-name descname">ST_RANGE</code><a class="headerlink" href="#geosoft.gxapi.ST_RANGE" title="Permalink to this definition">¶</a></dt>
 <dd><p>St range</p>
 <dl class="py attribute">
-<dt id="id20">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_RANGE</code><em class="property"> = 5</em><a class="headerlink" href="#id20" title="Permalink to this definition">¶</a></dt>
+<dt id="id21">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_RANGE</code><em class="property"> = 5</em><a class="headerlink" href="#id21" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -531,8 +542,8 @@ The more “non-normal”, the higher the statistic.</p>
 <code class="sig-name descname">ST_MEAN</code><a class="headerlink" href="#geosoft.gxapi.ST_MEAN" title="Permalink to this definition">¶</a></dt>
 <dd><p>St mean</p>
 <dl class="py attribute">
-<dt id="id21">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_MEAN</code><em class="property"> = 6</em><a class="headerlink" href="#id21" title="Permalink to this definition">¶</a></dt>
+<dt id="id22">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_MEAN</code><em class="property"> = 6</em><a class="headerlink" href="#id22" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -542,8 +553,8 @@ The more “non-normal”, the higher the statistic.</p>
 <code class="sig-name descname">ST_MEDIAN</code><a class="headerlink" href="#geosoft.gxapi.ST_MEDIAN" title="Permalink to this definition">¶</a></dt>
 <dd><p>St median</p>
 <dl class="py attribute">
-<dt id="id22">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_MEDIAN</code><em class="property"> = 7</em><a class="headerlink" href="#id22" title="Permalink to this definition">¶</a></dt>
+<dt id="id23">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_MEDIAN</code><em class="property"> = 7</em><a class="headerlink" href="#id23" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -551,10 +562,21 @@ The more “non-normal”, the higher the statistic.</p>
 <dl class="py data">
 <dt id="geosoft.gxapi.ST_MODE">
 <code class="sig-name descname">ST_MODE</code><a class="headerlink" href="#geosoft.gxapi.ST_MODE" title="Permalink to this definition">¶</a></dt>
-<dd><p>St mode</p>
+<dd><p>Mode value (most often repeated value)</p>
 <dl class="py attribute">
-<dt id="id23">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_MODE</code><em class="property"> = 8</em><a class="headerlink" href="#id23" title="Permalink to this definition">¶</a></dt>
+<dt id="id24">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_MODE</code><em class="property"> = 8</em><a class="headerlink" href="#id24" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt id="geosoft.gxapi.ST_SIMPLE_MODE">
+<code class="sig-name descname">ST_SIMPLE_MODE</code><a class="headerlink" href="#geosoft.gxapi.ST_SIMPLE_MODE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mode value (using different algorithm)</p>
+<dl class="py attribute">
+<dt id="id25">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_SIMPLE_MODE</code><em class="property"> = 23</em><a class="headerlink" href="#id25" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -564,8 +586,8 @@ The more “non-normal”, the higher the statistic.</p>
 <code class="sig-name descname">ST_GEOMEAN</code><a class="headerlink" href="#geosoft.gxapi.ST_GEOMEAN" title="Permalink to this definition">¶</a></dt>
 <dd><p>St geomean</p>
 <dl class="py attribute">
-<dt id="id24">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_GEOMEAN</code><em class="property"> = 9</em><a class="headerlink" href="#id24" title="Permalink to this definition">¶</a></dt>
+<dt id="id26">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_GEOMEAN</code><em class="property"> = 9</em><a class="headerlink" href="#id26" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -575,8 +597,8 @@ The more “non-normal”, the higher the statistic.</p>
 <code class="sig-name descname">ST_VARIANCE</code><a class="headerlink" href="#geosoft.gxapi.ST_VARIANCE" title="Permalink to this definition">¶</a></dt>
 <dd><p>St variance</p>
 <dl class="py attribute">
-<dt id="id25">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_VARIANCE</code><em class="property"> = 10</em><a class="headerlink" href="#id25" title="Permalink to this definition">¶</a></dt>
+<dt id="id27">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_VARIANCE</code><em class="property"> = 10</em><a class="headerlink" href="#id27" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -586,8 +608,8 @@ The more “non-normal”, the higher the statistic.</p>
 <code class="sig-name descname">ST_STDDEV</code><a class="headerlink" href="#geosoft.gxapi.ST_STDDEV" title="Permalink to this definition">¶</a></dt>
 <dd><p>St stddev</p>
 <dl class="py attribute">
-<dt id="id26">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_STDDEV</code><em class="property"> = 11</em><a class="headerlink" href="#id26" title="Permalink to this definition">¶</a></dt>
+<dt id="id28">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_STDDEV</code><em class="property"> = 11</em><a class="headerlink" href="#id28" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -597,8 +619,8 @@ The more “non-normal”, the higher the statistic.</p>
 <code class="sig-name descname">ST_STDERR</code><a class="headerlink" href="#geosoft.gxapi.ST_STDERR" title="Permalink to this definition">¶</a></dt>
 <dd><p>St stderr</p>
 <dl class="py attribute">
-<dt id="id27">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_STDERR</code><em class="property"> = 12</em><a class="headerlink" href="#id27" title="Permalink to this definition">¶</a></dt>
+<dt id="id29">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_STDERR</code><em class="property"> = 12</em><a class="headerlink" href="#id29" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -608,8 +630,8 @@ The more “non-normal”, the higher the statistic.</p>
 <code class="sig-name descname">ST_SKEW</code><a class="headerlink" href="#geosoft.gxapi.ST_SKEW" title="Permalink to this definition">¶</a></dt>
 <dd><p>St skew</p>
 <dl class="py attribute">
-<dt id="id28">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_SKEW</code><em class="property"> = 13</em><a class="headerlink" href="#id28" title="Permalink to this definition">¶</a></dt>
+<dt id="id30">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_SKEW</code><em class="property"> = 13</em><a class="headerlink" href="#id30" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -619,8 +641,8 @@ The more “non-normal”, the higher the statistic.</p>
 <code class="sig-name descname">ST_KURTOSIS</code><a class="headerlink" href="#geosoft.gxapi.ST_KURTOSIS" title="Permalink to this definition">¶</a></dt>
 <dd><p>St kurtosis</p>
 <dl class="py attribute">
-<dt id="id29">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_KURTOSIS</code><em class="property"> = 14</em><a class="headerlink" href="#id29" title="Permalink to this definition">¶</a></dt>
+<dt id="id31">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_KURTOSIS</code><em class="property"> = 14</em><a class="headerlink" href="#id31" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -630,8 +652,8 @@ The more “non-normal”, the higher the statistic.</p>
 <code class="sig-name descname">ST_BASE</code><a class="headerlink" href="#geosoft.gxapi.ST_BASE" title="Permalink to this definition">¶</a></dt>
 <dd><p>St base</p>
 <dl class="py attribute">
-<dt id="id30">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_BASE</code><em class="property"> = 15</em><a class="headerlink" href="#id30" title="Permalink to this definition">¶</a></dt>
+<dt id="id32">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_BASE</code><em class="property"> = 15</em><a class="headerlink" href="#id32" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -641,8 +663,8 @@ The more “non-normal”, the higher the statistic.</p>
 <code class="sig-name descname">ST_SUM</code><a class="headerlink" href="#geosoft.gxapi.ST_SUM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sums and sums of powers</p>
 <dl class="py attribute">
-<dt id="id31">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_SUM</code><em class="property"> = 16</em><a class="headerlink" href="#id31" title="Permalink to this definition">¶</a></dt>
+<dt id="id33">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_SUM</code><em class="property"> = 16</em><a class="headerlink" href="#id33" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -652,8 +674,8 @@ The more “non-normal”, the higher the statistic.</p>
 <code class="sig-name descname">ST_SUM2</code><a class="headerlink" href="#geosoft.gxapi.ST_SUM2" title="Permalink to this definition">¶</a></dt>
 <dd><p>St sum2</p>
 <dl class="py attribute">
-<dt id="id32">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_SUM2</code><em class="property"> = 17</em><a class="headerlink" href="#id32" title="Permalink to this definition">¶</a></dt>
+<dt id="id34">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_SUM2</code><em class="property"> = 17</em><a class="headerlink" href="#id34" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -663,8 +685,8 @@ The more “non-normal”, the higher the statistic.</p>
 <code class="sig-name descname">ST_SUM3</code><a class="headerlink" href="#geosoft.gxapi.ST_SUM3" title="Permalink to this definition">¶</a></dt>
 <dd><p>St sum3</p>
 <dl class="py attribute">
-<dt id="id33">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_SUM3</code><em class="property"> = 18</em><a class="headerlink" href="#id33" title="Permalink to this definition">¶</a></dt>
+<dt id="id35">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_SUM3</code><em class="property"> = 18</em><a class="headerlink" href="#id35" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -674,8 +696,8 @@ The more “non-normal”, the higher the statistic.</p>
 <code class="sig-name descname">ST_SUM4</code><a class="headerlink" href="#geosoft.gxapi.ST_SUM4" title="Permalink to this definition">¶</a></dt>
 <dd><p>St sum4</p>
 <dl class="py attribute">
-<dt id="id34">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_SUM4</code><em class="property"> = 19</em><a class="headerlink" href="#id34" title="Permalink to this definition">¶</a></dt>
+<dt id="id36">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_SUM4</code><em class="property"> = 19</em><a class="headerlink" href="#id36" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -685,8 +707,8 @@ The more “non-normal”, the higher the statistic.</p>
 <code class="sig-name descname">ST_MINPOS</code><a class="headerlink" href="#geosoft.gxapi.ST_MINPOS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Smallest value greater than zero.</p>
 <dl class="py attribute">
-<dt id="id35">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_MINPOS</code><em class="property"> = 21</em><a class="headerlink" href="#id35" title="Permalink to this definition">¶</a></dt>
+<dt id="id37">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_MINPOS</code><em class="property"> = 21</em><a class="headerlink" href="#id37" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -696,8 +718,8 @@ The more “non-normal”, the higher the statistic.</p>
 <code class="sig-name descname">ST_HIST_MAXCOUNT</code><a class="headerlink" href="#geosoft.gxapi.ST_HIST_MAXCOUNT" title="Permalink to this definition">¶</a></dt>
 <dd><p>St hist maxcount</p>
 <dl class="py attribute">
-<dt id="id36">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_HIST_MAXCOUNT</code><em class="property"> = 100</em><a class="headerlink" href="#id36" title="Permalink to this definition">¶</a></dt>
+<dt id="id38">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST_HIST_MAXCOUNT</code><em class="property"> = 100</em><a class="headerlink" href="#id38" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -718,7 +740,7 @@ The more “non-normal”, the higher the statistic.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXST class</a></li> 
       </ul>
     </div>

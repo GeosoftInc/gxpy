@@ -949,6 +949,41 @@ geosoft.gxapi module history
 ==========================================
 
   
+Version 2022.2
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GX3DC.create` Create a 3D view container which can be used to instantiate a full 3D View.
+
+:func:`geosoft.gxapi.GX3DC.destroy_internal` Destroys a 3D container object and cleans up any unmanaged resources.
+
+:func:`geosoft.gxapi.GX3DC.get_geo_view` Retrieves the GeoView associated with the 3D container.
+
+:func:`geosoft.gxapi.GXDU.interp_gap_and_fill` Replace all dummies by interpolating from valid data.
+
+:func:`geosoft.gxapi.GXDU.load_gravity_cg6_ex` Load a CG-6 gravity survey file. Specify the name of the output line
+
+:func:`geosoft.gxapi.GXITR.equal_area_or_linear` Calculate an equal area transform.
+
+:func:`geosoft.gxapi.GXKGRD.run_vv` Executes the Krigrid program directly on input data VVs.
+
+:func:`geosoft.gxapi.GXLMSG.goto_line` Sends a 'go to line' message
+
+:func:`geosoft.gxapi.GXMVIEW.render_ex` Render a specified area of view onto a Windows DC handle, setting the type of it and returning the new data extents
+
+:func:`geosoft.gxapi.GXMVU.plot_voxel_slice` Extract a vertical slice from a voxel along a path and plot it to a 2D view.
+
+:func:`geosoft.gxapi.GXSTK.set_error_plot_params` Set error bar plot parameters for the current profile.
+
+:func:`geosoft.gxapi.GXVVU.distance_link_non_dummies` Create distance linking non-dummies `GXVV <geosoft.gxapi.GXVV>`
+
+:func:`geosoft.gxapi.GXVVU.qc2` Quality control on deviation of data from norm in a `GXVV <geosoft.gxapi.GXVV>`
+
+
+  
 Version 2022.1
 -----------------
 
@@ -965,6 +1000,8 @@ New Functions
 :func:`geosoft.gxapi.GXEDOC.save` Save the managed document.
 
 :func:`geosoft.gxapi.GXMAP.dataset_file_path_list` Get a list of all dataset file paths in this map.
+
+:func:`geosoft.gxapi.GXMAP.delete_empty_groups` Remove empty groups in the map, do not delete empty views.
 
 :func:`geosoft.gxapi.GXMVIEW.add_folder_2d` Add a Map folder to the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
 
