@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXPJ class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXPJ class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -43,10 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -60,13 +56,6 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXPJ.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -77,6 +66,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXPJ.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -89,335 +85,268 @@
 <span id="gxpj"></span><h1>GXPJ class<a class="headerlink" href="#gxpj-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXPJ">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXPJ</code><a class="headerlink" href="#geosoft.gxapi.GXPJ" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">PJ</span> <span class="nb">object</span> <span class="ow">is</span> <span class="n">created</span> <span class="kn">from</span> <span class="nn">two</span> <span class="n">IPJ</span> <span class="n">objects</span><span class="p">,</span>
-<span class="ow">and</span> <span class="ow">is</span> <span class="n">used</span> <span class="k">for</span> <span class="n">converting</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">OASIS</span> <span class="n">database</span>
-<span class="ow">or</span> <span class="nb">map</span> <span class="nb">object</span> <span class="kn">from</span> <span class="nn">one</span> <span class="nb">map</span> <span class="n">coordinate</span> <span class="p">(</span><span class="n">projection</span><span class="p">)</span>
-<span class="n">system</span> <span class="n">to</span> <span class="n">another</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">class </em><code class="descname">GXPJ</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXPJ class.</p>
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a> object is created from two <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> objects,
+and is used for converting data in an OASIS database
+or map object from one map coordinate (projection)
+system to another.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXPJ.clip_ply">
-<code class="descname">clip_ply</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(GXPLY)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPJ.clip_ply" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">clip</span> <span class="n">polygon</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">projected</span> <span class="n">area</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">clip_ply</code><span class="sig-paren">(</span><em>min_x</em>, <em>min_y</em>, <em>max_x</em>, <em>max_y</em>, <em>max_dev</em>, <em>pply</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.clip_ply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a clip polygon from a projected area.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; Min X (or Longitude...)</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; Min Y (or Latitude...)</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; Max X</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; Max Y</li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; Max deviation in degrees</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPLY</span></code></a>) &#8211; PLY to be filled</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>min_x</strong> (<em>float</em>) &#8211; Min X (or Longitude...)</li>
+<li><strong>min_y</strong> (<em>float</em>) &#8211; Min Y (or Latitude...)</li>
+<li><strong>max_x</strong> (<em>float</em>) &#8211; Max X</li>
+<li><strong>max_y</strong> (<em>float</em>) &#8211; Max Y</li>
+<li><strong>max_dev</strong> (<em>float</em>) &#8211; Max deviation in degrees</li>
+<li><strong>pply</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) &#8211; <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal"><span class="pre">GXPLY</span></code></a> to be filled</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">rectangular</span> <span class="n">area</span> <span class="kn">from</span> <span class="p">(</span><span class="n">MinX</span><span class="p">,</span> <span class="n">MinY</span><span class="p">)</span> <span class="n">to</span> <span class="p">(</span><span class="n">MaxX</span><span class="p">,</span> <span class="n">MaxY</span><span class="p">)</span>
-<span class="ow">is</span> <span class="n">projected</span> <span class="n">throught</span> <span class="n">the</span> <span class="n">PJ</span><span class="o">.</span> <span class="n">The</span> <span class="n">resulting</span> <span class="p">(</span><span class="n">non</span><span class="o">-</span><span class="n">rectangular</span><span class="p">)</span>
-<span class="n">area</span> <span class="ow">is</span> <span class="n">then</span> <span class="n">digitized</span> <span class="n">along</span> <span class="n">its</span> <span class="n">edges</span><span class="p">,</span> <span class="n">then</span> <span class="n">thinned</span> <span class="n">to</span>
-<span class="n">remove</span> <span class="n">near</span><span class="o">-</span><span class="n">collinear</span> <span class="n">points</span><span class="o">.</span> <span class="n">The</span> <span class="n">thinning</span> <span class="ow">is</span> <span class="n">done</span> <span class="n">to</span> <span class="nb">any</span>
-<span class="n">point</span> <span class="n">whose</span> <span class="n">neighbors</span> <span class="n">subtend</span> <span class="n">an</span> <span class="n">angle</span> <span class="n">greater</span> <span class="n">than</span>
-<span class="p">(</span><span class="mi">180</span> <span class="n">degrees</span> <span class="o">-</span> <span class="n">maximum</span> <span class="n">deviation</span><span class="p">)</span><span class="o">.</span>  <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="k">if</span> <span class="nb">max</span><span class="o">.</span> <span class="n">dev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-<span class="n">only</span> <span class="n">co</span><span class="o">-</span><span class="n">linear</span> <span class="n">points</span> <span class="n">would</span> <span class="n">be</span> <span class="n">removed</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> A rectangular area from (MinX, MinY) to (MaxX, MaxY)
+is projected throught the <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a>. The resulting (non-rectangular)
+area is then digitized along its edges, then thinned to
+remove near-collinear points. The thinning is done to any
+point whose neighbors subtend an angle greater than
+(180 degrees - maximum deviation).  (i.e. if max. dev = 0,
+only co-linear points would be removed).</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPJ.convert_vv">
-<code class="descname">convert_vv</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPJ.convert_vv" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">VVx</span><span class="o">/</span><span class="n">VVy</span> <span class="kn">from</span> <span class="nn">input</span> <span class="n">projection</span> <span class="n">to</span> <span class="n">output</span> <span class="n">projection</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">convert_vv</code><span class="sig-paren">(</span><em>vv_x</em>, <em>vv_y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.convert_vv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert VVx/VVy from input projection to output projection.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VVx</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VVy</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; VVx</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; VVy</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<pre class="literal-block">
-This function is equivalent to <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV.project" title="geosoft.gxapi.GXVV.project"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVV.project()</span></code></a>.
-</pre>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This function is equivalent to <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV.project" title="geosoft.gxapi.GXVV.project"><code class="xref py py-obj docutils literal"><span class="pre">GXVV.project</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPJ.convert_vv3">
-<code class="descname">convert_vv3</code><span class="sig-paren">(</span><em>(GXVV)arg1</em>, <em>(GXVV)arg2</em>, <em>(GXVV)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPJ.convert_vv3" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">VVx</span><span class="o">/</span><span class="n">VVy</span><span class="o">/</span><span class="n">VVz</span> <span class="n">projections</span>
-</pre></div>
-</div>
+<code class="descname">convert_vv3</code><span class="sig-paren">(</span><em>vv_x</em>, <em>vv_y</em>, <em>vv_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.convert_vv3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert VVx/VVy/VVz projections</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VVx</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VVy</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; VVz</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; VVx</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; VVy</li>
+<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; VVz</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<pre class="literal-block">
-This function is equivalent to <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV.project_3d" title="geosoft.gxapi.GXVV.project_3d"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXVV.project_3d()</span></code></a>.
-</pre>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This function is equivalent to <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV.project_3d" title="geosoft.gxapi.GXVV.project_3d"><code class="xref py py-obj docutils literal"><span class="pre">GXVV.project_3d</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPJ.convert_xy">
-<code class="descname">convert_xy</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPJ.convert_xy" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="kn">from</span> <span class="nn">input</span> <span class="n">projection</span> <span class="n">to</span> <span class="n">output</span> <span class="n">projection</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">convert_xy</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.convert_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert X, Y from input projection to output projection.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X  (or Longitude)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y  (or Latitude)</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X  (or Longitude)</li>
+<li><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y  (or Latitude)</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPJ.convert_xy_from_xyz">
-<code class="descname">convert_xy_from_xyz</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPJ.convert_xy_from_xyz" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="kn">from</span> <span class="nn">input</span> <span class="n">projection</span> <span class="n">to</span> <span class="n">output</span> <span class="n">projection</span><span class="p">,</span> <span class="n">taking</span> <span class="n">Z</span> <span class="n">into</span> <span class="n">account</span>
-</pre></div>
-</div>
+<code class="descname">convert_xy_from_xyz</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.convert_xy_from_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert X, Y from input projection to output projection, taking Z into account</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X  (or Longitude)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y  (or Latitude)</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; Z  (or Depth - unchanged)</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X  (or Longitude)</li>
+<li><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y  (or Latitude)</li>
+<li><strong>z</strong> (<em>float</em>) &#8211; Z  (or Depth - unchanged)</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 7.3.0.</span></p>
+<p><span class="versionmodified">New in version 7.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<pre class="literal-block">
-This function is used (for instance) when projecting voxel model locations
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This function is used (for instance) when projecting voxel model locations
 where the user expects that the vertical position will not change. The
-regular <a class="reference internal" href="#geosoft.gxapi.GXPJ.convert_xyz" title="geosoft.gxapi.GXPJ.convert_xyz"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXPJ.convert_xyz()</span></code></a> may result in shifts of hundreds, even a thousand
+regular <a class="reference internal" href="#geosoft.gxapi.GXPJ.convert_xyz" title="geosoft.gxapi.GXPJ.convert_xyz"><code class="xref py py-obj docutils literal"><span class="pre">convert_xyz</span></code></a> may result in shifts of hundreds, even a thousand
 meters in case where you are going from the geoid to an ellipsoid.
 The value of Z can have an important effect on the accuracy of the results, as
-the normal <a class="reference internal" href="#geosoft.gxapi.GXPJ.convert_xy" title="geosoft.gxapi.GXPJ.convert_xy"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXPJ.convert_xy()</span></code></a> assumes a value of Z=0 internally and calls
-<a class="reference internal" href="#geosoft.gxapi.GXPJ.convert_xyz" title="geosoft.gxapi.GXPJ.convert_xyz"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXPJ.convert_xyz()</span></code></a>.
-</pre>
+the normal <a class="reference internal" href="#geosoft.gxapi.GXPJ.convert_xy" title="geosoft.gxapi.GXPJ.convert_xy"><code class="xref py py-obj docutils literal"><span class="pre">convert_xy</span></code></a> assumes a value of Z=0 internally and calls
+<a class="reference internal" href="#geosoft.gxapi.GXPJ.convert_xyz" title="geosoft.gxapi.GXPJ.convert_xyz"><code class="xref py py-obj docutils literal"><span class="pre">convert_xyz</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPJ.convert_xyz">
-<code class="descname">convert_xyz</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPJ.convert_xyz" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Convert</span> <span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">Z</span> <span class="kn">from</span> <span class="nn">input</span> <span class="n">projection</span> <span class="n">to</span> <span class="n">output</span> <span class="n">projection</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">convert_xyz</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.convert_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert X,Y,Z from input projection to output projection.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X  (or Longitude)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y  (or Latitude)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Z  (or Depth)</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X  (or Longitude)</li>
+<li><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y  (or Latitude)</li>
+<li><strong>z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Z  (or Depth)</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.3.0.</span></p>
+<p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXPJ.create">
-<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em><span class="sig-paren">)</span> &rarr; GXPJ:<a class="headerlink" href="#geosoft.gxapi.GXPJ.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">creates</span> <span class="n">a</span> <span class="n">projection</span> <span class="nb">object</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>input</em>, <em>output</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method creates a projection object.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Input PRJ file name, &#8220;&#8221; for geodetic</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Ouput PRJ file name, &#8220;&#8221; for geodetic</li>
+<li><strong>input</strong> (<em>str</em>) &#8211; Input PRJ file name, &#8220;&#8221; for geodetic</li>
+<li><strong>output</strong> (<em>str</em>) &#8211; Ouput PRJ file name, &#8220;&#8221; for geodetic</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">PJ Object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a> Object</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPJ</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ">GXPJ</a></p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXPJ.create_ipj">
-<em class="property">static </em><code class="descname">create_ipj</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em>, <em>(GXIPJ)arg2</em><span class="sig-paren">)</span> &rarr; GXPJ:<a class="headerlink" href="#geosoft.gxapi.GXPJ.create_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="n">creates</span> <span class="n">a</span> <span class="n">projection</span> <span class="nb">object</span> <span class="kn">from</span> <span class="nn">IPJs.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create_ipj</code><span class="sig-paren">(</span><em>ip_jin</em>, <em>ip_jout</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.create_ipj" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method creates a projection object from IPJs.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Input Projection, (IPJ)0 for long/lat</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; Output Projection, (IPJ)0 for long/lat</li>
+<li><strong>ip_jin</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; Input Projection, (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a>)0 for long/lat</li>
+<li><strong>ip_jout</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; Output Projection, (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a>)0 for long/lat</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">PJ Object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a> Object</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPJ</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ">GXPJ</a></p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">converting</span> <span class="n">to</span><span class="o">/</span><span class="kn">from</span> <span class="nn">long</span><span class="o">/</span><span class="n">lat</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">natural</span> <span class="n">coordinate</span>
-<span class="n">system</span> <span class="n">of</span> <span class="n">the</span> <span class="n">source</span><span class="o">/</span><span class="n">target</span><span class="p">,</span> <span class="n">only</span> <span class="n">the</span> <span class="n">long</span><span class="o">/</span><span class="n">lat</span> <span class="n">system</span>
-<span class="n">can</span> <span class="n">be</span> <span class="n">passed</span> <span class="k">as</span> <span class="p">(</span><span class="n">IPJ</span><span class="p">)</span><span class="mf">0.</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If converting to/from long/lat in the natural coordinate
+system of the source/target, only the long/lat system
+can be passed as (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a>)0.</p>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXPJ.create_rectified">
-<em class="property">static </em><code class="descname">create_rectified</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(int)arg7</em><span class="sig-paren">)</span> &rarr; GXPJ:<a class="headerlink" href="#geosoft.gxapi.GXPJ.create_rectified" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">rectified</span> <span class="n">PJ</span> <span class="kn">from</span> <span class="nn">lon</span><span class="p">,</span><span class="n">lat</span><span class="p">,</span><span class="n">rotation</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create_rectified</code><span class="sig-paren">(</span><em>lon</em>, <em>lat</em>, <em>x</em>, <em>y</em>, <em>rot</em>, <em>scl</em>, <em>dir</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.create_rectified" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a rectified <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a> from lon,lat,rotation</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; longitude  at (X,Y) origin</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; latitude   at (X,Y) origin</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; (X,Y) origin</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; </li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; coordinate Y relative to geographic N (deg azm)</li>
-<li><strong>arg6</strong> (<em>float</em>) &#8211; scale to convert X,Y to m.</li>
-<li><strong>arg7</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#pj-rect"><span class="std std-ref">PJ_RECT constants</span></a></li>
+<li><strong>lon</strong> (<em>float</em>) &#8211; Longitude  at (X,Y) origin</li>
+<li><strong>lat</strong> (<em>float</em>) &#8211; Latitude   at (X,Y) origin</li>
+<li><strong>x</strong> (<em>float</em>) &#8211; (X,Y) origin</li>
+<li><strong>rot</strong> (<em>float</em>) &#8211; Coordinate Y relative to geographic N (deg azm)</li>
+<li><strong>scl</strong> (<em>float</em>) &#8211; Scale to convert X,Y to m.</li>
+<li><strong>dir</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#pj-rect"><span class="std std-ref">PJ_RECT constants</span></a></li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">PJ Object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a> Object</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPJ</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ">GXPJ</a></p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Given</span> <span class="n">an</span> <span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="n">coordinate</span> <span class="n">system</span><span class="p">,</span> <span class="n">the</span> <span class="n">lat</span><span class="o">/</span><span class="n">lon</span> <span class="n">origin</span> <span class="ow">and</span>
-<span class="n">angle</span> <span class="n">of</span> <span class="n">the</span> <span class="n">coordinate</span> <span class="n">system</span><span class="p">,</span> <span class="n">this</span> <span class="n">will</span> <span class="n">create</span> <span class="n">a</span> <span class="n">PJ</span>
-<span class="n">to</span> <span class="n">convert</span> <span class="n">between</span> <span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="n">coordinates</span> <span class="ow">and</span> <span class="n">Lon</span><span class="p">,</span><span class="n">Lat</span><span class="o">.</span>
-<span class="n">The</span> <span class="n">Lon</span><span class="o">/</span><span class="n">Lat</span> <span class="ow">is</span> <span class="n">determined</span> <span class="n">using</span> <span class="n">a</span> <span class="n">Transverse</span> <span class="n">Mercator</span>
-<span class="n">projection</span> <span class="k">with</span> <span class="n">central</span> <span class="n">meridian</span> <span class="n">through</span> <span class="n">the</span> <span class="n">center</span>
-<span class="n">of</span> <span class="n">the</span> <span class="n">coordinates</span> <span class="n">on</span> <span class="n">a</span> <span class="n">WGS</span> <span class="mi">84</span> <span class="n">datum</span><span class="o">.</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Given an X,Y coordinate system, the lat/lon origin and
+angle of the coordinate system, this will create a <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a>
+to convert between X,Y coordinates and Lon,Lat.
+The Lon/Lat is determined using a Transverse Mercator
+projection with central meridian through the center
+of the coordinates on a WGS 84 datum.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPJ.elevation">
-<code class="descname">elevation</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXPJ.elevation" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">elevation</span> <span class="n">correction</span> <span class="n">method</span>
-</pre></div>
-</div>
+<code class="descname">elevation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.elevation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get elevation correction method</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -429,30 +358,24 @@ the normal <a class="reference internal" href="#geosoft.gxapi.GXPJ.convert_xy" t
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.0.</span></p>
+<p><span class="versionmodified">New in version 5.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<pre class="literal-block">
-To determine the model in use, refer to the datum_trf column in the
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> To determine the model in use, refer to the datum_trf column in the
 usercsvdatumtrf.csv file.  The datum and geoid model are named in
-the sqare brackets following the transform name as follows:
-
-name [datum_model:geoid]
-
-The datum_model is the name of the datum transformation model which will
+the sqare brackets following the transform name as follows:</p>
+<p>name [datum_model:geoid]</p>
+<p>The datum_model is the name of the datum transformation model which will
 be in a file with extension .ll2 in the etc directory.  The geoid is the
 name of the geoid model which will be in a grid file with extension .grd
 in the etc directory.  If the geoid model is missing, this method will
-return PJ_ELEVATION_NONE and elevation coordinates will not be changed.
-</pre>
+return <a class="reference internal" href="#geosoft.gxapi.PJ_ELEVATION_NONE" title="geosoft.gxapi.PJ_ELEVATION_NONE"><code class="xref py py-obj docutils literal"><span class="pre">PJ_ELEVATION_NONE</span></code></a> and elevation coordinates will not be changed.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPJ.is_input_ll">
-<code class="descname">is_input_ll</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXPJ.is_input_ll" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Is</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">projection</span> <span class="n">a</span> <span class="n">lat</span><span class="o">/</span><span class="n">long</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">is_input_ll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.is_input_ll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the input projection a lat/long.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -465,21 +388,22 @@ return PJ_ELEVATION_NONE and elevation coordinates will not be changed.
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPJ.is_null">
-<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXPJ.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPJ</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPJ</span></code></a>, False otherwise.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -487,10 +411,8 @@ return PJ_ELEVATION_NONE and elevation coordinates will not be changed.
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPJ.is_output_ll">
-<code class="descname">is_output_ll</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXPJ.is_output_ll" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Is</span> <span class="n">the</span> <span class="n">output</span> <span class="n">projection</span> <span class="n">a</span> <span class="n">lat</span><span class="o">/</span><span class="n">long</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">is_output_ll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.is_output_ll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the output projection a lat/long.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -503,21 +425,22 @@ return PJ_ELEVATION_NONE and elevation coordinates will not be changed.
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXPJ.null">
-<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXPJ<a class="headerlink" href="#geosoft.gxapi.GXPJ.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPJ</span></code></a></p>
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPJ</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXPJ</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ">GXPJ</a></td>
 </tr>
 </tbody>
 </table>
@@ -525,26 +448,18 @@ return PJ_ELEVATION_NONE and elevation coordinates will not be changed.
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPJ.project_bounding_rectangle">
-<code class="descname">project_bounding_rectangle</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Project</span> <span class="n">a</span> <span class="n">bounding</span> <span class="n">rectangle</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">project_bounding_rectangle</code><span class="sig-paren">(</span><em>min_x</em>, <em>min_y</em>, <em>max_x</em>, <em>max_y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Project a bounding rectangle.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Min X</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Min Y</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Max X</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Max Y</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Bounding Region Min X</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Bounding Region Min Y</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Bounding Region Max X</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Bounding Region Max Y</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
@@ -552,40 +467,30 @@ return PJ_ELEVATION_NONE and elevation coordinates will not be changed.
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.4.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">rectangular</span> <span class="n">area</span> <span class="kn">from</span> <span class="p">(</span><span class="n">dMinX</span><span class="p">,</span> <span class="n">dMinY</span><span class="p">)</span> <span class="n">to</span> <span class="p">(</span><span class="n">dMaxX</span><span class="p">,</span> <span class="n">dMaxY</span><span class="p">)</span>
-<span class="ow">is</span> <span class="n">projected</span> <span class="n">throught</span> <span class="n">the</span> <span class="n">PJ</span><span class="o">.</span> <span class="n">The</span> <span class="n">resulting</span> <span class="n">region</span> <span class="n">area</span> <span class="ow">is</span>
-<span class="n">then</span> <span class="n">digitized</span> <span class="n">along</span> <span class="n">its</span> <span class="n">edges</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">new</span> <span class="n">bounding</span> <span class="n">rectangle</span>
-<span class="ow">is</span> <span class="n">computed</span><span class="o">.</span>  <span class="n">If</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">lot</span> <span class="n">of</span> <span class="n">curve</span> <span class="n">through</span> <span class="n">the</span>
-<span class="n">projection</span> <span class="n">the</span> <span class="n">resulting</span> <span class="n">bounding</span> <span class="n">region</span> <span class="n">may</span> <span class="n">be</span> <span class="n">slightly</span>
-<span class="n">smaller</span> <span class="n">than</span> <span class="n">the</span> <span class="n">true</span> <span class="n">region</span><span class="o">.</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> A rectangular area from (dMinX, dMinY) to (dMaxX, dMaxY)
+is projected throught the <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a>. The resulting region area is
+then digitized along its edges and a new bounding rectangle
+is computed.  If there is a lot of curve through the
+projection the resulting bounding region may be slightly
+smaller than the true region.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPJ.project_bounding_rectangle2">
-<code class="descname">project_bounding_rectangle2</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle2" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Project</span> <span class="n">a</span> <span class="n">bounding</span> <span class="n">rectangle</span> <span class="k">with</span> <span class="n">error</span> <span class="n">tolerance</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">project_bounding_rectangle2</code><span class="sig-paren">(</span><em>min_x</em>, <em>min_y</em>, <em>max_x</em>, <em>max_y</em>, <em>err</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Project a bounding rectangle with error tolerance.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Min X</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Min Y</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Max X</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Max Y</li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; maximum allowable projection error if &lt;= 0.0, will use 0.005% of smallest dimension</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Bounding Region Min X</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Bounding Region Min Y</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Bounding Region Max X</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Bounding Region Max Y</li>
+<li><strong>err</strong> (<em>float</em>) &#8211; Maximum allowable projection error if &lt;= 0.0, will use 0.005% of smallest dimension</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
@@ -593,37 +498,27 @@ return PJ_ELEVATION_NONE and elevation coordinates will not be changed.
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<pre class="literal-block">
-This is the same as <a class="reference internal" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle" title="geosoft.gxapi.GXPJ.project_bounding_rectangle"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXPJ.project_bounding_rectangle()</span></code></a> except that the bounding
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This is the same as <a class="reference internal" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle" title="geosoft.gxapi.GXPJ.project_bounding_rectangle"><code class="xref py py-obj docutils literal"><span class="pre">project_bounding_rectangle</span></code></a> except that the bounding
 rectangle will be limited to an area within which the projection can be
-performed to an accuracy better than the specified error tolerance.
-</pre>
+performed to an accuracy better than the specified error tolerance.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPJ.project_bounding_rectangle_res">
-<code class="descname">project_bounding_rectangle_res</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle_res" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Project</span> <span class="n">a</span> <span class="n">bounding</span> <span class="n">rectangle</span> <span class="k">with</span> <span class="n">resolution</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">project_bounding_rectangle_res</code><span class="sig-paren">(</span><em>min_x</em>, <em>min_y</em>, <em>max_x</em>, <em>max_y</em>, <em>res</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle_res" title="Permalink to this definition">¶</a></dt>
+<dd><p>Project a bounding rectangle with resolution.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Min X</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Min Y</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Max X</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Max Y</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Resolution</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Bounding Region Min X</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Bounding Region Min Y</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Bounding Region Max X</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Bounding Region Max Y</li>
+<li><strong>res</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Resolution</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
@@ -631,39 +526,29 @@ performed to an accuracy better than the specified error tolerance.
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">function</span> <span class="n">behaves</span> <span class="n">just</span> <span class="n">like</span> <span class="n">ProjBoundingRectangle_PJ</span>
-<span class="k">except</span> <span class="n">that</span> <span class="n">it</span> <span class="n">also</span> <span class="n">computes</span> <span class="n">an</span> <span class="n">approximate</span> <span class="n">resolution</span>
-<span class="n">at</span> <span class="n">the</span> <span class="n">reprojected</span> <span class="n">coordinate</span> <span class="n">system</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">given</span> <span class="n">original</span>
-<span class="n">resolution</span><span class="o">.</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This function behaves just like ProjBoundingRectangle_PJ
+except that it also computes an approximate resolution
+at the reprojected coordinate system from a given original
+resolution.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPJ.project_bounding_rectangle_res2">
-<code class="descname">project_bounding_rectangle_res2</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle_res2" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Project</span> <span class="n">a</span> <span class="n">bounding</span> <span class="n">rectangle</span> <span class="k">with</span> <span class="n">resolution</span> <span class="ow">and</span> <span class="n">error</span> <span class="n">tolerance</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">project_bounding_rectangle_res2</code><span class="sig-paren">(</span><em>min_x</em>, <em>min_y</em>, <em>max_x</em>, <em>max_y</em>, <em>res</em>, <em>err</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle_res2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Project a bounding rectangle with resolution and error tolerance.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Min X</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Min Y</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Max X</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Max Y</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Resolution</li>
-<li><strong>arg6</strong> (<em>float</em>) &#8211; maximum allowable projection error if &lt;= 0.0, will use 0.005% of smallest dimension</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Bounding Region Min X</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Bounding Region Min Y</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Bounding Region Max X</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Bounding Region Max Y</li>
+<li><strong>res</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Resolution</li>
+<li><strong>err</strong> (<em>float</em>) &#8211; Maximum allowable projection error if &lt;= 0.0, will use 0.005% of smallest dimension</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
@@ -671,142 +556,133 @@ performed to an accuracy better than the specified error tolerance.
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<pre class="literal-block">
-This is the same as <a class="reference internal" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle_res" title="geosoft.gxapi.GXPJ.project_bounding_rectangle_res"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXPJ.project_bounding_rectangle_res()</span></code></a> except that the bounding
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This is the same as <a class="reference internal" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle_res" title="geosoft.gxapi.GXPJ.project_bounding_rectangle_res"><code class="xref py py-obj docutils literal"><span class="pre">project_bounding_rectangle_res</span></code></a> except that the bounding
 rectangle will be limited to an area within which the projection can be
-performed to an accuracy better than the specified error tolerance.
-</pre>
+performed to an accuracy better than the specified error tolerance.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPJ.project_limited_bounding_rectangle">
-<code class="descname">project_limited_bounding_rectangle</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em>, <em>(float_ref)arg7</em>, <em>(float_ref)arg8</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPJ.project_limited_bounding_rectangle" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Project</span> <span class="n">a</span> <span class="n">bounding</span> <span class="n">rectangle</span> <span class="k">with</span> <span class="n">limits</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">project_limited_bounding_rectangle</code><span class="sig-paren">(</span><em>min_xl</em>, <em>min_yl</em>, <em>max_xl</em>, <em>max_yl</em>, <em>min_x</em>, <em>min_y</em>, <em>max_x</em>, <em>max_y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.project_limited_bounding_rectangle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Project a bounding rectangle with limits.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; Output limited bounding region Min X</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; Min Y</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; Max X</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; Max Y</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Bounding Region Min X</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Min Y</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Max X</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Max Y</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>min_xl</strong> (<em>float</em>) &#8211; Output limited bounding region Min X</li>
+<li><strong>min_yl</strong> (<em>float</em>) &#8211; Min Y</li>
+<li><strong>max_xl</strong> (<em>float</em>) &#8211; Max X</li>
+<li><strong>max_yl</strong> (<em>float</em>) &#8211; Max Y</li>
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Bounding Region Min X</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Min Y</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Max X</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Max Y</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.0.0.</span></p>
+<p><span class="versionmodified">New in version 6.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">bounding</span> <span class="n">rectangle</span> <span class="n">will</span> <span class="n">be</span> <span class="n">limited</span> <span class="n">to</span> <span class="n">no</span> <span class="n">larger</span>
-<span class="n">than</span> <span class="n">the</span> <span class="n">area</span> <span class="n">specified</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">output</span> <span class="n">projection</span><span class="o">.</span>  <span class="n">This</span>
-<span class="ow">is</span> <span class="n">useful</span> <span class="n">when</span> <span class="n">projecting</span> <span class="kn">from</span> <span class="nn">limits</span> <span class="n">that</span> <span class="n">are</span> <span class="n">unreasonable</span>
-<span class="ow">in</span> <span class="n">the</span> <span class="n">target</span> <span class="n">projection</span><span class="o">.</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The bounding rectangle will be limited to no larger
+than the area specified in the output projection.  This
+is useful when projecting from limits that are unreasonable
+in the target projection.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle" title="geosoft.gxapi.GXPJ.project_bounding_rectangle"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXPJ.project_bounding_rectangle()</span></code></a>.</p>
+<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle" title="geosoft.gxapi.GXPJ.project_bounding_rectangle"><code class="xref py py-obj docutils literal"><span class="pre">project_bounding_rectangle</span></code></a>.</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXPJ.setup_ldt">
-<code class="descname">setup_ldt</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXPJ.setup_ldt" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Setup</span> <span class="n">the</span> <span class="n">PJ</span> <span class="k">with</span> <span class="n">LDT</span> <span class="n">check</span><span class="o">.</span>
-</pre></div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<code class="descname">setup_ldt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXPJ.setup_ldt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup the <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a> with LDT check.</p>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.2.0.</span></p>
+<p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">By</span> <span class="n">default</span><span class="p">,</span> <span class="n">a</span> <span class="n">PJ</span> <span class="n">on</span> <span class="n">the</span> <span class="n">same</span> <span class="n">datum</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">apply</span> <span class="n">a</span> <span class="n">LDT</span><span class="p">,</span>
-<span class="ow">is</span> <span class="n">intended</span> <span class="k">for</span> <span class="n">transformations</span> <span class="n">between</span> <span class="n">datums</span><span class="o">.</span>  <span class="n">However</span><span class="p">,</span>
-<span class="ow">in</span> <span class="n">some</span> <span class="n">instances</span> <span class="n">you</span> <span class="n">might</span> <span class="n">want</span> <span class="n">to</span> <span class="n">convert</span> <span class="n">between</span> <span class="n">LDTs</span> <span class="n">on</span>
-<span class="n">the</span> <span class="n">same</span> <span class="n">datum</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">when</span> <span class="n">you</span> <span class="n">have</span> <span class="n">two</span> <span class="n">sets</span> <span class="n">of</span> <span class="n">coordinates</span>
-<span class="n">that</span> <span class="n">you</span> <span class="n">KNOW</span> <span class="n">came</span> <span class="kn">from</span> <span class="nn">WGS84</span> <span class="ow">and</span> <span class="n">were</span> <span class="n">placed</span> <span class="n">on</span> <span class="n">this</span> <span class="n">datum</span>
-<span class="n">using</span> <span class="n">differnt</span> <span class="n">LDT</span><span class="s1">&#39;s.  If you want to combine such coordinate</span>
-<span class="n">systems</span><span class="p">,</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">the</span> <span class="n">other</span> <span class="n">should</span> <span class="n">be</span> <span class="n">converted</span> <span class="n">to</span> <span class="n">the</span> <span class="n">other</span><span class="s1">&#39;s</span>
-<span class="n">LDT</span><span class="o">.</span>  <span class="n">Note</span> <span class="n">that</span> <span class="n">a</span> <span class="n">more</span> <span class="n">logical</span> <span class="n">way</span> <span class="n">to</span> <span class="n">do</span> <span class="n">this</span> <span class="n">would</span> <span class="n">be</span> <span class="n">to</span>
-<span class="n">convert</span> <span class="n">both</span> <span class="n">sets</span> <span class="n">back</span> <span class="n">to</span> <span class="n">their</span> <span class="n">original</span> <span class="n">WGS84</span> <span class="n">coordinates</span>
-<span class="ow">and</span> <span class="n">combine</span> <span class="ow">in</span> <span class="n">WGS84</span><span class="o">.</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> By default, a <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXPJ</span></code></a> on the same datum will not apply a LDT,
+is intended for transformations between datums.  However,
+in some instances you might want to convert between LDTs on
+the same datum, such as when you have two sets of coordinates
+that you KNOW came from WGS84 and were placed on this datum
+using differnt LDT&#8217;s.  If you want to combine such coordinate
+systems, one or the other should be converted to the other&#8217;s
+LDT.  Note that a more logical way to do this would be to
+convert both sets back to their original WGS84 coordinates
+and combine in WGS84.</p>
 </dd></dl>
 
 </dd></dl>
 
 <div class="section" id="pj-elevation-constants">
 <span id="pj-elevation"></span><h2>PJ_ELEVATION constants<a class="headerlink" href="#pj-elevation-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">elevation</span> <span class="n">correction</span> <span class="n">method</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<p>Elevation correction method</p>
+<dl class="data">
 <dt id="geosoft.gxapi.PJ_ELEVATION_NONE">
-<code class="descclassname">gxapi.</code><code class="descname">PJ_ELEVATION_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.PJ_ELEVATION_NONE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">PJ_ELEVATION_NONE</code><a class="headerlink" href="#geosoft.gxapi.PJ_ELEVATION_NONE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Elevation transform not supported.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PJ_ELEVATION_NONE</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">elevation</span> <span class="n">transform</span> <span class="ow">not</span> <span class="n">supported</span><span class="o">.</span>
-</pre></div>
-</div>
-<dl class="attribute">
+</dd></dl>
+
+<dl class="data">
 <dt id="geosoft.gxapi.PJ_ELEVATION_GEOCENTRIC">
-<code class="descclassname">gxapi.</code><code class="descname">PJ_ELEVATION_GEOCENTRIC</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.PJ_ELEVATION_GEOCENTRIC" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">elevation</span> <span class="n">transformation</span> <span class="n">uses</span> <span class="n">earth</span><span class="o">-</span><span class="n">centre</span> <span class="n">shift</span>
-<span class="ow">and</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">accurate</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">PJ_ELEVATION_GEOCENTRIC</code><a class="headerlink" href="#geosoft.gxapi.PJ_ELEVATION_GEOCENTRIC" title="Permalink to this definition">¶</a></dt>
+<dd><p>elevation transformation uses earth-centre shift
+and is not accurate.</p>
 <dl class="attribute">
-<dt id="geosoft.gxapi.PJ_ELEVATION_GEOID">
-<code class="descclassname">gxapi.</code><code class="descname">PJ_ELEVATION_GEOID</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxapi.PJ_ELEVATION_GEOID" title="Permalink to this definition">¶</a></dt>
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PJ_ELEVATION_GEOCENTRIC</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">elevation</span> <span class="n">transformation</span> <span class="n">uses</span> <span class="n">a</span> <span class="n">geoid</span> <span class="n">model</span>
-<span class="ow">and</span> <span class="ow">is</span> <span class="k">as</span> <span class="n">accurate</span> <span class="k">as</span> <span class="n">the</span> <span class="n">geoid</span> <span class="n">data</span><span class="o">.</span>
-</pre></div>
-</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.PJ_ELEVATION_GEOID">
+<code class="descname">PJ_ELEVATION_GEOID</code><a class="headerlink" href="#geosoft.gxapi.PJ_ELEVATION_GEOID" title="Permalink to this definition">¶</a></dt>
+<dd><p>elevation transformation uses a geoid model
+and is as accurate as the geoid data.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PJ_ELEVATION_GEOID</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="pj-rect-constants">
 <span id="pj-rect"></span><h2>PJ_RECT constants<a class="headerlink" href="#pj-rect-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Conversion</span> <span class="n">direction</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<p>Conversion direction</p>
+<dl class="data">
 <dt id="geosoft.gxapi.PJ_RECT_XY2LL">
-<code class="descclassname">gxapi.</code><code class="descname">PJ_RECT_XY2LL</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.PJ_RECT_XY2LL" title="Permalink to this definition">¶</a></dt>
+<code class="descname">PJ_RECT_XY2LL</code><a class="headerlink" href="#geosoft.gxapi.PJ_RECT_XY2LL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Xy2ll</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PJ_RECT_XY2LL</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+</dd></dl>
+
+<dl class="data">
 <dt id="geosoft.gxapi.PJ_RECT_LL2XY">
-<code class="descclassname">gxapi.</code><code class="descname">PJ_RECT_LL2XY</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.PJ_RECT_LL2XY" title="Permalink to this definition">¶</a></dt>
+<code class="descname">PJ_RECT_LL2XY</code><a class="headerlink" href="#geosoft.gxapi.PJ_RECT_LL2XY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ll2xy</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">PJ_RECT_LL2XY</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
+
+</dd></dl>
 
 </div>
 </div>
@@ -823,15 +699,27 @@ performed to an accuracy better than the specified error tolerance.
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

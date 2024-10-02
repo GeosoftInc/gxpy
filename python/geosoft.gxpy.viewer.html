@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>geosoft.gxpy.viewer submodule &#8212; Geosoft GX Python API 9.2.1 documentation</title>
+    <title>geosoft.gxpy.viewer submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.2.1',
+        VERSION:     '9.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -27,8 +27,6 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="geosoft.gxpy.vv submodule" href="geosoft.gxpy.vv.html" />
-    <link rel="prev" title="geosoft.gxpy.view submodule" href="geosoft.gxpy.view.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -44,31 +42,11 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="geosoft.gxpy.vv.html" title="geosoft.gxpy.vv submodule"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="geosoft.gxpy.view.html" title="geosoft.gxpy.view submodule"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" accesskey="U">gxpy modules reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Introduction</a></li>
-    <li><a href="geosoft.gxpy.html">gxpy modules reference</a></li>
-</ul>
-<h3>Previous Topic</h3>
-<ul>
-    <li><a href="geosoft.gxpy.view.html" title="previous chapter">geosoft.gxpy.view submodule</a></li>
-</ul>
-<h3>Next Topic</h3>
-<ul>
-    <li><a href="geosoft.gxpy.vv.html" title="next chapter">geosoft.gxpy.vv submodule</a></li>
-</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -103,7 +81,7 @@
 </div>
 <dl class="exception">
 <dt id="geosoft.gxpy.viewer.ViewerException">
-<em class="property">exception </em><code class="descclassname">geosoft.gxpy.viewer.</code><code class="descname">ViewerException</code><a class="headerlink" href="#geosoft.gxpy.viewer.ViewerException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descname">ViewerException</code><a class="headerlink" href="#geosoft.gxpy.viewer.ViewerException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
 <p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.viewer" title="geosoft.gxpy.viewer"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.viewer</span></code></a>.</p>
 <div class="versionadded">
@@ -113,7 +91,7 @@
 
 <dl class="function">
 <dt id="geosoft.gxpy.viewer.view_document">
-<code class="descclassname">geosoft.gxpy.viewer.</code><code class="descname">view_document</code><span class="sig-paren">(</span><em>document_file_name</em>, <em>wait_for_close=True</em>, <em>env=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.viewer.view_document" title="Permalink to this definition">¶</a></dt>
+<code class="descname">view_document</code><span class="sig-paren">(</span><em>document_file_name</em>, <em>wait_for_close=True</em>, <em>env=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.viewer.view_document" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open Geosoft Desktop application for viewing a supported Geosoft document type.  These include:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdb</span> <span class="n">file</span>
 <span class="nb">map</span> <span class="n">files</span>
@@ -133,7 +111,7 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>document_file_name</strong> &#8211; document file name, require decorators for grids, e.g. testgrid.grd(GRD).  
 Supports all documents that can be openned by Geosoft Desktop.</li>
-<li><strong>wait_for_close</strong> &#8211; wait for process to exit, default <cite>True</cite></li>
+<li><strong>wait_for_close</strong> &#8211; wait for process to exit, default <code class="xref py py-obj docutils literal"><span class="pre">True</span></code></li>
 <li><strong>env</strong> &#8211; environment variables to add to os environment variables</li>
 </ul>
 </td>
@@ -159,14 +137,7 @@ Supports all documents that can be openned by Geosoft Desktop.</li>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="geosoft.gxpy.vv.html" title="geosoft.gxpy.vv submodule"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="geosoft.gxpy.view.html" title="geosoft.gxpy.view submodule"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" >gxpy modules reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

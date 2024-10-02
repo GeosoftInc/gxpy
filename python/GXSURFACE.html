@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXSURFACE class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXSURFACE class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -43,10 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -59,13 +55,6 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXSURFACE.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -76,6 +65,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXSURFACE.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -88,79 +84,63 @@
 <span id="gxsurface"></span><h1>GXSURFACE class<a class="headerlink" href="#gxsurface-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXSURFACE">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXSURFACE</code><a class="headerlink" href="#geosoft.gxapi.GXSURFACE" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-The SURFACE class allows you to create, read and alter Geosurface files (<cite>*</cite>.geosoft_surface).
-A Geosurface file can contain one or more surface items (see SURFACEITEM class). In turn each item can
-contains one or more triangular polyhedral meshes.
-</pre>
+<em class="property">class </em><code class="descname">GXSURFACE</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXSURFACE class.</p>
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACE</span></code></a> class allows you to create, read and alter Geosurface files (<code class="docutils literal"><span class="pre">*.geosoft_surface</span></code>).
+A Geosurface file can contain one or more surface items (see <a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACEITEM</span></code></a> class). In turn each item can
+contains one or more triangular polyhedral meshes.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXSURFACE.add_surface_item">
-<code class="descname">add_surface_item</code><span class="sig-paren">(</span><em>(GXSURFACEITEM)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.add_surface_item" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">a</span> <span class="n">new</span> <span class="n">surface</span> <span class="n">item</span> <span class="n">to</span> <span class="n">the</span> <span class="n">SURFACE</span>
-</pre></div>
-</div>
+<code class="descname">add_surface_item</code><span class="sig-paren">(</span><em>surfaceitem</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.add_surface_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a new surface item to the <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACE</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSURFACEITEM</span></code></a>) &#8211; SURFACEITEM to add</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>surfaceitem</strong> (<a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><em>GXSURFACEITEM</em></a>) &#8211; <a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACEITEM</span></code></a> to add</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.4.0.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXSURFACE.append_vulcan_triangulation">
-<em class="property">static </em><code class="descname">append_vulcan_triangulation</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXIPJ)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.append_vulcan_triangulation" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">new</span> <span class="n">surface</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">Maptek</span> <span class="n">Vulcan</span> <span class="n">triangulation</span> <span class="n">file</span> <span class="ow">and</span> <span class="n">add</span> <span class="n">to</span> <span class="n">an</span> <span class="n">existing</span> <span class="n">geosurface</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">append_vulcan_triangulation</code><span class="sig-paren">(</span><em>triangulation_file</em>, <em>ipj</em>, <em>surface_file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.append_vulcan_triangulation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new surface from a Maptek Vulcan triangulation file and add to an existing geosurface.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; 00t file</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; IPJ</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; Geosurface file</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>triangulation_file</strong> (<em>str</em>) &#8211; 00t file</li>
+<li><strong>surface_file</strong> (<em>str</em>) &#8211; Geosurface file</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
-</td>
-</tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.4.0.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXSURFACE.crc">
-<em class="property">static </em><code class="descname">crc</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(int_ref)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.crc" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Compute</span> <span class="n">an</span> <span class="n">XML</span> <span class="n">CRC</span> <span class="n">of</span> <span class="n">a</span> <span class="n">Geosurface</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">crc</code><span class="sig-paren">(</span><em>surface_file</em>, <em>output</em>, <em>crc</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.crc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute an XML CRC of a Geosurface file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Geosurface file</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; output file</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; CRC (unused, always set to 0)</li>
+<li><strong>surface_file</strong> (<em>str</em>) &#8211; Geosurface file</li>
+<li><strong>output</strong> (<em>str</em>) &#8211; Output file</li>
+<li><strong>crc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; CRC (unused, always set to 0)</li>
 </ul>
 </td>
 </tr>
@@ -173,382 +153,333 @@ contains one or more triangular polyhedral meshes.
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.0.0.</span></p>
+<p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXSURFACE.create">
-<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXIPJ)arg2</em><span class="sig-paren">)</span> &rarr; GXSURFACE:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">Geosurface</span> <span class="n">file</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>surface_file</em>, <em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new Geosurface file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Geosurface file name</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; IPJ containing coordinate system of the Geosurface</li>
+<li><strong>surface_file</strong> (<em>str</em>) &#8211; Geosurface file name</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> containing coordinate system of the Geosurface</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">SURFACE Object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACE</span></code></a> Object</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSURFACE</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE">GXSURFACE</a></p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.4.0.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXSURFACE.create_from_dxf">
-<em class="property">static </em><code class="descname">create_from_dxf</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.create_from_dxf" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">Geosurface</span> <span class="n">file</span> <span class="kn">from</span> <span class="nn">DXF</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create_from_dxf</code><span class="sig-paren">(</span><em>ipj</em>, <em>surface_file</em>, <em>dxf_file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.create_from_dxf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create Geosurface file from DXF file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; IPJ</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Geosurface file</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; dxf file</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>surface_file</strong> (<em>str</em>) &#8211; Geosurface file</li>
+<li><strong>dxf_file</strong> (<em>str</em>) &#8211; DXF file</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.2.0.</span></p>
+<p><span class="versionmodified">New in version 8.2.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXSURFACE.create_from_vulcan_triangulation">
-<em class="property">static </em><code class="descname">create_from_vulcan_triangulation</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXIPJ)arg2</em>, <em>(str)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.create_from_vulcan_triangulation" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">Geosurface</span> <span class="n">file</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">Maptek</span> <span class="n">Vulcan</span> <span class="n">triangulation</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create_from_vulcan_triangulation</code><span class="sig-paren">(</span><em>triangulation_file</em>, <em>ipj</em>, <em>surface_file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.create_from_vulcan_triangulation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create Geosurface file from a Maptek Vulcan triangulation file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; 00t file</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; IPJ</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; Geosurface file</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>triangulation_file</strong> (<em>str</em>) &#8211; 00t file</li>
+<li><strong>surface_file</strong> (<em>str</em>) &#8211; Geosurface file</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.4.0.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXSURFACE.get_closed_surface_names">
-<em class="property">static </em><code class="descname">get_closed_surface_names</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXLST)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_closed_surface_names" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">names</span> <span class="n">of</span> <span class="n">closed</span> <span class="n">surface</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">Geosurface</span> <span class="n">file</span> <span class="p">(</span><span class="n">may</span> <span class="k">return</span> <span class="n">an</span> <span class="n">empty</span> <span class="nb">list</span><span class="p">)</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">get_closed_surface_names</code><span class="sig-paren">(</span><em>surface_file</em>, <em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_closed_surface_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the names of closed surface items in a Geosurface file (may return an empty list)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Geosurface file</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST to fill (may return an empty LST if none of the surfaces are closed)</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>surface_file</strong> (<em>str</em>) &#8211; Geosurface file</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> to fill (may return an empty <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> if none of the surfaces are closed)</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.0.0.</span></p>
+<p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSURFACE.get_extents">
-<code class="descname">get_extents</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(float_ref)arg4</em>, <em>(float_ref)arg5</em>, <em>(float_ref)arg6</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_extents" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">spatial</span> <span class="nb">range</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">surface</span> <span class="n">items</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">get_extents</code><span class="sig-paren">(</span><em>min_x</em>, <em>min_y</em>, <em>min_z</em>, <em>max_x</em>, <em>max_y</em>, <em>max_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_extents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the spatial range of all surface items.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum valid data in X.</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum valid data in Y.</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Minimum valid data in Z.</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Maximum valid data in X.</li>
-<li><strong>arg5</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Maximum valid data in Y.</li>
-<li><strong>arg6</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Maximum valid data in Z.</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Minimum valid data in X.</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Minimum valid data in Y.</li>
+<li><strong>min_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Minimum valid data in Z.</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Maximum valid data in X.</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Maximum valid data in Y.</li>
+<li><strong>max_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Maximum valid data in Z.</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.5.0.</span></p>
+<p><span class="versionmodified">New in version 8.5.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSURFACE.get_ipj">
-<code class="descname">get_ipj</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">coordinate</span> <span class="n">system</span> <span class="n">of</span> <span class="n">the</span> <span class="n">SURFACE</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">get_ipj</code><span class="sig-paren">(</span><em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_ipj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the coordinate system of the <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACE</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; IPJ in which to place the Geosurface coordinate system</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> in which to place the Geosurface coordinate system</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.4.0.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSURFACE.get_surface_item">
-<code class="descname">get_surface_item</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; GXSURFACEITEM:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_surface_item" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">an</span> <span class="n">existing</span> <span class="n">surface</span> <span class="n">item</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">SURFACE</span>
-</pre></div>
-</div>
+<code class="descname">get_surface_item</code><span class="sig-paren">(</span><em>guid</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_surface_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the an existing surface item from the <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACE</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; Item GUID</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>guid</strong> (<em>str</em>) &#8211; Item GUID</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">SURFACEITEM Object</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACEITEM</span></code></a> Object</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSURFACEITEM</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM">GXSURFACEITEM</a></td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.4.0.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSURFACE.get_surface_items">
-<code class="descname">get_surface_items</code><span class="sig-paren">(</span><em>(GXLST)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_surface_items" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">surfaces</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">Geosurface</span> <span class="n">file</span>
-</pre></div>
-</div>
+<code class="descname">get_surface_items</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_surface_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the surfaces items in a Geosurface file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST to fill</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> to fill</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.4.0.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXSURFACE.get_surface_names">
-<em class="property">static </em><code class="descname">get_surface_names</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(GXLST)arg2</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_surface_names" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">surface</span> <span class="n">item</span> <span class="n">names</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">Geosurface</span> <span class="n">file</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">get_surface_names</code><span class="sig-paren">(</span><em>surface_file</em>, <em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_surface_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the surface item names in a Geosurface file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Geosurface file</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a>) &#8211; LST to fill</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>surface_file</strong> (<em>str</em>) &#8211; Geosurface file</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> to fill</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
-</td>
-</tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.0.0.</span></p>
+<p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSURFACE.is_null">
-<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSURFACE</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSURFACE</span></code></a>, False otherwise.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXSURFACE.null">
-<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXSURFACE<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSURFACE</span></code></a></p>
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACE</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSURFACE</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACE</span></code></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSURFACE</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE">GXSURFACE</a></td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXSURFACE.open">
-<em class="property">static </em><code class="descname">open</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; GXSURFACE:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.open" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Open</span> <span class="n">a</span> <span class="n">Geosurface</span> <span class="n">file</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">open</code><span class="sig-paren">(</span><em>surface_file</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open a Geosurface file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Geosurface file name</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#surface-open"><span class="std std-ref">SURFACE_OPEN constants</span></a></li>
+<li><strong>surface_file</strong> (<em>str</em>) &#8211; Geosurface file name</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#surface-open"><span class="std std-ref">SURFACE_OPEN constants</span></a></li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">SURFACE Object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACE</span></code></a> Object</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXSURFACE</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE">GXSURFACE</a></p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.4.0.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSURFACE.set_ipj">
-<code class="descname">set_ipj</code><span class="sig-paren">(</span><em>(GXIPJ)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.set_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Change</span> <span class="n">the</span> <span class="n">coordinate</span> <span class="n">system</span> <span class="n">of</span> <span class="n">the</span> <span class="n">SURFACE</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">set_ipj</code><span class="sig-paren">(</span><em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.set_ipj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the coordinate system of the <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACE</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a>) &#8211; IPJ containing the new coordinate system of the Geosurface</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> containing the new coordinate system of the Geosurface</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.4.0.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXSURFACE.sync">
-<em class="property">static </em><code class="descname">sync</code><span class="sig-paren">(</span><em>(str)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXSURFACE.sync" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Syncronize</span> <span class="n">the</span> <span class="n">Metadata</span> <span class="k">for</span> <span class="n">this</span> <span class="n">Geosurface</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">sync</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.sync" title="Permalink to this definition">¶</a></dt>
+<dd><p>Syncronize the Metadata for this Geosurface</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>str</em>) &#8211; Geosurface file</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; Geosurface file</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.0.0.</span></p>
+<p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 </dd></dl>
 
 <div class="section" id="surface-open-constants">
 <span id="surface-open"></span><h2>SURFACE_OPEN constants<a class="headerlink" href="#surface-open-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Open</span> <span class="n">Modes</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<p>Open Modes</p>
+<dl class="data">
 <dt id="geosoft.gxapi.SURFACE_OPEN_READ">
-<code class="descclassname">gxapi.</code><code class="descname">SURFACE_OPEN_READ</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.SURFACE_OPEN_READ" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SURFACE_OPEN_READ</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_OPEN_READ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">SURFACE_OPEN_READ</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+</dd></dl>
+
+<dl class="data">
 <dt id="geosoft.gxapi.SURFACE_OPEN_READWRITE">
-<code class="descclassname">gxapi.</code><code class="descname">SURFACE_OPEN_READWRITE</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.SURFACE_OPEN_READWRITE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SURFACE_OPEN_READWRITE</code><a class="headerlink" href="#geosoft.gxapi.SURFACE_OPEN_READWRITE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Readwrite</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">SURFACE_OPEN_READWRITE</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
+
+</dd></dl>
 
 </div>
 </div>
@@ -565,15 +496,27 @@ contains one or more triangular polyhedral meshes.
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

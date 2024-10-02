@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>geosoft.gxpy.group submodule &#8212; Geosoft GX Python API 9.2.1 documentation</title>
+    <title>geosoft.gxpy.group submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.2.1',
+        VERSION:     '9.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -27,8 +27,6 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="geosoft.gxpy.gx submodule" href="geosoft.gxpy.gx.html" />
-    <link rel="prev" title="geosoft.gxpy.grid submodule" href="geosoft.gxpy.grid.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -44,31 +42,11 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="geosoft.gxpy.gx.html" title="geosoft.gxpy.gx submodule"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="geosoft.gxpy.grid.html" title="geosoft.gxpy.grid submodule"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" accesskey="U">gxpy modules reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Introduction</a></li>
-    <li><a href="geosoft.gxpy.html">gxpy modules reference</a></li>
-</ul>
-<h3>Previous Topic</h3>
-<ul>
-    <li><a href="geosoft.gxpy.grid.html" title="previous chapter">geosoft.gxpy.grid submodule</a></li>
-</ul>
-<h3>Next Topic</h3>
-<ul>
-    <li><a href="geosoft.gxpy.gx.html" title="next chapter">geosoft.gxpy.gx submodule</a></li>
-</ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -96,7 +74,11 @@
             
   <div class="section" id="module-geosoft.gxpy.group">
 <span id="geosoft-gxpy-group-submodule"></span><h1>geosoft.gxpy.group submodule<a class="headerlink" href="#module-geosoft.gxpy.group" title="Permalink to this headline">¶</a></h1>
-<p>Render groups in 3D views, or to 2D views on a map.</p>
+<p>A Geosoft View (<a class="reference internal" href="geosoft.gxpy.view.html#geosoft.gxpy.view.View" title="geosoft.gxpy.view.View"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.view.View</span></code></a> or <a class="reference internal" href="geosoft.gxpy.view.html#geosoft.gxpy.view.View_3d" title="geosoft.gxpy.view.View_3d"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.view.View_3d</span></code></a>) contains graphical elements as
+<a class="reference internal" href="#geosoft.gxpy.group.Group" title="geosoft.gxpy.group.Group"><code class="xref py py-class docutils literal"><span class="pre">Group</span></code></a> instances. Groups are named and are available to a user in a Geosoft viewer, which allows groups to
+be turned on or off, modify the transparency, or be deleted.</p>
+<p>2D views can only accept 2D groups, while a 3D view can accept both 2D and 3D groups. When a 2D group is placed
+in a 3D view, the group is placed on a the active plane inside the 3D view</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -116,6 +98,12 @@
 <tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.group.Draw_3d" title="geosoft.gxpy.group.Draw_3d"><code class="xref py py-class docutils literal"><span class="pre">Draw_3d</span></code></a></td>
 <td>3D grawing group for 3D objects placed in a 3d view</td>
 </tr>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.group.Color_symbols_group" title="geosoft.gxpy.group.Color_symbols_group"><code class="xref py py-class docutils literal"><span class="pre">Color_symbols_group</span></code></a></td>
+<td>group for 2D symbols rendered based on data values</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.group.Aggregate_group" title="geosoft.gxpy.group.Aggregate_group"><code class="xref py py-class docutils literal"><span class="pre">Aggregate_group</span></code></a></td>
+<td>group that contains a <a class="reference internal" href="geosoft.gxpy.agg.html#geosoft.gxpy.agg.Aggregate_image" title="geosoft.gxpy.agg.Aggregate_image"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.agg.Aggregate_image</span></code></a> instance</td>
+</tr>
 <tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.group.Color" title="geosoft.gxpy.group.Color"><code class="xref py py-class docutils literal"><span class="pre">Color</span></code></a></td>
 <td>colour definition</td>
 </tr>
@@ -127,12 +115,6 @@
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.group.Text_def" title="geosoft.gxpy.group.Text_def"><code class="xref py py-class docutils literal"><span class="pre">Text_def</span></code></a></td>
 <td>defined text characteristics</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.group.Color_symbols_group" title="geosoft.gxpy.group.Color_symbols_group"><code class="xref py py-class docutils literal"><span class="pre">Color_symbols_group</span></code></a></td>
-<td>group for 2D symbols rendered based on data values</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.group.Aggregate_group" title="geosoft.gxpy.group.Aggregate_group"><code class="xref py py-class docutils literal"><span class="pre">Aggregate_group</span></code></a></td>
-<td>group that contains a <a class="reference internal" href="geosoft.gxpy.agg.html#geosoft.gxpy.agg.Aggregate_image" title="geosoft.gxpy.agg.Aggregate_image"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.agg.Aggregate_image</span></code></a> instance</td>
 </tr>
 </tbody>
 </table>
@@ -147,11 +129,17 @@
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
+<p><a class="reference internal" href="geosoft.gxpy.view.html#module-geosoft.gxpy.view" title="geosoft.gxpy.view"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.view</span></code></a>, <a class="reference internal" href="geosoft.gxpy.map.html#module-geosoft.gxpy.map" title="geosoft.gxpy.map"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.map</span></code></a></p>
 <p class="last"><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMVIEW</span></code></a>, <a class="reference internal" href="GXMVU.html#geosoft.gxapi.GXMVU" title="geosoft.gxapi.GXMVU"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXMVU</span></code></a></p>
 </div>
+<dl class="data">
+<dt id="geosoft.gxpy.group.APPEND">
+<code class="descname">APPEND</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.group.APPEND" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="class">
 <dt id="geosoft.gxpy.group.Aggregate_group">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.group.</code><code class="descname">Aggregate_group</code><span class="sig-paren">(</span><em>view</em>, <em>group_name</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Aggregate_group" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Aggregate_group</code><span class="sig-paren">(</span><em>view</em>, <em>group_name</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Aggregate_group" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#geosoft.gxpy.group.Group" title="geosoft.gxpy.group.Group"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.group.Group</span></code></a></p>
 <p>Aggregate groups on a map</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -171,10 +159,10 @@
 <col width="80%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><cite>open()</cite></td>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.group.Aggregate_group.open" title="geosoft.gxpy.group.Aggregate_group.open"><code class="xref py py-obj docutils literal"><span class="pre">open()</span></code></a></td>
 <td>open an existing aggregate group</td>
 </tr>
-<tr class="row-even"><td><cite>new()</cite></td>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.group.Aggregate_group.new" title="geosoft.gxpy.group.Aggregate_group.new"><code class="xref py py-obj docutils literal"><span class="pre">new()</span></code></a></td>
 <td>create a new aggregate group</td>
 </tr>
 </tbody>
@@ -210,9 +198,184 @@
 
 </dd></dl>
 
+<dl class="data">
+<dt id="geosoft.gxpy.group.CMODEL_CMY">
+<code class="descname">CMODEL_CMY</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.group.CMODEL_CMY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.CMODEL_HSV">
+<code class="descname">CMODEL_HSV</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.group.CMODEL_HSV" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.CMODEL_RGB">
+<code class="descname">CMODEL_RGB</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.group.CMODEL_RGB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.COLOR_BAR_ANNOTATE_BOTTOM">
+<code class="descname">COLOR_BAR_ANNOTATE_BOTTOM</code><em class="property"> = -1</em><a class="headerlink" href="#geosoft.gxpy.group.COLOR_BAR_ANNOTATE_BOTTOM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.COLOR_BAR_ANNOTATE_LEFT">
+<code class="descname">COLOR_BAR_ANNOTATE_LEFT</code><em class="property"> = -1</em><a class="headerlink" href="#geosoft.gxpy.group.COLOR_BAR_ANNOTATE_LEFT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.COLOR_BAR_ANNOTATE_RIGHT">
+<code class="descname">COLOR_BAR_ANNOTATE_RIGHT</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.group.COLOR_BAR_ANNOTATE_RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.COLOR_BAR_ANNOTATE_TOP">
+<code class="descname">COLOR_BAR_ANNOTATE_TOP</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.group.COLOR_BAR_ANNOTATE_TOP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.COLOR_BAR_BOTTOM">
+<code class="descname">COLOR_BAR_BOTTOM</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.group.COLOR_BAR_BOTTOM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.COLOR_BAR_LEFT">
+<code class="descname">COLOR_BAR_LEFT</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.group.COLOR_BAR_LEFT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.COLOR_BAR_RIGHT">
+<code class="descname">COLOR_BAR_RIGHT</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.group.COLOR_BAR_RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.COLOR_BAR_TOP">
+<code class="descname">COLOR_BAR_TOP</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.group.COLOR_BAR_TOP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.CYLINDER_CLOSE_ALL">
+<code class="descname">CYLINDER_CLOSE_ALL</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.group.CYLINDER_CLOSE_ALL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.CYLINDER_CLOSE_END">
+<code class="descname">CYLINDER_CLOSE_END</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.group.CYLINDER_CLOSE_END" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.CYLINDER_CLOSE_START">
+<code class="descname">CYLINDER_CLOSE_START</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.group.CYLINDER_CLOSE_START" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.CYLINDER_OPEN">
+<code class="descname">CYLINDER_OPEN</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.group.CYLINDER_OPEN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_BLACK">
+<code class="descname">C_BLACK</code><em class="property"> = 67108863</em><a class="headerlink" href="#geosoft.gxpy.group.C_BLACK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_BLUE">
+<code class="descname">C_BLUE</code><em class="property"> = 50266112</em><a class="headerlink" href="#geosoft.gxpy.group.C_BLUE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_CYAN">
+<code class="descname">C_CYAN</code><em class="property"> = 50331903</em><a class="headerlink" href="#geosoft.gxpy.group.C_CYAN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_GREEN">
+<code class="descname">C_GREEN</code><em class="property"> = 33619712</em><a class="headerlink" href="#geosoft.gxpy.group.C_GREEN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_GREY">
+<code class="descname">C_GREY</code><em class="property"> = 41975936</em><a class="headerlink" href="#geosoft.gxpy.group.C_GREY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_GREY10">
+<code class="descname">C_GREY10</code><em class="property"> = 51910680</em><a class="headerlink" href="#geosoft.gxpy.group.C_GREY10" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_GREY25">
+<code class="descname">C_GREY25</code><em class="property"> = 54542400</em><a class="headerlink" href="#geosoft.gxpy.group.C_GREY25" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_GREY50">
+<code class="descname">C_GREY50</code><em class="property"> = 41975936</em><a class="headerlink" href="#geosoft.gxpy.group.C_GREY50" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_LT_BLUE">
+<code class="descname">C_LT_BLUE</code><em class="property"> = 50348096</em><a class="headerlink" href="#geosoft.gxpy.group.C_LT_BLUE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_LT_CYAN">
+<code class="descname">C_LT_CYAN</code><em class="property"> = 50331712</em><a class="headerlink" href="#geosoft.gxpy.group.C_LT_CYAN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_LT_GREEN">
+<code class="descname">C_LT_GREEN</code><em class="property"> = 54526016</em><a class="headerlink" href="#geosoft.gxpy.group.C_LT_GREEN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_LT_GREY">
+<code class="descname">C_LT_GREY</code><em class="property"> = 54542400</em><a class="headerlink" href="#geosoft.gxpy.group.C_LT_GREY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_LT_MAGENTA">
+<code class="descname">C_LT_MAGENTA</code><em class="property"> = 50348032</em><a class="headerlink" href="#geosoft.gxpy.group.C_LT_MAGENTA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_LT_RED">
+<code class="descname">C_LT_RED</code><em class="property"> = 54542336</em><a class="headerlink" href="#geosoft.gxpy.group.C_LT_RED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_LT_YELLOW">
+<code class="descname">C_LT_YELLOW</code><em class="property"> = 54525952</em><a class="headerlink" href="#geosoft.gxpy.group.C_LT_YELLOW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_MAGENTA">
+<code class="descname">C_MAGENTA</code><em class="property"> = 50396928</em><a class="headerlink" href="#geosoft.gxpy.group.C_MAGENTA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_RED">
+<code class="descname">C_RED</code><em class="property"> = 33554687</em><a class="headerlink" href="#geosoft.gxpy.group.C_RED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_TRANSPARENT">
+<code class="descname">C_TRANSPARENT</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.group.C_TRANSPARENT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_WHITE">
+<code class="descname">C_WHITE</code><em class="property"> = 50331648</em><a class="headerlink" href="#geosoft.gxpy.group.C_WHITE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.C_YELLOW">
+<code class="descname">C_YELLOW</code><em class="property"> = 67043328</em><a class="headerlink" href="#geosoft.gxpy.group.C_YELLOW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="class">
 <dt id="geosoft.gxpy.group.Color">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.group.</code><code class="descname">Color</code><span class="sig-paren">(</span><em>color</em>, <em>model=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Color</code><span class="sig-paren">(</span><em>color</em>, <em>model=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Colours, which are stored as a 24-bit color integer.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -292,24 +455,35 @@ tuple (r, g, b), (c, m, y) or (h, s, v), each item defined in the range 0 to 255
 
 <dl class="class">
 <dt id="geosoft.gxpy.group.Color_map">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.group.</code><code class="descname">Color_map</code><span class="sig-paren">(</span><em>cmap=None</em>, <em>title=None</em>, <em>units=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color_map" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Color_map</code><span class="sig-paren">(</span><em>cmap=None</em>, <em>title=None</em>, <em>unit_of_measure=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Color map for establishing data color mapping for things like aggregates and color symbols.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cmap</strong> &#8211; <p>the name of a Geosoft color map file (<cite>.tbl, .zon, .itr, .agg</cite>) from which to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cmap</strong> &#8211; <p>the name of a Geosoft color map file (<code class="xref py py-obj docutils literal"><span class="pre">tbl,</span> <span class="pre">.zon,</span> <span class="pre">.itr,</span> <span class="pre">.agg</span></code>) from which to
 establish the initial colors.  If the file does not have zone values,
-which is the case for a <cite>.tbl</cite> file, the Color_map will be uninitialized and you
-can use one of the <cite>set</cite> methods to establish zone values.</p>
-<p>You can also provide an <cite>int_value</cite>, which will create an uninitialized map of the the
+which is the case for a <code class="xref py py-obj docutils literal"><span class="pre">tbl</span></code> file, the Color_map will be uninitialized and you
+can use one of the <code class="xref py py-obj docutils literal"><span class="pre">set</span></code> methods to establish zone values.</p>
+<p>You can also provide an <code class="xref py py-obj docutils literal"><span class="pre">int</span></code>, which will create an uninitialized map of the the
 specified length, or a <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXITR</span></code></a> instance.</p>
 <p>If not specified the Geosoft default color table is used.</p>
+</li>
+<li><strong>title</strong> &#8211; Color map title which is displayed in the color map legend.</li>
+<li><strong>unit_of_measure</strong> &#8211; Unit of measure to be displayed in a color map legend.</li>
+</ul>
 </td>
 </tr>
 </tbody>
 </table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.3: </span>changed <code class="xref py py-obj docutils literal"><span class="pre">units</span></code> to <a class="reference internal" href="#geosoft.gxpy.group.Color_map.unit_of_measure" title="geosoft.gxpy.group.Color_map.unit_of_measure"><code class="xref py py-obj docutils literal"><span class="pre">unit_of_measure</span></code></a> for consistency across gxpy</p>
+</div>
 <dl class="attribute">
 <dt id="geosoft.gxpy.group.Color_map.brightness">
 <code class="descname">brightness</code><a class="headerlink" href="#geosoft.gxpy.group.Color_map.brightness" title="Permalink to this definition">¶</a></dt>
@@ -377,19 +551,26 @@ the [n-2] level are assigned the [n-1] color.</p>
 <dl class="method">
 <dt id="geosoft.gxpy.group.Color_map.save_file">
 <code class="descname">save_file</code><span class="sig-paren">(</span><em>file_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color_map.save_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save to a Geosoft file, <cite>.tbl</cite>, <cite>.itr</cite> or <cite>.zon</cite>.  If the file_name does not have an
-extension and the color_map has not been initialized a <cite>.tbl</cite> file is created (colors only), 
-otherwise a <cite>.itr</cite> is created, which contains both zone boundaries and colors.</p>
+<dd><p>Save to a Geosoft file, <code class="xref py py-obj docutils literal"><span class="pre">tbl</span></code>, <code class="xref py py-obj docutils literal"><span class="pre">itr</span></code> or <code class="xref py py-obj docutils literal"><span class="pre">zon</span></code>.  If the file_name does not have an
+extension and the color_map has not been initialized a <code class="xref py py-obj docutils literal"><span class="pre">tbl</span></code> file is created (colors only), 
+otherwise a <code class="xref py py-obj docutils literal"><span class="pre">itr</span></code> is created, which contains both zone boundaries and colors.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_name</strong> &#8211; file name, if None a temporary file is created</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
-</tr>
 </tbody>
 </table>
+<p>This is useful for gxapi methods that require a colour map to be loaded from a file. Say you
+cave a Color_map instance named <code class="xref py py-obj docutils literal"><span class="pre">cmap</span></code> and you want to create a GXCSYMB instance, which
+requires a colur map file:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">cs</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXCSYMB</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">cmap</span><span class="o">.</span><span class="n">save_file</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -498,10 +679,10 @@ None if no title</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="geosoft.gxpy.group.Color_map.units">
-<code class="descname">units</code><a class="headerlink" href="#geosoft.gxpy.group.Color_map.units" title="Permalink to this definition">¶</a></dt>
-<dd><p>Data units, expected to be the units of the data from which the color bar was made or is intended. 
-None if no units</p>
+<dt id="geosoft.gxpy.group.Color_map.unit_of_measure">
+<code class="descname">unit_of_measure</code><a class="headerlink" href="#geosoft.gxpy.group.Color_map.unit_of_measure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data unit of measure for the data from which the color bar was made or is intended.
+None if the unit of measure is unknown.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
@@ -511,26 +692,64 @@ None if no units</p>
 
 <dl class="class">
 <dt id="geosoft.gxpy.group.Color_symbols_group">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.group.</code><code class="descname">Color_symbols_group</code><span class="sig-paren">(</span><em>view</em>, <em>group_name</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color_symbols_group" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Color_symbols_group</code><span class="sig-paren">(</span><em>view</em>, <em>group_name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color_symbols_group" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#geosoft.gxpy.group.Group" title="geosoft.gxpy.group.Group"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.group.Group</span></code></a></p>
-<p>Create a color symbols group with color mapping.</p>
+<p>Data represented as colored symbols based on a <a class="reference internal" href="#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-class docutils literal"><span class="pre">Color_map</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Constructors:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.group.Color_symbols_group.new" title="geosoft.gxpy.group.Color_symbols_group.new"><code class="xref py py-func docutils literal"><span class="pre">new()</span></code></a></td>
+<td>create a new symbol group in a view</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.group.Color_symbols_group.open" title="geosoft.gxpy.group.Color_symbols_group.open"><code class="xref py py-func docutils literal"><span class="pre">open()</span></code></a></td>
+<td>open an existing symbol group in a view</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="geosoft.gxpy.group.Color_symbols_group.color_map">
+<code class="descname">color_map</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color_symbols_group.color_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <a class="reference internal" href="#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.group.Color_map</span></code></a> of a color symbol group.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxpy.group.Color_symbols_group.new">
+<em class="property">classmethod </em><code class="descname">new</code><span class="sig-paren">(</span><em>view</em>, <em>name</em>, <em>data</em>, <em>color_map</em>, <em>symbol_def=None</em>, <em>symbol=20</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color_symbols_group.new" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new color symbols group with color mapping.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>view</strong> &#8211; the view in which to place the group</li>
-<li><strong>name</strong> &#8211; group name</li>
-<li><strong>data</strong> &#8211; iterable that yields <cite>((x, y), data)</cite>, or <cite>((x, y, z), data, ...)</cite>.  Only <cite>((x,y), data)</cite>
-is used.</li>
+<li><strong>group_name</strong> &#8211; group name, which can optionally be decorated with the unit_of_measure (eg &#8220;Cu.ppm&#8221;)</li>
+<li><strong>data</strong> &#8211; iterable that yields <code class="xref py py-obj docutils literal"><span class="pre">((x,</span> <span class="pre">y),</span> <span class="pre">data)</span></code>, or <code class="xref py py-obj docutils literal"><span class="pre">((x,</span> <span class="pre">y,</span> <span class="pre">z),</span> <span class="pre">data,</span> <span class="pre">...)</span></code>.  Only the
+first <code class="xref py py-obj docutils literal"><span class="pre">data</span></code> value is used.</li>
 <li><strong>color_map</strong> &#8211; symbol fill color <a class="reference internal" href="#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-class docutils literal"><span class="pre">Color_map</span></code></a>.
-Symbols are filled with the color lookup using data.</li>
+Symbols are filled with the color lookup using <code class="xref py py-obj docutils literal"><span class="pre">data</span></code>.</li>
 <li><strong>symbol_def</strong> &#8211; <a class="reference internal" href="#geosoft.gxpy.group.Text_def" title="geosoft.gxpy.group.Text_def"><code class="xref py py-class docutils literal"><span class="pre">Text_def</span></code></a> defines the symbol font to use, normally
-<cite>symbols.gfn</cite> is expected, and if used the symbols defined by the <cite>SYMBOL</cite> manifest
+<code class="xref py py-obj docutils literal"><span class="pre">symbols.gfn</span></code> is expected, and if used the symbols defined by the <code class="xref py py-obj docutils literal"><span class="pre">SYMBOL</span></code> manifest
 are valid.  For other fonts you will get the symbol requested.  The default is
-<cite>Text_def(font=&#8217;dymbols.gfn&#8217;, color=&#8217;k&#8217;, weight=FONT_WEIGHT_ULTRALIGHT)</cite></li>
-<li><strong>symbol</strong> &#8211; the symbol to plot, normally one of <cite>SYMBOL</cite>.</li>
+<code class="xref py py-obj docutils literal"><span class="pre">Text_def(font='symbols.gfn',</span> <span class="pre">color='k',</span> <span class="pre">weight=FONT_WEIGHT_ULTRALIGHT)</span></code></li>
+<li><strong>symbol</strong> &#8211; the symbol to plot, normally one of <code class="xref py py-obj docutils literal"><span class="pre">SYMBOL</span></code>.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxpy.group.Color_symbols_group" title="geosoft.gxpy.group.Color_symbols_group"><code class="xref py py-class docutils literal"><span class="pre">Color_symbols_group</span></code></a> instance</p>
 </td>
 </tr>
 </tbody>
@@ -538,53 +757,43 @@ are valid.  For other fonts you will get the symbol requested.  The default is
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
-<dl class="classmethod">
-<dt id="geosoft.gxpy.group.Color_symbols_group.new">
-<em class="property">classmethod </em><code class="descname">new</code><span class="sig-paren">(</span><em>view</em>, <em>name</em>, <em>data</em>, <em>color_map</em>, <em>symbol_def=None</em>, <em>symbol=20</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color_symbols_group.new" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+</dd></dl>
 
 <dl class="classmethod">
 <dt id="geosoft.gxpy.group.Color_symbols_group.open">
 <em class="property">classmethod </em><code class="descname">open</code><span class="sig-paren">(</span><em>view</em>, <em>group_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Color_symbols_group.open" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Open an existing color symbols group.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>view</strong> &#8211; view that contains the group</li>
+<li><strong>group_name</strong> &#8211; name of the group, which must be a color symbols group</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxpy.group.Color_symbols_group" title="geosoft.gxpy.group.Color_symbols_group"><code class="xref py py-class docutils literal"><span class="pre">Color_symbols_group</span></code></a> instance</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="geosoft.gxpy.group.Draw">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.group.</code><code class="descname">Draw</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Draw</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#geosoft.gxpy.group.Group" title="geosoft.gxpy.group.Group"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.group.Group</span></code></a></p>
 <p>Create (start) a drawing group for 2D drawing elements.</p>
-<p>On a 3D view, 2D drawing elements
-are placed on the default drawing plane.  Drawing groups will lock the view such that only one
-drawing group can be instantiated at a time.</p>
-<p>Use <cite>with Draw() as group:</cite> to ensure correct unlocking when complete.</p>
-<p>Inherits from the <cite>Group</cite> base class.</p>
-<dl class="method">
-<dt id="geosoft.gxpy.group.Draw.color">
-<code class="descname">color</code><span class="sig-paren">(</span><em>cstr</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw.color" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a color from a color string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cstr</strong> &#8211; color string (see below)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">color</td>
-</tr>
-</tbody>
-</table>
-<p>Colour strings may be &#8220;R&#8221;,&#8221;G&#8221;,&#8221;B&#8221;,&#8221;C&#8221;,&#8221;M&#8221;,&#8221;Y&#8221;,
-&#8220;H&#8221;,&#8221;S&#8221;,&#8221;V&#8221;, or &#8220;K&#8221; or a combination of these
-characters, each followed by up to three digits
-specifying a number between 0 and 255.
-An empty string will produce C_ANY_NONE.</p>
-<p>You must stay in the same color model, RGB, CMY,
-HSV or K.</p>
-<p>For example &#8220;R&#8221;, &#8220;R127G22&#8221;, &#8220;H255S127V32&#8221;</p>
-<p>Characters are not case sensitive.</p>
-</dd></dl>
-
+<p>On a 3D view, 2D drawing elements are placed on the default drawing plane.
+Drawing groups will lock the view such that only one drawing group can be instantiated at a time.</p>
+<p>Use <code class="xref py py-obj docutils literal"><span class="pre">with</span> <span class="pre">Draw()</span> <span class="pre">as</span> <span class="pre">group:</span></code> to ensure correct unlocking when complete.</p>
+<p>Inherits from the <a class="reference internal" href="#geosoft.gxpy.group.Group" title="geosoft.gxpy.group.Group"><code class="xref py py-obj docutils literal"><span class="pre">Group</span></code></a> base class.</p>
 <dl class="method">
 <dt id="geosoft.gxpy.group.Draw.contour">
 <code class="descname">contour</code><span class="sig-paren">(</span><em>grid_file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw.contour" title="Permalink to this definition">¶</a></dt>
@@ -619,11 +828,11 @@ coordinate system to have automatic reprojection occur during drawing.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>style</strong> &#8211; <cite>GRATICULE_LINE</cite>, <cite>GRATICULE_CROSS</cite> or <cite>GRATICULE_DOT</cite></li>
+<li><strong>style</strong> &#8211; <a class="reference internal" href="#geosoft.gxpy.group.GRATICULE_LINE" title="geosoft.gxpy.group.GRATICULE_LINE"><code class="xref py py-obj docutils literal"><span class="pre">GRATICULE_LINE</span></code></a>, <a class="reference internal" href="#geosoft.gxpy.group.GRATICULE_CROSS" title="geosoft.gxpy.group.GRATICULE_CROSS"><code class="xref py py-obj docutils literal"><span class="pre">GRATICULE_CROSS</span></code></a> or <a class="reference internal" href="#geosoft.gxpy.group.GRATICULE_DOT" title="geosoft.gxpy.group.GRATICULE_DOT"><code class="xref py py-obj docutils literal"><span class="pre">GRATICULE_DOT</span></code></a></li>
 <li><strong>dx</strong> &#8211; vertical line separation</li>
 <li><strong>dy</strong> &#8211; horizontal line separation</li>
-<li><strong>ddh</strong> &#8211; horizontal cross size for <cite>GRATICULE_CROSS</cite></li>
-<li><strong>ddv</strong> &#8211; vertical cross size for <cite>GRATICULE_CROSS</cite></li>
+<li><strong>ddh</strong> &#8211; horizontal cross size for <a class="reference internal" href="#geosoft.gxpy.group.GRATICULE_CROSS" title="geosoft.gxpy.group.GRATICULE_CROSS"><code class="xref py py-obj docutils literal"><span class="pre">GRATICULE_CROSS</span></code></a></li>
+<li><strong>ddv</strong> &#8211; vertical cross size for <a class="reference internal" href="#geosoft.gxpy.group.GRATICULE_CROSS" title="geosoft.gxpy.group.GRATICULE_CROSS"><code class="xref py py-obj docutils literal"><span class="pre">GRATICULE_CROSS</span></code></a></li>
 </ul>
 </td>
 </tr>
@@ -655,8 +864,8 @@ coordinate system to have automatic reprojection occur during drawing.</p>
 <dt id="geosoft.gxpy.group.Draw.new_pen">
 <code class="descname">new_pen</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw.new_pen" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a pen that inherits default from the current view pen.  Arguments are the same
-as the <cite>Pen</cite> constructor.  This using this ensures that default sizing of view unit-based
-dimensions (such as <cite>line_thick</cite>) are not lost when new pens are created.</p>
+as the <a class="reference internal" href="#geosoft.gxpy.group.Pen" title="geosoft.gxpy.group.Pen"><code class="xref py py-obj docutils literal"><span class="pre">Pen</span></code></a> constructor.  This using this ensures that default sizing of view unit-based
+dimensions (such as <code class="xref py py-obj docutils literal"><span class="pre">line_thick</span></code>) are not lost when new pens are created.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -679,6 +888,23 @@ dimensions (such as <cite>line_thick</cite>) are not lost when new pens are crea
 </dd></dl>
 
 <dl class="method">
+<dt id="geosoft.gxpy.group.Draw.point">
+<code class="descname">point</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw.point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p</strong> &#8211; point location as <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.geometry.Point</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
 <dt id="geosoft.gxpy.group.Draw.polygon">
 <code class="descname">polygon</code><span class="sig-paren">(</span><em>pp</em>, <em>close=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw.polygon" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw a polygon on the current plane.</p>
@@ -686,7 +912,7 @@ dimensions (such as <cite>line_thick</cite>) are not lost when new pens are crea
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pp</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.geometry.PPoint</span></code></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pp</strong> &#8211; <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.geometry.PPoint</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -709,7 +935,8 @@ appear continuous.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>pp</strong> &#8211; <code class="xref py py-class docutils literal"><span class="pre">gxpy.geometry.PPoint</span></code></li>
+<li><strong>pp</strong> &#8211; <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.geometry.PPoint</span></code></a> instance or something that can be constructed, or a
+pair of <a class="reference internal" href="geosoft.gxpy.vv.html#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.vv.GXvv</span></code></a> (xvv, yvv)</li>
 <li><strong>close</strong> &#8211; if True, draw a polygon, default is a polyline</li>
 </ul>
 </td>
@@ -723,6 +950,24 @@ appear continuous.</p>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.group.Draw.polypoint">
+<code class="descname">polypoint</code><span class="sig-paren">(</span><em>pp</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw.polypoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw many points.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pp</strong> &#8211; point location as <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.geometry.PPoint</span></code></a>, or a pair of VVs (vvx, vvy), or
+something that <code class="xref py py-obj docutils literal"><span class="pre">gxpy.geometry.PPoint</span></code> can construct into a PP.</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
@@ -746,9 +991,9 @@ appear continuous.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>text</strong> &#8211; text string.  Use line-feed characters for multi-line text.</li>
-<li><strong>location</strong> &#8211; (x, y) or a <cite>gxpy.geomerty.Point</cite> location</li>
-<li><strong>reference</strong> &#8211; <p>reference point relative to the clip limits of the view to
-which reference location.  The points are:</p>
+<li><strong>location</strong> &#8211; (x, y) or a <code class="xref py py-obj docutils literal"><span class="pre">gxpy.geomerty.Point</span></code> location</li>
+<li><strong>reference</strong> &#8211; <p>Text justification point relative text outline box.
+The points are:</p>
 <blockquote>
 <div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span>   <span class="n">top</span> <span class="n">left</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">right</span>
 <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span>   <span class="n">middle</span> <span class="n">left</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">right</span>
@@ -780,7 +1025,7 @@ which reference location.  The points are:</p>
 
 <dl class="class">
 <dt id="geosoft.gxpy.group.Draw_3d">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.group.</code><code class="descname">Draw_3d</code><span class="sig-paren">(</span><em>view</em>, <em>*args</em>, <em>render_backfaces=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw_3d" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Draw_3d</code><span class="sig-paren">(</span><em>view</em>, <em>*args</em>, <em>render_backfaces=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw_3d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#geosoft.gxpy.group.Draw" title="geosoft.gxpy.group.Draw"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.group.Draw</span></code></a></p>
 <p>Create a 3D drawing group within a 3D view.</p>
 <p>3D drawing groups accept 3D drawing objects that can be created using methods of this class.
@@ -872,28 +1117,28 @@ within the 3D view.</p>
 <dl class="method">
 <dt id="geosoft.gxpy.group.Draw_3d.polydata_3d">
 <code class="descname">polydata_3d</code><span class="sig-paren">(</span><em>data</em>, <em>render_info_func=None</em>, <em>passback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Draw_3d.polydata_3d" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create 3D objects rendered by the data.</p>
+<dd><p>Create 3D objects rendered using data attributes.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>view</strong> &#8211; a 3D view in which to place the group</li>
-<li><strong>data</strong> &#8211; iterable that yields items passed to your <cite>render_info_func</cite> callback</li>
-<li><strong>render_info_func</strong> &#8211; <p>a callback that given <cite>(item, passback)</cite> returns the rendering <cite>(symbol_type,
-geometry, color_integer, attibute)</cite>:</p>
+<li><strong>data</strong> &#8211; iterable that yields items passed to your <code class="xref py py-obj docutils literal"><span class="pre">render_info_func</span></code> callback</li>
+<li><strong>render_info_func</strong> &#8211; <p>a callback that given <code class="xref py py-obj docutils literal"><span class="pre">(item,</span> <span class="pre">passback)</span></code> returns the rendering <code class="xref py py-obj docutils literal"><span class="pre">(symbol_type,</span>
+<span class="pre">geometry,</span> <span class="pre">color_integer,</span> <span class="pre">attibute)</span></code>:</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="35%" />
-<col width="15%" />
-<col width="29%" />
-<col width="21%" />
+<col width="36%" />
+<col width="16%" />
+<col width="30%" />
+<col width="18%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Symbol</th>
 <th class="head">Geometry</th>
 <th class="head">Color</th>
-<th class="head">Attributes</th>
+<th class="head">Attribute</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -915,7 +1160,7 @@ geometry, color_integer, attibute)</cite>:</p>
 <tr class="row-odd"><td>SYMBOL_3D_CONE</td>
 <td>Point2</td>
 <td>Color.int_value</td>
-<td>base_radius</td>
+<td>radius</td>
 </tr>
 </tbody>
 </table>
@@ -955,7 +1200,7 @@ geometry, color_integer, attibute)</cite>:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>points</strong> &#8211; verticies of the polyline, <code class="xref py py-class docutils literal"><span class="pre">gxpy.geometry.PPoint</span></code> instance, or array-like [x,y,z]</li>
+<li><strong>points</strong> &#8211; verticies of the polyline, <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.geometry.PPoint</span></code></a> instance, or array-like [x,y,z]</li>
 <li><strong>style</strong> &#8211; LINE3D_STYLE_LINE, LINE3D_STYLE_TUBE or LINE3D_STYLE_TUBE_JOINED.
 Lines are single-pixel-wide.  Tubes have width defined by the pen line thickness.
 Joined tubes have a joints and rounded ends.</li>
@@ -978,7 +1223,7 @@ Joined tubes have a joints and rounded ends.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>points</strong> &#8211; points to draw, <code class="xref py py-class docutils literal"><span class="pre">gxpy.geometry.PPoint</span></code> instance, or array-like [x,y,z]</li>
+<li><strong>points</strong> &#8211; points to draw, <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.geometry.PPoint</span></code></a> instance, or array-like [x,y,z]</li>
 <li><strong>style</strong> &#8211; POINT_STYLE_DOT or POINT_STYLE_SPHERE.  Dots are fast and intended for point clouds.
 The current pen thickness is used as the sphere sizes.</li>
 </ul>
@@ -1027,9 +1272,89 @@ be turned on.   Once on it cannot be turned off for a view.</p>
 
 </dd></dl>
 
+<dl class="data">
+<dt id="geosoft.gxpy.group.FONT_WEIGHT_BOLD">
+<code class="descname">FONT_WEIGHT_BOLD</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxpy.group.FONT_WEIGHT_BOLD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.FONT_WEIGHT_LIGHT">
+<code class="descname">FONT_WEIGHT_LIGHT</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.group.FONT_WEIGHT_LIGHT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.FONT_WEIGHT_MEDIUM">
+<code class="descname">FONT_WEIGHT_MEDIUM</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.group.FONT_WEIGHT_MEDIUM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.FONT_WEIGHT_ULTRALIGHT">
+<code class="descname">FONT_WEIGHT_ULTRALIGHT</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.group.FONT_WEIGHT_ULTRALIGHT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.FONT_WEIGHT_XBOLD">
+<code class="descname">FONT_WEIGHT_XBOLD</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxpy.group.FONT_WEIGHT_XBOLD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.FONT_WEIGHT_XXBOLD">
+<code class="descname">FONT_WEIGHT_XXBOLD</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxpy.group.FONT_WEIGHT_XXBOLD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.GRATICULE_CROSS">
+<code class="descname">GRATICULE_CROSS</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.group.GRATICULE_CROSS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.GRATICULE_DOT">
+<code class="descname">GRATICULE_DOT</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.group.GRATICULE_DOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.GRATICULE_LINE">
+<code class="descname">GRATICULE_LINE</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.group.GRATICULE_LINE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.GROUP_AGG">
+<code class="descname">GROUP_AGG</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.group.GROUP_AGG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.GROUP_ALL">
+<code class="descname">GROUP_ALL</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.group.GROUP_ALL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.GROUP_CSYMB">
+<code class="descname">GROUP_CSYMB</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxpy.group.GROUP_CSYMB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.GROUP_MARKED">
+<code class="descname">GROUP_MARKED</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.group.GROUP_MARKED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.GROUP_NAME_SIZE">
+<code class="descname">GROUP_NAME_SIZE</code><em class="property"> = 2080</em><a class="headerlink" href="#geosoft.gxpy.group.GROUP_NAME_SIZE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.GROUP_VISIBLE">
+<code class="descname">GROUP_VISIBLE</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.group.GROUP_VISIBLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.GROUP_VOXD">
+<code class="descname">GROUP_VOXD</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxpy.group.GROUP_VOXD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="class">
 <dt id="geosoft.gxpy.group.Group">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.group.</code><code class="descname">Group</code><span class="sig-paren">(</span><em>view</em>, <em>name='_'</em>, <em>plane=None</em>, <em>view_lock=False</em>, <em>mode=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Group" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Group</code><span class="sig-paren">(</span><em>view</em>, <em>name='_'</em>, <em>plane=None</em>, <em>view_lock=False</em>, <em>mode=0</em>, <em>unit_of_measure=''</em>, <em>group_3d=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Group" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Geosoft group class.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1046,13 +1371,20 @@ be turned on.   Once on it cannot be turned off for a view.</p>
 </tr>
 <tr class="field-odd field"><th class="field-name">plane:</th><td class="field-body">plane number, or plane name if drawing to a 3D view.  Default is plane number 0.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">view_lock:</th><td class="field-body">True to lock the view for a single-stream drawwing group.  Default is False.</td>
+<tr class="field-even field"><th class="field-name">view_lock:</th><td class="field-body">True to lock the view for a single-stream drawing group.  Default is False.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">unit_of_measure:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">unit of measurement for data in this group, default is &#8216;&#8217;</td>
+</tr>
+<tr class="field-even field"><th class="field-name">group_3d:</th><td class="field-body">True for a 3D drawing group, default assumes a 2D drawing group to a plane.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">mode:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxpy.group.APPEND" title="geosoft.gxpy.group.APPEND"><code class="xref py py-obj docutils literal"><span class="pre">APPEND</span></code></a> (default), <a class="reference internal" href="#geosoft.gxpy.group.NEW" title="geosoft.gxpy.group.NEW"><code class="xref py py-obj docutils literal"><span class="pre">NEW</span></code></a> or <a class="reference internal" href="#geosoft.gxpy.group.READ_ONLY" title="geosoft.gxpy.group.READ_ONLY"><code class="xref py py-obj docutils literal"><span class="pre">READ_ONLY</span></code></a></td>
 </tr>
 </tbody>
 </table>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Properties:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<tr class="field-even field"><th class="field-name">Properties:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1060,13 +1392,18 @@ be turned on.   Once on it cannot be turned off for a view.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">name:</th><td class="field-body">the name of the group</td>
 </tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">unit_of_measure:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">the unit of measurement (uom) for this data in this group</td>
+</tr>
+<tr class="field-even field"><th class="field-name">name_uom:</th><td class="field-body">uom decorated group name as it appears in a view</td>
+</tr>
 <tr class="field-odd field"><th class="field-name">extent:</th><td class="field-body">extent of the group in view units</td>
 </tr>
 <tr class="field-even field"><th class="field-name">extent_map_cm:</th><td class="field-body">extent of the group in map cm</td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">drawing_coordinate_system:</th></tr>
 <tr class="field-odd field"><td>&nbsp;</td><td class="field-body">the coordinate system of drawing coordinates. Setting to None will reset drawing
-coordinates to the view cs.  If <cite>drawing_coordinate_system</cite> is set to some other cs the drawing
+coordinates to the view cs.  If <code class="xref py py-obj docutils literal"><span class="pre">drawing_coordinate_system</span></code> is set to some other cs the drawing
 coordinates will be transformed into the view cs.</td>
 </tr>
 </tbody>
@@ -1078,6 +1415,9 @@ coordinates will be transformed into the view cs.</td>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.3: </span>added support for <a class="reference internal" href="#geosoft.gxpy.group.Group.unit_of_measure" title="geosoft.gxpy.group.Group.unit_of_measure"><code class="xref py py-obj docutils literal"><span class="pre">unit_of_measure</span></code></a></p>
+</div>
 <dl class="method">
 <dt id="geosoft.gxpy.group.Group.close">
 <code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Group.close" title="Permalink to this definition">¶</a></dt>
@@ -1085,25 +1425,50 @@ coordinates will be transformed into the view cs.</td>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="geosoft.gxpy.group.Group.drawing_plane">
+<code class="descname">drawing_plane</code><a class="headerlink" href="#geosoft.gxpy.group.Group.drawing_plane" title="Permalink to this definition">¶</a></dt>
+<dd><p>drawing plane of this group, None for a group in a 2D view.</p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="geosoft.gxpy.group.Group.extent">
 <code class="descname">extent</code><a class="headerlink" href="#geosoft.gxpy.group.Group.extent" title="Permalink to this definition">¶</a></dt>
-<dd><p>group extent as (xmin, ymion, xmax, ymax)</p>
+<dd><p>group extent as (xmin, ymin, xmax, ymax) in view units</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.group.Group.extent_map_cm">
 <code class="descname">extent_map_cm</code><span class="sig-paren">(</span><em>extent=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Group.extent_map_cm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a view extent in map cm.</p>
+<dd><p>Return an extent in map cm.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extent</strong> &#8211; tuple returned an extent property.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extent</strong> &#8211; an extent in view units as a tuple (xmin, ymin, xmax, ymax), Default is the group extent.</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.group.Group.guid">
+<code class="descname">guid</code><a class="headerlink" href="#geosoft.gxpy.group.Group.guid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The group GUID.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.group.Group.gx_metadata">
+<code class="descname">gx_metadata</code><a class="headerlink" href="#geosoft.gxpy.group.Group.gx_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>The group Geosoft metadata as a Geosoft <a class="reference internal" href="geosoft.gxpy.metadata.html#geosoft.gxpy.metadata.Metadata" title="geosoft.gxpy.metadata.Metadata"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.metadata.Metadata</span></code></a> instance.
+Can be set.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
@@ -1116,7 +1481,7 @@ coordinates will be transformed into the view cs.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>location</strong> &#8211; location (x, y) or a <cite>gxpy.geometry.Point</cite></li>
+<li><strong>location</strong> &#8211; location (x, y) or a <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.geometry.Point</span></code></a></li>
 <li><strong>reference</strong> &#8211; <p>reference point relative to the clip limits of the view to
 which reference location.  The points are:</p>
 <blockquote>
@@ -1150,6 +1515,16 @@ which reference location.  The points are:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="geosoft.gxpy.group.Group.unit_of_measure">
+<code class="descname">unit_of_measure</code><a class="headerlink" href="#geosoft.gxpy.group.Group.unit_of_measure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unit of measure for scalar data contained in this group. This is only relevant
+for groups that contain scalar data, such as a Colour_symbols_group. For
+the spatial unit_of_measure use <code class="xref py py-attr docutils literal"><span class="pre">drawing_coordinate_system.unit_of_measure</span></code></p>
+<p>Can be set.</p>
+<p>..versionadded:: 9.3</p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="geosoft.gxpy.group.Group.view">
 <code class="descname">view</code><a class="headerlink" href="#geosoft.gxpy.group.Group.view" title="Permalink to this definition">¶</a></dt>
 <dd><p>view that contains this group.</p>
@@ -1165,7 +1540,7 @@ which reference location.  The points are:</p>
 
 <dl class="exception">
 <dt id="geosoft.gxpy.group.GroupException">
-<em class="property">exception </em><code class="descclassname">geosoft.gxpy.group.</code><code class="descname">GroupException</code><a class="headerlink" href="#geosoft.gxpy.group.GroupException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descname">GroupException</code><a class="headerlink" href="#geosoft.gxpy.group.GroupException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
 <p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.group" title="geosoft.gxpy.group"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.group</span></code></a>.</p>
 <div class="versionadded">
@@ -1173,15 +1548,90 @@ which reference location.  The points are:</p>
 </div>
 </dd></dl>
 
+<dl class="data">
+<dt id="geosoft.gxpy.group.LINE3D_STYLE_LINE">
+<code class="descname">LINE3D_STYLE_LINE</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.group.LINE3D_STYLE_LINE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.LINE3D_STYLE_TUBE">
+<code class="descname">LINE3D_STYLE_TUBE</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.group.LINE3D_STYLE_TUBE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.LINE3D_STYLE_TUBE_JOINED">
+<code class="descname">LINE3D_STYLE_TUBE_JOINED</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.group.LINE3D_STYLE_TUBE_JOINED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.LINE_STYLE_DOTTED">
+<code class="descname">LINE_STYLE_DOTTED</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.group.LINE_STYLE_DOTTED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.LINE_STYLE_LONG">
+<code class="descname">LINE_STYLE_LONG</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.group.LINE_STYLE_LONG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.LINE_STYLE_LONG_DOT_LONG">
+<code class="descname">LINE_STYLE_LONG_DOT_LONG</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxpy.group.LINE_STYLE_LONG_DOT_LONG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.LINE_STYLE_LONG_SHORT_LONG">
+<code class="descname">LINE_STYLE_LONG_SHORT_LONG</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxpy.group.LINE_STYLE_LONG_SHORT_LONG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.LINE_STYLE_SHORT">
+<code class="descname">LINE_STYLE_SHORT</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxpy.group.LINE_STYLE_SHORT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.LINE_STYLE_SOLID">
+<code class="descname">LINE_STYLE_SOLID</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.group.LINE_STYLE_SOLID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.LOCATE_CENTER">
+<code class="descname">LOCATE_CENTER</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.group.LOCATE_CENTER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.LOCATE_FIT">
+<code class="descname">LOCATE_FIT</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.group.LOCATE_FIT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.LOCATE_FIT_KEEP_ASPECT">
+<code class="descname">LOCATE_FIT_KEEP_ASPECT</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.group.LOCATE_FIT_KEEP_ASPECT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.NEW">
+<code class="descname">NEW</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.group.NEW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.POINT_STYLE_DOT">
+<code class="descname">POINT_STYLE_DOT</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.group.POINT_STYLE_DOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.POINT_STYLE_SPHERE">
+<code class="descname">POINT_STYLE_SPHERE</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.group.POINT_STYLE_SPHERE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="class">
 <dt id="geosoft.gxpy.group.Pen">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.group.</code><code class="descname">Pen</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Pen" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Pen</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Pen" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Geosoft Pen class.</p>
-<p>The default dimensioned properties (<cite>line_thick</cite>, <cite>line_pitch</cite>,
-<cite>pat_size</cite> and <cite>pat_thick</cite>) assume the view units are cm, and this is usually
+<p>The default dimensioned properties (<code class="xref py py-obj docutils literal"><span class="pre">line_thick</span></code>, <code class="xref py py-obj docutils literal"><span class="pre">line_pitch</span></code>,
+<code class="xref py py-obj docutils literal"><span class="pre">pat_size</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">pat_thick</span></code>) assume the view units are cm, and this is usually
 only the case for the base view.  For views in other units either
-explicitly define the dimention in view units, or pass <cite>factor</cite> set 
+explicitly define the dimention in view units, or pass <code class="xref py py-obj docutils literal"><span class="pre">factor</span></code> set 
 the the view <a class="reference internal" href="geosoft.gxpy.view.html#geosoft.gxpy.view.View.units_per_map_cm" title="geosoft.gxpy.view.View.units_per_map_cm"><code class="xref py py-attr docutils literal"><span class="pre">geosoft.gxpy.view.View.units_per_map_cm</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1209,7 +1659,7 @@ the the view <a class="reference internal" href="geosoft.gxpy.view.html#geosoft.
 </pre></div>
 </div>
 </li>
-<li><strong>pat_number</strong> &#8211; pattern number for filled patterns (refer to <cite>etc/default.pat</cite>) default 0, flood fill</li>
+<li><strong>pat_number</strong> &#8211; pattern number for filled patterns (refer to <code class="xref py py-obj docutils literal"><span class="pre">etc/default.pat</span></code>) default 0, flood fill</li>
 <li><strong>pat_angle</strong> &#8211; pattern angle, default 0</li>
 <li><strong>pat_density</strong> &#8211; pattern density, default 1</li>
 <li><strong>pat_size</strong> &#8211; pattern size, default 1.0</li>
@@ -1240,9 +1690,11 @@ are scaled to cm.  Typically you will pass <a class="reference internal" href="g
 <dt id="geosoft.gxpy.group.Pen.from_mapplot_string">
 <em class="property">classmethod </em><code class="descname">from_mapplot_string</code><span class="sig-paren">(</span><em>cstr</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Pen.from_mapplot_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a <a class="reference internal" href="#geosoft.gxpy.group.Pen" title="geosoft.gxpy.group.Pen"><code class="xref py py-class docutils literal"><span class="pre">Pen</span></code></a> instance from a mapplot-style string descriptor using either a
-rgbRGB or cmyCMY color model.  Lower case letters indicate line color, uppercase
+krgbKRGB or kcmyKCMY color model.  Lower case letters indicate line color, uppercase
 indicates fill color, &#8216;k&#8217;, &#8216;K&#8217; for black.  Each letter may be followed by an intensity
 between 0 and 255.  If an intensity is not specified 255 is assumed.</p>
+<p>Line thickness can be defined by &#8216;t&#8217; followed by a thickness in 1000&#8217;th of the view unit,
+which for the default &#8216;base&#8217; view would be microns.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1274,6 +1726,9 @@ between 0 and 255.  If an intensity is not specified 255 is assumed.</p>
 <tr class="row-odd"><td>&#8216;c64K96&#8217;</td>
 <td>light cyan line, light-grey fill</td>
 </tr>
+<tr class="row-even"><td>&#8216;bt500&#8217;</td>
+<td>blue line, 0.5 units thick</td>
+</tr>
 </tbody>
 </table>
 </div></blockquote>
@@ -1296,9 +1751,169 @@ between 0 and 255.  If an intensity is not specified 255 is assumed.</p>
 
 </dd></dl>
 
+<dl class="data">
+<dt id="geosoft.gxpy.group.READ_ONLY">
+<code class="descname">READ_ONLY</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.group.READ_ONLY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.REF_BOTTOM_CENTER">
+<code class="descname">REF_BOTTOM_CENTER</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.group.REF_BOTTOM_CENTER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.REF_BOTTOM_LEFT">
+<code class="descname">REF_BOTTOM_LEFT</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.group.REF_BOTTOM_LEFT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.REF_BOTTOM_RIGHT">
+<code class="descname">REF_BOTTOM_RIGHT</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.group.REF_BOTTOM_RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.REF_CENTER">
+<code class="descname">REF_CENTER</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxpy.group.REF_CENTER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.REF_CENTER_LEFT">
+<code class="descname">REF_CENTER_LEFT</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.group.REF_CENTER_LEFT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.REF_CENTER_RIGHT">
+<code class="descname">REF_CENTER_RIGHT</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxpy.group.REF_CENTER_RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.REF_TOP_CENTER">
+<code class="descname">REF_TOP_CENTER</code><em class="property"> = 7</em><a class="headerlink" href="#geosoft.gxpy.group.REF_TOP_CENTER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.REF_TOP_LEFT">
+<code class="descname">REF_TOP_LEFT</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxpy.group.REF_TOP_LEFT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.REF_TOP_RIGHT">
+<code class="descname">REF_TOP_RIGHT</code><em class="property"> = 8</em><a class="headerlink" href="#geosoft.gxpy.group.REF_TOP_RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.SMOOTH_AKIMA">
+<code class="descname">SMOOTH_AKIMA</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.group.SMOOTH_AKIMA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.SMOOTH_CUBIC">
+<code class="descname">SMOOTH_CUBIC</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.group.SMOOTH_CUBIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.SMOOTH_NONE">
+<code class="descname">SMOOTH_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.group.SMOOTH_NONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.SYMBOL_3D_CONE">
+<code class="descname">SYMBOL_3D_CONE</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.group.SYMBOL_3D_CONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.SYMBOL_3D_CUBE">
+<code class="descname">SYMBOL_3D_CUBE</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.group.SYMBOL_3D_CUBE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.SYMBOL_3D_CYLINDER">
+<code class="descname">SYMBOL_3D_CYLINDER</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.group.SYMBOL_3D_CYLINDER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.SYMBOL_3D_SPHERE">
+<code class="descname">SYMBOL_3D_SPHERE</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.group.SYMBOL_3D_SPHERE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.SYMBOL_BOX">
+<code class="descname">SYMBOL_BOX</code><em class="property"> = 4</em><a class="headerlink" href="#geosoft.gxpy.group.SYMBOL_BOX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.SYMBOL_CIRCLE">
+<code class="descname">SYMBOL_CIRCLE</code><em class="property"> = 20</em><a class="headerlink" href="#geosoft.gxpy.group.SYMBOL_CIRCLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.SYMBOL_DOT">
+<code class="descname">SYMBOL_DOT</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.group.SYMBOL_DOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.SYMBOL_HEXAGON">
+<code class="descname">SYMBOL_HEXAGON</code><em class="property"> = 7</em><a class="headerlink" href="#geosoft.gxpy.group.SYMBOL_HEXAGON" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.SYMBOL_INVERTED_TRIANGLE">
+<code class="descname">SYMBOL_INVERTED_TRIANGLE</code><em class="property"> = 6</em><a class="headerlink" href="#geosoft.gxpy.group.SYMBOL_INVERTED_TRIANGLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.SYMBOL_NONE">
+<code class="descname">SYMBOL_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.group.SYMBOL_NONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.SYMBOL_PLUS">
+<code class="descname">SYMBOL_PLUS</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.group.SYMBOL_PLUS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.SYMBOL_SMALL_BOX">
+<code class="descname">SYMBOL_SMALL_BOX</code><em class="property"> = 8</em><a class="headerlink" href="#geosoft.gxpy.group.SYMBOL_SMALL_BOX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.SYMBOL_SMALL_DIAMOND">
+<code class="descname">SYMBOL_SMALL_DIAMOND</code><em class="property"> = 9</em><a class="headerlink" href="#geosoft.gxpy.group.SYMBOL_SMALL_DIAMOND" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.SYMBOL_TRIANGLE">
+<code class="descname">SYMBOL_TRIANGLE</code><em class="property"> = 5</em><a class="headerlink" href="#geosoft.gxpy.group.SYMBOL_TRIANGLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.SYMBOL_X">
+<code class="descname">SYMBOL_X</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.group.SYMBOL_X" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.TILE_DIAGONAL">
+<code class="descname">TILE_DIAGONAL</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxpy.group.TILE_DIAGONAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.TILE_RANDOM">
+<code class="descname">TILE_RANDOM</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.group.TILE_RANDOM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.TILE_RECTANGULAR">
+<code class="descname">TILE_RECTANGULAR</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.group.TILE_RECTANGULAR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.TILE_TRIANGULAR">
+<code class="descname">TILE_TRIANGULAR</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.group.TILE_TRIANGULAR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="class">
 <dt id="geosoft.gxpy.group.Text_def">
-<em class="property">class </em><code class="descclassname">geosoft.gxpy.group.</code><code class="descname">Text_def</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Text_def" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Text_def</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.Text_def" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Text definition:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1332,7 +1947,7 @@ are scaled to cm.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">height:</th><td class="field-body">font height in</td>
+<tr class="field-odd field"><th class="field-name">height:</th><td class="field-body">font height in view units</td>
 </tr>
 <tr class="field-even field"><th class="field-name">font:</th><td class="field-body">font name</td>
 </tr>
@@ -1376,21 +1991,85 @@ are scaled to cm.</li>
 <dl class="attribute">
 <dt id="geosoft.gxpy.group.Text_def.mapplot_string">
 <code class="descname">mapplot_string</code><a class="headerlink" href="#geosoft.gxpy.group.Text_def.mapplot_string" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a text definition for mapplot.
-:returns:</p>
+<dd><p>Mapplot text definition string, assumes scaling in cm.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.group.Text_def.slant">
 <code class="descname">slant</code><a class="headerlink" href="#geosoft.gxpy.group.Text_def.slant" title="Permalink to this definition">¶</a></dt>
-<dd><p>text slant, 15 for italics, 0 for not italics, can be set.</p>
+<dd><p>text slant, 15 for italics, 0 for not italics, can be set.  If set, any slant
+greater than 5 will result in a 15 degree slant to create italics.</p>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.UNIT_MAP">
+<code class="descname">UNIT_MAP</code><em class="property"> = 2</em><a class="headerlink" href="#geosoft.gxpy.group.UNIT_MAP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.UNIT_VIEW">
+<code class="descname">UNIT_VIEW</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxpy.group.UNIT_VIEW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxpy.group.UNIT_VIEW_UNWARPED">
+<code class="descname">UNIT_VIEW_UNWARPED</code><em class="property"> = 3</em><a class="headerlink" href="#geosoft.gxpy.group.UNIT_VIEW_UNWARPED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.group.color_from_string">
+<code class="descname">color_from_string</code><span class="sig-paren">(</span><em>cstr</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.color_from_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a Geosoft color number from a color string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cstr</strong> &#8211; color string (see below)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">color</td>
+</tr>
+</tbody>
+</table>
+<p>Colour strings may be &#8220;R&#8221;, &#8220;G&#8221;, &#8220;B&#8221;, &#8220;C&#8221;, &#8220;M&#8221;, &#8220;Y&#8221;,
+&#8220;H&#8221;, &#8220;S&#8221;, &#8220;V&#8221;, or &#8220;K&#8221; or a combination of these
+characters, each followed by up to three digits
+specifying a number between 0 and 255.
+An empty string will produce C_ANY_NONE.</p>
+<p>You must stay in the same color model, RGB, CMY,
+HSV or K.</p>
+<p>For example &#8220;R&#8221;, &#8220;R127G22&#8221;, &#8220;H255S127V32&#8221;</p>
+<p>Characters are not case sensitive.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.group.contour">
+<code class="descname">contour</code><span class="sig-paren">(</span><em>view</em>, <em>group_name</em>, <em>grid_file_name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.contour" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a contour group from a grid file.  A default contour interval is determined from the grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>group_name</strong> &#8211; name for the contour group</li>
+<li><strong>grid_file_name</strong> &#8211; Grid file name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.group.edge_reference">
-<code class="descclassname">geosoft.gxpy.group.</code><code class="descname">edge_reference</code><span class="sig-paren">(</span><em>area</em>, <em>reference</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.edge_reference" title="Permalink to this definition">¶</a></dt>
+<code class="descname">edge_reference</code><span class="sig-paren">(</span><em>area</em>, <em>reference</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.edge_reference" title="Permalink to this definition">¶</a></dt>
 <dd><p>Location of a reference point of an area.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1421,7 +2100,7 @@ which reference location.  The points are:</p>
 
 <dl class="function">
 <dt id="geosoft.gxpy.group.font_weight_from_line_thickness">
-<code class="descclassname">geosoft.gxpy.group.</code><code class="descname">font_weight_from_line_thickness</code><span class="sig-paren">(</span><em>line_thick</em>, <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.font_weight_from_line_thickness" title="Permalink to this definition">¶</a></dt>
+<code class="descname">font_weight_from_line_thickness</code><span class="sig-paren">(</span><em>line_thick</em>, <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.font_weight_from_line_thickness" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns font weight for a text height and line thickness.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1454,7 +2133,7 @@ which reference location.  The points are:</p>
 
 <dl class="function">
 <dt id="geosoft.gxpy.group.legend_color_bar">
-<code class="descclassname">geosoft.gxpy.group.</code><code class="descname">legend_color_bar</code><span class="sig-paren">(</span><em>view</em>, <em>group_name</em>, <em>cmap</em>, <em>cmap2=None</em>, <em>bar_location=0</em>, <em>location=None</em>, <em>decimals=1</em>, <em>annotation_height=0.2</em>, <em>annotation_offset=None</em>, <em>annotation_side=1</em>, <em>box_size=None</em>, <em>bar_width=None</em>, <em>max_bar_size=None</em>, <em>minimum_gap=0</em>, <em>post_end_values=False</em>, <em>annotate_vertical=False</em>, <em>division_line=1</em>, <em>interval_1=None</em>, <em>interval_2=None</em>, <em>title=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.legend_color_bar" title="Permalink to this definition">¶</a></dt>
+<code class="descname">legend_color_bar</code><span class="sig-paren">(</span><em>view</em>, <em>group_name</em>, <em>cmap</em>, <em>cmap2=None</em>, <em>bar_location=0</em>, <em>location=None</em>, <em>decimals=1</em>, <em>annotation_height=0.2</em>, <em>annotation_offset=None</em>, <em>annotation_side=1</em>, <em>box_size=None</em>, <em>bar_width=None</em>, <em>max_bar_size=None</em>, <em>minimum_gap=0</em>, <em>post_end_values=False</em>, <em>annotate_vertical=False</em>, <em>division_line=1</em>, <em>interval_1=None</em>, <em>interval_2=None</em>, <em>title=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.legend_color_bar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw a color bar legend from :class:Color_map coloring definitions.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1474,10 +2153,10 @@ a shaded-color legend, provide the shaded color map here.</li>
 </pre></div>
 </div>
 </li>
-<li><strong>location</strong> &#8211; offset or (x, y) offset from view reference point, in cm.  The default is
+<li><strong>location</strong> &#8211; offset or (x, y) offset from <code class="xref py py-obj docutils literal"><span class="pre">bar_location</span></code> reference point, in cm.  The default is
 determined to center the bar off the location side specified.</li>
 <li><strong>decimals</strong> &#8211; annotation decimal places</li>
-<li><strong>annotation_height</strong> &#8211; annotation number height</li>
+<li><strong>annotation_height</strong> &#8211; annotation number height (cm)</li>
 <li><strong>annotation_offset</strong> &#8211; offset of annotations from the bar (cm)</li>
 <li><strong>annotation_side</strong> &#8211; <p>side of the bar for annotations</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">COLOR_BAR_ANNOTATE_RIGHT</span> <span class="o">=</span> <span class="mi">1</span>
@@ -1488,15 +2167,17 @@ determined to center the bar off the location side specified.</li>
 </div>
 </li>
 <li><strong>box_size</strong> &#8211; box size, height for vertical bars, width for horizontal bars</li>
-<li><strong>bar_width</strong> &#8211; width of the color boxes</li>
+<li><strong>bar_width</strong> &#8211; width of the color boxes, horizontal for vertical bars, vertical for horizontal bars</li>
 <li><strong>max_bar_size</strong> &#8211; maximum bar size, default is the size of the view edge</li>
 <li><strong>minimum_gap</strong> &#8211; minimum gap to between annotations.  Annotations are dropped in necessary.</li>
 <li><strong>post_end_values</strong> &#8211; post the maximum and minimum values</li>
 <li><strong>annotate_vertical</strong> &#8211; True to orient labels vertically</li>
 <li><strong>division_line</strong> &#8211; 0, no division lines, 1 - line, 2 - tick</li>
-<li><strong>interval_1</strong> &#8211; annotation increment, default annotates everything</li>
-<li><strong>interval_2</strong> &#8211; secondary smaller annotations, 1/10, 1/ 5, 1/4 or 1/2 interval_1</li>
-<li><strong>title</strong> &#8211; bar title, use new-lines for sub-titles.</li>
+<li><strong>interval_1</strong> &#8211; Major annotation increment, default annotates everything</li>
+<li><strong>interval_2</strong> &#8211; secondary smaller annotations, reduced to 1/10, 1/5, 1/4 or 1/2 of interval_1.
+Default chooses something reasonable.</li>
+<li><strong>title</strong> &#8211; bar title, use new-lines for sub-titles.  Default uses the title and unit_of_measure
+from <code class="xref py py-obj docutils literal"><span class="pre">cmap</span></code>.</li>
 </ul>
 </td>
 </tr>
@@ -1509,7 +2190,7 @@ determined to center the bar off the location side specified.</li>
 
 <dl class="function">
 <dt id="geosoft.gxpy.group.thickness_from_font_weight">
-<code class="descclassname">geosoft.gxpy.group.</code><code class="descname">thickness_from_font_weight</code><span class="sig-paren">(</span><em>weight</em>, <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.thickness_from_font_weight" title="Permalink to this definition">¶</a></dt>
+<code class="descname">thickness_from_font_weight</code><span class="sig-paren">(</span><em>weight</em>, <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.group.thickness_from_font_weight" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the line thickness appropriate for a text weight.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1551,14 +2232,7 @@ determined to center the bar off the location side specified.</li>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="geosoft.gxpy.gx.html" title="geosoft.gxpy.gx submodule"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="geosoft.gxpy.grid.html" title="geosoft.gxpy.grid submodule"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.2.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="geosoft.gxpy.html" >gxpy modules reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXACQUIRE class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXACQUIRE class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -43,10 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -59,13 +55,6 @@
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXACQUIRE.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -76,6 +65,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXACQUIRE.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -88,72 +84,63 @@
 <span id="gxacquire"></span><h1>GXACQUIRE class<a class="headerlink" href="#gxacquire-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXACQUIRE">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXACQUIRE</code><a class="headerlink" href="#geosoft.gxapi.GXACQUIRE" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">used</span> <span class="n">to</span> <span class="kn">import</span> <span class="nn">Acquire</span> <span class="n">data</span><span class="o">.</span> <span class="n">It</span> <span class="n">uses</span> <span class="n">the</span>
-<span class="n">public</span> <span class="n">Acquire</span> <span class="n">API</span><span class="o">.</span>
-</pre></div>
-</div>
-<dl class="staticmethod">
+<em class="property">class </em><code class="descname">GXACQUIRE</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXACQUIRE" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXACQUIRE class.</p>
+<p>This class is used to import acQuire data. It uses the
+public acQuire API.</p>
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXACQUIRE.create">
-<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXACQUIRE:<a class="headerlink" href="#geosoft.gxapi.GXACQUIRE.create" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">ACQUIRE</span> <span class="nb">object</span>
-</pre></div>
-</div>
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXACQUIRE.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an acQuire object</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">ACQUIRE Object</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">acQuire Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXACQUIRE" title="geosoft.gxapi.GXACQUIRE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXACQUIRE</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXACQUIRE" title="geosoft.gxapi.GXACQUIRE">GXACQUIRE</a></td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.0.0.</span></p>
+<p><span class="versionmodified">New in version 6.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXACQUIRE.delete_empty_chan">
-<code class="descname">delete_empty_chan</code><span class="sig-paren">(</span><em>(GXDB)arg1</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXACQUIRE.delete_empty_chan" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Delete</span> <span class="n">empty</span> <span class="n">channels</span>
-</pre></div>
-</div>
+<code class="descname">delete_empty_chan</code><span class="sig-paren">(</span><em>db</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXACQUIRE.delete_empty_chan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete empty channels</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Database</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.0.0.</span></p>
+<p><span class="versionmodified">New in version 6.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXACQUIRE.import_hole">
-<code class="descname">import_hole</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(str)arg2</em>, <em>(str)arg3</em>, <em>(GXVV)arg4</em>, <em>(int)arg5</em>, <em>(int)arg6</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXACQUIRE.import_hole" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Import</span> <span class="n">Drillhole</span> <span class="n">data</span> <span class="n">acQuire</span> <span class="n">database</span> <span class="n">into</span> <span class="n">a</span> <span class="n">GDB</span>
-</pre></div>
-</div>
+<code class="descname">import_hole</code><span class="sig-paren">(</span><em>proj</em>, <em>dir</em>, <em>para</em>, <em>geo_vv</em>, <em>delete</em>, <em>convert</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXACQUIRE.import_hole" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import Drillhole data acQuire database into a GDB</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; project name</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; project directory</li>
-<li><strong>arg3</strong> (<em>str</em>) &#8211; Parameter File</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXVV</span></code></a>) &#8211; list of geology name database</li>
-<li><strong>arg5</strong> (<em>int</em>) &#8211; 0: Write to existing databases (overwrite holes), 1: Delete existing databases.</li>
-<li><strong>arg6</strong> (<em>int</em>) &#8211; Convert Negatives (0,1)</li>
+<li><strong>proj</strong> (<em>str</em>) &#8211; Project name</li>
+<li><strong>dir</strong> (<em>str</em>) &#8211; Project directory</li>
+<li><strong>para</strong> (<em>str</em>) &#8211; Parameter File</li>
+<li><strong>geo_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; List of geology name database</li>
+<li><strong>delete</strong> (<em>int</em>) &#8211; 0: Write to existing databases (overwrite holes), 1: Delete existing databases.</li>
+<li><strong>convert</strong> (<em>int</em>) &#8211; Convert Negatives (0,1)</li>
 </ul>
 </td>
 </tr>
@@ -169,27 +156,23 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Point</span> <span class="n">data</span> <span class="ow">and</span> <span class="n">polygon</span> <span class="n">data</span> <span class="n">are</span> <span class="n">saved</span> <span class="n">into</span> <span class="n">D</span><span class="c1">### lines in GDB,</span>
-<span class="c1">### representing incremental number starting from 0</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Point data and polygon data are saved into Dnnn lines in GDB,
+nnn representing incremental number starting from 0</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXACQUIRE.import_point">
-<code class="descname">import_point</code><span class="sig-paren">(</span><em>(GXDB)arg1</em>, <em>(str)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXACQUIRE.import_point" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Import</span> <span class="n">Point</span> <span class="n">Sample</span> <span class="n">data</span> <span class="n">acQuire</span> <span class="n">database</span> <span class="n">into</span> <span class="n">a</span> <span class="n">GDB</span>
-</pre></div>
-</div>
+<code class="descname">import_point</code><span class="sig-paren">(</span><em>db</em>, <em>para</em>, <em>convert</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXACQUIRE.import_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import Point Sample data acQuire database into a GDB</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXDB</span></code></a>) &#8211; Geosoft GDB</li>
-<li><strong>arg2</strong> (<em>str</em>) &#8211; Parameter File</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Convert Negatives (0,1)</li>
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Geosoft GDB</li>
+<li><strong>para</strong> (<em>str</em>) &#8211; Parameter File</li>
+<li><strong>convert</strong> (<em>int</em>) &#8211; Convert Negatives (0,1)</li>
 </ul>
 </td>
 </tr>
@@ -205,41 +188,39 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Data</span> <span class="n">existing</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">receiving</span> <span class="n">GDB</span> <span class="n">file</span> <span class="n">will</span> <span class="n">be</span> <span class="n">over</span><span class="o">-</span><span class="n">written</span><span class="o">.</span>
-<span class="n">Point</span> <span class="n">data</span> <span class="ow">and</span> <span class="n">polygon</span> <span class="n">data</span> <span class="n">are</span> <span class="n">saved</span> <span class="n">into</span> <span class="n">D</span><span class="c1">### lines in GDB,</span>
-<span class="c1">### representing incremental number starting from 0</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Data existing in the receiving GDB file will be over-written.
+Point data and polygon data are saved into Dnnn lines in GDB,
+nnn representing incremental number starting from 0</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXACQUIRE.is_null">
-<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#geosoft.gxapi.GXACQUIRE.is_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the instance of <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXACQUIRE</span> <span class="pre">is</span> <span class="pre">null</span> <span class="pre">(undefined)</span></code></p>
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXACQUIRE.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null instance of <a class="reference internal" href="#geosoft.gxapi.GXACQUIRE" title="geosoft.gxapi.GXACQUIRE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXACQUIRE</span></code></a>, False otherwise.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool`</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXACQUIRE.null">
-<em class="property">static </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXACQUIRE<a class="headerlink" href="#geosoft.gxapi.GXACQUIRE.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXACQUIRE" title="geosoft.gxapi.GXACQUIRE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXACQUIRE</span></code></a></p>
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXACQUIRE.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXACQUIRE" title="geosoft.gxapi.GXACQUIRE"><code class="xref py py-obj docutils literal"><span class="pre">GXACQUIRE</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXACQUIRE" title="geosoft.gxapi.GXACQUIRE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXACQUIRE</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXACQUIRE" title="geosoft.gxapi.GXACQUIRE"><code class="xref py py-obj docutils literal"><span class="pre">GXACQUIRE</span></code></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXACQUIRE" title="geosoft.gxapi.GXACQUIRE"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXACQUIRE</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXACQUIRE" title="geosoft.gxapi.GXACQUIRE">GXACQUIRE</a></td>
 </tr>
 </tbody>
 </table>
@@ -247,17 +228,15 @@
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXACQUIRE.selection_tool">
-<code class="descname">selection_tool</code><span class="sig-paren">(</span><em>(str)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXACQUIRE.selection_tool" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Run</span> <span class="n">the</span> <span class="n">Acquire</span> <span class="n">Selection</span> <span class="n">Tool</span><span class="o">.</span>
-</pre></div>
-</div>
+<code class="descname">selection_tool</code><span class="sig-paren">(</span><em>selection_file</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXACQUIRE.selection_tool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the acQuire Selection Tool.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>str</em>) &#8211; Selection File Name</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#acquire-sel"><span class="std std-ref">ACQUIRE_SEL constants</span></a></li>
+<li><strong>selection_file</strong> (<em>str</em>) &#8211; Selection File Name</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#acquire-sel"><span class="std std-ref">ACQUIRE_SEL constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -273,30 +252,38 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">selection</span> <span class="n">file</span> <span class="n">will</span> <span class="n">be</span> <span class="n">loaded</span> <span class="p">(</span><span class="k">if</span> <span class="n">present</span><span class="p">)</span> <span class="ow">and</span> <span class="n">then</span>
-<span class="n">the</span> <span class="n">user</span> <span class="n">can</span> <span class="n">make</span> <span class="n">selections</span> <span class="n">then</span> <span class="n">the</span> <span class="n">selections</span> <span class="n">are</span> <span class="n">saved</span>
-<span class="n">back</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">selection</span> <span class="n">file</span><span class="o">.</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The selection file will be loaded (if present) and then
+the user can make selections then the selections are saved
+back in the selection file.</p>
 </dd></dl>
 
 </dd></dl>
 
 <div class="section" id="acquire-sel-constants">
 <span id="acquire-sel"></span><h2>ACQUIRE_SEL constants<a class="headerlink" href="#acquire-sel-constants" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Type</span> <span class="n">of</span> <span class="n">Selection</span>
-</pre></div>
-</div>
-<dl class="attribute">
+<p>Type of Selection</p>
+<dl class="data">
 <dt id="geosoft.gxapi.ACQUIRE_SEL_HOLES">
-<code class="descclassname">gxapi.</code><code class="descname">ACQUIRE_SEL_HOLES</code><em class="property"> = 0</em><a class="headerlink" href="#geosoft.gxapi.ACQUIRE_SEL_HOLES" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ACQUIRE_SEL_HOLES</code><a class="headerlink" href="#geosoft.gxapi.ACQUIRE_SEL_HOLES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Holes</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">ACQUIRE_SEL_HOLES</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+</dd></dl>
+
+<dl class="data">
 <dt id="geosoft.gxapi.ACQUIRE_SEL_POINT">
-<code class="descclassname">gxapi.</code><code class="descname">ACQUIRE_SEL_POINT</code><em class="property"> = 1</em><a class="headerlink" href="#geosoft.gxapi.ACQUIRE_SEL_POINT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ACQUIRE_SEL_POINT</code><a class="headerlink" href="#geosoft.gxapi.ACQUIRE_SEL_POINT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Point</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">ACQUIRE_SEL_POINT</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
+
+</dd></dl>
 
 </div>
 </div>
@@ -313,15 +300,27 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

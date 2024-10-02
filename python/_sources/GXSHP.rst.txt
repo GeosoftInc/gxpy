@@ -1,56 +1,44 @@
- 
 
 .. _GXSHP:
 
+ 
 GXSHP class
 ==================================
 
 .. autoclass:: geosoft.gxapi.GXSHP
    :members:
 
+
 .. _SHP_GEOM_TYPE:
 
 SHP_GEOM_TYPE constants
 -----------------------------------------------------------------------
 
-::
+Shape file geometry types
 
-   Shape file geometry types 
-
-.. autoattribute:: geosoft.gxapi.SHP_GEOM_TYPE_POINT
-
-::
-
-   Single (X, Y) point 
-
-.. autoattribute:: geosoft.gxapi.SHP_GEOM_TYPE_ARC
-
-::
-
-   Arc (polyline) multiple (X, Y) points. 
-
-.. autoattribute:: geosoft.gxapi.SHP_GEOM_TYPE_POLYGON
-
-::
-
-   Polygon. Multiple (X, Y) points. 
-
-.. autoattribute:: geosoft.gxapi.SHP_GEOM_TYPE_POINTZ
-
-::
-
-   Single (X, Y, Z) point 
-
-.. autoattribute:: geosoft.gxapi.SHP_GEOM_TYPE_ARCZ
-
-::
-
-   Arc (polyline) multiple (X, Y, Z) points. 
-
-.. autoattribute:: geosoft.gxapi.SHP_GEOM_TYPE_POLYGONZ
-
-::
-
-   Polygon. Multiple (X, Y, Z) points. 
+.. autodata:: geosoft.gxapi.SHP_GEOM_TYPE_POINT
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SHP_GEOM_TYPE_POINT
+.. autodata:: geosoft.gxapi.SHP_GEOM_TYPE_ARC
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SHP_GEOM_TYPE_ARC
+.. autodata:: geosoft.gxapi.SHP_GEOM_TYPE_POLYGON
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SHP_GEOM_TYPE_POLYGON
+.. autodata:: geosoft.gxapi.SHP_GEOM_TYPE_POINTZ
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SHP_GEOM_TYPE_POINTZ
+.. autodata:: geosoft.gxapi.SHP_GEOM_TYPE_ARCZ
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SHP_GEOM_TYPE_ARCZ
+.. autodata:: geosoft.gxapi.SHP_GEOM_TYPE_POLYGONZ
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SHP_GEOM_TYPE_POLYGONZ
 
 	

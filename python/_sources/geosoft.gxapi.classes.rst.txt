@@ -36,6 +36,7 @@ These are the low-level library classes and functions that make up the GX API.
    GXDSEL
    GXDU
    GXDXFI
+   GXE3DV
    GXEDB
    GXEDOC
    GXEMAP
@@ -79,6 +80,7 @@ These are the low-level library classes and functions that make up the GX API.
    GXMETA
    GXMISC
    GXMSTK
+   GXMULTIVOXSET
    GXMVG
    GXMVIEW
    GXMVU
@@ -118,6 +120,7 @@ These are the low-level library classes and functions that make up the GX API.
    GXUSERMETA
    GXVA
    GXVAU
+   GXVECTOR3D
    GXVM
    GXVOX
    GXVOXD

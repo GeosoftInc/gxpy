@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>GXMATH class &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>GXMATH class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -43,21 +42,11 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/GXMATH.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -68,6 +57,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXMATH.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -80,25 +76,22 @@
 <span id="gxmath"></span><h1>GXMATH class<a class="headerlink" href="#gxmath-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXMATH">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXMATH</code><a class="headerlink" href="#geosoft.gxapi.GXMATH" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">class</span><span class="o">.</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">collection</span> <span class="n">of</span> <span class="n">standard</span>
-<span class="n">mathematical</span> <span class="n">functions</span><span class="p">,</span> <span class="n">including</span> <span class="n">most</span> <span class="n">of</span> <span class="n">the</span> <span class="n">common</span>
-<span class="n">logarithmic</span> <span class="ow">and</span> <span class="n">geometric</span> <span class="n">functions</span><span class="o">.</span>
-</pre></div>
-</div>
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.abs_double">
-<em class="property">static </em><code class="descname">abs_double</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.abs_double" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">absolute</span> <span class="n">value</span>
-</pre></div>
-</div>
+<em class="property">class </em><code class="descname">GXMATH</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH" title="Permalink to this definition">¶</a></dt>
+<dd><p>GXMATH class.</p>
+<p>This is not a class. This is a collection of standard
+mathematical functions, including most of the common
+logarithmic and geometric functions.</p>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.abs_double_">
+<em class="property">classmethod </em><code class="descname">abs_double_</code><span class="sig-paren">(</span><em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.abs_double_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate absolute value</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; real</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>z</strong> (<em>float</em>) &#8211; Real</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Real</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
 </tr>
@@ -107,25 +100,21 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Dummy</span> <span class="n">values</span> <span class="k">return</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Dummy values return dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.abs_int">
-<em class="property">static </em><code class="descname">abs_int</code><span class="sig-paren">(</span><em>(int)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMATH.abs_int" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">absolute</span> <span class="n">value</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.abs_int_">
+<em class="property">classmethod </em><code class="descname">abs_int_</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.abs_int_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate absolute value</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>int</em>) &#8211; integer</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>n</strong> (<em>int</em>) &#8211; Integer</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">integer</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Integer</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
@@ -134,29 +123,23 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Dummy</span> <span class="n">values</span> <span class="k">return</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Dummy values return dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.and">
-<em class="property">static </em><code class="descname">and</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMATH.and" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Return</span> <span class="n">the</span> <span class="n">unary</span> <span class="n">operation</span> <span class="n">result</span> <span class="n">of</span> <span class="n">A</span> <span class="o">&amp;</span> <span class="n">B</span>
-
-<span class="n">Returns</span>                 <span class="n">an</span> <span class="n">integer</span> <span class="n">number</span>
-
-<span class="n">If</span> <span class="n">A</span> <span class="ow">or</span> <span class="n">B</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">dummy</span><span class="p">,</span> <span class="n">returns</span> <span class="n">dummy</span><span class="o">.</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.and_">
+<em class="property">classmethod </em><code class="descname">and_</code><span class="sig-paren">(</span><em>pi_val1</em>, <em>pi_val2</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.and_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the unary operation result of A &amp; B</p>
+<p>Returns                 an integer number</p>
+<p>If A or B is a dummy, returns dummy.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; A</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; B</li>
+<li><strong>pi_val1</strong> (<em>int</em>) &#8211; A</li>
+<li><strong>pi_val2</strong> (<em>int</em>) &#8211; B</li>
 </ul>
 </td>
 </tr>
@@ -166,23 +149,22 @@
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.3.0.</span></p>
+<p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.arc_cos">
-<em class="property">static </em><code class="descname">arc_cos</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.arc_cos" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">the</span> <span class="n">arccosine</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.arc_cos_">
+<em class="property">classmethod </em><code class="descname">arc_cos_</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.arc_cos_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the arccosine</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; real</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>val</strong> (<em>float</em>) &#8211; Real</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Real</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
 </tr>
@@ -191,25 +173,21 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Dummy</span> <span class="n">values</span> <span class="ow">or</span> <span class="n">values</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">return</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Dummy values or values &lt; -1 or &gt; 1 return dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.arc_sin">
-<em class="property">static </em><code class="descname">arc_sin</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.arc_sin" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">the</span> <span class="n">arcsin</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.arc_sin_">
+<em class="property">classmethod </em><code class="descname">arc_sin_</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.arc_sin_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the arcsin</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; real</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>val</strong> (<em>float</em>) &#8211; Real</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Real</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
 </tr>
@@ -218,56 +196,25 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Dummy</span> <span class="n">values</span> <span class="ow">or</span> <span class="n">values</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">return</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Dummy values or values &lt; -1 or &gt; 1 return dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.arc_tan">
-<em class="property">static </em><code class="descname">arc_tan</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.arc_tan" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">the</span> <span class="n">arctan</span>
-</pre></div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; real</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
-</tr>
-</tbody>
-</table>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 6.0.1.</span></p>
-</div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Dummy</span> <span class="n">values</span> <span class="k">return</span> <span class="n">dummy</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.arc_tan2">
-<em class="property">static </em><code class="descname">arc_tan2</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.arc_tan2" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">ArcTan</span><span class="p">(</span><span class="n">Y</span><span class="o">/</span><span class="n">X</span><span class="p">)</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.arc_tan2_">
+<em class="property">classmethod </em><code class="descname">arc_tan2_</code><span class="sig-paren">(</span><em>y</em>, <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.arc_tan2_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate ArcTan(Y/X)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; Y</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; X</li>
+<li><strong>y</strong> (<em>float</em>) &#8211; Y</li>
+<li><strong>x</strong> (<em>float</em>) &#8211; X</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">real</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Real</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
@@ -278,25 +225,21 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">either</span> <span class="n">X</span> <span class="ow">or</span> <span class="n">Y</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">dummy</span><span class="p">,</span> <span class="n">returns</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If either X or Y is a dummy, returns dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.ceil">
-<em class="property">static </em><code class="descname">ceil</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.ceil" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculates</span> <span class="n">the</span> <span class="n">ceiling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">value</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.arc_tan_">
+<em class="property">classmethod </em><code class="descname">arc_tan_</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.arc_tan_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the arctan</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; real</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>val</strong> (<em>float</em>) &#8211; Real</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Real</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
 </tr>
@@ -305,25 +248,21 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Dummy</span> <span class="n">values</span> <span class="k">return</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Dummy values return dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.cos">
-<em class="property">static </em><code class="descname">cos</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.cos" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">the</span> <span class="n">cosine</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.ceil_">
+<em class="property">classmethod </em><code class="descname">ceil_</code><span class="sig-paren">(</span><em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.ceil_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the ceiling of the value</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; Angle in radians</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>z</strong> (<em>float</em>) &#8211; Real</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Real</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
 </tr>
@@ -332,65 +271,77 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Dummy</span> <span class="n">values</span> <span class="k">return</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Dummy values return dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.cross_product">
-<em class="property">static </em><code class="descname">cross_product</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float_ref)arg7</em>, <em>(float_ref)arg8</em>, <em>(float_ref)arg9</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMATH.cross_product" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Cross</span> <span class="n">product</span> <span class="n">of</span> <span class="n">two</span> <span class="n">vectors</span><span class="o">.</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.cos_">
+<em class="property">classmethod </em><code class="descname">cos_</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.cos_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the cosine</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; X1 component</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; Y1 component</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; Z1 component</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; X2 component</li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; Y2 component</li>
-<li><strong>arg6</strong> (<em>float</em>) &#8211; Z2 component</li>
-<li><strong>arg7</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X3 component (output)</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y3 component (output)</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Z3 component (output)</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>val</strong> (<em>float</em>) &#8211; Angle in radians</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Real</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.0.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Dummy values return dummy</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.cross_product_">
+<em class="property">classmethod </em><code class="descname">cross_product_</code><span class="sig-paren">(</span><em>x1</em>, <em>y1</em>, <em>z1</em>, <em>x2</em>, <em>y2</em>, <em>z2</em>, <em>x3</em>, <em>y3</em>, <em>z3</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.cross_product_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cross product of two vectors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x1</strong> (<em>float</em>) &#8211; X1 component</li>
+<li><strong>y1</strong> (<em>float</em>) &#8211; Y1 component</li>
+<li><strong>z1</strong> (<em>float</em>) &#8211; Z1 component</li>
+<li><strong>x2</strong> (<em>float</em>) &#8211; X2 component</li>
+<li><strong>y2</strong> (<em>float</em>) &#8211; Y2 component</li>
+<li><strong>z2</strong> (<em>float</em>) &#8211; Z2 component</li>
+<li><strong>x3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X3 component (output)</li>
+<li><strong>y3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y3 component (output)</li>
+<li><strong>z3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Z3 component (output)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
-</td>
-</tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.0.0.</span></p>
+<p><span class="versionmodified">New in version 6.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.dot_product_3d">
-<em class="property">static </em><code class="descname">dot_product_3d</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.dot_product_3d" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Compute</span> <span class="n">Dot</span> <span class="n">product</span> <span class="n">of</span> <span class="n">two</span> <span class="n">vectors</span><span class="o">.</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.dot_product_3d_">
+<em class="property">classmethod </em><code class="descname">dot_product_3d_</code><span class="sig-paren">(</span><em>x1</em>, <em>y1</em>, <em>z1</em>, <em>x2</em>, <em>y2</em>, <em>z2</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.dot_product_3d_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute Dot product of two vectors.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; X1 component</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; Y1 component</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; Z1 component</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; X2 component</li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; Y2 component</li>
-<li><strong>arg6</strong> (<em>float</em>) &#8211; Z2 component</li>
+<li><strong>x1</strong> (<em>float</em>) &#8211; X1 component</li>
+<li><strong>y1</strong> (<em>float</em>) &#8211; Y1 component</li>
+<li><strong>z1</strong> (<em>float</em>) &#8211; Z1 component</li>
+<li><strong>x2</strong> (<em>float</em>) &#8211; X2 component</li>
+<li><strong>y2</strong> (<em>float</em>) &#8211; Y2 component</li>
+<li><strong>z2</strong> (<em>float</em>) &#8211; Z2 component</li>
 </ul>
 </td>
 </tr>
@@ -403,23 +354,22 @@
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.0.0.</span></p>
+<p><span class="versionmodified">New in version 6.0.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.exp">
-<em class="property">static </em><code class="descname">exp</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.exp" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">e</span> <span class="n">raised</span> <span class="n">to</span> <span class="n">the</span> <span class="n">power</span> <span class="n">of</span> <span class="n">X</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.exp_">
+<em class="property">classmethod </em><code class="descname">exp_</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.exp_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate e raised to the power of X</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; X</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>val</strong> (<em>float</em>) &#8211; X</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Real</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
 </tr>
@@ -428,25 +378,21 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Dummy</span> <span class="n">values</span> <span class="k">return</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Dummy values return dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.floor">
-<em class="property">static </em><code class="descname">floor</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.floor" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculates</span> <span class="n">the</span> <span class="n">floor</span> <span class="n">of</span> <span class="n">the</span> <span class="n">value</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.floor_">
+<em class="property">classmethod </em><code class="descname">floor_</code><span class="sig-paren">(</span><em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.floor_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the floor of the value</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; real</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>z</strong> (<em>float</em>) &#8211; Real</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Real</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
 </tr>
@@ -455,29 +401,25 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Dummy</span> <span class="n">values</span> <span class="k">return</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Dummy values return dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.hypot">
-<em class="property">static </em><code class="descname">hypot</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.hypot" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-sqrt(X<cite>*</cite>X + Y<cite>*</cite>Y)
-</pre>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.hypot_">
+<em class="property">classmethod </em><code class="descname">hypot_</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.hypot_" title="Permalink to this definition">¶</a></dt>
+<dd><p>sqrt(X*X + Y*Y)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; X</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; Y</li>
+<li><strong>x</strong> (<em>float</em>) &#8211; X</li>
+<li><strong>y</strong> (<em>float</em>) &#8211; Y</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">real</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Real</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
@@ -488,25 +430,37 @@ sqrt(X<cite>*</cite>X + Y<cite>*</cite>Y)
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">either</span> <span class="n">X</span> <span class="ow">or</span> <span class="n">Y</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">dummy</span><span class="p">,</span> <span class="n">the</span> <span class="n">returned</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If either X or Y is a dummy, the returned value is dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.lambda_trans">
-<em class="property">static </em><code class="descname">lambda_trans</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.lambda_trans" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Performs</span> <span class="k">lambda</span> <span class="n">transform</span> <span class="n">on</span> <span class="n">a</span> <span class="n">value</span><span class="o">.</span>
-</pre></div>
-</div>
+<dl class="method">
+<dt id="geosoft.gxapi.GXMATH.is_null">
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.lambda_trans_">
+<em class="property">classmethod </em><code class="descname">lambda_trans_</code><span class="sig-paren">(</span><em>z</em>, <em>lda</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.lambda_trans_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs lambda transform on a value.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; Z Value</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; Lambda value</li>
+<li><strong>z</strong> (<em>float</em>) &#8211; Z Value</li>
+<li><strong>lda</strong> (<em>float</em>) &#8211; Lambda value</li>
 </ul>
 </td>
 </tr>
@@ -521,32 +475,28 @@ sqrt(X<cite>*</cite>X + Y<cite>*</cite>Y)
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Returns</span> <span class="mi">0</span> <span class="k">for</span> <span class="nb">input</span> <span class="n">Z</span> <span class="o">=</span> <span class="mf">0.</span>
-<span class="n">returns</span> <span class="n">log10</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span> <span class="k">for</span> <span class="k">lambda</span> <span class="o">=</span> <span class="mf">0.</span>
-<span class="n">returns</span> <span class="p">(</span><span class="n">Z</span><span class="o">^</span><span class="k">lambda</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="k">lambda</span> <span class="k">for</span> <span class="n">Z</span> <span class="o">&gt;</span> <span class="mf">0.</span>
-<span class="n">returns</span> <span class="n">dummy</span> <span class="k">for</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">dummy</span><span class="o">.</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Returns 0 for input Z = 0.
+returns log10(Z) for lambda = 0.
+returns (Z^lambda - 1)/lambda for Z &gt; 0.
+returns dummy for Z = dummy.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXMATH.lambda_trans_rev" title="geosoft.gxapi.GXMATH.lambda_trans_rev"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMATH.lambda_trans_rev()</span></code></a></p>
+<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXMATH.lambda_trans_rev_" title="geosoft.gxapi.GXMATH.lambda_trans_rev_"><code class="xref py py-obj docutils literal"><span class="pre">lambda_trans_rev_</span></code></a></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.lambda_trans_rev">
-<em class="property">static </em><code class="descname">lambda_trans_rev</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.lambda_trans_rev" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Performs</span> <span class="n">a</span> <span class="n">reverse</span> <span class="k">lambda</span> <span class="n">transform</span> <span class="n">on</span> <span class="n">a</span> <span class="n">value</span><span class="o">.</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.lambda_trans_rev_">
+<em class="property">classmethod </em><code class="descname">lambda_trans_rev_</code><span class="sig-paren">(</span><em>z</em>, <em>lda</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.lambda_trans_rev_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a reverse lambda transform on a value.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; Lambda transformed Z Value</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; Lambda value</li>
+<li><strong>z</strong> (<em>float</em>) &#8211; Lambda transformed Z Value</li>
+<li><strong>lda</strong> (<em>float</em>) &#8211; Lambda value</li>
 </ul>
 </td>
 </tr>
@@ -561,29 +511,25 @@ sqrt(X<cite>*</cite>X + Y<cite>*</cite>Y)
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">rLambdaTrans</span><span class="o">.</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> See rLambdaTrans.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXMATH.lambda_trans" title="geosoft.gxapi.GXMATH.lambda_trans"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMATH.lambda_trans()</span></code></a></p>
+<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXMATH.lambda_trans_" title="geosoft.gxapi.GXMATH.lambda_trans_"><code class="xref py py-obj docutils literal"><span class="pre">lambda_trans_</span></code></a></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.log">
-<em class="property">static </em><code class="descname">log</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.log" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">the</span> <span class="n">natural</span> <span class="n">log</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.log10_">
+<em class="property">classmethod </em><code class="descname">log10_</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.log10_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the base 10 log</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; real</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>val</strong> (<em>float</em>) &#8211; Real</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Real</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
 </tr>
@@ -592,25 +538,21 @@ sqrt(X<cite>*</cite>X + Y<cite>*</cite>Y)
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Dummy</span> <span class="n">values</span> <span class="k">return</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Dummy values return dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.log10">
-<em class="property">static </em><code class="descname">log10</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.log10" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">the</span> <span class="n">base</span> <span class="mi">10</span> <span class="n">log</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.log_">
+<em class="property">classmethod </em><code class="descname">log_</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.log_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the natural log</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; real</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>val</strong> (<em>float</em>) &#8211; Real</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Real</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
 </tr>
@@ -619,27 +561,23 @@ sqrt(X<cite>*</cite>X + Y<cite>*</cite>Y)
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Dummy</span> <span class="n">values</span> <span class="k">return</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Dummy values return dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.log_z">
-<em class="property">static </em><code class="descname">log_z</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(int)arg2</em>, <em>(float)arg3</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.log_z" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Given</span> <span class="n">a</span> <span class="n">Z</span> <span class="n">value</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">Log</span> <span class="n">style</span> <span class="ow">and</span> <span class="n">Log</span> <span class="n">Minimum</span> <span class="n">this</span>
-<span class="n">function</span> <span class="n">will</span> <span class="k">return</span> <span class="n">the</span> <span class="n">log</span> <span class="n">value</span><span class="o">.</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.log_z_">
+<em class="property">classmethod </em><code class="descname">log_z_</code><span class="sig-paren">(</span><em>z</em>, <em>mode</em>, <em>min</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.log_z_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a Z value and the Log style and Log Minimum this
+function will return the log value.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; Z Value</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Log Mode (0 - Log, 1 - LogLinearLog)</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; Log Minimum (must be greater than 0)</li>
+<li><strong>z</strong> (<em>float</em>) &#8211; Z Value</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; Log Mode (0 - Log, 1 - LogLinearLog)</li>
+<li><strong>min</strong> (<em>float</em>) &#8211; Log Minimum (must be greater than 0)</li>
 </ul>
 </td>
 </tr>
@@ -654,44 +592,39 @@ sqrt(X<cite>*</cite>X + Y<cite>*</cite>Y)
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<pre class="literal-block">
-Mode = 0 (regular log mode)
-
-Returns:
-Log10(Z)  for Z &gt; minimum
-Log10(minimum) for Z &lt;= minimum
-
-Mode = 1 (log / linear / negative log mode)
-
-Returns:
-minimum <cite>*</cite> ( log10( <cite>|</cite>Z<cite>|</cite> / minimum) + 1 )   for Z &gt; minimum
-Z for <cite>|</cite>Z<cite>|</cite> &lt;= minimum   (the linear part of the range)
--minimum <cite>*</cite> ( log10( <cite>|</cite>Z<cite>|</cite> / minimum) + 1 )   for Z &lt; -minimum
-</pre>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Mode = 0 (regular log mode) returns:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Log10</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>  <span class="k">for</span> <span class="n">Z</span> <span class="o">&gt;</span> <span class="n">minimum</span>
+<span class="n">Log10</span><span class="p">(</span><span class="n">minimum</span><span class="p">)</span> <span class="k">for</span> <span class="n">Z</span> <span class="o">&lt;=</span> <span class="n">minimum</span>
+</pre></div>
+</div>
+<p>Mode = 1 (log / linear / negative log mode) returns:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">minimum</span> <span class="o">*</span> <span class="p">(</span> <span class="n">log10</span><span class="p">(</span> <span class="o">|</span><span class="n">Z</span><span class="o">|</span> <span class="o">/</span> <span class="n">minimum</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span>   <span class="k">for</span> <span class="n">Z</span> <span class="o">&gt;</span> <span class="n">minimum</span>
+<span class="n">Z</span> <span class="k">for</span> <span class="o">|</span><span class="n">Z</span><span class="o">|</span> <span class="o">&lt;=</span> <span class="n">minimum</span>   <span class="p">(</span><span class="n">the</span> <span class="n">linear</span> <span class="n">part</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">range</span><span class="p">)</span>
+<span class="o">-</span><span class="n">minimum</span> <span class="o">*</span> <span class="p">(</span> <span class="n">log10</span><span class="p">(</span> <span class="o">|</span><span class="n">Z</span><span class="o">|</span> <span class="o">/</span> <span class="n">minimum</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span>   <span class="k">for</span> <span class="n">Z</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">minimum</span>
+</pre></div>
+</div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXMATH.un_log_z" title="geosoft.gxapi.GXMATH.un_log_z"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMATH.un_log_z()</span></code></a></p>
+<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXMATH.un_log_z_" title="geosoft.gxapi.GXMATH.un_log_z_"><code class="xref py py-obj docutils literal"><span class="pre">un_log_z_</span></code></a></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.mod_double">
-<em class="property">static </em><code class="descname">mod_double</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.mod_double" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculates</span> <span class="n">the</span> <span class="n">modulus</span> <span class="n">of</span> <span class="n">two</span> <span class="n">reals</span> <span class="p">(</span><span class="n">A</span> <span class="n">mod</span> <span class="n">B</span><span class="p">)</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.mod_double_">
+<em class="property">classmethod </em><code class="descname">mod_double_</code><span class="sig-paren">(</span><em>a</em>, <em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.mod_double_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the modulus of two reals (A mod B)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; A</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; B (must not be zero)</li>
+<li><strong>a</strong> (<em>float</em>) &#8211; A</li>
+<li><strong>b</strong> (<em>float</em>) &#8211; B (must not be zero)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">real</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Real</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
@@ -702,37 +635,31 @@ Z for <cite>|</cite>Z<cite>|</cite> &lt;= minimum   (the linear part of the rang
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">modulus</span> <span class="n">of</span> <span class="n">A</span> <span class="k">with</span> <span class="n">respect</span> <span class="n">to</span> <span class="n">B</span> <span class="ow">is</span> <span class="n">defined</span>
-<span class="k">as</span> <span class="n">the</span> <span class="n">difference</span> <span class="n">of</span> <span class="n">A</span> <span class="k">with</span> <span class="n">the</span> <span class="n">largest</span> <span class="n">integral</span> <span class="n">multiple</span> <span class="n">of</span> <span class="n">B</span>
-<span class="n">smaller</span> <span class="n">than</span> <span class="ow">or</span> <span class="n">equal</span> <span class="n">to</span> <span class="n">A</span><span class="o">.</span>
-
-<span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span>   <span class="n">A</span>  <span class="n">mod</span> <span class="n">B</span>
-<span class="mi">20</span> <span class="n">mod</span> <span class="mi">10</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="mi">20</span> <span class="n">mod</span> <span class="mi">9</span> <span class="o">=</span> <span class="mi">2</span>
-
-<span class="n">f</span> <span class="n">A</span> <span class="ow">or</span> <span class="n">B</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">dummy</span><span class="p">,</span> <span class="n">returns</span> <span class="n">dummy</span><span class="o">.</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The modulus of A with respect to B is defined
+as the difference of A with the largest integral multiple of B
+smaller than or equal to A.</p>
+<p>e.g.   A  mod B
+20 mod 10 = 0
+20 mod 9 = 2</p>
+<p>f A or B is a dummy, returns dummy.</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.mod_int">
-<em class="property">static </em><code class="descname">mod_int</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMATH.mod_int" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculates</span> <span class="n">the</span> <span class="n">modulus</span> <span class="n">of</span> <span class="n">two</span> <span class="n">integers</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.mod_int_">
+<em class="property">classmethod </em><code class="descname">mod_int_</code><span class="sig-paren">(</span><em>a</em>, <em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.mod_int_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the modulus of two integers</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; A</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; B (must not be zero)</li>
+<li><strong>a</strong> (<em>int</em>) &#8211; A</li>
+<li><strong>b</strong> (<em>int</em>) &#8211; B (must not be zero)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">int</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Int</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
@@ -743,33 +670,23 @@ Z for <cite>|</cite>Z<cite>|</cite> &lt;= minimum   (the linear part of the rang
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">A</span> <span class="ow">or</span> <span class="n">B</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">dummy</span><span class="p">,</span> <span class="n">returns</span> <span class="n">dummy</span><span class="o">.</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If A or B is a dummy, returns dummy.</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.nicer_log_scale">
-<em class="property">static </em><code class="descname">nicer_log_scale</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(int)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMATH.nicer_log_scale" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Finds</span> <span class="n">nicer</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span> <span class="n">values</span> <span class="k">for</span> <span class="n">logarithmic</span> <span class="n">plot</span> <span class="n">scales</span><span class="o">.</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.nicer_log_scale_">
+<em class="property">classmethod </em><code class="descname">nicer_log_scale_</code><span class="sig-paren">(</span><em>min</em>, <em>max</em>, <em>fine</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.nicer_log_scale_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds nicer min, max values for logarithmic plot scales.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Min value (changed)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Max value (changed)</li>
-<li><strong>arg3</strong> (<em>int</em>) &#8211; Fine flag</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Min value (changed)</li>
+<li><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Max value (changed)</li>
+<li><strong>fine</strong> (<em>int</em>) &#8211; Fine flag</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
@@ -777,45 +694,34 @@ Z for <cite>|</cite>Z<cite>|</cite> &lt;= minimum   (the linear part of the rang
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Will</span> <span class="n">fail</span> <span class="k">if</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">upper</span> <span class="n">bound</span> <span class="ow">is</span> <span class="n">less</span> <span class="n">than</span> <span class="n">the</span> <span class="n">lower</span>
-<span class="n">bound</span><span class="p">,</span> <span class="n">but</span> <span class="n">will</span> <span class="n">work</span> <span class="k">if</span> <span class="n">the</span> <span class="n">two</span> <span class="n">values</span> <span class="n">are</span> <span class="n">equal</span><span class="o">.</span>
-<span class="n">The</span> <span class="nb">input</span> <span class="n">bounds</span> <span class="n">are</span> <span class="n">overwritten</span><span class="o">.</span>
-
-<span class="n">Input</span> <span class="n">lower</span> <span class="ow">and</span> <span class="n">upper</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">returns</span> <span class="s2">&quot;nicer&quot;</span> <span class="n">values</span><span class="o">.</span>
-<span class="n">If</span> <span class="n">the</span> <span class="n">Fine</span> <span class="n">flag</span> <span class="ow">is</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">the</span> <span class="n">values</span> <span class="n">will</span> <span class="n">have</span> <span class="n">the</span>
-<span class="n">form</span> <span class="n">N</span> <span class="n">x</span> <span class="mi">10</span><span class="o">^</span><span class="n">Y</span><span class="p">,</span> <span class="n">where</span> <span class="n">N</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">value</span> <span class="kn">from</span> <span class="mi">1</span> <span class="n">to</span> <span class="mi">9</span><span class="p">,</span> <span class="ow">and</span> <span class="mi">10</span><span class="o">^</span><span class="n">Y</span>
-<span class="ow">is</span> <span class="n">an</span> <span class="n">integral</span> <span class="n">power</span> <span class="n">of</span> <span class="mf">10.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">Fine</span> <span class="n">flag</span> <span class="ow">is</span> <span class="nb">set</span> <span class="n">to</span>
-<span class="n">FALSE</span><span class="p">,</span> <span class="n">the</span> <span class="n">scaling</span> <span class="ow">is</span> <span class="n">coarse</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">bounding</span> <span class="n">exact</span>
-<span class="n">powers</span> <span class="n">of</span> <span class="mi">10</span> <span class="n">are</span> <span class="n">returned</span><span class="o">.</span>
-<span class="n">For</span> <span class="n">example</span><span class="p">,</span>  <span class="n">the</span> <span class="n">values</span> <span class="p">(</span><span class="o">.</span><span class="mi">034</span><span class="p">,</span> <span class="mi">23</span><span class="p">)</span> <span class="k">return</span> <span class="p">(</span><span class="o">.</span><span class="mi">03</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span> <span class="k">for</span>
-<span class="n">fine</span> <span class="n">scaling</span><span class="p">,</span> <span class="ow">and</span> <span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">coarse</span> <span class="n">scaling</span><span class="o">.</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Will fail if the input upper bound is less than the lower
+bound, but will work if the two values are equal.
+The input bounds are overwritten.</p>
+<p>Input lower and upper bounds, returns &#8220;nicer&#8221; values.
+If the Fine flag is set to TRUE, the values will have the
+form N x 10^Y, where N is a value from 1 to 9, and 10^Y
+is an integral power of 10. If the Fine flag is set to
+FALSE, the scaling is coarse, and the bounding exact
+powers of 10 are returned.
+For example,  the values (.034, 23) return (.03, 30) for
+fine scaling, and (0.01, 100) for coarse scaling.</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.nicer_scale">
-<em class="property">static </em><code class="descname">nicer_scale</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em>, <em>(int_ref)arg4</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMATH.nicer_scale" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Compute</span> <span class="n">a</span> <span class="n">nicer</span> <span class="n">scale</span> <span class="k">for</span> <span class="n">a</span> <span class="n">given</span> <span class="nb">min</span> <span class="ow">and</span> <span class="nb">max</span><span class="o">.</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.nicer_scale_">
+<em class="property">classmethod </em><code class="descname">nicer_scale_</code><span class="sig-paren">(</span><em>min</em>, <em>max</em>, <em>inc</em>, <em>pow</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.nicer_scale_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute a nicer scale for a given min and max.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Min value (changed)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Max value (changed)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Inc value (returned)</li>
-<li><strong>arg4</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.int_ref</span></code></a>) &#8211; Power value (returned)</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Min value (changed)</li>
+<li><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Max value (changed)</li>
+<li><strong>inc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Inc value (returned)</li>
+<li><strong>pow</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Power value (returned)</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
@@ -823,60 +729,63 @@ Z for <cite>|</cite>Z<cite>|</cite> &lt;= minimum   (the linear part of the rang
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.normalise_3d">
-<em class="property">static </em><code class="descname">normalise_3d</code><span class="sig-paren">(</span><em>(float_ref)arg1</em>, <em>(float_ref)arg2</em>, <em>(float_ref)arg3</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMATH.normalise_3d" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Scale</span> <span class="n">a</span> <span class="n">vector</span> <span class="n">to</span> <span class="n">unit</span> <span class="n">length</span><span class="o">.</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.normalise_3d_">
+<em class="property">classmethod </em><code class="descname">normalise_3d_</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.normalise_3d_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scale a vector to unit length.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X component (altered)</li>
-<li><strong>arg2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y component (altered)</li>
-<li><strong>arg3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Z component (altered)</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X component (altered)</li>
+<li><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y component (altered)</li>
+<li><strong>z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Z component (altered)</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.0.0.</span></p>
+<p><span class="versionmodified">New in version 6.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Divides</span> <span class="n">each</span> <span class="n">component</span> <span class="n">by</span> <span class="n">the</span> <span class="n">vector</span>
-<span class="n">magnitude</span><span class="o">.</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Divides each component by the vector
+magnitude.</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.or">
-<em class="property">static </em><code class="descname">or</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMATH.or" title="Permalink to this definition">¶</a></dt>
-<dd><pre class="literal-block">
-Return the unary operation result of A <cite>|</cite> B
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.null">
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMATH" title="geosoft.gxapi.GXMATH"><code class="xref py py-obj docutils literal"><span class="pre">GXMATH</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXMATH" title="geosoft.gxapi.GXMATH"><code class="xref py py-obj docutils literal"><span class="pre">GXMATH</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMATH" title="geosoft.gxapi.GXMATH">GXMATH</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
-Returns                 an integer number
-
-If A or B is a dummy, returns dummy.
-</pre>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.or_">
+<em class="property">classmethod </em><code class="descname">or_</code><span class="sig-paren">(</span><em>pi_val1</em>, <em>pi_val2</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.or_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the unary operation result of A | B</p>
+<p>Returns                 an integer number</p>
+<p>If A or B is a dummy, returns dummy.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; A</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; B</li>
+<li><strong>pi_val1</strong> (<em>int</em>) &#8211; A</li>
+<li><strong>pi_val2</strong> (<em>int</em>) &#8211; B</li>
 </ul>
 </td>
 </tr>
@@ -886,27 +795,26 @@ If A or B is a dummy, returns dummy.
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.3.0.</span></p>
+<p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.pow">
-<em class="property">static </em><code class="descname">pow</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.pow" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">X</span> <span class="n">raised</span> <span class="n">to</span> <span class="n">the</span> <span class="n">power</span> <span class="n">of</span> <span class="n">Y</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.pow_">
+<em class="property">classmethod </em><code class="descname">pow_</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.pow_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate X raised to the power of Y</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; X</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; Y</li>
+<li><strong>x</strong> (<em>float</em>) &#8211; X</li>
+<li><strong>y</strong> (<em>float</em>) &#8211; Y</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">real</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Real</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
@@ -917,99 +825,81 @@ If A or B is a dummy, returns dummy.
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">either</span> <span class="n">X</span> <span class="ow">or</span> <span class="n">Y</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">dummy</span><span class="p">,</span> <span class="n">returns</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If either X or Y is a dummy, returns dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.rand">
-<em class="property">static </em><code class="descname">rand</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.rand" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">a</span>  <span class="n">random</span> <span class="n">number</span> <span class="n">between</span> <span class="mi">0</span> <span class="ow">and</span> <span class="mi">1</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.rand_">
+<em class="property">classmethod </em><code class="descname">rand_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.rand_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a  random number between 0 and 1</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a real number</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A real number</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.3.0.</span></p>
+<p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<pre class="literal-block">
-Use <a class="reference internal" href="#geosoft.gxapi.GXMATH.s_rand" title="geosoft.gxapi.GXMATH.s_rand"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMATH.s_rand()</span></code></a> to seed the random number generator before a series of
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Use <a class="reference internal" href="#geosoft.gxapi.GXMATH.s_rand_" title="geosoft.gxapi.GXMATH.s_rand_"><code class="xref py py-obj docutils literal"><span class="pre">s_rand_</span></code></a> to seed the random number generator before a series of
 calls to this function are made.
-The standard &quot;C&quot; function rand() is called.
-</pre>
+The standard &#8220;C&#8221; function rand() is called.</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.rotate_vector">
-<em class="property">static </em><code class="descname">rotate_vector</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em>, <em>(float)arg3</em>, <em>(float)arg4</em>, <em>(float)arg5</em>, <em>(float)arg6</em>, <em>(float)arg7</em>, <em>(float_ref)arg8</em>, <em>(float_ref)arg9</em>, <em>(float_ref)arg10</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMATH.rotate_vector" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Rotate</span> <span class="n">a</span> <span class="n">vector</span> <span class="n">about</span> <span class="n">an</span> <span class="n">axis</span><span class="o">.</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.rotate_vector_">
+<em class="property">classmethod </em><code class="descname">rotate_vector_</code><span class="sig-paren">(</span><em>x1</em>, <em>y1</em>, <em>z1</em>, <em>angle</em>, <em>x2</em>, <em>y2</em>, <em>z2</em>, <em>x3</em>, <em>y3</em>, <em>z3</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.rotate_vector_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotate a vector about an axis.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; X1 component (vector to rotate)</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; Y1 component</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; Z1 component</li>
-<li><strong>arg4</strong> (<em>float</em>) &#8211; Angle to rotate, CW in radians</li>
-<li><strong>arg5</strong> (<em>float</em>) &#8211; X2 component (axis of rotation)</li>
-<li><strong>arg6</strong> (<em>float</em>) &#8211; Y2 component</li>
-<li><strong>arg7</strong> (<em>float</em>) &#8211; Z2 component</li>
-<li><strong>arg8</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; X3 component  (rotated vector, can</li>
-<li><strong>arg9</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Y3 component   be the same as input)</li>
-<li><strong>arg10</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.float_ref</span></code></a>) &#8211; Z3 component</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x1</strong> (<em>float</em>) &#8211; X1 component (vector to rotate)</li>
+<li><strong>y1</strong> (<em>float</em>) &#8211; Y1 component</li>
+<li><strong>z1</strong> (<em>float</em>) &#8211; Z1 component</li>
+<li><strong>angle</strong> (<em>float</em>) &#8211; Angle to rotate, CW in radians</li>
+<li><strong>x2</strong> (<em>float</em>) &#8211; X2 component (axis of rotation)</li>
+<li><strong>y2</strong> (<em>float</em>) &#8211; Y2 component</li>
+<li><strong>z2</strong> (<em>float</em>) &#8211; Z2 component</li>
+<li><strong>x3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X3 component  (rotated vector, can</li>
+<li><strong>y3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y3 component   be the same as input)</li>
+<li><strong>z3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Z3 component</li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Nothing</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.0.0.</span></p>
+<p><span class="versionmodified">New in version 6.0.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Rotates</span> <span class="n">a</span> <span class="n">vector</span> <span class="n">by</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">angle</span> <span class="n">around</span> <span class="n">an</span> <span class="n">arbitrary</span> <span class="n">axis</span><span class="o">.</span>
-<span class="n">Angles</span> <span class="n">are</span> <span class="n">measured</span> <span class="n">clockwise</span> <span class="n">looking</span> <span class="n">along</span> <span class="n">the</span> <span class="n">axis</span> <span class="p">(</span><span class="n">away</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">origin</span><span class="p">)</span><span class="o">.</span>
-<span class="n">Assumes</span> <span class="n">a</span> <span class="n">right</span> <span class="n">hand</span> <span class="n">coordinate</span> <span class="n">system</span><span class="o">.</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Rotates a vector by the input angle around an arbitrary axis.
+Angles are measured clockwise looking along the axis (away from the origin).
+Assumes a right hand coordinate system.</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.round_double">
-<em class="property">static </em><code class="descname">round_double</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.round_double" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Round</span> <span class="n">to</span> <span class="n">n</span> <span class="n">significant</span> <span class="n">digits</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.round_double_">
+<em class="property">classmethod </em><code class="descname">round_double_</code><span class="sig-paren">(</span><em>z</em>, <em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.round_double_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Round to n significant digits</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; real</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; number of significant digits to round to</li>
+<li><strong>z</strong> (<em>float</em>) &#8211; Real</li>
+<li><strong>n</strong> (<em>int</em>) &#8211; Number of significant digits to round to</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">real</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Real</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
@@ -1020,27 +910,23 @@ The standard &quot;C&quot; function rand() is called.
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Negative</span> <span class="n">values</span> <span class="n">ending</span> <span class="ow">in</span> <span class="mi">5</span><span class="n">XXX</span> <span class="n">to</span> <span class="n">n</span> <span class="n">sig</span> <span class="n">digits</span> <span class="nb">round</span> <span class="n">down</span>
-<span class="n">Positive</span> <span class="n">values</span> <span class="n">ending</span> <span class="ow">in</span> <span class="mi">5</span><span class="n">XXX</span> <span class="n">to</span> <span class="n">n</span> <span class="n">sig</span> <span class="n">digits</span> <span class="nb">round</span> <span class="n">up</span>
-<span class="n">Dummy</span> <span class="n">values</span> <span class="k">return</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Negative values ending in 5XXX to n sig digits round down
+Positive values ending in 5XXX to n sig digits round up
+Dummy values return dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.round_int">
-<em class="property">static </em><code class="descname">round_int</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMATH.round_int" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Round</span> <span class="n">to</span> <span class="n">the</span> <span class="n">nearest</span> <span class="n">whole</span> <span class="n">number</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.round_int_">
+<em class="property">classmethod </em><code class="descname">round_int_</code><span class="sig-paren">(</span><em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.round_int_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Round to the nearest whole number</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; round</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>z</strong> (<em>float</em>) &#8211; Round</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">integer</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Integer</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
@@ -1049,57 +935,39 @@ The standard &quot;C&quot; function rand() is called.
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Negative</span> <span class="n">values</span> <span class="k">with</span> <span class="n">decimal</span> <span class="n">parts</span> <span class="n">larger</span> <span class="n">than</span> <span class="o">.</span><span class="mi">5</span> <span class="nb">round</span> <span class="n">down</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.5</span> <span class="o">-&gt;</span> <span class="mf">2.0</span><span class="p">)</span>
-<span class="n">Positive</span> <span class="n">values</span> <span class="k">with</span> <span class="n">decimal</span> <span class="n">parts</span> <span class="n">larger</span> <span class="n">than</span> <span class="o">.</span><span class="mi">5</span> <span class="nb">round</span> <span class="n">up</span> <span class="p">(</span><span class="mf">1.5</span> <span class="o">-&gt;</span> <span class="mf">2.0</span><span class="p">)</span>
-<span class="n">Dummy</span> <span class="n">values</span> <span class="k">return</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Negative values with decimal parts larger than .5 round down (-1.5 -&gt; 2.0)
+Positive values with decimal parts larger than .5 round up (1.5 -&gt; 2.0)
+Dummy values return dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.s_rand">
-<em class="property">static </em><code class="descname">s_rand</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXMATH.s_rand" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Seed</span> <span class="n">the</span> <span class="n">random</span><span class="o">-</span><span class="n">number</span> <span class="n">generator</span> <span class="k">with</span> <span class="n">current</span> <span class="n">time</span>
-</pre></div>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.s_rand_">
+<em class="property">classmethod </em><code class="descname">s_rand_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.s_rand_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Seed the random-number generator with current time</p>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.3.0.</span></p>
+<p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<pre class="literal-block">
-Use the <a class="reference internal" href="#geosoft.gxapi.GXMATH.rand" title="geosoft.gxapi.GXMATH.rand"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMATH.rand()</span></code></a> function to create a random number between  0 and 1.
-The standard &quot;C&quot; function srand() is called.
-</pre>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Use the <a class="reference internal" href="#geosoft.gxapi.GXMATH.rand_" title="geosoft.gxapi.GXMATH.rand_"><code class="xref py py-obj docutils literal"><span class="pre">rand_</span></code></a> function to create a random number between  0 and 1.
+The standard &#8220;C&#8221; function srand() is called.</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.sign">
-<em class="property">static </em><code class="descname">sign</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(float)arg2</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.sign" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Determine</span> <span class="k">return</span> <span class="n">value</span> <span class="n">based</span> <span class="n">on</span> <span class="n">value</span> <span class="n">of</span> <span class="n">Z1</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.sign_">
+<em class="property">classmethod </em><code class="descname">sign_</code><span class="sig-paren">(</span><em>z_sign</em>, <em>z_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.sign_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine return value based on value of Z1</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; Z1</li>
-<li><strong>arg2</strong> (<em>float</em>) &#8211; Z2</li>
+<li><strong>z_sign</strong> (<em>float</em>) &#8211; Z1</li>
+<li><strong>z_val</strong> (<em>float</em>) &#8211; Z2</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><cite>|</cite>Z2<cite>|</cite> if Z1&gt;0, -<cite>|</cite>Z2<cite>|</cite> if Z1&lt;0, 0 if Z1 = 0, and Z2 if Z1 = Dummy</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">|Z2|</span> <span class="pre">if</span> <span class="pre">Z1</span> <span class="pre">&gt;</span> <span class="pre">0,</span> <span class="pre">-|Z2|</span> <span class="pre">if</span> <span class="pre">Z1</span> <span class="pre">&lt;</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">if</span> <span class="pre">Z1</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">and</span> <span class="pre">Z2</span> <span class="pre">if</span> <span class="pre">Z1</span> <span class="pre">=</span> <span class="pre">Dummy</span></code></p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
@@ -1110,25 +978,21 @@ The standard &quot;C&quot; function srand() is called.
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Dummy</span> <span class="n">values</span> <span class="k">return</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Dummy values return dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.sin">
-<em class="property">static </em><code class="descname">sin</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.sin" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">the</span> <span class="n">sin</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.sin_">
+<em class="property">classmethod </em><code class="descname">sin_</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.sin_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the sin</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; Angle in radians</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>val</strong> (<em>float</em>) &#8211; Angle in radians</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Real</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
 </tr>
@@ -1137,25 +1001,21 @@ The standard &quot;C&quot; function srand() is called.
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Dummy</span> <span class="n">values</span> <span class="k">return</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Dummy values return dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.sqrt">
-<em class="property">static </em><code class="descname">sqrt</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.sqrt" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">the</span> <span class="n">square</span> <span class="n">root</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.sqrt_">
+<em class="property">classmethod </em><code class="descname">sqrt_</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.sqrt_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the square root</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; real</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>val</strong> (<em>float</em>) &#8211; Real</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Real</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
 </tr>
@@ -1164,25 +1024,21 @@ The standard &quot;C&quot; function srand() is called.
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Dummy</span> <span class="n">values</span> <span class="k">return</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Dummy values return dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.tan">
-<em class="property">static </em><code class="descname">tan</code><span class="sig-paren">(</span><em>(float)arg1</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.tan" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Calculate</span> <span class="n">the</span> <span class="n">tangent</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.tan_">
+<em class="property">classmethod </em><code class="descname">tan_</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.tan_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the tangent</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg1</strong> (<em>float</em>) &#8211; Angle in radians</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>val</strong> (<em>float</em>) &#8211; Angle in radians</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Real</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
 </tr>
@@ -1191,26 +1047,22 @@ The standard &quot;C&quot; function srand() is called.
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Dummy</span> <span class="n">values</span> <span class="k">return</span> <span class="n">dummy</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Dummy values return dummy</p>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.un_log_z">
-<em class="property">static </em><code class="descname">un_log_z</code><span class="sig-paren">(</span><em>(float)arg1</em>, <em>(int)arg2</em>, <em>(float)arg3</em><span class="sig-paren">)</span> &rarr; float:<a class="headerlink" href="#geosoft.gxapi.GXMATH.un_log_z" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Inverse</span> <span class="n">of</span> <span class="n">rLogZ</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.un_log_z_">
+<em class="property">classmethod </em><code class="descname">un_log_z_</code><span class="sig-paren">(</span><em>z</em>, <em>mode</em>, <em>min</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.un_log_z_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse of rLogZ</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>float</em>) &#8211; log value</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; Log Mode (0 - Log, 1 - LogLinearLog)</li>
-<li><strong>arg3</strong> (<em>float</em>) &#8211; Log Minimum (must be greater than 0)</li>
+<li><strong>z</strong> (<em>float</em>) &#8211; Log value</li>
+<li><strong>mode</strong> (<em>int</em>) &#8211; Log Mode (0 - Log, 1 - LogLinearLog)</li>
+<li><strong>min</strong> (<em>float</em>) &#8211; Log Minimum (must be greater than 0)</li>
 </ul>
 </td>
 </tr>
@@ -1225,33 +1077,27 @@ The standard &quot;C&quot; function srand() is called.
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.1.</span></p>
 </div>
-<p><strong>Note:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">Notes</span> <span class="k">for</span> <span class="n">rLogZ</span><span class="o">.</span>
-</pre></div>
-</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>Note:</strong> See Notes for rLogZ.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXMATH.log_z" title="geosoft.gxapi.GXMATH.log_z"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXMATH.log_z()</span></code></a></p>
+<p class="last"><a class="reference internal" href="#geosoft.gxapi.GXMATH.log_z_" title="geosoft.gxapi.GXMATH.log_z_"><code class="xref py py-obj docutils literal"><span class="pre">log_z_</span></code></a></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXMATH.xor">
-<em class="property">static </em><code class="descname">xor</code><span class="sig-paren">(</span><em>(int)arg1</em>, <em>(int)arg2</em><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXMATH.xor" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Return</span> <span class="n">the</span> <span class="n">unary</span> <span class="n">operation</span> <span class="n">result</span> <span class="n">of</span> <span class="n">A</span> <span class="o">^</span> <span class="n">B</span>
-
-<span class="n">Returns</span>                 <span class="n">an</span> <span class="n">integer</span> <span class="n">number</span>
-
-<span class="n">If</span> <span class="n">A</span> <span class="ow">or</span> <span class="n">B</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">dummy</span><span class="p">,</span> <span class="n">returns</span> <span class="n">dummy</span><span class="o">.</span>
-</pre></div>
-</div>
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXMATH.xor_">
+<em class="property">classmethod </em><code class="descname">xor_</code><span class="sig-paren">(</span><em>pi_val1</em>, <em>pi_val2</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMATH.xor_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the unary operation result of A ^ B</p>
+<p>Returns                 an integer number</p>
+<p>If A or B is a dummy, returns dummy.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>arg1</strong> (<em>int</em>) &#8211; A</li>
-<li><strong>arg2</strong> (<em>int</em>) &#8211; B</li>
+<li><strong>pi_val1</strong> (<em>int</em>) &#8211; A</li>
+<li><strong>pi_val2</strong> (<em>int</em>) &#8211; B</li>
 </ul>
 </td>
 </tr>
@@ -1261,8 +1107,9 @@ The standard &quot;C&quot; function srand() is called.
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 6.3.0.</span></p>
+<p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
 </dd></dl>
 
 </dd></dl>
@@ -1281,15 +1128,27 @@ The standard &quot;C&quot; function srand() is called.
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

@@ -1,7 +1,7 @@
- 
 
 .. _GXSTRINGS:
 
+ 
 GXSTRINGS class
 ==================================
 

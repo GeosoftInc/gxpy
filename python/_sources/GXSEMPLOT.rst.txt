@@ -1,108 +1,87 @@
- 
 
 .. _GXSEMPLOT:
 
+ 
 GXSEMPLOT class
 ==================================
 
 .. autoclass:: geosoft.gxapi.GXSEMPLOT
    :members:
 
+
 .. _SEMPLOT_GROUP_CLASS:
 
-SEMPLOT_GROUP_CLASS constant
+SEMPLOT_GROUP_CLASS constants
 -----------------------------------------------------------------------
 
+`GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>` group class.
 
-.. autoattribute:: geosoft.gxapi.SEMPLOT_GROUP_CLASS
+.. autodata:: geosoft.gxapi.SEMPLOT_GROUP_CLASS
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SEMPLOT_GROUP_CLASS
 
-::
-
-   SEMPLOT group class. 
 
 .. _SEMPLOT_EXPORT:
 
 SEMPLOT_EXPORT constants
 -----------------------------------------------------------------------
 
-::
+`GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>` export type selection.
 
-   SEMPLOT export type selection. 
+.. autodata:: geosoft.gxapi.SEMPLOT_EXPORT_NORMAL
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SEMPLOT_EXPORT_NORMAL
+.. autodata:: geosoft.gxapi.SEMPLOT_EXPORT_NOEXTRA
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SEMPLOT_EXPORT_NOEXTRA
 
-.. autoattribute:: geosoft.gxapi.SEMPLOT_EXPORT_NORMAL
-
-::
-
-   Exports Sample info channels, oxides/ratios, totals, extra channels. 
-
-.. autoattribute:: geosoft.gxapi.SEMPLOT_EXPORT_NOEXTRA
-
-::
-
-   Exports Sample info, oxides/ratios, totals. 
 
 .. _SEMPLOT_EXT:
 
 SEMPLOT_EXT constants
 -----------------------------------------------------------------------
 
-::
+`GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>` file extension selection
 
-   SEMPLOT file extension selection 
+.. autodata:: geosoft.gxapi.SEMPLOT_EXT_ALL
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SEMPLOT_EXT_ALL
+.. autodata:: geosoft.gxapi.SEMPLOT_EXT_SEMPLOT
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SEMPLOT_EXT_SEMPLOT
+.. autodata:: geosoft.gxapi.SEMPLOT_EXT_CHIMERA
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SEMPLOT_EXT_CHIMERA
 
-.. autoattribute:: geosoft.gxapi.SEMPLOT_EXT_ALL
-
-::
-
-   Use for selection only. Selects both "Semplot" and "CHIMERA" type
-   files when creating LSTs etc. 
-
-.. autoattribute:: geosoft.gxapi.SEMPLOT_EXT_SEMPLOT
-
-::
-
-   Read/write templates with extensions ".xyt", ".tri" and ".semtemplate"
-   Read/write overlays with extensions ".oly" and ".semoverlay" 
-
-.. autoattribute:: geosoft.gxapi.SEMPLOT_EXT_CHIMERA
-
-::
-
-   Read/write templates with extensions ".geosoft_template"
-   Read/write overlays with extensions ".geosoft_overlay" 
 
 .. _SEMPLOT_PLOT:
 
 SEMPLOT_PLOT constants
 -----------------------------------------------------------------------
 
-::
+`GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>` plot type selection.
 
-   SEMPLOT plot type selection. 
-
-.. autoattribute:: geosoft.gxapi.SEMPLOT_PLOT_ALL
-
-::
-
-   Use for selection only. Selects both "XYPlot" and "TriPlot"
-   plots when creating LSTs etc. 
-
-.. autoattribute:: geosoft.gxapi.SEMPLOT_PLOT_XYPLOT
-
-::
-
-   Select XY (Scatter) plot. 
-
-.. autoattribute:: geosoft.gxapi.SEMPLOT_PLOT_TRIPLOT
-
-::
-
-   Select Tri (Triangular) plot. 
-
-.. autoattribute:: geosoft.gxapi.SEMPLOT_PLOT_UNKNOWN
-
-::
-
-   Returned as an error status from some functions. 
+.. autodata:: geosoft.gxapi.SEMPLOT_PLOT_ALL
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SEMPLOT_PLOT_ALL
+.. autodata:: geosoft.gxapi.SEMPLOT_PLOT_XYPLOT
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SEMPLOT_PLOT_XYPLOT
+.. autodata:: geosoft.gxapi.SEMPLOT_PLOT_TRIPLOT
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SEMPLOT_PLOT_TRIPLOT
+.. autodata:: geosoft.gxapi.SEMPLOT_PLOT_UNKNOWN
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SEMPLOT_PLOT_UNKNOWN
 
 	

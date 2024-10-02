@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,19 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-87443115-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>Geosoft GX API &#8212; Geosoft GX Python API 9.1 documentation</title>
+    
+    <title>Geosoft GX API &#8212; Geosoft GX Python API 9.3.0 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,16 +15,25 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.1',
+        VERSION:     '9.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Geosoft GX Python API 9.1 documentation" href="index.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -43,10 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -54,21 +50,14 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Geosoft GX API</a><ul>
-<li><a class="reference internal" href="#gx-api-reference">GX API Reference</a></li>
 <li><a class="reference internal" href="#the-gxcontext-class">The GXContext class</a></li>
+<li><a class="reference internal" href="#gxapi-instance-resource-garbage-collection">GXAPI Instance Resource Garbage Collection</a></li>
 <li><a class="reference internal" href="#helper-classes-to-pass-immutable-values-by-reference">Helper classes to pass immutable values by reference</a></li>
 <li><a class="reference internal" href="#exceptions">Exceptions</a></li>
 </ul>
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/geosoft.gxapi.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -79,6 +68,13 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/geosoft.gxapi.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
         </div>
       </div>
 
@@ -89,43 +85,46 @@
             
   <div class="section" id="geosoft-gx-api">
 <h1>Geosoft GX API<a class="headerlink" href="#geosoft-gx-api" title="Permalink to this headline">¶</a></h1>
-<p>The Geosoft GX API is exposed to python developers through the <code class="code docutils literal"><span class="pre">geosoft.gxapi</span></code> module.  The API includes the full set of
-low-level function calls that expose almost all Geosoft functionality to developer.</p>
-<div class="section" id="gx-api-reference">
-<h2>GX API Reference<a class="headerlink" href="#gx-api-reference" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><a class="reference internal" href="geosoft.gxapi.classes.html"><span class="doc">GX API Class/Library Reference...</span></a></div></blockquote>
-</div>
+<p>The complete Geosoft GX API is exposed to python developers through the <a class="reference internal" href="geosoft.gxapi.classes.html"><span class="doc">geosoft.gxapi</span></a>
+package.  This includes all low-level classes and function calls that expose almost all Geosoft functionality to
+a developer.</p>
 <div class="section" id="the-gxcontext-class">
 <h2>The GXContext class<a class="headerlink" href="#the-gxcontext-class" title="Permalink to this headline">¶</a></h2>
+<p>Before calling any other API function from a stand-alone script (a script that is not run as an extension from
+Geosoft Desktop), a GX Context must be created and held.  This can be done by creating an instance of
+<a class="reference internal" href="#geosoft.gxapi.GXContext" title="geosoft.gxapi.GXContext"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXContext</span></code></a> or an instance of <a class="reference internal" href="geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy" title="geosoft.gxpy.gx.GXpy"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.gx.GXpy</span></code></a>, which handles the details of
+<code class="docutils literal"><span class="pre">GXContext</span></code> for you.  We recommend using <a class="reference internal" href="geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy" title="geosoft.gxpy.gx.GXpy"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.gx.GXpy</span></code></a> unless you have chosen to work only with
+the low-level <code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi</span></code>.  Note that the low-level module <code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi</span></code>, although more complex,
+is more consistent across versions.</p>
+<p>Creating a GX context requires any version of <strong>Geosoft Desktop</strong> to be installed on the target system, from which
+the library dll&#8217;s are located and loaded. <strong>Geosoft Desktop</strong> can be downloaded from
+<a class="reference external" href="https://my.geosoft.com/downloads">Geosoft Downloads</a>.</p>
+<p>It is possible to redirect the location of dlls used by setting the <strong>GX_GEOSOFT_BIN_PATH</strong> environment variable
+to reference the location of the Geosoft binary files.  Refer to the
+<a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/overview">GX Developer Guide</a> for more
+information.</p>
 <dl class="class">
 <dt id="geosoft.gxapi.GXContext">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXContext</code><a class="headerlink" href="#geosoft.gxapi.GXContext" title="Permalink to this definition">¶</a></dt>
-<dd><p>The main GX execution context</p>
-<p>A single instance of this object needs to be created per thread and persisted before using any other class in the
-geosoft.gxapi module.</p>
+<em class="property">class </em><code class="descname">GXContext</code><span class="sig-paren">(</span><em>wrapper</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>The main GX execution context.</p>
+<p>A single instance of this object must be created per thread and persist before using any other class in the
+<code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxapi</span></code> module.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">Class <a class="reference internal" href="geosoft.gxpy.gx.html#geosoft.gxpy.gx.GXpy" title="geosoft.gxpy.gx.GXpy"><code class="xref py py-class docutils literal"><span class="pre">gxpy.gx.GXpy</span></code></a></p>
+</div>
 <dl class="method">
 <dt id="geosoft.gxapi.GXContext.clear_ui_console">
-<code class="descname">clear_ui_console</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXContext.clear_ui_console" title="Permalink to this definition">¶</a></dt>
+<code class="descname">clear_ui_console</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXContext.clear_ui_console" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clears the console owned by UI applications. Has no effect on consoles owning standalone scripts.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXContext.create">
-<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>(str)application</em>, <em>(str)version</em>, <em>(int)parent_wnd_id = 0</em><span class="sig-paren">)</span> &rarr; GXContext:<a class="headerlink" href="#geosoft.gxapi.GXContext.create" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>application</em>, <em>version</em>, <em>wind_id=0</em>, <em>flags=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXContext.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates the GX execution context (will return the current one if it exists).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -135,33 +134,15 @@ geosoft.gxapi module.</p>
 <li><strong>application</strong> (<em>str</em>) &#8211; Calling application name&#8221;</li>
 <li><strong>version</strong> (<em>str</em>) &#8211; Calling application version</li>
 <li><strong>parent_wnd_id</strong> (<em>int</em>) &#8211; Calling application main window handle (HWND cast to unsigned on Windows) as an int (default 0)</li>
+<li><strong>flags</strong> (<em>int</em>) &#8211; 0 default; 64 suppresses text progress messages; 128 suppresses GUI progress window</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A GX execution context.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXContext" title="geosoft.gxapi.GXContext">geosoft.gxapi.GXContext</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXContext" title="geosoft.gxapi.GXContext">GXContext</a></p>
 </td>
-</tr>
-</tbody>
-</table>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 9.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="staticmethod">
-<dt id="geosoft.gxapi.GXContext.current">
-<em class="property">static </em><code class="descname">current</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; GXContext:<a class="headerlink" href="#geosoft.gxapi.GXContext.current" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the current thread&#8217;s GX execution context (throws if not created yet).</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A GX execution context.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXContext" title="geosoft.gxapi.GXContext">geosoft.gxapi.GXContext</a></td>
 </tr>
 </tbody>
 </table>
@@ -172,7 +153,7 @@ geosoft.gxapi module.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXContext.enable_application_windows">
-<code class="descname">enable_application_windows</code><span class="sig-paren">(</span><em>(bool)enable</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXContext.enable_application_windows" title="Permalink to this definition">¶</a></dt>
+<code class="descname">enable_application_windows</code><span class="sig-paren">(</span><em>enable</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXContext.enable_application_windows" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used by to prevent user interaction while showing modal windows with APIs where it might be hard to use proper window parenting
 (e.g. in Python with PyQt, tkinter, wxPython etc.). Take care to enable window prior to any calls that need user interaction, e.g.
 The <a class="reference internal" href="GXEMAP.html#geosoft.gxapi.GXEMAP" title="geosoft.gxapi.GXEMAP"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXEMAP</span></code></a> digitization methods.</p>
@@ -181,10 +162,6 @@ The <a class="reference internal" href="GXEMAP.html#geosoft.gxapi.GXEMAP" title=
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enable</strong> (<em>bool</em>) &#8211; True to enable, False to disable keyboard and mouse interaction</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
 </tr>
 </tbody>
 </table>
@@ -195,7 +172,7 @@ The <a class="reference internal" href="GXEMAP.html#geosoft.gxapi.GXEMAP" title=
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXContext.get_active_wnd_id">
-<code class="descname">get_active_wnd_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXContext.get_active_wnd_id" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_active_wnd_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXContext.get_active_wnd_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get currently active window (main window, floating document or other popup, 0 if not available).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -214,7 +191,7 @@ The <a class="reference internal" href="GXEMAP.html#geosoft.gxapi.GXEMAP" title=
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXContext.get_main_wnd_id">
-<code class="descname">get_main_wnd_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int:<a class="headerlink" href="#geosoft.gxapi.GXContext.get_main_wnd_id" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_main_wnd_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXContext.get_main_wnd_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the main window handle (0 if not available).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -233,13 +210,32 @@ The <a class="reference internal" href="GXEMAP.html#geosoft.gxapi.GXEMAP" title=
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXContext.has_ui_console">
-<code class="descname">has_ui_console</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; bool:<a class="headerlink" href="#geosoft.gxapi.GXContext.has_ui_console" title="Permalink to this definition">¶</a></dt>
+<code class="descname">has_ui_console</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXContext.has_ui_console" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if a console owned by UI applications is available</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Window handle as an int (HWND cast to unsigned on Windows)</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the parent has UI console.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXContext.is_ui_console_visible">
+<code class="descname">is_ui_console_visible</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXContext.is_ui_console_visible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a console owned by UI applications is visible</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the UI console is visible.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
@@ -252,7 +248,7 @@ The <a class="reference internal" href="GXEMAP.html#geosoft.gxapi.GXEMAP" title=
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXContext.show_ui_console">
-<code class="descname">show_ui_console</code><span class="sig-paren">(</span><em>(bool)show</em><span class="sig-paren">)</span> &rarr; None:<a class="headerlink" href="#geosoft.gxapi.GXContext.show_ui_console" title="Permalink to this definition">¶</a></dt>
+<code class="descname">show_ui_console</code><span class="sig-paren">(</span><em>show</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXContext.show_ui_console" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shows or hides console owned by UI applications. Showing the console Will also bring the window to the front if behind 
 other application windows. Has no effect on consoles owning standalone scripts.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -260,10 +256,6 @@ other application windows. Has no effect on consoles owning standalone scripts.<
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>show</strong> (<em>bool</em>) &#8211; True to show False to Hide</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
 </tr>
 </tbody>
 </table>
@@ -274,43 +266,50 @@ other application windows. Has no effect on consoles owning standalone scripts.<
 
 </dd></dl>
 
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>There should be a single instance of this class constructed in a global location prior to using any other GX API
-classes and their methods. By default the module will only function if an installed <em>Oasis montaj</em> product is found since
-it loads the dlls that are shipped with <em>Oasis montaj</em> for the actual functionality.</p>
-<p>It is possible to redirect the location of dlls used by setting the <code class="code docutils literal"><span class="pre">GX_GEOSOFT_BIN_PATH</span></code> environment variable.
-This can be done either using the normal <em>Windows</em> mechanisms (i.e. via <code class="code docutils literal"><span class="pre">set</span></code> command line or <em>Advanced System Settings-&gt;Environment Variables</em>)
-or directly in Python code by using <code class="code docutils literal"><span class="pre">os.putenv(&quot;GX_GEOSOFT_BIN_PATH&quot;,</span> <span class="pre">...)</span></code>. If your intention is to use the
-public standalone API that is shipped with <em>GX Developer</em> then this should be set to wherever
-the <code class="code docutils literal"><span class="pre">GeosoftFiles</span></code> redistributable folder is copied or installed.</p>
-<p class="last">The UI console functions are inteded for extension scripts or scripts running in Oasis montaj or other UI applications
-and are launched with <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.run_gx" title="geosoft.gxapi.GXSYS.run_gx"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.run_gx()</span></code></a>. The GX execution engine will detect if it is not running
-in a console and create a console for that can be shown or hidden by default with a setting.</p>
+</div>
+<div class="section" id="gxapi-instance-resource-garbage-collection">
+<h2>GXAPI Instance Resource Garbage Collection<a class="headerlink" href="#gxapi-instance-resource-garbage-collection" title="Permalink to this headline">¶</a></h2>
+<p>The GXAPI Python garbage collection is not in reverse-order of creation, which can lead to resources that depend
+on prior resources being destroyed out of order.  For example, the following will assert on exit:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">vox</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXVOX</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;v1.geosoft_voxel&#39;</span><span class="p">)</span>
+<span class="n">voxe</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXVOXE</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">vox</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is because Python garbage collection releases the <strong>vox</strong> instance before the <strong>voxe</strong> instance.  To avoid
+this problem, when creating a class instance that depends on a prior class instance, explicitly free the dependant
+instance as follows:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">vox</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXVOX</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;v1.geosoft_voxel&#39;</span><span class="p">)</span>
+<span class="n">voxe</span> <span class="o">=</span> <span class="n">gxapi</span><span class="o">.</span><span class="n">GXVOXE</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">vox</span><span class="p">)</span>  <span class="c1"># voxe depends on vox</span>
+
+<span class="c1"># ... do some work with voxe ...</span>
+
+<span class="c1"># release the voxe resource to ensure it is released before vox</span>
+<span class="k">del</span> <span class="n">voxe</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="helper-classes-to-pass-immutable-values-by-reference">
 <h2>Helper classes to pass immutable values by reference<a class="headerlink" href="#helper-classes-to-pass-immutable-values-by-reference" title="Permalink to this headline">¶</a></h2>
 <p>Each of the classes below can be used to pass these immutable types by reference to the GX API.
-Instances of the objects have a :code`value` property that holds the reference to the immutable.</p>
+Instances of the objects have a <code class="code docutils literal"><span class="pre">value</span></code> property that holds the reference to the immutable object.</p>
 <dl class="class">
 <dt id="geosoft.gxapi.str_ref">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">str_ref</code><a class="headerlink" href="#geosoft.gxapi.str_ref" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">str_ref</code><a class="headerlink" href="#geosoft.gxapi.str_ref" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="class">
 <dt id="geosoft.gxapi.bool_ref">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">bool_ref</code><a class="headerlink" href="#geosoft.gxapi.bool_ref" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">bool_ref</code><a class="headerlink" href="#geosoft.gxapi.bool_ref" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="class">
 <dt id="geosoft.gxapi.int_ref">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">int_ref</code><a class="headerlink" href="#geosoft.gxapi.int_ref" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">int_ref</code><a class="headerlink" href="#geosoft.gxapi.int_ref" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="class">
 <dt id="geosoft.gxapi.float_ref">
-<em class="property">class </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">float_ref</code><a class="headerlink" href="#geosoft.gxapi.float_ref" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">float_ref</code><a class="headerlink" href="#geosoft.gxapi.float_ref" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <p>Default instances will be intialized with dummy values for <code class="code docutils literal"><span class="pre">float_ref</span></code> and <code class="code docutils literal"><span class="pre">int_ref</span></code>, an empty string
@@ -341,11 +340,11 @@ to the <code class="code docutils literal"><span class="pre">value</span></code>
 <h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
 <dl class="exception">
 <dt id="geosoft.gxapi.GXCancel">
-<em class="property">exception </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXCancel</code><a class="headerlink" href="#geosoft.gxapi.GXCancel" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descname">GXCancel</code><a class="headerlink" href="#geosoft.gxapi.GXCancel" title="Permalink to this definition">¶</a></dt>
 <dd><p>A subclass of <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#SystemExit">SystemExit</a> which is raised when a 
 script should cleanly exit due to a cancellation condition. Generally not caught since it will have the same effect 
 as <code class="xref py py-exc docutils literal"><span class="pre">SystemExit</span></code> for both standalone and Oasis montaj extension scripts. Raised from within API by 
-<a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.cancel" title="geosoft.gxapi.GXSYS.cancel"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.cancel()</span></code></a></p>
+<code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.cancel()</span></code></p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -353,11 +352,11 @@ as <code class="xref py py-exc docutils literal"><span class="pre">SystemExit</s
 
 <dl class="exception">
 <dt id="geosoft.gxapi.GXExit">
-<em class="property">exception </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXExit</code><a class="headerlink" href="#geosoft.gxapi.GXExit" title="Permalink to this definition">¶</a></dt>
-<dd><p>A subclass of <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#SystemExit">SystemExit</a> which is raised when a script 
-should cleanly exit due to a completion condition. Generally not caught since it will have the same effect as 
+<em class="property">exception </em><code class="descname">GXExit</code><a class="headerlink" href="#geosoft.gxapi.GXExit" title="Permalink to this definition">¶</a></dt>
+<dd><p>A subclass of <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#SystemExit">SystemExit</a> which is raised when a 
+script should cleanly exit due to a completion condition. Generally not caught since it will have the same effect as 
 <code class="xref py py-exc docutils literal"><span class="pre">SystemExit</span></code> for both standalone and Oasis montaj extension scripts. Raised from within API by 
-<a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.exit" title="geosoft.gxapi.GXSYS.exit"><code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.exit()</span></code></a></p>
+<code class="xref py py-func docutils literal"><span class="pre">geosoft.gxapi.GXSYS.exit()</span></code></p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -365,7 +364,7 @@ should cleanly exit due to a completion condition. Generally not caught since it
 
 <dl class="exception">
 <dt id="geosoft.gxapi.GXAPIError">
-<em class="property">exception </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXAPIError</code><a class="headerlink" href="#geosoft.gxapi.GXAPIError" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descname">GXAPIError</code><a class="headerlink" href="#geosoft.gxapi.GXAPIError" title="Permalink to this definition">¶</a></dt>
 <dd><p>A subclass of <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError">RuntimeError</a> which is raised whenever 
 the GX Python API encounters initialization issues or other API violations. It generally indicates a bug in Python code.</p>
 <div class="versionadded">
@@ -375,7 +374,7 @@ the GX Python API encounters initialization issues or other API violations. It g
 
 <dl class="exception">
 <dt id="geosoft.gxapi.GXError">
-<em class="property">exception </em><code class="descclassname">geosoft.gxapi.</code><code class="descname">GXError</code><a class="headerlink" href="#geosoft.gxapi.GXError" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descname">GXError</code><span class="sig-paren">(</span><em>message</em>, <em>module</em>, <em>error_number</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXError" title="Permalink to this definition">¶</a></dt>
 <dd><p>A subclass of <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError">RuntimeError</a> which is raised whenever 
 a GX Python API call encounters an error. Often the message string of these errors are informative to the user (e.g. File 
 &#8216;x&#8217; is locked in another application) but there could be cases where this is not the case. In most cases an attribute, 
@@ -402,15 +401,27 @@ very specific exceptions.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &#169; Copyright 2017, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
   </body>
 </html>

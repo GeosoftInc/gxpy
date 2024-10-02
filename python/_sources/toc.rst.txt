@@ -10,6 +10,7 @@ Table of Contents
 
    index
 
+   geosoft.gxapi.classes
    geosoft.gxapi
    geosoft.gxpy
 
