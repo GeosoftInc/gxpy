@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GXSURFACEITEM class &#8212; Geosoft GX Python API 9.7.0 documentation</title>
+    <title>GXSURFACEITEM class &#8212; Geosoft GX Python API 9.8.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -136,6 +136,32 @@ contains one or more triangular polyhedral meshes.</p>
 <p><span class="versionmodified">New in version 8.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXSURFACEITEM.compute_poly_line_intersections">
+<code class="descname">compute_poly_line_intersections</code><span class="sig-paren">(</span><em>vv_x</em>, <em>vv_y</em>, <em>vv_z</em>, <em>vv_x_out</em>, <em>vv_y_out</em>, <em>vv_z_out</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.compute_poly_line_intersections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute intersections of a 3D PolyLine with a <a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACEITEM</span></code></a> Object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X coordinates.</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y coordinates.</li>
+<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z coordinates.</li>
+<li><strong>vv_x_out</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X coordinates.</li>
+<li><strong>vv_y_out</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y coordinates.</li>
+<li><strong>vv_z_out</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z coordinates.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.7.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -400,6 +426,35 @@ contains one or more triangular polyhedral meshes.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="geosoft.gxapi.GXSURFACEITEM.intersects_bounding_box">
+<code class="descname">intersects_bounding_box</code><span class="sig-paren">(</span><em>min_x</em>, <em>min_y</em>, <em>min_z</em>, <em>max_x</em>, <em>max_y</em>, <em>max_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.intersects_bounding_box" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks intersections of a bounding box with a <a class="reference internal" href="#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACEITEM</span></code></a> Object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>min_x</strong> (<em>float</em>) – Min X</li>
+<li><strong>min_y</strong> (<em>float</em>) – Min Y</li>
+<li><strong>min_z</strong> (<em>float</em>) – Min Z</li>
+<li><strong>max_x</strong> (<em>float</em>) – Max X</li>
+<li><strong>max_y</strong> (<em>float</em>) – Max Y</li>
+<li><strong>max_z</strong> (<em>float</em>) – Max Z</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.7.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="method">
 <dt id="geosoft.gxapi.GXSURFACEITEM.is_null">
 <code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACEITEM.is_null" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
@@ -597,12 +652,12 @@ contains one or more triangular polyhedral meshes.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, Geosoft Inc.
+        &#169; Copyright 2020, Geosoft Inc.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

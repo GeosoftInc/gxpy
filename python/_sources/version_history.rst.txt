@@ -896,6 +896,19 @@ geosoft.gxapi module history
 ==========================================
 
   
+Version 9.8
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXDB.create_symb_lst` Create  a `GXLST <geosoft.gxapi.GXLST>` object large enough to contain channel names and symbols numbers.
+
+:func:`geosoft.gxapi.GXSYS.connect_with_current_central_instance` Query information necessary to communicate with current Central Instance
+
+
+  
 Version 9.7.1
 -----------------
 
@@ -903,7 +916,15 @@ Version 9.7.1
 New Functions
 ^^^^^^^^^^^^^
 
+:func:`geosoft.gxapi.GXDH.get_template_blob_no_source_resolve` Retrieve the import template from the database.
+
 :func:`geosoft.gxapi.GXDXFI.dxf2_view_no_surfaces` Draw entities in a DXF file to a view in a map, but for 3D views skips all surfaces
+
+:func:`geosoft.gxapi.GXSURFACEITEM.compute_poly_line_intersections` Compute intersections of a 3D PolyLine with a `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` Object
+
+:func:`geosoft.gxapi.GXSURFACEITEM.intersects_bounding_box` Checks intersections of a bounding box with a `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` Object
+
+:func:`geosoft.gxapi.GXSYS.get_view_service_url` Get the service URL for View
 
 
   
@@ -921,6 +942,8 @@ New Functions
 :func:`geosoft.gxapi.GXDH.desurvey_from_to` Calculate survey locations and depth from a hole survey using from/to values
 
 :func:`geosoft.gxapi.GXDH.desurvey` Calculate survey locations and depth from a hole survey.
+
+:func:`geosoft.gxapi.GXDU.load_gravity_cg6_to_line` Load a CG-6 gravity survey file. Specify the name of the output line
 
 :func:`geosoft.gxapi.GXEDB.profile_shown` Return index of first profile window in which a profile is shown
 

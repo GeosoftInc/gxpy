@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GXDU class &#8212; Geosoft GX Python API 9.7.0 documentation</title>
+    <title>GXDU class &#8212; Geosoft GX Python API 9.8.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -3252,6 +3252,30 @@ the <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="g
 </dd></dl>
 
 <dl class="classmethod">
+<dt id="geosoft.gxapi.GXDU.load_gravity_cg6_to_line">
+<em class="property">classmethod </em><code class="descname">load_gravity_cg6_to_line</code><span class="sig-paren">(</span><em>db</em>, <em>data</em>, <em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDU.load_gravity_cg6_to_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a CG-6 gravity survey file. Specify the name of the output line</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
+<li><strong>data</strong> (<em>str</em>) – Gravity data file</li>
+<li><strong>line</strong> (<em>str</em>) – line name - can be empty in which case it will create a line name from the input file name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Has its own format - space-delimited columns of data</p>
+</dd></dl>
+
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXDU.load_ltb">
 <em class="property">classmethod </em><code class="descname">load_ltb</code><span class="sig-paren">(</span><em>db</em>, <em>line</em>, <em>ltb</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDU.load_ltb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load <a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLTB</span></code></a> into a database line.</p>
@@ -6073,12 +6097,12 @@ vary linearly inside the gaps</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, Geosoft Inc.
+        &#169; Copyright 2020, Geosoft Inc.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
