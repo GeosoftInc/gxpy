@@ -7,10 +7,10 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GXMULTIGRID3D class &#8212; Geosoft GX Python API 9.4.0 documentation</title>
+    <title>GXMULTIGRID3D class &#8212; Geosoft GX Python API 9.5.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -403,6 +403,62 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="geosoft.gxapi.GXMULTIGRID3D.get_data_extents">
+<code class="descname">get_data_extents</code><span class="sig-paren">(</span><em>min_x</em>, <em>min_y</em>, <em>min_z</em>, <em>max_x</em>, <em>max_y</em>, <em>max_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3D.get_data_extents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the voxel size that has non-dummy data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Index of minimum valid data in X.</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Index of minimum valid data in Y.</li>
+<li><strong>min_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Index of minimum valid data in Z.</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Index of maximum valid data in X.</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Index of maximum valid data in Y.</li>
+<li><strong>max_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Index of maximum valid data in Z.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Find the non-dummy volume of a <a class="reference internal" href="#geosoft.gxapi.GXMULTIGRID3D" title="geosoft.gxapi.GXMULTIGRID3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMULTIGRID3D</span></code></a> object. If the voxel is all dummies,
+returns <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iMAX" title="geosoft.gxapi.iMAX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMAX</span></code></a> for the minima, and <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iMIN" title="geosoft.gxapi.iMIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMIN</span></code></a> for the maxima.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMULTIGRID3D.get_data_ground_extents">
+<code class="descname">get_data_ground_extents</code><span class="sig-paren">(</span><em>min_x</em>, <em>min_y</em>, <em>min_z</em>, <em>max_x</em>, <em>max_y</em>, <em>max_z</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3D.get_data_ground_extents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the voxel size in ground units that has non-dummy data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Ground location of minimum valid data in X.</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Ground location of minimum valid data in Y.</li>
+<li><strong>min_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Ground location of minimum valid data in Z.</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Ground location of maximum valid data in X.</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Ground location of maximum valid data in Y.</li>
+<li><strong>max_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Ground location of maximum valid data in Z.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Find the non-dummy volume of a <a class="reference internal" href="#geosoft.gxapi.GXMULTIGRID3D" title="geosoft.gxapi.GXMULTIGRID3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMULTIGRID3D</span></code></a> object. If the voxel is all dummies,
+returns <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iMAX" title="geosoft.gxapi.iMAX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMAX</span></code></a> for the minima, and <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iMIN" title="geosoft.gxapi.iMIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMIN</span></code></a> for the maxima.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="geosoft.gxapi.GXMULTIGRID3D.get_default">
 <code class="descname">get_default</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3D.get_default" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the default voxset</p>
@@ -632,6 +688,29 @@
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxapi.GXMULTIGRID3D.get_vector_orientation">
+<code class="descname">get_vector_orientation</code><span class="sig-paren">(</span><em>inc</em>, <em>dec</em>, <em>cell_size_y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3D.get_vector_orientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the vector voxel orientation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>inc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – inclination</li>
+<li><strong>dec</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – declination</li>
+<li><strong>cell_size_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – rotated</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -1189,23 +1268,23 @@
 <span id="multigrid3d-directgrid-method"></span><h2>MULTIGRID3D_DIRECTGRID_METHOD constants<a class="headerlink" href="#multigrid3d-directgrid-method-constants" title="Permalink to this headline">¶</a></h2>
 <p>How to calculate the cell values for direct gridding.</p>
 <dl class="data">
-<dt id="geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MIN">
-<code class="descname">MULTIGRID3D_DIRECTGRID_MIN</code><a class="headerlink" href="#geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MIN" title="Permalink to this definition">¶</a></dt>
-<dd><p>Multigrid3d directgrid min</p>
+<dt id="geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MINIMUM">
+<code class="descname">MULTIGRID3D_DIRECTGRID_MINIMUM</code><a class="headerlink" href="#geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MINIMUM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select the minimum value found in each cell</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">MULTIGRID3D_DIRECTGRID_MIN</code><em class="property"> = 0</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MULTIGRID3D_DIRECTGRID_MINIMUM</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
-<dt id="geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MAX">
-<code class="descname">MULTIGRID3D_DIRECTGRID_MAX</code><a class="headerlink" href="#geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MAX" title="Permalink to this definition">¶</a></dt>
-<dd><p>Multigrid3d directgrid max</p>
+<dt id="geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MAXIMUM">
+<code class="descname">MULTIGRID3D_DIRECTGRID_MAXIMUM</code><a class="headerlink" href="#geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MAXIMUM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select the maximum value found in each cell</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">MULTIGRID3D_DIRECTGRID_MAX</code><em class="property"> = 1</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MULTIGRID3D_DIRECTGRID_MAXIMUM</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1213,10 +1292,32 @@
 <dl class="data">
 <dt id="geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MEAN">
 <code class="descname">MULTIGRID3D_DIRECTGRID_MEAN</code><a class="headerlink" href="#geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MEAN" title="Permalink to this definition">¶</a></dt>
-<dd><p>Multigrid3d directgrid mean</p>
+<dd><p>Select the mean of all values found in each cell</p>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">MULTIGRID3D_DIRECTGRID_MEAN</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MULTIGRID3D_DIRECTGRID_ITEMS">
+<code class="descname">MULTIGRID3D_DIRECTGRID_ITEMS</code><a class="headerlink" href="#geosoft.gxapi.MULTIGRID3D_DIRECTGRID_ITEMS" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of valid (non-dummy) items found in each cell - 0 if no items found</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MULTIGRID3D_DIRECTGRID_ITEMS</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.MULTIGRID3D_DIRECTGRID_DUMMYITEMS">
+<code class="descname">MULTIGRID3D_DIRECTGRID_DUMMYITEMS</code><a class="headerlink" href="#geosoft.gxapi.MULTIGRID3D_DIRECTGRID_DUMMYITEMS" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of valid (non-dummy) items found in each cell - DUMMY if no items found</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">MULTIGRID3D_DIRECTGRID_DUMMYITEMS</code><em class="property"> = 4</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1236,13 +1337,13 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

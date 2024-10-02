@@ -7,10 +7,10 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GXVOX class &#8212; Geosoft GX Python API 9.4.0 documentation</title>
+    <title>GXVOX class &#8212; Geosoft GX Python API 9.5.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -439,7 +439,7 @@ SEARCH_RADIUS: Distance weighting limit (default = 4 * CUBE_ROOT(DX*DY*DZ))
 BLANKING_DISTANCE: Dummy values farther from data than this distance. (default = 4 * CUBE_ROOT(DX*DY*DZ))
 LOG: Apply log transform to input data before gridding (0:No (default), 1:Yes)?
 LOG_BASE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi.VV_LOG_BASE_10" title="geosoft.gxapi.VV_LOG_BASE_10"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VV_LOG_BASE_10</span></code></a> (default) or <a class="reference internal" href="GXVV.html#geosoft.gxapi.VV_LOG_BASE_E" title="geosoft.gxapi.VV_LOG_BASE_E"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VV_LOG_BASE_E</span></code></a>
-LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi.VV_LOG_NEGATIVE_NO" title="geosoft.gxapi.VV_LOG_NEGATIVE_NO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VV_LOG_NEGATIVE_NO</span></code></a> (default) or <a class="reference internal" href="GXVV.html#geosoft.gxapi.VV_LOG_NEGATIVE_YES" title="geosoft.gxapi.VV_LOG_NEGATIVE_YES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VV_LOG_NEGATIVE_YES</span></code></a></p>
+LOG_NEGATIVE: One of <code class="xref py py-obj docutils literal notranslate"><span class="pre">VV_LOG_NEGATIVE_NO</span></code> (default) or <code class="xref py py-obj docutils literal notranslate"><span class="pre">VV_LOG_NEGATIVE_YES</span></code></p>
 </dd></dl>
 
 <dl class="method">
@@ -668,83 +668,6 @@ LOG_NEGATIVE: One of <a class="reference internal" href="GXVV.html#geosoft.gxapi
 <p><span class="versionmodified">New in version 7.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
-</dd></dl>
-
-<dl class="classmethod">
-<dt id="geosoft.gxapi.GXVOX.generate_constant_value">
-<em class="property">classmethod </em><code class="descname">generate_constant_value</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>type</em>, <em>ox</em>, <em>oy</em>, <em>oz</em>, <em>cx</em>, <em>cy</em>, <em>cz</em>, <em>cell_count_x</em>, <em>cell_count_y</em>, <em>cell_count_z</em>, <em>ipj</em>, <em>meta</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOX.generate_constant_value" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate a <a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a> with a constant value</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) – Name of output <a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a></li>
-<li><strong>value</strong> (<em>float</em>) – Value to use</li>
-<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
-<li><strong>ox</strong> (<em>float</em>) – Origin X</li>
-<li><strong>oy</strong> (<em>float</em>) – Origin Y</li>
-<li><strong>oz</strong> (<em>float</em>) – Origin Z</li>
-<li><strong>cx</strong> (<em>float</em>) – Cell Size X</li>
-<li><strong>cy</strong> (<em>float</em>) – Cell Size Y</li>
-<li><strong>cz</strong> (<em>float</em>) – Cell Size Z</li>
-<li><strong>cell_count_x</strong> (<em>int</em>) – Cell Count X</li>
-<li><strong>cell_count_y</strong> (<em>int</em>) – Cell Count Y</li>
-<li><strong>cell_count_z</strong> (<em>int</em>) – Cell Count Z</li>
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
-<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – Metadata</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a> Object</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX">GXVOX</a></p>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 8.4.</span></p>
-</div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-</dd></dl>
-
-<dl class="classmethod">
-<dt id="geosoft.gxapi.GXVOX.generate_constant_value_vv">
-<em class="property">classmethod </em><code class="descname">generate_constant_value_vv</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>type</em>, <em>ox</em>, <em>oy</em>, <em>oz</em>, <em>cx</em>, <em>cy</em>, <em>cz</em>, <em>ipj</em>, <em>meta</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOX.generate_constant_value_vv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate a <a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a> with a constant value, cells sizes passed in VVs.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) – Name of output <a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a></li>
-<li><strong>value</strong> (<em>float</em>) – The Value to use</li>
-<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
-<li><strong>ox</strong> (<em>float</em>) – Origin X</li>
-<li><strong>oy</strong> (<em>float</em>) – Origin Y</li>
-<li><strong>oz</strong> (<em>float</em>) – Origin Z</li>
-<li><strong>cx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes X</li>
-<li><strong>cy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes Y</li>
-<li><strong>cz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes Z</li>
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
-<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – Metadata</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a> Object</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX">GXVOX</a></p>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 8.4.</span></p>
-</div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -2855,13 +2778,13 @@ The output can be clipped to the non-dummied cells.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -7,10 +7,10 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GXIP class &#8212; Geosoft GX Python API 9.4.0 documentation</title>
+    <title>GXIP class &#8212; Geosoft GX Python API 9.5.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -2320,16 +2320,16 @@ Window List Syntax:</p>
 <dl class="data">
 <dt id="geosoft.gxapi.IP_FILTER_PANTLEG">
 <code class="descname">IP_FILTER_PANTLEG</code><a class="headerlink" href="#geosoft.gxapi.IP_FILTER_PANTLEG" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Regular pant-leg filter:
-
-
-   _!_
-  /*_*\   n1
- /*/ \*\  n2
-/*/   \*\ n3
-   :  :
+<dd><p>Regular pant-leg filter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  _!_    
+ /*_*\\   n1
+/*/ \\*\\  n2`
 </pre></div>
 </div>
+<dl class="docutils">
+<dt>/<em>/   \</em>\ n3</dt>
+<dd>:  :</dd>
+</dl>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">IP_FILTER_PANTLEG</code><em class="property"> = 1</em></dt>
@@ -2340,15 +2340,16 @@ Window List Syntax:</p>
 <dl class="data">
 <dt id="geosoft.gxapi.IP_FILTER_PANTLEGP">
 <code class="descname">IP_FILTER_PANTLEGP</code><a class="headerlink" href="#geosoft.gxapi.IP_FILTER_PANTLEGP" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Regular pant-leg filter with top at first point:
-
-   !  nscp:
-  /*\   n1
- /*_*\  n2
-/*/ \*\ n3
-  :  :
+<dd><p>Regular pant-leg filter with top at first point:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  !  nscp:
+ /*\\   n1
+/*_*\\  n2
 </pre></div>
 </div>
+<dl class="docutils">
+<dt>/<em>/ \</em>\ n3</dt>
+<dd>:  :</dd>
+</dl>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">IP_FILTER_PANTLEGP</code><em class="property"> = 2</em></dt>
@@ -2359,15 +2360,16 @@ Window List Syntax:</p>
 <dl class="data">
 <dt id="geosoft.gxapi.IP_FILTER_PYRIAMID">
 <code class="descname">IP_FILTER_PYRIAMID</code><a class="headerlink" href="#geosoft.gxapi.IP_FILTER_PYRIAMID" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Regular pyramid filter:
-
-   _!_  maxn:
-  /* *\   n1
- /* * *\  n2
-/* * * *\ n3
-   :  :
+<dd><p>Regular pyramid filter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  _!_  maxn:
+ /* *\\   n1
+/* * *\\  n2
 </pre></div>
 </div>
+<dl class="docutils">
+<dt>/* * * <a href="#id72"><span class="problematic" id="id73">*</span></a>\ n3</dt>
+<dd>:  :</dd>
+</dl>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">IP_FILTER_PYRIAMID</code><em class="property"> = 3</em></dt>
@@ -2378,15 +2380,16 @@ Window List Syntax:</p>
 <dl class="data">
 <dt id="geosoft.gxapi.IP_FILTER_PYRIAMIDP">
 <code class="descname">IP_FILTER_PYRIAMIDP</code><a class="headerlink" href="#geosoft.gxapi.IP_FILTER_PYRIAMIDP" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default"><div class="highlight"><pre><span></span>Regular pyramid filter with peak on a point:
-
-   !  maxn:
-  /*\   n1
- /* *\  n2
-/* * *\ n3
-  :  :
+<dd><p>Regular pyramid filter with peak on a point:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  !  maxn:
+ /*\\   n1
+/* *\\  n2
 </pre></div>
 </div>
+<dl class="docutils">
+<dt>/* * <a href="#id74"><span class="problematic" id="id75">*</span></a>\ n3</dt>
+<dd>:  :</dd>
+</dl>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">IP_FILTER_PYRIAMIDP</code><em class="property"> = 4</em></dt>
@@ -2860,13 +2863,13 @@ guarantee no overlap with high N-values or closely spaced lines.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

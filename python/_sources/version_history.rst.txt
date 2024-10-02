@@ -2,6 +2,17 @@ geosoft.gxpy module history
 ==========================================
 
   
+Version 9.5
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxpy.gdb.Geosoft_gdb.read_line_dataframe` Read a line of data into a Pandas DataFrame
+
+
+  
 Version 9.4
 -----------------
 
@@ -249,7 +260,7 @@ New Functions
 
 :func:`geosoft.gxpy.vox.Vox.open` Open an existing vox.
 
-:func:`geosoft.gxpy.vox.Vox.value_at_location` Voxcet value at a location.
+:func:`geosoft.gxpy.vox.Vox.value_at_location` Vox  at a location.
 
 :func:`geosoft.gxpy.vox.delete_files` Delete all files associated with this vox name.
 
@@ -484,7 +495,7 @@ New Functions
 
 :func:`geosoft.gxpy.coordinate_system.wkt_vcs` Compose a wkt VERTCS block from a Geosoft vcs string.
 
-:func:`geosoft.gxpy.dataframe.Data_frame` Instantiates Pandas DataFrame from a Geosoft table.
+:func:`geosoft.gxpy.dataframe.Data_frame` Pandas DataFrame from a Geosoft table.
 
 :func:`geosoft.gxpy.dataframe.table_column` Return a dictionary of a column from a table
 
@@ -901,6 +912,143 @@ geosoft.gxapi module history
 ==========================================
 
   
+Version 9.5
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXDH.get_hole_survey_ex` Get the Survey information of a Hole.
+
+:func:`geosoft.gxapi.GXDH.get_hole_survey_from_to` Get the Survey information of a Hole using From/To database.
+
+:func:`geosoft.gxapi.GXDU.em_tau_trend_window` Automatic fitting EM Tau
+
+:func:`geosoft.gxapi.GXDU.footprint_coverage_dynamic` Compute the footprint of a survey
+
+:func:`geosoft.gxapi.GXDU.footprint_coverage_static` Compute the footprint of a survey
+
+:func:`geosoft.gxapi.GXGU.despike_em_array` Despike a time-series with individual noise levels
+
+:func:`geosoft.gxapi.GXGUI.import_drill_wizard_ex` Generate a template file for importing drill holes where type is known
+
+:func:`geosoft.gxapi.GXGUI.launch_va_view_multiple_tool` Launch the coincident array channel viewer.
+
+:func:`geosoft.gxapi.GXGUI.va_view_multiple_tool_exists` See if there is a Multiple Array Channel viewer already open.
+
+:func:`geosoft.gxapi.GXMESH.add_face` Adds a face to a patch in a mesh
+
+:func:`geosoft.gxapi.GXMESH.add_vertex` Adds a vertex to a patch in a mesh
+
+:func:`geosoft.gxapi.GXMESH.create` Creates a new Mesh
+
+:func:`geosoft.gxapi.GXMESH.delete_patch` Deletes a patch specified by Patch ID from a mesh
+
+:func:`geosoft.gxapi.GXMESH.get_attribute_values` Inserts an attribute set to a mesh
+
+:func:`geosoft.gxapi.GXMESH.get_faces` Returns all the faces comprising of vertex indices in a patch
+
+:func:`geosoft.gxapi.GXMESH.get_vertex_point` Number of faces in a patch in mesh
+
+:func:`geosoft.gxapi.GXMESH.get_vertices` Returns all the vertices in a patch
+
+:func:`geosoft.gxapi.GXMESH.import_grid_to_mesh` Imports a Grid to a Surface. Creates a new Geosurface file for the surface
+
+:func:`geosoft.gxapi.GXMESH.insert_attributes` Inserts an attribute set to a mesh
+
+:func:`geosoft.gxapi.GXMESH.insert_patch` Inserts a new surface patch to the mesh specified by a unique ID
+
+:func:`geosoft.gxapi.GXMESH.num_faces` Number of faces in a patch in mesh
+
+:func:`geosoft.gxapi.GXMESH.num_patches` Returns the number of patches added to the mesh
+
+:func:`geosoft.gxapi.GXMESH.num_vertices` Number of vertices in a patch in mesh
+
+:func:`geosoft.gxapi.GXMESH.open` Opens an existing Mesh
+
+:func:`geosoft.gxapi.GXMESH.patch_exists` Checks if a patch specified by a patch ID exists in a mesh
+
+:func:`geosoft.gxapi.GXMESH.save` Saves Mesh to the Project Cache and Geosurface file
+
+:func:`geosoft.gxapi.GXMESH.set_attribute_values` Inserts an attribute set to a mesh
+
+:func:`geosoft.gxapi.GXMESHUTIL.clip_surface_with_extents` Clip a Surface with X,Y,Z extents
+
+:func:`geosoft.gxapi.GXMESHUTIL.clip_surface_with_grid` Clip a Surface with a Grid Surface (grid converted to surface)
+
+:func:`geosoft.gxapi.GXMESHUTIL.clip_surface_with_polygon2d` Clip a Surface a specified Polygon file
+
+:func:`geosoft.gxapi.GXMESHUTIL.compute_surface_clip` Clip a surface with another surface, and output the clipped surfaces
+
+:func:`geosoft.gxapi.GXMESHUTIL.compute_surface_intersection` Computes and outputs the intersection of two closed surfaces
+
+:func:`geosoft.gxapi.GXMESHUTIL.compute_surface_simplification` Simplifies a surface by reducing the number of edges by half
+
+:func:`geosoft.gxapi.GXMESHUTIL.compute_surface_subdivision` Smooths a surface by applying a loop subdivision algorithm
+
+:func:`geosoft.gxapi.GXMESHUTIL.compute_surface_union` Compute union of two surfaces
+
+:func:`geosoft.gxapi.GXMESHUTIL.does_surface_intersect` Checks if the two surfaces intersect at all
+
+:func:`geosoft.gxapi.GXMESHUTIL.does_surface_self_intersect` Checks if a surface self-intersects
+
+:func:`geosoft.gxapi.GXMESHUTIL.import_grid_to_surface` Imports a Grid to a Surface
+
+:func:`geosoft.gxapi.GXMPLY.create` Creates a Multi Polygon Object.
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_data_extents` Get the voxel size that has non-dummy data.
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_data_ground_extents` Get the voxel size in ground units that has non-dummy data.
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_vector_orientation` Get the vector voxel orientation
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.clip_to_polygon` Invert the Z values in the Grid3d.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.convert_vector_to_double_using_rotation` Convert a Vector Voxel to 3 double Voxels using an external rotation. Internal rotations are ignored.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.create_double_constant_copy` Generate a double MultiVoxset with a constant value based on an input voxel
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.create_subset_from_double_extents` Create a new MULTIGRID3D that is a subset of the non-dummy extents.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.create_subset` Create a new MULTIGRID3D that is a subset of an exisiting MULTIGRID3D.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.extract_dem` Extract a DEM grid from a voxel.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.generate_rbf` Creates a VOXEL from an database using RBF.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.get_data_extents` Get the voxel size that has non-dummy data.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.get_data_ground_extents` Get the voxel size in ground units that has non-dummy data.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.grid_idw_from_gdb` Create a grid3d using IDW gridding.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.grid_points_from_gdb` Grid a grid3d from a database using kriging.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.grid_points_z_ex_from_gdb` Grid a grid3d from a database (using variable Z's)
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.grid_points_z_from_gdb` Grid a grid3d from a database (using variable Z's)
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_segy` Imports a MultiVoxset from a SEG Y File
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.invert_z` Invert the Z values in the Grid3d.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.krig_from_gdb` A more compact and extensible form of `log_grid_points_z_ex_from_gdb <geosoft.gxapi.GXMULTIGRID3DUTIL.log_grid_points_z_ex_from_gdb>`.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.log_grid_points_z_ex_from_gdb` Log grid a grid3d from a database (using variable Z's)
+
+:func:`geosoft.gxapi.GXMVIEW.polygon_mply` Draw multiple complex polygons from `GXMPLY <geosoft.gxapi.GXMPLY>`.
+
+:func:`geosoft.gxapi.GXPLY.combine` Combines two `GXPLY <geosoft.gxapi.GXPLY>` Object with another
+
+:func:`geosoft.gxapi.GXPLY.is_valid` Ensure a polygon is valid
+
+:func:`geosoft.gxapi.GXVOXD.get_render_mode` Get voxel render mode.
+
+:func:`geosoft.gxapi.GXVOXD.set_render_mode` Get voxel render mode.
+
+
+  
 Version 9.4
 -----------------
 
@@ -961,8 +1109,6 @@ New Functions
 :func:`geosoft.gxapi.GXGRID3D.write_y` Write data to a GRID3D in the Y direction
 
 :func:`geosoft.gxapi.GXGRID3D.write_z` Write data to a GRID3D in the Z direction
-
-:func:`geosoft.gxapi.GXGUI.multiple_array_channel_profile_viewer` View up to 3 array channel profiles. The first channel's array base properties are
 
 :func:`geosoft.gxapi.GXIMU.refresh_shad` Refresh a shaded relief image
 

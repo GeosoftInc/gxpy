@@ -37,6 +37,10 @@ MAP_EXPORT_BITS constants
 
 Color Types
 
+.. autodata:: geosoft.gxapi.MAP_EXPORT_BITS_32
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.MAP_EXPORT_BITS_32
 .. autodata:: geosoft.gxapi.MAP_EXPORT_BITS_24
     :annotation:
     

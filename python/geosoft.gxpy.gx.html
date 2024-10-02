@@ -7,10 +7,10 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>geosoft.gxpy.gx submodule &#8212; Geosoft GX Python API 9.4.0 documentation</title>
+    <title>geosoft.gxpy.gx submodule &#8212; Geosoft GX Python API 9.5.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -85,7 +85,7 @@
 stand-alone Python scripts, or is provided to the script for extensions to Geosoft Desktop applications.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Regression tests provide usage examples:     
+<p class="last">Regression tests provide usage examples:
 <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gx.py">gx tests</a></p>
 </div>
 <dl class="exception">
@@ -100,7 +100,7 @@ stand-alone Python scripts, or is provided to the script for extensions to Geoso
 
 <dl class="class">
 <dt id="geosoft.gxpy.gx.GXpy">
-<em class="property">class </em><code class="descname">GXpy</code><span class="sig-paren">(</span><em>name='geosoft.gxpy.gx'</em>, <em>version='9.4.0'</em>, <em>parent_window=0</em>, <em>log=None</em>, <em>max_res_heap=10000000</em>, <em>res_stack=6</em>, <em>max_warnings=10</em>, <em>suppress_progress=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXpy</code><span class="sig-paren">(</span><em>name='geosoft.gxpy.gx'</em>, <em>version='9.5.0'</em>, <em>parent_window=0</em>, <em>log=None</em>, <em>max_res_heap=10000000</em>, <em>res_stack=6</em>, <em>max_warnings=10</em>, <em>suppress_progress=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.gx._Singleton</span></code></p>
 <p>Geosoft GX context.  This is a singleton class, so subsequent creation returns an instance
 identical to the initial creation. This also means that initialization arguments are ignored
@@ -588,9 +588,9 @@ the instance temporary folder and will be deleted when this GXpy instance is del
 <dt id="geosoft.gxpy.gx.GXpy.temp_folder">
 <code class="descname">temp_folder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.temp_folder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the GX temporary folder path.</p>
-<p>Each GX instance will create an instance-specific temporary folder as a child in the Geosoft 
-temporary folder.  Placing temporary files in the GX-specific temporary folder will ensure 
-temporary file names will not collide with other running GX-based programs, and that all 
+<p>Each GX instance will create an instance-specific temporary folder as a child in the Geosoft
+temporary folder.  Placing temporary files in the GX-specific temporary folder will ensure
+temporary file names will not collide with other running GX-based programs, and that all
 temporarty files are removed on termination of this GX.</p>
 <p>Call <a class="reference internal" href="#geosoft.gxpy.gx.GXpy.keep_temp_folder" title="geosoft.gxpy.gx.GXpy.keep_temp_folder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keep_temp_folder</span></code></a> to prevent deletion of the temporary files, which can be useful
 when debugging.</p>
@@ -684,13 +684,13 @@ stack for each resource and the information you provided.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

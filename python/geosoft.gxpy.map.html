@@ -7,10 +7,10 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>geosoft.gxpy.map submodule &#8212; Geosoft GX Python API 9.4.0 documentation</title>
+    <title>geosoft.gxpy.map submodule &#8212; Geosoft GX Python API 9.5.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -198,7 +198,7 @@ as a 2D perspective of the last viewing state of the 3D view.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Regression tests provide usage examples:     
+<p class="last">Regression tests provide usage examples:
 <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_map.py">map tests</a></p>
 </div>
 <dl class="class">
@@ -210,16 +210,16 @@ as a 2D perspective of the last viewing state of the 3D view.</p>
 contains groups of graphical elements defined relative to the coordinate system of the view.  The
 <a class="reference internal" href="geosoft.gxpy.view.html#module-geosoft.gxpy.view" title="geosoft.gxpy.view"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.view</span></code></a> module provides classes and methods for working with individual 2D or
 3D views, and the <a class="reference internal" href="geosoft.gxpy.group.html#module-geosoft.gxpy.group" title="geosoft.gxpy.group"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.group</span></code></a> modules contains classes that deal with drawing groups..</p>
-<p>Geosoft maps will always have a 2D ‘base’ view and is intended for drawing map annotations, such as titles, 
-a scale bar, North arrow and legends.  The lower-left corner of the base view ia at location (0, 0) and the 
+<p>Geosoft maps will always have a 2D ‘base’ view and is intended for drawing map annotations, such as titles,
+a scale bar, North arrow and legends.  The lower-left corner of the base view ia at location (0, 0) and the
 upper-right corner is defined by the media size and may be adjusted to fit the data view.</p>
 <p>When drawing to the base view the native unit is millimetres and locations and graphic entity
 sizes are assumed to be mm.  When drawing to the map using map methods the units are in map cm,
 including graphic entity scaling.</p>
 <p>Maps will also have one or more data views, each with it’s own defined coordinate system
-and graphical content.  Creating a new map will create one data view, which will become the map’s 
+and graphical content.  Creating a new map will create one data view, which will become the map’s
 <a class="reference internal" href="#geosoft.gxpy.map.Map.current_data_view" title="geosoft.gxpy.map.Map.current_data_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">current_data_view</span></code></a>, within which any spatial data drawn by Geosoft 2D drawing applications
-will be placed.  Maps may have more than one data view, including 3D data views, and the 
+will be placed.  Maps may have more than one data view, including 3D data views, and the
 <a class="reference internal" href="#geosoft.gxpy.map.Map.current_data_view" title="geosoft.gxpy.map.Map.current_data_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">current_data_view</span></code></a> can be changed to any 2D or 3D view, and subsequent drawing will be placed
 in that view.</p>
 <p>3D views define a 3D spatial volume and accept both 2D and 3D drawing elements.  A 3D view will always
@@ -611,7 +611,7 @@ from Geosoft methods.</p>
 
 <dl class="method">
 <dt id="geosoft.gxpy.map.Map.image_file">
-<code class="descname">image_file</code><span class="sig-paren">(</span><em>imagefile=None</em>, <em>type='PNG'</em>, <em>pix_width=1000</em>, <em>pix_height=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.image_file" title="Permalink to this definition">¶</a></dt>
+<code class="descname">image_file</code><span class="sig-paren">(</span><em>imagefile=None</em>, <em>type='PNG'</em>, <em>pix_width=1000</em>, <em>pix_height=0</em>, <em>pix_32_bit=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.Map.image_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save a map to an image file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -623,6 +623,7 @@ from Geosoft methods.</p>
 <li><strong>type</strong> – one of the RASTER_FORMAT types, default`RASTER_FORMAT_PNG`</li>
 <li><strong>pix_width</strong> – image pixel width, if 0 use pix_height only</li>
 <li><strong>pix_height</strong> – image pixel height, if 0 use pix_width only</li>
+<li><strong>pix_32_bit</strong> – make 32-bit image (with 8-bit alpha background)</li>
 </ul>
 </td>
 </tr>
@@ -683,7 +684,7 @@ the dictionary items passed will be added to, or replace existing metadata.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">file_name:</th><td class="field-body">Map file name.  If not specified a temporary file is created in the instance
-temporary folder.  Use <code class="docutils literal notranslate"><span class="pre">file_name()</span></code> to get the file name if needed.  The 
+temporary folder.  Use <code class="docutils literal notranslate"><span class="pre">file_name()</span></code> to get the file name if needed.  The
 temporary map file will be unique and will exist through the life of the
 Python GX instance, but will be deleted along with all temporary files
 when the GX loses context.</td>
@@ -694,16 +695,16 @@ when the GX loses context.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">coordinate_system:</th></tr>
 <tr class="field-even field"><td>&#160;</td><td class="field-body">coordinate system, default is an unknown coordinate system.  You may pass
-a <a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a> instance, a string 
+a <a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a> instance, a string
 descriptor, such as ‘<code class="xref py py-obj docutils literal notranslate"><span class="pre">WGS</span> <span class="pre">84</span> <span class="pre">/</span> <span class="pre">UTM</span> <span class="pre">zone</span> <span class="pre">15N</span></code>’, or another valid constructor supported
 by <a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a>.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">media:</th><td class="field-body">media size as a tuple (x_cm, y_cm), or as a standard media name string.
 If the media string contains ‘portrait’, the media aspect will be portrait.
-Named media sizes are read from media.csv, which includes A4, A3, A2, A1, A0, 
+Named media sizes are read from media.csv, which includes A4, A3, A2, A1, A0,
 letter, legal, ledger, A, B, C, D, E. For example <code class="xref py py-obj docutils literal notranslate"><span class="pre">media='A4</span> <span class="pre">portrait'</span></code>.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">layout:</th><td class="field-body">MAP_PORTRAIT or MAP_LANDSCAPE, overrides media setting.  If the layout is not 
+<tr class="field-even field"><th class="field-name">layout:</th><td class="field-body">MAP_PORTRAIT or MAP_LANDSCAPE, overrides media setting.  If the layout is not
 defined by media or this parameter, the layout is determined by the aspect
 ratio of the data area.</td>
 </tr>
@@ -713,8 +714,8 @@ style is intended for smaller media with a larger bottom margin for a
 title and limited annotations.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">fixed_size:</th><td class="field-body">True for fixed media size, if, and only if, a media size is defined.
-If False, the base view boundary will be reduced to the data view plus margins.  
-If True, the base view boundary is fixed to the media size and margins are 
+If False, the base view boundary will be reduced to the data view plus margins.
+If True, the base view boundary is fixed to the media size and margins are
 adjusted to locate the data view proportionally relative to the requested margins.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">margins:</th><td class="field-body">(left, right, bottom, top) map margins in map cm.  The default for STYLE_MAP
@@ -752,7 +753,7 @@ spatial data near the edge of the defined data area.</td>
 <li><strong>location</strong> – (reference, x_offset, y_offset) reference is a reference point relative to the
 base map extents (1 through 9) nd the offsets are the offset from that reference
 point in map cm.</li>
-<li><strong>direction</strong> – North direction in degrees azimuth (clockwise from map Y axis).  The efault is 
+<li><strong>direction</strong> – North direction in degrees azimuth (clockwise from map Y axis).  The efault is
 calculated direction of North at the center of the data view.</li>
 <li><strong>length</strong> – arrow length in cm on the map.</li>
 <li><strong>inclination</strong> – magnetic inclination, not shown if not specified</li>
@@ -972,7 +973,7 @@ map.</p>
 
 <dl class="function">
 <dt id="geosoft.gxpy.map.save_as_image">
-<code class="descname">save_as_image</code><span class="sig-paren">(</span><em>mapfile</em>, <em>imagefile=None</em>, <em>type='PNG'</em>, <em>pix_width=1000</em>, <em>pix_height=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.save_as_image" title="Permalink to this definition">¶</a></dt>
+<code class="descname">save_as_image</code><span class="sig-paren">(</span><em>mapfile</em>, <em>imagefile=None</em>, <em>type='PNG'</em>, <em>pix_width=1000</em>, <em>pix_height=0</em>, <em>pix_32_bit=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.map.save_as_image" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save a map file to an image file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -984,6 +985,7 @@ map.</p>
 <li><strong>type</strong> – one of the RASTER_FORMAT types, default`RASTER_FORMAT_PNG`</li>
 <li><strong>pix_width</strong> – image pixel width, if 0 use pix_height only</li>
 <li><strong>pix_height</strong> – image pixel height, if 0 use pix_width only</li>
+<li><strong>pix_32_bit</strong> – make 32-bit image (with 8-bit alpha background)</li>
 </ul>
 </td>
 </tr>
@@ -1008,13 +1010,13 @@ map.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -7,10 +7,10 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GXGUI class &#8212; Geosoft GX Python API 9.4.0 documentation</title>
+    <title>GXGUI class &#8212; Geosoft GX Python API 9.5.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -1641,6 +1641,32 @@ from the name of the table opened - e.g. “HOLELOCATION.i4”.</p>
 </dd></dl>
 
 <dl class="classmethod">
+<dt id="geosoft.gxapi.GXGUI.import_drill_wizard_ex">
+<em class="property">classmethod </em><code class="descname">import_drill_wizard_ex</code><span class="sig-paren">(</span><em>name</em>, <em>temp</em>, <em>table</em>, <em>type</em>, <em>reg</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGUI.import_drill_wizard_ex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a template file for importing drill holes where type is known</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Data file name</li>
+<li><strong>temp</strong> (<em>str</em>) – Template to make</li>
+<li><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name of table</li>
+<li><strong>type</strong> (<em>int</em>) – Type of import <a class="reference internal" href="GXDH.html#dh-data"><span class="std std-ref">DH_DATA constants</span></a></li>
+<li><strong>reg</strong> (<a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><em>GXREG</em></a>) – Drill Hole Object <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a> handle</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+</dd></dl>
+
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXGUI.import_template_sql">
 <em class="property">classmethod </em><code class="descname">import_template_sql</code><span class="sig-paren">(</span><em>name</em>, <em>temp</em>, <em>sql</em>, <em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGUI.import_template_sql" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create template to import an external database table; provide query.</p>
@@ -1936,6 +1962,32 @@ may change during editing.</p>
 </dd></dl>
 
 <dl class="classmethod">
+<dt id="geosoft.gxapi.GXGUI.launch_va_view_multiple_tool">
+<em class="property">classmethod </em><code class="descname">launch_va_view_multiple_tool</code><span class="sig-paren">(</span><em>database_name</em>, <em>line_name</em>, <em>channel_name1</em>, <em>channel_name2</em>, <em>channel_name3</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGUI.launch_va_view_multiple_tool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Launch the coincident array channel viewer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>database_name</strong> (<em>str</em>) – Database name</li>
+<li><strong>line_name</strong> (<em>str</em>) – Line name (can be blank)</li>
+<li><strong>channel_name1</strong> (<em>str</em>) – Master Channel name (can be blank)</li>
+<li><strong>channel_name2</strong> (<em>str</em>) – Channel 2 name (can be blank)</li>
+<li><strong>channel_name3</strong> (<em>str</em>) – Channel 3 name (can be blank)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+</dd></dl>
+
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXGUI.line_pattern_form">
 <em class="property">classmethod </em><code class="descname">line_pattern_form</code><span class="sig-paren">(</span><em>pattern</em>, <em>thickness</em>, <em>pitch</em>, <em>colour</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGUI.line_pattern_form" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select a line pattern.</p>
@@ -2020,42 +2072,6 @@ non-zero  - Cancel</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
-</dd></dl>
-
-<dl class="classmethod">
-<dt id="geosoft.gxapi.GXGUI.multiple_array_channel_profile_viewer">
-<em class="property">classmethod </em><code class="descname">multiple_array_channel_profile_viewer</code><span class="sig-paren">(</span><em>db</em>, <em>line</em>, <em>chan1</em>, <em>chan2</em>, <em>chan3</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGUI.multiple_array_channel_profile_viewer" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>View up to 3 array channel profiles. The first channel’s array base properties are</dt>
-<dd>used for all three (scaling, array base properties for the X-axis).</dd>
-</dl>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> obj</li>
-<li><strong>line</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Selected line</li>
-<li><strong>chan1</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Master array channel (can be empty on input)</li>
-<li><strong>chan2</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Second array channel (optional)</li>
-<li><strong>chan3</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Third array channel (optional)</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 - OK
--1 - Cancel</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 9.4.</span></p>
-</div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
@@ -2674,6 +2690,27 @@ added at the end of the lists.</p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 <p><strong>Note:</strong> Same as <a class="reference internal" href="#geosoft.gxapi.GXGUI.two_panel_selection_ex" title="geosoft.gxapi.GXGUI.two_panel_selection_ex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">two_panel_selection_ex</span></code></a>, but user can specify a help
 link.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXGUI.va_view_multiple_tool_exists">
+<em class="property">classmethod </em><code class="descname">va_view_multiple_tool_exists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGUI.va_view_multiple_tool_exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>See if there is a Multiple Array Channel viewer already open.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">0 if not open, 1 if open</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> See if there is a Multiple Array Channel viewer already open.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -4236,6 +4273,50 @@ allow modification of projections (e.g. the OM Viewer).</p>
 
 </dd></dl>
 
+<dl class="data">
+<dt id="geosoft.gxapi.FILE_FILTER_SCINTREX_DAT">
+<code class="descname">FILE_FILTER_SCINTREX_DAT</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_SCINTREX_DAT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scintrex gravity files  <a href="#id81"><span class="problematic" id="id82">``</span></a><a href="#id83"><span class="problematic" id="id84">*</span></a>.dat`  LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_SCINTREX_DAT</code><em class="property"> = 128</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.FILE_FILTER_DMP">
+<code class="descname">FILE_FILTER_DMP</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_DMP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dump files  <a href="#id85"><span class="problematic" id="id86">``</span></a><a href="#id87"><span class="problematic" id="id88">*</span></a>.dmp`  LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_DMP</code><em class="property"> = 129</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.FILE_FILTER_RAW">
+<code class="descname">FILE_FILTER_RAW</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_RAW" title="Permalink to this definition">¶</a></dt>
+<dd><p>Geosoft RAW gravity files  <a href="#id89"><span class="problematic" id="id90">``</span></a><a href="#id91"><span class="problematic" id="id92">*</span></a>.raw`  LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_RAW</code><em class="property"> = 130</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.FILE_FILTER_DAT">
+<code class="descname">FILE_FILTER_DAT</code><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_DAT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data files  <a href="#id93"><span class="problematic" id="id94">``</span></a><a href="#id95"><span class="problematic" id="id96">*</span></a>.dat`  LOCAL</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">FILE_FILTER_DAT</code><em class="property"> = 131</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="file-form-constants">
 <span id="file-form"></span><h2>FILE_FORM constants<a class="headerlink" href="#file-form-constants" title="Permalink to this headline">¶</a></h2>
@@ -4748,13 +4829,13 @@ allow modification of projections (e.g. the OM Viewer).</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

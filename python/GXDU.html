@@ -7,10 +7,10 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GXDU class &#8212; Geosoft GX Python API 9.4.0 documentation</title>
+    <title>GXDU class &#8212; Geosoft GX Python API 9.5.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -1233,6 +1233,31 @@ Protected channels are modified automatically.</p>
 </dd></dl>
 
 <dl class="classmethod">
+<dt id="geosoft.gxapi.GXDU.em_tau_trend_window">
+<em class="property">classmethod </em><code class="descname">em_tau_trend_window</code><span class="sig-paren">(</span><em>hVVobs</em>, <em>hVVtime</em>, <em>nWindows</em>, <em>hVVtau</em>, <em>hVVfitError</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDU.em_tau_trend_window" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatic fitting EM Tau</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>hVVobs</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Observed EM                                [READONLY]</li>
+<li><strong>hVVtime</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Time                                               [READONLY]</li>
+<li><strong>nWindows</strong> (<em>int</em>) – Get linear trends of nWindows consecutive points                           [READONLY]</li>
+<li><strong>hVVtau</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Calculated tau values - same number of items as hVVobs</li>
+<li><strong>hVVfitError</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – rms error of fit</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXDU.export1">
 <em class="property">classmethod </em><code class="descname">export1</code><span class="sig-paren">(</span><em>db</em>, <em>format</em>, <em>cur_line</em>, <em>chan_vv</em>, <em>chan</em>, <em>data</em>, <em>dummies</em>, <em>header</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDU.export1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Export to a specific format.</p>
@@ -1726,6 +1751,62 @@ currently displayed line, and only that group will be exported.</p>
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXDU.footprint_coverage_dynamic">
+<em class="property">classmethod </em><code class="descname">footprint_coverage_dynamic</code><span class="sig-paren">(</span><em>dat</em>, <em>area</em>, <em>channel_name</em>, <em>segments</em>, <em>thinning_threshold</em>, <em>covered_area</em>, <em>total_area</em>, <em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDU.footprint_coverage_dynamic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the footprint of a survey</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dat</strong> (<a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><em>GXDAT</em></a>) – Input DAT for the dataset</li>
+<li><strong>area</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – The input area including exclusion regions</li>
+<li><strong>channel_name</strong> (<em>str</em>) – Channel that defines the radius</li>
+<li><strong>segments</strong> (<em>int</em>) – Number of segments to define a circle (default 30)</li>
+<li><strong>thinning_threshold</strong> (<em>float</em>) – The maxium change in circumference allowed to reduce polygon complexity</li>
+<li><strong>covered_area</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Computed Covered Area</li>
+<li><strong>total_area</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Computed Total Area</li>
+<li><strong>result</strong> (<a class="reference internal" href="GXMPLY.html#geosoft.gxapi.GXMPLY" title="geosoft.gxapi.GXMPLY"><em>GXMPLY</em></a>) – Computed coverted polygon and its exclusion regions</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXDU.footprint_coverage_static">
+<em class="property">classmethod </em><code class="descname">footprint_coverage_static</code><span class="sig-paren">(</span><em>dat</em>, <em>area</em>, <em>radius</em>, <em>segments</em>, <em>thinning_threshold</em>, <em>covered_area</em>, <em>total_area</em>, <em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDU.footprint_coverage_static" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the footprint of a survey</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dat</strong> (<a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><em>GXDAT</em></a>) – Input DAT for the dataset</li>
+<li><strong>area</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – The input area including exclusion regions</li>
+<li><strong>radius</strong> (<em>float</em>) – The radius of the instrument</li>
+<li><strong>segments</strong> (<em>int</em>) – Number of segments to define a circle (default 30)</li>
+<li><strong>thinning_threshold</strong> (<em>float</em>) – The maxium change in circumference allowed to reduce polygon complexity</li>
+<li><strong>covered_area</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Computed Covered Area</li>
+<li><strong>total_area</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Computed Total Area</li>
+<li><strong>result</strong> (<a class="reference internal" href="GXMPLY.html#geosoft.gxapi.GXMPLY" title="geosoft.gxapi.GXMPLY"><em>GXMPLY</em></a>) – Computed coverted polygon and its exclusion regions</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -5918,13 +5999,13 @@ vary linearly inside the gaps</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

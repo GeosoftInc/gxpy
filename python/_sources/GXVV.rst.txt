@@ -68,21 +68,29 @@ Type of log to use
     .. autoattribute:: geosoft.gxapi.VV_LOG_BASE_E
 
 
-.. _VV_LOG_NEGATIVE:
+.. _VV_LOGMODE:
 
-VV_LOG_NEGATIVE constants
+VV_LOGMODE constants
 -----------------------------------------------------------------------
 
 Ways to handle negatives
 
-.. autodata:: geosoft.gxapi.VV_LOG_NEGATIVE_NO
+.. autodata:: geosoft.gxapi.VV_LOGMODE_CLIPPED
     :annotation:
     
-    .. autoattribute:: geosoft.gxapi.VV_LOG_NEGATIVE_NO
-.. autodata:: geosoft.gxapi.VV_LOG_NEGATIVE_YES
+    .. autoattribute:: geosoft.gxapi.VV_LOGMODE_CLIPPED
+.. autodata:: geosoft.gxapi.VV_LOGMODE_SCALED
     :annotation:
     
-    .. autoattribute:: geosoft.gxapi.VV_LOG_NEGATIVE_YES
+    .. autoattribute:: geosoft.gxapi.VV_LOGMODE_SCALED
+.. autodata:: geosoft.gxapi.VV_LOGMODE_CLAMPED
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.VV_LOGMODE_CLAMPED
+.. autodata:: geosoft.gxapi.VV_LOGMODE_LINEAR
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.VV_LOGMODE_LINEAR
 
 
 .. _VV_LOOKUP:

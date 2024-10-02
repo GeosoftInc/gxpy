@@ -7,10 +7,10 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GXVOXD class &#8212; Geosoft GX Python API 9.4.0 documentation</title>
+    <title>GXVOXD class &#8212; Geosoft GX Python API 9.5.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -30,11 +30,19 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GXVOXD class</a><ul>
+<li><a class="reference internal" href="#voxelrender-mode-constants">VOXELRENDER_MODE constants</a></li>
+</ul>
+</li>
+</ul>
+
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <div class="searchformwrapper">
@@ -226,6 +234,24 @@ are not valid.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="geosoft.gxapi.GXVOXD.get_render_mode">
+<code class="descname">get_render_mode</code><span class="sig-paren">(</span><em>render_mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOXD.get_render_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get voxel render mode.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>render_mode</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – <a class="reference internal" href="#voxelrender-mode"><span class="std std-ref">VOXELRENDER_MODE constants</span></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
 <dt id="geosoft.gxapi.GXVOXD.get_shell_controls">
 <code class="descname">get_shell_controls</code><span class="sig-paren">(</span><em>min</em>, <em>max</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOXD.get_shell_controls" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the shell controls</p>
@@ -373,6 +399,24 @@ are not valid.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="geosoft.gxapi.GXVOXD.set_render_mode">
+<code class="descname">set_render_mode</code><span class="sig-paren">(</span><em>render_mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOXD.set_render_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get voxel render mode.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>render_mode</strong> (<em>int</em>) – <a class="reference internal" href="#voxelrender-mode"><span class="std std-ref">VOXELRENDER_MODE constants</span></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
 <dt id="geosoft.gxapi.GXVOXD.set_shell_controls">
 <code class="descname">set_shell_controls</code><span class="sig-paren">(</span><em>min</em>, <em>max</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOXD.set_shell_controls" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the shell controls</p>
@@ -414,6 +458,54 @@ are not valid.</p>
 
 </dd></dl>
 
+<div class="section" id="voxelrender-mode-constants">
+<span id="voxelrender-mode"></span><h2>VOXELRENDER_MODE constants<a class="headerlink" href="#voxelrender-mode-constants" title="Permalink to this headline">¶</a></h2>
+<p>Render Modes</p>
+<dl class="data">
+<dt id="geosoft.gxapi.VOXELRENDER_FILL">
+<code class="descname">VOXELRENDER_FILL</code><a class="headerlink" href="#geosoft.gxapi.VOXELRENDER_FILL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render voxel cells</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">VOXELRENDER_FILL</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.VOXELRENDER_EDGES">
+<code class="descname">VOXELRENDER_EDGES</code><a class="headerlink" href="#geosoft.gxapi.VOXELRENDER_EDGES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render wireframe only</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">VOXELRENDER_EDGES</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.VOXELRENDER_FILL_EDGES">
+<code class="descname">VOXELRENDER_FILL_EDGES</code><a class="headerlink" href="#geosoft.gxapi.VOXELRENDER_FILL_EDGES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render both voxel cells and wireframe</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">VOXELRENDER_FILL_EDGES</code><em class="property"> = 2</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.VOXELRENDER_SMOOTH">
+<code class="descname">VOXELRENDER_SMOOTH</code><a class="headerlink" href="#geosoft.gxapi.VOXELRENDER_SMOOTH" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trilinear interpolation</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">VOXELRENDER_SMOOTH</code><em class="property"> = 3</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
 </div>
 
 
@@ -428,13 +520,13 @@ are not valid.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking
