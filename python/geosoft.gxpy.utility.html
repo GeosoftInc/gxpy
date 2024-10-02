@@ -1,27 +1,16 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>geosoft.gxpy.utility submodule &#8212; Geosoft GX Python API 9.3.1 documentation</title>
-    
+    <title>geosoft.gxpy.utility submodule &#8212; Geosoft GX Python API 9.4.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '9.3.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -34,27 +23,28 @@
   _gaq.push(['_trackPageview']);
 </script>
 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
   <div role="note" aria-label="source link">
@@ -82,9 +72,9 @@
 </div>
 <dl class="exception">
 <dt id="geosoft.gxpy.utility.UtilityException">
-<em class="property">exception </em><code class="descname">UtilityException</code><a class="headerlink" href="#geosoft.gxpy.utility.UtilityException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
-<p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.utility" title="geosoft.gxpy.utility"><code class="xref py py-mod docutils literal"><span class="pre">geosoft.gxpy.utility</span></code></a>.</p>
+<em class="property">exception </em><code class="descname">UtilityException</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.UtilityException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.GXRuntimeError</span></code></p>
+<p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.utility" title="geosoft.gxpy.utility"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.utility</span></code></a>.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -99,8 +89,8 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>v</strong> &#8211; minimum version string required (ie &#8220;9.1&#8221; or &#8220;9.2.4&#8221;)</li>
-<li><strong>raise_on_fail</strong> &#8211; if True, raises an error if the version check fails, returns False otherwise</li>
+<li><strong>v</strong> – minimum version string required (ie “9.1” or “9.2.4”)</li>
+<li><strong>raise_on_fail</strong> – if True, raises an error if the version check fails, returns False otherwise</li>
 </ul>
 </td>
 </tr>
@@ -112,7 +102,7 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>A valid version consists of two or three dot-separated numeric components, with an optional development
-version tag on the end.  The development version tag consists of the letter &#8216;b&#8217; (for beta) followed by
+version tag on the end.  The development version tag consists of the letter ‘b’ (for beta) followed by
 a number.  If the numeric components of two version numbers are equal, then a development version will
 always be deemed earlier (lesser) than one without.</p>
 <p>The following are valid version numbers (shown in order of used for meeting minimum requirements):</p>
@@ -151,8 +141,8 @@ in the <a class="reference external" href="https://docs.python.org/3/distutils/"
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>byte_buffer</strong> &#8211; byte buffer (fulfills the Buffer Protocol)</li>
-<li><strong>crc</strong> &#8211; seed crc, can be passed along to accumulate the crc</li>
+<li><strong>byte_buffer</strong> – byte buffer (fulfills the Buffer Protocol)</li>
+<li><strong>crc</strong> – seed crc, can be passed along to accumulate the crc</li>
 </ul>
 </td>
 </tr>
@@ -172,8 +162,8 @@ in the <a class="reference external" href="https://docs.python.org/3/distutils/"
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>filename</strong> &#8211; file name</li>
-<li><strong>crc</strong> &#8211; seed crc, default 0</li>
+<li><strong>filename</strong> – file name</li>
+<li><strong>crc</strong> – seed crc, default 0</li>
 </ul>
 </td>
 </tr>
@@ -193,8 +183,8 @@ in the <a class="reference external" href="https://docs.python.org/3/distutils/"
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>s</strong> &#8211; string</li>
-<li><strong>crc</strong> &#8211; seed crc, default 0</li>
+<li><strong>s</strong> – string</li>
+<li><strong>crc</strong> – seed crc, default 0</li>
 </ul>
 </td>
 </tr>
@@ -213,7 +203,7 @@ in the <a class="reference external" href="https://docs.python.org/3/distutils/"
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>year</strong> &#8211; decimal year on the Gregorian calendar.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>year</strong> – decimal year on the Gregorian calendar.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">datetime (resolved to 1 millisecond)</td>
 </tr>
@@ -233,8 +223,8 @@ in the <a class="reference external" href="https://docs.python.org/3/distutils/"
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>s</strong> &#8211; string to decode</li>
-<li><strong>f</strong> &#8211; <p>format string:</p>
+<li><strong>s</strong> – string to decode</li>
+<li><strong>f</strong> – <p>format string:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="6%" />
@@ -254,13 +244,13 @@ in the <a class="reference external" href="https://docs.python.org/3/distutils/"
 <td>floating-point</td>
 </tr>
 <tr class="row-odd"><td>S</td>
-<td>string, interpreted as &#8216;U&#8217; unicode</td>
+<td>string, interpreted as ‘U’ unicode</td>
 </tr>
 <tr class="row-even"><td>a</td>
-<td>string, interpreted as &#8216;U&#8217; unicode</td>
+<td>string, interpreted as ‘U’ unicode</td>
 </tr>
 <tr class="row-odd"><td>U</td>
-<td>unicode, requires length suffix, ie &#8216;U1&#8217;, &#8216;U14&#8217;</td>
+<td>unicode, requires length suffix, ie ‘U1’, ‘U14’</td>
 </tr>
 </tbody>
 </table>
@@ -306,12 +296,30 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_name</strong> &#8211; file to delete</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_name</strong> – file to delete</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.delete_files_by_root">
+<code class="descname">delete_files_by_root</code><span class="sig-paren">(</span><em>file_root</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.delete_files_by_root" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete all files that have the same file_root (without extension). This can be safely applied to remove
+temporary files that use named using <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.gx.temp_file</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_root</strong> – file root name</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
 </div>
 </dd></dl>
 
@@ -324,9 +332,9 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>folder_name</strong> &#8211; name of the folder</li>
-<li><strong>age</strong> &#8211; age in seconds relative to the current date/time</li>
-<li><strong>raise_on_error</strong> &#8211; True to raise an error if unsuccessful, otherwise just returns False</li>
+<li><strong>folder_name</strong> – name of the folder</li>
+<li><strong>age</strong> – age in seconds relative to the current date/time</li>
+<li><strong>raise_on_error</strong> – True to raise an error if unsuccessful, otherwise just returns False</li>
 </ul>
 </td>
 </tr>
@@ -341,16 +349,46 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 </dd></dl>
 
 <dl class="function">
-<dt id="geosoft.gxpy.utility.dict_from_lst">
-<code class="descname">dict_from_lst</code><span class="sig-paren">(</span><em>lst</em>, <em>ordered=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dict_from_lst" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a dictionary from a Geosoft <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a> instance.</p>
+<dt id="geosoft.gxpy.utility.dict_from_http_response_text">
+<code class="descname">dict_from_http_response_text</code><span class="sig-paren">(</span><em>text</em>, <em>prune_xml_root=True</em>, <em>object_hook=None</em>, <em>object_pairs_hook=None</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dict_from_http_response_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode http response text to a dictionary. Response may be json or xml.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>lst</strong> &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxapi.GXLST</span></code></a> instance</li>
-<li><strong>ordered</strong> &#8211; True to return an OrderedDict</li>
+<li><strong>text</strong> – http response.text from requests module response objects</li>
+<li><strong>prune_xml_root</strong> – True to remove the xml root, False to keep it</li>
+<li><strong>object_hook</strong> – json.loads decoder hook for objects</li>
+<li><strong>object_pairs_hook</strong> – json.loads decoder for object pairs (see json.loads documentation).</li>
+<li><strong>kw</strong> – arguments passed to <code class="xref py py-obj docutils literal notranslate"><span class="pre">json.loads()</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dictionary of content</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>If the content is xml, the root node is removed and a dictionary is constructed from the content
+above the root node. If one of the hook functions is present, the dictionary is converted to json
+and a dictionary is reconstructed using the hooks.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.dict_from_lst">
+<code class="descname">dict_from_lst</code><span class="sig-paren">(</span><em>lst</em>, <em>ordered=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dict_from_lst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary from a Geosoft <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXLST</span></code></a> instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lst</strong> – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXLST</span></code></a> instance</li>
+<li><strong>ordered</strong> – True to return an OrderedDict</li>
 </ul>
 </td>
 </tr>
@@ -367,14 +405,14 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 <dl class="function">
 <dt id="geosoft.gxpy.utility.dict_from_reg">
 <code class="descname">dict_from_reg</code><span class="sig-paren">(</span><em>reg</em>, <em>ordered=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.dict_from_reg" title="Permalink to this definition">¶</a></dt>
-<dd><p>dictionary from a <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxapi.GXREG</span></code></a> instance</p>
+<dd><p>dictionary from a <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXREG</span></code></a> instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>reg</strong> &#8211; <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxapi.GXREG</span></code></a> instance</li>
-<li><strong>ordered</strong> &#8211; True to return and OrderedDict</li>
+<li><strong>reg</strong> – <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXREG</span></code></a> instance</li>
+<li><strong>ordered</strong> – True to return and OrderedDict</li>
 </ul>
 </td>
 </tr>
@@ -396,17 +434,17 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>xml</strong> &#8211; xml string</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>xml</strong> – xml string</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary of the XML content.</td>
 </tr>
 </tbody>
 </table>
-<p>If the XML root is &#8216;__gx_xml__&#8217;, the root is stripped.</p>
+<p>If the XML root is ‘__gx_xml__’, the root is stripped.</p>
 <p>Based on: <a class="reference external" href="https://github.com/martinblech/xmltodict">https://github.com/martinblech/xmltodict</a></p>
-<p>Tag attributes will become keys with &#8216;&#64;&#8217; as the first character, and the key value will be the attribute setting.</p>
+<p>Tag attributes will become keys with ‘&#64;’ as the first character, and the key value will be the attribute setting.</p>
 <p>For example, XML string:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;gmd:MD_Metadata xsi:schemaLocation=&quot;http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd&quot;&gt;
     &lt;geosoft xmlns=&quot;http://www.geosoft.com/schema/geo&quot;&gt;
         &lt;dataset version=&quot;1&quot; beta=&quot;abc&quot;&gt;
@@ -418,7 +456,7 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 </pre></div>
 </div>
 <p>returns dictionary:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;gmd:MD_Metadata&#39;</span><span class="p">:</span> <span class="p">{</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;gmd:MD_Metadata&#39;</span><span class="p">:</span> <span class="p">{</span>
     <span class="s1">&#39;@xsi:schemaLocation&#39;</span><span class="p">:</span> <span class="s2">&quot;http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd&quot;</span><span class="p">,</span>
     <span class="s1">&#39;geosoft&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;@xmlns&#39;</span><span class="p">:</span> <span class="s2">&quot;http://www.geosoft.com/schema/geo&quot;</span><span class="p">,</span>
@@ -435,7 +473,7 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#geosoft.gxpy.utility.xml_from_dict" title="geosoft.gxpy.utility.xml_from_dict"><code class="xref py py-func docutils literal"><span class="pre">xml_from_dict()</span></code></a></p>
+<p class="last"><a class="reference internal" href="#geosoft.gxpy.utility.xml_from_dict" title="geosoft.gxpy.utility.xml_from_dict"><code class="xref py py-func docutils literal notranslate"><span class="pre">xml_from_dict()</span></code></a></p>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
@@ -451,8 +489,8 @@ and return a decimal Gregorian year. Other date formats will raise a ValueErr.</
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>title</strong> &#8211; message title</li>
-<li><strong>message</strong> &#8211; message</li>
+<li><strong>title</strong> – message title</li>
+<li><strong>message</strong> – message</li>
 </ul>
 </td>
 </tr>
@@ -512,7 +550,7 @@ have a Geosoft dummy value.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>npd</strong> &#8211; numpy data array</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>npd</strong> – numpy data array</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">numpy 1D array, True for any row that had a dummy in any data field</td>
 </tr>
@@ -542,7 +580,7 @@ The numpy array is returned.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> &#8211; float value or a numpy array</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> – float value or a numpy array</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">data with dummies replaced by numpy.nan</td>
 </tr>
@@ -561,7 +599,7 @@ The numpy array is returned.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_name</strong> &#8211; file name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_name</strong> – file name</td>
 </tr>
 </tbody>
 </table>
@@ -578,14 +616,14 @@ The numpy array is returned.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>use_override</strong> &#8211; True to use the _tem_folder_overide if it is defined (used by tests)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>use_override</strong> – True to use the _temp_folder_overide if it is defined (used by tests)</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If creating temporary files, better to use gx method <code class="xref py py-meth docutils literal"><span class="pre">temp_file()</span></code>, which will
-create the temporary file in the GX-specific folder <code class="xref py py-mod docutils literal"><span class="pre">temp_folder</span></code>.</p>
+<p class="last">If creating temporary files, better to use gx method <code class="xref py py-meth docutils literal notranslate"><span class="pre">temp_file()</span></code>, which will
+create the temporary file in the GX-specific folder <code class="xref py py-mod docutils literal notranslate"><span class="pre">temp_folder</span></code>.</p>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
@@ -618,15 +656,37 @@ create the temporary file in the GX-specific folder <code class="xref py py-mod 
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>geosoft_file_name</strong> &#8211; geosoft supported file name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>geosoft_file_name</strong> – geosoft supported file name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary of the metadata</td>
 </tr>
 </tbody>
 </table>
-<p>If the metadata for the file does not exist  {&#8216;metadata&#8217;: {}} is returned.</p>
+<p>If the metadata for the file does not exist  {‘metadata’: {}} is returned.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.utility.geosoft_xml_from_dict">
+<code class="descname">geosoft_xml_from_dict</code><span class="sig-paren">(</span><em>d</em>, <em>pretty=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.geosoft_xml_from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a unicode XML string of a dictionary with geosoft namespace defined.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>d</strong> – dictionary</li>
+<li><strong>pretty</strong> – True to indent with line-feeds for pretty-printing</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The tag xmlns=”<a class="reference external" href="http://www.geosoft.com/schema/geo">http://www.geosoft.com/schema/geo</a>” is added to the root element.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
 </div>
 </dd></dl>
 
@@ -639,11 +699,11 @@ create the temporary file in the GX-specific folder <code class="xref py py-mod 
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>group</strong> &#8211; name in the parameter block group name</li>
-<li><strong>parms</strong> &#8211; if specified only these keys are searched and the value is replaced by the found parameter.
+<li><strong>group</strong> – name in the parameter block group name</li>
+<li><strong>parms</strong> – if specified only these keys are searched and the value is replaced by the found parameter.
 Parameter keys are not case sensitive, though if parms is not provided all returned keys will
 be upper-case.</li>
-<li><strong>default</strong> &#8211; default value for parameters not found, ignored if parms is provided as a dict, in which
+<li><strong>default</strong> – default value for parameters not found, ignored if parms is provided as a dict, in which
 case the current key:value settings will be unchanged.</li>
 </ul>
 </td>
@@ -741,8 +801,8 @@ The shared dictionary is cleared (popped) so a subsequent call will return an em
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file_name</strong> &#8211; file to test</li>
-<li><strong>age</strong> &#8211; minimum age in seconds, default ignores age</li>
+<li><strong>file_name</strong> – file to test</li>
+<li><strong>age</strong> – minimum age in seconds, default ignores age</li>
 </ul>
 </td>
 </tr>
@@ -774,8 +834,8 @@ The shared dictionary is cleared (popped) so a subsequent call will return an em
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>path</strong> &#8211; name of the folder</li>
-<li><strong>age</strong> &#8211; age in seconds from now</li>
+<li><strong>path</strong> – name of the folder</li>
+<li><strong>age</strong> – age in seconds from now</li>
 </ul>
 </td>
 </tr>
@@ -795,17 +855,17 @@ The shared dictionary is cleared (popped) so a subsequent call will return an em
 <dl class="function">
 <dt id="geosoft.gxpy.utility.jupyter_markdown_toc">
 <code class="descname">jupyter_markdown_toc</code><span class="sig-paren">(</span><em>j_file</em>, <em>numbered=True</em>, <em>start_level=1</em>, <em>max_depth=1</em>, <em>prefix=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.jupyter_markdown_toc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a markdoown table-of-content string from a jupyter notebook based on markdown &#8220;#&#8221;.</p>
+<dd><p>Create a markdoown table-of-content string from a jupyter notebook based on markdown “#”.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>j_file</strong> &#8211; jupyter notebook name. Default file extension is &#8216;.ipynb&#8217;</li>
-<li><strong>numbered</strong> &#8211; True (default) to number the main headings, False for all bulletys</li>
-<li><strong>start_level</strong> &#8211; toc base level, default is 1, which starts TOC at &#8220;##&#8221;</li>
-<li><strong>max_depth</strong> &#8211; maximum levels relative to the start level, default is first level only.</li>
-<li><strong>prefix</strong> &#8211; previx for each TOC line, default is &#8216; &#8216; so TOC will appear indented.</li>
+<li><strong>j_file</strong> – jupyter notebook name. Default file extension is ‘.ipynb’</li>
+<li><strong>numbered</strong> – True (default) to number the main headings, False for all bulletys</li>
+<li><strong>start_level</strong> – toc base level, default is 1, which starts TOC at “##”</li>
+<li><strong>max_depth</strong> – maximum levels relative to the start level, default is first level only.</li>
+<li><strong>prefix</strong> – previx for each TOC line, default is ‘ ‘ so TOC will appear indented.</li>
 </ul>
 </td>
 </tr>
@@ -816,7 +876,7 @@ The shared dictionary is cleared (popped) so a subsequent call will return an em
 </table>
 <p>Include this in a jupyter notebook to create a TOC that can then be cut/pasted into the
 introductory markdown:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geosoft.gxpy.utility</span> <span class="k">as</span> <span class="nn">gxu</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geosoft.gxpy.utility</span> <span class="k">as</span> <span class="nn">gxu</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">gxu</span><span class="o">.</span><span class="n">jupyter_markdown_toc</span><span class="p">(</span><span class="s1">&#39;my_notebook_name&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -828,7 +888,7 @@ introductory markdown:</p>
 <dl class="function">
 <dt id="geosoft.gxpy.utility.merge_dict">
 <code class="descname">merge_dict</code><span class="sig-paren">(</span><em>d</em>, <em>d2</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.merge_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update a dictionary by adding key-values from second dictionary.  Unlike Python&#8217;s 
+<dd><p>Update a dictionary by adding key-values from second dictionary.  Unlike Python’s 
 update(), this adds new keys to nested dictionaries rather than replace everything
 in a nested dictionary.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -836,8 +896,8 @@ in a nested dictionary.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>d</strong> &#8211; dictionary to update</li>
-<li><strong>d2</strong> &#8211; new items to add or replace</li>
+<li><strong>d</strong> – dictionary to update</li>
+<li><strong>d2</strong> – new items to add or replace</li>
 </ul>
 </td>
 </tr>
@@ -854,13 +914,13 @@ in a nested dictionary.</p>
 <dl class="function">
 <dt id="geosoft.gxpy.utility.normalize_file_name">
 <code class="descname">normalize_file_name</code><span class="sig-paren">(</span><em>fn</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.normalize_file_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Normalize a file name string by replacing &#8216;&#8217; with &#8216;/&#8217;.  This is useful for writing
+<dd><p>Normalize a file name string by replacing ‘’ with ‘/’.  This is useful for writing
 file names to control files.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fn</strong> &#8211; file name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fn</strong> – file name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">normalized file name</td>
 </tr>
@@ -879,7 +939,7 @@ file names to control files.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> &#8211; string to decode</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> – string to decode</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">decoded number, gxapi.rDUMMY if unable to decode the string</td>
 </tr>
@@ -899,7 +959,7 @@ file names to control files.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> &#8211; string to be decoded</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> – string to be decoded</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">float of decoded string</td>
 </tr>
@@ -913,9 +973,9 @@ file names to control files.</p>
 </div>
 </dd>
 </dl>
-<p>Any string that begins with &#8220;*&#8221; character is interpreted as a dummy.</p>
+<p>Any string that begins with “*” character is interpreted as a dummy.</p>
 <p>If unable to directly convert simple string, decoder will clean-up the string by
-removing leading/trailing white space and converting &#8216;o&#8217; or &#8216;O&#8217; to numeral &#8216;0&#8217;.</p>
+removing leading/trailing white space and converting ‘o’ or ‘O’ to numeral ‘0’.</p>
 <p>If decoder still fails, it will attempt to decode time and geographic formatted
 strings to return decimal hours or decimal degrees respectively:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -942,15 +1002,15 @@ strings to return decimal hours or decimal degrees respectively:</p>
 <div class="line">S/s and W/w return negative of decoded value</div>
 <div class="line"><br /></div>
 <div class="line">Example:</div>
-<div class="line">&#8220;-90 15 18.0&#8221; = &#8220;90 15 18.0W&#8221; = &#8220;90.15.18w&#8221;, returns -90.255</div>
-<div class="line">&#8220;14&#8221; = &#8220;14N&#8221; = &#8220;14.00.00&#8221; = &#8220;14 00 00&#8221;, returns 14.0</div>
+<div class="line">“-90 15 18.0” = “90 15 18.0W” = “90.15.18w”, returns -90.255</div>
+<div class="line">“14” = “14N” = “14.00.00” = “14 00 00”, returns 14.0</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
 <p>Note that mm and ss.ss can go over 60.0 and will be decoded as minutes or seconds
-as presented. For example, &#8220;20 90 0.00&#8221; will return 21.5.</p>
+as presented. For example, “20 90 0.00” will return 21.5.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
@@ -959,20 +1019,20 @@ as presented. For example, &#8220;20 90 0.00&#8221; will return 21.5.</p>
 <dl class="function">
 <dt id="geosoft.gxpy.utility.reg_from_dict">
 <code class="descname">reg_from_dict</code><span class="sig-paren">(</span><em>rd</em>, <em>max_size=4096</em>, <em>json_encode=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.reg_from_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxapi.GXREG</span></code></a> instance from a dictionary</p>
+<dd><p><a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXREG</span></code></a> instance from a dictionary</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>rd</strong> &#8211; dictionary</li>
-<li><strong>max_size</strong> &#8211; maximum &#8220;key=value&#8221; string size</li>
-<li><strong>json_encode</strong> &#8211; if True, non-string values in the dictionary are converted to JSON strings and stored as
-&#8220;_JSON:json-string&#8221;. False will encode non-string values as <code class="docutils literal"><span class="pre">str(value)</span></code></li>
+<li><strong>rd</strong> – dictionary</li>
+<li><strong>max_size</strong> – maximum “key=value” string size</li>
+<li><strong>json_encode</strong> – if True, non-string values in the dictionary are converted to JSON strings and stored as
+“_JSON:json-string”. False will encode non-string values as <code class="docutils literal notranslate"><span class="pre">str(value)</span></code></li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxapi.GXREG</span></code></a> instance</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXREG</span></code></a> instance</p>
 </td>
 </tr>
 </tbody>
@@ -986,19 +1046,19 @@ as presented. For example, &#8220;20 90 0.00&#8221; will return 21.5.</p>
 <dt id="geosoft.gxpy.utility.run_external_python">
 <code class="descname">run_external_python</code><span class="sig-paren">(</span><em>script</em>, <em>script_args=''</em>, <em>python_args=''</em>, <em>shared_dict=None</em>, <em>console=True</em>, <em>catcherr=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.run_external_python" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run a python script as an external program, returning results as a dictionary.
-External program calls gxpy.utility.get_shared_dict() to get the caller&#8217;s dictionary,
+External program calls gxpy.utility.get_shared_dict() to get the caller’s dictionary,
 and gxpy.utility.set_shared_dict(return_dictionary) to return a dictionary back to caller.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>script</strong> &#8211; full path of the python script</li>
-<li><strong>shared_dict</strong> &#8211; dictionary passed to the external script (get_shared_dict() to retrieve)</li>
-<li><strong>script_args</strong> &#8211; command line arguments as a string</li>
-<li><strong>python_args</strong> &#8211; command line arguments as a string</li>
-<li><strong>console</strong> &#8211; True (default) will create a separate console for the process.</li>
-<li><strong>catcherr</strong> &#8211; True (default) Catch and re-raise errors from the sub-process.</li>
+<li><strong>script</strong> – full path of the python script</li>
+<li><strong>shared_dict</strong> – dictionary passed to the external script (get_shared_dict() to retrieve)</li>
+<li><strong>script_args</strong> – command line arguments as a string</li>
+<li><strong>python_args</strong> – command line arguments as a string</li>
+<li><strong>console</strong> – True (default) will create a separate console for the process.</li>
+<li><strong>catcherr</strong> – True (default) Catch and re-raise errors from the sub-process.</li>
 </ul>
 </td>
 </tr>
@@ -1022,8 +1082,8 @@ are converted to uppercase.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>group</strong> &#8211; parameter block group name, default is &#8216;_&#8217;</li>
-<li><strong>parms</strong> &#8211; dict containing named parameter settings, must be specified</li>
+<li><strong>group</strong> – parameter block group name, default is ‘_’</li>
+<li><strong>parms</strong> – dict containing named parameter settings, must be specified</li>
 </ul>
 </td>
 </tr>
@@ -1043,7 +1103,7 @@ This is a companion file to run_external_python().</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>shared_dict</strong> &#8211; dictionary of parameters to save</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>shared_dict</strong> – dictionary of parameters to save</td>
 </tr>
 </tbody>
 </table>
@@ -1061,9 +1121,9 @@ This is a companion file to run_external_python().</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>value</strong> &#8211; value to format</li>
-<li><strong>n</strong> &#8211; number of significant digits</li>
-<li><strong>mode</strong> &#8211; 0 round, 1 ceiling, -1 floor</li>
+<li><strong>value</strong> – value to format</li>
+<li><strong>n</strong> – number of significant digits</li>
+<li><strong>mode</strong> – 0 round, 1 ceiling, -1 floor</li>
 </ul>
 </td>
 </tr>
@@ -1089,15 +1149,15 @@ This is a companion file to run_external_python().</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> &#8211; seed name, returns this if callback(name) is False the name in unique</li>
-<li><strong>invalid</strong> &#8211; callback function invalid(name), returns True if name is invalid. If a call-back
+<li><strong>name</strong> – seed name, returns this if callback(name) is False the name in unique</li>
+<li><strong>invalid</strong> – callback function invalid(name), returns True if name is invalid. If a call-back
 is not provided a simple os.path.isfile(name) is used.</li>
-<li><strong>separator</strong> &#8211; single or two-character separator. The unique name is constructed by appending
+<li><strong>separator</strong> – single or two-character separator. The unique name is constructed by appending
 an increasing number to the seed name until a valid name is found. By default
 the number is enclosed in parentheses (e.g. some_name(4).txt). If a single separator
 character is defined the number is separted from the name by the single character
-(e.g. for separator=&#8217;_&#8217;, might return some_name_4.txt).</li>
-<li><strong>maxversion</strong> &#8211; maximum number to try, default is 1000. This protects against infinite loop
+(e.g. for separator=’_’, might return some_name_4.txt).</li>
+<li><strong>maxversion</strong> – maximum number to try, default is 1000. This protects against infinite loop
 should there be a bug in your callback.</li>
 </ul>
 </td>
@@ -1121,11 +1181,11 @@ should there be a bug in your callback.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>url</strong> &#8211; name of the URL resource</li>
-<li><strong>filename</strong> &#8211; name of file in which to place the resource, default is the resource base name.</li>
-<li><strong>overwrite</strong> &#8211; True to overwrite an existing file.  Default is False, in which case if the file
+<li><strong>url</strong> – name of the URL resource</li>
+<li><strong>filename</strong> – name of file in which to place the resource, default is the resource base name.</li>
+<li><strong>overwrite</strong> – True to overwrite an existing file.  Default is False, in which case if the file
 exists the filename is returned.</li>
-<li><strong>reporthook</strong> &#8211; a hook function that will be called once on establishment of the network connection
+<li><strong>reporthook</strong> – a hook function that will be called once on establishment of the network connection
 and once after each block read thereafter. The hook will be passed three arguments;
 a count of blocks transferred so far, a block size in bytes, and the total size of the file.</li>
 </ul>
@@ -1169,7 +1229,7 @@ a count of blocks transferred so far, a block size in bytes, and the total size 
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>v</strong> &#8211; numpy vector array, any dimension</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>v</strong> – numpy vector array, any dimension</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">array normalized, 0 vectors will be np.nan</td>
 </tr>
@@ -1182,28 +1242,32 @@ a count of blocks transferred so far, a block size in bytes, and the total size 
 
 <dl class="function">
 <dt id="geosoft.gxpy.utility.xml_from_dict">
-<code class="descname">xml_from_dict</code><span class="sig-paren">(</span><em>d</em>, <em>pretty=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.xml_from_dict" title="Permalink to this definition">¶</a></dt>
+<code class="descname">xml_from_dict</code><span class="sig-paren">(</span><em>d</em>, <em>pretty=True</em>, <em>xmlns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.utility.xml_from_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a unicode XML string of a dictionary.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>d</strong> &#8211; dictionary</li>
-<li><strong>pretty</strong> &#8211; True to indent with line-feeds for pretty-printing</li>
+<li><strong>d</strong> – dictionary</li>
+<li><strong>pretty</strong> – True to indent with line-feeds for pretty-printing</li>
+<li><strong>xmlns</strong> – xml namespace string.  xmlns=”<a class="reference external" href="http://www.geosoft.com/schema/geo">http://www.geosoft.com/schema/geo</a>” for geosoft.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-<p>If the dictionary does not have a single node root, the root XML will be &#8216;__gx_xml__&#8217;.</p>
+<p>If the dictionary does not have a single node root, the root XML will be ‘__gx_xml__’.</p>
 <p>Based on: <a class="reference external" href="https://github.com/martinblech/xmltodict">https://github.com/martinblech/xmltodict</a></p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#geosoft.gxpy.utility.dict_from_xml" title="geosoft.gxpy.utility.dict_from_xml"><code class="xref py py-func docutils literal"><span class="pre">dict_from_xml()</span></code></a></p>
+<p class="last"><a class="reference internal" href="#geosoft.gxpy.utility.dict_from_xml" title="geosoft.gxpy.utility.dict_from_xml"><code class="xref py py-func docutils literal notranslate"><span class="pre">dict_from_xml()</span></code></a></p>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.4: </span>added support for xmlns</p>
 </div>
 </dd></dl>
 
@@ -1216,8 +1280,8 @@ a count of blocks transferred so far, a block size in bytes, and the total size 
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>jd1</strong> &#8211; part 1 Julian date (<a class="reference external" href="https://pypi.python.org/pypi/jdcal">https://pypi.python.org/pypi/jdcal</a>)</li>
-<li><strong>jd2</strong> &#8211; part 2 Julian date</li>
+<li><strong>jd1</strong> – part 1 Julian date (<a class="reference external" href="https://pypi.python.org/pypi/jdcal">https://pypi.python.org/pypi/jdcal</a>)</li>
+<li><strong>jd2</strong> – part 2 Julian date</li>
 </ul>
 </td>
 </tr>
@@ -1239,7 +1303,7 @@ a count of blocks transferred so far, a block size in bytes, and the total size 
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dt</strong> &#8211; datetime</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dt</strong> – datetime</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">decimal Gregorian year to an accuracy of 1 millisecond</td>
 </tr>
@@ -1264,13 +1328,13 @@ a count of blocks transferred so far, a block size in bytes, and the total size 
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

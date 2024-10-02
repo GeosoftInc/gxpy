@@ -223,6 +223,7 @@ Supported compression levels
 DB_COORDPAIR constants
 -----------------------------------------------------------------------
 
+Used to indicate the matching coordinate pair of a channel.
 
 .. autodata:: geosoft.gxapi.DB_COORDPAIR_NONE
     :annotation:
@@ -534,6 +535,7 @@ Wait Times
 DB_ARRAY_BASETYPE constants
 -----------------------------------------------------------------------
 
+Array channel base coordinate type
 
 .. autodata:: geosoft.gxapi.DB_ARRAY_BASETYPE_NONE
     :annotation:

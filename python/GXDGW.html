@@ -1,27 +1,16 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>GXDGW class &#8212; Geosoft GX Python API 9.3.1 documentation</title>
-    
+    <title>GXDGW class &#8212; Geosoft GX Python API 9.4.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '9.3.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -34,15 +23,14 @@
   _gaq.push(['_trackPageview']);
 </script>
 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -57,12 +45,14 @@
 
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
   <div role="note" aria-label="source link">
@@ -91,20 +81,20 @@ use this class to store to, or retrieve information from
 the current workspace parameter block via dialog boxes</p>
 <p><strong>Note:</strong></p>
 <p>Setting Fonts in GX dialogs.</p>
-<p>By default, &#8220;new look&#8221; GX dialogs uses the &#8220;Tahoma&#8221; font. This font can be
+<p>By default, “new look” GX dialogs uses the “Tahoma” font. This font can be
 overridden by updating the application settings. This can be done programmatically
-using the <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.global_set" title="geosoft.gxapi.GXSYS.global_set"><code class="xref py py-obj docutils literal"><span class="pre">GXSYS.global_set</span></code></a> function using the following parameters:</p>
-<p>MONTAJ.GX_FONT=&#8221;Font_name&#8221;</p>
-<p>This sets the default font to &#8220;Font_name&#8221;. It applies to text in all
+using the <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.global_set" title="geosoft.gxapi.GXSYS.global_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSYS.global_set</span></code></a> function using the following parameters:</p>
+<p>MONTAJ.GX_FONT=”Font_name”</p>
+<p>This sets the default font to “Font_name”. It applies to text in all
 components of the dialog.</p>
 <p>Additional customization of individual components can be accomplished
 using the following parameters:</p>
-<p>MONTAJ.GX_CAPTION_FONT=&#8221;Caption_Font&#8221;: Font for the field captions (labels)
-MONTAJ.GX_BUTTON_FONT=&#8221;Button_Font&#8221;  : Font for buttons, including the &#8220;Browse&#8221; button
-MONTAJ.GX_TITLE_FONT=&#8221;Title_Font&#8221;    : Font for special titles (see <a class="reference internal" href="#geosoft.gxapi.GXDGW.set_title" title="geosoft.gxapi.GXDGW.set_title"><code class="xref py py-obj docutils literal"><span class="pre">set_title</span></code></a>).</p>
+<p>MONTAJ.GX_CAPTION_FONT=”Caption_Font”: Font for the field captions (labels)
+MONTAJ.GX_BUTTON_FONT=”Button_Font”  : Font for buttons, including the “Browse” button
+MONTAJ.GX_TITLE_FONT=”Title_Font”    : Font for special titles (see <a class="reference internal" href="#geosoft.gxapi.GXDGW.set_title" title="geosoft.gxapi.GXDGW.set_title"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_title</span></code></a>).</p>
 <p>The font used for the text in edit windows remains the default, or the
 value specified using MONTAJ.GX_FONT.</p>
-<p>Note that the &#8220;OK&#8221; button, and the Title, use &#8220;Bold&#8221; versions of the
+<p>Note that the “OK” button, and the Title, use “Bold” versions of the
 specified font. If the bolded version does not exist as a normal font,
 then the operating system may provide its own alternative which may not
 appear the same as you expect.</p>
@@ -122,9 +112,9 @@ resource. The Resource is loaded into memory but not displayed.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; Name of the Window Resource to use</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Name of the Window Resource to use</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Handle to the <a class="reference internal" href="#geosoft.gxapi.GXDGW" title="geosoft.gxapi.GXDGW"><code class="xref py py-obj docutils literal"><span class="pre">GXDGW</span></code></a> object.</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Handle to the <a class="reference internal" href="#geosoft.gxapi.GXDGW" title="geosoft.gxapi.GXDGW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDGW</span></code></a> object.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXDGW" title="geosoft.gxapi.GXDGW">GXDGW</a></td>
 </tr>
@@ -133,23 +123,23 @@ resource. The Resource is loaded into memory but not displayed.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDGW.get_info_meta">
 <code class="descname">get_info_meta</code><span class="sig-paren">(</span><em>obj</em>, <em>dlg_obj_type</em>, <em>meta</em>, <em>meta_obj</em>, <em>meta_attrib</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDGW.get_info_meta" title="Permalink to this definition">¶</a></dt>
-<dd><p>Copies the Dialog information to a <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> attribute.</p>
+<dd><p>Copies the Dialog information to a <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> attribute.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>obj</strong> (<em>int</em>) &#8211; Dialog Object</li>
-<li><strong>dlg_obj_type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
-<li><strong>meta_obj</strong> (<em>int</em>) &#8211; Object</li>
-<li><strong>meta_attrib</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>obj</strong> (<em>int</em>) – Dialog Object</li>
+<li><strong>dlg_obj_type</strong> (<em>int</em>) – <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>meta_obj</strong> (<em>int</em>) – Object</li>
+<li><strong>meta_attrib</strong> (<em>int</em>) – Attribute</li>
 </ul>
 </td>
 </tr>
@@ -158,7 +148,7 @@ resource. The Resource is loaded into memory but not displayed.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
@@ -166,16 +156,16 @@ resource. The Resource is loaded into memory but not displayed.</p>
 <dt id="geosoft.gxapi.GXDGW.get_info_sys">
 <code class="descname">get_info_sys</code><span class="sig-paren">(</span><em>id</em>, <em>info</em>, <em>group</em>, <em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDGW.get_info_sys" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method uses the information in a Dialog box to
-set a <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS" title="geosoft.gxapi.GXSYS"><code class="xref py py-obj docutils literal"><span class="pre">GXSYS</span></code></a> variable.</p>
+set a <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS" title="geosoft.gxapi.GXSYS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSYS</span></code></a> variable.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>id</strong> (<em>int</em>) &#8211; Dialog Object</li>
-<li><strong>info</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
-<li><strong>group</strong> (<em>str</em>) &#8211; Group name of the Variable</li>
-<li><strong>field</strong> (<em>str</em>) &#8211; Variable name</li>
+<li><strong>id</strong> (<em>int</em>) – Dialog Object</li>
+<li><strong>info</strong> (<em>int</em>) – <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>group</strong> (<em>str</em>) – Group name of the Variable</li>
+<li><strong>field</strong> (<em>str</em>) – Variable name</li>
 </ul>
 </td>
 </tr>
@@ -184,20 +174,20 @@ set a <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS" title=
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDGW.get_list">
 <code class="descname">get_list</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDGW.get_list" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method retrieves the list (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>) object associated
+<dd><p>This method retrieves the list (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a>) object associated
 with a Dialog object.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>int</em>) &#8211; Dialog Object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>int</em>) – Dialog Object</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The List Object</td>
 </tr>
@@ -208,7 +198,7 @@ with a Dialog object.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
@@ -222,9 +212,9 @@ the text object specified.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>id</strong> (<em>int</em>) &#8211; Handle to the TEXT Object</li>
-<li><strong>info</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
-<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Where to place the String</li>
+<li><strong>id</strong> (<em>int</em>) – Handle to the TEXT Object</li>
+<li><strong>info</strong> (<em>int</em>) – <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>buff</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Where to place the String</li>
 </ul>
 </td>
 </tr>
@@ -233,7 +223,7 @@ the text object specified.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
@@ -256,12 +246,12 @@ the text object specified.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXDGW.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDGW.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXDGW" title="geosoft.gxapi.GXDGW"><code class="xref py py-obj docutils literal"><span class="pre">GXDGW</span></code></a></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXDGW" title="geosoft.gxapi.GXDGW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDGW</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXDGW" title="geosoft.gxapi.GXDGW"><code class="xref py py-obj docutils literal"><span class="pre">GXDGW</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXDGW" title="geosoft.gxapi.GXDGW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDGW</span></code></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXDGW" title="geosoft.gxapi.GXDGW">GXDGW</a></td>
 </tr>
@@ -286,7 +276,7 @@ the text object specified.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
@@ -300,9 +290,9 @@ is too long it will be truncated.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>id</strong> (<em>int</em>) &#8211; Handle to the TEXT Object</li>
-<li><strong>info</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
-<li><strong>buff</strong> (<em>str</em>) &#8211; String to set the Text To</li>
+<li><strong>id</strong> (<em>int</em>) – Handle to the TEXT Object</li>
+<li><strong>info</strong> (<em>int</em>) – <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>buff</strong> (<em>str</em>) – String to set the Text To</li>
 </ul>
 </td>
 </tr>
@@ -311,23 +301,23 @@ is too long it will be truncated.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXDGW.set_info_meta">
 <code class="descname">set_info_meta</code><span class="sig-paren">(</span><em>obj</em>, <em>dlg_obj_type</em>, <em>meta</em>, <em>meta_obj</em>, <em>meta_attrib</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDGW.set_info_meta" title="Permalink to this definition">¶</a></dt>
-<dd><p>This sets a text object to the text found in a <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> attribute.</p>
+<dd><p>This sets a text object to the text found in a <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> attribute.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>obj</strong> (<em>int</em>) &#8211; Dialog Object</li>
-<li><strong>dlg_obj_type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
-<li><strong>meta_obj</strong> (<em>int</em>) &#8211; Object</li>
-<li><strong>meta_attrib</strong> (<em>int</em>) &#8211; Attribute</li>
+<li><strong>obj</strong> (<em>int</em>) – Dialog Object</li>
+<li><strong>dlg_obj_type</strong> (<em>int</em>) – <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>meta_obj</strong> (<em>int</em>) – Object</li>
+<li><strong>meta_attrib</strong> (<em>int</em>) – Attribute</li>
 </ul>
 </td>
 </tr>
@@ -336,7 +326,7 @@ is too long it will be truncated.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
@@ -351,10 +341,10 @@ the text is not set.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>id</strong> (<em>int</em>) &#8211; Dialog Object</li>
-<li><strong>info</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
-<li><strong>group</strong> (<em>str</em>) &#8211; Group name of the Variable</li>
-<li><strong>field</strong> (<em>str</em>) &#8211; Variable name</li>
+<li><strong>id</strong> (<em>int</em>) – Dialog Object</li>
+<li><strong>info</strong> (<em>int</em>) – <a class="reference internal" href="#dgw-object"><span class="std std-ref">DGW_OBJECT constants</span></a></li>
+<li><strong>group</strong> (<em>str</em>) – Group name of the Variable</li>
+<li><strong>field</strong> (<em>str</em>) – Variable name</li>
 </ul>
 </td>
 </tr>
@@ -363,7 +353,7 @@ the text is not set.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
@@ -375,26 +365,26 @@ the text is not set.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>title</strong> (<em>str</em>) &#8211; Title to set</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>title</strong> (<em>str</em>) – Title to set</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
-<p><strong>Note:</strong> A &#8220;Special&#8221;, additional title can be added to a dialog by passing a title
-to <a class="reference internal" href="#geosoft.gxapi.GXDGW.set_title" title="geosoft.gxapi.GXDGW.set_title"><code class="xref py py-obj docutils literal"><span class="pre">set_title</span></code></a> with the following syntax:</p>
-<p><code class="docutils literal"><span class="pre">&quot;Window</span> <span class="pre">Title\nAdditional</span> <span class="pre">Title&quot;</span></code></p>
-<p>In the title argument, a line break character <code class="docutils literal"><span class="pre">'\n'</span></code> is used to
+<p><strong>Note:</strong> A “Special”, additional title can be added to a dialog by passing a title
+to <a class="reference internal" href="#geosoft.gxapi.GXDGW.set_title" title="geosoft.gxapi.GXDGW.set_title"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_title</span></code></a> with the following syntax:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;Window</span> <span class="pre">Title\nAdditional</span> <span class="pre">Title&quot;</span></code></p>
+<p>In the title argument, a line break character <code class="docutils literal notranslate"><span class="pre">'\n'</span></code> is used to
 separate the parts.</p>
 <p>The window title free_appears as the title in the upper bar of the dialog.
 The additional title free_appears below this, in the main body of the
 dialog, and is separated from the rest of the fields by a horizontal
 line. It is printed in the bold version of the default font (or of the
 special font specified using the MONTAJ.GX_TITLE_FONT parameter noted
-above in &#8220;Setting Fonts in GX dialogs.&#8221;</p>
+above in “Setting Fonts in GX dialogs.”</p>
 </dd></dl>
 
 </dd></dl>
@@ -405,7 +395,7 @@ above in &#8220;Setting Fonts in GX dialogs.&#8221;</p>
 INFO TYPE   EDIT   FEDIT  LEDIT  CEDIT  EBUT
 =========   =====  =====  =====  =====  =====
 LABEL       RW     RW     RW     RW     RW          R - can use GetInfo_DGW
-TEXT        RW     RW     RW     RW     .           W - can use <a class="reference internal" href="#geosoft.gxapi.GXDGW.set_info" title="geosoft.gxapi.GXDGW.set_info"><code class="xref py py-obj docutils literal"><span class="pre">set_info</span></code></a>
+TEXT        RW     RW     RW     RW     .           W - can use <a class="reference internal" href="#geosoft.gxapi.GXDGW.set_info" title="geosoft.gxapi.GXDGW.set_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_info</span></code></a>
 PATH        .      RW     .      .      .
 FILEPATH    .      RW     .      .      .
 LISTVAL     .      .      R      .      .
@@ -490,7 +480,7 @@ LISTALIAS   .      .      RW     .      .</p>
 <dl class="data">
 <dt id="geosoft.gxapi.DGW_HIDE">
 <code class="descname">DGW_HIDE</code><a class="headerlink" href="#geosoft.gxapi.DGW_HIDE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Hide the button or entry and its label, if string is not &#8220;0&#8221;</p>
+<dd><p>Hide the button or entry and its label, if string is not “0”</p>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">DGW_HIDE</code><em class="property"> = 8</em></dt>
@@ -513,13 +503,13 @@ LISTALIAS   .      .      RW     .      .</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

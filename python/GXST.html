@@ -1,27 +1,16 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>GXST class &#8212; Geosoft GX Python API 9.3.1 documentation</title>
-    
+    <title>GXST class &#8212; Geosoft GX Python API 9.4.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '9.3.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -34,15 +23,14 @@
   _gaq.push(['_trackPageview']);
 </script>
 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -57,12 +45,14 @@
 
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
   <div role="note" aria-label="source link">
@@ -86,26 +76,26 @@
 <dt id="geosoft.gxapi.GXST">
 <em class="property">class </em><code class="descname">GXST</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXST" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXST class.</p>
-<p>Mono-variate statistics. The <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a> class is used to accumulate statistical
+<p>Mono-variate statistics. The <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> class is used to accumulate statistical
 information about a set of data. This class is usually used in conjunction
-with others. For instance, <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.stat" title="geosoft.gxapi.GXDU.stat"><code class="xref py py-obj docutils literal"><span class="pre">GXDU.stat</span></code></a> (see <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU" title="geosoft.gxapi.GXDU"><code class="xref py py-obj docutils literal"><span class="pre">GXDU</span></code></a>) will add a channel&#8217;s
-data to the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a> object, and sComputeST_IMG (see <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal"><span class="pre">GXIMG</span></code></a>) will compute
+with others. For instance, <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.stat" title="geosoft.gxapi.GXDU.stat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDU.stat</span></code></a> (see <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU" title="geosoft.gxapi.GXDU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDU</span></code></a>) will add a channel’s
+data to the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> object, and sComputeST_IMG (see <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a>) will compute
 statistics for a grid.</p>
 <p><strong>Note:</strong></p>
 <p id="histogram-ranges"><strong>* Histogram ranges and color zone ranges *</strong></p>
 <p>Histogram bins are defined with inclusive minima and exclusive maxima;
 for instance if Min = 0 and Inc = 1, then the second bin would include
 all values z such that  0 &gt;= z &gt; 1 (the first bin has all values &lt; 0).</p>
-<p>Color zones used in displaying grids (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a>, ZON etc...) are the
+<p>Color zones used in displaying grids (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a>, ZON etc…) are the
 opposite, with exclusive minima and inclusive maxima.
 For instance, if a zone is defined from 0 to 1, then it would
 contain all values of z such that 0 &gt; z &gt;= 1.</p>
 <p>These definitions mean that it is impossible to perfectly assign
-<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal"><span class="pre">GXITR</span></code></a> colors to individual bars of a histogram. The best work-around
+<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> colors to individual bars of a histogram. The best work-around
 when the data values are integers is to define the color zones using
 0.5 values between the integers. A general work-around is to make the
 number of histogram bins much larger than the number of color zones.</p>
-<p>See also  <a class="reference internal" href="GXST2.html#geosoft.gxapi.GXST2" title="geosoft.gxapi.GXST2"><code class="xref py py-obj docutils literal"><span class="pre">GXST2</span></code></a> (bi-variate statistics)</p>
+<p>See also  <a class="reference internal" href="GXST2.html#geosoft.gxapi.GXST2" title="geosoft.gxapi.GXST2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST2</span></code></a> (bi-variate statistics)</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXST.create">
 <em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXST.create" title="Permalink to this definition">¶</a></dt>
@@ -115,7 +105,7 @@ accumulate statistics.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a> Object</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> Object</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST">GXST</a></td>
 </tr>
@@ -124,7 +114,7 @@ accumulate statistics.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -136,7 +126,7 @@ all values.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a> Object</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> Object</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST">GXST</a></td>
 </tr>
@@ -145,7 +135,7 @@ all values.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -156,32 +146,32 @@ all values.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>val</strong> (<em>float</em>) &#8211; Value to Add</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>val</strong> (<em>float</em>) – Value to Add</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXST.data_vv">
 <code class="descname">data_vv</code><span class="sig-paren">(</span><em>vv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXST.data_vv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add all the values in this <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> to the statistics object.</p>
+<dd><p>Add all the values in this <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> to the statistics object.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> object</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -192,7 +182,7 @@ all values.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>float</em>) &#8211; Input value</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>float</em>) – Input value</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The percentile at the given value (0 - 100)</td>
 </tr>
@@ -203,7 +193,7 @@ all values.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.8.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Statistics and histogram must have been calculated prior to
 calling this method</p>
 </dd></dl>
@@ -216,7 +206,7 @@ calling this method</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>percent</strong> (<em>float</em>) &#8211; Input percentile (0 - 100)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>percent</strong> (<em>float</em>) – Input percentile (0 - 100)</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The value at the given percentile.</td>
 </tr>
@@ -227,7 +217,7 @@ calling this method</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.8.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Statistics and histogram must have been calculated prior to
 calling this method</p>
 </dd></dl>
@@ -240,17 +230,17 @@ calling this method</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> for numbers of items</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> for numbers of items</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.1.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
-<p><strong>Note:</strong> The length of the returned <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> is set to the total
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The length of the returned <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> is set to the total
 number of bins. If a histogram is not defined in
-the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a>, then the returned length is zero.</p>
+the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a>, then the returned length is zero.</p>
 </dd></dl>
 
 <dl class="method">
@@ -262,9 +252,9 @@ the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxap
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>div</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; # of bins</li>
-<li><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Min (value at start of 2nd bin)</li>
-<li><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Max (value at end of 2nd last bin)</li>
+<li><strong>div</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – # of bins</li>
+<li><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Min (value at start of 2nd bin)</li>
+<li><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Max (value at end of 2nd last bin)</li>
 </ul>
 </td>
 </tr>
@@ -273,10 +263,10 @@ the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxap
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.1.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
-<p><strong>Note:</strong> The items correspond to those in <a class="reference internal" href="#geosoft.gxapi.GXST.histogram2" title="geosoft.gxapi.GXST.histogram2"><code class="xref py py-obj docutils literal"><span class="pre">histogram2</span></code></a>.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The items correspond to those in <a class="reference internal" href="#geosoft.gxapi.GXST.histogram2" title="geosoft.gxapi.GXST.histogram2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">histogram2</span></code></a>.
 If a histogram is not defined in
-the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a>, then the returned number of bins is zero, and
+the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a>, then the returned number of bins is zero, and
 the min and max values will be dummies.</p>
 </dd></dl>
 
@@ -284,15 +274,15 @@ the min and max values will be dummies.</p>
 <dt id="geosoft.gxapi.GXST.get_info">
 <code class="descname">get_info</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXST.get_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method allows you to retrieve (and compute) the
-information from the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a> object.</p>
+information from the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> object.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#st-info"><span class="std std-ref">ST_INFO constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>int</em>) – <a class="reference internal" href="#st-info"><span class="std std-ref">ST_INFO constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Data you asked for
-<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal"><span class="pre">GS_R8DM</span></code></a> for none</td>
+<a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_R8DM" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_R8DM</span></code></a> for none</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
 </tr>
@@ -301,11 +291,11 @@ information from the <a class="reference internal" href="#geosoft.gxapi.GXST" ti
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
-<p><strong>Note:</strong> The following can only be determined if the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a> has recorded
-a histogram: <a class="reference internal" href="#geosoft.gxapi.ST_MEDIAN" title="geosoft.gxapi.ST_MEDIAN"><code class="xref py py-obj docutils literal"><span class="pre">ST_MEDIAN</span></code></a>, <a class="reference internal" href="#geosoft.gxapi.ST_MODE" title="geosoft.gxapi.ST_MODE"><code class="xref py py-obj docutils literal"><span class="pre">ST_MODE</span></code></a></p>
-<p><a class="reference internal" href="#geosoft.gxapi.ST_MINPOS" title="geosoft.gxapi.ST_MINPOS"><code class="xref py py-obj docutils literal"><span class="pre">ST_MINPOS</span></code></a> can be used to retrieve the smallest value greater
-than zero, but not from <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a> objects recovered from serialized object.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The following can only be determined if the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> has recorded
+a histogram: <a class="reference internal" href="#geosoft.gxapi.ST_MEDIAN" title="geosoft.gxapi.ST_MEDIAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_MEDIAN</span></code></a>, <a class="reference internal" href="#geosoft.gxapi.ST_MODE" title="geosoft.gxapi.ST_MODE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_MODE</span></code></a></p>
+<p><a class="reference internal" href="#geosoft.gxapi.ST_MINPOS" title="geosoft.gxapi.ST_MINPOS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ST_MINPOS</span></code></a> can be used to retrieve the smallest value greater
+than zero, but not from <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> objects recovered from serialized object.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -316,7 +306,7 @@ than zero, but not from <a class="reference internal" href="#geosoft.gxapi.GXST"
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<em>float</em>) &#8211; Real</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<em>float</em>) – Real</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real<p>Notes                        this function is based on Normal Cumulative distribution function
 mit to about 5 standard deviations</p>
@@ -329,7 +319,7 @@ mit to about 5 standard deviations</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -340,7 +330,7 @@ mit to about 5 standard deviations</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>percent</strong> (<em>float</em>) &#8211; Real</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>percent</strong> (<em>float</em>) – Real</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">real<p>Notes                  this function is based on Normal Cumulative distribution function
 mit to about 5 standard deviations</p>
@@ -353,31 +343,31 @@ mit to about 5 standard deviations</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXST.histogram">
 <code class="descname">histogram</code><span class="sig-paren">(</span><em>bins</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXST.histogram" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method prepares <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a> for recording histogram.</p>
+<dd><p>This method prepares <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> for recording histogram.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bins</strong> (<em>int</em>) &#8211; # of bins</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bins</strong> (<em>int</em>) – # of bins</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> The Number of bins includes the one before the minimum
 and the one after the maximum, so it must be a value &gt;2.</p>
 <p>IMPORTANT: This function gets the histogram minimum and
-maximum from the current min and max values stored in the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a>,
-so this is equivalent to calling <a class="reference internal" href="#geosoft.gxapi.GXST.histogram2" title="geosoft.gxapi.GXST.histogram2"><code class="xref py py-obj docutils literal"><span class="pre">histogram2</span></code></a> with</p>
-<p><code class="docutils literal"><span class="pre">#bins,</span> <span class="pre">Min,</span> <span class="pre">(Max-Min)/(#</span> <span class="pre">bins</span> <span class="pre">-2))</span></code></p>
+maximum from the current min and max values stored in the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a>,
+so this is equivalent to calling <a class="reference internal" href="#geosoft.gxapi.GXST.histogram2" title="geosoft.gxapi.GXST.histogram2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">histogram2</span></code></a> with</p>
+<p><code class="docutils literal notranslate"><span class="pre">#bins,</span> <span class="pre">Min,</span> <span class="pre">(Max-Min)/(#</span> <span class="pre">bins</span> <span class="pre">-2))</span></code></p>
 <p>You should already have the data loaded in order to call this
 function.</p>
 <p>See <a class="reference internal" href="#histogram-ranges">histogram_ranges</a></p>
@@ -386,15 +376,15 @@ function.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXST.histogram2">
 <code class="descname">histogram2</code><span class="sig-paren">(</span><em>bins</em>, <em>min</em>, <em>max</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXST.histogram2" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method prepares <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a> for recording histogram.</p>
+<dd><p>This method prepares <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> for recording histogram.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>bins</strong> (<em>int</em>) &#8211; # of bins</li>
-<li><strong>min</strong> (<em>float</em>) &#8211; Min</li>
-<li><strong>max</strong> (<em>float</em>) &#8211; Max</li>
+<li><strong>bins</strong> (<em>int</em>) – # of bins</li>
+<li><strong>min</strong> (<em>float</em>) – Min</li>
+<li><strong>max</strong> (<em>float</em>) – Max</li>
 </ul>
 </td>
 </tr>
@@ -403,7 +393,7 @@ function.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> The Number of bins includes the one before the minimum
 and the one after the maximum, so it must be a value &gt;2.
 The width of the individual bins will be (Min-Max)/(# - 2)</p>
@@ -429,13 +419,13 @@ The width of the individual bins will be (Min-Max)/(# - 2)</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXST.normal_test">
 <code class="descname">normal_test</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXST.normal_test" title="Permalink to this definition">¶</a></dt>
-<dd><p>Test the &#8220;normality&#8221; of the histogram distribution</p>
+<dd><p>Test the “normality” of the histogram distribution</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The normality statistic.
-Terminates if no histogram in the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a> object.</td>
+Terminates if no histogram in the <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> object.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
 </tr>
@@ -444,7 +434,7 @@ Terminates if no histogram in the <a class="reference internal" href="#geosoft.g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> This function compares the histogram to a normal curve with the
 same mean and standard deviation. The individual counts are normalized
 by the total counts, the bin width and the standard deviation.
@@ -453,18 +443,18 @@ the normalized count is summed, and the final result is normalized by
 the total number of bins. In this way histograms with different means,
 standard deviations, number of bins and counts can be compared.
 If the histogram were perfectly normal, then a value of 0 would be returned.
-The more &#8220;non-normal&#8221;, the higher the statistic.</p>
+The more “non-normal”, the higher the statistic.</p>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXST.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXST.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal"><span class="pre">GXST</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST">GXST</a></td>
 </tr>
@@ -479,7 +469,7 @@ The more &#8220;non-normal&#8221;, the higher the statistic.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 </dd></dl>
@@ -755,13 +745,13 @@ The more &#8220;non-normal&#8221;, the higher the statistic.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -1,27 +1,16 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>GXLPT class &#8212; Geosoft GX Python API 9.3.1 documentation</title>
-    
+    <title>GXLPT class &#8212; Geosoft GX Python API 9.4.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '9.3.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -34,27 +23,28 @@
   _gaq.push(['_trackPageview']);
 </script>
 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
   <div role="note" aria-label="source link">
@@ -80,7 +70,7 @@
 <dd><p>GXLPT class.</p>
 <p>This class allows access to the current default line patterns.
 It does not allow the definition of individual patterns. It is
-is used primarily with <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> class functions.</p>
+is used primarily with <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMAP</span></code></a> class functions.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXLPT.create">
 <em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXLPT.create" title="Permalink to this definition">¶</a></dt>
@@ -89,7 +79,7 @@ is used primarily with <a class="reference internal" href="GXMAP.html#geosoft.gx
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXLPT" title="geosoft.gxapi.GXLPT"><code class="xref py py-obj docutils literal"><span class="pre">GXLPT</span></code></a> Object</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXLPT" title="geosoft.gxapi.GXLPT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLPT</span></code></a> Object</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXLPT" title="geosoft.gxapi.GXLPT">GXLPT</a></td>
 </tr>
@@ -98,44 +88,44 @@ is used primarily with <a class="reference internal" href="GXMAP.html#geosoft.gx
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXLPT.get_lst">
 <code class="descname">get_lst</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXLPT.get_lst" title="Permalink to this definition">¶</a></dt>
-<dd><p>Copies all pattern names into a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object.</p>
+<dd><p>Copies all pattern names into a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> object.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> Handle</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> Handle</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXLPT.get_standard_lst">
 <code class="descname">get_standard_lst</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXLPT.get_standard_lst" title="Permalink to this definition">¶</a></dt>
-<dd><p>Copies the six standard line types into a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object.</p>
+<dd><p>Copies the six standard line types into a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> object.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> Handle</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> Handle</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The six standard line types are &#8220;solid&#8221;, &#8220;long dash&#8221;, &#8220;dotted&#8221;, &#8220;short dash&#8221;, &#8220;long, short dash&#8221; and &#8220;dash dot&#8221;.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The six standard line types are “solid”, “long dash”, “dotted”, “short dash”, “long, short dash” and “dash dot”.</p>
 </dd></dl>
 
 <dl class="method">
@@ -157,12 +147,12 @@ is used primarily with <a class="reference internal" href="GXMAP.html#geosoft.gx
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXLPT.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXLPT.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXLPT" title="geosoft.gxapi.GXLPT"><code class="xref py py-obj docutils literal"><span class="pre">GXLPT</span></code></a></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXLPT" title="geosoft.gxapi.GXLPT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLPT</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXLPT" title="geosoft.gxapi.GXLPT"><code class="xref py py-obj docutils literal"><span class="pre">GXLPT</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXLPT" title="geosoft.gxapi.GXLPT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLPT</span></code></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXLPT" title="geosoft.gxapi.GXLPT">GXLPT</a></td>
 </tr>
@@ -186,13 +176,13 @@ is used primarily with <a class="reference internal" href="GXMAP.html#geosoft.gx
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

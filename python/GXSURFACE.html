@@ -1,27 +1,16 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>GXSURFACE class &#8212; Geosoft GX Python API 9.3.1 documentation</title>
-    
+    <title>GXSURFACE class &#8212; Geosoft GX Python API 9.4.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '9.3.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -34,15 +23,14 @@
   _gaq.push(['_trackPageview']);
 </script>
 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -57,12 +45,14 @@
 
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
   <div role="note" aria-label="source link">
@@ -86,25 +76,25 @@
 <dt id="geosoft.gxapi.GXSURFACE">
 <em class="property">class </em><code class="descname">GXSURFACE</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXSURFACE class.</p>
-<p>The <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACE</span></code></a> class allows you to create, read and alter Geosurface files (<code class="docutils literal"><span class="pre">*.geosoft_surface</span></code>).
-A Geosurface file can contain one or more surface items (see <a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACEITEM</span></code></a> class). In turn each item can
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACE</span></code></a> class allows you to create, read and alter Geosurface files (<code class="docutils literal notranslate"><span class="pre">*.geosoft_surface</span></code>).
+A Geosurface file can contain one or more surface items (see <a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACEITEM</span></code></a> class). In turn each item can
 contains one or more triangular polyhedral meshes.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXSURFACE.add_surface_item">
 <code class="descname">add_surface_item</code><span class="sig-paren">(</span><em>surfaceitem</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.add_surface_item" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add a new surface item to the <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACE</span></code></a></p>
+<dd><p>Add a new surface item to the <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACE</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>surfaceitem</strong> (<a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><em>GXSURFACEITEM</em></a>) &#8211; <a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACEITEM</span></code></a> to add</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>surfaceitem</strong> (<a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><em>GXSURFACEITEM</em></a>) – <a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACEITEM</span></code></a> to add</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -116,8 +106,8 @@ contains one or more triangular polyhedral meshes.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>triangulation_file</strong> (<em>str</em>) &#8211; 00t file</li>
-<li><strong>surface_file</strong> (<em>str</em>) &#8211; Geosurface file</li>
+<li><strong>triangulation_file</strong> (<em>str</em>) – 00t file</li>
+<li><strong>surface_file</strong> (<em>str</em>) – Geosurface file</li>
 </ul>
 </td>
 </tr>
@@ -126,7 +116,7 @@ contains one or more triangular polyhedral meshes.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -138,9 +128,9 @@ contains one or more triangular polyhedral meshes.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>surface_file</strong> (<em>str</em>) &#8211; Geosurface file</li>
-<li><strong>output</strong> (<em>str</em>) &#8211; Output file</li>
-<li><strong>crc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; CRC (unused, always set to 0)</li>
+<li><strong>surface_file</strong> (<em>str</em>) – Geosurface file</li>
+<li><strong>output</strong> (<em>str</em>) – Output file</li>
+<li><strong>crc</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – CRC (unused, always set to 0)</li>
 </ul>
 </td>
 </tr>
@@ -155,7 +145,7 @@ contains one or more triangular polyhedral meshes.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -167,12 +157,12 @@ contains one or more triangular polyhedral meshes.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>surface_file</strong> (<em>str</em>) &#8211; Geosurface file name</li>
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> containing coordinate system of the Geosurface</li>
+<li><strong>surface_file</strong> (<em>str</em>) – Geosurface file name</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> containing coordinate system of the Geosurface</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACE</span></code></a> Object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACE</span></code></a> Object</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE">GXSURFACE</a></p>
@@ -183,7 +173,7 @@ contains one or more triangular polyhedral meshes.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -195,8 +185,8 @@ contains one or more triangular polyhedral meshes.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>surface_file</strong> (<em>str</em>) &#8211; Geosurface file</li>
-<li><strong>dxf_file</strong> (<em>str</em>) &#8211; DXF file</li>
+<li><strong>surface_file</strong> (<em>str</em>) – Geosurface file</li>
+<li><strong>dxf_file</strong> (<em>str</em>) – DXF file</li>
 </ul>
 </td>
 </tr>
@@ -205,7 +195,7 @@ contains one or more triangular polyhedral meshes.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.2.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -217,8 +207,8 @@ contains one or more triangular polyhedral meshes.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>triangulation_file</strong> (<em>str</em>) &#8211; 00t file</li>
-<li><strong>surface_file</strong> (<em>str</em>) &#8211; Geosurface file</li>
+<li><strong>triangulation_file</strong> (<em>str</em>) – 00t file</li>
+<li><strong>surface_file</strong> (<em>str</em>) – Geosurface file</li>
 </ul>
 </td>
 </tr>
@@ -227,7 +217,29 @@ contains one or more triangular polyhedral meshes.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxapi.GXSURFACE.dump_geometry_to_text_file">
+<em class="property">classmethod </em><code class="descname">dump_geometry_to_text_file</code><span class="sig-paren">(</span><em>surface_filename</em>, <em>text_filename</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.dump_geometry_to_text_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dump surface geometry to a text file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>surface_filename</strong> (<em>str</em>) – Geosurface file</li>
+<li><strong>text_filename</strong> (<em>str</em>) – Text file</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -239,8 +251,8 @@ contains one or more triangular polyhedral meshes.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>surface_file</strong> (<em>str</em>) &#8211; Geosurface file</li>
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> to fill (may return an empty <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> if none of the surfaces are closed)</li>
+<li><strong>surface_file</strong> (<em>str</em>) – Geosurface file</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill (may return an empty <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> if none of the surfaces are closed)</li>
 </ul>
 </td>
 </tr>
@@ -249,7 +261,7 @@ contains one or more triangular polyhedral meshes.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -261,12 +273,12 @@ contains one or more triangular polyhedral meshes.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Minimum valid data in X.</li>
-<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Minimum valid data in Y.</li>
-<li><strong>min_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Minimum valid data in Z.</li>
-<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Maximum valid data in X.</li>
-<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Maximum valid data in Y.</li>
-<li><strong>max_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Maximum valid data in Z.</li>
+<li><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum valid data in X.</li>
+<li><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum valid data in Y.</li>
+<li><strong>min_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum valid data in Z.</li>
+<li><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum valid data in X.</li>
+<li><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum valid data in Y.</li>
+<li><strong>max_z</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum valid data in Z.</li>
 </ul>
 </td>
 </tr>
@@ -275,38 +287,38 @@ contains one or more triangular polyhedral meshes.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.5.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSURFACE.get_ipj">
 <code class="descname">get_ipj</code><span class="sig-paren">(</span><em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the coordinate system of the <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACE</span></code></a>.</p>
+<dd><p>Get the coordinate system of the <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACE</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> in which to place the Geosurface coordinate system</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> in which to place the Geosurface coordinate system</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSURFACE.get_surface_item">
 <code class="descname">get_surface_item</code><span class="sig-paren">(</span><em>guid</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_surface_item" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the an existing surface item from the <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACE</span></code></a></p>
+<dd><p>Get the an existing surface item from the <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACE</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>guid</strong> (<em>str</em>) &#8211; Item GUID</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>guid</strong> (<em>str</em>) – Item GUID</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACEITEM</span></code></a> Object</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACEITEM</span></code></a> Object</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM">GXSURFACEITEM</a></td>
 </tr>
@@ -315,7 +327,7 @@ contains one or more triangular polyhedral meshes.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -326,14 +338,14 @@ contains one or more triangular polyhedral meshes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> to fill</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -345,8 +357,8 @@ contains one or more triangular polyhedral meshes.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>surface_file</strong> (<em>str</em>) &#8211; Geosurface file</li>
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> to fill</li>
+<li><strong>surface_file</strong> (<em>str</em>) – Geosurface file</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill</li>
 </ul>
 </td>
 </tr>
@@ -355,7 +367,7 @@ contains one or more triangular polyhedral meshes.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -377,12 +389,12 @@ contains one or more triangular polyhedral meshes.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXSURFACE.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACE</span></code></a></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACE</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACE</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACE</span></code></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE">GXSURFACE</a></td>
 </tr>
@@ -399,12 +411,12 @@ contains one or more triangular polyhedral meshes.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>surface_file</strong> (<em>str</em>) &#8211; Geosurface file name</li>
-<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#surface-open"><span class="std std-ref">SURFACE_OPEN constants</span></a></li>
+<li><strong>surface_file</strong> (<em>str</em>) – Geosurface file name</li>
+<li><strong>mode</strong> (<em>int</em>) – <a class="reference internal" href="#surface-open"><span class="std std-ref">SURFACE_OPEN constants</span></a></li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACE</span></code></a> Object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACE</span></code></a> Object</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE">GXSURFACE</a></p>
@@ -415,25 +427,25 @@ contains one or more triangular polyhedral meshes.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSURFACE.set_ipj">
 <code class="descname">set_ipj</code><span class="sig-paren">(</span><em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.set_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><p>Change the coordinate system of the <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal"><span class="pre">GXSURFACE</span></code></a>.</p>
+<dd><p>Change the coordinate system of the <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACE</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> containing the new coordinate system of the Geosurface</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> containing the new coordinate system of the Geosurface</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -444,14 +456,14 @@ contains one or more triangular polyhedral meshes.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; Geosurface file</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Geosurface file</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 8.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 </dd></dl>
@@ -496,13 +508,13 @@ contains one or more triangular polyhedral meshes.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

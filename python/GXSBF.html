@@ -1,27 +1,16 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>GXSBF class &#8212; Geosoft GX Python API 9.3.1 documentation</title>
-    
+    <title>GXSBF class &#8212; Geosoft GX Python API 9.4.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '9.3.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -34,15 +23,14 @@
   _gaq.push(['_trackPageview']);
 </script>
 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -58,12 +46,14 @@
 
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
   <div role="note" aria-label="source link">
@@ -87,28 +77,28 @@
 <dt id="geosoft.gxapi.GXSBF">
 <em class="property">class </em><code class="descname">GXSBF</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSBF" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXSBF class.</p>
-<p>The <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal"><span class="pre">GXSBF</span></code></a> class provides a means of storing data in a
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a> class provides a means of storing data in a
 file-type directory structure within a workspace, database
-or map. Each of these three objects contains its own <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal"><span class="pre">GXSBF</span></code></a> object,
-which may be accessed using the <a class="reference internal" href="#geosoft.gxapi.GXSBF.h_get_sys" title="geosoft.gxapi.GXSBF.h_get_sys"><code class="xref py py-obj docutils literal"><span class="pre">h_get_sys</span></code></a>, <a class="reference internal" href="#geosoft.gxapi.GXSBF.h_get_db" title="geosoft.gxapi.GXSBF.h_get_db"><code class="xref py py-obj docutils literal"><span class="pre">h_get_db</span></code></a> and
-<a class="reference internal" href="#geosoft.gxapi.GXSBF.h_get_map" title="geosoft.gxapi.GXSBF.h_get_map"><code class="xref py py-obj docutils literal"><span class="pre">h_get_map</span></code></a> functions. To access data in a file, or create a
-new file in the <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal"><span class="pre">GXSBF</span></code></a> object, call the CreatSBF_BF function (see <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a>),
-which will return a <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> object to use.</p>
+or map. Each of these three objects contains its own <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a> object,
+which may be accessed using the <a class="reference internal" href="#geosoft.gxapi.GXSBF.h_get_sys" title="geosoft.gxapi.GXSBF.h_get_sys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">h_get_sys</span></code></a>, <a class="reference internal" href="#geosoft.gxapi.GXSBF.h_get_db" title="geosoft.gxapi.GXSBF.h_get_db"><code class="xref py py-obj docutils literal notranslate"><span class="pre">h_get_db</span></code></a> and
+<a class="reference internal" href="#geosoft.gxapi.GXSBF.h_get_map" title="geosoft.gxapi.GXSBF.h_get_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">h_get_map</span></code></a> functions. To access data in a file, or create a
+new file in the <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a> object, call the CreatSBF_BF function (see <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a>),
+which will return a <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> object to use.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXSBF.create">
 <code class="descname">create</code><span class="sig-paren">(</span><em>file</em>, <em>status</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSBF.create" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a child <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal"><span class="pre">GXSBF</span></code></a> object inside an <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal"><span class="pre">GXSBF</span></code></a>.</p>
+<dd><p>Create a child <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a> object inside an <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>file</strong> (<em>str</em>) &#8211; Directory name to open / create</li>
-<li><strong>status</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#sbf-open"><span class="std std-ref">SBF_OPEN constants</span></a></li>
+<li><strong>file</strong> (<em>str</em>) – Directory name to open / create</li>
+<li><strong>status</strong> (<em>int</em>) – <a class="reference internal" href="#sbf-open"><span class="std std-ref">SBF_OPEN constants</span></a></li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal"><span class="pre">GXSBF</span></code></a> object, terminates if fails.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a> object, terminates if fails.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF">GXSBF</a></p>
@@ -119,20 +109,20 @@ which will return a <a class="reference internal" href="GXBF.html#geosoft.gxapi.
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXSBF.create_obj_list">
 <code class="descname">create_obj_list</code><span class="sig-paren">(</span><em>lst</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSBF.create_obj_list" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fills an <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> with embedded storage names of an <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal"><span class="pre">GXSBF</span></code></a>.</p>
+<dd><p>Fills an <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> with embedded storage names of an <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> handle</li>
-<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#sbf-type"><span class="std std-ref">SBF_TYPE constants</span></a></li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> handle</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#sbf-type"><span class="std std-ref">SBF_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -141,11 +131,11 @@ which will return a <a class="reference internal" href="GXBF.html#geosoft.gxapi.
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.7.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
-<p><strong>Note:</strong> Function will populate an <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object with embedded files (<a class="reference internal" href="#geosoft.gxapi.SBF_TYPE_FILES" title="geosoft.gxapi.SBF_TYPE_FILES"><code class="xref py py-obj docutils literal"><span class="pre">SBF_TYPE_FILES</span></code></a>),
-directories (<a class="reference internal" href="#geosoft.gxapi.SBF_TYPE_DIRS" title="geosoft.gxapi.SBF_TYPE_DIRS"><code class="xref py py-obj docutils literal"><span class="pre">SBF_TYPE_DIRS</span></code></a>), or both (pass <a class="reference internal" href="#geosoft.gxapi.SBF_TYPE_BOTH" title="geosoft.gxapi.SBF_TYPE_BOTH"><code class="xref py py-obj docutils literal"><span class="pre">SBF_TYPE_BOTH</span></code></a>) in an <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal"><span class="pre">GXSBF</span></code></a>.
-Along with the Name of the file or directory, a constant &#8220;dir&#8221; or &#8220;file&#8221; string is written
-to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> also.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Function will populate an <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> object with embedded files (<a class="reference internal" href="#geosoft.gxapi.SBF_TYPE_FILES" title="geosoft.gxapi.SBF_TYPE_FILES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SBF_TYPE_FILES</span></code></a>),
+directories (<a class="reference internal" href="#geosoft.gxapi.SBF_TYPE_DIRS" title="geosoft.gxapi.SBF_TYPE_DIRS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SBF_TYPE_DIRS</span></code></a>), or both (pass <a class="reference internal" href="#geosoft.gxapi.SBF_TYPE_BOTH" title="geosoft.gxapi.SBF_TYPE_BOTH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SBF_TYPE_BOTH</span></code></a>) in an <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a>.
+Along with the Name of the file or directory, a constant “dir” or “file” string is written
+to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> also.</p>
 </dd></dl>
 
 <dl class="method">
@@ -156,14 +146,14 @@ to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dir</strong> (<em>str</em>) &#8211; Dir/Storage Name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dir</strong> (<em>str</em>) – Dir/Storage Name</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -174,14 +164,14 @@ to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; File Name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File Name</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -192,7 +182,7 @@ to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dir</strong> (<em>str</em>) &#8211; Dir/Storage Name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dir</strong> (<em>str</em>) – Dir/Storage Name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - Does not exist
 1 - Exists</td>
@@ -204,7 +194,7 @@ to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -215,7 +205,7 @@ to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; File Name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – File Name</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 - Does not exist
 1 - Exists</td>
@@ -227,7 +217,7 @@ to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -238,9 +228,9 @@ to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal"><span class="pre">GXSBF</span></code></a> Object</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a> Object</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF">GXSBF</a></td>
 </tr>
@@ -249,7 +239,7 @@ to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -260,9 +250,9 @@ to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) &#8211; <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a> object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMAP</span></code></a> object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal"><span class="pre">GXSBF</span></code></a> Object</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a> Object</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF">GXSBF</a></td>
 </tr>
@@ -271,7 +261,7 @@ to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -282,7 +272,7 @@ to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal"><span class="pre">GXSBF</span></code></a> Object</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a> Object</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF">GXSBF</a></td>
 </tr>
@@ -291,7 +281,7 @@ to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -313,12 +303,12 @@ to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXSBF.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXSBF.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal"><span class="pre">GXSBF</span></code></a></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal"><span class="pre">GXSBF</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF">GXSBF</a></td>
 </tr>
@@ -335,10 +325,10 @@ to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dir</strong> (<em>str</em>) &#8211; Directory name in the Parent <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal"><span class="pre">GXSBF</span></code></a></li>
-<li><strong>file</strong> (<em>str</em>) &#8211; File name in the directory</li>
-<li><strong>file_save</strong> (<em>str</em>) &#8211; File to save as (as an ASCII file)</li>
-<li><strong>p5</strong> (<em>int</em>) &#8211; Append Mode: 0 - New file, 1 - Append file</li>
+<li><strong>dir</strong> (<em>str</em>) – Directory name in the Parent <a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a></li>
+<li><strong>file</strong> (<em>str</em>) – File name in the directory</li>
+<li><strong>file_save</strong> (<em>str</em>) – File to save as (as an ASCII file)</li>
+<li><strong>p5</strong> (<em>int</em>) – Append Mode: 0 - New file, 1 - Append file</li>
 </ul>
 </td>
 </tr>
@@ -347,14 +337,14 @@ to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 </dd></dl>
 
 <div class="section" id="sbf-open-constants">
 <span id="sbf-open"></span><h2>SBF_OPEN constants<a class="headerlink" href="#sbf-open-constants" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal"><span class="pre">GXSBF</span></code></a> Open defines</p>
+<p><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a> Open defines</p>
 <dl class="data">
 <dt id="geosoft.gxapi.SBF_READ">
 <code class="descname">SBF_READ</code><a class="headerlink" href="#geosoft.gxapi.SBF_READ" title="Permalink to this definition">¶</a></dt>
@@ -391,7 +381,7 @@ to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title
 </div>
 <div class="section" id="sbf-type-constants">
 <span id="sbf-type"></span><h2>SBF_TYPE constants<a class="headerlink" href="#sbf-type-constants" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal"><span class="pre">GXSBF</span></code></a> Object type defines</p>
+<p><a class="reference internal" href="#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a> Object type defines</p>
 <dl class="data">
 <dt id="geosoft.gxapi.SBF_TYPE_DIRS">
 <code class="descname">SBF_TYPE_DIRS</code><a class="headerlink" href="#geosoft.gxapi.SBF_TYPE_DIRS" title="Permalink to this definition">¶</a></dt>
@@ -440,13 +430,13 @@ to the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

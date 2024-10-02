@@ -1,27 +1,16 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>GXEDOC class &#8212; Geosoft GX Python API 9.3.1 documentation</title>
-    
+    <title>GXEDOC class &#8212; Geosoft GX Python API 9.4.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '9.3.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -34,15 +23,14 @@
   _gaq.push(['_trackPageview']);
 </script>
 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -63,12 +51,14 @@
 
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
   <div role="note" aria-label="source link">
@@ -92,21 +82,21 @@
 <dt id="geosoft.gxapi.GXEDOC">
 <em class="property">class </em><code class="descname">GXEDOC</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEDOC" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXEDOC class.</p>
-<p>The <a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC"><code class="xref py py-obj docutils literal"><span class="pre">GXEDOC</span></code></a> class provides access to a generic documents views as loaded within
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEDOC</span></code></a> class provides access to a generic documents views as loaded within
 Oasis montaj.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXEDOC.create_new_gms_3d">
 <em class="property">classmethod </em><code class="descname">create_new_gms_3d</code><span class="sig-paren">(</span><em>name</em>, <em>nx</em>, <em>ny</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEDOC.create_new_gms_3d" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a new <a class="reference internal" href="GXGMSYS.html#geosoft.gxapi.GXGMSYS" title="geosoft.gxapi.GXGMSYS"><code class="xref py py-obj docutils literal"><span class="pre">GXGMSYS</span></code></a> 3D Model into the workspace, flags as new.</p>
+<dd><p>Creates a new <a class="reference internal" href="GXGMSYS.html#geosoft.gxapi.GXGMSYS" title="geosoft.gxapi.GXGMSYS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGMSYS</span></code></a> 3D Model into the workspace, flags as new.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) &#8211; Document to load.</li>
-<li><strong>nx</strong> (<em>int</em>) &#8211; X Size</li>
-<li><strong>ny</strong> (<em>int</em>) &#8211; Y Size</li>
-<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#gms3d-modeltype"><span class="std std-ref">GMS3D_MODELTYPE constants</span></a></li>
+<li><strong>name</strong> (<em>str</em>) – Document to load.</li>
+<li><strong>nx</strong> (<em>int</em>) – X Size</li>
+<li><strong>ny</strong> (<em>int</em>) – Y Size</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#gms3d-modeltype"><span class="std std-ref">GMS3D_MODELTYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -121,9 +111,9 @@ Oasis montaj.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftExtendedDesktopLicense">Geosoft Extended End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
-<p><strong>Note:</strong> See <a class="reference internal" href="#geosoft.gxapi.GXEDOC.load" title="geosoft.gxapi.GXEDOC.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>. This is used for brand new documents, it also sets
+<p><strong>Note:</strong> See <a class="reference internal" href="#geosoft.gxapi.GXEDOC.load" title="geosoft.gxapi.GXEDOC.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a>. This is used for brand new documents, it also sets
 an internal flag such that if on closing the user chooses
 not to save changes, the document is deleted thus keeping the
 project folders clean.</p>
@@ -137,9 +127,9 @@ project folders clean.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC"><code class="xref py py-obj docutils literal"><span class="pre">GXEDOC</span></code></a> Object</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEDOC</span></code></a> Object</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC">GXEDOC</a></td>
 </tr>
@@ -148,7 +138,7 @@ project folders clean.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
@@ -160,9 +150,9 @@ project folders clean.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC"><code class="xref py py-obj docutils literal"><span class="pre">GXEDOC</span></code></a> Object to current edited document. If there is no current document,
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEDOC</span></code></a> Object to current edited document. If there is no current document,
 the user is not prompted for a document, and 0 is returned.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC">GXEDOC</a></td>
@@ -172,7 +162,7 @@ the user is not prompted for a document, and 0 is returned.</td>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
@@ -184,9 +174,9 @@ the user is not prompted for a document, and 0 is returned.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC"><code class="xref py py-obj docutils literal"><span class="pre">GXEDOC</span></code></a> Object</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEDOC</span></code></a> Object</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC">GXEDOC</a></td>
 </tr>
@@ -195,10 +185,10 @@ the user is not prompted for a document, and 0 is returned.</td>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 <dl class="docutils">
-<dt><strong>Note:</strong> This function acts just like <a class="reference internal" href="#geosoft.gxapi.GXEDOC.current" title="geosoft.gxapi.GXEDOC.current"><code class="xref py py-obj docutils literal"><span class="pre">current</span></code></a> except that the document is not activated (brought to foreground) and no</dt>
+<dt><strong>Note:</strong> This function acts just like <a class="reference internal" href="#geosoft.gxapi.GXEDOC.current" title="geosoft.gxapi.GXEDOC.current"><code class="xref py py-obj docutils literal notranslate"><span class="pre">current</span></code></a> except that the document is not activated (brought to foreground) and no</dt>
 <dd>guarantee is given about which document is currently active.</dd>
 </dl>
 </dd></dl>
@@ -206,20 +196,20 @@ the user is not prompted for a document, and 0 is returned.</td>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXEDOC.get_documents_lst">
 <em class="property">classmethod </em><code class="descname">get_documents_lst</code><span class="sig-paren">(</span><em>lst</em>, <em>path</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEDOC.get_documents_lst" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load the file names of open documents into a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>.</p>
+<dd><p>Load the file names of open documents into a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> to load</li>
-<li><strong>path</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-path"><span class="std std-ref">EDOC_PATH constants</span></a></li>
-<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to load</li>
+<li><strong>path</strong> (<em>int</em>) – <a class="reference internal" href="#edoc-path"><span class="std std-ref">EDOC_PATH constants</span></a></li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The number of documents loaded into the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>.
-The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> is cleared first.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The number of documents loaded into the <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a>.
+The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> is cleared first.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
@@ -230,44 +220,44 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDOC.get_name">
 <code class="descname">get_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEDOC.get_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the name of the document object of this <a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC"><code class="xref py py-obj docutils literal"><span class="pre">GXEDOC</span></code></a>.</p>
+<dd><p>Get the name of the document object of this <a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEDOC</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name returned</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name returned</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDOC.get_window_position">
 <code class="descname">get_window_position</code><span class="sig-paren">(</span><em>left</em>, <em>top</em>, <em>right</em>, <em>bottom</em>, <em>state</em>, <em>is_floating</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEDOC.get_window_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the map window&#8217;s position and dock state</p>
+<dd><p>Get the map window’s position and dock state</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>left</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window left position</li>
-<li><strong>top</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window top position</li>
-<li><strong>right</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window right position</li>
-<li><strong>bottom</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window bottom position</li>
-<li><strong>state</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Window state <a class="reference internal" href="#edoc-window-state"><span class="std std-ref">EDOC_WINDOW_STATE constants</span></a></li>
-<li><strong>is_floating</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Docked or floating <a class="reference internal" href="#edoc-window-position"><span class="std std-ref">EDOC_WINDOW_POSITION constants</span></a></li>
+<li><strong>left</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window left position</li>
+<li><strong>top</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window top position</li>
+<li><strong>right</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window right position</li>
+<li><strong>bottom</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window bottom position</li>
+<li><strong>state</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Window state <a class="reference internal" href="#edoc-window-state"><span class="std std-ref">EDOC_WINDOW_STATE constants</span></a></li>
+<li><strong>is_floating</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Docked or floating <a class="reference internal" href="#edoc-window-position"><span class="std std-ref">EDOC_WINDOW_POSITION constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -276,7 +266,7 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
@@ -297,7 +287,7 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
@@ -309,7 +299,7 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
@@ -318,7 +308,7 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
@@ -347,8 +337,8 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) &#8211; list of documents (&#8216;;&#8217; or &#8216;|&#8217; delimited) to load.</li>
-<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
+<li><strong>name</strong> (<em>str</em>) – list of documents (‘;’ or ‘|’ delimited) to load.</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -364,7 +354,7 @@ document in the list.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 <p><strong>Note:</strong> The last listed document will become the current document.</p>
 <p>Only the first file in the list may have a directory path.
@@ -381,8 +371,8 @@ directory as the first file.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) &#8211; list of documents (&#8216;;&#8217; or &#8216;|&#8217; delimited) to load.</li>
-<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
+<li><strong>name</strong> (<em>str</em>) – list of documents (‘;’ or ‘|’ delimited) to load.</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -398,10 +388,10 @@ document in the list.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 <dl class="docutils">
-<dt><strong>Note:</strong> This function acts just like <a class="reference internal" href="#geosoft.gxapi.GXEDOC.load" title="geosoft.gxapi.GXEDOC.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a> except that the document(s) is not activated (brought to foreground) and no</dt>
+<dt><strong>Note:</strong> This function acts just like <a class="reference internal" href="#geosoft.gxapi.GXEDOC.load" title="geosoft.gxapi.GXEDOC.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a> except that the document(s) is not activated (brought to foreground) and no</dt>
 <dd>guarantee is given about which document is currently active.</dd>
 </dl>
 </dd></dl>
@@ -415,8 +405,8 @@ document in the list.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) &#8211; document name</li>
-<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
+<li><strong>name</strong> (<em>str</em>) – document name</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -431,30 +421,30 @@ document in the list.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDOC.make_current">
 <code class="descname">make_current</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEDOC.make_current" title="Permalink to this definition">¶</a></dt>
-<dd><p>Makes this <a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC"><code class="xref py py-obj docutils literal"><span class="pre">GXEDOC</span></code></a> object the current active object to the user.</p>
+<dd><p>Makes this <a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEDOC</span></code></a> object the current active object to the user.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXEDOC.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEDOC.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC"><code class="xref py py-obj docutils literal"><span class="pre">GXEDOC</span></code></a></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEDOC</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC"><code class="xref py py-obj docutils literal"><span class="pre">GXEDOC</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEDOC</span></code></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXEDOC" title="geosoft.gxapi.GXEDOC">GXEDOC</a></td>
 </tr>
@@ -477,25 +467,25 @@ document in the list.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXEDOC.set_window_position">
 <code class="descname">set_window_position</code><span class="sig-paren">(</span><em>left</em>, <em>top</em>, <em>right</em>, <em>bottom</em>, <em>state</em>, <em>is_floating</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXEDOC.set_window_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the map window&#8217;s position and dock state</p>
+<dd><p>Get the map window’s position and dock state</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>left</strong> (<em>int</em>) &#8211; Window left position</li>
-<li><strong>top</strong> (<em>int</em>) &#8211; Window top position</li>
-<li><strong>right</strong> (<em>int</em>) &#8211; Window right position</li>
-<li><strong>bottom</strong> (<em>int</em>) &#8211; Window bottom position</li>
-<li><strong>state</strong> (<em>int</em>) &#8211; Window state <a class="reference internal" href="#edoc-window-state"><span class="std std-ref">EDOC_WINDOW_STATE constants</span></a></li>
-<li><strong>is_floating</strong> (<em>int</em>) &#8211; Docked or floating <a class="reference internal" href="#edoc-window-position"><span class="std std-ref">EDOC_WINDOW_POSITION constants</span></a></li>
+<li><strong>left</strong> (<em>int</em>) – Window left position</li>
+<li><strong>top</strong> (<em>int</em>) – Window top position</li>
+<li><strong>right</strong> (<em>int</em>) – Window right position</li>
+<li><strong>bottom</strong> (<em>int</em>) – Window bottom position</li>
+<li><strong>state</strong> (<em>int</em>) – Window state <a class="reference internal" href="#edoc-window-state"><span class="std std-ref">EDOC_WINDOW_STATE constants</span></a></li>
+<li><strong>is_floating</strong> (<em>int</em>) – Docked or floating <a class="reference internal" href="#edoc-window-position"><span class="std std-ref">EDOC_WINDOW_POSITION constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -504,7 +494,7 @@ document in the list.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
@@ -516,14 +506,14 @@ document in the list.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>state</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-window-state"><span class="std std-ref">EDOC_WINDOW_STATE constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>state</strong> (<em>int</em>) – <a class="reference internal" href="#edoc-window-state"><span class="std std-ref">EDOC_WINDOW_STATE constants</span></a></td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
@@ -536,8 +526,8 @@ document in the list.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file</strong> (<em>str</em>) &#8211; Document file name</li>
-<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
+<li><strong>file</strong> (<em>str</em>) – Document file name</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -546,7 +536,7 @@ document in the list.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
@@ -557,7 +547,7 @@ document in the list.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
@@ -570,8 +560,8 @@ document in the list.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) &#8211; Name of document to unload</li>
-<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
+<li><strong>name</strong> (<em>str</em>) – Name of document to unload</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -580,10 +570,10 @@ document in the list.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 <p><strong>Note:</strong> If the document is not loaded, nothing happens.
-Same as <a class="reference internal" href="#geosoft.gxapi.GXEDOC.un_load_verify" title="geosoft.gxapi.GXEDOC.un_load_verify"><code class="xref py py-obj docutils literal"><span class="pre">un_load_verify</span></code></a> with FALSE to prompt save.</p>
+Same as <a class="reference internal" href="#geosoft.gxapi.GXEDOC.un_load_verify" title="geosoft.gxapi.GXEDOC.un_load_verify"><code class="xref py py-obj docutils literal notranslate"><span class="pre">un_load_verify</span></code></a> with FALSE to prompt save.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -594,14 +584,14 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXEDOC.un_load_verify
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
@@ -614,8 +604,8 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXEDOC.un_load_verify
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) &#8211; Name of document to unload</li>
-<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
+<li><strong>name</strong> (<em>str</em>) – Name of document to unload</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -624,7 +614,7 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXEDOC.un_load_verify
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 <p><strong>Note:</strong> If the document is not loaded, nothing happens.</p>
 </dd></dl>
@@ -638,9 +628,9 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXEDOC.un_load_verify
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) &#8211; Name of document to unload</li>
-<li><strong>verify</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-unload"><span class="std std-ref">EDOC_UNLOAD constants</span></a></li>
-<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
+<li><strong>name</strong> (<em>str</em>) – Name of document to unload</li>
+<li><strong>verify</strong> (<em>int</em>) – <a class="reference internal" href="#edoc-unload"><span class="std std-ref">EDOC_UNLOAD constants</span></a></li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#edoc-type"><span class="std std-ref">EDOC_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -649,11 +639,11 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXEDOC.un_load_verify
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 <p><strong>Note:</strong> If the document is not loaded, nothing happens.
 The user can be prompted to save before unloading.
-If <a class="reference internal" href="#geosoft.gxapi.EDOC_UNLOAD_NO_PROMPT" title="geosoft.gxapi.EDOC_UNLOAD_NO_PROMPT"><code class="xref py py-obj docutils literal"><span class="pre">EDOC_UNLOAD_NO_PROMPT</span></code></a>, data is always saved.</p>
+If <a class="reference internal" href="#geosoft.gxapi.EDOC_UNLOAD_NO_PROMPT" title="geosoft.gxapi.EDOC_UNLOAD_NO_PROMPT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EDOC_UNLOAD_NO_PROMPT</span></code></a>, data is always saved.</p>
 </dd></dl>
 
 </dd></dl>
@@ -712,7 +702,7 @@ If <a class="reference internal" href="#geosoft.gxapi.EDOC_UNLOAD_NO_PROMPT" tit
 <dl class="data">
 <dt id="geosoft.gxapi.EDOC_TYPE_GMS3D">
 <code class="descname">EDOC_TYPE_GMS3D</code><a class="headerlink" href="#geosoft.gxapi.EDOC_TYPE_GMS3D" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="GXGMSYS.html#geosoft.gxapi.GXGMSYS" title="geosoft.gxapi.GXGMSYS"><code class="xref py py-obj docutils literal"><span class="pre">GXGMSYS</span></code></a> 3D Model</p>
+<dd><p><a class="reference internal" href="GXGMSYS.html#geosoft.gxapi.GXGMSYS" title="geosoft.gxapi.GXGMSYS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGMSYS</span></code></a> 3D Model</p>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">EDOC_TYPE_GMS3D</code><em class="property"> = 0</em></dt>
@@ -745,7 +735,7 @@ If <a class="reference internal" href="#geosoft.gxapi.EDOC_UNLOAD_NO_PROMPT" tit
 <dl class="data">
 <dt id="geosoft.gxapi.EDOC_TYPE_GMS2D">
 <code class="descname">EDOC_TYPE_GMS2D</code><a class="headerlink" href="#geosoft.gxapi.EDOC_TYPE_GMS2D" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="GXGMSYS.html#geosoft.gxapi.GXGMSYS" title="geosoft.gxapi.GXGMSYS"><code class="xref py py-obj docutils literal"><span class="pre">GXGMSYS</span></code></a> 2D Model</p>
+<dd><p><a class="reference internal" href="GXGMSYS.html#geosoft.gxapi.GXGMSYS" title="geosoft.gxapi.GXGMSYS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGMSYS</span></code></a> 2D Model</p>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">EDOC_TYPE_GMS2D</code><em class="property"> = 3</em></dt>
@@ -909,13 +899,13 @@ If <a class="reference internal" href="#geosoft.gxapi.EDOC_UNLOAD_NO_PROMPT" tit
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

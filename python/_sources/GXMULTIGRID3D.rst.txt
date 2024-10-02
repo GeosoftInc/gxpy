@@ -1,11 +1,11 @@
 
-.. _GXMULTIVOXSET:
+.. _GXMULTIGRID3D:
 
  
-GXMULTIVOXSET class
+GXMULTIGRID3D class
 ==================================
 
-.. autoclass:: geosoft.gxapi.GXMULTIVOXSET
+.. autoclass:: geosoft.gxapi.GXMULTIGRID3D
    :members:
 
 
@@ -72,7 +72,7 @@ GOCAD Orientations
 VECTOR_IMPORT constants
 -----------------------------------------------------------------------
 
-Vector voxel import direction
+Vector grid3d import direction
 
 .. autodata:: geosoft.gxapi.VECTOR_IMPORT_XYZ
     :annotation:
@@ -125,24 +125,24 @@ Voxel filter type
     .. autoattribute:: geosoft.gxapi.FILTER3D_TOTAL_GRADIENT
 
 
-.. _MULTIVOXSET_DIRECTGRID_METHOD:
+.. _MULTIGRID3D_DIRECTGRID_METHOD:
 
-MULTIVOXSET_DIRECTGRID_METHOD constants
+MULTIGRID3D_DIRECTGRID_METHOD constants
 -----------------------------------------------------------------------
 
 How to calculate the cell values for direct gridding.
 
-.. autodata:: geosoft.gxapi.MULTIVOXSET_DIRECTGRID_MIN
+.. autodata:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MIN
     :annotation:
     
-    .. autoattribute:: geosoft.gxapi.MULTIVOXSET_DIRECTGRID_MIN
-.. autodata:: geosoft.gxapi.MULTIVOXSET_DIRECTGRID_MAX
+    .. autoattribute:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MIN
+.. autodata:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MAX
     :annotation:
     
-    .. autoattribute:: geosoft.gxapi.MULTIVOXSET_DIRECTGRID_MAX
-.. autodata:: geosoft.gxapi.MULTIVOXSET_DIRECTGRID_MEAN
+    .. autoattribute:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MAX
+.. autodata:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MEAN
     :annotation:
     
-    .. autoattribute:: geosoft.gxapi.MULTIVOXSET_DIRECTGRID_MEAN
+    .. autoattribute:: geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MEAN
 
 	

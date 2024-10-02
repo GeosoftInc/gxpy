@@ -1,27 +1,16 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>GXMAPTEMPLATE class &#8212; Geosoft GX Python API 9.3.1 documentation</title>
-    
+    <title>GXMAPTEMPLATE class &#8212; Geosoft GX Python API 9.4.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '9.3.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -34,15 +23,14 @@
   _gaq.push(['_trackPageview']);
 </script>
 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -57,12 +45,14 @@
 
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
   <div role="note" aria-label="source link">
@@ -86,7 +76,7 @@
 <dt id="geosoft.gxapi.GXMAPTEMPLATE">
 <em class="property">class </em><code class="descname">GXMAPTEMPLATE</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXMAPTEMPLATE class.</p>
-<p>A <a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPTEMPLATE</span></code></a> wraps and provides manipulation and usage for the XML content in map template files.
+<p>A <a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMAPTEMPLATE</span></code></a> wraps and provides manipulation and usage for the XML content in map template files.
 See the annotated schema file maptemplate.xsd in the &lt;GEOSOFT&gt;maptemplate folder and the accompanying
 documentation in that folder for documentation on the file format.</p>
 <dl class="method">
@@ -96,25 +86,25 @@ documentation in that folder for documentation on the file format.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXMAPTEMPLATE.create">
 <em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>name</em>, <em>base</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.create" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPTEMPLATE</span></code></a> from an existing file.</p>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMAPTEMPLATE</span></code></a> from an existing file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) &#8211; Map Template file name</li>
-<li><strong>base</strong> (<em>str</em>) &#8211; Map Template base template to create from</li>
-<li><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#maptemplate-open"><span class="std std-ref">MAPTEMPLATE_OPEN constants</span></a></li>
+<li><strong>name</strong> (<em>str</em>) – Map Template file name</li>
+<li><strong>base</strong> (<em>str</em>) – Map Template base template to create from</li>
+<li><strong>mode</strong> (<em>int</em>) – <a class="reference internal" href="#maptemplate-open"><span class="std std-ref">MAPTEMPLATE_OPEN constants</span></a></li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPTEMPLATE</span></code></a> Object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMAPTEMPLATE</span></code></a> Object</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE">GXMAPTEMPLATE</a></p>
@@ -125,7 +115,7 @@ documentation in that folder for documentation on the file format.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The base template name should be the file name part of a geosoft_maptemplate
 file in the &lt;geosoft&gt;maptemplate or &lt;geosoftuser&gt;maptemplate folders. A base file
 in the user folder will override any in the Geosoft install dir.</p>
@@ -140,8 +130,8 @@ in the user folder will override any in the Geosoft install dir.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>map</strong> (<em>str</em>) &#8211; New map file name (if it exists it will be overwritten)</li>
-<li><strong>group</strong> (<em>str</em>) &#8211; Group name to use for settings</li>
+<li><strong>map</strong> (<em>str</em>) – New map file name (if it exists it will be overwritten)</li>
+<li><strong>group</strong> (<em>str</em>) – Group name to use for settings</li>
 </ul>
 </td>
 </tr>
@@ -150,7 +140,7 @@ in the user folder will override any in the Geosoft install dir.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -160,7 +150,7 @@ in the user folder will override any in the Geosoft install dir.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -171,14 +161,14 @@ in the user folder will override any in the Geosoft install dir.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned map template file name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned map template file name</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -189,14 +179,14 @@ in the user folder will override any in the Geosoft install dir.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tmp</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned temporary map template file name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tmp</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned temporary map template file name</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> After manipulating contents the object may be updated by a call to
 the UpdateFromTmpCopy method.</p>
 </dd></dl>
@@ -220,12 +210,12 @@ the UpdateFromTmpCopy method.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXMAPTEMPLATE.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMAPTEMPLATE.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPTEMPLATE</span></code></a></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMAPTEMPLATE</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-obj docutils literal"><span class="pre">GXMAPTEMPLATE</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMAPTEMPLATE</span></code></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMAPTEMPLATE" title="geosoft.gxapi.GXMAPTEMPLATE">GXMAPTEMPLATE</a></td>
 </tr>
@@ -240,7 +230,7 @@ the UpdateFromTmpCopy method.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -253,11 +243,11 @@ Windows DC handle</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>hdc</strong> (<em>int</em>) &#8211; DC Handle</li>
-<li><strong>left</strong> (<em>int</em>) &#8211; Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
-<li><strong>bottom</strong> (<em>int</em>) &#8211; Bottom value</li>
-<li><strong>right</strong> (<em>int</em>) &#8211; Right value</li>
-<li><strong>top</strong> (<em>int</em>) &#8211; Top value</li>
+<li><strong>hdc</strong> (<em>int</em>) – DC Handle</li>
+<li><strong>left</strong> (<em>int</em>) – Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
+<li><strong>bottom</strong> (<em>int</em>) – Bottom value</li>
+<li><strong>right</strong> (<em>int</em>) – Right value</li>
+<li><strong>top</strong> (<em>int</em>) – Top value</li>
 </ul>
 </td>
 </tr>
@@ -266,7 +256,7 @@ Windows DC handle</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -278,11 +268,11 @@ Windows DC handle</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>hdc</strong> (<em>int</em>) &#8211; DC Handle (pass 0 to just query the Data view pixel location)</li>
-<li><strong>left</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
-<li><strong>bottom</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Bottom value</li>
-<li><strong>right</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Right value</li>
-<li><strong>top</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Top value</li>
+<li><strong>hdc</strong> (<em>int</em>) – DC Handle (pass 0 to just query the Data view pixel location)</li>
+<li><strong>left</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Left value of the render rect in Windows coordinates (bottom&gt;top)</li>
+<li><strong>bottom</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Bottom value</li>
+<li><strong>right</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Right value</li>
+<li><strong>top</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Top value</li>
 </ul>
 </td>
 </tr>
@@ -291,7 +281,7 @@ Windows DC handle</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.4.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> This method can also be used to get the data view pixel location
 by passing a null DC handle. This help to plot the view contents
 preview from another location.</p>
@@ -305,14 +295,14 @@ preview from another location.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tmp</strong> (<em>str</em>) &#8211; Temporary map template file name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tmp</strong> (<em>str</em>) – Temporary map template file name</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> This method will not modify the original contents of the file until a call to the
 the Commit method is made or the object is destroyed. A call to the Discard method
 will restore the contents to that of the original file. The temporary file is not deleted
@@ -361,13 +351,13 @@ and should be to not leak file resources.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

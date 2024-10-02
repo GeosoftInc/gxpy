@@ -1,27 +1,16 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>GXDATAMINE class &#8212; Geosoft GX Python API 9.3.1 documentation</title>
-    
+    <title>GXDATAMINE class &#8212; Geosoft GX Python API 9.4.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '9.3.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -34,15 +23,14 @@
   _gaq.push(['_trackPageview']);
 </script>
 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -57,12 +45,14 @@
 
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
   <div role="note" aria-label="source link">
@@ -86,8 +76,8 @@
 <dt id="geosoft.gxapi.GXDATAMINE">
 <em class="property">class </em><code class="descname">GXDATAMINE</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDATAMINE" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXDATAMINE class.</p>
-<p><a class="reference internal" href="#geosoft.gxapi.GXDATAMINE" title="geosoft.gxapi.GXDATAMINE"><code class="xref py py-obj docutils literal"><span class="pre">GXDATAMINE</span></code></a> functions provide an interface to Datamine Software Limited files.
-See also <a class="reference internal" href="GXGIS.html#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> for various other Datamine-specific functions.</p>
+<p><a class="reference internal" href="#geosoft.gxapi.GXDATAMINE" title="geosoft.gxapi.GXDATAMINE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDATAMINE</span></code></a> functions provide an interface to Datamine Software Limited files.
+See also <a class="reference internal" href="GXGIS.html#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> for various other Datamine-specific functions.</p>
 <p><strong>Note:</strong></p>
 <p>None.</p>
 <dl class="classmethod">
@@ -99,11 +89,11 @@ See also <a class="reference internal" href="GXGIS.html#geosoft.gxapi.GXGIS" tit
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file</strong> (<em>str</em>) &#8211; Datamine file name</li>
-<li><strong>field</strong> (<em>str</em>) &#8211; Field to use for data</li>
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; Projection to set</li>
-<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) &#8211; <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> to set</li>
-<li><strong>voxel</strong> (<em>str</em>) &#8211; Output voxel file name</li>
+<li><strong>file</strong> (<em>str</em>) – Datamine file name</li>
+<li><strong>field</strong> (<em>str</em>) – Field to use for data</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection to set</li>
+<li><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> to set</li>
+<li><strong>voxel</strong> (<em>str</em>) – Output voxel file name</li>
 </ul>
 </td>
 </tr>
@@ -112,7 +102,7 @@ See also <a class="reference internal" href="GXGIS.html#geosoft.gxapi.GXGIS" tit
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Create a Geosoft Voxel file from a Datamine block model file.</p>
 </dd></dl>
 
@@ -135,12 +125,12 @@ See also <a class="reference internal" href="GXGIS.html#geosoft.gxapi.GXGIS" tit
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXDATAMINE.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDATAMINE.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXDATAMINE" title="geosoft.gxapi.GXDATAMINE"><code class="xref py py-obj docutils literal"><span class="pre">GXDATAMINE</span></code></a></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXDATAMINE" title="geosoft.gxapi.GXDATAMINE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDATAMINE</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXDATAMINE" title="geosoft.gxapi.GXDATAMINE"><code class="xref py py-obj docutils literal"><span class="pre">GXDATAMINE</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXDATAMINE" title="geosoft.gxapi.GXDATAMINE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDATAMINE</span></code></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXDATAMINE" title="geosoft.gxapi.GXDATAMINE">GXDATAMINE</a></td>
 </tr>
@@ -151,14 +141,14 @@ See also <a class="reference internal" href="GXGIS.html#geosoft.gxapi.GXGIS" tit
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXDATAMINE.numeric_field_lst">
 <em class="property">classmethod </em><code class="descname">numeric_field_lst</code><span class="sig-paren">(</span><em>file</em>, <em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXDATAMINE.numeric_field_lst" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> containing the non-standard numeric fields in a Datamine file.</p>
+<dd><p>Return a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> containing the non-standard numeric fields in a Datamine file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file</strong> (<em>str</em>) &#8211; Datamine file name</li>
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> to populate</li>
+<li><strong>file</strong> (<em>str</em>) – Datamine file name</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to populate</li>
 </ul>
 </td>
 </tr>
@@ -167,8 +157,8 @@ See also <a class="reference internal" href="GXGIS.html#geosoft.gxapi.GXGIS" tit
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftDesktopLicense">Geosoft End-User License</a></p>
-<p><strong>Note:</strong> At this time, only <a class="reference internal" href="#geosoft.gxapi.GIS_DMTYPE_BLOCKMODEL" title="geosoft.gxapi.GIS_DMTYPE_BLOCKMODEL"><code class="xref py py-obj docutils literal"><span class="pre">GIS_DMTYPE_BLOCKMODEL</span></code></a> files are supported.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> At this time, only <a class="reference internal" href="#geosoft.gxapi.GIS_DMTYPE_BLOCKMODEL" title="geosoft.gxapi.GIS_DMTYPE_BLOCKMODEL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GIS_DMTYPE_BLOCKMODEL</span></code></a> files are supported.
 The field names go in the name part, and field indices (1 to N)
 in the value part.</p>
 </dd></dl>
@@ -259,13 +249,13 @@ in the value part.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

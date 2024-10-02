@@ -2,6 +2,125 @@ geosoft.gxpy module history
 ==========================================
 
   
+Version 9.4
+-----------------
+
+New Classes
+^^^^^^^^^^^
+
+:class:`geosoft.gxpy.dap_client.DapClient` DapClient class to communicate with a Geosoft DAP server.
+
+:class:`geosoft.gxpy.dap_client.DataCard` Single dataset information instance.
+
+:class:`geosoft.gxpy.dap_client.DataExtract` Data extraction instance.
+
+:class:`geosoft.gxpy.dap_client.ResultFilter` Results filter instance.
+
+:class:`geosoft.gxpy.dap_client.SearchFilter` Search filter instance.
+
+:class:`geosoft.gxpy.dap_client.SearchParameters` Search parameter instance, defined by a `SearchFilter` and a `ResultFilter`
+
+:class:`geosoft.gxpy.grid_fft.GridFFT` Descrete Fourier Transform of a grid.
+
+:class:`geosoft.gxpy.view.CrookedPath` Description of a crooked (x, y) path that defines a crooked-section view, or a crooked-section grid.
+
+:exc:`geosoft.gxpy.geometry_utility.GeometryUtilityException` Exceptions from `geosoft.gxpy.geometry_utility`.
+
+:exc:`geosoft.gxpy.grid_utility.GridUtilityException` Exceptions from `geosoft.gxpy.grid_utility`.
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxpy.dap_client.DapClient.catalog` Return a filtered catalog list.
+
+:func:`geosoft.gxpy.dap_client.DapClient.datacard_from_id` Return the `DataCard` instance based on the dataset ID #
+
+:func:`geosoft.gxpy.dap_client.DapClient.fetch_data` Fetch data from the server.
+
+:func:`geosoft.gxpy.gdb.Geosoft_gdb.close` Close the database and free resources
+
+:func:`geosoft.gxpy.gdb.Geosoft_gdb.scan_line_fid` Scan channels in a line and return the smallest common fid, line length, data width, list of channels
+
+:func:`geosoft.gxpy.geometry.PPoint.merge` Create a `PPoint` from a list of `Point`, 'Point2` or `PPoint` instances or point arrays.
+
+:func:`geosoft.gxpy.geometry_utility.resample` Return points resampled at a constant separation along the trace of points.
+
+:func:`geosoft.gxpy.grid.Grid.extent_point_2d` Return the 2D extent of the grid point (cell centers) on the grid plane.
+
+:func:`geosoft.gxpy.grid.Grid.generate_color_map` Generate color map for grid based on statistics and method
+
+:func:`geosoft.gxpy.grid.Grid.get_default_color_map` Get default color map for grid
+
+:func:`geosoft.gxpy.grid.Grid.mask` Mask against blank areas in `mask` grid.  Both grids must be same dimension.
+
+:func:`geosoft.gxpy.grid.Grid.minimum_curvature` Create a minimum-curvature surface grid from (x, y, value) located data.
+
+:func:`geosoft.gxpy.grid.Grid.statistics` Calculate and return current grid data statistics as a dictionary.
+
+:func:`geosoft.gxpy.grid.Grid.write_column` :param data:    data to write, `geosoft.gxpy.vv.GXvv` instance or an array
+
+:func:`geosoft.gxpy.grid.Grid.write_row` :param data:    data to write, `geosoft.gxpy.vv.GXvv` instance or an array
+
+:func:`geosoft.gxpy.grid.Grid.xy_from_index` Return the rotated location of grid index ix, iy
+
+:func:`geosoft.gxpy.grid.reopen` Reopen a grid to access the grid as an existing grid.
+
+:func:`geosoft.gxpy.grid_fft.GridFFT.filter` Apply a pre-defined filter.
+
+:func:`geosoft.gxpy.grid_fft.GridFFT.log_average_spectral_density` Log of the average spectral density of the transform.
+
+:func:`geosoft.gxpy.grid_fft.GridFFT.radially_averaged_spectrum` Radially averaged spectrum as a Numpy array shaped (n_wavenumbers, 5).
+
+:func:`geosoft.gxpy.grid_fft.GridFFT.read_uv_row` Read a row (constant wavenumber v) from (u, v) transform.
+
+:func:`geosoft.gxpy.grid_fft.GridFFT.result_grid` Produce a filter result grid.
+
+:func:`geosoft.gxpy.grid_fft.GridFFT.spectrum_grid` Return the 2D log(power) amplitude as a grid in wavenumber domain (u, v).
+
+:func:`geosoft.gxpy.grid_fft.GridFFT.tr_row_from_uv` Returns transform row index from (u, v) space row index.
+
+:func:`geosoft.gxpy.grid_fft.GridFFT.uv_row_from_tr` Returns (u, v) space row index of a transform row.
+
+:func:`geosoft.gxpy.grid_fft.GridFFT.write_uv_row` Write a row (constant wavenumber v) to the (u, v) transform.
+
+:func:`geosoft.gxpy.grid_utility.calculate_slope_standard_deviation` Return the standard deviation of the slopes.
+
+:func:`geosoft.gxpy.grid_utility.contour_points` Return a set of point segments that represent the spatial locations of contours threaded through the grid.
+
+:func:`geosoft.gxpy.grid_utility.feather` Feather the edge of a grid to a constant value at the edge.
+
+:func:`geosoft.gxpy.grid_utility.flood` Flood blank areas in a grid based on a minimum-curvature surface.
+
+:func:`geosoft.gxpy.grid_utility.grid_bool` Combine two grids into a single grid, with boolean logic to determine the result.
+
+:func:`geosoft.gxpy.grid_utility.grid_mosaic` Combine a set of grids into a single grid.  Raises an error if the resulting grid is too large.
+
+:func:`geosoft.gxpy.grid_utility.tilt_depth` Return estimate of the depth sources of potential filed anomalies.
+
+:func:`geosoft.gxpy.group.Draw.text_extent` Return the extent of a text string in view units relative to the current
+
+:func:`geosoft.gxpy.utility.delete_files_by_root` Delete all files that have the same file_root (without extension). This can be safely applied to remove
+
+:func:`geosoft.gxpy.utility.dict_from_http_response_text` Decode http response text to a dictionary. Response may be json or xml.
+
+:func:`geosoft.gxpy.utility.geosoft_xml_from_dict` Return a unicode XML string of a dictionary with geosoft namespace defined.
+
+:func:`geosoft.gxpy.view.CrookedPath.set_in_geosoft_ipj` Set the crooked-path in the `geosoft.gxapi.GXIPJ` instance of the coordinate system.
+
+
+  
+Version 9.3.2
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxpy.gx.GXpy.remove_stale_temporary_files` Removes stale temporary files from the current instance temporary file folder.
+
+
+  
 Version 9.3.1
 -----------------
 
@@ -44,13 +163,9 @@ New Functions
 
 :func:`geosoft.gxpy.geometry.first_coordinate_system` Return the first found known coordinate system in the list
 
-:func:`geosoft.gxpy.grid.Grid.extent_cell_2d` Return the 2D cell extent of the grid on the grid plane
-
-:func:`geosoft.gxpy.grid.Grid.extent_cell_3d` Return the 3D cell extent of the grid in the base coordinate system.
-
 :func:`geosoft.gxpy.grid.Grid.image_file` Save as a georeferenced image file.
 
-:func:`geosoft.gxpy.grid.Grid.np` Return a numpy array of grid values.
+:func:`geosoft.gxpy.grid.Grid.np` Return a numpy array of grid values in the working dtype.
 
 :func:`geosoft.gxpy.grid.image_file` Save a grid file grid as a georeferenced image file.
 
@@ -78,7 +193,7 @@ New Functions
 
 :func:`geosoft.gxpy.spatialdata.find_meta_branch` Return the lowest branch in the meta dictionary that contains the item.
 
-:func:`geosoft.gxpy.surface.Surface.computed_properties` Surface properties  by `geosoft.gxapi.GXSURFACEITEM.compute_extended_info`.
+:func:`geosoft.gxpy.surface.Surface.computed_properties` Surface properties, see: `geosoft.gxapi.GXSURFACEITEM.compute_extended_info`.
 
 :func:`geosoft.gxpy.surface.Surface.mesh` Returns a component mesh as `geosoft.gxpy.geometry.Mesh` instance
 
@@ -162,9 +277,9 @@ Version 9.3
 New Classes
 ^^^^^^^^^^^
 
-:class:`geosoft.gxpy.gdb.Channel` Class to work with database channels.  Use constructor :meth:`Channel.new` to create a new channel.
+:class:`geosoft.gxpy.gdb.Channel` Class to work with database channels.  Use constructor `Channel.new` to create a new channel.
 
-:class:`geosoft.gxpy.gdb.Line` Class to work with database lines.  Use constructor :meth:`Line.new` to create a new line.
+:class:`geosoft.gxpy.gdb.Line` Class to work with database lines.  Use constructor `Line.new` to create a new line.
 
 :class:`geosoft.gxpy.metadata.Metadata` Simple interface to work with Geosoft metadata objects `geosoft.gxapi.GXMETA`.
 
@@ -281,8 +396,6 @@ New Classes
 
 :class:`geosoft.gxpy.coordinate_system.Wkt` Helper class to parse WKT-formatted spatial reference strings.
 
-:class:`geosoft.gxpy.dataframe.Data_frame` Pandas DataFrame from a Geosoft table.
-
 :class:`geosoft.gxpy.geometry.Geometry` Geometry base class for all geometries and spatial objects in Geosoft.
 
 :class:`geosoft.gxpy.geometry.PPoint` Poly-Point class. Basic instance arithmetic and equality testing is supported.
@@ -371,6 +484,8 @@ New Functions
 
 :func:`geosoft.gxpy.coordinate_system.wkt_vcs` Compose a wkt VERTCS block from a Geosoft vcs string.
 
+:func:`geosoft.gxpy.dataframe.Data_frame` Instantiates Pandas DataFrame from a Geosoft table.
+
 :func:`geosoft.gxpy.dataframe.table_column` Return a dictionary of a column from a table
 
 :func:`geosoft.gxpy.dataframe.table_record` Return a dictionary of a single record from a table
@@ -391,7 +506,7 @@ New Functions
 
 :func:`geosoft.gxpy.grid.Grid.copy` Create a new Grid instance as a copy of an existing grid.
 
-:func:`geosoft.gxpy.grid.Grid.extent_2d` Return the 2D extent of the grid on the grid plane
+:func:`geosoft.gxpy.grid.Grid.extent_2d` Return the 2D extent of the grid on the grid plane.
 
 :func:`geosoft.gxpy.grid.Grid.extent_3d` Return the 3D extent of the grid in the base coordinate system.
 
@@ -423,7 +538,7 @@ New Functions
 
 :func:`geosoft.gxpy.group.Color_symbols_group.open` Open an existing color symbols group.
 
-:func:`geosoft.gxpy.group.Draw.contour` Draw contours for a grid file.  A default contour interval is determined from the grid.
+:func:`geosoft.gxpy.group.Draw.contour` Draw contours for a grid file.
 
 :func:`geosoft.gxpy.group.Draw.graticule` Draw a graticule reference on a view.
 
@@ -607,7 +722,7 @@ New Classes
 
 :class:`geosoft.gxpy.vv.GXvv` VV class wrapper.
 
-:exc:`geosoft.gxpy.gdb.GdbException` Exceptions from :mod:`geosoft.gxpy.gdb`.
+:exc:`geosoft.gxpy.gdb.GdbException` Exceptions from `geosoft.gxpy.gdb`.
 
 :exc:`geosoft.gxpy.grid.GridException` Exceptions from :mod:`geosoft.gxpy.grid`.
 
@@ -681,7 +796,9 @@ New Functions
 
 :func:`geosoft.gxpy.grid.Grid.delete_files` Delete the files associated with this grid when deleting the grid object.
 
-:func:`geosoft.gxpy.grid.Grid.from_data_array` Create grid from a 2D numpy array.
+:func:`geosoft.gxpy.grid.Grid.from_data_array` Create grid from a 2D data array or `geosoft.gxapi.GXPG`.
+
+:func:`geosoft.gxpy.grid.Grid.gxpg` Get a copy of the `geosoft.gxapi.GXPG` instance for the grid.
 
 :func:`geosoft.gxpy.grid.Grid.new` Create a new grid file.
 
@@ -701,11 +818,9 @@ New Functions
 
 :func:`geosoft.gxpy.grid.decorate_name` Properly decorate a grid name.
 
-:func:`geosoft.gxpy.grid.grid_bool` :param g1:          Grids to merge
-
-:func:`geosoft.gxpy.grid.grid_mosaic` Combine a set of grids into a single grid.  Raises an error if the resulting grid is too large.
-
 :func:`geosoft.gxpy.grid.name_parts` Return folder, undecorated file name + ext, file root, ext, decorations.
+
+:func:`geosoft.gxpy.grid_utility.sample` Return grid values sampled at the point locations.
 
 :func:`geosoft.gxpy.gx.GXpy.disable_app` Disables application windows to allow modal Python UI.
 
@@ -786,12 +901,259 @@ geosoft.gxapi module history
 ==========================================
 
   
+Version 9.4
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXARCMAP.load_raster_ex` Load a raster file to the current data frame and create associated files
+
+:func:`geosoft.gxapi.GXDU.em_tau_automatic` Automatic fitting EM Tau
+
+:func:`geosoft.gxapi.GXDU.em_tau_calc` Fitting  f(t) = A * e^(-t/Tau) = e^s0 * e^(-s1*t), where s0=lnA, s1=1/Tau
+
+:func:`geosoft.gxapi.GXDU.em_tau_late_time` Automatic fitting EM Tau
+
+:func:`geosoft.gxapi.GXDU.em_tau_manual` Automatic fitting EM Tau
+
+:func:`geosoft.gxapi.GXFFT2.rad_spc_alt` `GXFFT2 <geosoft.gxapi.GXFFT2>` transform Radially averaged power spectrum - log before average and no normalization
+
+:func:`geosoft.gxapi.GXGRID3D.fill_double` Fill the grid3d with a single double value.
+
+:func:`geosoft.gxapi.GXGRID3D.fill_thematic` Fill the grid3d with a single thematic value.
+
+:func:`geosoft.gxapi.GXGRID3D.fill_vector` Fill the grid3d with a single vector value.
+
+:func:`geosoft.gxapi.GXGRID3D.get_double_stats` Get Double statistics.
+
+:func:`geosoft.gxapi.GXGRID3D.get_elements_in_block_x` Get the number of cells in the block in the X direction
+
+:func:`geosoft.gxapi.GXGRID3D.get_elements_in_block_y` Get the number of cells in the block in the Y direction
+
+:func:`geosoft.gxapi.GXGRID3D.get_elements_in_block_z` Get the number of cells in the block in the Z direction
+
+:func:`geosoft.gxapi.GXGRID3D.get_thematic_stats` Get Thematic Data statistics.
+
+:func:`geosoft.gxapi.GXGRID3D.get_tpat` Get the TPAT from the thematic grid3d.
+
+:func:`geosoft.gxapi.GXGRID3D.get_type` Get the type of this GRID3D
+
+:func:`geosoft.gxapi.GXGRID3D.get_vector_stats` Get Vector Data statistics.
+
+:func:`geosoft.gxapi.GXGRID3D.is_double` Does this grid3d contain floating point data
+
+:func:`geosoft.gxapi.GXGRID3D.is_thematic` Does this grid3d contain thematic data
+
+:func:`geosoft.gxapi.GXGRID3D.is_vector` Does this grid3d contain vector data
+
+:func:`geosoft.gxapi.GXGRID3D.read_x` Read data from a GRID3D in the x direction (MOST EFFICIENT)
+
+:func:`geosoft.gxapi.GXGRID3D.read_y` Read data from a GRID3D in the Y direction
+
+:func:`geosoft.gxapi.GXGRID3D.read_z` Read data from a GRID3D in the Z direction
+
+:func:`geosoft.gxapi.GXGRID3D.set_tpat` Set the TPAT of a thematic grid3d.
+
+:func:`geosoft.gxapi.GXGRID3D.write_x` Write data to a GRID3D in the X direction (MOST EFFICIENT)
+
+:func:`geosoft.gxapi.GXGRID3D.write_y` Write data to a GRID3D in the Y direction
+
+:func:`geosoft.gxapi.GXGRID3D.write_z` Write data to a GRID3D in the Z direction
+
+:func:`geosoft.gxapi.GXGUI.multiple_array_channel_profile_viewer` View up to 3 array channel profiles. The first channel's array base properties are
+
+:func:`geosoft.gxapi.GXIMU.refresh_shad` Refresh a shaded relief image
+
+:func:`geosoft.gxapi.GXIP.locate_contributing_electrodes` Locate on a map electrodes selected in a database row.
+
+:func:`geosoft.gxapi.GXIPGUI.launch_remove_contributing_electrodes_ext_tool` Launch the Remove Contributing Electrodes dialog.
+
+:func:`geosoft.gxapi.GXIPJ.get_from_binary_as_string` Get `GXIPJ <geosoft.gxapi.GXIPJ>` from binary-as-string
+
+:func:`geosoft.gxapi.GXIPJ.set_from_binary_as_string` Set `GXIPJ <geosoft.gxapi.GXIPJ>` from binary-as-string
+
+:func:`geosoft.gxapi.GXITR.default_color_method` Return the user-defined global default color method.
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.create_default` Get the default voxset
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.create` Creates a new Multivoxset
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.duplicate` Creates an MULTIGRID3D with identical geometry to the input
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.export_to_binary` Export contents of `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to a Binary File.
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.export_to_gdb` Export To GDB
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.export_to_pg` Export a MULTIGRID3D To a PG
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.export_to_wa` Export To GDB
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.export_to_xml` Export a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to XML
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.export_to_xyz` Export a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to an XYZ File
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.fill` Fill a grid3d.
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_bounding_box` Get the bounding box
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_cell_sizes_x` Get the cell sizes in the X direction
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_cell_sizes_y` Get the cell sizes in the Y direction
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_cell_sizes_z` Get the cell sizes in the Z direction
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_default` Get the default voxset
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_ipj` Get the projection of the multigrid3d.
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_oriented_data_extents` Get the data extents based on an orientation
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_origin` Get the origin
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_section_cell_sizes` Get the cell sizes of a section
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_size_x` Get the number of cells in the X direction
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_size_y` Get the number of cells in the X direction
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_size_z` Get the number of cells in the X direction
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_uniform_cell_size_x` Get the uniform cell size in the X direction
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_uniform_cell_size_y` Get the uniform cell size in the Y direction
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_uniform_cell_size_z` Get the uniform cell size in the Z direction
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.get_volume_vectors` Get the direction of the volume
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.is_uniform_cell_size_x` Is the cell uniform in the X direction
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.is_uniform_cell_size_y` Is the cell uniform in the Y direction
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.is_uniform_cell_size_z` Is the cell uniform in the Z direction
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.modify` Opens an existing Multivoxset with an plan to modify it
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.open` Opens an existing Multivoxset
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.set_cell_sizes_x` Set the cell sizes in the X direction
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.set_cell_sizes_y` Set the cell sizes in the Y direction
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.set_cell_sizes_z` Set the cell sizes in the Z direction
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.set_ipj` Set the projection of the multigrid3d.
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.set_origin` Set the origin
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.set_uniform_cell_size_x` Set the uniform cell size in the X direction
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.set_uniform_cell_size_y` Get the uniform cell size in the Y direction
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.set_uniform_cell_size_z` Get the uniform cell size in the Z direction
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.check_equal_to_legacy_voxel` Compare `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to Legacy Voxel
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.compute_default_cell_size` Used if the user does not provide a default cell size.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.convert_density_to_velocity` Convert Density MultiVoxset to Velocity MultiVoxset
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.convert_double_to_thematic` Convert Double MultiVoxset to Thematic MultiVoxset
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.convert_double_to_vector` Convert 3 Double Voxels to a Vector Voxel
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.convert_thematic_to_double` Convert Thematic MultiVoxset to Double MultiVoxset
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.convert_vector_to_double` Convert a Vector Voxel to 3 double Voxels
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.convert_velocity_to_density` Convert Velocity MultiVoxset to Density MultiVoxset
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.create_double_constant_vv` Generate a double MultiVoxset with a constant value and non-uniform cell sizes
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.create_double_constant` Generate a double MultiVoxset with a constant value
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.create_thematic_constant_vv` Generate a double MultiVoxset with a constant value and non-uniform cell sizes
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.create_thematic_constant` Generate a double MultiVoxset with a constant value
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.create_vector_constant_vv` Generate a double MultiVoxset with a constant value and non-uniform cell sizes
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.create_vector_constant` Generate a double MultiVoxset with a constant value
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_binary` Export contents of `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to a Binary File.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_gdb` Export To GDB
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_segy` Export To SEGY
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_voxel` Exports a Multi-Voxset into a Voxel
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_wa` Export To GDB
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_xml` Export a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to XML
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_xyz` Export a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to an XYZ File
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.filter` Apply a 3D filter to a grid3d.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.get_gocad_location` Get the location of a grid3d with origin and scaled xyz vectors for use with GOCAD.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.grid_direct_from_gdb` Create a grid3d using direct gridding.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_datamine` Create a Geosoft Voxel file from a Datamine block model file.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_gdb` Imports from a Geosoft Database
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_gocad` Imports a MultiVoxset from a GOCAD File
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_ubc` Import UBC file into a MultiVoxset
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_vector_gdb` Imports from a Vector Geosoft Database
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_voxel` Import a Voxel directly into a Multi-Voxset
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_xyz` Import XYZ file into a Multi-Voxset
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.list_properties_gocad` List all the properties available in this GOCAD file.
+
+:func:`geosoft.gxapi.GXMVU.export_map_groups_to_gdb` Export map group(s) to database line(s).
+
+:func:`geosoft.gxapi.GXPJ.project_bounding_volume` Project a bounding volume.
+
+:func:`geosoft.gxapi.GXRGRD.run_list` Executes the Rangrid program from a list of databases.
+
+:func:`geosoft.gxapi.GXSTORAGEPROJECT.close` Close the project storage.
+
+:func:`geosoft.gxapi.GXSTORAGEPROJECT.open` Open a project storage.
+
+:func:`geosoft.gxapi.GXSTORAGEPROJECT.remove_dataset` Remove this dataset from the project.
+
+:func:`geosoft.gxapi.GXSURFACE.dump_geometry_to_text_file` Dump surface geometry to a text file.
+
+:func:`geosoft.gxapi.GXSYS.geosoft_connect_authenticate_and_navigate` Automatically authenticate and navigate to my.geosoft.com URL
+
+:func:`geosoft.gxapi.GXSYS.get_geosoft_id` Get the Geosoft ID (email) if signed in
+
+:func:`geosoft.gxapi.GXSYS.get_profile_name` Get the profile name as defined in My Geosoft (or email if not defined)
+
+:func:`geosoft.gxapi.GXSYS.get_profile_url` Get link to my.geosoft.com profile URL
+
+:func:`geosoft.gxapi.GXSYS.is_signed_in` Check if signed in via Geosoft Connect
+
+:func:`geosoft.gxapi.GXSYS.sign_in` Sign in via Geosoft Connect
+
+
+  
 Version 9.3.1
 -----------------
 
 
 New Functions
 ^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXDU.load_gravity_cg6` Load a CG-6 gravity survey file.
 
 :func:`geosoft.gxapi.GXTB.set_sort_mode` Set the sort mode of a table.
 
@@ -819,60 +1181,6 @@ New Functions
 :func:`geosoft.gxapi.GXGUI.show_3d_viewer_dialog` Display a standalone 3D viewer
 
 :func:`geosoft.gxapi.GXIP.set_import_line` Set the line name for some imports.
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.check_equal_to_legacy_voxel` Compare `GXMULTIVOXSET <geosoft.gxapi.GXMULTIVOXSET>` to Legacy Voxel
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.compute_default_cell_size` Used if the user does not provide a default cell size.
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.convert_double_to_vector` Convert 3 Double Voxels to a Vector Voxel
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.convert_vector_to_double` Convert a Vector Voxel to 3 double Voxels
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.create_double_constant_vv` Generate a double MultiVoxset with a constant value and non-uniform cell sizes
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.create_double_constant` Generate a double MultiVoxset with a constant value
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.create_thematic_constant_vv` Generate a double MultiVoxset with a constant value and non-uniform cell sizes
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.create_thematic_constant` Generate a double MultiVoxset with a constant value
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.create_vector_constant_vv` Generate a double MultiVoxset with a constant value and non-uniform cell sizes
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.create_vector_constant` Generate a double MultiVoxset with a constant value
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.export_to_binary` Export contents of `GXMULTIVOXSET <geosoft.gxapi.GXMULTIVOXSET>` to a Binary File.
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.export_to_gdb` Export To GDB
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.export_to_segy` Export To SEGY
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.export_to_voxel` Exports a Multi-Voxset into a Voxel
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.export_to_wa` Export To GDB
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.export_to_xml` Export a `GXMULTIVOXSET <geosoft.gxapi.GXMULTIVOXSET>` to XML
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.export_to_xyz` Export a `GXMULTIVOXSET <geosoft.gxapi.GXMULTIVOXSET>` to an XYZ File
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.filter` Apply a 3D filter to a voxel.
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.grid_direct_from_gdb` Create a voxel using direct gridding.
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.import_from_datamine` Create a Geosoft Voxel file from a Datamine block model file.
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.import_from_gdb` Imports from a Geosoft Database
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.import_from_gocad` Imports a MultiVoxset from a GOCAD File
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.import_from_ubc` Import UBC file into a MultiVoxset
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.import_from_vector_gdb` Imports from a Vector Geosoft Database
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.import_from_voxel` Import a Voxel directly into a Multi-Voxset
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.import_from_xyz` Import XYZ file into a Multi-Voxset
-
-:func:`geosoft.gxapi.GXMULTIVOXSET.list_properties_gocad` List all the properties available in this GOCAD file.
 
 :func:`geosoft.gxapi.GXMVIEW.delete_group_itr` Deletes existing `GXITR <geosoft.gxapi.GXITR>` associated with a group.
 

@@ -1,27 +1,16 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>GXGIS class &#8212; Geosoft GX Python API 9.3.1 documentation</title>
-    
+    <title>GXGIS class &#8212; Geosoft GX Python API 9.4.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '9.3.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -34,15 +23,14 @@
   _gaq.push(['_trackPageview']);
 </script>
 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -58,12 +46,14 @@
 
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
   <div role="note" aria-label="source link">
@@ -87,25 +77,25 @@
 <dt id="geosoft.gxapi.GXGIS">
 <em class="property">class </em><code class="descname">GXGIS</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXGIS class.</p>
-<p>The <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> class is used for the import, export,
-and interrogation of <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> Data stored in external formats,
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> class is used for the import, export,
+and interrogation of <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> Data stored in external formats,
 such as MapInfo® TAB files.</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXGIS.create">
 <em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>file</em>, <em>info</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.create" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> Object</p>
+<dd><p>Creates a <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> Object</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>file</strong> (<em>str</em>) &#8211; Data source (file)</li>
-<li><strong>info</strong> (<em>str</em>) &#8211; Data qualifying information if required.</li>
-<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#gis-type"><span class="std std-ref">GIS_TYPE constants</span></a></li>
+<li><strong>file</strong> (<em>str</em>) – Data source (file)</li>
+<li><strong>info</strong> (<em>str</em>) – Data qualifying information if required.</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#gis-type"><span class="std std-ref">GIS_TYPE constants</span></a></li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> Object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> Object</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS">GXGIS</a></p>
@@ -116,22 +106,22 @@ such as MapInfo® TAB files.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.create_map_2d">
 <code class="descname">create_map_2d</code><span class="sig-paren">(</span><em>map</em>, <em>map_scale</em>, <em>ipj</em>, <em>map2_d</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.create_map_2d" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#geosoft.gxapi.GXGIS.create_map_2d" title="geosoft.gxapi.GXGIS.create_map_2d"><code class="xref py py-obj docutils literal"><span class="pre">create_map_2d</span></code></a>   Create a new 2D map for <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> imports.</p>
+<dd><p><a class="reference internal" href="#geosoft.gxapi.GXGIS.create_map_2d" title="geosoft.gxapi.GXGIS.create_map_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_map_2d</span></code></a>   Create a new 2D map for <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> imports.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>map</strong> (<em>str</em>) &#8211; Map name</li>
-<li><strong>map_scale</strong> (<em>float</em>) &#8211; Map scale (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal"><span class="pre">rDUMMY</span></code></a>)</li>
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; Projection (no orientation)</li>
-<li><strong>map2_d</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#gis-map2d"><span class="std std-ref">GIS_MAP2D constants</span></a></li>
+<li><strong>map</strong> (<em>str</em>) – Map name</li>
+<li><strong>map_scale</strong> (<em>float</em>) – Map scale (can be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>)</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection (no orientation)</li>
+<li><strong>map2_d</strong> (<em>int</em>) – <a class="reference internal" href="#gis-map2d"><span class="std std-ref">GIS_MAP2D constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -140,7 +130,7 @@ such as MapInfo® TAB files.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> This function was created to minimize duplication in
 creation of new maps with 2D views.</p>
 </dd></dl>
@@ -153,7 +143,7 @@ creation of new maps with 2D views.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Name of input datamine file</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – Name of input datamine file</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Datamine file types - bitwise AND of types.</td>
 </tr>
@@ -164,24 +154,24 @@ creation of new maps with 2D views.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Terminates if file is not a Datamine file.
 A datamine file can contain fields from a multitude
-of types, so use <a class="reference internal" href="GXMATH.html#geosoft.gxapi.GXMATH.and_" title="geosoft.gxapi.GXMATH.and_"><code class="xref py py-obj docutils literal"><span class="pre">GXMATH.and_</span></code></a> or <a class="reference internal" href="GXMATH.html#geosoft.gxapi.GXMATH.or_" title="geosoft.gxapi.GXMATH.or_"><code class="xref py py-obj docutils literal"><span class="pre">GXMATH.or_</span></code></a> to determine if
+of types, so use <a class="reference internal" href="GXMATH.html#geosoft.gxapi.GXMATH.and_" title="geosoft.gxapi.GXMATH.and_"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMATH.and_</span></code></a> or <a class="reference internal" href="GXMATH.html#geosoft.gxapi.GXMATH.or_" title="geosoft.gxapi.GXMATH.or_"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMATH.or_</span></code></a> to determine if
 the file contains the required data.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.get_bpr_models_lst">
 <code class="descname">get_bpr_models_lst</code><span class="sig-paren">(</span><em>file</em>, <em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.get_bpr_models_lst" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> of block models contained in a Gemcom BPR or BRP2 file</p>
+<dd><p>Get a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> of block models contained in a Gemcom BPR or BRP2 file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file</strong> (<em>str</em>) &#8211; BPR or BPR2 file</li>
-<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; Returned <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> of block models</li>
+<li><strong>file</strong> (<em>str</em>) – BPR or BPR2 file</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Returned <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> of block models</li>
 </ul>
 </td>
 </tr>
@@ -190,15 +180,15 @@ the file contains the required data.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The Returned <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> has items in the following format:</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The Returned <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> has items in the following format:</p>
 <p>Name:  If there is only one sub-directory with models, then only
-the block model name &#8220;Rock Type_5&#8221; is required to ensure uniqueness.
+the block model name “Rock Type_5” is required to ensure uniqueness.
 If there is more than one sub-directory, then the name is set
-to (.e.g.) &#8220;[Standard]Rock Type_5&#8221;
-Value: Sub-directory file path  &#8220;StandardRock Type_5.BLK&#8221;, (includes the extension).</p>
+to (.e.g.) “[Standard]Rock Type_5”
+Value: Sub-directory file path  “StandardRock Type_5.BLK”, (includes the extension).</p>
 <p>The Gemcom BPR and BPR2 files keep their block models in one
-or more sub-directories, identified in the <code class="docutils literal"><span class="pre">*.CAT</span></code> file located
+or more sub-directories, identified in the <code class="docutils literal notranslate"><span class="pre">*.CAT</span></code> file located
 beside the input BPR or BPR2.</p>
 </dd></dl>
 
@@ -210,25 +200,25 @@ beside the input BPR or BPR2.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Returned file name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned file name</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.get_ipj">
 <code class="descname">get_ipj</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.get_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a></p>
+<dd><p>Get the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> handle
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> handle
 NULL if error</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ">GXIPJ</a></td>
@@ -238,45 +228,45 @@ NULL if error</td>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> This is your copy, you must destroy it.
-If the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> does not have an <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a>, an <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> with
+If the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> does not have an <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a>, an <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> with
 no warp and UNKNOWN projection is returned.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.get_meta">
 <code class="descname">get_meta</code><span class="sig-paren">(</span><em>meta</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.get_meta" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a></p>
+<dd><p>Get the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) &#8211; Meta object to store <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> meta information</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – Meta object to store <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> meta information</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.get_range">
 <code class="descname">get_range</code><span class="sig-paren">(</span><em>x_min</em>, <em>x_max</em>, <em>y_min</em>, <em>y_max</em>, <em>z_min</em>, <em>z_max</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.get_range" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the range of data in the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a></p>
+<dd><p>Get the range of data in the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x_min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X min</li>
-<li><strong>x_max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; X max</li>
-<li><strong>y_min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y min</li>
-<li><strong>y_max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Y max</li>
-<li><strong>z_min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Z min</li>
-<li><strong>z_max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Z max</li>
+<li><strong>x_min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X min</li>
+<li><strong>x_max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X max</li>
+<li><strong>y_min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y min</li>
+<li><strong>y_max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y max</li>
+<li><strong>z_min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Z min</li>
+<li><strong>z_max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Z max</li>
 </ul>
 </td>
 </tr>
@@ -285,7 +275,7 @@ no warp and UNKNOWN projection is returned.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -296,7 +286,7 @@ no warp and UNKNOWN projection is returned.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>map</strong> (<em>str</em>) &#8211; Name of input map file</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>map</strong> (<em>str</em>) – Name of input map file</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 if not a MapInfo MAP file
 1 if it is.</td>
@@ -308,7 +298,7 @@ no warp and UNKNOWN projection is returned.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> It is important not to overwrite a MapInfo MAP file
 with a Geosoft one. Use this function to test the MAP
 file (looks at the first few bytes).</p>
@@ -322,7 +312,7 @@ file (looks at the first few bytes).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tab</strong> (<em>str</em>) &#8211; Name of input tab file</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tab</strong> (<em>str</em>) – Name of input tab file</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 if not a MapInfo Raster TAB file
 1 if it is.</td>
@@ -334,7 +324,7 @@ file (looks at the first few bytes).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -345,7 +335,7 @@ file (looks at the first few bytes).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tab</strong> (<em>str</em>) &#8211; Name of input tab file</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tab</strong> (<em>str</em>) – Name of input tab file</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">0 if not a rotated MapInfo Raster TAB file
 1 if it is (see conditions below).</td>
@@ -357,7 +347,7 @@ file (looks at the first few bytes).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.4.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Returns 1 if:</p>
 <blockquote>
 <div><ol class="loweralpha simple">
@@ -391,13 +381,13 @@ if problems are encountered opening or reading the TAB file.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.is_shp_file_3d">
 <code class="descname">is_shp_file_3d</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.is_shp_file_3d" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns TRUE if an ArcView <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal"><span class="pre">GXSHP</span></code></a> file is type POINTZ, ARCZ, POLYGONZ or MULTIPOINTZ</p>
+<dd><p>Returns TRUE if an ArcView <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSHP</span></code></a> file is type POINTZ, ARCZ, POLYGONZ or MULTIPOINTZ</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">0 if the <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal"><span class="pre">GXSHP</span></code></a> file is 2D
-1 if the <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal"><span class="pre">GXSHP</span></code></a> file is of type POINTZ, ARCZ, POLYGONZ or MULTIPOINTZ</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">0 if the <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSHP</span></code></a> file is 2D
+1 if the <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSHP</span></code></a> file is of type POINTZ, ARCZ, POLYGONZ or MULTIPOINTZ</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
@@ -406,21 +396,21 @@ if problems are encountered opening or reading the TAB file.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
-<p><strong>Note:</strong> <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal"><span class="pre">GXSHP</span></code></a> files come in 2D and 3D forms.
-Fails if not <a class="reference internal" href="#geosoft.gxapi.GIS_TYPE_ARCVIEW" title="geosoft.gxapi.GIS_TYPE_ARCVIEW"><code class="xref py py-obj docutils literal"><span class="pre">GIS_TYPE_ARCVIEW</span></code></a>.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSHP</span></code></a> files come in 2D and 3D forms.
+Fails if not <a class="reference internal" href="#geosoft.gxapi.GIS_TYPE_ARCVIEW" title="geosoft.gxapi.GIS_TYPE_ARCVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GIS_TYPE_ARCVIEW</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.is_shp_file_point">
 <code class="descname">is_shp_file_point</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.is_shp_file_point" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns TRUE if an ArcView <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal"><span class="pre">GXSHP</span></code></a> file is type POINT or POINTZ</p>
+<dd><p>Returns TRUE if an ArcView <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSHP</span></code></a> file is type POINT or POINTZ</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">0 if the <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal"><span class="pre">GXSHP</span></code></a> file is not points
-if the <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal"><span class="pre">GXSHP</span></code></a> file is of type POINT or POINTZ</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">0 if the <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSHP</span></code></a> file is not points
+if the <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSHP</span></code></a> file is of type POINT or POINTZ</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
@@ -429,27 +419,27 @@ if the <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
-<p><strong>Note:</strong> Fails if not <a class="reference internal" href="#geosoft.gxapi.GIS_TYPE_ARCVIEW" title="geosoft.gxapi.GIS_TYPE_ARCVIEW"><code class="xref py py-obj docutils literal"><span class="pre">GIS_TYPE_ARCVIEW</span></code></a>.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Fails if not <a class="reference internal" href="#geosoft.gxapi.GIS_TYPE_ARCVIEW" title="geosoft.gxapi.GIS_TYPE_ARCVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GIS_TYPE_ARCVIEW</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.load_ascii">
 <code class="descname">load_ascii</code><span class="sig-paren">(</span><em>wa</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.load_ascii" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> attribute table information (string fields) into a <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal"><span class="pre">GXWA</span></code></a>.</p>
+<dd><p>Save <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> attribute table information (string fields) into a <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) &#8211; <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal"><span class="pre">GXWA</span></code></a> object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) – <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a> object</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.3.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
-<p><strong>Note:</strong> All string fields (excluding X/Y and numerical fields) will be saved into the <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal"><span class="pre">GXWA</span></code></a> columns.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> All string fields (excluding X/Y and numerical fields) will be saved into the <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a> columns.</p>
 <p>e field names are saved in the first line, followed by a blank line.
 e field columns are separated by a tab (delimited character).</p>
 </dd></dl>
@@ -457,57 +447,57 @@ e field columns are separated by a tab (delimited character).</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.load_gdb">
 <code class="descname">load_gdb</code><span class="sig-paren">(</span><em>db</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.load_gdb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> table information into a GDB.</p>
+<dd><p>Load <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> table information into a GDB.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> All fields of the database will be loaded into the group.</p>
 <p>Channels will use the same name (or a allowable alias) as
-the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> field name.</p>
+the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> field name.</p>
 <p>If a channel does not exist, it will be created based on the
-characteristics of the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> field.</p>
+characteristics of the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> field.</p>
 <p>If a channel exists, it will be used as-is.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.load_map">
 <code class="descname">load_map</code><span class="sig-paren">(</span><em>mview</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.load_map" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> table drawing into a <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW</span></code></a>.</p>
+<dd><p>Load <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> table drawing into a <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View in which to place <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> drawing.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View in which to place <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> drawing.</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> drawing will be drawin in the current group.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> drawing will be drawin in the current group.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.load_map_ex">
 <code class="descname">load_map_ex</code><span class="sig-paren">(</span><em>map</em>, <em>view_name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.load_map_ex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> table drawing into a <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal"><span class="pre">GXMAP</span></code></a>.</p>
+<dd><p>Load <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> table drawing into a <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMAP</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) &#8211; Map handle</li>
-<li><strong>view_name</strong> (<em>str</em>) &#8211; Name of existing data view</li>
+<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – Map handle</li>
+<li><strong>view_name</strong> (<em>str</em>) – Name of existing data view</li>
 </ul>
 </td>
 </tr>
@@ -516,23 +506,23 @@ characteristics of the <a class="reference internal" href="#geosoft.gxapi.GXGIS"
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> drawing will be drawin in the current group.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> drawing will be drawin in the current group.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.load_meta_groups_map">
 <code class="descname">load_meta_groups_map</code><span class="sig-paren">(</span><em>mview</em>, <em>meta</em>, <em>ph_object</em>, <em>prefix</em>, <em>name_field</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.load_meta_groups_map" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> table drawing into a <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal"><span class="pre">GXMVIEW</span></code></a>.</p>
+<dd><p>Load <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> table drawing into a <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) &#8211; View in which to place <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> drawing.</li>
-<li><strong>ph_object</strong> (<em>int</em>) &#8211; Class</li>
-<li><strong>prefix</strong> (<em>str</em>) &#8211; Group Name prefix</li>
-<li><strong>name_field</strong> (<em>str</em>) &#8211; Name field (Empty to use ID of entity)</li>
+<li><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View in which to place <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> drawing.</li>
+<li><strong>ph_object</strong> (<em>int</em>) – Class</li>
+<li><strong>prefix</strong> (<em>str</em>) – Group Name prefix</li>
+<li><strong>name_field</strong> (<em>str</em>) – Name field (Empty to use ID of entity)</li>
 </ul>
 </td>
 </tr>
@@ -541,10 +531,10 @@ characteristics of the <a class="reference internal" href="#geosoft.gxapi.GXGIS"
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.8.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> drawing will be drawn in the current group.
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> drawing will be drawn in the current group.
 A group will be created for every entity and data items
-containing an entity&#8217;s field will be added to the Meta
+containing an entity’s field will be added to the Meta
 information of every group into the class specified.
 Note that the map may grow very large for big datasets.</p>
 </dd></dl>
@@ -552,42 +542,42 @@ Note that the map may grow very large for big datasets.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.load_ply">
 <code class="descname">load_ply</code><span class="sig-paren">(</span><em>ply</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.load_ply" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> table drawing into a Multi-Polygon object.</p>
+<dd><p>Load <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> table drawing into a Multi-Polygon object.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ply</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) &#8211; Polygon object in which to place <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> shapes.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ply</strong> (<a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><em>GXPLY</em></a>) – Polygon object in which to place <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> shapes.</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.6.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.load_shapes_gdb">
 <code class="descname">load_shapes_gdb</code><span class="sig-paren">(</span><em>db</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.load_shapes_gdb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> shapes table information into separate lines in a GDB.</p>
+<dd><p>Load <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> shapes table information into separate lines in a GDB.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) &#8211; Database</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> All fields of the database will be loaded into the group.</p>
 <p>Channels will use the same name (or a allowable alias) as
-the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> field name.</p>
+the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> field name.</p>
 <p>If a channel does not exist, it will be created based on the
-characteristics of the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> field.</p>
+characteristics of the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> field.</p>
 <p>If a channel exists, it will be used as-is.</p>
 <p>The shape ID will be used as the line numbers.</p>
 </dd></dl>
@@ -595,12 +585,12 @@ characteristics of the <a class="reference internal" href="#geosoft.gxapi.GXGIS"
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXGIS.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS">GXGIS</a></td>
 </tr>
@@ -611,7 +601,7 @@ characteristics of the <a class="reference internal" href="#geosoft.gxapi.GXGIS"
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.num_attribs">
 <code class="descname">num_attribs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.num_attribs" title="Permalink to this definition">¶</a></dt>
-<dd><p>The number of attribute fields in the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> dataset</p>
+<dd><p>The number of attribute fields in the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> dataset</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -625,13 +615,13 @@ characteristics of the <a class="reference internal" href="#geosoft.gxapi.GXGIS"
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.num_shapes">
 <code class="descname">num_shapes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.num_shapes" title="Permalink to this definition">¶</a></dt>
-<dd><p>The number of shape entities in the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> dataset</p>
+<dd><p>The number of shape entities in the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> dataset</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -645,7 +635,7 @@ characteristics of the <a class="reference internal" href="#geosoft.gxapi.GXGIS"
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -657,9 +647,9 @@ characteristics of the <a class="reference internal" href="#geosoft.gxapi.GXGIS"
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>tab</strong> (<em>str</em>) &#8211; Name of input file</li>
-<li><strong>file</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Name of Raster file (an <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal"><span class="pre">GXIMG</span></code></a> <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal"><span class="pre">GXDAT</span></code></a>)</li>
-<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; Projection</li>
+<li><strong>tab</strong> (<em>str</em>) – Name of input file</li>
+<li><strong>file</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name of Raster file (an <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDAT</span></code></a>)</li>
+<li><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</li>
 </ul>
 </td>
 </tr>
@@ -668,7 +658,7 @@ characteristics of the <a class="reference internal" href="#geosoft.gxapi.GXGIS"
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> This will create a GI file for the raster image.</p>
 </dd></dl>
 
@@ -680,14 +670,14 @@ characteristics of the <a class="reference internal" href="#geosoft.gxapi.GXGIS"
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Name of the wireframe point file</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – Name of the wireframe point file</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Datamine wireframe models are specified by pairs of files,
 the first is the triangle node file, and the second gives
 the XYZ locations of the node points. This
@@ -698,58 +688,58 @@ first, so that the full model can be decoded.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.set_ipj">
 <code class="descname">set_ipj</code><span class="sig-paren">(</span><em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.set_ipj" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save the <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> back to <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> file</p>
+<dd><p>Save the <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> back to <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) &#8211; <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">GXIPJ</span></code></a> to save</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> to save</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.set_lst">
 <code class="descname">set_lst</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.set_lst" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> of items inside the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> object for special use.</p>
+<dd><p>Save a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> of items inside the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> object for special use.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) &#8211; <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object to save to <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> object to save to <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a>.</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
-<p><strong>Note:</strong> If the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> object already exists, it is destroyed and
-recreated to match the size of the input <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a>, before the
-input <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal"><span class="pre">GXLST</span></code></a> is copied to it.</p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If the <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> object already exists, it is destroyed and
+recreated to match the size of the input <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a>, before the
+input <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> is copied to it.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGIS.set_meta">
 <code class="descname">set_meta</code><span class="sig-paren">(</span><em>meta</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGIS.set_meta" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save the <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> back to <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a></p>
+<dd><p>Save the <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> back to <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) &#8211; <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal"><span class="pre">GXMETA</span></code></a> object to save to <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal"><span class="pre">GXGIS</span></code></a> meta</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> object to save to <a class="reference internal" href="#geosoft.gxapi.GXGIS" title="geosoft.gxapi.GXGIS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGIS</span></code></a> meta</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -760,14 +750,14 @@ input <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title=
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i_toi</strong> (<em>int</em>) &#8211; Triangulation object index</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i_toi</strong> (<em>int</em>) – Triangulation object index</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 7.1.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 </dd></dl>
@@ -848,7 +838,7 @@ input <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title=
 <dl class="data">
 <dt id="geosoft.gxapi.GIS_TYPE_SURPAC">
 <code class="descname">GIS_TYPE_SURPAC</code><a class="headerlink" href="#geosoft.gxapi.GIS_TYPE_SURPAC" title="Permalink to this definition">¶</a></dt>
-<dd><p>Surpac <a class="reference internal" href="GXSTR.html#geosoft.gxapi.GXSTR" title="geosoft.gxapi.GXSTR"><code class="xref py py-obj docutils literal"><span class="pre">GXSTR</span></code></a> and DTM files</p>
+<dd><p>Surpac <a class="reference internal" href="GXSTR.html#geosoft.gxapi.GXSTR" title="geosoft.gxapi.GXSTR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTR</span></code></a> and DTM files</p>
 <dl class="attribute">
 <dt>
 <code class="descclassname">gxapi.</code><code class="descname">GIS_TYPE_SURPAC</code><em class="property"> = 4</em></dt>
@@ -915,13 +905,13 @@ input <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title=
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

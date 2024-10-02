@@ -1,27 +1,16 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>GXBF class &#8212; Geosoft GX Python API 9.3.1 documentation</title>
-    
+    <title>GXBF class &#8212; Geosoft GX Python API 9.4.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '9.3.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -34,15 +23,14 @@
   _gaq.push(['_trackPageview']);
 </script>
 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -61,12 +49,14 @@
 
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
   <div role="note" aria-label="source link">
@@ -90,7 +80,7 @@
 <dt id="geosoft.gxapi.GXBF">
 <em class="property">class </em><code class="descname">GXBF</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXBF" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXBF class.</p>
-<p>The <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> class is used to access (or create) Binary files and remove
+<p>The <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> class is used to access (or create) Binary files and remove
 (or destroy) files from use. You can also perform a variety of
 additional tasks, such as positioning within files, reading from
 files and writing to files.</p>
@@ -102,32 +92,32 @@ files and writing to files.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>size</strong> (<em>int</em>) &#8211; New length in bytes</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>size</strong> (<em>int</em>) – New length in bytes</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXBF.copy">
 <code class="descname">copy</code><span class="sig-paren">(</span><em>b_fw</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXBF.copy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Copy entire contents of a source <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> to a destination <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a></p>
+<dd><p>Copy entire contents of a source <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> to a destination <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>b_fw</strong> (<a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) &#8211; Destination <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>b_fw</strong> (<a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – Destination <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -139,8 +129,8 @@ files and writing to files.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>size</strong> (<em>int</em>) &#8211; Number of bytes to CRC</li>
-<li><strong>crc</strong> (<em>int</em>) &#8211; CRC start (use <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.CRC_INIT_VALUE" title="geosoft.gxapi.CRC_INIT_VALUE"><code class="xref py py-obj docutils literal"><span class="pre">CRC_INIT_VALUE</span></code></a> for new)</li>
+<li><strong>size</strong> (<em>int</em>) – Number of bytes to CRC</li>
+<li><strong>crc</strong> (<em>int</em>) – CRC start (use <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.CRC_INIT_VALUE" title="geosoft.gxapi.CRC_INIT_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CRC_INIT_VALUE</span></code></a> for new)</li>
 </ul>
 </td>
 </tr>
@@ -155,24 +145,24 @@ files and writing to files.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXBF.create">
 <em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>file</em>, <em>status</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXBF.create" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> object.</p>
+<dd><p>Create <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> object.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>file</strong> (<em>str</em>) &#8211; File name to open (&#8220;&#8221; is a temporary file)</li>
-<li><strong>status</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-open-mode"><span class="std std-ref">BF_OPEN_MODE constants</span></a></li>
+<li><strong>file</strong> (<em>str</em>) – File name to open (“” is a temporary file)</li>
+<li><strong>status</strong> (<em>int</em>) – <a class="reference internal" href="#bf-open-mode"><span class="std std-ref">BF_OPEN_MODE constants</span></a></li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> Object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> Object</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF">GXBF</a></p>
@@ -183,7 +173,7 @@ files and writing to files.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Run-time specific directory paths may be added the the front of file names
 as follows:</p>
 <p>&lt;geosoft&gt;      the main Geosoft installation directory
@@ -192,25 +182,25 @@ as follows:</p>
 &lt;windows&gt;      the operating system Windows directory
 &lt;system&gt;       the operating system system directory
 &lt;other&gt;        other environment variables</p>
-<p>For example &#8220;&lt;geosoft&gt;/user/csv/datum.csv&#8221;</p>
+<p>For example “&lt;geosoft&gt;/user/csv/datum.csv”</p>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXBF.create_sbf">
 <em class="property">classmethod </em><code class="descname">create_sbf</code><span class="sig-paren">(</span><em>sbf</em>, <em>file</em>, <em>status</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXBF.create_sbf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> object inside an <a class="reference internal" href="GXSBF.html#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal"><span class="pre">GXSBF</span></code></a>.</p>
+<dd><p>Create <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> object inside an <a class="reference internal" href="GXSBF.html#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSBF</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>sbf</strong> (<a class="reference internal" href="GXSBF.html#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><em>GXSBF</em></a>) &#8211; Storage</li>
-<li><strong>file</strong> (<em>str</em>) &#8211; File name to open (&#8220;&#8221; is a temporary file)</li>
-<li><strong>status</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-open-mode"><span class="std std-ref">BF_OPEN_MODE constants</span></a></li>
+<li><strong>sbf</strong> (<a class="reference internal" href="GXSBF.html#geosoft.gxapi.GXSBF" title="geosoft.gxapi.GXSBF"><em>GXSBF</em></a>) – Storage</li>
+<li><strong>file</strong> (<em>str</em>) – File name to open (“” is a temporary file)</li>
+<li><strong>status</strong> (<em>int</em>) – <a class="reference internal" href="#bf-open-mode"><span class="std std-ref">BF_OPEN_MODE constants</span></a></li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> Object</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> Object</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF">GXBF</a></p>
@@ -221,7 +211,7 @@ as follows:</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> see sbf.gxh</p>
 </dd></dl>
 
@@ -243,7 +233,7 @@ as follows:</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -265,12 +255,12 @@ as follows:</p>
 <dl class="classmethod">
 <dt id="geosoft.gxapi.GXBF.null">
 <em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXBF.null" title="Permalink to this definition">¶</a></dt>
-<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a></p>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF">GXBF</a></td>
 </tr>
@@ -281,7 +271,7 @@ as follows:</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXBF.query_write">
 <code class="descname">query_write</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXBF.query_write" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if you can write to the <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a>.</p>
+<dd><p>Check if you can write to the <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -296,21 +286,21 @@ as follows:</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.1.1.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXBF.read_binary_string">
 <code class="descname">read_binary_string</code><span class="sig-paren">(</span><em>bytes</em>, <em>encoding</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXBF.read_binary_string" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reads string data from current position in <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a></p>
+<dd><p>Reads string data from current position in <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>bytes</strong> (<em>int</em>) &#8211; Number of bytes to read</li>
-<li><strong>encoding</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-encode"><span class="std std-ref">BF_ENCODE constants</span></a></li>
-<li><strong>data</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) &#8211; Data</li>
+<li><strong>bytes</strong> (<em>int</em>) – Number of bytes to read</li>
+<li><strong>encoding</strong> (<em>int</em>) – <a class="reference internal" href="#bf-encode"><span class="std std-ref">BF_ENCODE constants</span></a></li>
+<li><strong>data</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Data</li>
 </ul>
 </td>
 </tr>
@@ -319,20 +309,20 @@ as follows:</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXBF.read_double">
 <code class="descname">read_double</code><span class="sig-paren">(</span><em>type</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXBF.read_double" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reads real data from current position in <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a></p>
+<dd><p>Reads real data from current position in <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
-<li><strong>data</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) &#8211; Data</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>data</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Data</li>
 </ul>
 </td>
 </tr>
@@ -341,13 +331,13 @@ as follows:</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If the data source may be in byte order different from that
 required by the reader, you can add the source byte-order
-to the <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> elelment type.  The byte order will be swapped
+to the <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> elelment type.  The byte order will be swapped
 if required.  For example, to write out a real number 3.5
 with Most-Significant_Byte first (Mortorola) convention:</p>
-<p><code class="xref py py-obj docutils literal"><span class="pre">write_double</span></code>,3.5).</p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_double</span></code>,3.5).</p>
 <p>If a byte order is not specified, the source is assumed to be
 in the native byte order of the reading/writing computer.</p>
 </dd></dl>
@@ -355,14 +345,14 @@ in the native byte order of the reading/writing computer.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXBF.read_int">
 <code class="descname">read_int</code><span class="sig-paren">(</span><em>type</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXBF.read_int" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reads int data from current position in <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a></p>
+<dd><p>Reads int data from current position in <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
-<li><strong>data</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) &#8211; Data</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>data</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Data</li>
 </ul>
 </td>
 </tr>
@@ -371,13 +361,13 @@ in the native byte order of the reading/writing computer.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If the data source may be in byte order different from that
 required by the reader, you can add the source byte-order
-to the <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> elelment type.  The byte order will be swapped
+to the <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> elelment type.  The byte order will be swapped
 if required.  For example, to write out a real number 3.5
 with Most-Significant_Byte first (Mortorola) convention:</p>
-<p><code class="xref py py-obj docutils literal"><span class="pre">write_double</span></code>,3.5).</p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_double</span></code>,3.5).</p>
 <p>If a byte order is not specified, the source is assumed to be
 in the native byte order of the reading/writing computer.</p>
 </dd></dl>
@@ -385,14 +375,14 @@ in the native byte order of the reading/writing computer.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXBF.read_vv">
 <code class="descname">read_vv</code><span class="sig-paren">(</span><em>type</em>, <em>vv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXBF.read_vv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read data to a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> from current position in <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a></p>
+<dd><p>Read data to a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> from current position in <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> data to read, <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> length is read</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> data to read, <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> length is read</li>
 </ul>
 </td>
 </tr>
@@ -401,13 +391,13 @@ in the native byte order of the reading/writing computer.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If the data source may be in byte order different from that
 required by the reader, you can add the source byte-order
-to the <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a> elelment type.  The byte order will be swapped
+to the <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> elelment type.  The byte order will be swapped
 if required.  For example, to write out a real number 3.5
 with Most-Significant_Byte first (Mortorola) convention:</p>
-<p><code class="xref py py-obj docutils literal"><span class="pre">write_double</span></code>,3.5).</p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_double</span></code>,3.5).</p>
 <p>If a byte order is not specified, the source is assumed to be
 in the native byte order of the reading/writing computer.</p>
 </dd></dl>
@@ -421,8 +411,8 @@ in the native byte order of the reading/writing computer.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>offset</strong> (<em>int</em>) &#8211; Number of bytes from reference point</li>
-<li><strong>ref</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-seek"><span class="std std-ref">BF_SEEK constants</span></a></li>
+<li><strong>offset</strong> (<em>int</em>) – Number of bytes from reference point</li>
+<li><strong>ref</strong> (<em>int</em>) – <a class="reference internal" href="#bf-seek"><span class="std std-ref">BF_SEEK constants</span></a></li>
 </ul>
 </td>
 </tr>
@@ -431,7 +421,7 @@ in the native byte order of the reading/writing computer.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Terminates if attempt to move past the end of
 a read-only file.</p>
 </dd></dl>
@@ -444,14 +434,14 @@ a read-only file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>status</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-close"><span class="std std-ref">BF_CLOSE constants</span></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>status</strong> (<em>int</em>) – <a class="reference internal" href="#bf-close"><span class="std std-ref">BF_CLOSE constants</span></a></td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -471,7 +461,7 @@ a read-only file.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
@@ -491,20 +481,20 @@ a read-only file.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXBF.write_binary_string">
 <code class="descname">write_binary_string</code><span class="sig-paren">(</span><em>encoding</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXBF.write_binary_string" title="Permalink to this definition">¶</a></dt>
-<dd><p>Write a binary string to a <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a></p>
+<dd><p>Write a binary string to a <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>encoding</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#bf-encode"><span class="std std-ref">BF_ENCODE constants</span></a></li>
-<li><strong>data</strong> (<em>str</em>) &#8211; String to write out</li>
+<li><strong>encoding</strong> (<em>int</em>) – <a class="reference internal" href="#bf-encode"><span class="std std-ref">BF_ENCODE constants</span></a></li>
+<li><strong>data</strong> (<em>str</em>) – String to write out</li>
 </ul>
 </td>
 </tr>
@@ -513,30 +503,30 @@ a read-only file.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXBF.write_data_null">
 <code class="descname">write_data_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXBF.write_data_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Writes a null byte (0) to <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a></p>
+<dd><p>Writes a null byte (0) to <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXBF.write_double">
 <code class="descname">write_double</code><span class="sig-paren">(</span><em>type</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXBF.write_double" title="Permalink to this definition">¶</a></dt>
-<dd><p>Writes real to the <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a></p>
+<dd><p>Writes real to the <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
-<li><strong>data</strong> (<em>float</em>) &#8211; Data</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>data</strong> (<em>float</em>) – Data</li>
 </ul>
 </td>
 </tr>
@@ -545,7 +535,7 @@ a read-only file.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> See comments on byte order for the Read.. functions if you
 want to enforce a certain byte order.</p>
 <p>If a byte order is not specified, the data is written
@@ -555,14 +545,14 @@ in the native byte order of the writing computer.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXBF.write_int">
 <code class="descname">write_int</code><span class="sig-paren">(</span><em>type</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXBF.write_int" title="Permalink to this definition">¶</a></dt>
-<dd><p>Writes int to the <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a></p>
+<dd><p>Writes int to the <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
-<li><strong>data</strong> (<em>int</em>) &#8211; Data</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>data</strong> (<em>int</em>) – Data</li>
 </ul>
 </td>
 </tr>
@@ -571,7 +561,7 @@ in the native byte order of the writing computer.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> See comments on byte order for the Read.. functions if you
 want to enforce a certain byte order.</p>
 <p>If a byte order is not specified, the data is written
@@ -581,14 +571,14 @@ in the native byte order of the writing computer.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXBF.write_vv">
 <code class="descname">write_vv</code><span class="sig-paren">(</span><em>type</em>, <em>vv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXBF.write_vv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Writes <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal"><span class="pre">GXVV</span></code></a> to the <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal"><span class="pre">GXBF</span></code></a></p>
+<dd><p>Writes <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> to the <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>type</strong> (<em>int</em>) &#8211; <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
-<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) &#8211; Data</li>
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Data</li>
 </ul>
 </td>
 </tr>
@@ -597,7 +587,7 @@ in the native byte order of the writing computer.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> See comments on byte order for the Read.. functions if you
 want to enforce a certain byte order.</p>
 <p>If a byte order is not specified, the data is written
@@ -783,13 +773,13 @@ in the native byte order of the writing computer.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.4.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking
