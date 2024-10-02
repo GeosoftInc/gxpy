@@ -949,6 +949,61 @@ geosoft.gxapi module history
 ==========================================
 
   
+Version 2022.1
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXDCOL.update_zone_transform_parameters` Recalculate the layer's ITR, based on the current type of the `GXDCOL <geosoft.gxapi.GXDCOL>`. Launches anappropriate zone transform type parameter GUI based on the current selection.
+
+:func:`geosoft.gxapi.GXDU.average_spacing` Returns the average spacing along a line.
+
+:func:`geosoft.gxapi.GXEDOC.copy` Copies a managed document to another document.
+
+:func:`geosoft.gxapi.GXEDOC.save` Save the managed document.
+
+:func:`geosoft.gxapi.GXMAP.dataset_file_path_list` Get a list of all dataset file paths in this map.
+
+:func:`geosoft.gxapi.GXMVIEW.add_folder_2d` Add a Map folder to the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+
+:func:`geosoft.gxapi.GXMVIEW.delete_folder_2d` Delete a 3DView folder.
+
+:func:`geosoft.gxapi.GXMVIEW.move_group_to_folder_2d` Add group to a Map folder in `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+
+:func:`geosoft.gxapi.GXPROJ.add_document_include_meta` Adds (and opens) a document file in the current project.
+
+:func:`geosoft.gxapi.GXPROJ.get_default_project_path` Get default project folder.
+
+:func:`geosoft.gxapi.GXPROJ.has_pending_central_publish_event` Checks if there is a pending publish event.
+
+:func:`geosoft.gxapi.GXPROJ.save_document_view` Save document view to a file.
+
+:func:`geosoft.gxapi.GXPROJ.set_default_project_path` Set default project folder.
+
+:func:`geosoft.gxapi.GXTRANSFORMLAYER.apply_constant_transform` Apply constant transform to the transform layer
+
+:func:`geosoft.gxapi.GXTRANSFORMLAYER.can_redo` Can perform redo on the transform layer
+
+:func:`geosoft.gxapi.GXTRANSFORMLAYER.can_undo` Can perform undo on the transform layer
+
+:func:`geosoft.gxapi.GXTRANSFORMLAYER.cancel_` Cancel changes done in the transform layer
+
+:func:`geosoft.gxapi.GXTRANSFORMLAYER.clear_node_selection` Clear the section status of every node
+
+:func:`geosoft.gxapi.GXTRANSFORMLAYER.end` End interactive editing for selected grid layer in gmsys.
+
+:func:`geosoft.gxapi.GXTRANSFORMLAYER.redo` Redo one step of editing in the transform layer
+
+:func:`geosoft.gxapi.GXTRANSFORMLAYER.save_to_new_layer_grid` Save changes to a new grid
+
+:func:`geosoft.gxapi.GXTRANSFORMLAYER.select_node` Select or deselect a node by its index
+
+:func:`geosoft.gxapi.GXTRANSFORMLAYER.undo` Undo one step of editing in the transform layer
+
+
+  
 Version 2021.2
 -----------------
 
@@ -1116,13 +1171,15 @@ New Functions
 
 :func:`geosoft.gxapi.GXKML.import_3d_polygon` Imports a KML 3D polygon into a provided view.
 
-:func:`geosoft.gxapi.GXMVIEW.add_folder_3d` Add a folder to the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+:func:`geosoft.gxapi.GXMVIEW.add_folder_3d` Add a 3DView folder to the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
 
-:func:`geosoft.gxapi.GXMVIEW.delete_folder_3d` Delete a folder.
+:func:`geosoft.gxapi.GXMVIEW.delete_folder_3d` Delete a Map folder.
+
+:func:`geosoft.gxapi.GXMVIEW.get_folder_items_2d` Get the list of key-value pairs representing the name(key) and the type(value) of all children in the specified parent folders in the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
 
 :func:`geosoft.gxapi.GXMVIEW.get_folder_items_3d` Get the list of folders in the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
 
-:func:`geosoft.gxapi.GXMVIEW.move_group_to_folder_3d` Add group to a folder in `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
+:func:`geosoft.gxapi.GXMVIEW.move_group_to_folder_3d` Add group to a 3DView folder in `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
 
 :func:`geosoft.gxapi.GXMVU.color_bar_reg_ex` Create a Color Bar in view
 

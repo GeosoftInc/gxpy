@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXPROJ &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
+    <title>geosoft.gxapi.GXPROJ &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPROJ</a></li> 
@@ -215,6 +215,51 @@
 <span class="sd">            GMS2D</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_add_document_without_opening</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXPROJ.add_document_include_meta"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.add_document_include_meta">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">add_document_include_meta</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">display</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds (and opens) a document file in the current project.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:     Document name</span>
+<span class="sd">        :param type:     Type of document to add</span>
+<span class="sd">        :param meta:     Meta file to load</span>
+<span class="sd">        :param display:  :ref:`PROJ_DISPLAY`</span>
+<span class="sd">        :type  name:     str</span>
+<span class="sd">        :type  type:     str</span>
+<span class="sd">        :type  meta:     str</span>
+<span class="sd">        :type  display:  int</span>
+
+<span class="sd">        :returns:        0 - Ok</span>
+<span class="sd">                         1 - Error</span>
+<span class="sd">        :rtype:          int</span>
+
+<span class="sd">        .. versionadded:: 2022.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** The passed file name must be a valid</span>
+<span class="sd">        file name complete with an extension and</span>
+<span class="sd">        qualifiers (if applicable).</span>
+
+<span class="sd">        The type string can be one of the following:</span>
+
+<span class="sd">            Database      </span>
+<span class="sd">            Grid          </span>
+<span class="sd">            Map           </span>
+<span class="sd">            3DView        </span>
+<span class="sd">            Geosurface</span>
+<span class="sd">            Voxel         </span>
+<span class="sd">            VoxelInversion</span>
+<span class="sd">            GMS3D         </span>
+<span class="sd">            GMS2D</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_add_document_include_meta</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">meta</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">display</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
 
@@ -594,28 +639,32 @@
 
 
 <div class="viewcode-block" id="GXPROJ.get_central_project_information"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.get_central_project_information">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">get_central_project_information</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">crs</span><span class="p">,</span> <span class="n">branch</span><span class="p">,</span> <span class="n">rev_id</span><span class="p">,</span> <span class="n">rev_date</span><span class="p">,</span> <span class="n">rev_note</span><span class="p">,</span> <span class="n">rev_stage</span><span class="p">,</span> <span class="n">rev_author</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_central_project_information</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">crs</span><span class="p">,</span> <span class="n">branch</span><span class="p">,</span> <span class="n">rev_id</span><span class="p">,</span> <span class="n">rev_date</span><span class="p">,</span> <span class="n">rev_note</span><span class="p">,</span> <span class="n">rev_stage</span><span class="p">,</span> <span class="n">rev_author</span><span class="p">,</span> <span class="n">rev_server_url</span><span class="p">,</span> <span class="n">rev_proj_url</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get Central project information.</span>
 <span class="sd">        </span>
-<span class="sd">        :param instance:    Instance name</span>
-<span class="sd">        :param project:     Project name</span>
-<span class="sd">        :param crs:         Coordinate Reference System</span>
-<span class="sd">        :param branch:      Branch name</span>
-<span class="sd">        :param rev_id:      Revision Id</span>
-<span class="sd">        :param rev_date:    Revision date</span>
-<span class="sd">        :param rev_note:    Revision note</span>
-<span class="sd">        :param rev_stage:   Revision stage</span>
-<span class="sd">        :param rev_author:  Revision author</span>
-<span class="sd">        :type  instance:    str_ref</span>
-<span class="sd">        :type  project:     str_ref</span>
-<span class="sd">        :type  crs:         str_ref</span>
-<span class="sd">        :type  branch:      str_ref</span>
-<span class="sd">        :type  rev_id:      str_ref</span>
-<span class="sd">        :type  rev_date:    str_ref</span>
-<span class="sd">        :type  rev_note:    str_ref</span>
-<span class="sd">        :type  rev_stage:   str_ref</span>
-<span class="sd">        :type  rev_author:  str_ref</span>
+<span class="sd">        :param instance:        Instance name</span>
+<span class="sd">        :param project:         Project name</span>
+<span class="sd">        :param crs:             Coordinate Reference System</span>
+<span class="sd">        :param branch:          Branch name</span>
+<span class="sd">        :param rev_id:          Revision Id</span>
+<span class="sd">        :param rev_date:        Revision date</span>
+<span class="sd">        :param rev_note:        Revision note</span>
+<span class="sd">        :param rev_stage:       Revision stage</span>
+<span class="sd">        :param rev_author:      Revision author</span>
+<span class="sd">        :param rev_server_url:  Revision server url</span>
+<span class="sd">        :param rev_proj_url:    Revision project url</span>
+<span class="sd">        :type  instance:        str_ref</span>
+<span class="sd">        :type  project:         str_ref</span>
+<span class="sd">        :type  crs:             str_ref</span>
+<span class="sd">        :type  branch:          str_ref</span>
+<span class="sd">        :type  rev_id:          str_ref</span>
+<span class="sd">        :type  rev_date:        str_ref</span>
+<span class="sd">        :type  rev_note:        str_ref</span>
+<span class="sd">        :type  rev_stage:       str_ref</span>
+<span class="sd">        :type  rev_author:      str_ref</span>
+<span class="sd">        :type  rev_server_url:  str_ref</span>
+<span class="sd">        :type  rev_proj_url:    str_ref</span>
 
 <span class="sd">        .. versionadded:: 2021.2</span>
 
@@ -625,8 +674,93 @@
 
 <span class="sd">        **Note:** Get Central project information.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">instance</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">project</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">crs</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">branch</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_date</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_note</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_stage</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_author</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_central_project_information</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">instance</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">project</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">crs</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">branch</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_id</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_date</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_note</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_stage</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_author</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div></div>
+        <span class="n">instance</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">project</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">crs</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">branch</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_date</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_note</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_stage</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_author</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_server_url</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_proj_url</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_central_project_information</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">instance</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">project</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">crs</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">branch</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_id</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_date</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_note</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_stage</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_author</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_server_url</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_proj_url</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
         
+
+
+
+<div class="viewcode-block" id="GXPROJ.save_document_view"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.save_document_view">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">save_document_view</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">meta_file</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save document view to a file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:       Document name</span>
+<span class="sd">        :param meta_file:  save meta to file</span>
+<span class="sd">        :type  name:       str</span>
+<span class="sd">        :type  meta_file:  str</span>
+
+<span class="sd">        .. versionadded:: 2022.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Save document view to a file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_save_document_view</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">meta_file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXPROJ.get_default_project_path"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.get_default_project_path">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_default_project_path</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">folder</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get default project folder.</span>
+<span class="sd">        </span>
+<span class="sd">        :param folder:  Returned default path</span>
+<span class="sd">        :type  folder:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 2022.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Get default project folder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">folder</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_default_project_path</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">folder</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXPROJ.set_default_project_path"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.set_default_project_path">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">set_default_project_path</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">folder</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set default project folder.</span>
+<span class="sd">        </span>
+<span class="sd">        :param folder:  Default path</span>
+<span class="sd">        :type  folder:  str</span>
+
+<span class="sd">        .. versionadded:: 2022.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Set default project folder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_set_default_project_path</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">folder</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXPROJ.has_pending_central_publish_event"><a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.has_pending_central_publish_event">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">has_pending_central_publish_event</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Checks if there is a pending publish event.</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:      bool</span>
+
+<span class="sd">        .. versionadded:: 2022.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Checks if there is a pending publish event.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_has_pending_central_publish_event</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div></div>
 
 
 
@@ -655,7 +789,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPROJ</a></li> 
@@ -663,7 +797,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2021, Geosoft Inc.
+        &#169; Copyright 2022, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

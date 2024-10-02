@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXDCOL class &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
+    <title>GXDCOL class &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXDCOL class</a></li> 
       </ul>
     </div>
@@ -428,6 +428,31 @@ purely to get the current statistics.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="geosoft.gxapi.GXDCOL.update_zone_transform_parameters">
+<code class="sig-name descname">update_zone_transform_parameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDCOL.html#GXDCOL.update_zone_transform_parameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDCOL.update_zone_transform_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recalculate the layer’s ITR, based on the current type of the <a class="reference internal" href="#geosoft.gxapi.GXDCOL" title="geosoft.gxapi.GXDCOL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDCOL</span></code></a>. Launches anappropriate zone transform type parameter GUI based on the current selection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Index of layer</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>0 - Ok
+1 - Cancel</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2022.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The transform type assumed is the current transform type for the <a class="reference internal" href="#geosoft.gxapi.GXDCOL" title="geosoft.gxapi.GXDCOL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDCOL</span></code></a>. The dialogs
+to enter parameters are shown for Linear, Log, Normal and Equal.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="geosoft.gxapi.GXDCOL.update_zone_transform_type">
 <code class="sig-name descname">update_zone_transform_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">transformType</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDCOL.html#GXDCOL.update_zone_transform_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXDCOL.update_zone_transform_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recalculate the layer’s ITR to the provided type, based on the statistics of the chosen layer.</p>
@@ -476,8 +501,8 @@ and the function will return 1. The dialogs to enter parameters are shown for Li
 <code class="sig-name descname">BRIGHT_LAYER</code><a class="headerlink" href="#geosoft.gxapi.BRIGHT_LAYER" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the brightness of the current layer</p>
 <dl class="py attribute">
-<dt id="id17">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">BRIGHT_LAYER</code><em class="property"> = 1</em><a class="headerlink" href="#id17" title="Permalink to this definition">¶</a></dt>
+<dt id="id18">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">BRIGHT_LAYER</code><em class="property"> = 1</em><a class="headerlink" href="#id18" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -491,8 +516,8 @@ and the function will return 1. The dialogs to enter parameters are shown for Li
 <code class="sig-name descname">BRIGHTNESS_ALL</code><a class="headerlink" href="#geosoft.gxapi.BRIGHTNESS_ALL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Can set the brightness only for object as a whole</p>
 <dl class="py attribute">
-<dt id="id18">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">BRIGHTNESS_ALL</code><em class="property"> = 0</em><a class="headerlink" href="#id18" title="Permalink to this definition">¶</a></dt>
+<dt id="id19">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">BRIGHTNESS_ALL</code><em class="property"> = 0</em><a class="headerlink" href="#id19" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -502,8 +527,8 @@ and the function will return 1. The dialogs to enter parameters are shown for Li
 <code class="sig-name descname">BRIGHTNESS_ALL_AND_LAYERS</code><a class="headerlink" href="#geosoft.gxapi.BRIGHTNESS_ALL_AND_LAYERS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Can set the brightness for object as a whole and for individual layers</p>
 <dl class="py attribute">
-<dt id="id19">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">BRIGHTNESS_ALL_AND_LAYERS</code><em class="property"> = 1</em><a class="headerlink" href="#id19" title="Permalink to this definition">¶</a></dt>
+<dt id="id20">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">BRIGHTNESS_ALL_AND_LAYERS</code><em class="property"> = 1</em><a class="headerlink" href="#id20" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -517,8 +542,8 @@ and the function will return 1. The dialogs to enter parameters are shown for Li
 <code class="sig-name descname">DCOL_TYPE_UNKNOWN</code><a class="headerlink" href="#geosoft.gxapi.DCOL_TYPE_UNKNOWN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unknown</p>
 <dl class="py attribute">
-<dt id="id20">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DCOL_TYPE_UNKNOWN</code><em class="property"> = 0</em><a class="headerlink" href="#id20" title="Permalink to this definition">¶</a></dt>
+<dt id="id21">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DCOL_TYPE_UNKNOWN</code><em class="property"> = 0</em><a class="headerlink" href="#id21" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -528,8 +553,8 @@ and the function will return 1. The dialogs to enter parameters are shown for Li
 <code class="sig-name descname">DCOL_TYPE_GRID</code><a class="headerlink" href="#geosoft.gxapi.DCOL_TYPE_GRID" title="Permalink to this definition">¶</a></dt>
 <dd><p>Grid</p>
 <dl class="py attribute">
-<dt id="id21">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DCOL_TYPE_GRID</code><em class="property"> = 1</em><a class="headerlink" href="#id21" title="Permalink to this definition">¶</a></dt>
+<dt id="id22">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DCOL_TYPE_GRID</code><em class="property"> = 1</em><a class="headerlink" href="#id22" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -539,8 +564,8 @@ and the function will return 1. The dialogs to enter parameters are shown for Li
 <code class="sig-name descname">DCOL_TYPE_SYMBOLS</code><a class="headerlink" href="#geosoft.gxapi.DCOL_TYPE_SYMBOLS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Symbols</p>
 <dl class="py attribute">
-<dt id="id22">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DCOL_TYPE_SYMBOLS</code><em class="property"> = 2</em><a class="headerlink" href="#id22" title="Permalink to this definition">¶</a></dt>
+<dt id="id23">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DCOL_TYPE_SYMBOLS</code><em class="property"> = 2</em><a class="headerlink" href="#id23" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -550,8 +575,8 @@ and the function will return 1. The dialogs to enter parameters are shown for Li
 <code class="sig-name descname">DCOL_TYPE_VOXEL</code><a class="headerlink" href="#geosoft.gxapi.DCOL_TYPE_VOXEL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Voxel</p>
 <dl class="py attribute">
-<dt id="id23">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DCOL_TYPE_VOXEL</code><em class="property"> = 3</em><a class="headerlink" href="#id23" title="Permalink to this definition">¶</a></dt>
+<dt id="id24">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DCOL_TYPE_VOXEL</code><em class="property"> = 3</em><a class="headerlink" href="#id24" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -561,8 +586,8 @@ and the function will return 1. The dialogs to enter parameters are shown for Li
 <code class="sig-name descname">DCOL_TYPE_VECTOR_VOXEL</code><a class="headerlink" href="#geosoft.gxapi.DCOL_TYPE_VECTOR_VOXEL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Vector voxel</p>
 <dl class="py attribute">
-<dt id="id24">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DCOL_TYPE_VECTOR_VOXEL</code><em class="property"> = 4</em><a class="headerlink" href="#id24" title="Permalink to this definition">¶</a></dt>
+<dt id="id25">
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">DCOL_TYPE_VECTOR_VOXEL</code><em class="property"> = 4</em><a class="headerlink" href="#id25" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -583,13 +608,13 @@ and the function will return 1. The dialogs to enter parameters are shown for Li
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXDCOL class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2021, Geosoft Inc.
+        &#169; Copyright 2022, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

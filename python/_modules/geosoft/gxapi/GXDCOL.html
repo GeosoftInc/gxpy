@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXDCOL &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
+    <title>geosoft.gxapi.GXDCOL &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDCOL</a></li> 
@@ -282,6 +282,32 @@
 
 
 
+<div class="viewcode-block" id="GXDCOL.update_zone_transform_parameters"><a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.update_zone_transform_parameters">[docs]</a>    <span class="k">def</span> <span class="nf">update_zone_transform_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Recalculate the layer&#39;s ITR, based on the current type of the `GXDCOL &lt;geosoft.gxapi.GXDCOL&gt;`. Launches anappropriate zone transform type parameter GUI based on the current selection.</span>
+<span class="sd">        </span>
+<span class="sd">        :param index:  Index of layer</span>
+<span class="sd">        :type  index:  int</span>
+
+<span class="sd">        :returns:      0 - Ok</span>
+<span class="sd">                       1 - Cancel</span>
+<span class="sd">        :rtype:        int</span>
+
+<span class="sd">        .. versionadded:: 2022.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** The transform type assumed is the current transform type for the `GXDCOL &lt;geosoft.gxapi.GXDCOL&gt;`. The dialogs</span>
+<span class="sd">        to enter parameters are shown for Linear, Log, Normal and Equal.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_zone_transform_parameters</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
 <div class="viewcode-block" id="GXDCOL.get_layer_statistics"><a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.get_layer_statistics">[docs]</a>    <span class="k">def</span> <span class="nf">get_layer_statistics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a `GXST &lt;geosoft.gxapi.GXST&gt;` filled with layer statistics</span>
@@ -515,7 +541,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDCOL</a></li> 
@@ -523,7 +549,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2021, Geosoft Inc.
+        &#169; Copyright 2022, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXDU &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
+    <title>geosoft.gxapi.GXDU &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDU</a></li> 
@@ -399,6 +399,32 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">azimuth</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDU</span><span class="o">.</span><span class="n">_avg_azimuth</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">precision</span><span class="p">,</span> <span class="n">azimuth</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
         
+
+
+
+<div class="viewcode-block" id="GXDU.average_spacing"><a class="viewcode-back" href="../../../GXDU.html#geosoft.gxapi.GXDU.average_spacing">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">average_spacing</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">xCh</span><span class="p">,</span> <span class="n">yCh</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the average spacing along a line.</span>
+<span class="sd">        This is a simple average of the individual point separations after dummies are removed.</span>
+<span class="sd">        Returns DUMMY if there are fewer than two valid locations.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:    Database</span>
+<span class="sd">        :param line:  Line handle</span>
+<span class="sd">        :param xCh:   X channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :param yCh:   Y channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
+<span class="sd">        :type  db:    GXDB</span>
+<span class="sd">        :type  line:  int</span>
+<span class="sd">        :type  xCh:   int</span>
+<span class="sd">        :type  yCh:   int</span>
+<span class="sd">        :rtype:       float</span>
+
+<span class="sd">        .. versionadded:: 2022.1</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDU</span><span class="o">.</span><span class="n">_average_spacing</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">xCh</span><span class="p">,</span> <span class="n">yCh</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
 
 
 
@@ -5373,7 +5399,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDU</a></li> 
@@ -5381,7 +5407,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2021, Geosoft Inc.
+        &#169; Copyright 2022, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

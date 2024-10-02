@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXMVIEW &#8212; Geosoft GX Python API 2021.2.0 documentation</title>
+    <title>geosoft.gxapi.GXMVIEW &#8212; Geosoft GX Python API 2022.1.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMVIEW</a></li> 
@@ -4406,9 +4406,29 @@
 
 
 
+<div class="viewcode-block" id="GXMVIEW.get_folder_items_2d"><a class="viewcode-back" href="../../../GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_folder_items_2d">[docs]</a>    <span class="k">def</span> <span class="nf">get_folder_items_2d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the list of key-value pairs representing the name(key) and the type(value) of all children in the specified parent folders in the `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param parent_name:  Parent folder name, or empty string for root MVIEW</span>
+<span class="sd">        :type  parent_name:  str</span>
+<span class="sd">        :rtype:              GXLST</span>
+
+<span class="sd">        .. versionadded:: 9.10</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Returns name/type pairs. Types can be &#39;Folder&#39;, &#39;Group&#39; or &#39;Unknown&#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_folder_items_2d</span><span class="p">(</span><span class="n">parent_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXLST</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
 <div class="viewcode-block" id="GXMVIEW.add_folder_3d"><a class="viewcode-back" href="../../../GXMVIEW.html#geosoft.gxapi.GXMVIEW.add_folder_3d">[docs]</a>    <span class="k">def</span> <span class="nf">add_folder_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent_guid</span><span class="p">,</span> <span class="n">guid</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Add a folder to the `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;`.</span>
+<span class="sd">        Add a 3DView folder to the `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:         Folder name</span>
 <span class="sd">        :param parent_guid:  Folder parent GUID, or empty string for parent `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;`.</span>
@@ -4427,9 +4447,28 @@
 
 
 
+<div class="viewcode-block" id="GXMVIEW.add_folder_2d"><a class="viewcode-back" href="../../../GXMVIEW.html#geosoft.gxapi.GXMVIEW.add_folder_2d">[docs]</a>    <span class="k">def</span> <span class="nf">add_folder_2d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a Map folder to the `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:         Folder name</span>
+<span class="sd">        :param parent_name:  Parent folder name, or empty string for root `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;`.</span>
+<span class="sd">        :type  name:         str</span>
+<span class="sd">        :type  parent_name:  str</span>
+
+<span class="sd">        .. versionadded:: 2022.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_folder_2d</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">parent_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
 <div class="viewcode-block" id="GXMVIEW.move_group_to_folder_3d"><a class="viewcode-back" href="../../../GXMVIEW.html#geosoft.gxapi.GXMVIEW.move_group_to_folder_3d">[docs]</a>    <span class="k">def</span> <span class="nf">move_group_to_folder_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">guid</span><span class="p">,</span> <span class="n">group</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Add group to a folder in `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;`.</span>
+<span class="sd">        Add group to a 3DView folder in `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param guid:   Folder parent GUID, or empty string for parent `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;`.</span>
 <span class="sd">        :param group:  Group number</span>
@@ -4446,9 +4485,28 @@
 
 
 
+<div class="viewcode-block" id="GXMVIEW.move_group_to_folder_2d"><a class="viewcode-back" href="../../../GXMVIEW.html#geosoft.gxapi.GXMVIEW.move_group_to_folder_2d">[docs]</a>    <span class="k">def</span> <span class="nf">move_group_to_folder_2d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent_name</span><span class="p">,</span> <span class="n">group</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add group to a Map folder in `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param parent_name:  Parent folder name, or empty string for root `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;`.</span>
+<span class="sd">        :param group:        Group number</span>
+<span class="sd">        :type  parent_name:  str</span>
+<span class="sd">        :type  group:        int</span>
+
+<span class="sd">        .. versionadded:: 2022.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_move_group_to_folder_2d</span><span class="p">(</span><span class="n">parent_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">group</span><span class="p">)</span></div>
+        
+
+
+
+
 <div class="viewcode-block" id="GXMVIEW.delete_folder_3d"><a class="viewcode-back" href="../../../GXMVIEW.html#geosoft.gxapi.GXMVIEW.delete_folder_3d">[docs]</a>    <span class="k">def</span> <span class="nf">delete_folder_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">guid</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Delete a folder.</span>
+<span class="sd">        Delete a Map folder.</span>
 <span class="sd">        </span>
 <span class="sd">        :param guid:   Folder GUID.</span>
 <span class="sd">        :type  guid:   str</span>
@@ -4458,6 +4516,23 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_delete_folder_3d</span><span class="p">(</span><span class="n">guid</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXMVIEW.delete_folder_2d"><a class="viewcode-back" href="../../../GXMVIEW.html#geosoft.gxapi.GXMVIEW.delete_folder_2d">[docs]</a>    <span class="k">def</span> <span class="nf">delete_folder_2d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete a 3DView folder.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:   Folder name.</span>
+<span class="sd">        :type  name:   str</span>
+
+<span class="sd">        .. versionadded:: 2022.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_delete_folder_2d</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
         
 
 
@@ -5958,7 +6033,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2021.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2022.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMVIEW</a></li> 
@@ -5966,7 +6041,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2021, Geosoft Inc.
+        &#169; Copyright 2022, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
